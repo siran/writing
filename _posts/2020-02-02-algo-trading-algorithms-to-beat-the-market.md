@@ -17,7 +17,7 @@ canonical_url: >-
 layout: post
 ---
 
-> TL;DR: 
+> TL;DR:
 > - 2019 was an outstanding year for the stock market.
 > - With such a performance it was hard to come up with an algorithm the could beat the market.
 > - Running the same algo with data from 2016 I had a small but consistent average edge of 10% over the market.
@@ -148,7 +148,7 @@ In the third part of this series, we’ll build on our code and work on a scalpi
 
 Then I might also want to write about some other strategies I’ve tried, and provide code snippets that some might find useful.
 
-Ideas, comments? 
+Ideas, comments?
 
 See you next time!
 
@@ -165,4 +165,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>
