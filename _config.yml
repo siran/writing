@@ -22,8 +22,8 @@ title: An's Den
 email: anmichel@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Free-style, informed, speculative writing on my thought about science, philosophy, and else.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "writing" # the subpath of your site, e.g. /blog
+url: "https://siran.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: anmichelr
 github_username:  siran
 
