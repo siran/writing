@@ -28,7 +28,7 @@ twitter_username: anmichelr
 github_username:  siran
 
 # Build settings
-theme: minima
+theme: jekyll-theme-minima
 plugins:
   - jekyll-feed
 
