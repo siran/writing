@@ -12,7 +12,7 @@ I did notice quite quickly that the image was missing from Substack; interesting
 ## Imgur was the problem
 I slept it over, happy that the image failed to show in my local. That hinted to the solution.
 
-Next day, I googled hotlinking from Imgur. 
+Next day, I googled hotlinking from Imgur.
 
 It turned out that Imgur has some restrictive policies to hotlink from blogs:
 ![](https://raw.githubusercontent.com/siran/assets/main/writing/hot-linking-from-imgur-not-allowed.png)
@@ -22,7 +22,7 @@ It didn't took me long to realize that I could host the images in a Github page.
 I created an `assets` repository on my GitHub and enabled GitHub Pages:
 ![](https://raw.githubusercontent.com/siran/assets/main/writing/enabling-git-hub-pages.png)
 
-Now, I can hotlink images from my blog (Substack, Medium, Dev.to, even GutHub pages itself) to my asset repository. For free I get version control of my assets and complete control over them (other than privacy, I guess, since it's a public read-only repository). 
+Now, I can hotlink images from my blog (Substack, Medium, Dev.to, even GutHub pages itself) to my asset repository. For free I get version control of my assets and complete control over them (other than privacy, I guess, since it's a public read-only repository).
 
 I hope GitHub pages remains free forever.
 
