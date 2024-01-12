@@ -1,12 +1,15 @@
 ---
 title: How to write articles in Markdown for Substack and Medium using GitHub Page's Atom/RSS feed
+excerpt: You can write all your articles using Markdown and get them to Substack using Jekyll's jekyll-feed's plugin's Atom (RSS-like) feed to import articles into Substack.
+canonical_url: >-
+  https://anrodriguez.substack.com/p/how-to-write-articles-in-markdown-for-substack-and-medium-using-github-pages-atom-rss-feedshtml
 ---
 # How to write articles in Markdown for Substack and Medium using GitHub Page's Atom/RSS feed
 It is possible (and not hard) to have all your beautiful articles in plain-text format, backed-up and versioned-controlled.
 
 If you write online you might find this useful.
 
-You can write all your articles using [Markdown](https://en.wikipedia.org/wiki/Markdown) and get them to Substack using [Jekyll](https://jekyllrb.com/)'s [jekyll-feed](https://github.com/jekyll/jekyll-feed) plugin's Atom (RSS-like) feed to import articles into Substack.
+You can write all your articles using [Markdown](https://en.wikipedia.org/wiki/Markdown) and then import them to Substack using [Jekyll](https://jekyllrb.com/)'s [jekyll-feed](https://github.com/jekyll/jekyll-feed) plugin's Atom (RSS-like) feed to import articles into Substack.
 
 All your articles in plain-text format, backed-up and versioned-controlled.
 
@@ -41,9 +44,9 @@ It's also easy to run the static page locally.
 ## If development stops means there are no more developers
 Development never stops.
 
-Next I plan to implement Staticman, to allow for version-controlled comments for my articles.
+Next I plan to implement [Staticman](https://staticman.net/), to allow for version-controlled comments for my articles.
 
-Also it looks appealing to write a simple script to automate the article timestamping.
+Also it looks appealing to write a simple script to automate the article timestamping. Also, probably, another script to automate the canonical URL update for the articles posted in Github.
 
 
 ---
@@ -52,3 +55,5 @@ Also it looks appealing to write a simple script to automate the article timesta
 So this is all the pipeline test for now.
 
 Comment, like and subscribe. :-)
+
+(update: pipeline seems to work fine. Updated canonical URL in the GitHub page to point to Substack. Substack is like my main publisher; Github is the preprint; Medium and Dev.to the communicators.)
