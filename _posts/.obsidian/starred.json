@@ -1,0 +1,109 @@
+{
+  "items": [
+    {
+      "type": "file",
+      "title": "Scratch Personal",
+      "path": "__personal/Scratch Personal.md"
+    },
+    {
+      "type": "file",
+      "title": "Todo - Personal",
+      "path": "__personal/Todo - Personal.md"
+    },
+    {
+      "type": "file",
+      "title": "daily - Annalect",
+      "path": "annalect/daily - Annalect.md"
+    },
+    {
+      "type": "file",
+      "title": "todo - Annalect - notes, scratch",
+      "path": "annalect/Annalect - todo,notes, scratch.md"
+    },
+    {
+      "type": "file",
+      "title": "Annalect General To-Do",
+      "path": "annalect/Annalect General To-Do.md"
+    },
+    {
+      "type": "search",
+      "title": "tag:shashi",
+      "query": "tag:shashi"
+    },
+    {
+      "type": "search",
+      "title": "tag:shashi OR tag:onepd OR tag:mocktar",
+      "query": "tag:shashi OR tag:onepd OR tag:mocktar"
+    },
+    {
+      "type": "file",
+      "title": "scratch",
+      "path": "__personal/scratch.md"
+    },
+    {
+      "type": "file",
+      "title": "Things to buy",
+      "path": "__personal/Things to buy.md"
+    },
+    {
+      "type": "file",
+      "title": "women - scratch",
+      "path": "__personal/women/women - scratch.md"
+    },
+    {
+      "type": "file",
+      "title": "tocar!",
+      "path": "__personal/tocar!.md"
+    },
+    {
+      "type": "file",
+      "title": "MS Medical Record",
+      "path": "__personal/MS Medical Record.md"
+    },
+    {
+      "type": "file",
+      "title": "2022-08-20 1640 - to write",
+      "path": "__personal/2022-08-20 1640 - to write.md"
+    },
+    {
+      "type": "file",
+      "title": "TO Read",
+      "path": "__personal/2022-11-01 - TO Read.md"
+    },
+    {
+      "type": "file",
+      "title": "2022-11-01 - baby notes",
+      "path": "__personal/2022-11-01 - baby notes.md"
+    },
+    {
+      "type": "file",
+      "title": "2022-11-16 child support proposal",
+      "path": "personal/2022-11-16 child support proposal.md"
+    },
+    {
+      "type": "file",
+      "title": "notas divorcio",
+      "path": "__personal/lulu/notas divorcio.md"
+    },
+    {
+      "type": "file",
+      "title": "Docs",
+      "path": "Docs.md"
+    },
+    {
+      "type": "file",
+      "title": "__mercados",
+      "path": "__personal/__mercados.md"
+    },
+    {
+      "type": "file",
+      "title": "chistes",
+      "path": "chistes.md"
+    },
+    {
+      "type": "file",
+      "title": "urges to pee",
+      "path": "urges to pee.md"
+    }
+  ]
+}

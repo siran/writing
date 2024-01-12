@@ -1,0 +1,43 @@
+{
+  "scanned": true,
+  "reminders": {
+    "__personal/Scratch Personal.md": [
+      {
+        "title": "123-20 metropolitan av",
+        "time": "2023-01-04",
+        "rowNumber": 16
+      }
+    ],
+    "__personal/Todo - Personal.md": [
+      {
+        "title": "2022-12-28 answer this [life questions](../life%20questions.md)",
+        "time": "2022-12-31",
+        "rowNumber": 14
+      },
+      {
+        "title": "call home infusions",
+        "time": "2023-01-05 11:00",
+        "rowNumber": 21
+      }
+    ]
+  },
+  "debug": false,
+  "settings": {
+    "reminderTime": "09:00",
+    "laters": "In 30 minutes\nIn 1 hour\nIn 3 hours\nTomorrow\nNext week",
+    "useSystemNotification": false,
+    "autoCompleteTrigger": "(@",
+    "primaryReminderFormat": "ReminderPluginReminderFormat",
+    "enableReminderPluginReminderFormat": true,
+    "dateFormat": "YYYY-MM-DD",
+    "dateTimeFormat": "YYYY-MM-DD HH:mm",
+    "strictDateFormat": false,
+    "linkDatesToDailyNotes": false,
+    "enableTasksPluginReminderFormat": false,
+    "useCustomEmojiForTasksPlugin": false,
+    "removeTagsForTasksPlugin": false,
+    "enableKanbanPluginReminderFormat": false,
+    "editDetectionSec": 10,
+    "reminderCheckIntervalSec": 5
+  }
+}
