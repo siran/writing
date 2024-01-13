@@ -6,7 +6,7 @@ The workflow of publishing in Substack automatically from the RSS feed of a GitH
 ## Missing image in my local and Substack, not on Github
 Those with a keen eye, however, might have noticed that one of the images in the article was missing in Substack:
 ![](https://siran.github.io/assets/writing/missing-image-in-article.jpg)
-*The place of the missing image is pointed by the arrow (pointing to nothingness)*
+*[IMG: The place of the missing image is pointed by the arrow (pointing to nothingness)](https://siran.github.io/assets/writing/missing-image-in-article.jpg)*
 
 I did notice quite quickly that the image was missing from Substack; interestingly it showed on Github Pages. What a bummer, I thought. *What now?*
 ## Imgur was the problem
