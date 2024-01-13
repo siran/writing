@@ -17,12 +17,18 @@ I slept it over, happy that the image failed to show in my local. That hinted to
 Next day, I googled hotlinking from Imgur.
 
 It turned out that Imgur has some restrictive policies to hotlink from blogs:
+
 ![](https://siran.github.io/assets/writing/hot-linking-from-imgur-not-allowed.png)
+
+*[IMG: Imgur has some restrictive policies](https://siran.github.io/assets/writing/hot-linking-from-imgur-not-allowed.png)*
 ## Github pages as asset repository
 It didn't took me long to realize that I could host the images in a Github page. And so, I did.
 
 I created an `assets` repository on my GitHub and enabled GitHub Pages:
+
 ![](https://siran.github.io/assets/writing/enabling-git-hub-pages.png)
+
+*[IMG: My assets repository in Github Pages](https://siran.github.io/assets/writing/enabling-git-hub-pages.png)*
 
 Now, I can hotlink images from my blog (Substack, Medium, Dev.to, even GutHub pages itself) to my asset repository. For free I get version control of my assets and complete control over them (other than privacy, I guess, since it's a public read-only repository).
 
@@ -31,7 +37,9 @@ I hope GitHub pages remains free forever.
 ## Will GitHub Pages remain free forever for public repositories?
 A quick peek seem to point it will be free - hopefully with hotlinking - forever:
 
-![](https://siran.github.io/assets/writing/github-pages-free-forever.png)*It appears GitHub Pages is remaining free - hopefully with hotlinking*
+![](https://siran.github.io/assets/writing/github-pages-free-forever.png)
+
+*[IMG: It appears GitHub Pages is remaining free - hopefully with hotlinking](https://siran.github.io/assets/writing/github-pages-free-forever.png)*
 
 However, in case it does not, it feels good to know that I have all my assets and articles locally saved and backup to the cloud.
 
