@@ -4,7 +4,6 @@ excerpt: You can write all your articles using Markdown and get them to Substack
 canonical_url: >-
   https://anrodriguez.substack.com/p/how-to-write-articles-in-markdown-for-substack-and-medium-using-github-pages-atom-rss-feedshtml
 ---
-# How to write articles in Markdown for Substack and Medium using GitHub Page's Atom/RSS feed
 It is possible (and not hard) to have all your beautiful articles in plain-text format, backed-up and versioned-controlled.
 
 If you write online you might find this useful.
@@ -28,8 +27,11 @@ def myfunc():
 Probably even some Latex $E=mc^2$. If not now, I might be able to make it work in the future.
 
 In my local editor it looks OK:
-![](https://i.imgur.com/3uhlSHH.png)
-*Testing a caption for the image*
+
+![](https://siran.github.io/assets/writing/test-image.png)
+
+*[Testing a caption for the image](https://siran.github.io/assets/writing/test-image.png)*
+
 ## Setting it up
 It was not so hard to set up GitHub pages. I followed [this tutorial](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll) among other many tutorials. 
 
