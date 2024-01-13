@@ -17,9 +17,9 @@ In my opinion, this is a big deal and please let me explain why:
 *[Plot of the daily variations measured](https://siran.github.io/assets/writing/daily-variations.png)*
 
 ## What does this mean
-Put simply, I haven't been able to find any current-physics explatation for:
+Put simply, I haven't been able to find any current-physics explanation for:
 
-1. fringe shifts upon rotation,
+1. fringe shifts upon rotation in a fixed in-lab interferometer that slowly rotates,
 2. daily, periodic variation of the amplitude of such fringe shifts
 
 ## What could it be
@@ -27,3 +27,6 @@ My current explanation is that we are measuring a Doppler frequency shift while 
 
 I haven't yet made the mathematical fit to the data in [Matlab](https://matlab.mathworks.com/) (I've been fixing this blog so I could write), but it seems to me that a Doppler fit to the data is much more appropriate than any dragging effect.
 
+---
+
+I have a couple of explanations. So stay tuned.
