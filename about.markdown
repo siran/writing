@@ -12,15 +12,6 @@ I needed a place to write freely and stop driving my friends crazy with so much 
 
 Also, all of the people I admire have written their ideas. And so, I want to follow their steps and to contribute in my own way to humankind's world knowledge.
 
-### What Am I?
-I am spirit, and so are you.
-
-### What are then body and mind?
-We control our minds and body, which are our tools to navigate this world.
-
-### What is our job?
-Our job is to forgive and lay the grounds for love.
-
 ### What has An done with his life so far?
 By far, the most important thing I've done is contributing to nringing my daughter into this world.
 
@@ -34,4 +25,4 @@ Perhaps the second most important thing I've done was so far, was to embark on m
 
 ---
 
-Any more questions?
+Please feel free to ask me anything in my [about me](https://about.me/anmichel)
