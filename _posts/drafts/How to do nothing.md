@@ -58,7 +58,7 @@ Try it. Don't do, just be.
 ## Just be - air just flows in, inevitably
 Exhale until you can no more and notice how it is the air that rushes in, it is not you "breathing in".
 
-![](assets/writing/Pasted%20image%2020240120142045.png)
+![](assets/writing/woman%20exhaling.png)
 
 *[Breathing out is a very important concept.](assets/writing/woman%20exhaling.png)*
 
