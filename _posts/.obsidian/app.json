@@ -1,5 +1,11 @@
 {
-  "livePreview": false,
-  "propertiesInDocument": "source",
-  "showInlineTitle": true
+  "livePreview": true,
+  "propertiesInDocument": "visible",
+  "showInlineTitle": true,
+  "alwaysUpdateLinks": false,
+  "useMarkdownLinks": true,
+  "attachmentFolderPath": "assets/writing",
+  "strictLineBreaks": true,
+  "showLineNumber": true,
+  "newLinkFormat": "relative"
 }
