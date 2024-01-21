@@ -7,9 +7,9 @@ tags:
   - self-care
 excerpt: Doing nothing looks easy but it is actually hard.
 ---
-![](assets/writing/girl%20meditating,%20apparently%20doing%20nothing.png)
+![](https://siran.github.io/assets/writing/girl-meditating-apparently-doing-nothing.png)
 
-*[Doing nothing looks easy but it is actually hard.](assets/writing/girl%20meditating,%20apparently%20doing%20nothing.png)
+*[Doing nothing looks easy but it is actually hard.](https://siran.github.io/assets/writing/girl-meditating-apparently-doing-nothing.png)*
 
 For a long time I've had the feeling that I needed to do "something" all of the time.
 
@@ -35,9 +35,9 @@ You can imagine you are in the forest or the park or the street, and it starts t
 
 So, the question I invite you to ask yourself is, why run? Why take any action over the inevitability of the rain? Why not embrace the rain and get wet?
 
-![](assets/writing/Girl%20enjoying%20getting%20wet%20in%20the%20rain..png)
+![](https://siran.github.io/assets/writing/girl-enjoying-getting-wet-in-the-rain..png)
 
-*[Girl enjoying the rain and getting wet.](assets/writing/Girl%20enjoying%20getting%20wet%20in%20the%20rain..png)*
+*[Girl enjoying the rain and getting wet.](https://siran.github.io/assets/writing/girl-enjoying-getting-wet-in-the-rain..png)*
 
 Like Bob Marley said,
 > Some People Feel The Rain, Others Just Get Wet
@@ -58,9 +58,9 @@ Try it. Don't do, just be.
 ## Just be - air just flows in, inevitably
 Exhale until you can no more and notice how it is the air that rushes in, it is not you "breathing in".
 
-![](assets/writing/woman%20exhaling.png)
+![](https://siran.github.io/assets/writing/woman-exhaling.png)
 
-*[Breathing out is a very important concept.](assets/writing/woman%20exhaling.png)*
+*[Breathing out is a very important concept.](https://siran.github.io/assets/writing/woman-exhaling.png)*
 
 Check out this article about [breathing out](https://medium.com/@nickbeats1454/the-essence-of-nirvana-breathing-out-7bac009f7baa) and the essence of Nirvana.
 
@@ -87,8 +87,8 @@ Relax, close you eyes and do nothing for a while.
 
 Practice some [mindfulness](https://www.psychologytoday.com/us/basics/mindfulness); Practice some self-care.
 
-![](assets/writing/self-care%20tips%20from%20Google.png)
+![](https://siran.github.io/assets/writing/self-care-tips-from-google.png)
 
-*[Some self-care tips from Google](assets/writing/tips%20for%20self-care%20from%20Google.png)*
+*[Some self-care tips from Google](https://siran.github.io/assets/writing/self-care-tips-from-google.png)*
 
 It is OK.
