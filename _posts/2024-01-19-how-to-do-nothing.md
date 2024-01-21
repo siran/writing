@@ -83,7 +83,7 @@ If you don't do what you really need to do,  you won't be happy although you do 
 If you don't know where to start, this [YouTube playlist](https://www.youtube.com/playlist?list=PLqSpH4oFjwiIuSYw60NT429buU_DSlHIs) might be handy.
 
 ## It is OK
-Relax, close you eyes and do nothing for a while.
+Relax, close your eyes and do nothing for a while.
 
 Practice some [mindfulness](https://www.psychologytoday.com/us/basics/mindfulness); Practice some self-care.
 
