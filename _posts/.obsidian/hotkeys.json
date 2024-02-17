@@ -48,5 +48,22 @@
       ],
       "key": "PageDown"
     }
+  ],
+  "companion:suggest": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "G"
+    }
+  ],
+  "graph:open": [],
+  "companion:accept": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "ArrowRight"
+    }
   ]
 }

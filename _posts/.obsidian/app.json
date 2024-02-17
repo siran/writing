@@ -2,10 +2,12 @@
   "livePreview": true,
   "propertiesInDocument": "visible",
   "showInlineTitle": true,
-  "alwaysUpdateLinks": false,
+  "alwaysUpdateLinks": true,
   "useMarkdownLinks": true,
-  "attachmentFolderPath": "assets/writing",
+  "attachmentFolderPath": "./assets/writing",
   "strictLineBreaks": true,
   "showLineNumber": true,
-  "newLinkFormat": "relative"
+  "newLinkFormat": "relative",
+  "newFileLocation": "folder",
+  "newFileFolderPath": "_drafts/notes"
 }
