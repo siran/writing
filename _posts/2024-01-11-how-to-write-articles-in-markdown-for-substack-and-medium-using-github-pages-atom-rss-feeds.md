@@ -1,8 +1,10 @@
 ---
 title: How to write articles in Markdown for Substack and Medium using GitHub Page's Atom/RSS feed
 excerpt: You can write all your articles using Markdown and get them to Substack using Jekyll's jekyll-feed's plugin's Atom (RSS-like) feed to import articles into Substack.
-canonical_url: >-
-  https://anrodriguez.substack.com/p/how-to-write-articles-in-markdown-for-substack-and-medium-using-github-pages-atom-rss-feedshtml
+canonical_url: https://anrodriguez.substack.com/p/how-to-write-articles-in-markdown-for-substack-and-medium-using-github-pages-atom-rss-feedshtml
+tags:
+  - devops
+  - technical
 ---
 It is possible (and not hard) to have all your beautiful articles in plain-text format, backed-up and versioned-controlled.
 
