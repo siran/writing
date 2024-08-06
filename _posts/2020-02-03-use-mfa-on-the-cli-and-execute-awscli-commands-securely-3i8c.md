@@ -1,12 +1,11 @@
 ---
 title: Use MFA on the CLI and execute awscli commands securely
 excerpt: You can script your way through secure convenience.
-date: '2020-02-03T01:46:35.394Z'
+date: 2020-02-03T01:46:35.394Z
 tags:
   - aws
   - scripting
-canonical_url: >-
-  https://anrodriguez.substack.com/p/use-mfa-on-the-cli-and-execute-awscli-commands-securely-3i8chtml
+canonical_url: https://anrodriguez.substack.com/p/use-mfa-on-the-cli-and-execute-awscli-commands-securely-3i8chtml
 layout: post
 ---
 [![u-https-insidesmallbusiness-com-au-wp-content-uploads-2019-03.jpg](https://i.postimg.cc/Mpf8NMF0/u-https-insidesmallbusiness-com-au-wp-content-uploads-2019-03.jpg)](https://postimg.cc/PCHc8xhN)
