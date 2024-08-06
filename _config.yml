@@ -31,7 +31,7 @@ about_me: https://about.me/anrodriguez
 # Build settings
 theme: minima
 plugins:
-  - jekyll-feed
+  # - jekyll-feed
 show_excerpts: false
 
 # Exclude from processing.

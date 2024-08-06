@@ -94,7 +94,7 @@ def main():
     print(fname)
     new_path = format_article(path)
     os.rename(path, new_path)
-    print(f"formatted draft: {new_path} <- {fname}")
+    print(f"renombrado: {new_path} <- {fname}")
 
 if __name__ == '__main__':
   main()
