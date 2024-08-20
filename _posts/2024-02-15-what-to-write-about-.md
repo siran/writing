@@ -6,6 +6,7 @@ tags:
   - mindfulness
   - meditation
 excerpt: To write, it's good first to listen.
+canonical_url: https://anrodriguez.substack.com/p/what-to-write-abouthtml
 ---
 ![](https://siran.github.io/assets/writing/miles-davis-on-yellow-background.png)
 
