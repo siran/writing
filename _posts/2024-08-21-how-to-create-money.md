@@ -58,7 +58,7 @@ Think about it, who do we have to pay that money that we printed back to? To us?
 
 A government's deficit is some else's (a real person) surplus. Deficit spending can then be seen as investing in ourselves.
 
-And by person, companies are legal entities owned by people.65
+And by person, companies are legal entities owned by people.
 
 ## Final words, for now
 This topic is amazing. There is so much to discuss that I need to engage in dialogue with others. I am not writing a book on economics to prove my point.
