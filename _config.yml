@@ -27,6 +27,7 @@ url: "https://siran.github.io" # the base hostname & protocol for your site, e.g
 twitter_username: anmichelr
 github_username:  siran
 about_me: https://about.me/anrodriguez
+future: true
 
 # Build settings
 theme: minima
