@@ -34,20 +34,13 @@ def format_article(name):
   return new_name
 
 def replace_text_in_files():
-  # The find command to locate .md files
-  find_command = ["find", ".", "-name", "*.md", "-print0"]
-
   # The sed command to modify the files
-  sed_command = [
-      "xargs", "-0", "sed", "--in-place", "-E",
-      "-e", "s#\\(assets/writing/#(https://siran.github.io/assets/writing/#gp"
-  ]
+  os.chdir("/d/Users/an/Documents/__dev/writing/_posts")
+  command = "sed --in-place -E 's#\(assets/writing/#(https://siran.github.io/assets/writing/#g' *.md"
 
   # Using subprocess to run both commands together
   result = subprocess.run(
-      find_command + ["|"] + sed_command,
-      stdout=subprocess.PIPE,
-      stderr=subprocess.PIPE,
+      command,
       text=True,
       shell=True
   )
@@ -62,7 +55,7 @@ def main():
   # article_names = os.walk(path, topdown=True, followlinks=True)
   # images = os.walk('_drafts/assets/writing', topdown=True, followlinks=True )
 
-  imagesobj = pathlib.Path('_posts')
+  # imagesobj = pathlib.Path('_posts')
 
   renames = {}
   # images = imagesobj.rglob('*')
@@ -78,7 +71,9 @@ def main():
 
   replace_text_in_files()
 
-  article_pathnames = imagesobj.glob('*.md')
+  os.chdir("/d/Users/an/Documents/__dev/writing/")
+  imagesobj = pathlib.Path('_posts')
+  article_pathnames = imagesobj.rglob('*.md')
   for ppath in article_pathnames:
     path = str(ppath)
     fname = path.split('/')[-1]
