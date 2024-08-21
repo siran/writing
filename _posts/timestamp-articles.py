@@ -33,6 +33,30 @@ def format_article(name):
 
   return new_name
 
+def replace_text_in_files():
+  # The find command to locate .md files
+  find_command = ["find", ".", "-name", "*.md", "-print0"]
+
+  # The sed command to modify the files
+  sed_command = [
+      "xargs", "-0", "sed", "--in-place", "-E",
+      "-e", "s#\\(assets/writing/#(https://siran.github.io/assets/writing/#gp"
+  ]
+
+  # Using subprocess to run both commands together
+  result = subprocess.run(
+      find_command + ["|"] + sed_command,
+      stdout=subprocess.PIPE,
+      stderr=subprocess.PIPE,
+      text=True,
+      shell=True
+  )
+
+  # Print the output which includes filenames and changed lines
+  print(result.stdout)
+  if result.stderr:
+      print("Errors:", result.stderr)
+
 def main():
   # path = '_drafts/'
   # article_names = os.walk(path, topdown=True, followlinks=True)
@@ -41,40 +65,18 @@ def main():
   imagesobj = pathlib.Path('_posts')
 
   renames = {}
-  images = imagesobj.rglob('*')
-  for ximage in images:
-    image = str(ximage)
-    if "/_draft" in image: continue
-    if not (" " in image and "assets" in image and os.path.isfile(image)):
-      continue
+  # images = imagesobj.rglob('*')
+  # for ximage in images:
+  #   image = str(ximage)
+  #   if "/_draft" in image: continue
+  #   if not (" " in image and "assets" in image and os.path.isfile(image)):
+  #     continue
 
-    new_name = unidecode(image.replace(" ", "-")).lower()
-    new_name = re.sub(r"[,'?]*", "", new_name)
-    renames[image] = new_name
+  #   new_name = unidecode(image.replace(" ", "-")).lower()
+  #   new_name = re.sub(r"[,'?]*", "", new_name)
+  #   renames[image] = new_name
 
-  for old_path, new_path in renames.items():
-    old_name = old_path.split('/')[-1]
-    old_name_encoded = quote(old_name.split('/')[-1])
-    for oname in imagesobj.rglob('*.md'):
-      parts = str(oname).split('/')
-      fname = parts[-1]
-      # if str(fname)[-3:] != '.md': continue
-      # if " " in str(fname): continue
-      content = open(oname, 'r').read()
-      if old_name_encoded not in content:
-        continue
-      print(f'{old_name} -> {old_name_encoded}')
-      with open(str(oname), 'w') as f:
-        new_name = new_path.split('/')[-1]
-        content = (content
-            .replace(old_name_encoded, new_name)
-            .replace(f'assets/writing/', 'https://siran.github.io/assets/writing/'))
-
-        f.write(content)
-      os.rename(image, new_name)
-      print(f"renamed: {image} -> {image.replace(' ', '-')}")
-
-      written = 1
+  replace_text_in_files()
 
   article_pathnames = imagesobj.glob('*.md')
   for ppath in article_pathnames:
@@ -85,13 +87,6 @@ def main():
     if fname[0] == '.': continue
     if "_draft" in path: continue
 
-
-    # if (fname[4] != '-' and fname[7] != '-'):
-
-    # apparently to date only one article
-    # if sys.argv[1] not in fname: continue
-
-    print(fname)
     new_path = format_article(path)
     os.rename(path, new_path)
     print(f"renombrado: {new_path} <- {fname}")
