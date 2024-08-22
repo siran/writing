@@ -6,6 +6,7 @@ tags:
   - writing
   - handwriting
 excerpt: Practice this sheets with purpose and we should be legible again in no time.
+canonical_url: https://anrodriguez.substack.com/p/how-to-improve-your-handwritinghtml
 ---
 ![](https://siran.github.io/assets/writing/beautiful-print-letter-practice-example.png)
 

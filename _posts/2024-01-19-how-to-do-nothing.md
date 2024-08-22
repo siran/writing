@@ -6,6 +6,7 @@ tags:
   - meditation
   - self-care
 excerpt: Doing nothing looks easy but it is actually hard.
+canonical_url: https://anrodriguez.substack.com/p/how-to-do-nothinghtml
 ---
 ![](https://siran.github.io/assets/writing/girl-meditating-apparently-doing-nothing.png)
 

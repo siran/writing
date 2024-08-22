@@ -6,6 +6,7 @@ tags:
   - money
   - history
   - philosophy
+canonical_url: https://anrodriguez.substack.com/p/how-to-create-moneyhtml
 ---
 I think some people forget, or has never known, the origin of money. Or how money is created in 2024. I think that some also forget that money is just a representation of value, not value itself.
 

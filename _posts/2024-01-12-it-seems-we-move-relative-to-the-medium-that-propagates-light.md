@@ -4,6 +4,7 @@ excerpt: What is happening now that wasn't happening before?
 date: 2024-01-12T23:30
 tags:
   - physics
+canonical_url: https://anrodriguez.substack.com/p/it-seems-we-move-relative-to-the-medium-that-propagates-lighthtml
 ---
 (This might sound abstract. Please bear with me. I promise it's super easy to understand (don't click on the links if you don't feel ready :) - This is the intro to people that might think that talking about the nature of reality is "complicated" or "nor worth their time"; it is not complicated..., it is as easy as buying a loaf of bread).
 

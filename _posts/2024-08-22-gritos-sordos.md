@@ -7,5 +7,6 @@ tags:
   - mindfulness
   - philosophy
   - poetry
+canonical_url: https://anrodriguez.substack.com/p/gritos-sordoshtml
 ---
 ‎ 
