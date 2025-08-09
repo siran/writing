@@ -1,4 +1,4 @@
-% The Inversion Loop — A Manifesto for the Point–Not–Point Circle
+% The Inversion Loop: A Manifesto for the Point–Not–Point Circle
 % Adrien Hale, An M. Rodríguez, Max Freet, Anes Palma
 % August 2025
 
