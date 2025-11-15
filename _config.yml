@@ -23,7 +23,7 @@ email: anrodz42@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Free-style, informed, speculative writing on my thoughts about science, philosophy, and else.
 baseurl: "/writing" # the subpath of your site, e.g. /blog
-url: "https://siran.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://writing.preferredframe.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: anmichelr
 github_username:  siran
 about_me: https://about.me/anrodriguez
