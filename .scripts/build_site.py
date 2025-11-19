@@ -293,7 +293,7 @@ def scholar_date(x) -> str:
         x = x.strip()
         if not x:
             return ""
-        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", x):
+        if re.fullmatch(r"\d{4}-\d{2}-\d2", x):
             y, m, d = x.split("-")
             return f"{y}/{m}/{d}"
         if re.fullmatch(r"\d{4}-\d{2}", x):
@@ -505,19 +505,28 @@ def _build_article_head(it: dict, page_url: str, pdf_url: str | None) -> str:
 # ---------- article pages ----------
 
 def build_article_pages() -> None:
-    prints = ROOT / "prints"
-    if not prints.exists():
-        return
+    """
+    Build article/version/stem pages for any provenance.yaml that lives in:
 
+        <base>/<stem>/<doi_prefix>/<doi_suffix>/provenance.yaml
+
+    where <base> can be 'prints', 'documents', etc.
+    """
     records: list[dict] = []
 
-    for prov in prints.glob("*/*/*/provenance.yaml"):
+    for prov in ROOT.rglob("provenance.yaml"):
+        rel_parent = prov.parent.relative_to(ROOT)
+        parts = rel_parent.parts
+        # need at least base/stem/prefix/suffix
+        if len(parts) < 4:
+            continue
+
+        base = parts[0]
+        stem = parts[-3]
+        doi_prefix = parts[-2]
+        doi_suffix = parts[-1]
+
         data = yaml.safe_load(prov.read_text(encoding="utf-8")) or {}
-
-        stem = prov.parent.parent.parent.name
-        doi_prefix = prov.parent.parent.name
-        doi_suffix = prov.parent.name
-
         pf_block = data.get("parsed_from_pnpmd") or {}
 
         title = (data.get("title") or pf_block.get("title") or "") or ""
@@ -588,6 +597,8 @@ def build_article_pages() -> None:
         records.append(
             {
                 "prov": prov,
+                "base": base,
+                "rel_parent": rel_parent,
                 "stem": stem,
                 "doi_prefix": doi_prefix,
                 "doi_suffix": doi_suffix,
@@ -608,11 +619,15 @@ def build_article_pages() -> None:
             }
         )
 
-    groups: dict[str, list[dict]] = {}
-    for r in records:
-        groups.setdefault(r["stem"], []).append(r)
+    if not records:
+        return
 
-    for stem, items in groups.items():
+    groups: dict[tuple[str, str], list[dict]] = {}
+    for r in records:
+        key = (r["base"], r["stem"])
+        groups.setdefault(key, []).append(r)
+
+    for (base, stem), items in groups.items():
 
         def sort_key(it: dict) -> datetime:
             dt = _to_datetime(it["date"])
@@ -626,7 +641,7 @@ def build_article_pages() -> None:
         # each VERSION page
         for it in versions:
             src = it["prov"].parent
-            out_dir = OUT / "prints" / stem / it["doi_prefix"] / it["doi_suffix"]
+            out_dir = OUT / it["rel_parent"]
             out_dir.mkdir(parents=True, exist_ok=True)
 
             _mirror_artifact_files(src)
@@ -636,7 +651,7 @@ def build_article_pages() -> None:
 
             top_links = _build_top_links(local_md, it["assets_pdf"], local_pmd)
             breadcrumbs_html = crumb_link(
-                ["prints", stem, it["doi_prefix"], it["doi_suffix"]]
+                [it["base"], it["stem"], it["doi_prefix"], it["doi_suffix"]]
             )
 
             files_ul = _build_files_ul(
@@ -688,21 +703,26 @@ def build_article_pages() -> None:
             body_parts.append("</main>")
 
             version_url = (
-                f"{BASE_URL}/prints/{stem}/{it['doi_prefix']}/{it['doi_suffix']}/"
+                f"{BASE_URL}/{it['base']}/{it['stem']}/"
+                f"{it['doi_prefix']}/{it['doi_suffix']}/"
             )
             head_extra = _build_article_head(it, version_url, it["assets_pdf"])
 
             body_html = "\n".join(body_parts)
             write_html(out_dir / "index.html", body_html, head_extra=head_extra)
 
-            alias_dir = OUT / "prints" / "doi" / it["doi_prefix"] / it["doi_suffix"]
-            alias_dir.mkdir(parents=True, exist_ok=True)
-            write_html(alias_dir / "index.html", body_html, head_extra=head_extra)
+            # DOI alias only for prints, as before
+            if it["base"] == "prints":
+                alias_dir = (
+                    OUT / "prints" / "doi" / it["doi_prefix"] / it["doi_suffix"]
+                )
+                alias_dir.mkdir(parents=True, exist_ok=True)
+                write_html(alias_dir / "index.html", body_html, head_extra=head_extra)
 
-        # STEM page (latest)
+        # STEM page (latest) – for all bases
         it = latest
         src = it["prov"].parent
-        stem_out = OUT / "prints" / stem
+        stem_out = OUT / it["base"] / it["stem"]
         stem_out.mkdir(parents=True, exist_ok=True)
 
         _mirror_artifact_files(src)
@@ -710,11 +730,13 @@ def build_article_pages() -> None:
         local_md, local_html, local_pmd = _local_artifact_paths(src, it)
         html_body = _load_html_from_artifact(src, it["html_name"])
 
-        breadcrumbs_stem = crumb_link(["prints", stem])
+        breadcrumbs_stem = crumb_link([it["base"], it["stem"]])
 
         versions_list = []
         for v in versions:
-            ver_url = f"/prints/{stem}/{v['doi_prefix']}/{v['doi_suffix']}/"
+            ver_url = (
+                f"/{it['base']}/{it['stem']}/{v['doi_prefix']}/{v['doi_suffix']}/"
+            )
             doi_disp = f"{v['doi_prefix']}/{v['doi_suffix']}"
             date_disp = v["date"] or ""
             versions_list.append(
@@ -732,7 +754,7 @@ def build_article_pages() -> None:
             filter(None, (fmt_author(a) for a in display_authors))
         )
 
-        body_parts: list[str] = []
+        body_parts = []
         body_parts.append("<main class='paper'>")
         body_parts.append(breadcrumbs_stem)
         body_parts.append(f"<h1>{it['title']}</h1>")
@@ -775,7 +797,7 @@ def build_article_pages() -> None:
 
         body_parts.append("</main>")
 
-        stem_url = f"{BASE_URL}/prints/{stem}/"
+        stem_url = f"{BASE_URL}/{it['base']}/{it['stem']}/"
         head_extra = _build_article_head(it, stem_url, it["assets_pdf"])
 
         write_html(
@@ -1041,13 +1063,10 @@ def main() -> None:
     else:
         print("[DEBUG] WARNING: site_src does not exist; no site/ assets copied")
 
-    # build prints pages (also mirrors artifacts in prints/)
+    # build article pages for any provenance.yaml
     build_article_pages()
 
     hidden_stems = hidden_stems_from_provenance()
-
-    # directories containing provenance.yaml
-    prov_dirs = {p.parent for p in ROOT.rglob("provenance.yaml")}
 
     for dirpath, dirnames, filenames in os.walk(ROOT):
         d = Path(dirpath)
@@ -1080,21 +1099,18 @@ def main() -> None:
             kept_dirs.append(dd)
         dirnames[:] = kept_dirs
 
-        is_prov_dir = d in prov_dirs
-
-        # mirror files for non-provenance dirs
-        if not is_prov_dir:
-            for fname in filenames:
-                if fname.startswith("."):
-                    continue
-                if fname in EXCLUDE_NAMES:
-                    continue
-                p = d / fname
-                if (d / "pyvenv.cfg").exists():
-                    continue
-                dst = OUT / rel(p)
-                dst.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copy2(p, dst)
+        # mirror all non-excluded files
+        for fname in filenames:
+            if fname.startswith("."):
+                continue
+            if fname in EXCLUDE_NAMES:
+                continue
+            if (d / "pyvenv.cfg").exists():
+                continue
+            p = d / fname
+            dst = OUT / rel(p)
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(p, dst)
 
         # build dir index if absent
         out_html = OUT / "index.html" if d == ROOT else OUT / rel(d) / "index.html"
