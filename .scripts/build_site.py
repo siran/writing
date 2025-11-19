@@ -1024,9 +1024,20 @@ def main() -> None:
             if not src_path.is_file():
                 continue
             rel_path = src_path.relative_to(site_src)
-            dst_path = OUT / rel_path
-            dst_path.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(src_path, dst_path)
+
+            if src_path.suffix.lower() == ".md":
+                # about.md -> about.md.html, wrapped in header/footer/coda
+                dst_rel = rel_path.with_suffix(rel_path.suffix + ".html")
+                dst_path = OUT / dst_rel
+                dst_path.parent.mkdir(parents=True, exist_ok=True)
+                md_body = src_path.read_text(encoding="utf-8")
+                print(f"[DEBUG] site MD -> {dst_rel}")
+                write_html(dst_path, md_body, head_extra="", title=rel_path.stem)
+            else:
+                dst_path = OUT / rel_path
+                dst_path.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(src_path, dst_path)
+                print(f"[DEBUG] site COPY -> {rel_path} -> {dst_path.relative_to(OUT)}")
     else:
         print("[DEBUG] WARNING: site_src does not exist; no site/ assets copied")
 
