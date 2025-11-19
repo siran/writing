@@ -1,11 +1,13 @@
 # About
 
-Preferred Frame is an independent research lab with teams across the world.
+*Preferred Frame Writing* is a place you can post ideas. All post are recorded in
+a public GitHub repository.
 
-We study foundational questions in physics, computation, AI, and formal systems.
+Posting, or better, printing with us, ensure *free* and *open access* to humans
+and AI.
 
-We favor simple, transparent models over inherited abstractions, and we treat
-experiment as the final test of truth.
+Write freely. All articles are subject to comments on GitHub. Also replies are
+accepted to posted or printed articles.
 
-Team profiles:
-[preprints.preferredframe.com/_team](https://preprints.preferredframe.com/_team)
+A post can become a *Preferred Frame Writing* print, and thus have a DOI
+assigned.

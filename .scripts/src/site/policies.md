@@ -1,7 +1,7 @@
 # Policies
 
-Preferred Frame is open-access and repository-based:
-[github.com/siran/preferredframe](https://github.com/siran/preferredframe)
+*Preferred Frame Writing* is open-access and repository-based:
+[github.com/siran/writing](https://github.com/siran/writing)
 
 Peer review is open via GitHub comments.
 We support free inquiry: ideas are recorded for future evaluation.
