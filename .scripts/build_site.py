@@ -104,6 +104,29 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "site"
 SRC = ROOT / ".scripts" / "src"
 
+# ---------- git ignore helper ----------
+
+_GIT_AVAILABLE = (ROOT / ".git").exists()
+
+def is_git_ignored(path: Path) -> bool:
+    """Return True if path is ignored according to git ( .gitignore, etc.)."""
+    if not _GIT_AVAILABLE:
+        return False
+    try:
+        relpath = str(path.relative_to(ROOT))
+    except ValueError:
+        relpath = str(path)
+    try:
+        proc = subprocess.run(
+            ["git", "check-ignore", "-q", relpath],
+            cwd=ROOT,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+        return proc.returncode == 0
+    except Exception:
+        return False
+
 # ---------- base url ----------
 
 def compute_base_url() -> str:
@@ -293,7 +316,7 @@ def scholar_date(x) -> str:
         x = x.strip()
         if not x:
             return ""
-        if re.fullmatch(r"\d{4}-\d{2}-\d2", x):
+        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", x):
             y, m, d = x.split("-")
             return f"{y}/{m}/{d}"
         if re.fullmatch(r"\d{4}-\d{2}", x):
@@ -1045,6 +1068,7 @@ def main() -> None:
         for src_path in site_src.rglob("*"):
             if not src_path.is_file():
                 continue
+            # do not apply .gitignore to .scripts/src/site; assume explicit
             rel_path = src_path.relative_to(site_src)
 
             if src_path.suffix.lower() == ".md":
@@ -1084,7 +1108,7 @@ def main() -> None:
                 dirnames.clear()
                 continue
 
-        # prune child dirs
+        # prune child dirs (EXCLUDE_NAMES, dotdirs, pyvenv, .gitignore)
         kept_dirs: list[str] = []
         for dd in list(dirnames):
             child = d / dd
@@ -1096,10 +1120,12 @@ def main() -> None:
                 continue
             if d == ROOT / "prints" and dd in hidden_stems:
                 continue
+            if is_git_ignored(child):
+                continue
             kept_dirs.append(dd)
         dirnames[:] = kept_dirs
 
-        # mirror all non-excluded files
+        # mirror all non-excluded, non-ignored files
         for fname in filenames:
             if fname.startswith("."):
                 continue
@@ -1108,6 +1134,8 @@ def main() -> None:
             if (d / "pyvenv.cfg").exists():
                 continue
             p = d / fname
+            if is_git_ignored(p):
+                continue
             dst = OUT / rel(p)
             dst.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(p, dst)
@@ -1122,6 +1150,8 @@ def main() -> None:
         # dirs
         for dd in sorted(dirnames, key=str.lower):
             p = d / dd
+            if is_git_ignored(p):
+                continue
             items.append(
                 Item(
                     name=dd,
@@ -1138,6 +1168,8 @@ def main() -> None:
             if fname in EXCLUDE_NAMES:
                 continue
             p = d / fname
+            if is_git_ignored(p):
+                continue
             items.append(
                 Item(
                     name=fname,
