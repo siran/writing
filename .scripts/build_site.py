@@ -138,16 +138,33 @@ def compute_base_url() -> str:
 
 BASE_URL = compute_base_url()
 
-def write_cname_if_custom(base_url: str):
+def write_cname_if_custom(base_url: str) -> None:
+    """
+    Ensure the deployed site/ has a CNAME when using a custom domain.
+
+    Priority:
+    1. If ROOT/CNAME exists, copy it into OUT/CNAME (mirrors branch-based behavior).
+    2. Otherwise, infer host from BASE_URL and, if it's a custom host, write CNAME.
+    """
+    # 1) Mirror committed CNAME if present
+    root_cname = ROOT / "CNAME"
+    if root_cname.exists():
+        OUT.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(root_cname, OUT / "CNAME")
+        return
+
+    # 2) Fallback: infer from BASE_URL
     host = urlparse(base_url).hostname
     if not host:
         return
     if host.endswith(".github.io"):
+        # default GitHub Pages domain: no custom CNAME
         return
     if host in {"localhost", "127.0.0.1"}:
         return
+
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT/"CNAME").write_text(host+"\n", encoding="utf-8")
+    (OUT / "CNAME").write_text(host + "\n", encoding="utf-8")
 
 # ---------- helpers ----------
 def rel(p: Path) -> Path:
