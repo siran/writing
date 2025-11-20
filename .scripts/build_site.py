@@ -27,6 +27,8 @@ MIRROR_EXTS = {
     ".txt",
 }
 
+MD_EXTS = {".md", ".markdown", ".pandoc.md"}
+
 PREFERRED_JOURNAL = "Preferred Frame Writing"
 
 # ---------- repo autodetect ----------
@@ -922,22 +924,20 @@ def format_dir_index(dir_abs: Path, items: list[Item]) -> str:
             p_rel = rel(it.path)
             mirrored = OUT / p_rel
 
-            raw_url = None
-            rendered_url = None
-
-            if mirrored.exists():
-                raw_url = "/" + mirrored.relative_to(OUT).as_posix()
-
-            if it.path.suffix.lower() == ".md":
-                rendered = mirrored.with_suffix(mirrored.suffix + ".html")
-                if rendered.exists():
-                    rendered_url = "/" + rendered.relative_to(OUT).as_posix()
-
             lines.append(f"- 📄 {it.name}")
-            if raw_url:
-                lines.append(f"  - [open]({raw_url})")
-            if rendered_url:
-                lines.append(f"  - [open rendered]({rendered_url})")
+            if mirrored.exists():
+                url_local = "/" + mirrored.relative_to(OUT).as_posix()
+                ext = it.path.suffix.lower()
+                if ext in MD_EXTS:
+                    gh_url = (
+                        f"https://github.com/{OWNER}/{REPO}/blob/"
+                        f"{BRANCH}/{p_rel.as_posix()}"
+                    )
+                    lines.append(
+                        f"  - [open]({url_local}) · [open rendered]({gh_url})"
+                    )
+                else:
+                    lines.append(f"  - [open]({url_local})")
     lines.append("")
     return "\n".join(lines)
 
