@@ -86,6 +86,47 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT  = ROOT / "site"
 SRC  = ROOT / ".scripts" / "src"
 
+# ---------- .gitignore handling ----------
+def load_gitignored_paths() -> set[Path]:
+    """
+    Use git to list paths ignored by .gitignore and friends.
+    Returns absolute Paths under ROOT.
+    """
+    try:
+        out = subprocess.check_output(
+            ["git", "ls-files", "-i", "--exclude-standard", "--others", "--directory"],
+            cwd=ROOT,
+            text=True,
+            stderr=subprocess.DEVNULL,
+        )
+    except Exception:
+        return set()
+    paths: set[Path] = set()
+    for line in out.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        # git may return "dir/" for dirs
+        p = (ROOT / line.rstrip("/")).resolve()
+        paths.add(p)
+    return paths
+
+GITIGNORED_PATHS = load_gitignored_paths()
+
+def is_gitignored(path: Path) -> bool:
+    """
+    True if 'path' is itself git-ignored or lies under an ignored path.
+    """
+    p = path.resolve()
+    for ign in GITIGNORED_PATHS:
+        try:
+            p.relative_to(ign)
+            return True
+        except ValueError:
+            continue
+        # also allow exact match (covered by relative_to, but cheap)
+    return False
+
 # ---------- base url ----------
 def compute_base_url() -> str:
     v = os.getenv("BASE_URL")
