@@ -326,19 +326,30 @@ def write_html(out_html: Path, body_html: str, head_extra: str = "", title: str 
     out_html.parent.mkdir(parents=True, exist_ok=True)
     out_html.write_text(doc, encoding="utf-8")
 
+def _current_origin() -> str:
+    """
+    Shared origin resolution:
+    CNAME > provenance > env BASE_URL > computed BASE_URL
+    """
+    return (
+        _origin_from_cname()
+        or _canonical_origin_from_provenance()
+        or os.getenv("BASE_URL")
+        or BASE_URL
+    ).rstrip("/")
+
 def render_markdown_file(src: Path, dst_html: Path, title: str):
     """
     Render a Markdown-like file into dst_html by:
     - keeping the raw markdown text as body (no pandoc, no HTML conversion),
     - wrapping it with header/footer/coda via write_html.
-
-    'open rendered' thus means: same markdown-ish style, but with site chrome.
     """
     md = src.read_text(encoding="utf-8")
     body_html = md
 
     rel_html = dst_html.relative_to(OUT).as_posix()
-    page_url = f"{BASE_URL}/{rel_html}"
+    origin = _current_origin()
+    page_url = f"{origin}/{rel_html}"
     head = [
         '<meta charset="utf-8">',
         f'<link rel="canonical" href="{page_url}">',
@@ -588,6 +599,8 @@ def build_article_pages():
     for r in records:
         groups.setdefault(r["stem"], []).append(r)
 
+    origin = _current_origin()
+
     for stem, items in groups.items():
         def sort_key(it):
             dt = _to_datetime(it["date"])
@@ -680,7 +693,7 @@ def build_article_pages():
 
             body.append("</main>")
 
-            version_url = f"{BASE_URL}/prints/{stem}/{it['doi_prefix']}/{it['doi_suffix']}/"
+            version_url = f"{origin}/prints/{stem}/{it['doi_prefix']}/{it['doi_suffix']}/"
             head = []
             head.append('<meta charset="utf-8">')
             head.append(f'<link rel="canonical" href="{version_url}">')
@@ -751,7 +764,7 @@ def build_article_pages():
             write_html(alias_dir/"index.html", body_html, head_extra=head_extra)
 
             # ALSO: article page at the mirrored source location
-            mirror_dir = OUT / rel(src)  # e.g. documents/.../10.5281/zenodo.17555930
+            mirror_dir = OUT / rel(src)
             mirror_dir.mkdir(parents=True, exist_ok=True)
             write_html(mirror_dir/"index.html", body_html, head_extra=head_extra)
 
@@ -853,7 +866,7 @@ def build_article_pages():
                 body.append("<ul>" + "".join(refs_items) + "</ul>")
         body.append("</main>")
 
-        stem_url = f"{BASE_URL}/prints/{stem}/"
+        stem_url = f"{origin}/prints/{stem}/"
         head = []
         head.append('<meta charset="utf-8">')
         head.append(f'<link rel="canonical" href="{stem_url}">')
@@ -876,7 +889,7 @@ def build_article_pages():
         desc = it["abstract"] or it["onesent"] or it["title"]
         if desc:
             head.append(f'<meta name="description" content="{desc}">')
-            head.append(f'<meta property="og:description" content="{desc}">')
+        head.append(f'<meta property="og:description" content="{desc}">')
         head.append('<meta property="og:type" content="article">')
         head.append(f'<meta property="og:title" content="{it["title"]}">')
         head.append(f'<meta property="og:url" content="{stem_url}">')
@@ -973,43 +986,55 @@ def copy_static():
 
 # ---------- sitemap & robots ----------
 def _url_from_out_path(p: Path) -> str:
+    """
+    Return a *path only* (starting with /) for this file under OUT,
+    or '' if it should not appear in the sitemap.
+
+    - index.html at root         -> '/'
+    - foo/bar/index.html         -> '/foo/bar/'
+    - any other *.html           -> '/foo/bar/baz.html'
+    - any *.md                   -> '/foo/bar/baz.md'
+
+    The returned path is URL-encoded (spaces, apostrophes, etc.).
+    """
     rp = rel_out(p).as_posix()
-    if rp == "index.html":
-        return f"{BASE_URL}/"
-    if rp.endswith("/index.html"):
-        return f"{BASE_URL}/" + rp[:-10]
-    if p.suffix.lower() == ".html" and p.parent == OUT:
-        return f"{BASE_URL}/" + rp
-    return ""
+    suf = p.suffix.lower()
+
+    if suf == ".html":
+        if rp == "index.html":
+            path = "/"
+        elif rp.endswith("/index.html"):
+            path = "/" + rp[:-10]
+        else:
+            path = "/" + rp
+    elif suf == ".md":
+        path = "/" + rp
+    else:
+        return ""
+
+    # URL-encode, but keep path separators and common safe chars
+    return quote(path, safe="/:@-._~")
 
 def build_sitemap_and_robots():
-    cname_origin = _origin_from_cname()
-    origin = (
-        os.getenv("BASE_URL")
-        or cname_origin
-        or _canonical_origin_from_provenance()
-        or BASE_URL
-    ).rstrip("/")
-
-    def _remap_origin(loc: str) -> str:
-        try:
-            p = urlparse(loc)
-            return f"{origin}{p.path}"
-        except Exception:
-            return loc
+    origin = _current_origin()
 
     urls = []
-    for path in OUT.rglob("*.html"):
+    for path in OUT.rglob("*"):
         if path.name.startswith("."):
             continue
-        loc = _url_from_out_path(path)
-        if not loc:
+        if path.suffix.lower() not in {".html", ".md"}:
             continue
-        loc = _remap_origin(loc)
+
+        rel_url = _url_from_out_path(path)
+        if not rel_url:
+            continue
+
+        loc = origin + rel_url
         mtime = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc)
         lastmod = mtime.strftime("%Y-%m-%dT%H:%M:%SZ")
         urls.append((loc, lastmod))
 
+    # dedupe by loc, keep latest lastmod
     seen = {}
     for loc, lastmod in urls:
         if (loc not in seen) or (lastmod > seen[loc]):
@@ -1042,7 +1067,7 @@ def build_sitemap_and_robots():
 
 # ---------- RSS ----------
 def build_rss_feed():
-    origin = (os.getenv("BASE_URL") or _canonical_origin_from_provenance() or BASE_URL).rstrip("/")
+    origin = _current_origin()
 
     by_stem = {}
     for prov in iter_provenance_files():
