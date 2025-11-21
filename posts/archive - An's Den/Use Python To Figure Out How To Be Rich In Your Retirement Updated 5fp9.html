@@ -1,0 +1,74 @@
+<meta charset="utf-8">
+<p>I used Python to understand how to maximize my 401(k) savings. You know what a 401(k) is, right?</p><p>Like Einstein <a href="https://www.snopes.com/fact-check/compound-interest/">is said to have said</a>, “compound interest is the most powerful force in the universe.” And I’m not disagreeing with that claim.</p><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!oFkx!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8be98bdc-0665-4b41-b646-d4056ee4e843_474x354.jpeg" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!oFkx!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8be98bdc-0665-4b41-b646-d4056ee4e843_474x354.jpeg 424w, https://substackcdn.com/image/fetch/$s_!oFkx!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8be98bdc-0665-4b41-b646-d4056ee4e843_474x354.jpeg 848w, https://substackcdn.com/image/fetch/$s_!oFkx!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8be98bdc-0665-4b41-b646-d4056ee4e843_474x354.jpeg 1272w, https://substackcdn.com/image/fetch/$s_!oFkx!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8be98bdc-0665-4b41-b646-d4056ee4e843_474x354.jpeg 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/8be98bdc-0665-4b41-b646-d4056ee4e843_474x354.jpeg" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/8be98bdc-0665-4b41-b646-d4056ee4e843_474x354.jpeg&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:null,&quot;width&quot;:null,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:null,&quot;alt&quot;:&quot;Einstein thinking about compound interest&quot;,&quot;title&quot;:null,&quot;type&quot;:null,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:null,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="Einstein thinking about compound interest" title="Einstein thinking about compound interest" srcset="https://substackcdn.com/image/fetch/$s_!oFkx!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8be98bdc-0665-4b41-b646-d4056ee4e843_474x354.jpeg 424w, https://substackcdn.com/image/fetch/$s_!oFkx!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8be98bdc-0665-4b41-b646-d4056ee4e843_474x354.jpeg 848w, https://substackcdn.com/image/fetch/$s_!oFkx!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8be98bdc-0665-4b41-b646-d4056ee4e843_474x354.jpeg 1272w, https://substackcdn.com/image/fetch/$s_!oFkx!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8be98bdc-0665-4b41-b646-d4056ee4e843_474x354.jpeg 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a><figcaption class="image-caption">Think, think.</figcaption><p>There are many 401(k) calculators online. None were as interactive as I wanted. So, I decided to do a simple Python script to scratch my itch.</p><p>For now, this is the result. Below the code to generate the plot.</p><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!K7qU!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F65746199-ae56-4f18-8797-7f9e8e51783d_547x445.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!K7qU!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F65746199-ae56-4f18-8797-7f9e8e51783d_547x445.png 424w, https://substackcdn.com/image/fetch/$s_!K7qU!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F65746199-ae56-4f18-8797-7f9e8e51783d_547x445.png 848w, https://substackcdn.com/image/fetch/$s_!K7qU!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F65746199-ae56-4f18-8797-7f9e8e51783d_547x445.png 1272w, https://substackcdn.com/image/fetch/$s_!K7qU!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F65746199-ae56-4f18-8797-7f9e8e51783d_547x445.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/65746199-ae56-4f18-8797-7f9e8e51783d_547x445.png" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/65746199-ae56-4f18-8797-7f9e8e51783d_547x445.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:null,&quot;width&quot;:null,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:null,&quot;alt&quot;:&quot;Compound interest grows exponentially&quot;,&quot;title&quot;:null,&quot;type&quot;:null,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:false,&quot;internalRedirect&quot;:null,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="Compound interest grows exponentially" title="Compound interest grows exponentially" srcset="https://substackcdn.com/image/fetch/$s_!K7qU!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F65746199-ae56-4f18-8797-7f9e8e51783d_547x445.png 424w, https://substackcdn.com/image/fetch/$s_!K7qU!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F65746199-ae56-4f18-8797-7f9e8e51783d_547x445.png 848w, https://substackcdn.com/image/fetch/$s_!K7qU!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F65746199-ae56-4f18-8797-7f9e8e51783d_547x445.png 1272w, https://substackcdn.com/image/fetch/$s_!K7qU!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F65746199-ae56-4f18-8797-7f9e8e51783d_547x445.png 1456w" sizes="100vw"></picture><div></div></div></a><figcaption class="image-caption">Compound interest grows exponentially (a.k.a. fast!)</figcaption><p>You can use the sliders to adjust different parameters, like market return and number of years you’ll be working.</p><p>In the title of the plot you can see what would you final balance in your retirement 401(k) is.</p><p>In fact, I realized that the only parameters that really count are the “total number of years investing” and the “market return”.</p><p>If you max-out your 401k year after year, your final balance doesn’t change with your salary (obviously). The maximum contribution as of 2020 is $19,500 per year.</p><p>So the factors to control are most certainly the number of years you’re chipping in into your 401(k), and the selection of stocks you make to invest.</p><p>The more time you wait before retiring the more your fund grows. This is the power of compound interest.</p><p>Another interesting factor, as many, many, many people have realized, is to invest in an index fund.</p><p>Managed funds charge fee’s. These can hinder A LOT your growth.</p><p>Index funds with a low maintenance fee (typically 0.03%, like Vanguard Vanguard S&amp;P 500 ETF (VOO) which follows the Standard’s and Poor 500).</p><p>The S&amp;P 500 have yielded an approximate 7% yearly. So that’s why I set the default value to that number.</p><p>Being said that there is a cap on your 401(k) tax-free savings, you should strive to invest more. Be it with a capped IRA ($6K tops) or straight in the stock market.</p><p>Currently most serious investing brokers/banks don’t charge any commision to buy/sell positions.</p><p><a href="https://gist.github.com/siran/4b2a677d6cc682d677c98b2f0fafd596# file-401k_slider-py">Here’s the script</a> that makes an interactive plot using matplotlib.pyplot to see how a 401(k) retirement fund changes while varying some parameters:</p><pre><code>"""
+Use pyplot to plot how your 401(k) saving change with varying parameters
+"""
+import matplotlib.pyplot as plt
+from matplotlib.widgets import Slider, Button, RadioButtons
+
+
+fig = plt.figure()
+plt.subplots_adjust(left=0.25, right=.8, bottom=0.4)
+ax = fig.add_subplot(1,1,1)
+
+axcolor = 'lightgoldenrodyellow'
+axyears   = plt.axes([0.25, 0.1, 0.5, 0.03], facecolor=axcolor)
+axcontrib = plt.axes([0.25, 0.15, 0.5, 0.03], facecolor=axcolor)
+axmarket  = plt.axes([0.25, 0.2, 0.5, 0.03], facecolor=axcolor)
+axsalary  = plt.axes([0.25, 0.25, 0.5, 0.03], facecolor=axcolor)
+resetax = plt.axes([0.25, 0.3, 0.1, 0.03])
+
+years = Slider(axyears, 'Years', 1, 30, valinit=30, valstep=1)
+monthly_contribution = Slider(axcontrib, 'Contrib./mo %', 0.0, 1.0, valinit=0.195, valstep=0.001)
+market = Slider(axmarket, 'Market', 1.0, 1.5, valinit=1.07)
+salary = Slider(axsalary, 'Salary', 40000, 250000, valinit=100000, valstep=500)
+button = Button(resetax, 'Reset', color=axcolor, hovercolor='0.975')
+
+sliders = [years, monthly_contribution, market, salary]
+
+
+def get_balance(
+    years=30,
+    salary=100000 / 12,
+    monthly_contribuyion_pc = .15,
+    market_growth_pc = 1.07,
+    initial_balance = 50000
+    ):
+    total = [initial_balance]
+    yearly_salary_increase = 1.03
+    for m in range(1, int(years) * 12 + 1):
+        contribution = salary * monthly_contribuyion_pc
+        market_growth = total[-1] * (market_growth_pc**(1/12)-1)
+        total.append(total[-1] + contribution + market_growth)
+        if m % 12 == 0:
+            salary *= yearly_salary_increase
+
+    return total
+
+def update(val=None):
+    balance = get_balance(
+        years=years.val,
+        salary=salary.val / 12,
+        monthly_contribuyion_pc = monthly_contribution.val,
+        market_growth_pc = market.val,
+        initial_balance = 50000
+    )
+    ax.clear()
+    ax.plot([x/12 for x in range(len(balance))], balance)
+    ax.get_yaxis().set_major_formatter(plt.FuncFormatter(
+        lambda x, loc: "${:,}".format(int(x))))
+    ax.set_ylabel('401(k) balance')
+    ax.set_xlabel('Years')
+    fig.suptitle(f'Final balance: ${balance[-1]:,.2f}')
+
+def reset(event):
+    for s in sliders:
+        s.reset()
+
+years.on_changed(update)
+market.on_changed(update)
+monthly_contribution.on_changed(update)
+salary.on_changed(update)
+button.on_clicked(reset)
+update()
+plt.show()
+</code></pre><p>Although this is a simple script, I had to iron out some kinks:</p><ul><li><p><a href="https://matplotlib.org/devdocs/gallery/widgets/slider_demo.html# sphx-glr-gallery-widgets-slider-demo-py">This</a> as a template for the script</p></li><li><p><a href="https://preinventedwheel.com/matplotlib-thousands-separator-1-step-guide/">This other link</a> to know how to format the axis.</p></li><li><p><a href="https://stackoverflow.com/a/7066293">This other</a> is for the title location in my plot.</p></li></ul><p>This is <a href="https://www.calculator.net/401k-calculator.html">my favorite 401(k) calculator</a>, since it includes inflation. I didn’t include inflation in my script just to keep it simple.</p><p>Thanks for all of them for knowledge and inspiration.</p><p>It can be simply added as a toggle button to turn it on/off, and in the get_balance() function in the code.</p><p>Hope you have fun customizing the plot!</p><p><a href="https://medium.com/my-new-knowledge/use-python-to-figure-out-how-to-be-rich-in-my-retirement-896a09e0d1f5">Full article here</a></p><p><em><a href="https://dev.to/michrodz/use-python-to-figure-out-how-to-be-rich-in-your-retirement-updated-5fp9">This post is also available on DEV.</a></em></p>

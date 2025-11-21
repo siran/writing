@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+<p>If you need to create a Microsoft Excel spreadsheet, it is very easy to create an htmlfile with a good ol’ and use the mso-number-format CSS attribute to format your content.</p><p>I compiled these some time ago. Below there’s an example html showing how to use these classes, and an image with the output.</p><p>Attribute Description mso-number-format:”0” NO Decimals mso-number-format:”0.000” 3 Decimals mso-number-format:”# \,# # 0.000” Comma with 3 dec mso-number-format:”mm\/dd\/yy” Date7 mso-number-format:”mmmm\ d\,\ yyyy” Date9 mso-number-format:”m\/d\/yy\ h:mm\ AM\/PM” D -T AMPM mso-number-format:”Short Date” 01/03/1998 mso-number-format:”Medium Date” 01-mar-98 mso-number-format:”d-mmm-yyyy” 01-mar-1998 mso-number-format:”Short Time” 5:16 mso-number-format:”Medium Time” 5:16 am mso-number-format:”Long Time” 5:16:21:00 mso-number-format:”Percent” Percent - two decimals mso-number-format:”0%” Percent - no decimals mso-number-format:”0.E+00” Scientific Notation mso-number-format:”\@” Text mso-number-format:”# \ ???\/???” Fractions - up to 3 digits (312/943) mso-number-format:”\0022£\0022# \,# # 0.00” £12.76 mso-number-format:”# \,# # 0.00_ \;[Red]-# \,# # 0.00\ “ 2 decimals, negative numbers in red and signed (1.56 -1.56)</p><p>Example html content. Save the following content as myfile.xls :</p><pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            td.three-decimals {mso-number-format: "0\.000"}
+            td.thousands-separator {mso-number-format: "\# \,\# \# 0\.000"}
+            td.fractions {mso-number-format: "# \ ???/???"}
+            td.negative-red {mso-number-format: "# ,## 0.00_ ;[Red]-# ,## 0.00\ "  }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;table&gt;
+            &lt;tr&gt;
+                &lt;td&gt;3 decimals&lt;/td&gt;
+                &lt;td class="three-decimals"&gt;3.45&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;+Thousands sep&lt;/td&gt;
+                &lt;td class="thousands-separator"&gt;4560&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Fraction&lt;/td&gt;
+                &lt;td class="fractions"&gt;0.125&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Negatives red&lt;/td&gt;
+                &lt;td class="negative-red"&gt;-5&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Negatives red&lt;/td&gt;
+                &lt;td class="negative-red"&gt;5000&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>When you open the myfile.xls (in whatever version of MS Excel) you should see the cells formatted as intented. Image below.</p><p>Notice how cool that the value 0.125 has been converted to its fractional representation!</p><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!Qp3X!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd17bdbc0-887c-457d-878f-828f58928fdc_400x263.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!Qp3X!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd17bdbc0-887c-457d-878f-828f58928fdc_400x263.png 424w, https://substackcdn.com/image/fetch/$s_!Qp3X!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd17bdbc0-887c-457d-878f-828f58928fdc_400x263.png 848w, https://substackcdn.com/image/fetch/$s_!Qp3X!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd17bdbc0-887c-457d-878f-828f58928fdc_400x263.png 1272w, https://substackcdn.com/image/fetch/$s_!Qp3X!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd17bdbc0-887c-457d-878f-828f58928fdc_400x263.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/d17bdbc0-887c-457d-878f-828f58928fdc_400x263.png" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/d17bdbc0-887c-457d-878f-828f58928fdc_400x263.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:null,&quot;width&quot;:null,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:null,&quot;alt&quot;:&quot;Alt Cells are being formatted with the \n`mso-number-format`\n CSS attribute&quot;,&quot;title&quot;:null,&quot;type&quot;:null,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:null,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="Alt Cells are being formatted with the 
+`mso-number-format`
+ CSS attribute" title="Alt Cells are being formatted with the 
+`mso-number-format`
+ CSS attribute" srcset="https://substackcdn.com/image/fetch/$s_!Qp3X!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd17bdbc0-887c-457d-878f-828f58928fdc_400x263.png 424w, https://substackcdn.com/image/fetch/$s_!Qp3X!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd17bdbc0-887c-457d-878f-828f58928fdc_400x263.png 848w, https://substackcdn.com/image/fetch/$s_!Qp3X!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd17bdbc0-887c-457d-878f-828f58928fdc_400x263.png 1272w, https://substackcdn.com/image/fetch/$s_!Qp3X!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd17bdbc0-887c-457d-878f-828f58928fdc_400x263.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a><figcaption class="image-caption">Cells are being formatted with the `mso-number-format` CSS attribute</figcaption><p><a href="https://medium.com/my-new-knowledge/styling-excel-cells-with-mso-number-format-css-attribute-71d9da54edae">Full article here</a></p><p><em><a href="https://dev.to/michrodz/styling-excel-cells-with-mso-number-format-css-attribute-updated-j6i">This post is also available on DEV.</a></em></p>
