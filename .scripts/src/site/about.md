@@ -1,13 +1,12 @@
 # About
 
-*Preferred Frame Writing* is a place you can post ideas. All post are recorded in
-a public GitHub repository.
+Preferred Frame Writing is a space for sharing ideas openly. Every post is
+recorded in a public GitHub repository.
 
-Posting, or better, printing with us, ensure *free* and *open access* to humans
-and AI.
+Publishing here ensures free and open access for both humans and AI.
 
-Write freely. All articles are subject to comments on GitHub. Also replies are
-accepted to posted or printed articles.
+Write without restriction. All articles can receive comments on GitHub, and
+replies to existing posts are welcome.
 
-A post can become a *Preferred Frame Writing* print, and thus have a DOI
-assigned.
+Any post may be selected as a Preferred Frame Writing print, in which case it
+receives a DOI.
