@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>WinSCP — delete file after successful transfer (put/get)</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">WinSCP — delete file after successful transfer (put/get)</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Or how to control remotely an Android cellphone to take hundreds of thousands of pictures automatically, sync them to the cloud.
+</section>
+<section data-field="body" class="e-content">
+<section name="90d8" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="6629" id="6629" class="graf graf--h3 graf--leading graf--title">WinSCP — delete file after successful transfer (put/get)</h3><p name="bcea" id="bcea" class="graf graf--p graf-after--h3">Or how to control remotely an Android cellphone to take hundreds of thousands of pictures automatically, write a script to transfer the pictures continuously to a computer, delete them from the cellphone and then transfer the pictures to the cloud.</p><pre name="6845" id="6845" class="graf graf--pre graf-after--p">TL;DR<br>- I use OpenCamera installed in an Android phone to take a picture every 3s (28K pictures a day, 200k a week...).<br>- Every 30m I execute from Windows a Batch script that uses WinSCP to transfer files from the cellphone to the computer.<br>- I describe how I use multiple open-source or free-to-use apps to automate the process.<br>- I share a couple of snippets to automate file transfers with WinSCP script.</pre><figure name="9bdf" id="9bdf" class="graf graf--figure graf-after--pre"><img class="graf-image" data-image-id="1*4cAdavovo3Sn5FnOs7K5Tg.png" data-width="1000" data-height="991" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*4cAdavovo3Sn5FnOs7K5Tg.png"><figcaption class="imageCaption">Control remotely an Android cellphone to take hundreds of thousands of pictures automatically, write a script to transfer the pictures continuously to a computer and then to the cloud.</figcaption></figure><p name="cc90" id="cc90" class="graf graf--p graf-after--figure"><a href="https://winscp.net" data-href="https://winscp.net" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">WinSCP</a> is my go-to tool whenever I’m in Windows and need to do SFTP transfers to/from a remote server.</p><p name="8d1e" id="8d1e" class="graf graf--p graf-after--p">From its website:</p><blockquote name="5fdd" id="5fdd" class="graf graf--pullquote graf-after--p">WinSCP is a popular SFTP client and FTP client for Microsoft Windows! Copy file between a local computer and remote servers using FTP, FTPS, SCP, SFTP, WebDAV or S3 file transfer protocols.</blockquote><p name="3648" id="3648" class="graf graf--p graf-after--pullquote">Most importantly, you can script WinSCP to do automatic operations.</p><h3 name="9d63" id="9d63" class="graf graf--h3 graf-after--p">The problem</h3><p name="b201" id="b201" class="graf graf--p graf-after--h3">My use case is that I have an Android (tried iPhone, impossible) cellphone taking pictures continuously for several days. After a couple of hours, the cellphone’s memory is full of pictures. The pictures need to be transferred to a computer and deleted from the cellphone, without stopping the camera from taking pictures, or touching the cellphone.</p><h3 name="98e2" id="98e2" class="graf graf--h3 graf-after--p">The Solution</h3><p name="9a34" id="9a34" class="graf graf--p graf-after--h3">So I decided to do a WinSCP script to transfer the pictures from the cellphone to the computer.</p><p name="273f" id="273f" class="graf graf--p graf-after--p">I installed on the cellphone an <a href="https://play.google.com/store/apps/details?id=com.theolivetree.sshserver" data-href="https://play.google.com/store/apps/details?id=com.theolivetree.sshserver" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">SSH Server app</a>. Then I launched a Windows’ batch script that launched the WinSCP <code class="markup--code markup--p-code">SFTP</code> transfer script.</p><p name="b4b2" id="b4b2" class="graf graf--p graf-after--p">The Windows’ batch script runs in an infinite loop. It transfers all the files from a folder in the cellphone to a folder on the computer. It deletes the file from the cellphone immediately after it has been transferred to the computer.</p><p name="20f2" id="20f2" class="graf graf--p graf-after--p">When all files have been transferred, it waits for 30 minutes and starts transferring files again.</p><p name="d205" id="d205" class="graf graf--p graf-after--p">To implement the waiting period in the script, I used the <code class="markup--code markup--p-code">ping</code> command, specifying a timeout and a number of 1 retries:</p><pre name="b787" id="b787" class="graf graf--pre graf-after--p">ping 192.168.0.1 -n 1 -w 1800000</pre><p name="a0dc" id="a0dc" class="graf graf--p graf-after--pre">Below is copied the simple WinSCP script I use to transfer files from the cellphone’s SSH Server to a local computer and delete after the transfer.</p><p name="6439" id="6439" class="graf graf--p graf-after--p">The first line of the script is automatically generated by WinSCP, and the rest are common <a href="https://winscp.net/eng/docs/scriptcommand_option" data-href="https://winscp.net/eng/docs/scriptcommand_option" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">documented options</a> and <a href="https://winscp.net/eng/docs/scripting#commands" data-href="https://winscp.net/eng/docs/scripting#commands" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">scripting commands</a>.</p><p name="f178" id="f178" class="graf graf--p graf-after--p">Notice the <code class="markup--code markup--p-code">-delete</code> option, that deletes the file after a successful transfer.</p><pre name="eb69" id="eb69" class="graf graf--pre graf-after--p">open sftp://sftpusername:sftppassword@&lt;you server ip&gt;:&lt;port&gt;/ <br>-hostkey=&quot;ssh-dss 1024 THE_HOST_KEY&quot; -rawsettings CacheDirectories=0 CacheDirectoryChanges=0 PreserveDirectoryChanges=0</pre><pre name="bd84" id="bd84" class="graf graf--pre graf-after--pre">option batch continue<br>option confirm off<br>option reconnecttime 10<br>option failonnomatch on</pre><pre name="3ae9" id="3ae9" class="graf graf--pre graf-after--pre">cd /sdcard/path/on/mobile<br>lcd &quot;C:\path\on\windows\computer\&quot;</pre><pre name="2504" id="2504" class="graf graf--pre graf-after--pre">get -delete -transfer=automatic *.jpg</pre><pre name="430d" id="430d" class="graf graf--pre graf-after--pre">exit</pre><p name="ad00" id="ad00" class="graf graf--p graf-after--pre">I launch the WinSCP transfer script from a batch <code class="markup--code markup--p-code">.bat</code> file periodically, in an infinite loop, like so:</p><pre name="8679" id="8679" class="graf graf--pre graf-after--p"><a href="http://twitter.com/echo" data-href="http://twitter.com/echo" class="markup--anchor markup--pre-anchor" title="Twitter profile for @echo" rel="noopener" target="_blank">@echo</a> off<br> <br>:retry<br> <br>WinSCP.COM /ini=nul /script=&quot;C:\path\to\winscp_transfer_script.txt&quot;</pre><pre name="fc84" id="fc84" class="graf graf--pre graf-after--pre">echo Waiting 30m (using PING command)<br>echo off<br>ping 192.168.0.1 -n 1 -w 1800000<br>echo on<br>goto retry</pre><p name="ebdb" id="ebdb" class="graf graf--p graf-after--pre">Notice that <code class="markup--code markup--p-code">WinSCP.COM</code> is in my Window’s <code class="markup--code markup--p-code">PATH</code> already.</p><h3 name="9a49" id="9a49" class="graf graf--h3 graf-after--p">Remote control (cellphone and/or computer)</h3><p name="a4cc" id="a4cc" class="graf graf--p graf-after--h3">By the way, since I sometimes need to operate my cellphone without touching it, I do it using the excellent and free-for-personal-use app <a href="https://www.teamviewer.com" data-href="https://www.teamviewer.com" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Teamviewer</a>.</p><p name="596a" id="596a" class="graf graf--p graf-after--p">I install this app both on the computer and the cellphone. That way I can control them remotely, without even being physically close to them.</p><h3 name="3121" id="3121" class="graf graf--h3 graf-after--p">Cloud Storage</h3><p name="241c" id="241c" class="graf graf--p graf-after--h3">Initially, I set up a cloud-sync service in the computer so that the pictures that were copied to the computer would be automatically uploaded to the cloud. I use a cloud-syncing service, such as <a href="https://mega.nz/" data-href="https://mega.nz/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">MEGA</a>.</p><p name="ff3c" id="ff3c" class="graf graf--p graf-after--p">Automatically syncing with MEGA was good for a while, but as the number of pictures increased to tens and hundreds of thousands, it became too slow.</p><p name="bd36" id="bd36" class="graf graf--p graf-after--p">Mega, however, hasn’t worked too good for the large amount of pictures we’ve taking (1 picture every 3s, for months).</p><h3 name="c45b" id="c45b" class="graf graf--h3 graf-after--p">Camera App</h3><p name="a662" id="a662" class="graf graf--p graf-after--h3">To take the pictures I use another wonderful open-sourced app, <a href="https://play.google.com/store/apps/details?id=net.sourceforge.opencamera&amp;hl=en_US" data-href="https://play.google.com/store/apps/details?id=net.sourceforge.opencamera&amp;hl=en_US" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">OpenCamera</a> (<a href="https://opencamera.org.uk/help.html" data-href="https://opencamera.org.uk/help.html" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">website and instructions</a>).</p><p name="9a48" id="9a48" class="graf graf--p graf-after--p">OpenCamera can take pictures <em class="markup--em markup--p-em">ad-infinitum</em>, every N seconds, among many, many other wonderful settings.</p><h3 name="d20f" id="d20f" class="graf graf--h3 graf-after--p">Restarting all apps automatically</h3><p name="a619" id="a619" class="graf graf--p graf-after--h3">With such a long-lasting process — days, weeks — , I faced the issue that for some unknown reason Open Camera would stop taking pictures and/or TeamViewer would disconnect.</p><p name="cfdd" id="cfdd" class="graf graf--p graf-after--p graf--trailing">I solved this using another wonderful app called <a href="https://play.google.com/store/apps/details?id=com.llamalab.automate&amp;hl=en_US" data-href="https://play.google.com/store/apps/details?id=com.llamalab.automate&amp;hl=en_US" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Automate</a>. I use automate to stop and restart all the apps on the cellphone. With automate I could also start taking the pictures automatically by simulating a “tap” on OpenCamera’s shutter.</p></div></div></section><section name="9486" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="5332" id="5332" class="graf graf--p graf--leading graf--trailing">This is enough information for now. I’d love to hear your comments and possible improvements to this process.</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@anrodz" class="p-author h-card">An Rodriguez</a> on <a href="https://medium.com/p/67b045d19cd0"><time class="dt-published" datetime="2020-01-25T20:51:21.223Z">January 25, 2020</time></a>.</p><p><a href="https://medium.com/@anrodz/winscp-delete-file-after-successful-transfer-put-get-67b045d19cd0" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on November 21, 2025.</p></footer></article></body></html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Algorithmic Trading: backtesting an intraday scalping strategy with a simple, custom script</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Algorithmic Trading: backtesting an intraday scalping strategy with a simple, custom script</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Simple script to backtest a scalping mean-reversion strategy
+</section>
+<section data-field="body" class="e-content">
+<section name="4f02" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="2e89" id="2e89" class="graf graf--h3 graf--leading graf--title">Algorithmic Trading: backtesting an intraday scalping strategy</h3><p name="2c95" id="2c95" class="graf graf--p graf-after--h3">This is the third article of a series I’ve been writing. If interested, you can start <a href="https://medium.com/@mrodz/algorithmic-trading-algorithms-to-beat-the-market-200c61ad84fc" data-href="https://medium.com/@mrodz/algorithmic-trading-algorithms-to-beat-the-market-200c61ad84fc" class="markup--anchor markup--p-anchor" target="_blank">here</a>.</p><h3 name="b23c" id="b23c" class="graf graf--h3 graf-after--p">What is scalping?</h3><p name="6739" id="6739" class="graf graf--p graf-after--h3">In the trading world, “scalping” refers to taking many small profits as quickly as possible.</p><figure name="4b96" id="4b96" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*NYUKp8IdV01zW0TOTyet_A.png" data-width="1310" data-height="642" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*NYUKp8IdV01zW0TOTyet_A.png"><figcaption class="imageCaption">Notice the green and red dots during the trading day (BUYs and SELLs, respectively). The title of 9.62% refers to the profit after about 70 days (3 1/2 trading months).</figcaption></figure><p name="acdf" id="acdf" class="graf graf--p graf-after--figure"><a href="https://www.investopedia.com/articles/trading/05/scalping.asp" data-href="https://www.investopedia.com/articles/trading/05/scalping.asp" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Investopedia </a>defines a scalper as someone that</p><blockquote name="870c" id="870c" class="graf graf--pullquote graf-after--p">intends to take as many small profits as possible, without letting them evaporate. This is the opposite of the “let your profits run” mindset, which attempts to optimize positive trading results by increasing the size of winning</blockquote><p name="addf" id="addf" class="graf graf--p graf-after--pullquote">As mentioned in my <a href="https://medium.com/@mrodz/algo-trading-algorithms-to-beat-the-market-ccad674258b0" data-href="https://medium.com/@mrodz/algo-trading-algorithms-to-beat-the-market-ccad674258b0" class="markup--anchor markup--p-anchor" target="_blank">first article,</a> the use of margin might be useful to further increase the profits (or losses) made with a scalping strategy.</p><p name="c609" id="c609" class="graf graf--p graf-after--p">Doing manual scalping might be a time-intensive and stressful activity. Keeping track of all the charts for the stocks you care about is a lot of work. And buying/selling many times a day can be time-consuming.</p><p name="af06" id="af06" class="graf graf--p graf-after--p">Imagine doing submitting all those BUY and SELL orders as seen in the figure above. Doing that manually, with many stocks, is virtually impossible.</p><p name="f7b3" id="f7b3" class="graf graf--p graf-after--p">A computer can do this hard work for you. Faster and better.</p><h3 name="879f" id="879f" class="graf graf--h3 graf-after--p">Let a computer do the hard work for you</h3><p name="933b" id="933b" class="graf graf--p graf-after--h3">Algo Trading is a very handy and simple way to exploit the scalping strategy.</p><p name="cdd0" id="cdd0" class="graf graf--p graf-after--p">With Algo Trading, you can do a simple script that buys or sells a stock when certain conditions are met. This happens as frequently as you want: many times a day, a minute or whatever.</p><p name="02c9" id="02c9" class="graf graf--p graf-after--p">The idea is to build a script that buys and sells as many times as possible, making a small profit as often as possible.</p><p name="5a2b" id="5a2b" class="graf graf--p graf-after--p">Scalping is just a general mindset of what we want to do. But we still need some indicator or signal of when to buy or sell.</p><h3 name="9066" id="9066" class="graf graf--h3 graf-after--p">The concept of “mean reversion”</h3><figure name="45d3" id="45d3" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="0*wmcHG94evf4hK7Fj.jpg" data-width="1400" data-height="787" src="https://cdn-images-1.medium.com/max/800/0*wmcHG94evf4hK7Fj.jpg"><figcaption class="imageCaption">The price fluctuates around the average.</figcaption></figure><p name="9fd3" id="9fd3" class="graf graf--p graf-after--figure">In case it’s not already clear by the image above, <a href="https://www.investopedia.com/terms/m/meanreversion.asp" data-href="https://www.investopedia.com/terms/m/meanreversion.asp" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Investopedia</a> defines “mean reversion” as :</p><blockquote name="613b" id="613b" class="graf graf--blockquote graf-after--p">Mean reversion is a theory used in finance that suggests that <a href="https://www.investopedia.com/terms/a/asset.asp" data-href="https://www.investopedia.com/terms/a/asset.asp" class="markup--anchor markup--blockquote-anchor" rel="noopener" target="_blank">asset</a> prices and historical returns eventually will revert to the long-run mean or average level of the entire dataset.</blockquote><p name="43bf" id="43bf" class="graf graf--p graf-after--blockquote">This means that the price of a stock will tend to “revert” to its average price.</p><p name="6f2d" id="6f2d" class="graf graf--p graf-after--p">If a price suddenly hikes, we would expect it to return to a lower value. Also, if a price suddenly drops we would expect it to return to a higher value.</p><p name="0137" id="0137" class="graf graf--p graf-after--p">We can use this idea to have buy signals. If the price of a stock crosses the average from a lower to a higher price, we might submit a Buy order.</p><p name="16ca" id="16ca" class="graf graf--p graf-after--p">The scalping strategy suggests selling as soon as the price of the stock is higher than the purchase price.</p><h3 name="b690" id="b690" class="graf graf--h3 graf-after--p">Backtesting a scalping strategy</h3><p name="7d04" id="7d04" class="graf graf--p graf-after--h3">In my last article, <a href="https://medium.com/@mrodz/algo-trading-backtesting-your-algorithm-bd6d7385c89c" data-href="https://medium.com/@mrodz/algo-trading-backtesting-your-algorithm-bd6d7385c89c" class="markup--anchor markup--p-anchor" target="_blank">Algorithmic Trading: backtesting your algorithm</a>, I posted some sample code on how to download one year of data.</p><p name="0045" id="0045" class="graf graf--p graf-after--p">Also how we could backtest a simple “buy and hold” strategy over that year of data.</p><p name="d58e" id="d58e" class="graf graf--p graf-after--p">I’m going to share a script that allows you to backtest a scalping trading algorithm.</p><p name="5f06" id="5f06" class="graf graf--p graf-after--p">The idea of the script is to:</p><ul class="postList"><li name="a7de" id="a7de" class="graf graf--li graf-after--p">Loop over all days of a given year.</li><li name="e63b" id="e63b" class="graf graf--li graf-after--li">Calculate an N-point moving average of the close price.</li><li name="cb29" id="cb29" class="graf graf--li graf-after--li">For every day, loop over the minute-by-minute data.</li><li name="5dde" id="5dde" class="graf graf--li graf-after--li">If the open price changes from being below the average to above the average, we simulate a <code class="markup--code markup--li-code">buy</code>order.</li><li name="f6fc" id="f6fc" class="graf graf--li graf-after--li">We sell as soon as the open price is greater than the <code class="markup--code markup--li-code">buy_price</code>.</li></ul><p name="32db" id="32db" class="graf graf--p graf-after--li">If you already downloaded the data as shown in my previous article, the script copied below should work out-of-the-box.</p><p name="7a23" id="7a23" class="graf graf--p graf-after--p">With 2016 data, using AAPL it performs almost 3x better than a “Buy and Hold” strategy! From 9.9% to 30.2%. I call “market change” the change in the market price of the stock, and “wallet change” the performance of the algorithm.</p><pre name="5b9e" id="5b9e" class="graf graf--pre graf-after--p">AAPL - market change: 1.099<br>AAPL - wallet change: 1.302</pre><p name="0a73" id="0a73" class="graf graf--p graf-after--pre">If you also download the data for FTEC and V and run the script using</p><pre name="4bd0" id="4bd0" class="graf graf--pre graf-after--p">SYMBOLS = [&quot;AAPL&quot;, &quot;V&quot;, &quot;FTEC&quot;]</pre><p name="aefb" id="aefb" class="graf graf--p graf-after--pre">you would also get good profits over a Buy and Hold strategy:</p><pre name="bbb3" id="bbb3" class="graf graf--pre graf-after--p">AAPL - market change %: 1.099<br>AAPL - wallet change %: 1.302<br>AAPL - num_transactions: 454<br>...<br>V - market change %: 1.032<br>V - wallet change %: 1.049<br>V - num_transactions: 290<br>...<br>FTEC - market change %: 1.145<br>FTEC - wallet change %: 1.298<br>FTEC - num_transactions: 390</pre><figure name="589d" id="589d" class="graf graf--figure graf--iframe graf-after--pre"><script src="https://gist.github.com/siran/5f06c569e83579c5849ec55b32e38326.js"></script></figure><p name="0e20" id="0e20" class="graf graf--p graf-after--figure">But again, as I said in my first article, this same algorithm underperforms using data from 2019! : /</p><p name="b755" id="b755" class="graf graf--p graf-after--p">Also, I haven’t tested for a wider range of symbols.</p><p name="a8d2" id="a8d2" class="graf graf--p graf-after--p">I’ll do that in one of my next articles.</p><p name="c86d" id="c86d" class="graf graf--p graf-after--p">I also want to do a rolling profit analysis over this strategy with more stocks. My goal will be to determine if there’s a moment common to most stocks where the market started growing so much in 2019.</p><p name="d7ea" id="d7ea" class="graf graf--p graf-after--p graf--trailing">Any ideas? I’d be glad to read your ideas.</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@anrodz" class="p-author h-card">An Rodriguez</a> on <a href="https://medium.com/p/fcd15642555"><time class="dt-published" datetime="2020-01-13T03:52:38.135Z">January 13, 2020</time></a>.</p><p><a href="https://medium.com/@anrodz/algo-trading-backtesting-an-intraday-scalping-strategy-with-a-simple-custom-script-fcd15642555" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on November 21, 2025.</p></footer></article></body></html>

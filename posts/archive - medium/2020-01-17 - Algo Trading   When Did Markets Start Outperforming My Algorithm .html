@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Algo Trading: when did markets start outperforming my algorithm?</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Algo Trading: when did markets start outperforming my algorithm?</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+My simple, unpolished and naive scalping algorithm outperforms the market in 2016 but not in 2019.
+</section>
+<section data-field="body" class="e-content">
+<section name="9d03" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="d316" id="d316" class="graf graf--h3 graf--leading graf--title">Algo Trading: when did markets start outperforming my algorithm?</h3><p name="67da" id="67da" class="graf graf--p graf-after--h3">This is the fourth article of a series I’ve been writing. If interested you can start <a href="https://medium.com/my-new-knowledge/algo-trading-algorithms-to-beat-the-market-ccad674258b0" data-href="https://medium.com/my-new-knowledge/algo-trading-algorithms-to-beat-the-market-ccad674258b0" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">here</a>.</p><p name="0ba3" id="0ba3" class="graf graf--p graf-after--p">My simple, unpolished and naive scalping algorithm outperforms the market in 2016 but not in 2019.</p><figure name="f8b1" id="f8b1" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="0*g-DQQ62_xbEixQp-.jpeg" data-width="1000" data-height="667" src="https://cdn-images-1.medium.com/max/800/0*g-DQQ62_xbEixQp-.jpeg"><figcaption class="imageCaption">Me, disgruntled about the performance of my algorithm during 2019.</figcaption></figure><p name="9c04" id="9c04" class="graf graf--p graf-after--figure">As I wrote in two <a href="https://medium.com/@mrodz/algo-trading-algorithms-to-beat-the-market-ccad674258b0" data-href="https://medium.com/@mrodz/algo-trading-algorithms-to-beat-the-market-ccad674258b0" class="markup--anchor markup--p-anchor" target="_blank">previous</a> <a href="https://medium.com/@mrodz/algo-trading-backtesting-an-intraday-scalping-strategy-with-a-simple-custom-script-fcd15642555" data-href="https://medium.com/@mrodz/algo-trading-backtesting-an-intraday-scalping-strategy-with-a-simple-custom-script-fcd15642555" class="markup--anchor markup--p-anchor" target="_blank">articles</a> my simple, unpolished, naive, intraday scalping algorithm outperforms the market while backtesting some symbols with data from 2016.</p><p name="6b5a" id="6b5a" class="graf graf--p graf-after--p">In my latest article I do a backtest for an intraday scalping algorithm for symbols AAPL, V and FTEC. The results were quite promising with 2016 data, and depressing for 2019 data:</p><p name="197f" id="197f" class="graf graf--p graf-after--p">These are some results for 2016, notice my algorith perform 3x over APPL:</p><pre name="6ce2" id="6ce2" class="graf graf--pre graf-after--p">AAPL - market change %: 1.099<br>AAPL - wallet change %: 1.302<br>AAPL - num_transactions: 454<br>...<br>V - market change %: 1.032<br>V - wallet change %: 1.049<br>V - num_transactions: 290<br>...<br>FTEC - market change %: 1.145<br>FTEC - wallet change %: 1.298<br>FTEC - num_transactions: 390</pre><p name="5f71" id="5f71" class="graf graf--p graf-after--pre">You can use the same <code class="markup--code markup--p-code">download_data.py</code> script we made in <a href="https://medium.com/@mrodz/algo-trading-backtesting-your-algorithm-bd6d7385c89c" data-href="https://medium.com/@mrodz/algo-trading-backtesting-your-algorithm-bd6d7385c89c" class="markup--anchor markup--p-anchor" target="_blank">this article</a>. But now we are going to add all symbols for the S&amp;P 500.</p><p name="482f" id="482f" class="graf graf--p graf-after--p">Create a file named <code class="markup--code markup--p-code">symbols_sp500.py</code> with the following content (this list might be <em class="markup--em markup--p-em">a little </em>outdated, since I generated it on the last months of 2019, but for this test it will suffice.):</p><figure name="313a" id="313a" class="graf graf--figure graf--iframe graf-after--p"><script src="https://gist.github.com/siran/d99c3b4ee78d3ebb74710b2f07103a66.js"></script></figure><p name="7592" id="7592" class="graf graf--p graf-after--figure">Then we can import this module into our <code class="markup--code markup--p-code">download_data.py.</code></p><p name="bdc6" id="bdc6" class="graf graf--p graf-after--p">Yes, I’m greedy and I’m preparing to also study the evolution of the market during those 3 years.</p><p name="e88c" id="e88c" class="graf graf--p graf-after--p">I also added a new progress bar and nice descriptions of the symbol and date being downloaded ( <code class="markup--code markup--p-code">tqdm</code> is pretty great!).</p><p name="efb6" id="efb6" class="graf graf--p graf-after--p">If you want, stick to downloading only 2016 data by adjusting the time range.</p><p name="9cd9" id="9cd9" class="graf graf--p graf-after--p graf--trailing">Downloading 3 years (~1050 days) worth of data take a little while. As soon as a symbol finishes downloading I’ll start coding the next part.</p></div></div></section><section name="0e46" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="c575" id="c575" class="graf graf--p graf--leading">Turns out that downloading the bigger batch of data had its complications. Polygon didn’t serve some of the data (probably it doesn’t exist for the dates I requested). I also ran into other timeout issues, and more. I might get into the workarounds in future articles.</p><p name="3529" id="3529" class="graf graf--p graf-after--p">All in all, I downloaded more have a million days worth of data — around 11Gb of data. 500 stocks x 252 days a year x 4… I downloaded S&amp;P 500 symbols and then some other group of stocks that I happen to like.</p><p name="75ec" id="75ec" class="graf graf--p graf-after--p">The analysis of some of this data will take some time.</p><p name="c6f9" id="c6f9" class="graf graf--p graf-after--p">I did however run an improved version over the similar stocks, and produced this nice table:</p><pre name="82aa" id="82aa" class="graf graf--pre graf-after--p">symbol        from          to  market_growth  wallet_growth<br>  AAPL  2016-01-04  2016-12-30       1.098928       1.302331<br>  AAPL  2017-01-03  2018-01-02       1.482470       1.359844<br>  AAPL  2018-01-03  2019-01-03       0.827907       0.746127<br>  AAPL  2019-01-04  2019-12-31       1.980301       1.348624<br>  FTEC  2016-01-04  2016-12-30       1.145206       1.298188<br>  FTEC  2017-01-03  2018-01-02       1.363563       1.274163<br>  FTEC  2018-01-03  2019-01-03       0.915089       0.905536<br>  FTEC  2019-01-04  2019-12-31       1.480899       1.210752<br>     V  2016-01-04  2016-12-30       1.031672       1.048853<br>     V  2017-01-03  2018-01-02       1.440377       1.341969<br>     V  2018-01-03  2019-01-03       1.108143       1.082954<br>     V  2019-01-04  2019-12-31       1.405911       1.340098<br>    MA  2016-01-04  2016-12-30       1.088065       1.248133<br>    MA  2017-01-03  2018-01-02       1.448332       1.456326<br>    MA  2018-01-03  2019-01-03       1.178715       1.226534<br>    MA  2019-01-04  2019-12-31       1.573047       1.413504</pre><p name="5613" id="5613" class="graf graf--p graf-after--pre">Plotting those numbers one can see those 4 stocks moving in a similar fashion for the 4 years.</p><p name="f6cc" id="f6cc" class="graf graf--p graf-after--p">Taking the mean, one can see that the algorith outperformed the market from 2016 to 2018. Including 2019, though, makes the algorith underperform.</p><p name="0e8c" id="0e8c" class="graf graf--p graf-after--p graf--trailing">Stay tuned for updates!</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@anrodz" class="p-author h-card">An Rodriguez</a> on <a href="https://medium.com/p/6d9ccc12d904"><time class="dt-published" datetime="2020-01-17T03:12:54.103Z">January 17, 2020</time></a>.</p><p><a href="https://medium.com/@anrodz/algo-trading-when-did-markets-start-outperforming-my-algorithm-6d9ccc12d904" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on November 21, 2025.</p></footer></article></body></html>

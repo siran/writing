@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Use GitHub as asset repository for your articles (a.k.a. hot linking images to GitHub)</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Use GitHub as asset repository for your articles (a.k.a. hot linking images to GitHub)</h1>
+</header>
+<section data-field="body" class="e-content">
+<section name="e58e" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="a77a" id="a77a" class="graf graf--h3 graf--leading graf--title">Use GitHub as asset repository for your articles (a.k.a. hot linking images to GitHub)</h3><figure name="4cd4" id="4cd4" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="0*r0skSSM0CFY9S7QP.jpeg" data-width="743" data-height="440" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/0*r0skSSM0CFY9S7QP.jpeg"></figure><p name="ed87" id="ed87" class="graf graf--p graf-after--figure">The workflow of publishing in Substack automatically from the RSS feed of a GitHub page (that I published yesterday in <a href="https://anrodriguez.substack.com/p/how-to-write-articles-in-markdown-for-substack-and-medium-using-github-pages-atom-rss-feedshtml" data-href="https://anrodriguez.substack.com/p/how-to-write-articles-in-markdown-for-substack-and-medium-using-github-pages-atom-rss-feedshtml" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">this article</a>) satisfies my needs.</p><p name="7d3e" id="7d3e" class="graf graf--p graf-after--p">Those with a keen eye, however, might have noticed that one of the images in the article was missing in Substack:</p><p name="2ba2" id="2ba2" class="graf graf--p graf-after--p"><a href="https://siran.github.io/assets/writing/missing-image-in-article.jpg" data-href="https://siran.github.io/assets/writing/missing-image-in-article.jpg" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><em class="markup--em markup--p-em">The place of the missing image is pointed by the arrow (pointing to nothingness)</em></a></p><p name="0acc" id="0acc" class="graf graf--p graf-after--p">I did notice quite quickly that the image was missing from Substack; interestingly it showed on Github Pages. What a bummer, I thought. <em class="markup--em markup--p-em">What now?</em></p><p name="f63e" id="f63e" class="graf graf--p graf-after--p">I slept it over, happy that the image failed to show in my local. That hinted to the solution.</p><p name="f9e6" id="f9e6" class="graf graf--p graf-after--p">Next day, I googled hotlinking from Imgur.</p><p name="6cca" id="6cca" class="graf graf--p graf-after--p">It turned out that Imgur has some restrictive policies to hotlink from blogs:</p><p name="746c" id="746c" class="graf graf--p graf-after--p"><a href="https://siran.github.io/assets/writing/hot-linking-from-imgur-not-allowed.png" data-href="https://siran.github.io/assets/writing/hot-linking-from-imgur-not-allowed.png" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><em class="markup--em markup--p-em">Imgur has some restrictive policies</em></a></p><p name="e368" id="e368" class="graf graf--p graf-after--p">It didn’t took me long to realize that I could host the images in a Github page. And so, I did.</p><p name="7095" id="7095" class="graf graf--p graf-after--p">I created an <code class="markup--code markup--p-code">assets</code> repository on my GitHub and enabled GitHub Pages:</p><p name="891e" id="891e" class="graf graf--p graf-after--p"><a href="https://siran.github.io/assets/writing/enabling-git-hub-pages.png" data-href="https://siran.github.io/assets/writing/enabling-git-hub-pages.png" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><em class="markup--em markup--p-em">My assets repository in Github Pages</em></a></p><p name="01d4" id="01d4" class="graf graf--p graf-after--p">Now, I can hotlink images from my blog (Substack, Medium, Dev.to, even GutHub pages itself) to my asset repository. For free I get version control of my assets and complete control over them (other than privacy, I guess, since it’s a public read-only repository).</p><p name="b897" id="b897" class="graf graf--p graf-after--p">I hope GitHub pages remains free forever.</p><p name="1cd1" id="1cd1" class="graf graf--p graf-after--p">A quick peek seem to point it will be free — hopefully with hotlinking — forever:</p><p name="d27b" id="d27b" class="graf graf--p graf-after--p"><a href="https://siran.github.io/assets/writing/github-pages-free-forever.png" data-href="https://siran.github.io/assets/writing/github-pages-free-forever.png" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><em class="markup--em markup--p-em">It appears GitHub Pages is remaining free — hopefully with hotlinking</em></a></p><p name="57b5" id="57b5" class="graf graf--p graf-after--p">However, in case it does not, it feels good to know that I have all my assets and articles locally saved and backup to the cloud.</p><p name="d55d" id="d55d" class="graf graf--p graf-after--p">All is about experience now a days (user experience, developer experience, etc-experience), and my current experience for image handling is not the best.</p><p name="5692" id="5692" class="graf graf--p graf-after--p">For each image in this article, I had to:</p><ol class="postList"><li name="090f" id="090f" class="graf graf--li graf-after--p">Take a screenshot</li><li name="7bf1" id="7bf1" class="graf graf--li graf-after--li">Save it to local directory (preferably with a “hyphened-name”)</li><li name="35cf" id="35cf" class="graf graf--li graf-after--li">Add, commit and push to the repo</li><li name="83e0" id="83e0" class="graf graf--li graf-after--li">Build a link to the asset..</li></ol><p name="f24f" id="f24f" class="graf graf--p graf-after--li">Phew! It’s only 4 steps but for every image it’s a hassle.</p><p name="8859" id="8859" class="graf graf--p graf-after--p">So I’ll do a script to automate these tasks so I only have to 1) take screenshot 2) type regular name 3) paste into article.</p><p name="af61" id="af61" class="graf graf--p graf-after--p graf--trailing">I’ll share more in the near future when it get’s implemented.</p></div></div></section><section name="b1ec" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="0d66" id="0d66" class="graf graf--p graf--leading graf--trailing"><em class="markup--em markup--p-em">Originally published at </em><a href="https://anrodriguez.substack.com/p/use-github-as-asset-repository-for-your-articles-aka-hot-linking-images-to-githubhtml" data-href="https://anrodriguez.substack.com/p/use-github-as-asset-repository-for-your-articles-aka-hot-linking-images-to-githubhtml" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><em class="markup--em markup--p-em">https://anrodriguez.substack.com</em></a><em class="markup--em markup--p-em">.</em></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@anrodz" class="p-author h-card">An Rodriguez</a> on <a href="https://medium.com/p/f7efbc91f9fd"><time class="dt-published" datetime="2024-01-13T01:23:02.620Z">January 13, 2024</time></a>.</p><p><a href="https://medium.com/@anrodz/use-github-as-asset-repository-for-your-articles-a-k-a-hot-linking-images-to-github-f7efbc91f9fd" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on November 21, 2025.</p></footer></article></body></html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Styling Excel cells with mso-number-format CSS attribute</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Styling Excel cells with mso-number-format CSS attribute</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+If you need to create a Microsoft Excel spreadsheet, I show you how to style an HTML table with the mso-number-format CSS attribute!
+</section>
+<section data-field="body" class="e-content">
+<section name="396a" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="86ac" id="86ac" class="graf graf--h3 graf--leading graf--title">Styling Excel cells with mso-number-format CSS attribute</h3><p name="1d63" id="1d63" class="graf graf--p graf-after--h3">If you need to create a Microsoft Excel spreadsheet, it is very easy to create an <code class="markup--code markup--p-code">HTML</code> with a <code class="markup--code markup--p-code">&lt;table&gt;</code> styled using the <code class="markup--code markup--p-code">mso-number-format</code> <code class="markup--code markup--p-code">CSS</code> attribute.</p><p name="eb85" id="eb85" class="graf graf--p graf-after--p">I compiled these some time ago. Below there’s an example <code class="markup--code markup--p-code">HTML</code> showing how to use these classes and an image with the output.</p><figure name="49a8" id="49a8" class="graf graf--figure graf--iframe graf-after--p"><script src="https://gist.github.com/siran/ad395667c328dfd8d88b3f277e775358.js"></script></figure><h3 name="5e21" id="5e21" class="graf graf--h3 graf-after--figure">Example <code class="markup--code markup--h3-code">HTML</code> content</h3><p name="2f75" id="2f75" class="graf graf--p graf-after--h3">Save the following content as <code class="markup--code markup--p-code">myfile.xls</code> :</p><pre name="a743" id="a743" class="graf graf--pre graf-after--p">&lt;html&gt;<br>    &lt;head&gt;<br>        &lt;style&gt;<br>            td.three-decimals {mso-number-format: &quot;0\.000&quot;}<br>            td.thousands-separator {mso-number-format: &quot;\#\,\#\#0\.000&quot;}<br>            td.fractions {mso-number-format: &quot;#\ ???/???&quot;}<br>            td.negative-red {mso-number-format: &quot;#,##0.00_ ;[Red]-#,##0.00\ &quot;  }<br>        &lt;/style&gt;<br>    &lt;/head&gt;<br>    &lt;body&gt;<br>        &lt;table&gt;<br>            &lt;tr&gt;<br>                &lt;td&gt;3 decimals&lt;/td&gt;<br>                &lt;td class=&quot;three-decimals&quot;&gt;3.45&lt;/td&gt;<br>            &lt;/tr&gt;<br>            &lt;tr&gt;<br>                &lt;td&gt;+Thousands sep&lt;/td&gt;<br>                &lt;td class=&quot;thousands-separator&quot;&gt;4560&lt;/td&gt;<br>            &lt;/tr&gt;<br>            &lt;tr&gt;<br>                &lt;td&gt;Fraction&lt;/td&gt;<br>                &lt;td class=&quot;fractions&quot;&gt;0.125&lt;/td&gt;<br>            &lt;/tr&gt;<br>            &lt;tr&gt;<br>                &lt;td&gt;Negatives red&lt;/td&gt;<br>                &lt;td class=&quot;negative-red&quot;&gt;-5&lt;/td&gt;<br>            &lt;/tr&gt;<br>            &lt;tr&gt;<br>                &lt;td&gt;Negatives red&lt;/td&gt;<br>                &lt;td class=&quot;negative-red&quot;&gt;5000&lt;/td&gt;<br>            &lt;/tr&gt;<br>        &lt;/table&gt;<br>    &lt;/body&gt;<br>&lt;/html&gt;</pre><p name="13cf" id="13cf" class="graf graf--p graf-after--pre">When you open the <code class="markup--code markup--p-code">myfile.xls </code>(in whatever version of MS Excel) you should see the cells formatted as intented. See the image below.</p><p name="68ad" id="68ad" class="graf graf--p graf-after--p">Notice how cool that the value <code class="markup--code markup--p-code">0.125</code> has been converted to its fractional representation!</p><figure name="0d81" id="0d81" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*de0LzMY5OiOPyiNB3XU10A.png" data-width="400" data-height="263" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*de0LzMY5OiOPyiNB3XU10A.png"><figcaption class="imageCaption">Cells are being formatted with the `mso-number-format` CSS attribute</figcaption></figure><p name="80d4" id="80d4" class="graf graf--p graf-after--figure graf--trailing">Comments, questions?</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@anrodz" class="p-author h-card">An Rodriguez</a> on <a href="https://medium.com/p/71d9da54edae"><time class="dt-published" datetime="2020-01-28T00:04:25.942Z">January 28, 2020</time></a>.</p><p><a href="https://medium.com/@anrodz/styling-excel-cells-with-mso-number-format-css-attribute-71d9da54edae" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on November 21, 2025.</p></footer></article></body></html>

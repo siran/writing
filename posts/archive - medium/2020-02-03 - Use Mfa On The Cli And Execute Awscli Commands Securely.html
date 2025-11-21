@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Use MFA on the CLI and execute awscli commands securely</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Use MFA on the CLI and execute awscli commands securely</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Enhance security,: enable multi-factor authenticantion (MFA) use for issuing CLI commands.
+</section>
+<section data-field="body" class="e-content">
+<section name="7673" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="e7aa" id="e7aa" class="graf graf--h3 graf--leading graf--title">Use MFA on the CLI and execute awscli commands securely</h3><figure name="0e40" id="0e40" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="0*URyj1i385Cs8-mSo" data-width="900" data-height="636" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/0*URyj1i385Cs8-mSo"><figcaption class="imageCaption">Enhance security and don’t let anyone run CLI commands as someone else.</figcaption></figure><p name="d191" id="d191" class="graf graf--p graf-after--figure">To enhance security, you can enable multi-factor authentication (MFA) also for issuing CLI commands.</p><p name="0a4b" id="0a4b" class="graf graf--p graf-after--p">You can configure your MFA device by going to the IAM console, searching a user and follow these arrows:</p><figure name="a9b7" id="a9b7" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*8nz_5dVEL5Fg3o4ooNFajw.png" data-width="1100" data-height="471" src="https://cdn-images-1.medium.com/max/800/1*8nz_5dVEL5Fg3o4ooNFajw.png"><figcaption class="imageCaption">Configure your virtual MFA device</figcaption></figure><h3 name="d7cd" id="d7cd" class="graf graf--h3 graf-after--figure">IAM policy example</h3><p name="2111" id="2111" class="graf graf--p graf-after--h3">For example, you configure a Trust Policy as copied below. Notice the `Condition` to have `MultiFactorAuthPresent`. This way, in order for a user to assume a role in the CLI, the user must have an MFA token.</p><p name="e570" id="e570" class="graf graf--p graf-after--p">This condition can be applied to any `Action` of any IAM policy.</p><pre name="203b" id="203b" class="graf graf--pre graf-after--p">{<br>  &quot;Version&quot;: &quot;2012-10-17&quot;,<br>  &quot;Statement&quot;: [<br>    {<br>      &quot;Sid&quot;: &quot;&quot;,<br>      &quot;Effect&quot;: &quot;Allow&quot;,<br>      &quot;Principal&quot;: {<br>        &quot;AWS&quot;: [<br>          &quot;arn:aws:iam::nnnnnnnnnnnn:user/user.name&quot;<br>        ]<br>      },<br>      &quot;Action&quot;: &quot;sts:AssumeRole&quot;,<br>      &quot;Condition&quot;: {<br>        &quot;Bool&quot;: {<br>          &quot;aws:MultiFactorAuthPresent&quot;: &quot;true&quot;<br>        }<br>      }<br>    }<br>  ]<br>}</pre><p name="31fa" id="31fa" class="graf graf--p graf-after--pre">Manually using the CLI to obtain the temporary session tokens and setting them up as environment variables can be a hassle. I came up with this quick script to automate the job.</p><p name="1d57" id="1d57" class="graf graf--p graf-after--p">In the following script, you only have to replace `YOUR_MFA_ARN` with the ARN of the MFA device you have configured in your security settings in your AWS IAM user.</p><p name="8e21" id="8e21" class="graf graf--p graf-after--p">Then you can either <code class="markup--code markup--p-code">source</code> or <code class="markup--code markup--p-code">execute</code> the script.</p><figure name="df58" id="df58" class="graf graf--figure graf--iframe graf-after--p graf--trailing"><script src="https://gist.github.com/siran/0979d1f9aeaa16e7fa7162e16ded6f19.js"></script></figure></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@anrodz" class="p-author h-card">An Rodriguez</a> on <a href="https://medium.com/p/ef00ecf0e648"><time class="dt-published" datetime="2020-02-03T01:46:35.000Z">February 3, 2020</time></a>.</p><p><a href="https://medium.com/@anrodz/use-mfa-on-the-cli-and-execute-awscli-commands-securely-ef00ecf0e648" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on November 21, 2025.</p></footer></article></body></html>
