@@ -271,6 +271,27 @@ def hidden_stems_from_provenance() -> set[tuple[str, str]]:
 
     return {k for k in stems_with_nonpref if k not in stems_with_pref}
 
+def _origin_from_cname() -> str | None:
+    """
+    If there is a CNAME, use it as the canonical origin, e.g.
+    CNAME: writing.preferredframe.com
+    -> https://writing.preferredframe.com
+    """
+    for base in (ROOT, OUT):
+        cname = base / "CNAME"
+        if not cname.exists():
+            continue
+        try:
+            first_line = cname.read_text(encoding="utf-8").splitlines()[0].strip()
+        except Exception:
+            continue
+        if not first_line:
+            continue
+        # assume https for canonical origin
+        return f"https://{first_line}"
+    return None
+
+
 # ---------- templating ----------
 def write_html(out_html: Path, body_html: str, head_extra: str = "", title: str = ""):
     header = load_text(SRC / "header.html")
@@ -962,7 +983,13 @@ def _url_from_out_path(p: Path) -> str:
     return ""
 
 def build_sitemap_and_robots():
-    origin = (os.getenv("BASE_URL") or _canonical_origin_from_provenance() or BASE_URL).rstrip("/")
+    cname_origin = _origin_from_cname()
+    origin = (
+        os.getenv("BASE_URL")
+        or cname_origin
+        or _canonical_origin_from_provenance()
+        or BASE_URL
+    ).rstrip("/")
 
     def _remap_origin(loc: str) -> str:
         try:
