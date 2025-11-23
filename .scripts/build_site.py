@@ -161,7 +161,12 @@ def rel_out(p: Path) -> Path:
     return p.relative_to(OUT)
 
 def load_text(p: Path) -> str:
-    return p.read_text(encoding="utf-8") if p.exists() else ""
+    text = p.read_text(encoding="utf-8")
+
+    # remove exactly one trailing newline
+    if text.endswith("\n"):
+        return text[:-1]
+    return text
 
 @dataclass
 class Item:
@@ -272,16 +277,16 @@ def write_html(out_html: Path, body_html: str, head_extra: str = "", title: str 
 
     doc = "".join(s for s in (header, body_html, footer) if s)
 
-    if head_extra:
-        charset = '<!DOCTYPE html><meta charset="UTF-8">'
-        title_tag = f"<title>{title} - {PREFERRED_JOURNAL}</title>"
-        if charset not in head_extra:
-            head_extra = charset + "\n" + title_tag + "\n" + head_extra
-        m = re.search(r"</head\s*>", doc, re.IGNORECASE)
-        if m:
-            doc = doc[:m.start()] + head_extra + doc[m.start():]
-        else:
-            doc = head_extra + doc
+    # if head_extra:
+    #     charset = '<!DOCTYPE html><meta charset="UTF-8">'
+    #     title_tag = f"<title>{title} - {PREFERRED_JOURNAL}</title>"
+    #     if charset not in head_extra:
+    #         head_extra = charset + "\n" + title_tag + "\n" + head_extra
+    #     m = re.search(r"</head\s*>", doc, re.IGNORECASE)
+    #     if m:
+    #         doc = doc[:m.start()] + head_extra + doc[m.start():]
+    #     else:
+    #         doc = head_extra + doc
 
     ny = ZoneInfo("America/New_York")
     now = datetime.now(ny)
@@ -322,9 +327,23 @@ def build_simple_page_from_md(src_name: str, slug: str, title: str):
     dst_html = OUT / slug / "index.html"
     render_markdown_file(src_md, dst_html, title)
 
-def write_md_like_page(out_html: Path, md_body: str, head_extra: str = ""):
+def write_md_like_page(out_html: Path, md_body: str, title: str | None = None):
     body = md_body.replace("&", "&amp;").replace("<", "&lt;")
-    write_html(out_html, body, head_extra=head_extra)
+
+    rel_html = rel_out(out_html).as_posix()
+    origin = _current_origin()
+    page_url = f"{origin}/{rel_html}"
+
+    t = title or ""
+    head = [
+        '<meta charset="utf-8">',
+        f'<link rel="canonical" href="{page_url}">',
+        '<meta name="robots" content="index,follow">',
+        f'<meta name="description" content="{t}">',
+    ]
+    head_extra = "\n".join(head) + "\n"
+
+    write_html(out_html, body, head_extra=head_extra, title=t or "Index")
 
 def crumb_link(parts: list[str]) -> str:
     html = ['<nav class="breadcrumbs">']
@@ -903,8 +922,8 @@ def format_dir_index(dir_abs: Path, items: list[Item]) -> str:
     title = (rel_dir.name or f"{REPO} index")
 
     lines = []
-    lines.append(f"## {title}")
-    lines.append("")
+    # lines.append(f"## {title}")
+    # lines.append("")
     lines.append(breadcrumbs(rel_dir))
     lines.append("")
 
@@ -932,7 +951,7 @@ def format_dir_index(dir_abs: Path, items: list[Item]) -> str:
                 else:
                     lines.append(f"  - [open]({url_local})")
     lines.append("")
-    return "\n".join(lines)
+    return title, "\n".join(lines)
 
 def copy_static():
     OUT.mkdir(parents=True, exist_ok=True)
@@ -1221,8 +1240,8 @@ def main():
                 continue
             items.append(Item(name=p.name, is_dir=False, mtime=p.stat().st_mtime, path=p))
 
-        md_body = format_dir_index(d, items)
-        write_md_like_page(out_html, md_body)
+        title, md_body = format_dir_index(d, items)
+        write_md_like_page(out_html, md_body, title=title)
 
     copy_static()
     build_sitemap_and_robots()
