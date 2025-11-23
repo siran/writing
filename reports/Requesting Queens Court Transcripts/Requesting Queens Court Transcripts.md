@@ -30,11 +30,13 @@ Court Housing Division in Queens, New York.
 
 ## Observations
 
-- Court open 9am-5pm - Paper form need to be filled in situ - Form fields:
-index number, parties’ names, date and hour of requested hearing - appeals have
-additional details to consider. - Audio recording delivered by email, free. -
-Transcript cost estimated around \$0.50 per minute (approxima, uncertain), if
-requested
+- Court open 9am-5pm
+- Paper form need to be filled in situ
+- Form fields: index number, parties’ names, date and hour of requested hearing
+- appeals have additional details to consider.
+- Audio recording delivered by email, free.
+- Transcript cost estimated around \$0.50 per minute (approxima, uncertain), if
+  requested
 
 ## Discussion
 
