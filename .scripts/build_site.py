@@ -541,11 +541,13 @@ def build_article_pages():
     if not records:
         return
 
-    groups: dict[str, list[dict]] = {}
+    # group by (top-level folder, stem)
+    groups: dict[tuple[str, str], list[dict]] = {}
     for r in records:
-        groups.setdefault(r["stem"], []).append(r)
+        key = (r["top"], r["stem"])
+        groups.setdefault(key, []).append(r)
 
-    for stem, items in groups.items():
+    for (top, stem), items in groups.items():
         def sort_key(it):
             dt = _to_datetime(it["date"])
             return dt or datetime.fromtimestamp(it["prov"].stat().st_mtime)
@@ -556,12 +558,12 @@ def build_article_pages():
         # --- each VERSION page ---
         for it in versions:
             src = it["prov"].parent
-            out_dir = OUT/"prints"/stem/it["doi_prefix"]/it["doi_suffix"]
+            out_dir = OUT / top / stem / it["doi_prefix"] / it["doi_suffix"]
             out_dir.mkdir(parents=True, exist_ok=True)
 
             for f in src.iterdir():
                 if f.is_file() and f.suffix.lower() in MIRROR_EXTS:
-                    dst = OUT/rel(f)
+                    dst = OUT / rel(f)
                     dst.parent.mkdir(parents=True, exist_ok=True)
                     shutil.copy2(f, dst)
 
@@ -585,7 +587,7 @@ def build_article_pages():
             if local_pmd:
                 top_links.append(f'<a href="{local_pmd}">Preprocessed MD</a>')
 
-            breadcrumbs = crumb_link(["prints", stem, it["doi_prefix"], it["doi_suffix"]])
+            breadcrumbs = crumb_link([top, stem, it["doi_prefix"], it["doi_suffix"]])
             files_list = []
             prov_local = f"/{(OUT/rel(it['prov'])).relative_to(OUT).as_posix()}"
             if local_html:
@@ -638,7 +640,7 @@ def build_article_pages():
             body.append("</main>")
 
             stem_seg = quote(stem, safe="")
-            version_url = f"{origin}/prints/{stem_seg}/{it['doi_prefix']}/{it['doi_suffix']}/"
+            version_url = f"{origin}/{top}/{stem_seg}/{it['doi_prefix']}/{it['doi_suffix']}/"
 
             head = []
             head.append('<meta charset="utf-8">')
@@ -707,7 +709,8 @@ def build_article_pages():
 
             write_html(out_dir/"index.html", body_html, head_extra=head_extra)
 
-            alias_dir = OUT/"prints"/"doi"/it["doi_prefix"]/it["doi_suffix"]
+            # DOI aliases live under the same top-level (prints/doi or documents/doi)
+            alias_dir = OUT / top / "doi" / it["doi_prefix"] / it["doi_suffix"]
             alias_dir.mkdir(parents=True, exist_ok=True)
             write_html(alias_dir/"index.html", body_html, head_extra=head_extra)
 
@@ -718,12 +721,12 @@ def build_article_pages():
         # --- STEM page (latest) ---
         it = latest
         src = it["prov"].parent
-        stem_out = OUT/"prints"/stem
+        stem_out = OUT / top / stem
         stem_out.mkdir(parents=True, exist_ok=True)
 
         for f in src.iterdir():
             if f.is_file() and f.suffix.lower() in MIRROR_EXTS:
-                dst = OUT/rel(f)
+                dst = OUT / rel(f)
                 dst.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(f, dst)
 
@@ -739,15 +742,23 @@ def build_article_pages():
             except Exception:
                 html_body = ""
 
-        breadcrumbs = crumb_link(["prints", stem])
+        breadcrumbs = crumb_link([top, stem])
+
+        # Only treat records with the SAME concept DOI as versions
+        same_family = []
+        for v in versions:
+            if it["concept"] and v["concept"] == it["concept"]:
+                same_family.append(v)
+            elif not it["concept"] and not v["concept"]:
+                same_family.append(v)
 
         versions_list = []
-        for v in versions:
-            ver_url = f"/prints/{stem}/{v['doi_prefix']}/{v['doi_suffix']}/"
+        for v in same_family:
+            ver_url  = f"/{top}/{stem}/{v['doi_prefix']}/{v['doi_suffix']}/"
             doi_disp = f"{v['doi_prefix']}/{v['doi_suffix']}"
             date_disp = v["date"] or ""
             versions_list.append(f"<li>{date_disp} — <a href='{ver_url}'>{doi_disp}</a></li>")
-        versions_ul = "<ul>" + "".join(versions_list) + "</ul>"
+        versions_ul = "<ul>" + "".join(versions_list) + "</ul>" if versions_list else ""
 
         files_list = []
         prov_local = f"/{(OUT/rel(it['prov'])).relative_to(OUT).as_posix()}"
@@ -810,7 +821,7 @@ def build_article_pages():
         body.append("</main>")
 
         stem_seg = quote(stem, safe="")
-        stem_url = f"{origin}/prints/{stem_seg}/"
+        stem_url = f"{origin}/{top}/{stem_seg}/"
         head = []
         head.append('<meta charset="utf-8">')
         head.append(f'<link rel="canonical" href="{stem_url}">')
@@ -1018,6 +1029,7 @@ def build_rss_feed():
         rel_parts = rel(prov).parts
         if len(rel_parts) < 2:
             continue
+        top  = rel_parts[0]
         stem = rel_parts[1]
 
         pf_block = data.get("parsed_from_pnpmd") or {}
@@ -1037,13 +1049,14 @@ def build_rss_feed():
         if permalink and permalink.startswith("http"):
             item_url = permalink.rstrip("/")
         else:
-            item_url = f"{origin}/prints/{quote(stem, safe='')}/"
+            item_url = f"{origin}/{quote(top, safe='')}/{quote(stem, safe='')}/"
 
         dt = _to_datetime(date_norm) or datetime.fromtimestamp(prov.stat().st_mtime)
-        keep = by_stem.get(stem)
+        keep = by_stem.get((top, stem))
         if not keep or dt > keep["date"]:
-            by_stem[stem] = {
+            by_stem[(top, stem)] = {
                 "stem": stem,
+                "top": top,
                 "title": title,
                 "authors": authors,
                 "abstract": abstract,
