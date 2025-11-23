@@ -4,16 +4,16 @@
 Preferred Frame publisher (PNPMD-driven; commit = publication; DOI = final)
 
 Layout (human-first; spaces preserved):
-  - Repo files are stored at: prints/<stem>/<doi_prefix>/<doi_suffix>/{<stem>.md, .html, .pandoc.md, provenance.yaml}
-  - PDF lives ONLY in the assets repo at: assets.preferredframe.com/preferredframe/<stem>/<doi_prefix>/<doi_suffix>/<filename>.pdf
+  - Repo files are stored at: <subjournal>/<stem>/<doi_prefix>/<doi_suffix>/{<stem>.md, .html, .pandoc.md, provenance.yaml}
+  - PDF lives ONLY in the assets repo at: assets.preferredframe.com/<assets_prefix>/<stem>/<doi_prefix>/<doi_suffix>/<filename>.pdf
 
 Flow:
   1) Preflight: source & site repos clean (prompt to continue if dirty); create work branch (slugged)
-  2) Stage copy of src.md into prints/_staging/<stem>/ and render (.pdf, .html, .pandoc.md)
+  2) Stage copy of src.md into <subjournal>/_staging/<stem>/ and render (.pdf, .html, .pandoc.md)
   3) Parse PNPMD; scan ORCIDs & DOIs; normalize publication_date (ISO yyyy-mm-dd)
   4) Check for existing provenance for this stem; enforce commit policy & optional “new version” decision
   5) Reserve deposition / DOI (minimal metadata)
-  6) Move rendered files to final path prints/<stem>/<doi_prefix>/<doi_suffix>/
+  6) Move rendered files to final path <subjournal>/<stem>/<doi_prefix>/<doi_suffix>/
   7) Write full provenance (including Zenodo metadata) and show it
   8) Show Zenodo metadata, file lists, and action plan; single confirmation
   9) Commit site repo; copy PDF to assets repo & push; update Zenodo with FULL metadata; upload files; publish
@@ -29,6 +29,7 @@ import time
 import traceback
 from typing import List, Optional, Dict, Tuple
 from datetime import date, datetime
+from urllib.parse import urlparse
 import yaml
 import panflute as pf
 
@@ -334,13 +335,11 @@ def parse_pnpmd(md_text: str) -> Dict:
     about_parsed = _extract_about_authors(about_items)
     about_index = {_key(a["name"]): a for a in about_parsed}
 
-    # --- AUTHOR MERGE LOGIC ---
     # Canonical authors = header line. "About Author(s)" only enriches them.
     # If no header authors exist, fall back to About Author(s).
     merged: List[Dict[str, str]] = []
 
     if header_authors:
-        # Use only names from the header; attach metadata if About Author(s) has a matching name.
         for nm in header_authors:
             k = _key(nm)
             if k in about_index:
@@ -350,7 +349,6 @@ def parse_pnpmd(md_text: str) -> Dict:
             else:
                 merged.append({"name": nm})
     else:
-        # Backward-compatible fallback: no header authors, so use About Author(s) as canonical.
         merged = list(about_parsed)
 
     refs_text = _stringify_blocks(refs_blocks)
@@ -398,6 +396,52 @@ def _try_parse_date(s: str) -> Optional[datetime]:
             return datetime(yr, mon, 1)
     return None
 
+# ---------------- helper: site base URL from CNAME ----------------
+
+def compute_site_base_url(site_repo: Path) -> str:
+    """
+    Determine canonical site base URL from CNAME (preferred),
+    then BASE_URL env, then a local default.
+    """
+    candidates = [
+        site_repo / "site" / "CNAME",
+        site_repo / "CNAME",
+    ]
+    for p in candidates:
+        if p.exists():
+            raw = p.read_text(encoding="utf-8").splitlines()
+            if not raw:
+                continue
+            v = raw[0].strip()
+            if not v:
+                continue
+            if v.startswith("http://") or v.startswith("https://"):
+                return v.rstrip("/")
+            return "https://" + v.rstrip("/")
+
+    v = os.environ.get("BASE_URL")
+    if v:
+        return v.rstrip("/")
+
+    return "http://127.0.0.1:8000"
+
+def infer_journal_from_site_base(site_base: str) -> str:
+    """
+    Infer journal name from site base URL host.
+    - writing.preferredframe.com → Preferred Frame Writing
+    - preprints.preferredframe.com → Preferred Frame Pre-Prints
+    - default → Preferred Frame
+    """
+    try:
+        host = (urlparse(site_base).hostname or "").lower()
+    except Exception:
+        host = ""
+    if "writing.preferredframe.com" in host or host.startswith("writing."):
+        return "Preferred Frame Writing"
+    if "preprints.preferredframe.com" in host or host.startswith("preprints."):
+        return "Preferred Frame Pre-Prints"
+    return "Preferred Frame"
+
 # ---------------- steps ----------------
 
 def prepare_branch(site_repo: Path, stem: str, src_commit: str) -> str:
@@ -407,9 +451,9 @@ def prepare_branch(site_repo: Path, stem: str, src_commit: str) -> str:
     run(["git", "checkout", "-b", branch_name], cwd=site_repo)
     return branch_name
 
-def render_in_staging(site_repo: Path, src_md: Path, publication_date_iso: str) -> Tuple[Path, Path, Path, Path]:
+def render_in_staging(site_repo: Path, subjournal: str, src_md: Path, publication_date_iso: str) -> Tuple[Path, Path, Path, Path]:
     stem = src_md.stem
-    staging = site_repo / "prints" / "_staging" / stem
+    staging = site_repo / subjournal / "_staging" / stem
     staging.mkdir(parents=True, exist_ok=True)
     dst_md = staging / src_md.name
     echo(f"+ copy {src_md} -> {dst_md}")
@@ -443,10 +487,8 @@ def reserve_deposition(api: str, token: str,
     Reserve a DOI on Zenodo with minimal metadata + prereserve_doi.
     Full metadata is sent later once final paths are known.
     """
-    # POST new deposition
     dep = http_json("POST", f"{api}/deposit/depositions", token, data={})
 
-    # Debug: raw POST response
     try:
         print("\n--- DEBUG: Zenodo POST /deposit/depositions response ---")
         print(json.dumps(dep, indent=2, ensure_ascii=False))
@@ -472,7 +514,6 @@ def reserve_deposition(api: str, token: str,
     dep = http_json("PUT", f"{api}/deposit/depositions/{dep_id}", token,
                     data={"metadata": minimal_meta})
 
-    # Debug: raw PUT response
     try:
         print(f"\n--- DEBUG: Zenodo PUT /deposit/depositions/{dep_id} response ---")
         print(json.dumps(dep, indent=2, ensure_ascii=False))
@@ -481,7 +522,6 @@ def reserve_deposition(api: str, token: str,
 
     pr = (dep.get("metadata") or {}).get("prereserve_doi") or {}
     reserved_doi = pr.get("doi")
-    # conceptdoi normally only on record after publish; may be None here
     concept_doi = dep.get("conceptdoi")
 
     if not reserved_doi:
@@ -498,15 +538,34 @@ def dump_yaml(obj) -> str:
         default_flow_style=False,
     )
 
-def write_provenance(dst_dir: Path, dst_md: Path, dst_pdf: Path, dst_html: Path, dst_pmd: Path,
-                     src_origin: str, src_commit: str,
-                     title: str, creators: List[Dict], parsed: Dict,
-                     publication_date: str, publication_year: str, doi: str, concept_doi: Optional[str],
-                     assets_pdf_url: str, site_html_url: str, site_md_url: str, site_pandoc_md_url: str,
-                     version_permalink: str, zenodo_metadata: Dict) -> Path:
+def write_provenance(
+    dst_dir: Path,
+    dst_md: Path,
+    dst_pdf: Path,
+    dst_html: Path,
+    dst_pmd: Path,
+    src_origin: str,
+    src_commit: str,
+    title: str,
+    creators: List[Dict],
+    parsed: Dict,
+    publication_date: str,
+    publication_year: str,
+    doi: str,
+    concept_doi: Optional[str],
+    assets_pdf_url: str,
+    site_html_url: str,
+    site_md_url: str,
+    site_pandoc_md_url: str,
+    version_permalink: str,
+    zenodo_metadata: Dict,
+    journal_name: str,
+    subjournal: str,
+) -> Path:
 
     prov = {
-        "journal": "Preferred Frame",
+        "journal": journal_name,
+        "subjournal": subjournal,
         "publication_type": "article",
         "title": title,
         "doi": doi,
@@ -563,8 +622,8 @@ def ensure_draft_or_die(api: str, token: str, dep_id: int) -> Dict:
         die("Cannot upload: need a draft with a bucket link. Create a new version or unlock draft.")
     return dep
 
-def find_latest_provenance_for_stem(site_repo: Path, stem: str) -> Tuple[Optional[Path], Optional[Dict]]:
-    base = site_repo / "prints" / stem
+def find_latest_provenance_for_stem(site_repo: Path, subjournal: str, stem: str) -> Tuple[Optional[Path], Optional[Dict]]:
+    base = site_repo / subjournal / stem
     if not base.exists():
         return None, None
 
@@ -593,10 +652,23 @@ def main():
     ap.add_argument("--env", choices=["sandbox","prod"], default="sandbox",
                     help="Zenodo environment (default: sandbox)")
     ap.add_argument("--community", default="preferredframe", help="Zenodo community slug.")
-    ap.add_argument("--journal", default="Preferred Frame", help="Journal title shown in Zenodo.")
+    ap.add_argument(
+        "--journal",
+        default=None,
+        help="Journal title shown in Zenodo and provenance. "
+             "If omitted, inferred from CNAME/site base URL."
+    )
+    ap.add_argument(
+        "--subjournal",
+        default=None,
+        help="Top-level subjournal folder (prints, documents, posts, reports, ...). "
+             "If omitted, you will be prompted."
+    )
     ap.add_argument("--assets-dir", default="../assets", help="Path to local assets repo (default: ../assets).")
     ap.add_argument("--assets-base-url", default="https://assets.preferredframe.com",
                     help="Public base URL for assets (default: https://assets.preferredframe.com)")
+    ap.add_argument("--assets-prefix", default="preferredframe",
+                    help="Subdirectory under the assets repo/base-url (default: preferredframe).")
     ap.add_argument("--no-assets-push", action="store_true", help="Do not push the assets repo (default: push).")
     args = ap.parse_args()
 
@@ -616,6 +688,29 @@ def main():
     if not git_status_clean(site_repo):
         input(f"Site repo has uncommitted changes: {site_repo}. Press Enter to continue or Ctrl-C to abort.")
 
+    # Determine site base URL from CNAME (writing.preferredframe.com, preprints.preferredframe.com, ...)
+    site_base = compute_site_base_url(site_repo)
+    echo(f"+ site_base_url = {site_base}")
+
+    # Infer journal if not explicitly set
+    if not args.journal:
+        args.journal = infer_journal_from_site_base(site_base)
+    echo(f"+ journal = {args.journal}")
+
+    # If subjournal not given, interactively choose
+    if not args.subjournal:
+        choices = ["documents", "posts", "prints", "reports"]
+        default_sj = "prints"
+        echo(f"Available subjournals: {', '.join(choices)}")
+        ans_sj = input(f"Select subjournal [{'/'.join(choices)}] (default: {default_sj}): ").strip().lower()
+        if not ans_sj:
+            ans_sj = default_sj
+        if ans_sj not in choices:
+            echo(f"Unrecognized subjournal '{ans_sj}'. Valid options: {', '.join(choices)}")
+            die("Aborting: invalid subjournal.")
+        args.subjournal = ans_sj
+    echo(f"+ subjournal = {args.subjournal}")
+
     publication_date_iso = date.today().isoformat()
     publication_year = publication_date_iso[0:4]
     publication_date = publication_date_iso
@@ -623,7 +718,7 @@ def main():
     stem = src_md.stem
 
     # ---- existing publication check for this stem ----
-    prov_path_prev, prov_prev = find_latest_provenance_for_stem(site_repo, stem)
+    prov_path_prev, prov_prev = find_latest_provenance_for_stem(site_repo, args.subjournal, stem)
 
     if prov_prev:
         prev_source = prov_prev.get("source") or {}
@@ -634,7 +729,7 @@ def main():
         if prev_commit and prev_commit == src_commit:
             die(f"This commit has already been published as DOI {prev_doi or '(unknown)'}.")
 
-        echo(f"Found previous publication for stem '{stem}':")
+        echo(f"Found previous publication for stem '{stem}' in subjournal '{args.subjournal}':")
         echo(f" - provenance: {prov_path_prev}")
         echo(f" - DOI:        {prev_doi or '(none)'}")
         echo(f" - concept_doi:{prev_concept or '(none)'}")
@@ -642,7 +737,7 @@ def main():
 
         ans_ver = input(f"Treat this as a new version of the latest one? [y/N]: ").strip().lower()
         if ans_ver not in ("y", "yes"):
-            die(f"a document named '{stem}' already has been published")
+            die(f"a document named '{stem}' already has been published in '{args.subjournal}'")
 
     # Remember original branch
     orig_branch = run(["git", "rev-parse", "--abbrev-ref", "HEAD"], cwd=site_repo).strip()
@@ -651,7 +746,7 @@ def main():
     branch_name = prepare_branch(site_repo, stem, src_commit)
 
     # ---- stage & render ----
-    staging, staged_md, staged_pdf, staged_html = render_in_staging(site_repo, src_md, publication_date_iso)
+    staging, staged_md, staged_pdf, staged_html = render_in_staging(site_repo, args.subjournal, src_md, publication_date_iso)
     staged_pmd = staged_md.with_suffix(".pandoc.md")
 
     # ---- parse PNPMD ----
@@ -679,7 +774,7 @@ def main():
     else:
         die("Reserved DOI has no '/'?")
 
-    final_dir = site_repo / "prints" / stem / doi_prefix / doi_suffix
+    final_dir = site_repo / args.subjournal / stem / doi_prefix / doi_suffix
     final_dir.mkdir(parents=True, exist_ok=True)
 
     final_md   = final_dir / staged_md.name
@@ -700,18 +795,19 @@ def main():
     except Exception:
         pass
 
-    site_html_url = f"https://preferredframe.com/prints/{stem}/{doi_prefix}/{doi_suffix}/{final_html.name}"
-    site_md_url   = f"https://preferredframe.com/prints/{stem}/{doi_prefix}/{doi_suffix}/{final_md.name}"
-    site_pandoc_md_url = f"https://preferredframe.com/prints/{stem}/{doi_prefix}/{doi_suffix}/{final_pmd.name}"
-    version_permalink  = f"https://preferredframe.com/prints/{stem}/{doi_prefix}/{doi_suffix}/"
-    assets_pdf_url     = f"{args.assets_base_url}/preferredframe/{stem}/{doi_prefix}/{doi_suffix}/{final_pdf.name}"
+    assets_prefix = args.assets_prefix.strip("/")
 
-    # Self-identical links (HTML, MD, PDF)
+    site_html_url = f"{site_base}/{args.subjournal}/{stem}/{doi_prefix}/{doi_suffix}/{final_html.name}"
+    site_md_url   = f"{site_base}/{args.subjournal}/{stem}/{doi_prefix}/{doi_suffix}/{final_md.name}"
+    site_pandoc_md_url = f"{site_base}/{args.subjournal}/{stem}/{doi_prefix}/{doi_suffix}/{final_pmd.name}"
+    version_permalink  = f"{site_base}/{args.subjournal}/{stem}/{doi_prefix}/{doi_suffix}/"
+    assets_pdf_url     = f"{args.assets_base_url.rstrip('/')}/{assets_prefix}/{stem}/{doi_prefix}/{doi_suffix}/{final_pdf.name}"
+
     self_related_identifiers = [
         {
-            "relation": "isIdenticalTo",         # DataCite: IsIdenticalTo
+            "relation": "isIdenticalTo",
             "identifier": site_html_url,
-            "resource_type": "publication-article",  # DataCite: JournalArticle
+            "resource_type": "publication-article",
         },
         {
             "relation": "isIdenticalTo",
@@ -725,14 +821,10 @@ def main():
         },
     ]
 
-    # Reference DOIs as related_identifiers:
-    #   relatedIdentifierType = DOI  (implicit from https://doi.org/…)
-    #   relationType          = Cites
-    #   resourceTypeGeneral   = JournalArticle -> "publication-article"
     reference_related_identifiers = [
         {
-            "relation": "cites",                 # DataCite: Cites
-            "identifier": ref_url,              # e.g. https://doi.org/...
+            "relation": "cites",
+            "identifier": ref_url,
             "resource_type": "publication-article",
         }
         for ref_url in parsed["reference_doi_urls"]
@@ -760,12 +852,28 @@ def main():
 
     # ---- write FULL provenance (includes Zenodo metadata) ----
     prov_path = write_provenance(
-        final_dir, final_md, final_pdf, final_html, final_pmd,
-        src_origin, src_commit,
-        title, creators, parsed, publication_date, publication_year,
-        doi, concept_doi, assets_pdf_url, site_html_url,
-        site_md_url, site_pandoc_md_url, version_permalink,
+        final_dir,
+        final_md,
+        final_pdf,
+        final_html,
+        final_pmd,
+        src_origin,
+        src_commit,
+        title,
+        creators,
+        parsed,
+        publication_date,
+        publication_year,
+        doi,
+        concept_doi,
+        assets_pdf_url,
+        site_html_url,
+        site_md_url,
+        site_pandoc_md_url,
+        version_permalink,
         zenodo_metadata=zenodo_meta,
+        journal_name=args.journal,
+        subjournal=args.subjournal,
     )
 
     # ---- preview ----
@@ -794,7 +902,7 @@ def main():
     echo("  git commit ...")
     if args.assets_dir:
         echo("Assets repo:")
-        echo(f"  copy {final_pdf} -> {args.assets_dir}/preferredframe/{stem}/{doi_prefix}/{doi_suffix}/{final_pdf.name}")
+        echo(f"  copy {final_pdf} -> {args.assets_dir}/{assets_prefix}/{stem}/{doi_prefix}/{doi_suffix}/{final_pdf.name}")
         echo("  git add <that pdf>")
         if not args.no_assets_push:
             echo("  git commit ...")
@@ -847,16 +955,23 @@ def main():
     run(["git", "add", rel_html], cwd=site_repo)
     run(["git", "add", rel_pmd],  cwd=site_repo)
     run(["git", "add", rel_prov], cwd=site_repo)
-    run(["git", "commit", "-m",
-     f"Publish print: {title} ({publication_date}, DOI {doi}); source {src_commit[:10]} as '{final_md.stem}'"], cwd=site_repo)
-
+    run(
+        [
+            "git",
+            "commit",
+            "-m",
+            f"Publish print: {title} ({publication_date}, DOI {doi}); "
+            f"source {src_commit[:10]} as '{final_md.stem}'"
+        ],
+        cwd=site_repo,
+    )
 
     # ---- copy PDF to assets repo & push (default ON) ----
     if args.assets_dir:
         assets_repo = Path(args.assets_dir).resolve()
         if not (assets_repo / ".git").exists():
             die(f"Assets dir is not a git repo: {assets_repo}")
-        dest = assets_repo / "preferredframe" / stem / doi_prefix / doi_suffix / final_pdf.name
+        dest = assets_repo / assets_prefix / stem / doi_prefix / doi_suffix / final_pdf.name
         dest.parent.mkdir(parents=True, exist_ok=True)
         echo(f"+ copy {final_pdf} -> {dest}")
         shutil.copy2(final_pdf, dest)
@@ -883,7 +998,6 @@ def main():
 
     from urllib.parse import quote
 
-    # md first (treat as primary), then PDF, then others
     for path in [final_md, final_pdf, final_pmd, final_html]:
         fname = path.name
         put_url = f"{bucket_url}/{quote(fname)}"
@@ -915,8 +1029,8 @@ def main():
                         )
                         prov_data["concept_doi"] = concept_doi_rec
                         prov_path.write_text(dump_yaml(prov_data), encoding="utf-8")
-                        rel_prov = str(prov_path.relative_to(site_repo))
-                        run(["git", "add", rel_prov], cwd=site_repo)
+                        rel_prov2 = str(prov_path.relative_to(site_repo))
+                        run(["git", "add", rel_prov2], cwd=site_repo)
                         run(
                             [
                                 "git",
