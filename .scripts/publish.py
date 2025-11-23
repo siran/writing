@@ -12,7 +12,7 @@ Flow:
   2) Stage copy of src.md into <subjournal>/_staging/<stem>/ and render (.pdf, .html, .pandoc.md)
   3) Parse PNPMD; scan ORCIDs & DOIs; normalize publication_date (ISO yyyy-mm-dd)
   4) Check for existing provenance for this stem; enforce commit policy & optional “new version” decision
-  5) Reserve deposition / DOI (minimal metadata)
+  5) Reserve deposition / DOI (minimal metadata) or create new version deposition
   6) Move rendered files to final path <subjournal>/<stem>/<doi_prefix>/<doi_suffix>/
   7) Write full provenance (including Zenodo metadata) and show it
   8) Show Zenodo metadata, file lists, and action plan; single confirmation
@@ -215,6 +215,21 @@ ORCID_ID_RE  = re.compile(r"\b(\d{4}-\d{4}-\d{4}-\d{3}[0-9Xx])\b", re.IGNORECASE
 EMAIL_RE     = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}")
 DOI_RE       = re.compile(r"\b10\.\d{4,9}/[^\s\"<>]+", re.IGNORECASE)
 
+ZENODO_DOI_RECID_RE = re.compile(r"zenodo\.(\d+)$")
+
+def record_id_from_doi(doi: str) -> Optional[int]:
+    """
+    Extract the Zenodo record id from a DOI like '10.5281/zenodo.17555930'.
+    Returns None if it cannot be parsed.
+    """
+    m = ZENODO_DOI_RECID_RE.search(doi.strip())
+    if not m:
+        return None
+    try:
+        return int(m.group(1))
+    except ValueError:
+        return None
+
 def _norm_orcid(s: str) -> str:
     return s.upper().replace(" ", "")
 
@@ -335,8 +350,6 @@ def parse_pnpmd(md_text: str) -> Dict:
     about_parsed = _extract_about_authors(about_items)
     about_index = {_key(a["name"]): a for a in about_parsed}
 
-    # Canonical authors = header line. "About Author(s)" only enriches them.
-    # If no header authors exist, fall back to About Author(s).
     merged: List[Dict[str, str]] = []
 
     if header_authors:
@@ -664,6 +677,12 @@ def main():
         help="Top-level subjournal folder (prints, documents, posts, reports, ...). "
              "If omitted, you will be prompted."
     )
+    ap.add_argument(
+        "--new-version-of",
+        dest="new_version_of",
+        default=None,
+        help="Stem of an existing publication this should be a new version of.",
+    )
     ap.add_argument("--assets-dir", default="../assets", help="Path to local assets repo (default: ../assets).")
     ap.add_argument("--assets-base-url", default="https://assets.preferredframe.com",
                     help="Public base URL for assets (default: https://assets.preferredframe.com)")
@@ -717,27 +736,54 @@ def main():
 
     stem = src_md.stem
 
-    # ---- existing publication check for this stem ----
-    prov_path_prev, prov_prev = find_latest_provenance_for_stem(site_repo, args.subjournal, stem)
+    # If --new-version-of is given, extend that stem's history.
+    prev_stem = args.new_version_of or stem
+
+    # ---- existing publication check for this stem (or overridden stem) ----
+    prov_path_prev, prov_prev = find_latest_provenance_for_stem(site_repo, args.subjournal, prev_stem)
+
+    is_new_version = False
+    prev_record_id: Optional[int] = None
+    prev_concept = None
 
     if prov_prev:
         prev_source = prov_prev.get("source") or {}
         prev_commit = (prev_source.get("commit") or "").strip()
         prev_doi    = (prov_prev.get("doi") or "").strip()
-        prev_concept = prov_prev.get("concept_doi")
+        prev_concept = (prov_prev.get("concept_doi") or "").strip() or None
 
         if prev_commit and prev_commit == src_commit:
             die(f"This commit has already been published as DOI {prev_doi or '(unknown)'}.")
 
-        echo(f"Found previous publication for stem '{stem}' in subjournal '{args.subjournal}':")
+        echo(f"Found previous publication for stem '{prev_stem}' in subjournal '{args.subjournal}':")
         echo(f" - provenance: {prov_path_prev}")
         echo(f" - DOI:        {prev_doi or '(none)'}")
         echo(f" - concept_doi:{prev_concept or '(none)'}")
         echo(f" - commit:     {prev_commit or '(unknown)'}")
 
-        ans_ver = input(f"Treat this as a new version of the latest one? [y/N]: ").strip().lower()
-        if ans_ver not in ("y", "yes"):
-            die(f"a document named '{stem}' already has been published in '{args.subjournal}'")
+        if args.new_version_of:
+            # Non-interactive: caller explicitly requested a new version of prev_stem.
+            is_new_version = True
+            prev_record_id = record_id_from_doi(prev_doi)
+            if not prev_record_id:
+                die(f"Cannot extract Zenodo record id from previous DOI '{prev_doi}'.")
+        else:
+            ans_ver = input(
+                f"Treat this as a new version of the latest one? [y/N]: "
+            ).strip().lower()
+            if ans_ver in ("y", "yes"):
+                is_new_version = True
+                prev_record_id = record_id_from_doi(prev_doi)
+                if not prev_record_id:
+                    die(f"Cannot extract Zenodo record id from previous DOI '{prev_doi}'.")
+            else:
+                die(f"a document named '{stem}' already has been published in '{args.subjournal}'")
+    else:
+        if args.new_version_of:
+            die(
+                f"--new-version-of={args.new_version_of!r} was given, "
+                f"but no previous provenance was found for that stem in subjournal '{args.subjournal}'."
+            )
 
     # Remember original branch
     orig_branch = run(["git", "rev-parse", "--abbrev-ref", "HEAD"], cwd=site_repo).strip()
@@ -764,9 +810,55 @@ def main():
 
     # ---- Zenodo API & DOI reservation ----
     api, token = zenodo_api_and_token(args.env)
-    dep_id, doi, concept_doi = reserve_deposition(
-        api, token, title, creators, publication_year, args.community, args.journal
-    )
+
+    if is_new_version:
+        if prev_record_id is None:
+            die("Internal error: prev_record_id missing for new version.")
+
+        # Create a new draft that is a version of the previous record
+        dep = http_json(
+            "POST",
+            f"{api}/deposit/depositions/{prev_record_id}/actions/newversion",
+            token,
+            data=None,
+        )
+        dep_id = dep.get("id")
+        if not dep_id:
+            die("Zenodo did not return a deposition id for the new version.")
+
+        minimal_meta = {
+            "upload_type": "publication",
+            "publication_type": "article",
+            "title": title,
+            "creators": creators,
+            "journal_title": args.journal,
+            "publisher": {"name": args.journal},
+            "publication_year": publication_year,
+            "communities": [{"identifier": args.community}],
+            "prereserve_doi": True,
+        }
+
+        dep = http_json(
+            "PUT",
+            f"{api}/deposit/depositions/{dep_id}",
+            token,
+            data={"metadata": minimal_meta},
+        )
+
+        pr = (dep.get("metadata") or {}).get("prereserve_doi") or {}
+        doi = pr.get("doi")
+        concept_doi = dep.get("conceptdoi") or prev_concept
+
+        if not doi:
+            die("Zenodo did not return a reserved DOI for the new version.")
+
+        if prev_concept and concept_doi and concept_doi != prev_concept:
+            echo(f"WARNING: concept DOI changed {prev_concept} → {concept_doi}")
+    else:
+        # Brand-new concept
+        dep_id, doi, concept_doi = reserve_deposition(
+            api, token, title, creators, publication_year, args.community, args.journal
+        )
 
     # ---- final destination based on DOI path ----
     if "/" in doi:
