@@ -1,0 +1,69 @@
+journal: Preferred Frame Writing
+subjournal: reports
+publication_type: article
+title: 'Civil Court – Housing Division, Queens NY: Transcript Request Report - 2025-11-19'
+doi: 10.5281/zenodo.17685396
+concept_doi: null
+permalink: "https://writing.preferredframe.com/reports/Requesting Queens Court Transcripts/10.5281/zenodo.17685396/"
+publication_date: '2025-11-22'
+publication_year: '2025'
+keywords:
+- transcript
+- court records
+- housing court
+- Queens NY
+one_sentence_summary: Summary of the process and conditions for obtaining a hearing transcript in the Queens Housing Court.
+abstract: This report describes the steps required to request a transcript from a housing-court hearing in Queens, New York. It records the form requirements, expected delivery time, and cost estimates. The aim is to document the administrative process clearly for future reference.
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+  email: an@preferredframe.com
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: 'Civil Court – Housing Division, Queens NY: Transcript Request Report - 2025-11-19'
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+    email: an@preferredframe.com
+  description: This report describes the steps required to request a transcript from a housing-court hearing in Queens, New York. It records the form requirements, expected delivery time, and cost estimates. The aim is to document the administrative process clearly for future reference.
+  notes: Summary of the process and conditions for obtaining a hearing transcript in the Queens Housing Court.
+  keywords:
+  - transcript
+  - court records
+  - housing court
+  - Queens NY
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2025'
+  date: '2025-11-22'
+  license: cc-by-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/reports/Requesting Queens Court Transcripts/10.5281/zenodo.17685396/Requesting Queens Court Transcripts.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/reports/Requesting Queens Court Transcripts/10.5281/zenodo.17685396/Requesting Queens Court Transcripts.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Requesting Queens Court Transcripts/10.5281/zenodo.17685396/Requesting Queens Court Transcripts.pdf"
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: 43b14acece1c8cc40e10d38d25036a2c283c1b3a
+  filename: Requesting Queens Court Transcripts.md
+artifacts:
+  md: Requesting Queens Court Transcripts.md
+  md_url: "https://writing.preferredframe.com/reports/Requesting Queens Court Transcripts/10.5281/zenodo.17685396/Requesting Queens Court Transcripts.md"
+  pandoc_md_name: Requesting Queens Court Transcripts.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/reports/Requesting Queens Court Transcripts/10.5281/zenodo.17685396/Requesting Queens Court Transcripts.pandoc.md"
+  pdf_name: Requesting Queens Court Transcripts.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/Requesting Queens Court Transcripts/10.5281/zenodo.17685396/Requesting Queens Court Transcripts.pdf"
+  html_name: Requesting Queens Court Transcripts.html
+  html_url: "https://writing.preferredframe.com/reports/Requesting Queens Court Transcripts/10.5281/zenodo.17685396/Requesting Queens Court Transcripts.html"
+  primary: md
