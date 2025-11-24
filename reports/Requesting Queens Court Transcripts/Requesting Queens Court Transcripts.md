@@ -1,6 +1,6 @@
 % Civil Court – Housing Division, Queens NY: Transcript Request Report - 2025-11-19
 % An M. Rodriguez
-% November 19, 2025
+% November 23, 2025
 
 ## One-Sentence Summary
 
@@ -30,27 +30,35 @@ Court Housing Division in Queens, New York.
 
 ## Observations
 
-- Court open 9am-5pm
-- Paper form need to be filled in situ
+- Court open 9am–5pm
+- Paper form needs to be filled in situ
 - Form fields: index number, parties’ names, date and hour of requested hearing
-- appeals have additional details to consider.
-- Audio recording delivered by email, free.
-- Transcript cost estimated around \$0.50 per minute (approxima, uncertain), if
-  requested
+- Appeals have additional details to consider.
+- Audio recording delivered by email, free. Staff estimated **4–6 weeks**, but
+  it actually arrived within a few days.
+  - Hearing (and thus the audio recording) lasts ~10 minutes.
+- Transcript cost estimated around \$0.50 per minute (approximate, uncertain),
+  if requested.
 
 ## Discussion
 
-- Process simple but slow
-- Manual paperwork and timing (4-6 weeks) suggests administrative backlog
+- Process simple:
+  - Could be automated online easily.
+  - It is possible such automation already exists but is not clearly
+    communicated.
+- Reported times (4–6 weeks) for receiving the recording were greatly
+  overestimated. The recording arrived within a few days.
+  - This suggests staff may not have consistent or up-to-date information on
+    timelines.
 
 ## Conclusion
 
 - Transcript request submitted
-- Expected audio delivery in 4–6 weeks
-- Final transcription cost still approximate
-
-- Housing court timing and processes can be improved via more automation
-- Use of AI can provide a pseudo-transcript for free
+- Staff approximated audio delivery in 4–6 weeks, it was actually few days.
+- Final transcription cost still approximate at $0.5/page - whole transcript or
+  nothing.
+- Housing court timing and processes can be improved via more automation.
+- Use of AI can provide a pseudo-transcript for free.
 
 ## About Author(s)
 
