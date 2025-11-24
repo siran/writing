@@ -277,16 +277,34 @@ def write_html(out_html: Path, body_html: str, head_extra: str = "", title: str 
 
     doc = "".join(s for s in (header, body_html, footer) if s)
 
-    # if head_extra:
-    #     charset = '<!DOCTYPE html><meta charset="UTF-8">'
-    #     title_tag = f"<title>{title} - {PREFERRED_JOURNAL}</title>"
-    #     if charset not in head_extra:
-    #         head_extra = charset + "\n" + title_tag + "\n" + head_extra
-    #     m = re.search(r"</head\s*>", doc, re.IGNORECASE)
-    #     if m:
-    #         doc = doc[:m.start()] + head_extra + doc[m.start():]
-    #     else:
-    #         doc = head_extra + doc
+    # --- ensure <head> and a deterministic <title> for SEO ---
+    page_title = (title or "").strip() or PREFERRED_JOURNAL
+    if page_title == PREFERRED_JOURNAL:
+        full_title = PREFERRED_JOURNAL
+    else:
+        full_title = f"{page_title} — {PREFERRED_JOURNAL}"
+    title_tag = f"<title>{full_title}</title>"
+
+    # If there's no <head>, wrap the document in a minimal shell
+    if not re.search(r"<head[^>]*>", doc, flags=re.IGNORECASE):
+        doc = "<!DOCTYPE html><html><head></head><body>" + doc + "</body></html>"
+
+    # Replace existing <title> or insert a new one at the start of <head>
+    m_title = re.search(r"<title[^>]*>.*?</title>", doc, flags=re.IGNORECASE | re.DOTALL)
+    if m_title:
+        doc = doc[:m_title.start()] + title_tag + doc[m_title.end():]
+    else:
+        m_head_open = re.search(r"<head[^>]*>", doc, flags=re.IGNORECASE)
+        insert_pos = m_head_open.end() if m_head_open else 0
+        doc = doc[:insert_pos] + "\n" + title_tag + "\n" + doc[insert_pos:]
+
+    # Inject extra head tags just before </head>
+    if head_extra:
+        m_head_close = re.search(r"</head\s*>", doc, flags=re.IGNORECASE)
+        if m_head_close:
+            doc = doc[:m_head_close.start()] + head_extra + doc[m_head_close.start():]
+        else:
+            doc = head_extra + doc
 
     ny = ZoneInfo("America/New_York")
     now = datetime.now(ny)
@@ -726,16 +744,16 @@ def build_article_pages():
             head_extra = "\n".join(head) + "\n"
             body_html = "\n".join(body)
 
-            write_html(out_dir/"index.html", body_html, head_extra=head_extra)
+            write_html(out_dir/"index.html", body_html, head_extra=head_extra, title=it["title"])
 
             # DOI aliases live under the same top-level (prints/doi or documents/doi)
             alias_dir = OUT / top / "doi" / it["doi_prefix"] / it["doi_suffix"]
             alias_dir.mkdir(parents=True, exist_ok=True)
-            write_html(alias_dir/"index.html", body_html, head_extra=head_extra)
+            write_html(alias_dir/"index.html", body_html, head_extra=head_extra, title=it["title"])
 
             mirror_dir = OUT / rel(src)
             mirror_dir.mkdir(parents=True, exist_ok=True)
-            write_html(mirror_dir/"index.html", body_html, head_extra=head_extra)
+            write_html(mirror_dir/"index.html", body_html, head_extra=head_extra, title=it["title"])
 
         # --- STEM page (latest) ---
         it = latest
