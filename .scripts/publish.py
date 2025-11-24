@@ -574,6 +574,7 @@ def write_provenance(
     zenodo_metadata: Dict,
     journal_name: str,
     subjournal: str,
+    change_log: Optional[str] = None,
 ) -> Path:
 
     prov = {
@@ -592,6 +593,7 @@ def write_provenance(
         "authors": creators,
         "references_doi": parsed["reference_doi_urls"],
         "zenodo_metadata": zenodo_metadata,
+        "change_log": change_log or "",
         "source": {
             "repo_origin": src_origin,
             "commit": src_commit,
@@ -785,6 +787,19 @@ def main():
                 f"but no previous provenance was found for that stem in subjournal '{args.subjournal}'."
             )
 
+    # Optional multi-line change log for new versions
+    change_log = None
+    if is_new_version:
+        echo("\nThis is a new version. Enter change log (multi-line).")
+        echo("Finish with an empty line.")
+        lines = []
+        while True:
+            ln = input()
+            if ln.strip() == "":
+                break
+            lines.append(ln)
+        change_log = "\n".join(lines).strip() if lines else ""
+
     # Remember original branch
     orig_branch = run(["git", "rev-parse", "--abbrev-ref", "HEAD"], cwd=site_repo).strip()
 
@@ -810,6 +825,12 @@ def main():
 
     # ---- Zenodo API & DOI reservation ----
     api, token = zenodo_api_and_token(args.env)
+
+    # Sandbox: do not attempt to link to production record IDs; always mint fresh concepts.
+    if args.env == "sandbox" and is_new_version:
+        echo("+ sandbox env: ignoring previous record; creating a fresh concept instead of a linked new version.")
+        is_new_version = False
+        prev_record_id = None
 
     if is_new_version:
         if prev_record_id is None:
@@ -966,6 +987,7 @@ def main():
         zenodo_metadata=zenodo_meta,
         journal_name=args.journal,
         subjournal=args.subjournal,
+        change_log=change_log,
     )
 
     # ---- preview ----

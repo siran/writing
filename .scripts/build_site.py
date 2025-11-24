@@ -365,7 +365,7 @@ def write_md_like_page(out_html: Path, md_body: str, title: str | None = None):
 
 def crumb_link(parts: list[str]) -> str:
     html = ['<nav class="breadcrumbs">']
-    html.append('<a href="/">🏠 Home</a>')
+    html.append('<a href="/"> / </a>')
     base = ""
     for label in parts:
         base = base.rstrip("/") + "/" + quote(label)
@@ -640,8 +640,8 @@ def build_article_pages():
             authors_html = ", ".join(filter(None, (fmt_author(a) for a in display_authors)))
 
             body = []
-            body.append("<main class='paper'>")
             body.append(breadcrumbs)
+            body.append("<main class='paper'>")
             body.append(f"<h1>{it['title']}</h1>")
             if authors_html:
                 body.append(f"<p class='authors'>{authors_html}</p>")
@@ -820,8 +820,8 @@ def build_article_pages():
         authors_html = ", ".join(filter(None, (fmt_author(a) for a in display_authors)))
 
         body = []
-        body.append("<main class='paper'>")
         body.append(breadcrumbs)
+        body.append("<main class='paper'>")
         body.append(f"<h1>{it['title']}</h1>")
         if authors_html:
             body.append(f"<p class='authors'>{authors_html}</p>")
@@ -929,10 +929,10 @@ def build_article_pages():
 def breadcrumbs(rel_dir: Path) -> str:
     depth = len(rel_dir.parts)
     to_root = "./" if depth == 0 else "../"*depth
-    items = [f"[🏠 Home]({to_root})"]
+    items = [f"[/   ]({to_root})"]
     for i, part in enumerate(rel_dir.parts):
         up = "../"*(len(rel_dir.parts)-i-1) or "./"
-        items.append(f"/ [📂 {part}]({up})")
+        items.append(f"[📂 {part} /]({up})")
     return " ".join(items)
 
 def format_dir_index(dir_abs: Path, items: list[Item]) -> str:
@@ -953,21 +953,19 @@ def format_dir_index(dir_abs: Path, items: list[Item]) -> str:
         else:
             p_rel = rel(it.path)
             mirrored = OUT / p_rel
-
-            lines.append(f"- 📄 {it.name}")
             if mirrored.exists():
                 url_local = "/" + mirrored.relative_to(OUT).as_posix()
+                link_str = f"- 📄 [{it.name}]({url_local})"
+                # lines.append()
                 ext = it.path.suffix.lower()
                 if ext in MD_EXTS:
                     gh_url = (
                         f"https://github.com/{OWNER}/{REPO}/blob/"
                         f"{BRANCH}/{p_rel.as_posix()}"
                     )
-                    lines.append(
-                        f"  - [open md]({url_local}) · [open rendered md]({gh_url})"
-                    )
-                else:
-                    lines.append(f"  - [open]({url_local})")
+                    link_gh = f"  ([↗️ GitHub]({gh_url}))"
+                    link_str = link_str + link_gh
+                lines.append(link_str)
     lines.append("")
     return title, "\n".join(lines)
 
