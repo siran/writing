@@ -81,28 +81,6 @@ def _strip_conflicting_keys(yaml_text: str) -> str:
     return "\n".join(out)
 
 
-def _normalize_book_yaml_as_front_matter(yaml_text: str) -> str:
-    """
-    Ensure book.yml content becomes a valid top-level YAML metadata block
-    with explicit '---' ... '---' delimiters, after stripping conflicting keys.
-    """
-    yaml_text = _strip_conflicting_keys(yaml_text)
-    lines = yaml_text.replace("\r\n", "\n").splitlines()
-
-    if not lines:
-        return "---\n---\n\n"
-
-    # case 1: already starts with '---'
-    if lines[0].strip() == "---":
-        has_closing = any(line.strip() == "---" for line in lines[1:])
-        if not has_closing:
-            lines.append("---")
-        return "\n".join(lines) + "\n\n"
-
-    # case 2: no leading '---' => wrap in a block
-    return "---\n" + "\n".join(lines) + "\n---\n\n"
-
-
 def render_book_yaml(
     src: Path,
     *,
@@ -111,7 +89,7 @@ def render_book_yaml(
     omit_numbering: bool = False,
     make_pdf: bool = True,
     make_html: bool = True,
-    make_epub: bool = False,
+    make_epub: bool = True,
     toc_depth: int = 2,
     shift_headings: Optional[int] = None,
     auto_shift: bool = True,
@@ -136,7 +114,7 @@ def render_book_yaml(
 
     book_dir = src.parent
     title = title_from_book_yaml(src)
-    base = slugify_filename(title)
+    base = title.strip()
 
     print(f"Book mode: metadata={src.name}  title={title!r}  base={base}")
 
@@ -155,8 +133,7 @@ def render_book_yaml(
     big_md_path = book_dir / f"{base}.md"
 
     # 1) book-level YAML front matter (from book.yml), normalized and cleaned
-    raw_yaml_text = src.read_text(encoding="utf-8")
-    yaml_block = _normalize_book_yaml_as_front_matter(raw_yaml_text)
+    yaml_block = src.read_text(encoding="utf-8")
 
     with big_md_path.open("w", encoding="utf-8") as f:
         f.write(yaml_block)

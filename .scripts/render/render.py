@@ -193,12 +193,6 @@ def main(argv=None):
         action="store_true",
         help="Bypass preprocessing and pass the original Markdown directly to Pandoc.",
     )
-
-    ap.add_argument(
-        "--epub",
-        action="store_true",
-        help="Also render EPUB in addition to PDF/HTML selection.",
-    )
     ap.add_argument("--toc-depth", type=int, default=2, help="TOC depth for pandoc.")
     ap.add_argument(
         "--shift-headings",
@@ -224,6 +218,11 @@ def main(argv=None):
     g = ap.add_mutually_exclusive_group()
     g.add_argument("--pdf", action="store_true", help="Render PDF only.")
     g.add_argument("--html", action="store_true", help="Render HTML only.")
+    ap.add_argument(
+        "--epub",
+        action="store_true",
+        help="Also render EPUB in addition to PDF/HTML selection.",
+    )
     g.add_argument(
         "--all", action="store_true", help="Render both PDF and HTML (default)."
     )
@@ -231,14 +230,9 @@ def main(argv=None):
     args = ap.parse_args(argv)
 
     try:
-        make_pdf = True
-        make_html = True
-        if args.pdf:
-            make_html = False
-        if args.html:
-            make_pdf = False
-        # default if none given: --all (PDF+HTML)
-        make_epub = bool(args.epub)
+        make_pdf = args.pdf or args.all
+        make_html = args.html or args.all
+        make_epub = args.epub or args.all
 
         render(
             args.file,

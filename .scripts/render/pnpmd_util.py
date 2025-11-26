@@ -113,13 +113,6 @@ def load_map(map_path: Path) -> List[Tuple[str, str, bool]]:
     return out
 
 
-def slugify_filename(title: str) -> str:
-    s = title.strip()
-    s = re.sub(r"[^\w.-]+", "-", s)
-    s = re.sub(r"-{2,}", "-", s)
-    return s.strip("-") or "book"
-
-
 def title_from_book_yaml(path: Path) -> str:
     """
     Try to extract the main title from a Pandoc-style book YAML.
