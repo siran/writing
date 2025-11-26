@@ -88,7 +88,7 @@ def detect_repo_branch():
 OWNER, REPO, BRANCH = detect_repo_branch()
 
 # ---------- paths ----------
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 OUT  = ROOT / "site"
 SRC  = ROOT / ".scripts" / "src"
 
