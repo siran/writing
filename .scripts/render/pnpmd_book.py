@@ -5,7 +5,7 @@ from typing import Optional
 import re
 import shutil
 
-from pnpmd_util import slugify_filename, title_from_book_yaml, die
+from pnpmd_util import title_from_book_yaml, die
 from pnpmd_preprocess import prepare_preprocessed
 from pnpmd_pandoc import render_pdf, render_html, render_epub
 
