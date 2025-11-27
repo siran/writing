@@ -97,11 +97,12 @@ will explore the alternative Jesus offers us.
 Today we will seek to gain even a glimpse of what the Course means in this
 paragraph:
 
-> When this Power has once been experienced, it is impossible to trust one’s own
-> petty strength again. Who would attempt to fly with the tiny strength of a
-> sparrow when the mighty wings of an eagle have been given him? And who would
-> place his faith in the shabby offerings of the ego when the gifts of God are
-> laid before him? What is it that induces them to make the shift? ([CE M-4.I.2](https://acimce.app/:M-4.I.2))
+> When this Power has once been experienced [Holy Spirit's Power over the world],
+> it is impossible to trust one’s own petty strength again. Who would attempt to
+> fly with the tiny strength of a sparrow when the mighty wings of an eagle have
+> been given him? And who would place his faith in the shabby offerings of the
+> ego when the gifts of God are laid before him? What is it that induces them to
+> make the shift? ([CE M-4.I.2](https://acimce.app/:M-4.I.2))
 
 
 ### In the morning
@@ -139,18 +140,18 @@ Use these words until you feel a shift regarding the situation you are facing.
 Then spend the rest of the time in silence with God.
 
 
-## During the day
+### During the day
 
 Watch your mind throughout the day for thoughts of worry or preparation against
 future events, even if preparation seems necessary or best for you. Respond to
 such thoughts with this phrase:
 
-> If I am worried, it is because I am trusting in my own strength. Choose now to
-let God take over.
+> "If I am worried, it is because I am trusting in my own strength. Choose now
+> to let God take over."
 
 Use your phone’s timer to remind you of this phrase:
 
-> I place my future in God’s hands.
+> "I place my future in God’s hands."
 
 As always, repeat the phrase slowly, letting its meaning come alive and take
 root in your mind. With as much honesty as you can, truly place your future in

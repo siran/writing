@@ -169,8 +169,8 @@ We will return to our practice of observing needs of any kind and confronting
 them with the truth. Whenever you find yourself wanting or needing something—no
 matter how normal it seems—pause for a few seconds to ask yourself:
 
-> What need do I have, except to awaken to my true Identity?
+> "What need do I have, except to awaken to my true Identity?"
 
 Every 20 minutes, with your phone’s timer, remind yourself:
 
-> I leave my needs in the hands of the One who seeks my happiness.
+> "I leave my needs in the hands of the One who seeks my happiness."

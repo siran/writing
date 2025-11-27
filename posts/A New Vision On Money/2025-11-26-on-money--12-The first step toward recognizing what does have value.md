@@ -141,12 +141,12 @@ strength in which I trust.”
 only thing you want.
 
 
-## During the day
+### During the day
 
 Whenever you find yourself in a situation that produces any discomfort, pain, or
 sense of loss, slowly repeat to yourself:
 
-> I can choose to change the thoughts that cause me pain.
+> "I can choose to change the thoughts that cause me pain."
 
 Try to consider seriously that this idea may be true in the specific situation
 you are in. Very soon, you will surely see the witnesses that will show you that
@@ -154,4 +154,4 @@ this idea is the truth.
 
 Every 20 minutes, using your phone’s timer, remind yourself of this phrase:
 
-> Loss is impossible when it is seen correctly.
+> "Loss is impossible when it is seen correctly."
