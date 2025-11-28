@@ -7,20 +7,19 @@ tags:
   - spirituality
 ---
 
-La idea de manifestar es la idea de que gracias al pensamiento positivo, es
-posible hacer que aparezcan en tu experiencia física cosas que tú valoras.
-Quizás la idea se puede resumir en que la creencia de que si tu mente está en la
-sintonía correcta, si estás pensando adecuadamente, entonces esas cosas que
-deseas se manifestarán de forma material en tu vida. Es una idea muy atractiva
-¡imagina tener la vida de tus sueños! Suena como la clase de poder mágico que
-todos queremos tener.
+The idea of manifesting is the belief that, through positive thinking, it is
+possible to make things you value appear in your physical experience. You could
+summarize it as the belief that if your mind is tuned correctly—if you are
+thinking in the right way—then the things you desire will materialize in your
+life. It is a very attractive idea—imagine having the life of your dreams! It
+sounds like the kind of magical power everyone would like to have.
 
-Según yo lo entiendo, el proceso típico de la idea de manifestar, en sus
-múltiples formas, se compone de estos dos pasos:
+As I understand it, the typical process behind manifesting, in its many forms,
+consists of two steps:
 
-* Primero defines en tu mente con mucha claridad qué es lo que quieres obtener
+* First, you define very clearly in your mind what you want to obtain.
 
-* Luego “sintonizas” tu energía de alguna manera para atraer eso que deseas.
+* Then you “tune” your energy in some way to attract what you desire.
 
 ![](https://siran.github.io/assets/a_new_vision_on_money/ohm-bracelet.png)
 

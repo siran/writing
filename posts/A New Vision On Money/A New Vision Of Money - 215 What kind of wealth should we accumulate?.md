@@ -102,28 +102,29 @@ vision that Christ offers of the other person:
 > healed, no lack unsatisfied, no need unmet within this golden treasury of
 > Christ. ([CE W-159.6](https://acimce.app/:W-159.6))
 
-Imagínate que esto fuera cierto. Hay un almacén de tesoros donde todo lo que
-necesitas está allí para que lo tomes. Allí “No hay enfermedad que no esté ya
-curada” y no hay “carencia que no se haya suplido”. Pero para eso, necesitas
-acumular verdaderos tesoros. En otras palabras, tienes que dar milagros.
+Imagine if this were true. There is a storehouse of treasures where everything
+you need is already there for you to take. There, “there is no sickness that has
+not already been cured” and “no lack that has not been supplied.” But to access
+it, you must accumulate true treasures. In other words, you must give miracles.
 
-Normalmente hay un par de reacciones posibles ante esta idea. Por un lado están
-los que piensan que es egoísta dar para recibir: “Si quiero curarme y que mis
-necesidades estén cubiertas, entonces tengo que dar milagros. ¡Qué egoísta!”
-Otra reacción es la del que piensa que puede usar el sistema a su favor: “Si doy
-entonces tendré lo que yo quiera”. Ambas ideas, aparentemente en extremos
-opuestos, son expresiones de la separación.
+Usually there are a couple of common reactions to this idea. On one hand are
+those who think it is selfish to give in order to receive: “If I want to heal
+myself and have my needs met, then I have to give miracles. How selfish!” The
+other reaction is from those who think they can use the system to their
+advantage: “If I give, then I’ll get whatever I want.” Both ideas—though
+seemingly opposite—are expressions of separation.
 
-La primera posición busca mantenerte separado de la ley de dar y recibir: está
-bien dar, pero no recibir en la misma medida. La segunda, al demostrar un puro
-interés en el yo, también busca mantenerte separado del todo.
+The first position tries to keep you separate from the law of giving and
+receiving: it is okay to give, but not to receive in equal measure. The second,
+by showing a purely self-interested motive, also tries to keep you separate from
+the whole.
 
-La clave para salir de este dilema está en aceptar que dar y recibir es lo
-mismo. Esto significa considerarse parte de los otros y celebrar el amor que se
-recibe, porque también es para uno mismo. Esto inevitablemente traerá beneficios
-en el plano físico, pero podemos recibirlos y aceptarlos sin hacer énfasis
-alguno en ellos. Son simplemente maneras en que el Espíritu Santo nos está
-ahorrando tiempo para seguir dedicándonos a lo importante.
+The key to moving beyond this dilemma is accepting that giving and receiving are
+the same. This means seeing yourself as part of others and celebrating the love
+you receive, because it is also for you. This will inevitably bring benefits on
+the physical level, but we can receive them without placing any emphasis on
+them. They are simply ways in which the Holy Spirit is saving us time so we can
+keep dedicating ourselves to what truly matters.
 
 
 ## Practice

@@ -269,7 +269,7 @@ This point is confirmed a few paragraphs later:
 > blessed thereby. ([P-3.III.6:6-7](https://acim.org/acim/en/s/915#6:6-7))
 
 
-### 9. Algunos son enviados con la intención de no pagarte, sin costo para ti
+### 9. Some are sent with the intention not to pay you, at no cost to you
 
 God also sends you people who are not able to pay you. This inability may be
 material or emotional. Yet, since they were sent by God, each one of them enters
@@ -297,10 +297,10 @@ expressed with absolute clarity:
 > One rule should always be observed: No one should be turned away because he
 > cannot pay. ([P-3.III.6:1](https://acim.org/acim/en/s/915#6:1))
 
-Jesús sabe que esa regla la consideramos completamente impráctica, pero ya
-estudiamos a profundidad lo impráctico que es ir en pos del tiras de papel como
-algo valioso. En lugar de pensar que estos “pacientes” representarán una pérdida
-para nuestras finanzas, tenemos que aceptar el valioso regalo que nos traen:
+Jesus knows that we consider this rule completely impractical, but we have
+already studied in depth how impractical it is to chase after strips of paper as
+if they were valuable. Instead of thinking that these “patients” will represent
+a loss for our finances, we need to accept the precious gift they bring us:
 
 > Then stop a while, long enough to think of this: You have perhaps been seeking
 > for salvation without recognizing where to look. Whoever asks your help can

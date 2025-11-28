@@ -102,7 +102,7 @@ same form you gave, but “it must be more.” The form it takes cannot be less
 acceptable.
 
 The clever ones may think this is a formula for acquiring money. *If I am
-generous, the   universe will reward me with abundance!* However, the Course warns
+generous, the universe will reward me with abundance!* However, the Course warns
 us: “Do not ascribe value to its form.” In other words, using this information
 with the goal of obtaining and enriching yourself is completely contrary to the
 goal being sought. And what generosity can there be if you are thinking only of
