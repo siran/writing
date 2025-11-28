@@ -1,5 +1,5 @@
 ---
-title: On Money - 15: What kind of wealth should we accumulate?
+title: A New Vision Of Money - 15: What kind of wealth should we accumulate?
 date: 2025-11-27 10:46:00
 tags:
   - money

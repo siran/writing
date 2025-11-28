@@ -1,5 +1,5 @@
 ---
-title: On Money - 20: Give genuinely -- do not purchase your relationships
+title: A New Vision Of Money - 20: Give genuinely -- do not purchase your relationships
 date: 2025-11-27 15:14:00
 tags:
   - money

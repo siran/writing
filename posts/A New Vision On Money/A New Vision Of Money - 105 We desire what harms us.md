@@ -1,5 +1,5 @@
 ---
-title: On Money - 5. We desire what harms us
+title: A New Vision Of Money - 5. We desire what harms us
 date: 2024-10-07 07:59:41
 tags:
   - money

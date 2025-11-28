@@ -1,5 +1,5 @@
 ---
-title: On Money - 17: Give yourself the luxury of being generous
+title: A New Vision Of Money - 17: Give yourself the luxury of being generous
 date: 2025-11-27 12:35:00
 tags:
   - money

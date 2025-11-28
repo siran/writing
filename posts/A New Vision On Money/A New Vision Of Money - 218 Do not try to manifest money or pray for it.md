@@ -1,5 +1,5 @@
 ---
-title: On Money - 18: Do not try to manifest money or pray for it
+title: A New Vision Of Money - 18: Do not try to manifest money or pray for it
 date: 2025-11-27 13:04:00
 tags:
   - money

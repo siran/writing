@@ -1,5 +1,5 @@
 ---
-title: On Money - 8. Can money cover our needs?
+title: A New Vision Of Money - 8. Can money cover our needs?
 date: 2024-10-27 08:15:53
 tags:
   - money

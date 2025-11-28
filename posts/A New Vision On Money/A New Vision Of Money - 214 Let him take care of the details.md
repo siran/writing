@@ -1,5 +1,5 @@
 ---
-title: On Money - 14: Let Him take care of the details
+title: A New Vision Of Money - 14: Let Him take care of the details
 date: 2025-11-27 9:18:00
 tags:
   - money

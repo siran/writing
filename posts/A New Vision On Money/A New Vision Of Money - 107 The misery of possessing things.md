@@ -1,5 +1,5 @@
 ---
-title: On Money - 7. The misery of possessing things
+title: A New Vision Of Money - 7. The misery of possessing things
 date: 2024-10-16 10:09:08
 tags:
   - money

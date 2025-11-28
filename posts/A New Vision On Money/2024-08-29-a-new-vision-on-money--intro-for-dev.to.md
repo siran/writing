@@ -1,5 +1,5 @@
 ---
-title: A new vision on money (intro for Dev.to)
+title: A New Vision Of Money (intro for Dev.to)
 date: 2024-08-29 10:42:29
 tags:
   - money

@@ -1,5 +1,5 @@
 ---
-title: "On Money - 9: An Empty Vault"
+title: "A New Vision Of Money - 9: An Empty Vault"
 date: 2024-11-05 08:22:58
 tags:
   - money

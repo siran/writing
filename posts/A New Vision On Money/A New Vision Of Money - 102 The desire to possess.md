@@ -1,5 +1,5 @@
 ---
-title: On Money - 2. The desire to possess
+title: A New Vision Of Money - 2. The desire to possess
 date: 2024-08-28 10:28:29
 tags:
   - money

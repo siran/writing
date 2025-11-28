@@ -1,5 +1,5 @@
 ---
-title: On Money - 11: The transition to a new vision of money
+title: A New Vision Of Money - 11: The transition to a new vision of money
 date: 2025-11-26 19:07:00
 tags:
   - money

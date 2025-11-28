@@ -1,5 +1,5 @@
 ---
-title: On Money - 12: The first step toward recognizing what does have value
+title: A New Vision Of Money - 12: The first step toward recognizing what does have value
 date: 2025-11-26 21:26:00
 tags:
   - money

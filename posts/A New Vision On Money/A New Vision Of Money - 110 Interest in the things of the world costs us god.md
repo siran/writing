@@ -1,5 +1,5 @@
 ---
-title: "On Money - 10: Interest in the things of the world costs us God"
+title: "A New Vision Of Money - 10: Interest in the things of the world costs us God"
 date: 2025-11-25 14:00:00
 tags:
   - money

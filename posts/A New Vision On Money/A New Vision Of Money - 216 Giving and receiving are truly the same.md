@@ -1,5 +1,5 @@
 ---
-title: On Money - 16: Giving and receiving are truly the same
+title: A New Vision Of Money - 16: Giving and receiving are truly the same
 date: 2025-11-27 10:46:00
 tags:
   - money

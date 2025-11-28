@@ -1,6 +1,6 @@
 ---
 date: 2024-09-12 02:05:34
-title: On Money - Pleasure and Pain
+title: A New Vision Of Money - Pleasure and Pain
 excerpt: The Course teaches us that what shares the same purpose is the same. In this sense, pleasure and pain are the same, as they share the same purpose, and that purpose is to keep us separated from God.
 tags:
   - money

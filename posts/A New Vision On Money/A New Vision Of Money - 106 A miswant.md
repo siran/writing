@@ -1,7 +1,7 @@
 ---
 date: 2024-10-12 06:08:57
 excerpt: "This is a point where both social sciences and A Course in Miracles agree: what we think we want is not what will make us happy."
-title: On Money - 6. A miswant
+title: A New Vision Of Money - 6. A miswant
 tags:
   - money
   - philosophy

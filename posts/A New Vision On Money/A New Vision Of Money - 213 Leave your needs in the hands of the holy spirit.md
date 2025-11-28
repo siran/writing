@@ -1,5 +1,5 @@
 ---
-title: On Money - 13: Leave your needs in the hands of the Holy Spirit
+title: A New Vision Of Money - 13: Leave your needs in the hands of the Holy Spirit
 date: 2025-11-26 22:04:00
 tags:
   - money
