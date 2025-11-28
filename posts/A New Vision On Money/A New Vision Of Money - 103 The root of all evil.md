@@ -31,11 +31,11 @@ At the end of the previous quote, we see that heaven is described as a condition
 
 The way to rid ourselves of the idea that money is the cause of our problems, even if only for a few of them, is by resolving the internal problem of authorship, also called the problem of authority in the course. As long as we believe that there are external or internal things that have the power to cause the calamities we experience, we are confused about who created us. Jesus emphasizes the importance of resolving this problem as soon as possible:
 
->It is essential that this whole authority problem be voluntarily dismissed once and for all. You do not understand how important this is for your sanity. You are quite insane on this point. ([CE T-3.XI.1:1-3](https://acimce.app/:T-3.XI.1:1-3))
+> It is essential that this whole authority problem be voluntarily dismissed once and for all. You do not understand how important this is for your sanity. You are quite insane on this point. ([CE T-3.XI.1:1-3](https://acimce.app/:T-3.XI.1:1-3))
 
 Interestingly, the way to rid ourselves of this problem is by recognizing that it is a fictitious problem, a problem we have believed is there but is actually an illusion. How can we understand this? We find the key in these paragraphs:
 
-> Peace is a natural heritage of the Son. Everyone is free to refuse to accept his inheritance, but he is not free to establish what his inheritance is. The problem which everyone must decide is the fundamental question of his own authorship. [CE T-3.X.11:1-3](https://acimce.app/:T-3.X.11:1-3))
+> Peace is a natural heritage of the Son. Everyone is free to refuse to accept his inheritance, but he is not free to establish what his inheritance is. The problem which everyone must decide is the fundamental question of his own authorship. ([CE T-3.X.11:1-3](https://acimce.app/:T-3.X.11:1-3))
 
 And also,
 
@@ -51,7 +51,7 @@ We do not realize this circular and insane reasoning because, instead of thinkin
 
 Can I accept without reserves that another Being is responsible for my existence and who I am?
 
-Can I accept that I used my freedom to deny my Creator? 
+Can I accept that I used my freedom to deny my Creator?
 
 Can I use my free will not to imprison myself but to be free?
 

@@ -13,10 +13,10 @@ We have learned that we tend to desire things we do not truly want, things that 
 
 In Lesson 50 of the Course, we find this:
 
-> Here is the answer to every problem that confronts you today and tomorrow and throughout time. In this world, you believe you are sustained by everything but God. Your faith is placed in the most trivial and insane symbols: pills, money, “protective” clothing, influence, prestige, being liked, knowing the “right” people, and an endless list of forms of nothingness which you endow with magical power. All these things are your replacements for the love of God. All these things are cherished to ensure a body identification. They are songs of praise to the ego.  
+> Here is the answer to every problem that confronts you today and tomorrow and throughout time. In this world, you believe you are sustained by everything but God. Your faith is placed in the most trivial and insane symbols: pills, money, “protective” clothing, influence, prestige, being liked, knowing the “right” people, and an endless list of forms of nothingness which you endow with magical power. All these things are your replacements for the love of God. All these things are cherished to ensure a body identification. They are songs of praise to the ego.
   >
  > Do not put your faith in the worthless. It will not sustain you.  ([CE W-50.1-2](https://acimce.app/:W-50.1-2))
- 
+
 For most of us, seeking things like money, medicine, protective clothing, and good connections can give us some sense of being sustained. There is no doubt about that. But do we feel protected in all circumstances? Do we feel truly beyond any trial life may put before us? Do we feel perfectly surrounded by peace? Certainly not. Lesson 50 says that, in this world, we can reach a state of mind where nothing can disturb or threaten us. Can money give us that?
 
 No matter how many things we acquire for the body, the need for peace will always leave us feeling empty. There is no amount of money, pills, connections, or clothing that can bring us that peace. It is a well-studied fact that people report no significant increase in happiness when they receive a salary increase beyond a certain threshold. The happiness that money can buy is very limited and fleeting.
@@ -49,8 +49,6 @@ Let us use the practice instructions from Lesson 50 as our morning meditation. F
 2. Allow thoughts that support this idea to come to you.
 3. Let the meaning of this idea enter your being, showing you its significance and the benefits it brings.
 4. Spend the final minutes in silence, feeling that God sustains you and that you can rest in Him.
-
-**Throughout the Day**
 
 Throughout the day, monitor your mind to observe thoughts suggesting that external things are needed to sustain your existence. Whenever you feel in need or lacking, respond immediately:
 

@@ -23,7 +23,7 @@ chase after other things we see as “more valuable”:
 > It is not easy to realize that prayers for things, for status, for human love,
 > for external "gifts" of any kind, are always made to set up jailers and to
 > hide from guilt. These things are used for goals that substitute for God, and
-> therefore distort the purpose of prayer. The desire for them the prayer. One
+> therefore distort the purpose of prayer. The desire for them is the prayer. One
 > need not ask explicitly. The goal of God is lost in the quest for lesser goals
 > of any kind, and prayer becomes requests for enemies. The power of prayer can
 > be quite clearly recognized even in this. No one who wants an enemy will fail

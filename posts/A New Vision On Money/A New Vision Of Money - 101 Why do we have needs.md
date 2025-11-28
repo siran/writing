@@ -30,11 +30,11 @@ In Heaven, where there is no lack, behavior is unnecessary because there is no m
 
 > The body is the mechanism for behavior. Nobody would bother even to get up and go from one place to another if he did not think he would somehow be better off. Believing that you _could_ be “better off” is the reason why you have the mechanism for behavior at your disposal. That is why the Bible says, “By their _deeds_ ye shall know them.” ([CE T-1.48.21:3-6](https://acimce.app/:T-1.48.21:3-6))
 
-All behavior must be expressed through the body. Jesus tells us that the body is the mechanism of behavior and therefore for satisfying needs. Depending on the needs someone wants to fulfill, their behavior will follow. This is why "By their _deeds_ ye shall know them.."
+All behavior must be expressed through the body. Jesus tells us that the body is the mechanism of behavior and therefore for satisfying needs. Depending on the needs someone wants to fulfill, their behavior will follow. This is why "By their _deeds_ ye shall know them."
 
 However, the body originally arose as a product of the desire to separate from God. This desire required a symbol to keep us separate from our true Creator. Therefore, the symbol of the separation from God is the body. The body is like a protective barrier that keeps us separated from the rest of the world. This protective barrier is what proves to us every day that "I am me" and that I cannot be anything else.
 
-Like any symbol, the body can change its purpose and be used for something positive. When the body is used to separate, it seems that the body has its own needs. When we use the body to keep ourselves separated from God, we become slaves to those needs and will spend our lives satisfying them. On the other had, if we made God our only need, then our behavior, expressed through the body, would reflect that motivation. Believing that we can be better off is, therefore, a good thing. It is what ultimately motivates us to satisfy the need for God, our only real need.
+Like any symbol, the body can change its purpose and be used for something positive. When the body is used to separate, it seems that the body has its own needs. When we use the body to keep ourselves separated from God, we become slaves to those needs and will spend our lives satisfying them. On the other hand, if we made God our only need, then our behavior, expressed through the body, would reflect that motivation. Believing that we can be better off is, therefore, a good thing. It is what ultimately motivates us to satisfy the need for God, our only real need.
 
 Since the vast majority of us use the body to keep ourselves separated, it seems like there are hundreds of different needs to satisfy before we have time to seek God.
 

@@ -18,7 +18,7 @@ Since we are so deeply identified with the body, it’s natural that we want to 
 
 > The dreaming of the world takes many forms, because the body seeks in many ways to prove it is autonomous and real. It puts things on itself that it has bought with little metal discs or paper strips the world proclaims as valuable and good. It works to get them, doing senseless things, and tosses them away for senseless things it does not need and does not even _want_. It hires _other_ bodies, that they may protect it and collect more senseless things that it can call its own. It looks about for special bodies that can share its dream. ([CE T-27.X.2:1-5](https://acimce.app/:T-27.X.2:1-5))
 
-What this paragraph means is that we have designed a system of thought that teaches us it's fundamental lesson: "... that it [the body] is _cause_ and not effect, and you are _its_ effect and cannot be its cause." ([CE T-27.X.3:4](https://acimce.app/:T-27.X.3:4)).
+What this paragraph means is that we have designed a system of thought that teaches us its fundamental lesson: "... that it [the body] is _cause_ and not effect, and you are _its_ effect and cannot be its cause." ([CE T-27.X.3:4](https://acimce.app/:T-27.X.3:4)).
 
 Let us remember that the body only became part of our experience after we decided to separate from God. The body is an effect of the mind and has never ceased to be so. The truth of this idea is stored within us and constantly surfaces, although we do not take it very seriously.
 
@@ -28,7 +28,7 @@ Through the ages we have imposed onto ourselves a system of thought that teaches
 
 This system of thought starts with the idea that the body has its impulses and needs, like feeling cold - an impulse that tells us the body requires clothing and other accessories.
 
-To procure these things, we need money, and to have money, we must work hard. 
+To procure these things, we need money, and to have money, we must work hard.
 
 We strain the body for strips of paper, metal discs, and numbers on a bank screen. We invent countless meaningless activities to obtain those strips of paper. But do we stop when the need is met?
 
@@ -64,11 +64,11 @@ Jesus reminds us, however, that this law is madness and that by freeing ourselve
 
 Let us then do what he proposes. Close your eyes for a few minutes and take time thinking about:
 
-- how you would feel recognizing that you are not bound by the laws of economics. 
+- how you would feel recognizing that you are not bound by the laws of economics.
 
-- how you would feel realizing that you don't have to make any effort to earn a living. 
+- how you would feel realizing that you don't have to make any effort to earn a living.
 
-- how you would feel recognizing that all those laws that seem to bind you are madness and that only the laws of God govern you. 
+- how you would feel recognizing that all those laws that seem to bind you are madness and that only the laws of God govern you.
 
 Observe how you feel.
 

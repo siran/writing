@@ -37,7 +37,7 @@ In the movie "Into the Wild," there is also a good example of this. It is a movi
 
 I have had clear glimpses of that same truth. On many occasions, in the middle of a vacation in a place I was supposed to be enjoying, I have noticed that joy was absent. Despite being in a spectacular place, drinking cocktails by the sea, the happiness I had imagined having while doing that was absent. The sense of separation settled in despite nothing external in my life going wrong.
 
-The idea that we are desiring something that is not what we want is what the Course calls it an "alien will." This alien will, the will of the ego, is what keeps us in a state of dissatisfaction. This is explained in Lesson 339:
+The idea that we are desiring something that is not what we want is what the Course calls an "alien will." This alien will, the will of the ego, is what keeps us in a state of dissatisfaction. This is explained in Lesson 339:
 
 > Everyone will receive what he requests, but he can be confused indeed about the things he wants; the state he would attain. What can he then request that he would want when he receives it? ([CE W-339.1:3-4](https://acimce.app/:W-339.1:3-4))
 

@@ -16,7 +16,10 @@ One of the most prominent quotes where we see this idea is in chapter 13, where 
 
 > There are no stores where people buy an endless list of things they do not need. ([CE T-13.VII.1:4](https://acimce.app/:T-13.VII.1:4))
 
-Here, He is once again telling us that we use money to cover imaginary needs and also to satisfy unnecessary whims. As we saw earlier in the quote from chapter 27, not only do we buy things we do not need, but we waste money "things, and tosses them away for senseless things it does not need and does not even _want_. ([CE T-27.X.2:3](https://acimce.app/:T-27.X.2:3))"
+Here, He is once again telling us that we use money to cover imaginary needs and
+also to satisfy unnecessary whims. As we saw earlier in the quote from chapter
+27, not only do we buy things we do not need, but we waste money on "things, and
+tosses them away for senseless things it does not need and does not even want." ([CE T-27.X.2:3](https://acimce.app/:T-27.X.2:3))
 
 For example, as I write these lines, I glance at a flowerpot I bought months ago. It has no plants in it because I had no plants to put in. Clearly, I bought something I neither needed nor wanted. If I truly wanted it, I would have planted something in it by now.
 

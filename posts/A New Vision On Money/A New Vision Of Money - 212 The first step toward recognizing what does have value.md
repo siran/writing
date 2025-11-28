@@ -50,37 +50,34 @@ being taken away from us”:
 > light? He is not yet at a point at which he can make the shift entirely
 > internally. And so the plan will sometimes call for changes in what seem to
 > be external circumstances. These changes are always helpful. When the
-> teacher of God has learned that much, he goes on to the second stage. [CE M-4.I.3]
-> https://acimce.app/:M-4.I.3
+> teacher of God has learned that much, he goes on to the second stage. ([CE M-4.I.3](https://acimce.app/:M-4.I.3))
+
 
 ![](https://siran.github.io/assets/a_new_vision_on_money/sucking-money-away.png)
 
-It takes a great deal of learning to understand that even “losses” are also
-beneficial. Although it may seem difficult, I am sure you have several examples
-in mind. Think of something you have lost—perhaps a job or a relationship—and
-how that experience of loss resulted in something very positive for your life.
 
-Se me viene a la mente el ejemplo del avión que se estrelló en los Andes en los
-años 70. Difícilmente podemos imaginar una situación más trágica y llena de
-pérdidas. Sin embargo, los que sobrevivieron cuentan que es una historia de
-transformación. Una vez que la tragedia ha sido re-interpretada, lo que queda es
-una historia de solidaridad, milagros, amor al prójimo y confianza en Dios. La
-historia de esos muchachos ha servido de inspiración para miles de personas. Así
-como ese ejemplo, las redes sociales están llenas de ejemplos similares de
-personas que lograron ver que sus tragedias resultaron en una bendición.
+The example that comes to mind is the airplane that crashed in the Andes in the
+1970s. We can hardly imagine a more tragic situation, filled with loss. And yet,
+the survivors describe it as a story of transformation. Once the tragedy is
+re-interpreted, what remains is a story of solidarity, miracles, love for one
+another, and trust in God. Their experience has served as an inspiration for
+thousands of people.
 
-Lo que nos dice el curso es que este es un paso crucial. En realidad, no creo
-que se nos esté quitando las cosas, sino que al dejar de atribuirles valor,
-simplemente dejamos de verlas. Como aún no entendemos plenamente que somos
-responsables del mundo que vemos, esto luce como que las cosas nos ocurren y la
-pérdida llega a nosotros. Sin embargo, estas aparentes pérdidas son muy
-beneficiosas, y cuando por fin aprendamos a verlas de esa manera, estaremos
-listos para el siguiente paso.
+Just like that example, social media is full of similar stories from people who
+came to see that their tragedies turned out to be a blessing.
 
-No necesitamos creer por completo que cada cambio es beneficioso, incluso los
-que se ven como un pérdida. Es un proceso gradual. En la lección 284, Jesús nos
-dice que iremos aceptado este hecho poco a poco, a medida que consideremos esta
-idea más seriamente:
+What the Course tells us is that this is a crucial step. I don’t think things
+are truly being taken away from us; rather, when we stop giving them value, we
+simply stop seeing them. Because we still don’t fully understand that we are
+responsible for the world we see, it looks as though things “happen” to us and
+that loss comes from outside. Yet these apparent losses are deeply beneficial,
+and when we finally learn to see them that way, we will be ready for the next
+step.
+
+We do not need to fully believe that every change is beneficial— even the ones
+that look like loss. It is a gradual process. In Lesson 284, Jesus tells us that
+we will accept this fact little by little, as we consider the idea more
+seriously:
 
 > 1 Loss is not loss when properly perceived. ²Pain is impossible. ³There is no
 > grief with any cause at all. ⁴And suffering of any kind is nothing but a

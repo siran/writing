@@ -59,10 +59,10 @@ Today, we will spend about 15 minutes getting in touch with the reality of what 
 
 - Close your eyes and prepare your mind to search honestly.
 - Search your mind for examples of things you possess or have possessed, of goals and achievements.
-- Honestly review how you placed each of these things on the ego’s altar.    
-- Reflect on how there was no complete joy in them.    
-- Finally, say to each of these things:    
- 
+- Honestly review how you placed each of these things on the ego’s altar.
+- Reflect on how there was no complete joy in them.
+- Finally, say to each of these things:
+
 > "I now place this possession on Your altar, Father, so You may return to me what You truly want me to have."
 
 Imagine truly giving each of these things to God’s light, and receiving back a gift that brings you relief. When you can no longer find anything else in your mind, use the silence to be with God for a few more minutes. End with this phrase:
@@ -70,7 +70,7 @@ Imagine truly giving each of these things to God’s light, and receiving back a
 > "I leave all my needs to God today. Under His guidance, my journey will be light and without obstacles."
 
 ### During the day
-As you can see, this first part of the series to question them and give them to someone who truly knows what is best for you. Today, we will continue developing this skill.
+As you can see, this first part of the series is to question them and give them to someone who truly knows what is best for you. Today, we will continue developing this skill.
 
 Whenever you notice that you are desiring something from this world, no matter how much you believe you need or want it, say as honestly as you can:
 
