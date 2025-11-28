@@ -53,7 +53,7 @@ being taken away from us”:
 > teacher of God has learned that much, he goes on to the second stage. [CE M-4.I.3]
 > https://acimce.app/:M-4.I.3
 
-![](http://assets.preferredframe.com/a_new_vision_on_money/sucking-money-away.png)
+![](https://siran.github.io/assets/a_new_vision_on_money/sucking-money-away.png)
 
 It takes a great deal of learning to understand that even “losses” are also
 beneficial. Although it may seem difficult, I am sure you have several examples

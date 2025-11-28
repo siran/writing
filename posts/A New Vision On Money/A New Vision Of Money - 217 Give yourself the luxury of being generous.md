@@ -17,7 +17,7 @@ attributes of God’s teachers. The Manual for Teachers defines it this way:
 > true sense. To the world, generosity means “giving away” in the sense of
 > “giving up.” To the teacher of God, it means giving away in order to keep. ([CE M-4.VII.1:1-5](https://acimce.app/:M-4.VII.1:1-5))
 
-![](http://assets.preferredframe.com/a_new_vision_on_money/generous-love.png)
+![](https://siran.github.io/assets/a_new_vision_on_money/generous-love.png)
 
 As is typical of the Course, the word generosity is defined as the opposite of
 how it is understood in the world, without losing the essence of its original

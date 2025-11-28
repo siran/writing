@@ -24,7 +24,7 @@ What, then, does the Course propose? Do we really have to sell all our
 possessions and dedicate ourselves solely to seeking God? Must we pursue a
 minimalist or ascetic life?
 
-![Bridge](http://assets.preferredframe.com/a_new_vision_on_money/bridge.png)
+![](https://siran.github.io/assets/a_new_vision_on_money/bridge.png)
 
 Bringing back the quote from Chapter 13 that we used earlier:
 

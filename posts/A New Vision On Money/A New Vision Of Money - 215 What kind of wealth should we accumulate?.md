@@ -26,7 +26,7 @@ given and your experiences of making others happy. The doors of your chests are
 open—not so that anything can be stolen, but so that others may find, together
 with you, the true wealth.
 
-![alt text](http://assets.preferredframe.com/a_new_vision_on_money/open-valuable-coffer.png)
+![](https://siran.github.io/assets/a_new_vision_on_money/open-valuable-coffer.png)
 
 Miracles, which are expressions of love, are the experiences we must accumulate.
 Here we find one of the Course’s typical reversals. In order to fill the

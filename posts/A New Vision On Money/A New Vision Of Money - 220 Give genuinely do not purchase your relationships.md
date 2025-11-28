@@ -35,7 +35,7 @@ compensated—both for the doctors and for the insurance companies that have so
 “generously” provided their services. Doctors also have bills to pay, and they
 deserve a good life that balances out how much they have sacrificed.
 
-![](http://assets.preferredframe.com/a_new_vision_on_money/paid-sacrifice.png)
+![](https://siran.github.io/assets/a_new_vision_on_money/paid-sacrifice.png)
 
 The system that keeps us bound to this world assumes that when we offer a
 service, payment must come from the people we are serving. From whom else could
@@ -315,7 +315,7 @@ your earthly needs. Is that not something entirely desirable?
 
 Can you make room in your mind and in your heart for this new vision?
 
-![](http://assets.preferredframe.com/a_new_vision_on_money/receiving-dawn.png)
+![](https://siran.github.io/assets/a_new_vision_on_money/receiving-dawn.png)
 
 
 ## Practice

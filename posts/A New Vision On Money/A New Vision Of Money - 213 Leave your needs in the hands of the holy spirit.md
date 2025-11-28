@@ -31,7 +31,7 @@ will take care of them without giving them undue importance:
 > Leave, then, your needs to Him. He will supply them with no emphasis at all
 > upon them. ([CE T-13.VIII.3-4](https://acimce.app/:T-13.VIII.3-4))
 
-![](http://assets.preferredframe.com/a_new_vision_on_money/boy-running-in-water.png)
+![](https://siran.github.io/assets/a_new_vision_on_money/boy-running-in-water.png)
 
 What is interesting about these two paragraphs is how pragmatic the Course is.
 The Holy Spirit understands your belief in needs. Instead of denying them, He
