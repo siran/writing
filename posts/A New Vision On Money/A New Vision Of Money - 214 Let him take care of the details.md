@@ -73,13 +73,13 @@ according to Jesus, are trivialities. These are the things Jesus would be very
 happy for you to leave in His hands so you may have time to do what is
 important: perform miracles. As He tells us:
 
-> The reason I direct everything that is unimportant is because it is no way
-> to waste your free will. If you insist on doing the trivial your way, you
-> waste too much time and will on it. Will cannot be free if it is tied up in
-> trivia. It never gets out. I will tell you exactly what to do in connection
-> with everything that does not matter. That is not an area where choice should
-> be invested. There is a better use of time.
->
+> The reason I direct everything that is unimportant is because it is no way to
+> waste your free will. If you insist on doing the trivial your way, you waste
+> too much time and will on it. Will cannot be free if it is tied up in trivia.
+> It never gets out. I will tell you exactly what to do in connection with
+> everything that does not matter. That is not an area where choice should be
+> invested. There is a better use of time.
+> 
 > You have to remember to ask me to take charge of all minutiae, and they will
 > be taken care of so well and so quickly that you cannot get bogged down in
 > them. ([CE T-1.25.3-4](https://acimce.app/:T-1.25.3-4))
@@ -104,9 +104,9 @@ in her shopping. Her resistance was so strong that He dictated another paragraph
 to explain why she felt this way:
 
 > The only remaining problem is that you will be unwilling to ask [that Jesus take care of the details],
-> because you are afraid not to be bogged down (in minutia). Do not let this hold us back. If
-> you will ask, I will arrange these things, even if you’re not too
-> enthusiastic. I am not intruding on your will, but I am trying to free it. ([CE T-1.25.4:2-5](https://acimce.app/:T-1.25.4:2-5))
+> because you are afraid not to be bogged down (in minutia). Do not let this
+> hold us back. If you will ask, I will arrange these things, even if you’re not
+> too enthusiastic. I am not intruding on your will, but I am trying to free it. ([CE T-1.25.4:2-5](https://acimce.app/:T-1.25.4:2-5))
 
 How interesting that He tells her her fear is of not getting entangled in
 trivialities. There is something within each of us that prefers to stay
@@ -152,18 +152,18 @@ a way that allows you to feel cared for, loved, and free of burdens:
 The morning meditation will focus on finding and handing over examples in which
 you want to remain stuck:
 
-1. Close your eyes and quiet your mind using any of the techniques we have learned
-in this workshop.
+1. Close your eyes and quiet your mind using any of the techniques we have
+   learned in this workshop.
 
 2. Now bring to mind examples of small situations in which you feel your time is
-being drained. These may be small problems, but also small pleasures or
-distractions. A common example is spending too much time on your phone.
+   being drained. These may be small problems, but also small pleasures or
+   distractions. A common example is spending too much time on your phone.
 
-3. See if you can honestly accept that you are using that problem or distraction as
-a way to keep God at a distance by not having time for Him.
+3. See if you can honestly accept that you are using that problem or distraction
+   as a way to keep God at a distance by not having time for Him.
 
-4. Hand that small matter over to the Holy Spirit. You may say: “I want You to take
-care of this for me, because I want my will to be free.”
+4. Hand that small matter over to the Holy Spirit. You may say: “I want You to
+   take care of this for me, because I want my will to be free.”
 
 5. Spend the last minutes of the meditation in silence with God.
 
@@ -172,7 +172,8 @@ care of this for me, because I want my will to be free.”
 
 Throughout the day we will simply ask for guidance. Every 20 minutes, remember:
 
-> "Holy Spirit, I want You to take care of the details of my life because I want a
+> "Holy Spirit, I want You to take care of the details of my life because I want
+> a
 free will."
 
 If you find yourself in a situation where you are trying to solve it by your own

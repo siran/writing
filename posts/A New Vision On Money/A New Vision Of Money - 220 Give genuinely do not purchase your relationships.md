@@ -332,7 +332,7 @@ Can you make room in your mind and in your heart for this new vision?
 
 On this final day of the workshop we will practice with this prayer from Lesson
 355. Memorize one line, close your eyes, and feel that you are saying that line
-directly to God. He is listening to you:
+     directly to God. He is listening to you:
 
 
 > Why should I wait, my Father, for the joy You promised me? For You will keep

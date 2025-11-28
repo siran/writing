@@ -141,8 +141,8 @@ to give. These will be the only treasures we accumulate today.
    and to whom?”
 
 3. Remain in silence and wait for a response. It is perfectly fine if you hear
-nothing specific. Simply keep your mind open to the possibility of receiving an
-image, a feeling, or even words.
+   nothing specific. Simply keep your mind open to the possibility of receiving
+   an image, a feeling, or even words.
 
 4. Say with determination: “Today I only want to accumulate miracles as
    treasures.”

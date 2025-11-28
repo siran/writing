@@ -148,16 +148,16 @@ We will devote this morning’s meditation to accepting what God has given us. A
 we saw today, in order to accept, we must give. So we will simply welcome those
 who come to mind and offer them joy and peace:
 
-1. Close your eyes and quiet your mind using any of the techniques you have learned
-in this workshop.
+1. Close your eyes and quiet your mind using any of the techniques you have
+   learned in this workshop.
 
 2. Think of people in your life. Let their image come to mind.
 
-3. To everyone who appears in your mind say: “I offer you joy and peace, for that
-is what I want as well.”
+3. To everyone who appears in your mind say: “I offer you joy and peace, for
+   that is what I want as well.”
 
-4. Say these words slowly and imagine giving each person joy and peace in the form
-of a light that contains both.
+4. Say these words slowly and imagine giving each person joy and peace in the
+   form of a light that contains both.
 
 5. Imagine each person receiving your gift and smiling back at you in gratitude.
 

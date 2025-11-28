@@ -17,17 +17,17 @@ we need certain things in order to function.
 The Course asks us to place all our needs in the hands of the Holy Spirit. He
 will take care of them without giving them undue importance:
 
-> Only the Holy Spirit knows what you need, for He will give you all things
-> that do not block the way to light. And what else could you need? In time,
-> He gives you all the things that you need have, and will renew them as long as
-> you have need of them. He will take nothing from you as long as you have any
-> need of it. And yet He knows that everything you need is temporary, and needs
-> but last until you step aside from all your needs and learn that all of them
-> have been fulfilled. Therefore, He has no investment in the things that He
-> supplies, except to make certain that you will not use them on behalf of
-> lingering in time. He knows that you are not at home there, and He wills no
-> delay to wait upon your joyous homecoming.
->
+> Only the Holy Spirit knows what you need, for He will give you all things that
+> do not block the way to light. And what else could you need? In time, He gives
+> you all the things that you need have, and will renew them as long as you have
+> need of them. He will take nothing from you as long as you have any need of
+> it. And yet He knows that everything you need is temporary, and needs but last
+> until you step aside from all your needs and learn that all of them have been
+> fulfilled. Therefore, He has no investment in the things that He supplies,
+> except to make certain that you will not use them on behalf of lingering in
+> time. He knows that you are not at home there, and He wills no delay to wait
+> upon your joyous homecoming.
+> 
 > Leave, then, your needs to Him. He will supply them with no emphasis at all
 > upon them. ([CE T-13.VIII.3-4](https://acimce.app/:T-13.VIII.3-4))
 
@@ -108,7 +108,7 @@ thought:
 
 > Whenever you are tempted to undertake a foolish journey that would lead away
 > from light, remember what you really want, and say:
->
+> 
 > The Holy Spirit leads me unto Christ, and where else would I go? What need
 > have I but to awake in Him? ([CE T-13.VIII.5:1-3](https://acimce.app/:T-13.VIII.5:1-3))
 
@@ -145,20 +145,20 @@ Spend a few minutes in the morning to accept the peace that Jesus gives you so
 you may extend it to the world:
 
 1. Close your eyes and resolve to center your mind on a single goal, without
-distractions.
+   distractions.
 
 2. Confront any distracting thoughts with the phrase: “Now I seek only the Peace
-God gives me. And this thought will not distract me from that.”
+   God gives me. And this thought will not distract me from that.”
 
 3. Imagine that God—through Jesus, if that image helps you—gives you a beautiful
-light that represents the Peace you seek.
+   light that represents the Peace you seek.
 
-4. Bring to mind events in your life in which the world offered you something and
-then took it away. Extend the light God is giving you to fill the emptiness left
-behind.
+4. Bring to mind events in your life in which the world offered you something
+   and then took it away. Extend the light God is giving you to fill the
+   emptiness left behind.
 
-5. Notice how it feels to fill that emptiness and consider whether it was not truly
-God’s Peace that you wanted.
+5. Notice how it feels to fill that emptiness and consider whether it was not
+   truly God’s Peace that you wanted.
 
 Stay a few minutes in silence, feeling that peace and your union with God.
 

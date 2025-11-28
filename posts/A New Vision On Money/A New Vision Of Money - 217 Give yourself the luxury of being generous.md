@@ -73,7 +73,7 @@ only gain internally—what we give returns to us at the level of form as well:
 
 > Having had and given, then the world asserts that you have lost what you
 > possessed. ⁸The truth maintains that giving will increase what you possess.
->
+> 
 > How is this possible? ²For it is sure that if you give a finite thing away,
 > your body’s eyes will not perceive it yours. Yet we have learned that things
 > but represent the thoughts which make them. And we do not lack for proof that
@@ -81,13 +81,13 @@ only gain internally—what we give returns to us at the level of form as well:
 > in which the thought seems to appear is changed in giving. Yet it must return
 > to him who gives. Nor can the form it takes be less acceptable. It must be
 > more.
->
+> 
 > Ideas must first belong to you before you give them. If you are to save the
 > world, you first accept salvation for yourself. But you will not believe that
 > this is done until you see the miracles it brings to everyone you look upon.
 > Herein is the idea of giving clarified and given meaning. Now you can perceive
 > that by your giving is your store increased.
->
+> 
 > Protect all things you value by the act of giving them away, and you are sure
 > that you will never lose them. What you thought you did not have is thereby
 > proven yours. Yet value not its form. For this will change and grow
@@ -115,20 +115,20 @@ your own benefit?
 This morning we will place the day in God’s hands. Let Him decide what we need
 to give in order to keep, as well as what we must let go.
 
-1. Close your eyes and quiet your mind using any of the techniques you have learned
-in this workshop.
+1. Close your eyes and quiet your mind using any of the techniques you have
+   learned in this workshop.
 
-2. Now imagine the day ahead of you. Think of yourself as someone who can afford to
-be generous. Think of each interaction you may have today.
+2. Now imagine the day ahead of you. Think of yourself as someone who can afford
+   to be generous. Think of each interaction you may have today.
 
-3. For each person who comes to mind, imagine that God has a gift and that you are
-giving it to them. Also imagine their reaction of joy or relief.
+3. For each person who comes to mind, imagine that God has a gift and that you
+   are giving it to them. Also imagine their reaction of joy or relief.
 
 4. Allow images of things to arise—things you are attached to and that keep you
-from moving toward peace.
+   from moving toward peace.
 
 5. Imagine giving each of those things to God as you say: “I will place nothing
-between us.”
+   between us.”
 
 6. Devote the last few minutes to simply being in silence and in peace.
 
@@ -144,5 +144,6 @@ Wait in silence for a moment to hear His response.
 Also watch your mind to identify thoughts of scarcity. If you find yourself
 thinking selfishly, say inwardly:
 
-> "I only want for myself what I can truly keep. Today I will be generous with my
+> "I only want for myself what I can truly keep. Today I will be generous with
+> my
 forgiveness."

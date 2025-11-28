@@ -187,24 +187,24 @@ think you need and ask in every circumstance what is truly best for you.
 Today we will try to connect with the secret of true prayer. We will simply hand
 over our goals and solutions and accept what is already there:
 
-1. Close your eyes and quiet your mind using any of the techniques you have learned
-in this workshop.
+1. Close your eyes and quiet your mind using any of the techniques you have
+   learned in this workshop.
 
 2. Now think of a goal you want to achieve and the means you believe you need to
-achieve it.
+   achieve it.
 
-3. Hand each goal and each means to God saying: “I believe this is what I want to
-have, but I don’t know if it is what benefits me most. You tell me what You want
-for me.”
+3. Hand each goal and each means to God saying: “I believe this is what I want
+   to have, but I don’t know if it is what benefits me most. You tell me what
+   You want for me.”
 
-4. Feel how God lifts a weight from your shoulders and returns His joy and peace to
-you.
+4. Feel how God lifts a weight from your shoulders and returns His joy and peace
+   to you.
 
 5. Notice that this joy and this peace were what you truly wanted in the first
-place.
+   place.
 
-6. Spend the remaining time in an attitude of trust that God will send a tangible
-answer to what you thought you needed or wanted.
+6. Spend the remaining time in an attitude of trust that God will send a
+   tangible answer to what you thought you needed or wanted.
 
 
 ### During the day

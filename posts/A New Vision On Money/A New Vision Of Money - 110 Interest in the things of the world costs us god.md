@@ -23,13 +23,13 @@ chase after other things we see as “more valuable”:
 > It is not easy to realize that prayers for things, for status, for human love,
 > for external "gifts" of any kind, are always made to set up jailers and to
 > hide from guilt. These things are used for goals that substitute for God, and
-> therefore distort the purpose of prayer. The desire for them is the prayer. One
-> need not ask explicitly. The goal of God is lost in the quest for lesser goals
-> of any kind, and prayer becomes requests for enemies. The power of prayer can
-> be quite clearly recognized even in this. No one who wants an enemy will fail
-> to find one. But just as surely will he lose the only true goal that is given
-> him. Think of the cost, and understand it well. All other goals are at the
-> cost of God. ([S-1.III.6](https://illuminatemind.net/wp-content/uploads/2020/11/Song-of-Prayer.pdf))
+> therefore distort the purpose of prayer. The desire for them is the prayer.
+> One need not ask explicitly. The goal of God is lost in the quest for lesser
+> goals of any kind, and prayer becomes requests for enemies. The power of
+> prayer can be quite clearly recognized even in this. No one who wants an enemy
+> will fail to find one. But just as surely will he lose the only true goal that
+> is given him. Think of the cost, and understand it well. All other goals are
+> at the cost of God. ([S-1.III.6](https://illuminatemind.net/wp-content/uploads/2020/11/Song-of-Prayer.pdf))
 
 Whenever you find yourself desiring external things, you can be certain that you
 have sacrificed God in your mind. We rarely think in these terms. The idea of
@@ -160,24 +160,24 @@ For this, we will use the meditation technique the Workbook teaches, in which we
 center the mind on the Name of God.
 
 1. Close your eyes and resolve to spend these minutes with God without letting
-thoughts interrupt you.
+   thoughts interrupt you.
 
 2. Slowly repeat the phrase: “Father, the only thought I have.”
 
-3. Watch your mind, and if any thought distracts you, confront it by saying: “No,
-this is not the thought I want to have. I want to be with my Father.”
+3. Watch your mind, and if any thought distracts you, confront it by saying:
+   “No, this is not the thought I want to have. I want to be with my Father.”
 
 4. Slowly repeat the phrase: “Father, the only word I have,” and notice how your
-mind calms as you center it on a single word.
+   mind calms as you center it on a single word.
 
-5. If distracting thoughts come, confront them now with: “Father, the only word I
-have.”
+5. If distracting thoughts come, confront them now with: “Father, the only word
+   I have.”
 
 6. Now repeat, slowly and letting the meaning of the phrase come alive in your
-mind: “Father, the only goal I desire.”
+   mind: “Father, the only goal I desire.”
 
-7. Spend the rest of the time in silence, keeping your mind focused on God as the
-only thing you want.
+7. Spend the rest of the time in silence, keeping your mind focused on God as
+   the only thing you want.
 
 
 ## During the day

@@ -9,6 +9,9 @@ tags:
 ---
 ![](https://siran.github.io/assets/a_new_vision_on_money/dispelling-illusions.png)
 
-In the coming posts, we will give an honest look to the topic of needs and how we attempt to satisfy them.
+In the coming posts, we will give an honest look to the topic of needs and how
+we attempt to satisfy them.
 
-At the same time we give it an honest look, we will also be applying correctives to undo our current vision of money. This way our mind will be more open and willing to accept an entirely new vision.
+At the same time we give it an honest look, we will also be applying correctives
+to undo our current vision of money. This way our mind will be more open and
+willing to accept an entirely new vision.

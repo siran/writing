@@ -21,8 +21,8 @@ The idea that you must be a psychotherapist—or that you already are one—may
 cause resistance, but its logic is very clear. The only thing that needs healing
 is the mind; therefore, psychotherapy is the only form of therapy that exists:
 
-> Psychotherapy is the only form of therapy there is. Since only the mind can
-> be sick, only the mind can be healed. Only the mind is in need of healing. ([P-in.1:1-3](https://acim.org/acim/en/s/901#1:1-3))
+> Psychotherapy is the only form of therapy there is. Since only the mind can be
+> sick, only the mind can be healed. Only the mind is in need of healing. ([P-in.1:1-3](https://acim.org/acim/en/s/901#1:1-3))
 
 If your function in this world is to heal, if the mind is what must be healed,
 and if the method for doing so is psychotherapy, then it follows that your true
@@ -46,9 +46,9 @@ and move a little further along their path:
 > come to pass for every “patient” on the face of this earth, for who except a
 > patient could possibly have come here? The therapist is only a somewhat more
 > specialized teacher of God. He learns through teaching, and the more advanced
-> he is the more he teaches and the more he learns. But whatever stage he is
-> in, there are patients who need him just that way. They cannot take more than
-> he can give for now. Yet both will find sanity at last. ([P-2.I.4:1-7](https://acim.org/acim/en/s/905#4:1-7))
+> he is the more he teaches and the more he learns. But whatever stage he is in,
+> there are patients who need him just that way. They cannot take more than he
+> can give for now. Yet both will find sanity at last. ([P-2.I.4:1-7](https://acim.org/acim/en/s/905#4:1-7))
 
 It may also seem strange to think that every interaction, no matter how small,
 is a psychotherapy session. But the Course emphasizes again and again that there
@@ -61,11 +61,11 @@ encounters?
 Just as the Holy Spirit selects who comes into your life, we must also let Him
 tell us what that person needs from us—how they are to be helped:
 
-> Everyone who is sent to you is a patient of yours. This does not mean that
-> you select him, nor that you choose the kind of treatment that is suitable.
-> But it does mean that no one comes to you by mistake. There are no errors in
-> God’s plan. It would be an error, however, to assume that you know what to
-> offer everyone who comes. This is not up to you to decide. ([P-3.I.1:1-6](https://acim.org/acim/en/s/913#1:1-6))
+> Everyone who is sent to you is a patient of yours. This does not mean that you
+> select him, nor that you choose the kind of treatment that is suitable. But it
+> does mean that no one comes to you by mistake. There are no errors in God’s
+> plan. It would be an error, however, to assume that you know what to offer
+> everyone who comes. This is not up to you to decide. ([P-3.I.1:1-6](https://acim.org/acim/en/s/913#1:1-6))
 
 Almost everyone who works in a profession expects to be compensated for it. If
 psychotherapy is our divine profession, so to speak, can we expect some form of
@@ -80,8 +80,7 @@ supplement, and the answer is something few would anticipate:
 > evil. ⁶It is nothing. ⁷But no one here can live with no illusions, for he must
 > yet strive to have the last illusion be accepted by everyone everywhere. ⁸He
 > has a mighty part in this one purpose, for which he came. ⁹He stays here but
-> for this. ¹⁰And while he stays he will be given what he needs to stay.
-> ([P-3.III.1:1-10](https://acim.org/acim/en/s/915#1:1-10))
+> for this. ¹⁰And while he stays he will be given what he needs to stay. ([P-3.III.1:1-10](https://acim.org/acim/en/s/915#1:1-10))
 
 We have finally reached the conclusion we have been building. As you read above,
 money is neither good nor bad—money is nothing. Every student of A Course in
@@ -112,7 +111,7 @@ differently:
 > plan for your salvation that does not work. Once you accept His plan as the
 > one function that you would fulfill, there will be nothing else the Holy
 > Spirit will not arrange for you without your effort.
->
+> 
 > He will go before you, making straight your path, and leaving in your way no
 > stones to trip on and no obstacles to bar your way. Nothing you need will be
 > denied you. Not one seeming difficulty but will melt away before you reach it.
@@ -133,24 +132,24 @@ ourselves to our only function in this world.
 1. Close your eyes and slowly repeat: “My only function is the one God gave me.”
 
 2. Now allow thoughts to arise. Observe each one and confront it with: “This
-thought reflects a goal that is keeping me from fulfilling the only function God
-gave me.”
+   thought reflects a goal that is keeping me from fulfilling the only function
+   God gave me.”
 
-3. When your mind becomes quiet, say: “On this blank slate I will let God write my
-true function.” The blank slate is your calmed mind.
+3. When your mind becomes quiet, say: “On this blank slate I will let God write
+   my true function.” The blank slate is your calmed mind.
 
-4. Repeat this phrase slowly, leaving long periods of silence to receive whatever
-God wants to communicate.
+4. Repeat this phrase slowly, leaving long periods of silence to receive
+   whatever God wants to communicate.
 
 5. Allow thoughts to come as long as they feel related to your true function.
 
-6. Now focus on how deeply you want to fulfill that function, and how important it
-is for you and for the world. You may think of the relief it would bring to you
-and to the people in your life.
+6. Now focus on how deeply you want to fulfill that function, and how important
+   it is for you and for the world. You may think of the relief it would bring
+   to you and to the people in your life.
 
 7. If thoughts arise that are not compatible with your function, confront them
-again with: “This thought reflects a goal that is keeping me from fulfilling the
-only function God gave me.”
+   again with: “This thought reflects a goal that is keeping me from fulfilling
+   the only function God gave me.”
 
 
 ### During the day

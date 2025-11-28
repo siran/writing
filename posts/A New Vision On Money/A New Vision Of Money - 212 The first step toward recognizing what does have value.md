@@ -42,15 +42,15 @@ the first stage in the development of trust, as explained by the Manual for
 Teachers of the Course, consists of a period in which “it seems as if things are
 being taken away from us”:
 
-> First, they must go through what might be called a “period of undoing.”
-> This need not be painful, but it usually is so experienced. It seems as if
-> things are being taken away, and it is rarely understood initially that their
-> lack of value is merely being recognized. How can lack of value be perceived
-> unless the perceiver is in a position where he must see things in a different
-> light? He is not yet at a point at which he can make the shift entirely
-> internally. And so the plan will sometimes call for changes in what seem to
-> be external circumstances. These changes are always helpful. When the
-> teacher of God has learned that much, he goes on to the second stage. ([CE M-4.I.3](https://acimce.app/:M-4.I.3))
+> First, they must go through what might be called a “period of undoing.” This
+> need not be painful, but it usually is so experienced. It seems as if things
+> are being taken away, and it is rarely understood initially that their lack of
+> value is merely being recognized. How can lack of value be perceived unless
+> the perceiver is in a position where he must see things in a different light?
+> He is not yet at a point at which he can make the shift entirely internally.
+> And so the plan will sometimes call for changes in what seem to be external
+> circumstances. These changes are always helpful. When the teacher of God has
+> learned that much, he goes on to the second stage. ([CE M-4.I.3](https://acimce.app/:M-4.I.3))
 
 
 ![](https://siran.github.io/assets/a_new_vision_on_money/sucking-money-away.png)
@@ -92,22 +92,23 @@ that cause me pain” in your awareness. This is the plan:
 
 1. At first, we only say this idea superficially.
 
-2. “After being repeated many times.” In this second phase we repeat the idea again
-and again. It may seem completely useless to do this, but it has a purpose we
-will soon see.
+2. “After being repeated many times.” In this second phase we repeat the idea
+   again and again. It may seem completely useless to do this, but it has a
+   purpose we will soon see.
 
-3. “It is accepted as partly true, but with many reservations.” Here is the reason
-we repeat the idea so many times. If we answer each event of pain or loss with
-this idea, we will begin to notice that, at least in some cases, it is true.
+3. “It is accepted as partly true, but with many reservations.” Here is the
+   reason we repeat the idea so many times. If we answer each event of pain or
+   loss with this idea, we will begin to notice that, at least in some cases, it
+   is true.
 
 4. “Later it is considered more and more seriously.” Because the idea is kept in
-mind, it can be considered with more seriousness in each situation that arises.
-By considering it seriously, the witnesses to its truth come to our aid and show
-us its validity.
+   mind, it can be considered with more seriousness in each situation that
+   arises. By considering it seriously, the witnesses to its truth come to our
+   aid and show us its validity.
 
 5. “And finally it is accepted as the truth.” This is the final goal. Through
-practice, the idea can be generalized to every situation because it is the
-truth.
+   practice, the idea can be generalized to every situation because it is the
+   truth.
 
 
 ## Practice
@@ -118,24 +119,24 @@ We will devote 15 minutes this morning to focusing the mind on God as your
 strength.
 
 1. Close your eyes and resolve to spend these minutes with God without letting
-thoughts interrupt you.
+   thoughts interrupt you.
 
 2. Slowly repeat the phrase: “Father, the strength in which I think.”
 
-3. Watch your mind, and if any thought distracts you, confront it by saying: “No,
-this is not the thought I want. I want to be with my Father.”
+3. Watch your mind, and if any thought distracts you, confront it by saying:
+   “No, this is not the thought I want. I want to be with my Father.”
 
-4. Slowly repeat the phrase: “Father, the strength in which I forgive,” and notice
-how your mind calms as you center it on a single word.
+4. Slowly repeat the phrase: “Father, the strength in which I forgive,” and
+   notice how your mind calms as you center it on a single word.
 
-5. If distracting thoughts come, now confront them with: “Father, the strength in
-which I see.”
+5. If distracting thoughts come, now confront them with: “Father, the strength
+   in which I see.”
 
-6. Now repeat, slowly and letting the meaning come alive in your mind: “Father, the
-strength in which I trust.”
+6. Now repeat, slowly and letting the meaning come alive in your mind: “Father,
+   the strength in which I trust.”
 
-7. Spend the rest of the time in silence, keeping your mind centered on God as the
-only thing you want.
+7. Spend the rest of the time in silence, keeping your mind centered on God as
+   the only thing you want.
 
 
 ### During the day
