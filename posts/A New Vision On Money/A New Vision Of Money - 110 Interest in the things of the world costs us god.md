@@ -48,7 +48,7 @@ meditate. This is what the Manual for Teachers is referring to when it says that
 it seems we are being asked to sacrifice our best interests for the sake of
 truth.
 
-![Nun doing beauty treatment.](assets/nun-beauty.png)
+![Nun doing beauty treatment.](http://assets.preferredframe.com/a_new_vision_on_money/nun-beauty.png)
 
 The way we deal with sacrifice varies greatly. There are those who want to live
 a hedonistic life and resist sacrifice by allowing themselves as much pleasure

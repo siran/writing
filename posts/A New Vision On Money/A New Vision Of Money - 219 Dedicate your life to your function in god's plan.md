@@ -34,7 +34,7 @@ matter how trivial it seems—is a psychotherapy session, where you have the
 opportunity to offer healing to another’s mind so that it may also be received
 by your own.
 
-![](assets/joined-hands.png)
+![](http://assets.preferredframe.com/a_new_vision_on_money/joined-hands.png)
 
 Whatever form psychotherapy takes, your function is to bless your brothers and
 help them regain peace by recognizing that they are not victims of the world.

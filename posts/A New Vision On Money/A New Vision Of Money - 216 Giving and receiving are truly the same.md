@@ -38,7 +38,7 @@ them:
 > Receive them now by opening the storehouse of your mind, where they are laid,
 > and giving them away. ([CE W-159.2:5](https://acimce.app/:W-159.2:5))
 
-![](assets/giving-is-receiving.png)
+![](http://assets.preferredframe.com/a_new_vision_on_money/giving-is-receiving.png)
 
 Having received the vision of Christ within, we now have to give that vision in
 the form of miracles. As we give the world all the miracles we find within, the

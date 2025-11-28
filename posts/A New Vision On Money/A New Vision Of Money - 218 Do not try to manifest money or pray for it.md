@@ -22,7 +22,7 @@ múltiples formas, se compone de estos dos pasos:
 
 * Luego “sintonizas” tu energía de alguna manera para atraer eso que deseas.
 
-![](assets/ohm-bracelet.png)
+![](http://assets.preferredframe.com/a_new_vision_on_money/ohm-bracelet.png)
 
 In case it was not clear at the end of the previous lesson, the Course is not
 teaching us to manifest money or to pray for it. You may have heard—or even

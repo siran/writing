@@ -38,7 +38,7 @@ because she didn’t like the purchase. Jesus replied to her:
 > warm, inexpensive, and capable of taking rough wear. I told you you could get
 > a Borgana, but I let you get a better one because the furrier needed you. ([CE Cameo-6.4](https://acimce.app/:Cameo-6.4))
 
-![](assets/coats-hanging.png)
+![](http://assets.preferredframe.com/a_new_vision_on_money/coats-hanging.png)
 
 Even though Helen was not happy with the coat she had chosen, Jesus reminded her
 that she herself had set the criteria. The most interesting part of His response
