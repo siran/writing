@@ -1,5 +1,5 @@
 ---
-title: A New Vision Of Money - 19: Dedicate your life to your function in God’s plan
+title: A New Vision Of Money - 19: Dedicate your life to your function in God's plan
 date: 2025-11-27 13:21:00
 tags:
   - money
