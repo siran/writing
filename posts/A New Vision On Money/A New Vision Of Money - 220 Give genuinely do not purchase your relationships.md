@@ -248,15 +248,22 @@ purpose or a message for you?
 > Himself. Whoever comes has been sent. ([P-3.III.6:2-5](https://acim.org/acim/en/s/915#6:2-5))
 
 
-### 8. Algunos son enviados con la intención de pagarte, sin costo para ellos
+### 8. Some are sent with the intention of paying you, at no cost to them
 
-El anexo de psicoterapia categoriza a las personas que llegan a tu vida de dos
-maneras: los que son enviados con la intención de pagarte y los que no.
+The psychotherapy supplement categorizes the people who come into your life in
+two ways: those who are sent with the intention of paying you, and those who are
+not.
 
 > There will be those of whom the Holy Spirit asks some payment for His purpose.
 > There will be those from whom He does not ask. It should not be the therapist
 > who makes these decisions. There is a difference between payment and cost. To
 > give money where God’s plan allots it has no cost. ([P-3.III.2:3-7](https://acim.org/acim/en/s/915#2:3-7))
+
+That it “does not constitute a cost” means that the one who pays is not
+sacrificing himself by paying you. They are blessing themselves in the act, just
+as you are.
+
+This point is confirmed a few paragraphs later:
 
 > Perhaps he was sent to give his brother the money he needed. Both will be
 > blessed thereby. ([P-3.III.6:6-7](https://acim.org/acim/en/s/915#6:6-7))
@@ -264,12 +271,13 @@ maneras: los que son enviados con la intención de pagarte y los que no.
 
 ### 9. Algunos son enviados con la intención de no pagarte, sin costo para ti
 
-Dios también te envía personas que no están en la capacidad de pagarte. Esta
-incapacidad puede ser material o emocional. Sin embargo, dado que fueron
-enviados por Dios, cada uno de ellos llega a tu vida con una bendición para ti.
-De hecho, Jesús explica que parte de la bendición para ti proviene del hecho de
-que no te pueden pagar, ya que esto te permite aprender la lección de cuan poco
-valioso es el dinero en realidad.
+God also sends you people who are not able to pay you. This inability may be
+material or emotional. Yet, since they were sent by God, each one of them enters
+your life with a blessing for you.
+
+In fact, Jesus explains that part of the blessing you receive comes precisely
+from the fact that they cannot pay you, because this allows you to learn the
+lesson of how little value money truly has.
 
 > Perhaps he was sent to teach the therapist how much he needs forgiveness, and
 > how valueless is money in comparison. Again will both be blessed. ([P-3.III.6:8-9](https://acim.org/acim/en/s/915#6:8-9))
