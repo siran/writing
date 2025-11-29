@@ -948,24 +948,29 @@ def format_dir_index(dir_abs: Path, items: list[Item]) -> str:
     items_sorted = sorted(items, key=lambda e: (not e.is_dir, e.name.lower()))
     for it in items_sorted:
         if it.is_dir:
-            href = (it.name + "/") if rel_dir.parts else (rel(it.path).as_posix() + "/")
-            lines.append(f"- 📂 [{href}]({href})")
+            href_rel = rel(it.path).as_posix() + "/"
+            href = quote(href_rel, safe="/:@-._~")
+            lines.append(f"- 📂 [{href_rel}]({href})")
         else:
             p_rel = rel(it.path)
             mirrored = OUT / p_rel
+
             if mirrored.exists():
-                url_local = "/" + mirrored.relative_to(OUT).as_posix()
-                link_str = f"- 📄 [{it.name}]({url_local})"
-                # lines.append()
+                rel_url = mirrored.relative_to(OUT).as_posix()
+                url_local = "/" + quote(rel_url, safe="/:@-._~")
                 ext = it.path.suffix.lower()
+
                 if ext in MD_EXTS:
+                    gh_path = quote(p_rel.as_posix(), safe="/:@-._~")
                     gh_url = (
                         f"https://github.com/{OWNER}/{REPO}/blob/"
-                        f"{BRANCH}/{p_rel.as_posix()}"
+                        f"{BRANCH}/{gh_path}"
                     )
-                    link_gh = f"  ([↗️ GitHub]({gh_url}))"
-                    link_str = link_str + link_gh
-                lines.append(link_str)
+                    lines.append(
+                        f"- 📄 [{it.name}]({url_local}) ([GH]({gh_url}))"
+                    )
+                else:
+                    lines.append(f"- 📄 [{it.name}]({url_local})")
     lines.append("")
     return title, "\n".join(lines)
 
