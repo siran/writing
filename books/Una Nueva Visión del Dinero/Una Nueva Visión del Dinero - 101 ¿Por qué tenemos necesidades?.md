@@ -20,10 +20,10 @@ algo posible:
 > encuentras es un mundo de escasez porque estás necesitado. (T-13.VII.10)
 
 
-¿Cómo llegamos a estar necesitados? Toda necesidad involucra, por definición una
-carencia. La carencia se puede entender como un vacío de algo. Ese vacío tiene
-que ser llenado con aquello que le falta. Así que necesitar “algo” es lo mismo
-que querer llenar el vacío de esa misma cosa.
+¿Cómo llegamos a estar necesitados? Toda necesidad involucra, por definición,
+una carencia. La carencia se puede entender como un vacío de algo. Ese vacío
+tiene que ser llenado con aquello que le falta. Así que necesitar “algo” es lo
+mismo que querer llenar el vacío de esa misma cosa.
 
 Al separarnos de Dios y venir a este mundo descubrimos lo que significaba estar
 sin Dios. La separación conllevó que imagináramos una carencia: la falta de Dios
@@ -33,8 +33,8 @@ lo más interno de nuestro ser dio paso a las necesidades, o nuestra motivación
 para el cambio.
 
 Tener necesidades involucra un reconocimiento de que puedes estar en un estado
-mejor al que te encuentras ahora. Jesús, en el dictado original del curso, que
-las necesidades son lo que motiva nuestro comportamiento:
+mejor al que te encuentras ahora. Jesús, en el dictado original del curso, dice
+que las necesidades son lo que motiva nuestro comportamiento:
 
 
 > Tras la separación, las necesidades se convirtieron en la fuente más poderosa
@@ -43,9 +43,9 @@ las necesidades son lo que motiva nuestro comportamiento:
 > divino. (CE T-1.48.21)
 
 
-En el cielo, donde no hay carencias, el comportamiento es innecesario puesto que
+En el Cielo, donde no hay carencias, el comportamiento es innecesario puesto que
 no existe una motivación para el cambio. En este mundo, sin embargo, todo
-comportamiento que exhibamos o vemos en los demás está motivado por ciertas
+comportamiento que exhibamos o veamos en los demás está motivado por ciertas
 necesidades específicas. Que el comportamiento no sea un atributo divino no
 quiere decir que el comportamiento sea algo malo. Por el contrario, el
 comportamiento es el mecanismo que tenemos a nuestra disposición para actuar
@@ -60,10 +60,10 @@ nuestro deseo de estar mejor:
 
 
 Cualquier comportamiento tiene que expresarse a través del cuerpo. Jesús nos
-dice que el cuerpo es el mecanismo del comportamiento y por lo tanto para
-satisfacer necesidades. De acuerdo a las necesidades que alguien quiere
+dice que el cuerpo es el mecanismo del comportamiento y, por lo tanto, sirve
+para satisfacer necesidades. De acuerdo a las necesidades que alguien quiere
 satisfacer así será su comportamiento. Es por eso que “por sus obras los
-conocereis”.
+conocereís”.
 
 No obstante, el cuerpo surge en un primer lugar como producto del deseo de ser
 nuestro propio creador. Este deseo requirió de un símbolo que nos mantuviera
@@ -111,14 +111,15 @@ esta pirámide está completamente errada:
 En otras palabras, toda necesidad es una distorsión de nuestra única verdadera
 carencia: Dios. Como resultado de la separación, internamente nos desintegramos
 como si repitiéramos el proceso de separarnos de Dios una y otra vez dentro de
-nuestro propio Ser. Por eso pareciera que tenemos voces por dentro que nos piden
+nuestro propio Ser. Por eso pareciera que tenemos voces internas que nos piden
 cosas contradictorias.
 
 Para poder satisfacer esas necesidades que las voces internas exigen, tuvimos
 que darles prioridades a unas y dejar otras a un lado. Una voz dice que quiere
 comer ya, pero otra dice que quieres seguir viendo el teléfono acostado en el
 sofá. Otra voz te habla de que quisieras salir a comer, pero también hay una
-parte te recuerda que no puedes malgastar el dinero y mejor te quedas en casa.
+parte que te recuerda que no puedes malgastar el dinero y que mejor te quedas en
+casa.
 
 La idea de una jerarquía de necesidades parece lo más cuerdo del mundo. Sin esa
 jerarquía nos volveríamos locos tratando de satisfacer todas las voces internas
@@ -140,10 +141,10 @@ específico de la idea alocada de que tenemos una jerarquía de necesidades.
 
 ### Durante el día
 
-Si queremos adquirir una nueva visión del dinero y la necesidades tenemos que
-abandonar la manera vieja de ver. Esto se hacer a través de reconocer que
-tenemos una manera de ver y que es una creencia aprendida, no una manera natural
-de ver las cosas.
+Si queremos adquirir una nueva visión del dinero y las necesidades tenemos que
+abandonar la manera vieja de ver. Esto se hace a través de reconocer que tenemos
+una manera de ver y que es una creencia aprendida, no una manera natural de ver
+las cosas.
 
 Durante el día de hoy vamos a utilizar la técnica de respuesta a la tentación.
 
@@ -153,8 +154,8 @@ Tiene dos partes:
 **1. A lo largo del día observa tu mente e identifica los pensamientos de
 necesidad**
 
-A cada pensamiento de carencia o necesidad responde lentamente, pero sin
-demoras, con la siguiente frase:
+A cada pensamiento de carencia o necesidad responde lentamente, pero sin demora,
+con la siguiente frase:
 
 
 > "Ahora creo que necesito ________, pero mi Ser realmente me está pidiendo a
@@ -181,8 +182,7 @@ entrenar tu mente a reconocer que el cuerpo no es el que pide las cosas, sino un
 deseo más profundo de regresar a tu estado natural.
 
 
-**2. A lo largo del día observa tu mente e identifica los pensamientos de
-necesidad**
+**2. Recordatorios durante el día **
 
 Usa el temporizador de tu teléfono para poner una alarma cada 20 minutos. Cada
 vez que suene la alarma, recuérdate a ti mismo esta verdad:
