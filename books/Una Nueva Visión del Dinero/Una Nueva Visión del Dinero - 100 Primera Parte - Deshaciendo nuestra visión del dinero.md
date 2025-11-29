@@ -8,7 +8,6 @@ tags:
 ---
 
 Los próximos días los usaremos para mirar con honestidad el tema de las
-necesidades y sobre cómo intentamos satisfacerlas. A medida que vayamos mirando
-con honestidad, aplicaremos correctivos para deshacer la visión actual que
-tenemos del dinero, de manera que la mente esté dispuesta a aceptar una nueva
-visión.
+necesidades y cómo intentamos satisfacerlas. A medida que vayamos mirando con
+honestidad, aplicaremos correctivos para deshacer la visión actual que tenemos
+del dinero, de manera que la mente esté dispuesta a aceptar una nueva visión.
