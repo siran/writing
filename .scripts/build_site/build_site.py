@@ -321,7 +321,6 @@ def render_markdown_file(src: Path, dst_html: Path, title: str):
     head = [
         '<meta charset="utf-8">',
         f'<link rel="canonical" href="{page_url}">',
-        '<meta name="robots" content="noindex,follow">',
         f'<meta name="description" content="Rendered Markdown view for {title}">',
     ]
     head_extra = "\n".join(head) + "\n"
