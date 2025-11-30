@@ -50,6 +50,46 @@
 </style>
 <script>
     (function () {
+        // --- Breadcrumb injector for *.md.html pages ---
+        try {
+            var path = window.location && window.location.pathname || "";
+
+            // Only for mirrored markdown pages
+            if (/\.md\.html$/i.test(path)) {
+
+                function buildBreadcrumbMarkdown(pathname) {
+                    var p = pathname.replace(/^\/+|\/+$/g, "");
+                    if (!p) return "[🏠 Home](/)";
+
+                    var segments = p.split("/");
+                    var crumbs = ["[🏠 Home](/)"];
+                    var accum = [];
+
+                    // all except last (directories)
+                    for (var i = 0; i < segments.length - 1; i++) {
+                        accum.push(segments[i]);
+                        var label = decodeURIComponent(segments[i]);
+                        var url = "/" + accum.join("/") + "/";
+                        crumbs.push("[" + label + "](" + url + ")");
+                    }
+
+                    // last segment is file
+                    var last = segments[segments.length - 1];
+                    var lastLabel = decodeURIComponent(last.replace(/\.html$/i, ""));
+                    crumbs.push(lastLabel);
+
+                    return crumbs.join(" / ");
+                }
+
+                // Insert breadcrumb markdown above body
+                var bcMD = buildBreadcrumbMarkdown(path);
+                document.body.innerHTML = bcMD + "\n\n" + document.body.innerHTML;
+            }
+        } catch (e) { }
+    })();
+</script>
+<script>
+    (function () {
         try {
             var html = document.body.innerHTML;
 

@@ -271,40 +271,30 @@ def _current_origin() -> str:
 
 # ---------- templating ----------
 def write_html(out_html: Path, body_html: str, head_extra: str = "", title: str = ""):
-    header = load_text(SRC / "header.html")
-    footer = load_text(SRC / "footer.html")
+    # For mirrored Markdown views (*.md.html) we want a bare page: just
+    # the body content plus coda (styles + JS).
+    is_md_html = str(out_html).endswith(".md.html")
+
+    header = load_text(SRC / "header.html") if not is_md_html else ""
+    footer = load_text(SRC / "footer.html") if not is_md_html else ""
     coda   = load_text(SRC / "coda.html")
 
     doc = "".join(s for s in (header, body_html, footer) if s)
 
-    # --- ensure <head> and a deterministic <title> for SEO ---
-    page_title = (title or "").strip() or PREFERRED_JOURNAL
-    if page_title == PREFERRED_JOURNAL:
-        full_title = PREFERRED_JOURNAL
-    else:
-        full_title = f"{page_title} — {PREFERRED_JOURNAL}"
-    title_tag = f"<title>{full_title}</title>"
-
-    # If there's no <head>, wrap the document in a minimal shell
-    if not re.search(r"<head[^>]*>", doc, flags=re.IGNORECASE):
-        doc = "<!DOCTYPE html><html><head></head><body>" + doc + "</body></html>"
-
-    # Replace existing <title> or insert a new one at the start of <head>
-    m_title = re.search(r"<title[^>]*>.*?</title>", doc, flags=re.IGNORECASE | re.DOTALL)
-    if m_title:
-        doc = doc[:m_title.start()] + title_tag + doc[m_title.end():]
-    else:
-        m_head_open = re.search(r"<head[^>]*>", doc, flags=re.IGNORECASE)
-        insert_pos = m_head_open.end() if m_head_open else 0
-        doc = doc[:insert_pos] + "\n" + title_tag + "\n" + doc[insert_pos:]
-
-    # Inject extra head tags just before </head>
+    # NOTE: head_extra injection is currently disabled. If you later want
+    # per-page <title>/meta again, you can re-enable this block and it will
+    # work for *all* non-.md.html pages.
+    #
     if head_extra:
-        m_head_close = re.search(r"</head\s*>", doc, flags=re.IGNORECASE)
-        if m_head_close:
-            doc = doc[:m_head_close.start()] + head_extra + doc[m_head_close.start():]
+        charset = '<!DOCTYPE html><meta charset="UTF-8">'
+        title_tag = f"<title>{title} - {PREFERRED_JOURNAL}</title>"
+        if charset not in head_extra:
+            head_extra = charset + "\n" + title_tag + "\n" + head_extra
+        m = re.search(r"</head\s*>", doc, re.IGNORECASE)
+        if m:
+            doc = doc[:m.start()] + head_extra + doc[m.start():]
         else:
-            doc = head_extra + doc
+         doc = head_extra + doc
 
     ny = ZoneInfo("America/New_York")
     now = datetime.now(ny)
@@ -969,7 +959,7 @@ def format_dir_index(dir_abs: Path, items: list[Item]) -> str:
                     f"{BRANCH}/{gh_path}"
                 )
 
-                lines.append(f"- 📄 [{it.name}]({url_local}) ([[Raw]({url_local_raw}]) [[GH]({gh_url})])")
+                lines.append(f"- 📄 [{it.name}]({url_local}) ([[Raw]({url_local_raw})] [[GH]({gh_url})])")
             else:
                 mirrored = OUT / p_rel
                 if mirrored.exists():
