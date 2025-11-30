@@ -1,5 +1,5 @@
 ---
-title: Una Nueva Visión del Dinero - 101 ¿Por qué tenemos necesidades?
+title: Una Nueva Visión del Dinero - 1. ¿Por qué tenemos necesidades?
 date: 2025-11-28 18:02:00
 tags:
   - money
@@ -88,7 +88,7 @@ separados, entonces pareciera que hay cientos de necesidades diferentes que hay
 que satisfacer antes de tener tiempo para buscar a Dios.
 
 
-![](assets/pirámide-de-maslow.png)
+![](https://siran.github.io/assets/a_new_vision_on_money/pirámide-de-maslow.png)
 
 
 La famosa jerarquía de las necesidades de Maslow es un gran ejemplo de esta

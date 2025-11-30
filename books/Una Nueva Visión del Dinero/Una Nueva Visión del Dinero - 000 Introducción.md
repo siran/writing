@@ -1,5 +1,5 @@
 ---
-title: Una Nueva Visión del Dinero - 000 Introducción
+title: Una Nueva Visión del Dinero - Introducción
 date: 2025-11-28 16:04:00
 tags:
   - money
