@@ -956,6 +956,9 @@ def format_dir_index(dir_abs: Path, items: list[Item]) -> str:
             if ext in MD_EXTS:
                 # rendered file lives at: OUT / <p_rel>.html
                 rendered = (OUT / p_rel).with_suffix(p_rel.suffix + ".html")
+                mirrored = OUT / p_rel
+                rel_url = rel_out(mirrored).as_posix()
+                url_local_raw = "/" + quote(rel_url, safe="/:@-._~")
                 # assume it exists; if it doesn't, that's a build bug
                 rel_rendered = rel_out(rendered).as_posix()
                 url_local = "/" + quote(rel_rendered, safe="/:@-._~")
@@ -966,7 +969,7 @@ def format_dir_index(dir_abs: Path, items: list[Item]) -> str:
                     f"{BRANCH}/{gh_path}"
                 )
 
-                lines.append(f"- 📄 [{it.name}]({url_local}) ([GH]({gh_url}))")
+                lines.append(f"- 📄 [{it.name}]({url_local}) ([[Raw]({url_local_raw}]) [[GH]({gh_url})])")
             else:
                 mirrored = OUT / p_rel
                 if mirrored.exists():

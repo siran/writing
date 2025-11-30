@@ -81,31 +81,31 @@ def _extract_cover_image(yaml_text: str) -> Optional[str]:
     return val or None
 
 
-def _strip_conflicting_keys(yaml_text: str) -> str:
-    """
-    Remove keys that may cause weird template output like 'truetrue'
-    when printed by the HTML template (e.g. booleans).
+# def _strip_conflicting_keys(yaml_text: str) -> str:
+#     """
+#     Remove keys that may cause weird template output like 'truetrue'
+#     when printed by the HTML template (e.g. booleans).
 
-    We strip:
-      - autoSectionLabels
-      - autoSectionLabelsDepth
-      - linkReferences
-    """
-    lines = yaml_text.replace("\r\n", "\n").splitlines()
-    out: list[str] = []
-    skip = {"autosectionlabels", "autosectionlabelsdepth", "linkreferences"}
+#     We strip:
+#       - autoSectionLabels
+#       - autoSectionLabelsDepth
+#       - linkReferences
+#     """
+#     lines = yaml_text.replace("\r\n", "\n").splitlines()
+#     out: list[str] = []
+#     skip = {"autosectionlabels", "autosectionlabelsdepth", "linkreferences"}
 
-    for line in lines:
-        raw = line.lstrip()
-        if not raw or raw.startswith("#"):
-            out.append(line)
-            continue
-        key = raw.split(":", 1)[0].strip()
-        if key.lower() in skip:
-            continue
-        out.append(line)
+#     for line in lines:
+#         raw = line.lstrip()
+#         if not raw or raw.startswith("#"):
+#             out.append(line)
+#             continue
+#         key = raw.split(":", 1)[0].strip()
+#         if key.lower() in skip:
+#             continue
+#         out.append(line)
 
-    return "\n".join(out)
+#     return "\n".join(out)
 
 
 def _normalize_book_yaml_as_front_matter(yaml_text: str) -> str:
@@ -113,7 +113,7 @@ def _normalize_book_yaml_as_front_matter(yaml_text: str) -> str:
     Ensure book.yml content becomes a valid top-level YAML metadata block
     with explicit '---' ... '---' delimiters, after stripping conflicting keys.
     """
-    yaml_text = _strip_conflicting_keys(yaml_text)
+    # yaml_text = _strip_conflicting_keys(yaml_text)
     lines = yaml_text.replace("\r\n", "\n").splitlines()
 
     if not lines:
