@@ -940,37 +940,43 @@ def format_dir_index(dir_abs: Path, items: list[Item]) -> str:
     title = (rel_dir.name or f"{REPO} index")
 
     lines = []
-    # lines.append(f"## {title}")
-    # lines.append("")
     lines.append(breadcrumbs(rel_dir))
     lines.append("")
 
     items_sorted = sorted(items, key=lambda e: (not e.is_dir, e.name.lower()))
     for it in items_sorted:
         if it.is_dir:
-            href_rel = rel(it.path).as_posix() + "/"
-            href = quote(href_rel, safe="/:@-._~")
-            lines.append(f"- 📂 [{href_rel}]({href})")
+            href = (it.name + "/") if rel_dir.parts else (rel(it.path).as_posix() + "/")
+            href = quote(href, safe="/:@-._~")
+            lines.append(f"- 📂 [{it.name}]({href})")
         else:
-            p_rel = rel(it.path)
-            mirrored = OUT / p_rel
+            p_rel = rel(it.path)          # path in repo (e.g. books/.../file.md)
+            ext = it.path.suffix.lower()
 
-            if mirrored.exists():
-                rel_url = mirrored.relative_to(OUT).as_posix()
-                url_local = "/" + quote(rel_url, safe="/:@-._~")
-                ext = it.path.suffix.lower()
+            if ext in MD_EXTS:
+                # rendered file lives at: OUT / <p_rel>.html
+                rendered = (OUT / p_rel).with_suffix(p_rel.suffix + ".html")
+                # assume it exists; if it doesn't, that's a build bug
+                rel_rendered = rel_out(rendered).as_posix()
+                url_local = "/" + quote(rel_rendered, safe="/:@-._~")
 
-                if ext in MD_EXTS:
-                    gh_path = quote(p_rel.as_posix(), safe="/:@-._~")
-                    gh_url = (
-                        f"https://github.com/{OWNER}/{REPO}/blob/"
-                        f"{BRANCH}/{gh_path}"
-                    )
-                    lines.append(
-                        f"- 📄 [{it.name}]({url_local}.html) ([GH]({gh_url}))"
-                    )
-                else:
+                gh_path = quote(p_rel.as_posix(), safe="/:@-._~")
+                gh_url = (
+                    f"https://github.com/{OWNER}/{REPO}/blob/"
+                    f"{BRANCH}/{gh_path}"
+                )
+
+                lines.append(f"- 📄 [{it.name}]({url_local}) ([GH]({gh_url}))")
+            else:
+                mirrored = OUT / p_rel
+                if mirrored.exists():
+                    rel_url = rel_out(mirrored).as_posix()
+                    url_local = "/" + quote(rel_url, safe="/:@-._~")
                     lines.append(f"- 📄 [{it.name}]({url_local})")
+                else:
+                    # file exists in repo but wasn't mirrored (should not happen)
+                    lines.append(f"- 📄 {it.name}")
+
     lines.append("")
     return title, "\n".join(lines)
 
