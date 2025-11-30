@@ -967,7 +967,7 @@ def format_dir_index(dir_abs: Path, items: list[Item]) -> str:
                         f"{BRANCH}/{gh_path}"
                     )
                     lines.append(
-                        f"- 📄 [{it.name}]({url_local}) ([GH]({gh_url}))"
+                        f"- 📄 [{it.name}]({url_local}.html) ([GH]({gh_url}))"
                     )
                 else:
                     lines.append(f"- 📄 [{it.name}]({url_local})")
