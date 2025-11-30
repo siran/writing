@@ -79,12 +79,11 @@ that look like loss. It is a gradual process. In Lesson 284, Jesus tells us that
 we will accept this fact little by little, as we consider the idea more
 seriously:
 
-> 1 Loss is not loss when properly perceived. ²Pain is impossible. ³There is no
-> grief with any cause at all. ⁴And suffering of any kind is nothing but a
-> dream. ⁵Such is the truth—at first to be but said; and then repeated many
-> times; and next to be accepted as but partly true, with many reservations;
-> then to be considered seriously more and more; and finally accepted as the
-> truth. ([CE W-284.1:1-5](https://acimce.app/:W-284.1:1-5))
+> Loss is not loss when properly perceived. Pain is impossible. There is no
+> grief with any cause at all. And suffering of any kind is nothing but a dream.
+> Such is the truth—at first to be but said; and then repeated many times; and
+> next to be accepted as but partly true, with many reservations; then to be
+> considered seriously more and more; and finally accepted as the truth. ([CE W-284.1:1-5](https://acimce.app/:W-284.1:1-5))
 
 This lesson gives you a practice plan to make the idea of loss impossible in
 your mind. The key is to keep the thought “I can choose to change the thoughts

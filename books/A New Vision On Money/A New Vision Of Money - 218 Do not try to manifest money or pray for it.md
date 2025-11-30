@@ -96,10 +96,10 @@ we are told very clearly that we must not “pray for things, for status, for
 human love, or for external ‘gifts’ of any kind” (O-1.III.6). Instead, it asks
 us to do this:
 
-> The secret of true prayer is to forget the things you think you need. ²To ask
-> for the specific is much the same as to look on sin and then forgive it. ³Also
+> The secret of true prayer is to forget the things you think you need. To ask
+> for the specific is much the same as to look on sin and then forgive it. Also
 > in the same way, in prayer you overlook your specific needs as you see them,
-> and let them go into God’s Hands. ⁴There they become your gifts to Him, for
+> and let them go into God’s Hands. There they become your gifts to Him, for
 > they tell Him that you would have no gods before Him; no love but His. ([S-1.I.4:1-4](https://acim.org/acim/en/s/923#4:1-4))
 
 If the previous paragraph is read with the idea that God’s will is separate from

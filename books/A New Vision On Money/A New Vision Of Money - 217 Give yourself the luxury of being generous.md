@@ -74,7 +74,7 @@ only gain internally—what we give returns to us at the level of form as well:
 > Having had and given, then the world asserts that you have lost what you
 > possessed. ⁸The truth maintains that giving will increase what you possess.
 > 
-> How is this possible? ²For it is sure that if you give a finite thing away,
+> How is this possible? For it is sure that if you give a finite thing away,
 > your body’s eyes will not perceive it yours. Yet we have learned that things
 > but represent the thoughts which make them. And we do not lack for proof that
 > when we give ideas away, we strengthen them in our own minds. Perhaps the form

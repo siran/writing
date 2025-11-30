@@ -72,15 +72,15 @@ psychotherapy is our divine profession, so to speak, can we expect some form of
 divine compensation? That question is also answered in the psychotherapy
 supplement, and the answer is something few would anticipate:
 
-> . No one can pay for therapy, for healing is of God and He asks for nothing.
-> ²It is, however, part of His plan that everything in this world be used by the
-> Holy Spirit to help in carrying out the plan. ³Even an advanced therapist has
-> some earthly needs while he is here. ⁴Should he need money it will be given
-> him, not in payment, but to help him better serve the plan. ⁵Money is not
-> evil. ⁶It is nothing. ⁷But no one here can live with no illusions, for he must
-> yet strive to have the last illusion be accepted by everyone everywhere. ⁸He
-> has a mighty part in this one purpose, for which he came. ⁹He stays here but
-> for this. ¹⁰And while he stays he will be given what he needs to stay. ([P-3.III.1:1-10](https://acim.org/acim/en/s/915#1:1-10))
+> No one can pay for therapy, for healing is of God and He asks for nothing. It
+> is, however, part of His plan that everything in this world be used by the
+> Holy Spirit to help in carrying out the plan. Even an advanced therapist has
+> some earthly needs while he is here. Should he need money it will be given
+> him, not in payment, but to help him better serve the plan. Money is not evil.
+> It is nothing. But no one here can live with no illusions, for he must yet
+> strive to have the last illusion be accepted by everyone everywhere. He has a
+> mighty part in this one purpose, for which he came. He stays here but for
+> this. And while he stays he will be given what he needs to stay. ([P-3.III.1:1-10](https://acim.org/acim/en/s/915#1:1-10))
 
 We have finally reached the conclusion we have been building. As you read above,
 money is neither good nor bad—money is nothing. Every student of A Course in
