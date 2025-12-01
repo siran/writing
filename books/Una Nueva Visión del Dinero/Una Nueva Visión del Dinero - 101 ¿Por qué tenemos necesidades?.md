@@ -182,7 +182,7 @@ entrenar tu mente a reconocer que el cuerpo no es el que pide las cosas, sino un
 deseo más profundo de regresar a tu estado natural.
 
 
-**2. Recordatorios durante el día**
+### Durante el día
 
 Usa el temporizador de tu teléfono para poner una alarma cada 20 minutos. Cada
 vez que suene la alarma, recuérdate a ti mismo esta verdad:
