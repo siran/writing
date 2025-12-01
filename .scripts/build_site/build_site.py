@@ -326,6 +326,18 @@ def write_html(out_html: Path, body_html: str, head_extra: str = "", title: str 
 
 def render_markdown_file(src: Path, dst_html: Path, title: str):
     md = src.read_text(encoding="utf-8")
+    # Replace YAML front matter with a Markdown H1 so mirrors show the title, not raw YAML.
+    m_front = re.match(r"^---\s*\n(.*?)\n---\s*\n", md, flags=re.DOTALL)
+    if m_front:
+        front = m_front.group(1)
+        title_val = None
+        m_title = re.search(r"^title\s*:\s*(.+)$", front, flags=re.MULTILINE)
+        if m_title:
+            title_val = m_title.group(1).strip().strip('"\'')
+        # Remove front matter
+        md = md[m_front.end():]
+        if title_val:
+            md = f"# {title_val}\n\n" + md
     body_html = md
 
     rel_html = dst_html.relative_to(OUT).as_posix()
