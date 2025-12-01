@@ -271,12 +271,12 @@ def _current_origin() -> str:
 
 # ---------- templating ----------
 def write_html(out_html: Path, body_html: str, head_extra: str = "", title: str = ""):
-    # For mirrored Markdown views (*.md.html) we want a bare page: just
-    # the body content plus coda (styles + JS).
+    # For mirrored Markdown views (*.md.html) we still skip the normal header,
+    # but include the footer and coda so styling/scripts are present.
     is_md_html = str(out_html).endswith(".md.html")
 
     header = load_text(SRC / "header.html") if not is_md_html else ""
-    footer = load_text(SRC / "footer.html") if not is_md_html else ""
+    footer = load_text(SRC / "footer.html")
     coda   = load_text(SRC / "coda.html")
 
     doc = "".join(s for s in (header, body_html, footer) if s)
