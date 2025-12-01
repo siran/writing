@@ -189,7 +189,7 @@ Aquí te dejo algunos ejemplos de los tipos de distorsión cuando son llevados a
 extremo:
 
 
-![](assets/tabla-de-distorsiones.png)
+![](https://siran.github.io/assets/a_new_vision_on_money/tabla-de-distorsiones.png)
 
 
 Quizás habernos sumergido profundo dentro del tema de la posesión te haya
