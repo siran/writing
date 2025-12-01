@@ -171,7 +171,7 @@ inmediatamente con la verdad diciendo:
 
 
 > "Me he inventado que este(a) ________ tiene el poder de alterarme. Pero mi
-> verdadero autor es Dios y mi herencia es su paz."
+> verdadero autor es Dios y mi herencia es Su paz."
 
 
 Por ejemplo, si te encuentras angustiado/a por una deuda o porque alguien tiene
@@ -179,11 +179,11 @@ una mala opinión de ti, puedes decir:
 
 
 > "Me he inventado que esta deuda tiene el poder de alterarme. Pero mi verdadero
-> autor es Dios y mi herencia es su paz."
+> autor es Dios y mi herencia es Su paz."
 
 
 > "Me he inventado que esta opinión tiene el poder de alterarme. Pero mi
-> verdadero autor es Dios y mi herencia es su paz."
+> verdadero autor es Dios y mi herencia es Su paz."
 
 
 Como de costumbre, recuerda decir las palabras muy lentamente y sintiendo su
