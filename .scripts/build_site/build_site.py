@@ -271,20 +271,33 @@ def _current_origin() -> str:
 
 # ---------- templating ----------
 def write_html(out_html: Path, body_html: str, head_extra: str = "", title: str = ""):
-    # For mirrored Markdown views (*.md.html) we still skip the normal header,
-    # but include the footer and coda so styling/scripts are present.
-    is_md_html = str(out_html).endswith(".md.html")
-
-    header = load_text(SRC / "header.html") if not is_md_html else ""
+    # All pages (including *.md.html mirrors) get header + breadcrumb (for mirrors)
+    # + body + footer + coda.
+    header = load_text(SRC / "header.html")
     footer = load_text(SRC / "footer.html")
     coda   = load_text(SRC / "coda.html")
 
-    doc = "".join(s for s in (header, body_html, footer) if s)
+    rel_html = rel_out(out_html).as_posix()
+    breadcrumb_html = ""
+    if rel_html.endswith(".md.html"):
+        # Use same crumb_link style as article pages, based on path without trailing .html
+        rel_no_html = re.sub(r"\.html$", "", rel_html)
+        parts = list(Path(rel_no_html).parts)
+        if parts and parts[-1] == "index":
+            parts = parts[:-1]
+        breadcrumb_html = crumb_link(parts)
 
-    # NOTE: head_extra injection is currently disabled. If you later want
-    # per-page <title>/meta again, you can re-enable this block and it will
-    # work for *all* non-.md.html pages.
-    #
+    doc = "".join(
+        s for s in (
+            header,
+            breadcrumb_html + "\n" if breadcrumb_html else "",
+            body_html,
+            footer,
+        ) if s
+    )
+
+    # NOTE: head_extra injection is currently disabled. Re-enable this block
+    # if per-page <title>/<meta> should be injected again.
     if head_extra:
         charset = '<!DOCTYPE html><meta charset="UTF-8">'
         title_tag = f"<title>{title} - {PREFERRED_JOURNAL}</title>"
@@ -294,7 +307,7 @@ def write_html(out_html: Path, body_html: str, head_extra: str = "", title: str 
         if m:
             doc = doc[:m.start()] + head_extra + doc[m.start():]
         else:
-         doc = head_extra + doc
+            doc = head_extra + doc
 
     ny = ZoneInfo("America/New_York")
     now = datetime.now(ny)
@@ -354,7 +367,7 @@ def write_md_like_page(out_html: Path, md_body: str, title: str | None = None):
 
 def crumb_link(parts: list[str]) -> str:
     html = ['<nav class="breadcrumbs">']
-    html.append('<a href="/"> / </a>')
+    html.append('<a href="/">🏠 Home</a>')
     base = ""
     for label in parts:
         base = base.rstrip("/") + "/" + quote(label)
