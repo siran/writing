@@ -8,7 +8,7 @@ tags:
 ---
 
 En la introducción dijimos que una visión del dinero es que éste es
-intrínsecamente malo, la raíz de todos lo males. De alguna manera tenemos
+intrínsecamente malo, la raíz de todos los males. De alguna manera tenemos
 grabado en el inconsciente la idea de que el dinero es causa de los tantos males
 que vivimos. ¿Quién no ha pensado que sin los injustos sistemas que el dinero
 impone tendríamos una mejor sociedad y un mejor mundo? ¿Y quién no ha pensado
@@ -39,17 +39,17 @@ nosotros mismos. A eso el curso lo llama “el problema de la autoría”. El
 problema es que estamos confundidos con respecto a quién es nuestro autor.
 
 Puedes imaginar esto como pretender que te vas de casa, te golpeas la cabeza y
-gracias a tu amnesia no recuerdas quien es tu padre. Sin embargo, no porque lo
+gracias a tu amnesia no recuerdas quién es tu padre. Sin embargo, no porque lo
 hayas olvidado tu padre deja de ser quien es. Una simple prueba de paternidad
-podría comprobar de donde vienes.
+podría comprobar de dónde vienes.
 
 Lo que dice Jesús es que estar confundido acerca de quién te creó es la raíz de
 todos los males. El dinero no lo es, puesto que el dinero es sólo un reflejo
 entre muchos otros del problema de autoría. Aquí Jesús está liberando al dinero
 de la visión antigua y prevalente de que es la causa de todo mal.
-Automáticamente pudiéramos pensar que Jesús se está aliando con la visión
-moderna de que el dinero es intrínsecamente bueno, tu derecho divino, la
-demostración de que estás haciendo la voluntad de Dios.
+Automáticamente podríamos pensar que Jesús se está aliando con la visión moderna
+de que el dinero es intrínsecamente bueno, tu derecho divino, la demostración de
+que estás haciendo la voluntad de Dios.
 
 Sin embargo, Jesús no se alía con esa visión tampoco. Está claro en ese párrafo
 que Jesús categoriza el dinero como parte del problema al decir que es un
@@ -123,7 +123,7 @@ no tengo paz por dichos problemas o porque me siento un prisionero de las
 circunstancias, no el hecho de no tener dinero. Como la voluntad de Dios es mi
 herencia y mi herencia es la paz, eso quiere decir que he decidido vivir lo
 contrario a la voluntad de Dios. Por lo tanto, estoy haciendo uso de mi libre
-albedrío para aprisionarme a mi mismo. ¡Qué locura!
+albedrío para aprisionarme a mí mismo. ¡Qué locura!
 
 No nos damos cuenta de este razonamiento circular y demente porque, en lugar de
 pensar que hemos usado nuestra libertad para aprisionarnos, pensamos simplemente
@@ -145,17 +145,17 @@ las cosas que parecen definir lo que eres. ¿Qué cosas de este mundo crees que 
 definen? ¿Qué cosas de este mundo tienen el poder de alterar tu imagen?
 
 Hoy pasaremos el día identificando esas cosas que parecen ser nuestro autor, y
-declarar la independencia de ellas. Algunos ejemplos:
+declarando la independencia de ellas. Algunos ejemplos:
 
 
 * "Creo que el dinero tiene el poder de definir lo que soy, lo que hago o puedo
-  dejar de hacer"
+  dejar de hacer."
 
 * "Creo que la opinión de otros tiene el poder de alterar cómo me veo y cómo me
-  comporto"
+  comporto."
 
 * "Creo que la falta de ciertas cosas como el agua, la electricidad o el
-  silencio tienen el poder de alterar mi paz"
+  silencio tienen el poder de alterar mi paz."
 
 * "Creo que hay ciertas comidas, bebidas o sustancias que pueden afectar mi
   estado de ánimo."
@@ -170,33 +170,35 @@ paz. Cada vez que identifiques un pensamiento de esta clase, responde
 inmediatamente con la verdad diciendo:
 
 
-> Me he inventado que este(a) ________ tiene el poder de alterarme. Pero mi
-> verdadero autor es Dios y mi herencia es su paz.
+> "Me he inventado que este(a) ________ tiene el poder de alterarme. Pero mi
+> verdadero autor es Dios y mi herencia es su paz."
 
 
-Por ejemplo, si te encuentras angustiada por una deuda o porque alguien tiene
+Por ejemplo, si te encuentras angustiado/a por una deuda o porque alguien tiene
 una mala opinión de ti, puedes decir:
 
 
 > "Me he inventado que esta deuda tiene el poder de alterarme. Pero mi verdadero
-> autor es Dios y mi herencia es su paz.
+> autor es Dios y mi herencia es su paz."
 
 
-Me he inventado que esta opinión tiene el poder de alterarme. Pero mi verdadero
-autor es Dios y mi herencia es su paz.
+> "Me he inventado que esta opinión tiene el poder de alterarme. Pero mi
+> verdadero autor es Dios y mi herencia es su paz."
+
 
 Como de costumbre, recuerda decir las palabras muy lentamente y sintiendo su
 significado. No se trata de repetir como un loro, sino que te des el permiso de
-sentir como el contenido que esas palabras representan tienen el poder de
+sentir cómo el contenido que esas palabras representan tiene el poder de
 disolver las ilusiones. Recuerda aplicar la respuesta a la tentación hasta que
 sientas un cambio interno. También te puede ayudar decirlas con una sensación de
-que está declarando tu independencia de esas cosas externas.
+que estás declarando tu independencia de esas cosas externas.
 
-Adicionalmente, configura el temporizador de tu teléfono para recordarte cada 20
-minutos la verdad. Es importante que mantengas una idea verdadera en mente a lo
-largo del día, de lo contrario, tu mente se perderá en las distracciones diarias
-y pensarás que el mundo es tu autor. Puedes usar esta frase:
+Adicionalmente, configura el temporizador de tu teléfono para que te recuerde
+cada 20 minutos esta verdad. Es importante que mantengas una idea verdadera en
+mente a lo largo del día, de lo contrario, tu mente se perderá en las
+distracciones diarias y pensarás que el mundo es tu autor. Puedes usar esta
+frase:
 
 
 > "Mi valía no lo establece nada de este mundo. Mi valía fue establecida por
-> Dios"
+> Dios."
