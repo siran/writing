@@ -8,7 +8,10 @@ tags:
   - philosophy
   - spirituality
 ---
+
+
 ![](https://siran.github.io/assets/a_new_vision_on_money/money.png)
+
 
 There is no doubt that money is a source of concern for many people. Today’s
 popular culture is filled with references on how to succeed, how to get what you
@@ -42,7 +45,9 @@ that the love of money is the root of all evil. There is also the famous saying
 of Jesus that it is easier for a camel to pass through the eye of a needle than
 for a rich man to enter the kingdom of heaven.
 
+
 ![](https://siran.github.io/assets/a_new_vision_on_money/scrooge-mc-duck.png)
+
 
 On the other hand, there is a very popular view today that assures us that money
 is inherently good. According to this view, our goal is to have money and to
@@ -52,7 +57,9 @@ The topic of manifestation is very fashionable today, and books like "The
 Secret" teach us how to find God's will and attain everything we want in this
 world.
 
+
 ![](https://siran.github.io/assets/a_new_vision_on_money/vision-board.png)
+
 
 As students of [A Course in Miracles](https://acimce.app/book/W-In), we should
 have total clarity on this topic if we truly seek peace in our lives and aim to

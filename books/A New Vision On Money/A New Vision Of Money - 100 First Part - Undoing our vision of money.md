@@ -7,7 +7,10 @@ tags:
   - philosophy
   - spirituality
 ---
+
+
 ![](https://siran.github.io/assets/a_new_vision_on_money/dispelling-illusions.png)
+
 
 In the coming posts, we will give an honest look to the topic of needs and how
 we attempt to satisfy them.
