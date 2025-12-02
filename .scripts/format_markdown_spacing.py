@@ -2,10 +2,24 @@
 
 """
 Normalize Markdown spacing:
-- Ensure a blank line before headings.
-- Ensure a blank line after headings.
-- Surround image lines and blockquotes with blank lines.
+- Ensure TWO line before headings.
+- Ensure ONE blank line after headings.
+- Surround images lines, blockquotes and citations with TWO blank lines.
 - Leave fenced code blocks untouched.
+
+Useful to use with Emerald's `emeraldwalk.runonsave`:
+```
+{
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": ".*\\.md$",
+                "cmd": "cd \"${workspaceFolder}\" && python3 .scripts/format_markdown_spacing.py \"${file}\""
+            }
+        ]
+    }
+}
+```
 """
 
 from __future__ import annotations
