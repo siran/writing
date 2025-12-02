@@ -46,6 +46,27 @@ def format_lines(lines: list[str]) -> list[str]:
             formatted.append("")
             formatted.append("")
 
+    def ensure_heading_spacing_before() -> None:
+        # Remove trailing blanks, then:
+        # - if previous non-blank is a heading, add one blank (so headings are separated by one line)
+        # - otherwise, add two blanks.
+        while formatted and formatted[-1].strip() == "":
+            formatted.pop()
+        if not formatted:
+            return
+        # Find last non-blank line
+        j = len(formatted) - 1
+        while j >= 0 and formatted[j].strip() == "":
+            j -= 1
+        if j < 0:
+            return
+        last = formatted[j].lstrip()
+        if last.startswith("#"):
+            formatted.append("")
+        else:
+            formatted.append("")
+            formatted.append("")
+
     while i < len(lines):
         line = lines[i]
         stripped = line.strip()
@@ -66,7 +87,7 @@ def format_lines(lines: list[str]) -> list[str]:
         is_quote = stripped.startswith(">")
 
         if is_heading:
-            ensure_two_blank_before()
+            ensure_heading_spacing_before()
             formatted.append(line)
             i += 1
 
