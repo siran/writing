@@ -2,9 +2,9 @@
 title: Una Nueva Visión del Dinero - 2. El deseo de poseer
 date: 2025-11-30 10:03:00
 tags:
-  - money
-  - philosophy
-  - spirituality
+  - dinero
+  - filosofía
+  - espiritualidad
 ---
 
 Antes de poder explicar de dónde surge la idea del dinero, se nos hace necesario
@@ -224,6 +224,7 @@ presente o qué tan difícil y persistente parezca ser. El milagro lo puede sana
 
 
 ## Práctica
+
 
 ### Durante el día
 

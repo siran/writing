@@ -2,12 +2,14 @@
 title: Una Nueva Visión del Dinero - Introducción
 date: 2025-11-28 16:04:00
 tags:
-  - money
-  - philosophy
-  - spirituality
+  - dinero
+  - filosofía
+  - espiritualidad
 ---
 
+
 ![](https://siran.github.io/assets/a_new_vision_on_money/money.png)
+
 
 No hay duda de que el dinero es una causa de preocupación para muchas personas.
 La cultura popular actual está llena de referencias a cómo triunfar, cómo tener
@@ -53,7 +55,9 @@ voluntad. Hoy en día está muy de moda el tema de la manifestación, y libros c
 “El Secreto” nos enseñan cómo encontrar la voluntad de Dios y obtener todo lo
 que queramos en este mundo.
 
+
 ![](https://siran.github.io/assets/a_new_vision_on_money/mapa-de-sueños.png)
+
 
 Como estudiantes de [Un Curso de Milagros](https://acimce.app/book/W-In),
 deberíamos estar claros respecto a este tema si verdaderamente queremos paz en

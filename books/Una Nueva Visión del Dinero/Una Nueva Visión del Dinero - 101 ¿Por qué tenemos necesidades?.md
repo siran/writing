@@ -2,10 +2,11 @@
 title: Una Nueva Visión del Dinero - 1. ¿Por qué tenemos necesidades?
 date: 2025-11-28 18:02:00
 tags:
-  - money
-  - philosophy
-  - spirituality
+  - dinero
+  - filosofía
+  - espiritualidad
 ---
+
 
 > Tu Padre sabe que no tienes necesidad de nada. Esto es así en el Cielo, pues,
 > ¿qué podrías necesitar en la eternidad? (T-13.VII.10)
@@ -138,6 +139,7 @@ específico de la idea alocada de que tenemos una jerarquía de necesidades.
 
 
 ## Práctica
+
 
 ### Durante el día
 

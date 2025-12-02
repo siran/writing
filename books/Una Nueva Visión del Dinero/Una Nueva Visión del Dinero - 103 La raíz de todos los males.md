@@ -2,9 +2,9 @@
 title: Una Nueva Visión del Dinero - 3. La raíz de todos los males
 date: 2025-12-01 13:29:00
 tags:
-  - money
-  - philosophy
-  - spirituality
+  - dinero
+  - filosofía
+  - espiritualidad
 ---
 
 En la introducción dijimos que una visión del dinero es que éste es
