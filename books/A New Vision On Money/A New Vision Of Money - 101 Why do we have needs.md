@@ -153,10 +153,11 @@ before.
 ![](https://siran.github.io/assets/a_new_vision_on_money/maslows-pyramid-of-needs.png)
 
 
-Maslow's famous hierarchy of needs is a great example of this idea. In the chart
-above, we can see that it is necessary to first satisfy our physiological and
-safety needs before the need for relationships and spiritual fulfillment.
-However, Jesus tells us that this pyramid is completely wrong:
+Maslow's famous hierarchy of needs is a great example of this idea. The chart
+above is commonly understood to say that we must first satisfy our physiological
+and safety needs before satisfying the need for relationships and spiritual
+fulfillment. However, Jesus tells us that this understanding is completely
+wrong:
 
 
 > You act according to the particular hierarchy of needs you establish for
