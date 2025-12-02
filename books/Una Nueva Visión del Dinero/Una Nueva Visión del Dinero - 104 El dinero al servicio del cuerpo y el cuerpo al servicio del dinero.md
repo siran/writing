@@ -75,7 +75,7 @@ vacías para obtener esas tiras de papel. ¿Pero nos detenemos cuando la necesid
 está satisfecha?
 
 
-![](assets/paper-money.png)
+![](https://siran.github.io/assets/a_new_vision_on_money/paper-money.png)
 
 
 En lugar de simplemente satisfacer una necesidad puntual, terminamos

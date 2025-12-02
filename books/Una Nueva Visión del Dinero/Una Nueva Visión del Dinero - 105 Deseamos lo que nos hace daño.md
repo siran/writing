@@ -210,7 +210,7 @@ abajo y dedica varios minutos a escribir tantas cosas como te vengan a la mente
 que quisieras lograr, alcanzar u obtener.
 
 
-![](assets/tabla-ejercicios-C105.png)
+![](https://siran.github.io/assets/a_new_vision_on_money/tabla-ejercicios-C105.png)
 
 
 Para cada deseo dedica varios instantes a responder con mucha honestidad los
