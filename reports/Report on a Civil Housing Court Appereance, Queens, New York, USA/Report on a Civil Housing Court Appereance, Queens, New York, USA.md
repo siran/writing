@@ -2,11 +2,13 @@
 % An M. Rodriguez
 % November 20, 2025
 
+
 ## One-Sentence Summary
 
-Structured account of a housing-court appearance, describing conditions,
-procedures, and the later remote hearing granted due to caregiving and medical
-needs.
+Account of a housing-court in-person appearance, describing conditions,
+procedures, and the later re-scheduled remote same-day hearing granted due to
+caregiving and medical needs, instead of it being default.
+
 
 ## Abstract
 
@@ -19,6 +21,7 @@ court’s same-day approval of a remote hearing and future remote appearances. T
 report further notes the need for interpreter support, including English-English
 interpretation, because legal language and proceedings may be difficult for some
 litigants to follow.
+
 
 ## Executive Summary
 
@@ -54,21 +57,25 @@ order, modernizing check-in procedures, and standardizing remote-hearing
 availability—would ease the burden on litigants and enhance court efficiency
 without compromising judicial workflow.
 
+
 ## Report Info
 
 - Date: 2025-11-20
 - Place: Civil Housing Court, Queens, New York, USA
+
 
 ## Keywords
 
 housing court, in-person hearing, remote hearing, interpreter, court procedure,
 access to justice, Queens NY
 
+
 ## Introduction
 
 This report captures a defendant’s experience navigating the procedures and
 conditions of the Queens Civil Housing Court. It emphasizes the perspective of a
 first-time, self-represented litigant unfamiliar with local court customs.
+
 
 ## Observations
 
@@ -79,6 +86,7 @@ first-time, self-represented litigant unfamiliar with local court customs.
   to be heard.
 - No information was provided about the order in which cases would be called.
 - All parties waited on standby for hours, without guidance.
+
 
 ### 2. Outdated Procedures and Check-In Confusion
 
@@ -91,6 +99,7 @@ first-time, self-represented litigant unfamiliar with local court customs.
   cases (spanning about 10 pages, roughly 10 cases per page).
 - Line to speak with the clerk took about 30 minutes.
 - No hearing order was posted. No estimated timing. No sequencing information.
+
 
 ### 3. Remote Hearings and Their Inconsistent Use
 
@@ -112,6 +121,7 @@ first-time, self-represented litigant unfamiliar with local court customs.
 - The judge accepted the explanation and granted remote appearances for future
   dates.
 
+
 ### 4. Interpreter Needs
 
 - Defendant, a native Spanish speaker, requested an interpreter.
@@ -120,6 +130,7 @@ first-time, self-represented litigant unfamiliar with local court customs.
 - Defendant noted that legal communication requires precision beyond basic
   English fluency, and that many litigants need conceptual interpretation even
   when they can speak English.
+
 
 ## Discussion
 
@@ -138,6 +149,7 @@ first-time, self-represented litigant unfamiliar with local court customs.
 - Interpreter access remains vital, and lack of appointed counsel increases the
   need for accurate records—hence the importance of transcript requests.
 
+
 ## Conclusion
 
 - Defendant waited the entire morning without being heard.
@@ -148,6 +160,7 @@ first-time, self-represented litigant unfamiliar with local court customs.
   and use of remote tools.
 - A more predictable system—such as a published case order—and standard
   remote-hearing options would reduce strain on litigants and increase fairness.
+
 
 ## About Author(s)
 
