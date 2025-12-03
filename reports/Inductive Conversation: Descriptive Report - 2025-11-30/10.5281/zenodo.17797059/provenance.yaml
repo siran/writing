@@ -1,0 +1,68 @@
+journal: Preferred Frame Writing
+subjournal: reports
+publication_type: article
+title: 'Inductive Conversation: Descriptive Report - 2025-11-30'
+doi: 10.5281/zenodo.17797059
+concept_doi: null
+permalink: "https://writing.preferredframe.com/reports/Inductive Conversation: Descriptive Report - 2025-11-30/10.5281/zenodo.17797059/"
+publication_date: '2025-12-02'
+publication_year: '2025'
+keywords:
+- reasoning
+- conversation
+- expanded induction
+- self-dialogue
+one_sentence_summary: Description of a cognitive pattern in which an idea becomes clearer by elevating it to a more general case before returning to the original point.
+abstract: This report documents a reasoning style based on speaking out loud and using conceptual expansions (“P+1”) to test the consistency of an original case (“P”). The aim is to record the phenomenon, outline its stages, and clarify why it is effective for refining arguments in real time.
+authors:
+- name: An M. Rodríguez
+  orcid: 0009-0009-9098-9468
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: 'Inductive Conversation: Descriptive Report - 2025-11-30'
+  creators:
+  - name: An M. Rodríguez
+    orcid: 0009-0009-9098-9468
+  description: This report documents a reasoning style based on speaking out loud and using conceptual expansions (“P+1”) to test the consistency of an original case (“P”). The aim is to record the phenomenon, outline its stages, and clarify why it is effective for refining arguments in real time.
+  notes: Description of a cognitive pattern in which an idea becomes clearer by elevating it to a more general case before returning to the original point.
+  keywords:
+  - reasoning
+  - conversation
+  - expanded induction
+  - self-dialogue
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2025'
+  date: '2025-12-02'
+  license: cc-by-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/reports/Inductive Conversation: Descriptive Report - 2025-11-30/10.5281/zenodo.17797059/Inductive Conversation: Descriptive Report - 2025-11-30.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/reports/Inductive Conversation: Descriptive Report - 2025-11-30/10.5281/zenodo.17797059/Inductive Conversation: Descriptive Report - 2025-11-30.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Inductive Conversation: Descriptive Report - 2025-11-30/10.5281/zenodo.17797059/Inductive Conversation: Descriptive Report - 2025-11-30.pdf"
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: ef256984eab846b0e88bdebe7ddcfb9dc4a042c0
+  filename: 'Inductive Conversation: Descriptive Report - 2025-11-30.md'
+artifacts:
+  md: 'Inductive Conversation: Descriptive Report - 2025-11-30.md'
+  md_url: "https://writing.preferredframe.com/reports/Inductive Conversation: Descriptive Report - 2025-11-30/10.5281/zenodo.17797059/Inductive Conversation: Descriptive Report - 2025-11-30.md"
+  pandoc_md_name: 'Inductive Conversation: Descriptive Report - 2025-11-30.pandoc.md'
+  pandoc_md_url: "https://writing.preferredframe.com/reports/Inductive Conversation: Descriptive Report - 2025-11-30/10.5281/zenodo.17797059/Inductive Conversation: Descriptive Report - 2025-11-30.pandoc.md"
+  pdf_name: 'Inductive Conversation: Descriptive Report - 2025-11-30.pdf'
+  pdf_url: "https://assets.preferredframe.com/preferredframe/Inductive Conversation: Descriptive Report - 2025-11-30/10.5281/zenodo.17797059/Inductive Conversation: Descriptive Report - 2025-11-30.pdf"
+  html_name: 'Inductive Conversation: Descriptive Report - 2025-11-30.html'
+  html_url: "https://writing.preferredframe.com/reports/Inductive Conversation: Descriptive Report - 2025-11-30/10.5281/zenodo.17797059/Inductive Conversation: Descriptive Report - 2025-11-30.html"
+  primary: md
