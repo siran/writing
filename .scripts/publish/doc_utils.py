@@ -317,6 +317,7 @@ def render_in_staging(
     src_md: Path,
     publication_date_iso: str,
     book_yaml: Optional[Path] = None,
+    render_args: Optional[List[str]] = None,
 ) -> Tuple[Path, Path, Path, Path, Optional[Path]]:
     """
     Stage and render the main PNPMD .md, and optionally a book .yml (book mode).
@@ -337,15 +338,19 @@ def render_in_staging(
     md_text = replace_header_date(md_text, publication_date_iso)
     dst_md.write_text(md_text, encoding="utf-8")
 
+    render_args = render_args or []
+
     script_dir = Path(__file__).resolve().parent
-    render_py = (script_dir / "render.py") if (script_dir / "render.py").exists() else Path(
-        shutil.which("render.py")
-    )
-    if not render_py or not render_py.exists():
-        die("render.py not found beside this script or in PATH.")
+    render_py = script_dir.parent / "render" / "render.py"
+    if not render_py.exists():
+        die(f"render.py not found at expected location: {render_py}")
 
     # Render PNPMD markdown → pdf, html, pandoc.md
-    run([sys.executable, str(render_py), "--all", str(dst_md)], cwd=staging, check=True)
+    run(
+        [sys.executable, str(render_py), "--all", *render_args, str(dst_md)],
+        cwd=staging,
+        check=True,
+    )
 
     dst_pdf = dst_md.with_suffix(".pdf")
     dst_html = dst_md.with_suffix(".html")
@@ -361,7 +366,11 @@ def render_in_staging(
         echo(f"+ copy {book_yaml} -> {dst_yaml}")
         shutil.copy2(book_yaml, dst_yaml)
 
-        run([sys.executable, str(render_py), "--all", str(dst_yaml)], cwd=staging, check=True)
+        run(
+            [sys.executable, str(render_py), "--all", *render_args, str(dst_yaml)],
+            cwd=staging,
+            check=True,
+        )
 
         possible_epub = dst_yaml.with_suffix(".epub")
         if possible_epub.exists():

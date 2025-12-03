@@ -197,6 +197,21 @@ def parse_args():
         action="store_true",
         help="Do not push the assets repo (default: push).",
     )
+    ap.add_argument(
+        "--omit-toc",
+        action="store_true",
+        help="Pass through to render.py to omit the table of contents.",
+    )
+    ap.add_argument(
+        "--omit-numbering",
+        action="store_true",
+        help="Pass through to render.py to disable section numbering.",
+    )
+    ap.add_argument(
+        "--as-is",
+        action="store_true",
+        help="Pass through to render.py to bypass preprocessing and render the file as-is.",
+    )
     return ap.parse_args()
 
 
@@ -540,8 +555,21 @@ def run_publish(args, ctx: PublishContext) -> None:
     ctx.branch_name = branch_name
 
     # Stage & render (PNPMD + optional book YAML → EPUB)
+    render_args: List[str] = []
+    if args.omit_toc:
+        render_args.append("--omit-toc")
+    if args.omit_numbering:
+        render_args.append("--omit-numbering")
+    if args.as_is:
+        render_args.append("--as-is")
+
     staging, staged_md, staged_pdf, staged_html, staged_epub = render_in_staging(
-        site_repo, subjournal, src_md, publication_date_iso, book_yaml=book_yaml
+        site_repo,
+        subjournal,
+        src_md,
+        publication_date_iso,
+        book_yaml=book_yaml,
+        render_args=render_args,
     )
     staged_pmd = staged_md.with_suffix(".pandoc.md")
 
