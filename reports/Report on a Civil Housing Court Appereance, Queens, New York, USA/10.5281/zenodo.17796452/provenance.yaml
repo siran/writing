@@ -1,0 +1,76 @@
+journal: Preferred Frame Writing
+subjournal: reports
+publication_type: article
+title: Report on a Civil Housing Court Appereance, Queens, New York, USA
+doi: 10.5281/zenodo.17796452
+concept_doi: null
+permalink: "https://writing.preferredframe.com/reports/Report on a Civil Housing Court Appereance, Queens, New York, USA/10.5281/zenodo.17796452/"
+publication_date: '2025-12-02'
+publication_year: '2025'
+keywords:
+- housing court
+- in-person hearing
+- remote hearing
+- interpreter
+- court procedure
+- access to justice
+- Queens NY
+one_sentence_summary: Account of a housing-court in-person appearance, describing conditions, procedures, and the later re-scheduled remote same-day hearing granted due to caregiving and medical needs, instead of it being default.
+abstract: This report summarizes a first-person account from an unrepresented and inexperienced defendant in the Queens Civil Housing Court. It documents crowding, unclear procedures, lack of hearing-order information, reliance on outdated paper systems, and the contrast between mandatory in-person attendance and the court’s routine use of remote interpreters. It concludes with the court’s same-day approval of a remote hearing and future remote appearances. The report further notes the need for interpreter support, including English-English interpretation, because legal language and proceedings may be difficult for some litigants to follow.
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+  email: an@preferredframe.com
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: Report on a Civil Housing Court Appereance, Queens, New York, USA
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+    email: an@preferredframe.com
+  description: This report summarizes a first-person account from an unrepresented and inexperienced defendant in the Queens Civil Housing Court. It documents crowding, unclear procedures, lack of hearing-order information, reliance on outdated paper systems, and the contrast between mandatory in-person attendance and the court’s routine use of remote interpreters. It concludes with the court’s same-day approval of a remote hearing and future remote appearances. The report further notes the need for interpreter support, including English-English interpretation, because legal language and proceedings may be difficult for some litigants to follow.
+  notes: Account of a housing-court in-person appearance, describing conditions, procedures, and the later re-scheduled remote same-day hearing granted due to caregiving and medical needs, instead of it being default.
+  keywords:
+  - housing court
+  - in-person hearing
+  - remote hearing
+  - interpreter
+  - court procedure
+  - access to justice
+  - Queens NY
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2025'
+  date: '2025-12-02'
+  license: cc-by-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/reports/Report on a Civil Housing Court Appereance, Queens, New York, USA/10.5281/zenodo.17796452/Report on a Civil Housing Court Appereance, Queens, New York, USA.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/reports/Report on a Civil Housing Court Appereance, Queens, New York, USA/10.5281/zenodo.17796452/Report on a Civil Housing Court Appereance, Queens, New York, USA.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Report on a Civil Housing Court Appereance, Queens, New York, USA/10.5281/zenodo.17796452/Report on a Civil Housing Court Appereance, Queens, New York, USA.pdf"
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: 56e2fd09d0aab0cb861c05973de46740a0caaf8e
+  filename: Report on a Civil Housing Court Appereance, Queens, New York, USA.md
+artifacts:
+  md: Report on a Civil Housing Court Appereance, Queens, New York, USA.md
+  md_url: "https://writing.preferredframe.com/reports/Report on a Civil Housing Court Appereance, Queens, New York, USA/10.5281/zenodo.17796452/Report on a Civil Housing Court Appereance, Queens, New York, USA.md"
+  pandoc_md_name: Report on a Civil Housing Court Appereance, Queens, New York, USA.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/reports/Report on a Civil Housing Court Appereance, Queens, New York, USA/10.5281/zenodo.17796452/Report on a Civil Housing Court Appereance, Queens, New York, USA.pandoc.md"
+  pdf_name: Report on a Civil Housing Court Appereance, Queens, New York, USA.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/Report on a Civil Housing Court Appereance, Queens, New York, USA/10.5281/zenodo.17796452/Report on a Civil Housing Court Appereance, Queens, New York, USA.pdf"
+  html_name: Report on a Civil Housing Court Appereance, Queens, New York, USA.html
+  html_url: "https://writing.preferredframe.com/reports/Report on a Civil Housing Court Appereance, Queens, New York, USA/10.5281/zenodo.17796452/Report on a Civil Housing Court Appereance, Queens, New York, USA.html"
+  primary: md
