@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import os, subprocess, urllib.parse, shutil, re, json, io
+import os, subprocess, urllib.parse, shutil, re, json, io, sys
 from pathlib import Path
 from dataclasses import dataclass
 from urllib.parse import urlparse, quote
@@ -351,6 +351,74 @@ def render_markdown_file(src: Path, dst_html: Path, title: str):
     head_extra = "\n".join(head) + "\n"
 
     write_html(dst_html, body_html, head_extra=head_extra, title=title)
+
+def render_book_dirs():
+    """
+    Find directories that declare a book.yml/book.yaml and render them to
+    HTML+EPUB (skip PDF) before mirroring the tree into site/.
+    """
+    render_py = ROOT / ".scripts" / "render" / "render.py"
+    if not render_py.exists():
+        print(f"[DEBUG] render.py not found at {render_py}; skipping book renders")
+        return
+
+    seen: set[Path] = set()
+    candidates: list[Path] = []
+    for ext in ("book.yml", "book.yaml"):
+        candidates.extend(ROOT.rglob(ext))
+
+    for meta in candidates:
+        try:
+            meta_rel = rel(meta)
+        except Exception:
+            continue
+
+        # Skip gitignored, OUT/, excluded, or hidden paths
+        if is_gitignored(meta):
+            continue
+        try:
+            meta.relative_to(OUT)
+            continue
+        except ValueError:
+            pass
+
+        parts = meta_rel.parts
+        if not parts:
+            continue
+        if parts[0] in EXCLUDE_NAMES:
+            continue
+        if any(p.startswith(".") and p != ".well-known" for p in parts):
+            continue
+
+        book_dir = meta.parent
+        if book_dir in seen:
+            continue
+        seen.add(book_dir)
+
+        print(f"[DEBUG] Rendering book in {rel(book_dir)} via {meta.name}")
+        cmd = [
+            sys.executable,
+            str(render_py),
+            "--html",
+            "--epub",
+            "--omit-numbering",
+            "--omit-toc",
+            str(meta.name),
+        ]
+        proc = subprocess.run(
+            cmd,
+            cwd=book_dir,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+        )
+        if proc.stdout:
+            print(proc.stdout, end="" if proc.stdout.endswith("\n") else "\n")
+        if proc.returncode != 0:
+            print(
+                f"[DEBUG] WARNING: book render failed (rc={proc.returncode}) "
+                f"for {rel(book_dir)}; continuing build"
+            )
 
 def build_simple_page_from_md(src_name: str, slug: str, title: str):
     src_md = ROOT / src_name
@@ -1193,6 +1261,10 @@ def main():
                 shutil.copy2(src_path, dst_path)
     else:
         print("[DEBUG] WARNING: site_src does not exist; no site/ assets copied")
+
+    # Render any books (book.yml/book.yaml) ahead of mirroring so their
+    # generated .md/.pandoc.md/.html/.epub files are present in the tree.
+    render_book_dirs()
 
     build_article_pages()
 
