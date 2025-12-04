@@ -6,7 +6,6 @@ tags:
   - money
   - philosophy
   - spirituality
-canonical_url: https://anrodriguez.substack.com/p/lesson-1-why-do-we-have-needshtml
 ---
 
 
@@ -208,8 +207,7 @@ us from all other wanting and also provide us with any means we need to stay in
 this world for as long as it is sensible:
 
 
-> Unified need produces unified action, because it produces lack of ambivalence. [CE T-1.48.23:2]
-> https://acimce.app/:T-1.48.23:2
+> Unified need produces unified action, because it produces lack of ambivalence. ([CE T-1.48.23:2](https://acimce.app/:T-1.48.23:2))
 
 
 Money, then, would become for you as a secondary thing in yout life. A thing
@@ -251,6 +249,7 @@ This practice does not mean you should refrain from doing anything. For
 instance, it does not expect you to ignore hunger and not eat. The purpose is to
 train your mind to recognize that it is not the body that asks for things, but a
 deeper desire to return to your natural state.
+
 
 2. **Throughout the day, observe your mind and identify thoughts of need.**
 
