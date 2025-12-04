@@ -45,7 +45,11 @@ cómo ver el dinero. La primera corriente, quizás más antigua, nos dice que el
 dinero es una fuerza maligna. En la Biblia, por ejemplo, encontramos un pasaje
 que dice que la raíz de todos los males es el amor al dinero. También está el
 famoso dicho de Jesús de que primero entraría un camello por el ojo de una aguja
-antes de que un rico entre al reino de los cielos. ![](https://siran.github.io/assets/a_new_vision_on_money/scrooge-mc-duck.png)
+antes de que un rico entre al reino de los cielos.
+
+
+![](https://siran.github.io/assets/a_new_vision_on_money/scrooge-mc-duck.png)
+
 
 Por otro lado, hay una corriente, muy popular hoy en día, que nos asegura que el
 dinero es intrínsecamente bueno. Según esta visión, nuestro objetivo es tener
