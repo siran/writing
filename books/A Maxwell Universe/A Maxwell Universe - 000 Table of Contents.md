@@ -1,3 +1,13 @@
+---
+title: A Maxwell Universe - Table of Contents
+date: 2025-11-28 16:04:00
+tags:
+  - dinero
+  - filosofía
+  - espiritualidad
+---
+
+
 # PART I — FOUNDATIONS OF REALITY
 
 ## 1. Darkness : cause–effect as the only primitive
