@@ -288,11 +288,15 @@ def write_html(out_html: Path, body_html: str, head_extra: str = "", title: str 
             parts = parts[:-1]
         breadcrumb_html = crumb_link(parts)
 
+    body_block = body_html
+    if is_md_html:
+        body_block = f'<div class="md-container">\n{body_block}\n</div>\n'
+
     doc = "".join(
         s for s in (
             header,
             breadcrumb_html + "\n" if breadcrumb_html else "",
-            body_html,
+            body_block,
             footer,
         ) if s
     )
@@ -319,9 +323,6 @@ def write_html(out_html: Path, body_html: str, head_extra: str = "", title: str 
     if not doc.endswith("\n"):
         doc += "\n"
     doc += stamp
-
-    if is_md_html:
-        doc = f'<div class="md-container">\n{doc}\n</div>\n'
 
     if coda:
         doc += coda
