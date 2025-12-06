@@ -1,5 +1,5 @@
 ---
-title: A Maxwell Universe – From Darkness, Light
+title: A Maxwell Universe – 1. From Darkness, Light
 date: 2025-12-05 12:31
 ---
 

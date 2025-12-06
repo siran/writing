@@ -11,6 +11,8 @@ date: 2025-11-28 16:04:00
 1. Darkness: cause–effect as the only primitive
    - [A Cause-Effect Model for Emergent Time and Distance](https://preferredframe.com/prints/doi/10.5281/zenodo.17613402/)
 
+1b. Discussion
+
 2. Emergent Space: distance from causal steps
    - [Dimension and Space as Emergent Properties of Distance in a Cause-Effect Model of the Emergence of Time](https://preferredframe.com/prints/doi/10.5281/zenodo.17633950/)
 
