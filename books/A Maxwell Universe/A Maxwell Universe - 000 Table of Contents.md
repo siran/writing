@@ -9,27 +9,38 @@ date: 2025-12-05 12:31
 1. From Darkness, Light
    - Events as primitives
    - Operational awareness and causal loops
+   - Reference:
+     * [Palma & Rodriguez (2025) — *Operational Awareness in a Maxwell-Only Universe: A Formal Implication of Panpsychism*](https://doi.org/10.13140/RG.2.2.13647.60324/1)
 
 2. Time
    - Time as emergent ordering
    - Reconstruction of the past
    - Consensus and fragility of interpretation
+   - Reference:
+     * [A Cause-Effect Model for Emergent Time and Distance](https://preferredframe.com/prints/A%20Cause-Effect%20Model%20for%20Emergent%20Time%20and%20Distance/10.5281/zenodo.17613402/A%20Cause-Effect%20Model%20for%20Emergent%20Time%20and%20Distance.md)
 
 3. Orderings
    - Causal steps and chains
    - Loops as clocks
    - Self-sustaining loops as noticers
+   - Reference:
+     * [A Cause-Effect Model for Emergent Time and Distance](https://preferredframe.com/prints/A%20Cause-Effect%20Model%20for%20Emergent%20Time%20and%20Distance/10.5281/zenodo.17613402/A%20Cause-Effect%20Model%20for%20Emergent%20Time%20and%20Distance.md)
 
 4. Counting Steps
    - Duration as step counting
    - Distance from minimal causal chains
    - Emergent geometry via embeddings
    - Dimension as a relational property
+   - References:
+     * [A Cause-Effect Model for Emergent Time and Distance](https://preferredframe.com/prints/A%20Cause-Effect%20Model%20for%20Emergent%20Time%20and%20Distance/10.5281/zenodo.17613402/A%20Cause-Effect%20Model%20for%20Emergent%20Time%20and%20Distance.md)
+     * [Dimension and Space as Emergent Properties of Distance in a Cause-Effect Model of the Emergence of Time](https://preferredframe.com/prints/Dimension%20and%20Space%20as%20Emergent%20Properties%20of%20Distance%20in%20a%20Cause-Effect%20Model%20of%20the%20Emergence%20of%20Time/10.5281/zenodo.17633950/Dimension%20and%20Space%20as%20Emergent%20Properties%20of%20Distance%20in%20a%20Cause-Effect%20Model%20of%20the%20Emergence%20of%20Time.md)
 
 5. Space
    - One-dimensionality of causal distance
    - Full distance set as emergent space
    - Structure from compression, not substrate
+   - Reference:
+     * [Dimension and Space as Emergent Properties of Distance in a Cause-Effect Model of the Emergence of Time](https://preferredframe.com/prints/Dimension%20and%20Space%20as%20Emergent%20Properties%20of%20Distance%20in%20a%20Cause-Effect%20Model%20of%20the%20Emergence%20of%20Time/10.5281/zenodo.17633950/Dimension%20and%20Space%20as%20Emergent%20Properties%20of%20Distance%20in%20a%20Cause-Effect%20Model%20of%20the%20Emergence%20of%20Time.md)
 
 6. Plato and the Cave
    - Shadows vs. underlying structure
@@ -47,17 +58,17 @@ patches
 
 ## PART III — A MAXWELL ONTOLOGY
 
-6. Maxwell Ontology: derive Newton from Maxwell
-   - [Explaining Conservation Laws in a Maxwell Universe Ontology](https://preprints.preferredframe.com/Explaining%20Conservation%20Laws%20in%20a%20Maxwell%20Universe%20Ontology/Explaining%20Conservation%20Laws%20in%20a%20Maxwell%20Universe%20Ontology.md.html)
-   - [Gravity from energy](https://preprints.preferredframe.com/Emergent%20L%5E-2%20force%20in%20a%20Pure%20Maxwell%20Universe%20from%20Constant-Energy%20and%20Wave-Like%20Interactions/Emergent%20-L%5E-2%20Interaction%20Force%20in%20a%20Pure%20Maxwell%20Universe%20from%20Constant-Energy%20and%20Wave-Like%20Interactions.md.html)
-
-7. Rydberg Series: EM standing waves on toroidal surfaces
+6. Rydberg Series: EM standing waves on toroidal surfaces
    - [Hydrogen Atom Quantization from Purely Classical Maxwell Electromagnetic Fields](https://preprints.preferredframe.com/Hydrogen%20Atom%20Quantization%20from%20Purely%20Classical%20Maxwell%20Electromagnetic%20Fields/Hydrogen%20Atom%20Quantization%20from%20Purely%20Classical%20Maxwell%20Electromagnetic%20Fields.md.html)
 
+7. Maxwell Ontology: deriving Newton from Maxwell
+   - [Explaining Conservation Laws in a Maxwell Universe Ontology](https://preprints.preferredframe.com/Explaining%20Conservation%20Laws%20in%20a%20Maxwell%20Universe%20Ontology/Explaining%20Conservation%20Laws%20in%20a%20Maxwell%20Universe%20Ontology.md.html)
+   - [Gravity from Energy: Emergent \(L^{-2}\) Force from Constant-Energy and Wave-Like Interactions](https://preprints.preferredframe.com/Emergent%20L%5E-2%20force%20in%20a%20Pure%20Maxwell%20Universe%20from%20Constant-Energy%20and%20Wave-Like%20Interactions/Emergent%20-L%5E-2%20Interaction%20Force%20in%20a%20Pure%20Maxwell%20Universe%20from%20Constant-Energy%20and%20Wave-Like%20Interactions.md.html)
+
+
 8. Photon as Torus: opposing circulations; decomposition
-    - WIP: Main idea is that a standing electromagnetic wave on the surface on a
-      torus be decomposed in counter-circulating energy 'currents': positron and
-      electron.
+   - WIP: Main idea is that a standing electromagnetic wave on a torus
+     decomposes into counter-circulating energy flows (electron / positron).
 
 9. Toroidal Shells: (m,n) flows, 1/r² decay, topological charge
    - [Defining Topological Charge in a Source-Free Maxwell Universe](https://preprints.preferredframe.com/Defining%20Topological%20Charge%20in%20a%20Source-Free%20Maxwell%20Universe/Defining%20Topological%20Charge%20in%20a%20Source-Free%20Maxwell%20Universe.md.html)
@@ -75,6 +86,7 @@ patches
     - [Probabilities as Field-Energy Fractions](https://preprints.preferredframe.com/Classical%20deterministic%20entanglement%20from%20a%20scalar%20energy%20field/Classical%20deterministic%20entanglement%20from%20a%20scalar%20energy%20field.md.html)
 
 13. Finite Environments: deviations from Born statistics
+    - (WIP)
 
 
 ## PART V — GRAVITATION AND LARGE-SCALE PHYSICS
@@ -93,6 +105,7 @@ patches
     - [The In–Out Self‐Referential Field Vibration](https://preprints.preferredframe.com/The%20In%E2%80%93Out%20Self%E2%80%90Referential%20Field%20Vibration/The%20In%E2%80%93Out%20Self%E2%80%90Referential%20Field%20Vibration.md.html)
 
 17. Mode Aggregation: collective (m,n) frequencies and black-body spectrum
+    - (WIP)
 
 
 ## PART VII — THERMODYNAMICS AND COSMOLOGY
@@ -100,11 +113,11 @@ patches
 18. Thermodynamics and End-State: dipole minimum; Gaussian flux = 0
     - [Thermodynamics in a Maxwell Universe, and a non-fundamental arrow of time](https://preprints.preferredframe.com/Thermodynamics%20in%20a%20Maxwell%20Universe%2C%20and%20a%20non-fundamental%20arrow%20of%20time/Thermodynamics%20in%20a%20Maxwell%20Universe%2C%20and%20a%20non-fundamental%20arrow%20of%20time.md.html)
 
-19. Energy circulation diagrams.
-    - WIP
+19. Energy circulation diagrams
+    - (WIP)
 
 
-## PART VIII - EMERGENCE OF SELF
+## PART VIII — EMERGENCE OF SELF
 
-20. Self, time and space as imprints of a self sustaining loop {#EmergenceOfSelf}
-    - [Emergence of Self-Awareness from a Cause-Effect Loop](https://preprints.preferredframe.com/Emergence%20of%20Self-Awareness%20from%20a%20Cause%E2%80%93Effect%20Loop/Emergence%20of%20Self-Awareness%20from%20a%20Cause%E2%80%93Effect%20Loop%20v2.md.html)
+20. Self, time and space as imprints of a self-sustaining loop {#EmergenceOfSelf}
+    - [Emergence of Self-Awareness from a Cause–Effect Loop](https://preprints.preferredframe.com/Emergence%20of%20Self-Awareness%20from%20a%20Cause%E2%80%93Effect%20Loop/Emergence%20of%20Self-Awareness%20from%20a%20Cause%E2%80%93Effect%20Loop%20v2.md.html)
