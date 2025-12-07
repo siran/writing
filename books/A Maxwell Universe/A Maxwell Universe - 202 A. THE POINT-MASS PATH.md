@@ -66,59 +66,98 @@ that exists even when bodies do not.
 
 ### Newton
 
-The idea of space as a container begins with Newton.
+A major conceptual shift arrives with Newton. His goal was clear: to calculate
+the motion of planets, stars, and falling bodies. To do this he focused only on
+what mattered, and treated material bodies as points [^CowJoke].
 
-For the first time in Western physics, space became a **real, independent
-container**: absolute, uniform, existing even if no objects occupy it. Matter
-was reduced to point-masses, without structure or internal mechanism, moving
-inside this container according to forces acting at a distance.
+[^CowJoke]: Any physicist knows that a burping point, circle, or sphere are all very good approximations of a cow.
 
-The abstract geometry of Euclid, and the relational extension of Descartes, were
-replaced by a physical stage on which events unfold.
+This was never presented as a claim that matter is literally structureless.
+Newton explicitly says it is *convenient* to consider bodies as mathematical
+points (Principia, Book I, Lemma I), not that they are points in reality. He
+also believed matter had internal parts, but lacked a theory of that structure.
+His priority was prediction, not ontology.
 
-This Newtonian move transformed geometry from an abstract language into a
-physical ontology. It is this point-mass–in-container picture that later
-required increasing layers of patches. These patches came in the form of human
-constructs—some rooted in experiments, others in postulates—all sharing the
-point-mass or point-charge assumptions. This is not a criticism of an extremely
-useful worldview; it is an acknowledgment of the limits of the model and the
-unnecessary mysteries we inherited from it.
+To encode gravitational influence, Newton introduced absolute space and time: a
+uniform background against which motion could be measured. In this framework,
+forces acted at a distance, instantaneously and without a known mechanism. It
+worked, and spectacularly so. The motions of the heavens matched the equations.
 
-This marked a fundamental departure from the ancient and Cartesian relational
-views, yet produced extraordinarily successful predictions.
+This move replaced the relational geometry of Descartes and the abstraction of
+Euclid with a physical stage on which events unfold. It marked a profound shift
+in worldview, yet was driven by calculation, not philosophical assertion.
 
-From Newton, physics inherited a simple intuition: things are *objects* with
-definite positions. From this, the point-mass model took hold.
+From Newton, physics inherited an intuition: things are *objects* with definite
+positions. Forces act on them, and their trajectories follow from these forces.
+This intuition became the seed of the point-mass and later the point-charge
+model; curiously each one of a distinct and non-interacting substances or
+properties.
 
-Newton formalized motion and gravitation using point particles interacting at a
-distance. This required no explicit medium; action-at-a-distance was (and still
-is) an unexamined primitive. Forces were encoded algebraically rather than
-explained mechanistically. In many ways the map displaced the territory: we
-introduced problems rather than solved them—self-energy of point objects, and
-the mystery of wavefunction collapse in Quantum Mechanics.
+Over time, the abstraction hardened into ontology. The map replaced the
+territory. Self-energy problems, action-at-a-distance, and the conceptual
+puzzles of quantum collapse all trace back to this inherited idealizations:
+point charges and point masses -- not to Newton’s intent, but to the assumption
+that the point is fundamentally "real" (or, if not, why waste time discussing or
+puzzzling about "singularities", point-wave dualities, that appear on our
+incomplete theories).
 
-As experimental precision grew, the absence of a medium became problematic.
-Waves require a substrate, so an ether was proposed: a stationary, undetectable
-medium intended to support electromagnetic propagation.
+As experiments grew more precise, the absence of a physical medium became
+problematic. Waves require a substrate, so an ether was proposed: a stationary,
+yet undetectable, medium for electromagnetic propagation.
 
 
 ### Michelson–Morley
 
 Michelson–Morley exposed the contradiction. If light propagated through an
-ether, motion relative to that medium should be detectable. It was not. The
-point-mass model now required a new patch: velocities must transform in a
-non-classical way.
+ether, motion relative to that medium should be detectable. It turned out that
+the interpretation of their results -- much lower than expectected, so, "light
+propagagtes in vacuum" idea.
 
-Einstein replaced the ether with spacetime geometry. Special Relativity made the
-speed of light invariant; General Relativity encoded gravity as curvature. These
-worked, but the ontology of “mass points in a curved manifold” retained the
-original assumption: matter as discrete localized entities.
+Einstein replaced the not-found "ether" with spacetime geometry. Special
+Relativity made the speed of light invariant; General Relativity encoded gravity
+as curvature generated by a point-mass. These worked, but the ontology of “mass
+points in a curved manifold” retained the original assumption: matter as
+discrete localized entities.
 
-Quantum theory fractured the picture further. Particles became both points *and*
-waves. Collapse added a special rule. Fields were introduced yet still quantized
-as point-like excitations. Layer after layer of corrections accumulated to
-preserve the point-mass intuition.
 
-This lineage—Newton → Ether → Relativity → Quantum—reveals a pattern: each step
-introduces a new patch to reconcile deeper inconsistencies. The point-mass
-ontology survives only through continuous repair.
+## Schrödinger
+
+Quantum theory fractured the picture further. The earliest hints came not from
+Schrödinger, but from Planck (1900), who introduced quantized energy to explain
+black-body radiation—an act of desperation, not conviction [^GoodIdea]. Einstein
+(1905) then applied the idea to light itself, proposing that electromagnetic
+waves sometimes behave as discrete packets. Neither Planck nor Einstein offered
+a new ontology. Both were patching classical physics.
+
+[^GoodIdea]: Turned out to be one of those good results from the what-if
+reasoning.
+
+It was Schrödinger (1926) who attempted to construct a coherent mechanics.
+Inspired by de Broglie’s hypothesis that matter has an associated wavelengths,
+he introduced a continuous wavefunction $\psi$ evolving by a differential
+equation: the Schrödinger equation. Schrödinger’s intent was explicit: he
+believed this wave was a real physical field, not a probability amplitude, and
+expected classical structure to emerge from a smooth electromagnetic-like
+medium.
+
+But this interpretation clashed with experiments. Electrons arrived one at a
+time on screens; atoms emitted discrete lines; detectors clicked individually.
+To preserve the point-particle intuition inherited from Newton, Born proposed a
+reinterpretation: $|\psi|^2$ is not a physical wave, but a probability
+distribution. Instantly, the theory gained two incompatible rules:
+
+1. smooth, deterministic evolution of $\psi$
+2. abrupt, non-dynamical “collapse” upon measurement.
+
+The wave was continuous; the outcomes were discrete.
+
+Particles became both points *and* waves, depending on the experiment, and in a
+not so understood way. So-called "collapse" became a special rule added by hand.
+Fields were introduced but still quantized as point-like excitations. Layer
+after layer of reinterpretation accumulated to preserve the underlying
+assumption: matter is fundamentally discrete and localized, even when the
+equations describing it are not.
+
+Quantum theory thus deepened, rather than resolved, the tension introduced by
+the point-mass ontology: smooth evolution mixed with instantaneous jumps,
+continuity mixed with discreteness, waves mixed with points.
