@@ -4,8 +4,6 @@ date: 2025-11-28 16:04:00
 ---
 
 
-# Table of Contents
-
 ## PART I — FOUNDATIONS OF REALITY
 
 1. Darkness: cause–effect as the only primitive
