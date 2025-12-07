@@ -1,5 +1,5 @@
 ---
-title: A Maxwell Universe – PART II — THE POINT-MASS PATH
+title: A Maxwell Universe – PART II — A. THE POINT-MASS PATH
 date: 2025-12-07 11:11
 ---
 
@@ -53,7 +53,7 @@ For example:
 
 This transformation unified algebra and geometry.
 
-On the matter of "what space is?", Descartes did **not** propose a
+On the matter of “what space is?”, Descartes did **not** propose a
 container-like space. That idea came later. For Descartes, there is no empty
 void. “The extension in length, breadth, and depth which constitutes the nature
 of a body is the same as that which constitutes the nature of space”
@@ -79,15 +79,13 @@ replaced by a physical stage on which events unfold.
 This Newtonian move transformed geometry from an abstract language into a
 physical ontology. It is this point-mass–in-container picture that later
 required increasing layers of patches. These patches came in the form of human
-constructs, some rooted in experiments, other in postulates; all sharing the
-point-mass or point-charge constructs. This is not in any way a criticism of a
-the extremely useful worldview that Newton and others shared with us. It is more
-of an acknowlegments of the limits of the model, and the unnecesary mysteries we
-put ourselves subject to.
+constructs—some rooted in experiments, others in postulates—all sharing the
+point-mass or point-charge assumptions. This is not a criticism of an extremely
+useful worldview; it is an acknowledgment of the limits of the model and the
+unnecessary mysteries we inherited from it.
 
-remain consistent with experiments. It marked a fundamental departure from the
-ancient and Cartesian relational views, yet produced extraordinarily successful
-predictions.
+This marked a fundamental departure from the ancient and Cartesian relational
+views, yet produced extraordinarily successful predictions.
 
 From Newton, physics inherited a simple intuition: things are *objects* with
 definite positions. From this, the point-mass model took hold.
