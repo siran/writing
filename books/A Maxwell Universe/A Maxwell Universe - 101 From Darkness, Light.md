@@ -9,16 +9,21 @@ date: 2025-12-05 12:31
 Reality begins not with space or time, but with the simple fact that events
 happen.
 
-We often assume events happen for a reason. They do not need to. A reason is a
-story added later. What matters is simply that a change occurs and can be
-registered. Once a change is registered, two states can be distinguished:
-“before” and “after.” That distinction *is* the event.
+We often assume events happen for a reason. This doesn't need to be so, and even
+if it is, we don't have direct access to the causal information, but indirect
+through its effects.
 
-The sense of reason or explanation arises only as a reactive story—a way of
-organizing transitions once change has been noticed. Nothing deeper is assumed.
+A reason is a story added later. What matters is simply that a change occurs and
+that it can be registered in a way that affects our state. Once a change is
+registered, two states can be distinguished: “before” and “after.” That
+distinction *is* the event. Here we don't appeal to an "intelligence recording
+an event," but simply to a mark, like a scratch on a table, that affects the
+object's state. It denotes only the minimal capacity to register change.
 
-Here “awareness” does not refer to intelligence. It denotes only the minimal
-capacity to register change.
+The sense of reason or explanation arises only as a reactive story as way of
+organizing transitions once change has been noticed by a reasoning entity (topic
+which we will address later in [@EmergenceOfSelf]).
+
 
 This reactivity is not limited to conscious minds. Anything that changes in
 response to causes and produces effects is, in this minimal sense,
