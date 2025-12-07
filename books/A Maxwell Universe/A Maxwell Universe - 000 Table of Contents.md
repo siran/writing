@@ -55,6 +55,9 @@ patches
    - [Hydrogen Atom Quantization from Purely Classical Maxwell Electromagnetic Fields](https://preprints.preferredframe.com/Hydrogen%20Atom%20Quantization%20from%20Purely%20Classical%20Maxwell%20Electromagnetic%20Fields/Hydrogen%20Atom%20Quantization%20from%20Purely%20Classical%20Maxwell%20Electromagnetic%20Fields.md.html)
 
 8. Photon as Torus: opposing circulations; decomposition
+    - WIP: Main idea is that a standing electromagnetic wave on the surface on a
+      torus be decomposed in counter-circulating energy 'currents': positron and
+      electron.
 
 9. Toroidal Shells: (m,n) flows, 1/r² decay, topological charge
    - [Defining Topological Charge in a Source-Free Maxwell Universe](https://preprints.preferredframe.com/Defining%20Topological%20Charge%20in%20a%20Source-Free%20Maxwell%20Universe/Defining%20Topological%20Charge%20in%20a%20Source-Free%20Maxwell%20Universe.md.html)
@@ -69,11 +72,12 @@ patches
     - [Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics](https://preprints.preferredframe.com/Deriving%20the%20Schr%C3%B6dinger%20Equation%20from%20Source%E2%80%91Free%20Maxwell%20Dynamics/Deriving%20the%20Schr%C3%B6dinger%20Equation%20from%20Source%E2%80%91Free%20Maxwell%20Dynamics%20v2.md.html)
 
 12. Energy Fractions: probability as energy distribution
+    - [Probabilities as Field-Energy Fractions](https://preprints.preferredframe.com/Classical%20deterministic%20entanglement%20from%20a%20scalar%20energy%20field/Classical%20deterministic%20entanglement%20from%20a%20scalar%20energy%20field.md.html)
 
 13. Finite Environments: deviations from Born statistics
 
 
-## PART V — GRAVITATION & LARGE-SCALE PHYSICS
+## PART V — GRAVITATION AND LARGE-SCALE PHYSICS
 
 14. Energy–Energy as Gravity: refractive geometry
     - [Gravity as a Dielectric](https://preprints.preferredframe.com/Gravity%20as%20a%20Dielectric/Gravity%20as%20a%20Dielectric.md.html)
@@ -86,11 +90,21 @@ patches
 ## PART VI — TOPOLOGY, MIND, AND EMERGENCE
 
 16. In–Out Meta-Structure: inversion loop and self-reference
+    - [The In–Out Self‐Referential Field Vibration](https://preprints.preferredframe.com/The%20In%E2%80%93Out%20Self%E2%80%90Referential%20Field%20Vibration/The%20In%E2%80%93Out%20Self%E2%80%90Referential%20Field%20Vibration.md.html)
 
 17. Mode Aggregation: collective (m,n) frequencies and black-body spectrum
 
 
-## PART VII — THERMODYNAMICS & COSMOLOGY
+## PART VII — THERMODYNAMICS AND COSMOLOGY
 
 18. Thermodynamics and End-State: dipole minimum; Gaussian flux = 0
     - [Thermodynamics in a Maxwell Universe, and a non-fundamental arrow of time](https://preprints.preferredframe.com/Thermodynamics%20in%20a%20Maxwell%20Universe%2C%20and%20a%20non-fundamental%20arrow%20of%20time/Thermodynamics%20in%20a%20Maxwell%20Universe%2C%20and%20a%20non-fundamental%20arrow%20of%20time.md.html)
+
+19. Energy circulation diagrams.
+    - WIP
+
+
+## PART VIII - EMERGENCE OF SELF
+
+20. Self, time and space as imprints of a self sustaining loop {#EmergenceOfSelf}
+    - [Emergence of Self-Awareness from a Cause-Effect Loop](https://preprints.preferredframe.com/Emergence%20of%20Self-Awareness%20from%20a%20Cause%E2%80%93Effect%20Loop/Emergence%20of%20Self-Awareness%20from%20a%20Cause%E2%80%93Effect%20Loop%20v2.md.html)
