@@ -6,16 +6,26 @@ date: 2025-12-05 12:31
 Reality begins not with space or time, but with the simple fact that events
 happen.
 
-We assume things happen for a reason. They do not need to. The appearance of
-reason is an interpretive story that awareness constructs to track change.
-Awareness organizes transitions into patterns because doing so yields coherence.
-Nothing deeper is assumed.
+We often assume events happen for a reason. They do not need to. A reason is a
+story added later. What matters is simply that a change occurs and can be
+registered. Once a change is registered, two states can be distinguished:
+“before” and “after.” That distinction *is* the event.
 
-By “awareness,” we do not refer to intelligence—only the primitive noticing of
+The sense of reason or explanation arises only as a reactive story—a way of
+organizing transitions once change has been noticed. Nothing deeper is assumed.
+
+Here “awareness” does not refer to intelligence. It denotes only the minimal
+capacity to register change.
+
+This reactivity is not limited to conscious minds. Anything that changes in
+response to causes and produces effects is, in this minimal sense,
+**operationally aware**. A self-sustaining causal loop qualifies: it updates its
+own state in response to incoming influences. By doing so, it distinguishes
+states and tracks transitions. In this minimal operational sense, it “notices”
 change.
 
 
-### Time
+## Time
 
 Time is a construct: a tool awareness uses to organize its state. Each mind
 forms its own internal notion of time. Yet we maintain collective agreements:
@@ -35,17 +45,81 @@ anchors, interpretations feel arbitrary, raising the persistent question: what
 is real?
 
 
+## Orderings
+
+From the primitive relation
+
+$$ n_i \succ n_j, $$
+
+meaning “subnode $n_i$ causes $n_j$,” an ordering arises: before and after. We
+may call this succession of events $i$ and $j$ a "causal step".
+
+A series of events is a causal chain: i a b c d j.
+
+Chains can form loops, ... j i a b c j i ... which are allowed to cross
+themselves -- why not? -- until the loop is considered closed, in some useful
+sense.
+
+Repeated causal loops can function as clocks. Any recurrent sequence can serve
+as a clock. Accuracy varies, but recurrence suffices.
+
+Note that an effect that doesn't itself produce a cause is the end of a causal
+chain. Its existence can't be noticed, by definition. So the fact that we notice
+things, means that at least things (including us, in a sense) are, in essence,
+self-sustaining causal loops.
+
+
+## Counting steps
+
+By counting loops or causal steps, awareness defines durations. Time is an
+emergent count, not an external parameter.
+
+Distance emerges by tracking how many causal steps connect two subnodes. If a
+signal travels from $n_i$ to $n_j$ through a minimal chain of length $L_{ij}$,
+then
+
+$$
+d(n_i, n_j) \propto L_{ij}.
+$$
+
+If no path exists, distance is infinite or undefined. If the only path returns
+to the same subnode, the round-trip count is an effective measure of separation.
+Distance is not a spatial coordinate but an operational measure of causal
+separation.
+
+In the companion work *Dimension and Space as Emergent Properties of Distance in
+a Cause-Effect Model of the Emergence of Time*, these causal distances define an
+effective geometry. Observers attempt to embed subsets of subnodes into
+Euclidean spaces $\mathbb{R}^D$ such that Euclidean distances approximate causal
+distances:
+
+$$ \|\Phi(n_i) - \Phi(n_j)\| \approx d(n_i, n_j). $$
+
+When such embeddings succeed with low distortion, observers perceive a
+$D$-dimensional space. If multiple embeddings work, dimension is not unique. If
+none succeed, geometry fails. Space and dimension are not fundamental. They
+emerge from how awareness compresses relational patterns.
+
+What we call geometry, space, time, and distance arises only after awareness
+notices repeated causal patterns and organizes them into stable expectations.
+Underneath is a flux of interactions in darkness. Noticing shapes a world.
+
+
 ### Space
 
-Distance also emerges from our handling of events. Events need not be separate
-in a physical sense; there may simply be many causal steps between them.
-Distance is the count of steps.
+Distance is always one-dimensional: a single count of causal steps between two
+events. What we call space is the union of all such distances. By collecting
+every pairwise separation into one structure, awareness tries to form a coherent
+geometric picture.
 
-Structure is emergent. If a set of events can be represented so that a “square
-embedding” is coherent, observers perceive a square. The same pattern might
-equally be seen as a point, a surface, or a thin slice of a volume. Structure
-depends on how relational patterns are compressed. It is not an inherent
-property of whatever underlies perception.
+If the full set of distances can be embedded with low distortion into some
+$\mathbb{R}^D$, we say the Node appears $D$-dimensional. If it cannot, the
+resulting “space” may have no consistent dimension at all.
+
+Structure is therefore emergent. If a set of events fits a “square embedding,”
+observers perceive a square. The same pattern might be interpreted as a point, a
+surface, or a thin slice of a volume. Structure depends on how relational
+patterns are compressed, not on an intrinsic geometry underneath.
 
 
 ### Plato and the Cave
@@ -88,51 +162,6 @@ details come later.
 [^FundamentalC]: If certain subnodes behave according to Maxwell’s equations,
 the effective propagation speed depends on local energy density. Written plainly,
 this is unsurprising: energy alters how fast things happen.
-
-
-### Orderings
-
-From the primitive relation
-
-$$ n_i \succ n_j, $$
-
-meaning “subnode $n_i$ causes $n_j$,” an ordering arises: before and after.
-
-Repeated causal loops function as clocks. Any recurrent sequence can serve as a
-clock. Accuracy varies, but recurrence suffices.
-
-By counting loops or causal steps, awareness defines durations. Time is an
-emergent count, not an external parameter.
-
-Distance emerges by tracking how many causal steps connect two subnodes. If a
-signal travels from $n_i$ to $n_j$ through a minimal chain of length $L_{ij}$,
-then
-
-$$
-d(n_i, n_j) \propto L_{ij}.
-$$
-
-If no path exists, distance is infinite or undefined. If the only path returns
-to the same subnode, the round-trip count is an effective measure of separation.
-Distance is not a spatial coordinate but an operational measure of causal
-separation.
-
-In the companion work *Dimension and Space as Emergent Properties of Distance in
-a Cause-Effect Model of the Emergence of Time*, these causal distances define an
-effective geometry. Observers attempt to embed subsets of subnodes into
-Euclidean spaces $\mathbb{R}^D$ such that Euclidean distances approximate causal
-distances:
-
-$$ \|\Phi(n_i) - \Phi(n_j)\| \approx d(n_i, n_j). $$
-
-When such embeddings succeed with low distortion, observers perceive a
-$D$-dimensional space. If multiple embeddings work, dimension is not unique. If
-none succeed, geometry fails. Space and dimension are not fundamental. They
-emerge from how awareness compresses relational patterns.
-
-What we call geometry, space, time, and distance arises only after awareness
-notices repeated causal patterns and organizes them into stable expectations.
-Underneath is a flux of interactions in darkness. Noticing shapes a world.
 
 
 ### For more information, see:
