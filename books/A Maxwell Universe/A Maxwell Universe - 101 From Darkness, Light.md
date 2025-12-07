@@ -158,6 +158,35 @@ influence. Contradictory data had been minimized. Re-analysis revealed a weaker
 link than claimed, showing how consensus can form around distorted evidence.
 
 
+## 7. Mathematics and Reality
+
+Much has been said about reality being “mathematical,” though the phrase is
+rarely defined. The arguments above suggest a simpler view: we ascribe patterns
+to reality -- sometimes because we genuinely recognize these patterns, sometimes
+because we project them and think that the patterns are "real".
+
+Mathematics does not have to govern the world. More often, we see the world
+through the mathematics we have created. Mathematics—and therefore physics—
+describes those aspects of the world that admit stable, compressible patterns.
+When a pattern is regular enough to be anticipated, we express that regularity
+symbolically and call the result a “law.” When the pattern breaks, the law
+breaks with it.
+
+It is therefore not that reality *is* mathematical, nor that mathematics is the
+“language of nature.” Rather, we build mathematical models for the aspects of
+reality we can recognize, isolate, and predict. Wherever the world resists
+compression into stable patterns, our mathematics simply does not apply.
+
+Mathematics succeeds because we select what it can describe—and which patterns
+we pay attention to—not because nature is made of numbers (or, in its most
+recent rebranding, “information”).
+
+This perspective prepares the ground for a different approach. Instead of
+starting from mathematical objects, we start from energy itself and the
+interactions it sustains. Geometry, fields, and equations come later—as
+descriptions of persistent patterns in that underlying activity.
+
+
 ## For more information, see:
 
 - *A Cause-Effect Model for Emergent Time and Distance*
