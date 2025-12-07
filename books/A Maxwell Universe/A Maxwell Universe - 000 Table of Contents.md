@@ -1,24 +1,40 @@
 ---
 title: A Maxwell Universe – Table of Contents
-date: 2025-11-28 16:04:00
+date: 2025-12-05 12:31
 ---
 
 
 ## PART I — FOUNDATIONS OF REALITY
 
-1. From Darkness, Light: cause–effect as the only primitive
-   - [A Cause-Effect Model for Emergent Time and Distance](https://preferredframe.com/prints/doi/10.5281/zenodo.17613402/)
+1. From Darkness, Light
+   - Events as primitives
+   - Operational awareness and causal loops
 
+2. Time
+   - Time as emergent ordering
+   - Reconstruction of the past
+   - Consensus and fragility of interpretation
 
-2. Emergent Space: distance from causal steps
-   - [Dimension and Space as Emergent Properties of Distance in a Cause-Effect Model of the Emergence of Time](https://preferredframe.com/prints/doi/10.5281/zenodo.17633950/)
+3. Orderings
+   - Causal steps and chains
+   - Loops as clocks
+   - Self-sustaining loops as noticers
 
-2b. Discussion
+4. Counting Steps
+   - Duration as step counting
+   - Distance from minimal causal chains
+   - Emergent geometry via embeddings
+   - Dimension as a relational property
 
-3. Universal Causal Substrate: any dimension, dense subnodes, all consistent
-   theories encodable
+5. Space
+   - One-dimensionality of causal distance
+   - Full distance set as emergent space
+   - Structure from compression, not substrate
 
-4. Time Forks: point-mass, field, and spiritual ontologies
+6. Plato and the Cave
+   - Shadows vs. underlying structure
+   - Limits of inference
+   - Patterns as the only accessible reality
 
 
 ## PART II — THE POINT-MASS PATH
