@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import argparse
+import shutil
 from pathlib import Path
 from typing import Optional
 
@@ -119,7 +120,14 @@ def render(
         )
 
     # Preprocessed path
-    in_tmp, final_pandoc_md, meta_args, shift_args, common_args = prepare_preprocessed(
+    (
+        in_tmp,
+        final_pandoc_md,
+        meta_args,
+        shift_args,
+        common_args,
+        css_path,
+    ) = prepare_preprocessed(
         src,
         omit_toc=omit_toc,
         omit_numbering=omit_numbering,
@@ -134,8 +142,6 @@ def render(
     html_path = src.with_suffix(".html") if make_html else None
     epub_path = src.with_suffix(".epub") if make_epub else None
 
-    import shutil
-
     if make_pdf:
         out_pdf = in_tmp.parent / "out.pdf"
         rc = render_pdf(in_tmp, out_pdf, meta_args, shift_args, common_args, timeout)
@@ -145,14 +151,23 @@ def render(
 
     if make_html:
         out_html = in_tmp.parent / "out.html"
-        rc = render_html(in_tmp, out_html, meta_args, shift_args, common_args, timeout)
+        rc = render_html(
+            in_tmp, out_html, meta_args, shift_args, common_args, timeout, css_path
+        )
         if rc != 0:
             die(f"Docker pandoc (HTML) failed (rc={rc})")
         shutil.copy2(out_html, html_path)
+        if css_path and css_path.exists():
+            try:
+                shutil.copy2(css_path, html_path.parent / css_path.name)
+            except Exception:
+                print(f"[WARN] could not copy CSS to {html_path.parent}")
 
     if make_epub:
         out_epub = in_tmp.parent / "out.epub"
-        rc = render_epub(in_tmp, out_epub, meta_args, shift_args, common_args, timeout)
+        rc = render_epub(
+            in_tmp, out_epub, meta_args, shift_args, common_args, timeout, css_path
+        )
         if rc != 0:
             die(f"Docker pandoc (EPUB) failed (rc={rc})")
         shutil.copy2(out_epub, epub_path)

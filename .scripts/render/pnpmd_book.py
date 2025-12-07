@@ -204,7 +204,14 @@ def render_book_yaml(
 
     print(f"✅ Built combined markdown {big_md_path}")
 
-    in_tmp, final_pandoc_md, meta_args, shift_args, common_args = prepare_preprocessed(
+    (
+        in_tmp,
+        final_pandoc_md,
+        meta_args,
+        shift_args,
+        common_args,
+        css_path,
+    ) = prepare_preprocessed(
         big_md_path,
         omit_toc=omit_toc,
         omit_numbering=omit_numbering,
@@ -222,28 +229,40 @@ def render_book_yaml(
 
         local_name: Optional[str] = None
         cv = cover_value
+        strip_cover = False
 
-        if cv.startswith("http://") or cv.startswith("https://"):
-            # Download via curl to tmpdir/cover.ext
-            from urllib.parse import urlparse
+        try:
+            if cv.startswith("http://") or cv.startswith("https://"):
+                # Download via curl to tmpdir/cover.ext
+                from urllib.parse import urlparse
 
-            parsed = urlparse(cv)
-            ext = Path(parsed.path).suffix or ".jpg"
-            dest = tmpdir / ("cover" + ext)
-            rc = run_visible(["curl", "-L", "-o", str(dest), cv])
-            if rc != 0:
-                die(f"curl failed for cover-image: {cv}")
-            local_name = dest.name
-        else:
-            # Treat as filesystem path (absolute or relative to book_dir)
-            src_img = Path(cv)
-            if not src_img.is_absolute():
-                src_img = book_dir / src_img
-            if not src_img.exists():
-                die(f"cover-image not found: {src_img}")
-            dest = tmpdir / src_img.name
-            shutil.copy2(src_img, dest)
-            local_name = dest.name
+                parsed = urlparse(cv)
+                ext = Path(parsed.path).suffix or ".jpg"
+                dest = tmpdir / ("cover" + ext)
+                rc = run_visible(["curl", "-L", "-o", str(dest), cv])
+                if rc != 0:
+                    print(f"[WARN] cover-image fetch failed (rc={rc}); skipping cover: {cv}")
+                    strip_cover = True
+                elif dest.exists():
+                    local_name = dest.name
+                else:
+                    print(f"[WARN] cover-image missing after download; skipping cover: {cv}")
+                    strip_cover = True
+            else:
+                # Treat as filesystem path (absolute or relative to book_dir)
+                src_img = Path(cv)
+                if not src_img.is_absolute():
+                    src_img = book_dir / src_img
+                if not src_img.exists():
+                    print(f"[WARN] cover-image not found; skipping cover: {src_img}")
+                    strip_cover = True
+                else:
+                    dest = tmpdir / src_img.name
+                    shutil.copy2(src_img, dest)
+                    local_name = dest.name
+        except Exception as e:
+            print(f"[WARN] cover-image processing failed; skipping cover: {e}")
+            strip_cover = True
 
         # Rewrite the cover-image metadata in in_tmp YAML to point to local_name
         if local_name:
@@ -261,6 +280,24 @@ def render_book_yaml(
                         break
                 text = "\n".join(lines)
                 in_tmp.write_text(text, encoding="utf-8")
+        elif strip_cover:
+            # Strip the cover-image entry from the YAML block so pandoc won't fail.
+            text = in_tmp.read_text(encoding="utf-8")
+            lines = text.splitlines()
+            if lines and lines[0].strip() == "---":
+                header_end = None
+                for i in range(1, len(lines)):
+                    if lines[i].strip() == "---":
+                        header_end = i
+                        break
+                if header_end is not None:
+                    kept: list[str] = []
+                    for i, line in enumerate(lines):
+                        if 0 < i < header_end and line.lstrip().startswith("cover-image"):
+                            continue
+                        kept.append(line)
+                    text = "\n".join(kept)
+                    in_tmp.write_text(text, encoding="utf-8")
 
     pdf_path = big_md_path.with_suffix(".pdf") if make_pdf else None
     html_path = big_md_path.with_suffix(".html") if make_html else None
@@ -275,17 +312,28 @@ def render_book_yaml(
 
     if make_html:
         out_html = in_tmp.parent / "out.html"
-        rc = render_html(in_tmp, out_html, meta_args, shift_args, common_args, timeout)
+        rc = render_html(
+            in_tmp, out_html, meta_args, shift_args, common_args, timeout, css_path
+        )
         if rc != 0:
             die(f"Docker pandoc (HTML) failed (rc={rc})")
         shutil.copy2(out_html, html_path)
 
     if make_epub:
         out_epub = in_tmp.parent / "out.epub"
-        rc = render_epub(in_tmp, out_epub, meta_args, shift_args, common_args, timeout)
+        rc = render_epub(
+            in_tmp, out_epub, meta_args, shift_args, common_args, timeout, css_path
+        )
         if rc != 0:
             die(f"Docker pandoc (EPUB) failed (rc={rc})")
         shutil.copy2(out_epub, epub_path)
+
+    if css_path and css_path.exists():
+        dest_css = book_dir / css_path.name
+        try:
+            shutil.copy2(css_path, dest_css)
+        except Exception:
+            print(f"[WARN] could not copy CSS to {dest_css}")
 
     wrote = [
         str(p)

@@ -313,10 +313,10 @@ def prepare_preprocessed(
     auto_shift: bool = True,
     number_offset: Optional[str] = None,
     epub_chapter_level: Optional[int] = None,
-):
+) -> Tuple[Path, Path, List[str], List[str], List[str], Optional[Path]]:
     """
     Returns:
-      in_tmp, final_pandoc_md, meta_args, shift_args, common_args
+      in_tmp, final_pandoc_md, meta_args, shift_args, common_args, css_path
     """
     repo = find_repo_root(src.parent)
     entries = load_map(repo / "pnpmd.map")
@@ -353,6 +353,12 @@ def prepare_preprocessed(
     text_for_pandoc = keep_head + (body2 if not omit_toc else body)
     in_tmp.write_text(text_for_pandoc, encoding="utf-8")
 
+    css_path = None
+    css_src = repo / ".scripts" / "render" / "book-style.css"
+    if css_src.exists():
+        css_path = tmpdir / css_src.name
+        css_path.write_text(css_src.read_text(encoding="utf-8"), encoding="utf-8")
+
     # Only propagate title/authors/date; no extra policy defaults.
     meta_args: List[str] = []
     if meta.get("title"):
@@ -386,4 +392,4 @@ def prepare_preprocessed(
     if epub_chapter_level is not None:
         common_args += ["--epub-chapter-level", str(epub_chapter_level)]
 
-    return in_tmp, final_pandoc_md, meta_args, shift_args, common_args
+    return in_tmp, final_pandoc_md, meta_args, shift_args, common_args, css_path

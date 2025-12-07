@@ -25,6 +25,7 @@ MIRROR_EXTS = {
     ".yml",
     ".pandoc.md",
     ".txt",
+    ".css",
 }
 
 MD_EXTS = {".md", ".markdown", ".pandoc.md"}

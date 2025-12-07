@@ -1,7 +1,7 @@
 # pnpmd_pandoc.py
 
 from pathlib import Path
-from typing import List
+from typing import List, Optional
 
 from pnpmd_util import run_visible
 
@@ -43,7 +43,11 @@ def render_html(
     shift_args: List[str],
     common_args: List[str],
     timeout: int,
+    css_path: Optional[Path] = None,
 ) -> int:
+    css_args: List[str] = []
+    if css_path and css_path.exists():
+        css_args = ["--css", css_path.name]
     cmd = [
         "docker",
         "run",
@@ -57,6 +61,7 @@ def render_html(
         *common_args,
         *shift_args,
         *meta_args,
+        *css_args,
         "--filter",
         "pandoc-crossref",
         "in.md",
@@ -75,7 +80,11 @@ def render_epub(
     shift_args: List[str],
     common_args: List[str],
     timeout: int,
+    css_path: Optional[Path] = None,
 ) -> int:
+    css_args: List[str] = []
+    if css_path and css_path.exists():
+        css_args = ["--css", css_path.name]
     cmd = [
         "docker",
         "run",
@@ -89,6 +98,7 @@ def render_epub(
         *common_args,
         *shift_args,
         *meta_args,
+        *css_args,
         "--filter",
         "pandoc-crossref",
         "in.md",
