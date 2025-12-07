@@ -1,7 +1,10 @@
 ---
-title: A Maxwell Universe – 1. From Darkness, Light
+title: A Maxwell Universe - PART I — FOUNDATIONS OF REALITY
 date: 2025-12-05 12:31
 ---
+
+
+## 1. From Darkness, Light
 
 Reality begins not with space or time, but with the simple fact that events
 happen.
@@ -25,7 +28,7 @@ states and tracks transitions. In this minimal operational sense, it “notices�
 change.
 
 
-## Time
+## 2. Time
 
 Time is a construct: a tool awareness uses to organize its state. Each mind
 forms its own internal notion of time. Yet we maintain collective agreements:
@@ -45,7 +48,7 @@ anchors, interpretations feel arbitrary, raising the persistent question: what
 is real?
 
 
-## Orderings
+## 3. Orderings
 
 From the primitive relation
 
@@ -69,7 +72,7 @@ things, means that at least things (including us, in a sense) are, in essence,
 self-sustaining causal loops.
 
 
-## Counting steps
+## 4. Counting steps
 
 By counting loops or causal steps, awareness defines durations. Time is an
 emergent count, not an external parameter.
@@ -105,7 +108,7 @@ notices repeated causal patterns and organizes them into stable expectations.
 Underneath is a flux of interactions in darkness. Noticing shapes a world.
 
 
-### Space
+## 5. Space
 
 Distance is always one-dimensional: a single count of causal steps between two
 events. What we call space is the union of all such distances. By collecting
@@ -122,7 +125,7 @@ surface, or a thin slice of a volume. Structure depends on how relational
 patterns are compressed, not on an intrinsic geometry underneath.
 
 
-### Plato and the Cave
+## 6. Plato and the Cave
 
 Plato illustrated the limits of our access to reality. We see shadows, not the
 source. Our interpretations are reconstructions shaped by limited observation.
@@ -142,29 +145,7 @@ influence. Contradictory data had been minimized. Re-analysis revealed a weaker
 link than claimed, showing how consensus can form around distorted evidence.
 
 
-### Energy Density
-
-Within the Node, subnodes interact. These interactions are the only primitives.
-When awareness notices that one transition reliably precedes another, we call
-the first a “cause” and the second an “effect.” Nothing is “in space.” Nothing
-“ticks” in time. Only relational influence exists.
-
-The speed at which a cause produces an effect is what we call the speed of
-light. Nothing can exceed it because it is a relational bound, not a moving
-object’s velocity.
-
-As a preview for later chapters, this fundamental cause–effect speed $c_0$ has
-no requirement to be uniform everywhere [^FundamentalC]. Things may happen
-faster or slower in different regions of the Node. Maxwell’s equations already
-show that wave speed depends on energy density, as in a dielectric. Further
-details come later.
-
-[^FundamentalC]: If certain subnodes behave according to Maxwell’s equations,
-the effective propagation speed depends on local energy density. Written plainly,
-this is unsurprising: energy alters how fast things happen.
-
-
-### For more information, see:
+## For more information, see:
 
 - *A Cause-Effect Model for Emergent Time and Distance*
   https://preferredframe.com/prints/A%20Cause-Effect%20Model%20for%20Emergent%20Time%20and%20Distance/10.5281/zenodo.17613402/A%20Cause-Effect%20Model%20for%20Emergent%20Time%20and%20Distance.md
@@ -173,3 +154,5 @@ this is unsurprising: energy alters how fast things happen.
 - *Dimension and Space as Emergent Properties of Distance in a Cause-Effect
   Model of the Emergence of Time*
   https://preferredframe.com/prints/Dimension%20and%20Space%20as%20Emergent%20Properties%20of%20Distance%20in%20a%20Cause-Effect%20Model%20of%20the%20Emergence%20of%20Time/10.5281/zenodo.17633950/Dimension%20and%20Space%20as%20Emergent%20Properties%20of%20Distance%20in%20a%20Cause-Effect%20Model%20of%20the%20Emergence%20of%20Time.md
+
+-
