@@ -47,6 +47,8 @@ date: 2025-12-05 12:31
    - Limits of inference
    - Patterns as the only accessible reality
 
+7. Mathematics and Reality
+
 
 ## PART II — THE POINT-MASS PATH
 
