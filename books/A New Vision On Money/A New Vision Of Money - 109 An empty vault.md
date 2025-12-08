@@ -7,7 +7,10 @@ tags:
   - spirituality
 excerpt: Instead of continuing to invest in this world, Jesus invites us to start investing in the real world
 ---
+
+
 ![](https://siran.github.io/assets/a_new_vision_on_money/nephews-watching-scrooge-mcducks-vault-empty.png)
+
 
 Everything we consider valuable, we want to store somewhere safe. For example,
 we keep our money in the bank, our jewelry in a jewelry box, and when traveling,
@@ -21,9 +24,11 @@ Wherever we store our physical treasures, that place is, in fact, empty.
 Lesson 344 expresses this idea using the metaphor that our treasure chests are
 empty:
 
+
 > I did not understand what giving means, and thought to save what I desired for
 > myself alone. And as I looked upon the treasure that I thought I had, I found
 > an empty place where nothing ever was or is or will be. ([CE W-344.1:2-3](https://acimce.app/:W-344.1:2-3))
+
 
 This message may seem very metaphorical, but we might think of real examples
 where we accumulated things that seemed like treasures only to realize they were
@@ -47,6 +52,7 @@ which are the treasures of the spirit. The poor, according to the Course, are
 those who have invested in a world that yields no returns. Whether one has a lot
 of money or little, Jesus counts us all as poor:
 
+
 > I once asked you if you were willing to sell all you have and give to the poor
 > and follow me. This is what I meant: If you had no investment in anything in
 > this world, you could teach the poor where their treasure is. The poor are
@@ -55,6 +61,7 @@ of money or little, Jesus counts us all as poor:
 > Consider how perfectly your lesson would be learned if you were unwilling to
 > _share_ their poverty. For poverty is lack, and there is but one lack, since
 > there is but one need. ([CE T-12.V.1](https://acimce.app/:T-12.V.1))
+
 
 We have already seen that our only lack, our one need, is God. God is our
 sustenance. This paragraph invites us not to participate in the illusion that we
@@ -71,6 +78,7 @@ according to Jesus, include both the financially rich and poor.
 
 Chapter 12 says:
 
+
 > The ego is trying to teach you how to gain the whole world and lose your own
 > soul. The Holy Spirit teaches that you _cannot_ lose your soul and there _is_
 > no gain in the world, for of itself it profits nothing. To invest in something
@@ -80,6 +88,7 @@ Chapter 12 says:
 > gives you nothing in return. You cannot sell your soul, but you can sell your
 > awareness of its being. You cannot perceive the soul, but you will not know it
 > while you perceive anything else as more valuable. ([CE T-12.IX.1-2](https://acimce.app/:T-12.IX.1-2))
+
 
 Jesus compares us to those who invest all their money in stocks of companies
 that eventually go bankrupt. Here, we have not invested in a company but have
@@ -104,7 +113,9 @@ investing in the real world. How is that done? You invest in the real world by
 seeing it with love, refusing to share in poverty, and helping the poor. It
 sounds like just a pretty, simple phrase, but it is a profoundly deep teaching.
 
+
 ## How to Invest in the Real World
+
 If the poor are simply those of us who have invested in the world, how do we
 help them? And why should we do it? Jesus presents a counterintuitive example of
 how to help a poor person. Though not intuitive at first, it is a perfect
@@ -135,9 +146,11 @@ not represent any loss. The real treasure is in the real world.
 
 Jesus tells us:
 
+
 > _Recognize what does not matter_, and if they ask you for something
 > “outrageous,” do it _because_ it does not matter. Refuse, and your opposition
 > establishes that it _does_ matter to you. ([CE T-12.V.4:1-2](https://acimce.app/:T-12.V.4:1-2))
+
 
 Doing as He asks is the perfect solution. On one hand, we are giving love to our
 brother and lifting him out of poverty. On the other hand, we are showing an
@@ -154,8 +167,11 @@ the word treasure. This is quite typical of the Course: taking an everyday word
 and infusing it with a much broader meaning while retaining the essence of what
 the word evokes in us.
 
+
 ## Practice
+
 ### In the morning
+
 Let us dedicate 15 minutes in the morning today to begin investing in the real
 world. We will do this by recognizing where we are impoverishing ourselves and
 offering our best willingness to lift others out of poverty:
@@ -177,7 +193,9 @@ offering our best willingness to lift others out of poverty:
 8. Spend the last few minutes of the meditation feeling how this light unites
    the three of you.
 
+
 ### Throughout the Day
+
 Throughout the day, watch your mind for any thoughts where you believe or feel
 that someone is withholding or taking something that should be yours. This can
 take many forms. It might be that someone literally has not paid you, is asking
@@ -188,15 +206,20 @@ apologize for a past offense.
 Whatever form this idea takes, respond immediately with the truth to avoid
 prolonging confusion:
 
+
 > "Let my only response to everything be love."
+
 
 If you find it difficult to apply this idea to a specific thought or situation,
 try to recognize that those who attack are poor and that poverty needs gifts,
 not further impoverishment. You can say:
 
+
 > "Those who attack are poor, and their poverty asks for gifts, not more
 > attack."
 
+
 Use your phone's timer to remind yourself every 20 minutes with this phrase:
+
 
 > "Let my only response to everything be love."

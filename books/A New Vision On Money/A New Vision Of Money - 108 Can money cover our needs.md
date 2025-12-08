@@ -7,7 +7,10 @@ tags:
   - spirituality
 excerpt: For most of us, seeking things like money, medicine, protective clothing, and good connections can give us some sense of being sustained. There is no doubt about that.
 ---
+
+
 ![](https://siran.github.io/assets/a_new_vision_on_money/wim-hof-in-shorts-and-sandals-on-everest-peak.avif)
+
 
 We have learned that we tend to desire things we do not truly want, things that
 will also harm us. But what about needs in this world? Can money at least
@@ -17,6 +20,7 @@ an emphatic no to this question. When we believe that money can sustain us, the
 Course says we have placed our faith in the most trivial and absurd symbols.
 
 In Lesson 50 of the Course, we find this:
+
 
 > Here is the answer to every problem that confronts you today and tomorrow and
 > throughout time. In this world, you believe you are sustained by everything
@@ -28,6 +32,7 @@ In Lesson 50 of the Course, we find this:
 > songs of praise to the ego.
   > 
  > Do not put your faith in the worthless. It will not sustain you. ([CE W-50.1-2](https://acimce.app/:W-50.1-2))
+
 
 For most of us, seeking things like money, medicine, protective clothing, and
 good connections can give us some sense of being sustained. There is no doubt
@@ -111,8 +116,11 @@ In our experience, money has met our needs in the past. But how often have we
 allowed God to be our sustenance? Let us not place our faith in what cannot
 sustain us, but rather trust that God will take care of all things.
 
+
 ## Practice
+
 ### In the morning
+
 Let us use the practice instructions from Lesson 50 as our morning meditation.
 For 10 minutes, do the following:
 
@@ -127,19 +135,27 @@ Throughout the day, monitor your mind to observe thoughts suggesting that
 external things are needed to sustain your existence. Whenever you feel in need
 or lacking, respond immediately:
 
+
 > “The Love of God is my sustenance.”
+
 
 Use your phone’s timer to remind you of this phrase every 20 minutes:
 
+
 > “The Love of God is my sustenance.”
 
+
 ### During the day
+
 Monitor your mind to observe thoughts suggesting that external things are needed
 to sustain your existence. Whenever you feel in need or lacking, respond
 immediately:
 
+
 > “The Love of God is my sustenance.”
 
+
 Use your phone’s timer to remind you of this phrase every 20 minutes:
+
 
 > “The Love of God is my sustenance.”

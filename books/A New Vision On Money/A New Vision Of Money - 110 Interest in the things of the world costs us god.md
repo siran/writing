@@ -20,6 +20,7 @@ supplement The Song of Prayer. There Jesus tells us plainly that any goal we
 pursue in this world costs us God Himself. We are sacrificing God in order to
 chase after other things we see as “more valuable”:
 
+
 > It is not easy to realize that prayers for things, for status, for human love,
 > for external "gifts" of any kind, are always made to set up jailers and to
 > hide from guilt. These things are used for goals that substitute for God, and
@@ -30,6 +31,7 @@ chase after other things we see as “more valuable”:
 > will fail to find one. But just as surely will he lose the only true goal that
 > is given him. Think of the cost, and understand it well. All other goals are
 > at the cost of God. ([S-1.III.6](https://illuminatemind.net/wp-content/uploads/2020/11/Song-of-Prayer.pdf))
+
 
 Whenever you find yourself desiring external things, you can be certain that you
 have sacrificed God in your mind. We rarely think in these terms. The idea of
@@ -48,7 +50,9 @@ meditate. This is what the Manual for Teachers is referring to when it says that
 it seems we are being asked to sacrifice our best interests for the sake of
 truth.
 
+
 ![](https://siran.github.io/assets/a_new_vision_on_money/nun-beauty.png)
+
 
 The way we deal with sacrifice varies greatly. There are those who want to live
 a hedonistic life and resist sacrifice by allowing themselves as much pleasure
@@ -77,6 +81,7 @@ share the same belief: that giving up things of this world is a sacrifice.
 
 In the Manual for Teachers, the subject of sacrifice is explained very clearly:
 
+
 > It takes great learning both to realize and to accept the fact that the world
 > has nothing to give. What can the sacrifice of nothing mean? It cannot mean
 > that you have less because of it. There is no sacrifice in the world’s terms
@@ -85,6 +90,7 @@ In the Manual for Teachers, the subject of sacrifice is explained very clearly:
 > these things belong? Could they mean anything except to a body? Yet a body
 > cannot evaluate. By seeking after such things the mind associates itself with
 > the body, obscuring its identity and losing sight of what it really is. ([CE M-13.2](https://acimce.app/:M-13.2))
+
 
 Virtually all of us in this world share the same illusion. Imagine, for example,
 that you found a magic lamp. This lamp has a genie that grants any wish. For
@@ -122,10 +128,12 @@ purpose is to replace the first illusion. It is an illusion because loss is
 impossible in Heaven, which is our reality. Loss, however, can be experienced in
 this world. The second illusion is, then, the true meaning of sacrifice:
 
+
 > What is the real meaning of sacrifice? It is the cost of believing in
 > illusions. It is the price that must be paid for the denial of truth. There is
 > no pleasure of the world that does not demand this, for otherwise the pleasure
 > would be seen as pain, and no one asks for pain if he recognizes it. ([CE M-13.5:1-4](https://acimce.app/:M-13.5:1-4))
+
 
 Sacrifice does not mean losing the pleasures of this world as a result of giving
 them up. Sacrifice is the loss that comes from assigning them value. Sacrifice
@@ -186,11 +194,14 @@ Throughout the day you will watch your mind to identify desires of any kind.
 They may be bodily, professional, family-related, etc. To any goal in which your
 body is the central character, respond immediately:
 
+
 > “God is the only goal I truly desire.”
+
 
 Let the meaning of these words enter your mind and help you see the need beyond
 the bodily desire.
 
 Use your phone’s timer to remind you every 20 minutes that your goal is God:
+
 
 > “This day I dedicate to God. It is the gift I give Him.”
