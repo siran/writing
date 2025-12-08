@@ -72,12 +72,17 @@
         try {
             var html = document.body.innerHTML;
 
+            // Collapse wrapped lines inside Markdown link targets back into single spaces.
+            var normalizeTarget = function (value) {
+                return value.replace(/[ \t]*[\r\n]+[ \t]*/g, " ").trim();
+            };
+
             // Markdown images: ![alt](url "optional title")
             // Run this BEFORE link conversion.
             html = html.replace(
                 /!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)/g,
                 function (_m, alt, src, title) {
-                    src = src.trim();
+                    src = normalizeTarget(src);
                     alt = (alt || "").replace(/"/g, "&quot;");
                     var t = title ? ' title="' + title.replace(/"/g, "&quot;") + '"' : "";
                     return '<img src="' + src + '" alt="' + alt + '"' + t + '>';
@@ -94,7 +99,7 @@
 
             // Markdown links: [text](url)
             html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (_m, t, u) {
-                return '<a href="' + u.trim() + '">' + t + "</a>";
+                return '<a href="' + normalizeTarget(u) + '">' + t + "</a>";
             });
 
             // Bare URLs → <a>; don't match inside ) etc.
