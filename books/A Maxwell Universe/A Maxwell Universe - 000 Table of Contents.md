@@ -10,6 +10,7 @@ date: 2025-12-05 12:31
    - Events as primitives
    - Operational awareness and causal loops
    - Reference:
+     * [A Cause-Effect Model for Emergent Time and Distance](https://preferredframe.com/prints/A%20Cause-Effect%20Model%20for%20Emergent%20Time%20and%20Distance/10.5281/zenodo.17613402/A%20Cause-Effect%20Model%20for%20Emergent%20Time%20and%20Distance.md)
      * [Palma & Rodriguez (2025) — *Operational Awareness in a Maxwell-Only Universe: A Formal Implication of Panpsychism*](https://doi.org/10.13140/RG.2.2.13647.60324/1)
 
 2. Time
