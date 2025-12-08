@@ -10,3 +10,6 @@ replies to existing posts are welcome.
 
 Any post may be selected as a Preferred Frame Writing print, in which case it
 receives a DOI.
+
+We are human-*first* publication, and documents are accepted as plain-text files
+in the PNPMD Mardown format: [PNPMD Markdown](https://writing.preferredframe.com/documents/PNPMD%20Markdown%20Specification/)
