@@ -92,12 +92,12 @@ in essence, a self-sustaining causal loop.
 By counting loops or causal steps, operational awareness defines durations. Time
 is an emergent count, not an external parameter.
 
-Distance also "emerges" by tracking how many causal steps connect two subnodes.
-If a signal travels from $n_i$ to $n_j$ through a minimal chain of length
-$L_{ij}$, then,
+Distance arises by tracking how many causal steps connect two subnodes. If a
+signal travels from $n_i$ to $n_j$ through a minimal chain of length $L_{ij}$,
+then
 
 $$
-d(n_i, n_j) \propto L_{ij}
+d(n_i, n_j) \propto L_{ij}.
 $$
 
 If no path exists, the distance is infinite or undefined. If the only available
