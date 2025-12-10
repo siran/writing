@@ -92,33 +92,42 @@ in essence, a self-sustaining causal loop.
 By counting loops or causal steps, operational awareness defines durations. Time
 is an emergent count, not an external parameter.
 
-Distance emerges by tracking how many causal steps connect two subnodes. If a
-signal travels from $n_i$ to $n_j$ through a minimal chain of length $L_{ij}$,
-then
+Distance also "emerges" by tracking how many causal steps connect two subnodes.
+If a signal travels from $n_i$ to $n_j$ through a minimal chain of length
+$L_{ij}$, then,
 
 $$
-d(n_i, n_j) \propto L_{ij}.
+d(n_i, n_j) \propto L_{ij}
 $$
 
-If no path exists, distance is infinite or undefined. If the only path returns
-to the same subnode, the round-trip count becomes an effective measure of
-separation. Distance is not a spatial coordinate but an operational measure of
-causal separation.
+If no path exists, the distance is infinite or undefined. If the only available
+path returns to the same subnode, the round-trip count becomes an effective
+measure of separation. Distance is not a spatial coordinate but an operational
+measure of causal separation.
 
-These causal distances define an effective geometry. Observers attempt to embed
-subsets of subnodes into Euclidean spaces $\mathbb{R}^D$ such that Euclidean
-distances approximate causal distances:
+These causal distances define an effective geometry. Observers attempt to map
+them into familiar spaces of some chosen dimension.
 
-$$ \|\Phi(n_i) - \Phi(n_j)\| \approx d(n_i, n_j). $$
+More technically, we can think of a map $\mathcal{M}$ into a space of dimension
+$D$, where each event is assigned a point, and the distances between those
+points approximate the causal distances:
 
-When such embeddings succeed with low distortion, observers perceive a
-$D$-dimensional space. If multiple embeddings work, dimension is not unique. If
-none succeed, geometry fails. Space and dimension are not fundamental. They
-emerge from how operational awareness compresses relational patterns.
+$$
+\|\mathcal{M}(n_i) - \mathcal{M}(n_j)\| \approx d(n_i, n_j).
+$$
 
-Geometry, space, time, and distance arise only after repeated causal patterns
-are registered and organized into stable expectations. Beneath this lies a flux
-of interactions in darkness. Registration of change shapes a world.
+When such embeddings succeed with low distortion, observers perceive the
+corresponding subnodes as forming a $D$-dimensional structure under
+$\mathcal{M}$.
+
+If multiple embeddings work, dimension is not unique. If none succeed, all maps
+$\mathcal{M}$ are defective and geometry is ill-defined.
+
+Thus, space, time, and dimension are not fundamental; they arise from how
+operational awareness compresses relational patterns.
+
+Geometry, space, time, and distance appear only after repeated causal patterns
+stabilize into expectations.
 
 
 ## 5. Space
