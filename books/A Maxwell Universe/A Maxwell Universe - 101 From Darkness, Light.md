@@ -50,7 +50,7 @@ We may picture “reality” [^WhatIsReality?] as a Node with an unknowable inte
 structure [^Uncomputable]. All we know is that this structure reproduces
 patterns of transitions from which we infer “before” and “after.”
 
-What we call the past is reconstructed now, from present evidence. If new
+What we call "the past" is reconstructed *now*, from present evidence. If new
 evidence appears, our reconstruction may shift. The long debate about whether
 dietary fat was harmful or beneficial is a familiar example later shown to rest
 on selective data [^FatDebate]. Consensus reality is fragile. Without external
@@ -73,8 +73,10 @@ Chains can form loops:
 
 ... → j → i → a → b → c → j → i → ...
 
-and may cross themselves without restriction. A loop is considered “closed” when
-its pattern stabilizes in some useful sense.
+and may cross themselves without restriction. Learning is a good illustration of
+multiple acknowledgdments and thus multiple "closes". A loop can be considered
+considered “closed” when its pattern stabilizes in some useful sense. A "closed"
+loop, has however to continue propagating, as we mention later.
 
 Repeated causal loops can function as clocks. Any recurrent sequence can serve
 as a clock. Accuracy varies, but recurrence suffices.
@@ -103,11 +105,9 @@ to the same subnode, the round-trip count becomes an effective measure of
 separation. Distance is not a spatial coordinate but an operational measure of
 causal separation.
 
-In the companion work *Dimension and Space as Emergent Properties of Distance in
-a Cause-Effect Model of the Emergence of Time*, these causal distances define an
-effective geometry. Observers attempt to embed subsets of subnodes into
-Euclidean spaces $\mathbb{R}^D$ such that Euclidean distances approximate causal
-distances:
+These causal distances define an effective geometry. Observers attempt to embed
+subsets of subnodes into Euclidean spaces $\mathbb{R}^D$ such that Euclidean
+distances approximate causal distances:
 
 $$ \|\Phi(n_i) - \Phi(n_j)\| \approx d(n_i, n_j). $$
 
