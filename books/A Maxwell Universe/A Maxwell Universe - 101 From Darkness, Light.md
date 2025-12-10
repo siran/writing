@@ -238,14 +238,3 @@ recent rebranding, “information”).
 This perspective prepares the ground for a different approach. We start not from
 mathematical objects, but from predictable interactions and their cause-effect
 patterns.
-
-
-## For more information, see:
-
-- *A Cause-Effect Model for Emergent Time and Distance*
-  https://preferredframe.com/prints/A%20Cause-Effect%20Model%20for%20Emergent%20Time%20and%20Distance/10.5281/zenodo.17613402/A%20Cause-Effect%20Model%20for%20Emergent%20Time%20and%20Distance.md
-
-
-- *Dimension and Space as Emergent Properties of Distance in a Cause-Effect
-  Model of the Emergence of Time*
-  https://preferredframe.com/prints/Dimension%20and%20Space%20as%20Emergent%20Properties%20of%20Distance%20in%20a%20Cause-Effect%20Model%20of%20the%20Emergence%20of%20Time/10.5281/zenodo.17633950/Dimension%20and%20Space%20as%20Emergent%20Properties%20of%20Distance%20in%20a%20Cause-Effect%20Model%20of%20the%20Emergence%20of%20Time.md
