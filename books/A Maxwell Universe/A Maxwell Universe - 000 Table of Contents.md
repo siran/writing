@@ -47,10 +47,50 @@ date: 2025-12-05 12:31
 
 ## PART II — THE POINT-MASS PATH
 
-5A. Newtonian Lineage: Newton → Ether → Michelson–Morley → SR/GR → Quantum
-patches
+1. Geometry Before the Point-Mass
+   - Ancient geometry as ideal form
+   - Plato: perfect structures behind appearances
+   - Descartes: analytic geometry and the denial of empty space
 
-5B. Fragmentation: mechanics, relativity, quantum split into branches
+2. Newton
+   - Theological grounding of order
+   - Absolute space and absolute time
+   - Point-mass as calculational convenience turned ontology
+   - Tension around action-at-a-distance
+
+3. Ether
+   - Need for a medium under the point-mass picture
+   - Electromagnetic propagation and the assumed substrate
+
+4. Michelson–Morley
+   - Failure to detect ether
+   - Patches added to preserve the ontology
+   - Spacetime geometry replacing the ether while keeping point-like matter
+
+
+### Part II.B — Fragmentation of the Point-Mass Framework
+
+5. Classical Mechanics
+   - Point-masses with definite positions
+   - Continuous trajectories in absolute space and time
+
+6. Relativity
+   - Point-masses retained, background replaced by geometry
+   - Smooth fields and curvature as governing structure
+
+7. Quantum Theory
+   - Discreteness without definite positions
+   - Collapse vs. continuous evolution
+
+8. Quantum Field Theory
+   - Fields with point-like excitations
+   - Renormalization and the unresolved ontology
+
+9. The Resulting Split
+   - Incompatible inheritances: localization, smoothness, continuity,
+     discreteness
+   - Many successful theories, no unified ontology
+   - The patches worked; the ontology did not.
 
 
 ## PART III — A MAXWELL ONTOLOGY
