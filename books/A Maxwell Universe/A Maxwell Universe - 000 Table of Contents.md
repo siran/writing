@@ -8,47 +8,41 @@ date: 2025-12-05 12:31
 
 1. From Darkness, Light
    - Events as primitives
+   - Registration of change
    - Operational awareness and causal loops
-   - Reference:
-     * [A Cause-Effect Model for Emergent Time and Distance](https://preferredframe.com/prints/A%20Cause-Effect%20Model%20for%20Emergent%20Time%20and%20Distance/10.5281/zenodo.17613402/A%20Cause-Effect%20Model%20for%20Emergent%20Time%20and%20Distance.md)
-     * [Palma & Rodriguez (2025) — *Operational Awareness in a Maxwell-Only Universe: A Formal Implication of Panpsychism*](https://doi.org/10.13140/RG.2.2.13647.60324/1)
 
 2. Time
    - Time as emergent ordering
    - Reconstruction of the past
-   - Consensus and fragility of interpretation
-   - Reference:
-     * [A Cause-Effect Model for Emergent Time and Distance](https://preferredframe.com/prints/A%20Cause-Effect%20Model%20for%20Emergent%20Time%20and%20Distance/10.5281/zenodo.17613402/A%20Cause-Effect%20Model%20for%20Emergent%20Time%20and%20Distance.md)
+   - Fragility of consensus interpretation
 
 3. Orderings
    - Causal steps and chains
-   - Loops as clocks
+   - Loops, clocks, and recurrence
    - Self-sustaining loops as noticers
-   - Reference:
-     * [A Cause-Effect Model for Emergent Time and Distance](https://preferredframe.com/prints/A%20Cause-Effect%20Model%20for%20Emergent%20Time%20and%20Distance/10.5281/zenodo.17613402/A%20Cause-Effect%20Model%20for%20Emergent%20Time%20and%20Distance.md)
 
 4. Counting Steps
-   - Duration as step counting
+   - Duration as step-counting
    - Distance from minimal causal chains
-   - Emergent geometry via embeddings
-   - Dimension as a relational property
-   - References:
-     * [A Cause-Effect Model for Emergent Time and Distance](https://preferredframe.com/prints/A%20Cause-Effect%20Model%20for%20Emergent%20Time%20and%20Distance/10.5281/zenodo.17613402/A%20Cause-Effect%20Model%20for%20Emergent%20Time%20and%20Distance.md)
-     * [Dimension and Space as Emergent Properties of Distance in a Cause-Effect Model of the Emergence of Time](https://preferredframe.com/prints/Dimension%20and%20Space%20as%20Emergent%20Properties%20of%20Distance%20in%20a%20Cause-Effect%20Model%20of%20the%20Emergence%20of%20Time/10.5281/zenodo.17633950/Dimension%20and%20Space%20as%20Emergent%20Properties%20of%20Distance%20in%20a%20Cause-Effect%20Model%20of%20the%20Emergence%20of%20Time.md)
+   - Effective geometry from causal distances
+   - Dimensionality from low-distortion embeddings
 
 5. Space
-   - One-dimensionality of causal distance
-   - Full distance set as emergent space
-   - Structure from compression, not substrate
-   - Reference:
-     * [Dimension and Space as Emergent Properties of Distance in a Cause-Effect Model of the Emergence of Time](https://preferredframe.com/prints/Dimension%20and%20Space%20as%20Emergent%20Properties%20of%20Distance%20in%20a%20Cause-Effect%20Model%20of%20the%20Emergence%20of%20Time/10.5281/zenodo.17633950/Dimension%20and%20Space%20as%20Emergent%20Properties%20of%20Distance%20in%20a%20Cause-Effect%20Model%20of%20the%20Emergence%20of%20Time.md)
+   - Space as the collection of all causal distances
+   - Multiple embeddings and non-unique geometry
+   - Compression as the basis of perceived structure
+   - Arithmetic as another emergent pattern
 
 6. Plato and the Cave
-   - Shadows vs. underlying structure
-   - Limits of inference
-   - Patterns as the only accessible reality
+   - Shadows and inaccessible causal substrate
+   - Representations from limited effects
+   - No guarantee of uniqueness or stability of models
 
 7. Mathematics and Reality
+   - Pattern-ascription vs. projection
+   - Laws as stable compressions
+   - Limits of mathematical description
+   - Mathematics as tool, not foundation
 
 
 ## PART II — THE POINT-MASS PATH
@@ -124,3 +118,6 @@ patches
 
 20. Self, time and space as imprints of a self-sustaining loop {#EmergenceOfSelf}
     - [Emergence of Self-Awareness from a Cause–Effect Loop](https://preprints.preferredframe.com/Emergence%20of%20Self-Awareness%20from%20a%20Cause%E2%80%93Effect%20Loop/Emergence%20of%20Self-Awareness%20from%20a%20Cause%E2%80%93Effect%20Loop%20v2.md.html)
+
+
+## Back Cover
