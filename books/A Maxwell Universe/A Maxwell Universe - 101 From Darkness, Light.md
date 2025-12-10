@@ -57,6 +57,18 @@ on selective data [^FatDebate]. Consensus reality is fragile. Without external
 anchors, interpretations feel arbitrary, raising the persistent question: what
 is real?
 
+[^WhatIsReality?]: Reality—“all that is”—includes everything you can think of
+and everything you suspect exists but do not consciously consider. Any formal
+definition is partial.
+
+[^Uncomputable]: As in Plato’s cave: the underlying structure is inaccessible in
+principle. We see only shadows and name some “causes” and others “effects.”
+
+[^FatDebate]: Late-20th-century nutrition science framed fat as the main cause of
+heart disease, but later reviews showed selective reporting and industry
+influence. Contradictory data had been minimized. Re-analysis revealed a weaker
+link than claimed, showing how consensus can form around distorted evidence.
+
 
 ## 3. Orderings
 
@@ -169,29 +181,43 @@ stable, predictive representations.
 ## 6. Plato and the Cave
 
 Plato illustrated the limits of our access to reality. We see shadows, not the
-source. Our interpretations are reconstructions shaped by limited observation.
-There is no external vantage point from which the true structure can be viewed.
-We infer what we can from patterns alone.
+real source. Our interpretations are reconstructions shaped by limited
+observation. There is no external vantage point from which the true structure
+can be viewed.
 
-[^WhatIsReality?]: Reality—“all that is”—includes everything you can think of
-and everything you suspect exists but do not consciously consider. Any formal
-definition is partial.
+We do not have direct access, or in other words, can never observe the
+underlying causal substrate of reality; we observe only the effects that reach
+us.
 
-[^Uncomputable]: As in Plato’s cave: the underlying structure is inaccessible in
-principle. We see only shadows and name some “causes” and others “effects.”
+Any geometry, dimension, or pattern we assign reflects how these effects can be
+compressed into a usable representation. A different observer, or a different
+sampling of the same causal structure, may construct a different representation
+without contradiction.
 
-[^FatDebate]: Late-20th-century nutrition science framed fat as the main cause of
-heart disease, but later reviews showed selective reporting and industry
-influence. Contradictory data had been minimized. Re-analysis revealed a weaker
-link than claimed, showing how consensus can form around distorted evidence.
+Shadows in Plato’s cave correspond to the relational patterns we detect. The
+“objects” casting those shadows are the underlying causal relations, which are
+inaccessible in themselves. We infer their organization from recurring effects,
+and when those effects change, our inferred picture must change with them. No
+representation we construct is guaranteed to be unique, complete, consistent, or
+stable.
+
+This perspective removes the assumption that there is a single, correct spatial
+or mathematical description waiting to be uncovered. Our models are not mirrors
+of an external geometry; they are operational tools built from the limited
+regularities we can register. Like the prisoners in the cave, we work with
+projections, not with the structure that produces them.
+
+What we call “reality” is therefore a reconstruction: a stable arrangement of
+inferred patterns that remains useful so long as the causal effects available to
+us support it.
 
 
 ## 7. Mathematics and Reality
 
-Much has been said about reality being “mathematical,” though the phrase is
-rarely defined. The arguments above suggest a simpler view: we ascribe patterns
-to reality -- sometimes because we genuinely recognize these patterns, sometimes
-because we project them and think that the patterns are "real".
+Much has been said and written about reality being “mathematical,” though the
+phrase is rarely defined. The arguments above suggest a simpler view: we ascribe
+patterns to reality—sometimes because we genuinely recognize them, sometimes
+because we project them and treat the projection as real.
 
 Mathematics does not have to govern the world. More often, we see the world
 through the mathematics we have created. Mathematics—and therefore physics—
@@ -209,10 +235,9 @@ Mathematics succeeds because we select what it can describe—and which patterns
 we pay attention to—not because nature is made of numbers (or, in its most
 recent rebranding, “information”).
 
-This perspective prepares the ground for a different approach. Instead of
-starting from mathematical objects, we start from energy itself and the
-interactions it sustains. Geometry, fields, and equations come later—as
-descriptions of persistent patterns in that underlying activity.
+This perspective prepares the ground for a different approach. We start not from
+mathematical objects, but from predictable interactions and their cause-effect
+patterns.
 
 
 ## For more information, see:
