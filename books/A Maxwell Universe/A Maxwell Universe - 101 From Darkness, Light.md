@@ -118,33 +118,52 @@ $$
 
 When such embeddings succeed with low distortion, observers perceive the
 corresponding subnodes as forming a $D$-dimensional structure under
-$\mathcal{M}$.
-
-If multiple embeddings work, dimension is not unique. If none succeed, all maps
-$\mathcal{M}$ are defective and geometry is ill-defined.
+$\mathcal{M}$. If multiple embeddings work, dimension is not unique. If none
+succeed, all such maps $\mathcal{M}$ are defective and geometry is ill-defined.
 
 Thus, space, time, and dimension are not fundamental; they arise from how
-operational awareness compresses relational patterns.
-
-Geometry, space, time, and distance appear only after repeated causal patterns
-stabilize into expectations.
+operational awareness compresses relational patterns. Geometry and distance
+appear only after repeated causal patterns stabilize into expectations.
 
 
 ## 5. Space
 
-Distance is always one-dimensional: a single count of causal steps between two
-events. What we call “space” is the union of all such distances. By collecting
-every pairwise separation into a single structure, operational awareness
-attempts to form a coherent geometric picture.
+Distance is the count of causal steps between two events. What we call “space”
+is the collection of all such distances. By gathering every pairwise separation
+into a single structure, operational awareness attempts to form a coherent
+geometric representation.
 
 If the full set of distances can be embedded with low distortion into some
-$\mathbb{R}^D$, we say the Node appears $D$-dimensional. If it cannot, the
-resulting “space” may have no consistent dimension at all.
+$D$-dimensional space, we say the subnodes appear $D$-dimensional. If no
+low-distortion embedding exists, the notion of dimension breaks down.
 
-Structure is therefore emergent. If a set of events fits a “square embedding,”
-observers perceive a square. The same pattern might be interpreted as a point, a
-surface, or a thin slice of a volume. Structure depends on how relational
-patterns are compressed, not on an intrinsic geometry underneath.
+The same distance data may admit several embeddings. A configuration may fit a
+triangle, two overlapping triangles, a star, or other shapes. Nothing enforces a
+unique interpretation; different interpretations may even coexist and function
+adequately. We only have effects—the causal distances—and from them we infer
+patterns to some acceptable accuracy. The preferred embedding is usually (but
+not always) the one that compresses the relations with minimal complexity while
+keeping distortion tolerable. Occam’s razor reflects this preference.
+
+This pattern-recognition mechanism is not limited to geometry. Arithmetic
+emerges the same way. Repeated causal acts—placing one apple in a bag, then
+another—stabilize into a reliable pattern. From this, operational awareness
+forms the abstraction that $1+1=2$. If two apples reliably produced three,
+arithmetic would encode that instead, and we would again regard the universe as
+“mathematical.” The rule is not discovered beneath reality; it is extracted from
+consistent effects and then used to predict further effects.
+
+In some contexts, $1+1$ can take any value permitted by the rules. One may
+define a formal system where $1+1=3$ and build consistent mathematics from it.
+Even in everyday settings, combining two things rarely doubles a quantity
+cleanly. The outcome depends on the combination rules: posture, leverage,
+strategy. Only once those rules are fixed does the expression $1+1=2$ become the
+correct statement. The “truth” of arithmetic reflects operational assumptions,
+not the causal substrate.
+
+Space, time, dimension, and arithmetic arise from the same mechanism:
+recognizing regularities in causally connected events and compressing them into
+stable, predictive representations.
 
 
 ## 6. Plato and the Cave
