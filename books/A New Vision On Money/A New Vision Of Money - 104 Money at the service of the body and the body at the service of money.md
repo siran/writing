@@ -6,9 +6,11 @@ tags:
   - philosophy
   - spirituality
 excerpt: The dreaming of the world takes many forms, because the body seeks in many ways to prove it is real; we think that "[the body] is _cause_ and not effect, and you are _its_ effect and cannot be its cause."
-canonical_url: https://anrodriguez.substack.com/p/lesson-4-money-at-the-service-of-the-body-and-the-body-at-the-service-of-moneyhtml
 ---
+
+
 ![](https://siran.github.io/assets/a_new_vision_on_money/man-lifting-money.png)
+
 
 Previously, we saw that by separating from God, we created the first and only
 lack: the lack of God. This lack fragmented and transformed into thousands of
@@ -31,6 +33,7 @@ appease its desires. From this perspective, the idea that the body itself
 doesn’t need anything sounds absurd. However, this is what the Course teaches.
 It is explained in Chapter 27:
 
+
 > The dreaming of the world takes many forms, because the body seeks in many
 > ways to prove it is autonomous and real. It puts things on itself that it has
 > bought with little metal discs or paper strips the world proclaims as valuable
@@ -39,6 +42,7 @@ It is explained in Chapter 27:
 > _other_ bodies, that they may protect it and collect more senseless things
 > that it can call its own. It looks about for special bodies that can share its
 > dream. ([CE T-27.X.2:1-5](https://acimce.app/:T-27.X.2:1-5))
+
 
 What this paragraph means is that we have designed a system of thought that
 teaches us its fundamental lesson: "... that it [the body] is _cause_ and not
@@ -69,7 +73,9 @@ We strain the body for strips of paper, metal discs, and numbers on a bank
 screen. We invent countless meaningless activities to obtain those strips of
 paper. But do we stop when the need is met?
 
+
 ![](https://siran.github.io/assets/a_new_vision_on_money/couple-in-gym.png)
+
 
 Instead of simply meeting a specific need, we end up squandering money on things
 we neither want nor need. Who cannot relate to this? Who has not wasted money on
@@ -89,7 +95,9 @@ Jesus has a good sense of irony. When seen in this light, the entire system
 becomes laughable for how absurd and senseless it is. Can you see the absurdity
 of it all too?
 
+
 ![](https://siran.github.io/assets/a_new_vision_on_money/consumers.png)
+
 
 Many have dared to point out the absurdity of the system. For example, in 2008,
 as a result of a financial crisis, the “Occupy” movement emerged as a way to
@@ -110,6 +118,7 @@ and laws to follow. The Course assures us that, although we feel bound by these
 laws, we will feel deep liberation when we realize they are not really laws but
 part of a madness. It says this in Lesson 76 of the Workbook:
 
+
 > Think of the freedom in the recognition that you are not bound to all the
 > strange and twisted laws you have set up to save you. You really think that
 > you will starve unless you have stacks of green paper strips and piles of
@@ -117,12 +126,15 @@ part of a madness. It says this in Lesson 76 of the Workbook:
 > your veins through a sharpened needle will ward off death. You really think
 > you are alone unless another body is with you. ([CE W-76.3:2-4](https://acimce.app/:W-76.3:2-4))
 
+
 > It is insanity that thinks these things. You call them laws, and put them
 > under different names in a long catalog of rituals that have no use and serve
 > no purpose. You think you must obey the "laws" of medicine, of economics, and
 > of health. Protect the body, and you will be saved. ([CE W-76.4](https://acimce.app/:W-76.4))
 
+
 > These are not laws but madness. ([CE W-76.5:1](https://acimce.app/:W-76.5:1))
+
 
 There are many examples of these laws. For instance, the idea that we must earn
 a living. In the psychotherapy supplement of the Course, it says that we believe
@@ -157,14 +169,18 @@ Observe how you feel.
 Isn’t that a goal you would like to achieve? Wouldn’t you put your body in
 service to this goal?
 
+
 ## Practice
+
 We have already seen that we tend to focus our lives on pleasing the body and
 put all our efforts into accumulating things that can satisfy it. We need to
 center the mind early in the day so that the goal is different. Today, we will
 introduce an additional element to our practice with this purpose. We will
 dedicate ourselves to starting the day well.
 
+
 ### In the Morning
+
 Dedicate about 15 minutes in the morning to the following practice:
 
 1. Close your eyes and set your mind to look honestly, without deception.
@@ -180,13 +196,17 @@ Dedicate about 15 minutes in the morning to the following practice:
 4. Release each belief with these words, said slowly and with full confidence
    that they will take effect:
 
+
 > "I believe that ---------------, but that is not true; I am governed only by
 > the laws of God."
 
+
 For example:
+
 
 > "I believe that I would starve if I had no money, but that is not true. I am
 > governed only by the laws of God."
+
 
 If you practice correctly, your mind will naturally reach a state of silence
 where you will find no more beliefs, and you will experience peace.
@@ -194,7 +214,9 @@ where you will find no more beliefs, and you will experience peace.
 Spend the remaining time staying in that state and remind yourself that this is
 the state you wish to remain in for the rest of the day.
 
+
 ### During the Day
+
 Since we have accepted the system we live in as normal for so many years, it is
 understandable that one morning meditation will not make it disappear
 immediately. For this, we need constant practice that offers a saner
@@ -208,8 +230,10 @@ mindful of thoughts related to shopping or goals you want to achieve.
 Whenever you catch yourself having a thought aimed at pleasing the body or
 achieving goals that serve the body, immediately respond with the truth:
 
+
 > "This thing I believe I need is not what will make me happy. I will be still
 > and listen to the alternative God offers me."
+
 
 Always remember that the words should be spoken slowly and with attention to the
 meaning they carry. For example, when you say "I will be still to listen," do
@@ -217,6 +241,7 @@ exactly that.
 
 Additionally, set a timer on your phone to remind you every 20 minutes to keep
 your focus throughout the day:
+
 
 > "Today I will not waste time trying to prove to myself that the body commands
 > me."

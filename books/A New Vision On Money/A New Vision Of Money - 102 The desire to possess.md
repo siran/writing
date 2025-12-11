@@ -6,9 +6,11 @@ tags:
   - philosophy
   - spirituality
 excerpt: Before we can explain where the idea of money comes from, it is necessary to take a small detour to explain the desire to possess.
-canonical_url: https://anrodriguez.substack.com/p/lesson-2-the-desire-to-possesshtml
 ---
+
+
 ![](https://siran.github.io/assets/a_new_vision_on_money/rama-bestows-his-possessions.png)
+
 
 Before we can explain where the idea of money comes from, it is necessary to
 take a small detour to explain the desire to possess. After all, one of the main
@@ -50,10 +52,12 @@ in the sense that a child belongs to their parents. That is the reality in
 heaven, and also in this world, even if we do not realize it. This is how Jesus
 explains it in the original dictation of the Course:
 
+
 > The truth is still that the attraction of God is irresistible at _all_ levels,
 > and the acceptance of this totally unavoidable truth is only a matter of time.
 > But you should consider whether you _want_ to wait, because you _can_ return
 > now, if you choose. ([CE T-2.I.1:3-4](https://acimce.app/:T-2.I.1:3-4))
+
 
 In this world, however, we came with the idea of being separated from God. So
 that impulse of such irresistible attraction had to be suppressed.
@@ -75,11 +79,14 @@ Jesus typifies the four main ways in which we distort the attraction to God. I
 will only cover the first two forms that are relevant to the topic of money that
 we are discussing this time.
 
+
 ## Type 1: The desire to possess bodies or be possessed by them
+
 Anyone who has fallen in love in this world has experienced the desire to
 possess the body of their beloved. As I mentioned earlier, soap operas are full
 of phrases that reveal the human desire to possess another or to be made theirs.
 Jesus typifies this type of distortion with these words:
+
 
 > Possession can be associated with the body only. If this occurs, sex is
 > particularly likely to be contaminated. Possession versus being possessed is
@@ -87,22 +94,27 @@ Jesus typifies this type of distortion with these words:
 > conceived of as satisfying alone, and both will be associated with fear, this
 > interpretation is particularly vulnerable to psychosexual confusion. ([CE T-2.I.3](https://acimce.app/:T-2.I.3))
 
+
 Here we can see that the classic roles of man and woman as a sexual couple are
 the product of a distortion. The man wants to possess the woman, and the woman
 wants the man to make her his. However, Jesus adds that neither role is
 satisfactory in itself, which leads to more confusion that is projected onto
 sex.
 
+
 ## Type 2: The desire to possess material things
+
 The second type of distortion occurs when we direct the desire for possession
 toward material things. This is the type of distortion in which money plays a
 part:
+
 
 > From a rather similar reference point, possession can also be associated with
 > things. This is essentially a shift from type 1 and is usually due to an
 > underlying fear of associating possession with people. In this sense, it is an
 > attempt to _protect_ people from one's possessiveness, like the superstition
 > about "protecting the name" we mentioned before. ([CE T-2.I.4](https://acimce.app/:T-2.I.4))
+
 
 It is interesting to read that the desire to possess material things is a form
 of protection. It is as if the first distortion we resort to is the desire to
@@ -118,14 +130,18 @@ sorrows in shopping when things do not go well in love. The idea proposed here
 is that this behavior is due to the fear caused by the desire to possess the
 other person.
 
+
 ![](https://siran.github.io/assets/a_new_vision_on_money/shopping-spree.png)
+
 
 Another interesting point that Jesus makes in his explanation is that many
 relationships are formed based on the first type of possession. But this is not
 what keeps them together in the long run. Once the romance fades, many couples
 remain together by sharing the desire to possess material things.
 
+
 ## Emergency Switches
+
 The desire to possess bodies and material things is an attempt to fill a void.
 Since these goals are relatively easy to achieve, the desires to possess tend to
 be compulsive. This means they can lead us to a state where our behavior becomes
@@ -177,14 +193,18 @@ object we desire to possess or that possesses us. There is nothing inherently
 special about money from this perspective. It is simply a deep need for God that
 has not yet been healed.
 
+
 ## Healing the Desire to Possess
+
 The Course teaches us to redefine our concept of possession as the path to
 healing the distortions we participate in:
+
 
 > The obvious correction for all types of the possession fallacy is to redefine
 > possession correctly. In the sense of “taking over,” the concept does not
 > exist at all in divine reality, which is the only level where real existence
 > is a meaningful term. No one _can_ be “taken over” unless he wills to be. ([CE T-2.I.24:1-3](https://acimce.app/:T-2.I.24:1-3))
+
 
 This is achieved through miracles. Miracles, which are expressions of love, are
 designed to fill the void left from our separation from God. By satisfying the
@@ -192,10 +212,13 @@ true need, the distortions must disappear. It does not matter what type of
 distortion arises or how difficult and persistent it may seem. The miracle can
 heal it:
 
+
 > It is emphasized here that these differences have no effect at all on the
 > miracle, which can heal any of them with equal ease. ([CE T-2.I.21:1](https://acimce.app/:T-2.I.21:1))
 
+
 ## Practice
+
 Just like in the previous practice, we will use the response to temptation and
 frequent reminders.
 
@@ -215,9 +238,11 @@ you. That is why you need to be very vigilant to recognize the moments when you
 think you want these things. Once you have identified the thought, respond
 immediately:
 
+
 > "I am confused because I think possessing ---------- is what will bring me
 > happiness [peace, freedom, etc.]. What I am really seeking through this is to
 > belong to God."
+
 
 Just like in the previous practice, close your eyes and say these words very
 slowly, letting their meaning enter your mind and help you change your
@@ -226,5 +251,6 @@ If you feel resistance, try to continue for a few more seconds. If the
 resistance persists, that will also be the moment to stop.
 
 Additionally, set your phone timer to remind you every 20 minutes of this idea:
+
 
 > "Today, I will not fight against my irresistible attraction to God."

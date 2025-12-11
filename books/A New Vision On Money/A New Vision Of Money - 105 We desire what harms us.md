@@ -5,7 +5,6 @@ tags:
   - money
   - philosophy
   - spirituality
-canonical_url: https://anrodriguez.substack.com/p/on-money-5-we-desire-what-harms-ushtml
 excerpt: It seems like there are millions of alternatives to choose from in this world. In reality, there are only two alternatives. The Course tells us how to distinguish between the valuable and valueless.
 ---
 

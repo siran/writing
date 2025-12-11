@@ -2,13 +2,15 @@
 title: A New Vision Of Money - 3. The root of all evil
 date: 2024-08-29 06:14:05
 excerpt: Somehow, we have ingrained in our subconscious the idea that money is the cause of the many problems we experience. Who has not thought that without the unjust systems imposed by money, we would have a better society and a better world?
-canonical_url: https://anrodriguez.substack.com/p/lesson-3-the-root-of-all-evilhtml
 tags:
   - money
   - philosophy
   - spirituality
 ---
+
+
 ![](https://siran.github.io/assets/a_new_vision_on_money/money-grows.png)
+
 
 In the introduction, we said that one view of money is that it is intrinsically
 evil, the root of all evils. Somehow, we have ingrained in our subconscious the
@@ -21,11 +23,13 @@ corrupt anyone? "Everyone has their price," says a famous saying.
 Jesus tells us in the Course that money is an effect of a prior cause and
 therefore cannot be attributed with evil:
 
+
 > The authority problem, not money, is the real "root of all evil." Money is but
 > one of its many reflections, and is a reasonably representative example of the
 > kind of thinking which stems from it. The idea of buying and selling implies
 > precisely the kind of exchange that the spirit cannot understand at all,
 > because its own supply is always abundant and all its demands are fully met. ([CE T-4.II.1:3-5](https://acimce.app/:T-4.II.1:3-5))
+
 
 Separation can be understood as a process we undertook with the goal of becoming
 our own authors. First, we denied God as our divine Author and then embarked on
@@ -73,20 +77,25 @@ believe that there are external or internal things that have the power to cause
 the calamities we experience, we are confused about who created us. Jesus
 emphasizes the importance of resolving this problem as soon as possible:
 
+
 > It is essential that this whole authority problem be voluntarily dismissed
 > once and for all. You do not understand how important this is for your sanity.
 > You are quite insane on this point. ([CE T-3.XI.1:1-3](https://acimce.app/:T-3.XI.1:1-3))
 
+
 Interestingly, the way to rid ourselves of this problem is by recognizing that
 it is a fictitious problem, a problem we have believed is there but is actually
 an illusion. How can we understand this? We find the key in these paragraphs:
+
 
 > Peace is a natural heritage of the Son. Everyone is free to refuse to accept
 > his inheritance, but he is not free to establish what his inheritance is. The
 > problem which everyone must decide is the fundamental question of his own
 > authorship. ([CE T-3.X.11:1-3](https://acimce.app/:T-3.X.11:1-3))
 
+
 And also,
+
 
 > You cannot find peace while this authority problem continues. But the truth is
 > still that there is no problem about this. There is no one who does not feel
@@ -94,6 +103,7 @@ And also,
 > will, he must regard his will as if it were not free, or the obviously
 > circular reasoning of his own position would be quite apparent. Free will
 > _must_ lead to freedom. ([CE T-3.X.12:1-5](https://acimce.app/:T-3.X.12:1-5))
+
 
 The authority problem can be reduced to a simple phrase: “My will and God's are
 different.” If they were the same will, there would be no authority to oppose
@@ -128,7 +138,10 @@ Can I use my free will not to imprison myself but to be free?
 
 Why would I not accept peace, which is my inheritance?
 
+
 ## Practice
+
+
 ![](https://siran.github.io/assets/a_new_vision_on_money/woman-painting-wall.png)
 
 
@@ -155,17 +168,22 @@ you feel. You will easily know this whenever you see that you have lost your
 peace. Each time you identify such a thought, immediately respond with the truth
 by saying:
 
+
 > I made up the idea that ---------- has the power to alter me. But my true
 > author is God, and my inheritance is His peace."
+
 
 For example, if you find yourself distressed about a debt or because someone has
 a bad opinion of you, you can say:
 
+
 > "I made up that this debt has the power to alter me. But my true author is
 > God, and my inheritance is His peace."
 
+
 > "I made up that this opinion has the power to alter me. But my true author is
 > God, and my inheritance is His peace."
+
 
 As usual, remember to say the words very slowly and feel their meaning. It is
 not about repeating them like a parrot, but about allowing yourself to feel how
@@ -178,6 +196,7 @@ Additionally, set your phone timer to remind you every 20 minutes of the truth.
 It is important to keep a true idea in mind throughout the day; otherwise, your
 mind will get lost in daily distractions and you will think again that the world
 is your author. You can use this phrase:
+
 
 > My worth is not determined by anything in this world. My worth was established
 > by God.
