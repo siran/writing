@@ -359,23 +359,55 @@ def render_markdown_file(src: Path, dst_html: Path, title: str):
 
     write_html(dst_html, body_html, head_extra=head_extra, title=title)
 
+def render_md_formats(src_in_site: Path, rel_path: Path, *, do_pdf: bool, do_epub: bool):
+    """
+    Render PDF/EPUB for a mirrored Markdown file (already under OUT) using render.py.
+    Outputs are written next to the mirrored file in OUT.
+    """
+    if not (do_pdf or do_epub):
+        return
+
+    render_py = ROOT / ".scripts" / "render" / "render.py"
+    if not render_py.exists():
+        print(f"[DEBUG] render.py not found at {render_py}; skipping md formats for {rel_path}")
+        return
+
+    cmd = [sys.executable, str(render_py)]
+    if do_pdf:
+        cmd.append("--pdf")
+    if do_epub:
+        cmd.append("--epub")
+    cmd.append(src_in_site.name)
+
+    proc = subprocess.run(
+        cmd,
+        cwd=src_in_site.parent,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+    )
+    out = proc.stdout or ""
+    if out:
+        print(out, end="" if out.endswith("\n") else "\n")
+    if proc.returncode != 0:
+        print(f"[DEBUG] WARNING: md render failed (rc={proc.returncode}) for {rel_path}; continuing")
+
 def _render_single_book(
     book_dir: Path,
     meta_name: str,
     render_py: Path,
     *,
     include_epub: bool = True,
-    include_pdf: bool = False,
+    include_pdf: bool = True,
     include_html: bool = True,
 ) -> tuple[Path, int, str]:
     """
     Render a single book directory with render.py.
 
-    include_pdf=True will invoke render.py with --all (PDF+HTML) and optionally
-    --epub; on failure it falls back to HTML-only so the build can continue.
-    include_epub=False skips EPUB generation entirely. include_html=False will
-    skip both PDF/HTML renders and just run preprocessing to emit concatenated
-    .md/.pandoc.md files.
+    include_pdf/include_html/include_epub request those formats. include_html=False
+    will skip both PDF/HTML renders and just run preprocessing to emit concatenated
+    .md/.pandoc.md files. By default we ask for PDF+HTML+EPUB; on PDF failure we
+    retry HTML-only so concatenated outputs still exist.
     """
     cmd = [sys.executable, str(render_py)]
 
@@ -437,13 +469,13 @@ def _render_single_book(
 
 def render_book_dirs(
     skip_epub: bool = False,
-    include_pdf: bool = False,
+    include_pdf: bool = True,
     include_html: bool = True,
     max_workers: int | None = None,
 ):
     """
     Find directories that declare a book.yml/book.yaml and render them before
-    mirroring the tree into site(). By default renders HTML+EPUB (PDF skipped).
+    mirroring the tree into site(). By default renders PDF+HTML+EPUB.
 
     skip_epub=True renders without EPUB. include_pdf=True attempts PDF+HTML
     (still skipping EPUB if skip_epub is set), and on failure falls back to
@@ -1396,7 +1428,17 @@ def main():
     ap.add_argument(
         "--skip-books",
         action="store_true",
-        help="Preprocess book.yml/book.yaml without EPUB/PDF (writes concatenated .md/.pandoc.md only).",
+        help="Only concatenate book.yml/book.yaml (no PDF/EPUB/HTML renders).",
+    )
+    ap.add_argument(
+        "--skip-pdf",
+        action="store_true",
+        help="Skip generating PDFs (books and individual Markdown files).",
+    )
+    ap.add_argument(
+        "--skip-epub",
+        action="store_true",
+        help="Skip generating EPUBs (books and individual Markdown files).",
     )
     ap.add_argument(
         "--book-workers",
@@ -1429,10 +1471,13 @@ def main():
             rel_path = src_path.relative_to(site_src)
             print(f"[DEBUG] site asset found: {rel_path}")
             if src_path.suffix.lower() == ".md":
+                dst_md = OUT / rel_path
+                dst_md.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(src_path, dst_md)
                 dst_rel = rel_path.with_suffix(rel_path.suffix + ".html")
                 dst_path = OUT / dst_rel
                 print(f"[DEBUG]   MD (site) -> {dst_rel}")
-                render_markdown_file(src_path, dst_path, title=rel_path.stem)
+                render_markdown_file(dst_md, dst_path, title=rel_path.stem)
             else:
                 dst_path = OUT / rel_path
                 print(f"[DEBUG]   COPY -> {rel_path} → {dst_path.relative_to(OUT)}")
@@ -1442,14 +1487,16 @@ def main():
         print("[DEBUG] WARNING: site_src does not exist; no site/ assets copied")
 
     # Render any books (book.yml/book.yaml) ahead of mirroring so their
-    # generated .md/.pandoc.md/.html (and .epub when enabled) files are present
-    # in the tree. With --skip-books we only preprocess to emit concatenated
-    # Markdown (.md + .pandoc.md), skipping EPUB/PDF for speed (site walker
-    # will still produce HTML from the emitted Markdown).
+    # generated .md/.pandoc.md/.html/.pdf/.epub files are present in the tree.
+    # With --skip-books we only preprocess to emit concatenated Markdown
+    # (.md + .pandoc.md), skipping PDF/EPUB/HTML book renders for speed.
+    book_include_pdf = not (args.skip_pdf or args.skip_books)
+    book_include_epub = not (args.skip_epub or args.skip_books)
+    book_include_html = not args.skip_books
     render_book_dirs(
-        skip_epub=args.skip_books,
-        include_pdf=False,
-        include_html=not args.skip_books,
+        skip_epub=not book_include_epub,
+        include_pdf=book_include_pdf,
+        include_html=book_include_html,
         max_workers=args.book_workers,
     )
 
