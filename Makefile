@@ -1,7 +1,7 @@
 .PHONY: serve clean
 
 
-rm:
+clean:
 	@echo "removing site/"
 	rm -r site || true
 
@@ -9,14 +9,12 @@ buildb:
 	@echo "building ..."
 	.scripts/build_site/build_site.py
 buildn:
-	@echo "building no books ..."
-	.scripts/build_site/build_site.py --skip-books
+	@echo "building fast (skip PDFs/EPUBs and book renders)..."
+	.scripts/build_site/build_site.py --skip-books --skip-pdf --skip-epub
 
 serve: clean buildn
-	@echo "serving NO books ..."
+	@echo "serving fast build (no book renders, no PDF/EPUB)..."
 	python3 -m http.server -d site 8000
 serveb: clean buildb
 	@echo "serving WITH books..."
 	python3 -m http.server -d site 8000
-clean:
-	rm -rf site
