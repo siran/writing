@@ -9,7 +9,7 @@ excerpt: Instead of continuing to invest in this world, Jesus invites us to star
 ---
 
 
-![](https://siran.github.io/assets/a_new_vision_on_money/nephews-watching-scrooge-mcducks-vault-empty.png)
+![](https://siran.github.io/assets/a_new_vision_on_money/empty-vault.png)
 
 
 Everything we consider valuable, we want to store somewhere safe. For example,
