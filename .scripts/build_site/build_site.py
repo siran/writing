@@ -359,16 +359,44 @@ def render_markdown_file(src: Path, dst_html: Path, title: str):
 
     write_html(dst_html, body_html, head_extra=head_extra, title=title)
 
-def _render_single_book(book_dir: Path, meta_name: str, render_py: Path) -> tuple[Path, int, str]:
-    cmd = [
-        sys.executable,
-        str(render_py),
-        "--html",
-        "--epub",
-        "--omit-numbering",
-        "--omit-toc",
-        meta_name,
-    ]
+def _render_single_book(
+    book_dir: Path,
+    meta_name: str,
+    render_py: Path,
+    *,
+    include_epub: bool = True,
+    include_pdf: bool = False,
+    include_html: bool = True,
+) -> tuple[Path, int, str]:
+    """
+    Render a single book directory with render.py.
+
+    include_pdf=True will invoke render.py with --all (PDF+HTML) and optionally
+    --epub; on failure it falls back to HTML-only so the build can continue.
+    include_epub=False skips EPUB generation entirely. include_html=False will
+    skip both PDF/HTML renders and just run preprocessing to emit concatenated
+    .md/.pandoc.md files.
+    """
+    cmd = [sys.executable, str(render_py)]
+
+    if include_pdf and include_html:
+        cmd.append("--all")  # PDF+HTML
+    elif include_pdf:
+        cmd.append("--pdf")
+    elif include_html:
+        cmd.append("--html")
+
+    if include_epub and (include_html or include_pdf):
+        cmd.append("--epub")
+
+    cmd.extend(
+        [
+            "--omit-numbering",
+            "--omit-toc",
+            meta_name,
+        ]
+    )
+
     proc = subprocess.run(
         cmd,
         cwd=book_dir,
@@ -376,19 +404,54 @@ def _render_single_book(book_dir: Path, meta_name: str, render_py: Path) -> tupl
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
     )
-    return book_dir, proc.returncode, proc.stdout or ""
+    out = proc.stdout or ""
 
-def render_book_dirs(skip: bool = False, max_workers: int | None = None):
-    """
-    Find directories that declare a book.yml/book.yaml and render them to
-    HTML+EPUB (skip PDF) before mirroring the tree into site().
+    # If PDF+HTML failed (likely due to PDF), retry HTML-only (no EPUB) so the
+    # build keeps going and concatenated outputs exist.
+    if include_pdf and proc.returncode != 0:
+        out += (
+            ("\n" if out and not out.endswith("\n") else "")
+            + "[DEBUG] PDF+HTML render failed; retrying HTML-only without EPUB\n"
+        )
+        fallback_cmd = [sys.executable, str(render_py)]
+        if include_html:
+            fallback_cmd.append("--html")
+        fallback_cmd.extend(
+            [
+                "--omit-numbering",
+                "--omit-toc",
+                meta_name,
+            ]
+        )
+        proc2 = subprocess.run(
+            fallback_cmd,
+            cwd=book_dir,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+        )
+        out += proc2.stdout or ""
+        return book_dir, proc2.returncode, out
 
-    skip=True will bypass book rendering (useful for local quick builds).
-    max_workers limits parallelism; default uses min(4, number of books).
+    return book_dir, proc.returncode, out
+
+def render_book_dirs(
+    skip_epub: bool = False,
+    include_pdf: bool = False,
+    include_html: bool = True,
+    max_workers: int | None = None,
+):
     """
-    if skip:
-        print("[DEBUG] Skipping book renders (--skip-books)")
-        return
+    Find directories that declare a book.yml/book.yaml and render them before
+    mirroring the tree into site(). By default renders HTML+EPUB (PDF skipped).
+
+    skip_epub=True renders without EPUB. include_pdf=True attempts PDF+HTML
+    (still skipping EPUB if skip_epub is set), and on failure falls back to
+    HTML-only so the build can continue. include_html=False will only run the
+    preprocessing step to emit concatenated .md/.pandoc.md files. max_workers
+    limits parallelism; default uses min(4, number of books).
+    """
+    include_epub = not skip_epub
 
     render_py = ROOT / ".scripts" / "render" / "render.py"
     if not render_py.exists():
@@ -435,7 +498,17 @@ def render_book_dirs(skip: bool = False, max_workers: int | None = None):
         return
 
     workers = max_workers or min(4, len(book_dirs))
-    print(f"[DEBUG] Rendering {len(book_dirs)} book(s) with {workers} worker(s)")
+    if not include_html and not include_pdf and not include_epub:
+        mode = "preprocess only (no HTML/PDF/EPUB)"
+    elif include_pdf and include_epub:
+        mode = "HTML+PDF+EPUB"
+    elif include_pdf:
+        mode = "HTML+PDF (no EPUB)"
+    elif include_epub:
+        mode = "HTML+EPUB"
+    else:
+        mode = "HTML only"
+    print(f"[DEBUG] Rendering {len(book_dirs)} book(s) ({mode}) with {workers} worker(s)")
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as ex:
         futures = []
@@ -448,7 +521,15 @@ def render_book_dirs(skip: bool = False, max_workers: int | None = None):
             if not meta_name:
                 continue
             futures.append(
-                ex.submit(_render_single_book, book_dir, meta_name, render_py)
+                ex.submit(
+                    _render_single_book,
+                    book_dir,
+                    meta_name,
+                    render_py,
+                    include_epub=include_epub,
+                    include_pdf=include_pdf,
+                    include_html=include_html,
+                )
             )
 
         for fut in concurrent.futures.as_completed(futures):
@@ -1315,7 +1396,7 @@ def main():
     ap.add_argument(
         "--skip-books",
         action="store_true",
-        help="Skip rendering book.yml/book.yaml directories (faster local builds).",
+        help="Preprocess book.yml/book.yaml without EPUB/PDF (writes concatenated .md/.pandoc.md only).",
     )
     ap.add_argument(
         "--book-workers",
@@ -1361,8 +1442,16 @@ def main():
         print("[DEBUG] WARNING: site_src does not exist; no site/ assets copied")
 
     # Render any books (book.yml/book.yaml) ahead of mirroring so their
-    # generated .md/.pandoc.md/.html/.epub files are present in the tree.
-    render_book_dirs(skip=args.skip_books, max_workers=args.book_workers)
+    # generated .md/.pandoc.md/.html (and .epub when enabled) files are present
+    # in the tree. With --skip-books we only preprocess to emit concatenated
+    # Markdown (.md + .pandoc.md), skipping EPUB/PDF for speed (site walker
+    # will still produce HTML from the emitted Markdown).
+    render_book_dirs(
+        skip_epub=args.skip_books,
+        include_pdf=False,
+        include_html=not args.skip_books,
+        max_workers=args.book_workers,
+    )
 
     build_article_pages()
 
