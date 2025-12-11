@@ -7,7 +7,7 @@ date: 2025-12-07 11:11
 ## The ancients
 
 
-![Euclid (fl. 4th century BCE)](assets/euclid.png)
+![Euclid (fl. 4th century BCE)](https://siran.github.io/assets/A Maxwell Universe/euclid.png)
 
 
 Geometry is ancient. Long before physics existed as a discipline, geometric
@@ -21,7 +21,7 @@ Debates about whether numbers or perfect forms “exist” continue even today.
 ## Plato
 
 
-![Plato (427–347 BCE)](assets/plato.png)
+![Plato (427–347 BCE)](https://siran.github.io/assets/A Maxwell Universe/plato.png)
 
 
 Plato saw geometry as belonging to a realm more real than the material world. In
@@ -38,7 +38,7 @@ Review of Psychology*, 2012).
 ## Descartes
 
 
-![René Descartes (1596–1650)](assets/descartes.png)
+![René Descartes (1596–1650)](https://siran.github.io/assets/A Maxwell Universe/descartes.png)
 
 
 Descartes preserved the ancient view of geometry as abstract but added a crucial
@@ -66,7 +66,7 @@ matter.
 ## Newton
 
 
-![Isaac Newton (1642–1727)](assets/newton.png)
+![Isaac Newton (1642–1727)](https://siran.github.io/assets/A Maxwell Universe/newton.png)
 
 
 A major conceptual shift arrives with Newton. His work was not merely predictive
@@ -128,7 +128,7 @@ a medium but remained undetected.
 ## Michelson–Morley
 
 
-![Edward W. Morley (1838–1923)](assets/morley.png)
+![Edward W. Morley (1838–1923)](https://siran.github.io/assets/A Maxwell Universe/morley.png)
 
 
 The Michelson–Morley experiment failed to detect motion through the ether.
@@ -136,7 +136,7 @@ Instead of discarding the point-mass framework, physics added another patch:
 non-classical transformations that altered length and time.
 
 
-![Albert A. Michelson (1852–1931)](assets/michelson.png)
+![Albert A. Michelson (1852–1931)](https://siran.github.io/assets/A Maxwell Universe/michelson.png)
 
 
 Einstein removed the ether and replaced the background with spacetime geometry.
@@ -145,7 +145,7 @@ reinterpreted gravity as curvature. Yet the ontology remained: matter as
 localized entities, points in a manifold.
 
 
-![Albert Einstein (1879–1955)](assets/einstein.png)
+![Albert Einstein (1879–1955)](https://siran.github.io/assets/A Maxwell Universe/einstein.png)
 
 
 ## Part II.B — Fragmentation
@@ -159,7 +159,7 @@ incompatible descriptions of the world.
 ### Classical Mechanics
 
 
-![Classical mechanics](assets/classical-mechanics.png)
+![Classical mechanics](https://siran.github.io/assets/A Maxwell Universe/classical-mechanics.png)
 
 
 Classical mechanics kept Newton’s ontology intact: point-masses with definite
@@ -172,7 +172,7 @@ experiment can reveal them.
 ### Relativity
 
 
-![Relativity](assets/relativity.png)
+![Relativity](https://siran.github.io/assets/A Maxwell Universe/relativity.png)
 
 
 Relativity retained point-masses but discarded absolute space and absolute time.
@@ -188,7 +188,7 @@ fundamental equations are smooth and deterministic.
 ### Quantum Theory
 
 
-![Double-slit experiment](assets/double-slit.png)
+![Double-slit experiment](https://siran.github.io/assets/A Maxwell Universe/double-slit.png)
 
 
 Quantum theory abandoned definite positions but kept discreteness. A particle is
@@ -203,7 +203,7 @@ succeeds in prediction but not in ontology.
 ### Quantum Field Theory
 
 
-![Feynman diagram: electron-positron anhilitation producing photon.](assets/feynman-diagram.png)
+![Feynman diagram: electron-positron anhilitation producing photon.](https://siran.github.io/assets/A Maxwell Universe/feynman-diagram.png)
 
 
 Quantum Field Theory keeps relativity’s spacetime and quantum theory’s
