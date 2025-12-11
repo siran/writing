@@ -9,7 +9,7 @@ excerpt: For most of us, seeking things like money, medicine, protective clothin
 ---
 
 
-![](https://siran.github.io/assets/a_new_vision_on_money/wim-hof-in-shorts-and-sandals-on-everest-peak.avif)
+![](https://siran.github.io/assets/a_new_vision_on_money/wim-hof-in-shorts-and-sandals-on-everest-peak.jpg)
 
 
 We have learned that we tend to desire things we do not truly want, things that
@@ -30,7 +30,7 @@ In Lesson 50 of the Course, we find this:
 > with magical power. All these things are your replacements for the love of
 > God. All these things are cherished to ensure a body identification. They are
 > songs of praise to the ego.
-  > 
+  >
  > Do not put your faith in the worthless. It will not sustain you. ([CE W-50.1-2](https://acimce.app/:W-50.1-2))
 
 

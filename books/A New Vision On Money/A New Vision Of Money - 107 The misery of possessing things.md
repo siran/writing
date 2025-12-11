@@ -7,7 +7,10 @@ tags:
   - spirituality
 excerpt: "There are two moments of happiness in a man’s life: the day he buys a boat and the day he finally sells it,"
 ---
-![](https://siran.github.io/assets/a_new_vision_on_money/man-taking-goat-to-sacrifice.avif)
+
+
+![](https://siran.github.io/assets/a_new_vision_on_money/man-taking-goat-to-sacrifice.jpg)
+
 
 Let's revisit the topic of possession. We previously discussed the belief that
 if we do not accumulate piles of money and inflate the number in our bank
@@ -29,11 +32,13 @@ focus your efforts on buying and owning more and more things. What we don't
 realize is that the ego has a plan behind this. In chapter 13, we find a good
 explanation of the ego's plan:
 
+
 > Ownership is a dangerous concept, if it is left to you. The ego wants to have
 > things for salvation, for possession is its law. Possession for its own sake
 > is the ego’s fundamental creed, a basic cornerstone in the churches that it
 > builds unto itself. And at its altar, it demands you lay _all_ of the things
 > it bids you get, leaving you no joy in them. ([CE T-13.VIII.1:7-10](https://acimce.app/:T-13.VIII.1:7-10))
+
 
 Most religions in the world contain the idea of sacrificing something to god or
 gods. Usually, when we think of sacrificial rituals, we think of someone
@@ -66,6 +71,7 @@ you will also be sacrificing them and ending up with nothing.
 
 For this reason, always distrust what you tell yourself you need:
 
+
 > Everything that the ego tells you that you need will hurt you. For although it
 > urges you again and again to get, it leaves you nothing, for what you get it
 > will _demand_ of you. And even from the very hands that grasped it, it will be
@@ -75,6 +81,7 @@ For this reason, always distrust what you tell yourself you need:
 > yourself will hurt you. For what you think you need will merely serve to
 > tighten up your world against the light, and render you unwilling to question
 > the value that this world can really hold for you. ([CE T-13.VIII.2](https://acimce.app/:T-13.VIII.2))
+
 
 Here, we see once again the idea of 'miswanting.' Additionally, it describes a
 process that the ego uses to ensure there is no joy in anything you possess. It
@@ -95,7 +102,9 @@ sells it. The idea behind this saying is that every man longs to have his own
 boat, but once he gets it, he realizes how much maintenance and trouble owning a
 boat brings. The only way to regain happiness is to get rid of the boat.
 
-![](https://siran.github.io/assets/a_new_vision_on_money/man-on-his-way-to-return-boat.avif)
+
+![](https://siran.github.io/assets/a_new_vision_on_money/man-on-his-way-to-return-boat.jpg)
+
 
 Think of a personal example of something you always wanted, but once you
 obtained it, it wasn’t what you imagined. Perhaps it turned out to be more work
@@ -134,8 +143,11 @@ you want.
 In a very emphatic way, Jesus tells you not to ask yourself what you want,
 because you don’t know. The answer you give yourself will cause harm.
 
+
 ## Practice
+
 ### In the morning
+
 Today, we will spend about 15 minutes getting in touch with the reality of what
 we have tried to possess, we have placed on the ego’s altar, which has deprived
 us of the joy it promised:
@@ -147,18 +159,23 @@ us of the joy it promised:
 - Reflect on how there was no complete joy in them.
 - Finally, say to each of these things:
 
+
 > "I now place this possession on Your altar, Father, so You may return to me
 > what You truly want me to have."
+
 
 Imagine truly giving each of these things to God’s light, and receiving back a
 gift that brings you relief. When you can no longer find anything else in your
 mind, use the silence to be with God for a few more minutes. End with this
 phrase:
 
+
 > "I leave all my needs to God today. Under His guidance, my journey will be
 > light and without obstacles."
 
+
 ### During the day
+
 As you can see, this first part of the series is to question them and give them
 to someone who truly knows what is best for you. Today, we will continue
 developing this skill.
@@ -166,10 +183,13 @@ developing this skill.
 Whenever you notice that you are desiring something from this world, no matter
 how much you believe you need or want it, say as honestly as you can:
 
+
 > "Holy Spirit, give me what I need in this situation because only You know what
 > it is."
 
+
 Set the timer on your phone to remind you every 20 minutes of the last part of
 that phrase:
+
 
 > "Holy Spirit, only You know what I need."
