@@ -472,6 +472,7 @@ def render_book_dirs(
     include_pdf: bool = True,
     include_html: bool = True,
     max_workers: int | None = None,
+    base_dir: Path | None = None,
 ):
     """
     Find directories that declare a book.yml/book.yaml and render them before
@@ -483,6 +484,8 @@ def render_book_dirs(
     preprocessing step to emit concatenated .md/.pandoc.md files. max_workers
     limits parallelism; default uses min(4, number of books).
     """
+    base = base_dir or ROOT
+    skip_gitignore = base == OUT
     include_epub = not skip_epub
 
     render_py = ROOT / ".scripts" / "render" / "render.py"
@@ -493,23 +496,17 @@ def render_book_dirs(
     seen: set[Path] = set()
     candidates: list[Path] = []
     for ext in ("book.yml", "book.yaml"):
-        candidates.extend(ROOT.rglob(ext))
+        candidates.extend(base.rglob(ext))
 
     for meta in candidates:
         try:
-            meta_rel = rel(meta)
+            meta_rel = meta.relative_to(base)
         except Exception:
             continue
 
         # Skip gitignored, OUT/, excluded, or hidden paths
-        if is_gitignored(meta):
+        if not skip_gitignore and is_gitignored(meta):
             continue
-        try:
-            meta.relative_to(OUT)
-            continue
-        except ValueError:
-            pass
-
         parts = meta_rel.parts
         if not parts:
             continue
@@ -523,7 +520,11 @@ def render_book_dirs(
             continue
         seen.add(book_dir)
 
-        print(f"[DEBUG] Queued book render: {rel(book_dir)} ({meta.name})")
+        try:
+            rel_root = rel(book_dir)
+        except Exception:
+            rel_root = book_dir
+        print(f"[DEBUG] Queued book render: {rel_root} ({meta.name})")
 
     book_dirs = list(seen)
     if not book_dirs:
@@ -540,7 +541,10 @@ def render_book_dirs(
         mode = "HTML+EPUB"
     else:
         mode = "HTML only"
-    print(f"[DEBUG] Rendering {len(book_dirs)} book(s) ({mode}) with {workers} worker(s)")
+    print(
+        f"[DEBUG] Rendering {len(book_dirs)} book(s) ({mode}) with {workers} worker(s) "
+        f"from base={base}"
+    )
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as ex:
         futures = []
@@ -1209,8 +1213,12 @@ def breadcrumbs(rel_dir: Path) -> str:
         items.append(f"[📂 {part} /]({up})")
     return " ".join(items)
 
-def format_dir_index(dir_abs: Path, items: list[Item]) -> str:
-    rel_dir = rel(dir_abs) if dir_abs != ROOT else Path()
+def _format_dir_index_common(rel_dir: Path, items: list[Item], *, use_root_links: bool) -> tuple[str, str]:
+    """
+    Shared index formatter.
+
+    use_root_links=False => paths are relative to OUT (mirrored tree).
+    """
     title = (rel_dir.name or f"{REPO} index")
 
     lines = []
@@ -1220,11 +1228,12 @@ def format_dir_index(dir_abs: Path, items: list[Item]) -> str:
     items_sorted = sorted(items, key=lambda e: (not e.is_dir, e.name.lower()))
     for it in items_sorted:
         if it.is_dir:
-            href = (it.name + "/") if rel_dir.parts else (rel(it.path).as_posix() + "/")
+            href_rel = rel(it.path) if use_root_links else rel_out(it.path)
+            href = (it.name + "/") if rel_dir.parts else (href_rel.as_posix() + "/")
             href = quote(href, safe="/:@-._~")
             lines.append(f"- 📂 [{it.name}]({href})")
         else:
-            p_rel = rel(it.path)          # path in repo (e.g. books/.../file.md)
+            p_rel = rel(it.path) if use_root_links else rel_out(it.path)
             ext = it.path.suffix.lower()
 
             if ext in MD_EXTS:
@@ -1238,12 +1247,15 @@ def format_dir_index(dir_abs: Path, items: list[Item]) -> str:
                 url_local = "/" + quote(rel_rendered, safe="/:@-._~")
 
                 gh_path = quote(p_rel.as_posix(), safe="/:@-._~")
-                gh_url = (
-                    f"https://github.com/{OWNER}/{REPO}/blob/"
-                    f"{BRANCH}/{gh_path}"
-                )
+                gh_url = None
+                if use_root_links and (ROOT / p_rel).exists():
+                    gh_url = (
+                        f"https://github.com/{OWNER}/{REPO}/blob/"
+                        f"{BRANCH}/{gh_path}"
+                    )
 
-                lines.append(f"- 📄 [{it.name}]({url_local}) ([[Raw]({url_local_raw})] [[GH]({gh_url})])")
+                gh_block = f" [[GH]({gh_url})]" if gh_url else ""
+                lines.append(f"- 📄 [{it.name}]({url_local}) ([[Raw]({url_local_raw})]{gh_block})")
             else:
                 mirrored = OUT / p_rel
                 if mirrored.exists():
@@ -1256,6 +1268,52 @@ def format_dir_index(dir_abs: Path, items: list[Item]) -> str:
 
     lines.append("")
     return title, "\n".join(lines)
+
+def format_dir_index(dir_abs: Path, items: list[Item]) -> tuple[str, str]:
+    rel_dir = rel(dir_abs) if dir_abs != ROOT else Path()
+    return _format_dir_index_common(rel_dir, items, use_root_links=True)
+
+def format_dir_index_out(dir_abs: Path, items: list[Item]) -> tuple[str, str]:
+    rel_dir = rel_out(dir_abs) if dir_abs != OUT else Path()
+    return _format_dir_index_common(rel_dir, items, use_root_links=False)
+
+def build_out_indexes(hidden_stems: set[tuple[str, str]]):
+    for dirpath, dirnames, filenames in os.walk(OUT):
+        d = Path(dirpath)
+        rel_parts = rel_out(d).parts if d != OUT else ()
+        in_hidden = (
+            len(rel_parts) >= 2 and (rel_parts[0], rel_parts[1]) in hidden_stems
+        )
+        # prune hidden dirs
+        keep = []
+        for dd in list(dirnames):
+            if dd.startswith(".") and dd != ".well-known":
+                continue
+            child = d / dd
+            child_rel_parts = rel_out(child).parts
+            if len(child_rel_parts) >= 2 and (child_rel_parts[0], child_rel_parts[1]) in hidden_stems:
+                continue
+            if (child/"pyvenv.cfg").exists():
+                continue
+            keep.append(dd)
+        dirnames[:] = keep
+
+        items: list[Item] = []
+        for sub in sorted([d/nn for nn in dirnames], key=lambda x: x.name.lower()):
+            items.append(Item(name=sub.name, is_dir=True, mtime=sub.stat().st_mtime, path=sub))
+        for fname in sorted(filenames, key=lambda x: x.lower()):
+            if fname.startswith("."):
+                continue
+            p = d / fname
+            if p.name in EXCLUDE_NAMES:
+                continue
+            items.append(Item(name=p.name, is_dir=False, mtime=p.stat().st_mtime, path=p))
+
+        out_html = d / "index.html"
+        if in_hidden:
+            continue
+        title, md_body = format_dir_index_out(d, items)
+        write_md_like_page(out_html, md_body, title=title)
 
 def copy_static():
     OUT.mkdir(parents=True, exist_ok=True)
@@ -1486,20 +1544,6 @@ def main():
     else:
         print("[DEBUG] WARNING: site_src does not exist; no site/ assets copied")
 
-    # Render any books (book.yml/book.yaml) ahead of mirroring so their
-    # generated .md/.pandoc.md/.html/.pdf/.epub files are present in the tree.
-    # With --skip-books we only preprocess to emit concatenated Markdown
-    # (.md + .pandoc.md), skipping PDF/EPUB/HTML book renders for speed.
-    book_include_pdf = not (args.skip_pdf or args.skip_books)
-    book_include_epub = not (args.skip_epub or args.skip_books)
-    book_include_html = not args.skip_books
-    render_book_dirs(
-        skip_epub=not book_include_epub,
-        include_pdf=book_include_pdf,
-        include_html=book_include_html,
-        max_workers=args.book_workers,
-    )
-
     build_article_pages()
 
     hidden_stems = hidden_stems_from_provenance()
@@ -1556,44 +1600,22 @@ def main():
                 rendered_dst = dst.with_suffix(dst.suffix + ".html")
                 render_markdown_file(p, rendered_dst, title=p.stem)
 
-        rel_parts_d = rel(d).parts if d != ROOT else ()
-        in_hidden_stem = (
-            len(rel_parts_d) >= 2 and (rel_parts_d[0], rel_parts_d[1]) in hidden_stems
-        )
-
-        out_html = (OUT/rel(d)/"index.html") if d != ROOT else (OUT/"index.html")
-        if out_html.exists() or in_hidden_stem:
-            continue
-
-        items = []
-        for p in sorted([x for x in d.iterdir() if x.is_dir()], key=lambda x: x.name.lower()):
-            if is_gitignored(p):
-                continue
-            if p.name in EXCLUDE_NAMES:
-                continue
-            if p.name.startswith(".") and p.name != ".well-known":
-                continue
-            if (p/"pyvenv.cfg").exists():
-                continue
-            p_rel_parts = rel(p).parts
-            if len(p_rel_parts) >= 2 and (p_rel_parts[0], p_rel_parts[1]) in hidden_stems:
-                continue
-            items.append(Item(name=p.name, is_dir=True, mtime=p.stat().st_mtime, path=p))
-
-        for p in sorted([x for x in d.iterdir() if x.is_file() and not x.name.startswith(".")],
-                        key=lambda x: x.name.lower()):
-            if is_gitignored(p):
-                continue
-            if p.name in EXCLUDE_NAMES:
-                continue
-            if d == ROOT and p.name == "CNAME":
-                continue
-            items.append(Item(name=p.name, is_dir=False, mtime=p.stat().st_mtime, path=p))
-
-        title, md_body = format_dir_index(d, items)
-        write_md_like_page(out_html, md_body, title=title)
-
     copy_static()
+    # Render books from the mirrored copies under OUT to avoid touching source.
+    book_include_pdf = not (args.skip_pdf or args.skip_books)
+    book_include_epub = not (args.skip_epub or args.skip_books)
+    book_include_html = not args.skip_books
+    render_book_dirs(
+        skip_epub=not book_include_epub,
+        include_pdf=book_include_pdf,
+        include_html=book_include_html,
+        max_workers=args.book_workers,
+        base_dir=OUT,
+    )
+
+    # Build directory indexes based on the final OUT tree (includes rendered books).
+    build_out_indexes(hidden_stems)
+
     build_sitemap_and_robots()
     build_rss_feed()
 
