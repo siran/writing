@@ -28,7 +28,7 @@ which we will address later in [@EmergenceOfSelf]).
 This reactivity is not limited to conscious minds. Anything that changes in
 response to causes and produces effects is, in this minimal sense,
 **operationally aware** [^OperationalAwareness]. A self-sustaining causal loop
-qualifies: it updates its own state in response to incoming influences. By doing
+qualifies: it can update its own state in response to incoming influences. By doing
 so, it distinguishes states and tracks transitions—not through any “plan of
 action,” which would imply a consciousness we have not defined, but simply by
 virtue of its continued existence as a loop. In this minimal operational sense,
