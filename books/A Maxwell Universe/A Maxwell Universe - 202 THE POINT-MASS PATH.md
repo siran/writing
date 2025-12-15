@@ -400,7 +400,7 @@ dynamical effects—real physical deformations of matter—introduced to preserv
 the ether as an undetectable reference frame.
 
 
-![Hendrik A. Lorentz (1853–1928)](assets/lorentz.png)
+![Hendrik A. Lorentz (1853–1928)](https://siran.github.io/assets/a_new_vision_on_money/lorentz.png)
 
 
 Einstein took a different step. In 1905 he kept Lorentz’s mathematical
