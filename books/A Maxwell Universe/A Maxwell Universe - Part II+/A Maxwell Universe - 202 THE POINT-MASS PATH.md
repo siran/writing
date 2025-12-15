@@ -117,8 +117,6 @@ Descartes’ error was not conceptual but mathematical. Without the tools of wav
 theory and field dynamics, he could not quantify how vortices remain stable or
 how they propagate influence without losing coherence.
 
----
-
 
 ## Newton
 
