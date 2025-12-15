@@ -13,7 +13,11 @@ def render_pdf(
     shift_args: List[str],
     common_args: List[str],
     timeout: int,
+    log_path: Optional[Path] = None,
+    verbose: bool = False,
 ) -> int:
+    log_args: List[str] = [f"--log={log_path.name}"] if log_path else []
+    verbose_args: List[str] = ["--verbose"] if verbose else []
     cmd = [
         "docker",
         "run",
@@ -24,6 +28,8 @@ def render_pdf(
         "/data",
         "pandoc/extra",
         "--standalone",
+        *log_args,
+        *verbose_args,
         *common_args,
         *shift_args,
         *meta_args,
@@ -44,10 +50,14 @@ def render_html(
     common_args: List[str],
     timeout: int,
     css_path: Optional[Path] = None,
+    log_path: Optional[Path] = None,
+    verbose: bool = False,
 ) -> int:
     css_args: List[str] = []
     if css_path and css_path.exists():
         css_args = ["--css", css_path.name]
+    log_args: List[str] = [f"--log={log_path.name}"] if log_path else []
+    verbose_args: List[str] = ["--verbose"] if verbose else []
     cmd = [
         "docker",
         "run",
@@ -58,6 +68,8 @@ def render_html(
         "/data",
         "pandoc/extra",
         "--standalone",
+        *log_args,
+        *verbose_args,
         *common_args,
         *shift_args,
         *meta_args,
@@ -81,10 +93,14 @@ def render_epub(
     common_args: List[str],
     timeout: int,
     css_path: Optional[Path] = None,
+    log_path: Optional[Path] = None,
+    verbose: bool = False,
 ) -> int:
     css_args: List[str] = []
     if css_path and css_path.exists():
         css_args = ["--css", css_path.name]
+    log_args: List[str] = [f"--log={log_path.name}"] if log_path else []
+    verbose_args: List[str] = ["--verbose"] if verbose else []
     cmd = [
         "docker",
         "run",
@@ -95,6 +111,8 @@ def render_epub(
         "/data",
         "pandoc/extra",
         "--standalone",
+        *log_args,
+        *verbose_args,
         *common_args,
         *shift_args,
         *meta_args,

@@ -5,7 +5,7 @@ from typing import Optional
 import re
 import shutil
 
-from pnpmd_util import title_from_book_yaml, die, run_visible
+from pnpmd_util import title_from_book_yaml, die, run_visible, print_pandoc_log
 from pnpmd_preprocess import prepare_preprocessed
 from pnpmd_pandoc import render_pdf, render_html, render_epub
 
@@ -144,6 +144,7 @@ def render_book_yaml(
     auto_shift: bool = True,
     number_offset: Optional[str] = None,
     epub_chapter_level: Optional[int] = None,
+    verbose: bool = False,
 ) -> tuple[Optional[Path], Optional[Path]]:
     """
     Book mode:
@@ -305,25 +306,59 @@ def render_book_yaml(
 
     if make_pdf:
         out_pdf = in_tmp.parent / "out.pdf"
-        rc = render_pdf(in_tmp, out_pdf, meta_args, shift_args, common_args, timeout)
+        pdf_log = in_tmp.parent / "pandoc-pdf.log.json"
+        rc = render_pdf(
+            in_tmp,
+            out_pdf,
+            meta_args,
+            shift_args,
+            common_args,
+            timeout,
+            log_path=pdf_log,
+            verbose=verbose,
+        )
+        if verbose or rc != 0:
+            print_pandoc_log(pdf_log, label="PDF")
         if rc != 0:
             die(f"Docker pandoc (PDF) failed (rc={rc})")
         shutil.copy2(out_pdf, pdf_path)
 
     if make_html:
         out_html = in_tmp.parent / "out.html"
+        html_log = in_tmp.parent / "pandoc-html.log.json"
         rc = render_html(
-            in_tmp, out_html, meta_args, shift_args, common_args, timeout, css_path
+            in_tmp,
+            out_html,
+            meta_args,
+            shift_args,
+            common_args,
+            timeout,
+            css_path,
+            log_path=html_log,
+            verbose=verbose,
         )
+        if verbose or rc != 0:
+            print_pandoc_log(html_log, label="HTML")
         if rc != 0:
             die(f"Docker pandoc (HTML) failed (rc={rc})")
         shutil.copy2(out_html, html_path)
 
     if make_epub:
         out_epub = in_tmp.parent / "out.epub"
+        epub_log = in_tmp.parent / "pandoc-epub.log.json"
         rc = render_epub(
-            in_tmp, out_epub, meta_args, shift_args, common_args, timeout, css_path
+            in_tmp,
+            out_epub,
+            meta_args,
+            shift_args,
+            common_args,
+            timeout,
+            css_path,
+            log_path=epub_log,
+            verbose=verbose,
         )
+        if verbose or rc != 0:
+            print_pandoc_log(epub_log, label="EPUB")
         if rc != 0:
             die(f"Docker pandoc (EPUB) failed (rc={rc})")
         shutil.copy2(out_epub, epub_path)

@@ -9,7 +9,7 @@ from typing import Optional
 from pnpmd_preprocess import prepare_preprocessed
 from pnpmd_pandoc import render_pdf, render_html, render_epub
 from pnpmd_book import render_book_yaml
-from pnpmd_util import discover_md_in_cwd, die
+from pnpmd_util import discover_md_in_cwd, die, print_pandoc_log
 
 
 def render(
@@ -27,6 +27,7 @@ def render(
     auto_shift: bool = True,
     number_offset: Optional[str] = None,
     epub_chapter_level: Optional[int] = None,
+    verbose: bool = False,
 ) -> tuple[Optional[Path], Optional[Path]]:
     """
     Main render entrypoint.
@@ -52,6 +53,7 @@ def render(
             auto_shift=auto_shift,
             number_offset=number_offset,
             epub_chapter_level=epub_chapter_level,
+            verbose=verbose,
         )
 
     # --- Normal (single .md) mode ---
@@ -88,21 +90,57 @@ def render(
 
         if make_pdf:
             out_pdf = tmpdir / "out.pdf"
-            rc = render_pdf(in_tmp, out_pdf, [], shift_args, common_args, timeout)
+            pdf_log = tmpdir / "pandoc-pdf.log.json"
+            rc = render_pdf(
+                in_tmp,
+                out_pdf,
+                [],
+                shift_args,
+                common_args,
+                timeout,
+                log_path=pdf_log,
+                verbose=verbose,
+            )
+            if verbose or rc != 0:
+                print_pandoc_log(pdf_log, label="PDF")
             if rc != 0:
                 die(f"Docker pandoc (PDF) failed (rc={rc})")
             shutil.copy2(out_pdf, pdf_path)
 
         if make_html:
             out_html = tmpdir / "out.html"
-            rc = render_html(in_tmp, out_html, [], shift_args, common_args, timeout)
+            html_log = tmpdir / "pandoc-html.log.json"
+            rc = render_html(
+                in_tmp,
+                out_html,
+                [],
+                shift_args,
+                common_args,
+                timeout,
+                log_path=html_log,
+                verbose=verbose,
+            )
+            if verbose or rc != 0:
+                print_pandoc_log(html_log, label="HTML")
             if rc != 0:
                 die(f"Docker pandoc (HTML) failed (rc={rc})")
             shutil.copy2(out_html, html_path)
 
         if make_epub:
             out_epub = tmpdir / "out.epub"
-            rc = render_epub(in_tmp, out_epub, [], shift_args, common_args, timeout)
+            epub_log = tmpdir / "pandoc-epub.log.json"
+            rc = render_epub(
+                in_tmp,
+                out_epub,
+                [],
+                shift_args,
+                common_args,
+                timeout,
+                log_path=epub_log,
+                verbose=verbose,
+            )
+            if verbose or rc != 0:
+                print_pandoc_log(epub_log, label="EPUB")
             if rc != 0:
                 die(f"Docker pandoc (EPUB) failed (rc={rc})")
             shutil.copy2(out_epub, epub_path)
@@ -144,16 +182,39 @@ def render(
 
     if make_pdf:
         out_pdf = in_tmp.parent / "out.pdf"
-        rc = render_pdf(in_tmp, out_pdf, meta_args, shift_args, common_args, timeout)
+        pdf_log = in_tmp.parent / "pandoc-pdf.log.json"
+        rc = render_pdf(
+            in_tmp,
+            out_pdf,
+            meta_args,
+            shift_args,
+            common_args,
+            timeout,
+            log_path=pdf_log,
+            verbose=verbose,
+        )
+        if verbose or rc != 0:
+            print_pandoc_log(pdf_log, label="PDF")
         if rc != 0:
             die(f"Docker pandoc (PDF) failed (rc={rc})")
         shutil.copy2(out_pdf, pdf_path)
 
     if make_html:
         out_html = in_tmp.parent / "out.html"
+        html_log = in_tmp.parent / "pandoc-html.log.json"
         rc = render_html(
-            in_tmp, out_html, meta_args, shift_args, common_args, timeout, css_path
+            in_tmp,
+            out_html,
+            meta_args,
+            shift_args,
+            common_args,
+            timeout,
+            css_path,
+            log_path=html_log,
+            verbose=verbose,
         )
+        if verbose or rc != 0:
+            print_pandoc_log(html_log, label="HTML")
         if rc != 0:
             die(f"Docker pandoc (HTML) failed (rc={rc})")
         shutil.copy2(out_html, html_path)
@@ -165,9 +226,20 @@ def render(
 
     if make_epub:
         out_epub = in_tmp.parent / "out.epub"
+        epub_log = in_tmp.parent / "pandoc-epub.log.json"
         rc = render_epub(
-            in_tmp, out_epub, meta_args, shift_args, common_args, timeout, css_path
+            in_tmp,
+            out_epub,
+            meta_args,
+            shift_args,
+            common_args,
+            timeout,
+            css_path,
+            log_path=epub_log,
+            verbose=verbose,
         )
+        if verbose or rc != 0:
+            print_pandoc_log(epub_log, label="EPUB")
         if rc != 0:
             die(f"Docker pandoc (EPUB) failed (rc={rc})")
         shutil.copy2(out_epub, epub_path)
@@ -229,6 +301,11 @@ def main(argv=None):
         type=int,
         help="Heading level to start new EPUB chapters (pandoc --epub-chapter-level).",
     )
+    ap.add_argument(
+        "--verbose",
+        action="store_true",
+        help="Print pandoc logs (and extra pandoc verbosity) to help debug failures.",
+    )
 
     g = ap.add_mutually_exclusive_group()
     g.add_argument("--pdf", action="store_true", help="Render PDF only.")
@@ -263,6 +340,7 @@ def main(argv=None):
             auto_shift=not args.no_auto_shift,
             number_offset=args.number_offset,
             epub_chapter_level=args.epub_chapter_level,
+            verbose=args.verbose,
         )
     except SystemExit:
         raise

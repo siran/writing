@@ -1,5 +1,6 @@
 # pnpmd_util.py
 
+import json
 import re
 import subprocess
 import sys
@@ -128,3 +129,80 @@ def title_from_book_yaml(path: Path) -> str:
     if m2:
         return m2.group(1).strip().strip('"\'')
     return path.stem
+
+
+def _iter_log_entries(txt: str):
+    """
+    Yield parsed log entries from a pandoc --log JSON file.
+
+    Supports whole-file JSON (object or list) and JSON-per-line formats.
+    """
+    if not txt.strip():
+        return
+
+    def emit(obj):
+        if obj is None:
+            return
+        if isinstance(obj, list):
+            for x in obj:
+                yield x
+        else:
+            yield obj
+
+    try:
+        yield from emit(json.loads(txt))
+        return
+    except Exception:
+        pass
+
+    for line in txt.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            yield json.loads(line)
+        except Exception:
+            continue
+
+
+def print_pandoc_log(log_path: Path, *, label: str = ""):
+    """
+    Pretty-print a pandoc JSON log (if present) to stdout.
+    """
+    prefix = f"[{label}] " if label else "[pandoc] "
+    if not log_path.exists():
+        print(f"{prefix}log not found at {log_path}")
+        return
+    try:
+        txt = log_path.read_text(encoding="utf-8")
+    except Exception as e:
+        print(f"{prefix}could not read log: {e}")
+        return
+    entries = list(_iter_log_entries(txt))
+    if not entries:
+        print(f"{prefix}log empty at {log_path}")
+        return
+
+    for entry in entries:
+        if isinstance(entry, dict):
+            level = (
+                entry.get("level")
+                or entry.get("type")
+                or entry.get("severity")
+                or "info"
+            )
+            src = entry.get("source") or entry.get("from") or ""
+            pos = entry.get("position") or entry.get("pos")
+            pos_str = ""
+            if isinstance(pos, (list, tuple)) and len(pos) >= 2:
+                pos_str = f"{pos[0]}:{pos[1]}"
+            msg = entry.get("message") or entry.get("text") or str(entry)
+            parts = [level.upper()]
+            if src:
+                parts.append(src)
+            if pos_str:
+                parts.append(pos_str)
+            parts.append(msg)
+            print(prefix + " | ".join(parts))
+        else:
+            print(prefix + str(entry))
