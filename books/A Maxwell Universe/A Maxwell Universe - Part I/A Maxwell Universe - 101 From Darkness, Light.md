@@ -4,7 +4,7 @@ date: 2025-12-05 12:31
 ---
 
 
-## 1. From Darkness, Light
+# 1. From Darkness, Light
 
 Reality begins not with space or time, but with the simple fact that events
 happen.
@@ -37,7 +37,7 @@ a self-sustaining causal loop “notices” change.
 [^OperationalAwareness]: Palma, A., & Rodriguez, A. M. (2025). *Operational Awareness in a Maxwell-Only Universe: A Formal Implication of Panpsychism*. ResearchGate. https://doi.org/10.13140/RG.2.2.13647.60324/1
 
 
-## 2. Time
+# 2. Time
 
 Time is, thus, a construct: a tool operational awareness uses to organize its
 state. Each loop forms its own internal notion of time. Yet we maintain
@@ -70,7 +70,7 @@ influence. Contradictory data had been minimized. Re-analysis revealed a weaker
 link than claimed, showing how consensus can form around distorted evidence.
 
 
-## 3. Orderings
+# 3. Orderings
 
 From the primitive relation
 
@@ -99,7 +99,7 @@ Therefore the fact that anything is noticed at all implies that the noticer is,
 in essence, a self-sustaining causal loop.
 
 
-## 4. Counting Steps
+# 4. Counting Steps
 
 By counting loops or causal steps, operational awareness defines durations. Time
 is an emergent count, not an external parameter.
@@ -138,7 +138,7 @@ operational awareness compresses relational patterns. Geometry and distance
 appear only after repeated causal patterns stabilize into expectations.
 
 
-## 5. Space
+# 5. Space
 
 Distance is the count of causal steps between two events. What we call “space”
 is the collection of all such distances. By gathering every pairwise separation
@@ -178,7 +178,7 @@ recognizing regularities in causally connected events and compressing them into
 stable, predictive representations.
 
 
-## 6. Plato and the Cave
+# 6. Plato and the Cave
 
 Plato illustrated the limits of our access to reality. We see shadows, not the
 real source. Our interpretations are reconstructions shaped by limited
@@ -212,7 +212,7 @@ inferred patterns that remains useful so long as the causal effects available to
 us support it.
 
 
-## 7. Mathematics and Reality
+# 7. Mathematics and Reality
 
 Much has been said and written about reality being “mathematical,” though the
 phrase is rarely defined. The arguments above suggest a simpler view: we ascribe
@@ -238,3 +238,76 @@ recent rebranding, “information”).
 This perspective prepares the ground for a different approach. We start not from
 mathematical objects, but from predictable interactions and their cause-effect
 patterns.
+
+
+# Appendix A — Assumptions and Non-Assumptions
+
+This work is intentionally minimal. The following list states explicitly what
+is assumed and what is not.
+
+
+## A.1 Assumptions
+
+1. **Events occur.**
+   Reality admits changes that can affect subsequent states.
+
+2. **Change can be registered.**
+   Some changes leave marks that influence later transitions.
+
+3. **Cause–effect relations exist.**
+   Certain registered changes reliably precede others.
+
+4. **Effects act as subsequent causes.**
+   For a causal relation to be detectable, an effect must be capable of acting
+   as a cause of further change. A causal chain that does not propagate is
+   operationally invisible and physically irrelevant.
+
+5. **Causal relations can form chains and loops.**
+   Effects may propagate forward, recur, and close into self-sustaining
+   structures.
+
+6. **Stable causal patterns can persist.**
+   Recurrent structures may endure long enough to be recognized and reused.
+
+No further primitives are assumed.
+
+
+## A.2 Non-Assumptions
+
+This work does **not** assume:
+
+- Space as a container.
+- Time as a flowing parameter.
+- Spacetime as a fundamental structure.
+- Geometry as primitive.
+- Dimension as intrinsic.
+- Matter, mass, particles, fields, forces, or charges as ontically separate,
+  non-electromagnetic substances or dynamics.
+- Quantum postulates or probabilistic axioms.
+- Mathematical objects as ontologically prior.
+- Observers as fundamental entities.
+- Consciousness as a primitive.
+
+All such notions appear, if at all, only as **emergent descriptions** derived
+from stable cause–effect patterns.
+
+
+## A.3 Scope and Limits
+
+This part makes no claims about the ultimate nature of the causal substrate.
+It addresses only what can be inferred from observable effects and their
+regularities.
+
+Any representation constructed here remains valid only insofar as the observed
+patterns persist. No guarantee of uniqueness, completeness, or permanence is
+asserted.
+
+
+## A.4 Role in the Full Work
+
+Part I establishes the ontological ground required for the later development of
+a Maxwell-only universe.
+
+Subsequent parts introduce specific dynamics. Nothing in this part depends on
+those dynamics, and nothing in later parts modifies the assumptions listed
+above.
