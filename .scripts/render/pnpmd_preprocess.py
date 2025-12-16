@@ -268,9 +268,17 @@ def insert_toc_after_keywords_content(md: str) -> str:
     return "\n".join(lines)
 
 
-def replace_toc_marker(md: str) -> Tuple[str, bool]:
+def replace_toc_marker(md: str, toc_depth: int) -> Tuple[str, bool]:
     touched = False
-    toc_block = r'\begingroup\renewcommand{\contentsname}{}\tableofcontents\endgroup'
+    td = max(0, toc_depth)
+    toc_block = (
+        "\\begingroup\n"
+        f"\\setcounter{{tocdepth}}{{{td}}}\n"
+        "\\renewcommand{\\contentsname}{}\n"
+        "\\setlength{\\parskip}{0.35em}\n"
+        "\\tableofcontents\n"
+        "\\endgroup"
+    )
     if _TOC_MARK_RE.search(md):
         md = _TOC_MARK_RE.sub(lambda m: f'\n{toc_block}\n', md)
         touched = True
@@ -355,7 +363,7 @@ def prepare_preprocessed(
     has_toc_marker = False
     if not omit_toc:
         body2 = insert_toc_after_keywords_content(body2)
-        body2, has_toc_marker = replace_toc_marker(body2)
+        body2, has_toc_marker = replace_toc_marker(body2, toc_depth)
 
     tmpdir = Path(tempfile.mkdtemp(prefix="pnpmd_"))
     in_tmp = tmpdir / "in.md"

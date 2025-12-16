@@ -1,9 +1,11 @@
 # pnpmd_book.py
 
-from pathlib import Path
-from typing import Optional
 import re
 import shutil
+from pathlib import Path
+from typing import Optional
+
+import yaml
 
 from pnpmd_util import title_from_book_yaml, die, run_visible, print_pandoc_log
 from pnpmd_preprocess import prepare_preprocessed
@@ -139,8 +141,20 @@ def _extract_cover_image(yaml_text: str) -> Optional[str]:
 def _extract_yaml_scalar(yaml_text: str, key: str) -> Optional[str]:
     """
     Extract a simple scalar value from a YAML-looking block: 'key: value'.
-    Returns the unquoted value or None if missing.
+    Returns the unquoted value or None if missing. Uses YAML parsing first so
+    escape sequences (e.g., '\n') are interpreted as actual newlines.
     """
+    try:
+        docs = list(yaml.safe_load_all(yaml_text))
+        data = docs[0] if docs else {}
+        if isinstance(data, dict) and key in data:
+            val = data.get(key)
+            if val is None:
+                return None
+            return str(val).strip()
+    except Exception:
+        pass
+
     m = re.search(rf"^{re.escape(key)}\s*:\s*(.+)$", yaml_text, re.MULTILINE)
     if not m:
         return None
@@ -170,6 +184,29 @@ def _latex_escape(text: str) -> str:
     for old, new in replacements.items():
         out = out.replace(old, new)
     return out
+
+
+def _subtitle_segments(text: str) -> list[tuple[str, int]]:
+    """
+    Split subtitle into (line_text, blank_lines_before) tuples.
+    Leading/trailing newlines are ignored. Blank lines only add spacing before
+    subsequent text (never after the last line).
+    """
+    normalized = text.replace("\r\n", "\n").strip("\n")
+    if not normalized:
+        return []
+
+    segments: list[tuple[str, int]] = []
+    blank_run = 0
+    for ln in normalized.split("\n"):
+        stripped = ln.strip()
+        if stripped == "":
+            if segments:
+                blank_run += 1
+            continue
+        segments.append((stripped, blank_run))
+        blank_run = 0
+    return segments
 
 
 def _ensure_header_packages(path: Path, packages: list[str]) -> None:
@@ -385,27 +422,29 @@ def render_book_yaml(
                         "\\clearpage\n"
                         "\\thispagestyle{empty}\n"
                         "\\begin{center}\n"
-                        "\\vspace*{0.24\\textheight}\n"
+                        "\\vspace*{0.22\\textheight}\n"
                         "{\\bfseries\\fontsize{24pt}{32pt}\\selectfont Table of Contents}\\par\n"
                         "\\end{center}\n"
-                        "\\vspace{1.75em}\n"
+                        "\\vspace{1.0em}\n"
                         "\\noindent{\\color[gray]{0.65}\\rule{\\textwidth}{0.6pt}}\n"
                         "\\color{black}\n"
-                        "\\vspace{2.5em}\n"
+                        "\\vspace{2.0em}\n"
                         "```\n\n"
                     )
                 else:
                     title_block = (
-                        "```{=latex}\n"
-                        "\\clearpage\n"
-                        "\\thispagestyle{empty}\n"
-                        "\\begin{center}\n"
-                        "\\vspace*{0.28\\textheight}\n"
-                        f"{{\\bfseries\\fontsize{{26pt}}{{36pt}}\\selectfont {latex_title}}}\\par\n"
-                        "\\end{center}\n"
-                        "\\clearpage\n"
-                        "```\n\n"
-                    )
+                    "```{=latex}\n"
+                    "\\clearpage\n"
+                    "\\thispagestyle{empty}\n"
+                    "\\begin{center}\n"
+                    "\\vspace*{0.28\\textheight}\n"
+                    "{\\begingroup\\setlength{\\baselineskip}{2.1\\baselineskip}\n"
+                    f"{{\\bfseries\\fontsize{{26pt}}{{52pt}}\\selectfont {latex_title}}}\\par\n"
+                    "\\endgroup}\n"
+                    "\\end{center}\n"
+                    "\\clearpage\n"
+                    "```\n\n"
+                )
 
                 f.write(title_block)
                 if not is_toc:
@@ -535,6 +574,7 @@ def render_book_yaml(
         ltitle = _latex_escape(title_text) if title_text else ""
         lsubtitle = _latex_escape(subtitle_text) if subtitle_text else None
         lauthor = _latex_escape(author_text) if author_text else None
+        subtitle_segments = _subtitle_segments(lsubtitle) if lsubtitle else []
 
         cover_block = ""
         if cover_filename:
@@ -559,13 +599,19 @@ def render_book_yaml(
         ]
         if ltitle:
             title_lines.append(
-                f"{{\\bfseries\\fontsize{{28pt}}{{40pt}}\\selectfont {ltitle}}}\\par"
+                "{\\begingroup\\setlength{\\baselineskip}{1.8\\baselineskip}\n"
+                f"{{\\bfseries\\fontsize{{28pt}}{{56pt}}\\selectfont {ltitle}}}\\par\n"
+                "\\endgroup}"
             )
-        if lsubtitle:
-            title_lines += [
-                "\\vspace{1.4em}",
-                f"{{\\normalfont\\fontsize{{18pt}}{{26pt}}\\selectfont {lsubtitle}}}\\par",
-            ]
+        if subtitle_segments:
+            title_lines.append("\\vspace{1.6em}")
+            for idx, (seg, blanks) in enumerate(subtitle_segments):
+                gap = blanks + (1 if idx > 0 else 0)
+                for _ in range(gap):
+                    title_lines.append("\\vspace{1.1em}")
+                title_lines.append(
+                    f"{{\\normalfont\\fontsize{{18pt}}{{26pt}}\\selectfont {seg}}}\\par"
+                )
         if lauthor:
             title_lines += [
                 "\\vspace{3.25em}",
