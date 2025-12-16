@@ -1,5 +1,5 @@
 ---
-title: A Maxwell Universe – Back Cover
+title: A Maxwell Universe – Synopsis
 date: 2025-12-05 12:31
 ---
 

@@ -260,36 +260,44 @@ cause and effect. Logic and mathematics enter later, as tools shaped by the
 regularities that causal interactions happen to exhibit.
 
 
-# Appendix A — Assumptions and Non-Assumptions
+# Appendix — Assumptions and Derived Commitments
 
-This work is intentionally minimal. The following list states explicitly what
-is assumed and what is not.
+This work adopts a minimal ontology. Only the first three assumptions are
+primitive. All others follow from them.
 
 
-## A.1 Assumptions
+## A.1 Fundamental Assumptions
 
-1. **Events occur.**
-   Reality admits changes that can affect subsequent states.
+**A1. Events occur.**
+There are changes.
 
-2. **Change can be registered.**
-   Some changes leave marks that influence later transitions.
+**A2. Change can be registered.**
+Some changes persist as state differences.
 
-3. **Cause–effect relations exist.**
-   Certain registered changes reliably precede others.
+**A3. Registered change is itself the effect that follows.**
+A registered change is a new state, and nothing beyond this is required.
 
-4. **Effects act as subsequent causes.**
-   For a causal relation to be detectable, an effect must be capable of acting
-   as a cause of further change. A causal chain that does not propagate is
-   operationally invisible and physically irrelevant.
+No space, time, matter, laws, logic, or mathematics are assumed.
 
-5. **Causal relations can form chains and loops.**
-   Effects may propagate forward, recur, and close into self-sustaining
-   structures.
 
-6. **Stable causal patterns can persist.**
-   Recurrent structures may endure long enough to be recognized and reused.
+### Derived Commitments
 
-No further primitives are assumed.
+The following are consequences of A1–A3.
+
+**A4. Order exists.**
+If a registered change is a new state, a distinction between “before” and
+“after” exists. This defines causal order.
+
+**A5. Time is ordering, not substance.**
+Time arises from consistent causal orderings of registered change.
+
+**A6. Existence is persistence.**
+Anything that exists does so only insofar as it sustains its own state across
+change. Endpoints without return effects do not persist and are therefore
+unobservable.
+
+Space, distance, geometry, dimension, mathematics, and logic arise as further
+compressions of stable patterns in these orderings, as developed in §§4–7.
 
 
 ## A.2 Non-Assumptions
