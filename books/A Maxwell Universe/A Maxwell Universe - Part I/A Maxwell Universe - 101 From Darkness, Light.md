@@ -212,32 +212,48 @@ inferred patterns that remains useful so long as the causal effects available to
 us support it.
 
 
-# 7. Mathematics and Reality
+# 7. Logic, Mathematics, and Reality
 
-Much has been said and written about reality being “mathematical,” though the
-phrase is rarely defined. The arguments above suggest a simpler view: we ascribe
-patterns to reality—sometimes because we genuinely recognize them, sometimes
-because we project them and treat the projection as real.
+Much has been said about reality being “mathematical,” though the phrase is
+rarely defined. The arguments above suggest a simpler view: we ascribe patterns
+to reality. Sometimes, we genuinely recognize these patterns, sometimes because
+we project them and then treat the projection as real.
 
-Mathematics does not have to govern the world. More often, we see the world
-through the mathematics we have created. Mathematics—and therefore physics—
-describes those aspects of the world that admit stable, compressible patterns.
-When a pattern is regular enough to be anticipated, we express that regularity
-symbolically and call the result a “law.” When the pattern breaks, the law
-breaks with it.
+Mathematics does not need to govern the world. Even if reality admits
+mathematical structure in some sense, mathematics itself is vastly larger than
+anything the world could instantiate. Most mathematics has no physical
+counterpart at all, that we know of, yet.
 
-It is therefore not that reality *is* mathematical, nor that mathematics is the
-“language of nature.” Rather, we build mathematical models for the aspects of
-reality we can recognize, isolate, and predict. Wherever the world resists
-compression into stable patterns, our mathematics simply does not apply.
+More often, we see the world through the mathematics we have constructed.
+Mathematics —and therefore physics— describes those aspects of reality that
+admit stable, compressible patterns. When a pattern is regular enough to be
+anticipated, we encode it symbolically and call the result a “law.” When the
+pattern breaks, the law breaks with it.
 
-Mathematics succeeds because we select what it can describe—and which patterns
-we pay attention to—not because nature is made of numbers (or, in its most
-recent rebranding, “information”).
+It is therefore not that reality is mathematical, nor that mathematics is the
+“language of nature.” Rather, mathematics is a modeling tool we apply to the
+regularities we can isolate and predict. Wherever reality resists compression
+into stable patterns, mathematics simply does not apply.
 
-This perspective prepares the ground for a different approach. We start not from
-mathematical objects, but from predictable interactions and their cause-effect
-patterns.
+Mathematics succeeds because we select what it can describe —and which patterns
+we attend to— not because nature is made of numbers, structures, or -the lastest
+rebranding- “information.”
+
+The same is true of logic. Logic is not a law imposed on reality; it is an
+abstraction distilled from stable, repeatable causal behavior. Classical logic
+reflects a world in which states are well-separated and transitions are
+consistent. When causal structures change, the logic extracted from them
+changes as well.
+
+That modern physics tolerates superposition or incompatible descriptions does
+not mean that reality violates logic. It means that classical logical categories
+no longer compress the observed causal patterns. New formal systems are adopted
+not because contradictions become true, but because the old logic no longer
+tracks what is reliably predictable.
+
+This work therefore starts neither from logic nor from mathematics, but from
+cause and effect. Logic and mathematics enter later, as tools shaped by the
+regularities that causal interactions happen to exhibit.
 
 
 # Appendix A — Assumptions and Non-Assumptions
