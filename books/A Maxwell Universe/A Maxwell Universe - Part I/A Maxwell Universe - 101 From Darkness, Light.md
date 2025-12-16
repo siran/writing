@@ -242,14 +242,16 @@ rebranding- “information.”
 The same is true of logic. Logic is not a law imposed on reality; it is an
 abstraction distilled from stable, repeatable causal behavior. Classical logic
 reflects a world in which states are well-separated and transitions are
-consistent. When causal structures change, the logic extracted from them
-changes as well.
+consistent.
 
+Just as spatial geometry emerges from the compression of causal distances into
+low-distortion embeddings (§4–§5), logical structure emerges from the
+compression of causal transitions into stable inference rules.
+
+When causal structures change, the logic extracted from them changes as well.
 That modern physics tolerates superposition or incompatible descriptions does
 not mean that reality violates logic. It means that classical logical categories
-no longer compress the observed causal patterns. New formal systems are adopted
-not because contradictions become true, but because the old logic no longer
-tracks what is reliably predictable.
+no longer compress the observed causal patterns.
 
 This work therefore starts neither from logic nor from mathematics, but from
 cause and effect. Logic and mathematics enter later, as tools shaped by the
