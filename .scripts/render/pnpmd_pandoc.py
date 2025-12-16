@@ -15,9 +15,11 @@ def render_pdf(
     timeout: int,
     log_path: Optional[Path] = None,
     verbose: bool = False,
+    extra_args: Optional[List[str]] = None,
 ) -> int:
     log_args: List[str] = [f"--log={log_path.name}"] if log_path else []
     verbose_args: List[str] = ["--verbose"] if verbose else []
+    extra_args = extra_args or []
     cmd = [
         "docker",
         "run",
@@ -30,6 +32,7 @@ def render_pdf(
         "--standalone",
         *log_args,
         *verbose_args,
+        *extra_args,
         *common_args,
         *shift_args,
         *meta_args,

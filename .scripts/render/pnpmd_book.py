@@ -81,6 +81,95 @@ def _extract_cover_image(yaml_text: str) -> Optional[str]:
     return val or None
 
 
+def _extract_yaml_scalar(yaml_text: str, key: str) -> Optional[str]:
+    """
+    Extract a simple scalar value from a YAML-looking block: 'key: value'.
+    Returns the unquoted value or None if missing.
+    """
+    m = re.search(rf"^{re.escape(key)}\s*:\s*(.+)$", yaml_text, re.MULTILINE)
+    if not m:
+        return None
+    val = m.group(1).strip()
+    if (val.startswith('"') and val.endswith('"')) or (
+        val.startswith("'") and val.endswith("'")
+    ):
+        val = val[1:-1].strip()
+    return val or None
+
+
+def _latex_escape(text: str) -> str:
+    """
+    Minimal LaTeX escaping for common special characters.
+    """
+    replacements = {
+        "\\": r"\textbackslash{}",
+        "&": r"\&",
+        "%": r"\%",
+        "$": r"\$",
+        "#": r"\#",
+        "_": r"\_",
+        "{": r"\{",
+        "}": r"\}",
+    }
+    out = text
+    for old, new in replacements.items():
+        out = out.replace(old, new)
+    return out
+
+
+def _ensure_header_packages(path: Path, packages: list[str]) -> None:
+    """
+    Ensure the YAML front matter declares header-includes with the given LaTeX
+    packages. Adds header-includes if missing.
+    """
+    if not path.exists():
+        return
+
+    txt = path.read_text(encoding="utf-8")
+    lines = txt.splitlines()
+    if not lines or lines[0].strip() != "---":
+        return
+
+    header_end = None
+    for i in range(1, len(lines)):
+        if lines[i].strip() == "---":
+            header_end = i
+            break
+    if header_end is None:
+        return
+
+    hi_idx = None
+    for i in range(1, header_end):
+        if lines[i].lstrip().startswith("header-includes"):
+            hi_idx = i
+            break
+
+    if hi_idx is None:
+        insert_pos = header_end
+        lines.insert(insert_pos, "header-includes:")
+        insert_pos += 1
+        for pkg in packages:
+            lines.insert(insert_pos, f"  - '{pkg}'")
+            insert_pos += 1
+        header_end += 1 + len(packages)
+    else:
+        existing = set()
+        j = hi_idx + 1
+        while j < header_end and lines[j].startswith("  -"):
+            existing.add(lines[j].split(None, 1)[1].strip().strip("'\""))
+            j += 1
+        insert_pos = j
+        added = 0
+        for pkg in packages:
+            if pkg not in existing:
+                lines.insert(insert_pos, f"  - '{pkg}'")
+                insert_pos += 1
+                added += 1
+        header_end += added
+
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 # def _strip_conflicting_keys(yaml_text: str) -> str:
 #     """
 #     Remove keys that may cause weird template output like 'truetrue'
@@ -225,10 +314,10 @@ def render_book_yaml(
 
     # If cover-image was specified in book.yml, ensure a local copy exists in
     # the tmp dir (where pandoc runs) and rewrite the metadata to point to it.
+    local_name: Optional[str] = None
     if cover_value:
         tmpdir = in_tmp.parent
 
-        local_name: Optional[str] = None
         cv = cover_value
         strip_cover = False
 
@@ -300,6 +389,89 @@ def render_book_yaml(
                     text = "\n".join(kept)
                     in_tmp.write_text(text, encoding="utf-8")
 
+    # Ensure LaTeX packages needed for the cover/title pages are available.
+    _ensure_header_packages(in_tmp, ["\\usepackage{geometry}", "\\usepackage{graphicx}"])
+
+    # Inject a full-page cover (if present) plus a centered title/subtitle/author page
+    # at the very start of the document. This uses the local cover file downloaded
+    # into the temp directory so PDF creation works offline.
+    def _inject_frontmatter_pages(path: Path, cover_filename: Optional[str]) -> None:
+        if not path.exists():
+            return
+
+        title_text = _extract_yaml_scalar(raw_yaml_text, "title") or title
+        subtitle_text = _extract_yaml_scalar(raw_yaml_text, "subtitle")
+        author_text = _extract_yaml_scalar(raw_yaml_text, "author")
+
+        ltitle = _latex_escape(title_text) if title_text else ""
+        lsubtitle = _latex_escape(subtitle_text) if subtitle_text else None
+        lauthor = _latex_escape(author_text) if author_text else None
+
+        cover_block = ""
+        if cover_filename:
+            cover_block = (
+                "```{=latex}\n"
+                "\\clearpage\n"
+                "\\thispagestyle{empty}\n"
+                "\\newgeometry{margin=0pt}\n"
+                "\\noindent\n"
+                f"\\includegraphics[width=\\paperwidth,height=\\paperheight]{{{cover_filename}}}\n"
+                "\\restoregeometry\n"
+                "\\clearpage\n"
+                "```\n\n"
+            )
+
+        title_lines = [
+            "```{=latex}",
+            "\\clearpage",
+            "\\thispagestyle{empty}",
+            "\\begin{center}",
+            "\\vspace*{0.25\\textheight}",
+        ]
+        if ltitle:
+            title_lines.append(
+                f"{{\\bfseries\\fontsize{{28pt}}{{34pt}}\\selectfont {ltitle}}}\\par"
+            )
+        if lsubtitle:
+            title_lines += [
+                "\\vspace{1.2em}",
+                f"{{\\normalfont\\fontsize{{18pt}}{{22pt}}\\selectfont {lsubtitle}}}\\par",
+            ]
+        if lauthor:
+            title_lines += [
+                "\\vspace{2.5em}",
+                f"{{\\Large\\bfseries {lauthor}}}\\par",
+            ]
+        title_lines += [
+            "\\end{center}",
+            "\\clearpage",
+            "```",
+            "",
+            "",
+        ]
+        title_block = "\n".join(title_lines)
+
+        txt = path.read_text(encoding="utf-8")
+        lines = txt.splitlines()
+        header_end = None
+        if lines and lines[0].strip() == "---":
+            for i in range(1, len(lines)):
+                if lines[i].strip() == "---":
+                    header_end = i
+                    break
+
+        if header_end is not None:
+            head = "\n".join(lines[: header_end + 1])
+            body = "\n".join(lines[header_end + 1 :]).lstrip("\n")
+        else:
+            head = ""
+            body = txt.lstrip("\n")
+
+        new_txt = (head + "\n\n" if head else "") + cover_block + title_block + body
+        path.write_text(new_txt, encoding="utf-8")
+
+    _inject_frontmatter_pages(in_tmp, local_name)
+
     pdf_path = big_md_path.with_suffix(".pdf") if make_pdf else None
     html_path = big_md_path.with_suffix(".html") if make_html else None
     epub_path = big_md_path.with_suffix(".epub") if make_epub else None
@@ -307,6 +479,7 @@ def render_book_yaml(
     if make_pdf:
         out_pdf = in_tmp.parent / "out.pdf"
         pdf_log = in_tmp.parent / "pandoc-pdf.log.json"
+        pdf_extras = ["-V", "title=", "-V", "subtitle=", "-V", "author="]
         rc = render_pdf(
             in_tmp,
             out_pdf,
@@ -316,6 +489,7 @@ def render_book_yaml(
             timeout,
             log_path=pdf_log,
             verbose=verbose,
+            extra_args=pdf_extras,
         )
         if verbose or rc != 0:
             print_pandoc_log(pdf_log, label="PDF")

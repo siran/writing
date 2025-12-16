@@ -100,6 +100,7 @@ def render(
                 timeout,
                 log_path=pdf_log,
                 verbose=verbose,
+                extra_args=None,
             )
             if verbose or rc != 0:
                 print_pandoc_log(pdf_log, label="PDF")
@@ -192,6 +193,7 @@ def render(
             timeout,
             log_path=pdf_log,
             verbose=verbose,
+            extra_args=None,
         )
         if verbose or rc != 0:
             print_pandoc_log(pdf_log, label="PDF")
