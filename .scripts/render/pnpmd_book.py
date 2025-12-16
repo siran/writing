@@ -422,7 +422,7 @@ def render_book_yaml(
                         "\\clearpage\n"
                         "\\thispagestyle{empty}\n"
                         "\\begin{center}\n"
-                        "\\vspace*{0.22\\textheight}\n"
+                        "\\vspace*{0.11\\textheight}\n"
                         "{\\bfseries\\fontsize{24pt}{32pt}\\selectfont Table of Contents}\\par\n"
                         "\\end{center}\n"
                         "\\vspace{1.0em}\n"
