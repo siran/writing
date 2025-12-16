@@ -1,5 +1,5 @@
 ---
-title: A Maxwell Universe – PART I — FOUNDATIONS OF REALITY
+title: A Maxwell Universe –
 date: 2025-12-05 12:31
 ---
 
@@ -28,11 +28,11 @@ which we will address later in [@EmergenceOfSelf]).
 This reactivity is not limited to conscious minds. Anything that changes in
 response to causes and produces effects is, in this minimal sense,
 **operationally aware** [^OperationalAwareness]. A self-sustaining causal loop
-qualifies: it can update its own state in response to incoming influences. By doing
-so, it distinguishes states and tracks transitions—not through any “plan of
-action,” which would imply a consciousness we have not defined, but simply by
-virtue of its continued existence as a loop. In this minimal operational sense,
-a self-sustaining causal loop “notices” change.
+qualifies: it can update its own state in response to incoming influences. By
+doing so, it distinguishes states and tracks transitions—not through any “plan
+of action,” which would imply a consciousness we have not yet defined, but
+simply by virtue of its continued existence as a loop. In this minimal
+operational sense, a self-sustaining causal loop “notices” change.
 
 [^OperationalAwareness]: Palma, A., & Rodriguez, A. M. (2025). *Operational Awareness in a Maxwell-Only Universe: A Formal Implication of Panpsychism*. ResearchGate. https://doi.org/10.13140/RG.2.2.13647.60324/1
 
