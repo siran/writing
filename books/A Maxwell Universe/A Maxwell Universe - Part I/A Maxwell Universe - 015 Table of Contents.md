@@ -1,5 +1,5 @@
 ---
-title: A Maxwell Universe – PART I — FOUNDATIONS OF REALITY
+title: A Maxwell Universe – Table of Contents
 date: 2025-12-15
 ---
 
