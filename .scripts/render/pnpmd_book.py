@@ -10,6 +10,61 @@ from pnpmd_preprocess import prepare_preprocessed
 from pnpmd_pandoc import render_pdf, render_html, render_epub
 
 
+_H1_RE = re.compile(r"^\s*#\s+(.*)$")
+
+
+def _extract_first_h1(body: str) -> tuple[Optional[str], str]:
+    """
+    Find the first level-1 heading ('# Title') in the body and return (title, body_without_that_heading).
+    If no heading is found, returns (None, original_body).
+    """
+    lines = body.splitlines()
+    title = None
+    remove_idx = None
+    for i, ln in enumerate(lines):
+        m = _H1_RE.match(ln)
+        if m:
+            title = m.group(1).strip()
+            remove_idx = i
+            break
+    if remove_idx is None:
+        return None, body
+
+    # Drop the heading line and a single following blank line (if present) to avoid duplicates.
+    new_lines = lines[:remove_idx] + lines[remove_idx + 1 :]
+    if remove_idx < len(new_lines) and new_lines[remove_idx].strip() == "":
+        new_lines.pop(remove_idx)
+
+    return title, "\n".join(new_lines)
+
+
+def _split_by_h1(body: str, default_title: str) -> list[tuple[str, str]]:
+    """
+    Split body into sections keyed by H1 headings. The heading line is removed
+    from the section body. If no H1 is found, returns one section with the
+    default_title and the entire body.
+    """
+    lines = body.splitlines()
+    sections: list[tuple[str, str]] = []
+    cur_title: Optional[str] = None
+    cur_lines: list[str] = []
+
+    for ln in lines:
+        m = _H1_RE.match(ln)
+        if m:
+            if cur_title is not None:
+                sections.append((cur_title, "\n".join(cur_lines).strip("\n")))
+            cur_title = m.group(1).strip()
+            cur_lines = []
+            continue
+        cur_lines.append(ln)
+
+    if cur_title is None:
+        cur_title = default_title
+    sections.append((cur_title, "\n".join(cur_lines).strip("\n")))
+    return sections
+
+
 def _split_front_matter(text: str) -> tuple[Optional[str], str]:
     """
     Split a markdown file into (front_matter_text_or_None, body_text).
@@ -288,9 +343,81 @@ def render_book_yaml(
             if not chapter_title:
                 chapter_title = p.stem
 
-            f.write(f"# {chapter_title}\n\n")
-            f.write(body)
-            f.write("\n\n")
+            sections = _split_by_h1(body, chapter_title)
+
+            for sec_title, sec_body in sections:
+                latex_title = _latex_escape(sec_title)
+                is_ack = "acknowledgment" in sec_title.lower() or "acknowledgement" in sec_title.lower()
+                is_toc = sec_title.strip().lower() in {"table of contents", "contents"}
+
+                body_stripped = sec_body.strip()
+
+                if is_ack:
+                    latex_body = (
+                        _latex_escape(body_stripped)
+                        .replace("\n\n", "\\par\n\\vspace{0.6em}\n")
+                        .replace("\n", " ")
+                    )
+                    title_block = (
+                        "```{=latex}\n"
+                        "\\clearpage\n"
+                        "\\thispagestyle{empty}\n"
+                        "\\vspace*{0.30\\textheight}\n"
+                        "\\begin{center}\n"
+                        f"{{\\bfseries\\Large {latex_title}}}\\par\n"
+                        "\\vspace{2.2em}\n"
+                        f"{{\\itshape {latex_body}}}\\par\n"
+                        "\\end{center}\n"
+                        "\\clearpage\n"
+                        "```\n\n"
+                    )
+                    f.write(title_block)
+                    # HTML/EPUB fallback (hidden from LaTeX via \\iffalse)
+                    f.write("```{=latex}\n\\iffalse\n```\n")
+                    f.write(f"# {sec_title}\n\n")
+                    if body_stripped:
+                        f.write(f"*{body_stripped}*\n\n")
+                    f.write("```{=latex}\n\\fi\n```\n\n")
+                    continue
+                elif is_toc:
+                    title_block = (
+                        "```{=latex}\n"
+                        "\\clearpage\n"
+                        "\\thispagestyle{empty}\n"
+                        "\\begin{center}\n"
+                        "\\vspace*{0.24\\textheight}\n"
+                        "{\\bfseries\\fontsize{24pt}{32pt}\\selectfont Table of Contents}\\par\n"
+                        "\\end{center}\n"
+                        "\\vspace{1.75em}\n"
+                        "\\noindent{\\color[gray]{0.65}\\rule{\\textwidth}{0.6pt}}\n"
+                        "\\color{black}\n"
+                        "\\vspace{2.5em}\n"
+                        "```\n\n"
+                    )
+                else:
+                    title_block = (
+                        "```{=latex}\n"
+                        "\\clearpage\n"
+                        "\\thispagestyle{empty}\n"
+                        "\\begin{center}\n"
+                        "\\vspace*{0.28\\textheight}\n"
+                        f"{{\\bfseries\\fontsize{{26pt}}{{36pt}}\\selectfont {latex_title}}}\\par\n"
+                        "\\end{center}\n"
+                        "\\clearpage\n"
+                        "```\n\n"
+                    )
+
+                f.write(title_block)
+                if not is_toc:
+                    f.write("```{=latex}\n\\vspace*{0.18\\textheight}\n```\n")
+                    f.write(f"# {sec_title}\n\n")
+
+                if is_ack:
+                    f.write("```{=latex}\n\\vspace*{0.12\\textheight}\n\\begin{center}\n```\n")
+                    f.write(body_stripped + "\n")
+                    f.write("```{=latex}\n\\end{center}\n\\clearpage\n```\n\n")
+                else:
+                    f.write(body_stripped + "\n\n")
 
     print(f"✅ Built combined markdown {big_md_path}")
 
@@ -390,7 +517,9 @@ def render_book_yaml(
                     in_tmp.write_text(text, encoding="utf-8")
 
     # Ensure LaTeX packages needed for the cover/title pages are available.
-    _ensure_header_packages(in_tmp, ["\\usepackage{geometry}", "\\usepackage{graphicx}"])
+    _ensure_header_packages(
+        in_tmp, ["\\usepackage{geometry}", "\\usepackage{graphicx}", "\\usepackage{xcolor}"]
+    )
 
     # Inject a full-page cover (if present) plus a centered title/subtitle/author page
     # at the very start of the document. This uses the local cover file downloaded
@@ -430,16 +559,16 @@ def render_book_yaml(
         ]
         if ltitle:
             title_lines.append(
-                f"{{\\bfseries\\fontsize{{28pt}}{{34pt}}\\selectfont {ltitle}}}\\par"
+                f"{{\\bfseries\\fontsize{{28pt}}{{40pt}}\\selectfont {ltitle}}}\\par"
             )
         if lsubtitle:
             title_lines += [
-                "\\vspace{1.2em}",
-                f"{{\\normalfont\\fontsize{{18pt}}{{22pt}}\\selectfont {lsubtitle}}}\\par",
+                "\\vspace{1.4em}",
+                f"{{\\normalfont\\fontsize{{18pt}}{{26pt}}\\selectfont {lsubtitle}}}\\par",
             ]
         if lauthor:
             title_lines += [
-                "\\vspace{2.5em}",
+                "\\vspace{3.25em}",
                 f"{{\\Large\\bfseries {lauthor}}}\\par",
             ]
         title_lines += [

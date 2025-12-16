@@ -236,10 +236,11 @@ def rewrite_hash_anchors(md: str) -> str:
 
 # ---------- TOC, heading spacing ----------
 _TOC_MARK_RE = re.compile(r'^\s*\[\[TOC\]\]\s*$', re.MULTILINE)
+_TOC_LATEX_RE = re.compile(r'^\s*\\TOC\s*$', re.MULTILINE)
 
 
 def insert_toc_after_keywords_content(md: str) -> str:
-    if _TOC_MARK_RE.search(md):
+    if _TOC_MARK_RE.search(md) or _TOC_LATEX_RE.search(md):
         return md
     lines = md.splitlines()
     start_idx = None
@@ -268,8 +269,16 @@ def insert_toc_after_keywords_content(md: str) -> str:
 
 
 def replace_toc_marker(md: str) -> Tuple[str, bool]:
+    touched = False
+    toc_block = r'\begingroup\renewcommand{\contentsname}{}\tableofcontents\endgroup'
     if _TOC_MARK_RE.search(md):
-        return _TOC_MARK_RE.sub(r'\n\\tableofcontents\n', md), True
+        md = _TOC_MARK_RE.sub(lambda m: f'\n{toc_block}\n', md)
+        touched = True
+    if _TOC_LATEX_RE.search(md):
+        md = _TOC_LATEX_RE.sub(lambda m: f'\n{toc_block}\n', md)
+        touched = True
+    if touched:
+        return md, True
     return md, False
 
 
