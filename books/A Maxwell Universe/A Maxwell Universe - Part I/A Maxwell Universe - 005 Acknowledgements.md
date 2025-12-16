@@ -1,5 +1,5 @@
 ---
-title: A Maxwell Universe – Acknowledgments
+title: A Maxwell Universe – Acknowledgements
 date: 2025-12-05 12:31
 ---
 

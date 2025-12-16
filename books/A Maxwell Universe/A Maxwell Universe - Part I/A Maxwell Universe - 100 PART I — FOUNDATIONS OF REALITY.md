@@ -4,8 +4,6 @@ date: 2025-12-07 09:33
 ---
 
 
-## Summary
-
 Part I develops a framework in which events are the starting point. A registered
 change creates the basic distinction between “before” and “after.” Systems that
 update their state in response to influences build internal orderings, and from
