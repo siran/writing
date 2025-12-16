@@ -13,17 +13,19 @@ We often assume events happen for a reason. This doesn't need to be so, and even
 if it is, we don't have direct access to the causal information, but indirect
 through its effects.
 
-A reason is a story added later. What matters is simply that a change occurs and
-that it can be registered in a way that affects our state. Once a change is
-registered, two states can be distinguished: “before” and “after.” That
-distinction *is* the event. Here we don't appeal to an "intelligence recording
-an event," but simply to a mark, like a scratch on a table, that affects the
-object's state. It denotes only the minimal capacity to register change.
+A reason is a story added later. What matters is simply that a change occurs
+and that it is registered in a way that affects what follows. Once a change is
+registered, the system occupies a different state. The distinction between
+“before” and “after” is not added to the event; it is the event.
 
-The sense of reason or explanation arises only as a reactive story as way of
-organizing transitions once change has been noticed by a reasoning entity (topic
-which we will address later in [@EmergenceOfSelf]).
+There is no need to appeal to an intelligence recording what happened, but only
+to a persistent state change —like a scratch on a table— that constrains future
+interactions. The scratch is not a record of the event. The scratch is the
+event, insofar as it makes a difference.
 
+The sense of reason or explanation arises only as a reactive story, a way of
+organizing transitions once change has been noticed by a reasoning entity
+(a topic addressed later in [@EmergenceOfSelf]).
 
 This reactivity is not limited to conscious minds. Anything that changes in
 response to causes and produces effects is, in this minimal sense,
