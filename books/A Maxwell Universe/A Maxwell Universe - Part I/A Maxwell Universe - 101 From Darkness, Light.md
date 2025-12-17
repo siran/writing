@@ -89,8 +89,8 @@ Chains can form loops:
 
 and may cross themselves without restriction. Learning is a good illustration of
 multiple acknowledgdments and thus multiple "closes". A loop can be considered
-considered “closed” when its pattern stabilizes in some useful sense. A "closed"
-loop, has however to continue propagating, as we mention later.
+“closed” when its pattern stabilizes in some useful sense. A "closed" loop, has
+however to continue propagating, as we mention later.
 
 Repeated causal loops can function as clocks. Any recurrent sequence can serve
 as a clock. Accuracy varies, but recurrence suffices.
