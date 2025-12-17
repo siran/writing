@@ -579,16 +579,18 @@ def render_book_yaml(
         in_tmp, ["\\usepackage{geometry}", "\\usepackage{graphicx}", "\\usepackage{xcolor}"]
     )
 
+    # Cache common metadata once so it can be reused below.
+    title_text = _extract_yaml_scalar(raw_yaml_text, "title") or title
+    subtitle_text = _extract_yaml_scalar(raw_yaml_text, "subtitle")
+    author_text = _extract_yaml_scalar(raw_yaml_text, "author")
+    publisher_text = _extract_yaml_scalar(raw_yaml_text, "publisher")
+
     # Inject a full-page cover (if present) plus a centered title/subtitle/author page
     # at the very start of the document. This uses the local cover file downloaded
     # into the temp directory so PDF creation works offline.
     def _inject_frontmatter_pages(path: Path, cover_filename: Optional[str]) -> None:
         if not path.exists():
             return
-
-        title_text = _extract_yaml_scalar(raw_yaml_text, "title") or title
-        subtitle_text = _extract_yaml_scalar(raw_yaml_text, "subtitle")
-        author_text = _extract_yaml_scalar(raw_yaml_text, "author")
 
         ltitle = _latex_escape(title_text) if title_text else ""
         lsubtitle = _latex_escape(subtitle_text) if subtitle_text else None
@@ -664,6 +666,7 @@ def render_book_yaml(
                 '<div class="title-page">\n'
                 + "\n".join(html_title_parts)
                 + "\n</div>\n"
+                '<div class="page-break"></div>\n'
                 "```\n\n"
             )
 
@@ -683,7 +686,13 @@ def render_book_yaml(
             head = ""
             body = txt.lstrip("\n")
 
-        new_txt = (head + "\n\n" if head else "") + cover_block + title_block + html_block + body
+        new_txt = (
+            (head + "\n\n" if head else "")
+            + cover_block
+            + title_block
+            + html_block
+            + body
+        )
         path.write_text(new_txt, encoding="utf-8")
 
     _inject_frontmatter_pages(in_tmp, local_name)
@@ -713,13 +722,23 @@ def render_book_yaml(
             die(f"Docker pandoc (PDF) failed (rc={rc})")
         shutil.copy2(out_pdf, pdf_path)
 
+    # Suppress pandoc's auto title block for HTML/EPUB (use our injected title page),
+    # while keeping metadata via title-meta/pagetitle/author-meta.
+    meta_overrides: list[str] = []
+    if title_text:
+        meta_overrides += ["-M", f"title-meta={title_text}", "-M", f"pagetitle={title_text}"]
+    if author_text:
+        meta_overrides += ["-M", f"author-meta={author_text}"]
+    if publisher_text:
+        meta_overrides += ["-M", f"publisher={publisher_text}"]
+
     if make_html:
         out_html = in_tmp.parent / "out.html"
         html_log = in_tmp.parent / "pandoc-html.log.json"
         rc = render_html(
             in_tmp,
             out_html,
-            meta_args,
+            meta_args + meta_overrides,
             shift_args,
             common_args,
             timeout,
@@ -733,17 +752,32 @@ def render_book_yaml(
             die(f"Docker pandoc (HTML) failed (rc={rc})")
         shutil.copy2(out_html, html_path)
 
+    # Keep cover metadata intact for EPUB and prepend a dedicated cover page so the
+    # first spine item is the cover image.
+    if make_epub and local_name:
+        text = in_tmp.read_text(encoding="utf-8")
+        cover_block = (
+            "```{=html}\n"
+            '<div class="cover-full">\n'
+            f'  <img src="{local_name}" alt="Cover image" />\n'
+            "</div>\n"
+            '<div class="page-break"></div>\n'
+            "```\n\n"
+        )
+        in_tmp.write_text(cover_block + text, encoding="utf-8")
+
     if make_epub:
         out_epub = in_tmp.parent / "out.epub"
         epub_log = in_tmp.parent / "pandoc-epub.log.json"
         rc = render_epub(
             in_tmp,
             out_epub,
-            meta_args,
+            meta_args + meta_overrides,
             shift_args,
             common_args,
             timeout,
             css_path,
+            extra_args=None,
             log_path=epub_log,
             verbose=verbose,
         )

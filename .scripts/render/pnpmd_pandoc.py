@@ -96,12 +96,14 @@ def render_epub(
     common_args: List[str],
     timeout: int,
     css_path: Optional[Path] = None,
+    extra_args: Optional[List[str]] = None,
     log_path: Optional[Path] = None,
     verbose: bool = False,
 ) -> int:
     css_args: List[str] = []
     if css_path and css_path.exists():
         css_args = ["--css", css_path.name]
+    extra_args = extra_args or []
     log_args: List[str] = [f"--log={log_path.name}"] if log_path else []
     verbose_args: List[str] = ["--verbose"] if verbose else []
     cmd = [
@@ -120,6 +122,7 @@ def render_epub(
         *shift_args,
         *meta_args,
         *css_args,
+        *extra_args,
         "--filter",
         "pandoc-crossref",
         "in.md",

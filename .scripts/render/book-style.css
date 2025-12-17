@@ -13,7 +13,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--serif);
-  max-width: 780px;
+  max-width: 900px;
   margin: 3rem auto 4rem;
   padding: 0 1.5rem;
   line-height: 1.8;
@@ -209,7 +209,19 @@ figcaption {
 
 .title-page {
   text-align: center;
-  margin: 1rem auto;
+  margin: 10rem auto 2rem;
+}
+
+.cover-full img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.page-break {
+  page-break-after: always;
+  break-after: page;
 }
 
 #title-block-header {
@@ -217,8 +229,10 @@ figcaption {
 }
 
 .title-cover img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
+  max-height: 80vh;
+  object-fit: contain;
   margin: 0 auto 2rem;
   display: block;
 }
@@ -226,7 +240,7 @@ figcaption {
 .book-title {
   font-family: var(--serif);
   font-size: 2.5rem;
-  margin: 5rem 0;
+  margin: 0 0 1rem;
   color: #0f1c3f;
 }
 
