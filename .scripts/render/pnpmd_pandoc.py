@@ -1,9 +1,33 @@
 # pnpmd_pandoc.py
 
+import os
+import time
 from pathlib import Path
 from typing import List, Optional
 
 from pnpmd_util import run_visible
+
+
+_PANDOC_IMAGE = os.environ.get("PNPMD_PANDOC_IMAGE", "pandoc/extra:3.1")
+_IMAGE_READY = False
+
+
+def _ensure_image(image: str, retries: int = 2, delay: float = 2.0) -> int:
+    """
+    Pre-pull the docker image with a couple of retries so transient registry
+    errors don't abort the run.
+    """
+    global _IMAGE_READY
+    if _IMAGE_READY:
+        return 0
+    last_rc = 0
+    for attempt in range(retries + 1):
+        last_rc = run_visible(["docker", "pull", image])
+        if last_rc == 0:
+            _IMAGE_READY = True
+            return 0
+        time.sleep(delay * (attempt + 1))
+    return last_rc
 
 
 def render_pdf(
@@ -20,6 +44,11 @@ def render_pdf(
     log_args: List[str] = [f"--log={log_path.name}"] if log_path else []
     verbose_args: List[str] = ["--verbose"] if verbose else []
     extra_args = extra_args or []
+
+    rc = _ensure_image(_PANDOC_IMAGE)
+    if rc != 0:
+        return rc
+
     cmd = [
         "docker",
         "run",
@@ -28,7 +57,7 @@ def render_pdf(
         f"type=bind,source={str(in_tmp.parent)},target=/data",
         "-w",
         "/data",
-        "pandoc/extra",
+        _PANDOC_IMAGE,
         "--standalone",
         *log_args,
         *verbose_args,
@@ -61,6 +90,11 @@ def render_html(
         css_args = ["--css", css_path.name]
     log_args: List[str] = [f"--log={log_path.name}"] if log_path else []
     verbose_args: List[str] = ["--verbose"] if verbose else []
+
+    rc = _ensure_image(_PANDOC_IMAGE)
+    if rc != 0:
+        return rc
+
     cmd = [
         "docker",
         "run",
@@ -69,7 +103,7 @@ def render_html(
         f"type=bind,source={str(in_tmp.parent)},target=/data",
         "-w",
         "/data",
-        "pandoc/extra",
+        _PANDOC_IMAGE,
         "--standalone",
         *log_args,
         *verbose_args,
@@ -106,6 +140,11 @@ def render_epub(
     extra_args = extra_args or []
     log_args: List[str] = [f"--log={log_path.name}"] if log_path else []
     verbose_args: List[str] = ["--verbose"] if verbose else []
+
+    rc = _ensure_image(_PANDOC_IMAGE)
+    if rc != 0:
+        return rc
+
     cmd = [
         "docker",
         "run",
@@ -114,7 +153,7 @@ def render_epub(
         f"type=bind,source={str(in_tmp.parent)},target=/data",
         "-w",
         "/data",
-        "pandoc/extra",
+        _PANDOC_IMAGE,
         "--standalone",
         *log_args,
         *verbose_args,

@@ -15,6 +15,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PNPMD_PANDOC_IMAGE: pandoc/extra:3.1
     steps:
       - uses: actions/checkout@v4
 
