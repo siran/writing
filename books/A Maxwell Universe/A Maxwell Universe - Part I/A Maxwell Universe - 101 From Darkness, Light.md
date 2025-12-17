@@ -25,7 +25,7 @@ event, insofar as it makes a difference.
 
 The sense of reason or explanation arises only as a reactive story, a way of
 organizing transitions once change has been noticed by a reasoning entity
-(a topic addressed later in [@EmergenceOfSelf]).
+(a topic addressed later in [^EmergenceOfSelf]).
 
 This reactivity is not limited to conscious minds. Anything that changes in
 response to causes and produces effects is, in this minimal sense,
@@ -37,6 +37,9 @@ simply by virtue of its continued existence as a loop. In this minimal
 operational sense, a self-sustaining causal loop “notices” change.
 
 [^OperationalAwareness]: Palma, A., & Rodriguez, A. M. (2025). *Operational Awareness in a Maxwell-Only Universe: A Formal Implication of Panpsychism*. ResearchGate. https://doi.org/10.13140/RG.2.2.13647.60324/1
+
+[^EmergenceOfSelf]: Rodriguez, A. M. (2025). *Emergence of Self-Awareness from a
+Cause–Effect Loop*. https://preprints.preferredframe.com/Emergence%20of%20Self-Awareness%20from%20a%20Cause%E2%80%93Effect%20Loop/Emergence%20of%20Self-Awareness%20from%20a%20Cause%E2%80%93Effect%20Loop%20v2.md.html
 
 
 # 2. Time
