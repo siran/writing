@@ -38,8 +38,7 @@ operational sense, a self-sustaining causal loop “notices” change.
 
 [^OperationalAwareness]: Palma, A., & Rodriguez, A. M. (2025). *Operational Awareness in a Maxwell-Only Universe: A Formal Implication of Panpsychism*. ResearchGate. https://doi.org/10.13140/RG.2.2.13647.60324/1
 
-[^EmergenceOfSelf]: Rodriguez, A. M. (2025). *Emergence of Self-Awareness from a
-Cause–Effect Loop*. https://preprints.preferredframe.com/Emergence%20of%20Self-Awareness%20from%20a%20Cause%E2%80%93Effect%20Loop/Emergence%20of%20Self-Awareness%20from%20a%20Cause%E2%80%93Effect%20Loop%20v2.md.html
+[^EmergenceOfSelf]: Rodriguez, A. M. (2025). *Emergence of Self-Awareness from a Cause–Effect Loop*. https://preprints.preferredframe.com/Emergence%20of%20Self-Awareness%20from%20a%20Cause%E2%80%93Effect%20Loop/Emergence%20of%20Self-Awareness%20from%20a%20Cause%E2%80%93Effect%20Loop%20v2.md.html
 
 
 # 2. Time

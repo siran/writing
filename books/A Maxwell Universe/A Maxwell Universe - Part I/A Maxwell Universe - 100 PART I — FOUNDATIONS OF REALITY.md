@@ -11,7 +11,7 @@ these orderings time emerges.
 
 Causal steps link events into chains, and then loops. Loops support recurrent
 patterns and can act as clocks. Counting causal steps gives duration and also
-distance: the minimal number of steps between two subnodes. Collecting all
+distance: the minimal number of steps between two events. Collecting all
 pairwise distances produces an effective geometry.
 
 Space and dimension arise when these distances can be embedded with low
