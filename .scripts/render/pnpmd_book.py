@@ -1,6 +1,7 @@
 # pnpmd_book.py
 
 import re
+import html
 import shutil
 from pathlib import Path
 from typing import Optional
@@ -13,6 +14,8 @@ from pnpmd_pandoc import render_pdf, render_html, render_epub
 
 
 _H1_RE = re.compile(r"^\s*#\s+(.*)$")
+_NON_ALNUM_RE = re.compile(r"[^0-9A-Za-z _-]+")
+_SPACE_RE = re.compile(r"\s+")
 
 
 def _extract_first_h1(body: str) -> tuple[Optional[str], str]:
@@ -38,6 +41,16 @@ def _extract_first_h1(body: str) -> tuple[Optional[str], str]:
         new_lines.pop(remove_idx)
 
     return title, "\n".join(new_lines)
+
+
+def _slugify(text: str) -> str:
+    """
+    Generate a simple slug: lowercase, strip accents/punct, collapse spaces to '-'.
+    """
+    t = _NON_ALNUM_RE.sub("", text)
+    t = _SPACE_RE.sub("-", t.strip())
+    t = re.sub(r"-{2,}", "-", t).strip("-")
+    return t.lower() or "x"
 
 
 def _split_by_h1(body: str, default_title: str) -> list[tuple[str, str]]:
@@ -449,7 +462,13 @@ def render_book_yaml(
                 f.write(title_block)
                 if not is_toc:
                     f.write("```{=latex}\n\\vspace*{0.18\\textheight}\n```\n")
-                    f.write(f"# {sec_title}\n\n")
+                    is_part_heading = sec_title.strip().lower().startswith("part ")
+                    hid = _slugify(sec_title)
+                    if is_part_heading:
+                        heading_line = f"# {sec_title} {{#{hid}}}"
+                    else:
+                        heading_line = f"# {sec_title} {{#{hid} .chapter}}"
+                    f.write(f"{heading_line}\n\n")
 
                 if is_ack:
                     f.write("```{=latex}\n\\vspace*{0.12\\textheight}\n\\begin{center}\n```\n")
@@ -575,6 +594,7 @@ def render_book_yaml(
         lsubtitle = _latex_escape(subtitle_text) if subtitle_text else None
         lauthor = _latex_escape(author_text) if author_text else None
         subtitle_segments = _subtitle_segments(lsubtitle) if lsubtitle else []
+        html_cover_src = cover_value or None
 
         cover_block = ""
         if cover_filename:
@@ -626,6 +646,27 @@ def render_book_yaml(
         ]
         title_block = "\n".join(title_lines)
 
+        html_title_parts: list[str] = []
+        if html_cover_src:
+            html_title_parts.append(
+                f'<div class="title-cover"><img src="{html.escape(html_cover_src)}" alt="Cover image" /></div>'
+            )
+        if title_text:
+            html_title_parts.append(f'<h1 class="book-title">{html.escape(title_text)}</h1>')
+        if subtitle_text:
+            html_title_parts.append(f'<div class="subtitle">{html.escape(subtitle_text)}</div>')
+        if author_text:
+            html_title_parts.append(f'<div class="book-author">{html.escape(author_text)}</div>')
+        html_block = ""
+        if html_title_parts:
+            html_block = (
+                "```{=html}\n"
+                '<div class="title-page">\n'
+                + "\n".join(html_title_parts)
+                + "\n</div>\n"
+                "```\n\n"
+            )
+
         txt = path.read_text(encoding="utf-8")
         lines = txt.splitlines()
         header_end = None
@@ -642,7 +683,7 @@ def render_book_yaml(
             head = ""
             body = txt.lstrip("\n")
 
-        new_txt = (head + "\n\n" if head else "") + cover_block + title_block + body
+        new_txt = (head + "\n\n" if head else "") + cover_block + title_block + html_block + body
         path.write_text(new_txt, encoding="utf-8")
 
     _inject_frontmatter_pages(in_tmp, local_name)

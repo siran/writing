@@ -236,7 +236,7 @@ def rewrite_hash_anchors(md: str) -> str:
 
 def _build_html_toc(md: str, depth: int) -> str:
     """
-    Build a Markdown TOC (unordered list) up to the given depth using the
+    Build an HTML TOC (unordered list) up to the given depth using the
     normalized heading IDs we generate during preprocessing.
     """
     items: list[tuple[int, str, str]] = []
@@ -247,19 +247,53 @@ def _build_html_toc(md: str, depth: int) -> str:
         lvl = len(m.group('hash'))
         if lvl > depth:
             continue
-        title = m.group('title').strip()
+        raw_title = m.group('title').strip()
         attrs = m.group('attrs') or ""
+
+        if raw_title.lower().startswith("acknowledgements"):
+            continue
+
+        # If a heading line contains an inline empty span with id ([]{#id}),
+        # strip it from the display text and prefer that id.
+        span_id = None
+        span_match = re.search(r'\[\]\s*\{#([^\}]+)\}', raw_title)
+        if span_match:
+            span_id = span_match.group(1)
+            raw_title = re.sub(r'\s*\[\]\s*\{#([^\}]+)\}\s*', '', raw_title).strip()
+
         anchor = None
         for mm in _ATTR_ID_RE.finditer(attrs):
             anchor = mm.group(1)
-        anchor = anchor or _auto_slug(title)
-        items.append((lvl, title, anchor))
+        if not anchor and span_id:
+            anchor = span_id
+        anchor = anchor or _auto_slug(raw_title)
 
-    lines: list[str] = []
+        items.append((lvl, raw_title, anchor))
+
+    if not items:
+        return ""
+
+    html: list[str] = []
+    prev_level = 0
+    first = True
     for lvl, title, anchor in items:
-        indent = "  " * (lvl - 1)
-        lines.append(f"{indent}- [{title}](#{anchor})")
-    return "\n".join(lines)
+        while prev_level < lvl:
+            html.append("<ul>")
+            prev_level += 1
+        while prev_level > lvl:
+            html.append("</li></ul>")
+            prev_level -= 1
+        if not first:
+            html.append("</li>")
+        html.append(f'<li><a href="#{anchor}">{title}</a>')
+        first = False
+
+    html.append("</li>")
+    while prev_level > 0:
+        html.append("</ul>")
+        prev_level -= 1
+
+    return "\n".join(html)
 
 
 # ---------- TOC, heading spacing ----------
