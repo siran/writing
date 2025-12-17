@@ -34,6 +34,14 @@ def render(
 
     Returns: (pdf_path or None, html_path or None)
     """
+    effective_epub_level = epub_chapter_level
+    if make_epub and effective_epub_level is None:
+        effective_epub_level = 1
+    epub_split_args: list[str] = []
+    if make_epub and effective_epub_level is not None:
+        epub_split_args = ["--split-level", str(effective_epub_level)]
+    epub_extra_args = epub_split_args + (["--toc"] if make_epub else [])
+
     src = Path(path) if path else discover_md_in_cwd()
     if not src.exists():
         die(f"Missing source: {src}")
@@ -52,7 +60,7 @@ def render(
             shift_headings=shift_headings,
             auto_shift=auto_shift,
             number_offset=number_offset,
-            epub_chapter_level=epub_chapter_level,
+            epub_chapter_level=effective_epub_level,
             verbose=verbose,
         )
 
@@ -81,8 +89,6 @@ def render(
             shift_args = ["--shift-heading-level-by", str(shift_headings)]
 
         common_args = toc_opts + numbering_flag + toc_flag + ["-f", reader]
-        if epub_chapter_level is not None:
-            common_args += ["--epub-chapter-level", str(epub_chapter_level)]
 
         pdf_path = src.with_suffix(".pdf") if make_pdf else None
         html_path = src.with_suffix(".html") if make_html else None
@@ -139,6 +145,7 @@ def render(
                 timeout,
                 log_path=epub_log,
                 verbose=verbose,
+                extra_args=epub_extra_args,
             )
             if verbose or rc != 0:
                 print_pandoc_log(epub_log, label="EPUB")
@@ -174,7 +181,7 @@ def render(
         shift_headings=shift_headings,
         auto_shift=auto_shift,
         number_offset=number_offset,
-        epub_chapter_level=epub_chapter_level,
+        epub_chapter_level=effective_epub_level,
     )
 
     pdf_path = src.with_suffix(".pdf") if make_pdf else None
@@ -239,6 +246,7 @@ def render(
             css_path,
             log_path=epub_log,
             verbose=verbose,
+            extra_args=epub_extra_args,
         )
         if verbose or rc != 0:
             print_pandoc_log(epub_log, label="EPUB")
@@ -301,7 +309,7 @@ def main(argv=None):
     ap.add_argument(
         "--epub-chapter-level",
         type=int,
-        help="Heading level to start new EPUB chapters (pandoc --epub-chapter-level).",
+        help="Heading level for EPUB splitting (pandoc --split-level, default 1); also enables pandoc TOC for EPUB.",
     )
     ap.add_argument(
         "--verbose",

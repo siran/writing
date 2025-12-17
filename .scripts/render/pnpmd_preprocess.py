@@ -478,7 +478,5 @@ def prepare_preprocessed(
         toc_opts.append(f"--toc-depth={toc_depth}")
 
     common_args = toc_opts + numbering_flag + toc_flag + ["-f", reader]
-    if epub_chapter_level is not None:
-        common_args += ["--epub-chapter-level", str(epub_chapter_level)]
 
     return in_tmp, final_pandoc_md, meta_args, shift_args, common_args, css_path

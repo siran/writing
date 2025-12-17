@@ -479,6 +479,14 @@ def render_book_yaml(
 
     print(f"✅ Built combined markdown {big_md_path}")
 
+    effective_epub_level = epub_chapter_level
+    if make_epub and effective_epub_level is None:
+        effective_epub_level = 1
+    epub_split_args: list[str] = []
+    if make_epub and effective_epub_level is not None:
+        epub_split_args = ["--split-level", str(effective_epub_level)]
+    epub_extra_args = epub_split_args + (["--toc"] if make_epub else [])
+
     (
         in_tmp,
         final_pandoc_md,
@@ -494,7 +502,7 @@ def render_book_yaml(
         shift_headings=shift_headings,
         auto_shift=auto_shift,
         number_offset=number_offset,
-        epub_chapter_level=epub_chapter_level,
+        epub_chapter_level=effective_epub_level,
     )
 
     # If cover-image was specified in book.yml, ensure a local copy exists in
@@ -767,6 +775,20 @@ def render_book_yaml(
         in_tmp.write_text(cover_block + text, encoding="utf-8")
 
     if make_epub:
+        # Remove the custom HTML TOC block before EPUB so split files don't break links;
+        # rely on pandoc's generated nav/TOC instead.
+        try:
+            text = in_tmp.read_text(encoding="utf-8")
+            text = re.sub(
+                r"```{=html}\n<div class=\"toc\">.*?</div>\n```\\s*\n?",
+                "",
+                text,
+                flags=re.DOTALL,
+            )
+            in_tmp.write_text(text, encoding="utf-8")
+        except Exception:
+            pass
+
         out_epub = in_tmp.parent / "out.epub"
         epub_log = in_tmp.parent / "pandoc-epub.log.json"
         rc = render_epub(
@@ -777,7 +799,7 @@ def render_book_yaml(
             common_args,
             timeout,
             css_path,
-            extra_args=None,
+            extra_args=epub_extra_args,
             log_path=epub_log,
             verbose=verbose,
         )
