@@ -10,4 +10,12 @@ editor: An M. Rodriguez
 lang: en-US
 rights: CC BY-NC 4.0
 cover-image: https://assets.preferredframe.com/A%20Maxwell%20Universe/A%20Maxwell%20Universe-8.5x12.png
+fontsize: 12pt
+linestretch: 1.32
+header-includes:
+  - \renewcommand{\footnotesize}{\fontsize{11pt}{13pt}\selectfont}
+  - \setlength{\skip\footins}{16pt}
+  - \usepackage{titlesec}
+  - \titleformat{\section}{\raggedleft\bfseries\Large}{\thesection.}{0.6em}{}
+  - \titlespacing*{\section}{0pt}{2.2ex plus 1ex minus 0.5ex}{1.4ex}
 ---

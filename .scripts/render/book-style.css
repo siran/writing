@@ -16,8 +16,8 @@ body {
   max-width: 780px;
   margin: 3rem auto 4rem;
   padding: 0 1.5rem;
-  line-height: 1.7;
-  font-size: 18px;
+  line-height: 1.8;
+  font-size: 20px;
 }
 
 h1,
@@ -72,6 +72,11 @@ blockquote {
 a {
   color: var(--accent);
   text-decoration: none;
+}
+
+.subtitle {
+  white-space: pre-line;
+  line-height: 1.6;
 }
 
 a:hover {
@@ -143,6 +148,19 @@ figcaption {
   margin-top: 0.6em;
   color: var(--muted);
   font-size: 0.95em;
+}
+
+.footnotes {
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+.footnotes ol {
+  padding-left: 1.5em;
+}
+
+.footnotes li {
+  margin-bottom: 0.65em;
 }
 
 .toc {

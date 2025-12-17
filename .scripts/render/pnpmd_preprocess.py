@@ -234,9 +234,38 @@ def rewrite_hash_anchors(md: str) -> str:
     return _unprotect(prot2, blobs)
 
 
+def _build_html_toc(md: str, depth: int) -> str:
+    """
+    Build a Markdown TOC (unordered list) up to the given depth using the
+    normalized heading IDs we generate during preprocessing.
+    """
+    items: list[tuple[int, str, str]] = []
+    for ln in md.splitlines():
+        m = _HDR_RE.match(ln)
+        if not m:
+            continue
+        lvl = len(m.group('hash'))
+        if lvl > depth:
+            continue
+        title = m.group('title').strip()
+        attrs = m.group('attrs') or ""
+        anchor = None
+        for mm in _ATTR_ID_RE.finditer(attrs):
+            anchor = mm.group(1)
+        anchor = anchor or _auto_slug(title)
+        items.append((lvl, title, anchor))
+
+    lines: list[str] = []
+    for lvl, title, anchor in items:
+        indent = "  " * (lvl - 1)
+        lines.append(f"{indent}- [{title}](#{anchor})")
+    return "\n".join(lines)
+
+
 # ---------- TOC, heading spacing ----------
 _TOC_MARK_RE = re.compile(r'^\s*\[\[TOC\]\]\s*$', re.MULTILINE)
 _TOC_LATEX_RE = re.compile(r'^\s*\\TOC\s*$', re.MULTILINE)
+_ATTR_ID_RE = re.compile(r'(?:^|\s)#([A-Za-z0-9_:-]+)(?=\s|$)')
 
 
 def insert_toc_after_keywords_content(md: str) -> str:
@@ -271,6 +300,7 @@ def insert_toc_after_keywords_content(md: str) -> str:
 def replace_toc_marker(md: str, toc_depth: int) -> Tuple[str, bool]:
     touched = False
     td = max(0, toc_depth)
+    html_toc = _build_html_toc(md, td)
     toc_block = (
         "\\begingroup\n"
         f"\\setcounter{{tocdepth}}{{{td}}}\n"
@@ -279,6 +309,14 @@ def replace_toc_marker(md: str, toc_depth: int) -> Tuple[str, bool]:
         "\\tableofcontents\n"
         "\\endgroup"
     )
+    if html_toc:
+        toc_block += (
+            "\n\n```{=html}\n"
+            "<div class=\"toc\">\n"
+            f"{html_toc}\n"
+            "</div>\n"
+            "```\n"
+        )
     if _TOC_MARK_RE.search(md):
         md = _TOC_MARK_RE.sub(lambda m: f'\n{toc_block}\n', md)
         touched = True
