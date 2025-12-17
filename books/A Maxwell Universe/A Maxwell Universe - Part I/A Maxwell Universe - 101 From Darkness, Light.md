@@ -147,8 +147,8 @@ is the collection of all such distances. By gathering every pairwise separation
 into a single structure, operational awareness attempts to form a coherent
 geometric representation.
 
-If the full set of distances can be embedded with low distortion into some
-$D$-dimensional space, we say the subnodes appear $D$-dimensional. If no
+If the full set of causal distances can be embedded with low distortion into some
+$D$-dimensional space, we say the events appear to be $D$-dimensional. If no
 low-distortion embedding exists, the notion of dimension breaks down.
 
 The same distance data may admit several embeddings. A configuration may fit a
