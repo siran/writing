@@ -78,7 +78,7 @@ From the primitive relation
 
 $$ n_i \succ n_j, $$
 
-meaning “subnode $n_i$ causes $n_j$,” an ordering arises: before and after. We
+meaning “$n_i$ causes $n_j$,” an ordering arises: before and after. We
 may call this succession of events $i$ and $j$ a **causal step**.
 
 A series of events forms a **causal chain**: i → a → b → c → d → j.
@@ -106,16 +106,16 @@ in essence, a self-sustaining causal loop.
 By counting loops or causal steps, operational awareness defines durations. Time
 is an emergent count, not an external parameter.
 
-Distance arises by tracking how many causal steps connect two subnodes. If a
-signal travels from $n_i$ to $n_j$ through a minimal chain of length $L_{ij}$,
-then
+Distance arises by tracking how many causal steps connect two events. If a
+signal travels from event $i$ to event $j$ through a minimal chain of length
+$L_{ij}$, then
 
 $$
-d(n_i, n_j) \propto L_{ij}.
+d(i, j) \propto L_{ij}.
 $$
 
 If no path exists, the distance is infinite or undefined. If the only available
-path returns to the same subnode, the round-trip count becomes an effective
+path returns to the same event, the round-trip count becomes an effective
 measure of separation. Distance is not a spatial coordinate but an operational
 measure of causal separation.
 
@@ -127,11 +127,11 @@ $D$, where each event is assigned a point, and the distances between those
 points approximate the causal distances:
 
 $$
-\|\mathcal{M}(n_i) - \mathcal{M}(n_j)\| \approx d(n_i, n_j).
+\|\mathcal{M}(i) - \mathcal{M}(j)\| \approx d(i, j).
 $$
 
 When such embeddings succeed with low distortion, observers perceive the
-corresponding subnodes as forming a $D$-dimensional structure under
+corresponding events as forming a $D$-dimensional structure under
 $\mathcal{M}$. If multiple embeddings work, dimension is not unique. If none
 succeed, all such maps $\mathcal{M}$ are defective and geometry is ill-defined.
 
