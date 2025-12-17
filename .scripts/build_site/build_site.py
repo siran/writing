@@ -424,7 +424,8 @@ def _render_single_book(
     cmd.extend(
         [
             "--omit-numbering",
-            "--omit-toc",
+            "--toc-depth",
+            "1",
             meta_name,
         ]
     )
@@ -451,7 +452,8 @@ def _render_single_book(
         fallback_cmd.extend(
             [
                 "--omit-numbering",
-                "--omit-toc",
+                "--toc-depth",
+                "1",
                 meta_name,
             ]
         )

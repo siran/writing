@@ -427,9 +427,7 @@ def prepare_preprocessed(
     body = rewrite_hash_anchors(body)
     body = normalize_heading_spacing(body)
 
-    final_pandoc_md = src.with_suffix(".pandoc.md")
     keep_head = "\n".join(raw_head) + ("\n\n" if raw_head else "")
-    final_pandoc_md.write_text(keep_head + body, encoding="utf-8")
 
     body2 = body
     has_toc_marker = False
@@ -441,6 +439,11 @@ def prepare_preprocessed(
     in_tmp = tmpdir / "in.md"
     text_for_pandoc = keep_head + (body2 if not omit_toc else body)
     in_tmp.write_text(text_for_pandoc, encoding="utf-8")
+
+    final_pandoc_md = src.with_suffix(".pandoc.md")
+    # Persist exactly what we feed to pandoc (with TOC replacement when enabled)
+    # so debug/served .pandoc.md matches the actual render input.
+    final_pandoc_md.write_text(text_for_pandoc, encoding="utf-8")
 
     css_path = None
     css_src = repo / ".scripts" / "render" / "book-style.css"
