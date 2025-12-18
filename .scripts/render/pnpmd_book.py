@@ -621,9 +621,8 @@ def render_book_yaml(
     epub_split_args: list[str] = []
     if make_epub and effective_epub_level is not None:
         epub_split_args = ["--split-level", str(effective_epub_level)]
-    # Rely on EPUB nav document for the TOC; explicit --toc ensures nav is built,
-    # while we strip visible TOC content below.
-    epub_extra_args = epub_split_args + (["--toc"] if make_epub else [])
+    # Rely on EPUB nav document for the TOC (no explicit --toc).
+    epub_extra_args = epub_split_args
 
     (
         in_tmp,
@@ -898,20 +897,6 @@ def render_book_yaml(
             die(f"Docker pandoc (HTML) failed (rc={rc})")
         shutil.copy2(out_html, html_path)
         _inline_css(html_path, css_path)
-
-    # Keep cover metadata intact for EPUB and prepend a dedicated cover page so the
-    # first spine item is the cover image.
-    if make_epub and local_name:
-        text = in_tmp.read_text(encoding="utf-8")
-        cover_block = (
-            "```{=html}\n"
-            '<div class="cover-full">\n'
-            f'  <img src="{local_name}" alt="Cover image" />\n'
-            "</div>\n"
-            '<div class="page-break"></div>\n'
-            "```\n\n"
-        )
-        in_tmp.write_text(cover_block + text, encoding="utf-8")
 
     if make_epub:
         # Produce a TOC-free variant for EPUB so only the nav document is used.
