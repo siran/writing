@@ -534,20 +534,13 @@ def render_book_yaml(
                         "```\n\n"
                     )
                     fp.write(title_block)
-                    # HTML/EPUB fallback via raw HTML (ignored by LaTeX); keep explicit heading
-                    # so EPUB split-level treats it like a chapter.
-                    html_ack = [
-                        '<div style="page-break-before: always; break-before: page;"></div>',
-                    ]
-                    if body_stripped:
-                        html_ack.append(f"<p><em>{html.escape(body_stripped)}</em></p>")
-                    html_ack.append('<div style="page-break-after: always; break-after: page;"></div>')
-                    fp.write("```{=html}\n" + "\n".join(html_ack) + "\n```\n\n")
-                    # Add a real heading/body for split-level handling, but hide from LaTeX.
+                    # For HTML/EPUB emit a page break and a real heading/body so split-level works,
+                    # but hide that heading from LaTeX (PDF already has the styled page above).
+                    fp.write("```{=html}\n<div class=\"page-break\"></div>\n```\n\n")
                     fp.write("```{=latex}\n\\iffalse\n```\n")
-                    fp.write(f"# {sec_title} {{#{hid} .chapter}}\n\n")
+                    fp.write(f"# {sec_title} {{#{hid} .chapter .unlisted}}\n\n")
                     if body_stripped:
-                        fp.write(body_stripped + "\n\n")
+                        fp.write(f"*{body_stripped}*\n\n")
                     fp.write("```{=latex}\n\\fi\n```\n\n")
                 elif is_toc:
                     title_block = (
@@ -565,20 +558,11 @@ def render_book_yaml(
                         "```\n\n"
                     )
                     fp.write(title_block)
-                    fp.write(
-                        "```{=html}\n"
-                        '<div style="page-break-before: always; break-before: page;"></div>\n'
-                        "```\n\n"
-                    )
+                    fp.write("```{=html}\n<div class=\"page-break\"></div>\n```\n\n")
                     fp.write("```{=latex}\n\\iffalse\n```\n")
-                    fp.write(f"# Table of Contents {{#{hid} .chapter}}\n\n")
+                    fp.write(f"# Table of Contents {{#{hid} .chapter .unlisted}}\n\n")
                     fp.write("[[TOC]]\n\n")
                     fp.write("```{=latex}\n\\fi\n```\n\n")
-                    fp.write(
-                        "```{=html}\n"
-                        '<div style="page-break-after: always; break-after: page;"></div>\n'
-                        "```\n\n"
-                    )
                 else:
                     title_block = (
                         "```{=latex}\n"
