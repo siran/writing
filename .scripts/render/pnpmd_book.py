@@ -918,6 +918,34 @@ def render_book_yaml(
                 text,
                 flags=re.DOTALL,
             )
+            # Strip any LaTeX \tableofcontents block that may have been emitted by
+            # [[TOC]] replacement so EPUB only uses pandoc's built-in nav.
+            text = re.sub(
+                r"```{=latex}.*?\\tableofcontents.*?```\\s*\n?",
+                "",
+                text,
+                flags=re.DOTALL,
+            )
+            # Guard against any leftover marker.
+            text = text.replace("[[TOC]]", "")
+            # Drop the explicit "Table of Contents" section for EPUB to avoid duplicate TOCs.
+            hdr_re = re.compile(r"^#{1,6}\s+(.*)$", re.MULTILINE)
+            lines = text.splitlines()
+            out: list[str] = []
+            skipping = False
+            for ln in lines:
+                m = hdr_re.match(ln)
+                if m:
+                    title_lower = m.group(1).strip().lower()
+                    if title_lower.startswith("table of contents") or title_lower == "contents":
+                        skipping = True
+                        continue
+                    else:
+                        skipping = False
+                if skipping:
+                    continue
+                out.append(ln)
+            text = "\n".join(out)
             in_tmp.write_text(text, encoding="utf-8")
         except Exception:
             pass
