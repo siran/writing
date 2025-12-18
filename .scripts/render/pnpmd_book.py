@@ -545,11 +545,11 @@ def render_book_yaml(
                     # For HTML/EPUB emit a page break and a real heading/body so split-level works,
                     # but hide that heading from LaTeX (PDF already has the styled page above).
                     fp.write("```{=html}\n<div class=\"page-break\"></div>\n```\n\n")
-                    fp.write("```{=latex}\n\\begin{comment}\n```\n")
+                    fp.write("```{=latex}\n\\iffalse\n```\n")
                     fp.write(f"# {sec_title} {{#{hid} .chapter .unlisted}}\n\n")
                     if body_stripped:
                         fp.write(f"*{body_stripped}*\n\n")
-                    fp.write("```{=latex}\n\\end{comment}\n```\n\n")
+                    fp.write("```{=latex}\n\\fi\n```\n\n")
                 elif is_toc:
                     title_block = (
                         "```{=latex}\n"
@@ -572,9 +572,9 @@ def render_book_yaml(
                         '<h1 class="toc-page-title">Table of Contents</h1>\n'
                         "```\n\n"
                     )
-                    fp.write("```{=latex}\n\\begin{comment}\n```\n")
+                    fp.write("```{=latex}\n\\iffalse\n```\n")
                     fp.write("[[TOC]]\n\n")
-                    fp.write("```{=latex}\n\\end{comment}\n```\n\n")
+                    fp.write("```{=latex}\n\\fi\n```\n\n")
                     fp.write("```{=html}\n<div class=\"page-break\"></div>\n```\n\n")
                 else:
                     title_block = (
@@ -738,13 +738,7 @@ def render_book_yaml(
 
     # Ensure LaTeX packages needed for the cover/title pages are available.
     _ensure_header_packages(
-        in_tmp,
-        [
-            "\\usepackage{geometry}",
-            "\\usepackage{graphicx}",
-            "\\usepackage{xcolor}",
-            "\\usepackage{comment}",
-        ],
+        in_tmp, ["\\usepackage{geometry}", "\\usepackage{graphicx}", "\\usepackage{xcolor}"]
     )
 
     # Cache common metadata once so it can be reused below.
