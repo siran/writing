@@ -755,13 +755,19 @@ def run_publish(args, ctx: PublishContext) -> None:
 
     related_identifiers = self_related_identifiers + reference_related_identifiers
 
+    # Notes must be non-empty; prefer one-sentence summary, then abstract, then title.
+    notes_text = normalize_markdown_prose(parsed["one_sentence"])
+    if not notes_text:
+        notes_text = normalize_markdown_prose(parsed["abstract"])
+    if not notes_text:
+        notes_text = title
+
     zenodo_meta = {
         "upload_type": "publication",
         "publication_type": pub_type,
         "title": title,
         "creators": creators,
         "description": normalize_markdown_prose(parsed["abstract"]),
-        "notes": normalize_markdown_prose(parsed["one_sentence"]),
         "keywords": parsed["keywords"],
         "journal_title": args.journal,
         "publisher": {"name": args.journal},
@@ -772,6 +778,7 @@ def run_publish(args, ctx: PublishContext) -> None:
         "communities": [{"identifier": args.community}],
         "prereserve_doi": True,
     }
+    zenodo_meta["notes"] = notes_text
 
     # Provenance
     prov_path = write_provenance(
@@ -847,10 +854,16 @@ def run_publish(args, ctx: PublishContext) -> None:
     for p in upload_paths:
         echo(f" - {p.name}")
 
-    # Commit site repo
-    rel_final_dir = str(final_dir.relative_to(site_repo))
+    # Commit site repo: stage non-binary artifacts only (.md/.html/.pandoc.md/.yml/.yaml/.json/.txt/.md).
+    allowed_exts = {".md", ".html", ".yaml", ".yml", ".json", ".txt"}
+    files_to_stage = [
+        p for p in final_dir.iterdir() if p.is_file() and (p.name.endswith(".pandoc.md") or p.suffix in allowed_exts)
+    ]
+    if not files_to_stage:
+        die(f"No files to stage in {final_dir}")
 
-    run(["git", "add", "-u", rel_final_dir], cwd=site_repo)
+    rel_paths = [str(p.relative_to(site_repo)) for p in files_to_stage]
+    run(["git", "add"] + rel_paths, cwd=site_repo)
     run(
         [
             "git",
