@@ -533,15 +533,21 @@ def render_book_yaml(
                         "```\n\n"
                     )
                     fp.write(title_block)
-                    # HTML/EPUB fallback via raw HTML (ignored by LaTeX)
+                    # HTML/EPUB fallback via raw HTML (ignored by LaTeX); keep explicit heading
+                    # so EPUB split-level treats it like a chapter.
                     html_ack = [
                         '<div style="page-break-before: always; break-before: page;"></div>',
-                        "<h1>" + html.escape(sec_title) + "</h1>",
                     ]
                     if body_stripped:
                         html_ack.append(f"<p><em>{html.escape(body_stripped)}</em></p>")
                     html_ack.append('<div style="page-break-after: always; break-after: page;"></div>')
                     fp.write("```{=html}\n" + "\n".join(html_ack) + "\n```\n\n")
+                    # Add a real heading/body for split-level handling, but hide from LaTeX.
+                    fp.write("```{=latex}\n\\iffalse\n```\n")
+                    fp.write(f"# {sec_title} {{#{hid} .chapter}}\n\n")
+                    if body_stripped:
+                        fp.write(body_stripped + "\n\n")
+                    fp.write("```{=latex}\n\\fi\n```\n\n")
                 elif is_toc:
                     title_block = (
                         "```{=latex}\n"
@@ -563,7 +569,10 @@ def render_book_yaml(
                         '<div style="page-break-before: always; break-before: page;"></div>\n'
                         "```\n\n"
                     )
+                    fp.write("```{=latex}\n\\iffalse\n```\n")
+                    fp.write(f"# Table of Contents {{#{hid} .chapter}}\n\n")
                     fp.write("[[TOC]]\n\n")
+                    fp.write("```{=latex}\n\\fi\n```\n\n")
                     fp.write(
                         "```{=html}\n"
                         '<div style="page-break-after: always; break-after: page;"></div>\n'
@@ -909,54 +918,8 @@ def render_book_yaml(
         _inline_css(html_path, css_path)
 
     if make_epub:
-        # Produce a TOC-free variant for EPUB so only the nav document is used.
-        epub_in = in_tmp.parent / "in_epub.md"
-        try:
-            text = in_tmp.read_text(encoding="utf-8")
-            # Remove HTML TOC block.
-            text = re.sub(
-                r"```{=html}\n<div class=\"toc\">.*?</div>\n```\\s*\n?",
-                "",
-                text,
-                flags=re.DOTALL,
-            )
-            # Remove LaTeX TOC block (from [[TOC]] replacement) and any TOC latex title page.
-            text = re.sub(
-                r"```{=latex}.*?(\\tableofcontents|Table of Contents).*?```\\s*\n?",
-                "",
-                text,
-                flags=re.DOTALL | re.IGNORECASE,
-            )
-            # Drop explicit TOC headings/sections (fallback).
-            hdr_re = re.compile(r"^#{1,6}\s+(.*)$", re.MULTILINE)
-            lines = text.splitlines()
-            out: list[str] = []
-            skipping = False
-            for ln in lines:
-                m = hdr_re.match(ln)
-                if m:
-                    title_lower = m.group(1).strip().lower()
-                    if title_lower.startswith("table of contents") or title_lower == "contents":
-                        skipping = True
-                        continue
-                    else:
-                        skipping = False
-                if skipping:
-                    continue
-                # Remove standalone [[TOC]] markers if any remain.
-                if ln.strip() == "[[TOC]]":
-                    continue
-                out.append(ln)
-            text = "\n".join(out)
-            # Final fallback: remove any block from an isolated [[TOC]] line to the next heading.
-            text = re.sub(
-                r"(?ms)^\s*\[\[TOC\]\]\s*$(.*?)(^#{1,6}\s+|\Z)",
-                r"\2",
-                text,
-            )
-            epub_in.write_text(text, encoding="utf-8")
-        except Exception:
-            shutil.copy2(in_tmp, epub_in)
+        # Use the same input for EPUB so headings (including TOC/Ack) split pages consistently.
+        epub_in = in_tmp
 
         out_epub = in_tmp.parent / "out.epub"
         epub_log = in_tmp.parent / "pandoc-epub.log.json"
