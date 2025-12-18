@@ -917,7 +917,7 @@ def render_book_yaml(
                 text,
                 flags=re.DOTALL | re.IGNORECASE,
             )
-            # Drop explicit TOC headings/sections.
+            # Drop explicit TOC headings/sections (fallback).
             hdr_re = re.compile(r"^#{1,6}\s+(.*)$", re.MULTILINE)
             lines = text.splitlines()
             out: list[str] = []
@@ -938,6 +938,12 @@ def render_book_yaml(
                     continue
                 out.append(ln)
             text = "\n".join(out)
+            # Final fallback: remove any block from an isolated [[TOC]] line to the next heading.
+            text = re.sub(
+                r"(?ms)^\s*\[\[TOC\]\]\s*$(.*?)(^#{1,6}\s+|\Z)",
+                r"\2",
+                text,
+            )
             epub_in.write_text(text, encoding="utf-8")
         except Exception:
             shutil.copy2(in_tmp, epub_in)

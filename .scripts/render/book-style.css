@@ -220,8 +220,10 @@ figcaption {
 }
 
 .page-break {
-  page-break-after: always;
+  break-before: page;
   break-after: page;
+  page-break-before: always;
+  page-break-after: always;
 }
 
 #title-block-header {
