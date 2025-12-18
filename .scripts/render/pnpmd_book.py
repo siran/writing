@@ -286,11 +286,11 @@ def _build_md_toc(text: str, depth: int) -> str:
             continue
         raw_title = m.group("title").strip()
         hid = None
+        # Strip trailing {#id}
         m_id = _ID_TRAIL_RE.search(raw_title)
         if m_id:
-            hid = m_id.group(1).strip()
             raw_title = _ID_TRAIL_RE.sub("", raw_title).strip()
-        anchor = hid or _slugify(raw_title)
+        anchor = _slugify(raw_title)
         indent = "  " * (lvl - 1)
         lines.append(f"{indent}- [{raw_title}](#{anchor})")
     return "\n".join(lines) + ("\n" if lines else "")
@@ -596,7 +596,7 @@ def render_book_yaml(
                     if is_part_heading:
                         heading_line = f"# {sec_title}"
                     else:
-                        heading_line = f"# {sec_title} {{#{hid}}}"
+                        heading_line = f"# {sec_title}"
                     fh.write(f"{heading_line}\n\n")
                     fh.write(body_stripped + "\n\n")
 
