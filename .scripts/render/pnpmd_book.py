@@ -535,11 +535,12 @@ def render_book_yaml(
                     fp.write(title_block)
                     # HTML/EPUB fallback via raw HTML (ignored by LaTeX)
                     html_ack = [
-                        '<div class="page-break"></div>',
+                        '<div style="page-break-before: always; break-before: page;"></div>',
                         "<h1>" + html.escape(sec_title) + "</h1>",
                     ]
                     if body_stripped:
                         html_ack.append(f"<p><em>{html.escape(body_stripped)}</em></p>")
+                    html_ack.append('<div style="page-break-after: always; break-after: page;"></div>')
                     fp.write("```{=html}\n" + "\n".join(html_ack) + "\n```\n\n")
                 elif is_toc:
                     title_block = (
@@ -557,8 +558,17 @@ def render_book_yaml(
                         "```\n\n"
                     )
                     fp.write(title_block)
-                    fp.write("```{=html}\n<div class=\"page-break\"></div>\n```\n\n")
+                    fp.write(
+                        "```{=html}\n"
+                        '<div style="page-break-before: always; break-before: page;"></div>\n'
+                        "```\n\n"
+                    )
                     fp.write("[[TOC]]\n\n")
+                    fp.write(
+                        "```{=html}\n"
+                        '<div style="page-break-after: always; break-after: page;"></div>\n'
+                        "```\n\n"
+                    )
                 else:
                     title_block = (
                         "```{=latex}\n"
