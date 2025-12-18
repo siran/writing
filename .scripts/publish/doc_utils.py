@@ -15,6 +15,14 @@ import panflute as pf
 
 from common import echo, die, run, format_long_date
 
+# Ensure render helpers are importable (pnpmd_util lives under .scripts/render).
+ROOT = Path(__file__).resolve().parents[2]
+RENDER_DIR = ROOT / ".scripts" / "render"
+if str(RENDER_DIR) not in sys.path:
+    sys.path.append(str(RENDER_DIR))
+
+from pnpmd_util import title_from_book_yaml
+
 
 # ---- YAML dumper with nicer URL quoting ----
 
@@ -329,6 +337,43 @@ def render_in_staging(
     staging = site_repo / subjournal / "_staging" / stem
     staging.mkdir(parents=True, exist_ok=True)
 
+    base_render_args = list(render_args or [])
+
+    script_dir = Path(__file__).resolve().parent
+    render_py = script_dir.parent / "render" / "render.py"
+    if not render_py.exists():
+        die(f"render.py not found at expected location: {render_py}")
+
+    # ---- Book mode ----
+    if book_yaml is not None:
+        book_dir = book_yaml.parent
+        echo(f"+ copy book dir {book_dir} -> {staging}")
+        for p in book_dir.iterdir():
+            if p.is_file():
+                shutil.copy2(p, staging / p.name)
+
+        dst_yaml = staging / book_yaml.name
+        run(
+            [sys.executable, str(render_py), "--all", "--epub", *base_render_args, str(dst_yaml)],
+            cwd=staging,
+            check=True,
+        )
+
+        base_title = title_from_book_yaml(dst_yaml)
+        dst_md = staging / f"{base_title}.md"
+        dst_pdf = dst_md.with_suffix(".pdf")
+        dst_html = dst_md.with_suffix(".html")
+        dst_pmd = dst_md.with_suffix(".pandoc.md")
+        staged_epub = dst_md.with_suffix(".epub")
+
+        for p in (dst_md, dst_pdf, dst_html, dst_pmd):
+            if not p.exists():
+                die(f"Expected artifact missing after render: {p}")
+        if not staged_epub.exists():
+            staged_epub = None
+
+        return staging, dst_md, dst_pdf, dst_html, staged_epub
+
     # ---- main PNPMD .md ----
     dst_md = staging / src_md.name
     echo(f"+ copy {src_md} -> {dst_md}")
@@ -338,16 +383,8 @@ def render_in_staging(
     md_text = replace_header_date(md_text, publication_date_iso)
     dst_md.write_text(md_text, encoding="utf-8")
 
-    render_args = render_args or []
-
-    script_dir = Path(__file__).resolve().parent
-    render_py = script_dir.parent / "render" / "render.py"
-    if not render_py.exists():
-        die(f"render.py not found at expected location: {render_py}")
-
-    # Render PNPMD markdown → pdf, html, pandoc.md
     run(
-        [sys.executable, str(render_py), "--all", *render_args, str(dst_md)],
+        [sys.executable, str(render_py), "--all", *base_render_args, str(dst_md)],
         cwd=staging,
         check=True,
     )
@@ -359,29 +396,7 @@ def render_in_staging(
         if not p.exists():
             die(f"Expected artifact missing after render: {p}")
 
-    # ---- optional book YAML → EPUB ----
-    staged_epub: Optional[Path] = None
-    if book_yaml is not None:
-        dst_yaml = staging / book_yaml.name
-        echo(f"+ copy {book_yaml} -> {dst_yaml}")
-        shutil.copy2(book_yaml, dst_yaml)
-
-        run(
-            [sys.executable, str(render_py), "--all", *render_args, str(dst_yaml)],
-            cwd=staging,
-            check=True,
-        )
-
-        possible_epub = dst_yaml.with_suffix(".epub")
-        if possible_epub.exists():
-            staged_epub = possible_epub
-        else:
-            echo(
-                f"WARNING: book YAML was rendered but no EPUB found at {possible_epub}. "
-                f"Continuing without EPUB."
-            )
-
-    return staging, dst_md, dst_pdf, dst_html, staged_epub
+    return staging, dst_md, dst_pdf, dst_html, None
 
 
 # ---- provenance ----

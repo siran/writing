@@ -228,12 +228,8 @@ def preflight_and_context(
     book_yaml: Optional[Path] = None
     if src_path.suffix.lower() in (".yml", ".yaml"):
         book_yaml = src_path
-        src_md = src_path.with_suffix(".md")
-        if not src_md.exists():
-            die(
-                f"Book mode: argument is {src_path}, but expected companion .md at "
-                f"{src_md} for PNPMD metadata and it does not exist."
-            )
+        # Use the YAML itself as the primary input; combined .md will be produced in staging.
+        src_md = src_path
     else:
         src_md = src_path
 
