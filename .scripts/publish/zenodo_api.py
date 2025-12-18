@@ -22,6 +22,25 @@ def zenodo_api_and_token(env: str) -> Tuple[str, str]:
     return api, token
 
 
+def _rate_limit_delay(headers) -> Optional[float]:
+    reset = headers.get("X-RateLimit-Reset")
+    try:
+        if reset is not None:
+            reset_ts = float(reset)
+            now = time.time()
+            if reset_ts > now:
+                return max(0.0, reset_ts - now)
+    except Exception:
+        pass
+    retry_after = headers.get("Retry-After")
+    try:
+        if retry_after is not None:
+            return float(retry_after)
+    except Exception:
+        pass
+    return None
+
+
 def http_put_raw(url: str, token: str, fp):
     echo(f"+ HTTP PUT (raw) {url}")
     headers = {"Authorization": f"Bearer {token}"}
@@ -30,10 +49,12 @@ def http_put_raw(url: str, token: str, fp):
         r = requests.put(url, data=fp, headers=headers)
         if r.ok:
             return r.json() if "application/json" in (r.headers.get("Content-Type", "")) else {}
+        wait = _rate_limit_delay(r.headers)
         if r.status_code in {429, 500, 502, 503, 504} and i < len(backoffs):
-            echo(f"[WARN] Bucket PUT {r.status_code} at {url}; retrying in {delay}s...")
+            wait_time = wait if wait is not None else delay
+            echo(f"[WARN] Bucket PUT {r.status_code} at {url}; retrying in {wait_time}s...")
             try:
-                time.sleep(delay)
+                time.sleep(wait_time)
             except KeyboardInterrupt:
                 break
             continue
@@ -61,12 +82,7 @@ def http_json(method: str, url: str, token: str, data=None, files=None) -> Dict:
                 return r.json()
             except Exception:
                 return {}
-        retry_after = r.headers.get("Retry-After")
-        retry_delay = None
-        try:
-            retry_delay = int(retry_after)
-        except Exception:
-            pass
+        retry_delay = _rate_limit_delay(r.headers)
         if r.status_code in {429, 500, 502, 503, 504} and i < len(backoffs):
             wait = retry_delay if retry_delay is not None else delay
             echo(f"[WARN] Zenodo API {r.status_code} at {url}; retrying in {wait}s...")
