@@ -405,8 +405,8 @@ def render_in_staging(
 
     script_dir = Path(__file__).resolve().parent
     render_py = script_dir.parent / "render" / "render.py"
-    if not render_py.exists():
-        die(f"render.py not found at expected location: {render_py}")
+        if not render_py.exists():
+            die(f"render.py not found at expected location: {render_py}")
 
     # ---- Book mode ----
     if book_yaml is not None:
@@ -447,6 +447,15 @@ def render_in_staging(
             if not p.exists():
                 die(f"Expected artifact missing after render: {p}")
         staged_epub = epub_dst if epub_dst.exists() else None
+
+        # Inject publication date into the human-friendly % header (line 3).
+        try:
+            lines = human_md.read_text(encoding="utf-8").splitlines()
+            if len(lines) >= 3 and lines[0].startswith("%") and lines[1].startswith("%"):
+                lines[2] = f"% {format_long_date(publication_date_iso)}"
+                human_md.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        except Exception:
+            pass
 
         return staging, human_md, pdf_dst, html_dst, staged_epub
 

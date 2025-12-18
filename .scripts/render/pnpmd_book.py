@@ -3,6 +3,7 @@
 import re
 import html
 import shutil
+from datetime import date
 from pathlib import Path
 from typing import Optional
 
@@ -222,6 +223,79 @@ def _subtitle_segments(text: str) -> list[tuple[str, int]]:
     return segments
 
 
+def _normalize_human_md_spacing(text: str) -> str:
+    """
+    Ensure two blank lines before each heading and one blank line after,
+    and wrap images with blank lines.
+    """
+    lines = text.replace("\r\n", "\n").splitlines()
+    out: list[str] = []
+    i = 0
+    while i < len(lines):
+        ln = lines[i].rstrip()
+        is_heading = bool(re.match(r"^\s*#{1,6}\s", ln))
+        is_image = bool(re.match(r"!\[.*\]\([^)]*\)", ln.strip()))
+
+        if is_heading:
+            # ensure two blank lines before
+            blanks = 0
+            j = len(out) - 1
+            while j >= 0 and out[j].strip() == "":
+                blanks += 1
+                j -= 1
+            while blanks < 2:
+                out.append("")
+                blanks += 1
+            out.append(ln.strip())
+            # ensure one blank line after
+            if i + 1 >= len(lines) or lines[i + 1].strip() != "":
+                out.append("")
+            i += 1
+            continue
+
+        if is_image:
+            if not out or out[-1].strip() != "":
+                out.append("")
+            out.append(ln.strip())
+            if i + 1 >= len(lines) or lines[i + 1].strip() != "":
+                out.append("")
+            i += 1
+            continue
+
+        out.append(ln)
+        i += 1
+
+    return "\n".join(out).strip("\n") + "\n"
+
+
+_HDR_SIMPLE_RE = re.compile(r"^(?P<hash>#{1,6})\s+(?P<title>.+)$")
+_ID_TRAIL_RE = re.compile(r"\s*\{#([^\}]+)\}\s*$")
+
+
+def _build_md_toc(text: str, depth: int) -> str:
+    """
+    Build a Markdown TOC up to the given depth from headings in text.
+    """
+    lines = []
+    for ln in text.splitlines():
+        m = _HDR_SIMPLE_RE.match(ln)
+        if not m:
+            continue
+        lvl = len(m.group("hash"))
+        if lvl > depth:
+            continue
+        raw_title = m.group("title").strip()
+        hid = None
+        m_id = _ID_TRAIL_RE.search(raw_title)
+        if m_id:
+            hid = m_id.group(1).strip()
+            raw_title = _ID_TRAIL_RE.sub("", raw_title).strip()
+        anchor = hid or _slugify(raw_title)
+        indent = "  " * (lvl - 1)
+        lines.append(f"{indent}- [{raw_title}](#{anchor})")
+    return "\n".join(lines) + ("\n" if lines else "")
+
+
 def _inline_css(html_path: Path, css_path: Optional[Path]) -> None:
     """
     Inline CSS content into the generated HTML so the file is standalone.
@@ -408,10 +482,17 @@ def render_book_yaml(
     cover_value = _extract_cover_image(raw_yaml_text)
     yaml_block = _normalize_book_yaml_as_front_matter(raw_yaml_text)
 
+    title_text = _extract_yaml_scalar(raw_yaml_text, "title") or title
+    author_text = _extract_yaml_scalar(raw_yaml_text, "author") or ""
+    date_text = _extract_yaml_scalar(raw_yaml_text, "date") or date.today().isoformat()
+
     with human_md_path.open("w", encoding="utf-8") as fh, pandoc_md_path.open(
         "w", encoding="utf-8"
     ) as fp:
-        fh.write(yaml_block)
+        # Human-friendly header (pandoc percent style) without YAML
+        fh.write(f"% {title_text}\n% {author_text}\n% {date_text}\n\n")
+
+        # Pandoc input keeps full YAML metadata/front matter.
         fp.write(yaml_block)
 
         # 2) each chapter .md becomes '# title' + body (front matter stripped)
@@ -518,6 +599,18 @@ def render_book_yaml(
                         heading_line = f"# {sec_title} {{#{hid}}}"
                     fh.write(f"{heading_line}\n\n")
                     fh.write(body_stripped + "\n\n")
+
+    # Normalize spacing in the human-readable markdown.
+    try:
+        human_text = human_md_path.read_text(encoding="utf-8")
+        human_text = _normalize_human_md_spacing(human_text)
+        # Replace [[TOC]] with a Markdown TOC up to the requested toc_depth.
+        if "[[TOC]]" in human_text:
+            toc_md = _build_md_toc(human_text, toc_depth)
+            human_text = human_text.replace("[[TOC]]", toc_md)
+        human_md_path.write_text(human_text, encoding="utf-8")
+    except Exception:
+        pass
 
     print(f"✅ Built combined markdown {human_md_path} (pandoc input {pandoc_md_path})")
 
