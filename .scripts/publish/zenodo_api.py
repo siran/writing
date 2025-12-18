@@ -1,6 +1,7 @@
 # .scripts/zenodo_api.py
 import os
 import json
+import time
 import traceback
 from typing import Dict, List, Tuple, Optional
 
@@ -24,14 +25,24 @@ def zenodo_api_and_token(env: str) -> Tuple[str, str]:
 def http_put_raw(url: str, token: str, fp):
     echo(f"+ HTTP PUT (raw) {url}")
     headers = {"Authorization": f"Bearer {token}"}
-    r = requests.put(url, data=fp, headers=headers)
-    if not r.ok:
+    backoffs = [1, 2, 4, 8, 16]
+    for i, delay in enumerate(backoffs, start=1):
+        r = requests.put(url, data=fp, headers=headers)
+        if r.ok:
+            return r.json() if "application/json" in (r.headers.get("Content-Type", "")) else {}
+        if r.status_code in {429, 500, 502, 503, 504} and i < len(backoffs):
+            echo(f"[WARN] Bucket PUT {r.status_code} at {url}; retrying in {delay}s...")
+            try:
+                time.sleep(delay)
+            except KeyboardInterrupt:
+                break
+            continue
         try:
             print(r.text)
         except Exception:
             pass
         die(f"Zenodo bucket PUT error {r.status_code} at {url}")
-    return r.json() if "application/json" in (r.headers.get("Content-Type", "")) else {}
+    die(f"Zenodo bucket PUT error at {url}")
 
 
 def http_json(method: str, url: str, token: str, data=None, files=None) -> Dict:
@@ -39,20 +50,37 @@ def http_json(method: str, url: str, token: str, data=None, files=None) -> Dict:
     headers = {"Authorization": f"Bearer {token}"}
     print(f"{data=}")
     print(f"{files=}")
-    if method.upper() in ("POST", "PUT", "PATCH"):
-        r = requests.request(method, url, headers=headers, json=data, files=files)
-    else:
-        r = requests.request(method, url, headers=headers, params=data)
-    if not r.ok:
+    backoffs = [1, 2, 4, 8, 16]
+    for i, delay in enumerate(backoffs, start=1):
+        if method.upper() in ("POST", "PUT", "PATCH"):
+            r = requests.request(method, url, headers=headers, json=data, files=files)
+        else:
+            r = requests.request(method, url, headers=headers, params=data)
+        if r.ok:
+            try:
+                return r.json()
+            except Exception:
+                return {}
+        retry_after = r.headers.get("Retry-After")
+        retry_delay = None
+        try:
+            retry_delay = int(retry_after)
+        except Exception:
+            pass
+        if r.status_code in {429, 500, 502, 503, 504} and i < len(backoffs):
+            wait = retry_delay if retry_delay is not None else delay
+            echo(f"[WARN] Zenodo API {r.status_code} at {url}; retrying in {wait}s...")
+            try:
+                time.sleep(wait)
+            except KeyboardInterrupt:
+                break
+            continue
         try:
             echo(r.text)
         except Exception:
             pass
         die(f"Zenodo API error {r.status_code} at {url}")
-    try:
-        return r.json()
-    except Exception:
-        return {}
+    die(f"Zenodo API error at {url}")
 
 
 def reserve_deposition(
