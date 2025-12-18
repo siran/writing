@@ -509,6 +509,7 @@ def render_book_yaml(
                 latex_title = _latex_escape(sec_title)
                 is_ack = "acknowledgment" in sec_title.lower() or "acknowledgement" in sec_title.lower()
                 is_toc = sec_title.strip().lower() in {"table of contents", "contents"}
+                hid = _slugify(sec_title)
 
                 body_stripped = sec_body.strip()
 
