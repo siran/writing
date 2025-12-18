@@ -106,6 +106,70 @@ def replace_header_date(md_text: str, new_date_iso: str) -> str:
     return "\n".join(out)
 
 
+def _normalize_license_id(raw: str) -> str:
+    """
+    Normalize various license strings to a Zenodo-friendly identifier.
+    Examples:
+      "CC BY-NC-ND 4.0" -> "cc-by-nc-nd-4.0"
+      "cc-by-nc-nd-4.0" -> "cc-by-nc-nd-4.0"
+    """
+    s = (raw or "").strip()
+    if not s:
+        return ""
+    s = s.lower()
+    s = s.replace("creative commons", "")
+    s = re.sub(r"[\\s_]+", "-", s)
+    s = s.strip("-")
+    # Ensure cc- prefix
+    if s and not s.startswith("cc-") and s.startswith("by-"):
+        s = "cc-" + s
+    return s
+
+
+def detect_license(primary_md: Path, book_yaml: Optional[Path]) -> Optional[str]:
+    """
+    Attempt to detect a license/rights string from book.yml (preferred) or the
+    Markdown front matter, then normalize it for Zenodo.
+    """
+    def _from_yaml(path: Path) -> Optional[str]:
+        try:
+            data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+            if isinstance(data, dict):
+                for key in ("license", "licence", "rights"):
+                    val = data.get(key)
+                    if isinstance(val, str):
+                        return val
+        except Exception:
+            return None
+        return None
+
+    candidates = []
+    if book_yaml and book_yaml.exists():
+        v = _from_yaml(book_yaml)
+        if v:
+            candidates.append(v)
+
+    # front matter of markdown
+    try:
+        txt = primary_md.read_text(encoding="utf-8").replace("\\r\\n", "\\n")
+        m = re.match(r"^---\\s*\\n(.*?)\\n---\\s*\\n", txt, flags=re.DOTALL)
+        if m:
+            fm = yaml.safe_load(m.group(1)) or {}
+            if isinstance(fm, dict):
+                for key in ("license", "licence", "rights"):
+                    val = fm.get(key)
+                    if isinstance(val, str):
+                        candidates.append(val)
+    except Exception:
+        pass
+
+    for c in candidates:
+        norm = _normalize_license_id(c)
+        if norm:
+            return norm
+    return None
+
+
 # ---- PNPMD parsing ----
 
 ORCID_URL_RE = re.compile(r"https?://orcid\.org/(\d{4}-\d{4}-\d{4}-\d{3}[0-9Xx])")
@@ -427,6 +491,7 @@ def write_provenance(
     journal_name: str,
     subjournal: str,
     change_log: Optional[str] = None,
+    publication_type: str = "article",
 ) -> Path:
 
     artifacts: Dict[str, str] = {
@@ -447,7 +512,7 @@ def write_provenance(
     prov = {
         "journal": journal_name,
         "subjournal": subjournal,
-        "publication_type": "article",
+        "publication_type": publication_type,
         "title": title,
         "doi": doi,
         "concept_doi": concept_doi,

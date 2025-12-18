@@ -21,7 +21,15 @@ from doc_utils import (
     write_provenance,
     find_latest_provenance_for_stem,
     dump_yaml,
+    detect_license,
 )
+
+# Make render helpers visible (for title_from_book_yaml).
+ROOT = Path(__file__).resolve().parents[2]
+RENDER_DIR = ROOT / ".scripts" / "render"
+if str(RENDER_DIR) not in sys.path:
+    sys.path.append(str(RENDER_DIR))
+from pnpmd_util import title_from_book_yaml
 from zenodo_api import (
     zenodo_api_and_token,
     http_json,
@@ -212,7 +220,39 @@ def parse_args():
         action="store_true",
         help="Pass through to render.py to bypass preprocessing and render the file as-is.",
     )
+    ap.add_argument(
+        "--toc-depth",
+        type=int,
+        default=1,
+        help="TOC depth passed to render.py (default: 1).",
+    )
     return ap.parse_args()
+
+
+def _prompt_required_metadata(parsed: dict) -> dict:
+    """
+    Ensure keywords, one_sentence, and abstract are populated. Prompts interactively if missing.
+    """
+    updated = dict(parsed)
+    if not updated.get("keywords"):
+        kw = input("Enter keywords (comma-separated): ").strip()
+        kws = [k.strip() for k in kw.split(",") if k.strip()] if kw else []
+        updated["keywords"] = kws
+    if not updated.get("one_sentence"):
+        updated["one_sentence"] = input("Enter one-sentence summary: ").strip()
+    if not updated.get("abstract"):
+        updated["abstract"] = input("Enter abstract: ").strip()
+
+    missing = []
+    if not updated["keywords"]:
+        missing.append("keywords")
+    if not updated["one_sentence"]:
+        missing.append("one_sentence_summary")
+    if not updated["abstract"]:
+        missing.append("abstract")
+    if missing:
+        die(f"Missing required metadata: {', '.join(missing)}")
+    return updated
 
 
 def preflight_and_context(
@@ -369,6 +409,7 @@ def reserve_or_new_version(
     title: str,
     creators: List[Dict],
     publication_year: str,
+    publication_type: str,
 ) -> Tuple[str, str, str, Optional[str], int]:
     """
     Create or reuse a Zenodo deposition (via newversion),
@@ -401,7 +442,7 @@ def reserve_or_new_version(
 
         minimal_meta = {
             "upload_type": "publication",
-            "publication_type": "article",
+            "publication_type": publication_type,
             "title": title,
             "creators": creators,
             "journal_title": args.journal,
@@ -429,7 +470,14 @@ def reserve_or_new_version(
             echo(f"WARNING: concept DOI changed {prev_concept} → {concept_doi}")
     else:
         dep_id, doi, concept_doi = reserve_deposition(
-            api, token, title, creators, publication_year, args.community, args.journal
+            api,
+            token,
+            title,
+            creators,
+            publication_year,
+            args.community,
+            args.journal,
+            publication_type,
         )
 
     return api, token, doi, concept_doi, dep_id
@@ -535,6 +583,12 @@ def run_publish(args, ctx: PublishContext) -> None:
     publication_date = publication_date_iso
 
     stem = src_md.stem
+    if book_yaml is not None:
+        t = title_from_book_yaml(book_yaml)
+        if t:
+            stem = t
+    pub_type = "book" if book_yaml is not None else "article"
+    resource_type = f"publication-{pub_type}"
 
     # Versioning / history
     is_new_version, prev_record_id, prev_concept = determine_versioning(
@@ -558,6 +612,8 @@ def run_publish(args, ctx: PublishContext) -> None:
         render_args.append("--omit-numbering")
     if args.as_is:
         render_args.append("--as-is")
+    if args.toc_depth is not None:
+        render_args += ["--toc-depth", str(args.toc_depth)]
 
     staging, staged_md, staged_pdf, staged_html, staged_epub = render_in_staging(
         site_repo,
@@ -571,6 +627,7 @@ def run_publish(args, ctx: PublishContext) -> None:
 
     # Parse PNPMD
     parsed = parse_pnpmd(staged_md.read_text(encoding="utf-8"))
+    parsed = _prompt_required_metadata(parsed)
     creators: List[Dict] = []
     for a in parsed["authors"]:
         if not a.get("name"):
@@ -593,10 +650,15 @@ def run_publish(args, ctx: PublishContext) -> None:
         title,
         creators,
         publication_year,
+        pub_type,
     )
     ctx.api = api
     ctx.token = token
     ctx.dep_id = dep_id
+
+    license_id = detect_license(staged_md, book_yaml)
+    if not license_id:
+        license_id = "cc-by-nc-nd-4.0"
 
     # Final destination
     if "/" in doi:
@@ -660,17 +722,17 @@ def run_publish(args, ctx: PublishContext) -> None:
         {
             "relation": "isIdenticalTo",
             "identifier": site_html_url,
-            "resource_type": "publication-article",
+            "resource_type": resource_type,
         },
         {
             "relation": "isIdenticalTo",
             "identifier": site_md_url,
-            "resource_type": "publication-article",
+            "resource_type": resource_type,
         },
         {
             "relation": "isIdenticalTo",
             "identifier": assets_pdf_url,
-            "resource_type": "publication-article",
+            "resource_type": resource_type,
         },
     ]
     if assets_epub_url:
@@ -678,7 +740,7 @@ def run_publish(args, ctx: PublishContext) -> None:
             {
                 "relation": "isIdenticalTo",
                 "identifier": assets_epub_url,
-                "resource_type": "publication-article",
+                "resource_type": resource_type,
             }
         )
 
@@ -686,7 +748,7 @@ def run_publish(args, ctx: PublishContext) -> None:
         {
             "relation": "cites",
             "identifier": ref_url,
-            "resource_type": "publication-article",
+            "resource_type": resource_type,
         }
         for ref_url in parsed["reference_doi_urls"]
     ]
@@ -695,7 +757,7 @@ def run_publish(args, ctx: PublishContext) -> None:
 
     zenodo_meta = {
         "upload_type": "publication",
-        "publication_type": "article",
+        "publication_type": pub_type,
         "title": title,
         "creators": creators,
         "description": normalize_markdown_prose(parsed["abstract"]),
@@ -705,7 +767,7 @@ def run_publish(args, ctx: PublishContext) -> None:
         "publisher": {"name": args.journal},
         "publication_year": publication_year,
         "date": publication_date,
-        "license": "cc-by-4.0",
+        "license": license_id,
         "related_identifiers": related_identifiers,
         "communities": [{"identifier": args.community}],
         "prereserve_doi": True,
@@ -738,6 +800,7 @@ def run_publish(args, ctx: PublishContext) -> None:
         journal_name=args.journal,
         subjournal=subjournal,
         change_log=change_log,
+        publication_type=pub_type,
     )
 
     # Preview
@@ -769,16 +832,25 @@ def run_publish(args, ctx: PublishContext) -> None:
         cleanup_best_effort(ctx)
         sys.exit(0)
 
-    # Commit site repo
-    rel_md = str(final_md.relative_to(site_repo))
-    rel_html = str(final_html.relative_to(site_repo))
-    rel_pmd = str(final_pmd.relative_to(site_repo))
-    rel_prov = str(prov_path.relative_to(site_repo))
+    # Determine rendered artifacts (ignore CSS).
+    upload_paths = sorted(
+        p
+        for p in final_dir.iterdir()
+        if p.is_file()
+        and (
+            p.name.endswith(".pandoc.md")
+            or p.suffix.lower() in {".md", ".pdf", ".html", ".epub"}
+        )
+    )
 
-    run(["git", "add", rel_md], cwd=site_repo)
-    run(["git", "add", rel_html], cwd=site_repo)
-    run(["git", "add", rel_pmd], cwd=site_repo)
-    run(["git", "add", rel_prov], cwd=site_repo)
+    echo("\n--- FILES TO UPLOAD TO ZENODO ---")
+    for p in upload_paths:
+        echo(f" - {p.name}")
+
+    # Commit site repo
+    rel_final_dir = str(final_dir.relative_to(site_repo))
+
+    run(["git", "add", "-u", rel_final_dir], cwd=site_repo)
     run(
         [
             "git",
@@ -842,9 +914,7 @@ def run_publish(args, ctx: PublishContext) -> None:
 
     from urllib.parse import quote
 
-    upload_paths = [final_md, final_pdf, final_pmd, final_html]
-    if final_epub is not None:
-        upload_paths.append(final_epub)
+    # Upload the actual rendered artifacts (ignore CSS).
 
     for path in upload_paths:
         fname = path.name

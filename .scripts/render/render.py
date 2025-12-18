@@ -3,6 +3,7 @@
 
 import argparse
 import shutil
+import re
 from pathlib import Path
 from typing import Optional
 
@@ -10,6 +11,34 @@ from pnpmd_preprocess import prepare_preprocessed
 from pnpmd_pandoc import render_pdf, render_html, render_epub
 from pnpmd_book import render_book_yaml
 from pnpmd_util import discover_md_in_cwd, die, print_pandoc_log
+
+
+def _inline_css(html_path: Path, css_path: Optional[Path]) -> None:
+    """
+    Inline CSS content into the generated HTML so the file is standalone.
+    Removes link tags pointing to the CSS file.
+    """
+    if not css_path or not css_path.exists() or not html_path.exists():
+        return
+    try:
+        html_txt = html_path.read_text(encoding="utf-8")
+        css_txt = css_path.read_text(encoding="utf-8")
+    except Exception:
+        return
+
+    style_block = "<style>\n" + css_txt + "\n</style>\n"
+    html_txt = re.sub(
+        rf'<link[^>]+href=["\']{re.escape(css_path.name)}["\'][^>]*>\s*',
+        "",
+        html_txt,
+        flags=re.IGNORECASE,
+    )
+    if "</head>" in html_txt:
+        html_txt = html_txt.replace("</head>", style_block + "</head>", 1)
+    else:
+        html_txt = style_block + html_txt
+
+    html_path.write_text(html_txt, encoding="utf-8")
 
 
 def render(
@@ -227,6 +256,7 @@ def render(
         if rc != 0:
             die(f"Docker pandoc (HTML) failed (rc={rc})")
         shutil.copy2(out_html, html_path)
+        _inline_css(html_path, css_path)
         if css_path and css_path.exists():
             try:
                 shutil.copy2(css_path, html_path.parent / css_path.name)

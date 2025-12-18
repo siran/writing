@@ -63,6 +63,7 @@ def reserve_deposition(
     publication_year: str,
     community: str,
     journal: str,
+    publication_type: str,
 ) -> Tuple[int, str, Optional[str]]:
     """
     Reserve a DOI on Zenodo with minimal metadata + prereserve_doi.
@@ -82,7 +83,7 @@ def reserve_deposition(
 
     minimal_meta = {
         "upload_type": "publication",
-        "publication_type": "article",
+        "publication_type": publication_type,
         "title": title,
         "creators": creators,
         "journal_title": journal,

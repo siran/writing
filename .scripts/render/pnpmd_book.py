@@ -222,6 +222,34 @@ def _subtitle_segments(text: str) -> list[tuple[str, int]]:
     return segments
 
 
+def _inline_css(html_path: Path, css_path: Optional[Path]) -> None:
+    """
+    Inline CSS content into the generated HTML so the file is standalone.
+    Removes link tags pointing to the CSS file.
+    """
+    if not css_path or not css_path.exists() or not html_path.exists():
+        return
+    try:
+        html_txt = html_path.read_text(encoding="utf-8")
+        css_txt = css_path.read_text(encoding="utf-8")
+    except Exception:
+        return
+
+    style_block = "<style>\n" + css_txt + "\n</style>\n"
+    html_txt = re.sub(
+        rf'<link[^>]+href=["\']{re.escape(css_path.name)}["\'][^>]*>\s*',
+        "",
+        html_txt,
+        flags=re.IGNORECASE,
+    )
+    if "</head>" in html_txt:
+        html_txt = html_txt.replace("</head>", style_block + "</head>", 1)
+    else:
+        html_txt = style_block + html_txt
+
+    html_path.write_text(html_txt, encoding="utf-8")
+
+
 def _ensure_header_packages(path: Path, packages: list[str]) -> None:
     """
     Ensure the YAML front matter declares header-includes with the given LaTeX
@@ -759,6 +787,7 @@ def render_book_yaml(
         if rc != 0:
             die(f"Docker pandoc (HTML) failed (rc={rc})")
         shutil.copy2(out_html, html_path)
+        _inline_css(html_path, css_path)
 
     # Keep cover metadata intact for EPUB and prepend a dedicated cover page so the
     # first spine item is the cover image.
