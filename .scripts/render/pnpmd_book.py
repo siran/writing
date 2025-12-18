@@ -534,7 +534,10 @@ def render_book_yaml(
                     )
                     fp.write(title_block)
                     # HTML/EPUB fallback via raw HTML (ignored by LaTeX)
-                    html_ack = ["<h1>" + html.escape(sec_title) + "</h1>"]
+                    html_ack = [
+                        '<div class="page-break"></div>',
+                        "<h1>" + html.escape(sec_title) + "</h1>",
+                    ]
                     if body_stripped:
                         html_ack.append(f"<p><em>{html.escape(body_stripped)}</em></p>")
                     fp.write("```{=html}\n" + "\n".join(html_ack) + "\n```\n\n")
@@ -554,6 +557,7 @@ def render_book_yaml(
                         "```\n\n"
                     )
                     fp.write(title_block)
+                    fp.write("```{=html}\n<div class=\"page-break\"></div>\n```\n\n")
                     fp.write("[[TOC]]\n\n")
                 else:
                     title_block = (
@@ -617,8 +621,9 @@ def render_book_yaml(
     epub_split_args: list[str] = []
     if make_epub and effective_epub_level is not None:
         epub_split_args = ["--split-level", str(effective_epub_level)]
-    # Rely on EPUB nav document for the TOC; avoid adding a second visible TOC page.
-    epub_extra_args = epub_split_args
+    # Rely on EPUB nav document for the TOC; explicit --toc ensures nav is built,
+    # while we strip visible TOC content below.
+    epub_extra_args = epub_split_args + (["--toc"] if make_epub else [])
 
     (
         in_tmp,
