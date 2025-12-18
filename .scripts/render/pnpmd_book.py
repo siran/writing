@@ -286,7 +286,15 @@ def _build_md_toc(text: str, depth: int) -> str:
             continue
         raw_title = m.group("title").strip()
         hid = None
-        # Strip trailing {#id}
+        attrs = ""
+        # Extract attrs if present
+        m_attr = re.search(r"\{([^}]*)\}\s*$", raw_title)
+        if m_attr:
+            attrs = m_attr.group(1)
+        # Skip unlisted headings (used for injected TOC/ack pages).
+        if ".unlisted" in attrs.split() or re.search(r"\.unlisted\b", attrs):
+            continue
+        # Strip trailing {#id ...}
         raw_clean = _ID_TRAIL_RE.sub("", raw_title).strip()
         indent = "  " * (lvl - 1)
         lines.append(f"{indent}- {raw_clean}")

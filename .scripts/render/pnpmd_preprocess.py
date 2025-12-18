@@ -250,7 +250,8 @@ def _build_html_toc(md: str, depth: int) -> str:
         raw_title = m.group('title').strip()
         attrs = m.group('attrs') or ""
 
-        if raw_title.lower().startswith("acknowledgements"):
+        # Skip unlisted/auxiliary headings (e.g., injected TOC page).
+        if ".unlisted" in attrs.split() or re.search(r"\.unlisted\b", attrs):
             continue
 
         # If a heading line contains an inline empty span with id ([]{#id}),
