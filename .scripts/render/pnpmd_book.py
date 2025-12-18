@@ -288,9 +288,8 @@ def _build_md_toc(text: str, depth: int) -> str:
         hid = None
         # Strip trailing {#id}
         raw_clean = _ID_TRAIL_RE.sub("", raw_title).strip()
-        anchor = _slugify(raw_clean)
         indent = "  " * (lvl - 1)
-        lines.append(f"{indent}- [{raw_clean}](#{anchor})")
+        lines.append(f"{indent}- {raw_clean}")
     return "\n".join(lines) + ("\n" if lines else "")
 
 
