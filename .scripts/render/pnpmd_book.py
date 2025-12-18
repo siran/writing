@@ -909,27 +909,25 @@ def render_book_yaml(
         in_tmp.write_text(cover_block + text, encoding="utf-8")
 
     if make_epub:
-        # Remove the custom HTML TOC block before EPUB so split files don't break links;
-        # rely on pandoc's generated nav/TOC instead.
+        # Produce a TOC-free variant for EPUB so only the nav document is used.
+        epub_in = in_tmp.parent / "in_epub.md"
         try:
             text = in_tmp.read_text(encoding="utf-8")
+            # Remove HTML TOC block.
             text = re.sub(
                 r"```{=html}\n<div class=\"toc\">.*?</div>\n```\\s*\n?",
                 "",
                 text,
                 flags=re.DOTALL,
             )
-            # Strip any LaTeX \tableofcontents block that may have been emitted by
-            # [[TOC]] replacement so EPUB only uses pandoc's built-in nav.
+            # Remove LaTeX TOC block (from [[TOC]] replacement) and any TOC latex title page.
             text = re.sub(
-                r"```{=latex}.*?\\tableofcontents.*?```\\s*\n?",
+                r"```{=latex}.*?(\\tableofcontents|Table of Contents).*?```\\s*\n?",
                 "",
                 text,
-                flags=re.DOTALL,
+                flags=re.DOTALL | re.IGNORECASE,
             )
-            # Guard against any leftover marker.
-            text = text.replace("[[TOC]]", "")
-            # Drop the explicit "Table of Contents" section for EPUB to avoid duplicate TOCs.
+            # Drop explicit TOC headings/sections.
             hdr_re = re.compile(r"^#{1,6}\s+(.*)$", re.MULTILINE)
             lines = text.splitlines()
             out: list[str] = []
@@ -945,16 +943,19 @@ def render_book_yaml(
                         skipping = False
                 if skipping:
                     continue
+                # Remove standalone [[TOC]] markers if any remain.
+                if ln.strip() == "[[TOC]]":
+                    continue
                 out.append(ln)
             text = "\n".join(out)
-            in_tmp.write_text(text, encoding="utf-8")
+            epub_in.write_text(text, encoding="utf-8")
         except Exception:
-            pass
+            shutil.copy2(in_tmp, epub_in)
 
         out_epub = in_tmp.parent / "out.epub"
         epub_log = in_tmp.parent / "pandoc-epub.log.json"
         rc = render_epub(
-            in_tmp,
+            epub_in,
             out_epub,
             meta_args + meta_overrides,
             shift_args,
