@@ -45,7 +45,17 @@ def http_put_raw(url: str, token: str, fp):
     echo(f"+ HTTP PUT (raw) {url}")
     headers = {"Authorization": f"Bearer {token}"}
     backoffs = [1, 2, 4, 8, 16]
+    start_pos = None
+    try:
+        start_pos = fp.tell()
+    except Exception:
+        start_pos = None
     for i, delay in enumerate(backoffs, start=1):
+        if start_pos is not None:
+            try:
+                fp.seek(start_pos)
+            except Exception:
+                pass
         r = requests.put(url, data=fp, headers=headers)
         if r.ok:
             return r.json() if "application/json" in (r.headers.get("Content-Type", "")) else {}
