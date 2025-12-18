@@ -455,12 +455,11 @@ def render_book_yaml(
                         "```\n\n"
                     )
                     fp.write(title_block)
-                    # HTML/EPUB fallback (hidden from LaTeX via \\iffalse)
-                    fp.write("```{=latex}\n\\iffalse\n```\n")
-                    fp.write(f"# {sec_title}\n\n")
+                    # HTML/EPUB fallback via raw HTML (ignored by LaTeX)
+                    html_ack = ["<h1>" + html.escape(sec_title) + "</h1>"]
                     if body_stripped:
-                        fp.write(f"*{body_stripped}*\n\n")
-                    fp.write("```{=latex}\n\\fi\n```\n\n")
+                        html_ack.append(f"<p><em>{html.escape(body_stripped)}</em></p>")
+                    fp.write("```{=html}\n" + "\n".join(html_ack) + "\n```\n\n")
                 elif is_toc:
                     title_block = (
                         "```{=latex}\n"
@@ -520,7 +519,7 @@ def render_book_yaml(
                     fh.write(f"{heading_line}\n\n")
                     fh.write(body_stripped + "\n\n")
 
-    print(f"✅ Built combined markdown {big_md_path}")
+    print(f"✅ Built combined markdown {human_md_path} (pandoc input {pandoc_md_path})")
 
     effective_epub_level = epub_chapter_level
     if make_epub and effective_epub_level is None:

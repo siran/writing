@@ -424,19 +424,31 @@ def render_in_staging(
         )
 
         base_title = title_from_book_yaml(dst_yaml)
-        dst_md = staging / f"{base_title}.md"
-        dst_pdf = dst_md.with_suffix(".pdf")
-        dst_html = dst_md.with_suffix(".html")
-        dst_pmd = dst_md.with_suffix(".pandoc.md")
-        staged_epub = dst_md.with_suffix(".epub")
+        human_md = staging / f"{base_title}.md"
+        pandoc_md = staging / f"{base_title}.pandoc.md"
 
-        for p in (dst_md, dst_pdf, dst_html, dst_pmd):
+        pdf_src = pandoc_md.with_suffix(".pdf")  # e.g., .pandoc.pdf
+        html_src = pandoc_md.with_suffix(".html")
+        epub_src = pandoc_md.with_suffix(".epub")
+
+        pdf_dst = staging / f"{base_title}.pdf"
+        html_dst = staging / f"{base_title}.html"
+        epub_dst = staging / f"{base_title}.epub"
+
+        # Rename pandoc outputs to user-friendly names.
+        if pdf_src.exists():
+            pdf_src.rename(pdf_dst)
+        if html_src.exists():
+            html_src.rename(html_dst)
+        if epub_src.exists():
+            epub_src.rename(epub_dst)
+
+        for p in (human_md, pdf_dst, html_dst, pandoc_md):
             if not p.exists():
                 die(f"Expected artifact missing after render: {p}")
-        if not staged_epub.exists():
-            staged_epub = None
+        staged_epub = epub_dst if epub_dst.exists() else None
 
-        return staging, dst_md, dst_pdf, dst_html, staged_epub
+        return staging, human_md, pdf_dst, html_dst, staged_epub
 
     # ---- main PNPMD .md ----
     dst_md = staging / src_md.name
