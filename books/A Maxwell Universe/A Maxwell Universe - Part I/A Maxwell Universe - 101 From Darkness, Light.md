@@ -78,7 +78,9 @@ link than claimed, showing how consensus can form around distorted evidence.
 
 From the primitive relation
 
-$$ n_i \succ n_j, $$
+$$
+n_i \succ n_j,
+$$
 
 meaning “$n_i$ causes $n_j$,” an ordering arises: before and after. We
 may call this succession of events $i$ and $j$ a **causal step**.
