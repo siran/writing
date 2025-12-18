@@ -440,7 +440,10 @@ def prepare_preprocessed(
     text_for_pandoc = keep_head + (body2 if not omit_toc else body)
     in_tmp.write_text(text_for_pandoc, encoding="utf-8")
 
-    final_pandoc_md = src.with_suffix(".pandoc.md")
+    if src.suffix == ".pandoc.md":
+        final_pandoc_md = src
+    else:
+        final_pandoc_md = src.with_suffix(".pandoc.md")
     # Persist exactly what we feed to pandoc (with TOC replacement when enabled)
     # so debug/served .pandoc.md matches the actual render input.
     final_pandoc_md.write_text(text_for_pandoc, encoding="utf-8")

@@ -389,7 +389,8 @@ def render_book_yaml(
 
     print(f"Book mode: metadata={src.name}  title={title!r}  base={base}")
 
-    big_md_path = book_dir / f"{base}.md"
+    human_md_path = book_dir / f"{base}.md"
+    pandoc_md_path = book_dir / f"{base}.pandoc.md"
 
     md_files = sorted(
         p
@@ -407,8 +408,11 @@ def render_book_yaml(
     cover_value = _extract_cover_image(raw_yaml_text)
     yaml_block = _normalize_book_yaml_as_front_matter(raw_yaml_text)
 
-    with big_md_path.open("w", encoding="utf-8") as f:
-        f.write(yaml_block)
+    with human_md_path.open("w", encoding="utf-8") as fh, pandoc_md_path.open(
+        "w", encoding="utf-8"
+    ) as fp:
+        fh.write(yaml_block)
+        fp.write(yaml_block)
 
         # 2) each chapter .md becomes '# title' + body (front matter stripped)
         for p in md_files:
@@ -430,6 +434,7 @@ def render_book_yaml(
 
                 body_stripped = sec_body.strip()
 
+                # ----- Write pandoc/LaTeX version -----
                 if is_ack:
                     latex_body = (
                         _latex_escape(body_stripped)
@@ -449,14 +454,13 @@ def render_book_yaml(
                         "\\clearpage\n"
                         "```\n\n"
                     )
-                    f.write(title_block)
+                    fp.write(title_block)
                     # HTML/EPUB fallback (hidden from LaTeX via \\iffalse)
-                    f.write("```{=latex}\n\\iffalse\n```\n")
-                    f.write(f"# {sec_title}\n\n")
+                    fp.write("```{=latex}\n\\iffalse\n```\n")
+                    fp.write(f"# {sec_title}\n\n")
                     if body_stripped:
-                        f.write(f"*{body_stripped}*\n\n")
-                    f.write("```{=latex}\n\\fi\n```\n\n")
-                    continue
+                        fp.write(f"*{body_stripped}*\n\n")
+                    fp.write("```{=latex}\n\\fi\n```\n\n")
                 elif is_toc:
                     title_block = (
                         "```{=latex}\n"
@@ -472,38 +476,49 @@ def render_book_yaml(
                         "\\vspace{2.0em}\n"
                         "```\n\n"
                     )
+                    fp.write(title_block)
+                    fp.write("[[TOC]]\n\n")
                 else:
                     title_block = (
-                    "```{=latex}\n"
-                    "\\clearpage\n"
-                    "\\thispagestyle{empty}\n"
-                    "\\begin{center}\n"
-                    "\\vspace*{0.28\\textheight}\n"
-                    "{\\begingroup\\setlength{\\baselineskip}{2.1\\baselineskip}\n"
-                    f"{{\\bfseries\\fontsize{{26pt}}{{52pt}}\\selectfont {latex_title}}}\\par\n"
-                    "\\endgroup}\n"
-                    "\\end{center}\n"
-                    "\\clearpage\n"
-                    "```\n\n"
-                )
-
-                f.write(title_block)
-                if not is_toc:
-                    f.write("```{=latex}\n\\vspace*{0.18\\textheight}\n```\n")
+                        "```{=latex}\n"
+                        "\\clearpage\n"
+                        "\\thispagestyle{empty}\n"
+                        "\\begin{center}\n"
+                        "\\vspace*{0.28\\textheight}\n"
+                        "{\\begingroup\\setlength{\\baselineskip}{2.1\\baselineskip}\n"
+                        f"{{\\bfseries\\fontsize{{26pt}}{{52pt}}\\selectfont {latex_title}}}\\par\n"
+                        "\\endgroup}\n"
+                        "\\end{center}\n"
+                        "\\clearpage\n"
+                        "```\n\n"
+                    )
+                    fp.write(title_block)
+                    fp.write("```{=latex}\n\\vspace*{0.18\\textheight}\n```\n")
                     is_part_heading = sec_title.strip().lower().startswith("part ")
                     hid = _slugify(sec_title)
                     if is_part_heading:
                         heading_line = f"# {sec_title} {{#{hid}}}"
                     else:
                         heading_line = f"# {sec_title} {{#{hid} .chapter}}"
-                    f.write(f"{heading_line}\n\n")
+                    fp.write(f"{heading_line}\n\n")
+                    fp.write(body_stripped + "\n\n")
 
+                # ----- Write human-readable version (no LaTeX) -----
+                is_part_heading = sec_title.strip().lower().startswith("part ")
+                hid = _slugify(sec_title)
                 if is_ack:
-                    f.write("```{=latex}\n\\vspace*{0.12\\textheight}\n\\begin{center}\n```\n")
-                    f.write(body_stripped + "\n")
-                    f.write("```{=latex}\n\\end{center}\n\\clearpage\n```\n\n")
+                    fh.write(f"# {sec_title}\n\n")
+                    if body_stripped:
+                        fh.write(f"*{body_stripped}*\n\n")
+                elif is_toc:
+                    fh.write("# Table of Contents\n\n[[TOC]]\n\n")
                 else:
-                    f.write(body_stripped + "\n\n")
+                    if is_part_heading:
+                        heading_line = f"# {sec_title}"
+                    else:
+                        heading_line = f"# {sec_title} {{#{hid}}}"
+                    fh.write(f"{heading_line}\n\n")
+                    fh.write(body_stripped + "\n\n")
 
     print(f"✅ Built combined markdown {big_md_path}")
 
@@ -523,7 +538,7 @@ def render_book_yaml(
         common_args,
         css_path,
     ) = prepare_preprocessed(
-        big_md_path,
+        pandoc_md_path,
         omit_toc=omit_toc,
         omit_numbering=omit_numbering,
         toc_depth=toc_depth,
@@ -733,9 +748,9 @@ def render_book_yaml(
 
     _inject_frontmatter_pages(in_tmp, local_name)
 
-    pdf_path = big_md_path.with_suffix(".pdf") if make_pdf else None
-    html_path = big_md_path.with_suffix(".html") if make_html else None
-    epub_path = big_md_path.with_suffix(".epub") if make_epub else None
+    pdf_path = pandoc_md_path.with_suffix(".pdf") if make_pdf else None
+    html_path = pandoc_md_path.with_suffix(".html") if make_html else None
+    epub_path = pandoc_md_path.with_suffix(".epub") if make_epub else None
 
     if make_pdf:
         out_pdf = in_tmp.parent / "out.pdf"
@@ -847,7 +862,7 @@ def render_book_yaml(
 
     wrote = [
         str(p)
-        for p in [pdf_path, html_path, epub_path, big_md_path, final_pandoc_md]
+        for p in [pdf_path, html_path, epub_path, human_md_path, final_pandoc_md]
         if p
     ]
     print("✅ Wrote " + ", ".join(wrote))
