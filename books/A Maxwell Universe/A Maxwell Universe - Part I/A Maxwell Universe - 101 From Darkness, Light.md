@@ -68,8 +68,8 @@ definition is partial.
 [^Uncomputable]: As in Plato’s cave: the underlying structure is inaccessible in
 principle. We see only shadows and name some “causes” and others “effects.”
 
-[^FatDebate]: Late-20th-century nutrition science framed fat as the main cause of
-heart disease, but later reviews showed selective reporting and industry
+[^FatDebate]: Late-20th-century nutrition science framed fat as the main cause
+of heart disease, but later reviews showed selective reporting and industry
 influence. Contradictory data had been minimized. Re-analysis revealed a weaker
 link than claimed, showing how consensus can form around distorted evidence.
 
@@ -151,9 +151,9 @@ is the collection of all such distances. By gathering every pairwise separation
 into a single structure, operational awareness attempts to form a coherent
 geometric representation.
 
-If the full set of causal distances can be embedded with low distortion into some
-$D$-dimensional space, we say the events appear to be $D$-dimensional. If no
-low-distortion embedding exists, the notion of dimension breaks down.
+If the full set of causal distances can be embedded with low distortion into
+some $D$-dimensional space, we say the events appear to be $D$-dimensional. If
+no low-distortion embedding exists, the notion of dimension breaks down.
 
 The same distance data may admit several embeddings. A configuration may fit a
 triangle, two overlapping triangles, a star, or other shapes. Nothing enforces a
