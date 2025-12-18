@@ -287,12 +287,10 @@ def _build_md_toc(text: str, depth: int) -> str:
         raw_title = m.group("title").strip()
         hid = None
         # Strip trailing {#id}
-        m_id = _ID_TRAIL_RE.search(raw_title)
-        if m_id:
-            raw_title = _ID_TRAIL_RE.sub("", raw_title).strip()
-        anchor = _slugify(raw_title)
+        raw_clean = _ID_TRAIL_RE.sub("", raw_title).strip()
+        anchor = _slugify(raw_clean)
         indent = "  " * (lvl - 1)
-        lines.append(f"{indent}- [{raw_title}](#{anchor})")
+        lines.append(f"{indent}- [{raw_clean}](#{anchor})")
     return "\n".join(lines) + ("\n" if lines else "")
 
 
