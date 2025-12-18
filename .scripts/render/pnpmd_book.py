@@ -617,7 +617,8 @@ def render_book_yaml(
     epub_split_args: list[str] = []
     if make_epub and effective_epub_level is not None:
         epub_split_args = ["--split-level", str(effective_epub_level)]
-    epub_extra_args = epub_split_args + (["--toc"] if make_epub else [])
+    # Rely on EPUB nav document for the TOC; avoid adding a second visible TOC page.
+    epub_extra_args = epub_split_args
 
     (
         in_tmp,
