@@ -566,11 +566,14 @@ def render_book_yaml(
                         "```\n\n"
                     )
                     fp.write(title_block)
-                    fp.write("```{=html}\n<div class=\"page-break\"></div>\n```\n\n")
-                    fp.write("```{=latex}\n\\iffalse\n```\n")
-                    fp.write(f"# Table of Contents {{#{hid} .chapter .unlisted}}\n\n")
+                    fp.write(
+                        "```{=html}\n"
+                        '<div class="page-break"></div>\n'
+                        '<h1 class="toc-page-title">Table of Contents</h1>\n'
+                        "```\n\n"
+                    )
                     fp.write("[[TOC]]\n\n")
-                    fp.write("```{=latex}\n\\fi\n```\n\n")
+                    fp.write("```{=html}\n<div class=\"page-break\"></div>\n```\n\n")
                 else:
                     title_block = (
                         "```{=latex}\n"
