@@ -405,8 +405,8 @@ def render_in_staging(
 
     script_dir = Path(__file__).resolve().parent
     render_py = script_dir.parent / "render" / "render.py"
-        if not render_py.exists():
-            die(f"render.py not found at expected location: {render_py}")
+    if not render_py.exists():
+        die(f"render.py not found at expected location: {render_py}")
 
     # ---- Book mode ----
     if book_yaml is not None:
