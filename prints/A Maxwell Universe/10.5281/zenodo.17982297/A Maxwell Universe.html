@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="An M. Rodriguez" />
+  <meta name="description" content="Recovering mass and charge from energy in a free-space Maxwell Universe; or, what would have happened if Maxwell came before Newton." />
+  <title>A Maxwell Universe</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+:root {
+  --bg: #fdfbf7;
+  --text: #1b1b1b;
+  --muted: #4a4a4a;
+  --accent: #1f5fbf;
+  --accent-soft: #e8f0ff;
+  --mono: "SFMono-Regular", "JetBrains Mono", "Fira Code", "Menlo", monospace;
+  --serif: "Iowan Old Style", "Book Antiqua", "Palatino", "Merriweather", Georgia, serif;
+  --sans: "Source Sans Pro", "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--serif);
+  max-width: 900px;
+  margin: 3rem auto 4rem;
+  padding: 0 1.5rem;
+  line-height: 1.8;
+  font-size: 20px;
+  text-align: justify;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--sans);
+  letter-spacing: 0.01em;
+  color: #0f1c3f;
+  margin: 2.1rem 0 0.85rem;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 10rem;
+}
+
+h1.chapter {
+  text-align: right;
+  margin-top: 17.5rem;
+}
+
+h2 {
+  font-size: 1.9rem;
+  border-bottom: 1px solid rgba(15, 28, 63, 0.1);
+  padding-bottom: 0.35rem;
+  text-align: right;
+  margin-top: 3rem;
+}
+
+h3 {
+  font-size: 1.45rem;
+}
+
+p {
+  margin: 0 0 1.15em;
+}
+
+ul,
+ol {
+  padding-left: 1.4em;
+  margin: 0 0 1.2em;
+}
+
+li {
+  margin-bottom: 0.55em;
+}
+
+blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 0.5em 1.1em;
+  margin: 1.7em 0;
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.subtitle {
+  white-space: pre-line;
+  line-height: 1.6;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code,
+pre {
+  font-family: var(--mono);
+  font-size: 0.95em;
+  background: #f1f3f7;
+}
+
+code {
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+}
+
+pre {
+  padding: 1.05em;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+pre code {
+  padding: 0;
+  background: none;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  width: 100%;
+  font-size: 0.95em;
+}
+
+th,
+td {
+  border: 1px solid #e1e5f0;
+  padding: 0.6em 0.8em;
+  text-align: left;
+}
+
+th {
+  background: #f5f7fb;
+  font-weight: 600;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.15), transparent);
+  margin: 2rem 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: 1.2em auto;
+  border-radius: 6px;
+}
+
+figure {
+  margin: 1.5em 0;
+  text-align: center;
+}
+
+figcaption {
+  margin-top: 0.6em;
+  color: var(--muted);
+  font-size: 0.95em;
+}
+
+.footnotes {
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+.footnotes ol {
+  padding-left: 1.5em;
+}
+
+.footnotes li {
+  margin-bottom: 0.65em;
+}
+
+.toc {
+  background: #f7f8fb;
+  border: 1px solid #e2e6f3;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-top: 10rem;
+}
+
+.toc ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.toc li {
+  margin: 0.35em 0;
+}
+
+.toc a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.toc::before {
+  content: "Table of Contents";
+  display: block;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.toc a:hover {
+  color: var(--accent);
+}
+
+.title-page {
+  text-align: center;
+  margin: 10rem auto 2rem;
+}
+
+.cover-full img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.page-break {
+  break-before: page;
+  break-after: page;
+  page-break-before: always;
+  page-break-after: always;
+}
+
+#title-block-header {
+  display: none;
+}
+
+.title-cover img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  margin: 0 auto 2rem;
+  display: block;
+}
+
+.book-title {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  margin: 0 0 1rem;
+  color: #0f1c3f;
+}
+
+.book-author {
+  font-size: 1.2rem;
+  margin-top: 3.5rem;
+  font-weight: 600;
+}
+
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">A Maxwell Universe</h1>
+<p class="subtitle"><p>All-there-is from source-free electromagnetic
+energy. Part I</p></p>
+<p class="author">An M. Rodriguez</p>
+</header>
+<div class="title-page">
+<div class="title-cover"><img src="https://assets.preferredframe.com/A%20Maxwell%20Universe/A%20Maxwell%20Universe-8.5x12.png" alt="Cover image" /></div>
+<h1 class="book-title">A Maxwell Universe</h1>
+<div class="subtitle">All-there-is from source-free electromagnetic energy.
+Part I</div>
+<div class="book-author">An M. Rodriguez</div>
+</div>
+<div class="page-break"></div>
+<div class="page-break"></div>
+<h1 class="chapter unlisted" id="acknowledgments">Acknowledgments</h1>
+<p><em>To my friend, that contributed to almost every idea here written;
+knowingly or unknowingly.</em></p>
+<div class="page-break"></div>
+<h1 class="toc-page-title">Table of Contents</h1>
+<div class="toc">
+<ul>
+<li><a href="#part-i-foundations-of-reality">PART I — FOUNDATIONS OF REALITY</a>
+</li>
+<li><a href="#1-from-darkness-light">1. From Darkness, Light</a>
+</li>
+<li><a href="#2-time">2. Time</a>
+</li>
+<li><a href="#3-orderings">3. Orderings</a>
+</li>
+<li><a href="#4-counting-steps">4. Counting Steps</a>
+</li>
+<li><a href="#5-space">5. Space</a>
+</li>
+<li><a href="#6-plato-and-the-cave">6. Plato and the Cave</a>
+</li>
+<li><a href="#7-logic-mathematics-and-reality">7. Logic, Mathematics, and Reality</a>
+</li>
+<li><a href="#appendix-assumptions-and-derived-commitments">Appendix — Assumptions and Derived Commitments</a>
+</li>
+<li><a href="#synopsis">Synopsis</a>
+</li>
+</ul>
+</div>
+<div class="page-break"></div>
+<h1 id="part-i-foundations-of-reality">PART I — FOUNDATIONS OF REALITY
+<span id="part-i-foundations-of-reality"></span></h1>
+<p>Part I develops a framework in which events are the starting point. A
+registered change creates the basic distinction between “before” and
+“after.” Systems that update their state in response to influences build
+internal orderings, and from these orderings time emerges.</p>
+<p>Causal steps link events into chains, and then loops. Loops support
+recurrent patterns and can act as clocks. Counting causal steps gives
+duration and also distance: the minimal number of steps between two
+events. Collecting all pairwise distances produces an effective
+geometry.</p>
+<p>Space and dimension arise when these distances can be embedded with
+low distortion into a space of some dimension. Multiple embeddings imply
+non-unique dimension; failure of all embeddings implies that geometry
+does not apply. Space and dimension are therefore relational constructs,
+not fundamental ingredients of reality.</p>
+<p>The same compression mechanism explains arithmetic and mathematical
+laws. Stable patterns become symbolic rules; when the patterns shift,
+the rules shift with them. Mathematics succeeds where reality presents
+regularities, and fails where it does not.</p>
+<p>Across Part I, a single theme recurs: we do not access the underlying
+causal structure itself. We access only its effects, and from these we
+construct representations that remain valid only while the observed
+patterns stay stable.</p>
+<h1 class="chapter" id="1-from-darkness-light">1. From Darkness,
+Light</h1>
+<p>Reality begins not with space or time, but with the simple fact that
+events happen.</p>
+<p>We often assume events happen for a reason. This doesn’t need to be
+so, and even if it is, we don’t have direct access to the causal
+information, but indirect through its effects.</p>
+<p>A reason is a story added later. What matters is simply that a change
+occurs and that it is registered in a way that affects what follows.
+Once a change is registered, the system occupies a different state. The
+distinction between “before” and “after” is not added to the event; it
+is the event.</p>
+<p>There is no need to appeal to an intelligence recording what
+happened, but only to a persistent state change —like a scratch on a
+table— that constrains future interactions. The scratch is not a record
+of the event. The scratch is the event, insofar as it makes a
+difference.</p>
+<p>The sense of reason or explanation arises only as a reactive story, a
+way of organizing transitions once change has been noticed by a
+reasoning entity (a topic addressed later in <a href="#fn1"
+class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>).</p>
+<p>This reactivity is not limited to conscious minds. Anything that
+changes in response to causes and produces effects is, in this minimal
+sense, <strong>operationally aware</strong> <a href="#fn2"
+class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. A
+self-sustaining causal loop qualifies: it can update its own state in
+response to incoming influences. By doing so, it distinguishes states
+and tracks transitions—not through any “plan of action,” which would
+imply a consciousness we have not yet defined, but simply by virtue of
+its continued existence as a loop. In this minimal operational sense, a
+self-sustaining causal loop “notices” change.</p>
+<h1 class="chapter" id="2-time">2. Time</h1>
+<p>Time is, thus, a construct: a tool operational awareness uses to
+organize its state. Each loop forms its own internal notion of time. Yet
+we maintain collective agreements: certain event-patterns (“causes”)
+tend to precede others (“effects”). Those who do not share the
+prevailing interpretation are often labeled “irrational,” though this
+only reflects different mappings between change and order.</p>
+<p>We may picture “reality” <a href="#fn3" class="footnote-ref"
+id="fnref3" role="doc-noteref"><sup>3</sup></a> as a Node with an
+unknowable internal structure <a href="#fn4" class="footnote-ref"
+id="fnref4" role="doc-noteref"><sup>4</sup></a>. All we know is that
+this structure reproduces patterns of transitions from which we infer
+“before” and “after.”</p>
+<p>What we call “the past” is reconstructed <em>now</em>, from present
+evidence. If new evidence appears, our reconstruction may shift. The
+long debate about whether dietary fat was harmful or beneficial is a
+familiar example later shown to rest on selective data <a href="#fn5"
+class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.
+Consensus reality is fragile. Without external anchors, interpretations
+feel arbitrary, raising the persistent question: what is real?</p>
+<h1 class="chapter" id="3-orderings">3. Orderings</h1>
+<p>From the primitive relation</p>
+<p><span
+class="math display"><em>n</em><sub><em>i</em></sub> ≻ <em>n</em><sub><em>j</em></sub>,</span></p>
+<p>meaning “<span
+class="math inline"><em>n</em><sub><em>i</em></sub></span> causes <span
+class="math inline"><em>n</em><sub><em>j</em></sub></span>,” an ordering
+arises: before and after. We may call this succession of events <span
+class="math inline"><em>i</em></span> and <span
+class="math inline"><em>j</em></span> a <strong>causal
+step</strong>.</p>
+<p>A series of events forms a <strong>causal chain</strong>: i <span
+class="math inline">→</span> a <span class="math inline">→</span> b
+<span class="math inline">→</span> c <span class="math inline">→</span>
+d <span class="math inline">→</span> j.</p>
+<p>Chains can form loops:</p>
+<p>… <span class="math inline">→</span> j <span
+class="math inline">→</span> i <span class="math inline">→</span> a
+<span class="math inline">→</span> b <span class="math inline">→</span>
+c <span class="math inline">→</span> j <span
+class="math inline">→</span> i <span class="math inline">→</span> …</p>
+<p>and may cross themselves without restriction. Learning is a good
+illustration of multiple acknowledgdments and thus multiple “closes”. A
+loop can be considered “closed” when its pattern stabilizes in some
+useful sense. A “closed” loop, has however to continue propagating, as
+we mention later.</p>
+<p>Repeated causal loops can function as clocks. Any recurrent sequence
+can serve as a clock. Accuracy varies, but recurrence suffices.</p>
+<p>Note that an effect that produces no further causes marks the end of
+a causal chain. Such an endpoint cannot be registered—there is no return
+influence. Therefore the fact that anything is noticed at all implies
+that the noticer is, in essence, a self-sustaining causal loop.</p>
+<h1 class="chapter" id="4-counting-steps">4. Counting Steps</h1>
+<p>By counting loops or causal steps, operational awareness defines
+durations. Time is an emergent count, not an external parameter.</p>
+<p>Distance arises by tracking how many causal steps connect two events.
+If a signal travels from event <span
+class="math inline"><em>i</em></span> to event <span
+class="math inline"><em>j</em></span> through a minimal chain of length
+<span
+class="math inline"><em>L</em><sub><em>i</em><em>j</em></sub></span>,
+then</p>
+<p><span
+class="math display"><em>d</em>(<em>i</em>, <em>j</em>) ∝ <em>L</em><sub><em>i</em><em>j</em></sub>.</span></p>
+<p>If no path exists, the distance is infinite or undefined. If the only
+available path returns to the same event, the round-trip count becomes
+an effective measure of separation. Distance is not a spatial coordinate
+but an operational measure of causal separation.</p>
+<p>These causal distances define an effective geometry. Observers
+attempt to map them into familiar spaces of some chosen dimension.</p>
+<p>More technically, we can think of a map <span
+class="math inline">ℳ</span> into a space of dimension <span
+class="math inline"><em>D</em></span>, where each event is assigned a
+point, and the distances between those points approximate the causal
+distances:</p>
+<p><span
+class="math display">∥ℳ(<em>i</em>) − ℳ(<em>j</em>)∥ ≈ <em>d</em>(<em>i</em>, <em>j</em>).</span></p>
+<p>When such embeddings succeed with low distortion, observers perceive
+the corresponding events as forming a <span
+class="math inline"><em>D</em></span>-dimensional structure under <span
+class="math inline">ℳ</span>. If multiple embeddings work, dimension is
+not unique. If none succeed, all such maps <span
+class="math inline">ℳ</span> are defective and geometry is
+ill-defined.</p>
+<p>Thus, space, time, and dimension are not fundamental; they arise from
+how operational awareness compresses relational patterns. Geometry and
+distance appear only after repeated causal patterns stabilize into
+expectations.</p>
+<h1 class="chapter" id="5-space">5. Space</h1>
+<p>Distance is the count of causal steps between two events. What we
+call “space” is the collection of all such distances. By gathering every
+pairwise separation into a single structure, operational awareness
+attempts to form a coherent geometric representation.</p>
+<p>If the full set of causal distances can be embedded with low
+distortion into some <span
+class="math inline"><em>D</em></span>-dimensional space, we say the
+events appear to be <span
+class="math inline"><em>D</em></span>-dimensional. If no low-distortion
+embedding exists, the notion of dimension breaks down.</p>
+<p>The same distance data may admit several embeddings. A configuration
+may fit a triangle, two overlapping triangles, a star, or other shapes.
+Nothing enforces a unique interpretation; different interpretations may
+even coexist and function adequately. We only have effects—the causal
+distances—and from them we infer patterns to some acceptable accuracy.
+The preferred embedding is usually (but not always) the one that
+compresses the relations with minimal complexity while keeping
+distortion tolerable. Occam’s razor reflects this preference.</p>
+<p>This pattern-recognition mechanism is not limited to geometry.
+Arithmetic emerges the same way. Repeated causal acts—placing one apple
+in a bag, then another—stabilize into a reliable pattern. From this,
+operational awareness forms the abstraction that <span
+class="math inline">1 + 1 = 2</span>. If two apples reliably produced
+three, arithmetic would encode that instead, and we would again regard
+the universe as “mathematical.” The rule is not discovered beneath
+reality; it is extracted from consistent effects and then used to
+predict further effects.</p>
+<p>In some contexts, <span class="math inline">1 + 1</span> can take any
+value permitted by the rules. One may define a formal system where <span
+class="math inline">1 + 1 = 3</span> and build consistent mathematics
+from it. Even in everyday settings, combining two things rarely doubles
+a quantity cleanly. The outcome depends on the combination rules:
+posture, leverage, strategy. Only once those rules are fixed does the
+expression <span class="math inline">1 + 1 = 2</span> become the correct
+statement. The “truth” of arithmetic reflects operational assumptions,
+not the causal substrate.</p>
+<p>Space, time, dimension, and arithmetic arise from the same mechanism:
+recognizing regularities in causally connected events and compressing
+them into stable, predictive representations.</p>
+<h1 class="chapter" id="6-plato-and-the-cave">6. Plato and the Cave</h1>
+<p>Plato illustrated the limits of our access to reality. We see
+shadows, not the real source. Our interpretations are reconstructions
+shaped by limited observation. There is no external vantage point from
+which the true structure can be viewed.</p>
+<p>We do not have direct access, or in other words, can never observe
+the underlying causal substrate of reality; we observe only the effects
+that reach us.</p>
+<p>Any geometry, dimension, or pattern we assign reflects how these
+effects can be compressed into a usable representation. A different
+observer, or a different sampling of the same causal structure, may
+construct a different representation without contradiction.</p>
+<p>Shadows in Plato’s cave correspond to the relational patterns we
+detect. The “objects” casting those shadows are the underlying causal
+relations, which are inaccessible in themselves. We infer their
+organization from recurring effects, and when those effects change, our
+inferred picture must change with them. No representation we construct
+is guaranteed to be unique, complete, consistent, or stable.</p>
+<p>This perspective removes the assumption that there is a single,
+correct spatial or mathematical description waiting to be uncovered. Our
+models are not mirrors of an external geometry; they are operational
+tools built from the limited regularities we can register. Like the
+prisoners in the cave, we work with projections, not with the structure
+that produces them.</p>
+<p>What we call “reality” is therefore a reconstruction: a stable
+arrangement of inferred patterns that remains useful so long as the
+causal effects available to us support it.</p>
+<h1 class="chapter" id="7-logic-mathematics-and-reality">7. Logic,
+Mathematics, and Reality</h1>
+<p>Much has been said about reality being “mathematical,” though the
+phrase is rarely defined. The arguments above suggest a simpler view: we
+ascribe patterns to reality. Sometimes, we genuinely recognize these
+patterns, sometimes because we project them and then treat the
+projection as real.</p>
+<p>Mathematics does not need to govern the world. Even if reality admits
+mathematical structure in some sense, mathematics itself is vastly
+larger than anything the world could instantiate. Most mathematics has
+no physical counterpart at all, that we know of, yet.</p>
+<p>More often, we see the world through the mathematics we have
+constructed. Mathematics —and therefore physics— describes those aspects
+of reality that admit stable, compressible patterns. When a pattern is
+regular enough to be anticipated, we encode it symbolically and call the
+result a “law.” When the pattern breaks, the law breaks with it.</p>
+<p>It is therefore not that reality is mathematical, nor that
+mathematics is the “language of nature.” Rather, mathematics is a
+modeling tool we apply to the regularities we can isolate and predict.
+Wherever reality resists compression into stable patterns, mathematics
+simply does not apply.</p>
+<p>Mathematics succeeds because we select what it can describe —and
+which patterns we attend to— not because nature is made of numbers,
+structures, or -the lastest rebranding- “information.”</p>
+<p>The same is true of logic. Logic is not a law imposed on reality; it
+is an abstraction distilled from stable, repeatable causal behavior.
+Classical logic reflects a world in which states are well-separated and
+transitions are consistent.</p>
+<p>Just as spatial geometry emerges from the compression of causal
+distances into low-distortion embeddings (§4–§5), logical structure
+emerges from the compression of causal transitions into stable inference
+rules.</p>
+<p>When causal structures change, the logic extracted from them changes
+as well. That modern physics tolerates superposition or incompatible
+descriptions does not mean that reality violates logic. It means that
+classical logical categories no longer compress the observed causal
+patterns.</p>
+<p>This work therefore starts neither from logic nor from mathematics,
+but from cause and effect. Logic and mathematics enter later, as tools
+shaped by the regularities that causal interactions happen to
+exhibit.</p>
+<h1 class="chapter"
+id="appendix-assumptions-and-derived-commitments">Appendix — Assumptions
+and Derived Commitments</h1>
+<p>This work adopts a minimal ontology. Only the first three assumptions
+are primitive. All others follow from them.</p>
+<h2 id="a.1-fundamental-assumptions">A.1 Fundamental Assumptions</h2>
+<p><strong>A1. Events occur.</strong> There are changes.</p>
+<p><strong>A2. Change can be registered.</strong> Some changes persist
+as state differences.</p>
+<p><strong>A3. Registered change is itself the effect that
+follows.</strong> A registered change is a new state, and nothing beyond
+this is required.</p>
+<p>No space, time, matter, laws, logic, or mathematics are assumed.</p>
+<h3 id="derived-commitments">Derived Commitments</h3>
+<p>The following are consequences of A1–A3.</p>
+<p><strong>A4. Order exists.</strong> If a registered change is a new
+state, a distinction between “before” and “after” exists. This defines
+causal order.</p>
+<p><strong>A5. Time is ordering, not substance.</strong> Time arises
+from consistent causal orderings of registered change.</p>
+<p><strong>A6. Existence is persistence.</strong> Anything that exists
+does so only insofar as it sustains its own state across change.
+Endpoints without return effects do not persist and are therefore
+unobservable.</p>
+<p>Space, distance, geometry, dimension, mathematics, and logic arise as
+further compressions of stable patterns in these orderings, as developed
+in §§4–7.</p>
+<h2 id="a.2-non-assumptions">A.2 Non-Assumptions</h2>
+<p>This work does <strong>not</strong> assume:</p>
+<ul>
+<li>Space as a container.</li>
+<li>Time as a flowing parameter.</li>
+<li>Spacetime as a fundamental structure.</li>
+<li>Geometry as primitive.</li>
+<li>Dimension as intrinsic.</li>
+<li>Matter, mass, particles, fields, forces, or charges as ontically
+separate, non-electromagnetic substances or dynamics.</li>
+<li>Quantum postulates or probabilistic axioms.</li>
+<li>Mathematical objects as ontologically prior.</li>
+<li>Observers as fundamental entities.</li>
+<li>Consciousness as a primitive.</li>
+</ul>
+<p>All such notions appear, if at all, only as <strong>emergent
+descriptions</strong> derived from stable cause–effect patterns.</p>
+<h2 id="a.3-scope-and-limits">A.3 Scope and Limits</h2>
+<p>This part makes no claims about the ultimate nature of the causal
+substrate. It addresses only what can be inferred from observable
+effects and their regularities.</p>
+<p>Any representation constructed here remains valid only insofar as the
+observed patterns persist. No guarantee of uniqueness, completeness, or
+permanence is asserted.</p>
+<h2 id="a.4-role-in-the-full-work">A.4 Role in the Full Work</h2>
+<p>Part I establishes the ontological ground required for the later
+development of a Maxwell-only universe.</p>
+<p>Subsequent parts introduce specific dynamics. Nothing in this part
+depends on those dynamics, and nothing in later parts modifies the
+assumptions listed above.</p>
+<h1 class="chapter" id="synopsis">Synopsis</h1>
+<p>A Maxwell Universe begins from a single premise: events occur.</p>
+<p>Registered change creates order. From cause–effect relations alone
+emerge time, distance, space, dimension, mathematics, and physical law.
+No spacetime is assumed. No fixed rules are imposed. The underlying
+substrate, if any, is never accessed directly—only the regularities in
+its effects are observed and compressed into models.</p>
+<p>The first part of A Maxwell Universe establishes this foundation. It
+prepares the ground for later volumes, where matter, mass, and charge
+appear not as fundamental point-entities, but as extended,
+self-sustaining electromagnetic configurations governed entirely by
+Maxwell dynamics.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Rodriguez, A. M. (2025). <em>Emergence of Self-Awareness
+from a Cause–Effect Loop</em>.
+https://preprints.preferredframe.com/Emergence%20of%20Self-Awareness%20from%20a%20Cause%E2%80%93Effect%20Loop/Emergence%20of%20Self-Awareness%20from%20a%20Cause%E2%80%93Effect%20Loop%20v2.md.html<a
+href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Palma, A., &amp; Rodriguez, A. M. (2025).
+<em>Operational Awareness in a Maxwell-Only Universe: A Formal
+Implication of Panpsychism</em>. ResearchGate.
+https://doi.org/10.13140/RG.2.2.13647.60324/1<a href="#fnref2"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Reality—“all that is”—includes everything you can think
+of and everything you suspect exists but do not consciously consider.
+Any formal definition is partial.<a href="#fnref3" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>As in Plato’s cave: the underlying structure is
+inaccessible in principle. We see only shadows and name some “causes”
+and others “effects.”<a href="#fnref4" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Late-20th-century nutrition science framed fat as the
+main cause of heart disease, but later reviews showed selective
+reporting and industry influence. Contradictory data had been minimized.
+Re-analysis revealed a weaker link than claimed, showing how consensus
+can form around distorted evidence.<a href="#fnref5"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+</body>
+</html>
