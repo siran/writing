@@ -859,7 +859,10 @@ def build_article_pages():
             out_dir.mkdir(parents=True, exist_ok=True)
 
             for f in src.iterdir():
-                if f.is_file() and f.suffix.lower() in MIRROR_EXTS:
+                if not f.is_file():
+                    continue
+                # Mirror assets and all rendered outputs; also mirror the parent stem dir (for DOI alias).
+                if f.suffix.lower() in MIRROR_EXTS or f.name.endswith(".md.html"):
                     dst = OUT / rel(f)
                     dst.parent.mkdir(parents=True, exist_ok=True)
                     shutil.copy2(f, dst)
