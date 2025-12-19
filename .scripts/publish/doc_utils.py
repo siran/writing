@@ -427,21 +427,23 @@ def render_in_staging(
         human_md = staging / f"{base_title}.md"
         pandoc_md = staging / f"{base_title}.pandoc.md"
 
-        pdf_src = pandoc_md.with_suffix(".pdf")  # e.g., .pandoc.pdf
-        html_src = pandoc_md.with_suffix(".html")
-        epub_src = pandoc_md.with_suffix(".epub")
+        # Prefer already-clean names; fall back to .pandoc.* if present.
+        pdf_src = staging / f"{base_title}.pdf"
+        html_src = staging / f"{base_title}.html"
+        epub_src = staging / f"{base_title}.epub"
+        alt_pdf = pandoc_md.with_suffix(".pdf")  # legacy .pandoc.pdf
+        alt_html = pandoc_md.with_suffix(".html")
+        alt_epub = pandoc_md.with_suffix(".epub")
+        if not pdf_src.exists() and alt_pdf.exists():
+            alt_pdf.rename(pdf_src)
+        if not html_src.exists() and alt_html.exists():
+            alt_html.rename(html_src)
+        if not epub_src.exists() and alt_epub.exists():
+            alt_epub.rename(epub_src)
 
-        pdf_dst = staging / f"{base_title}.pdf"
-        html_dst = staging / f"{base_title}.html"
-        epub_dst = staging / f"{base_title}.epub"
-
-        # Rename pandoc outputs to user-friendly names.
-        if pdf_src.exists():
-            pdf_src.rename(pdf_dst)
-        if html_src.exists():
-            html_src.rename(html_dst)
-        if epub_src.exists():
-            epub_src.rename(epub_dst)
+        pdf_dst = pdf_src
+        html_dst = html_src
+        epub_dst = epub_src
 
         for p in (human_md, pdf_dst, html_dst, pandoc_md):
             if not p.exists():

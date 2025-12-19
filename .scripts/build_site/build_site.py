@@ -14,7 +14,17 @@ EXCLUDE_NAMES = {
     "site","venv",".venv","env",".env","node_modules",".git",
     "__pycache__", ".mypy_cache",".pytest_cache",".ruff_cache",".cache",
     "Makefile","index.html","_staging", "pnpmd.map", "requirements.txt",
-    "gpt5push.sh"
+    "gpt5push.sh",
+    # Root pages that should be linked from nav but not listed in dir indexes
+    "about.md",
+    "about.md.html",
+    "journals.md",
+    "journals.md.html",
+    "policies.md",
+    "policies.md.html",
+    "submissions.md",
+    "submissions.md.html",
+    "CNAME"
 }
 MIRROR_EXTS = {
     ".md",
@@ -345,6 +355,7 @@ def render_markdown_file(src: Path, dst_html: Path, title: str):
         md = md[m_front.end():]
         if title_val:
             md = f"# {title_val}\n\n" + md
+    # Human-first: embed the markdown body as-is (styled by the site chrome).
     body_html = md
 
     rel_html = dst_html.relative_to(OUT).as_posix()
@@ -489,6 +500,7 @@ def render_book_dirs(
     base = base_dir or ROOT
     skip_gitignore = base == OUT
     include_epub = not skip_epub
+    import yaml as _yaml
 
     render_py = ROOT / ".scripts" / "render" / "render.py"
     if not render_py.exists():
@@ -579,6 +591,12 @@ def render_book_dirs(
                     f"[DEBUG] WARNING: book render failed (rc={rc}) "
                     f"for {rel(book_dir)}; continuing build"
                 )
+            # After render, ensure every .md (including combined book .md) has a .md.html wrapper.
+            try:
+                for md_file in book_dir.glob("*.md"):
+                    render_markdown_file(md_file, md_file.with_suffix(md_file.suffix + ".html"), title=md_file.stem)
+            except Exception:
+                pass
 
 def build_simple_page_from_md(src_name: str, slug: str, title: str):
     src_md = ROOT / src_name

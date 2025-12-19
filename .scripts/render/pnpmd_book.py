@@ -857,9 +857,10 @@ def render_book_yaml(
 
     _inject_frontmatter_pages(in_tmp, local_name)
 
-    pdf_path = pandoc_md_path.with_suffix(".pdf") if make_pdf else None
-    html_path = pandoc_md_path.with_suffix(".html") if make_html else None
-    epub_path = pandoc_md_path.with_suffix(".epub") if make_epub else None
+    # Final artifact names should be human-friendly (no '.pandoc' in the stem).
+    pdf_path = book_dir / f"{base}.pdf" if make_pdf else None
+    html_path = book_dir / f"{base}.html" if make_html else None
+    epub_path = book_dir / f"{base}.epub" if make_epub else None
 
     if make_pdf:
         out_pdf = in_tmp.parent / "out.pdf"

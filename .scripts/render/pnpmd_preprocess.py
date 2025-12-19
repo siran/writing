@@ -441,7 +441,7 @@ def prepare_preprocessed(
     text_for_pandoc = keep_head + (body2 if not omit_toc else body)
     in_tmp.write_text(text_for_pandoc, encoding="utf-8")
 
-    if src.suffix == ".pandoc.md":
+    if src.name.endswith(".pandoc.md"):
         final_pandoc_md = src
     else:
         final_pandoc_md = src.with_suffix(".pandoc.md")
