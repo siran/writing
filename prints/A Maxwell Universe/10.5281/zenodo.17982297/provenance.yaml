@@ -1,0 +1,81 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: book
+title: A Maxwell Universe
+doi: 10.5281/zenodo.17982297
+concept_doi: 10.5281/zenodo.17982296
+permalink: "https://writing.preferredframe.com/prints/A Maxwell Universe/10.5281/zenodo.17982297/"
+publication_date: '2025-12-18'
+publication_year: '2025'
+keywords:
+- cause-effect
+- emergent time
+- emergent space
+- causal order
+- foundations of physics
+- ontology
+- operational realism
+- geometry emergence
+- philosophy of physics
+one_sentence_summary: Time, distance, space, and mathematical structure emerge from registered cause-effect relations, without assuming spacetime, matter, or laws as primitives.
+abstract: A minimal framework is presented in which events and their registered effects are the only primitives. A registered change establishes a distinction between before and after, giving rise to causal order. Time emerges as the consistent ordering of such changes, while distance arises from counting the causal steps connecting events. When these relational distances admit low-distortion embeddings, effective geometry and dimensionality appear. Space, time, arithmetic, logic, and physical laws are therefore understood as emergent compressions of stable cause–effect patterns rather than as fundamental structures. No assumptions are made about spacetime, matter, particles, observers, or mathematical objects; the framework applies to any description of reality grounded in causal interaction.
+authors:
+- name: An M. Rodriguez
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: book
+  title: A Maxwell Universe
+  creators:
+  - name: An M. Rodriguez
+  description: A minimal framework is presented in which events and their registered effects are the only primitives. A registered change establishes a distinction between before and after, giving rise to causal order. Time emerges as the consistent ordering of such changes, while distance arises from counting the causal steps connecting events. When these relational distances admit low-distortion embeddings, effective geometry and dimensionality appear. Space, time, arithmetic, logic, and physical laws are therefore understood as emergent compressions of stable cause–effect patterns rather than as fundamental structures. No assumptions are made about spacetime, matter, particles, observers, or mathematical objects; the framework applies to any description of reality grounded in causal interaction.
+  keywords:
+  - cause-effect
+  - emergent time
+  - emergent space
+  - causal order
+  - foundations of physics
+  - ontology
+  - operational realism
+  - geometry emergence
+  - philosophy of physics
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2025'
+  date: '2025-12-18'
+  license: cc-by-nc-nd-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/A Maxwell Universe/10.5281/zenodo.17982297/A Maxwell Universe.html"
+    resource_type: publication-book
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/A Maxwell Universe/10.5281/zenodo.17982297/A Maxwell Universe.md"
+    resource_type: publication-book
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/A Maxwell Universe/10.5281/zenodo.17982297/A Maxwell Universe.pdf"
+    resource_type: publication-book
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/A Maxwell Universe/10.5281/zenodo.17982297/A Maxwell Universe.epub"
+    resource_type: publication-book
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: Time, distance, space, and mathematical structure emerge from registered cause-effect relations, without assuming spacetime, matter, or laws as primitives.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: aeb1a37bacd958e322682cd1c846658a430dafba
+  filename: A Maxwell Universe.md
+artifacts:
+  md: A Maxwell Universe.md
+  md_url: "https://writing.preferredframe.com/prints/A Maxwell Universe/10.5281/zenodo.17982297/A Maxwell Universe.md"
+  pandoc_md_name: A Maxwell Universe.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/A Maxwell Universe/10.5281/zenodo.17982297/A Maxwell Universe.pandoc.md"
+  pdf_name: A Maxwell Universe.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/A Maxwell Universe/10.5281/zenodo.17982297/A Maxwell Universe.pdf"
+  html_name: A Maxwell Universe.html
+  html_url: "https://writing.preferredframe.com/prints/A Maxwell Universe/10.5281/zenodo.17982297/A Maxwell Universe.html"
+  primary: md
+  epub_name: A Maxwell Universe.epub
+  epub_url: "https://assets.preferredframe.com/preferredframe/A Maxwell Universe/10.5281/zenodo.17982297/A Maxwell Universe.epub"
