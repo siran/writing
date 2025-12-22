@@ -17,6 +17,24 @@ from pnpmd_pandoc import render_pdf, render_html, render_epub
 _H1_RE = re.compile(r"^\s*#\s+(.*)$")
 _NON_ALNUM_RE = re.compile(r"[^0-9A-Za-z _-]+")
 _SPACE_RE = re.compile(r"\s+")
+_ACK_TITLE_MARKERS = (
+    "acknowledgment",
+    "acknowledgement",
+    "dedicatoria",
+    "dedicatorio",
+    "dedication",
+)
+_TOC_TITLES = {
+    "table of contents",
+    "contents",
+    "tabla de contenidos",
+    "tabla de contenido",
+    "table de contenidos",
+}
+
+
+def _normalize_title_key(text: str) -> str:
+    return _SPACE_RE.sub(" ", text.strip().lower())
 
 
 def _extract_first_h1(body: str) -> tuple[Optional[str], str]:
@@ -515,8 +533,9 @@ def render_book_yaml(
 
             for sec_title, sec_body in sections:
                 latex_title = _latex_escape(sec_title)
-                is_ack = "acknowledgment" in sec_title.lower() or "acknowledgement" in sec_title.lower()
-                is_toc = sec_title.strip().lower() in {"table of contents", "contents"}
+                norm_title = _normalize_title_key(sec_title)
+                is_ack = any(marker in norm_title for marker in _ACK_TITLE_MARKERS)
+                is_toc = norm_title in _TOC_TITLES
                 hid = _slugify(sec_title)
 
                 body_stripped = sec_body.strip()
@@ -557,7 +576,7 @@ def render_book_yaml(
                         "\\thispagestyle{empty}\n"
                         "\\begin{center}\n"
                         "\\vspace*{0.11\\textheight}\n"
-                        "{\\bfseries\\fontsize{24pt}{32pt}\\selectfont Table of Contents}\\par\n"
+                        f"{{\\bfseries\\fontsize{{24pt}}{{32pt}}\\selectfont {latex_title}}}\\par\n"
                         "\\end{center}\n"
                         "\\vspace{1.0em}\n"
                         "\\noindent{\\color[gray]{0.65}\\rule{\\textwidth}{0.6pt}}\n"
@@ -569,7 +588,7 @@ def render_book_yaml(
                     fp.write(
                         "```{=html}\n"
                         '<div class="page-break"></div>\n'
-                        '<h1 class="toc-page-title">Table of Contents</h1>\n'
+                        f'<h1 class="toc-page-title">{html.escape(sec_title)}</h1>\n'
                         "```\n\n"
                     )
                     fp.write("[[TOC]]\n\n")
@@ -607,7 +626,7 @@ def render_book_yaml(
                     if body_stripped:
                         fh.write(f"*{body_stripped}*\n\n")
                 elif is_toc:
-                    fh.write("# Table of Contents\n\n[[TOC]]\n\n")
+                    fh.write(f"# {sec_title}\n\n[[TOC]]\n\n")
                 else:
                     if is_part_heading:
                         heading_line = f"# {sec_title}"
