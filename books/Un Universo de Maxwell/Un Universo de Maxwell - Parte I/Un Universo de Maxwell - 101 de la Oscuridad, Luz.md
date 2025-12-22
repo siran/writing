@@ -46,26 +46,26 @@ causal auto-sostenido “nota” el cambio.
 
 # 2. Tiempo
 
-El tiempo es, por tanto, un constructo útil: una herramienta que la conciencia operativa
-utiliza para organizar su estado. Cada bucle forma su propia noción interna de
-tiempo. Sin embargo, mantenemos acuerdos colectivos: ciertos patrones de
-eventos (“causas”) tienden a preceder a otros (“efectos”). Quienes no comparten
-la interpretación dominante suelen ser considerados “irracionales”, aunque
-esto solo refleja diferentes correspondencias entre cambio y orden.
+El tiempo es, por tanto, un constructo útil: una herramienta que la conciencia
+operativa utiliza para organizar su estado. Cada bucle forma su propia noción
+interna de tiempo. Sin embargo, mantenemos acuerdos colectivos: ciertos patrones
+de eventos (“causas”) tienden a preceder a otros (“efectos”). Quienes no
+comparten la interpretación dominante suelen ser considerados “irracionales”,
+aunque esto solo refleja diferentes correspondencias entre cambio y orden.
 
-Podemos considerar a la “realidad” [^WhatIsReality?] como un Nodo con una
+Podemos considerar la “realidad” [^WhatIsReality?] como un Nodo con una
 estructura interna incognoscible [^Uncomputable], inescrutable o simplemente
-innaccesible. Todo lo que sabemos es que dicha estructura parece reproducir
-consistentemente patrones de transiciones a partir de los cuales inferimos
+inaccesible. Todo lo que sabemos es que dicha estructura parece reproducir de
+forma consistente patrones de transiciones a partir de los cuales inferimos
 “antes” y “después”.
 
 Lo que llamamos “el pasado” se reconstruye *ahora*, a partir de evidencia
-presente. Si aparece nueva evidencia, nuestra reconstrucción -“el pasado”- puede
+presente. Si aparece nueva evidencia, nuestra reconstrucción —“el pasado”— puede
 cambiar. El prolongado debate sobre si la grasa dietaria era perjudicial o
-beneficiosa es un ejemplo conocido que más tarde se demostró había utilizando
-datos selectivos [^FatDebate]. La realidad consensuada es frágil. Sin anclajes
-externos, las interpretaciones se sienten arbitrarias, lo que da lugar a la
-pregunta persistente: ¿qué es real?
+beneficiosa es un ejemplo conocido que más tarde se demostró que había
+utilizado datos selectivos [^FatDebate]. La realidad consensuada es frágil. Sin
+anclajes externos, las interpretaciones se sienten arbitrarias, lo que da lugar
+a la pregunta persistente: ¿qué es real?
 
 [^WhatIsReality?]: La realidad —“todo lo que es”— incluye todo lo que puedes
 pensar y todo aquello que sospechas que existe aunque no lo consideres de
