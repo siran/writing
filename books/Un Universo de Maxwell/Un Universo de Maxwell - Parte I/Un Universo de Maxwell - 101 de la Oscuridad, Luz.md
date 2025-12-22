@@ -125,9 +125,9 @@ notador es, en esencia, un bucle causal auto-sostenido.
 Al contar bucles o pasos causales, la conciencia operativa define duraciones. El
 tiempo es un conteo emergente, no un parámetro externo.
 
-La distancia surge al rastrear cuántos pasos causales conectan dos eventos. Si
-una señal viaja desde el evento $i$ hasta el evento $j$ a través de una cadena
-mínima de longitud $L_{ij}$, entonces
+La distancia surge al contar cuántos pasos causales conectan dos eventos. Si una
+señal viaja desde el evento $i$ hasta el evento $j$ a través de una cadena mínima
+de longitud $L_{ij}$, entonces
 
 $$
 d(i, j) \propto L_{ij}.
@@ -135,25 +135,27 @@ $$
 
 Si no existe ningún camino, la distancia es infinita o indefinida. Si el único
 camino disponible regresa al mismo evento, el conteo de ida y vuelta se
-convierte en una medida efectiva de separación. La distancia no es una
-coordenada espacial, sino una medida operativa de separación causal.
+convierte en una medida efectiva de separación.
+
+La distancia, por tanto, no es una coordenada espacial, sino una medida
+operativa de separación causal.
 
 Estas distancias causales definen una geometría efectiva. Los observadores
 intentan representarlas en espacios familiares de alguna dimensión elegida.
 
-De forma más técnica, podemos pensar en una aplicación $\mathcal{M}$ hacia un
-espacio de dimensión $D$, donde a cada evento se le asigna un punto, y las
-distancias entre esos puntos aproximan las distancias causales:
+De forma más técnica, podemos pensar en un mapa $\mathcal{M}$ hacia un espacio
+de dimensión $D$, donde a cada evento se le asigna un punto, y las distancias
+entre esos puntos aproximan las distancias causales:
 
 $$
 \|\mathcal{M}(i) - \mathcal{M}(j)\| \approx d(i, j).
 $$
 
-Cuando tales incrustaciones tienen baja distorsión, los observadores perciben
-los eventos correspondientes como formando una estructura de dimensión $D$
-bajo $\mathcal{M}$. Si múltiples incrustaciones funcionan, la dimensión no es
-única. Si ninguna lo hace, todas esas aplicaciones $\mathcal{M}$ son
-defectuosas y la geometría resulta mal definida.
+Cuando tales mapas presentan baja distorsión, los observadores operativos
+perciben los eventos correspondientes como formando una estructura de dimensión
+$D$ bajo el mapa $\mathcal{M}$. Si múltiples mapeos funcionan, la dimensión no
+es única. Si ninguno lo hace, todos esos mapas son defectuosos y la geometría
+resulta mal definida.
 
 Así, el espacio, el tiempo y la dimensión no son fundamentales; surgen de la
 forma en que la conciencia operativa comprime patrones relacionales. La
