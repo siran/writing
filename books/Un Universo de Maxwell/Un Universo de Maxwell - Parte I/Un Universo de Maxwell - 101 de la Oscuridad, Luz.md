@@ -1,40 +1,43 @@
 ---
-title: A Maxwell Universe –
-date: 2025-12-05 12:31
+title: Un Universo de Maxwell –
+date: 2025-12-22 12:08
 ---
 
 
-# 1. From Darkness, Light
+# 1. De la oscuridad, la luz
 
-Reality begins not with space or time, but with the simple fact that events
-happen.
+La realidad no comienza con el espacio o el tiempo, sino con el hecho
+simple de que hay eventos que ocurren.
 
-We often assume events happen for a reason. This doesn't need to be so, and even
-if it is, we don't have direct access to the causal information, but indirect
-through its effects.
+A menudo asumimos que los eventos ocurren por una razón. Esto no tiene por qué
+ser así y, aun si lo fuera, no tenemos acceso directo a la información causal,
+sino solo de manera indirecta, a través de sus efectos.
 
-A reason is a story added later. What matters is simply that a change occurs
-and that it is registered in a way that affects what follows. Once a change is
-registered, the system occupies a different state. The distinction between
-“before” and “after” is not added to the event; it is the event.
+Una razón es una historia añadida después. Lo que importa es simplemente que
+ocurra un cambio y que este sea registrado de un modo que afecte a lo que
+sigue. Una vez que un cambio es registrado, el sistema ocupa un estado
+distinto. La distinción entre “antes” y “después” no se añade al evento; es el
+evento.
 
-There is no need to appeal to an intelligence recording what happened, but only
-to a persistent state change —like a scratch on a table— that constrains future
-interactions. The scratch is not a record of the event. The scratch is the
-event, insofar as it makes a difference.
+No es necesario apelar a una inteligencia que registre lo ocurrido, sino solo
+a un cambio de estado persistente —como una marca en una mesa— que restringe
+las interacciones futuras. La marca no es un registro del evento. La marca es
+el evento, en la medida en que produce una diferencia.
 
-The sense of reason or explanation arises only as a reactive story, a way of
-organizing transitions once change has been noticed by a reasoning entity
-(a topic addressed later in [^EmergenceOfSelf]).
+El sentido de razón o de explicación surge únicamente como una historia
+reactiva, una forma de organizar transiciones una vez que el cambio ha sido
+notado por una entidad capaz de razonar (tema que se aborda más adelante en
+[^EmergenceOfSelf]).
 
-This reactivity is not limited to conscious minds. Anything that changes in
-response to causes and produces effects is, in this minimal sense,
-**operationally aware** [^OperationalAwareness]. A self-sustaining causal loop
-qualifies: it can update its own state in response to incoming influences. By
-doing so, it distinguishes states and tracks transitions—not through any “plan
-of action,” which would imply a consciousness we have not yet defined, but
-simply by virtue of its continued existence as a loop. In this minimal
-operational sense, a self-sustaining causal loop “notices” change.
+Esta reactividad no se limita a las mentes conscientes. Todo aquello que cambia
+en respuesta a causas y produce efectos es, en este sentido mínimo,
+**operacionalmente consciente** [^OperationalAwareness]. Un bucle causal
+auto-sostenido cumple esta condición: puede actualizar su propio estado en
+respuesta a influencias entrantes. Al hacerlo, distingue estados y sigue
+transiciones, no mediante ningún “plan de acción”, lo cual implicaría una
+conciencia que aún no hemos definido, sino simplemente en virtud de su
+existencia continuada como bucle. En este sentido operativo mínimo, un bucle
+causal auto-sostenido “nota” el cambio.
 
 [^OperationalAwareness]: Palma, A., & Rodriguez, A. M. (2025). *Operational Awareness in a Maxwell-Only Universe: A Formal Implication of Panpsychism*. ResearchGate. https://doi.org/10.13140/RG.2.2.13647.60324/1
 
