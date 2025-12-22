@@ -165,34 +165,36 @@ repetidos se estabilizan en expectativas.
 
 # 5. Espacio
 
-La distancia es el conteo de pasos causales entre dos eventos. Lo que llamamos
-“espacio” es el conjunto de todas esas distancias. Al reunir cada separación
-por pares en una sola estructura, la conciencia operativa intenta formar una
-representación geométrica coherente.
+La distancia siendo el conteo de pasos causales entre dos eventos, lo que
+llamamos “espacio” es el conjunto de todas esas distancias.
 
-Si el conjunto completo de distancias causales puede incrustarse con baja
-distorsión en algún espacio de dimensión $D$, decimos que los eventos parecen
-ser $D$-dimensionales. Si no existe ninguna incrustación de baja distorsión, la
-noción de dimensión se descompone.
+Al reunir cada separación por pares en una sola estructura, la conciencia
+operativa intenta formar una representación geométrica coherente.
 
-Los mismos datos de distancia pueden admitir varias incrustaciones. Una
-configuración puede ajustarse a un triángulo, a dos triángulos superpuestos, a
-una estrella u otras formas. Nada impone una interpretación única; distintas
-interpretaciones pueden incluso coexistir y funcionar adecuadamente. Solo
-tenemos efectos —las distancias causales— y, a partir de ellos, inferimos
-patrones con cierta precisión aceptable. La incrustación preferida suele ser
-(aunque no siempre) aquella que comprime las relaciones con complejidad mínima
-manteniendo una distorsión tolerable. La navaja de Occam refleja esta
-preferencia.
+Si el conjunto completo de distancias causales puede incrustarse con "baja
+distorsión" [^DistorsionYUtilidad] en algún espacio de dimensión $D$, decimos
+que los eventos parecen ser $D$-dimensionales. Si no existe ninguna incrustación
+de baja distorsión, la noción de dimensión se descompone.
+
+Los mismos datos de distancia pueden admitir ser incrustados en distintos
+espacios.varias incrustaciones. Una configuración puede ajustarse a un
+triángulo, a dos triángulos superpuestos, a una estrella u otras formas. Nada
+impone una interpretación única; distintas interpretaciones pueden incluso
+coexistir y funcionar adecuadamente. Solo tenemos efectos —las distancias
+causales— y, a partir de ellos, inferimos patrones con cierta precisión
+aceptable. La incrustación preferida suele ser (aunque no siempre) aquella que
+comprime las relaciones con complejidad mínima, y manteniendo una distorsión
+tolerable. La navaja de Occam refleja esta preferencia.
 
 Este mecanismo de reconocimiento de patrones no se limita a la geometría. La
 aritmética emerge del mismo modo. Actos causales repetidos —poner una manzana en
-una bolsa y luego otra— se estabilizan en un patrón fiable. A partir de ello,
-la conciencia operativa forma la abstracción de que $1+1=2$. Si dos manzanas
+una bolsa y luego otra— se estabilizan en un patrón fiable. A partir de ello, la
+conciencia operativa forma la abstracción de que $1+1=2$. Si dos manzanas
 produjeran de forma fiable tres, la aritmética codificaría eso, y volveríamos a
 considerar el universo como “matemático”. La regla no se descubre bajo la
 realidad; se extrae de efectos consistentes y luego se utiliza para predecir
-efectos adicionales.
+efectos adicionales, consistentes con los primeros (si no consistentes, aunque
+existentes, posiblemente no sean considerados reales).
 
 En algunos contextos, $1+1$ puede tomar cualquier valor permitido por las
 reglas. Puede definirse un sistema formal en el que $1+1=3$ y construir a partir
@@ -206,6 +208,9 @@ sustrato causal.
 El espacio, el tiempo, la dimensión y la aritmética surgen del mismo mecanismo:
 reconocer regularidades en eventos conectados causalmente y comprimirlas en
 representaciones estables y predictivas.
+
+[^DistorsionYUtilidad]: Es decir, de alguna manera "operativamente útil" para la
+persistencia del bucle
 
 
 # 6. Plato and the Cave
