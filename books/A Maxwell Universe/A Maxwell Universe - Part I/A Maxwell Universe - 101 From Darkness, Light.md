@@ -92,9 +92,9 @@ Chains can form loops:
 ... → j → i → a → b → c → j → i → ...
 
 and may cross themselves without restriction. Learning is a good illustration of
-multiple acknowledgdments and thus multiple "closes". A loop can be considered
-“closed” when its pattern stabilizes in some useful sense. A "closed" loop, has
-however to continue propagating, as we mention later.
+multiple acknowledgments and thus multiple "closes". A loop can be considered
+“closed” when its pattern stabilizes in some useful sense. A "closed" loop,
+however, must continue propagating, as we mention later.
 
 Repeated causal loops can function as clocks. Any recurrent sequence can serve
 as a clock. Accuracy varies, but recurrence suffices.
@@ -228,7 +228,7 @@ we project them and then treat the projection as real.
 Mathematics does not need to govern the world. Even if reality admits
 mathematical structure in some sense, mathematics itself is vastly larger than
 anything the world could instantiate. Most mathematics has no physical
-counterpart at all, that we know of, yet.
+counterpart, that we know of, yet.
 
 More often, we see the world through the mathematics we have constructed.
 Mathematics —and therefore physics— describes those aspects of reality that
@@ -242,7 +242,7 @@ regularities we can isolate and predict. Wherever reality resists compression
 into stable patterns, mathematics simply does not apply.
 
 Mathematics succeeds because we select what it can describe —and which patterns
-we attend to— not because nature is made of numbers, structures, or -the lastest
+we attend to— not because nature is made of numbers, structures, or -the latest
 rebranding- “information.”
 
 The same is true of logic. Logic is not a law imposed on reality; it is an
