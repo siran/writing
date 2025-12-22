@@ -120,43 +120,45 @@ retorno. Por lo tanto, el hecho mismo de que algo sea notado implica que el
 notador es, en esencia, un bucle causal auto-sostenido.
 
 
-# 4. Counting Steps
+# 4. Conteo de pasos
 
-By counting loops or causal steps, operational awareness defines durations. Time
-is an emergent count, not an external parameter.
+Al contar bucles o pasos causales, la conciencia operativa define duraciones. El
+tiempo es un conteo emergente, no un parámetro externo.
 
-Distance arises by tracking how many causal steps connect two events. If a
-signal travels from event $i$ to event $j$ through a minimal chain of length
-$L_{ij}$, then
+La distancia surge al rastrear cuántos pasos causales conectan dos eventos. Si
+una señal viaja desde el evento $i$ hasta el evento $j$ a través de una cadena
+mínima de longitud $L_{ij}$, entonces
 
 $$
 d(i, j) \propto L_{ij}.
 $$
 
-If no path exists, the distance is infinite or undefined. If the only available
-path returns to the same event, the round-trip count becomes an effective
-measure of separation. Distance is not a spatial coordinate but an operational
-measure of causal separation.
+Si no existe ningún camino, la distancia es infinita o indefinida. Si el único
+camino disponible regresa al mismo evento, el conteo de ida y vuelta se
+convierte en una medida efectiva de separación. La distancia no es una
+coordenada espacial, sino una medida operativa de separación causal.
 
-These causal distances define an effective geometry. Observers attempt to map
-them into familiar spaces of some chosen dimension.
+Estas distancias causales definen una geometría efectiva. Los observadores
+intentan representarlas en espacios familiares de alguna dimensión elegida.
 
-More technically, we can think of a map $\mathcal{M}$ into a space of dimension
-$D$, where each event is assigned a point, and the distances between those
-points approximate the causal distances:
+De forma más técnica, podemos pensar en una aplicación $\mathcal{M}$ hacia un
+espacio de dimensión $D$, donde a cada evento se le asigna un punto, y las
+distancias entre esos puntos aproximan las distancias causales:
 
 $$
 \|\mathcal{M}(i) - \mathcal{M}(j)\| \approx d(i, j).
 $$
 
-When such embeddings succeed with low distortion, observers perceive the
-corresponding events as forming a $D$-dimensional structure under
-$\mathcal{M}$. If multiple embeddings work, dimension is not unique. If none
-succeed, all such maps $\mathcal{M}$ are defective and geometry is ill-defined.
+Cuando tales incrustaciones tienen baja distorsión, los observadores perciben
+los eventos correspondientes como formando una estructura de dimensión $D$
+bajo $\mathcal{M}$. Si múltiples incrustaciones funcionan, la dimensión no es
+única. Si ninguna lo hace, todas esas aplicaciones $\mathcal{M}$ son
+defectuosas y la geometría resulta mal definida.
 
-Thus, space, time, and dimension are not fundamental; they arise from how
-operational awareness compresses relational patterns. Geometry and distance
-appear only after repeated causal patterns stabilize into expectations.
+Así, el espacio, el tiempo y la dimensión no son fundamentales; surgen de la
+forma en que la conciencia operativa comprime patrones relacionales. La
+geometría y la distancia aparecen solo después de que patrones causales
+repetidos se estabilizan en expectativas.
 
 
 # 5. Space
