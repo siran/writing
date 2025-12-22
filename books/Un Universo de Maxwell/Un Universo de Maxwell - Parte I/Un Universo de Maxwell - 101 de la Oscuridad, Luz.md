@@ -163,44 +163,49 @@ geometría y la distancia aparecen solo después de que patrones causales
 repetidos se estabilizan en expectativas.
 
 
-# 5. Space
+# 5. Espacio
 
-Distance is the count of causal steps between two events. What we call “space”
-is the collection of all such distances. By gathering every pairwise separation
-into a single structure, operational awareness attempts to form a coherent
-geometric representation.
+La distancia es el conteo de pasos causales entre dos eventos. Lo que llamamos
+“espacio” es el conjunto de todas esas distancias. Al reunir cada separación
+por pares en una sola estructura, la conciencia operativa intenta formar una
+representación geométrica coherente.
 
-If the full set of causal distances can be embedded with low distortion into
-some $D$-dimensional space, we say the events appear to be $D$-dimensional. If
-no low-distortion embedding exists, the notion of dimension breaks down.
+Si el conjunto completo de distancias causales puede incrustarse con baja
+distorsión en algún espacio de dimensión $D$, decimos que los eventos parecen
+ser $D$-dimensionales. Si no existe ninguna incrustación de baja distorsión, la
+noción de dimensión se descompone.
 
-The same distance data may admit several embeddings. A configuration may fit a
-triangle, two overlapping triangles, a star, or other shapes. Nothing enforces a
-unique interpretation; different interpretations may even coexist and function
-adequately. We only have effects—the causal distances—and from them we infer
-patterns to some acceptable accuracy. The preferred embedding is usually (but
-not always) the one that compresses the relations with minimal complexity while
-keeping distortion tolerable. Occam’s razor reflects this preference.
+Los mismos datos de distancia pueden admitir varias incrustaciones. Una
+configuración puede ajustarse a un triángulo, a dos triángulos superpuestos, a
+una estrella u otras formas. Nada impone una interpretación única; distintas
+interpretaciones pueden incluso coexistir y funcionar adecuadamente. Solo
+tenemos efectos —las distancias causales— y, a partir de ellos, inferimos
+patrones con cierta precisión aceptable. La incrustación preferida suele ser
+(aunque no siempre) aquella que comprime las relaciones con complejidad mínima
+manteniendo una distorsión tolerable. La navaja de Occam refleja esta
+preferencia.
 
-This pattern-recognition mechanism is not limited to geometry. Arithmetic
-emerges the same way. Repeated causal acts—placing one apple in a bag, then
-another—stabilize into a reliable pattern. From this, operational awareness
-forms the abstraction that $1+1=2$. If two apples reliably produced three,
-arithmetic would encode that instead, and we would again regard the universe as
-“mathematical.” The rule is not discovered beneath reality; it is extracted from
-consistent effects and then used to predict further effects.
+Este mecanismo de reconocimiento de patrones no se limita a la geometría. La
+aritmética emerge del mismo modo. Actos causales repetidos —poner una manzana en
+una bolsa y luego otra— se estabilizan en un patrón fiable. A partir de ello,
+la conciencia operativa forma la abstracción de que $1+1=2$. Si dos manzanas
+produjeran de forma fiable tres, la aritmética codificaría eso, y volveríamos a
+considerar el universo como “matemático”. La regla no se descubre bajo la
+realidad; se extrae de efectos consistentes y luego se utiliza para predecir
+efectos adicionales.
 
-In some contexts, $1+1$ can take any value permitted by the rules. One may
-define a formal system where $1+1=3$ and build consistent mathematics from it.
-Even in everyday settings, combining two things rarely doubles a quantity
-cleanly. The outcome depends on the combination rules: posture, leverage,
-strategy. Only once those rules are fixed does the expression $1+1=2$ become the
-correct statement. The “truth” of arithmetic reflects operational assumptions,
-not the causal substrate.
+En algunos contextos, $1+1$ puede tomar cualquier valor permitido por las
+reglas. Puede definirse un sistema formal en el que $1+1=3$ y construir a partir
+de él una matemática consistente. Incluso en contextos cotidianos, combinar
+dos cosas rara vez duplica una cantidad de manera limpia. El resultado depende
+de las reglas de combinación: postura, palanca, estrategia. Solo una vez que
+esas reglas quedan fijadas, la expresión $1+1=2$ se convierte en el enunciado
+correcto. La “verdad” de la aritmética refleja supuestos operativos, no el
+sustrato causal.
 
-Space, time, dimension, and arithmetic arise from the same mechanism:
-recognizing regularities in causally connected events and compressing them into
-stable, predictive representations.
+El espacio, el tiempo, la dimensión y la aritmética surgen del mismo mecanismo:
+reconocer regularidades en eventos conectados causalmente y comprimirlas en
+representaciones estables y predictivas.
 
 
 # 6. Plato and the Cave
