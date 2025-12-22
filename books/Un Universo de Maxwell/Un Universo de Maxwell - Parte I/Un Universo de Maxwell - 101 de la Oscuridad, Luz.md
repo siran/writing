@@ -290,58 +290,59 @@ Los siguientes se derivan de A1–A3.
 
 **A4. Existe el orden.**
 Si un cambio registrado es un nuevo estado, existe una distinción entre
-“antes” y “después”. Esto define un orden causal.
+“antes” y “después”. Esto define un orden.
 
-**A5. El tiempo es orden, no sustancia.** El tiempo surge a partir de
-identificar operacionalmente estados que etiquetamos como "causas" y otros como
-"efectos".
+**A5. El tiempo es orden, no sustancia.**
+El tiempo surge a partir de la identificación operacional de estados etiquetados
+como “antes” y “después”.
 
-**A6. La existencia es persistencia.** Todo lo que existe lo hace solo en la
-medida en que sostiene su propio estado a pesar de cambios que puedan ocurrir.
-Los puntos finales de una cadena causal que no tenga efectos de retorno no son
-observables, y en esencia equivalente a no-existencia.
+**A6. La existencia es persistencia.**
+Todo lo que existe lo hace solo en la medida en que sostiene su propio estado.
+Un punto final de una cadena causal que no produce efectos subsecuentes no es
+observable y, por tanto, es operacionalmente equivalente a la inexistencia.
 
 El espacio, la distancia, la geometría, la dimensión, las matemáticas y la
 lógica surgen como compresiones adicionales de patrones estables en estos
 ordenamientos, como se desarrolla en §§4–7.
 
 
-## A.2 Non-Assumptions
+## A.3 No-supuestos
 
-This work does **not** assume:
+Este trabajo **no** asume:
 
-- Space as a container.
-- Time as a flowing parameter.
-- Spacetime as a fundamental structure.
-- Geometry as primitive.
-- Dimension as intrinsic.
-- Matter, mass, particles, fields, forces, or charges as ontically separate,
-  non-electromagnetic substances or dynamics.
-- Quantum postulates or probabilistic axioms.
-- Mathematical objects as ontologically prior.
-- Observers as fundamental entities.
-- Consciousness as a primitive.
+- El espacio como un contenedor.
+- El tiempo como un parámetro que fluye.
+- El espaciotiempo como una estructura fundamental.
+- La geometría como primitiva.
+- La dimensión como intrínseca.
+- La materia, la masa, las partículas, los campos, las fuerzas o las cargas como
+  sustancias o dinámicas ontológicamente separadas y no electromagnéticas.
+- Postulados cuánticos o axiomas probabilísticos.
+- Objetos matemáticos como ontológicamente previos.
+- Observadores como entidades fundamentales.
+- La conciencia como primitiva.
 
-All such notions appear, if at all, only as **emergent descriptions** derived
-from stable cause–effect patterns.
-
-
-## A.3 Scope and Limits
-
-This part makes no claims about the ultimate nature of the causal substrate.
-It addresses only what can be inferred from observable effects and their
-regularities.
-
-Any representation constructed here remains valid only insofar as the observed
-patterns persist. No guarantee of uniqueness, completeness, or permanence is
-asserted.
+Todas estas nociones aparecen, si lo hacen, solo como **descripciones
+emergentes** derivadas de patrones estables de causa–efecto.
 
 
-## A.4 Role in the Full Work
+## A.4 Alcance y límites
 
-Part I establishes the ontological ground required for the later development of
-a Maxwell-only universe.
+Esta parte no hace afirmaciones sobre la naturaleza última del sustrato causal.
+Aborda únicamente lo que puede inferirse a partir de los efectos observables y
+sus regularidades.
 
-Subsequent parts introduce specific dynamics. Nothing in this part depends on
-those dynamics, and nothing in later parts modifies the assumptions listed
-above.
+Toda representación construida aquí sigue siendo válida solo en la medida en
+que los patrones observados persistan. No se afirma ninguna garantía de
+unicidad, completitud ni permanencia.
+
+
+## A.5 Rol en la obra completa
+
+La Parte I establece el fundamento ontológico requerido para el desarrollo
+posterior de un universo exclusivamente regido por las ecuaciones del
+electromagnetismo de Maxwell.
+
+Las partes siguientes presentan dinámicas específicas. Nada en esta parte
+depende de esas dinámicas, y nada en las partes posteriores modifica los
+supuestos enumerados arriba.
