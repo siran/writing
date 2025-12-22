@@ -44,37 +44,42 @@ causal auto-sostenido “nota” el cambio.
 [^EmergenceOfSelf]: Rodriguez, A. M. (2025). *Emergence of Self-Awareness from a Cause–Effect Loop*. https://preprints.preferredframe.com/Emergence%20of%20Self-Awareness%20from%20a%20Cause%E2%80%93Effect%20Loop/Emergence%20of%20Self-Awareness%20from%20a%20Cause%E2%80%93Effect%20Loop%20v2.md.html
 
 
-# 2. Time
+# 2. Tiempo
 
-Time is, thus, a construct: a tool operational awareness uses to organize its
-state. Each loop forms its own internal notion of time. Yet we maintain
-collective agreements: certain event-patterns (“causes”) tend to precede others
-(“effects”). Those who do not share the prevailing interpretation are often
-labeled “irrational,” though this only reflects different mappings between
-change and order.
+El tiempo es, así, un constructo: una herramienta que la conciencia operativa
+utiliza para organizar su estado. Cada bucle forma su propia noción interna de
+tiempo. Sin embargo, mantenemos acuerdos colectivos: ciertos patrones de
+eventos (“causas”) tienden a preceder a otros (“efectos”). Quienes no comparten
+la interpretación dominante suelen ser considerados “irracionales”, aunque
+esto solo refleja diferentes correspondencias entre cambio y orden.
 
-We may picture “reality” [^WhatIsReality?] as a Node with an unknowable internal
-structure [^Uncomputable]. All we know is that this structure reproduces
-patterns of transitions from which we infer “before” and “after.”
+Podemos imaginar la “realidad” [^WhatIsReality?] como un Nodo con una estructura
+interna incognoscible [^Uncomputable]. Todo lo que sabemos es que dicha
+estructura reproduce patrones de transiciones a partir de los cuales inferimos
+“antes” y “después”.
 
-What we call "the past" is reconstructed *now*, from present evidence. If new
-evidence appears, our reconstruction may shift. The long debate about whether
-dietary fat was harmful or beneficial is a familiar example later shown to rest
-on selective data [^FatDebate]. Consensus reality is fragile. Without external
-anchors, interpretations feel arbitrary, raising the persistent question: what
-is real?
+Lo que llamamos “el pasado” se reconstruye *ahora*, a partir de evidencia
+presente. Si aparece nueva evidencia, nuestra reconstrucción puede cambiar. El
+prolongado debate sobre si la grasa dietaria era perjudicial o beneficiosa es
+un ejemplo conocido que más tarde se demostró basado en datos selectivos
+[^FatDebate]. La realidad consensuada es frágil. Sin anclajes externos, las
+interpretaciones se sienten arbitrarias, lo que da lugar a la pregunta
+persistente: ¿qué es real?
 
-[^WhatIsReality?]: Reality—“all that is”—includes everything you can think of
-and everything you suspect exists but do not consciously consider. Any formal
-definition is partial.
+[^WhatIsReality?]: La realidad —“todo lo que es”— incluye todo lo que puedes
+pensar y todo aquello que sospechas que existe aunque no lo consideres de
+manera consciente. Cualquier definición formal es parcial.
 
-[^Uncomputable]: As in Plato’s cave: the underlying structure is inaccessible in
-principle. We see only shadows and name some “causes” and others “effects.”
+[^Uncomputable]: Como en la caverna de Platón: la estructura subyacente es
+inaccesible en principio. Solo vemos sombras y llamamos a algunas “causas” y a
+otras “efectos”.
 
-[^FatDebate]: Late-20th-century nutrition science framed fat as the main cause
-of heart disease, but later reviews showed selective reporting and industry
-influence. Contradictory data had been minimized. Re-analysis revealed a weaker
-link than claimed, showing how consensus can form around distorted evidence.
+[^FatDebate]: A finales del siglo XX, la ciencia de la nutrición presentó a la
+grasa como la principal causa de las enfermedades cardíacas, pero revisiones
+posteriores mostraron informes selectivos e influencia industrial. Datos
+contradictorios habían sido minimizados. Un nuevo análisis reveló una relación
+más débil de la que se afirmaba, mostrando cómo puede formarse un consenso a
+partir de evidencia distorsionada.
 
 
 # 3. Orderings
