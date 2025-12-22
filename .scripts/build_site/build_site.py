@@ -1300,6 +1300,17 @@ def format_dir_index_out(dir_abs: Path, items: list[Item]) -> tuple[str, str]:
     rel_dir = rel_out(dir_abs) if dir_abs != OUT else Path()
     return _format_dir_index_common(rel_dir, items, use_root_links=False)
 
+def _book_artifact_hide_names(dir_abs: Path) -> set[str]:
+    if not ((dir_abs / "book.yml").exists() or (dir_abs / "book.yaml").exists()):
+        return set()
+    hidden = {"book-style.css"}
+    suffix = ".pandoc.md"
+    for p in dir_abs.glob(f"*{suffix}"):
+        base = p.name[:-len(suffix)]
+        hidden.add(p.name)
+        hidden.add(f"{base}.pandoc.md.html")
+    return hidden
+
 def build_out_indexes(hidden_stems: set[tuple[str, str]]):
     for dirpath, dirnames, filenames in os.walk(OUT):
         d = Path(dirpath)
@@ -1307,6 +1318,7 @@ def build_out_indexes(hidden_stems: set[tuple[str, str]]):
         in_hidden = (
             len(rel_parts) >= 2 and (rel_parts[0], rel_parts[1]) in hidden_stems
         )
+        hide_names = _book_artifact_hide_names(d)
         # prune hidden dirs
         keep = []
         for dd in list(dirnames):
@@ -1329,6 +1341,11 @@ def build_out_indexes(hidden_stems: set[tuple[str, str]]):
                 continue
             p = d / fname
             if p.name in EXCLUDE_NAMES:
+                continue
+            lower_name = p.name.lower()
+            if lower_name.endswith(".md.html") or lower_name.endswith(".markdown.html"):
+                continue
+            if p.name in hide_names:
                 continue
             items.append(Item(name=p.name, is_dir=False, mtime=p.stat().st_mtime, path=p))
 

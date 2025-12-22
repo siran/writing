@@ -567,7 +567,7 @@ def render_book_yaml(
                     fp.write("```{=latex}\n\\iffalse\n```\n")
                     fp.write(f"# {sec_title} {{#{hid} .chapter .unlisted}}\n\n")
                     if body_stripped:
-                        fp.write(f"*{body_stripped}*\n\n")
+                        fp.write(f"{body_stripped}\n\n")
                     fp.write("```{=latex}\n\\fi\n```\n\n")
                 elif is_toc:
                     title_block = (
@@ -624,7 +624,7 @@ def render_book_yaml(
                 if is_ack:
                     fh.write(f"# {sec_title}\n\n")
                     if body_stripped:
-                        fh.write(f"*{body_stripped}*\n\n")
+                        fh.write(f"{body_stripped}\n\n")
                 elif is_toc:
                     fh.write(f"# {sec_title}\n\n[[TOC]]\n\n")
                 else:

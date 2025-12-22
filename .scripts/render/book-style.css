@@ -45,6 +45,12 @@ h1.chapter {
   margin-top: 17.5rem;
 }
 
+h1.chapter.unlisted + p,
+h1.chapter.unlisted + p + p {
+  font-style: italic;
+  text-align: center;
+}
+
 h2 {
   font-size: 1.9rem;
   border-bottom: 1px solid rgba(15, 28, 63, 0.1);
