@@ -261,12 +261,13 @@ Mucho se ha dicho sobre que la realidad es “matemática”, aunque rara vez se
 define qué significa exactamente esa afirmación. Los argumentos anteriores
 sugieren una visión más simple: atribuimos patrones a la realidad. A veces los
 reconocemos genuinamente; otras veces los proyectamos y luego tratamos esa
-proyección como si fuera real.
+proyección como si fuese real.
 
-Las matemáticas no necesitan gobernar el mundo. Incluso si la realidad admite
-estructura matemática en algún sentido, las matemáticas son inmensamente más
-vastas que cualquier cosa que el mundo físico pueda instanciar. La mayor parte
-de las matemáticas no tiene, hasta donde sabemos, ningún correlato físico.
+Las matemáticas no tienen por qué, y en ningún sentido se entiende que,
+gobiernen el mundo. Incluso si la realidad admite estructura matemática en algún
+sentido, las matemáticas son inmensamente más vastas que cualquier cosa que el
+mundo físico pueda instanciar. La mayor parte de las matemáticas no tiene, hasta
+donde sepamos, ningún correlato físico.
 
 Con mayor frecuencia, vemos el mundo a través de las matemáticas que hemos
 construido. Las matemáticas —y, por extensión, la física— describen aquellos
@@ -275,20 +276,20 @@ un patrón es lo suficientemente regular como para ser anticipado, lo
 codificamos simbólicamente y lo llamamos “ley”. Cuando el patrón se rompe, la
 ley se rompe con él.
 
-No es, entonces, que la realidad *sea* matemática, ni que las matemáticas sean
-el “lenguaje de la naturaleza”. Más bien, las matemáticas son una herramienta
-de modelado que aplicamos a las regularidades que podemos aislar y predecir.
-Allí donde la realidad resiste ser comprimida en patrones estables, las
-matemáticas simplemente no aplican.
+No es, entonces, que la realidad sea matemática, ni que las matemáticas sean el
+“lenguaje de la naturaleza”. Más bien, las matemáticas son una herramienta de
+modelado que aplicamos a las regularidades que podemos aislar y predecir. Allí
+donde la realidad resiste ser comprimida en patrones estables, las matemáticas
+simplemente no aplican.
 
 Las matemáticas funcionan porque seleccionamos qué pueden describir —y a qué
 patrones prestamos atención—, no porque la naturaleza esté hecha de números,
 estructuras o, en su reetiquetado más reciente, “información”.
 
 Lo mismo ocurre con la lógica. La lógica no es una ley impuesta a la realidad;
-es una abstracción destilada de comportamientos causales estables y repetibles.
-La lógica clásica refleja un mundo en el que los estados están bien separados y
-las transiciones son consistentes.
+es una abstracción destilada de comportamientos considerados causales estables y
+repetibles. La lógica clásica refleja un mundo en el que los estados están bien
+separados y las transiciones son consistentes.
 
 Así como la geometría espacial emerge de la compresión de distancias causales
 en mapeos de baja distorsión (§§4–5), la estructura lógica emerge de la
@@ -301,9 +302,9 @@ categorías lógicas clásicas ya no comprimen adecuadamente los patrones causal
 observados.
 
 Este trabajo, por tanto, no parte ni de la lógica ni de las matemáticas, sino de
-la causa y el efecto. La lógica y las matemáticas aparecen más tarde, como
-herramientas moldeadas por las regularidades que las interacciones causales
-resultan exhibir.
+patrones que aparecen como “causas” y “efectos”. La lógica y las matemáticas
+aparecen más tarde, como herramientas moldeadas por las regularidades que las
+interacciones causales resultan exhibir.
 
 
 # Apéndice — Supuestos y compromisos derivados
