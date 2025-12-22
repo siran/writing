@@ -213,38 +213,43 @@ representaciones estables y predictivas.
 bucle.
 
 
-# 6. Plato and the Cave
+# 6. Platón y la caverna
 
-Plato illustrated the limits of our access to reality. We see shadows, not the
-real source. Our interpretations are reconstructions shaped by limited
-observation. There is no external vantage point from which the true structure
-can be viewed.
+Platón ilustró los límites de nuestro acceso a la realidad con su famosa
+"Alegoría de la Caverna" [^LaCavernaDePlaton]: vemos sombras, no los objetos que las producen, la "fuente real".
 
-We do not have direct access, or in other words, can never observe the
-underlying causal substrate of reality; we observe only the effects that reach
-us.
+Nuestras interpretaciones son reconstrucciones moldeadas por una observación
+limitada. No existe un punto de vista externo desde el cual pueda contemplarse
+la estructura verdadera, o de manera completa.
 
-Any geometry, dimension, or pattern we assign reflects how these effects can be
-compressed into a usable representation. A different observer, or a different
-sampling of the same causal structure, may construct a different representation
-without contradiction.
+No tenemos acceso directo —o, dicho de otro modo, nunca podemos observar— el
+sustrato causal subyacente de la realidad; solo observamos los efectos que nos
+alcanzan.
 
-Shadows in Plato’s cave correspond to the relational patterns we detect. The
-“objects” casting those shadows are the underlying causal relations, which are
-inaccessible in themselves. We infer their organization from recurring effects,
-and when those effects change, our inferred picture must change with them. No
-representation we construct is guaranteed to be unique, complete, consistent, or
-stable.
+Cualquier geometría, dimensión o patrón que asignemos refleja la forma en que
+estos efectos pueden comprimirse en una representación utilizable. Un
+observador distinto, o un muestreo distinto de la misma estructura causal,
+puede construir una representación diferente sin contradicción.
 
-This perspective removes the assumption that there is a single, correct spatial
-or mathematical description waiting to be uncovered. Our models are not mirrors
-of an external geometry; they are operational tools built from the limited
-regularities we can register. Like the prisoners in the cave, we work with
-projections, not with the structure that produces them.
+Las sombras en la caverna de Platón corresponden a los patrones relacionales que
+detectamos. Los “objetos” que proyectan esas sombras son las relaciones
+causales subyacentes, inaccesibles en sí mismas. Inferimos su organización a
+partir de efectos recurrentes y, cuando esos efectos cambian, la imagen
+inferida debe cambiar con ellos. Ninguna representación que construyamos está
+garantizada como única, completa, consistente o estable.
 
-What we call “reality” is therefore a reconstruction: a stable arrangement of
-inferred patterns that remains useful so long as the causal effects available to
-us support it.
+Esta perspectiva elimina la suposición de que exista una única descripción
+espacial o matemática correcta esperando ser descubierta. Nuestros modelos no
+son espejos de una geometría externa; son herramientas operativas construidas a
+partir de las regularidades limitadas que podemos registrar. Como los
+prisioneros en la caverna, trabajamos con proyecciones, no con la estructura que
+las produce.
+
+Lo que llamamos “realidad” es, por tanto, una reconstrucción: un arreglo
+estable de patrones inferidos que sigue siendo útil mientras los efectos
+causales disponibles lo sostengan.
+
+[^LaCavernaDePlaton]: <describir alegoria, alguna que otra cita quizás?>
 
 
 # 7. Logic, Mathematics, and Reality
