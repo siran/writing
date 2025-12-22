@@ -83,35 +83,37 @@ más débil de la que se afirmaba, mostrando cómo puede formarse un consenso a
 partir de evidencia distorsionada.
 
 
-# 3. Orderings
+# 3. Ordenamientos
 
-From the primitive relation
+A partir de la relación primitiva
 
 $$
 n_i \succ n_j,
 $$
 
-meaning “$n_i$ causes $n_j$,” an ordering arises: before and after. We
-may call this succession of events $i$ and $j$ a **causal step**.
+que significa “$n_i$ causa $n_j$”, surge un ordenamiento: antes y después.
+Podemos llamar a esta sucesión de eventos $i$ y $j$ un **paso causal**.
 
-A series of events forms a **causal chain**: i → a → b → c → d → j.
+Una serie de eventos forma una **cadena causal**: i → a → b → c → d → j.
 
-Chains can form loops:
+Las cadenas pueden formar bucles:
 
 ... → j → i → a → b → c → j → i → ...
 
-and may cross themselves without restriction. Learning is a good illustration of
-multiple acknowledgdments and thus multiple "closes". A loop can be considered
-“closed” when its pattern stabilizes in some useful sense. A "closed" loop, has
-however to continue propagating, as we mention later.
+y pueden cruzarse consigo mismas sin restricción. El aprendizaje es una buena
+ilustración de múltiples reconocimientos y, por tanto, de múltiples “cierres”.
+Un bucle puede considerarse “cerrado” cuando su patrón se estabiliza en algún
+sentido útil. Sin embargo, un bucle “cerrado” debe continuar propagándose, como
+se menciona más adelante.
 
-Repeated causal loops can function as clocks. Any recurrent sequence can serve
-as a clock. Accuracy varies, but recurrence suffices.
+Los bucles causales repetidos pueden funcionar como relojes. Cualquier
+secuencia recurrente puede servir como reloj. La precisión varía, pero la
+recurrencia es suficiente.
 
-Note that an effect that produces no further causes marks the end of a causal
-chain. Such an endpoint cannot be registered—there is no return influence.
-Therefore the fact that anything is noticed at all implies that the noticer is,
-in essence, a self-sustaining causal loop.
+Obsérvese que un efecto que no produce causas posteriores marca el final de
+una cadena causal. Tal punto final no puede ser registrado: no hay influencia
+de retorno. Por lo tanto, el hecho mismo de que algo sea notado implica que el
+notador es, en esencia, un bucle causal auto-sostenido.
 
 
 # 4. Counting Steps
