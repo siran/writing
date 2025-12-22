@@ -216,15 +216,15 @@ bucle.
 # 6. Platón y la caverna
 
 Platón ilustró los límites de nuestro acceso a la realidad con su famosa
-"Alegoría de la Caverna" [^LaCavernaDePlaton]: vemos sombras, no los objetos que las producen, la "fuente real".
+*Alegoría de la caverna* [^LaCavernaDePlaton]: vemos sombras, no los objetos que
+las producen, la fuente real.
 
 Nuestras interpretaciones son reconstrucciones moldeadas por una observación
 limitada. No existe un punto de vista externo desde el cual pueda contemplarse
-la estructura verdadera, o de manera completa.
+la estructura verdadera ni de manera completa.
 
 No tenemos acceso directo —o, dicho de otro modo, nunca podemos observar— el
-sustrato causal subyacente de la realidad; solo observamos los efectos que nos
-alcanzan.
+sustrato causal subyacente de la realidad; solo registramos los efectos.
 
 Cualquier geometría, dimensión o patrón que asignemos refleja la forma en que
 estos efectos pueden comprimirse en una representación utilizable. Un
@@ -241,7 +241,7 @@ garantizada como única, completa, consistente o estable.
 Esta perspectiva elimina la suposición de que exista una única descripción
 espacial o matemática correcta esperando ser descubierta. Nuestros modelos no
 son espejos de una geometría externa; son herramientas operativas construidas a
-partir de las regularidades limitadas que podemos registrar. Como los
+partir de las limitadas regularidades que podemos registrar. Como los
 prisioneros en la caverna, trabajamos con proyecciones, no con la estructura que
 las produce.
 
@@ -249,7 +249,10 @@ Lo que llamamos “realidad” es, por tanto, una reconstrucción: un arreglo
 estable de patrones inferidos que sigue siendo útil mientras los efectos
 causales disponibles lo sostengan.
 
-[^LaCavernaDePlaton]: <describir alegoria, alguna que otra cita quizás?>
+[^LaCavernaDePlaton]: Platón, *La República*, Libro VII. La alegoría describe a
+prisioneros encadenados que solo ven sombras proyectadas en una pared y las
+toman por la realidad, sin acceso directo a los objetos ni a la fuente de la
+luz que las produce.
 
 
 # 7. Logic, Mathematics, and Reality
