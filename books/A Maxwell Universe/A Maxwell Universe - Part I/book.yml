@@ -19,6 +19,6 @@ header-includes:
   - \renewcommand{\footnotesize}{\fontsize{11pt}{13pt}\selectfont}
   - \setlength{\skip\footins}{16pt}
   - \usepackage{titlesec}
-  - \titleformat{\section}[block]{\bfseries\Large}{\hfill\thesection.}{0.8em}{\hfill}
+  - \titleformat{\section}[block]{\bfseries\Large\raggedleft}{\hfill\thesection.}{0.8em}{\hfill}
   - \titlespacing*{\section}{0pt}{4ex plus 1ex minus 0.5ex}{1.8ex}
 ---
