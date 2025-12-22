@@ -20,7 +20,7 @@ exclusivamente de relaciones que aparecen como “causas” y “efectos”.
 El objetivo de esta primera parte no es proponer una teoría física alternativa,
 sino establecer un fundamento ontológico claro sobre el cual cualquier dinámica
 posterior —incluida una ontología basada únicamente en las ecuaciones de
-Maxwell— pueda construirse sin ambigüedad conceptual.
+electromagnetismo de Maxwell— pueda construirse sin ambigüedad conceptual.
 
 El lector no está invitado a estar de acuerdo, sino a seguir el razonamiento.
 Si las conclusiones no resultan convincentes, el punto de desacuerdo debería

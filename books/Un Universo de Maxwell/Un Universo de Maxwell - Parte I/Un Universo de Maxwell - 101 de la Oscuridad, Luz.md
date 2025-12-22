@@ -106,7 +106,7 @@ buena ilustración de múltiples **registros efectivos** y, por tanto, de
 múltiples “cierres”.
 
 Un bucle puede considerarse “cerrado” cuando su patrón se estabiliza en algún
-sentido **útil**, es decir, cuando su persistencia queda asegurada. Sin
+sentido útil, es decir, cuando su persistencia queda asegurada. Sin
 embargo, un bucle “cerrado” debe continuar propagándose, como se mencionará más
 adelante.
 
