@@ -91,28 +91,32 @@ $$
 n_i \succ n_j,
 $$
 
-que significa “$n_i$ causa $n_j$”, surge un ordenamiento: antes y después.
-Podemos llamar a esta sucesión de eventos $i$ y $j$ un **paso causal**.
+que significa (siendo $n_i$ y $n_j$ estados registrados) “$n_i$ precede a
+$n_j$”, surge un ordenamiento: antes y después. Podemos llamar a esta sucesión
+de eventos $i$ y $j$ un **paso causal**.
 
-Una serie de eventos forma una **cadena causal**: i → a → b → c → d → j.
+Una sucesión de eventos forma una **cadena causal**: i → a → b → c → d → j.
 
 Las cadenas pueden formar bucles:
 
 ... → j → i → a → b → c → j → i → ...
 
-y pueden cruzarse consigo mismas sin restricción. El aprendizaje es una buena
-ilustración de múltiples reconocimientos y, por tanto, de múltiples “cierres”.
+y pueden cruzarse consigo mismas sin restricción. El aprendizaje ofrece una
+buena ilustración de múltiples **registros efectivos** y, por tanto, de
+múltiples “cierres”.
+
 Un bucle puede considerarse “cerrado” cuando su patrón se estabiliza en algún
-sentido útil. Sin embargo, un bucle “cerrado” debe continuar propagándose, como
-se menciona más adelante.
+sentido **útil**, es decir, cuando su persistencia queda asegurada. Sin
+embargo, un bucle “cerrado” debe continuar propagándose, como se mencionará más
+adelante.
 
-Los bucles causales repetidos pueden funcionar como relojes. Cualquier
-secuencia recurrente puede servir como reloj. La precisión varía, pero la
-recurrencia es suficiente.
+Los bucles causales recurrentes (i → {a, b, c} → i → {d, e, f} → i …) pueden
+funcionar como relojes. La precisión puede variar, pero la recurrencia es
+suficiente.
 
-Obsérvese que un efecto que no produce causas posteriores marca el final de
-una cadena causal. Tal punto final no puede ser registrado: no hay influencia
-de retorno. Por lo tanto, el hecho mismo de que algo sea notado implica que el
+Nótese que un efecto que no produce causas posteriores marca el final de una
+cadena causal. Tal punto final no puede ser registrado: no hay influencia de
+retorno. Por lo tanto, el hecho mismo de que algo sea notado implica que el
 notador es, en esencia, un bucle causal auto-sostenido.
 
 
