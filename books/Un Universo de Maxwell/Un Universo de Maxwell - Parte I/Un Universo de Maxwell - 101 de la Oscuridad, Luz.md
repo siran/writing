@@ -4,7 +4,7 @@ date: 2025-12-22 12:08
 ---
 
 
-# 1. De la oscuridad, la luz
+# 1. De la oscuridad, luz
 
 La realidad no comienza con el espacio o el tiempo, sino con el hecho
 simple de que hay eventos que ocurren.
@@ -17,11 +17,11 @@ Una razón es una historia añadida después. Lo que importa es simplemente que
 ocurra un cambio y que este sea registrado de un modo que afecte a lo que
 sigue. Una vez que un cambio es registrado, el sistema ocupa un estado
 distinto. La distinción entre “antes” y “después” no se añade al evento; es el
-evento.
+evento en sí.
 
 No es necesario apelar a una inteligencia que registre lo ocurrido, sino solo
 a un cambio de estado persistente —como una marca en una mesa— que restringe
-las interacciones futuras. La marca no es un registro del evento. La marca es
+las interacciones futuras. La marca no es un registro del evento. La marca *es*
 el evento, en la medida en que produce una diferencia.
 
 El sentido de razón o de explicación surge únicamente como una historia
