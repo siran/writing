@@ -255,50 +255,55 @@ toman por la realidad, sin acceso directo a los objetos ni a la fuente de la
 luz que las produce.
 
 
-# 7. Logic, Mathematics, and Reality
+# 7. Lógica, matemáticas y realidad
 
-Much has been said about reality being “mathematical,” though the phrase is
-rarely defined. The arguments above suggest a simpler view: we ascribe patterns
-to reality. Sometimes, we genuinely recognize these patterns, sometimes because
-we project them and then treat the projection as real.
+Mucho se ha dicho sobre que la realidad es “matemática”, aunque rara vez se
+define qué significa exactamente esa afirmación. Los argumentos anteriores
+sugieren una visión más simple: atribuimos patrones a la realidad. A veces los
+reconocemos genuinamente; otras veces los proyectamos y luego tratamos esa
+proyección como si fuera real.
 
-Mathematics does not need to govern the world. Even if reality admits
-mathematical structure in some sense, mathematics itself is vastly larger than
-anything the world could instantiate. Most mathematics has no physical
-counterpart at all, that we know of, yet.
+Las matemáticas no necesitan gobernar el mundo. Incluso si la realidad admite
+estructura matemática en algún sentido, las matemáticas son inmensamente más
+vastas que cualquier cosa que el mundo físico pueda instanciar. La mayor parte
+de las matemáticas no tiene, hasta donde sabemos, ningún correlato físico.
 
-More often, we see the world through the mathematics we have constructed.
-Mathematics —and therefore physics— describes those aspects of reality that
-admit stable, compressible patterns. When a pattern is regular enough to be
-anticipated, we encode it symbolically and call the result a “law.” When the
-pattern breaks, the law breaks with it.
+Con mayor frecuencia, vemos el mundo a través de las matemáticas que hemos
+construido. Las matemáticas —y, por extensión, la física— describen aquellos
+aspectos de la realidad que presentan patrones estables y compresibles. Cuando
+un patrón es lo suficientemente regular como para ser anticipado, lo
+codificamos simbólicamente y lo llamamos “ley”. Cuando el patrón se rompe, la
+ley se rompe con él.
 
-It is therefore not that reality is mathematical, nor that mathematics is the
-“language of nature.” Rather, mathematics is a modeling tool we apply to the
-regularities we can isolate and predict. Wherever reality resists compression
-into stable patterns, mathematics simply does not apply.
+No es, entonces, que la realidad *sea* matemática, ni que las matemáticas sean
+el “lenguaje de la naturaleza”. Más bien, las matemáticas son una herramienta
+de modelado que aplicamos a las regularidades que podemos aislar y predecir.
+Allí donde la realidad resiste ser comprimida en patrones estables, las
+matemáticas simplemente no aplican.
 
-Mathematics succeeds because we select what it can describe —and which patterns
-we attend to— not because nature is made of numbers, structures, or -the lastest
-rebranding- “information.”
+Las matemáticas funcionan porque seleccionamos qué pueden describir —y a qué
+patrones prestamos atención—, no porque la naturaleza esté hecha de números,
+estructuras o, en su reetiquetado más reciente, “información”.
 
-The same is true of logic. Logic is not a law imposed on reality; it is an
-abstraction distilled from stable, repeatable causal behavior. Classical logic
-reflects a world in which states are well-separated and transitions are
-consistent.
+Lo mismo ocurre con la lógica. La lógica no es una ley impuesta a la realidad;
+es una abstracción destilada de comportamientos causales estables y repetibles.
+La lógica clásica refleja un mundo en el que los estados están bien separados y
+las transiciones son consistentes.
 
-Just as spatial geometry emerges from the compression of causal distances into
-low-distortion embeddings (§4–§5), logical structure emerges from the
-compression of causal transitions into stable inference rules.
+Así como la geometría espacial emerge de la compresión de distancias causales
+en mapeos de baja distorsión (§§4–5), la estructura lógica emerge de la
+compresión de transiciones causales en reglas de inferencia estables.
 
-When causal structures change, the logic extracted from them changes as well.
-That modern physics tolerates superposition or incompatible descriptions does
-not mean that reality violates logic. It means that classical logical categories
-no longer compress the observed causal patterns.
+Cuando las estructuras causales cambian, la lógica extraída de ellas también
+cambia. Que la física moderna tolere superposición o descripciones
+incompatibles no significa que la realidad viole la lógica; significa que las
+categorías lógicas clásicas ya no comprimen adecuadamente los patrones causales
+observados.
 
-This work therefore starts neither from logic nor from mathematics, but from
-cause and effect. Logic and mathematics enter later, as tools shaped by the
-regularities that causal interactions happen to exhibit.
+Este trabajo, por tanto, no parte ni de la lógica ni de las matemáticas, sino de
+la causa y el efecto. La lógica y las matemáticas aparecen más tarde, como
+herramientas moldeadas por las regularidades que las interacciones causales
+resultan exhibir.
 
 
 # Apéndice — Supuestos y compromisos derivados
