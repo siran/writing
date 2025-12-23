@@ -145,7 +145,7 @@ intentan representarlas en espacios familiares de alguna dimensión elegida.
 
 De forma más técnica, podemos pensar en un mapa $\mathcal{M}$ hacia un espacio
 de dimensión $D$, donde a cada evento se le asigna un punto, y las distancias
-entre esos puntos aproximan las distancias causales:
+entre esos puntos aproximan las distancias causales $d$:
 
 $$
 \|\mathcal{M}(i) - \mathcal{M}(j)\| \approx d(i, j).

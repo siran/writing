@@ -1,5 +1,5 @@
 ---
-title: A Maxwell Universe - Prefacio
+title: Un Universo de Maxwell - Prefacio
 date: 2025-12-22 16:09
 ---
 
