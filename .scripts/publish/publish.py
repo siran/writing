@@ -184,6 +184,26 @@ def parse_args():
         "If omitted, you will be prompted.",
     )
     ap.add_argument(
+        "--orcid",
+        default=None,
+        help="Comma-separated ORCIDs (author order) to fill missing ORCIDs.",
+    )
+    ap.add_argument(
+        "--keywords",
+        default=None,
+        help="Comma-separated keywords override (avoids interactive prompt).",
+    )
+    ap.add_argument(
+        "--oss",
+        default=None,
+        help="One-sentence summary override (avoids interactive prompt).",
+    )
+    ap.add_argument(
+        "--abstract",
+        default=None,
+        help="Abstract override (avoids interactive prompt).",
+    )
+    ap.add_argument(
         "--new-version-of",
         dest="new_version_of",
         default=None,
@@ -268,6 +288,58 @@ def _normalize_orcid_input(raw: str) -> str:
     if m:
         return m.group(1).upper()
     return ""
+
+
+def _split_csv_arg(raw: Optional[str]) -> List[str]:
+    if not raw:
+        return []
+    return [s.strip() for s in raw.split(",") if s.strip()]
+
+
+def _apply_orcid_list(parsed: dict, orcids: List[str]) -> dict:
+    updated = dict(parsed)
+    authors = [dict(a) for a in (updated.get("authors") or [])]
+    if not orcids or not authors:
+        return updated
+
+    used = 0
+    for author in authors:
+        name = (author.get("name") or "").strip()
+        if not name or author.get("orcid"):
+            continue
+        if used >= len(orcids):
+            break
+        author["orcid"] = orcids[used]
+        used += 1
+
+    if used < len(orcids):
+        echo(
+            f"WARNING: {len(orcids) - used} ORCID(s) from --orcid not used "
+            "because there were fewer authors missing ORCID."
+        )
+
+    updated["authors"] = authors
+    return updated
+
+
+def _apply_cli_overrides(parsed: dict, args) -> dict:
+    updated = dict(parsed)
+    if args.keywords is not None:
+        updated["keywords"] = _split_csv_arg(args.keywords)
+    if args.oss is not None:
+        updated["one_sentence"] = (args.oss or "").strip()
+    if args.abstract is not None:
+        updated["abstract"] = (args.abstract or "").strip()
+    if args.orcid is not None:
+        orcid_items = _split_csv_arg(args.orcid)
+        orcids: List[str] = []
+        for item in orcid_items:
+            norm = _normalize_orcid_input(item)
+            if not norm:
+                die(f"Invalid ORCID in --orcid list: {item!r}")
+            orcids.append(norm)
+        updated = _apply_orcid_list(updated, orcids)
+    return updated
 
 
 def _prompt_missing_orcids(parsed: dict) -> dict:
@@ -671,6 +743,7 @@ def run_publish(args, ctx: PublishContext) -> None:
 
     # Parse PNPMD
     parsed = parse_pnpmd(staged_md.read_text(encoding="utf-8"))
+    parsed = _apply_cli_overrides(parsed, args)
     parsed = _prompt_required_metadata(parsed)
     parsed = _prompt_missing_orcids(parsed)
     creators: List[Dict] = []
