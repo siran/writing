@@ -9,6 +9,48 @@ import requests  # assumes installed
 
 from common import echo, die
 
+MIN_REQUEST_INTERVAL = float(os.environ.get("ZENODO_MIN_REQUEST_INTERVAL", "1.0"))
+RETRY_FOREVER_INTERVAL = float(os.environ.get("ZENODO_RETRY_FOREVER_INTERVAL", "3.0"))
+_LAST_REQUEST_TS = 0.0
+
+
+def _throttle_request():
+    if MIN_REQUEST_INTERVAL <= 0:
+        return
+    global _LAST_REQUEST_TS
+    now = time.monotonic()
+    wait = _LAST_REQUEST_TS + MIN_REQUEST_INTERVAL - now
+    if wait > 0:
+        try:
+            time.sleep(wait)
+        except KeyboardInterrupt:
+            pass
+
+
+def _mark_request_time():
+    global _LAST_REQUEST_TS
+    _LAST_REQUEST_TS = time.monotonic()
+
+
+def _log_429_headers(headers):
+    keys = [
+        "Retry-After",
+        "X-RateLimit-Reset",
+        "X-RateLimit-Limit",
+        "X-RateLimit-Remaining",
+    ]
+    parts = [f"{k}={headers.get(k)}" for k in keys if headers.get(k) is not None]
+    if parts:
+        echo(f"[WARN] 429 response headers: {', '.join(parts)}")
+
+
+def _log_non2xx_headers(r):
+    try:
+        if not r.ok:
+            echo(f"[WARN] Non-2xx response headers ({r.status_code}): {dict(r.headers)}")
+    except Exception:
+        pass
+
 
 def zenodo_api_and_token(env: str) -> Tuple[str, str]:
     token = os.environ.get("ZENODO_TOKEN")
@@ -44,36 +86,60 @@ def _rate_limit_delay(headers) -> Optional[float]:
 def http_put_raw(url: str, token: str, fp):
     echo(f"+ HTTP PUT (raw) {url}")
     headers = {"Authorization": f"Bearer {token}"}
-    backoffs = [1, 2, 4, 8, 16]
+    backoffs = [2, 4, 8, 16, 32]
     start_pos = None
     try:
         start_pos = fp.tell()
     except Exception:
         start_pos = None
-    for i, delay in enumerate(backoffs, start=1):
+    attempt = 0
+    while True:
         if start_pos is not None:
             try:
                 fp.seek(start_pos)
             except Exception:
                 pass
-        r = requests.put(url, data=fp, headers=headers)
+        _throttle_request()
+        try:
+            r = requests.put(url, data=fp, headers=headers)
+        finally:
+            _mark_request_time()
+        _log_non2xx_headers(r)
         if r.ok:
             return r.json() if "application/json" in (r.headers.get("Content-Type", "")) else {}
         wait = _rate_limit_delay(r.headers)
-        if r.status_code in {429, 500, 502, 503, 504} and i < len(backoffs):
-            wait_time = wait if wait is not None else delay
+        if r.status_code == 429:
+            try:
+                echo(f"[WARN] 429 response body:\n{r.text}")
+            except Exception:
+                pass
+            try:
+                _log_429_headers(r.headers)
+            except Exception:
+                pass
+        if r.status_code in {429, 500, 502, 503, 504}:
+            attempt += 1
+            if attempt <= len(backoffs):
+                delay = backoffs[attempt - 1]
+            else:
+                delay = max(RETRY_FOREVER_INTERVAL, 0.0)
+                if attempt == len(backoffs) + 1:
+                    echo(
+                        "[WARN] Bucket PUT retry backoff exhausted; "
+                        f"continuing every {delay}s until success or Ctrl-C."
+                    )
+            wait_time = max(delay, wait) if wait is not None else delay
             echo(f"[WARN] Bucket PUT {r.status_code} at {url}; retrying in {wait_time}s...")
             try:
                 time.sleep(wait_time)
             except KeyboardInterrupt:
-                break
+                raise
             continue
         try:
             print(r.text)
         except Exception:
             pass
         die(f"Zenodo bucket PUT error {r.status_code} at {url}")
-    die(f"Zenodo bucket PUT error at {url}")
 
 
 def http_json(method: str, url: str, token: str, data=None, files=None) -> Dict:
@@ -81,32 +147,56 @@ def http_json(method: str, url: str, token: str, data=None, files=None) -> Dict:
     headers = {"Authorization": f"Bearer {token}"}
     print(f"{data=}")
     print(f"{files=}")
-    backoffs = [1, 2, 4, 8, 16]
-    for i, delay in enumerate(backoffs, start=1):
-        if method.upper() in ("POST", "PUT", "PATCH"):
-            r = requests.request(method, url, headers=headers, json=data, files=files)
-        else:
-            r = requests.request(method, url, headers=headers, params=data)
+    backoffs = [2, 4, 8, 16, 32]
+    attempt = 0
+    while True:
+        _throttle_request()
+        try:
+            if method.upper() in ("POST", "PUT", "PATCH"):
+                r = requests.request(method, url, headers=headers, json=data, files=files)
+            else:
+                r = requests.request(method, url, headers=headers, params=data)
+        finally:
+            _mark_request_time()
+        _log_non2xx_headers(r)
         if r.ok:
             try:
                 return r.json()
             except Exception:
                 return {}
         retry_delay = _rate_limit_delay(r.headers)
-        if r.status_code in {429, 500, 502, 503, 504} and i < len(backoffs):
-            wait = retry_delay if retry_delay is not None else delay
+        if r.status_code == 429:
+            try:
+                echo(f"[WARN] 429 response body:\n{r.text}")
+            except Exception:
+                pass
+            try:
+                _log_429_headers(r.headers)
+            except Exception:
+                pass
+        if r.status_code in {429, 500, 502, 503, 504}:
+            attempt += 1
+            if attempt <= len(backoffs):
+                delay = backoffs[attempt - 1]
+            else:
+                delay = max(RETRY_FOREVER_INTERVAL, 0.0)
+                if attempt == len(backoffs) + 1:
+                    echo(
+                        "[WARN] Zenodo API retry backoff exhausted; "
+                        f"continuing every {delay}s until success or Ctrl-C."
+                    )
+            wait = max(delay, retry_delay) if retry_delay is not None else delay
             echo(f"[WARN] Zenodo API {r.status_code} at {url}; retrying in {wait}s...")
             try:
                 time.sleep(wait)
             except KeyboardInterrupt:
-                break
+                raise
             continue
         try:
             echo(r.text)
         except Exception:
             pass
         die(f"Zenodo API error {r.status_code} at {url}")
-    die(f"Zenodo API error at {url}")
 
 
 def reserve_deposition(
