@@ -22,6 +22,8 @@ from doc_utils import (
     find_latest_provenance_for_stem,
     dump_yaml,
     detect_license,
+    ORCID_URL_RE,
+    ORCID_ID_RE,
 )
 
 # Make render helpers visible (for title_from_book_yaml).
@@ -252,6 +254,48 @@ def _prompt_required_metadata(parsed: dict) -> dict:
         missing.append("abstract")
     if missing:
         die(f"Missing required metadata: {', '.join(missing)}")
+    return updated
+
+
+def _normalize_orcid_input(raw: str) -> str:
+    s = (raw or "").strip()
+    if not s:
+        return ""
+    m = ORCID_URL_RE.search(s)
+    if m:
+        return m.group(1).upper()
+    m = ORCID_ID_RE.search(s)
+    if m:
+        return m.group(1).upper()
+    return ""
+
+
+def _prompt_missing_orcids(parsed: dict) -> dict:
+    """
+    Ensure each author has an ORCID. Prompts interactively when missing.
+    """
+    updated = dict(parsed)
+    authors = [dict(a) for a in (updated.get("authors") or [])]
+    for author in authors:
+        name = (author.get("name") or "").strip()
+        if not name or author.get("orcid"):
+            continue
+        while True:
+            raw = input(
+                f"Enter ORCID for {name} "
+                "(format 0000-0000-0000-0000, or 'skip' to omit): "
+            ).strip()
+            if not raw:
+                echo("ORCID is required for Zenodo; enter an ORCID or type 'skip' to omit.")
+                continue
+            if raw.lower() in {"skip", "none", "n/a"}:
+                break
+            orcid = _normalize_orcid_input(raw)
+            if orcid:
+                author["orcid"] = orcid
+                break
+            echo("Invalid ORCID format. Example: 0000-0000-0000-0000 or https://orcid.org/0000-0000-0000-0000")
+    updated["authors"] = authors
     return updated
 
 
@@ -628,6 +672,7 @@ def run_publish(args, ctx: PublishContext) -> None:
     # Parse PNPMD
     parsed = parse_pnpmd(staged_md.read_text(encoding="utf-8"))
     parsed = _prompt_required_metadata(parsed)
+    parsed = _prompt_missing_orcids(parsed)
     creators: List[Dict] = []
     for a in parsed["authors"]:
         if not a.get("name"):
