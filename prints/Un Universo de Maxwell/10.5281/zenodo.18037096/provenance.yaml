@@ -1,0 +1,79 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: book
+title: Un Universo de Maxwell
+doi: 10.5281/zenodo.18037096
+concept_doi: null
+permalink: "https://writing.preferredframe.com/prints/Un Universo de Maxwell/10.5281/zenodo.18037096/"
+publication_date: '2025-12-23'
+publication_year: '2025'
+keywords:
+- tiempo
+- fundamentos
+- espacio
+- causa
+- filosofía natural
+- geometría
+- emergencia
+one_sentence_summary: El tiempo, la distancia, el espacio, la dimensión y la estructura matemática se definen a partir de eventos que ocurren y de sus relaciones de causa–efecto registradas, sin asumir el espaciotiempo, la materia ni las leyes como primitivas.
+abstract: Se presenta una descripción de la realidad en la que el punto de partida son los eventos que ocurren y los cambios que quedan registrados. Un cambio registrado establece una distinción entre antes y después, dando lugar al orden causal. El tiempo se define como la consistencia de estos ordenamientos, mientras que la distancia surge al contar los pasos causales que conectan eventos. Cuando estas distancias relacionales admiten mapeos de baja distorsión, aparecen una geometría efectiva y la noción de dimensión. El espacio, el tiempo, la aritmética, la lógica y las leyes físicas se entienden así como compresiones emergentes de patrones estables de causa–efecto, y no como estructuras fundamentales. No se asumen espaciotiempo, materia, partículas, observadores ni objetos matemáticos; la descripción se aplica a cualquier formulación de la realidad basada en interacción causal.
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: book
+  title: Un Universo de Maxwell
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  description: Se presenta una descripción de la realidad en la que el punto de partida son los eventos que ocurren y los cambios que quedan registrados. Un cambio registrado establece una distinción entre antes y después, dando lugar al orden causal. El tiempo se define como la consistencia de estos ordenamientos, mientras que la distancia surge al contar los pasos causales que conectan eventos. Cuando estas distancias relacionales admiten mapeos de baja distorsión, aparecen una geometría efectiva y la noción de dimensión. El espacio, el tiempo, la aritmética, la lógica y las leyes físicas se entienden así como compresiones emergentes de patrones estables de causa–efecto, y no como estructuras fundamentales. No se asumen espaciotiempo, materia, partículas, observadores ni objetos matemáticos; la descripción se aplica a cualquier formulación de la realidad basada en interacción causal.
+  keywords:
+  - tiempo
+  - fundamentos
+  - espacio
+  - causa
+  - filosofía natural
+  - geometría
+  - emergencia
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2025'
+  date: '2025-12-23'
+  license: cc-by-nc-nd-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Un Universo de Maxwell/10.5281/zenodo.18037096/Un Universo de Maxwell.html"
+    resource_type: publication-book
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Un Universo de Maxwell/10.5281/zenodo.18037096/Un Universo de Maxwell.md"
+    resource_type: publication-book
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Un Universo de Maxwell/10.5281/zenodo.18037096/Un Universo de Maxwell.pdf"
+    resource_type: publication-book
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Un Universo de Maxwell/10.5281/zenodo.18037096/Un Universo de Maxwell.epub"
+    resource_type: publication-book
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: El tiempo, la distancia, el espacio, la dimensión y la estructura matemática se definen a partir de eventos que ocurren y de sus relaciones de causa–efecto registradas, sin asumir el espaciotiempo, la materia ni las leyes como primitivas.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: a8aac5bc518956f57c2aef14116d5dd728094c5b
+  filename: Un Universo de Maxwell.md
+artifacts:
+  md: Un Universo de Maxwell.md
+  md_url: "https://writing.preferredframe.com/prints/Un Universo de Maxwell/10.5281/zenodo.18037096/Un Universo de Maxwell.md"
+  pandoc_md_name: Un Universo de Maxwell.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/Un Universo de Maxwell/10.5281/zenodo.18037096/Un Universo de Maxwell.pandoc.md"
+  pdf_name: Un Universo de Maxwell.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/Un Universo de Maxwell/10.5281/zenodo.18037096/Un Universo de Maxwell.pdf"
+  html_name: Un Universo de Maxwell.html
+  html_url: "https://writing.preferredframe.com/prints/Un Universo de Maxwell/10.5281/zenodo.18037096/Un Universo de Maxwell.html"
+  primary: md
+  epub_name: Un Universo de Maxwell.epub
+  epub_url: "https://assets.preferredframe.com/preferredframe/Un Universo de Maxwell/10.5281/zenodo.18037096/Un Universo de Maxwell.epub"
