@@ -86,13 +86,11 @@ def _rate_limit_delay(headers) -> Optional[float]:
 def http_put_raw(url: str, token: str, fp):
     echo(f"+ HTTP PUT (raw) {url}")
     headers = {"Authorization": f"Bearer {token}"}
-    backoffs = [2, 4, 8, 16, 32]
     start_pos = None
     try:
         start_pos = fp.tell()
     except Exception:
         start_pos = None
-    attempt = 0
     while True:
         if start_pos is not None:
             try:
@@ -102,8 +100,19 @@ def http_put_raw(url: str, token: str, fp):
         _throttle_request()
         try:
             r = requests.put(url, data=fp, headers=headers)
-        finally:
+        except requests.exceptions.RequestException as e:
             _mark_request_time()
+            delay = max(RETRY_FOREVER_INTERVAL, 0.0)
+            echo(
+                f"[WARN] Bucket PUT exception {type(e).__name__}: {e}; "
+                f"retrying in {delay}s..."
+            )
+            try:
+                time.sleep(delay)
+            except KeyboardInterrupt:
+                raise
+            continue
+        _mark_request_time()
         _log_non2xx_headers(r)
         if r.ok:
             return r.json() if "application/json" in (r.headers.get("Content-Type", "")) else {}
@@ -118,16 +127,7 @@ def http_put_raw(url: str, token: str, fp):
             except Exception:
                 pass
         if r.status_code in {429, 500, 502, 503, 504}:
-            attempt += 1
-            if attempt <= len(backoffs):
-                delay = backoffs[attempt - 1]
-            else:
-                delay = max(RETRY_FOREVER_INTERVAL, 0.0)
-                if attempt == len(backoffs) + 1:
-                    echo(
-                        "[WARN] Bucket PUT retry backoff exhausted; "
-                        f"continuing every {delay}s until success or Ctrl-C."
-                    )
+            delay = max(RETRY_FOREVER_INTERVAL, 0.0)
             wait_time = max(delay, wait) if wait is not None else delay
             echo(f"[WARN] Bucket PUT {r.status_code} at {url}; retrying in {wait_time}s...")
             try:
@@ -147,8 +147,6 @@ def http_json(method: str, url: str, token: str, data=None, files=None) -> Dict:
     headers = {"Authorization": f"Bearer {token}"}
     print(f"{data=}")
     print(f"{files=}")
-    backoffs = [2, 4, 8, 16, 32]
-    attempt = 0
     while True:
         _throttle_request()
         try:
@@ -156,8 +154,19 @@ def http_json(method: str, url: str, token: str, data=None, files=None) -> Dict:
                 r = requests.request(method, url, headers=headers, json=data, files=files)
             else:
                 r = requests.request(method, url, headers=headers, params=data)
-        finally:
+        except requests.exceptions.RequestException as e:
             _mark_request_time()
+            delay = max(RETRY_FOREVER_INTERVAL, 0.0)
+            echo(
+                f"[WARN] Zenodo API exception {type(e).__name__}: {e}; "
+                f"retrying in {delay}s..."
+            )
+            try:
+                time.sleep(delay)
+            except KeyboardInterrupt:
+                raise
+            continue
+        _mark_request_time()
         _log_non2xx_headers(r)
         if r.ok:
             try:
@@ -175,16 +184,7 @@ def http_json(method: str, url: str, token: str, data=None, files=None) -> Dict:
             except Exception:
                 pass
         if r.status_code in {429, 500, 502, 503, 504}:
-            attempt += 1
-            if attempt <= len(backoffs):
-                delay = backoffs[attempt - 1]
-            else:
-                delay = max(RETRY_FOREVER_INTERVAL, 0.0)
-                if attempt == len(backoffs) + 1:
-                    echo(
-                        "[WARN] Zenodo API retry backoff exhausted; "
-                        f"continuing every {delay}s until success or Ctrl-C."
-                    )
+            delay = max(RETRY_FOREVER_INTERVAL, 0.0)
             wait = max(delay, retry_delay) if retry_delay is not None else delay
             echo(f"[WARN] Zenodo API {r.status_code} at {url}; retrying in {wait}s...")
             try:
