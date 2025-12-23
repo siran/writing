@@ -201,10 +201,9 @@ def _asset_url(x) -> str:
 def _local_artifact_url(src_dir: Path, name: str | None) -> str:
     if not name:
         return ""
-    p = src_dir / name
-    if not p.exists():
-        return ""
-    return f"/{(OUT/rel(p)).relative_to(OUT).as_posix()}"
+    # Artifacts may be generated only under OUT (staging), so compute the OUT path.
+    out_path = OUT / rel(src_dir) / name
+    return f"/{rel_out(out_path).as_posix()}"
 
 def _canonical_origin_from_provenance() -> str | None:
     try:
@@ -901,8 +900,8 @@ def build_article_pages():
             local_pmd  = f"/{(OUT/rel(src/it['pmd_name'])).relative_to(OUT).as_posix()}" if it["pmd_name"] else None
             local_pdf  = _local_artifact_url(src, it.get("pdf_name"))
             local_epub = _local_artifact_url(src, it.get("epub_name"))
-            pdf_link = local_pdf or it.get("assets_pdf") or ""
-            epub_link = local_epub or it.get("assets_epub") or ""
+            pdf_link = it.get("assets_pdf") or local_pdf or ""
+            epub_link = it.get("assets_epub") or local_epub or ""
 
             html_body = ""
             if it["html_name"] and (src/it["html_name"]).exists():
@@ -1099,8 +1098,8 @@ def build_article_pages():
         local_pmd  = f"/{(OUT/rel(src/it['pmd_name'])).relative_to(OUT).as_posix()}" if it["pmd_name"] else None
         local_pdf  = _local_artifact_url(src, it.get("pdf_name"))
         local_epub = _local_artifact_url(src, it.get("epub_name"))
-        pdf_link = local_pdf or it.get("assets_pdf") or ""
-        epub_link = local_epub or it.get("assets_epub") or ""
+        pdf_link = it.get("assets_pdf") or local_pdf or ""
+        epub_link = it.get("assets_epub") or local_epub or ""
 
         html_body = ""
         if it["html_name"] and (src/it["html_name"]).exists():
