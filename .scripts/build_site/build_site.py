@@ -36,6 +36,8 @@ MIRROR_EXTS = {
     ".pandoc.md",
     ".txt",
     ".css",
+    ".pdf",
+    ".epub",
 }
 
 MD_EXTS = {".md", ".markdown", ".pandoc.md"}
@@ -194,6 +196,15 @@ def _asset_url(x) -> str:
     if isinstance(x, dict):
         return (x.get("url") or x.get("href") or x.get("path") or "").strip()
     return ""
+
+
+def _local_artifact_url(src_dir: Path, name: str | None) -> str:
+    if not name:
+        return ""
+    p = src_dir / name
+    if not p.exists():
+        return ""
+    return f"/{(OUT/rel(p)).relative_to(OUT).as_posix()}"
 
 def _canonical_origin_from_provenance() -> str | None:
     try:
@@ -795,11 +806,17 @@ def build_article_pages():
         md_name   = (artifacts.get("md") or artifacts.get("main") or None)
         html_name = (artifacts.get("html_name") or None)
         pmd_name  = (artifacts.get("pandoc_md_name") or artifacts.get("pandoc_md") or None)
+        pdf_name  = (artifacts.get("pdf_name") or artifacts.get("pdf") or None)
+        epub_name = (artifacts.get("epub_name") or artifacts.get("epub") or None)
         add_old   = artifacts.get("additional") or {}
         if not html_name:
             html_name = add_old.get("html")
         if not pmd_name:
             pmd_name  = add_old.get("pandoc_md")
+        if not pdf_name:
+            pdf_name = add_old.get("pdf")
+        if not epub_name:
+            epub_name = add_old.get("epub")
 
         if not md_name and artifacts.get("md_url"):
             md_name = Path(artifacts["md_url"]).name
@@ -807,11 +824,21 @@ def build_article_pages():
             html_name = Path(artifacts["html_url"]).name
         if not pmd_name and artifacts.get("pandoc_md_url"):
             pmd_name = Path(artifacts["pandoc_md_url"]).name
+        if not pdf_name and artifacts.get("pdf_url"):
+            pdf_name = Path(artifacts["pdf_url"]).name
+        if not epub_name and artifacts.get("epub_url"):
+            epub_name = Path(artifacts["epub_url"]).name
 
         assets_pdf = (
             artifacts.get("pdf_url")
             or _asset_url(assets.get("pdf"))
             or _asset_url(canonical_assets.get("pdf"))
+            or ""
+        )
+        assets_epub = (
+            artifacts.get("epub_url")
+            or _asset_url(assets.get("epub"))
+            or _asset_url(canonical_assets.get("epub"))
             or ""
         )
 
@@ -827,7 +854,9 @@ def build_article_pages():
             "kws": kws,
             "date": date_norm, "doi": doi, "concept": concept,
             "assets_pdf": assets_pdf,
+            "assets_epub": assets_epub,
             "md_name": md_name, "html_name": html_name, "pmd_name": pmd_name,
+            "pdf_name": pdf_name, "epub_name": epub_name,
             "html_canonical": html_canonical,
             "references_doi": references_doi,
             "journal": journal,
@@ -870,6 +899,10 @@ def build_article_pages():
             local_md   = f"/{(OUT/rel(src/it['md_name'])).relative_to(OUT).as_posix()}" if it["md_name"] else None
             local_html = f"/{(OUT/rel(src/it['html_name'])).relative_to(OUT).as_posix()}" if it["html_name"] else None
             local_pmd  = f"/{(OUT/rel(src/it['pmd_name'])).relative_to(OUT).as_posix()}" if it["pmd_name"] else None
+            local_pdf  = _local_artifact_url(src, it.get("pdf_name"))
+            local_epub = _local_artifact_url(src, it.get("epub_name"))
+            pdf_link = local_pdf or it.get("assets_pdf") or ""
+            epub_link = local_epub or it.get("assets_epub") or ""
 
             html_body = ""
             if it["html_name"] and (src/it["html_name"]).exists():
@@ -882,8 +915,10 @@ def build_article_pages():
             top_links = []
             if local_md:
                 top_links.append(f'<a href="{local_md}">Markdown</a>')
-            if it["assets_pdf"]:
-                top_links.append(f'<a href="{it["assets_pdf"]}">PDF</a>')
+            if pdf_link:
+                top_links.append(f'<a href="{pdf_link}">PDF</a>')
+            if epub_link:
+                top_links.append(f'<a href="{epub_link}">EPUB</a>')
             if local_pmd:
                 top_links.append(f'<a href="{local_pmd}">Preprocessed MD</a>')
 
@@ -912,8 +947,10 @@ def build_article_pages():
             if local_md:
                 files_list.append(f'<li><a href="{local_md}">{it["md_name"]}</a></li>')
             files_list.append(f'<li><a href="{prov_local}">provenance.yaml</a></li>')
-            if it["assets_pdf"]:
-                files_list.append(f'<li><a href="{it["assets_pdf"]}">PDF</a></li>')
+            if pdf_link:
+                files_list.append(f'<li><a href="{pdf_link}">PDF</a></li>')
+            if epub_link:
+                files_list.append(f'<li><a href="{epub_link}">EPUB</a></li>')
             files_ul = "<ul>" + "".join(files_list) + "</ul>"
 
             display_authors = it["authors"]
@@ -964,8 +1001,10 @@ def build_article_pages():
             head = []
             head.append('<meta charset="utf-8">')
             head.append(f'<link rel="canonical" href="{version_url}">')
-            if it["assets_pdf"]:
-                head.append(f'<link rel="alternate" type="application/pdf" href="{it["assets_pdf"]}">')
+            if pdf_link:
+                head.append(f'<link rel="alternate" type="application/pdf" href="{pdf_link}">')
+            if epub_link:
+                head.append(f'<link rel="alternate" type="application/epub+zip" href="{epub_link}">')
             head.append('<meta name="robots" content="index,follow">')
             if it["title"]:
                 head.append(f'<meta name="citation_title" content="{it["title"]}">')
@@ -976,8 +1015,8 @@ def build_article_pages():
             if it["date"]:
                 head.append(f'<meta name="citation_publication_date" content="{scholar_date(it["date"])}">')
             head.append(f'<meta name="citation_journal_title" content="{PREFERRED_JOURNAL}">')
-            if it["assets_pdf"]:
-                head.append(f'<meta name="citation_pdf_url" content="{it["assets_pdf"]}">')
+            if pdf_link:
+                head.append(f'<meta name="citation_pdf_url" content="{pdf_link}">')
             if it["doi"]:
                 head.append(f'<meta name="citation_doi" content="{it["doi"]}">')
             desc = it["abstract"] or it["onesent"] or it["title"]
@@ -999,11 +1038,17 @@ def build_article_pages():
                     ent["sameAs"] = [oc]
                 authors_ld.append(ent)
             enc = []
-            if it["assets_pdf"]:
+            if pdf_link:
                 enc.append({
                     "@type": "MediaObject",
-                    "contentUrl": it["assets_pdf"],
+                    "contentUrl": pdf_link,
                     "encodingFormat": "application/pdf",
+                })
+            if epub_link:
+                enc.append({
+                    "@type": "MediaObject",
+                    "contentUrl": epub_link,
+                    "encodingFormat": "application/epub+zip",
                 })
             article_ld = {
                 "@context": "https://schema.org",
@@ -1052,6 +1097,10 @@ def build_article_pages():
         local_md   = f"/{(OUT/rel(src/it['md_name'])).relative_to(OUT).as_posix()}" if it["md_name"] else None
         local_html = f"/{(OUT/rel(src/it['html_name'])).relative_to(OUT).as_posix()}" if it["html_name"] else None
         local_pmd  = f"/{(OUT/rel(src/it['pmd_name'])).relative_to(OUT).as_posix()}" if it["pmd_name"] else None
+        local_pdf  = _local_artifact_url(src, it.get("pdf_name"))
+        local_epub = _local_artifact_url(src, it.get("epub_name"))
+        pdf_link = local_pdf or it.get("assets_pdf") or ""
+        epub_link = local_epub or it.get("assets_epub") or ""
 
         html_body = ""
         if it["html_name"] and (src/it["html_name"]).exists():
@@ -1086,15 +1135,19 @@ def build_article_pages():
         if local_md:
             files_list.append(f'<li><a href="{local_md}">{it["md_name"]}</a></li>')
         files_list.append(f'<li><a href="{prov_local}">provenance.yaml</a></li>')
-        if it["assets_pdf"]:
-            files_list.append(f'<li><a href="{it["assets_pdf"]}">PDF</a></li>')
+        if pdf_link:
+            files_list.append(f'<li><a href="{pdf_link}">PDF</a></li>')
+        if epub_link:
+            files_list.append(f'<li><a href="{epub_link}">EPUB</a></li>')
         files_ul = "<ul>" + "".join(files_list) + "</ul>"
 
         top_links = []
         if local_md:
             top_links.append(f'<a href="{local_md}">Markdown (latest)</a>')
-        if it["assets_pdf"]:
-            top_links.append(f'<a href="{it["assets_pdf"]}">PDF (latest)</a>')
+        if pdf_link:
+            top_links.append(f'<a href="{pdf_link}">PDF (latest)</a>')
+        if epub_link:
+            top_links.append(f'<a href="{epub_link}">EPUB (latest)</a>')
         if local_pmd:
             top_links.append(f'<a href="{local_pmd}">Preprocessed MD</a>')
 
@@ -1163,8 +1216,10 @@ def build_article_pages():
         head = []
         head.append('<meta charset="utf-8">')
         head.append(f'<link rel="canonical" href="{stem_url}">')
-        if it["assets_pdf"]:
-            head.append(f'<link rel="alternate" type="application/pdf" href="{it["assets_pdf"]}">')
+        if pdf_link:
+            head.append(f'<link rel="alternate" type="application/pdf" href="{pdf_link}">')
+        if epub_link:
+            head.append(f'<link rel="alternate" type="application/epub+zip" href="{epub_link}">')
         head.append('<meta name="robots" content="index,follow">')
         if it["title"]:
             head.append(f'<meta name="citation_title" content="{it["title"]}">')
@@ -1175,8 +1230,8 @@ def build_article_pages():
         if it["date"]:
             head.append(f'<meta name="citation_publication_date" content="{scholar_date(it["date"])}">')
         head.append(f'<meta name="citation_journal_title" content="{PREFERRED_JOURNAL}">')
-        if it["assets_pdf"]:
-            head.append(f'<meta name="citation_pdf_url" content="{it["assets_pdf"]}">')
+        if pdf_link:
+            head.append(f'<meta name="citation_pdf_url" content="{pdf_link}">')
         if it["doi"]:
             head.append(f'<meta name="citation_doi" content="{it["doi"]}">')
         desc = it["abstract"] or it["onesent"] or it["title"]
@@ -1198,11 +1253,17 @@ def build_article_pages():
                 ent["sameAs"] = [oc]
             authors_ld.append(ent)
         enc = []
-        if it["assets_pdf"]:
+        if pdf_link:
             enc.append({
                 "@type": "MediaObject",
-                "contentUrl": it["assets_pdf"],
+                "contentUrl": pdf_link,
                 "encodingFormat": "application/pdf",
+            })
+        if epub_link:
+            enc.append({
+                "@type": "MediaObject",
+                "contentUrl": epub_link,
+                "encodingFormat": "application/epub+zip",
             })
         article_ld = {
             "@context": "https://schema.org",
