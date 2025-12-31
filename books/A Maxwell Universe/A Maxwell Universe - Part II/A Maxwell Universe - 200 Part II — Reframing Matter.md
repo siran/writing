@@ -22,16 +22,13 @@ The guiding observation is simple: **the same equations already contain more
 structure than we usually allow ourselves to see.**
 
 Discrete spectra, inertia, charge, and stability appear not as added principles,
-but as consequences of global closure, continuity, and energy flows governed by
-source-free Maxwell equations in free space, and energy conservation in a
-Maxwell Universe.
+but as consequences of global closure, continuity, and energy flow governed by
+source-free Maxwell equations and energy conservation.
 
-The Rydberg series is taken as the point of entry as direct evidence that
+The Rydberg series is taken as the point of entry, as direct evidence that
 electromagnetic fields, when globally constrained, can organize energy
-discretely without invoking quantum mechanics postulates (particles, measurement
-collapse, wave-particle, symmtries, probability clouds), extra or wrapped
-dimensions, ungrounded or mysterious ideas, forces, etc.
+discretely — without invoking quantum-mechanical postulates, particles,
+measurement collapse, or probabilistic interpretation.
 
 From this anchor, the remaining properties of matter —mass, motion, charge, and
-stability— are traced back to the same source:
-**electromagnetic energy constrained to close on itself.**
+stability— are traced back to the same source: electromagnetic energy.
