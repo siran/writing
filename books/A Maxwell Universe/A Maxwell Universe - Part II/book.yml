@@ -1,0 +1,24 @@
+---
+title: A Maxwell Universe
+subtitle: |+
+  All-there-is from source-free electromagnetic energy.
+  Part II
+author: An M. Rodriguez
+description: Recovering mass and charge from energy in a free-space Maxwell Universe; or, what would have happened if Maxwell came before Newton.
+publisher: Preferred Frame Prints
+editor: An M. Rodriguez
+lang: en-US
+rights: CC-BY-NC-ND-4.0
+cover-image: https://assets.preferredframe.com/A%20Maxwell%20Universe/A%20Maxwell%20Universe-8.5x12.png
+identifier:
+- scheme: DOI
+  text: doi:10.5281/zenodo.17982296
+fontsize: 12pt
+linestretch: 1.32
+header-includes:
+  - \renewcommand{\footnotesize}{\fontsize{11pt}{13pt}\selectfont}
+  - \setlength{\skip\footins}{16pt}
+  - \usepackage{titlesec}
+  - \titleformat{\section}[block]{\bfseries\Large\raggedleft}{\hfill\thesection.}{0.8em}{\hfill}
+  - \titlespacing*{\section}{0pt}{4ex plus 1ex minus 0.5ex}{1.8ex}
+---
