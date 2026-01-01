@@ -121,9 +121,10 @@ together produces a closed surface with no boundary—a **Torus**.
 
 <image>
 
-Any lines drawn on the original napkin become closed paths on the torus. However,
-they form closed loops only if they match their own position when crossing an
-identified edge. This requirement ensures global continuity of the grid.
+Any lines drawn on the original napkin become closed paths on the torus.
+However, they form closed loops only if they match their own position when
+crossing an identified edge. This requirement ensures global continuity of the
+grid.
 
 In a source-free Maxwell universe, electromagnetic fields on this surface must
 satisfy these continuity conditions along the two independent cycles of the
@@ -178,8 +179,8 @@ $$
 \nabla \cdot \mathbf{E} = 0
 $$
 
-everywhere. No electric field originates from a point. How, then, does a particle
-appear to have charge?
+everywhere. No electric field originates from a point. How, then, does a
+particle appear to have charge?
 
 Consider the standing wave on the torus. The field lines wrap around the two
 independent cycles, characterized by the winding numbers $(m,n)$. These
