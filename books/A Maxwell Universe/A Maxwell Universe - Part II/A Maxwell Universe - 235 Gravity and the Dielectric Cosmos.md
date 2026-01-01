@@ -1,20 +1,23 @@
+A Maxwell Universe - 235 Gravity and the Dielectric Cosmos.md:
 ---
 title: A Maxwell Universe – Gravity and the Dielectric Cosmos
-date: 2026-01-01 11:45
+date: 2026-01-01 11:30
 ---
 
 
 ## Gravity as Refraction
 
 We have established that "mass" is simply a region of high electromagnetic
-energy density, knotted into a stable topology.
+energy density, knotted into a stable topology. We have also established, via
+the principle of superposition, that electromagnetic fields *do* interact via
+their energy densities.
 
 This leads to a direct mechanism for Gravity that does not require curved
 spacetime, but rather a **Variable Speed of Light**.
 
 In standard optics, light bends when it passes from a medium of one density to
 another (refraction). It bends towards the region of higher index of refraction
-where the phase velocity is slower.
+(slower speed).
 
 In a Maxwell Universe, a massive object (a proton, a star) is a concentrated
 knot of energy. This high energy density locally modifies the electromagnetic
@@ -43,13 +46,13 @@ physical medium—a dielectric.
 This resolves the paradox of Action at a Distance. Objects do not pull on each
 other across a void.
 
-1.  Object A (a star) stresses the dielectric vacuum around it, creating a
-    gradient in the refractive index.
+1.  Object A (a star) stresses the dielectric vacuum around it, creating a
+    gradient in the refractive index.
 
-2.  Object B (a planet) sits in this gradient.
+2.  Object B (a planet) sits in this gradient.
 
-3.  The internal energy flow of Object B—the very light that composes its
-    atoms—refracts in response to this gradient.
+3.  The internal energy flow of Object B—the very light that composes its
+    atoms—refracts in response to this gradient.
 
 The entire knot drifts toward the region of slower light speed, just as a light
 beam bends into glass. Inertia is the resistance of the knot to moving; Gravity
@@ -90,10 +93,10 @@ adding visible mass.
 
 Finally, this view challenges the consensus that the universe is expanding.
 
-In 1929, Edwin Hubble discovered that light from distant galaxies is redshifted.
-The standard interpretation is the **Doppler Effect**: galaxies are moving away
-from us. To explain why this expansion is accelerating, physics invented **Dark
-Energy**.
+In 1929, Edwin Hubble discovered that light from distant galaxies is shifted
+toward the red end of the spectrum (Redshift). The standard interpretation is
+the **Doppler Effect**: galaxies are moving away from us. To explain why this
+expansion is accelerating, physics invented **Dark Energy**.
 
 However, this conclusion rests on a single, unproven postulate: **that the speed
 of light is universally constant over cosmological distances.**
@@ -116,3 +119,55 @@ The universe appears to expand only because we are viewing it through a lens,
 but calculating as if the glass were absent. Dark Energy is not a mysterious
 force pushing the universe apart; it is a calibration error caused by ignoring
 the optical density of the vacuum.
+
+
+## The Stability of the Whole
+
+If we return to the logic of the atom, we find a strong argument against both
+the Big Bang and the Big Crunch.
+
+We established earlier that particles (knots) are stable because they are
+impedance-matched to the vacuum. They exist in a balance between the internal
+pressure of their topology and the external impedance of the field.
+
+Why should the universe be any different?
+
+In a Maxwell Universe, there is no "outside" for the universe to expand into.
+The cosmos is not a bubble of high pressure expanding into a void; it is the
+void itself, saturated with field.
+
+Just as the electron finds a stable radius where self-refraction balances
+dispersion, the universe likely exists in a state of **Global Impedance
+Equilibrium**. It is neither contracting nor expanding; it is "ringing" at the
+resonant frequency of its total energy content.
+
+
+## The Illusion of Scale
+
+Finally, we must ask: if the universe *were* expanding, could we even know it?
+
+Standard cosmology assumes we are distinct from the space we occupy—that we are
+rigid observers holding rigid rulers, watching the fabric of space stretch
+between galaxies.
+
+But in a Maxwell Universe, **we are the fabric.**
+
+Our bodies, our eyes, our telescopes, and our atoms are made of the same
+electromagnetic loops as the distant stars. The "ruler" we use to measure
+distance is defined by the wavelength of light and the radius of the atom.
+
+If the background energy density of the universe were to change (causing an
+expansion or contraction), the properties of the vacuum ($\epsilon_0, \mu_0$)
+would change. Consequently, the speed of light ($c$) and the size of atoms (the
+Bohr radius) would change in exact proportion.
+
+* If space expands, our rulers expand.
+* If time slows, our clocks slow.
+
+To us—electromagnetic beings embedded in an electromagnetic substrate—the
+universe is necessarily **scale-less**. We cannot measure the absolute size of
+the container because we are painted onto the canvas.
+
+The universe appears static not just because it is stable, but because any
+global change scales the observer along with the observed. We are left with a
+cosmos that is infinite, eternal, and—from the inside—perfectly still.
