@@ -62,7 +62,7 @@ Consider the difference between a knot and a link.
   another.
 
 
-![Borromean rings](assets/borromean-rings.png)
+![Borromean rings](https://siran.github.io/assets/A Maxwell Universe/borromean-rings.png)
 
 
 *Borromean rings*
