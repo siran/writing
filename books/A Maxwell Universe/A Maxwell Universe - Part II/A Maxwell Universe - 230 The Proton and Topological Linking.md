@@ -7,19 +7,20 @@ date: 2026-01-01 09:31
 ## The Hierarchy of Stability
 
 We have identified the electron not as a point particle, but as the fundamental
-electromagnetic knot—specifically, the **(3,2) Trefoil Knot**. It is a single flux
-tube wound into a toroidal standing wave.
+electromagnetic knot—specifically, the **(3,2) Trefoil Knot**. It is a single
+flux tube wound into a toroidal standing wave.
 
 It is the simplest persistent solution to the source-free Maxwell equations that
-is topologically distinct from a simple loop. This specific topology ($n=1$ in the
-knot hierarchy) provides two critical physical properties:
+is topologically distinct from a simple loop. This specific topology ($n=1$ in
+the knot hierarchy) provides two critical physical properties:
 
-1.  **Chirality:** The Trefoil knot is handed; it has a mirror image. This gives a
-    geometric definition to antimatter. The positron is simply the enantiomer
+1.  **Chirality:** The Trefoil knot is handed; it has a mirror image. This gives
+    a geometric definition to antimatter. The positron is simply the enantiomer
     (mirror topology) of the electron.
-2.  **Topological Locking:** unlike a simple unknotted loop, which can shrink and
-    dissipate, a Trefoil cannot be untied without cutting the field lines. This
-    provides the topological protection required for the electron's immense
+
+2.  **Topological Locking:** unlike a simple unknotted loop, which can shrink
+    and dissipate, a Trefoil cannot be untied without cutting the field lines.
+    This provides the topological protection required for the electron's immense
     stability.
 
 However, the universe is not composed solely of electrons. It is dominated by
@@ -28,7 +29,7 @@ neutrons.
 
 If the electron is a "knot," the proton cannot simply be a heavier knot. Its
 properties—specifically its composite nature and its immense stability—require a
-higher order of topological organization.
+different type of topological organization.
 
 In a Maxwell Universe, the distinction between leptons (electrons) and hadrons
 (protons) is the distinction between **Knots** and **Links**.
@@ -36,9 +37,9 @@ In a Maxwell Universe, the distinction between leptons (electrons) and hadrons
 
 ## The Composite Problem
 
-Standard high-energy physics describes the proton as a composite particle made of
-three "quarks." These quarks possess fractional charge and are bound together by
-the "Strong Force" mediated by gluons.
+Standard high-energy physics describes the proton as a composite particle made
+of three "quarks." These quarks possess fractional charge and are bound together
+by the "Strong Force" mediated by gluons.
 
 A peculiar feature of this force is **confinement**: quarks are never found in
 isolation. If one attempts to pull a quark out of a proton, the energy required
@@ -54,14 +55,17 @@ have parts that are geometrically distinct but physically inseparable?**
 Consider the difference between a knot and a link.
 
 * A **Knot** (like the Trefoil) is a single closed curve embedded in space. It
-    represents a single, coherent flux tube.
+  represents a single, coherent flux tube.
+
 * A **Link** is a collection of two or more disjoint closed curves that are
-    entangled such that they cannot be separated without passing one curve
-    through another.
+  entangled such that they cannot be separated without passing one curve through
+  another.
 
 
+![Borromean rings](assets/borromean-rings.png)
 
-[Image of Borromean rings]
+
+*Borromean rings*
 
 
 If we model the proton as a composite structure, we model it as a system of
@@ -188,3 +192,44 @@ We therefore arrive at a unified ontology:
 
 There is only one field. Its complexity determines whether we see it as light,
 matter, or nuclear force.
+
+
+### 4. The Stability of Debris: Why Quarks Are Confined
+
+This topological taxonomy provides an immediate answer to a question that the
+Standard Model must treat as an axiom: **Why can Leptons exist freely, but
+Quarks cannot?**
+
+We can test this by conducting a thought experiment on the "debris" left behind
+when we break a particle.
+
+**Case A: Breaking a Borromean Link of Trefoils**
+
+Imagine a composite particle made of three linked Trefoil knots (three electrons
+linked together). If we break one of the links, the system falls apart. The
+result is three separate, independent Trefoil knots. Since the Trefoil is a
+stable topology (it cannot untie itself), we would see a spray of three stable
+particles (electrons) flying apart. *This is not what we see when we smash a
+proton.*
+
+**Case B: Breaking a Borromean Link of Unknots (The Proton)**
+
+Now consider the proton as defined above: three simple loops (Unknots) linked in
+a Borromean configuration. If we break the link (overcoming the immense "Strong
+Force" tension), the system falls apart. The result is three separate
+**Unknots**. A single, unknotted flux loop is topologically unstable. Without
+the locking mechanism of the link or the self-entanglement of the Trefoil, it
+essentially has no "identity." It can untwist, shrink, and dissipate its energy
+into the vacuum field immediately.
+
+**The Geometric Conclusion:**
+
+* **Leptons are Knots:** They are stable in isolation because their stability
+  comes from *self-tying*.
+
+* **Quarks are Unknots:** They are stable *only* when linked. In isolation, they
+  physically dissolve.
+
+Thus, "Confinement" is not a magical force that pulls quarks back together; it
+is the observation that a quark (an unknot) simply ceases to exist as a
+localized object the moment it is untied from its partners.
