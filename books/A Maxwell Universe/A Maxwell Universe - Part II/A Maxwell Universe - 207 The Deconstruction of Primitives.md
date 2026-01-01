@@ -6,11 +6,19 @@ date: 2026-01-01 10:01
 
 # The Operational Trap
 
-The story of physics is usually told as a descent into the microscopic: materials are made of molecules, molecules of atoms, atoms of subatomic particles. As we dig deeper, the properties of these constituents become increasingly abstract. We speak of "mass," "charge," "spin," and "color" as if they were fundamental ingredients of reality.
+The story of physics is usually told as a descent into the microscopic:
+materials are made of molecules, molecules of atoms, atoms of subatomic
+particles. As we dig deeper, the properties of these constituents become
+increasingly abstract. We speak of "mass," "charge," "spin," and "color" as if
+they were fundamental ingredients of reality.
 
-But if we ask *what* these ingredients are, the definitions become circular. Mass is "resistance to force." Charge is "that which sources an electric field."
+But if we ask *what* these ingredients are, the definitions become circular.
+Mass is "resistance to force." Charge is "that which sources an electric field."
 
-Before we can propose a universe built solely of electromagnetic fields, we must first demonstrate that "mass" and "charge" are not primitive substances that we are failing to include. They are, historically and mathematically, operational parameters—invented to describe motion, not to explain existence.
+Before we can propose a universe built solely of electromagnetic fields, we must
+first demonstrate that "mass" and "charge" are not primitive substances that we
+are failing to include. They are, historically and mathematically, operational
+parameters—invented to describe motion, not to explain existence.
 
 
 ## The Invention of Mass
