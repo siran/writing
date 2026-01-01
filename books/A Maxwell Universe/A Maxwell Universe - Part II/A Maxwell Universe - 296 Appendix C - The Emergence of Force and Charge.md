@@ -70,7 +70,7 @@ integral of the divergence of the tensor. Using the vector identity
 $$
 \nabla \cdot (\mathbf{E}_k \mathbf{E}_0)
 = (\nabla \cdot \mathbf{E}_k)\mathbf{E}_0
-+ (\mathbf{E}_k \cdot \nabla)\mathbf{E}_0$,
++ (\mathbf{E}_k \cdot \nabla)\mathbf{E}_0,
 $$
 
 and assuming the background field $\mathbf{E}_0$ is constant across the small
