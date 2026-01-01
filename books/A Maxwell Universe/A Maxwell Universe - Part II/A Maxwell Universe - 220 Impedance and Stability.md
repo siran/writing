@@ -94,3 +94,56 @@ $e$.
 
 Thus, stability and interaction are two sides of the same coin: the impedance
 contrast between the geometry of matter and the geometry of the vacuum.
+
+
+## Knots vs. Links
+
+If the electron is the simplest stable standing wave—a single flux tube wound
+tightly into a torus ($n=1$)—then what is a proton?
+
+Standard physics tells us the proton is not elementary; it is composed of three
+"quarks." Yet, these parts can never be separated.
+
+In a Maxwell Universe, this distinction is topological.
+
+* **The Electron is a Knot:** A single closed loop of energy.
+* **The Proton is a Link:** Multiple closed loops of energy that thread
+    through each other.
+
+
+## The Logic of Confinement
+
+Consider three smoke rings (flux tubes) linked together in a Borromean
+configuration. No single ring is connected to the others, yet the group cannot
+come apart.
+
+
+![Borromean rings](assets/borromean-rings.png)
+
+
+*Borromean rings*
+
+To separate them, one would have to "cut" a field line—an act that requires
+overcoming the immense impedance of the vacuum (creating a magnetic monopole
+singularity, which is forbidden or energetically prohibitive).
+
+This topological interlocking creates a structure that is:
+1.  **Composite:** It has internal parts (the individual loops).
+2.  **Stable:** The parts are mechanically locked together.
+3.  **Confined:** The parts cannot exist in isolation.
+
+In this view, the "Strong Nuclear Force" is not a separate fundamental force.
+It is simply the **topology of linking**. The "force" that holds the proton
+together is the same robustness that holds a chain together: geometry.
+
+
+## Mass and Curvature
+
+Why is the proton 1,836 times heavier than the electron?
+
+To link three flux tubes together within a sub-atomic volume requires
+significantly tighter curvature than a single loop. Tighter curvature implies
+higher frequency, higher energy density, and therefore—via $E=mc^2$—higher mass.
+
+The proton is massive not because it contains "heavy stuff," but because it is a
+knot of extreme topological complexity, pulled tight.
