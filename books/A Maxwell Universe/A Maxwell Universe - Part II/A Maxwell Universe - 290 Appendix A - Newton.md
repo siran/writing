@@ -7,99 +7,90 @@ date: 2026-01-01 10:20
 # Appendix A: Newton’s Method
 
 Throughout this text, we have argued that mass is an operational parameter—a
-coefficient of change—rather than a primitive substance. To understand why this
-distinction matters, it is illuminating to look at how Isaac Newton actually
-formulated his dynamics.
+coefficient of change—rather than a primitive substance. To see why this
+distinction matters, it helps to look at how Isaac Newton actually formulated
+his dynamics.
 
-Modern textbooks condense Newton’s Second Law into the crisp algebraic equation:
+Modern textbooks condense Newton’s Second Law into the crisp algebraic equation
 
 $$
-F = ma
+F = ma.
 $$
 
-However, Newton never wrote this equation. In fact, the *Principia* (1687)
-contains almost no algebra in the modern sense. It is written entirely in the
-language of Euclidean geometry, using ratios, proportions, and limits of
-geometric shapes.
+Newton does not present the law in this algebraic form. In the *Principia* he
+states it verbally:
 
-Newton did this because algebra was considered less rigorous at the time. To
-convince his peers, he had to prove his new physics using the ancient, trusted
-tools of Greek geometry.
 
-But this geometric presentation hid the true engine of his discovery: the
-**Method of Fluxions**.
+> “The alteration of motion is ever proportional to the motive force impressed…”
+
+
+:contentReference[oaicite:0]{index=0}
+
+And he frames the whole work in a classical geometric style. Newton even says
+explicitly why he does this:
+
+
+> “…to avoid disputes about the method of fluxions, I have composed the
+> demonstrations… in a geometrical way…”
+
+
+:contentReference[oaicite:1]{index=1}
+
+So the *Principia* is not “algebra-first physics.” It is *geometry-first
+physics*, with the calculus largely kept out of view.
 
 
 ## The Hidden Calculus
 
-Newton viewed the universe not as a static collection of shapes, but as a system
-in continuous motion. He did not think in terms of static variables ($x, y$),
-but in terms of flowing quantities which he called **Fluents**.
+Newton’s dynamics are powered by a flow-based view of quantities. In his own
+words (in the *intended preface* / fluxional framing):
 
-The rate at which these quantities changed he called **Fluxions**, denoted by a
-dot over the variable ($\dot{x}$).
 
-* **Fluent ($x$):** Distance (a quantity flowing in time).
+> “Quantities increasing by continuous flow we call fluents, the speeds of
+> flowing we call fluxions and the momentary increments we call moments.”
 
-* **Fluxion ($\dot{x}$):** Velocity (the speed of the flow).
 
-* **Moment ($o$):** An infinitely small interval of time.
+:contentReference[oaicite:2]{index=2}
 
-When Newton derived relationships, he did so by letting time flow forward by a
-tiny moment $o$.
+This is the stance: reality is described as *generation by flow*, and the
+mathematics is about how flows relate.
 
-For example, to find the rate of change of a quantity $y = x^2$, he would
-increment the fluent $x$ by its momentary change $\dot{x}o$:
-
-$$
-(y + \dot{y}o) = (x + \dot{x}o)^2
-$$
-
-Expanding this yields:
-
-$$
-y + \dot{y}o = x^2 + 2x\dot{x}o + (\dot{x}o)^2
-$$
-
-Subtracting the original state ($y=x^2$) leaves the change:
-
-$$
-\dot{y}o = 2x\dot{x}o + \dot{x}^2 o^2
-$$
-
-Dividing by the tiny time interval $o$:
-
-$$
-\dot{y} = 2x\dot{x} + \dot{x}^2 o
-$$
-
-Finally, Newton argued that as the moment $o$ vanishes (becomes "evanescent"),
-the last term disappears, leaving the exact dynamic relationship:
-
-$$
-\dot{y} = 2x\dot{x}
-$$
-
-This is the essence of calculus. But notice the perspective: reality is defined
-by **flow** ($\dot{x}$), not by static position.
+That is exactly the intuition behind the “moment” computation you outline
+($x \mapsto x+\dot{x}o$; discard higher order in $o$). Whatever notation we use
+today, Newton’s idea is: take the relation, advance by a vanishing moment, and
+keep only what survives as the moment goes to zero.
 
 
 ## Mass as a Coefficient of Flow
 
-When Newton introduced "Quantity of Matter" (Mass), he did so to solve a problem of flow. He needed to explain why some objects change their flow ($\dot{x}$) more reluctantly than others when pushed.
-
-In Definition II of the *Principia*, he wrote:
-
-
-> *"The quantity of motion is the measure of the same, arising from the velocity and quantity of matter conjointly."*
+Newton introduces “quantity of matter” (mass) as a *measurable factor* that lets
+motion be accounted for consistently. His basic operational definition of matter
+already reads like a recipe:
 
 
-He did not define mass as "stuff." He defined it as the thing you must multiply velocity by to get the correct "quantity of motion" (momentum).
+> “Quantity of matter is the measure of the same, arising from its density and
+> bulk conjointly.”
 
-$$
-\text{Motion} \propto \text{Mass} \times \text{Velocity}
-$$
 
-Dynamics came first; mass was invented to linearize the dynamics.
+:contentReference[oaicite:3]{index=3}
 
-In a Maxwell Universe, we return to this priority. The "flow" (electromagnetic flux) is the fundamental reality. What we call "mass" is simply the impedance—the resistance to change—that arises when that flux is knotted into a complex topology.
+Then, crucially, he defines *quantity of motion* (momentum) as a product-like
+measure:
+
+
+> “The quantity of motion is the measure of the same, arising from the velocity
+> and quantity of matter conjointly.”
+
+
+:contentReference[oaicite:4]{index=4}
+
+So mass is not introduced as mystical “stuff.” It enters as the coefficient
+needed so that “motion” (momentum) scales with velocity in the right way.
+
+In that precise sense: **dynamics comes first; mass is the invented coefficient
+that linearizes the bookkeeping of change.**
+
+In a Maxwell Universe, we return to this priority. The fundamental “flow” is
+electromagnetic energy–momentum flow. What we call “mass” is the effective
+resistance to changing that flow—arising when flux is knotted into a stable
+topology.
