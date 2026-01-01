@@ -9,10 +9,12 @@ date: 2025-12-31 18:04
 One of the greatest achievements of early quantum theory was predicting the
 *discrete* energy levels of the hydrogen atom, known as the *Rydberg series*.
 
-In 1704, Isaac Newton demonstrated, using a prism, that all the colors of the
-rainbow are contained in sunlight. However, if one performs the same experiment
-with a neon light, or with hydrogen—the most abundant element in the known
-universe—it becomes readily evident that they do not emit a continuous spectrum.
+In 1704, Isaac Newton showed, using a prism, that all the colors of the rainbow
+are contained in sunlight.
+
+When doing the same experiment with a neon light, or with hydrogen—the most
+abundant element in the known universe—it is easily seen that neither neon light
+nor hydrogen light contain all the colors as sunlight apparently did.
 
 Instead, they emit light only at very specific, sharply defined colors. These
 gaps in the spectrum constitute the "spectral signature" of the element.
@@ -20,18 +22,25 @@ gaps in the spectrum constitute the "spectral signature" of the element.
 
 ## Color is Energy
 
-In this context, color is not merely a representation of energy—it *is* energy,
-directly perceived as frequency. The discreteness of these colors was the
-anomaly that gave rise to quantum mechanics, as classical electromagnetism (in
-its continuous form) seemingly offered no explanation for why an atom should
-radiate in steps rather than in a sweep.
+Here, color is not a representation of energy — it *is* energy, directly
+perceived as frequency. If we examine closely (naked eye is enough) the spectrum
+of sunlight, it is readily evident that it is not "continuous", and that there
+are gaps in the visible spectrum of light.
+
+These discrete features were the anomaly that gave rise to "quantum mechanics,"
+as classical electromagnetism seemingly offered no explanation for why an atom
+should radiate in steps rather than in a continuous sweep.
 
 
 ## The Rydberg Series
 
-Long before the internal structure of the atom was understood, the Swedish
-physicist Johannes Rydberg (1888) found that these frequencies follow a simple
-mathematical pattern involving integers $n = 1, 2, 3, \dots$:
+Long before the internal structure of the atom was understood, experiments
+showed that glowing hydrogen does not emit a continuous rainbow of light.
+Instead, it emits light only at very specific, sharply defined colors.
+
+In 1888, the Swedish physicist Johannes Rydberg found that these colors—that is,
+electromagnetic frequencies—follow a simple mathematical pattern involving
+integers $n = 1, 2, 3, \dots$:
 
 $$
 E_n \propto \frac{1}{n^2}.
@@ -49,40 +58,42 @@ More precisely, observed spectral lines correspond to transitions between
 configurations. The emitted radiation carries the exact energy difference:
 
 $$
-\Delta E \propto \frac{1}{m^2}-\frac{1}{n^2}, \qquad m>n.
+\Delta E \propto \frac{1}{m^2}-\frac{1}{n^2},
+\qquad m>n.
 $$
 
 
 ## The Geometry of Quantization
 
-We can interpret the $1/n^2$ factor not as a change in spatial size, but as a
-reorganization of fixed total energy into progressively finer internal
+We interpret the $1/n^2$ factor not as a change in spatial size, but as a
+reorganization of a fixed total energy into progressively finer internal
 structure.
 
-Imagine a flat rectangular sheet. Draw one vertical line and one horizontal
-line, each connecting opposite edges. They cross in the center, dividing the
-sheet into $2\times2=4$ cells.
+Imagine a flat rectangular sheet of paper. Draw one vertical line and one
+horizontal line, each connecting opposite edges. They cross in the middle and
+divide the sheet into $2\times2=4$ cells.
 
-More generally, if we keep adding lines the sheet is then partitioned into:
+More generally, if we keep adding lines the sheet is then partitioned into
 
 $$
-n\times n = n^2 \text{ cells}.
+n\times n = n^2
+\text{ cells}.
 $$
 
 With no internal lines ($n=1$), the sheet corresponds to a ground configuration
-with energy $E_1$. As $n$ increases, the total area remains constant, but it is
+with energy $E_1$. As $n$ increases, the total area stays the same, but it is
 subdivided into smaller and smaller regions.
 
 If the total energy is conserved and distributed uniformly across the $n^2$
-cells, the energy density per unit cell scales as:
+cells, the energy per cell scales as
 
 $$
 E_n \propto \frac{E_1}{n^2}.
 $$
 
-In this constrained view, the Rydberg scaling appears without invoking
-particles, wavefunctions, or force balance. Discrete levels are simply discrete
-global subdivisions of a conserved quantity: energy.
+In this abstract but constrained way, the Rydberg scaling appears without
+invoking particles, wavefunctions, or force balance. Discrete levels are simply
+discrete global subdivisions of a conserved quantity: energy.
 
 
 ## The Torus
@@ -90,18 +101,17 @@ global subdivisions of a conserved quantity: energy.
 To understand the physical basis of this grid, we must look at the topology of
 confinement.
 
-Return to the flat sheet. First, identify and glue together one pair of opposite
-edges. The sheet becomes a tube. Lines that originally ended on one edge now
-reappear continuously on the opposite edge.
+Return to the flat napkin. First, identify and glue together one pair of
+opposite edges. The flat napkin becomes a tube. Lines that originally ended on
+one edge now reappear continuously on the opposite edge.
 
 Next, take this tube and identify its two circular ends. Gluing these ends
 together produces a closed surface with no boundary—a **Torus**.
 
-
-
-Any lines drawn on the original sheet become closed paths on the torus. However,
-they form closed loops only if they match their own position when crossing an
-identified edge. This requirement ensures global continuity.
+Any lines drawn on the original napkin become closed paths on the torus.
+However, they form closed loops only if they match their own position when
+crossing an identified edge. This requirement ensures global continuity of the
+grid.
 
 In a source-free Maxwell universe, electromagnetic fields on this surface must
 satisfy these continuity conditions along the two independent cycles of the
@@ -142,20 +152,26 @@ $$
 The photon is the packet of energy that facilitates this topological patching.
 
 The ground state ($n=1$) is unique. It represents the configuration where the
-flux tube is pulled as tight as topologically possible. As we shall see, the
-geometric limit of this "tightness" is what determines the coupling constant of
-the universe.
+torus is composed of a single coherent cell—the state where the flux tube is
+pulled as tight as topologically possible. As we shall see, the geometric limit
+of this "tightness" is what determines the coupling constant of the universe.
 
 
 ## Charge as Topology
 
 Finally, we must account for the appearance of electric charge. In a source-free
-universe, $\nabla \cdot \mathbf{E} = 0$ everywhere. No electric field originates
-from a point. How, then, does a particle appear to have charge?
+universe,
+
+$$
+\nabla \cdot \mathbf{E} = 0
+$$
+
+everywhere. No electric field originates from a point. How, then, does a
+particle appear to have charge?
 
 Consider the standing wave on the torus. The field lines wrap around the two
-independent cycles, characterized by winding numbers $(m,n)$. These windings
-represent closed circulations of electromagnetic energy.
+independent cycles, characterized by the winding numbers $(m,n)$. These
+windings represent closed circulations of electromagnetic energy.
 
 At any local patch of the surface, the field lines entering and leaving balance
 so that the net flux vanishes. However, the global circulation -for example,
