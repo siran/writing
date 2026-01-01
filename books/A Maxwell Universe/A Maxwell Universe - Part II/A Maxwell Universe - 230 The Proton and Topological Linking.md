@@ -1,15 +1,26 @@
 ---
 title: A Maxwell Universe – The Proton and Topological Linking
-date: 2026-01-01 08:19
+date: 2026-01-01 09:31
 ---
 
 
 ## The Hierarchy of Stability
 
 We have identified the electron not as a point particle, but as the fundamental
-electromagnetic knot—a single flux tube wound into a toroidal standing wave. It
-is the simplest persistent solution to the source-free Maxwell equations,
-characterized by a single coherent topology ($n=1$).
+electromagnetic knot—specifically, the **(3,2) Trefoil Knot**. It is a single flux
+tube wound into a toroidal standing wave.
+
+It is the simplest persistent solution to the source-free Maxwell equations that
+is topologically distinct from a simple loop. This specific topology ($n=1$ in the
+knot hierarchy) provides two critical physical properties:
+
+1.  **Chirality:** The Trefoil knot is handed; it has a mirror image. This gives a
+    geometric definition to antimatter. The positron is simply the enantiomer
+    (mirror topology) of the electron.
+2.  **Topological Locking:** unlike a simple unknotted loop, which can shrink and
+    dissipate, a Trefoil cannot be untied without cutting the field lines. This
+    provides the topological protection required for the electron's immense
+    stability.
 
 However, the universe is not composed solely of electrons. It is dominated by
 mass, and that mass resides almost entirely in the atomic nucleus: protons and
@@ -42,14 +53,15 @@ have parts that are geometrically distinct but physically inseparable?**
 
 Consider the difference between a knot and a link.
 
-* A **Knot** (like the Trefoil or the unknot torus) is a single closed curve
-    embedded in space. It represents a single, coherent flux tube.
+* A **Knot** (like the Trefoil) is a single closed curve embedded in space. It
+    represents a single, coherent flux tube.
 * A **Link** is a collection of two or more disjoint closed curves that are
     entangled such that they cannot be separated without passing one curve
     through another.
 
 
-![Borromean rings](assets/borromean-rings.png)
+
+[Image of Borromean rings]
 
 
 If we model the proton as a composite structure, we model it as a system of
@@ -116,6 +128,42 @@ The proton is massive not because it contains "heavy substance," but because it
 is a knot of extreme geometric complexity. The energy required to sustain the
 topology of three interlocked loops is naturally orders of magnitude higher than
 the energy of a single loop.
+
+
+## The Particle Zoo as Taxonomy
+
+This topological framework offers a natural classification for the "zoo" of
+subatomic particles discovered in the 20th century. In the Standard Model, these
+are organized by abstract quantum numbers. In a Maxwell Universe, they are
+organized by **geometric complexity**.
+
+
+### 1. Leptons: Prime Knots
+
+The leptons correspond to single, self-entangled flux tubes.
+* **The Electron:** The fundamental (3,2) Trefoil.
+* **Generations (Muon, Tau):** These are not different knots, but higher-energy
+    harmonic excitations of the same knot topology. Just as a guitar string has
+    overtones, the flux tube can vibrate at higher geometric frequencies. These
+    states are heavier (more curvature) and unstable, naturally decaying back to
+    the ground state (electron).
+
+
+### 2. Mesons: The Hopf Link
+
+Mesons, composed of a quark and anti-quark, correspond to **2-component links**
+(such as the Hopf Link). Unlike the Borromean 3-link, a simple chain of two
+loops is topologically less constrained. The loops can slide against each other
+and annihilate their opposing helicities more easily. This geometric fragility
+explains why mesons are inherently unstable and short-lived compared to the proton.
+
+
+### 3. Baryons: Borromean Links
+
+Baryons are **3-component links**. The Borromean property provides a unique
+"locking" mechanism that 2-component links lack. This explains why the proton is
+the only stable hadron. All other baryons can be viewed as topological variants
+or excited states that eventually settle into this most stable, locked configuration.
 
 
 ## The Strong Force as Geometry
