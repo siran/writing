@@ -22,19 +22,27 @@ states it verbally:
 
 
 > “The alteration of motion is ever proportional to the motive force impressed…”
+> [^1]
 
 
-:contentReference[oaicite:0]{index=0}
+[^1]: Newton, I. (1687). *Philosophiæ Naturalis Principia Mathematica*. Axioms,
+or Laws of Motion, Law II. (Trans. Andrew Motte, 1729).
 
 And he frames the whole work in a classical geometric style. Newton even says
 explicitly why he does this:
 
 
 > “…to avoid disputes about the method of fluxions, I have composed the
-> demonstrations… in a geometrical way…”
+> demonstrations… in a geometrical way…” [^2]
 
 
-:contentReference[oaicite:1]{index=1}
+[^2]: Newton, I. (1715). "Account of the Book entitled Commercium Epistolicum D.
+Johannis Collins, & aliorum de Analysi Promota". *Philosophical Transactions of
+the Royal Society*, 29(342), 173–224. (Published anonymously). Note: This
+admission appears in Newton’s anonymous review of the *Commercium Epistolicum*,
+the document central to his priority dispute with Leibniz. In it, he candidly
+admits that the geometric style of the *Principia* was a strategic choice to
+avoid controversy over his new calculus methods.
 
 So the *Principia* is not “algebra-first physics.” It is *geometry-first
 physics*, with the calculus largely kept out of view.
@@ -47,18 +55,53 @@ words (in the *intended preface* / fluxional framing):
 
 
 > “Quantities increasing by continuous flow we call fluents, the speeds of
-> flowing we call fluxions and the momentary increments we call moments.”
+> flowing we call fluxions and the momentary increments we call moments.” [^3]
 
 
-:contentReference[oaicite:2]{index=2}
+[^3]: Newton, I. (1736). *The Method of Fluxions and Infinite Series; with its
+Application to the Geometry of Curve-lines*. Preface. (Trans. John Colson).
+[Written c. 1671].
 
-This is the stance: reality is described as *generation by flow*, and the
-mathematics is about how flows relate.
+This is the stance: reality is described as *generation by flow*. To see the
+engine of this discovery, we must look at the "moment" ($o$)—an infinitely small
+interval of time.
 
-That is exactly the intuition behind the “moment” computation you outline
-($x \mapsto x+\dot{x}o$; discard higher order in $o$). Whatever notation we use
-today, Newton’s idea is: take the relation, advance by a vanishing moment, and
-keep only what survives as the moment goes to zero.
+When Newton derived relationships, he did so by letting time flow forward by
+this tiny moment. For example, to find the rate of change of a quantity
+$y = x^2$, he would increment the fluent $x$ by its momentary change $\dot{x}o$:
+
+$$
+(y + \dot{y}o) = (x + \dot{x}o)^2
+$$
+
+Expanding this yields:
+
+$$
+y + \dot{y}o = x^2 + 2x\dot{x}o + (\dot{x}o)^2
+$$
+
+Subtracting the original state ($y=x^2$) leaves the change:
+
+$$
+\dot{y}o = 2x\dot{x}o + \dot{x}^2 o^2
+$$
+
+Dividing by the tiny time interval $o$:
+
+$$
+\dot{y} = 2x\dot{x} + \dot{x}^2 o
+$$
+
+Finally, Newton argued that as the moment $o$ vanishes (becomes "evanescent"),
+the last term disappears, leaving the exact dynamic relationship:
+
+$$
+\dot{y} = 2x\dot{x}
+$$
+
+That is exactly the intuition behind the “moment” computation: take the
+relation, advance by a vanishing moment, and keep only what survives as the
+moment goes to zero.
 
 
 ## Mass as a Coefficient of Flow
@@ -69,20 +112,22 @@ already reads like a recipe:
 
 
 > “Quantity of matter is the measure of the same, arising from its density and
-> bulk conjointly.”
+> bulk conjointly.” [^4]
 
 
-:contentReference[oaicite:3]{index=3}
+[^4]: Newton, I. (1687). *Philosophiæ Naturalis Principia Mathematica*.
+Definition I.
 
 Then, crucially, he defines *quantity of motion* (momentum) as a product-like
 measure:
 
 
 > “The quantity of motion is the measure of the same, arising from the velocity
-> and quantity of matter conjointly.”
+> and quantity of matter conjointly.” [^5]
 
 
-:contentReference[oaicite:4]{index=4}
+[^5]: Newton, I. (1687). *Philosophiæ Naturalis Principia Mathematica*.
+Definition II.
 
 So mass is not introduced as mystical “stuff.” It enters as the coefficient
 needed so that “motion” (momentum) scales with velocity in the right way.
