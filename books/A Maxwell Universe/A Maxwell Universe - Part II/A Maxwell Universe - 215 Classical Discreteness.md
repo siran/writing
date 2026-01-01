@@ -55,29 +55,25 @@ geometry —only to the integer $n$.
 
 More precisely, observed spectral lines correspond not to absolute energies
 $E_n$, but to transitions between configurations. The emitted radiation carries
-the energy difference
+the energy difference:
 
 $$
 \Delta E \propto \frac{1}{m^2}-\frac{1}{n^2},
 \qquad m>n.
 $$
 
-This form already encodes closure: it is characteristic of reorganizations
-within a fixed total extent, where energy redistributes among internally
-circulating modes.
-
 
 ## The Geometry of Quantization
 
-We can interpret the $1/n^2$ factor not as a change in spatial size, but as a
-reorganization of energy into progressively finer structure. An analogy for this
-reorganization can be drawn on a napkin.
+We interpret the $1/n^2$ factor not as a change in spatial size, but as a
+reorganization of a fixed total energy into progressively finer internal
+structure.
 
-Imagine a flat rectangular sheet of paper. Draw a set of straight lines from
-edge to edge, crossing in the middle. These lines divide the napkin into a
-grid.
+Imagine a flat rectangular sheet of paper. Draw a cross (a set of straight lines
+from edge to edge, crossing in the middle). These lines divide the napkin into a
+grid of 4 cells.
 
-If we draw $n$ lines in each of the two independent directions, the surface is
+If we draw $n$ lines in each of the two sides of the paper, the surface is
 partitioned into a grid of distinct cells:
 
 $$
@@ -94,15 +90,15 @@ across the surface, then as the number of cells ($n^2$) increases, the energy
 density associated with each individual cell decreases as:
 
 $$
-E_n \propto \frac{E_1}{n^2}.
+E_n \propto \frac{E_1}{n^2}
 $$
 
-In this abstract but constrained way, we recover the Rydberg scaling without
-invoking wavefunctions, operators, or planetary orbits. Atomic energy levels
-are simply global subdivisions of a conserved surface.
+In this abstract but constrained way, the Rydberg scaling appears without
+invoking particles, wavefunctions, operators, or force balance. Discrete levels
+are simply discrete global subdivisions of a conserved quantity, energy.
 
 The inverse-square law is therefore not accidental: it is the generic signature
-of two independent periodic constraints acting on a conserved manifold.
+of two independent closure counts acting on a conserved configuration.
 
 
 ## The Torus
