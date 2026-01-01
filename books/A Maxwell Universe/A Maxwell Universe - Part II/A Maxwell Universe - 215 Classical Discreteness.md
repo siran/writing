@@ -9,21 +9,30 @@ date: 2025-12-31 18:04
 One of the greatest achievements of early quantum theory was predicting the
 *discrete* energy levels of the hydrogen atom, known as the *Rydberg series*.
 
-In [] Isaac Newton had showed using a prism that all the colors of the rainbow
+In 1704 Isaac Newton showed, using a prism, that all the colors of the rainbow
 are contained in sunlight.
 
 When doing the same experiment with a neon light, for example, or with hydrogen
 -the most abundant element in the known universe- is it easily seen that neither
 neon light nor hydrogen light contain all the colors as apparently did sunlight.
-These very specific colors emitted by excited atoms constitute the spectrum.
+
+These very specific colors emitted by excited atoms constitute "the spectrum" of
+the atom.
+
+
+## Color is Energy
+
 Here, color is not a representation of energy — it *is* energy, directly
 perceived as visible light color; also called "electromagnetic frequency". If we
 examine closely (not even too closely, naked eye is enough) the spectrum of
-sunlight, it is readily evident that it is not continuous, and that there are
-gaps in the visible spectrum of light.
+sunlight, it is readily evident that it is not "continuous", and that there are
+gaps in the visible spectrum of light. These gaps in the spectrum, seen as
+discrete integer numbers, is what gave rise to "quantum mechanics" that could
+explain, with astonishg detail, many "discrete" features not explained by
+classical "continuos" theories, like electromagnetism.
 
-These "gaps" in the full spectrum tell us what is the composition of the sun, as
-every element has its particular "spectral signature".
+These "gaps" in the full spectrum of sunlight tell us what is the composition of
+the sun, as every element has its particular "spectral signature".
 
 
 ## The Rydberg Series
@@ -69,35 +78,35 @@ We interpret the $1/n^2$ factor not as a change in spatial size, but as a
 reorganization of a fixed total energy into progressively finer internal
 structure.
 
-Imagine a flat rectangular sheet of paper. Draw a cross (a set of straight lines
-from edge to edge, crossing in the middle). These lines divide the napkin into a
-grid of 4 cells.
+Imagine a flat rectangular sheet of paper. Draw one vertical line and one
+horizontal line, each connecting opposite edges. They cross in the middle and
+divide the sheet into $2\times2=4$ cells.
 
-If we draw $n$ lines in each of the two sides of the paper, the surface is
-partitioned into a grid of distinct cells:
-
-$$
-n \times n = n^2 \text{ cells}.
-$$
-
-Before any lines are drawn, the surface corresponds to the ground state ($n=1$),
-associated with energy $E_1$. As we increase the number of subdivisions $n$, the
-total surface area remains the same, but it is partitioned into smaller and
-smaller regions.
-
-If the total energy of the configuration is conserved and distributed uniformly
-across the surface, then as the number of cells ($n^2$) increases, the energy
-density associated with each individual cell decreases as:
+More generally, if we keep adding lines the sheet is then partitioned into
 
 $$
-E_n \propto \frac{E_1}{n^2}
+n\times n = n^2
+\text{ cells}.
+$$
+
+With no internal lines, the sheet corresponds to a ground configuration with
+energy $E_1$.
+
+As $n$ increases, the total area stays the same, but it is
+subdivided into smaller and smaller regions.
+
+If the total energy is conserved and distributed uniformly across the $n^2$
+cells, the energy per cell scales as
+
+$$
+E_n \propto \frac{E_1}{n^2}.
 $$
 
 In this abstract but constrained way, the Rydberg scaling appears without
 invoking particles, wavefunctions, operators, or force balance. Discrete levels
-are simply discrete global subdivisions of a conserved quantity, energy.
+are simply discrete global subdivisions of a conserved quantity: energy.
 
-The inverse-square law is therefore not accidental: it is the generic signature
+The inverse-square law is therefore not accidental. It is the generic signature
 of two independent closure counts acting on a conserved configuration.
 
 
