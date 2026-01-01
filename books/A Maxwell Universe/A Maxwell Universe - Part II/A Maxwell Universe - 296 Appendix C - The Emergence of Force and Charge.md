@@ -31,8 +31,7 @@ where $\mathbf{S} = \mathbf{E} \times \mathbf{H}$ is the Poynting vector and $\m
 ### Step 1: Isolating the Interaction
 
 We decompose the field into the Knot field ($\mathbf{E}_k, \mathbf{H}_k$) and the Background field ($\mathbf{E}_0, \mathbf{H}_0$).
-The Stress Tensor is quadratic. When expanded, the self-terms integrate to zero for a stable particle, and the background terms integrate to zero as they pass through unchanged.
-
+The Stress Tensor is quadratic. The self-terms integrate to zero for a stable particle, and the background terms integrate to zero as they pass through.
 The net driving force comes entirely from the **Interaction Tensor**:
 
 $$
@@ -43,9 +42,8 @@ $$
 ### Step 2: The Electrostatic Term ($q\mathbf{E}$)
 
 Consider the knot in its own rest frame ($\mathbf{v}=0$).
-We calculate the stress exerted by the background electric field $\mathbf{E}_0$ on the knot.
+We calculate the stress exerted by the background electric field $\mathbf{E}_0$ on the knot. The force is the surface integral of the interaction stress:
 
-The force is the surface integral of the interaction stress:
 $$
 \mathbf{F}_{static} = \oint_{\partial V} \mathbf{T}^{int} \cdot d\mathbf{a}
 $$
@@ -63,18 +61,13 @@ where $q$ is the integrated magnitude of the curl (defined below).
 ### Step 3: The Magnetic Term ($\mathbf{v} \times \mathbf{B}$)
 
 This emergent term arises strictly from motion.
-If the knot moves with velocity $\mathbf{v}$ through a background magnetic field $\mathbf{B}_0$, the momentum balance changes.
-
-The rate of change of momentum density includes a **convective term** (from the Reynolds Transport Theorem):
+If the knot moves with velocity $\mathbf{v}$ through a background magnetic field $\mathbf{B}_0$, the momentum balance changes. The rate of change of momentum density includes a **convective term**:
 
 $$
 \frac{d\mathbf{P}}{dt} = \frac{\partial \mathbf{P}}{\partial t} + (\mathbf{v} \cdot \nabla)\mathbf{P}
 $$
 
-We examine the convective derivative of the interaction momentum density $\mathbf{g} = \epsilon_0 \mathbf{E}_k \times \mathbf{B}_0$.
-The motion of the knot pushes its electric field profile $\mathbf{E}_k$ through the background $\mathbf{B}_0$.
-
-Using the relation between spatial gradients and time derivatives for a moving wave ($\frac{\partial}{\partial t} = -\mathbf{v} \cdot \nabla$), and substituting into the Maxwell-Faraday law, the interaction yields a net momentum flux perpendicular to both velocity and field:
+The motion of the knot pushes its electric field profile $\mathbf{E}_k$ through the background $\mathbf{B}_0$. Using the relation between spatial gradients and time derivatives for a moving wave ($\frac{\partial}{\partial t} = -\mathbf{v} \cdot \nabla$), and substituting into the Maxwell-Faraday law, the interaction yields a net momentum flux perpendicular to both velocity and field:
 
 $$
 \mathbf{F}_{mag} = q (\mathbf{v} \times \mathbf{B}_0)
@@ -87,7 +80,7 @@ The "magnetic force" is simply the momentum transfer required for the electric g
 
 Standard theory defines charge via divergence ($\nabla \cdot \mathbf{E}$). In a source-free Maxwell Universe, $\nabla \cdot \mathbf{E} = 0$ everywhere, so the net vector flux through any closed surface is zero.
 
-However, the **energy** of the configuration is not zero. We define "Charge" not as a source of flux, but as the measure of the **Magnitude of the Field Curls**.
+However, the **amount of electromagnetic activity** is not zero. We define "Charge" as the **Time-Averaged Magnitude** of the field curls.
 
 
 ### 2.1 The Local Vorticity Vector
@@ -95,41 +88,47 @@ However, the **energy** of the configuration is not zero. We define "Charge" not
 We define the local **Vorticity Vector** $\mathbf{C}$ as the curl of the electric field:
 
 $$
-\mathbf{C}(\mathbf{x}) = \nabla \times \mathbf{E}(\mathbf{x})
+\mathbf{C}(\mathbf{x}, t) = \nabla \times \mathbf{E}(\mathbf{x}, t)
 $$
 
-This vector describes the local "spin" or circulation of the field. In a stable knot, $\mathbf{C}$ is non-zero and structured according to the winding numbers $(m,n)$ of the torus.
+This vector describes the instantaneous "spin" or circulation of the field.
 
 
-### 2.2 The Scalar Vorticity Magnitude
+### 2.2 The Problem of Vector Cancellation
 
-If we simply integrate $\mathbf{C}$ over the volume of the knot, the result might be zero due to vector cancellation (symmetry).
-However, energy couples to the square of the field (intensity). Therefore, the relevant physical quantity is the **Scalar Magnitude** of the vorticity:
+If we simply integrate the vector $\mathbf{C}$ over the volume of the knot, the result is zero.
+Because the knot is a standing wave, for every clockwise curl, there is a counter-clockwise curl elsewhere (or at a different phase of the cycle). The *net* directional circulation vanishes, just as the net current in an AC circuit is zero.
+
+
+### 2.3 The Scalar Magnitude (AC Analogy)
+
+However, a washing machine full of turbulent water has zero net flow but non-zero **Agitation**. An AC circuit has zero net current but non-zero **Power**.
+
+To measure the physical "substance" of the knot, we must measure the **Magnitude** of the agitation, regardless of direction. We define the **Vorticity Density** $\Omega$ as the time-averaged magnitude of the curl:
 
 $$
-\Omega(\mathbf{x}) = |\mathbf{C}(\mathbf{x})| = |\nabla \times \mathbf{E}|
+\Omega(\mathbf{x}) = \langle |\nabla \times \mathbf{E}(\mathbf{x}, t)| \rangle_t
 $$
 
-This scalar field $\Omega(\mathbf{x})$ represents the **Vorticity Density**—the raw amount of electromagnetic "twist" at any point, regardless of direction.
+This scalar field $\Omega(\mathbf{x})$ represents the raw amount of electromagnetic "twist" or turbulence at any point.
 
 
-### 2.3 The Total Integrated Vorticity
+### 2.4 The Total Integrated Vorticity
 
 We define the intrinsic "strength" of the particle as the volume integral of this density:
 
 $$
-\Gamma_{total} = \int_{Knot} \Omega(\mathbf{x}) \, d^3x = \int_{Knot} |\nabla \times \mathbf{E}| \, d^3x
+\Gamma_{total} = \int_{Knot} \Omega(\mathbf{x}) \, d^3x
 $$
 
 Since $\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}$, $\Gamma_{total}$ is directly proportional to the total **Oscillation Energy** trapped in the standing wave.
 
 
-### 2.4 The Measured Charge $q$
+### 2.5 The Measured Charge $q$
 
-An observer measures the knot from a distance $r$. The total energy (and thus the total vorticity) is conserved. As this energy projects outwards, it must be distributed over the surface area of the shell ($4\pi r^2$).
+An observer measures the knot from a distance $r$. The total amount of agitation $\Gamma_{total}$ is conserved. As this agitation projects outwards, it distributes over the surface area of the shell ($4\pi r^2$).
 
-The instrument (a voltmeter or electrometer) measures the **Time-Averaged Intensity** of the field on its sensor.
-
+The instrument (a voltmeter) measures the **Time-Averaged Intensity** of the field impact on its sensor.
 Since the total integrated magnitude $\Gamma_{total}$ is distributed over the growing sphere, the **Surface Density of Vorticity Magnitude** decays as:
 
 $$
@@ -141,7 +140,5 @@ We define the observable **Charge** $q$ as the coefficient of this projection:
 $$
 q \equiv k \cdot \Gamma_{total}
 $$
-
-(where $k$ is a dimensional constant).
 
 Thus, the inverse-square law $E \propto q/r^2$ is not due to a point source divergence. It is the geometric dilution of the **Total Vorticity Magnitude** of the knot spread over the surface area of the universe.
