@@ -207,11 +207,9 @@ $$
 \Gamma_{total} = \int_{Knot} \Omega(\mathbf{x}) \, d^3x
 $$
 
-Since
-
-$$\nabla \times \mathbf{E}
-= -\frac{\partial \mathbf{B}}{\partial t}$, $\Gamma_{total}
-$$
+Since $\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}$, this
+quantity $\Gamma_{total}$ is directly proportional to the total **Oscillation
+Energy** trapped in the standing wave.
 
 is directly proportional to the total **Oscillation Energy** trapped in the standing wave.
 
