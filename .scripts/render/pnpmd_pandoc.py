@@ -9,6 +9,10 @@ from pnpmd_util import run_visible
 
 
 _PANDOC_IMAGE = os.environ.get("PNPMD_PANDOC_IMAGE", "pandoc/extra:3.1")
+_MATHJAX_URL = os.environ.get(
+    "PNPMD_MATHJAX_URL",
+    "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js",
+)
 _IMAGE_READY = False
 
 
@@ -88,6 +92,33 @@ def render_html(
     css_args: List[str] = []
     if css_path and css_path.exists():
         css_args = ["--css", css_path.name]
+    mathjax_args: List[str] = []
+    if _MATHJAX_URL:
+        header_path = in_tmp.parent / "mathjax-config.html"
+        header_path.write_text(
+            (
+                "<script>\n"
+                "window.MathJax = {\n"
+                "  tex: {\n"
+                "    inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],\n"
+                "    displayMath: [['$$', '$$'], ['\\\\[', '\\\\]']]\n"
+                "  },\n"
+                "  options: {\n"
+                "    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']\n"
+                "  },\n"
+                "  svg: {\n"
+                "    fontCache: 'global'\n"
+                "  }\n"
+                "};\n"
+                "</script>\n"
+            ),
+            encoding="utf-8",
+        )
+        mathjax_args = [
+            "--include-in-header",
+            header_path.name,
+            f"--mathjax={_MATHJAX_URL}",
+        ]
     log_args: List[str] = [f"--log={log_path.name}"] if log_path else []
     verbose_args: List[str] = ["--verbose"] if verbose else []
 
@@ -111,6 +142,7 @@ def render_html(
         *shift_args,
         *meta_args,
         *css_args,
+        *mathjax_args,
         "--filter",
         "pandoc-crossref",
         "in.md",
