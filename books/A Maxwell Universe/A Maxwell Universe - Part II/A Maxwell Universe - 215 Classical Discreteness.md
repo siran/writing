@@ -40,10 +40,10 @@ the sun, as every element has its particular "spectral signature".
 Long before the internal structure of the atom was understood, experiments (like
 the prism experiment done by Newton) showed that glowing hydrogen does not emit
 a continuous rainbow of light. Instead, it emits light only at very specific,
-sharply defined colors. These colors tell us the "energy levels" of the atom.
+sharply defined colors. These colors tell us the energy organization of the atom.
 
-In 1888, a swedish physicist, Johannes Rydberg found that these colors —that is,
-electromagnetic frequencies- follow a simple mathematical pattern involving
+In 1888, a Swedish physicist, Johannes Rydberg, found that these colors —that is,
+electromagnetic frequencies— follow a simple mathematical pattern involving
 integers $n = 1, 2, 3, \dots$:
 
 $$
