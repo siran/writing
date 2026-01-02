@@ -161,16 +161,22 @@ experimental physics.
     theoretically drive another brain.
 
 3.  **Navigation (Biology Detects):** Migratory birds possess
-    **Cryptochromes**—proteins in the eye that rely on radical-pair electron
-    entanglement to "see" the Earth's magnetic field. Evolution has already
-    produced biological sensors capable of detecting subtle electromagnetic
-    gradients.
+    **Cryptochromes**—proteins in the eye that rely on precise electron spin
+    states to "see" the Earth's magnetic field. Evolution has already produced
+    biological sensors capable of detecting subtle electromagnetic gradients
+    through classical magnetic torque (Larmor precession), without needing to
+    invoke quantum magic.
 
 4.  **Force (Fields Move Matter):** **Optical Tweezers** and
     **Dielectrophoresis** are standard lab techniques. We use the pressure of
-    electromagnetic fields to physically push bacteria, viruses, and cells. The
-    claim that "fields can apply force to matter" is not magic; it is
-    engineering.
+    electromagnetic fields to physically push bacteria, viruses, and cells.
+    * *The Critique:* "But those machines use kilowatts; the brain uses
+      milliwatts."
+    * *The Rebuttal:* Distance. Optical tweezers work from meters away. The
+      Brain-Mind interface works at **Angstroms**. The most obvious proof of
+      Telekinesis is that **you can move your own arm.** The "Self" (Field)
+      driving the "Body" (Matter) is the primary instance of this force. The
+      field strength at $r \approx 0$ is singular.
 
 
 ### The Hard Limits (and The "Noise" Fallacy)
@@ -179,28 +185,22 @@ However, intellectual honesty demands we address the evidence *against* this
 range of influence.
 
 1.  **The Thermal Noise Floor ($kT$):**
-
-    This is the standard critique. At 10 meters, the voltage induced by one brain upon another is in the nanovolt range ($10^{-9}$ V). Standard biology argues that the random thermal motion of ions (Brownian motion) creates a "noise floor" ($10^{-6}$ V) that would bury this signal.
-
-    * *The Critique:* "The signal is real, but it is whispering in a hurricane."
-
+    This is the standard critique. At 10 meters, the signal is weak ($10^{-9}$ V). Standard biology argues that the random thermal motion of ions (Brownian motion) creates a "noise floor" that would bury this signal.
     * *The Maxwellian Counter:* **There is no such thing as noise.** In a causal
-      universe, "randomness" is a myth. Brownian motion is not random; it is the
-      deterministic result of billions of micro-interactions. Standard theory
-      treats the body's heat as interference. We treat it as a **Carrier Wave**.
-      The brain does not need to overpower the thermal energy; it creates
-      coherence *within* it. This is known in signal processing as **Stochastic
-      Resonance**—using the background energy to amplify the signal rather than
-      fight it.
+      universe, "randomness" is a myth. Brownian motion is the deterministic
+      result of billions of micro-interactions. The brain does not need to
+      overpower the thermal energy; it creates coherence *within* it. This is
+      **Stochastic Resonance**—using the background energy as a carrier wave
+      rather than fighting it.
 
-2.  **The Inverse Square Law:** Radiated power drops as $1/r^2$. The inductive
-    near-field (which is much stronger) drops even faster, as $1/r^3$. This
-    implies that while "Telempathy" is potent at 1 meter (personal space), it
-    likely vanishes at 100 meters.
-
-    * *The Implication:* The "Collective Anchor" is not one person broadcasting
-      to the globe. It is a **Mesh Network**. The signal hops from person to
-      person, sustained by the overlap of 8 billion local fields.
+2.  **The Inverse Square Law (Geometry Matters):** Textbook physics says power
+    drops as $1/r^2$. But this assumes a **Point Source**. The human body is not
+    a point; it is a **Phased Array** (Spine + Heart + Brain). In the near-field
+    (within a few meters), the field geometry is complex and can be focused or
+    structured (like a Soliton). Furthermore, the "Collective Anchor" operates
+    as a **Mesh Network**. The signal does not need to travel from New York to
+    London directly; it propagates through the overlapping near-fields of 8
+    billion repeaters.
 
 
 ### The Challenge (The Phantom Experiment)
