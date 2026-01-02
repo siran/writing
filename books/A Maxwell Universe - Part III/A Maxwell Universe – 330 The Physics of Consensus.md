@@ -11,20 +11,21 @@ animal, vegetable, or otherwise—is a transmitter.
 
 Any entity possessing **Operational Awareness** (as defined in Part I)—any
 system that steers its own causal loop—is constantly radiating energy into the
-vacuum. We are immersed in a planetary standing wave of biological Will, a
-"Holding Signal" that stabilizes the physical background.
+vacuum. This creates a web of mutual influence. A hive of bees acts to preserve
+its loop. If that loop is threatened, their reaction—the collapse of the
+colony—broadcasts a signal. This signal strikes the human observer, forcing us
+to re-evaluate our own survival parameters. The forest *does* steer the city,
+because the loops are coupled.
 
-But while a forest broadcasts raw existence, it does not broadcast
-**Consensus**.
+But while the forest acts through **biological pressure**, humanity acts through
+a second, distinct channel. We do not just react to the environment; we react to
+**Symbols**. Billions of humans broadcast synchronized patterns that have no
+physical basis in the forest. We agree that "Green paper is money," "Red lights
+mean stop," and "The King is the King."
 
-Consensus requires a higher order of synchronization. It requires the **Mind**.
-Billions of humans do not just broadcast noise; we broadcast aligned symbols. We
-agree that "Green paper is money," "Red lights mean stop," and "The King is the
-King."
-
-This synchronization does not happen by magic. It happens because we have built
-massive, artificial amplifiers to align our signals. We call these amplifiers
-**Institutions**.
+This symbolic synchronization does not happen by magic. It happens because we
+have built massive, artificial amplifiers to align our signals. We call these
+amplifiers **Institutions**.
 
 
 ## The Shared Imprint (The Law)
