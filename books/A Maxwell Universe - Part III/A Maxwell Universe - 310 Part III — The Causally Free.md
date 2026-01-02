@@ -1,5 +1,5 @@
 ---
-title: A Maxwell Universe – Part III — The Causally Free
+title: A Maxwell Universe – The Causally Free
 date: 2026-01-01 18:00
 ---
 
