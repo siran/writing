@@ -1,18 +1,26 @@
 ---
-title: A Maxwell Universe – The Physics of Consensus
-date: 2026-01-02 09:15
+title: A Maxwell Universe – Part III — The Physics of Consensus
+date: 2026-01-02 10:15
 ---
 
 
 # The Physics of Consensus
 
-In the previous chapter, we established that every mind—human and animal—is a
-transmitter. We are constantly radiating a "Holding Signal" that stabilizes the
-physical world around us.
+In the previous chapter, we established that every electric signal—human,
+animal, vegetable, or otherwise—is a transmitter.
 
-But we do not broadcast random noise. We broadcast synchronized patterns.
-Billions of people agree that "Green paper is money," "Red lights mean stop,"
-and "The King is the King."
+Any entity possessing **Operational Awareness** (as defined in Part I)—any
+system that steers its own causal loop—is constantly radiating energy into the
+vacuum. We are immersed in a planetary standing wave of biological Will, a
+"Holding Signal" that stabilizes the physical background.
+
+But while a forest broadcasts raw existence, it does not broadcast
+**Consensus**.
+
+Consensus requires a higher order of synchronization. It requires the **Mind**.
+Billions of humans do not just broadcast noise; we broadcast aligned symbols. We
+agree that "Green paper is money," "Red lights mean stop," and "The King is the
+King."
 
 This synchronization does not happen by magic. It happens because we have built
 massive, artificial amplifiers to align our signals. We call these amplifiers
@@ -27,11 +35,12 @@ inert. It has zero causal power. It cannot stop a bullet; it cannot lock a door.
 Yet, "The Law" can summon armies, imprison bodies, and execute the living. How?
 
 The paper is not the source of the power. The paper is the **tuning fork**.
+
 * When a Judge reads the verdict, they are striking the fork.
 * This sound triggers a specific **Imprint** stored in the minds of the police,
   the jailers, and the public.
-* Instantly, thousands of biological transmitters synchronize. They all switch
-  to the "Enforcement Protocol."
+* Instantly, thousands of distinct causal loops synchronize. They all switch to
+  the "Enforcement Protocol."
 
 The "Force of Law" is literally the **constructive interference** of thousands
 of minds acting in unison. The paper is just the synchronization token that

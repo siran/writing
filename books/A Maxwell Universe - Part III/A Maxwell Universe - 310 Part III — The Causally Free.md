@@ -50,10 +50,8 @@ If these ideas are free from physical laws, are they chaotic? No. They are
 governed by a far more rigid master: **Logical Necessity.**
 
 This is the paradox of the meta-layer.
-
 * The physical substrate is governed by **Time** (state $t$ leads to state
   $t+1$).
-
 * The meta-layer is governed by **Implication** (Axiom $A$ necessitates
   Conclusion $B$).
 
