@@ -1,0 +1,79 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: book
+title: A Maxwell Universe - Part II
+doi: 10.5281/zenodo.18122088
+concept_doi: 10.5281/zenodo.18122087
+permalink: "https://writing.preferredframe.com/prints/A Maxwell Universe - Part II/10.5281/zenodo.18122088/"
+publication_date: '2026-01-01'
+publication_year: '2026'
+keywords:
+- Source-free Electrodynamics
+- Topological Knots
+- Electromagnetic Inertia
+- Dielectric Refraction
+- Field Vorticity
+- Emergent Gravity
+- Toroidal Standing Waves
+one_sentence_summary: Matter, mass, charge, and gravity are not fundamental entities, but emergent properties arising from the topology and self-interaction of source-free electromagnetic standing waves.
+abstract: '"Matter" and "charge" are derived entities from the properties of the electromagnetic field. Abandoning the axiomatic status of mass and charge, we model elementary particles as self-sustaining, knotted configurations of electromagnetic energy governed by source-free Maxwells equations. Through this topological lens, we demonstrate that "mass" is an operational measure of electromagnetic self-impedance (inertia), while "charge" emerges as the macroscopic projection of internal field vorticity. The apparent "force" of gravity is reinterpreted as dielectric refraction, where the energy density of the knot modifies the local vacuum index, bending the paths of passing waves. By unifying mechanics and electrodynamics under a single geometric framework, this section establishes that the physical universe requires no fundamental ingredients other than light and topology.'
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: book
+  title: A Maxwell Universe - Part II
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  description: '"Matter" and "charge" are derived entities from the properties of the electromagnetic field. Abandoning the axiomatic status of mass and charge, we model elementary particles as self-sustaining, knotted configurations of electromagnetic energy governed by source-free Maxwells equations. Through this topological lens, we demonstrate that "mass" is an operational measure of electromagnetic self-impedance (inertia), while "charge" emerges as the macroscopic projection of internal field vorticity. The apparent "force" of gravity is reinterpreted as dielectric refraction, where the energy density of the knot modifies the local vacuum index, bending the paths of passing waves. By unifying mechanics and electrodynamics under a single geometric framework, this section establishes that the physical universe requires no fundamental ingredients other than light and topology.'
+  keywords:
+  - Source-free Electrodynamics
+  - Topological Knots
+  - Electromagnetic Inertia
+  - Dielectric Refraction
+  - Field Vorticity
+  - Emergent Gravity
+  - Toroidal Standing Waves
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-01'
+  license: cc-by-nc-nd-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/A Maxwell Universe - Part II/10.5281/zenodo.18122088/A Maxwell Universe - Part II.html"
+    resource_type: publication-book
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/A Maxwell Universe - Part II/10.5281/zenodo.18122088/A Maxwell Universe - Part II.md"
+    resource_type: publication-book
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/A Maxwell Universe - Part II/10.5281/zenodo.18122088/A Maxwell Universe - Part II.pdf"
+    resource_type: publication-book
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/A Maxwell Universe - Part II/10.5281/zenodo.18122088/A Maxwell Universe - Part II.epub"
+    resource_type: publication-book
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: Matter, mass, charge, and gravity are not fundamental entities, but emergent properties arising from the topology and self-interaction of source-free electromagnetic standing waves.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: 7651cbc6e80585584d529d0d74f0358cf9073252
+  filename: A Maxwell Universe - Part II.md
+artifacts:
+  md: A Maxwell Universe - Part II.md
+  md_url: "https://writing.preferredframe.com/prints/A Maxwell Universe - Part II/10.5281/zenodo.18122088/A Maxwell Universe - Part II.md"
+  pandoc_md_name: A Maxwell Universe - Part II.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/A Maxwell Universe - Part II/10.5281/zenodo.18122088/A Maxwell Universe - Part II.pandoc.md"
+  pdf_name: A Maxwell Universe - Part II.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/A Maxwell Universe - Part II/10.5281/zenodo.18122088/A Maxwell Universe - Part II.pdf"
+  html_name: A Maxwell Universe - Part II.html
+  html_url: "https://writing.preferredframe.com/prints/A Maxwell Universe - Part II/10.5281/zenodo.18122088/A Maxwell Universe - Part II.html"
+  primary: md
+  epub_name: A Maxwell Universe - Part II.epub
+  epub_url: "https://assets.preferredframe.com/preferredframe/A Maxwell Universe - Part II/10.5281/zenodo.18122088/A Maxwell Universe - Part II.epub"
