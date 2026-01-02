@@ -134,3 +134,85 @@ interference of this species-wide expectation. If I try to fly, I am not just
 fighting gravity; I am fighting the **Impedance of the Collective Mind**. My
 personal signal attempting to rewrite the local field is drowned out by the
 billions of signals asserting "You cannot fly."
+
+
+## Supporting Evidence (and The Schrödinger’s Human)
+
+To prove this, we do not necessarily need to lock a graduate student in a
+Faraday cage with a magnetically suspended electron—though the temptation to
+create a "Schrödinger’s Intern" is significant.
+
+While the specific "Telekinetic Force" experiment remains to be done, the
+individual components of this mechanism are already well-established in
+experimental physics.
+
+
+### The Pillars of Plausibility (What we know is true)
+
+1.  **Transmission (The Heart Broadcasts):** We routinely measure the magnetic
+    field of the human heart ($50$ picotesla) at distances of up to a meter
+    using SQUID magnetometers. The signal exists. It is not hypothetical. The
+    body is an antenna.
+
+2.  **Reception (The Brain Receives):** Transcranial Magnetic Stimulation (TMS)
+    proves the reverse. We can use external magnetic fields to induce currents
+    in the brain, causing involuntary muscle twitches or emotional shifts. If a
+    machine can drive a brain via fields, a brain (which acts as a machine) can
+    theoretically drive another brain.
+
+3.  **Navigation (Biology Detects):** Migratory birds possess
+    **Cryptochromes**—proteins in the eye that rely on radical-pair electron
+    entanglement to "see" the Earth's magnetic field. Evolution has already
+    produced biological sensors capable of detecting subtle electromagnetic
+    gradients.
+
+4.  **Force (Fields Move Matter):** **Optical Tweezers** and
+    **Dielectrophoresis** are standard lab techniques. We use the pressure of
+    electromagnetic fields to physically push bacteria, viruses, and cells. The
+    claim that "fields can apply force to matter" is not magic; it is
+    engineering.
+
+
+### The Hard Limits (and The "Noise" Fallacy)
+
+However, intellectual honesty demands we address the evidence *against* this
+range of influence.
+
+1.  **The Thermal Noise Floor ($kT$):**
+
+    This is the standard critique. At 10 meters, the voltage induced by one brain upon another is in the nanovolt range ($10^{-9}$ V). Standard biology argues that the random thermal motion of ions (Brownian motion) creates a "noise floor" ($10^{-6}$ V) that would bury this signal.
+
+    * *The Critique:* "The signal is real, but it is whispering in a hurricane."
+
+    * *The Maxwellian Counter:* **There is no such thing as noise.** In a causal
+      universe, "randomness" is a myth. Brownian motion is not random; it is the
+      deterministic result of billions of micro-interactions. Standard theory
+      treats the body's heat as interference. We treat it as a **Carrier Wave**.
+      The brain does not need to overpower the thermal energy; it creates
+      coherence *within* it. This is known in signal processing as **Stochastic
+      Resonance**—using the background energy to amplify the signal rather than
+      fight it.
+
+2.  **The Inverse Square Law:** Radiated power drops as $1/r^2$. The inductive
+    near-field (which is much stronger) drops even faster, as $1/r^3$. This
+    implies that while "Telempathy" is potent at 1 meter (personal space), it
+    likely vanishes at 100 meters.
+
+    * *The Implication:* The "Collective Anchor" is not one person broadcasting
+      to the globe. It is a **Mesh Network**. The signal hops from person to
+      person, sustained by the overlap of 8 billion local fields.
+
+
+### The Challenge (The Phantom Experiment)
+
+The theory is falsifiable. We propose the **Phantom Experiment**:
+1.  Construct a "Mechanical Human": A copper loop (Heart) and linear wire
+    (Spine) inside a saline bag, pulsed at 10 Hz / 5 mA.
+2.  Place a **Torsion Balance** (a suspended, ultra-sensitive mass) 1 meter away
+    in a vacuum.
+3.  **The Prediction:** The Maxwellian pressure of the 10 Hz field will induce a
+    measurable oscillation in the balance.
+
+If the balance moves, the "Force of Will" is proven as a classical force. If it
+remains still, the magnitude of the effect is insufficient to explain
+macroscopic anomalies.
