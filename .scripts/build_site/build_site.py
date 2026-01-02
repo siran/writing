@@ -742,8 +742,9 @@ def fmt_author(a):
     return nm
 
 # ---------- article pages ----------
-def build_article_pages():
+def build_article_pages() -> set[Path]:
     origin = _current_origin()
+    article_dirs: set[Path] = set()
 
     records = []
     for prov in iter_provenance_files():
@@ -864,7 +865,7 @@ def build_article_pages():
         json.dumps(records, indent=2, default=str)
 
     if not records:
-        return
+        return set()
 
     # group by (top-level folder, stem)
     groups: dict[tuple[str, str], list[dict]] = {}
@@ -930,7 +931,7 @@ def build_article_pages():
                 doi_value = doi_clean or doi_fallback
                 doi_url = f"https://doi.org/{doi_value}"
                 origin = _current_origin()
-                doi_alias = f"{origin}/{top}/doi/{it['doi_prefix']}/{it['doi_suffix']}"
+                doi_alias = f"{origin}/doi/{it['doi_prefix']}/{it['doi_suffix']}"
                 share_html = (
                     "<div class=\"share\"><strong>Share as:</strong><br>"
                     f'<a href="{doi_alias}">{doi_alias}</a><br>'
@@ -1071,15 +1072,23 @@ def build_article_pages():
             body_html = "\n".join(body)
 
             write_html(out_dir/"index.html", body_html, head_extra=head_extra, title=it["title"])
+            article_dirs.add(out_dir)
 
-            # DOI aliases live under the same top-level (prints/doi or documents/doi)
+            # DOI aliases live under the same top-level plus a root /doi/ alias.
             alias_dir = OUT / top / "doi" / it["doi_prefix"] / it["doi_suffix"]
             alias_dir.mkdir(parents=True, exist_ok=True)
             write_html(alias_dir/"index.html", body_html, head_extra=head_extra, title=it["title"])
+            article_dirs.add(alias_dir)
+
+            root_alias_dir = OUT / "doi" / it["doi_prefix"] / it["doi_suffix"]
+            root_alias_dir.mkdir(parents=True, exist_ok=True)
+            write_html(root_alias_dir/"index.html", body_html, head_extra=head_extra, title=it["title"])
+            article_dirs.add(root_alias_dir)
 
             mirror_dir = OUT / rel(src)
             mirror_dir.mkdir(parents=True, exist_ok=True)
             write_html(mirror_dir/"index.html", body_html, head_extra=head_extra, title=it["title"])
+            article_dirs.add(mirror_dir)
 
         # --- STEM page (latest) ---
         it = latest
@@ -1159,7 +1168,7 @@ def build_article_pages():
             doi_value = doi_clean or doi_fallback
             doi_url = f"https://doi.org/{doi_value}"
             origin = _current_origin()
-            doi_alias = f"{origin}/{top}/doi/{it['doi_prefix']}/{it['doi_suffix']}"
+            doi_alias = f"{origin}/doi/{it['doi_prefix']}/{it['doi_suffix']}"
             share_html = (
                 "<div class=\"share\"><strong>Share as:</strong><br>"
                 f'<a href="{doi_alias}">{doi_alias}</a><br>'
@@ -1285,6 +1294,9 @@ def build_article_pages():
         head_extra = "\n".join(head) + "\n"
 
         write_html(stem_out/"index.html", "\n".join(body), head_extra=head_extra, title=it["title"])
+        article_dirs.add(stem_out)
+
+    return article_dirs
 
 # ---------- dir index ----------
 def breadcrumbs(rel_dir: Path) -> str:
@@ -1371,7 +1383,18 @@ def _book_artifact_hide_names(dir_abs: Path) -> set[str]:
         hidden.add(f"{base}.pandoc.md.html")
     return hidden
 
-def build_out_indexes(hidden_stems: set[tuple[str, str]]):
+def _index_is_article_page(dir_abs: Path) -> bool:
+    idx = dir_abs / "index.html"
+    if not idx.exists():
+        return False
+    try:
+        html = idx.read_text(encoding="utf-8")
+    except Exception:
+        return False
+    return "<main class='paper'>" in html or '<main class="paper">' in html
+
+def build_out_indexes(hidden_stems: set[tuple[str, str]], article_dirs: set[Path] | None = None):
+    article_dirs = article_dirs or set()
     for dirpath, dirnames, filenames in os.walk(OUT):
         d = Path(dirpath)
         rel_parts = rel_out(d).parts if d != OUT else ()
@@ -1409,9 +1432,11 @@ def build_out_indexes(hidden_stems: set[tuple[str, str]]):
                 continue
             items.append(Item(name=p.name, is_dir=False, mtime=p.stat().st_mtime, path=p))
 
-        out_html = d / "index.html"
         if in_hidden:
             continue
+        if d in article_dirs or _index_is_article_page(d):
+            continue
+        out_html = d / "index.html"
         title, md_body = format_dir_index_out(d, items)
         write_md_like_page(out_html, md_body, title=title)
 
@@ -1644,7 +1669,7 @@ def main():
     else:
         print("[DEBUG] WARNING: site_src does not exist; no site/ assets copied")
 
-    build_article_pages()
+    article_dirs = build_article_pages()
 
     hidden_stems = hidden_stems_from_provenance()
 
@@ -1714,7 +1739,7 @@ def main():
     )
 
     # Build directory indexes based on the final OUT tree (includes rendered books).
-    build_out_indexes(hidden_stems)
+    build_out_indexes(hidden_stems, article_dirs)
 
     build_sitemap_and_robots()
     build_rss_feed()
