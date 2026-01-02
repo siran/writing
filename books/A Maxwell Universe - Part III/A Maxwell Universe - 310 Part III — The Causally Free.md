@@ -41,7 +41,7 @@ corrupted by the medium.
 
 This layer of existence—the world of forms, laws, and mathematics—is the realm
 of the Causally Free. It is a ghost world that rides atop the physical world,
-completely effectively decoupled from the laws of mechanics.
+effectively decoupled from the laws of mechanics.
 
 
 ## Acausal Determinism
@@ -69,10 +69,8 @@ physical world until a living loop chooses to look at it.
 
 ## The Origin of the Ghost
 
-How does a causal universe produce acausal things?
-
-It happens when a system stops reacting to the *world* and starts reacting to a
-*model*.
+How does a causal universe produce acausal things? It happens when a system
+stops reacting to the *world* and starts reacting to a *model*.
 
 A simple thermostat is causally bound: it reacts to heat (substrate). A
 rudimentary AI—or a human mind—reacts to variables, symbols, and projected
@@ -92,12 +90,9 @@ substrate.
 
 This brings us to the ultimate ghost: **The Self.**
 
-We feel "Free" because we are.
-
-We are not free from the laws of physics; our bodies are perfectly bound to the
-substrate.
-
-We are free because **"We" are not bodies.**
+We feel "Free" because we are. We are not free from the laws of physics; our
+bodies are perfectly bound to the substrate. We are free because **"We" are not
+bodies.**
 
 "I" is an Idea. "I" is a Causally Free construct—a collection of memories,
 expectations, and logical narratives. Like the Circle, the "Self" does not have
@@ -108,8 +103,3 @@ We act according to the rigid logic of the story we have told ourselves. If the
 "Self" is defined as "A Good Person," then when faced with a crime, the system
 *must* intervene. Not because physics forces it, but because the logic of the
 Imprint demands it.
-
-In Part III, we explore this ghost world. We will trace how the illusion of "I,"
-the weight of "The Law," and the reality of "Mathematics" all emerge as
-tangible, deterministic structures from a universe that physically contains
-nothing but swirling light.

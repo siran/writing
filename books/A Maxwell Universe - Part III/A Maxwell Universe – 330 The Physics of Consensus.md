@@ -6,9 +6,9 @@ date: 2026-01-02 09:15
 
 # The Physics of Consensus
 
-In the previous chapter, we established that every human mind is a transmitter.
-We are constantly radiating a "Holding Signal" that stabilizes the physical
-world around us.
+In the previous chapter, we established that every mind—human and animal—is a
+transmitter. We are constantly radiating a "Holding Signal" that stabilizes the
+physical world around us.
 
 But we do not broadcast random noise. We broadcast synchronized patterns.
 Billions of people agree that "Green paper is money," "Red lights mean stop,"
@@ -27,12 +27,9 @@ inert. It has zero causal power. It cannot stop a bullet; it cannot lock a door.
 Yet, "The Law" can summon armies, imprison bodies, and execute the living. How?
 
 The paper is not the source of the power. The paper is the **tuning fork**.
-
 * When a Judge reads the verdict, they are striking the fork.
-
 * This sound triggers a specific **Imprint** stored in the minds of the police,
   the jailers, and the public.
-
 * Instantly, thousands of biological transmitters synchronize. They all switch
   to the "Enforcement Protocol."
 
@@ -48,9 +45,7 @@ value. It is a token of trust. In our model, "Value" is an **induced
 potential**.
 
 * **The Central Bank** acts as the reference oscillator (The Clock).
-
 * **The Market** is the interference pattern of billions of desires (The Flux).
-
 * **The Price** is the equilibrium point where the collective "Push" matches the
   collective "Pull."
 
