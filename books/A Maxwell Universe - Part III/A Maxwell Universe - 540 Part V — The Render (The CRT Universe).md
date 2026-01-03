@@ -1,6 +1,6 @@
 ---
 title: A Maxwell Universe – Part V — The Render (The CRT Universe)
-date: 2026-01-03 13:00
+date: 2026-01-03 15:00
 ---
 
 
@@ -74,9 +74,11 @@ Stylus.
 * **The Consensus:** When 8 billion people agree that "Walls are Solid," we are
   collectively applying a magnetic field that forces the Stylus to trace the
   "Wall" loop at that coordinate.
-* **The Miracle:** If we collectively ceased to observe the wall—if we turned
-  off the Deflection Coils—the Stylus would stop tracing that loop. The wall
-  would not "crumble"; it would simply cease to be rendered.
+* **The Constraint:** The stability of macroscopic objects depends on long-lived
+  global constraints maintained by collective coherence. If we collectively
+  released this constraint (consciously or unconsciously), the Stylus would
+  simply cease to trace that loop. The wall would not "crumble"; it would simply
+  cease to be rendered.
 
 
 ## Volumetric Reality (The Hologram)

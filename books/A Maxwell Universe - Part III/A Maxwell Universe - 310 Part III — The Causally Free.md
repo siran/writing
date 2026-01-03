@@ -1,6 +1,6 @@
 ---
 title: A Maxwell Universe – Part III — The Causally Free
-date: 2026-01-02 23:00
+date: 2026-01-03 12:00
 ---
 
 
@@ -67,8 +67,7 @@ physical world until a living loop chooses to look at it.
 
 ## The Shadow on the Wall (Plato’s Projector)
 
-How does a causal universe produce acausal things? How does a non-physical
-"Idea" move a physical neuron?
+How does a non-physical "Idea" move a physical neuron?
 
 To the biologist observing the brain, a sudden spike in neural activity (an
 insight) looks like **Creation Ex-Nihilo**—energy appearing out of nowhere. But

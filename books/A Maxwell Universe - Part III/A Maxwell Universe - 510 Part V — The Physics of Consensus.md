@@ -1,6 +1,6 @@
 ---
 title: A Maxwell Universe – Part V — The Physics of Consensus
-date: 2026-01-02 23:30
+date: 2026-01-03 14:30
 ---
 
 

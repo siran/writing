@@ -1,14 +1,14 @@
 ---
 title: A Maxwell Universe – Part IV — The Physics of Objects
-date: 2026-01-03 12:00
+date: 2026-01-03 13:30
 ---
 
 
 # The Physics of Objects (Signatures)
 
-We have described the human mind as a resonator. But what does it resonate
-*with*? When we look at a cup, we think we are seeing light reflected off a
-surface. But "Presence" is more than photons.
+We have described the mind as a resonator. But what does it resonate *with*?
+When we look at a cup, we think we are seeing light reflected off a surface. But
+"Presence" is more than photons.
 
 
 ## The Fourier Object
@@ -19,7 +19,7 @@ electromagnetic knot.
     (Infrared).
 2.  **Geometric Resonance:** The shape of the object acts as a cavity,
     modulating the background field ($U$).
-3.  **Electronic Signature:** The electron bonds (Carbon, Silicon) creates a
+3.  **Electronic Signature:** The electron bonds (Carbon, Silicon) create a
     specific spectral hum.
 
 The "Cup" is not just matter; it is a continuously broadcasting radio station
@@ -35,6 +35,7 @@ Hardware) is a broadband receiver.
 When you walk into a room, you do not just visually scan the furniture. Your
 internal cavity (The Self) mechanically tunes itself to match the impedance of
 the objects in the room.
+
 * **Recognition** is not data processing.
 * **Recognition** is **Resonance**.
 

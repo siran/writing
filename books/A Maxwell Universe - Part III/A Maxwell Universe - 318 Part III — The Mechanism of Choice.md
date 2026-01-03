@@ -1,6 +1,6 @@
 ---
 title: A Maxwell Universe – Part III — The Mechanism of Choice
-date: 2026-01-03 11:00
+date: 2026-01-03 12:30
 ---
 
 
@@ -23,14 +23,14 @@ this is a statistical law, not a fundamental one. It only applies to systems
 connected to an infinite heat bath. For small, isolated systems, **Time is
 Reversible.**
 
-Recent derivations in finite-bath thermodynamics (see *Palma & Rodriguez, 2025*)
-prove that if a quantum system interacts with a limited number of environmental
-modes ($M < 10$), it does not "collapse." It remains in a coherent, reversible
-superposition.
+Recent derivations in finite-bath thermodynamics suggest that limited
+environmental interaction (where environmental modes $M$ are small, typically $<
+10$) is a **sufficient condition** for reversibility. If the system is shielded,
+it does not "collapse." It remains in a coherent, reversible superposition.
 
 This is the secret of the Mind. The brain’s highest functions do not occur in
 the noisy, wet environment of the whole neuron. They occur in the **Finite
-Bath** of the microtubule interiors.
+Bath** of the shielded microtubule interiors.
 * Inside this shielded cavity, the "Now" is not a point. It is a **Bubble**.
 * Within this bubble, the brain can simulate multiple potential futures (Option
   A, Option B) without committing to any of them.
