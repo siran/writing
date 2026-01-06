@@ -1,0 +1,24 @@
+---
+title: A Maxwell Universe - Part III
+subtitle: |
+  All-there-is from source-free electromagnetic energy.
+  Part III
+author: An M. Rodriguez
+description: Part III assembles the final arc of the Maxwellian worldview, connecting the microscopic geometry of the cell to the macroscopic stability of the state. It treats ideas as acausal constraints and the collective as a boundary condition, proving that the observer is not a spectator, but the active architect of the display.
+publisher: Preferred Frame Prints
+editor: An M. Rodriguez
+lang: en-US
+rights: CC-BY-NC-ND-4.0
+cover-image: https://assets.preferredframe.com/A%20Maxwell%20Universe/A%20Maxwell%20UniversePII-8.5x12.png
+identifier:
+- scheme: DOI
+  text: doi:10.5281/zenodo.17982296
+fontsize: 12pt
+linestretch: 1.32
+header-includes:
+  - \renewcommand{\footnotesize}{\fontsize{11pt}{13pt}\selectfont}
+  - \setlength{\skip\footins}{16pt}
+  - \usepackage{titlesec}
+  - \titleformat{\section}[block]{\bfseries\Large\raggedleft}{\hfill\thesection.}{0.8em}{\hfill}
+  - \titlespacing*{\section}{0pt}{4ex plus 1ex minus 0.5ex}{1.8ex}
+---

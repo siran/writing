@@ -1,75 +1,120 @@
 ---
-title: A Maxwell Universe – Part III — The Causally Free
-date: 2026-01-03 12:00
+title: A Maxwell Universe – Part III — The Emergence of Self
+date: 2026-01-03 13:10
 ---
 
 
-# The Causally Free
-
 In Part I, we established that we never touch the causal substrate of the
-universe; we only interact with its effects. In Part II, we described the
-physical world—matter, energy, light—as the direct, knotted topology of that
-substrate. A proton is "causally bound"; it must obey Maxwell’s equations at
-every point, continuously and locally.
+universe; we interact only with its effects. We described a “self-sustaining
+causal loop” as a chain of events $(i \rightarrow a \rightarrow b \rightarrow
+i)$. We thus established that “existence is persistence”: events that do not
+cause further effects are effectively non-existent.
 
-Part III concerns the emergence of a second reality.
+The persistence of the loop raises an immediate question: is the loop entirely
+at the mercy of the causal substrate? At first glance, yes. The loop depends on
+the causal substrate producing the same effects from the same causes. If the
+rules change, the loop changes.
 
-As causal loops stabilize, they produce *imprints* — internal records of the
-loop's own history. These records (memories, symbols, ideas) possess a property
-that matter does not: they are *causally free*.
+However, loops of sufficient complexity can generate *imprints*.
 
-They are "free" because they have detached from the physical constraints of the
-substrate. They float above the energy flows that sustain them, obeying a new,
-strange form of necessity: *acausal determinism*.
+An imprint is like a cul-de-sac branching from a main road: it can be removed
+without destroying the road, yet its presence alters traffic patterns. It is an
+internal record that is not required for the loop’s persistence, but that alters
+the loop's evolution.
+
+
+## Imprints and Steering
+
+An imprint is produced causally, but once established, it is shielded from
+direct coupling to causes external to the loop by the loop’s closure.
+
+This shielding is not metaphysical; it is structural. Just as a roof shields a
+table from the rain, the loop’s closure shields the imprint from the
+fine-grained causal "turbulence" of the substrate.
+
+Crucially, the imprint feeds back into the loop. If it did not, it would not
+function as an imprint of that loop. It steers the evolution of the loop. It
+does not force future states but it biases transitions. By altering which
+internal paths are accessible, the imprint shapes the loop's evolution without
+breaking causal closure.
+
+An amoeba and a human both are self-sustaining loops. The difference lies in the
+degree to which internal imprints are generated and consulted to steer the
+future. DNA is a familiar example of an imprint that maintains structure across
+the loop's persistence. Other imprints live inside us, but are not so evident
+nor figurative. An imprint can also be encoded in brain waves, for example, as
+we'll propose later.
 
 
 ## The Meta-Layer
 
-Consider the concept of a "circle."
+Consider the concept of "a circle."
 
-A physical ring (a tire, a bubble) is causally bound. It acts on the air around
-it; it responds to friction; it ages; it breaks. It interacts.
+* A physical ring (a tire) is causally bound. It interacts with the road; it
+  ages; it breaks.
 
-The *idea* of a circle is just an imprint of the loop, and only interacts with
-it.
+* The *idea* of a circle interacts with nothing. It has no mass, no charge, and
+  no temperature.
 
-It is abstract, in that it only has the initial properties we abscribe to it. *A
-priori*, and if convenient, it can have no mass, no charge, or no other
-properties. However, it *is* a circle, so its area *has* to be $\pi r^2$,
-because that is what a circle *is*.
-
-The circle exists in this "platonic space", or imprints of the loop. It is a
-"meta-layer" structure — a stable pattern of though that can be instantiated in
-a mind, on paper, or in silicon, without ever being corrupted by the medium.
-Being concerned mostly with the fundamentals of the problem, it is beyond of the
-scope of this book to delve into specifics of how a thought is instantiated in
-the brain, a paper, or else. We will, however, propose candidate mechanisms for
-cognition, recognition, and perhaps others.
-
-This layer of existence — the world of forms, laws, and mathematics — is the
-realm of the *causally free*. It is a ghost world that rides atop the physical
-world, effectively decoupled from the laws of mechanics, but *acausally
-deterministic*, as we shall see.
+Yet, it exists. It is a "meta-layer" structure — an internal causal structure
+that steers the loop, much like software can steer hardware. Once formed, it is
+decoupled from the mechanics external to the loop. The definition of a circle
+does not age. It does not decay. It rides atop the physical world.
 
 
 ## Acausal Determinism
 
-If these ideas are free from physical laws, are they chaotic? No. They are
-governed by another master: *logical necessity.*
+If these ideas are free from physical laws, are they chaotic? No. They are also
+governed by another form of necessity: logical implication.
 
-This is the paradox of the meta-layer:
+* The physical substrate is governed by "changes of state" (state $t$ leads to
+  state $t+1$).
 
-* The physical substrate is governed by causality, which gives rise to reality;
-  as seen in Part I, state $s$ leads to state $s+1$.
+* The meta-layer is governed by necessity or implication (Axiom $A$ necessitates
+  Conclusion $B$).
 
-* The meta-layer is governed by **implication** (axiom $A$ necessitates
-  conclusion $B$).
+In humans, failure to adhere to an internal imprint can cause what some call
+"cognitive dissonance".
 
-This is *acausal determinism*: If you accept the axioms of Euclidean geometry
+This is **Acausal Determinism**. If you accept the axioms of Euclidean geometry
 (the imprint), you *must* accept that the angles of a triangle sum to 180
-degrees. This "must" is not a physical force. No electron is pushing you to
-agree. It is a logical inevitability that exists outside of time and causality.
+degrees (or the loop’s internal consistency breaks). This "must" is not a
+physical force. No electron is pushing you to agree. It is a logical
+inevitability that exists outside of time. This necessity is enforced by the
+loop’s continued consultation of the imprint. In this way, imprints steer the
+evolution of the loop according to internal constraints, without invoking
+physical force.
 
-An "idea" is inert, intangible, and eternal. It just sits there, as an imprint
-of a self-sustained causal loop. By virtue of its creation and maintenance by
-the loop, the *idea* or *imprint* determines the evolutions of the loop.
+
+## The Origin of the Ghost
+
+How does a causal universe produce acausal things? It happens when a system
+stops reacting directly to the world and starts reacting to internal models.
+
+A simple thermostat is causally bound: it reacts to heat (substrate). A human
+mind reacts to projected futures (imprints).
+
+When the mind simulates a future ("If I walk off the cliff, I will fall"), it is
+interacting with a ghost. The "fall" has not happened. The "cliff" in the mind
+is made of imprints, not stone. The simulation is causally free from the actual
+gravity of the earth. Yet, this simulation determines the body's motion. The
+imprint of the fall steers its causal substrate, the loop.
+
+
+## The Self as an Idea
+
+This brings us to the ultimate ghost: the self.
+
+We feel “free” because we are. We are not free from the laws of physics; our
+bodies are perfectly bound to the substrate (more about this in later sections).
+We are free because “we” are not bodies.
+
+"I" is an Idea. "I" is a causally free construct — a collection of memories,
+expectations, and logical narratives. Like the Circle, the "Self" does not have
+a temperature or a location. It is a pattern.
+
+And like the circle, it is acausally deterministic. We do not act randomly. We
+act according to the rigid logic of the story we have told ourselves. If the
+"self" is defined as "a good person," then when faced with a crime, the system
+*must* intervene. Not because physics forces it, but because the logic of the
+Imprint demands it.
