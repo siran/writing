@@ -33,6 +33,35 @@ def _unprotect(text: str, blobs: List[str]):
     return re.sub(r'\u0000B(\d+)\u0000', lambda mm: blobs[int(mm.group(1))], text)
 
 
+# ---------- Unicode superscripts ----------
+_SUPERSCRIPT_RE = re.compile(
+    r'[\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079]+'
+)
+_SUPERSCRIPT_MAP = {
+    "\u2070": "0",
+    "\u00b9": "1",
+    "\u00b2": "2",
+    "\u00b3": "3",
+    "\u2074": "4",
+    "\u2075": "5",
+    "\u2076": "6",
+    "\u2077": "7",
+    "\u2078": "8",
+    "\u2079": "9",
+}
+
+
+def replace_unicode_superscripts(md: str) -> str:
+    prot, blobs = _protect(md)
+
+    def repl(m: re.Match) -> str:
+        digits = "".join(_SUPERSCRIPT_MAP[ch] for ch in m.group(0))
+        return f"^{digits}^"
+
+    prot = _SUPERSCRIPT_RE.sub(repl, prot)
+    return _unprotect(prot, blobs)
+
+
 # ---------- Mapping ----------
 def apply_mappings_safe(s: str, entries):
     prot, blobs = _protect(s)
@@ -427,6 +456,8 @@ def prepare_preprocessed(
     body = atsec_to_nameref(body)
     body = rewrite_hash_anchors(body)
     body = normalize_heading_spacing(body)
+    if src.name.lower().endswith(".fdn.md"):
+        body = replace_unicode_superscripts(body)
 
     keep_head = "\n".join(raw_head) + ("\n\n" if raw_head else "")
 
@@ -475,6 +506,8 @@ def prepare_preprocessed(
     shift_args = ["--shift-heading-level-by", str(shift)] if shift != 0 else []
 
     reader = "markdown+tex_math_dollars+raw_tex"
+    if src.name.lower().endswith(".fdn.md"):
+        reader += "+superscript"
     toc_flag: List[str] = [] if (omit_toc or has_toc_marker) else ["--toc"]
     numbering_flag: List[str] = [] if omit_numbering else ["--number-sections"]
     if number_offset is not None and not omit_numbering:

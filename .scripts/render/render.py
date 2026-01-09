@@ -7,7 +7,7 @@ import re
 from pathlib import Path
 from typing import Optional
 
-from pnpmd_preprocess import prepare_preprocessed
+from pnpmd_preprocess import prepare_preprocessed, replace_unicode_superscripts
 from pnpmd_pandoc import render_pdf, render_html, render_epub
 from pnpmd_book import render_book_yaml
 from pnpmd_util import discover_md_in_cwd, die, print_pandoc_log
@@ -39,6 +39,16 @@ def _inline_css(html_path: Path, css_path: Optional[Path]) -> None:
         html_txt = style_block + html_txt
 
     html_path.write_text(html_txt, encoding="utf-8")
+
+
+def _is_fdn_md(src: Path) -> bool:
+    return src.name.lower().endswith(".fdn.md")
+
+
+def _pdf_extra_args(src: Path) -> list[str]:
+    if not _is_fdn_md(src):
+        return []
+    return ["--pdf-engine=xelatex"]
 
 
 def render(
@@ -96,13 +106,17 @@ def render(
     # --- Normal (single .md) mode ---
     if as_is:
         from tempfile import mkdtemp
-        import shutil
 
         tmpdir = Path(mkdtemp(prefix="pnpmd_"))
         in_tmp = tmpdir / "in.md"
-        in_tmp.write_text(src.read_text(encoding="utf-8"), encoding="utf-8")
+        text = src.read_text(encoding="utf-8")
+        if _is_fdn_md(src):
+            text = replace_unicode_superscripts(text)
+        in_tmp.write_text(text, encoding="utf-8")
 
         reader = "markdown+tex_math_dollars+raw_tex"
+        if _is_fdn_md(src):
+            reader += "+superscript"
 
         toc_flag: list[str] = [] if omit_toc else ["--toc"]
         numbering_flag: list[str] = [] if omit_numbering else ["--number-sections"]
@@ -118,6 +132,7 @@ def render(
             shift_args = ["--shift-heading-level-by", str(shift_headings)]
 
         common_args = toc_opts + numbering_flag + toc_flag + ["-f", reader]
+        pdf_extra_args = _pdf_extra_args(src)
 
         pdf_path = src.with_suffix(".pdf") if make_pdf else None
         html_path = src.with_suffix(".html") if make_html else None
@@ -135,7 +150,7 @@ def render(
                 timeout,
                 log_path=pdf_log,
                 verbose=verbose,
-                extra_args=None,
+                extra_args=pdf_extra_args,
             )
             if verbose or rc != 0:
                 print_pandoc_log(pdf_log, label="PDF")
@@ -212,6 +227,7 @@ def render(
         number_offset=number_offset,
         epub_chapter_level=effective_epub_level,
     )
+    pdf_extra_args = _pdf_extra_args(src)
 
     pdf_path = src.with_suffix(".pdf") if make_pdf else None
     html_path = src.with_suffix(".html") if make_html else None
@@ -229,7 +245,7 @@ def render(
             timeout,
             log_path=pdf_log,
             verbose=verbose,
-            extra_args=None,
+            extra_args=pdf_extra_args,
         )
         if verbose or rc != 0:
             print_pandoc_log(pdf_log, label="PDF")
