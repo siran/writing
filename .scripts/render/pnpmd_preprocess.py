@@ -5,7 +5,9 @@ import tempfile
 from pathlib import Path
 from typing import Optional, Tuple, Set, Dict, List
 
-from pnpmd_util import find_repo_root, load_map
+import yaml
+
+from pnpmd_util import find_repo_root, load_map, die
 
 # ---------- Protection of code, math ----------
 _FENCE_RE = re.compile(r'(^|\n)(?P<f>```+|~~~+)[^\n]*\n.*?(\n(?P=f)[ \t]*\n|$)', re.DOTALL)
@@ -78,6 +80,29 @@ def apply_mappings_safe(s: str, entries):
 _PERC_LINE = re.compile(r'^\s*%\s*(.*)\s*$')
 
 
+def extract_yaml_front_matter(text: str):
+    lines = text.splitlines()
+    if not lines:
+        return text, {}, []
+    if lines[0].strip() != "---":
+        return text, {}, []
+    end_idx = None
+    for i in range(1, len(lines)):
+        if lines[i].strip() in ("---", "..."):
+            end_idx = i
+            break
+    if end_idx is None:
+        return text, {}, []
+    yaml_text = "\n".join(lines[1:end_idx])
+    try:
+        data = yaml.safe_load(yaml_text) or {}
+    except Exception:
+        data = {}
+    stripped = "\n".join(lines[end_idx + 1 :]).lstrip("\n")
+    raw_head = lines[: end_idx + 1]
+    return stripped, data, raw_head
+
+
 def extract_percent_block(text: str):
     lines = text.splitlines()
     meta = {"title": None, "authors": [], "date": None}
@@ -103,6 +128,64 @@ def extract_percent_block(text: str):
     raw_head = lines[:i]
     stripped = "\n".join(lines[i:]).lstrip("\n") if i else text
     return stripped, meta, raw_head
+
+
+def _is_blank(val) -> bool:
+    if val is None:
+        return True
+    if isinstance(val, str):
+        return not val.strip()
+    if isinstance(val, (list, tuple)):
+        return all(_is_blank(v) for v in val)
+    if isinstance(val, dict):
+        return all(_is_blank(v) for v in val.values())
+    return False
+
+
+def _validate_percent_meta(meta: Dict, raw_head: List[str]) -> None:
+    if len(raw_head) < 3:
+        die("Pandoc % header must provide 3 lines: title, author, date.")
+    if _is_blank(meta.get("title")):
+        die("Pandoc % header missing title.")
+    if _is_blank(meta.get("authors")):
+        die("Pandoc % header missing author.")
+    if _is_blank(meta.get("date")):
+        die("Pandoc % header missing date.")
+
+
+def _validate_yaml_meta(meta: Dict) -> None:
+    title = meta.get("title")
+    author = meta.get("author") or meta.get("authors")
+    date = meta.get("date")
+    if _is_blank(title):
+        die("YAML front matter missing title.")
+    if _is_blank(author):
+        die("YAML front matter missing author.")
+    if _is_blank(date):
+        die("YAML front matter missing date.")
+
+
+def _parse_author_list(val) -> List[str]:
+    if not val:
+        return []
+    values = val if isinstance(val, list) else [val]
+    out: List[str] = []
+    for item in values:
+        if item is None:
+            continue
+        if isinstance(item, str):
+            parts = [
+                p.strip()
+                for chunk in re.split(r"\band\b|,", item)
+                for p in [chunk]
+                if p.strip()
+            ]
+            out.extend(parts)
+        else:
+            s = str(item).strip()
+            if s:
+                out.append(s)
+    return out
 
 
 # ---------- IDs, anchors ----------
@@ -432,6 +515,7 @@ def prepare_preprocessed(
     auto_shift: bool = True,
     number_offset: Optional[str] = None,
     epub_chapter_level: Optional[int] = None,
+    include_css: bool = True,
 ) -> Tuple[Path, Path, List[str], List[str], List[str], Optional[Path]]:
     """
     Returns:
@@ -443,8 +527,20 @@ def prepare_preprocessed(
 
     raw = src.read_text(encoding="utf-8").replace("\r\n", "\n")
 
-    mapped = apply_mappings_safe(raw, entries)
+    body_wo_yaml, yaml_meta, yaml_head = extract_yaml_front_matter(raw)
+    mapped = apply_mappings_safe(body_wo_yaml, entries)
     stripped, meta, raw_head = extract_percent_block(mapped)
+
+    use_percent = len(raw_head) > 0
+    use_yaml = not use_percent
+
+    if use_percent:
+        _validate_percent_meta(meta, raw_head)
+        yaml_head = []
+    else:
+        if not yaml_head:
+            die("Missing required metadata: add a 3-line % header or YAML front matter.")
+        _validate_yaml_meta(yaml_meta or {})
     header_and_inline_ids = collect_all_ids(stripped)
 
     body, label_map = prose_anchors_and_labels(stripped)
@@ -459,7 +555,12 @@ def prepare_preprocessed(
     if src.name.lower().endswith(".fdn.md"):
         body = replace_unicode_superscripts(body)
 
-    keep_head = "\n".join(raw_head) + ("\n\n" if raw_head else "")
+    keep_parts = []
+    if use_yaml and yaml_head:
+        keep_parts.append("\n".join(yaml_head))
+    if use_percent and raw_head:
+        keep_parts.append("\n".join(raw_head))
+    keep_head = "\n".join(keep_parts) + ("\n\n" if keep_parts else "")
 
     body2 = body
     has_toc_marker = False
@@ -482,18 +583,33 @@ def prepare_preprocessed(
 
     css_path = None
     css_src = repo / ".scripts" / "render" / "book-style.css"
-    if css_src.exists():
+    if include_css and css_src.exists():
         css_path = tmpdir / css_src.name
         css_path.write_text(css_src.read_text(encoding="utf-8"), encoding="utf-8")
 
-    # Only propagate title/authors/date; no extra policy defaults.
     meta_args: List[str] = []
-    if meta.get("title"):
-        meta_args += ["-M", f"title={meta['title']}"]
-    for a in meta.get("authors", []):
-        meta_args += ["-M", f"author={a}"]
-    if meta.get("date"):
-        meta_args += ["-M", f"date={meta['date']}"]
+    if use_percent:
+        if meta.get("title"):
+            meta_args += ["-M", f"title={meta['title']}"]
+        for a in meta.get("authors", []):
+            meta_args += ["-M", f"author={a}"]
+        if meta.get("date"):
+            meta_args += ["-M", f"date={meta['date']}"]
+    else:
+        title = yaml_meta.get("title")
+        subtitle = yaml_meta.get("subtitle")
+        authors = _parse_author_list(
+            yaml_meta.get("author") or yaml_meta.get("authors")
+        )
+        date_val = yaml_meta.get("date")
+        if title is not None:
+            meta_args += ["-M", f"title={str(title).strip()}"]
+        if subtitle is not None:
+            meta_args += ["-M", f"subtitle={str(subtitle).strip()}"]
+        for a in authors:
+            meta_args += ["-M", f"author={a}"]
+        if date_val is not None:
+            meta_args += ["-M", f"date={str(date_val).strip()}"]
 
     # heading shift: explicit > auto > 0
     shift = 0
@@ -505,7 +621,7 @@ def prepare_preprocessed(
             shift = 1 - mhl
     shift_args = ["--shift-heading-level-by", str(shift)] if shift != 0 else []
 
-    reader = "markdown+tex_math_dollars+raw_tex"
+    reader = "markdown+yaml_metadata_block+tex_math_dollars+raw_tex"
     if src.name.lower().endswith(".fdn.md"):
         reader += "+superscript"
     toc_flag: List[str] = [] if (omit_toc or has_toc_marker) else ["--toc"]

@@ -50,6 +50,11 @@ def _pdf_extra_args(src: Path) -> list[str]:
         return []
     return ["--pdf-engine=xelatex"]
 
+def _print_wrote(items: list[tuple[str, Optional[Path]]]) -> None:
+    for label, path in items:
+        if path:
+            print(f"✅ Wrote {label}: {path}")
+
 
 def render(
     path: str | None = None,
@@ -197,12 +202,13 @@ def render(
                 die(f"Docker pandoc (EPUB) failed (rc={rc})")
             shutil.copy2(out_epub, epub_path)
 
-        if make_pdf:
-            print(f"✅ Wrote {pdf_path}")
-        if make_html:
-            print(f"✅ Wrote {html_path}")
-        if make_epub:
-            print(f"✅ Wrote {epub_path}")
+        _print_wrote(
+            [
+                ("PDF", pdf_path if make_pdf else None),
+                ("HTML", html_path if make_html else None),
+                ("EPUB", epub_path if make_epub else None),
+            ]
+        )
 
         return (
             pdf_path.resolve() if pdf_path else None,
@@ -226,6 +232,7 @@ def render(
         auto_shift=auto_shift,
         number_offset=number_offset,
         epub_chapter_level=effective_epub_level,
+        include_css=False,
     )
     pdf_extra_args = _pdf_extra_args(src)
 
@@ -300,8 +307,14 @@ def render(
             die(f"Docker pandoc (EPUB) failed (rc={rc})")
         shutil.copy2(out_epub, epub_path)
 
-    wrote = [str(p) for p in [pdf_path, html_path, epub_path, final_pandoc_md] if p]
-    print("✅ Wrote " + ", ".join(wrote))
+    _print_wrote(
+        [
+            ("PDF", pdf_path if make_pdf else None),
+            ("HTML", html_path if make_html else None),
+            ("EPUB", epub_path if make_epub else None),
+            ("Pandoc MD", final_pandoc_md),
+        ]
+    )
 
     return (
         pdf_path.resolve() if pdf_path else None,
@@ -380,7 +393,7 @@ def main(argv=None):
     try:
         make_pdf = args.pdf or args.all
         make_html = args.html or args.all
-        make_epub = args.epub or args.all
+        make_epub = args.epub
 
         render(
             args.file,

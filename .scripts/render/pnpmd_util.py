@@ -9,8 +9,14 @@ from pathlib import Path
 from typing import List, Tuple
 
 
+_PRINTED_CMD = False
+
 def echo_cmd(cmd_list: List[str]):
+    global _PRINTED_CMD
+    if _PRINTED_CMD:
+        print()
     print("+", " ".join(_quote(x) for x in cmd_list), flush=True)
+    _PRINTED_CMD = True
 
 
 def _quote(s: str) -> str:

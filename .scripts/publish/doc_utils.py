@@ -99,8 +99,35 @@ def replace_header_date(md_text: str, new_date_iso: str) -> str:
             out.append(lines[i])
         i += 1
 
-    if head_count < 3:
-        out.append(f"% {long_date}")
+    if head_count > 0:
+        if head_count < 3:
+            die("Pandoc % header must include title, author, and date.")
+        out.extend(lines[i:])
+        return "\n".join(out)
+
+    if lines and lines[0].strip() == "---":
+        end_idx = None
+        for i in range(1, len(lines)):
+            if lines[i].strip() in ("---", "..."):
+                end_idx = i
+                break
+        if end_idx is not None:
+            yaml_lines = lines[1:end_idx]
+            date_idx = None
+            for i, line in enumerate(yaml_lines):
+                if re.match(r"^\s*date\s*:", line):
+                    date_idx = i
+                    break
+            if date_idx is not None:
+                indent = re.match(r"^(\s*)", yaml_lines[date_idx]).group(1)
+                yaml_lines[date_idx] = f"{indent}date: {new_date_iso}"
+            else:
+                yaml_lines.append(f"date: {new_date_iso}")
+            return "\n".join(
+                [lines[0], *yaml_lines, lines[end_idx], *lines[end_idx + 1 :]]
+            )
+
+    die("Missing required metadata: add a 3-line % header or YAML front matter.")
 
     out.extend(lines[i:])
     return "\n".join(out)

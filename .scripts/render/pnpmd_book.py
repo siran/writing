@@ -32,6 +32,11 @@ _TOC_TITLES = {
     "table de contenidos",
 }
 
+def _print_wrote(items: list[tuple[str, Optional[Path]]]) -> None:
+    for label, path in items:
+        if path:
+            print(f"✅ Wrote {label}: {path}")
+
 
 def _normalize_title_key(text: str) -> str:
     return _SPACE_RE.sub(" ", text.strip().lower())
@@ -964,12 +969,15 @@ def render_book_yaml(
         except Exception:
             print(f"[WARN] could not copy CSS to {dest_css}")
 
-    wrote = [
-        str(p)
-        for p in [pdf_path, html_path, epub_path, human_md_path, final_pandoc_md]
-        if p
-    ]
-    print("✅ Wrote " + ", ".join(wrote))
+    _print_wrote(
+        [
+            ("PDF", pdf_path if make_pdf else None),
+            ("HTML", html_path if make_html else None),
+            ("EPUB", epub_path if make_epub else None),
+            ("MD", human_md_path),
+            ("Pandoc MD", final_pandoc_md),
+        ]
+    )
 
     return (
         pdf_path.resolve() if pdf_path else None,
