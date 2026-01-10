@@ -2,12 +2,14 @@
 
 """
 Format Markdown in-place using numbertext-style wrapping plus spacing rules:
-- Normalize blockquote spacing ("->" -> "> |", ">" -> "> ").
-- Wrap paragraphs to 80 columns while preserving blockquote formatting.
+- Leave YAML/TOML front matter untouched.
+- Do not change content inside code fences, inline code, or math ($ / $$).
+- Wrap paragraphs to 80 columns while preserving blockquote prefixes.
 - Keep image lines intact (no wrapping).
 - Normalize blank lines between blocks:
-  - 1 after headings and before blockquotes/images.
-  - 2 after blockquotes/images and before new headings (except heading->heading).
+  - 2 before headings (except after front matter or another heading).
+  - 1 after headings.
+  - 2 after blockquotes/images.
 
 Useful to use with Emerald's `emeraldwalk.runonsave`:
 ```
@@ -30,6 +32,7 @@ import re
 import sys
 import textwrap
 from pathlib import Path
+from typing import Optional
 
 
 HEADING_RE = re.compile(r"^(\s*)(#{1,6})(\s+.*)$")
@@ -37,7 +40,13 @@ ARROW_LINE_RE = re.compile(r"^\s*(?:->|>)\s*")
 IMAGE_LINE_RE = re.compile(r"^\s*!\[")
 FOOTNOTE_DEF_RE = re.compile(r"^\s*\[\^[^\]]+\]:")
 FOOTNOTE_PREFIX_RE = re.compile(r"^(\s*\[\^[^\]]+\]:)\s*(.*)$")
+LIST_ITEM_RE = re.compile(r"^(\s*)([-*+]|[0-9]+[.)])(\s+|$)(.*)$")
+FENCE_START_RE = re.compile(r"^\s*(`{3,}|~{3,})")
+MATH_BLOCK_DELIM_RE = re.compile(r"^\s*\$\$\s*$")
 WRAP_WIDTH = 80
+FRONT_MATTER_DELIMS = ("---", "+++")
+INLINE_TOKEN_PREFIX = "<<<CODEXSPAN"
+INLINE_TOKEN_SUFFIX = ">>>"
 
 
 def split_blocks_with_implicit_breaks(lines: list[str]) -> list[tuple[str, list[str]]]:
@@ -61,6 +70,31 @@ def split_blocks_with_implicit_breaks(lines: list[str]) -> list[tuple[str, list[
             i = j
             continue
 
+        fence = is_fence_start(line)
+        if fence:
+            buf = [line]
+            i += 1
+            while i < len(lines):
+                buf.append(lines[i])
+                if is_fence_end(lines[i], fence):
+                    i += 1
+                    break
+                i += 1
+            blocks.append(("literal", buf))
+            continue
+
+        if MATH_BLOCK_DELIM_RE.match(line):
+            buf = [line]
+            i += 1
+            while i < len(lines):
+                buf.append(lines[i])
+                if MATH_BLOCK_DELIM_RE.match(lines[i]):
+                    i += 1
+                    break
+                i += 1
+            blocks.append(("literal", buf))
+            continue
+
         if HEADING_RE.match(line.rstrip("\n")):
             blocks.append(("heading", [line]))
             i += 1
@@ -75,6 +109,8 @@ def split_blocks_with_implicit_breaks(lines: list[str]) -> list[tuple[str, list[
             if cur.strip() == "":
                 break
             if HEADING_RE.match(cur.rstrip("\n")):
+                break
+            if is_fence_start(cur) or MATH_BLOCK_DELIM_RE.match(cur):
                 break
 
             cur_is_arrow = bool(ARROW_LINE_RE.match(cur))
@@ -158,76 +194,148 @@ def normalize_block_text(text: str) -> str:
     return text.rstrip("\n") + "\n"
 
 
-def ensure_newline_before_blockquotes(text: str) -> str:
-    out: list[str] = []
-    line_has_text = False
-    line_is_blockquote = False
-    prev_line_was_blockquote = False
-    i = 0
+def inline_token(idx: int) -> str:
+    return f"{INLINE_TOKEN_PREFIX}{idx}{INLINE_TOKEN_SUFFIX}"
 
-    def ensure_blank_line() -> None:
-        nonlocal line_has_text, line_is_blockquote, prev_line_was_blockquote
-        if not out:
-            line_has_text = False
-            line_is_blockquote = False
-            prev_line_was_blockquote = False
-            return
-        while out and out[-1] in (" ", "\t"):
-            out.pop()
-        if not out:
-            line_has_text = False
-            line_is_blockquote = False
-            prev_line_was_blockquote = False
-            return
-        if out[-1] != "\n":
-            out.append("\n")
-        if len(out) < 2 or out[-2] != "\n":
-            out.append("\n")
-        prev_line_was_blockquote = False
-        line_has_text = False
-        line_is_blockquote = False
+
+def make_placeholder(idx: int, span: str) -> str:
+    base = inline_token(idx)
+    if len(base) >= len(span):
+        return base
+    return base + ("X" * (len(span) - len(base)))
+
+
+def is_escaped(text: str, idx: int) -> bool:
+    backslashes = 0
+    i = idx - 1
+    while i >= 0 and text[i] == "\\":
+        backslashes += 1
+        i -= 1
+    return backslashes % 2 == 1
+
+
+def protect_inline_spans(text: str) -> tuple[str, list[tuple[str, str]]]:
+    replacements: list[tuple[str, str]] = []
+    out: list[str] = []
+    i = 0
 
     while i < len(text):
         ch = text[i]
-        if ch == "\n":
-            out.append(ch)
-            prev_line_was_blockquote = line_is_blockquote
-            line_has_text = False
-            line_is_blockquote = False
-            i += 1
+
+        if ch == "`" and not is_escaped(text, i):
+            run_len = 1
+            while i + run_len < len(text) and text[i + run_len] == "`":
+                run_len += 1
+            j = i + run_len
+            while j < len(text):
+                if text[j] == "`" and not is_escaped(text, j):
+                    if text.startswith("`" * run_len, j):
+                        span = text[i : j + run_len]
+                        token = make_placeholder(len(replacements), span)
+                        out.append(token)
+                        replacements.append((token, span))
+                        i = j + run_len
+                        break
+                j += 1
+            else:
+                out.append(text[i : i + run_len])
+                i += run_len
             continue
-        if text.startswith("->", i):
-            m = re.match(r"->\s*", text[i:])
-            adv = m.end() if m else 2
-            if line_has_text or not prev_line_was_blockquote:
-                ensure_blank_line()
-            out.append("> | ")
-            line_has_text = True
-            line_is_blockquote = True
-            i += adv
+
+        if ch == "$" and not is_escaped(text, i):
+            if text.startswith("$$", i):
+                j = i + 2
+                while j < len(text) - 1:
+                    if text.startswith("$$", j) and not is_escaped(text, j):
+                        span = text[i : j + 2]
+                        token = make_placeholder(len(replacements), span)
+                        out.append(token)
+                        replacements.append((token, span))
+                        i = j + 2
+                        break
+                    j += 1
+                else:
+                    out.append("$$")
+                    i += 2
+                continue
+
+            j = i + 1
+            while j < len(text):
+                if text[j] == "$" and not is_escaped(text, j):
+                    if not (j > 0 and text[j - 1] == "$") and not (
+                        j + 1 < len(text) and text[j + 1] == "$"
+                    ):
+                        span = text[i : j + 1]
+                        token = make_placeholder(len(replacements), span)
+                        out.append(token)
+                        replacements.append((token, span))
+                        i = j + 1
+                        break
+                j += 1
+            else:
+                out.append(ch)
+                i += 1
             continue
-        if text.startswith(">", i):
-            m = re.match(r">\s*", text[i:])
-            adv = m.end() if m else 1
-            if line_has_text or not prev_line_was_blockquote:
-                ensure_blank_line()
-            out.append("> ")
-            line_has_text = True
-            line_is_blockquote = True
-            i += adv
-            continue
+
         out.append(ch)
-        if not ch.isspace():
-            line_has_text = True
         i += 1
 
-    return "".join(out)
+    return "".join(out), replacements
+
+
+def restore_inline_spans(text: str, replacements: list[tuple[str, str]]) -> str:
+    for token, span in replacements:
+        text = text.replace(token, span)
+    return text
+
+
+def is_fence_start(line: str) -> Optional[str]:
+    match = FENCE_START_RE.match(line)
+    return match.group(1) if match else None
+
+
+def is_fence_end(line: str, fence: str) -> bool:
+    stripped = line.lstrip()
+    return stripped.startswith(fence)
+
+
+def split_front_matter(lines: list[str]) -> tuple[list[str], list[str]]:
+    if not lines:
+        return [], lines
+
+    first_line = lines[0].strip()
+    if first_line not in FRONT_MATTER_DELIMS:
+        return [], lines
+
+    end_tokens = ("...", first_line) if first_line == "---" else (first_line,)
+    for idx in range(1, len(lines)):
+        if lines[idx].strip() in end_tokens:
+            return lines[: idx + 1], lines[idx + 1 :]
+
+    return [], lines
 
 
 def wrap_paragraph(text: str, width: int = WRAP_WIDTH) -> str:
     lines = text.splitlines()
     out_lines: list[str] = []
     buffer: list[str] = []
+
+    def wrap_prefixed(
+        prefix: str, content: str, *, repeat_prefix: bool = True
+    ) -> list[str]:
+        content = content.strip()
+        if not content:
+            return [prefix.rstrip()]
+        masked, replacements = protect_inline_spans(content)
+        wrapper = textwrap.TextWrapper(
+            width=width,
+            initial_indent=prefix,
+            subsequent_indent=prefix if repeat_prefix else (" " * len(prefix)),
+            break_long_words=False,
+            break_on_hyphens=False,
+        )
+        wrapped = wrapper.fill(masked)
+        return restore_inline_spans(wrapped, replacements).splitlines()
 
     def flush_buffer() -> None:
         if not buffer:
@@ -242,6 +350,7 @@ def wrap_paragraph(text: str, width: int = WRAP_WIDTH) -> str:
                 stripped.append(line.strip())
         joined = " ".join(part for part in stripped if part != "")
         if joined:
+            masked, replacements = protect_inline_spans(joined)
             wrapper = textwrap.TextWrapper(
                 width=width,
                 initial_indent=indent,
@@ -249,44 +358,78 @@ def wrap_paragraph(text: str, width: int = WRAP_WIDTH) -> str:
                 break_long_words=False,
                 break_on_hyphens=False,
             )
-            out_lines.extend(wrapper.fill(joined).splitlines())
+            wrapped = wrapper.fill(masked)
+            out_lines.extend(
+                restore_inline_spans(wrapped, replacements).splitlines()
+            )
         buffer.clear()
 
-    for line in lines:
+    i = 0
+    while i < len(lines):
+        line = lines[i]
         if line.strip() == "":
             flush_buffer()
             out_lines.append("")
+            i += 1
             continue
 
-        m = re.match(r"^(\s*)>\s*\|\s*(.*)$", line)
+        m = LIST_ITEM_RE.match(line)
         if m:
             flush_buffer()
-            indent, content = m.group(1), m.group(2).rstrip()
-            if content:
-                out_lines.append(f"{indent}> | {content}")
-            else:
-                out_lines.append(f"{indent}> |")
-            continue
-
-        m = re.match(r"^(\s*)>\s*(.*)$", line)
-        if m:
-            flush_buffer()
-            indent, content = m.group(1), m.group(2).strip()
-            prefix = f"{indent}> "
-            wrapper = textwrap.TextWrapper(
-                width=width,
-                initial_indent=prefix,
-                subsequent_indent=prefix,
-                break_long_words=False,
-                break_on_hyphens=False,
-            )
-            if content:
-                out_lines.extend(wrapper.fill(content).splitlines())
+            indent, marker, gap, content = m.groups()
+            prefix = f"{indent}{marker}{gap}"
+            content_indent_len = len(prefix)
+            parts: list[str] = []
+            if content.strip():
+                parts.append(content.strip())
+            i += 1
+            while i < len(lines):
+                next_line = lines[i]
+                if next_line.strip() == "":
+                    break
+                if LIST_ITEM_RE.match(next_line):
+                    break
+                leading_ws = len(next_line) - len(next_line.lstrip(" \t"))
+                if leading_ws < content_indent_len:
+                    break
+                continuation = next_line[content_indent_len:]
+                if continuation.strip():
+                    parts.append(continuation.strip())
+                i += 1
+            if parts:
+                out_lines.extend(
+                    wrap_prefixed(prefix, " ".join(parts), repeat_prefix=False)
+                )
             else:
                 out_lines.append(prefix.rstrip())
             continue
 
+        m = re.match(r"^(\s*->\s*)(.*)$", line)
+        if m:
+            flush_buffer()
+            prefix, content = m.groups()
+            out_lines.extend(wrap_prefixed(prefix, content))
+            i += 1
+            continue
+
+        m = re.match(r"^(\s*>\s*\|\s*)(.*)$", line)
+        if m:
+            flush_buffer()
+            prefix, content = m.groups()
+            out_lines.extend(wrap_prefixed(prefix, content))
+            i += 1
+            continue
+
+        m = re.match(r"^(\s*>\s*)(.*)$", line)
+        if m:
+            flush_buffer()
+            prefix, content = m.groups()
+            out_lines.extend(wrap_prefixed(prefix, content))
+            i += 1
+            continue
+
         buffer.append(line)
+        i += 1
 
     flush_buffer()
     return "\n".join(out_lines)
@@ -313,6 +456,7 @@ def wrap_footnote_block(text: str, width: int = WRAP_WIDTH) -> str:
     if not content:
         return prefix
 
+    masked, replacements = protect_inline_spans(content)
     wrapper = textwrap.TextWrapper(
         width=width,
         initial_indent=f"{prefix} ",
@@ -320,7 +464,8 @@ def wrap_footnote_block(text: str, width: int = WRAP_WIDTH) -> str:
         break_long_words=False,
         break_on_hyphens=False,
     )
-    return wrapper.fill(content)
+    wrapped = wrapper.fill(masked)
+    return restore_inline_spans(wrapped, replacements)
 
 
 def format_paragraph(paragraph: str) -> str:
@@ -333,12 +478,11 @@ def format_paragraph(paragraph: str) -> str:
         core = wrap_footnote_block(core)
         return core + ("\n" * trailing)
 
-    core = ensure_newline_before_blockquotes(core)
     core = wrap_paragraph(core)
     return core + ("\n" * trailing)
 
 
-def format_only(lines: list[str]) -> str:
+def format_only(lines: list[str], leading_context: Optional[str] = None) -> str:
     raw_blocks = split_blocks_with_implicit_breaks(lines)
     blocks: list[tuple[str, str]] = []
     gaps: list[int] = []
@@ -355,6 +499,9 @@ def format_only(lines: list[str]) -> str:
         if kind == "heading":
             block_kind = "heading"
             text = blines[0]
+        elif kind == "literal":
+            block_kind = "literal"
+            text = "".join(blines)
         else:
             paragraph = "".join(blines)
             if is_image_paragraph(blines):
@@ -364,7 +511,10 @@ def format_only(lines: list[str]) -> str:
                 block_kind = "blockquote" if is_blockquote_paragraph(blines) else "para"
                 text = format_paragraph(paragraph)
 
-        blocks.append((block_kind, normalize_block_text(text)))
+        if block_kind == "literal":
+            blocks.append((block_kind, text))
+        else:
+            blocks.append((block_kind, normalize_block_text(text)))
 
     if not blocks:
         return "".join(lines)
@@ -379,6 +529,8 @@ def format_only(lines: list[str]) -> str:
 
     out: list[str] = []
     leading_blank_lines = gaps[0] if gaps else 0
+    if leading_context == "front_matter" and blocks[0][0] == "heading":
+        leading_blank_lines = 1
     if leading_blank_lines:
         out.append("\n" * leading_blank_lines)
     out.append(blocks[0][1])
@@ -402,8 +554,14 @@ def main(path: Path) -> int:
 
     original_text = path.read_text(encoding="utf-8")
     lines = original_text.splitlines(keepends=True)
+    front_matter: list[str] = []
+    body_lines = lines
+    if path.suffix.lower() == ".md":
+        front_matter, body_lines = split_front_matter(lines)
 
-    new_text = format_only(lines)
+    new_text = "".join(front_matter) + format_only(
+        body_lines, leading_context="front_matter" if front_matter else None
+    )
     if new_text != original_text:
         path.write_text(new_text, encoding="utf-8")
 
