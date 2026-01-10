@@ -993,42 +993,6 @@ def run_publish(args, ctx: PublishContext) -> None:
         cwd=site_repo,
     )
 
-    # Assets repo
-    if args.assets_dir:
-        assets_repo = Path(args.assets_dir).resolve()
-        if not (assets_repo / ".git").exists():
-            die(f"Assets dir is not a git repo: {assets_repo}")
-
-        dest_pdf = assets_repo / assets_prefix / stem / doi_prefix / doi_suffix / final_pdf.name
-        dest_pdf.parent.mkdir(parents=True, exist_ok=True)
-        echo(f"+ copy {final_pdf} -> {dest_pdf}")
-        shutil.copy2(final_pdf, dest_pdf)
-
-        paths_to_add = [os.path.relpath(dest_pdf, assets_repo)]
-
-        if final_epub is not None:
-            dest_epub = (
-                assets_repo / assets_prefix / stem / doi_prefix / doi_suffix / final_epub.name
-            )
-            dest_epub.parent.mkdir(parents=True, exist_ok=True)
-            echo(f"+ copy {final_epub} -> {dest_epub}")
-            shutil.copy2(final_epub, dest_epub)
-            paths_to_add.append(os.path.relpath(dest_epub, assets_repo))
-
-        run(["git", "add"] + paths_to_add, cwd=assets_repo)
-        if not args.no_assets_push:
-            suffix = ", epub" if final_epub is not None else ""
-            run(
-                [
-                    "git",
-                    "commit",
-                    "-m",
-                    f"{title}.pdf ({publication_date}, {doi}){suffix}",
-                ],
-                cwd=assets_repo,
-            )
-            run(["git", "push"], cwd=assets_repo)
-
     # Apply final metadata
     _ = http_json(
         "PUT",
@@ -1107,6 +1071,42 @@ def run_publish(args, ctx: PublishContext) -> None:
             echo("No concept DOI present in record; leaving provenance as-is.")
     except Exception as e:
         echo(f"WARNING: Failed to retrieve record to update concept DOI: {e}")
+
+    # Assets repo (push after Zenodo is finished)
+    if args.assets_dir:
+        assets_repo = Path(args.assets_dir).resolve()
+        if not (assets_repo / ".git").exists():
+            die(f"Assets dir is not a git repo: {assets_repo}")
+
+        dest_pdf = assets_repo / assets_prefix / stem / doi_prefix / doi_suffix / final_pdf.name
+        dest_pdf.parent.mkdir(parents=True, exist_ok=True)
+        echo(f"+ copy {final_pdf} -> {dest_pdf}")
+        shutil.copy2(final_pdf, dest_pdf)
+
+        paths_to_add = [os.path.relpath(dest_pdf, assets_repo)]
+
+        if final_epub is not None:
+            dest_epub = (
+                assets_repo / assets_prefix / stem / doi_prefix / doi_suffix / final_epub.name
+            )
+            dest_epub.parent.mkdir(parents=True, exist_ok=True)
+            echo(f"+ copy {final_epub} -> {dest_epub}")
+            shutil.copy2(final_epub, dest_epub)
+            paths_to_add.append(os.path.relpath(dest_epub, assets_repo))
+
+        run(["git", "add"] + paths_to_add, cwd=assets_repo)
+        if not args.no_assets_push:
+            suffix = ", epub" if final_epub is not None else ""
+            run(
+                [
+                    "git",
+                    "commit",
+                    "-m",
+                    f"{title}.pdf ({publication_date}, {doi}){suffix}",
+                ],
+                cwd=assets_repo,
+            )
+            run(["git", "push"], cwd=assets_repo)
 
     # Merge branch into main
     run(["git", "checkout", "main"], cwd=site_repo)
