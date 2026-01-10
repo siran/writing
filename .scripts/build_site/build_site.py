@@ -181,6 +181,13 @@ def load_text(p: Path) -> str:
         return text[:-1]
     return text
 
+def _doi_suffix_number(doi_suffix: str) -> int:
+    s = (doi_suffix or "").strip()
+    if not s:
+        return -1
+    m = re.search(r"(\d+)(?!.*\d)", s)
+    return int(m.group(1)) if m else -1
+
 @dataclass
 class Item:
     name: str
@@ -289,6 +296,20 @@ def _current_origin() -> str:
         or os.getenv("BASE_URL")
         or BASE_URL
     ).rstrip("/")
+
+def _normalize_feed_url(url: str) -> str:
+    try:
+        parts = urllib.parse.urlsplit(url)
+        if not parts.scheme or not parts.netloc:
+            return url
+        path = urllib.parse.quote(parts.path, safe="/%")
+        query = urllib.parse.quote(parts.query, safe="=&%")
+        fragment = urllib.parse.quote(parts.fragment, safe="%")
+        return urllib.parse.urlunsplit(
+            (parts.scheme, parts.netloc, path, query, fragment)
+        )
+    except Exception:
+        return url
 
 # ---------- templating ----------
 def write_html(out_html: Path, body_html: str, head_extra: str = "", title: str = ""):
@@ -875,8 +896,10 @@ def build_article_pages() -> set[Path]:
 
     for (top, stem), items in groups.items():
         def sort_key(it):
-            dt = _to_datetime(it["date"])
-            return dt or datetime.fromtimestamp(it["prov"].stat().st_mtime)
+            mtime = datetime.fromtimestamp(it["prov"].stat().st_mtime)
+            dt = _to_datetime(it["date"]) or mtime
+            doi_num = _doi_suffix_number(it.get("doi_suffix") or "")
+            return (dt, doi_num, it.get("doi_suffix") or "", mtime)
 
         versions = sorted(items, key=sort_key, reverse=True)
         latest = versions[0]
@@ -898,7 +921,6 @@ def build_article_pages() -> set[Path]:
 
             local_md   = f"/{(OUT/rel(src/it['md_name'])).relative_to(OUT).as_posix()}" if it["md_name"] else None
             local_html = f"/{(OUT/rel(src/it['html_name'])).relative_to(OUT).as_posix()}" if it["html_name"] else None
-            local_pmd  = f"/{(OUT/rel(src/it['pmd_name'])).relative_to(OUT).as_posix()}" if it["pmd_name"] else None
             local_pdf  = _local_artifact_url(src, it.get("pdf_name"))
             local_epub = _local_artifact_url(src, it.get("epub_name"))
             pdf_link = it.get("assets_pdf") or local_pdf or ""
@@ -912,15 +934,16 @@ def build_article_pages() -> set[Path]:
                 except Exception:
                     html_body = ""
 
+            local_md_html = f"{local_md}.html" if local_md else ""
             top_links = []
-            if local_md:
-                top_links.append(f'<a href="{local_md}">Markdown</a>')
+            if local_html:
+                top_links.append(f'<a href="{local_html}">HTML</a>')
+            if local_md_html:
+                top_links.append(f'<a href="{local_md_html}">MD.HTML</a>')
             if pdf_link:
                 top_links.append(f'<a href="{pdf_link}">PDF</a>')
-            if epub_link:
-                top_links.append(f'<a href="{epub_link}">EPUB</a>')
-            if local_pmd:
-                top_links.append(f'<a href="{local_pmd}">Preprocessed MD</a>')
+            if local_md:
+                top_links.append(f'<a href="{local_md}">MD (raw)</a>')
 
             share_html = ""
             doi_clean = (it["doi"] or "").replace(" ", "")
@@ -940,19 +963,21 @@ def build_article_pages() -> set[Path]:
                 )
 
             breadcrumbs = crumb_link([top, stem, it["doi_prefix"], it["doi_suffix"]])
-            files_list = []
-            prov_local = f"/{(OUT/rel(it['prov'])).relative_to(OUT).as_posix()}"
-            if local_html:
-                files_list.append(f'<li><a href="{local_html}">{it["html_name"]}</a></li>')
-            if local_md:
-                files_list.append(f'<li><a href="{local_md}">{it["md_name"]}</a></li>')
-            files_list.append(f'<li><a href="{prov_local}">provenance.yaml</a></li>')
-            if pdf_link:
-                files_list.append(f'<li><a href="{pdf_link}">PDF</a></li>')
-            if epub_link:
-                files_list.append(f'<li><a href="{epub_link}">EPUB</a></li>')
-            files_ul = "<ul>" + "".join(files_list) + "</ul>"
+            stem_seg = quote(stem, safe="")
+            same_family = []
+            for v in versions:
+                if it["concept"] and v["concept"] == it["concept"]:
+                    same_family.append(v)
+                elif not it["concept"] and not v["concept"]:
+                    same_family.append(v)
 
+            versions_list = []
+            for v in same_family:
+                ver_url = f"/{top}/{stem_seg}/{v['doi_prefix']}/{v['doi_suffix']}/"
+                doi_disp = f"{v['doi_prefix']}/{v['doi_suffix']}"
+                date_disp = v["date"] or ""
+                versions_list.append(f"<li>{date_disp} — <a href=\"{ver_url}\">{doi_disp}</a></li>")
+            versions_ul = "<ul>" + "".join(versions_list) + "</ul>" if versions_list else ""
             display_authors = it["authors"]
             authors_html = ", ".join(filter(None, (fmt_author(a) for a in display_authors)))
 
@@ -963,9 +988,13 @@ def build_article_pages() -> set[Path]:
             if authors_html:
                 body.append(f"<p class='authors'>{authors_html}</p>")
             body.append(f"<p class='publine'>{PREFERRED_JOURNAL} — {month_year(it['date'])}</p>")
-            body.append("<p class='links'>" + " · ".join(top_links) + "</p>")
+            if top_links:
+                body.append("<p class='links'><strong>Version:</strong> " + " · ".join(top_links) + "</p>")
             if share_html:
                 body.append(share_html)
+            if versions_ul:
+                body.append("<h2>Versions</h2>")
+                body.append(versions_ul)
 
             if it["onesent"]:
                 body.append("<h2>One-Sentence Summary</h2>")
@@ -974,9 +1003,6 @@ def build_article_pages() -> set[Path]:
             if it["abstract"]:
                 body.append("<h2>Abstract</h2>")
                 body.append(f"<p>{it['abstract']}</p>")
-
-            body.append("<h2>Files</h2>")
-            body.append(files_ul)
 
             if html_body:
                 body.append("<h2>Article</h2>")
@@ -995,7 +1021,6 @@ def build_article_pages() -> set[Path]:
 
             body.append("</main>")
 
-            stem_seg = quote(stem, safe="")
             version_url = f"{origin}/{top}/{stem_seg}/{it['doi_prefix']}/{it['doi_suffix']}/"
 
             head = []
@@ -1104,7 +1129,6 @@ def build_article_pages() -> set[Path]:
 
         local_md   = f"/{(OUT/rel(src/it['md_name'])).relative_to(OUT).as_posix()}" if it["md_name"] else None
         local_html = f"/{(OUT/rel(src/it['html_name'])).relative_to(OUT).as_posix()}" if it["html_name"] else None
-        local_pmd  = f"/{(OUT/rel(src/it['pmd_name'])).relative_to(OUT).as_posix()}" if it["pmd_name"] else None
         local_pdf  = _local_artifact_url(src, it.get("pdf_name"))
         local_epub = _local_artifact_url(src, it.get("epub_name"))
         pdf_link = it.get("assets_pdf") or local_pdf or ""
@@ -1128,36 +1152,26 @@ def build_article_pages() -> set[Path]:
             elif not it["concept"] and not v["concept"]:
                 same_family.append(v)
 
+        stem_seg = quote(stem, safe="")
         versions_list = []
         for v in same_family:
-            ver_url  = f"/{top}/{stem}/{v['doi_prefix']}/{v['doi_suffix']}/"
+            ver_url = f"/{top}/{stem_seg}/{v['doi_prefix']}/{v['doi_suffix']}/"
             doi_disp = f"{v['doi_prefix']}/{v['doi_suffix']}"
             date_disp = v["date"] or ""
-            versions_list.append(f"<li>{date_disp} — <a href='{ver_url}'>{doi_disp}</a></li>")
+            versions_list.append(f"<li>{date_disp} — <a href=\"{ver_url}\">{doi_disp}</a></li>")
         versions_ul = "<ul>" + "".join(versions_list) + "</ul>" if versions_list else ""
 
-        files_list = []
-        prov_local = f"/{(OUT/rel(it['prov'])).relative_to(OUT).as_posix()}"
-        if local_html:
-            files_list.append(f'<li><a href="{local_html}">{it["html_name"]}</a></li>')
-        if local_md:
-            files_list.append(f'<li><a href="{local_md}">{it["md_name"]}</a></li>')
-        files_list.append(f'<li><a href="{prov_local}">provenance.yaml</a></li>')
-        if pdf_link:
-            files_list.append(f'<li><a href="{pdf_link}">PDF</a></li>')
-        if epub_link:
-            files_list.append(f'<li><a href="{epub_link}">EPUB</a></li>')
-        files_ul = "<ul>" + "".join(files_list) + "</ul>"
+        local_md_html = f"{local_md}.html" if local_md else ""
 
         top_links = []
-        if local_md:
-            top_links.append(f'<a href="{local_md}">Markdown (latest)</a>')
+        if local_html:
+            top_links.append(f'<a href="{local_html}">HTML</a>')
+        if local_md_html:
+            top_links.append(f'<a href="{local_md_html}">MD.HTML</a>')
         if pdf_link:
-            top_links.append(f'<a href="{pdf_link}">PDF (latest)</a>')
-        if epub_link:
-            top_links.append(f'<a href="{epub_link}">EPUB (latest)</a>')
-        if local_pmd:
-            top_links.append(f'<a href="{local_pmd}">Preprocessed MD</a>')
+            top_links.append(f'<a href="{pdf_link}">PDF</a>')
+        if local_md:
+            top_links.append(f'<a href="{local_md}">MD (raw)</a>')
 
         share_html = ""
         doi_clean = (it["doi"] or "").replace(" ", "")
@@ -1186,15 +1200,13 @@ def build_article_pages() -> set[Path]:
         if authors_html:
             body.append(f"<p class='authors'>{authors_html}</p>")
         body.append(f"<p class='publine'>{PREFERRED_JOURNAL} — {month_year(it['date'])}</p>")
-        body.append("<p class='links'>" + " · ".join(top_links) + "</p>")
+        if top_links:
+            body.append("<p class='links'><strong>Latest:</strong> " + " · ".join(top_links) + "</p>")
         if share_html:
             body.append(share_html)
         if versions_ul:
             body.append("<h2>Versions</h2>")
             body.append(versions_ul)
-        body.append("<h2>Files (latest)</h2>")
-        body.append(files_ul)
-
         if it["onesent"]:
             body.append("<h2>One-Sentence Summary</h2>")
             body.append(f"<p>{it['onesent']}</p>")
@@ -1219,7 +1231,6 @@ def build_article_pages() -> set[Path]:
                 body.append("<ul>" + "".join(refs_items) + "</ul>")
         body.append("</main>")
 
-        stem_seg = quote(stem, safe="")
         stem_url = f"{origin}/{top}/{stem_seg}/"
         head = []
         head.append('<meta charset="utf-8">')
@@ -1556,6 +1567,7 @@ def build_rss_feed():
             item_url = permalink.rstrip("/")
         else:
             item_url = f"{origin}/{quote(top, safe='')}/{quote(stem, safe='')}/"
+        item_url = _normalize_feed_url(item_url)
 
         dt = _to_datetime(date_norm) or datetime.fromtimestamp(prov.stat().st_mtime)
         keep = by_stem.get((top, stem))
@@ -1578,8 +1590,8 @@ def build_rss_feed():
     fg = FeedGenerator()
     fg.load_extension("podcast")
     fg.title(f"{PREFERRED_JOURNAL} — Publications")
-    fg.link(href=origin + "/", rel="alternate")
     fg.link(href=origin + "/rss.xml", rel="self")
+    fg.link(href=origin + "/", rel="alternate")
     fg.description(f"Latest publications from {PREFERRED_JOURNAL}")
     fg.language("en")
 
