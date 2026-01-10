@@ -5,6 +5,7 @@ date: 2026-01-09 9:44
 keywords: offline digital cash, hydra head, cardano, utxo, bearer-style money, peer-to-peer settlement, off-chain finality, fee-less payments, privacy, cul-de-sac economy
 one-sentence-summary: Hydra Heads enable true offline digital cash by letting value circulate peer to peer, privately and instantly, without miners, fees, or continuous blockchain access.
 summary: Cardano Hydra Heads implement offline, peer-to-peer, bearer-style digital cash by enabling instant, fee-less, and private value transfer without global ledger involvement.
+DOI: https://writing.preferredframe.com/doi/10.5281/zenodo.18203718
 ---
 
 ![Hydra heads](https://siran.github.io/assets/writing/hydra-heads.png)
@@ -67,9 +68,37 @@ possible in coin-type cryptocurrencies.
 
 ## Bitcoin-like, not Ethereum-like
 
-Most prominently **Ethereum** uses an **account-based model**. Also, by
-extension, all the other 20 standard, and other coins like: <list the most
-famous>
+Most prominently Ethereum uses an account-based model. Also, by extension, all
+the other ERC-20–based systems and account-model chains, including:
+
+- Ethereum
+- Binance Smart Chain
+- Solana
+- Tron
+
+Discarding these for true digital cash (which requires coin / UTxO semantics),
+and excluding stablecoins such as:
+
+- Tether
+- USDC
+
+leaves a much smaller competitive field.
+
+
+### Cardano’s actual competitors
+
+For bearer-style, UTxO-based, cash-capable cryptocurrencies, Cardano competes
+primarily with:
+
+- Bitcoin
+- Litecoin
+- Bitcoin Cash
+- Dogecoin
+- XRP
+
+Among these, Cardano is the only system that natively supports offline,
+fee-less, peer-to-peer cash-like settlement via Hydra Heads, while remaining
+anchored to a secure L1.
 
 
 ## Hydra Head properties
@@ -190,7 +219,7 @@ This is **cash without paper**.
 
 ### What if the same paper is printed twice?
 
-![alt text](https://siran.github.io/assets/writing/money-maker.png)
+![Money making machine.](https://siran.github.io/assets/writing/money-maker.png)
 
 
 This is analogous to photocopying a banknote.
@@ -578,3 +607,5 @@ curl -s http://${PHONE_IP}:${PHONE_API}/head \
 # - new UTxOs appear for A and B
 ############################################################
 ```
+
+DOI: https://writing.preferredframe.com/doi/10.5281/zenodo.18203718
