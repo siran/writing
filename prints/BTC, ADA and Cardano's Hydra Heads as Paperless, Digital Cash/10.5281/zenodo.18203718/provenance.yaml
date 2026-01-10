@@ -1,0 +1,80 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: BTC, ADA, and Cardano Hydra Heads as Paperless Digital Cash
+doi: 10.5281/zenodo.18203718
+concept_doi: null
+permalink: "https://writing.preferredframe.com/prints/BTC, ADA and Cardano's Hydra Heads as Paperless, Digital Cash/10.5281/zenodo.18203718/"
+publication_date: '2026-01-09'
+publication_year: '2026'
+keywords:
+- offline digital cash
+- hydra head
+- cardano
+- utxo
+- bearer-style money
+- peer-to-peer settlement
+- off-chain finality
+- fee-less payments
+- privacy
+- cul-de-sac economy
+one_sentence_summary: Hydra Heads enable true offline digital cash by letting value circulate peer to peer, privately and instantly, without miners, fees, or continuous blockchain access.
+abstract: Cardano Hydra Heads implement offline, peer-to-peer, bearer-style digital cash by enabling instant, fee-less, and private value transfer without global ledger involvement.
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: BTC, ADA, and Cardano Hydra Heads as Paperless Digital Cash
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  description: Cardano Hydra Heads implement offline, peer-to-peer, bearer-style digital cash by enabling instant, fee-less, and private value transfer without global ledger involvement.
+  keywords:
+  - offline digital cash
+  - hydra head
+  - cardano
+  - utxo
+  - bearer-style money
+  - peer-to-peer settlement
+  - off-chain finality
+  - fee-less payments
+  - privacy
+  - cul-de-sac economy
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-09'
+  license: cc-by-nc-nd-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/BTC, ADA and Cardano's Hydra Heads as Paperless, Digital Cash/10.5281/zenodo.18203718/BTC, ADA and Cardano's Hydra Heads as Paperless, Digital Cash.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/BTC, ADA and Cardano's Hydra Heads as Paperless, Digital Cash/10.5281/zenodo.18203718/BTC, ADA and Cardano's Hydra Heads as Paperless, Digital Cash.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/BTC, ADA and Cardano's Hydra Heads as Paperless, Digital Cash/10.5281/zenodo.18203718/BTC, ADA and Cardano's Hydra Heads as Paperless, Digital Cash.pdf"
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: Hydra Heads enable true offline digital cash by letting value circulate peer to peer, privately and instantly, without miners, fees, or continuous blockchain access.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: 36bcda5934caf987bf9034afa8a2a0dc0eaed2a9
+  filename: BTC, ADA and Cardano's Hydra Heads as Paperless, Digital Cash.md
+artifacts:
+  md: BTC, ADA and Cardano's Hydra Heads as Paperless, Digital Cash.md
+  md_url: "https://writing.preferredframe.com/prints/BTC, ADA and Cardano's Hydra Heads as Paperless, Digital Cash/10.5281/zenodo.18203718/BTC, ADA and Cardano's Hydra Heads as Paperless, Digital Cash.md"
+  pandoc_md_name: BTC, ADA and Cardano's Hydra Heads as Paperless, Digital Cash.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/BTC, ADA and Cardano's Hydra Heads as Paperless, Digital Cash/10.5281/zenodo.18203718/BTC, ADA and Cardano's Hydra Heads as Paperless, Digital Cash.pandoc.md"
+  pdf_name: BTC, ADA and Cardano's Hydra Heads as Paperless, Digital Cash.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/BTC, ADA and Cardano's Hydra Heads as Paperless, Digital Cash/10.5281/zenodo.18203718/BTC, ADA and Cardano's Hydra Heads as Paperless, Digital Cash.pdf"
+  html_name: BTC, ADA and Cardano's Hydra Heads as Paperless, Digital Cash.html
+  html_url: "https://writing.preferredframe.com/prints/BTC, ADA and Cardano's Hydra Heads as Paperless, Digital Cash/10.5281/zenodo.18203718/BTC, ADA and Cardano's Hydra Heads as Paperless, Digital Cash.html"
+  primary: md
