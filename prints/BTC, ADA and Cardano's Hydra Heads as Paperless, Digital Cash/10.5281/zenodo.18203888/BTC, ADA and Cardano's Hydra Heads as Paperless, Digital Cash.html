@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="An M. Rodriguez" />
+  <meta name="keywords" content="offline digital cash, hydra head,
+cardano, utxo, bearer-style money, peer-to-peer settlement, off-chain
+finality, fee-less payments, privacy, cul-de-sac economy" />
+  <title>January 9, 2026</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js"
+  type="text/javascript"></script>
+<style>
+:root {
+  --bg: #fdfbf7;
+  --text: #1b1b1b;
+  --muted: #4a4a4a;
+  --accent: #1f5fbf;
+  --accent-soft: #e8f0ff;
+  --mono: "SFMono-Regular", "JetBrains Mono", "Fira Code", "Menlo", monospace;
+  --serif: "Iowan Old Style", "Book Antiqua", "Palatino", "Merriweather", Georgia, serif;
+  --sans: "Source Sans Pro", "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--serif);
+  max-width: 900px;
+  margin: 3rem auto 4rem;
+  padding: 0 1.5rem;
+  line-height: 1.8;
+  font-size: 20px;
+  text-align: justify;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--sans);
+  letter-spacing: 0.01em;
+  color: #0f1c3f;
+  margin: 2.1rem 0 0.85rem;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 10rem;
+}
+
+h1.chapter {
+  text-align: right;
+  margin-top: 17.5rem;
+}
+
+h1.chapter.unlisted + p,
+h1.chapter.unlisted + p + p {
+  font-style: italic;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.9rem;
+  border-bottom: 1px solid rgba(15, 28, 63, 0.1);
+  padding-bottom: 0.35rem;
+  text-align: right;
+  margin-top: 3rem;
+}
+
+h3 {
+  font-size: 1.45rem;
+}
+
+p {
+  margin: 0 0 1.15em;
+}
+
+ul,
+ol {
+  padding-left: 1.4em;
+  margin: 0 0 1.2em;
+}
+
+li {
+  margin-bottom: 0.55em;
+}
+
+blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 0.5em 1.1em;
+  margin: 1.7em 0;
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.subtitle {
+  white-space: pre-line;
+  line-height: 1.6;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code,
+pre {
+  font-family: var(--mono);
+  font-size: 0.95em;
+  background: #f1f3f7;
+}
+
+code {
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+}
+
+pre {
+  padding: 1.05em;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+pre code {
+  padding: 0;
+  background: none;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  width: 100%;
+  font-size: 0.95em;
+}
+
+th,
+td {
+  border: 1px solid #e1e5f0;
+  padding: 0.6em 0.8em;
+  text-align: left;
+}
+
+th {
+  background: #f5f7fb;
+  font-weight: 600;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.15), transparent);
+  margin: 2rem 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: 1.2em auto;
+  border-radius: 6px;
+}
+
+figure {
+  margin: 1.5em 0;
+  text-align: center;
+}
+
+figcaption {
+  margin-top: 0.6em;
+  color: var(--muted);
+  font-size: 0.95em;
+}
+
+.footnotes {
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+.footnotes ol {
+  padding-left: 1.5em;
+}
+
+.footnotes li {
+  margin-bottom: 0.65em;
+}
+
+.toc {
+  background: #f7f8fb;
+  border: 1px solid #e2e6f3;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-top: 10rem;
+}
+
+.toc ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.toc li {
+  margin: 0.35em 0;
+}
+
+.toc a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.toc::before {
+  content: "Table of Contents";
+  display: block;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.toc a:hover {
+  color: var(--accent);
+}
+
+.title-page {
+  text-align: center;
+  margin: 10rem auto 2rem;
+}
+
+.cover-full img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.page-break {
+  break-before: page;
+  break-after: page;
+  page-break-before: always;
+  page-break-after: always;
+}
+
+#title-block-header {
+  display: none;
+}
+
+.title-cover img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  margin: 0 auto 2rem;
+  display: block;
+}
+
+.book-title {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  margin: 0 0 1rem;
+  color: #0f1c3f;
+}
+
+.book-author {
+  font-size: 1.2rem;
+  margin-top: 3.5rem;
+  font-weight: 600;
+}
+
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">January 9, 2026</h1>
+<p class="author">An M. Rodriguez</p>
+<p class="date">2026-01-09 9:44</p>
+</header>
+<figure>
+<img src="https://siran.github.io/assets/writing/hydra-heads.png"
+alt="Hydra heads" />
+<figcaption aria-hidden="true">Hydra heads</figcaption>
+</figure>
+<p>Cryptocurrencies already enable offline digital cash.</p>
+<p>Hydra Heads, a feature of Cardano<a href="#fn1" class="footnote-ref"
+id="fnref1" role="doc-noteref"><sup>1</sup></a>, behave like cash:</p>
+<ul>
+<li>offline</li>
+<li>off-chain</li>
+<li>fee-less</li>
+<li>instant</li>
+<li>peer to peer</li>
+<li>private</li>
+<li>invisible to non-participants</li>
+</ul>
+<figure>
+<img src="https://siran.github.io/assets/writing/ADA.png"
+alt="ADA, top ten cryptocurrency" />
+<figcaption aria-hidden="true">ADA, top ten cryptocurrency</figcaption>
+</figure>
+<p>Want to try it? See the instructions at the end of the article.</p>
+<h2 id="coins-vs.-account-balance">Coins vs. account balance</h2>
+<p>There are two broad families of cryptocurrencies:</p>
+<ul>
+<li><strong>coins</strong>, like Bitcoin, and,</li>
+<li><strong>bank accounts</strong>, like Ethereum</li>
+</ul>
+<p>In both cases, “the bank” is the blockchain (L1).</p>
+<p>In <strong>coin-type</strong> systems, like Bitcoin, your wallet
+holds discrete spendable objects, “coins”, or UTxOs,</p>
+<p>After a transaction is made (you give or receive coins), you can also
+“receive change”, or new coins, or the “spendable output of the
+transaction”.</p>
+<p>Once a coin is spent, it cannot be spent again. This is
+cryptographically (which is to say “math”) ensured.</p>
+<p>In <strong>account-type</strong> systems, like Ethereum, you do not
+hold coins but instead have an “account balance”. Before any value can
+be used, L1 (or a proxy) has to be consulted to avoid double spending.
+This requires consulting the main ledger (either directly or through a
+“trusted” proxy)</p>
+<p>Also, <strong>offline spending</strong> is not possible because
+balances are global and mutable (somebody else could have already
+executed a claim on your values, in the ledger, after you took a
+snapshot of available balance).</p>
+<p>This clearing of accounts is what makes current global financial
+system such a nightmare.</p>
+<p>Because of this, offline, off-chain, peer-to-peer settlement is
+<strong>only</strong> possible in coin-type cryptocurrencies.</p>
+<h2 id="bitcoin-like-not-ethereum-like">Bitcoin-like, not
+Ethereum-like</h2>
+<p>Most prominently Ethereum uses an account-based model. Also, by
+extension, all the other ERC-20–based systems and account-model chains,
+including:</p>
+<ul>
+<li>Ethereum</li>
+<li>Binance Smart Chain</li>
+<li>Solana</li>
+<li>Tron</li>
+</ul>
+<p>Discarding these for true digital cash (which requires coin / UTxO
+semantics), and excluding stablecoins such as:</p>
+<ul>
+<li>Tether</li>
+<li>USDC</li>
+</ul>
+<p>leaves a much smaller competitive field.</p>
+<h3 id="cardanos-actual-competitors">Cardano’s actual competitors</h3>
+<p>For bearer-style, UTxO-based, cash-capable cryptocurrencies, Cardano
+competes primarily with:</p>
+<ul>
+<li>Bitcoin</li>
+<li>Litecoin</li>
+<li>Bitcoin Cash</li>
+<li>Dogecoin</li>
+<li>XRP</li>
+</ul>
+<p>Among these, Cardano is the only system that natively supports
+offline, fee-less, peer-to-peer cash-like settlement via Hydra Heads,
+while remaining anchored to a secure L1.</p>
+<h2 id="hydra-head-properties">Hydra Head properties</h2>
+<p>A Hydra Head provides:</p>
+<ul>
+<li><p><strong>Fully offline operation</strong> Once opened, a head can
+operate offline indefinitely. Transactions require only peer
+connectivity.</p></li>
+<li><p><strong>Off-chain settlement</strong> Transactions are never
+broadcast globally.</p></li>
+<li><p><strong>Instant finality</strong> Payment and settlement are the
+same event.</p></li>
+<li><p><strong>Minerless and fee-less</strong> No miners, sequencers, or
+leaders. Participants validate and finalize their own transactions at
+zero marginal cost.</p></li>
+<li><p><strong>Double-spend resistance</strong> Enforced by the UTxO
+model and co-signed state transitions.</p></li>
+<li><p><strong>Privacy by default</strong> No external observers
+exist.</p></li>
+</ul>
+<h2 id="a-working-mental-model">A working mental model</h2>
+<figure>
+<img src="https://siran.github.io/assets/writing/atm.png"
+alt="Automatic Teller Machine (ATM)" />
+<figcaption aria-hidden="true">Automatic Teller Machine
+(ATM)</figcaption>
+</figure>
+<p>Cardano L1 acts like an abstract bank where cryptocurrency is
+held.</p>
+<p>Value is locked on L1 to fund a Hydra Head.</p>
+<p>Inside the hydra head, that value behaves like cryptographic
+cash.</p>
+<p>This mirrors physical cash: value is withdrawn from a bank and then
+circulates peer to peer.</p>
+<p>Only some participants need to interact with L1. Others can remain
+fully offline forever.</p>
+<h2 id="a-cul-de-sac-monetary-system">A “cul-de-sac” monetary
+system</h2>
+<figure>
+<img src="https://siran.github.io/assets/writing/cul-de-sac.png"
+alt="A cul-de-sac" />
+<figcaption aria-hidden="true">A cul-de-sac</figcaption>
+</figure>
+<p>A Hydra Head is like a monetary “cul-de-sac”.</p>
+<p>Value enters and exits from Cardano L1, but value does not need to
+circulate through L1 to function.</p>
+<p>Inside the head, money moves peer to peer <strong>without
+miners</strong>, <strong>fees</strong>, or global visibility.</p>
+<p>There is no routing, no settlement layer beneath it, and no external
+dependency.</p>
+<p>Like cash withdrawn from a bank, value can circulate indefinitely in
+a closed loop.</p>
+<p>Only when participants choose to settle does L1 become relevant
+again.</p>
+<p>Hydra Heads are self-contained monetary systems, anchored to L1 but
+not mediated by it.</p>
+<h2 id="privacy">Privacy</h2>
+<figure>
+<img src="https://siran.github.io/assets/writing/privacy-policy.png"
+alt="Privacy Policy" />
+<figcaption aria-hidden="true">Privacy Policy</figcaption>
+</figure>
+<p>On Cardano L1, only two events are visible:</p>
+<ul>
+<li>the head is opened</li>
+<li>the head is closed</li>
+</ul>
+<p>There is no on-chain record of:</p>
+<ul>
+<li>intermediate payments</li>
+<li>who paid whom</li>
+<li>when payments happened</li>
+<li>internal transaction structure</li>
+</ul>
+<p>It’s like a “no log policy”. Just like cash.</p>
+<p>If the head is private, nothing exists externally to reconstruct.</p>
+<p>Privacy comes from the absence of observers.</p>
+<h2 id="offline-does-not-weaken-security">Offline does not weaken
+security</h2>
+<p>Offline Hydra does not rely on trust.</p>
+<ul>
+<li>value cannot be double-spent</li>
+<li>invalid histories cannot be finalized on L1</li>
+<li>final settlement is always available if participants choose to
+exit</li>
+</ul>
+<p>Security properties hold without continuous connectivity.</p>
+<h2 id="paper-qr-codes-and-cash-without-paper">Paper, QR codes, and cash
+without paper</h2>
+<p>A Hydra transaction is data.</p>
+<p>It can be exchanged via:</p>
+<ul>
+<li>QR codes</li>
+<li>printed strings</li>
+<li>NFC</li>
+<li>Bluetooth</li>
+<li>copy/paste</li>
+<li>any ad-hoc channel</li>
+</ul>
+<p>A signed transaction can be printed on paper and handed to someone.
+When scanned and submitted, settlement is immediate.</p>
+<p>This is <strong>cash without paper</strong>.</p>
+<h3 id="what-if-the-same-paper-is-printed-twice">What if the same paper
+is printed twice?</h3>
+<figure>
+<img src="https://siran.github.io/assets/writing/money-maker.png"
+alt="Money making machine." />
+<figcaption aria-hidden="true">Money making machine.</figcaption>
+</figure>
+<p>This is analogous to photocopying a banknote.</p>
+<ul>
+<li>only the first settlement can succeed</li>
+<li>later attempts are rejected automatically</li>
+<li>no double spending occurs</li>
+</ul>
+<p>The risk exists at acceptance time, as with physical cash. The ledger
+remains consistent.</p>
+<p>Hydra prevents fraud from succeeding, not from being attempted.</p>
+<h2 id="world-cash">World cash</h2>
+<figure>
+<img src="https://siran.github.io/assets/writing/crypto-chart.png"
+alt="Cryptocurrency market by region, 2025-2030" />
+<figcaption aria-hidden="true">Cryptocurrency market by region,
+2025-2030</figcaption>
+</figure>
+<p>Hydra Heads are purely peer to peer and offline-capable.</p>
+<p>They work the same across frontiers:</p>
+<ul>
+<li>no jurisdiction</li>
+<li>no clearing system</li>
+<li>no geographic boundary</li>
+</ul>
+<p>They are effectively <strong>paperless, world cash</strong>.</p>
+<h2 id="why-this-matters">Why this matters</h2>
+<figure>
+<img src="https://siran.github.io/assets/writing/crypto-bill.png"
+alt="Crypto bill" />
+<figcaption aria-hidden="true">Crypto bill</figcaption>
+</figure>
+<p>Hydra Heads provide a cash-like monetary mode:</p>
+<ul>
+<li>cryptographically secure</li>
+<li>double-spend resistant</li>
+<li>fee-less</li>
+<li>instant</li>
+<li>minerless</li>
+<li>independent of continuous connectivity</li>
+</ul>
+<p>This mode exists in parallel to Cardano L1 and to traditional
+monetary systems, with L1 acting only as a value anchor.</p>
+<p>Hydra Heads are not merely a scaling technique, they implement
+<em>offline digital cash</em>.</p>
+<h2 id="try-it-for-yourself">Try it for yourself</h2>
+<p>Two cheat sheets follow:</p>
+<ol type="1">
+<li>Running a funded offline Hydra Head on Android</li>
+<li>Building and submitting an offline transaction and observing state
+changes</li>
+</ol>
+<p>Hydra Heads are not merely a scaling technique. They implement a
+cash-like settlement layer.</p>
+<p>Part 1:</p>
+<pre><code>############################################################
+# GLOBAL CONSTANTS (EDIT ONCE IF NEEDED)
+############################################################
+
+PHONE_IP=192.168.1.208
+TERMUX_USER=u0_aXXX
+TERMUX_PORT=8022
+
+PHONE_HOME=/data/data/com.termux/files/home
+HYDRA_BIN=$PHONE_HOME/hydra-node
+
+PC_HOME=$HOME/src/hydra
+KEYS_DIR=$PC_HOME/cardano-keys
+
+OFFLINE_SEED=0000000000000000000000000000000000000000000000000000000000000000
+
+############################################################
+# 1) PHONE SETUP (ANDROID)
+############################################################
+
+# Install Termux from F-Droid (manual)
+# Open Termux
+
+pkg update -y
+pkg install -y openssh proot-distro
+passwd              # set: aaaa
+sshd                # SSH on port 8022
+
+# Check user (note it!)
+whoami
+
+############################################################
+# 2) CONNECT FROM PC / WSL2
+############################################################
+
+ssh -p 8022 ${TERMUX_USER}@${PHONE_IP}
+
+############################################################
+# 3) CREATE DEBIAN (GLIBC) ON PHONE
+############################################################
+
+proot-distro install debian
+proot-distro login debian
+
+uname -m             # must be: aarch64
+
+############################################################
+# 4) INSTALL RUNTIME LIBS (PHONE / DEBIAN)
+############################################################
+
+apt update
+apt install -y \
+  ca-certificates curl jq \
+  libgmp10 libsodium23 libssl3 zlib1g libnuma1 libsnappy1v5 \
+  liblmdb0 libsecp256k1-2 \
+  etcd-server
+
+############################################################
+# 5) GET HYDRA-NODE ARM64 (ON PC)
+############################################################
+
+mkdir -p $PC_HOME
+cd $PC_HOME
+
+docker pull --platform=linux/arm64 blinklabs/hydra-node:main-arm64v8
+
+cid=$(docker create --platform=linux/arm64 blinklabs/hydra-node:main-arm64v8)
+docker cp &quot;$cid&quot;:/usr/local/bin/hydra-node ./hydra-node
+docker rm &quot;$cid&quot;
+
+file hydra-node       # ELF 64-bit ARM aarch64
+
+############################################################
+# 6) COPY HYDRA-NODE TO PHONE
+############################################################
+
+scp -P 8022 ./hydra-node \
+  ${TERMUX_USER}@${PHONE_IP}:${PHONE_HOME}/hydra-node
+
+############################################################
+# 7) PHONE: MAKE EXECUTABLE
+############################################################
+
+chmod +x $HYDRA_BIN
+$HYDRA_BIN --version
+
+############################################################
+# 8) PHONE: PROTOCOL PARAMETERS (CONWAY)
+############################################################
+
+cd $PHONE_HOME
+
+curl -fsSL https://preprod.koios.rest/api/v1/cli_protocol_params \
+  -o protocol-parameters.json
+
+grep -n &#39;&quot;poolVotingThresholds&quot;&#39; protocol-parameters.json
+
+############################################################
+# 9) PHONE: SHELLEY GENESIS (PREPROD)
+############################################################
+
+# Copy from known config tree or scp from PC if you have it
+# Must end up exactly here:
+ls -l $PHONE_HOME/shelley-genesis.json
+
+############################################################
+# 10) PHONE: FAKE ADA (INITIAL UTXO)
+############################################################
+
+cat &gt; $PHONE_HOME/utxo.json &lt;&lt;&#39;EOF&#39;
+{
+  &quot;0000000000000000000000000000000000000000000000000000000000000000#0&quot;: {
+    &quot;address&quot;: &quot;addr_test1vpgu5cghta2ydahksr55z88gsz6pjjp43zcatfefw3drw6sut9jxj&quot;,
+    &quot;value&quot;: { &quot;lovelace&quot;: 20000000 }
+  }
+}
+EOF
+
+############################################################
+# 11) PHONE: HYDRA KEYS (NODE A)
+############################################################
+
+mkdir -p /root/hydra-a/keys
+$HYDRA_BIN gen-hydra-key --output-file /root/hydra-a/keys/hydra
+
+############################################################
+# 12) PHONE: RUN HYDRA NODE A
+############################################################
+
+$HYDRA_BIN \
+  -n A \
+  --hydra-signing-key /root/hydra-a/keys/hydra.sk \
+  --offline-head-seed $OFFLINE_SEED \
+  --ledger-genesis $PHONE_HOME/shelley-genesis.json \
+  --initial-utxo $PHONE_HOME/utxo.json \
+  --ledger-protocol-parameters $PHONE_HOME/protocol-parameters.json \
+  --listen 0.0.0.0:5001 \
+  --advertise ${PHONE_IP}:5001 \
+  --api-host 0.0.0.0 \
+  --api-port 4001 \
+  --persistence-dir /root/hydra-a/state \
+  --use-system-etcd
+
+############################################################
+# 13) VERIFY PHONE NODE
+############################################################
+
+curl http://127.0.0.1:4001/head
+curl http://${PHONE_IP}:4001/head
+
+############################################################
+# 14) VERIFY FAKE FUNDS LOADED
+############################################################
+
+curl -s http://127.0.0.1:4001/head \
+ | jq &#39;.contents.coordinatedHeadState.confirmedSnapshot.initialUTxO&#39;
+
+############################################################
+# 15) IF UTXO EMPTY → WIPE STATE &amp; RESTART
+############################################################
+
+rm -rf /root/hydra-a/state
+mkdir -p /root/hydra-a/state
+# rerun step 12
+
+############################################################
+# 16) PC SIDE (NODE B – OFFLINE, FOR TX BUILD)
+############################################################
+
+# Use Docker cardano-cli only (no hydra-node needed on PC)
+
+cd $KEYS_DIR
+mkdir -p pay
+
+docker run --rm -v &quot;$PWD&quot;:/w ghcr.io/intersectmbo/cardano-node:10.6.1 \
+  cli latest address key-gen \
+    --verification-key-file /w/pay/b.vkey \
+    --signing-key-file /w/pay/b.skey
+
+docker run --rm -v &quot;$PWD&quot;:/w ghcr.io/intersectmbo/cardano-node:10.6.1 \
+  cli latest address build \
+    --payment-verification-key-file /w/pay/b.vkey \
+    --testnet-magic 1 \
+    --out-file /w/pay/b.addr
+
+############################################################
+# NEXT STEP (FOR NEXT ASSISTANT)
+############################################################
+# Build + sign a tx spending:
+#   0000...000#0
+# Submit via Hydra WebSocket (NewTx)
+# Observe /head changing on phone
+############################################################</code></pre>
+<p>Part 2:</p>
+<pre><code>############################################################
+# CHEAT SHEET #2 — OFFLINE TX INSIDE HYDRA HEAD
+############################################################
+
+# Assumptions (same as sheet #1)
+PHONE_IP=192.168.1.208
+PHONE_API=4001
+
+PC_HOME=$HOME/src/hydra
+KEYS_DIR=$PC_HOME/cardano-keys
+
+TX_IN=0000000000000000000000000000000000000000000000000000000000000000#0
+
+############################################################
+# 1) PC: PREPARE ADDRESSES (A = receiver, B = sender)
+############################################################
+
+cd $KEYS_DIR
+mkdir -p pay
+
+# Generate keys for A (receiver)
+docker run --rm -v &quot;$PWD&quot;:/w ghcr.io/intersectmbo/cardano-node:10.6.1 \
+  cli latest address key-gen \
+    --verification-key-file /w/pay/a.vkey \
+    --signing-key-file /w/pay/a.skey
+
+docker run --rm -v &quot;$PWD&quot;:/w ghcr.io/intersectmbo/cardano-node:10.6.1 \
+  cli latest address build \
+    --payment-verification-key-file /w/pay/a.vkey \
+    --testnet-magic 1 \
+    --out-file /w/pay/a.addr
+
+# (Sender B keys already exist from sheet #1)
+cat pay/a.addr
+cat pay/b.addr
+
+############################################################
+# 2) PC: BUILD RAW TX (FEE = 0 FIRST)
+############################################################
+
+A_ADDR=$(cat pay/a.addr)
+B_ADDR=$(cat pay/b.addr)
+
+docker run --rm -v &quot;$PWD&quot;:/w ghcr.io/intersectmbo/cardano-node:10.6.1 \
+  cli latest transaction build-raw \
+    --tx-in $TX_IN \
+    --tx-out &quot;$A_ADDR+1000000&quot; \
+    --tx-out &quot;$B_ADDR+19000000&quot; \
+    --fee 0 \
+    --protocol-params-file /w/protocol-parameters.json \
+    --out-file /w/tx.draft
+
+############################################################
+# 3) PC: CALCULATE MIN FEE
+############################################################
+
+FEE=$(docker run --rm -v &quot;$PWD&quot;:/w ghcr.io/intersectmbo/cardano-node:10.6.1 \
+  cli latest transaction calculate-min-fee \
+    --tx-body-file /w/tx.draft \
+    --protocol-params-file /w/protocol-parameters.json \
+    --witness-count 1 | awk &#39;{print $1}&#39;)
+
+CHANGE=$((19000000 - FEE))
+
+echo &quot;FEE=$FEE&quot;
+echo &quot;CHANGE=$CHANGE&quot;
+
+############################################################
+# 4) PC: BUILD FINAL TX
+############################################################
+
+docker run --rm -v &quot;$PWD&quot;:/w ghcr.io/intersectmbo/cardano-node:10.6.1 \
+  cli latest transaction build-raw \
+    --tx-in $TX_IN \
+    --tx-out &quot;$A_ADDR+1000000&quot; \
+    --tx-out &quot;$B_ADDR+$CHANGE&quot; \
+    --fee &quot;$FEE&quot; \
+    --protocol-params-file /w/protocol-parameters.json \
+    --out-file /w/tx.raw
+
+############################################################
+# 5) PC: SIGN TX (B SIGNS)
+############################################################
+
+docker run --rm -v &quot;$PWD&quot;:/w ghcr.io/intersectmbo/cardano-node:10.6.1 \
+  cli latest transaction sign \
+    --tx-body-file /w/tx.raw \
+    --signing-key-file /w/pay/b.skey \
+    --out-file /w/tx.signed
+
+ls -l tx.signed
+jq -r &#39;.cborHex | length&#39; tx.signed   # must be &gt; 0
+
+############################################################
+# 6) PC: SUBMIT TX TO HYDRA (WEBSOCKET)
+############################################################
+
+# Install websocat once if missing
+sudo curl -L \
+  https://github.com/vi/websocat/releases/download/v1.12.0/websocat.x86_64-unknown-linux-musl \
+  -o /usr/local/bin/websocat
+sudo chmod +x /usr/local/bin/websocat
+
+# Submit NewTx
+jq -c &#39;{tag:&quot;NewTx&quot;, transaction:.}&#39; tx.signed \
+ | websocat ws://${PHONE_IP}:${PHONE_API}/
+
+############################################################
+# 7) VERIFY TX EFFECT (PHONE)
+############################################################
+
+curl -s http://${PHONE_IP}:${PHONE_API}/head \
+ | jq &#39;.contents.coordinatedHeadState.version&#39;
+
+curl -s http://${PHONE_IP}:${PHONE_API}/head \
+ | jq &#39;.contents.coordinatedHeadState.confirmedSnapshot.initialUTxO&#39;
+
+############################################################
+# EXPECTED RESULT
+############################################################
+# - version increments (e.g. 0 -&gt; 1)
+# - original TX_IN disappears
+# - new UTxOs appear for A and B
+############################################################</code></pre>
+<p>DOI:
+https://writing.preferredframe.com/doi/10.5281/zenodo.18203718</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>https://cardano.org/ is a commodity cryptocurrency with
+token ADA, a top-10 cryptocurrency by market capitalization.<a
+href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+</body>
+</html>
