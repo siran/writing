@@ -1548,6 +1548,7 @@ def build_rss_feed():
             continue
         top  = rel_parts[0]
         stem = rel_parts[1]
+        doi_suffix = rel_parts[3] if len(rel_parts) > 3 else ""
 
         pf_block = data.get("parsed_from_pnpmd") or {}
         title    = (data.get("title") or pf_block.get("title") or stem)
@@ -1569,9 +1570,29 @@ def build_rss_feed():
             item_url = f"{origin}/{quote(top, safe='')}/{quote(stem, safe='')}/"
         item_url = _normalize_feed_url(item_url)
 
-        dt = _to_datetime(date_norm) or datetime.fromtimestamp(prov.stat().st_mtime)
+        mtime = datetime.fromtimestamp(prov.stat().st_mtime)
+        dt = _to_datetime(date_norm) or mtime
+        sort_key = (dt, _doi_suffix_number(doi_suffix), doi_suffix or "", mtime)
         keep = by_stem.get((top, stem))
-        if not keep or dt > keep["date"]:
+        if not keep or sort_key > keep["sort_key"]:
+            html_body = ""
+            artifacts = data.get("artifacts") or {}
+            html_name = (artifacts.get("html_name") or None)
+            add_old = artifacts.get("additional") or {}
+            if not html_name:
+                html_name = add_old.get("html")
+            if not html_name and artifacts.get("html_url"):
+                html_name = Path(artifacts["html_url"]).name
+            if html_name:
+                html_path = prov.parent / html_name
+                if html_path.exists():
+                    try:
+                        html_body = extract_html_body(
+                            html_path.read_text(encoding="utf-8")
+                        )
+                    except Exception:
+                        html_body = ""
+
             by_stem[(top, stem)] = {
                 "stem": stem,
                 "top": top,
@@ -1582,6 +1603,8 @@ def build_rss_feed():
                 "date": dt,
                 "url": item_url,
                 "doi": doi,
+                "content_html": html_body,
+                "sort_key": sort_key,
             }
 
     if not by_stem:
@@ -1604,6 +1627,8 @@ def build_rss_feed():
         desc = it["abstract"] or it["onesent"]
         if desc:
             fe.description(desc)
+        if it.get("content_html"):
+            fe.content(it["content_html"], type="CDATA")
         for a in it["authors"]:
             nm = a.get("name", "").strip()
             if nm:
