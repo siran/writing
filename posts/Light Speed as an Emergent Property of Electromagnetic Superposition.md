@@ -13,23 +13,42 @@ summary: Polarization is treated as a secondary electromagnetic field rather tha
 Electromagnetic waves interact through the total field they jointly create.
 Polarization is an electromagnetic field, not a material property. Phase-delayed
 secondary fields modify phase evolution. An effective, local light speed emerges
-from the electromagnetic environment itself.
+from the electromagnetic energy density itself, as fields interfere pointwise.
 
 
 ### Goal
 
-Explain, within linear Maxwell theory and linear response, how electromagnetic
-waves can interact and how an effective local propagation speed can arise,
-without introducing matter as a primitive and without adding new postulates.
+Explain, mathematically and with an explicit ontological justification, how
+linear Maxwell theory allows electromagnetic waves to superpose and interact
+through the total field, and how an effective local propagation speed can arise
+from that total-field interaction.
 
 
 ### Corollary
 
 The maximum propagation speed of electromagnetic disturbances is
-$c_0$. However, $c_0$ need not take the same effective
-value everywhere in the universe. Depending on the local electromagnetic energy
-density, the effective propagation speed may be equal to or smaller than
-$c_0$.
+$c_0$, with
+
+$$
+c_0 = \frac{1}{\sqrt{\mu_0 \epsilon_0}}.
+$$
+
+However, $c_0$ need not take the same effective value everywhere in
+the universe. When electromagnetic waves propagate in a linear, nontrivial
+electromagnetic environment, the total field gives rise to an effective
+susceptibility $\chi(\mathbf{x})$.
+
+The effective local propagation speed is then
+
+$$
+c_{\text{local}}(\mathbf{x}) = \frac{c_0}{\sqrt{1+\chi(\mathbf{x})}},
+$$
+
+and therefore depends on the local electromagnetic energy density through the
+induced effective $\chi$.
+
+As a result, the effective speed of light varies from place to place, tracking
+spatial variations in electromagnetic field energy density across the universe.
 
 
 ## Derivation
