@@ -2,6 +2,9 @@
 title: BTC, ADA, and Cardano Hydra Heads as Paperless Digital Cash
 author: An M. Rodriguez
 date: 2026-01-09 9:44
+keywords: offline digital cash, hydra head, cardano, utxo, bearer-style money, peer-to-peer settlement, off-chain finality, fee-less payments, privacy, cul-de-sac economy
+one-sentence-summary: Hydra Heads enable true offline digital cash by letting value circulate peer to peer, privately and instantly, without miners, fees, or continuous blockchain access.
+summary: Cardano Hydra Heads implement offline, peer-to-peer, bearer-style digital cash by enabling instant, fee-less, and private value transfer without global ledger involvement.
 ---
 
 ![Hydra heads](https://siran.github.io/assets/writing/hydra-heads.png)
