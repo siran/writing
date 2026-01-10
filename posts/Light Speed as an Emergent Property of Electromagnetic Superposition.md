@@ -5,32 +5,37 @@ author: An M. Rodriguez
 date: 2026-01-10 13:20
 keywords: Maxwell theory, electromagnetic superposition, polarization, linear response, refraction, phase delay, energy density, effective refractive index, variable light speed, field ontology
 one-sentence-summary: Light slows because electromagnetic waves interfere with phase-delayed secondary electromagnetic fields, making the effective speed of light an emergent, local property of electromagnetic superposition rather than a universal constant.
-summary: Polarization is treated as a secondary electromagnetic field rather than a property of matter. Within linear Maxwell theory and linear response, overlapping electromagnetic waves generate phase-delayed secondary fields whose superposition alters phase evolution and yields an effective refractive index. In this framework, electromagnetic waves interact through the total field configuration they jointly create, and the effective local speed of light depends on the electromagnetic energy density of the environment. Refraction, and the associated reduction of light speed, emerges as a consequence of field superposition and delayed response, without invoking particles, atoms, or nonlinear modifications of Maxwell’s equations.
+summary: Polarization is treated as a secondary electromagnetic field rather than a property of matter. Within linear Maxwell theory and linear response, overlapping electromagnetic waves generate phase-delayed secondary fields whose superposition alters phase evolution and yields an effective refractive index. Electromagnetic waves therefore interact through the total field configuration they jointly create, and the effective local speed of light depends on the electromagnetic energy density of the environment. Refraction emerges as a consequence of field superposition and delayed response, without invoking particles, atoms, or nonlinear modifications of Maxwell’s equations.
 ---
 
-**Summary**
+## Summary
 
 Electromagnetic waves interact through the total field they jointly create.
 Polarization is an electromagnetic field, not a material property. Phase-delayed
 secondary fields modify phase evolution. An effective, local light speed emerges
 from the electromagnetic environment itself.
 
-Goal Explain, within linear Maxwell theory and linear response, how
-electromagnetic waves can interact and how an effective local propagation speed
-can arise, without introducing matter as a primitive and without adding new
-postulates.
 
-**Corollary**
+## Goal
 
-It is true that the maximum speed of light is $c_0$. Additionally, by
-the above considerations, $c_0$ is not restricted to a same absolute
-value everywhere in the universe. It can be faster, or slower, depending on the
-local energy density.
+Explain, within linear Maxwell theory and linear response, how electromagnetic
+waves can interact and how an effective local propagation speed can arise,
+without introducing matter as a primitive and without adding new postulates.
+
+
+## Corollary
+
+The maximum propagation speed of electromagnetic disturbances is
+$c_0$. However, $c_0$ need not take the same effective
+value everywhere in the universe. Depending on the local electromagnetic energy
+density, the effective propagation speed may be equal to or smaller than
+$c_0$.
 
 
 ## Derivation
 
-1. Maxwell theory and superposition
+### 1. Maxwell theory and superposition
+
 In source-free regions, Maxwell’s equations are
 
 $$
@@ -45,11 +50,12 @@ $$
 These equations are linear: if $(\mathbf{E}_1,\mathbf{B}_1)$ and
 $(\mathbf{E}_2,\mathbf{B}_2)$ are solutions, then their sum is also a solution.
 
-Linearity refers to the field equations themselves. It does not constrain how
-derived quantities such as energy, momentum, or effective propagation are
-constructed.
+Linearity applies to the field equations themselves and does not constrain how
+physical observables are constructed from the fields.
 
-2. Quadratic field observables
+
+### 2. Quadratic field observables
+
 The electromagnetic energy density is
 
 $$
@@ -62,16 +68,18 @@ $$
 u=u_1+u_2+u_{12},
 $$
 
-with the cross term
+with
 
 $$
 u_{12}=\epsilon_0\left(\mathbf{E}_1\cdot\mathbf{E}_2+c^2\mathbf{B}_1\cdot\mathbf{B}_2\right).
 $$
 
-Thus, when two waves overlap, the local energy–momentum content depends on both
-fields. This is already an interaction at the level of physical observables.
+Thus, overlapping waves produce cross terms in energy density and momentum flow.
+This constitutes a physical interaction at the level of observables.
 
-3. Polarization written purely as fields
+
+### 3. Polarization written purely as fields
+
 In macroscopic electrodynamics,
 
 $$
@@ -85,18 +93,20 @@ $$
 $$
 
 Maxwell’s equations do not specify the origin of $\mathbf{P}$. Formally,
-$\mathbf{P}$ is simply an additional electromagnetic field proportional to
+$\mathbf{P}$ is an additional electromagnetic field proportional to
 $\mathbf{E}$.
 
 Interpreted this way:
 - $\mathbf{P}$ is a secondary electromagnetic field.
-- The constitutive relation $\mathbf{P}=\epsilon_0\chi\mathbf{E}$ is a linear
-  field–field relation.
-- No ontological distinction between “matter field” and “electromagnetic field”
-  is required.
+- The relation $\mathbf{P}=\epsilon_0\chi\mathbf{E}$ is a linear field–field
+  coupling.
+- No ontological distinction between “matter” and “electromagnetic field” is
+  required.
 
-4. Phase delay and effective propagation
-In realistic linear response, the proportionality is causal:
+
+### 4. Phase delay and effective propagation
+
+In realistic linear response, proportionality is causal:
 
 $$
 \mathbf{P}(t)=\epsilon_0\int_{-\infty}^{t}\chi(t-t')\,\mathbf{E}(t')\,dt'.
@@ -109,19 +119,17 @@ $$
 $$
 
 The secondary field associated with $\mathbf{P}$ is phase-delayed relative
-to the primary field.
+to the primary field. The total field is the superposition of the incident
+electromagnetic wave and the delayed secondary electromagnetic wave, producing a
+shifted phase evolution.
 
-The total field inside the region is the superposition of:
-- the incident electromagnetic wave,
-- the secondary electromagnetic wave generated by $\mathbf{P}$.
 
-This phase-delayed superposition produces a shifted phase evolution of the total
-wave.
+### 5. Emergence of an effective refractive index
 
-5. Emergence of an effective refractive index
-With $\mathbf{D}=\epsilon(\omega)\mathbf{E}$, where
+With
 
 $$
+\mathbf{D}=\epsilon(\omega)\mathbf{E},\qquad
 \epsilon(\omega)=\epsilon_0\left[1+\chi(\omega)\right],
 $$
 
@@ -144,39 +152,39 @@ v_p(\omega)=\frac{1}{\sqrt{\mu_0\epsilon(\omega)}}=\frac{c_0}{n(\omega)},\qquad
 n(\omega)=\sqrt{1+\chi(\omega)}.
 $$
 
-Thus the reduced propagation speed follows directly from interference with a
+The reduction in propagation speed follows directly from interference with a
 phase-delayed secondary electromagnetic field.
 
-6. Two-wave interaction
-Let the total field be
+
+### 6. Two-wave interaction
+
+Let
 
 $$
 \mathbf{E}=\mathbf{E}_1+\mathbf{E}_2.
 $$
 
-By linearity of the response,
+By linearity,
 
 $$
 \mathbf{P}=\epsilon_0\chi(\mathbf{E}_1+\mathbf{E}_2)
           =\epsilon_0\chi\mathbf{E}_1+\epsilon_0\chi\mathbf{E}_2.
 $$
 
-Each wave generates a secondary electromagnetic field, and both secondary fields
-contribute to the total $\mathbf{D}$ field.
+Each wave generates a secondary electromagnetic field, and both contribute to
+the total response. Each wave therefore propagates in an environment determined
+by the combined electromagnetic configuration.
 
-Therefore, in an overlap region, each wave propagates in an environment
-determined by the combined electromagnetic configuration, not by its own field
-alone.
 
-7. Local effective light speed
-Because the effective permittivity depends on the total field configuration, the
-local phase velocity depends on the local electromagnetic energy density:
+### 7. Local effective light speed
+
+The local electromagnetic energy density is
 
 $$
 u(\mathbf{x})=\frac{\epsilon_0}{2}\left(\langle\mathbf{E}^2\rangle+c^2\langle\mathbf{B}^2\rangle\right).
 $$
 
-The effective refractive index can be expressed as a function of this density,
+The effective refractive index is
 
 $$
 n(\mathbf{x})=\sqrt{1+\chi(\mathbf{x})},
@@ -188,9 +196,11 @@ $$
 c_{\text{local}}(\mathbf{x})=\frac{c_0}{n(\mathbf{x})}.
 $$
 
-8. Consequence
+
+### 8. Consequence
+
 Different regions of the universe, characterized by different electromagnetic
-field configurations and energy densities, naturally exhibit different effective
-propagation speeds. No modification of Maxwell’s equations is required. No
-additional postulates are introduced. Only the interpretation of polarization as
-a secondary electromagnetic field is changed.
+field configurations and energy densities, exhibit different effective
+propagation speeds. Maxwell’s equations remain unchanged. The result follows
+solely from superposition, linear response, and a field-only interpretation of
+polarization.
