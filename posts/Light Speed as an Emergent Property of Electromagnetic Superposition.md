@@ -6,6 +6,7 @@ date: 2026-01-10 13:20
 keywords: Maxwell theory, electromagnetic superposition, polarization, linear response, refraction, phase delay, energy density, effective refractive index, variable light speed, field ontology
 one-sentence-summary: Light slows because electromagnetic waves interfere with phase-delayed secondary electromagnetic fields, making the effective speed of light an emergent, local property of electromagnetic superposition rather than a universal constant.
 summary: Polarization is treated as a secondary electromagnetic field rather than a property of matter. Within linear Maxwell theory and linear response, overlapping electromagnetic waves generate phase-delayed secondary fields whose superposition alters phase evolution and yields an effective refractive index. Electromagnetic waves therefore interact through the total field configuration they jointly create, and the effective local speed of light depends on the electromagnetic energy density of the environment. Refraction emerges as a consequence of field superposition and delayed response, without invoking particles, atoms, or nonlinear modifications of Maxwell’s equations.
+doi: https://writing.preferredframe.com/doi/10.5281/zenodo.18209801/
 ---
 
 ## Summary
@@ -223,3 +224,7 @@ field configurations and energy densities, exhibit different effective
 propagation speeds. Maxwell’s equations remain unchanged. The result follows
 solely from superposition, linear response, and a field-only interpretation of
 polarization.
+
+---
+
+DOI: https://writing.preferredframe.com/doi/10.5281/zenodo.18209801/
