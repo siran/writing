@@ -1,6 +1,6 @@
 ---
 title: Light Speed as an Emergent Property of Electromagnetic Superposition
-subtitle: Polarization Without Matter: A Field-Only Interpretation of Refraction
+subtitle: "Polarization Without Matter: A Field-Only Interpretation of Refraction"
 author: An M. Rodriguez
 date: 2026-01-10 13:20
 keywords: Maxwell theory, electromagnetic superposition, polarization, linear response, refraction, phase delay, energy density, effective refractive index, variable light speed, field ontology
@@ -16,14 +16,14 @@ secondary fields modify phase evolution. An effective, local light speed emerges
 from the electromagnetic environment itself.
 
 
-## Goal
+### Goal
 
 Explain, within linear Maxwell theory and linear response, how electromagnetic
 waves can interact and how an effective local propagation speed can arise,
 without introducing matter as a primitive and without adding new postulates.
 
 
-## Corollary
+### Corollary
 
 The maximum propagation speed of electromagnetic disturbances is
 $c_0$. However, $c_0$ need not take the same effective
