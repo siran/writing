@@ -1,9 +1,9 @@
 ---
 title: Deriving String-Theoretic Structure in a Maxwell Universe
 subtitle: Winding, Tension, and Stability from Electromagnetic Topology Alone
-author: An M. Rodriguez
+author: An M. Rodriguez, Alex Mercer
 date: 2026-01-11
-keywords: Maxwell theory, Poynting flow, electromagnetic topology, torus knots, winding numbers, emergent strings, self-trapping, effective refractive index
+keywords: Maxwell theory, classical electrodynamics, Poynting flow, electromagnetic energy flow, electromagnetic topology, toroidal topology, torus knots, winding numbers, emergent strings, self-trapping, effective refractive index, field ontology
 one-sentence-summary: When electromagnetic energy flow organizes on invariant tori, classical Maxwell theory produces integer winding numbers, tension, inertia, and discrete mode spectra stabilized by energy-dependent effective refraction.
 summary: We show how linear, classical Maxwell theory admits toroidally organized energy flow whose closed trajectories are labeled by integer winding numbers. Localized electromagnetic energy flow defines an effective one-dimensional object with tension and inertia computed directly from field densities. Stability against dispersion arises because high electromagnetic energy density reduces the local effective speed of light, producing self-trapping through emergent refraction. Explicit null Maxwell solutions with torus-knot topology demonstrate that integer data $(m,n)$ are computable from conserved field integrals. String-theoretic structures thus emerge as effective descriptions of self-stabilizing electromagnetic topology.
 ---
