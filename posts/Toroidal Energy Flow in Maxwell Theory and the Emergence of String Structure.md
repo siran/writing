@@ -8,7 +8,7 @@ one-sentence-summary: When electromagnetic energy flow organizes on invariant to
 summary: We show how linear, classical Maxwell theory admits toroidally organized energy flow whose closed trajectories are labeled by integer winding numbers. Localized electromagnetic energy flow defines an effective one-dimensional object with tension and inertia computed directly from field densities. Stability against dispersion arises because high electromagnetic energy density reduces the local effective speed of light, producing self-trapping through emergent refraction. Explicit null Maxwell solutions with torus-knot topology demonstrate that integer data $(m,n)$ are computable from conserved field integrals. String-theoretic structures thus emerge as effective descriptions of self-stabilizing electromagnetic topology.
 ---
 
-![Knots on a donut shell.](assets/donut-knots.png)
+![Knots on a donut shell.](https://siran.github.io/assets/writing/donut-knots.png)
 
 
 ## Summary
