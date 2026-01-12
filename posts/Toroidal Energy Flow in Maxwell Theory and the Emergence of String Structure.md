@@ -1,43 +1,54 @@
 ---
-title: Toroidal Energy Flow in Maxwell Theory and the Emergence of "String-Theory" Structure
-subtitle: "Integer Winding, Tension, and Self-Trapped Modes via Electromagnetic Topology"
+title: Deriving String-Theoretic Structure in a Maxwell Universe
+subtitle: Winding, Tension, and Stability from Electromagnetic Topology Alone
 author: An M. Rodriguez
 date: 2026-01-11
 keywords: Maxwell theory, Poynting flow, electromagnetic topology, torus knots, winding numbers, emergent strings, self-trapping, effective refractive index
-one-sentence-summary: When electromagnetic energy flow organizes on invariant tori, classical Maxwell theory produces integer winding numbers, tension, inertia, and discrete mode spectra—stabilized by energy-dependent effective refraction.
+one-sentence-summary: When electromagnetic energy flow organizes on invariant tori, classical Maxwell theory produces integer winding numbers, tension, inertia, and discrete mode spectra stabilized by energy-dependent effective refraction.
 summary: We show how linear, classical Maxwell theory admits toroidally organized energy flow whose closed trajectories are labeled by integer winding numbers. Localized electromagnetic energy flow defines an effective one-dimensional object with tension and inertia computed directly from field densities. Stability against dispersion arises because high electromagnetic energy density reduces the local effective speed of light, producing self-trapping through emergent refraction. Explicit null Maxwell solutions with torus-knot topology demonstrate that integer data $(m,n)$ are computable from conserved field integrals. String-theoretic structures thus emerge as effective descriptions of self-stabilizing electromagnetic topology.
 ---
 
+![Knots on a donut shell.](assets/donut-knots.png)
+
+
 ## Summary
 
-Maxwell theory permits electromagnetic energy to circulate in closed, toroidal
-patterns. When this occurs, integer winding numbers, effective tension, inertia,
-and discrete mode spectra arise necessarily.
+Maxwell theory admits electromagnetic energy flow configurations that are
+closed, topologically nontrivial, and dynamically stable.
 
-No strings are assumed. No quantum axioms are used. All results follow from
-classical field theory, topology, and the self-interacting nature of superposed
-electromagnetic fields.
+In a source-free Maxwell universe, electromagnetic energy can circulate on
+invariant toroidal surfaces. Closure of these flows forces integer winding
+numbers. Localization of energy along closed trajectories defines an effective
+one-dimensional object with tension and inertia computed directly from field
+densities. Periodicity enforces discrete mode spectra.
+
+Stability against dispersion arises because high electromagnetic energy density
+reduces the local effective speed of light, creating self-trapping through
+emergent refraction.
+
+In this setting, the defining structures of string theory—winding numbers,
+tension, inertia, and discrete modes, are consequences of electromagnetic
+topology and self-interaction within classical Maxwell theory.
 
 
 ## Goal
 
-Demonstrate, explicitly and exhaustively, that:
+Demonstrate that:
 
 1. Electromagnetic energy flow can form closed trajectories on tori.
 2. Closure forces integer winding numbers $(m,n)$.
 3. Localized energy flow defines a one-dimensional object with tension.
 4. Maxwell momentum fixes the corresponding inertia.
-5. High energy density induces effective refraction, producing self-trapping and
-   spectral stability.
+5. High electromagnetic energy density reduces the local effective speed of
+   light, producing self-trapping and spectral stability.
 6. The integers $(m,n)$ are computable from conserved Maxwell
    integrals.
 
 
-## Conclusions (stated upfront)
+## Conclusions
 
 - Integer winding is forced by toroidal topology.
-- Tension and inertia are derived directly from electromagnetic energy and
-  momentum.
+- Tension and inertia follow from electromagnetic energy and momentum.
 - Discrete spectra follow from periodicity combined with self-confinement.
 - String-theoretic structure emerges as an effective description of
   electromagnetic topology stabilized by emergent refraction.
@@ -70,8 +81,8 @@ u = \frac{\epsilon_0}{2} \mathbf{E}^2 + \frac{1}{2\mu_0} \mathbf{B}^2,
 \mathbf{S} = \frac{1}{\mu_0} \mathbf{E} \times \mathbf{B}.
 $$
 
-Energy transport is therefore an intrinsic, conserved feature of the
-electromagnetic field.
+Energy transport is an intrinsic, conserved feature of the electromagnetic
+field.
 
 Define the instantaneous energy-flow velocity field wherever $u > 0$ as
 
@@ -92,7 +103,8 @@ A torus $T^2$ is the simplest closed surface with two independent,
 non-contractible cycles. On such a surface, any smooth, divergence-free tangent
 flow is a linear flow in angular coordinates $(\theta,\phi)$.
 
-A standard theorem of dynamical systems on $T^2$ states:
+A standard result from the theory of dynamical systems on $T^2$
+states:
 
 > A linear flow on a torus has closed trajectories if and only if the slope
 > $d\theta/d\phi$ is rational.
@@ -107,8 +119,7 @@ $$
 
 counting the number of windings around the two fundamental cycles.
 
-These integers are forced by periodicity and single-valuedness. They are not
-introduced by assumption.
+These integers are enforced by periodicity and single-valuedness.
 
 
 ## Localized energy flow defines tension
@@ -130,9 +141,8 @@ $$
 E = \int_0^L T \, ds = T L.
 $$
 
-This proportionality defines a tension $T$: energy per unit length.
-No mechanical analogy is required; this follows directly from field
-localization.
+This proportionality defines a tension $T$, interpreted as energy
+per unit length.
 
 
 ## Inertia from Maxwell momentum
@@ -160,27 +170,26 @@ $$
 \mathbf{E} \cdot \mathbf{B} = 0, \qquad |\mathbf{E}| = c |\mathbf{B}|,
 $$
 
-one finds the exact identity
+one finds
 
 $$
 |\mathbf{S}| = c u.
 $$
 
-It follows that the effective inertial line density is
+The effective inertial line density is therefore
 
 $$
 \mu = \frac{T}{c^2}.
 $$
 
-Tension and inertia are therefore not independent parameters; both are fixed by
-Maxwell field densities.
+Tension and inertia are fixed by Maxwell field densities.
 
 
 ## Stability and discrete mode spectrum
 
 A localized tube of electromagnetic energy in linear vacuum theory would
-normally disperse. However, electromagnetic superposition modifies the effective
-local propagation speed in regions of high field energy density.
+normally disperse. Electromagnetic superposition modifies the effective local
+propagation speed in regions of high field energy density.
 
 As shown in [@Rodriguez2026], linear superposition produces an effective
 susceptibility $\chi(\mathbf{x})$ such that
@@ -190,8 +199,11 @@ c_{\text{local}}(\mathbf{x}) = \frac{c_0}{\sqrt{1+\chi(\mathbf{x})}}.
 $$
 
 Regions of elevated energy density therefore correspond to regions of higher
-effective refractive index. A toroidal energy tube thus creates its own
-electromagnetic waveguide via total internal reflection.
+effective refractive index. A toroidal energy tube creates an electromagnetic
+waveguide through total internal reflection.
+
+The same electromagnetic fields that define the object also generate the
+refractive profile that confines it.
 
 Let $\xi(s,t)$ describe small transverse perturbations of this
 self-trapped structure. The leading-order effective dynamics yields
@@ -206,14 +218,11 @@ $$
 \xi(s+L,t) = \xi(s,t).
 $$
 
-Fourier analysis on $S^1$ then yields a discrete spectrum
+Fourier analysis on $S^1$ yields a discrete spectrum
 
 $$
 \omega_k = \frac{2\pi c_{\text{local}}}{L} |k|, \qquad k \in \mathbb{Z}.
 $$
-
-Discreteness follows from topology; stability follows from emergent
-self-refraction.
 
 
 ## Explicit Maxwell solutions with torus-knot topology
@@ -231,35 +240,32 @@ $$
 P_z = -\frac{p}{p+q}, \qquad L_z = \frac{q}{p+q}.
 $$
 
-The toroidal winding slope is therefore
+The toroidal winding slope is
 
 $$
-\frac{p}{q} = -\frac{P_z}{L_z},
+\frac{p}{q} = -\frac{P_z}{L_z}.
 $$
 
-and the integers themselves are recovered from conserved integrals:
+The integers are recovered from conserved integrals:
 
 $$
 p = -\frac{P_z}{H_m}, \qquad q = \frac{L_z}{H_m}.
 $$
 
-The winding numbers are measurable, conserved properties of the Maxwell field
-configuration.
-
 
 ## What has been derived
 
-From Maxwell theory alone, we have derived:
+From Maxwell theory alone:
 
-- Closed one-dimensional electromagnetic excitations.
-- Integer winding numbers $(m,n)$.
-- A tension $T$ from energy density.
-- An inertia $\mu = T/c^2$ from momentum density.
-- A discrete oscillator spectrum stabilized by self-trapping.
-- Integer data encoded in conserved field integrals.
+- Closed one-dimensional electromagnetic excitations arise.
+- Integer winding numbers $(m,n)$ are enforced by topology.
+- Tension $T$ follows from energy density.
+- Inertia $\mu = T/c^2$ follows from momentum density.
+- A discrete oscillator spectrum is stabilized by self-trapping.
+- Integer data are encoded in conserved field integrals.
 
-These are precisely the structural elements normally postulated in string
-theory, here recovered as emergent properties of a classical Maxwell universe.
+These structures correspond to those normally postulated in string theory and
+here arise as emergent properties of a classical Maxwell universe.
 
 
 ## Final statement
@@ -270,7 +276,7 @@ produces string-theoretic structure as an emergent phenomenon.
 Strings are not fundamental objects. They are effective descriptions of
 electromagnetic topology stabilized by the field’s own energy density.
 
-This conclusion follows directly from classical field theory.
+This follows directly from classical field theory.
 
 
 ## References
