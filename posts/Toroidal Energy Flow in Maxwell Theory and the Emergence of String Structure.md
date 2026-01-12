@@ -27,11 +27,10 @@ Demonstrate, explicitly and exhaustively, that:
 2. Closure forces integer winding numbers $(m,n)$.
 3. Localized energy flow defines a one-dimensional object with tension.
 4. Maxwell momentum fixes the corresponding inertia.
-5. Priodicity (continuity conditions) enforce high energy density that induces self-trapping, stabilizing the spectrum.
+5. Periodicity (continuity conditions) enforce high energy density that induces
+   self-trapping, stabilizing the spectrum.
 6. The integers $(m,n)$ are computable from conserved Maxwell
    integrals.
-
----
 
 
 ## Conclusions (stated upfront)
@@ -258,8 +257,8 @@ From Maxwell theory alone, we have derived:
 - A discrete oscillator spectrum from periodicity and self-trapping.
 - Integer data encoded in conserved field integrals.
 
- These are precisely the structural elements normally introduced as axioms in
- string theory, here recovered as emergent properties of a "Maxwell Universe."
+These are precisely the structural elements normally introduced as axioms in
+string theory, here recovered as emergent properties of a "Maxwell Universe."
 
 
 ## Final statement
