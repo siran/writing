@@ -72,6 +72,8 @@ def render(
     number_offset: Optional[str] = None,
     epub_chapter_level: Optional[int] = None,
     verbose: bool = False,
+    html_math: str = "mathjax",
+    html_embed_resources: bool = False,
 ) -> tuple[Optional[Path], Optional[Path]]:
     """
     Main render entrypoint.
@@ -86,7 +88,8 @@ def render(
         epub_split_args = ["--split-level", str(effective_epub_level)]
     epub_extra_args = epub_split_args + (["--toc"] if make_epub else [])
 
-    src = Path(path) if path else discover_md_in_cwd()
+    src = (Path(path) if path else discover_md_in_cwd()).expanduser()
+    src = src.resolve(strict=False)
     if not src.exists():
         die(f"Missing source: {src}")
 
@@ -106,6 +109,8 @@ def render(
             number_offset=number_offset,
             epub_chapter_level=effective_epub_level,
             verbose=verbose,
+            html_math=html_math,
+            html_embed_resources=html_embed_resources,
         )
 
     # --- Normal (single .md) mode ---
@@ -162,6 +167,8 @@ def render(
             if rc != 0:
                 die(f"Docker pandoc (PDF) failed (rc={rc})")
             shutil.copy2(out_pdf, pdf_path)
+            if not pdf_path.exists():
+                die(f"Expected PDF output missing: {pdf_path}")
 
         if make_html:
             out_html = tmpdir / "out.html"
@@ -175,12 +182,16 @@ def render(
                 timeout,
                 log_path=html_log,
                 verbose=verbose,
+                math_mode=html_math,
+                embed_resources=html_embed_resources,
             )
             if verbose or rc != 0:
                 print_pandoc_log(html_log, label="HTML")
             if rc != 0:
                 die(f"Docker pandoc (HTML) failed (rc={rc})")
             shutil.copy2(out_html, html_path)
+            if not html_path.exists():
+                die(f"Expected HTML output missing: {html_path}")
 
         if make_epub:
             out_epub = tmpdir / "out.epub"
@@ -201,6 +212,8 @@ def render(
             if rc != 0:
                 die(f"Docker pandoc (EPUB) failed (rc={rc})")
             shutil.copy2(out_epub, epub_path)
+            if not epub_path.exists():
+                die(f"Expected EPUB output missing: {epub_path}")
 
         _print_wrote(
             [
@@ -259,6 +272,8 @@ def render(
         if rc != 0:
             die(f"Docker pandoc (PDF) failed (rc={rc})")
         shutil.copy2(out_pdf, pdf_path)
+        if not pdf_path.exists():
+            die(f"Expected PDF output missing: {pdf_path}")
 
     if make_html:
         out_html = in_tmp.parent / "out.html"
@@ -273,12 +288,16 @@ def render(
             css_path,
             log_path=html_log,
             verbose=verbose,
+            math_mode=html_math,
+            embed_resources=html_embed_resources,
         )
         if verbose or rc != 0:
             print_pandoc_log(html_log, label="HTML")
         if rc != 0:
             die(f"Docker pandoc (HTML) failed (rc={rc})")
         shutil.copy2(out_html, html_path)
+        if not html_path.exists():
+            die(f"Expected HTML output missing: {html_path}")
         _inline_css(html_path, css_path)
         if css_path and css_path.exists():
             try:
@@ -306,6 +325,8 @@ def render(
         if rc != 0:
             die(f"Docker pandoc (EPUB) failed (rc={rc})")
         shutil.copy2(out_epub, epub_path)
+        if not epub_path.exists():
+            die(f"Expected EPUB output missing: {epub_path}")
 
     _print_wrote(
         [
@@ -375,6 +396,22 @@ def main(argv=None):
         action="store_true",
         help="Print pandoc logs (and extra pandoc verbosity) to help debug failures.",
     )
+    ap.add_argument(
+        "--html-math",
+        choices=["mathjax", "webtex", "mathml", "katex"],
+        default="mathjax",
+        help="Math rendering mode for HTML output.",
+    )
+    ap.add_argument(
+        "--html-embed-resources",
+        action="store_true",
+        help="Embed external resources into HTML (useful with --html-math=webtex).",
+    )
+    ap.add_argument(
+        "--math-images",
+        action="store_true",
+        help="Render HTML math as images and embed resources (alias for --html-math=webtex --html-embed-resources).",
+    )
 
     g = ap.add_mutually_exclusive_group()
     g.add_argument("--pdf", action="store_true", help="Render PDF only.")
@@ -395,6 +432,12 @@ def main(argv=None):
         make_html = args.html or args.all
         make_epub = args.epub
 
+        html_math = args.html_math
+        html_embed_resources = args.html_embed_resources
+        if args.math_images:
+            html_math = "webtex"
+            html_embed_resources = True
+
         render(
             args.file,
             timeout=args.timeout,
@@ -410,6 +453,8 @@ def main(argv=None):
             number_offset=args.number_offset,
             epub_chapter_level=args.epub_chapter_level,
             verbose=args.verbose,
+            html_math=html_math,
+            html_embed_resources=html_embed_resources,
         )
     except SystemExit:
         raise

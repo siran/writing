@@ -469,6 +469,8 @@ def render_book_yaml(
     number_offset: Optional[str] = None,
     epub_chapter_level: Optional[int] = None,
     verbose: bool = False,
+    html_math: str = "mathjax",
+    html_embed_resources: bool = False,
 ) -> tuple[Optional[Path], Optional[Path]]:
     """
     Book mode:
@@ -930,6 +932,8 @@ def render_book_yaml(
             css_path,
             log_path=html_log,
             verbose=verbose,
+            math_mode=html_math,
+            embed_resources=html_embed_resources,
         )
         if verbose or rc != 0:
             print_pandoc_log(html_log, label="HTML")

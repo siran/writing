@@ -13,6 +13,7 @@ _MATHJAX_URL = os.environ.get(
     "PNPMD_MATHJAX_URL",
     "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js",
 )
+_WEBTEX_URL = os.environ.get("PNPMD_WEBTEX_URL", "")
 _IMAGE_READY = False
 
 
@@ -88,39 +89,56 @@ def render_html(
     css_path: Optional[Path] = None,
     log_path: Optional[Path] = None,
     verbose: bool = False,
+    *,
+    math_mode: str = "mathjax",
+    embed_resources: bool = False,
+    webtex_url: Optional[str] = None,
 ) -> int:
     css_args: List[str] = []
     if css_path and css_path.exists():
         css_args = ["--css", css_path.name]
-    mathjax_args: List[str] = []
-    if _MATHJAX_URL:
-        header_path = in_tmp.parent / "mathjax-config.html"
-        header_path.write_text(
-            (
-                "<script>\n"
-                "window.MathJax = {\n"
-                "  tex: {\n"
-                "    inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],\n"
-                "    displayMath: [['$$', '$$'], ['\\\\[', '\\\\]']]\n"
-                "  },\n"
-                "  options: {\n"
-                "    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']\n"
-                "  },\n"
-                "  svg: {\n"
-                "    fontCache: 'global'\n"
-                "  }\n"
-                "};\n"
-                "</script>\n"
-            ),
-            encoding="utf-8",
-        )
-        mathjax_args = [
-            "--include-in-header",
-            header_path.name,
-            f"--mathjax={_MATHJAX_URL}",
-        ]
+    math_args: List[str] = []
+    mode = (math_mode or "mathjax").strip().lower()
+    if mode == "mathjax":
+        if _MATHJAX_URL:
+            header_path = in_tmp.parent / "mathjax-config.html"
+            header_path.write_text(
+                (
+                    "<script>\n"
+                    "window.MathJax = {\n"
+                    "  tex: {\n"
+                    "    inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],\n"
+                    "    displayMath: [['$$', '$$'], ['\\\\[', '\\\\]']]\n"
+                    "  },\n"
+                    "  options: {\n"
+                    "    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']\n"
+                    "  },\n"
+                    "  svg: {\n"
+                    "    fontCache: 'global'\n"
+                    "  }\n"
+                    "};\n"
+                    "</script>\n"
+                ),
+                encoding="utf-8",
+            )
+            math_args = [
+                "--include-in-header",
+                header_path.name,
+                f"--mathjax={_MATHJAX_URL}",
+            ]
+    elif mode == "webtex":
+        url = webtex_url or _WEBTEX_URL
+        if url:
+            math_args = [f"--webtex={url}"]
+        else:
+            math_args = ["--webtex"]
+    elif mode == "mathml":
+        math_args = ["--mathml"]
+    elif mode == "katex":
+        math_args = ["--katex"]
     log_args: List[str] = [f"--log={log_path.name}"] if log_path else []
     verbose_args: List[str] = ["--verbose"] if verbose else []
+    embed_args: List[str] = ["--embed-resources"] if embed_resources else []
 
     rc = _ensure_image(_PANDOC_IMAGE)
     if rc != 0:
@@ -138,11 +156,12 @@ def render_html(
         "--standalone",
         *log_args,
         *verbose_args,
+        *embed_args,
         *common_args,
         *shift_args,
         *meta_args,
         *css_args,
-        *mathjax_args,
+        *math_args,
         "--filter",
         "pandoc-crossref",
         "in.md",
