@@ -417,12 +417,12 @@ def render_in_staging(
     publication_date_iso: str,
     book_yaml: Optional[Path] = None,
     render_args: Optional[List[str]] = None,
-) -> Tuple[Path, Path, Path, Path, Optional[Path]]:
+) -> Tuple[Path, Path, Path, Path, Optional[Path], Optional[Path]]:
     """
     Stage and render the main PNPMD .md, and optionally a book .yml (book mode).
 
     Returns:
-        staging_dir, staged_md, staged_pdf, staged_html, staged_epub (or None)
+        staging_dir, staged_md, staged_pdf, staged_html, staged_embed_html, staged_epub (or None)
     """
     stem = src_md.stem
     staging = site_repo / subjournal / "_staging" / stem
@@ -434,6 +434,26 @@ def render_in_staging(
     render_py = script_dir.parent / "render" / "render.py"
     if not render_py.exists():
         die(f"render.py not found at expected location: {render_py}")
+
+    def _render_embed_html(staged_md: Path) -> Path:
+        embed_md = staged_md.with_name(f"{staged_md.stem}.embed{staged_md.suffix}")
+        shutil.copy2(staged_md, embed_md)
+        run(
+            [
+                sys.executable,
+                str(render_py),
+                "--html",
+                "--math-images",
+                *base_render_args,
+                str(embed_md),
+            ],
+            cwd=staging,
+            check=True,
+        )
+        embed_html = embed_md.with_suffix(".html")
+        if not embed_html.exists():
+            die(f"Expected embed HTML missing after render: {embed_html}")
+        return embed_html
 
     # ---- Book mode ----
     if book_yaml is not None:
@@ -486,7 +506,9 @@ def render_in_staging(
         except Exception:
             pass
 
-        return staging, human_md, pdf_dst, html_dst, staged_epub
+        embed_html = _render_embed_html(human_md)
+
+        return staging, human_md, pdf_dst, html_dst, embed_html, staged_epub
 
     # ---- main PNPMD .md ----
     dst_md = staging / src_md.name
@@ -510,7 +532,9 @@ def render_in_staging(
         if not p.exists():
             die(f"Expected artifact missing after render: {p}")
 
-    return staging, dst_md, dst_pdf, dst_html, None
+    embed_html = _render_embed_html(dst_md)
+
+    return staging, dst_md, dst_pdf, dst_html, embed_html, None
 
 
 # ---- provenance ----
@@ -520,6 +544,7 @@ def write_provenance(
     dst_md: Path,
     dst_pdf: Path,
     dst_html: Path,
+    dst_embed_html: Optional[Path],
     dst_pmd: Path,
     dst_epub: Optional[Path],
     src_origin: str,
@@ -533,6 +558,7 @@ def write_provenance(
     concept_doi: Optional[str],
     assets_pdf_url: str,
     assets_epub_url: Optional[str],
+    assets_embed_html_url: Optional[str],
     site_html_url: str,
     site_md_url: str,
     site_pandoc_md_url: str,
@@ -555,6 +581,10 @@ def write_provenance(
         "html_url": site_html_url,
         "primary": "md",
     }
+    if dst_embed_html is not None:
+        artifacts["embed_html_name"] = dst_embed_html.name
+        if assets_embed_html_url:
+            artifacts["embed_url"] = assets_embed_html_url
     if dst_epub is not None and assets_epub_url:
         artifacts["epub_name"] = dst_epub.name
         artifacts["epub_url"] = assets_epub_url

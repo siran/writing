@@ -603,6 +603,7 @@ def preview_actions(
     site_repo: Path,
     final_md: Path,
     final_html: Path,
+    final_embed_html: Optional[Path],
     final_pmd: Path,
     prov_path: Path,
     final_pdf: Path,
@@ -630,11 +631,14 @@ def preview_actions(
     print(_json.dumps(zenodo_meta, indent=2, ensure_ascii=False))
 
     echo("\n--- FILES TO COMMIT (site repo) ---")
-    for p in [final_md, final_html, final_pmd, prov_path]:
+    files_to_commit = [final_md, final_html, final_pmd, prov_path]
+    for p in files_to_commit:
         echo(f" - {p.relative_to(site_repo)}")
 
     echo("\n--- FILES TO UPLOAD TO ZENODO ---")
     upload_list = [final_md, final_pdf, final_pmd, final_html]
+    if final_embed_html is not None:
+        upload_list.append(final_embed_html)
     if final_epub is not None:
         upload_list.append(final_epub)
     for p in upload_list:
@@ -653,6 +657,11 @@ def preview_actions(
             f"  copy {final_pdf} -> "
             f"{args.assets_dir}/{assets_prefix}/{stem}/{doi_prefix}/{doi_suffix}/{final_pdf.name}"
         )
+        if final_embed_html is not None:
+            echo(
+                f"  copy {final_embed_html} -> "
+                f"{args.assets_dir}/{assets_prefix}/{stem}/{doi_prefix}/{doi_suffix}/{final_embed_html.name}"
+            )
         if final_epub is not None:
             echo(
                 f"  copy {final_epub} -> "
@@ -667,7 +676,13 @@ def preview_actions(
         f"  PUT /deposit/depositions/{dep_id} "
         f"(full metadata incl. related_identifiers)"
     )
-    echo("  PUT md, PDF, pandoc.md, html" + (", epub" if final_epub is not None else "") + " to bucket")
+    embed_label = ", embed.html" if final_embed_html is not None else ""
+    echo(
+        "  PUT md, PDF, pandoc.md, html"
+        + embed_label
+        + (", epub" if final_epub is not None else "")
+        + " to bucket"
+    )
     echo("  POST /deposit/depositions/{id}/actions/publish")
     echo(f"  GET /records/{dep_id} (fetch concept DOI)")
     echo("  update provenance.yaml with concept DOI (optional, then commit)")
@@ -731,7 +746,7 @@ def run_publish(args, ctx: PublishContext) -> None:
     if args.toc_depth is not None:
         render_args += ["--toc-depth", str(args.toc_depth)]
 
-    staging, staged_md, staged_pdf, staged_html, staged_epub = render_in_staging(
+    staging, staged_md, staged_pdf, staged_html, staged_embed_html, staged_epub = render_in_staging(
         site_repo,
         subjournal,
         src_md,
@@ -791,6 +806,9 @@ def run_publish(args, ctx: PublishContext) -> None:
     final_md = final_dir / staged_md.name
     final_pdf = final_dir / staged_pdf.name
     final_html = final_dir / staged_html.name
+    final_embed_html = (
+        final_dir / staged_embed_html.name if staged_embed_html is not None else None
+    )
     final_pmd = final_dir / staged_pmd.name
     final_epub = final_dir / staged_epub.name if staged_epub is not None else None
 
@@ -800,6 +818,8 @@ def run_publish(args, ctx: PublishContext) -> None:
         (staged_html, final_html),
         (staged_pmd, final_pmd),
     ]
+    if staged_embed_html is not None:
+        move_pairs.append((staged_embed_html, final_embed_html))
     if staged_epub is not None:
         move_pairs.append((staged_epub, final_epub))
 
@@ -828,6 +848,12 @@ def run_publish(args, ctx: PublishContext) -> None:
         f"{args.assets_base_url.rstrip('/')}/{assets_prefix}/"
         f"{stem}/{doi_prefix}/{doi_suffix}/{final_pdf.name}"
     )
+    assets_embed_html_url = (
+        f"{args.assets_base_url.rstrip('/')}/{assets_prefix}/"
+        f"{stem}/{doi_prefix}/{doi_suffix}/{final_embed_html.name}"
+        if final_embed_html is not None
+        else None
+    )
     if final_epub is not None:
         assets_epub_url = (
             f"{args.assets_base_url.rstrip('/')}/{assets_prefix}/"
@@ -853,6 +879,14 @@ def run_publish(args, ctx: PublishContext) -> None:
             "resource_type": resource_type,
         },
     ]
+    if assets_embed_html_url:
+        self_related_identifiers.append(
+            {
+                "relation": "isIdenticalTo",
+                "identifier": assets_embed_html_url,
+                "resource_type": resource_type,
+            }
+        )
     if assets_epub_url:
         self_related_identifiers.append(
             {
@@ -904,6 +938,7 @@ def run_publish(args, ctx: PublishContext) -> None:
         final_md,
         final_pdf,
         final_html,
+        final_embed_html,
         final_pmd,
         final_epub,
         src_origin,
@@ -917,6 +952,7 @@ def run_publish(args, ctx: PublishContext) -> None:
         concept_doi,
         assets_pdf_url,
         assets_epub_url,
+        assets_embed_html_url,
         site_html_url,
         site_md_url,
         site_pandoc_md_url,
@@ -933,6 +969,7 @@ def run_publish(args, ctx: PublishContext) -> None:
         site_repo,
         final_md,
         final_html,
+        final_embed_html,
         final_pmd,
         prov_path,
         final_pdf,
@@ -975,7 +1012,11 @@ def run_publish(args, ctx: PublishContext) -> None:
     # Commit site repo: stage non-binary artifacts only (.md/.html/.pandoc.md/.yml/.yaml/.json/.txt/.md).
     allowed_exts = {".md", ".html", ".yaml", ".yml", ".json", ".txt"}
     files_to_stage = [
-        p for p in final_dir.iterdir() if p.is_file() and (p.name.endswith(".pandoc.md") or p.suffix in allowed_exts)
+        p
+        for p in final_dir.iterdir()
+        if p.is_file()
+        and not p.name.endswith(".embed.html")
+        and (p.name.endswith(".pandoc.md") or p.suffix in allowed_exts)
     ]
     if not files_to_stage:
         die(f"No files to stage in {final_dir}")
@@ -1085,6 +1126,15 @@ def run_publish(args, ctx: PublishContext) -> None:
 
         paths_to_add = [os.path.relpath(dest_pdf, assets_repo)]
 
+        if final_embed_html is not None:
+            dest_embed_html = (
+                assets_repo / assets_prefix / stem / doi_prefix / doi_suffix / final_embed_html.name
+            )
+            dest_embed_html.parent.mkdir(parents=True, exist_ok=True)
+            echo(f"+ copy {final_embed_html} -> {dest_embed_html}")
+            shutil.copy2(final_embed_html, dest_embed_html)
+            paths_to_add.append(os.path.relpath(dest_embed_html, assets_repo))
+
         if final_epub is not None:
             dest_epub = (
                 assets_repo / assets_prefix / stem / doi_prefix / doi_suffix / final_epub.name
@@ -1096,7 +1146,12 @@ def run_publish(args, ctx: PublishContext) -> None:
 
         run(["git", "add"] + paths_to_add, cwd=assets_repo)
         if not args.no_assets_push:
-            suffix = ", epub" if final_epub is not None else ""
+            suffix_parts = []
+            if final_embed_html is not None:
+                suffix_parts.append("embed.html")
+            if final_epub is not None:
+                suffix_parts.append("epub")
+            suffix = f", {', '.join(suffix_parts)}" if suffix_parts else ""
             run(
                 [
                     "git",
