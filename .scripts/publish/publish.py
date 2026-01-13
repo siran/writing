@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import hashlib
 import re
 import sys
 import shutil
@@ -51,6 +52,33 @@ def slug_branch(s: str) -> str:
     if s.endswith(".lock"):
         s = s[:-5] + "-lock"
     return s[:80] or "x"
+
+
+def _pending_namespace(raw: str) -> str:
+    s = (raw or "").strip().lower()
+    s = re.sub(r"[^a-z0-9._-]+", "-", s)
+    s = s.strip("-")
+    return s or "preferredframe"
+
+
+def _pending_hash_value(mode: str, stem: str, src_commit: str, staged_md: Path) -> str:
+    if mode == "stem":
+        payload = stem
+    elif mode == "commit":
+        payload = src_commit
+    else:
+        payload = staged_md.read_bytes()
+    if isinstance(payload, bytes):
+        digest = hashlib.sha256(payload).hexdigest()
+    else:
+        digest = hashlib.sha256(payload.encode("utf-8")).hexdigest()
+    return digest[:12]
+
+
+def make_pending_doi(args, stem: str, src_commit: str, staged_md: Path) -> str:
+    namespace = _pending_namespace(args.assets_prefix)
+    digest = _pending_hash_value(args.pending_hash, stem, src_commit, staged_md)
+    return f"pending/{namespace}.{digest}"
 
 
 def git_repo_root(path: Path) -> Path:
@@ -169,6 +197,17 @@ def parse_args():
         choices=["sandbox", "prod"],
         default="sandbox",
         help="Zenodo environment (default: sandbox)",
+    )
+    ap.add_argument(
+        "--offline",
+        action="store_true",
+        help="Skip Zenodo API calls; use a pending DOI (pending/<namespace>.<hash>).",
+    )
+    ap.add_argument(
+        "--pending-hash",
+        choices=["md", "stem", "commit"],
+        default="md",
+        help="Hash source for pending DOI when --offline is set (default: md).",
     )
     ap.add_argument("--community", default="preferredframe", help="Zenodo community slug.")
     ap.add_argument(
@@ -470,7 +509,13 @@ def determine_versioning(
             is_new_version = True
             prev_record_id = record_id_from_doi(prev_doi)
             if not prev_record_id:
-                die(f"Cannot extract Zenodo record id from previous DOI '{prev_doi}'.")
+                if args.offline:
+                    echo(
+                        "WARNING: previous DOI is not a Zenodo DOI; "
+                        "proceeding without Zenodo linkage (--offline)."
+                    )
+                else:
+                    die(f"Cannot extract Zenodo record id from previous DOI '{prev_doi}'.")
         else:
             ans_ver = input(
                 f"Treat this as a new version of the latest one? [y/N]: "
@@ -479,7 +524,13 @@ def determine_versioning(
                 is_new_version = True
                 prev_record_id = record_id_from_doi(prev_doi)
                 if not prev_record_id:
-                    die(f"Cannot extract Zenodo record id from previous DOI '{prev_doi}'.")
+                    if args.offline:
+                        echo(
+                            "WARNING: previous DOI is not a Zenodo DOI; "
+                            "proceeding without Zenodo linkage (--offline)."
+                        )
+                    else:
+                        die(f"Cannot extract Zenodo record id from previous DOI '{prev_doi}'.")
             else:
                 die(
                     f"a document named '{stem}' already has been published in '{subjournal}'"
@@ -612,12 +663,13 @@ def preview_actions(
     stem: str,
     doi_prefix: str,
     doi_suffix: str,
-    dep_id: int,
+    dep_id: Optional[int],
     title: str,
     publication_date: str,
     doi: str,
     branch_name: str,
     args,
+    zenodo_enabled: bool,
     zenodo_meta: Dict,
 ):
     echo("\n--- PROVENANCE ---")
@@ -672,20 +724,23 @@ def preview_actions(
             echo("  git commit ...")
             echo("  git push")
     echo("Zenodo:")
-    echo(
-        f"  PUT /deposit/depositions/{dep_id} "
-        f"(full metadata incl. related_identifiers)"
-    )
-    embed_label = ", embed.html" if final_embed_html is not None else ""
-    echo(
-        "  PUT md, PDF, pandoc.md, html"
-        + embed_label
-        + (", epub" if final_epub is not None else "")
-        + " to bucket"
-    )
-    echo("  POST /deposit/depositions/{id}/actions/publish")
-    echo(f"  GET /records/{dep_id} (fetch concept DOI)")
-    echo("  update provenance.yaml with concept DOI (optional, then commit)")
+    if zenodo_enabled:
+        echo(
+            f"  PUT /deposit/depositions/{dep_id} "
+            f"(full metadata incl. related_identifiers)"
+        )
+        embed_label = ", embed.html" if final_embed_html is not None else ""
+        echo(
+            "  PUT md, PDF, pandoc.md, html"
+            + embed_label
+            + (", epub" if final_epub is not None else "")
+            + " to bucket"
+        )
+        echo("  POST /deposit/depositions/{id}/actions/publish")
+        echo(f"  GET /records/{dep_id} (fetch concept DOI)")
+        echo("  update provenance.yaml with concept DOI (optional, then commit)")
+    else:
+        echo("  SKIPPED (--offline)")
     echo("Git:")
     echo("  git checkout main")
     echo(f"  git merge --no-ff {branch_name}")
@@ -696,12 +751,14 @@ def preview_actions(
 # ---------------- main publish workflow ----------------
 
 def run_publish(args, ctx: PublishContext) -> None:
-    if args.env == "prod":
+    if args.env == "prod" and not args.offline:
         confirm = input(
             "WARNING: --env=prod will publish to LIVE Zenodo. Type 'prod' to continue: "
         ).strip()
         if confirm != "prod":
             die("Aborting: production environment not confirmed.")
+
+    zenodo_enabled = not args.offline
 
     # Preflight / context
     src_md, book_yaml, site_repo, src_commit, src_origin, site_base, subjournal = (
@@ -775,19 +832,27 @@ def run_publish(args, ctx: PublishContext) -> None:
     title = parsed["title"]
 
     # Zenodo deposition (reserve or new version)
-    api, token, doi, concept_doi, dep_id = reserve_or_new_version(
-        args,
-        is_new_version,
-        prev_record_id,
-        prev_concept,
-        title,
-        creators,
-        publication_year,
-        pub_type,
-    )
-    ctx.api = api
-    ctx.token = token
-    ctx.dep_id = dep_id
+    if zenodo_enabled:
+        api, token, doi, concept_doi, dep_id = reserve_or_new_version(
+            args,
+            is_new_version,
+            prev_record_id,
+            prev_concept,
+            title,
+            creators,
+            publication_year,
+            pub_type,
+        )
+        ctx.api = api
+        ctx.token = token
+        ctx.dep_id = dep_id
+    else:
+        api = None
+        token = None
+        dep_id = None
+        concept_doi = None
+        doi = make_pending_doi(args, stem, src_commit, staged_md)
+        echo(f"+ offline: pending DOI = {doi}")
 
     license_id = detect_license(staged_md, book_yaml)
     if not license_id:
@@ -984,11 +1049,18 @@ def run_publish(args, ctx: PublishContext) -> None:
         doi,
         branch_name,
         args,
+        zenodo_enabled,
         zenodo_meta,
     )
 
     # Confirmation
-    ans = input("\nProceed with publication commit and DOI minting? [y/N]: ").strip().lower()
+    prompt = "\nProceed with publication commit"
+    if zenodo_enabled:
+        prompt += " and DOI minting"
+    else:
+        prompt += " (Zenodo skipped)"
+    prompt += "? [y/N]: "
+    ans = input(prompt).strip().lower()
     if ans not in ("y", "yes"):
         echo("Aborting; cleaning up Zenodo draft, git branch, and files.")
         cleanup_best_effort(ctx)
@@ -1034,84 +1106,87 @@ def run_publish(args, ctx: PublishContext) -> None:
         cwd=site_repo,
     )
 
-    # Apply final metadata
-    _ = http_json(
-        "PUT",
-        f"{api}/deposit/depositions/{dep_id}",
-        token,
-        data={"metadata": zenodo_meta},
-    )
-
-    # Upload & publish
-    dep = ensure_draft_or_die(api, token, dep_id)
-    bucket_url = (dep.get("links") or {}).get("bucket")
-    if not bucket_url:
-        die("Draft has no bucket link; cannot upload.")
-
-    from urllib.parse import quote
-
-    # Upload the actual rendered artifacts (ignore CSS).
-
-    for path in upload_paths:
-        fname = path.name
-        put_url = f"{bucket_url}/{quote(fname)}"
-        with open(path, "rb") as fh:
-            http_put_raw(put_url, token, fh)
-        print("sleeping 1")
-        time.sleep(1)
-
-    _published = http_json(
-        "POST", f"{api}/deposit/depositions/{dep_id}/actions/publish", token
-    )
-
-    # Post-publish: concept DOI update
     concept_doi_updated = None
-    try:
-        record = http_json("GET", f"{api}/records/{dep_id}", token, data=None)
-        concept_doi_rec = record.get("conceptdoi")
-        if concept_doi_rec:
-            echo(f"\nConcept DOI from record: {concept_doi_rec}")
-            ans_cd = input(
-                "Update provenance.yaml with this concept DOI? [Y/n]: "
-            ).strip().lower()
-            if ans_cd in ("", "y", "yes"):
-                import yaml as _yaml
+    if zenodo_enabled:
+        # Apply final metadata
+        _ = http_json(
+            "PUT",
+            f"{api}/deposit/depositions/{dep_id}",
+            token,
+            data={"metadata": zenodo_meta},
+        )
 
-                try:
-                    prov_data = _yaml.safe_load(
-                        prov_path.read_text(encoding="utf-8")
-                    ) or {}
-                    concept_doi_old = prov_data.get("concept_doi")
-                    if concept_doi_old == concept_doi_rec:
-                        echo("Concept DOI unchanged; provenance already up to date.")
-                    else:
-                        echo(
-                            f"Updating concept DOI "
-                            f"{concept_doi_old or 'None'} → {concept_doi_rec}"
-                        )
-                        prov_data["concept_doi"] = concept_doi_rec
-                        prov_path.write_text(
-                            dump_yaml(prov_data),
-                            encoding="utf-8",
-                        )
-                        rel_prov2 = str(prov_path.relative_to(site_repo))
-                        run(["git", "add", rel_prov2], cwd=site_repo)
-                        run(
-                            [
-                                "git",
-                                "commit",
-                                "-m",
-                                f"Update concept DOI {concept_doi_old or 'None'} → {concept_doi_rec}",
-                            ],
-                            cwd=site_repo,
-                        )
-                        concept_doi_updated = concept_doi_rec
-                except Exception as e:
-                    echo(f"WARNING: Failed to update provenance with concept DOI: {e}")
-        else:
-            echo("No concept DOI present in record; leaving provenance as-is.")
-    except Exception as e:
-        echo(f"WARNING: Failed to retrieve record to update concept DOI: {e}")
+        # Upload & publish
+        dep = ensure_draft_or_die(api, token, dep_id)
+        bucket_url = (dep.get("links") or {}).get("bucket")
+        if not bucket_url:
+            die("Draft has no bucket link; cannot upload.")
+
+        from urllib.parse import quote
+
+        # Upload the actual rendered artifacts (ignore CSS).
+
+        for path in upload_paths:
+            fname = path.name
+            put_url = f"{bucket_url}/{quote(fname)}"
+            with open(path, "rb") as fh:
+                http_put_raw(put_url, token, fh)
+            print("sleeping 1")
+            time.sleep(1)
+
+        _published = http_json(
+            "POST", f"{api}/deposit/depositions/{dep_id}/actions/publish", token
+        )
+
+        # Post-publish: concept DOI update
+        try:
+            record = http_json("GET", f"{api}/records/{dep_id}", token, data=None)
+            concept_doi_rec = record.get("conceptdoi")
+            if concept_doi_rec:
+                echo(f"\nConcept DOI from record: {concept_doi_rec}")
+                ans_cd = input(
+                    "Update provenance.yaml with this concept DOI? [Y/n]: "
+                ).strip().lower()
+                if ans_cd in ("", "y", "yes"):
+                    import yaml as _yaml
+
+                    try:
+                        prov_data = _yaml.safe_load(
+                            prov_path.read_text(encoding="utf-8")
+                        ) or {}
+                        concept_doi_old = prov_data.get("concept_doi")
+                        if concept_doi_old == concept_doi_rec:
+                            echo("Concept DOI unchanged; provenance already up to date.")
+                        else:
+                            echo(
+                                f"Updating concept DOI "
+                                f"{concept_doi_old or 'None'} → {concept_doi_rec}"
+                            )
+                            prov_data["concept_doi"] = concept_doi_rec
+                            prov_path.write_text(
+                                dump_yaml(prov_data),
+                                encoding="utf-8",
+                            )
+                            rel_prov2 = str(prov_path.relative_to(site_repo))
+                            run(["git", "add", rel_prov2], cwd=site_repo)
+                            run(
+                                [
+                                    "git",
+                                    "commit",
+                                    "-m",
+                                    f"Update concept DOI {concept_doi_old or 'None'} → {concept_doi_rec}",
+                                ],
+                                cwd=site_repo,
+                            )
+                            concept_doi_updated = concept_doi_rec
+                    except Exception as e:
+                        echo(f"WARNING: Failed to update provenance with concept DOI: {e}")
+            else:
+                echo("No concept DOI present in record; leaving provenance as-is.")
+        except Exception as e:
+            echo(f"WARNING: Failed to retrieve record to update concept DOI: {e}")
+    else:
+        echo("\n[offline] Skipping Zenodo upload and publish.")
 
     # Assets repo (push after Zenodo is finished)
     if args.assets_dir:
@@ -1169,8 +1244,11 @@ def run_publish(args, ctx: PublishContext) -> None:
     run(["git", "push", "origin", "main"], cwd=site_repo)
     run(["git", "branch", "-d", branch_name], cwd=site_repo)
 
+    status_line = "Publication committed and DOI minted"
+    if not zenodo_enabled:
+        status_line = "Publication committed (Zenodo skipped)"
     echo(
-        f"\n✅ Publication committed and DOI minted"
+        f"\n✅ {status_line}"
         f"\nVersion DOI: {doi}"
         f"\nConcept DOI: {concept_doi_updated or concept_doi or '(none)'}"
         f"\nPermalink: {version_permalink}"
