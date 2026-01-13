@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import os, subprocess, urllib.parse, shutil, re, json, io, sys, concurrent.futures
+import hashlib
 from pathlib import Path
 from dataclasses import dataclass
 from urllib.parse import urlparse, quote
@@ -36,11 +37,10 @@ MIRROR_EXTS = {
     ".pandoc.md",
     ".txt",
     ".css",
-    ".pdf",
-    ".epub",
 }
 
 MD_EXTS = {".md", ".markdown", ".pandoc.md"}
+SKIP_COPY_EXTS = {".pdf"}
 
 # ---------- Journal naming based on CNAME ----------
 DEFAULT_JOURNAL = "Preferred Frame"
@@ -104,6 +104,7 @@ OWNER, REPO, BRANCH = detect_repo_branch()
 ROOT = Path(__file__).resolve().parents[2]
 OUT  = ROOT / "site"
 SRC  = ROOT / ".scripts" / "src"
+MD_TEMPLATE_DEPS = [SRC / "header.html", SRC / "footer.html", SRC / "coda.html"]
 
 # ---------- .gitignore handling ----------
 def load_gitignored_paths() -> set[Path]:
@@ -137,6 +138,46 @@ def is_gitignored(path: Path) -> bool:
             continue
     return False
 
+def _file_sha256(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+def _files_identical(src: Path, dst: Path) -> bool:
+    if not dst.exists():
+        return False
+    try:
+        s_stat = src.stat()
+        d_stat = dst.stat()
+    except Exception:
+        return False
+    if s_stat.st_size != d_stat.st_size:
+        return False
+    if int(s_stat.st_mtime) == int(d_stat.st_mtime):
+        return True
+    try:
+        return _file_sha256(src) == _file_sha256(dst)
+    except Exception:
+        return False
+
+def copy_if_changed(src: Path, dst: Path) -> bool:
+    if _files_identical(src, dst):
+        return False
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(src, dst)
+    return True
+
+def _max_mtime(paths: list[Path]) -> float:
+    mtimes = []
+    for p in paths:
+        try:
+            mtimes.append(p.stat().st_mtime)
+        except Exception:
+            continue
+    return max(mtimes) if mtimes else 0.0
+
 # ---------- base url ----------
 def compute_base_url() -> str:
     v = os.getenv("BASE_URL")
@@ -151,8 +192,7 @@ BASE_URL = compute_base_url()
 def write_cname_if_custom(base_url: str) -> None:
     root_cname = ROOT / "CNAME"
     if root_cname.exists():
-        OUT.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(root_cname, OUT / "CNAME")
+        copy_if_changed(root_cname, OUT / "CNAME")
         return
 
     host = urlparse(base_url).hostname
@@ -211,6 +251,9 @@ def _local_artifact_url(src_dir: Path, name: str | None) -> str:
     # Artifacts may be generated only under OUT (staging), so compute the OUT path.
     out_path = OUT / rel(src_dir) / name
     return f"/{rel_out(out_path).as_posix()}"
+
+def _is_pending_doi(doi_value: str) -> bool:
+    return (doi_value or "").strip().lower().startswith("pending/")
 
 def _canonical_origin_from_provenance() -> str | None:
     try:
@@ -372,7 +415,18 @@ def write_html(out_html: Path, body_html: str, head_extra: str = "", title: str 
     out_html.parent.mkdir(parents=True, exist_ok=True)
     out_html.write_text(doc, encoding="utf-8")
 
+def _should_render_markdown(src: Path, dst_html: Path) -> bool:
+    if not dst_html.exists():
+        return True
+    dep_mtime = _max_mtime([src, *MD_TEMPLATE_DEPS])
+    try:
+        return dep_mtime > dst_html.stat().st_mtime
+    except Exception:
+        return True
+
 def render_markdown_file(src: Path, dst_html: Path, title: str):
+    if not _should_render_markdown(src, dst_html):
+        return
     md = src.read_text(encoding="utf-8")
     # Replace YAML front matter with a Markdown H1 so mirrors show the title, not raw YAML.
     m_front = re.match(r"^---\s*\n(.*?)\n---\s*\n", md, flags=re.DOTALL)
@@ -433,6 +487,82 @@ def render_md_formats(src_in_site: Path, rel_path: Path, *, do_pdf: bool, do_epu
         print(out, end="" if out.endswith("\n") else "\n")
     if proc.returncode != 0:
         print(f"[DEBUG] WARNING: md render failed (rc={proc.returncode}) for {rel_path}; continuing")
+
+def _book_base_from_yaml(path: Path) -> str:
+    try:
+        txt = path.read_text(encoding="utf-8")
+    except Exception:
+        return path.stem
+    m = re.search(r"type:\s*main\s*\n\s*text:\s*(.+)", txt)
+    if m:
+        return m.group(1).strip().strip('"\'')
+    m2 = re.search(r"^\s*title\s*:\s*(.+)$", txt, re.MULTILINE)
+    if m2:
+        return m2.group(1).strip().strip('"\'')
+    return path.stem
+
+def _book_input_files(book_dir: Path, meta_path: Path, base: str) -> list[Path]:
+    inputs = [meta_path]
+    for p in book_dir.iterdir():
+        if not p.is_file():
+            continue
+        if p.suffix.lower() != ".md":
+            continue
+        if p.name == f"{base}.md" or p.name == f"{base}.pandoc.md":
+            continue
+        if p.name.endswith(".pandoc.md"):
+            continue
+        inputs.append(p)
+    return inputs
+
+def _book_output_files(
+    book_dir: Path,
+    base: str,
+    *,
+    include_pdf: bool,
+    include_epub: bool,
+    include_html: bool,
+) -> list[Path]:
+    outputs = [
+        book_dir / f"{base}.md",
+        book_dir / f"{base}.pandoc.md",
+    ]
+    if include_html:
+        outputs.append(book_dir / f"{base}.html")
+    if include_pdf:
+        outputs.append(book_dir / f"{base}.pdf")
+    if include_epub:
+        outputs.append(book_dir / f"{base}.epub")
+    return outputs
+
+def _book_needs_render(
+    book_dir: Path,
+    meta_path: Path,
+    *,
+    include_pdf: bool,
+    include_epub: bool,
+    include_html: bool,
+) -> bool:
+    base = _book_base_from_yaml(meta_path)
+    inputs = _book_input_files(book_dir, meta_path, base)
+    outputs = _book_output_files(
+        book_dir,
+        base,
+        include_pdf=include_pdf,
+        include_epub=include_epub,
+        include_html=include_html,
+    )
+    if any(not p.exists() for p in outputs):
+        return True
+    input_mtime = _max_mtime(inputs)
+    output_mtimes = []
+    for p in outputs:
+        try:
+            output_mtimes.append(p.stat().st_mtime)
+        except Exception:
+            return True
+    output_min_mtime = min(output_mtimes) if output_mtimes else 0.0
+    return input_mtime > output_min_mtime
 
 def _render_single_book(
     book_dir: Path,
@@ -543,6 +673,7 @@ def render_book_dirs(
     for ext in ("book.yml", "book.yaml"):
         candidates.extend(base.rglob(ext))
 
+    book_entries: list[tuple[Path, Path]] = []
     for meta in candidates:
         try:
             meta_rel = meta.relative_to(base)
@@ -564,6 +695,7 @@ def render_book_dirs(
         if book_dir in seen:
             continue
         seen.add(book_dir)
+        book_entries.append((book_dir, meta))
 
         try:
             rel_root = rel(book_dir)
@@ -571,11 +703,27 @@ def render_book_dirs(
             rel_root = book_dir
         print(f"[DEBUG] Queued book render: {rel_root} ({meta.name})")
 
-    book_dirs = list(seen)
-    if not book_dirs:
+    if not book_entries:
         return
 
-    workers = max_workers or min(4, len(book_dirs))
+    render_entries: list[tuple[Path, str]] = []
+    for book_dir, meta in book_entries:
+        if _book_needs_render(
+            book_dir,
+            meta,
+            include_pdf=include_pdf,
+            include_epub=include_epub,
+            include_html=include_html,
+        ):
+            render_entries.append((book_dir, meta.name))
+        else:
+            try:
+                rel_root = rel(book_dir)
+            except Exception:
+                rel_root = book_dir
+            print(f"[DEBUG] Skipping book render (up to date): {rel_root}")
+
+    workers = max_workers or min(4, len(render_entries)) if render_entries else 0
     if not include_html and not include_pdf and not include_epub:
         mode = "preprocess only (no HTML/PDF/EPUB)"
     elif include_pdf and include_epub:
@@ -586,48 +734,49 @@ def render_book_dirs(
         mode = "HTML+EPUB"
     else:
         mode = "HTML only"
-    print(
-        f"[DEBUG] Rendering {len(book_dirs)} book(s) ({mode}) with {workers} worker(s) "
-        f"from base={base}"
-    )
-
-    with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as ex:
-        futures = []
-        for book_dir in book_dirs:
-            meta_name = None
-            for ext in ("book.yml", "book.yaml"):
-                if (book_dir / ext).exists():
-                    meta_name = ext
-                    break
-            if not meta_name:
-                continue
-            futures.append(
-                ex.submit(
-                    _render_single_book,
-                    book_dir,
-                    meta_name,
-                    render_py,
-                    include_epub=include_epub,
-                    include_pdf=include_pdf,
-                    include_html=include_html,
+    if render_entries:
+        print(
+            f"[DEBUG] Rendering {len(render_entries)}/{len(book_entries)} book(s) ({mode}) "
+            f"with {workers} worker(s) from base={base}"
+        )
+        with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as ex:
+            futures = []
+            for book_dir, meta_name in render_entries:
+                futures.append(
+                    ex.submit(
+                        _render_single_book,
+                        book_dir,
+                        meta_name,
+                        render_py,
+                        include_epub=include_epub,
+                        include_pdf=include_pdf,
+                        include_html=include_html,
+                    )
                 )
-            )
 
-        for fut in concurrent.futures.as_completed(futures):
-            book_dir, rc, out = fut.result()
-            if out:
-                print(out, end="" if out.endswith("\n") else "\n")
-            if rc != 0:
-                print(
-                    f"[DEBUG] WARNING: book render failed (rc={rc}) "
-                    f"for {rel(book_dir)}; continuing build"
+            for fut in concurrent.futures.as_completed(futures):
+                book_dir, rc, out = fut.result()
+                if out:
+                    print(out, end="" if out.endswith("\n") else "\n")
+                if rc != 0:
+                    print(
+                        f"[DEBUG] WARNING: book render failed (rc={rc}) "
+                        f"for {rel(book_dir)}; continuing build"
+                    )
+    else:
+        print(f"[DEBUG] All books up to date; skipping renders from base={base}")
+
+    # Ensure every .md (including combined book .md) has a .md.html wrapper.
+    for book_dir, _meta in book_entries:
+        try:
+            for md_file in book_dir.glob("*.md"):
+                render_markdown_file(
+                    md_file,
+                    md_file.with_suffix(md_file.suffix + ".html"),
+                    title=md_file.stem,
                 )
-            # After render, ensure every .md (including combined book .md) has a .md.html wrapper.
-            try:
-                for md_file in book_dir.glob("*.md"):
-                    render_markdown_file(md_file, md_file.with_suffix(md_file.suffix + ".html"), title=md_file.stem)
-            except Exception:
-                pass
+        except Exception:
+            pass
 
 def build_simple_page_from_md(src_name: str, slug: str, title: str):
     src_md = ROOT / src_name
@@ -862,6 +1011,19 @@ def build_article_pages() -> set[Path]:
             or _asset_url(canonical_assets.get("epub"))
             or ""
         )
+        embed_name = (
+            artifacts.get("embed_html_name")
+            or artifacts.get("embed_html")
+            or None
+        )
+        embed_url = (
+            artifacts.get("embed_url")
+            or _asset_url(assets.get("embed"))
+            or _asset_url(assets.get("embed_html"))
+            or _asset_url(canonical_assets.get("embed"))
+            or _asset_url(canonical_assets.get("embed_html"))
+            or ""
+        )
 
         references_doi = data.get("references_doi") or pf_block.get("references_doi") or []
         if not isinstance(references_doi, list):
@@ -878,6 +1040,7 @@ def build_article_pages() -> set[Path]:
             "assets_epub": assets_epub,
             "md_name": md_name, "html_name": html_name, "pmd_name": pmd_name,
             "pdf_name": pdf_name, "epub_name": epub_name,
+            "embed_name": embed_name, "embed_url": embed_url,
             "html_canonical": html_canonical,
             "references_doi": references_doi,
             "journal": journal,
@@ -913,17 +1076,19 @@ def build_article_pages() -> set[Path]:
             for f in src.iterdir():
                 if not f.is_file():
                     continue
+                if f.suffix.lower() in SKIP_COPY_EXTS:
+                    continue
                 # Mirror assets and all rendered outputs; also mirror the parent stem dir (for DOI alias).
                 if f.suffix.lower() in MIRROR_EXTS or f.name.endswith(".md.html"):
                     dst = OUT / rel(f)
-                    dst.parent.mkdir(parents=True, exist_ok=True)
-                    shutil.copy2(f, dst)
+                    copy_if_changed(f, dst)
 
             local_md   = f"/{(OUT/rel(src/it['md_name'])).relative_to(OUT).as_posix()}" if it["md_name"] else None
             local_html = f"/{(OUT/rel(src/it['html_name'])).relative_to(OUT).as_posix()}" if it["html_name"] else None
-            local_pdf  = _local_artifact_url(src, it.get("pdf_name"))
-            local_epub = _local_artifact_url(src, it.get("epub_name"))
-            pdf_link = it.get("assets_pdf") or local_pdf or ""
+            local_embed = _local_artifact_url(src, it.get("embed_name")) if it.get("embed_name") else ""
+            embed_link = it.get("embed_url") or local_embed or ""
+            pdf_link = it.get("assets_pdf") or ""
+            local_epub = _local_artifact_url(src, it.get("epub_name")) if it.get("epub_name") else ""
             epub_link = it.get("assets_epub") or local_epub or ""
 
             html_body = ""
@@ -935,35 +1100,57 @@ def build_article_pages() -> set[Path]:
                     html_body = ""
 
             local_md_html = f"{local_md}.html" if local_md else ""
-            top_links = []
+            link_items = []
             if local_html:
-                top_links.append(f'<a href="{local_html}">HTML</a>')
+                link_items.append(("HTML", local_html))
+            if embed_link:
+                link_items.append(("HTML Embed", embed_link))
             if local_md_html:
-                top_links.append(f'<a href="{local_md_html}">MD.HTML</a>')
-            if pdf_link:
-                top_links.append(f'<a href="{pdf_link}">PDF</a>')
+                link_items.append(("MD.HTML", local_md_html))
             if local_md:
-                top_links.append(f'<a href="{local_md}">MD (raw)</a>')
+                link_items.append(("MD (raw)", local_md))
+            if pdf_link:
+                link_items.append(("PDF", pdf_link))
+            if epub_link:
+                link_items.append(("EPUB", epub_link))
 
-            share_html = ""
+            stem_seg = quote(stem, safe="")
+            stem_url = f"{origin}/{top}/{stem_seg}/"
+            stem_display = f"{origin}/{top}/{stem}/"
+            share_lines = [f'"<a href="{stem_url}">{stem_display}</a>"']
             doi_clean = (it["doi"] or "").replace(" ", "")
             doi_fallback = ""
             if it["doi_prefix"] and it["doi_suffix"]:
                 doi_fallback = f"{it['doi_prefix']}/{it['doi_suffix']}"
             if doi_clean or doi_fallback:
                 doi_value = doi_clean or doi_fallback
-                doi_url = f"https://doi.org/{doi_value}"
-                origin = _current_origin()
-                doi_alias = f"{origin}/doi/{it['doi_prefix']}/{it['doi_suffix']}"
-                share_html = (
-                    "<div class=\"share\"><strong>Share as:</strong><br>"
-                    f'<a href="{doi_alias}">{doi_alias}</a><br>'
-                    f'<a href="{doi_url}">{doi_url}</a>'
-                    "</div>"
+                if _is_pending_doi(doi_value):
+                    share_lines.append("(DOI pending)")
+                else:
+                    doi_alias = f"{origin}/doi/{it['doi_prefix']}/{it['doi_suffix']}"
+                    share_lines.append(f'<a href="{doi_alias}">{doi_alias}</a>')
+                    doi_url = f"https://doi.org/{doi_value}"
+                    share_lines.append(f'<a href="{doi_url}">{doi_url}</a>')
+            else:
+                share_lines.append("(DOI pending)")
+            share_html = (
+                "<div class=\"share\"><strong>Share as:</strong><br>"
+                + "<br>".join(share_lines)
+                + "</div>"
+            )
+            links_html = ""
+            if link_items:
+                links_html = (
+                    "<p class=\"links\"><strong>Latest:</strong></p>"
+                    + "<ul class=\"links\">"
+                    + "".join(
+                        f'<li><a href="{href}">{label}</a></li>'
+                        for label, href in link_items
+                    )
+                    + "</ul>"
                 )
 
             breadcrumbs = crumb_link([top, stem, it["doi_prefix"], it["doi_suffix"]])
-            stem_seg = quote(stem, safe="")
             same_family = []
             for v in versions:
                 if it["concept"] and v["concept"] == it["concept"]:
@@ -988,8 +1175,8 @@ def build_article_pages() -> set[Path]:
             if authors_html:
                 body.append(f"<p class='authors'>{authors_html}</p>")
             body.append(f"<p class='publine'>{PREFERRED_JOURNAL} — {month_year(it['date'])}</p>")
-            if top_links:
-                body.append("<p class='links'><strong>Version:</strong> " + " · ".join(top_links) + "</p>")
+            if links_html:
+                body.append(links_html)
             if share_html:
                 body.append(share_html)
             if versions_ul:
@@ -1042,7 +1229,7 @@ def build_article_pages() -> set[Path]:
             head.append(f'<meta name="citation_journal_title" content="{PREFERRED_JOURNAL}">')
             if pdf_link:
                 head.append(f'<meta name="citation_pdf_url" content="{pdf_link}">')
-            if it["doi"]:
+            if it["doi"] and not _is_pending_doi(it["doi"]):
                 head.append(f'<meta name="citation_doi" content="{it["doi"]}">')
             desc = it["abstract"] or it["onesent"] or it["title"]
             if desc:
@@ -1086,7 +1273,7 @@ def build_article_pages() -> set[Path]:
             }
             if enc:
                 article_ld["encoding"] = enc
-            if it["doi"]:
+            if it["doi"] and not _is_pending_doi(it["doi"]):
                 article_ld["sameAs"] = [f"https://doi.org/{it['doi'].split('/')[-1]}"]
             head.append(
                 '<script type="application/ld+json">'
@@ -1122,16 +1309,20 @@ def build_article_pages() -> set[Path]:
         stem_out.mkdir(parents=True, exist_ok=True)
 
         for f in src.iterdir():
-            if f.is_file() and f.suffix.lower() in MIRROR_EXTS:
+            if not f.is_file():
+                continue
+            if f.suffix.lower() in SKIP_COPY_EXTS:
+                continue
+            if f.suffix.lower() in MIRROR_EXTS:
                 dst = OUT / rel(f)
-                dst.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copy2(f, dst)
+                copy_if_changed(f, dst)
 
         local_md   = f"/{(OUT/rel(src/it['md_name'])).relative_to(OUT).as_posix()}" if it["md_name"] else None
         local_html = f"/{(OUT/rel(src/it['html_name'])).relative_to(OUT).as_posix()}" if it["html_name"] else None
-        local_pdf  = _local_artifact_url(src, it.get("pdf_name"))
-        local_epub = _local_artifact_url(src, it.get("epub_name"))
-        pdf_link = it.get("assets_pdf") or local_pdf or ""
+        local_embed = _local_artifact_url(src, it.get("embed_name")) if it.get("embed_name") else ""
+        embed_link = it.get("embed_url") or local_embed or ""
+        pdf_link = it.get("assets_pdf") or ""
+        local_epub = _local_artifact_url(src, it.get("epub_name")) if it.get("epub_name") else ""
         epub_link = it.get("assets_epub") or local_epub or ""
 
         html_body = ""
@@ -1163,31 +1354,53 @@ def build_article_pages() -> set[Path]:
 
         local_md_html = f"{local_md}.html" if local_md else ""
 
-        top_links = []
+        link_items = []
         if local_html:
-            top_links.append(f'<a href="{local_html}">HTML</a>')
+            link_items.append(("HTML", local_html))
+        if embed_link:
+            link_items.append(("HTML Embed", embed_link))
         if local_md_html:
-            top_links.append(f'<a href="{local_md_html}">MD.HTML</a>')
-        if pdf_link:
-            top_links.append(f'<a href="{pdf_link}">PDF</a>')
+            link_items.append(("MD.HTML", local_md_html))
         if local_md:
-            top_links.append(f'<a href="{local_md}">MD (raw)</a>')
+            link_items.append(("MD (raw)", local_md))
+        if pdf_link:
+            link_items.append(("PDF", pdf_link))
+        if epub_link:
+            link_items.append(("EPUB", epub_link))
 
-        share_html = ""
+        stem_url = f"{origin}/{top}/{stem_seg}/"
+        stem_display = f"{origin}/{top}/{stem}/"
+        share_lines = [f'"<a href="{stem_url}">{stem_display}</a>"']
         doi_clean = (it["doi"] or "").replace(" ", "")
         doi_fallback = ""
         if it["doi_prefix"] and it["doi_suffix"]:
             doi_fallback = f"{it['doi_prefix']}/{it['doi_suffix']}"
         if doi_clean or doi_fallback:
             doi_value = doi_clean or doi_fallback
-            doi_url = f"https://doi.org/{doi_value}"
-            origin = _current_origin()
-            doi_alias = f"{origin}/doi/{it['doi_prefix']}/{it['doi_suffix']}"
-            share_html = (
-                "<div class=\"share\"><strong>Share as:</strong><br>"
-                f'<a href="{doi_alias}">{doi_alias}</a><br>'
-                f'<a href="{doi_url}">{doi_url}</a>'
-                "</div>"
+            if _is_pending_doi(doi_value):
+                share_lines.append("(DOI pending)")
+            else:
+                doi_alias = f"{origin}/doi/{it['doi_prefix']}/{it['doi_suffix']}"
+                share_lines.append(f'<a href="{doi_alias}">{doi_alias}</a>')
+                doi_url = f"https://doi.org/{doi_value}"
+                share_lines.append(f'<a href="{doi_url}">{doi_url}</a>')
+        else:
+            share_lines.append("(DOI pending)")
+        share_html = (
+            "<div class=\"share\"><strong>Share as:</strong><br>"
+            + "<br>".join(share_lines)
+            + "</div>"
+        )
+        links_html = ""
+        if link_items:
+            links_html = (
+                "<p class=\"links\"><strong>Latest:</strong></p>"
+                + "<ul class=\"links\">"
+                + "".join(
+                    f'<li><a href="{href}">{label}</a></li>'
+                    for label, href in link_items
+                )
+                + "</ul>"
             )
 
         display_authors = it["authors"]
@@ -1200,8 +1413,8 @@ def build_article_pages() -> set[Path]:
         if authors_html:
             body.append(f"<p class='authors'>{authors_html}</p>")
         body.append(f"<p class='publine'>{PREFERRED_JOURNAL} — {month_year(it['date'])}</p>")
-        if top_links:
-            body.append("<p class='links'><strong>Latest:</strong> " + " · ".join(top_links) + "</p>")
+        if links_html:
+            body.append(links_html)
         if share_html:
             body.append(share_html)
         if versions_ul:
@@ -1251,7 +1464,7 @@ def build_article_pages() -> set[Path]:
         head.append(f'<meta name="citation_journal_title" content="{PREFERRED_JOURNAL}">')
         if pdf_link:
             head.append(f'<meta name="citation_pdf_url" content="{pdf_link}">')
-        if it["doi"]:
+        if it["doi"] and not _is_pending_doi(it["doi"]):
             head.append(f'<meta name="citation_doi" content="{it["doi"]}">')
         desc = it["abstract"] or it["onesent"] or it["title"]
         if desc:
@@ -1295,7 +1508,7 @@ def build_article_pages() -> set[Path]:
         }
         if enc:
             article_ld["encoding"] = enc
-        if it["doi"]:
+        if it["doi"] and not _is_pending_doi(it["doi"]):
             article_ld["sameAs"] = [f"https://doi.org/{it['doi'].split('/')[-1]}"]
         head.append(
             '<script type="application/ld+json">'
@@ -1457,8 +1670,7 @@ def copy_static():
         src = SRC / name
         if src.exists():
             dst = OUT / name
-            dst.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(src, dst)
+            copy_if_changed(src, dst)
 
 # ---------- sitemap & robots ----------
 def _url_from_out_path(p: Path) -> str:
@@ -1692,17 +1904,17 @@ def main():
             print(f"[DEBUG] site asset found: {rel_path}")
             if src_path.suffix.lower() == ".md":
                 dst_md = OUT / rel_path
-                dst_md.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copy2(src_path, dst_md)
+                copy_if_changed(src_path, dst_md)
                 dst_rel = rel_path.with_suffix(rel_path.suffix + ".html")
                 dst_path = OUT / dst_rel
                 print(f"[DEBUG]   MD (site) -> {dst_rel}")
                 render_markdown_file(dst_md, dst_path, title=rel_path.stem)
             else:
+                if src_path.suffix.lower() in SKIP_COPY_EXTS:
+                    continue
                 dst_path = OUT / rel_path
                 print(f"[DEBUG]   COPY -> {rel_path} → {dst_path.relative_to(OUT)}")
-                dst_path.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copy2(src_path, dst_path)
+                copy_if_changed(src_path, dst_path)
     else:
         print("[DEBUG] WARNING: site_src does not exist; no site/ assets copied")
 
@@ -1750,13 +1962,14 @@ def main():
                 continue
             if is_gitignored(p):
                 continue
+            if p.suffix.lower() in SKIP_COPY_EXTS:
+                continue
 
             if d == ROOT and fname == "index.html":
                 continue
 
             dst = OUT / rel(p)
-            dst.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(p, dst)
+            copy_if_changed(p, dst)
 
             if p.suffix.lower() == ".md":
                 rendered_dst = dst.with_suffix(dst.suffix + ".html")
@@ -1764,8 +1977,8 @@ def main():
 
     copy_static()
     # Render books from the mirrored copies under OUT to avoid touching source.
-    book_include_pdf = not (args.skip_pdf or args.skip_books)
-    book_include_epub = not (args.skip_epub or args.skip_books)
+    book_include_pdf = not (args.skip_pdf or args.skip_books or ".pdf" in SKIP_COPY_EXTS)
+    book_include_epub = not (args.skip_epub or args.skip_books or ".epub" in SKIP_COPY_EXTS)
     book_include_html = not args.skip_books
     render_book_dirs(
         skip_epub=not book_include_epub,

@@ -203,6 +203,29 @@ def _extract_yaml_scalar(yaml_text: str, key: str) -> Optional[str]:
     return val or None
 
 
+def _ensure_yaml_scalar(yaml_text: str, key: str, value: str) -> str:
+    """
+    Ensure a simple scalar key exists in a YAML block; insert if missing.
+    """
+    if _extract_yaml_scalar(yaml_text, key):
+        return yaml_text
+    lines = yaml_text.replace("\r\n", "\n").splitlines()
+    insert_line = f"{key}: {value}"
+    if lines and lines[0].strip() == "---":
+        end_idx = None
+        for i in range(1, len(lines)):
+            if lines[i].strip() in ("---", "..."):
+                end_idx = i
+                break
+        if end_idx is None:
+            lines.append(insert_line)
+        else:
+            lines.insert(end_idx, insert_line)
+        return "\n".join(lines) + "\n"
+    lines.append(insert_line)
+    return "\n".join(lines) + "\n"
+
+
 def _latex_escape(text: str) -> str:
     """
     Minimal LaTeX escaping for common special characters.
@@ -510,11 +533,12 @@ def render_book_yaml(
     # 1) book-level YAML front matter (from book.yml), normalized and cleaned
     raw_yaml_text = src.read_text(encoding="utf-8")
     cover_value = _extract_cover_image(raw_yaml_text)
-    yaml_block = _normalize_book_yaml_as_front_matter(raw_yaml_text)
 
     title_text = _extract_yaml_scalar(raw_yaml_text, "title") or title
     author_text = _extract_yaml_scalar(raw_yaml_text, "author") or ""
     date_text = _extract_yaml_scalar(raw_yaml_text, "date") or date.today().isoformat()
+    raw_yaml_text = _ensure_yaml_scalar(raw_yaml_text, "date", date_text)
+    yaml_block = _normalize_book_yaml_as_front_matter(raw_yaml_text)
 
     with human_md_path.open("w", encoding="utf-8") as fh, pandoc_md_path.open(
         "w", encoding="utf-8"
