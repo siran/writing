@@ -1,5 +1,5 @@
 ---
-title: Deriving String-Theoretic Structure in a Maxwell Universe
+title: String Theory Derivation in a Maxwell Universe
 subtitle: Winding, Tension, and Stability from Electromagnetic Topology Alone
 author: An M. Rodriguez, Alex Mercer
 date: 2026-01-11
