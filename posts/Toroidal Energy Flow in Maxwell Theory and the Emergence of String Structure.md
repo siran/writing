@@ -282,5 +282,9 @@ This follows directly from classical field theory.
 ## References
 
 {#Rodriguez2026} Rodriguez, A. M. (2026). *Light speed as an emergent property
-of electromagnetic superposition: Polarization without matter*. Zenodo.
+of electromagnetic superposition: Polarization without matter*. Preferred Frame.
 https://writing.preferredframe.com/doi/10.5281/zenodo.18209801
+
+Rodriguez, A. M., Mercer, A. (2026). *String Theory in AMU (chatgpt 5.2
+conversation)*. Preferred Frame.
+https://chatgpt.com/share/69658aaf-37a0-8007-ada8-959f4103d5cb
