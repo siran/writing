@@ -94,6 +94,11 @@ def git_status_clean(repo: Path) -> bool:
     return out.strip() == ""
 
 
+def git_staged_paths(repo: Path) -> List[str]:
+    out = run(["git", "diff", "--cached", "--name-only"], cwd=repo)
+    return [ln.strip() for ln in out.splitlines() if ln.strip()]
+
+
 def git_head(repo: Path) -> str:
     return run(["git", "rev-parse", "HEAD"], cwd=repo).strip()
 
@@ -119,6 +124,91 @@ def record_id_from_doi(doi: str) -> Optional[int]:
 
 def _is_pending_doi(doi: str) -> bool:
     return (doi or "").strip().lower().startswith("pending/")
+
+
+def _file_sha256(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as fh:
+        for chunk in iter(lambda: fh.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def _copy_if_changed(src: Path, dest: Path) -> bool:
+    try:
+        if dest.exists() and dest.is_file():
+            if src.stat().st_size == dest.stat().st_size:
+                if _file_sha256(src) == _file_sha256(dest):
+                    echo(f"+ skip copy (unchanged) {src} -> {dest}")
+                    return False
+    except Exception:
+        pass
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    echo(f"+ copy {src} -> {dest}")
+    shutil.copy2(src, dest)
+    return True
+
+
+def _reuse_pending_artifacts(
+    site_repo: Path,
+    subjournal: str,
+    stem: str,
+    prov_path: Path,
+    prov: Dict,
+) -> Optional[Tuple[Path, Path, Path, Path, Optional[Path], Optional[Path], Path]]:
+    artifacts = prov.get("artifacts") or {}
+    md_name = artifacts.get("md")
+    pdf_name = artifacts.get("pdf_name")
+    html_name = artifacts.get("html_name")
+    pmd_name = artifacts.get("pandoc_md_name")
+    if not (md_name and pdf_name and html_name and pmd_name):
+        return None
+
+    pending_dir = prov_path.parent
+    if not pending_dir.exists():
+        return None
+
+    staging = site_repo / subjournal / "_staging" / stem
+    staging.mkdir(parents=True, exist_ok=True)
+
+    def copy_from(name: str, dest_name: Optional[str] = None) -> Optional[Path]:
+        src = pending_dir / name
+        if not src.exists():
+            return None
+        dst = staging / (dest_name or name)
+        shutil.copy2(src, dst)
+        return dst
+
+    staged_md = copy_from(md_name)
+    staged_pdf = copy_from(pdf_name)
+    staged_html = copy_from(html_name)
+    if not (staged_md and staged_pdf and staged_html):
+        return None
+
+    pmd_dest_name = staged_md.with_suffix(".pandoc.md").name
+    staged_pmd = copy_from(pmd_name, pmd_dest_name)
+    if not staged_pmd:
+        return None
+
+    staged_embed_html = None
+    embed_name = artifacts.get("embed_html_name")
+    if embed_name:
+        staged_embed_html = copy_from(embed_name)
+
+    staged_epub = None
+    epub_name = artifacts.get("epub_name")
+    if epub_name:
+        staged_epub = copy_from(epub_name)
+
+    return (
+        staging,
+        staged_md,
+        staged_pdf,
+        staged_html,
+        staged_embed_html,
+        staged_epub,
+        staged_pmd,
+    )
 
 
 # ---------------- context & cleanup ----------------
@@ -475,7 +565,7 @@ def preflight_and_context(
 
 def determine_versioning(
     args, site_repo: Path, subjournal: str, src_commit: str, stem: str
-) -> Tuple[bool, Optional[int], Optional[str]]:
+) -> Tuple[bool, Optional[int], Optional[str], Optional[Path], Optional[Dict]]:
     """Figure out whether this is a new version and, if so, of which record."""
     if args.new_version_of:
         nv = args.new_version_of.strip().rstrip("/")
@@ -513,10 +603,10 @@ def determine_versioning(
             echo("Previous DOI is pending; treating as unpublished for versioning.")
             if args.offline:
                 echo("Offline mode: creating a new pending DOI without Zenodo linkage.")
-                return True, None, prev_concept
+                return True, None, prev_concept, prov_path_prev, prov_prev
             if args.new_version_of:
                 echo("WARNING: pending DOI cannot be used for Zenodo newversion; publishing as a new record.")
-            return False, None, prev_concept
+            return False, None, prev_concept, prov_path_prev, prov_prev
 
         if args.new_version_of:
             is_new_version = True
@@ -556,7 +646,7 @@ def determine_versioning(
                 f"'{subjournal}'."
             )
 
-    return is_new_version, prev_record_id, prev_concept
+    return is_new_version, prev_record_id, prev_concept, prov_path_prev, prov_prev
 
 
 def prompt_change_log(is_new_version: bool) -> Optional[str]:
@@ -792,8 +882,8 @@ def run_publish(args, ctx: PublishContext) -> None:
     resource_type = f"publication-{pub_type}"
 
     # Versioning / history
-    is_new_version, prev_record_id, prev_concept = determine_versioning(
-        args, site_repo, subjournal, src_commit, stem
+    is_new_version, prev_record_id, prev_concept, prev_prov_path, prev_prov = (
+        determine_versioning(args, site_repo, subjournal, src_commit, stem)
     )
     change_log = prompt_change_log(is_new_version)
 
@@ -806,6 +896,21 @@ def run_publish(args, ctx: PublishContext) -> None:
     ctx.branch_name = branch_name
 
     # Stage & render (PNPMD + optional book YAML → EPUB)
+    pending_reuse = False
+    pending_date = None
+    if (
+        not args.offline
+        and not args.new_version_of
+        and prev_prov
+        and prev_prov_path
+        and _is_pending_doi(prev_prov.get("doi") or "")
+    ):
+        prev_source = prev_prov.get("source") or {}
+        prev_commit = (prev_source.get("commit") or "").strip()
+        if not prev_commit or prev_commit == src_commit:
+            pending_reuse = True
+            pending_date = (prev_prov.get("publication_date") or "").strip() or None
+
     render_args: List[str] = []
     if args.omit_toc:
         render_args.append("--omit-toc")
@@ -816,15 +921,46 @@ def run_publish(args, ctx: PublishContext) -> None:
     if args.toc_depth is not None:
         render_args += ["--toc-depth", str(args.toc_depth)]
 
-    staging, staged_md, staged_pdf, staged_html, staged_embed_html, staged_epub = render_in_staging(
-        site_repo,
-        subjournal,
-        src_md,
-        publication_date_iso,
-        book_yaml=book_yaml,
-        render_args=render_args,
-    )
-    staged_pmd = staged_md.with_suffix(".pandoc.md")
+    staged_pmd: Optional[Path] = None
+    if pending_reuse:
+        reused = _reuse_pending_artifacts(
+            site_repo, subjournal, stem, prev_prov_path, prev_prov
+        )
+        if reused:
+            (
+                staging,
+                staged_md,
+                staged_pdf,
+                staged_html,
+                staged_embed_html,
+                staged_epub,
+                staged_pmd,
+            ) = reused
+            echo(f"+ reuse pending artifacts from {prev_prov_path}")
+        else:
+            pending_reuse = False
+            echo("WARNING: pending artifacts missing; re-rendering.")
+
+    if not pending_reuse:
+        staging, staged_md, staged_pdf, staged_html, staged_embed_html, staged_epub = render_in_staging(
+            site_repo,
+            subjournal,
+            src_md,
+            publication_date_iso,
+            book_yaml=book_yaml,
+            render_args=render_args,
+        )
+        staged_pmd = staged_md.with_suffix(".pandoc.md")
+
+    if pending_reuse and pending_date:
+        publication_date_iso = pending_date
+        publication_year = pending_date[0:4]
+        publication_date = pending_date
+    elif pending_reuse and not pending_date:
+        echo("WARNING: pending provenance missing publication_date; using today's date.")
+
+    if staged_pmd is None:
+        die("Internal error: missing pandoc.md after staging.")
 
     # Parse PNPMD
     parsed = parse_pnpmd(staged_md.read_text(encoding="utf-8"))
@@ -1208,32 +1344,30 @@ def run_publish(args, ctx: PublishContext) -> None:
             die(f"Assets dir is not a git repo: {assets_repo}")
 
         dest_pdf = assets_repo / assets_prefix / stem / doi_prefix / doi_suffix / final_pdf.name
-        dest_pdf.parent.mkdir(parents=True, exist_ok=True)
-        echo(f"+ copy {final_pdf} -> {dest_pdf}")
-        shutil.copy2(final_pdf, dest_pdf)
-
+        _copy_if_changed(final_pdf, dest_pdf)
         paths_to_add = [os.path.relpath(dest_pdf, assets_repo)]
 
         if final_embed_html is not None:
             dest_embed_html = (
                 assets_repo / assets_prefix / stem / doi_prefix / doi_suffix / final_embed_html.name
             )
-            dest_embed_html.parent.mkdir(parents=True, exist_ok=True)
-            echo(f"+ copy {final_embed_html} -> {dest_embed_html}")
-            shutil.copy2(final_embed_html, dest_embed_html)
+            _copy_if_changed(final_embed_html, dest_embed_html)
             paths_to_add.append(os.path.relpath(dest_embed_html, assets_repo))
 
         if final_epub is not None:
             dest_epub = (
                 assets_repo / assets_prefix / stem / doi_prefix / doi_suffix / final_epub.name
             )
-            dest_epub.parent.mkdir(parents=True, exist_ok=True)
-            echo(f"+ copy {final_epub} -> {dest_epub}")
-            shutil.copy2(final_epub, dest_epub)
+            _copy_if_changed(final_epub, dest_epub)
             paths_to_add.append(os.path.relpath(dest_epub, assets_repo))
 
         run(["git", "add"] + paths_to_add, cwd=assets_repo)
-        if not args.no_assets_push:
+        staged_paths = git_staged_paths(assets_repo)
+        if not staged_paths:
+            echo("+ assets unchanged; skipping assets commit/push.")
+        elif args.no_assets_push:
+            echo("+ assets staged (--no-assets-push); skipping commit/push.")
+        else:
             suffix_parts = []
             if final_embed_html is not None:
                 suffix_parts.append("embed.html")
