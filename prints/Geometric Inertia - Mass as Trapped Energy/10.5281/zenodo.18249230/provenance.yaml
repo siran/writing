@@ -2,9 +2,9 @@ journal: Preferred Frame Writing
 subjournal: prints
 publication_type: article
 title: 'Geometric Inertia: Mass as Trapped Energy'
-doi: 10.5281/zenodo.425635
-concept_doi: 10.5072/zenodo.425634
-permalink: "https://writing.preferredframe.com/prints/Geometric Inertia - Mass as Trapped Energy/10.5281/zenodo.425635/"
+doi: 10.5281/zenodo.18249230
+concept_doi: null
+permalink: "https://writing.preferredframe.com/prints/Geometric Inertia - Mass as Trapped Energy/10.5281/zenodo.18249230/"
 publication_date: '2026-01-14'
 publication_year: '2026'
 keywords:
@@ -27,12 +27,12 @@ references_doi:
 zenodo_metadata:
   upload_type: publication
   publication_type: article
-  title: Suggested Reference
+  title: 'Geometric Inertia: Mass as Trapped Energy'
   creators:
   - name: An M. Rodriguez
     orcid: 0009-0009-9098-9468
   - name: Alex Mercer
-  description: We derive subluminal velocity and inertial mass from first principles using only geometry and Maxwell kinematics. Electromagnetic energy always propagates locally at speed $, but if constrained to follow a helical or knotted trajectory, it must traverse a longer path to achieve the same forward displacement. This geometric delay reduces the effective forward speed. Momentum circulating in closed transverse directions does not contribute to translation and manifests as inertial mass. No constitutive medium, polarization response, or relativistic postulates are assumed. Mass emerges as a measure of trapped electromagnetic momentum.
+  description: We derive subluminal velocity and inertial mass from first principles using only geometry and Maxwell kinematics. Electromagnetic energy always propagates locally at speed $c$, but if constrained to follow a helical or knotted trajectory, it must traverse a longer path to achieve the same forward displacement. This geometric delay reduces the effective forward speed. Momentum circulating in closed transverse directions does not contribute to translation and manifests as inertial mass. No constitutive medium, polarization response, or relativistic postulates are assumed. Mass emerges as a measure of trapped electromagnetic momentum.
   keywords:
   - geometric delay
   - helical path
@@ -49,16 +49,16 @@ zenodo_metadata:
   license: cc-by-nc-nd-4.0
   related_identifiers:
   - relation: isIdenticalTo
-    identifier: "https://writing.preferredframe.com/prints/Geometric Inertia - Mass as Trapped Energy/10.5281/zenodo.425635/Geometric Inertia - Mass as Trapped Energy.html"
+    identifier: "https://writing.preferredframe.com/prints/Geometric Inertia - Mass as Trapped Energy/10.5281/zenodo.18249230/Geometric Inertia - Mass as Trapped Energy.html"
     resource_type: publication-article
   - relation: isIdenticalTo
-    identifier: "https://writing.preferredframe.com/prints/Geometric Inertia - Mass as Trapped Energy/10.5281/zenodo.425635/Geometric Inertia - Mass as Trapped Energy.md"
+    identifier: "https://writing.preferredframe.com/prints/Geometric Inertia - Mass as Trapped Energy/10.5281/zenodo.18249230/Geometric Inertia - Mass as Trapped Energy.md"
     resource_type: publication-article
   - relation: isIdenticalTo
-    identifier: "https://assets.preferredframe.com/preferredframe/Geometric Inertia - Mass as Trapped Energy/10.5281/zenodo.425635/Geometric Inertia - Mass as Trapped Energy.pdf"
+    identifier: "https://assets.preferredframe.com/preferredframe/Geometric Inertia - Mass as Trapped Energy/10.5281/zenodo.18249230/Geometric Inertia - Mass as Trapped Energy.pdf"
     resource_type: publication-article
   - relation: isIdenticalTo
-    identifier: "https://assets.preferredframe.com/preferredframe/Geometric Inertia - Mass as Trapped Energy/10.5281/zenodo.425635/Geometric Inertia - Mass as Trapped Energy.embed.html"
+    identifier: "https://assets.preferredframe.com/preferredframe/Geometric Inertia - Mass as Trapped Energy/10.5281/zenodo.18249230/Geometric Inertia - Mass as Trapped Energy.embed.html"
     resource_type: publication-article
   - relation: cites
     identifier: https://doi.org/10.5281/zenodo.18209801
@@ -73,17 +73,17 @@ zenodo_metadata:
 change_log: ''
 source:
   repo_origin: git@github.com:siran/writing.git
-  commit: d7a1bce204bb29e5993fa8ab49cf250d10861927
+  commit: ccc51e9e0678e2f1e7a2a372ac1c31c2b1bc4a4b
   filename: Geometric Inertia - Mass as Trapped Energy.md
 artifacts:
   md: Geometric Inertia - Mass as Trapped Energy.md
-  md_url: "https://writing.preferredframe.com/prints/Geometric Inertia - Mass as Trapped Energy/10.5281/zenodo.425635/Geometric Inertia - Mass as Trapped Energy.md"
+  md_url: "https://writing.preferredframe.com/prints/Geometric Inertia - Mass as Trapped Energy/10.5281/zenodo.18249230/Geometric Inertia - Mass as Trapped Energy.md"
   pandoc_md_name: Geometric Inertia - Mass as Trapped Energy.pandoc.md
-  pandoc_md_url: "https://writing.preferredframe.com/prints/Geometric Inertia - Mass as Trapped Energy/10.5281/zenodo.425635/Geometric Inertia - Mass as Trapped Energy.pandoc.md"
+  pandoc_md_url: "https://writing.preferredframe.com/prints/Geometric Inertia - Mass as Trapped Energy/10.5281/zenodo.18249230/Geometric Inertia - Mass as Trapped Energy.pandoc.md"
   pdf_name: Geometric Inertia - Mass as Trapped Energy.pdf
-  pdf_url: "https://assets.preferredframe.com/preferredframe/Geometric Inertia - Mass as Trapped Energy/10.5281/zenodo.425635/Geometric Inertia - Mass as Trapped Energy.pdf"
+  pdf_url: "https://assets.preferredframe.com/preferredframe/Geometric Inertia - Mass as Trapped Energy/10.5281/zenodo.18249230/Geometric Inertia - Mass as Trapped Energy.pdf"
   html_name: Geometric Inertia - Mass as Trapped Energy.html
-  html_url: "https://writing.preferredframe.com/prints/Geometric Inertia - Mass as Trapped Energy/10.5281/zenodo.425635/Geometric Inertia - Mass as Trapped Energy.html"
+  html_url: "https://writing.preferredframe.com/prints/Geometric Inertia - Mass as Trapped Energy/10.5281/zenodo.18249230/Geometric Inertia - Mass as Trapped Energy.html"
   primary: md
   embed_html_name: Geometric Inertia - Mass as Trapped Energy.embed.html
-  embed_url: "https://assets.preferredframe.com/preferredframe/Geometric Inertia - Mass as Trapped Energy/10.5281/zenodo.425635/Geometric Inertia - Mass as Trapped Energy.embed.html"
+  embed_url: "https://assets.preferredframe.com/preferredframe/Geometric Inertia - Mass as Trapped Energy/10.5281/zenodo.18249230/Geometric Inertia - Mass as Trapped Energy.embed.html"
