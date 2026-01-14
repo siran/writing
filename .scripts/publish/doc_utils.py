@@ -324,7 +324,9 @@ def parse_pnpmd(md_text: str) -> Dict:
     abstract = _stringify_blocks(_collect_section(doc, "Abstract")).strip()
     kb_text = _stringify_blocks(_collect_section(doc, "Keywords"))
     about_blocks = _collect_section(doc, "About Author(s)")
-    refs_blocks = _collect_section(doc, "References")
+    refs_blocks: List = []
+    for title in ("References", "Suggested References", "Suggested Reference"):
+        refs_blocks.extend(_collect_section(doc, title))
 
     first_line = next((ln.strip() for ln in kb_text.splitlines() if ln.strip()), "")
     keywords = [k.strip() for k in first_line.split(",") if k.strip()] if first_line else []
