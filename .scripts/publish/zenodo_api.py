@@ -12,6 +12,10 @@ from common import echo, die
 MIN_REQUEST_INTERVAL = float(os.environ.get("ZENODO_MIN_REQUEST_INTERVAL", "1.0"))
 RETRY_FOREVER_INTERVAL = float(os.environ.get("ZENODO_RETRY_FOREVER_INTERVAL", "3.0"))
 _LAST_REQUEST_TS = 0.0
+DEFAULT_USER_AGENT = os.environ.get(
+    "ZENODO_USER_AGENT",
+    "preferredframe-publish/1.0 (https://github.com/siran/writing)",
+)
 
 
 def _throttle_request():
@@ -64,6 +68,10 @@ def zenodo_api_and_token(env: str) -> Tuple[str, str]:
     return api, token
 
 
+def _auth_headers(token: str) -> Dict[str, str]:
+    return {"Authorization": f"Bearer {token}", "User-Agent": DEFAULT_USER_AGENT}
+
+
 def _rate_limit_delay(headers) -> Optional[float]:
     reset = headers.get("X-RateLimit-Reset")
     try:
@@ -85,7 +93,7 @@ def _rate_limit_delay(headers) -> Optional[float]:
 
 def http_put_raw(url: str, token: str, fp):
     echo(f"+ HTTP PUT (raw) {url}")
-    headers = {"Authorization": f"Bearer {token}"}
+    headers = _auth_headers(token)
     start_pos = None
     try:
         start_pos = fp.tell()
@@ -144,7 +152,7 @@ def http_put_raw(url: str, token: str, fp):
 
 def http_json(method: str, url: str, token: str, data=None, files=None) -> Dict:
     echo(f"+ HTTP {method.upper()} {url}")
-    headers = {"Authorization": f"Bearer {token}"}
+    headers = _auth_headers(token)
     print(f"{data=}")
     print(f"{files=}")
     while True:

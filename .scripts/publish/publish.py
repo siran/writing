@@ -117,6 +117,10 @@ def record_id_from_doi(doi: str) -> Optional[int]:
         return None
 
 
+def _is_pending_doi(doi: str) -> bool:
+    return (doi or "").strip().lower().startswith("pending/")
+
+
 # ---------------- context & cleanup ----------------
 
 @dataclass
@@ -494,7 +498,7 @@ def determine_versioning(
         prev_doi = (prov_prev.get("doi") or "").strip()
         prev_concept = (prov_prev.get("concept_doi") or "").strip() or None
 
-        if prev_commit and prev_commit == src_commit:
+        if prev_commit and prev_commit == src_commit and not _is_pending_doi(prev_doi):
             die(f"This commit has already been published as DOI {prev_doi or '(unknown)'}.")
 
         echo(
@@ -504,6 +508,15 @@ def determine_versioning(
         echo(f" - DOI:        {prev_doi or '(none)'}")
         echo(f" - concept_doi:{prev_concept or '(none)'}")
         echo(f" - commit:     {prev_commit or '(unknown)'}")
+
+        if _is_pending_doi(prev_doi):
+            echo("Previous DOI is pending; treating as unpublished for versioning.")
+            if args.offline:
+                echo("Offline mode: creating a new pending DOI without Zenodo linkage.")
+                return True, None, prev_concept
+            if args.new_version_of:
+                echo("WARNING: pending DOI cannot be used for Zenodo newversion; publishing as a new record.")
+            return False, None, prev_concept
 
         if args.new_version_of:
             is_new_version = True
