@@ -139,6 +139,44 @@ def _apply_provenance_defaults(parsed: dict, prov: Optional[Dict]) -> dict:
     return updated
 
 
+def _desired_provenance_fields(parsed: dict, creators: List[Dict]) -> Dict[str, object]:
+    return {
+        "title": (parsed.get("title") or "").strip(),
+        "keywords": list(parsed.get("keywords") or []),
+        "one_sentence_summary": normalize_markdown_prose(parsed.get("one_sentence") or ""),
+        "abstract": normalize_markdown_prose(parsed.get("abstract") or ""),
+        "authors": creators,
+    }
+
+
+def _provenance_diffs(prev_prov: Dict, parsed: dict, creators: List[Dict]) -> List[str]:
+    desired = _desired_provenance_fields(parsed, creators)
+    diffs: List[str] = []
+    for key, val in desired.items():
+        if not val:
+            continue
+        prev_val = prev_prov.get(key)
+        if prev_val != val:
+            diffs.append(key)
+    return diffs
+
+
+def _update_provenance_from_parsed(
+    prov_path: Path, prev_prov: Dict, parsed: dict, creators: List[Dict]
+) -> bool:
+    desired = _desired_provenance_fields(parsed, creators)
+    changed = False
+    for key, val in desired.items():
+        if not val:
+            continue
+        if prev_prov.get(key) != val:
+            prev_prov[key] = val
+            changed = True
+    if changed:
+        prov_path.write_text(dump_yaml(prev_prov), encoding="utf-8")
+    return changed
+
+
 def _validate_required_metadata(parsed: dict) -> dict:
     missing = []
     if not parsed.get("keywords"):
@@ -213,12 +251,15 @@ def _doi_env_kind(doi: str) -> Optional[str]:
 
 
 def _doi_env_mismatch(args, prev_doi: str, prev_concept: str) -> Optional[str]:
-    prev_env = _doi_env_kind(prev_doi) or _doi_env_kind(prev_concept)
-    if not prev_env:
-        return None
+    doi_env = _doi_env_kind(prev_doi)
+    concept_env = _doi_env_kind(prev_concept)
+    if doi_env and concept_env and doi_env != concept_env:
+        return f"{doi_env}/{concept_env}"
     expected = "prod" if args.env == "prod" else "sandbox"
-    if prev_env != expected:
-        return prev_env
+    if doi_env and doi_env != expected:
+        return doi_env
+    if concept_env and concept_env != expected:
+        return concept_env
     return None
 
 
@@ -444,6 +485,11 @@ def parse_args():
         "--abstract",
         default=None,
         help="Abstract override (avoids interactive prompt).",
+    )
+    ap.add_argument(
+        "--update-provenance",
+        action="store_true",
+        help="Update existing provenance.yaml with front matter metadata when they differ.",
     )
     ap.add_argument(
         "--new-version-of",
@@ -695,10 +741,12 @@ def determine_versioning(
 
         prev_env_mismatch = _doi_env_mismatch(args, prev_doi, prev_concept or "")
         if prev_env_mismatch:
-            echo(
-                f"WARNING: previous DOI appears to be {prev_env_mismatch}; "
-                f"treating as unpublished for {args.env}."
+            note = (
+                "previous DOI envs are mixed"
+                if "/" in prev_env_mismatch
+                else f"previous DOI appears to be {prev_env_mismatch}"
             )
+            echo(f"WARNING: {note}; treating as unpublished for {args.env}.")
             return False, None, None, prov_path_prev, prov_prev
 
         if prev_commit and prev_commit == src_commit and not _is_pending_doi(prev_doi):
@@ -1052,10 +1100,12 @@ def run_publish(args, ctx: PublishContext) -> None:
             prev_source = prev_prov.get("source") or {}
             prev_commit = (prev_source.get("commit") or "").strip()
             if prev_env_mismatch:
-                echo(
-                    f"WARNING: previous DOI appears to be {prev_env_mismatch}; "
-                    "reusing artifacts to mint a fresh DOI."
+                note = (
+                    "previous DOI envs are mixed"
+                    if "/" in prev_env_mismatch
+                    else f"previous DOI appears to be {prev_env_mismatch}"
                 )
+                echo(f"WARNING: {note}; reusing artifacts to mint a fresh DOI.")
             if prev_commit and prev_commit != src_commit:
                 echo(
                     "WARNING: previous provenance commit differs from current HEAD; "
@@ -1142,6 +1192,21 @@ def run_publish(args, ctx: PublishContext) -> None:
                 **({"email": a["email"]} if a.get("email") else {}),
             }
         )
+    if pending_reuse and prev_prov_path and prev_prov:
+        diffs = _provenance_diffs(prev_prov, parsed, creators)
+        if diffs:
+            if args.update_provenance:
+                if _update_provenance_from_parsed(prev_prov_path, prev_prov, parsed, creators):
+                    rel_prev = str(prev_prov_path.relative_to(site_repo))
+                    run(["git", "add", rel_prev], cwd=site_repo)
+                    echo(
+                        f"+ updated provenance from front matter ({', '.join(diffs)})"
+                    )
+            else:
+                echo(
+                    "NOTE: provenance metadata differs from front matter; "
+                    "re-run with --update-provenance to sync."
+                )
     title = parsed["title"]
 
     # Zenodo deposition (reserve or new version)

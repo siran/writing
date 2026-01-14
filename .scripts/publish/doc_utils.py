@@ -293,12 +293,32 @@ def _pandoc_doc(md_text: str) -> pf.Doc:
     return pf.load(io.StringIO(json.dumps(ast)))
 
 
+def _extract_frontmatter(md_text: str) -> Dict:
+    txt = md_text.replace("\r\n", "\n")
+    m = re.match(r"^---\s*\n(.*?)\n(?:---|\.\.\.)\s*\n", txt, flags=re.DOTALL)
+    if not m:
+        return {}
+    try:
+        data = yaml.safe_load(m.group(1)) or {}
+        return data if isinstance(data, dict) else {}
+    except Exception:
+        return {}
+
+
 def parse_pnpmd(md_text: str) -> Dict:
     doc = _pandoc_doc(md_text)
     meta = doc.get_metadata()
+    fm = _extract_frontmatter(md_text)
 
     def _meta_str(x):
         return x if isinstance(x, str) else pf.stringify(x) if x is not None else ""
+
+    def _fm_str(x):
+        if x is None:
+            return ""
+        if isinstance(x, str):
+            return x
+        return str(x)
 
     def _split_header_authors(s: str) -> List[str]:
         parts = re.split(r"\s+\band\b\s+|;", s)
@@ -330,6 +350,53 @@ def parse_pnpmd(md_text: str) -> Dict:
 
     first_line = next((ln.strip() for ln in kb_text.splitlines() if ln.strip()), "")
     keywords = [k.strip() for k in first_line.split(",") if k.strip()] if first_line else []
+
+    fm_title = _fm_str(fm.get("title"))
+    if fm_title:
+        title = fm_title
+
+    fm_date = _fm_str(fm.get("date"))
+    if fm_date:
+        pub_date = fm_date
+
+    fm_auth = fm.get("author")
+    if fm_auth is None:
+        fm_auth = fm.get("authors")
+    if isinstance(fm_auth, str) and fm_auth.strip():
+        header_authors = _split_header_authors(fm_auth)
+    elif isinstance(fm_auth, list):
+        fm_names: List[str] = []
+        for item in fm_auth:
+            if isinstance(item, str):
+                fm_names.extend(_split_header_authors(item))
+            elif isinstance(item, dict):
+                nm = item.get("name") or item.get("author") or ""
+                if nm:
+                    fm_names.append(str(nm))
+        if fm_names:
+            header_authors = fm_names
+
+    fm_keywords = fm.get("keywords")
+    if isinstance(fm_keywords, str):
+        fm_kw_list = [k.strip() for k in fm_keywords.split(",") if k.strip()]
+    elif isinstance(fm_keywords, list):
+        fm_kw_list = [str(k).strip() for k in fm_keywords if str(k).strip()]
+    else:
+        fm_kw_list = []
+    if fm_kw_list:
+        keywords = fm_kw_list
+
+    fm_one_sentence = (
+        _fm_str(fm.get("one-sentence-summary"))
+        or _fm_str(fm.get("one_sentence_summary"))
+        or _fm_str(fm.get("one_sentence"))
+    )
+    if fm_one_sentence:
+        one_sentence = fm_one_sentence
+
+    fm_abstract = _fm_str(fm.get("abstract")) or _fm_str(fm.get("summary"))
+    if fm_abstract:
+        abstract = fm_abstract
 
     about_items = list(_listish(about_blocks))
     about_parsed = _extract_about_authors(about_items)
