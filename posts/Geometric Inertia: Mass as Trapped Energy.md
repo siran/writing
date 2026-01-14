@@ -8,7 +8,7 @@ one-sentence-summary: When electromagnetic energy follows a non-straight, closed
 summary: We derive subluminal velocity and inertial mass from first principles using only geometry and Maxwell kinematics. Electromagnetic energy always propagates locally at speed $c$, but if constrained to follow a helical or knotted trajectory, it must traverse a longer path to achieve the same forward displacement. This geometric delay reduces the effective forward speed. Momentum circulating in closed transverse directions does not contribute to translation and manifests as inertial mass. No constitutive medium, polarization response, or relativistic postulates are assumed. Mass emerges as a measure of trapped electromagnetic momentum.
 ---
 
-![AI generated illustration of knotted trajectories on a toroidal surface.](assets/unrolled-cylinder.png)
+![AI generated illustration of knotted trajectories on a toroidal surface.](https://siran.github.io/assets/writing/unrolled-cylinder.png)
 
 
 ## The geometry of constrained motion
@@ -258,3 +258,21 @@ Mass is not a fundamental property of matter.
 
 **Mass is electromagnetic energy constrained to circulate rather than
 translate.**
+
+
+## Notes
+
+This work complements earlier derivations of emergent refraction and
+electromagnetic topology in a Maxwell universe, but remains kinematically
+self-contained.
+
+
+## Suggested References
+
+Rodriguez, A. M. (2026). *Light speed as an emergent property of electromagnetic
+superposition: Polarization without matter*. Preferred Frame.
+https://writing.preferredframe.com/doi/10.5281/zenodo.18209801
+
+Rodriguez, A. M., Mercer, A. (2026). *String Theory Derivation in a Maxwell
+Universe*. Preferred Frame.
+https://writing.preferredframe.com/doi/10.5281/zenodo.425370
