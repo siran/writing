@@ -203,6 +203,25 @@ def _is_pending_doi(doi: str) -> bool:
     return (doi or "").strip().lower().startswith("pending/")
 
 
+def _doi_env_kind(doi: str) -> Optional[str]:
+    d = (doi or "").strip().lower()
+    if d.startswith("10.5072/"):
+        return "sandbox"
+    if d.startswith("10.5281/"):
+        return "prod"
+    return None
+
+
+def _doi_env_mismatch(args, prev_doi: str, prev_concept: str) -> Optional[str]:
+    prev_env = _doi_env_kind(prev_doi) or _doi_env_kind(prev_concept)
+    if not prev_env:
+        return None
+    expected = "prod" if args.env == "prod" else "sandbox"
+    if prev_env != expected:
+        return prev_env
+    return None
+
+
 def _file_sha256(path: Path) -> str:
     h = hashlib.sha256()
     with path.open("rb") as fh:
@@ -666,9 +685,6 @@ def determine_versioning(
         prev_doi = (prov_prev.get("doi") or "").strip()
         prev_concept = (prov_prev.get("concept_doi") or "").strip() or None
 
-        if prev_commit and prev_commit == src_commit and not _is_pending_doi(prev_doi):
-            die(f"This commit has already been published as DOI {prev_doi or '(unknown)'}.")
-
         echo(
             f"Found previous publication for stem '{prev_stem}' in subjournal '{subjournal}':"
         )
@@ -676,6 +692,17 @@ def determine_versioning(
         echo(f" - DOI:        {prev_doi or '(none)'}")
         echo(f" - concept_doi:{prev_concept or '(none)'}")
         echo(f" - commit:     {prev_commit or '(unknown)'}")
+
+        prev_env_mismatch = _doi_env_mismatch(args, prev_doi, prev_concept or "")
+        if prev_env_mismatch:
+            echo(
+                f"WARNING: previous DOI appears to be {prev_env_mismatch}; "
+                f"treating as unpublished for {args.env}."
+            )
+            return False, None, None, prov_path_prev, prov_prev
+
+        if prev_commit and prev_commit == src_commit and not _is_pending_doi(prev_doi):
+            die(f"This commit has already been published as DOI {prev_doi or '(unknown)'}.")
 
         if _is_pending_doi(prev_doi):
             echo("Previous DOI is pending; treating as unpublished for versioning.")
@@ -1007,22 +1034,35 @@ def run_publish(args, ctx: PublishContext) -> None:
             assets_repo = None
     pending_reuse = False
     pending_date = None
+    prev_doi = ""
+    prev_concept = ""
+    prev_env_mismatch = None
     if (
         not args.offline
         and not args.new_version_of
         and prev_prov
         and prev_prov_path
-        and _is_pending_doi(prev_prov.get("doi") or "")
     ):
-        prev_source = prev_prov.get("source") or {}
-        prev_commit = (prev_source.get("commit") or "").strip()
-        pending_reuse = True
-        pending_date = (prev_prov.get("publication_date") or "").strip() or None
-        if prev_commit and prev_commit != src_commit:
-            echo(
-                "WARNING: pending provenance commit differs from current HEAD; "
-                "reusing pending artifacts to finish DOI minting."
-            )
+        prev_doi = (prev_prov.get("doi") or "").strip()
+        prev_concept = (prev_prov.get("concept_doi") or "").strip()
+        prev_env_mismatch = _doi_env_mismatch(args, prev_doi, prev_concept)
+        if _is_pending_doi(prev_doi) or prev_env_mismatch:
+            pending_reuse = True
+            pending_date = (prev_prov.get("publication_date") or "").strip() or None
+            prev_source = prev_prov.get("source") or {}
+            prev_commit = (prev_source.get("commit") or "").strip()
+            if prev_env_mismatch:
+                echo(
+                    f"WARNING: previous DOI appears to be {prev_env_mismatch}; "
+                    "reusing artifacts to mint a fresh DOI."
+                )
+            if prev_commit and prev_commit != src_commit:
+                echo(
+                    "WARNING: previous provenance commit differs from current HEAD; "
+                    "reusing artifacts to finish DOI minting."
+                )
+        else:
+            prev_env_mismatch = None
 
     render_args: List[str] = []
     if args.omit_toc:

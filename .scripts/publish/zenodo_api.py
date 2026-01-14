@@ -4,6 +4,7 @@ import json
 import time
 import traceback
 from typing import Dict, List, Tuple, Optional
+from urllib.parse import urlparse
 
 import requests  # assumes installed
 
@@ -64,6 +65,29 @@ def zenodo_api_and_token(env: str) -> Tuple[str, str]:
     api = os.environ.get("ZENODO_SANDBOX_API", "https://sandbox.zenodo.org/api")
     if env == "prod":
         api = os.environ.get("ZENODO_API", "https://zenodo.org/api")
+
+    def _api_env_kind(url: str) -> Optional[str]:
+        try:
+            host = (urlparse(url).hostname or "").lower()
+        except Exception:
+            return None
+        if "sandbox.zenodo.org" in host:
+            return "sandbox"
+        if host.endswith("zenodo.org"):
+            return "prod"
+        return None
+
+    api_kind = _api_env_kind(api)
+    if env == "prod" and api_kind == "sandbox":
+        die(
+            "ZENODO_API points to sandbox; refusing --env=prod. "
+            "Set ZENODO_API=https://zenodo.org/api."
+        )
+    if env == "sandbox" and api_kind == "prod":
+        die(
+            "ZENODO_SANDBOX_API points to production; refusing --env=sandbox. "
+            "Set ZENODO_SANDBOX_API=https://sandbox.zenodo.org/api."
+        )
 
     return api, token
 
