@@ -232,6 +232,8 @@ def _reuse_pending_artifacts(
     stem: str,
     prov_path: Path,
     prov: Dict,
+    assets_repo: Optional[Path],
+    assets_prefix: Optional[str],
 ) -> Optional[Tuple[Path, Path, Path, Path, Optional[Path], Optional[Path], Path]]:
     artifacts = prov.get("artifacts") or {}
     md_name = artifacts.get("md")
@@ -248,16 +250,27 @@ def _reuse_pending_artifacts(
     staging = site_repo / subjournal / "_staging" / stem
     staging.mkdir(parents=True, exist_ok=True)
 
-    def copy_from(name: str, dest_name: Optional[str] = None) -> Optional[Path]:
-        src = pending_dir / name
-        if not src.exists():
-            return None
-        dst = staging / (dest_name or name)
-        shutil.copy2(src, dst)
-        return dst
+    assets_base = None
+    if assets_repo and assets_prefix:
+        doi_suffix = pending_dir.name
+        doi_prefix = pending_dir.parent.name
+        assets_base = assets_repo / assets_prefix / stem / doi_prefix / doi_suffix
+        if not assets_base.exists():
+            assets_base = None
+
+    def copy_from(name: str, dest_name: Optional[str] = None, allow_assets: bool = False) -> Optional[Path]:
+        sources = [pending_dir / name]
+        if allow_assets and assets_base is not None:
+            sources.append(assets_base / name)
+        for src in sources:
+            if src.exists():
+                dst = staging / (dest_name or name)
+                shutil.copy2(src, dst)
+                return dst
+        return None
 
     staged_md = copy_from(md_name)
-    staged_pdf = copy_from(pdf_name)
+    staged_pdf = copy_from(pdf_name, allow_assets=True)
     staged_html = copy_from(html_name)
     if not (staged_md and staged_pdf and staged_html):
         return None
@@ -270,12 +283,12 @@ def _reuse_pending_artifacts(
     staged_embed_html = None
     embed_name = artifacts.get("embed_html_name")
     if embed_name:
-        staged_embed_html = copy_from(embed_name)
+        staged_embed_html = copy_from(embed_name, allow_assets=True)
 
     staged_epub = None
     epub_name = artifacts.get("epub_name")
     if epub_name:
-        staged_epub = copy_from(epub_name)
+        staged_epub = copy_from(epub_name, allow_assets=True)
 
     return (
         staging,
@@ -985,6 +998,13 @@ def run_publish(args, ctx: PublishContext) -> None:
     ctx.branch_name = branch_name
 
     # Stage & render (PNPMD + optional book YAML → EPUB)
+    assets_prefix = args.assets_prefix.strip("/")
+    assets_repo = None
+    if args.assets_dir:
+        try:
+            assets_repo = Path(args.assets_dir).resolve()
+        except Exception:
+            assets_repo = None
     pending_reuse = False
     pending_date = None
     if (
@@ -1017,7 +1037,13 @@ def run_publish(args, ctx: PublishContext) -> None:
     staged_pmd: Optional[Path] = None
     if pending_reuse:
         reused = _reuse_pending_artifacts(
-            site_repo, subjournal, stem, prev_prov_path, prev_prov
+            site_repo,
+            subjournal,
+            stem,
+            prev_prov_path,
+            prev_prov,
+            assets_repo,
+            assets_prefix,
         )
         if reused:
             (
@@ -1143,8 +1169,6 @@ def run_publish(args, ctx: PublishContext) -> None:
         shutil.rmtree(staging)
     except Exception:
         pass
-
-    assets_prefix = args.assets_prefix.strip("/")
 
     site_html_url = (
         f"{site_base}/{subjournal}/{stem}/{doi_prefix}/{doi_suffix}/{final_html.name}"
