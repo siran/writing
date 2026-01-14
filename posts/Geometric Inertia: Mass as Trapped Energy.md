@@ -220,8 +220,6 @@ $$
 This is the most general form consistent with light-like local transport
 constrained to a closed trajectory.
 
----
-
 
 ## Topological stability
 
@@ -236,8 +234,6 @@ reconnection of field lines.
 
 Therefore, once circulation exists, the associated inertial mass is locked in by
 topology.
-
----
 
 
 ## Final conclusion
