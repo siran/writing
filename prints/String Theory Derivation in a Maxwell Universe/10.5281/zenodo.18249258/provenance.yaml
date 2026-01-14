@@ -1,0 +1,95 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: String Theory Derivation in a Maxwell Universe
+doi: 10.5281/zenodo.18249258
+concept_doi: 10.5281/zenodo.18249257
+permalink: "https://writing.preferredframe.com/prints/String Theory Derivation in a Maxwell Universe/10.5281/zenodo.18249258/"
+publication_date: '2026-01-13'
+publication_year: '2026'
+keywords:
+- Maxwell theory
+- classical electrodynamics
+- Poynting flow
+- electromagnetic energy flow
+- electromagnetic topology
+- toroidal topology
+- torus knots
+- winding numbers
+- emergent strings
+- self-trapping
+- effective refractive index
+- field ontology
+one_sentence_summary: When electromagnetic energy flow organizes on invariant tori, classical Maxwell theory produces integer winding numbers, tension, inertia, and discrete mode spectra stabilized by energy-dependent effective refraction.
+abstract: We show how linear, classical Maxwell theory admits toroidally organized energy flow whose closed trajectories are labeled by integer winding numbers. Localized electromagnetic energy flow defines an effective one-dimensional object with tension and inertia computed directly from field densities. Stability against dispersion arises because high electromagnetic energy density reduces the local effective speed of light, producing self-trapping through emergent refraction. Explicit null Maxwell solutions with torus-knot topology demonstrate that integer data $(m,n)$ are computable from conserved field integrals. String-theoretic structures thus emerge as effective descriptions of self-stabilizing electromagnetic topology.
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+- name: Alex Mercer
+references_doi:
+- https://doi.org/10.5281/zenodo.18209801
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: String Theory Derivation in a Maxwell Universe
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  - name: Alex Mercer
+  description: We show how linear, classical Maxwell theory admits toroidally organized energy flow whose closed trajectories are labeled by integer winding numbers. Localized electromagnetic energy flow defines an effective one-dimensional object with tension and inertia computed directly from field densities. Stability against dispersion arises because high electromagnetic energy density reduces the local effective speed of light, producing self-trapping through emergent refraction. Explicit null Maxwell solutions with torus-knot topology demonstrate that integer data $(m,n)$ are computable from conserved field integrals. String-theoretic structures thus emerge as effective descriptions of self-stabilizing electromagnetic topology.
+  keywords:
+  - Maxwell theory
+  - classical electrodynamics
+  - Poynting flow
+  - electromagnetic energy flow
+  - electromagnetic topology
+  - toroidal topology
+  - torus knots
+  - winding numbers
+  - emergent strings
+  - self-trapping
+  - effective refractive index
+  - field ontology
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-13'
+  license: cc-by-nc-nd-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/String Theory Derivation in a Maxwell Universe/10.5281/zenodo.18249258/String Theory Derivation in a Maxwell Universe.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/String Theory Derivation in a Maxwell Universe/10.5281/zenodo.18249258/String Theory Derivation in a Maxwell Universe.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/String Theory Derivation in a Maxwell Universe/10.5281/zenodo.18249258/String Theory Derivation in a Maxwell Universe.pdf"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/String Theory Derivation in a Maxwell Universe/10.5281/zenodo.18249258/String Theory Derivation in a Maxwell Universe.embed.html"
+    resource_type: publication-article
+  - relation: cites
+    identifier: https://doi.org/10.5281/zenodo.18209801
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: When electromagnetic energy flow organizes on invariant tori, classical Maxwell theory produces integer winding numbers, tension, inertia, and discrete mode spectra stabilized by energy-dependent effective refraction.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: f83e81606737a9ab096ce712bd92ff41c57ff380
+  filename: String Theory Derivation in a Maxwell Universe.md
+artifacts:
+  md: String Theory Derivation in a Maxwell Universe.md
+  md_url: "https://writing.preferredframe.com/prints/String Theory Derivation in a Maxwell Universe/10.5281/zenodo.18249258/String Theory Derivation in a Maxwell Universe.md"
+  pandoc_md_name: String Theory Derivation in a Maxwell Universe.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/String Theory Derivation in a Maxwell Universe/10.5281/zenodo.18249258/String Theory Derivation in a Maxwell Universe.pandoc.md"
+  pdf_name: String Theory Derivation in a Maxwell Universe.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/String Theory Derivation in a Maxwell Universe/10.5281/zenodo.18249258/String Theory Derivation in a Maxwell Universe.pdf"
+  html_name: String Theory Derivation in a Maxwell Universe.html
+  html_url: "https://writing.preferredframe.com/prints/String Theory Derivation in a Maxwell Universe/10.5281/zenodo.18249258/String Theory Derivation in a Maxwell Universe.html"
+  primary: md
+  embed_html_name: String Theory Derivation in a Maxwell Universe.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/String Theory Derivation in a Maxwell Universe/10.5281/zenodo.18249258/String Theory Derivation in a Maxwell Universe.embed.html"
