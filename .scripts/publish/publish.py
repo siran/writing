@@ -99,6 +99,83 @@ def git_staged_paths(repo: Path) -> List[str]:
     return [ln.strip() for ln in out.splitlines() if ln.strip()]
 
 
+def _author_key(name: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "", (name or "").lower())
+
+
+def _apply_provenance_defaults(parsed: dict, prov: Optional[Dict]) -> dict:
+    if not prov:
+        return parsed
+    updated = dict(parsed)
+    if not updated.get("title"):
+        updated["title"] = (prov.get("title") or "").strip()
+    if not updated.get("keywords"):
+        updated["keywords"] = list(prov.get("keywords") or [])
+    if not updated.get("one_sentence"):
+        updated["one_sentence"] = (prov.get("one_sentence_summary") or "").strip()
+    if not updated.get("abstract"):
+        updated["abstract"] = (prov.get("abstract") or "").strip()
+    if not updated.get("reference_doi_urls"):
+        updated["reference_doi_urls"] = list(prov.get("references_doi") or [])
+
+    prov_authors = list(prov.get("authors") or [])
+    if prov_authors:
+        if not updated.get("authors"):
+            updated["authors"] = [dict(a) for a in prov_authors]
+        else:
+            prov_by_key = {_author_key(a.get("name", "")): a for a in prov_authors}
+            merged = []
+            for author in updated.get("authors") or []:
+                entry = dict(author)
+                key = _author_key(entry.get("name", ""))
+                src = prov_by_key.get(key)
+                if src:
+                    if not entry.get("orcid") and src.get("orcid"):
+                        entry["orcid"] = src.get("orcid")
+                    if not entry.get("email") and src.get("email"):
+                        entry["email"] = src.get("email")
+                merged.append(entry)
+            updated["authors"] = merged
+    return updated
+
+
+def _validate_required_metadata(parsed: dict) -> dict:
+    missing = []
+    if not parsed.get("keywords"):
+        missing.append("keywords")
+    if not parsed.get("one_sentence"):
+        missing.append("one_sentence_summary")
+    if not parsed.get("abstract"):
+        missing.append("abstract")
+    if missing:
+        die(f"Missing required metadata: {', '.join(missing)}")
+    return parsed
+
+
+def _infer_subjournal_from_provenance(site_repo: Path, stem: str) -> Optional[str]:
+    candidates = []
+    defaults = ["documents", "posts", "prints", "reports"]
+    for sj in defaults:
+        prov_path, _prov = find_latest_provenance_for_stem(site_repo, sj, stem)
+        if prov_path:
+            candidates.append(prov_path)
+
+    if not candidates:
+        for p in site_repo.rglob("provenance.yaml"):
+            try:
+                rel = p.relative_to(site_repo)
+            except ValueError:
+                continue
+            parts = rel.parts
+            if len(parts) >= 2 and parts[1] == stem:
+                candidates.append(p)
+
+    if not candidates:
+        return None
+    candidates.sort(key=lambda p: p.stat().st_mtime)
+    return candidates[-1].relative_to(site_repo).parts[0]
+
+
 def git_head(repo: Path) -> str:
     return run(["git", "rev-parse", "HEAD"], cwd=repo).strip()
 
@@ -506,11 +583,11 @@ def _prompt_missing_orcids(parsed: dict) -> dict:
 
 def preflight_and_context(
     args,
-) -> Tuple[Path, Optional[Path], Path, str, str, str, str]:
+) -> Tuple[Path, Optional[Path], Path, str, str, str, Optional[str]]:
     """
     Resolve src_md and optional book_yaml, check git, infer site_base/journal/subjournal.
     Returns:
-        src_md, book_yaml, site_repo, src_commit, src_origin, site_base, subjournal
+        src_md, book_yaml, site_repo, src_commit, src_origin, site_base, subjournal (if provided)
     """
     src_path = Path(args.md_path).resolve()
 
@@ -545,20 +622,8 @@ def preflight_and_context(
         args.journal = infer_journal_from_site_base(site_base)
     echo(f"+ journal = {args.journal}")
 
-    if not args.subjournal:
-        choices = ["documents", "posts", "prints", "reports"]
-        default_sj = "prints"
-        echo(f"Available subjournals: {', '.join(choices)}")
-        ans_sj = input(
-            f"Select subjournal [{'/'.join(choices)}] (default: {default_sj}): "
-        ).strip().lower()
-        if not ans_sj:
-            ans_sj = default_sj
-        if ans_sj not in choices:
-            echo(f"Unrecognized subjournal '{ans_sj}'. Valid options: {', '.join(choices)}")
-            die("Aborting: invalid subjournal.")
-        args.subjournal = ans_sj
-    echo(f"+ subjournal = {args.subjournal}")
+    if args.subjournal:
+        echo(f"+ subjournal = {args.subjournal}")
 
     return src_md, book_yaml, site_repo, src_commit, src_origin, site_base, args.subjournal
 
@@ -881,6 +946,30 @@ def run_publish(args, ctx: PublishContext) -> None:
     pub_type = "book" if book_yaml is not None else "article"
     resource_type = f"publication-{pub_type}"
 
+    if not subjournal:
+        inferred_sj = _infer_subjournal_from_provenance(site_repo, stem)
+        if inferred_sj:
+            subjournal = inferred_sj
+            args.subjournal = inferred_sj
+            echo(f"+ subjournal = {subjournal} (from provenance)")
+        else:
+            choices = ["documents", "posts", "prints", "reports"]
+            default_sj = "prints"
+            echo(f"Available subjournals: {', '.join(choices)}")
+            ans_sj = input(
+                f"Select subjournal [{'/'.join(choices)}] (default: {default_sj}): "
+            ).strip().lower()
+            if not ans_sj:
+                ans_sj = default_sj
+            if ans_sj not in choices:
+                echo(
+                    f"Unrecognized subjournal '{ans_sj}'. Valid options: {', '.join(choices)}"
+                )
+                die("Aborting: invalid subjournal.")
+            subjournal = ans_sj
+            args.subjournal = ans_sj
+            echo(f"+ subjournal = {subjournal}")
+
     # Versioning / history
     is_new_version, prev_record_id, prev_concept, prev_prov_path, prev_prov = (
         determine_versioning(args, site_repo, subjournal, src_commit, stem)
@@ -907,9 +996,13 @@ def run_publish(args, ctx: PublishContext) -> None:
     ):
         prev_source = prev_prov.get("source") or {}
         prev_commit = (prev_source.get("commit") or "").strip()
-        if not prev_commit or prev_commit == src_commit:
-            pending_reuse = True
-            pending_date = (prev_prov.get("publication_date") or "").strip() or None
+        pending_reuse = True
+        pending_date = (prev_prov.get("publication_date") or "").strip() or None
+        if prev_commit and prev_commit != src_commit:
+            echo(
+                "WARNING: pending provenance commit differs from current HEAD; "
+                "reusing pending artifacts to finish DOI minting."
+            )
 
     render_args: List[str] = []
     if args.omit_toc:
@@ -964,9 +1057,14 @@ def run_publish(args, ctx: PublishContext) -> None:
 
     # Parse PNPMD
     parsed = parse_pnpmd(staged_md.read_text(encoding="utf-8"))
+    if pending_reuse:
+        parsed = _apply_provenance_defaults(parsed, prev_prov)
     parsed = _apply_cli_overrides(parsed, args)
-    parsed = _prompt_required_metadata(parsed)
-    parsed = _prompt_missing_orcids(parsed)
+    if pending_reuse:
+        parsed = _validate_required_metadata(parsed)
+    else:
+        parsed = _prompt_required_metadata(parsed)
+        parsed = _prompt_missing_orcids(parsed)
     creators: List[Dict] = []
     for a in parsed["authors"]:
         if not a.get("name"):
