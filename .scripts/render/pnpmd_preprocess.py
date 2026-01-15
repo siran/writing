@@ -444,13 +444,14 @@ def insert_toc_after_keywords_content(md: str) -> str:
     return "\n".join(lines)
 
 
-def replace_toc_marker(md: str, toc_depth: int) -> Tuple[str, bool]:
+def replace_toc_marker(md: str, toc_depth: int, shift: int = 0) -> Tuple[str, bool]:
     touched = False
-    td = max(0, toc_depth)
-    html_toc = _build_html_toc(md, td)
+    latex_td = max(0, toc_depth)
+    html_td = max(0, toc_depth - shift)
+    html_toc = _build_html_toc(md, html_td)
     toc_block = (
         "\\begingroup\n"
-        f"\\setcounter{{tocdepth}}{{{td}}}\n"
+        f"\\setcounter{{tocdepth}}{{{latex_td}}}\n"
         "\\renewcommand{\\contentsname}{}\n"
         "\\setlength{\\parskip}{0.35em}\n"
         "\\tableofcontents\n"
@@ -504,6 +505,70 @@ def _min_heading_level(md: str) -> Optional[int]:
     return lvl
 
 
+def _normalize_heading_title(title: str) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", title.strip().lower()).strip()
+
+
+def _has_heading(md: str, target: str) -> bool:
+    norm_target = _normalize_heading_title(target)
+    for ln in md.splitlines():
+        m = _HDR_RE.match(ln)
+        if not m:
+            continue
+        norm_title = _normalize_heading_title(m.group("title"))
+        if norm_title == norm_target or norm_title.startswith(norm_target + " "):
+            return True
+    return False
+
+
+def _yaml_text(meta: Dict, *keys: str) -> str:
+    for key in keys:
+        if key in meta:
+            val = meta.get(key)
+            if val is None:
+                continue
+            if isinstance(val, list):
+                parts = [str(v).strip() for v in val if str(v).strip()]
+                if parts:
+                    return ", ".join(parts)
+                continue
+            text = str(val).strip()
+            if text:
+                return text
+    return ""
+
+
+def _inject_title_page_meta(body: str, yaml_meta: Dict) -> str:
+    if not yaml_meta:
+        return body
+
+    one_sentence = _yaml_text(
+        yaml_meta,
+        "one-sentence-summary",
+        "one_sentence_summary",
+        "one_sentence",
+        "oss",
+    )
+    abstract = _yaml_text(yaml_meta, "abstract", "summary")
+    keywords = _yaml_text(yaml_meta, "keywords", "keyword")
+
+    blocks: List[str] = []
+    if one_sentence and not _has_heading(body, "One-Sentence Summary"):
+        blocks.append(f"**One-Sentence Summary.** {one_sentence}")
+    if abstract and not _has_heading(body, "Abstract"):
+        blocks.append(f"**Abstract.** {abstract}")
+    if keywords and not _has_heading(body, "Keywords"):
+        blocks.append(f"**Keywords.** {keywords}")
+
+    if not blocks:
+        return body
+
+    injected = "\n\n".join(blocks) + "\n\n"
+    if not (_TOC_MARK_RE.search(body) or _TOC_LATEX_RE.search(body)):
+        injected += "[[TOC]]\n\n"
+    return injected + body
+
+
 # ---------- Core entry ----------
 def prepare_preprocessed(
     src: Path,
@@ -552,6 +617,7 @@ def prepare_preprocessed(
     body = atsec_to_nameref(body)
     body = rewrite_hash_anchors(body)
     body = normalize_heading_spacing(body)
+    body = _inject_title_page_meta(body, yaml_meta)
     if src.name.lower().endswith(".fdn.md"):
         body = replace_unicode_superscripts(body)
 
@@ -566,7 +632,17 @@ def prepare_preprocessed(
     has_toc_marker = False
     if not omit_toc:
         body2 = insert_toc_after_keywords_content(body2)
-        body2, has_toc_marker = replace_toc_marker(body2, toc_depth)
+
+    shift_preview = 0
+    if shift_headings is not None:
+        shift_preview = shift_headings
+    elif auto_shift:
+        mhl = _min_heading_level(body2)
+        if mhl and mhl > 1:
+            shift_preview = 1 - mhl
+
+    if not omit_toc:
+        body2, has_toc_marker = replace_toc_marker(body2, toc_depth, shift_preview)
 
     tmpdir = Path(tempfile.mkdtemp(prefix="pnpmd_"))
     in_tmp = tmpdir / "in.md"
@@ -612,13 +688,10 @@ def prepare_preprocessed(
             meta_args += ["-M", f"date={str(date_val).strip()}"]
 
     # heading shift: explicit > auto > 0
-    shift = 0
-    if shift_headings is not None:
-        shift = shift_headings
-    elif auto_shift:
-        mhl = _min_heading_level(body2)
-        if mhl and mhl > 1:
-            shift = 1 - mhl
+    if shift_headings is not None or auto_shift:
+        shift = shift_preview
+    else:
+        shift = 0
     shift_args = ["--shift-heading-level-by", str(shift)] if shift != 0 else []
 
     reader = "markdown+yaml_metadata_block+tex_math_dollars+raw_tex"
