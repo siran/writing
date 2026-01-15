@@ -35,7 +35,7 @@ cumulative, or biasing effects on other systems, consistent with source-free
 Maxwell theory?
 
 This concerns **coupling, geometry, frequency, and time integration**, all
-phsysical effects.
+physical effects.
 
 
 ## The factual baseline: biological systems radiate
@@ -84,7 +84,7 @@ A crucial point is often missed.
 Most environmental electromagnetic activity associated with matter occurs at
 **very high frequencies**:
 
-- atomic and thermal motion: ~10^12–10^14 Hz (infrared, phonons),
+- atomic and thermal motion: ~10^12–10^14 Hz,
 - collisions rapidly scramble phase.
 
 By contrast, dominant biological electromagnetic activity occurs at **extremely
@@ -98,9 +98,7 @@ These bands are **spectrally orthogonal**.
 
 Thermal electromagnetic activity averages out over long times at low frequency.
 Biological fields do not compete with atomic motion in amplitude; they occupy a
-different **frequency channel**.
-
-This is not speculative. It is a direct consequence of Fourier decomposition.
+different frequency channel.
 
 
 ## On noise and ignorance
@@ -111,11 +109,6 @@ In a Maxwellian ontology, this is a modeling convenience, not a physical law.
 
 What is called noise is unresolved superposition of many deterministic field
 contributions with unknown phases and geometries.
-
-Importantly:
-
-- unresolved does not mean nonexistent,
-- incoherent does not mean neutral in all channels.
 
 Bias does not compete with background activity in amplitude space alone. It
 competes through **frequency, phase, and coupling geometry**.
@@ -142,9 +135,6 @@ Nothing in Maxwell theory forbids:
 - frequency-selective influence,
 - geometry-dependent steering,
 - long-term drift under repeated coupling.
-
-No stochastic postulate is required to describe this. Drift arises from
-deterministic superposition whose full structure is unresolved.
 
 
 ## Biological modulation is real
@@ -176,7 +166,7 @@ electromagnetic activity through practice:
 - focused attention,
 - biofeedback training.
 
-No new physics is introduced. Only the **configuration of sources** changes.
+No new physics is introduced. Only the configuration of sources changes.
 
 
 ## An experimentally well-posed test
@@ -185,19 +175,17 @@ This letter does not claim empirical confirmation.
 
 It does claim that certain experiments are well posed.
 
-One concrete proposal:
-
-**A torsion balance experiment**
+One concrete proposal is a torsion balance experiment:
 
 - An ultrasensitive torsion balance is placed in a controlled environment.
 - A structured low-frequency electromagnetic source is introduced nearby.
-- The observable is not linear displacement, but **systematic bias in angular
-  fluctuations over long integration times**.
+- The observable is not linear displacement, but systematic bias in angular
+  fluctuations over long integration times.
 
 The prediction is not gross motion, but a correlation between field geometry,
 frequency coherence, and drift of the balance’s equilibrium statistics.
 
-This tests coupling and bias rather than not force.
+This tests coupling and bias rather than force.
 
 
 ## Closing
@@ -210,7 +198,7 @@ In summary:
   coupling and geometry.
 - No violation of known physics is required to state this.
 - Whether any specific long-range biological influence exists is an experimental
-  question, not a metaphysical one.
+  question.
 
 We offer this letter in a spirit of clarity, rigor, and open inquiry.
 
