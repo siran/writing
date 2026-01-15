@@ -12,15 +12,10 @@ keywords: Maxwell theory, biological electromagnetism, coherence, field bias, ca
 
 Dear Alex,
 
-Your name needs no introduction for those who know you, hats off.
+We write to you in the spirit of precision and shared concern for clarity at the
+boundaries of physics.
 
-For those that do *not* know you, a fair introduction is that ... .... ....
-
-Being that your openly stated perspectives and interests, we find it appropriate
-to address to you an equally open letter, addressing matters that might be of
-interest to you, your followers, or like-minded thinkers.
-
-The matters motivating this letter are simple to state as questions:
+The questions motivating this letter are simple to state:
 
 - Can biological systems exert electromagnetic influence beyond their immediate
   boundaries?
@@ -31,17 +26,13 @@ The matters motivating this letter are simple to state as questions:
 - What strictly follows from applying source-free Maxwell theory consistently to
   biological systems?
 
-In the below letter we make no appeal to nonphysical forces, consciousness as a
-primitive, or violations of known physical law; yet the results seem very much
-like it when seen under a strict theoretical perspective.
+This letter makes no appeal to nonphysical forces, consciousness as a primitive,
+or violations of known physical law.
 
-In this open letter, we assume only what Maxwell electromagnetism already
-assumes:
+It assumes only what Maxwell electromagnetism already assumes: continuous
+fields, local interactions, superposition, and conservation.
 
-- continuous fields,
-- local interactions,
-- superposition, and '
-- conservation of energy.
+The conclusions are modest, but nontrivial.
 
 
 ## What is being examined
@@ -60,9 +51,9 @@ speculative extensions of physics.
 
 There is no controversy on the following points:
 
-- Neural activity involves time-varying ionic currents,
-- Cardiac activity involves macroscopic current loops,
-- Any time-varying current radiates electromagnetic fields,
+- Neural activity involves time-varying ionic currents.
+- Cardiac activity involves macroscopic current loops.
+- Any time-varying current radiates electromagnetic fields.
 - These fields propagate according to Maxwell’s equations.
 
 Biological electromagnetic fields exist and have been measured. This is
@@ -79,10 +70,12 @@ with *influence*.
 
 Maxwell theory draws a clear distinction:
 
-- A field's magnitude imposes a proportional accelerations,
-- A structured field can bias ongoing dynamics.
+- A weak field cannot impose large accelerations.
+- A weak, structured field can nevertheless bias ongoing dynamics.
 
-This is standard in physics and engineering, and it's results are evident:
+Bias is not control by force. It is control by constraint.
+
+This distinction is standard in physics and engineering:
 
 - phase-sensitive detection,
 - lock-in amplification,
@@ -128,7 +121,75 @@ What Maxwell theory does **not** provide is:
 - violation of causal propagation limits.
 
 
-## Experimental confirmation
+## Causal loops and imprint formation
+
+Source-free Maxwell theory permits closed circulation of electromagnetic energy.
+
+Such circulation naturally gives rise to **causal loops**: configurations in
+which emitted fields influence the conditions of future emission through
+geometry, boundary interaction, or reabsorption.
+
+Causal loops are not exotic. They appear in:
+
+- resonant cavities,
+- waveguides,
+- oscillators,
+- self-organizing field structures.
+
+When a system’s own field contributes to shaping its future dynamics, an
+**imprint** is formed.
+
+Nothing in Maxwell theory forbids imprint formation. Maxwell theory is agnostic
+to it.
+
+
+## Steering without determinism
+
+The existence of causal loops does not imply magical control.
+
+A loop may steer without overriding, bias without dictating, and constrain
+without commanding.
+
+This distinction is essential.
+
+Steering arises from repeated weak coupling, phase sensitivity, and feedback
+geometry. It does not require large forces or violations of conservation.
+
+If influence exists, it must take this form.
+
+
+## Language discipline
+
+Terms such as *will*, *intention*, or *miracle* obscure rather than clarify.
+
+We avoid them.
+
+The only admissible variables here are:
+
+- currents,
+- fields,
+- phases,
+- coherence,
+- geometry,
+- coupling.
+
+Anything else is metaphor.
+
+
+## Relation to causal-loop frameworks
+
+A general, architecture-independent formalism for imprint-based causal loops
+exists (Rodriguez & Palma, 2025). It defines steering and self-recognition
+without invoking nonphysical primitives.
+
+We do not rely on that framework here.
+
+We note only that it is compatible with the physical picture described in this
+letter and provides a separate, higher-level language for discussing imprint and
+feedback when needed.
+
+
+## Experimental posture
 
 This letter does not claim empirical confirmation.
 
@@ -136,10 +197,23 @@ It does claim that certain experimental questions are well posed:
 
 - Can structured low-frequency electromagnetic sources bias the long-term
   behavior of sensitive systems?
-
 - Does geometry or phase coherence matter more than amplitude?
-
 - Can repeated weak coupling produce cumulative drift over long integration
   times?
 
 These questions admit controlled tests.
+
+
+## Closing
+
+This letter is not an argument for belief.
+
+It is an argument for clarity.
+
+Source-free Maxwell electromagnetism is a complete, deterministic field theory.
+Applied consistently, it already constrains what biological systems can and
+cannot do at a distance.
+
+What remains is experimental and conceptual work, not new physics.
+
+We offer this letter in that spirit.
