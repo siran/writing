@@ -19,9 +19,9 @@ Previous documents in this program established that:
 - divergence-free structure enforces circulation and topology,
 - energy flow can self-organize into stable configurations.
 
-These are not statements about what energy *must* do, but about how energy
-transport is *observed* to behave in space under ordinary conditions and how we
-describe that behavior mathematically.
+These are not claims about what energy *must* do, but about how energy transport
+is *observed* to behave in space and how that behavior is described
+mathematically.
 
 What has not yet been made explicit is **why the Maxwell evolution law itself
 appears**, rather than some other rule.
@@ -70,8 +70,9 @@ allows energy to propagate, circulate, and remain source-free.
 
 Only the following are assumed:
 
-1. A nonnegative energy density u(x,t), meaning simply that *something exists*.
-2. An energy flux S(x,t), meaning that *something happens*.
+1. A nonnegative energy density $u(\mathbf{x},t)$, meaning simply that
+   *something exists*.
+2. An energy flux $\mathbf{S}(\mathbf{x},t)$, meaning that *something happens*.
 3. A continuity description of energy transport,
 
    $$
@@ -110,24 +111,24 @@ It tells us:
 
 But it does **not** tell us:
 
-- what S is as a function of u,
-- how S itself evolves,
+- what $\mathbf{S}$ is as a function of $u$,
+- how $\mathbf{S}$ itself evolves,
 - how flow reorganizes spatially.
 
 Continuity therefore restricts allowed histories but does not generate them. It
 is kinematic: it limits what is permitted, not how motion occurs.
 
-To describe energy transport in time, an independent set of evolution rules is
-required. These rules are descriptions of behavior, not causes. Energy transport
-occurs regardless of how we model it.
+To describe energy transport in time, an independent evolution rule is required.
+Such rules are descriptions of behavior, not causes. Energy transport occurs
+regardless of how we model it.
 
 ---
 
 
 ## The general form of a transport dynamics
 
-Consider a divergence-free vector field F(x,t) representing a flow-like quantity
-that varies in space and time.
+Consider a divergence-free vector field $\mathbf{F}(\mathbf{x},t)$ representing
+a flow-like quantity that varies in space and time.
 
 A general local evolution rule has the schematic form
 
@@ -135,7 +136,9 @@ $$
 \partial_t \mathbf{F} = \mathcal{D}(\mathbf{F}),
 $$
 
-where D is some spatial differential operator.
+where $\mathcal{D}$ is a spatial differential operator. This restriction is
+essential: transport is spatial redistribution, so any law that produces
+transport must involve spatial derivatives.
 
 We now ask:
 
@@ -152,7 +155,7 @@ $$
 \partial_t \mathbf{F} = \nabla \phi,
 $$
 
-for some scalar field φ constructed from F.
+for some scalar field $\phi$ constructed from $\mathbf{F}$.
 
 Taking the divergence gives
 
@@ -160,18 +163,17 @@ $$
 \partial_t (\nabla \cdot \mathbf{F}) = \nabla^2 \phi.
 $$
 
-This quantity is generically nonzero as a mathematical identity. “Generically”
-here means that for an arbitrary scalar field φ, the Laplacian does not vanish
-unless φ satisfies special constraints.
+This quantity is generically nonzero as a mathematical identity. Here
+“generically” means that for an arbitrary scalar field $\phi$, the
+Laplacian does not vanish unless $\phi$ satisfies special constraints.
 
 Therefore:
 
 - divergence is created or destroyed during evolution,
 - effective sources and sinks appear dynamically.
 
-Gradient-driven evolution cannot serve as a general *source-free* transport law.
-This conclusion follows directly from operator structure, not from
-interpretation.
+Gradient-driven evolution cannot serve as a source-free transport law. This
+conclusion follows directly from operator structure, not interpretation.
 
 ---
 
@@ -184,7 +186,7 @@ $$
 \partial_t \mathbf{F} = \nabla \times \mathbf{G},
 $$
 
-for some vector field G.
+for some vector field $\mathbf{G}$.
 
 Taking the divergence yields
 
@@ -231,7 +233,7 @@ This completes the argument without gaps:
 - curl-based evolution is the minimal way to move such geometry,
 - Maxwell dynamics implements exactly this evolution.
 
-No additional assumptions are required.
+Nothing is left implicit.
 
 ---
 
@@ -257,11 +259,11 @@ corrections.
 
 In three dimensions:
 
-- curl is a vector operator,
+- curl maps vectors to vectors,
 - divergence-free fields admit circulation,
-- knots and linked structures cannot be undone continuously.
+- knotted and linked structures cannot be undone continuously.
 
-This is why electromagnetic circulation and topological stability are inherently
+This is why electromagnetic circulation and topological stability are
 three-dimensional phenomena.
 
 ---
