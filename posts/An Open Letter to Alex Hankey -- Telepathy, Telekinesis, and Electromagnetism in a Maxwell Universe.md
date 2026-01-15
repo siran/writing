@@ -1,5 +1,5 @@
 ---
-title: An Open Letter to Alex Hankey: Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe
+title: "An Open Letter to Alex Hankey: Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe"
 subtitle: Strict theoretical limits set by source-free Maxwell electromagnetism
 author: An M. Rodriguez, Alex Mercer
 date: 2026-01-20
@@ -7,8 +7,6 @@ one-sentence-summary: We examine whether phenomena historically labeled as telep
 summary: This open letter addresses claims of biological electromagnetic influence at a distance, reframing them strictly within source-free Maxwell theory. We distinguish mechanical force from cumulative bias, clarify the role of coherence, frequency, and geometry, and identify which forms of influence are forbidden, allowed, or experimentally open under classical electromagnetism.
 keywords: Maxwell theory, biological electromagnetism, coherence, field bias, classical foundations
 ---
-
-# An Open Letter to Alex Hankey
 
 Dear Alex,
 
