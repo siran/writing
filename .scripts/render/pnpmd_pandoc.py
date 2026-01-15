@@ -49,6 +49,20 @@ def render_pdf(
     log_args: List[str] = [f"--log={log_path.name}"] if log_path else []
     verbose_args: List[str] = ["--verbose"] if verbose else []
     extra_args = extra_args or []
+    header_args: List[str] = []
+    try:
+        numbering_header = in_tmp.parent / "section-numbering.tex"
+        numbering_header.write_text(
+            (
+                "\\makeatletter\n"
+                "\\renewcommand{\\@seccntformat}[1]{\\csname the#1\\endcsname.\\quad}\n"
+                "\\makeatother\n"
+            ),
+            encoding="utf-8",
+        )
+        header_args = ["--include-in-header", numbering_header.name]
+    except Exception:
+        header_args = []
 
     rc = _ensure_image(_PANDOC_IMAGE)
     if rc != 0:
@@ -70,6 +84,7 @@ def render_pdf(
         *common_args,
         *shift_args,
         *meta_args,
+        *header_args,
         "--filter",
         "pandoc-crossref",
         "in.md",
@@ -97,6 +112,23 @@ def render_html(
     css_args: List[str] = []
     if css_path and css_path.exists():
         css_args = ["--css", css_path.name]
+    header_args: List[str] = []
+    try:
+        numbering_header = in_tmp.parent / "section-numbering.html"
+        numbering_header.write_text(
+            (
+                "<style>\n"
+                ".header-section-number::after,\n"
+                ".toc-section-number::after {\n"
+                "  content: \". \";\n"
+                "}\n"
+                "</style>\n"
+            ),
+            encoding="utf-8",
+        )
+        header_args = ["--include-in-header", numbering_header.name]
+    except Exception:
+        header_args = []
     math_args: List[str] = []
     mode = (math_mode or "mathjax").strip().lower()
     if mode == "mathjax":
@@ -161,6 +193,7 @@ def render_html(
         *shift_args,
         *meta_args,
         *css_args,
+        *header_args,
         *math_args,
         "--filter",
         "pandoc-crossref",
@@ -188,6 +221,21 @@ def render_epub(
     css_args: List[str] = []
     if css_path and css_path.exists():
         css_args = ["--css", css_path.name]
+    extra_css_args: List[str] = []
+    try:
+        numbering_css = in_tmp.parent / "section-numbering.css"
+        numbering_css.write_text(
+            (
+                ".header-section-number::after,\n"
+                ".toc-section-number::after {\n"
+                "  content: \". \";\n"
+                "}\n"
+            ),
+            encoding="utf-8",
+        )
+        extra_css_args = ["--css", numbering_css.name]
+    except Exception:
+        extra_css_args = []
     extra_args = extra_args or []
     log_args: List[str] = [f"--log={log_path.name}"] if log_path else []
     verbose_args: List[str] = ["--verbose"] if verbose else []
@@ -212,6 +260,7 @@ def render_epub(
         *shift_args,
         *meta_args,
         *css_args,
+        *extra_css_args,
         *extra_args,
         "--filter",
         "pandoc-crossref",

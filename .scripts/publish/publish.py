@@ -41,6 +41,8 @@ from zenodo_api import (
     ensure_draft_or_die,
 )
 
+DEFAULT_ORCID = "0009-0009-9098-9468"
+
 
 # ---------------- git helpers ----------------
 
@@ -469,7 +471,10 @@ def parse_args():
     ap.add_argument(
         "--orcid",
         default=None,
-        help="Comma-separated ORCIDs (author order) to fill missing ORCIDs.",
+        help=(
+            "Comma-separated ORCIDs (author order) to fill missing ORCIDs. "
+            f"If omitted, defaults to {DEFAULT_ORCID!r} for the first missing author."
+        ),
     )
     ap.add_argument(
         "--keywords",
@@ -584,7 +589,7 @@ def _split_csv_arg(raw: Optional[str]) -> List[str]:
     return [s.strip() for s in raw.split(",") if s.strip()]
 
 
-def _apply_orcid_list(parsed: dict, orcids: List[str]) -> dict:
+def _apply_orcid_list(parsed: dict, orcids: List[str], *, warn_unused: bool = True) -> dict:
     updated = dict(parsed)
     authors = [dict(a) for a in (updated.get("authors") or [])]
     if not orcids or not authors:
@@ -600,7 +605,7 @@ def _apply_orcid_list(parsed: dict, orcids: List[str]) -> dict:
         author["orcid"] = orcids[used]
         used += 1
 
-    if used < len(orcids):
+    if warn_unused and used < len(orcids):
         echo(
             f"WARNING: {len(orcids) - used} ORCID(s) from --orcid not used "
             "because there were fewer authors missing ORCID."
@@ -626,7 +631,17 @@ def _apply_cli_overrides(parsed: dict, args) -> dict:
             if not norm:
                 die(f"Invalid ORCID in --orcid list: {item!r}")
             orcids.append(norm)
-        updated = _apply_orcid_list(updated, orcids)
+        updated = _apply_orcid_list(updated, orcids, warn_unused=True)
+    else:
+        default_orcid = _normalize_orcid_input(DEFAULT_ORCID)
+        if default_orcid:
+            authors = [dict(a) for a in (updated.get("authors") or [])]
+            has_missing = any(
+                (a.get("name") or "").strip() and not a.get("orcid")
+                for a in authors
+            )
+            if has_missing:
+                updated = _apply_orcid_list(updated, [default_orcid], warn_unused=False)
     return updated
 
 

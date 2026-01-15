@@ -377,6 +377,8 @@ def parse_pnpmd(md_text: str) -> Dict:
             header_authors = fm_names
 
     fm_keywords = fm.get("keywords")
+    if fm_keywords is None:
+        fm_keywords = fm.get("keyword")
     if isinstance(fm_keywords, str):
         fm_kw_list = [k.strip() for k in fm_keywords.split(",") if k.strip()]
     elif isinstance(fm_keywords, list):
@@ -390,6 +392,7 @@ def parse_pnpmd(md_text: str) -> Dict:
         _fm_str(fm.get("one-sentence-summary"))
         or _fm_str(fm.get("one_sentence_summary"))
         or _fm_str(fm.get("one_sentence"))
+        or _fm_str(fm.get("oss"))
     )
     if fm_one_sentence:
         one_sentence = fm_one_sentence
