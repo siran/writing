@@ -1,0 +1,77 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: 'An Open Letter to Alex Hankey: Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe'
+doi: 10.5281/zenodo.18263234
+concept_doi: null
+permalink: "https://writing.preferredframe.com/prints/An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe/10.5281/zenodo.18263234/"
+publication_date: '2026-01-15'
+publication_year: '2026'
+keywords:
+- Maxwell theory
+- biological electromagnetism
+- coherence
+- field bias
+- classical foundations
+one_sentence_summary: We examine whether phenomena historically labeled as telepathy or telekinesis can be discussed meaningfully within classical Maxwell electromagnetism, without invoking nonphysical forces or violating known constraints.
+abstract: This open letter addresses claims of biological electromagnetic influence at a distance, reframing them strictly within source-free Maxwell theory. We distinguish mechanical force from cumulative bias, clarify the role of coherence, frequency, and geometry, and identify which forms of influence are forbidden, allowed, or experimentally open under classical electromagnetism.
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+- name: Alex Mercer
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: 'An Open Letter to Alex Hankey: Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe'
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  - name: Alex Mercer
+  description: This open letter addresses claims of biological electromagnetic influence at a distance, reframing them strictly within source-free Maxwell theory. We distinguish mechanical force from cumulative bias, clarify the role of coherence, frequency, and geometry, and identify which forms of influence are forbidden, allowed, or experimentally open under classical electromagnetism.
+  keywords:
+  - Maxwell theory
+  - biological electromagnetism
+  - coherence
+  - field bias
+  - classical foundations
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-15'
+  license: cc-by-nc-nd-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe/10.5281/zenodo.18263234/An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe/10.5281/zenodo.18263234/An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe/10.5281/zenodo.18263234/An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe.pdf"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe/10.5281/zenodo.18263234/An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe.embed.html"
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: We examine whether phenomena historically labeled as telepathy or telekinesis can be discussed meaningfully within classical Maxwell electromagnetism, without invoking nonphysical forces or violating known constraints.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: 89ba6b7a31441f55ce1ae04640df07346feb585c
+  filename: An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe.md
+artifacts:
+  md: An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe.md
+  md_url: "https://writing.preferredframe.com/prints/An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe/10.5281/zenodo.18263234/An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe.md"
+  pandoc_md_name: An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe/10.5281/zenodo.18263234/An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe.pandoc.md"
+  pdf_name: An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe/10.5281/zenodo.18263234/An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe.pdf"
+  html_name: An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe.html
+  html_url: "https://writing.preferredframe.com/prints/An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe/10.5281/zenodo.18263234/An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe.html"
+  primary: md
+  embed_html_name: An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe/10.5281/zenodo.18263234/An Open Letter to Alex Hankey -- Telepathy, Telekinesis, and Electromagnetism in a Maxwell Universe.embed.html"
