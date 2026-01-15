@@ -538,7 +538,7 @@ def _yaml_text(meta: Dict, *keys: str) -> str:
     return ""
 
 
-def _inject_title_page_meta(body: str, yaml_meta: Dict) -> str:
+def _inject_title_page_meta(body: str, yaml_meta: Dict, *, omit_toc: bool) -> str:
     if not yaml_meta:
         return body
 
@@ -564,8 +564,20 @@ def _inject_title_page_meta(body: str, yaml_meta: Dict) -> str:
         return body
 
     injected = "\n\n".join(blocks) + "\n\n"
-    if not (_TOC_MARK_RE.search(body) or _TOC_LATEX_RE.search(body)):
+    if not omit_toc and not (_TOC_MARK_RE.search(body) or _TOC_LATEX_RE.search(body)):
         injected += "[[TOC]]\n\n"
+    injected += (
+        "```{=latex}\n"
+        "\\vspace{1.0\\baselineskip}\n"
+        "\\begin{center}\\rule{0.35\\linewidth}{0.4pt}\\end{center}\n"
+        "\\vspace{1.0\\baselineskip}\n"
+        "```\n\n"
+        "```{=html}\n"
+        "<hr class=\"meta-divider\" "
+        "style=\"width:35%; margin:2rem auto; border:0; height:1px; "
+        "background: rgba(0,0,0,0.35);\" />\n"
+        "```\n\n"
+    )
     return injected + body
 
 
@@ -617,7 +629,10 @@ def prepare_preprocessed(
     body = atsec_to_nameref(body)
     body = rewrite_hash_anchors(body)
     body = normalize_heading_spacing(body)
-    body = _inject_title_page_meta(body, yaml_meta)
+    body = _inject_title_page_meta(body, yaml_meta, omit_toc=omit_toc)
+    if omit_toc:
+        body = _TOC_MARK_RE.sub("", body)
+        body = _TOC_LATEX_RE.sub("", body)
     if src.name.lower().endswith(".fdn.md"):
         body = replace_unicode_superscripts(body)
 
