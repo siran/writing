@@ -33,8 +33,6 @@ while preserving continuity?
 
 The answer is Maxwell electromagnetism.
 
----
-
 
 ## What is meant by “minimal dynamical closure”
 
@@ -62,8 +60,6 @@ Calling Maxwell electromagnetism the **minimal dynamical closure** means:
 
 Maxwell dynamics closes the description in the weakest possible way that still
 allows energy to propagate, circulate, and remain source-free.
-
----
 
 
 ## What is assumed
@@ -97,8 +93,6 @@ This does not preclude other physical behaviors in regimes not yet observed or
 described. It reflects only what is classically observed when energy moves
 through space.
 
----
-
 
 ## Why continuity is kinematic, not dynamical
 
@@ -122,8 +116,6 @@ To describe energy transport in time, an independent evolution rule is required.
 Such rules are descriptions of behavior, not causes. Energy transport occurs
 regardless of how we model it.
 
----
-
 
 ## The general form of a transport dynamics
 
@@ -143,8 +135,6 @@ transport must involve spatial derivatives.
 We now ask:
 
 Which operators preserve divergence-free structure during evolution?
-
----
 
 
 ## Why gradient-driven dynamics fails
@@ -175,8 +165,6 @@ Therefore:
 Gradient-driven evolution cannot serve as a source-free transport law. This
 conclusion follows directly from operator structure, not interpretation.
 
----
-
 
 ## Curl as the minimal divergence-preserving operator
 
@@ -205,8 +193,6 @@ Therefore:
 This is the **minimal structural answer** to how divergence-free flow can evolve
 without generating sources.
 
----
-
 
 ## Why Maxwell dynamics appears
 
@@ -221,8 +207,6 @@ This is not a historical accident.
 It is the simplest way to describe the motion of divergence-free energy patterns
 through space while respecting continuity.
 
----
-
 
 ## Closing the logical loop explicitly
 
@@ -234,8 +218,6 @@ This completes the argument without gaps:
 - Maxwell dynamics implements exactly this evolution.
 
 Nothing is left implicit.
-
----
 
 
 ## Why this does not claim maximality or uniqueness
@@ -252,8 +234,6 @@ It claims only that:
 More complex models may include additional structure. Those are extensions, not
 corrections.
 
----
-
 
 ## Why three dimensions matter
 
@@ -266,8 +246,6 @@ In three dimensions:
 This is why electromagnetic circulation and topological stability are
 three-dimensional phenomena.
 
----
-
 
 ## What is proved here
 
@@ -277,8 +255,6 @@ What is proved:
 - Divergence-free transport requires curl-based evolution.
 - Curl-based evolution preserves source-free structure.
 - Maxwell electromagnetism is the minimal such evolution law.
-
----
 
 
 ## Closing statement
