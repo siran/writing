@@ -6,6 +6,7 @@ date: 2026-01-16
 one-sentence-summary: This document defines, exhaustively and operationally, the terms and symbols used throughout the Maxwell Universe Research Program, fixing meanings and preventing hidden assumptions.
 summary: We provide a complete glossary of terms and symbols used across the Maxwell Universe Research Program. All definitions are operational and descriptive, not metaphysical. The glossary separates representation from dynamics, avoids particle or spacetime primitives, and fixes terminology to ensure consistency across documents. This glossary is intended to be canonical.
 keywords: Maxwell theory, glossary, continuity equation, divergence-free fields, energy flow, electromagnetic foundations
+DOI: "https://writing.preferredframe.com/doi/10.5281/zenodo.18272625"
 ---
 
 ## Summary
