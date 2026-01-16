@@ -3,7 +3,7 @@ title: The Maxwell Universe Research Program
 subtitle: Foundations, Method, and Boundaries
 author: An M. Rodriguez, Alex Mercer
 date: 2026-01-19
-one-sentence-summary: A precise statement of the methodological foundations, assumptions, and limits of the Maxwell Universe program.
+one-sentence-summary: A precise statement of the methodological foundations, assumptions, and limits of the Maxwell Universe Research Program.
 summary: This document consolidates the guiding principles of the Maxwell Universe Research Program. It fixes the ontological stance, methodological rules, and logical boundaries that unify the program’s published works. The aim is not to introduce new results, but to preserve conceptual coherence, prevent regressions, and enable extension without reintroducing hidden postulates.
 keywords: Maxwell theory, foundations of physics, continuity equation, divergence-free flow, minimal dynamics, field-only ontology, topology
 ---
@@ -14,10 +14,9 @@ This document exists to prevent loss.
 
 Not loss of results, but loss of discipline.
 
-The Maxwell Universe Research Program purports itself as a constrained way of
-reasoning about physical phenomena starting from experimentally grounded
-structure, using the electromagnetic field's energy as the medium where the
-causal substrate manifests its effects.
+The Maxwell Universe Research Program is a constrained way of reasoning about
+physical phenomena starting from experimentally grounded structure, using
+electromagnetic energy flow as the medium through which causal effects manifest.
 
 That stance must be stated explicitly if the program is to remain coherent under
 extension, critique, or reinterpretation.
@@ -73,9 +72,9 @@ This mirrors experimental practice: even apparent sources are implemented
 through boundary conditions, circuits, and global constraints, not literal
 energy creation.
 
-“Source-free” is therefore not a self-imposed restriction of the framework but
-an acknowledgement that energy is not seen to be created or destroyed at points
-in space (net Gaussian flux non-identically zero).
+“Source-free” is therefore not a self-imposed restriction of the framework, but
+an acknowledgement that energy is not observed to be created or destroyed at
+points in space.
 
 
 ## Minimal assumption principle
@@ -95,7 +94,7 @@ This applies to:
 If a phenomenon follows from continuity, geometry, or topology, no additional
 postulate is added.
 
-Minimal does not mean final. Minimal means parsimonious.
+Minimal does not mean final. Minimal means **frugal in assumptions**.
 
 
 ## Representation versus dynamics
@@ -125,8 +124,9 @@ $$
 \partial_t u + \nabla \cdot \mathbf{S} = 0.
 $$
 
-This is treated as a **description of observed continuous energy transport
-through space**, not as a metaphysical axiom, nor fundamental restriction.
+This relation is treated as a **description of observed continuous energy
+transport through space**, not as a metaphysical axiom or fundamental
+restriction.
 
 No independent postulates of momentum conservation, inertia, force, or mass are
 assumed.
@@ -144,7 +144,9 @@ Geometry and topology are treated as active constraints, not passive background.
 Key consequences established across the program include:
 
 - Curved transport paths generate effective inertia.
-- Closed circulation generates stability.
+- Closed circulation generates stability **without invoking forces**, because
+  energy confined to closed or topologically constrained paths cannot disperse
+  continuously.
 - Toroidal surfaces enforce integer winding numbers.
 - Knotted configurations prevent continuous unwinding.
 - Three-dimensionality is essential: circulation, curl, and knots rely on it.
@@ -167,7 +169,7 @@ For example:
 - More complex theories may exist, but they introduce additional, identifiable
   structure.
 
-Minimality, thus, establishes a baseline, not a prohibition.
+Minimality establishes a baseline, not a prohibition.
 
 
 ## What is closed
@@ -188,20 +190,20 @@ Each closure is documented and scoped.
 Most foundational confusion in physics arises not from incorrect equations, but
 from hidden assumptions.
 
-The Maxwell Universe program removes those assumptions deliberately.
+The Maxwell Universe Research Program removes those assumptions deliberately.
 
-What remains is not emptiness, but structure.
+What remains is a clear, constrained framework grounded in observation.
 
 
 ## Closing statement
 
-This program is about describing nature with the above states prinples only,
-nothing else is seems necessary to explain observations.
+This program aims to describe nature using continuity of energy transport,
+divergence-free structure, and local dynamics only.
 
-That is, seeing all observed phenomena of reality as energy flow, and nothing
-more.
+Within this framework, observed physical phenomena are understood as organized
+energy flow through space.
+
+No additional primitives are required.
 
 Continuity, divergence-free structure, and local transport are not
 interpretations. They are observed regularities.
-
-Everything else is architecture.
