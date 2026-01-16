@@ -1,5 +1,5 @@
 ---
-title: The Maxwell Universe Program — A Logical Map
+title: The Maxwell Universe Research Program — A Logical Map
 subtitle: Section-by-Section Structure, Claims, Dependencies, and Status
 author: An M. Rodriguez, Alex Mercer
 date: 2026-01-16
