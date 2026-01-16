@@ -6,6 +6,7 @@ date: 2026-01-15
 one-sentence-summary: Maxwell’s equations constitute the simplest dynamical law capable of transporting energy continuously and locally while preserving divergence-free structure in three dimensions.
 summary: We show that Maxwell electromagnetism arises as the minimal dynamical closure of divergence-free energy flow subject to a continuity description. Continuity constrains energy bookkeeping but does not determine how energy moves. Requiring local transport that preserves divergence-free structure forces curl-based evolution. Maxwell’s equations are not postulated but emerge as the simplest dynamics capable of moving energy without creating or destroying sources. This establishes electromagnetism as the minimal, not maximal, theory of divergence-free energy transport.
 keywords: Maxwell theory, divergence-free flow, continuity equation, curl dynamics, minimal dynamics, electromagnetic foundations
+DOI: https://writing.preferredframe.com/doi/10.5281/zenodo.18264435
 ---
 
 ![](https://siran.github.io/assets/writing/energy-curls.png)
