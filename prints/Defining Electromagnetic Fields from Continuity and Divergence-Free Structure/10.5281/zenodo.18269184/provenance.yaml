@@ -1,0 +1,83 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: Defining Electromagnetic Fields from Continuity and Divergence-Free Structure
+doi: 10.5281/zenodo.18269184
+concept_doi: 10.5281/zenodo.18269183
+permalink: "https://writing.preferredframe.com/prints/Defining Electromagnetic Fields from Continuity and Divergence-Free Structure/10.5281/zenodo.18269184/"
+publication_date: '2026-01-16'
+publication_year: '2026'
+keywords:
+- Maxwell theory
+- continuity equation
+- divergence-free fields
+- Poynting vector
+- energy density
+- field reconstruction
+- circulation
+- topology
+one_sentence_summary: Continuity and divergence-free structure force electromagnetic energy to be described by directional, circulating degrees of freedom; however, energy density and flux alone do not uniquely determine the electric and magnetic fields without additional relational data.
+abstract: 'We clarify the conceptual bridge between a field-only ontology of electromagnetic energy flow and the usual electric and magnetic field variables. We show rigorously that a single scalar energy density does not define propagation, but that the relation between scalar configurations at different times, constrained by continuity, forces the introduction of directional transport. We prove a reconstruction result: given an energy density u and an energy flux S satisfying |S| <= c u, one can always construct at least one pair of fields E and B that reproduce u and S. The non-uniqueness of this reconstruction matches the true physical degrees of freedom identified as polarization. We conclude with a precise statement of what is implied by continuity and what requires the full Maxwell dynamical law.'
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+- name: Alex Mercer
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: Defining Electromagnetic Fields from Continuity and Divergence-Free Structure
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  - name: Alex Mercer
+  description: 'We clarify the conceptual bridge between a field-only ontology of electromagnetic energy flow and the usual electric and magnetic field variables. We show rigorously that a single scalar energy density does not define propagation, but that the relation between scalar configurations at different times, constrained by continuity, forces the introduction of directional transport. We prove a reconstruction result: given an energy density u and an energy flux S satisfying |S| <= c u, one can always construct at least one pair of fields E and B that reproduce u and S. The non-uniqueness of this reconstruction matches the true physical degrees of freedom identified as polarization. We conclude with a precise statement of what is implied by continuity and what requires the full Maxwell dynamical law.'
+  keywords:
+  - Maxwell theory
+  - continuity equation
+  - divergence-free fields
+  - Poynting vector
+  - energy density
+  - field reconstruction
+  - circulation
+  - topology
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-16'
+  license: cc-by-nc-nd-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Defining Electromagnetic Fields from Continuity and Divergence-Free Structure/10.5281/zenodo.18269184/Defining Electromagnetic Fields from Continuity and Divergence-Free Structure.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Defining Electromagnetic Fields from Continuity and Divergence-Free Structure/10.5281/zenodo.18269184/Defining Electromagnetic Fields from Continuity and Divergence-Free Structure.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Defining Electromagnetic Fields from Continuity and Divergence-Free Structure/10.5281/zenodo.18269184/Defining Electromagnetic Fields from Continuity and Divergence-Free Structure.pdf"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Defining Electromagnetic Fields from Continuity and Divergence-Free Structure/10.5281/zenodo.18269184/Defining Electromagnetic Fields from Continuity and Divergence-Free Structure.embed.html"
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: Continuity and divergence-free structure force electromagnetic energy to be described by directional, circulating degrees of freedom; however, energy density and flux alone do not uniquely determine the electric and magnetic fields without additional relational data.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: 04e83eb4ecde1ce474fdf1a8574b4a20226e8111
+  filename: Defining Electromagnetic Fields from Continuity and Divergence-Free Structure.md
+artifacts:
+  md: Defining Electromagnetic Fields from Continuity and Divergence-Free Structure.md
+  md_url: "https://writing.preferredframe.com/prints/Defining Electromagnetic Fields from Continuity and Divergence-Free Structure/10.5281/zenodo.18269184/Defining Electromagnetic Fields from Continuity and Divergence-Free Structure.md"
+  pandoc_md_name: Defining Electromagnetic Fields from Continuity and Divergence-Free Structure.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/Defining Electromagnetic Fields from Continuity and Divergence-Free Structure/10.5281/zenodo.18269184/Defining Electromagnetic Fields from Continuity and Divergence-Free Structure.pandoc.md"
+  pdf_name: Defining Electromagnetic Fields from Continuity and Divergence-Free Structure.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/Defining Electromagnetic Fields from Continuity and Divergence-Free Structure/10.5281/zenodo.18269184/Defining Electromagnetic Fields from Continuity and Divergence-Free Structure.pdf"
+  html_name: Defining Electromagnetic Fields from Continuity and Divergence-Free Structure.html
+  html_url: "https://writing.preferredframe.com/prints/Defining Electromagnetic Fields from Continuity and Divergence-Free Structure/10.5281/zenodo.18269184/Defining Electromagnetic Fields from Continuity and Divergence-Free Structure.html"
+  primary: md
+  embed_html_name: Defining Electromagnetic Fields from Continuity and Divergence-Free Structure.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/Defining Electromagnetic Fields from Continuity and Divergence-Free Structure/10.5281/zenodo.18269184/Defining Electromagnetic Fields from Continuity and Divergence-Free Structure.embed.html"
