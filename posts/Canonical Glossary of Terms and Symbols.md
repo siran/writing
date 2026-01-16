@@ -11,16 +11,15 @@ keywords: Maxwell theory, glossary, continuity equation, divergence-free fields,
 ## Summary
 
 This document defines the meaning of all technical terms and symbols used in the
-Maxwell Universe Research program.
+Maxwell Universe Research Program.
 
-Definitions are **operational**, **descriptive**, and **context-specific**. They
-describe how quantities are used and related in the theory; they do not assert
-what reality “is made of.”
+Definitions are operational, descriptive, and context-specific. They describe
+how quantities are used and related in the theory; they do not assert what
+reality “is made of.”
 
-No term implies "particles" or separate non-electromagnetic substances, forces,
-etc.
+No term implies particles, separate substances, or non-electromagnetic forces.
 
-This glossary is intended to be **canonical**.
+This glossary is intended to be canonical.
 
 
 ## Fundamental Quantities
@@ -31,23 +30,19 @@ A conserved physical quantity inferred from experimental regularities. In this
 program, energy is treated operationally through its measurable density and
 transport.
 
-Energy is not assumed to be a substance, object, or material. However it it's
-what is being transported, and whose transport makes everything happen.
+Energy is not assumed to be a substance or object. It is what is transported,
+and its transport is what gives rise to observable physical phenomena.
 
-If there is no "energy transport" (and thus, simply, "energy"), there is nothing
-to describe.
+If there is no energy transport, there is nothing to describe.
 
-It is positive by definition because "something" is always more than "nothing";
-and also "something" is more than "a lack of", which is represented by negative
-numbers. "Holes" being "something" is more about what is there around the empty
-hole.
-
-That negative values "can be achieved" depends on the initial conditions.
+Energy is positive by definition as a measure of presence relative to absence.
+Negative values, when used, represent differences relative to a chosen reference
+configuration.
 
 
 ### Energy density
 
-$\mathbf{u}(\mathbf{x},t)$
+$u(\mathbf{x},t)$
 
 A nonnegative scalar field representing the amount of electromagnetic energy
 associated with a region of space at a given time.
@@ -63,24 +58,23 @@ $\mathbf{S}(\mathbf{x},t)$
 A vector field representing the local rate and direction of electromagnetic
 energy transport through space.
 
-$\mathbf{S}$ is part of a transport description. It does not imply a medium
-or mechanical flow.
+$\mathbf{S}$ describes how energy moves. It does not imply a mechanical
+fluid or particle substrate distinct from the field itself. In this program, the
+electromagnetic field is the continuous medium of energy transport.
 
 
 ## Continuity and Transport
 
 ### Continuity equation
 
-The relation
-
 $$
 \partial_t u + \nabla \cdot \mathbf{S} = 0
 $$
 
-which expresses local conservation of energy during continuous transport.
+A relation expressing local conservation of energy during continuous transport.
 
-In this program, the continuity equation is treated as a **description of
-observed energy transport through *space***, not as a metaphysical postulate.
+In this program, the continuity equation is treated as a description of observed
+energy transport through space, not as a metaphysical postulate.
 
 
 ### Continuity
@@ -96,8 +90,8 @@ Continuity constrains allowed histories but does not specify dynamics.
 
 Spatial redistribution of energy over time.
 
-Transport through space requires a spatial structure. Thus, purely algebraic or
-purely temporal change can't produce transport by themselves.
+Transport through space requires spatial structure. Purely algebraic or purely
+temporal change cannot, by itself, produce transport.
 
 
 ### Flow
@@ -105,7 +99,8 @@ purely temporal change can't produce transport by themselves.
 A descriptive term for continuous transport of a conserved quantity, represented
 mathematically by a vector field.
 
-“Flow” does not imply a fluid, medium, or substance.
+Flow refers to organized energy transport. It does not imply particles or a
+separate mechanical medium; the field itself carries the flow.
 
 
 ## Kinematic vs Dynamic
@@ -122,15 +117,14 @@ Continuity is kinematic.
 
 Rules specifying how quantities evolve in time.
 
-Dynamics are required to describe *how* transport happens, not merely *that* it
-is conserved.
+Dynamics describe how transport and reconfiguration occur.
 
 
 ### Dynamical closure
 
 A specification of time evolution that completes a kinematic description.
 
-A closure answers the question: *how do allowed configurations change in time?*
+A closure answers the question: how do allowed configurations change in time?
 
 
 ### Minimal dynamical closure
@@ -138,7 +132,7 @@ A closure answers the question: *how do allowed configurations change in time?*
 The weakest evolution rule capable of describing observed behavior while
 preserving imposed constraints.
 
-“Minimal” means:
+Minimal means:
 - no auxiliary fields,
 - no nonlocal prescriptions,
 - no higher-order structure than required.
@@ -173,8 +167,8 @@ Divergence-free means there are no local sources or sinks.
 
 A description of regions where divergence-free structure holds.
 
-“Source-free” does not deny the existence of localized structures in nature; it
-denies primitive creation or destruction of energy at points.
+Source-free does not deny the existence of localized structures in nature; it
+denies primitive creation or destruction at points.
 
 
 ### Circulation
@@ -213,34 +207,29 @@ Curl-based evolution preserves divergence-free structure identically.
 
 An operator involving derivatives with respect to spatial coordinates.
 
-Spatial transport dynamics must involve spatial differential operators because
-transport is spatial redistribution.
+Transport is spatial redistribution and therefore requires spatial derivatives.
 
 
 ## Electromagnetic Fields
 
 ### Electric field
 
-$$
-\mathbf{E}
-$$
+$\mathbf{E}$
 
-A vector field paired with $\mathbf{B}$ (see below) used as part of a local
+A vector field used, together with $\mathbf{B}$, as part of a local
 representation of electromagnetic energy transport and rotation.
 
-$\mathbf{E}$ is not assumed fundamental; it is a representational variable.
+$\mathbf{E}$ is representational, not assumed fundamental.
 
 
 ### Magnetic field
 
-$$
-\mathbf{B}
-$$
+$\mathbf{B}$
 
-A vector field paired with $\mathbf{E}$ (see above) to represent rotational
-aspects of electromagnetic energy transport.
+A vector field paired with $\mathbf{E}$ to represent rotational aspects of
+electromagnetic energy transport.
 
-$\mathbf{B}$ is not assumed fundamental.
+$\mathbf{B}$ is representational, not assumed fundamental.
 
 
 ### Maxwell electromagnetism
@@ -248,9 +237,9 @@ $\mathbf{B}$ is not assumed fundamental.
 The curl-based dynamical system governing the coupled evolution of
 $\mathbf{E}$ and $\mathbf{B}$.
 
-In this program, Maxwell electromagnetism is understood as the **minimal
-dynamical description** capable of transporting divergence-free energy flow
-while respecting continuity.
+In this program, Maxwell electromagnetism is understood as the minimal dynamical
+description capable of transporting divergence-free energy flow while respecting
+continuity.
 
 
 ## Representation
@@ -298,17 +287,15 @@ Topology constrains which configurations can change smoothly.
 
 ### Toroidal shell
 
-A closed, surface-like with one hole, organization of energy flow supporting
-persistent circulation.
+A closed, surface-like organization of energy flow supporting persistent
+circulation.
 
 Toroidal shells are membrane-like structures.
 
 
 ### Winding numbers
 
-$$
-(m,n)
-$$
+$(m,n)$
 
 Integers labeling how a flow wraps around the independent cycles of a toroidal
 surface.
@@ -345,7 +332,7 @@ A spatial distribution of a quantity at a given time.
 
 ### Relation between configurations
 
-The comparison between "snapshots" or "time slices" of configurations.
+The comparison between scalar configurations at different times.
 
 Flow is defined by relations between configurations, not by a single snapshot.
 
@@ -379,8 +366,8 @@ This program deliberately limits ontological commitments.
 
 All terms in this glossary are defined operationally.
 
-No term implies particles, substances, forces, or spacetime structure unless
-explicitly stated.
+The electromagnetic field is treated as the continuous medium of energy
+transport. No additional substrate is assumed.
 
 The framework is descriptive, minimal, and grounded in observed continuity of
 energy transport through space.
