@@ -911,6 +911,53 @@ def fmt_author(a):
         return f'{nm} (<a href="{oc}">ORCID</a>)'
     return nm
 
+def _doi_value(it: dict) -> str:
+    doi_clean = (it.get("doi") or "").replace(" ", "")
+    if doi_clean:
+        return doi_clean
+    if it.get("doi_prefix") and it.get("doi_suffix"):
+        return f"{it['doi_prefix']}/{it['doi_suffix']}"
+    return ""
+
+def _doi_alias(origin: str, it: dict) -> str:
+    if it.get("doi_prefix") and it.get("doi_suffix"):
+        return f"{origin}/doi/{it['doi_prefix']}/{it['doi_suffix']}"
+    return ""
+
+def _share_lines_versions(
+    *,
+    origin: str,
+    top: str,
+    stem: str,
+    versions: list[dict],
+    latest: dict,
+    current: dict | None = None,
+) -> list[str]:
+    stem_seg = quote(stem, safe="")
+    stem_url = f"{origin}/{top}/{stem_seg}/"
+    stem_display = f"{origin}/{top}/{stem}/"
+
+    latest_alias = _doi_alias(origin, latest)
+    if not latest_alias or _is_pending_doi(_doi_value(latest)):
+        return [f'"<a href="{stem_url}">{stem_display}</a>"', "(DOI pending)"]
+
+    lines = [f'latest version: <a href="{latest_alias}">{latest_alias}</a>']
+    current_key = (
+        current.get("doi_prefix"),
+        current.get("doi_suffix"),
+    ) if current else (None, None)
+    for v in versions:
+        date_disp = iso_date_str(v.get("date") or "")
+        alias = _doi_alias(origin, v)
+        label = date_disp or f"{v.get('doi_prefix','')}/{v.get('doi_suffix','')}"
+        if (v.get("doi_prefix"), v.get("doi_suffix")) == current_key:
+            label = f"{label} (this version)"
+        if not alias or _is_pending_doi(_doi_value(v)):
+            lines.append(f"{label}: (DOI pending)" if label else "(DOI pending)")
+        else:
+            lines.append(f'{label}: <a href="{alias}">{alias}</a>')
+    return lines
+
 # ---------- article pages ----------
 def build_article_pages() -> set[Path]:
     origin = _current_origin()
@@ -1114,25 +1161,21 @@ def build_article_pages() -> set[Path]:
             if epub_link:
                 link_items.append(("EPUB", epub_link))
 
-            stem_seg = quote(stem, safe="")
-            stem_url = f"{origin}/{top}/{stem_seg}/"
-            stem_display = f"{origin}/{top}/{stem}/"
-            share_lines = [f'"<a href="{stem_url}">{stem_display}</a>"']
-            doi_clean = (it["doi"] or "").replace(" ", "")
-            doi_fallback = ""
-            if it["doi_prefix"] and it["doi_suffix"]:
-                doi_fallback = f"{it['doi_prefix']}/{it['doi_suffix']}"
-            if doi_clean or doi_fallback:
-                doi_value = doi_clean or doi_fallback
-                if _is_pending_doi(doi_value):
-                    share_lines.append("(DOI pending)")
-                else:
-                    doi_alias = f"{origin}/doi/{it['doi_prefix']}/{it['doi_suffix']}"
-                    share_lines.append(f'<a href="{doi_alias}">{doi_alias}</a>')
-                    doi_url = f"https://doi.org/{doi_value}"
-                    share_lines.append(f'<a href="{doi_url}">{doi_url}</a>')
-            else:
-                share_lines.append("(DOI pending)")
+            same_family = []
+            for v in versions:
+                if it["concept"] and v["concept"] == it["concept"]:
+                    same_family.append(v)
+                elif not it["concept"] and not v["concept"]:
+                    same_family.append(v)
+
+            share_lines = _share_lines_versions(
+                origin=origin,
+                top=top,
+                stem=stem,
+                versions=same_family,
+                latest=latest,
+                current=it,
+            )
             share_html = (
                 "<div class=\"share\"><strong>Share as:</strong><br>"
                 + "<br>".join(share_lines)
@@ -1151,13 +1194,7 @@ def build_article_pages() -> set[Path]:
                 )
 
             breadcrumbs = crumb_link([top, stem, it["doi_prefix"], it["doi_suffix"]])
-            same_family = []
-            for v in versions:
-                if it["concept"] and v["concept"] == it["concept"]:
-                    same_family.append(v)
-                elif not it["concept"] and not v["concept"]:
-                    same_family.append(v)
-
+            stem_seg = quote(stem, safe="")
             versions_list = []
             for v in same_family:
                 ver_url = f"/{top}/{stem_seg}/{v['doi_prefix']}/{v['doi_suffix']}/"
@@ -1368,24 +1405,14 @@ def build_article_pages() -> set[Path]:
         if epub_link:
             link_items.append(("EPUB", epub_link))
 
-        stem_url = f"{origin}/{top}/{stem_seg}/"
-        stem_display = f"{origin}/{top}/{stem}/"
-        share_lines = [f'"<a href="{stem_url}">{stem_display}</a>"']
-        doi_clean = (it["doi"] or "").replace(" ", "")
-        doi_fallback = ""
-        if it["doi_prefix"] and it["doi_suffix"]:
-            doi_fallback = f"{it['doi_prefix']}/{it['doi_suffix']}"
-        if doi_clean or doi_fallback:
-            doi_value = doi_clean or doi_fallback
-            if _is_pending_doi(doi_value):
-                share_lines.append("(DOI pending)")
-            else:
-                doi_alias = f"{origin}/doi/{it['doi_prefix']}/{it['doi_suffix']}"
-                share_lines.append(f'<a href="{doi_alias}">{doi_alias}</a>')
-                doi_url = f"https://doi.org/{doi_value}"
-                share_lines.append(f'<a href="{doi_url}">{doi_url}</a>')
-        else:
-            share_lines.append("(DOI pending)")
+        share_lines = _share_lines_versions(
+            origin=origin,
+            top=top,
+            stem=stem,
+            versions=same_family,
+            latest=latest,
+            current=None,
+        )
         share_html = (
             "<div class=\"share\"><strong>Share as:</strong><br>"
             + "<br>".join(share_lines)
