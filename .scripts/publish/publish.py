@@ -473,7 +473,7 @@ def parse_args():
         default=None,
         help=(
             "Comma-separated ORCIDs (author order) to fill missing ORCIDs. "
-            f"If omitted, defaults to {DEFAULT_ORCID!r} for the first missing author."
+            f"If omitted, defaults to {DEFAULT_ORCID!r} for the first author only."
         ),
     )
     ap.add_argument(
@@ -636,12 +636,12 @@ def _apply_cli_overrides(parsed: dict, args) -> dict:
         default_orcid = _normalize_orcid_input(DEFAULT_ORCID)
         if default_orcid:
             authors = [dict(a) for a in (updated.get("authors") or [])]
-            has_missing = any(
-                (a.get("name") or "").strip() and not a.get("orcid")
-                for a in authors
-            )
-            if has_missing:
-                updated = _apply_orcid_list(updated, [default_orcid], warn_unused=False)
+            if authors:
+                first = authors[0]
+                if (first.get("name") or "").strip() and not first.get("orcid"):
+                    first["orcid"] = default_orcid
+                    authors[0] = first
+                    updated["authors"] = authors
     return updated
 
 
