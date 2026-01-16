@@ -1,0 +1,79 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow
+doi: 10.5281/zenodo.18264435
+concept_doi: 10.5281/zenodo.18264434
+permalink: "https://writing.preferredframe.com/prints/Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow/10.5281/zenodo.18264435/"
+publication_date: '2026-01-15'
+publication_year: '2026'
+keywords:
+- Maxwell theory
+- divergence-free flow
+- continuity equation
+- curl dynamics
+- minimal dynamics
+- electromagnetic foundations
+one_sentence_summary: Maxwell’s equations constitute the simplest dynamical law capable of transporting energy continuously and locally while preserving divergence-free structure in three dimensions.
+abstract: We show that Maxwell electromagnetism arises as the minimal dynamical closure of divergence-free energy flow subject to a continuity description. Continuity constrains energy bookkeeping but does not determine how energy moves. Requiring local transport that preserves divergence-free structure forces curl-based evolution. Maxwell’s equations are not postulated but emerge as the simplest dynamics capable of moving energy without creating or destroying sources. This establishes electromagnetism as the minimal, not maximal, theory of divergence-free energy transport.
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+- name: Alex Mercer
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  - name: Alex Mercer
+  description: We show that Maxwell electromagnetism arises as the minimal dynamical closure of divergence-free energy flow subject to a continuity description. Continuity constrains energy bookkeeping but does not determine how energy moves. Requiring local transport that preserves divergence-free structure forces curl-based evolution. Maxwell’s equations are not postulated but emerge as the simplest dynamics capable of moving energy without creating or destroying sources. This establishes electromagnetism as the minimal, not maximal, theory of divergence-free energy transport.
+  keywords:
+  - Maxwell theory
+  - divergence-free flow
+  - continuity equation
+  - curl dynamics
+  - minimal dynamics
+  - electromagnetic foundations
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-15'
+  license: cc-by-nc-nd-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow/10.5281/zenodo.18264435/Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow/10.5281/zenodo.18264435/Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow/10.5281/zenodo.18264435/Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow.pdf"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow/10.5281/zenodo.18264435/Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow.embed.html"
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: Maxwell’s equations constitute the simplest dynamical law capable of transporting energy continuously and locally while preserving divergence-free structure in three dimensions.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: d10523ca02700b7b0495864890c0a96b9771bc51
+  filename: Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow.md
+artifacts:
+  md: Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow.md
+  md_url: "https://writing.preferredframe.com/prints/Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow/10.5281/zenodo.18264435/Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow.md"
+  pandoc_md_name: Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow/10.5281/zenodo.18264435/Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow.pandoc.md"
+  pdf_name: Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow/10.5281/zenodo.18264435/Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow.pdf"
+  html_name: Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow.html
+  html_url: "https://writing.preferredframe.com/prints/Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow/10.5281/zenodo.18264435/Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow.html"
+  primary: md
+  embed_html_name: Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow/10.5281/zenodo.18264435/Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow.embed.html"
