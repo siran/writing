@@ -6,6 +6,7 @@ date: 2026-01-20
 one-sentence-summary: We examine whether phenomena historically labeled as telepathy or telekinesis can be discussed meaningfully within classical Maxwell electromagnetism, without invoking nonphysical forces or violating known constraints.
 summary: This open letter addresses claims of biological electromagnetic influence at a distance, reframing them strictly within source-free Maxwell theory. We distinguish mechanical force from cumulative bias, clarify the role of coherence, frequency, and geometry, and identify which forms of influence are forbidden, allowed, or experimentally open under classical electromagnetism.
 keywords: Maxwell theory, biological electromagnetism, coherence, field bias, classical foundations
+DOI: https://writing.preferredframe.com/doi/10.5281/zenodo.18263234
 ---
 
 Dear Alex,
