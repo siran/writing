@@ -1,0 +1,79 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: Canonical Glossary of Terms and Symbols for the Maxwell Universe Research Program
+doi: 10.5281/zenodo.18272625
+concept_doi: null
+permalink: "https://writing.preferredframe.com/prints/Canonical Glossary of Terms and Symbols/10.5281/zenodo.18272625/"
+publication_date: '2026-01-16'
+publication_year: '2026'
+keywords:
+- Maxwell theory
+- glossary
+- continuity equation
+- divergence-free fields
+- energy flow
+- electromagnetic foundations
+one_sentence_summary: This document defines, exhaustively and operationally, the terms and symbols used throughout the Maxwell Universe Research Program, fixing meanings and preventing hidden assumptions.
+abstract: We provide a complete glossary of terms and symbols used across the Maxwell Universe Research Program. All definitions are operational and descriptive, not metaphysical. The glossary separates representation from dynamics, avoids particle or spacetime primitives, and fixes terminology to ensure consistency across documents. This glossary is intended to be canonical.
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+- name: Alex Mercer
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: Canonical Glossary of Terms and Symbols for the Maxwell Universe Research Program
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  - name: Alex Mercer
+  description: We provide a complete glossary of terms and symbols used across the Maxwell Universe Research Program. All definitions are operational and descriptive, not metaphysical. The glossary separates representation from dynamics, avoids particle or spacetime primitives, and fixes terminology to ensure consistency across documents. This glossary is intended to be canonical.
+  keywords:
+  - Maxwell theory
+  - glossary
+  - continuity equation
+  - divergence-free fields
+  - energy flow
+  - electromagnetic foundations
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-16'
+  license: cc-by-nc-nd-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Canonical Glossary of Terms and Symbols/10.5281/zenodo.18272625/Canonical Glossary of Terms and Symbols.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Canonical Glossary of Terms and Symbols/10.5281/zenodo.18272625/Canonical Glossary of Terms and Symbols.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Canonical Glossary of Terms and Symbols/10.5281/zenodo.18272625/Canonical Glossary of Terms and Symbols.pdf"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Canonical Glossary of Terms and Symbols/10.5281/zenodo.18272625/Canonical Glossary of Terms and Symbols.embed.html"
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: This document defines, exhaustively and operationally, the terms and symbols used throughout the Maxwell Universe Research Program, fixing meanings and preventing hidden assumptions.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: 8ef39b28d61572062bf587b2bb555bb1f87e4146
+  filename: Canonical Glossary of Terms and Symbols.md
+artifacts:
+  md: Canonical Glossary of Terms and Symbols.md
+  md_url: "https://writing.preferredframe.com/prints/Canonical Glossary of Terms and Symbols/10.5281/zenodo.18272625/Canonical Glossary of Terms and Symbols.md"
+  pandoc_md_name: Canonical Glossary of Terms and Symbols.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/Canonical Glossary of Terms and Symbols/10.5281/zenodo.18272625/Canonical Glossary of Terms and Symbols.pandoc.md"
+  pdf_name: Canonical Glossary of Terms and Symbols.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/Canonical Glossary of Terms and Symbols/10.5281/zenodo.18272625/Canonical Glossary of Terms and Symbols.pdf"
+  html_name: Canonical Glossary of Terms and Symbols.html
+  html_url: "https://writing.preferredframe.com/prints/Canonical Glossary of Terms and Symbols/10.5281/zenodo.18272625/Canonical Glossary of Terms and Symbols.html"
+  primary: md
+  embed_html_name: Canonical Glossary of Terms and Symbols.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/Canonical Glossary of Terms and Symbols/10.5281/zenodo.18272625/Canonical Glossary of Terms and Symbols.embed.html"
