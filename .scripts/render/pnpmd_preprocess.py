@@ -346,7 +346,7 @@ def rewrite_hash_anchors(md: str) -> str:
     return _unprotect(prot2, blobs)
 
 
-def _build_html_toc(md: str, depth: int) -> str:
+def _build_html_toc(md: str, depth: int, shift: int = 0) -> str:
     """
     Build an HTML TOC (unordered list) up to the given depth using the
     normalized heading IDs we generate during preprocessing.
@@ -357,6 +357,7 @@ def _build_html_toc(md: str, depth: int) -> str:
         if not m:
             continue
         lvl = len(m.group('hash'))
+        lvl = max(1, lvl + shift)
         if lvl > depth:
             continue
         raw_title = m.group('title').strip()
@@ -447,13 +448,16 @@ def insert_toc_after_keywords_content(md: str) -> str:
 def replace_toc_marker(md: str, toc_depth: int, shift: int = 0) -> Tuple[str, bool]:
     touched = False
     latex_td = max(0, toc_depth)
-    html_td = max(0, toc_depth - shift)
-    html_toc = _build_html_toc(md, html_td)
+    html_toc = _build_html_toc(md, toc_depth, shift)
     toc_block = (
         "\\begingroup\n"
         f"\\setcounter{{tocdepth}}{{{latex_td}}}\n"
-        "\\renewcommand{\\contentsname}{}\n"
+        "\\renewcommand{\\contentsname}{\\centering Table of Contents}\n"
+        "\\renewcommand{\\numberline}[1]{#1.\\hspace{0.6em}}\n"
         "\\setlength{\\parskip}{0.35em}\n"
+        "\\vspace{1.0\\baselineskip}\n"
+        "\\begin{center}\\rule{0.35\\linewidth}{0.4pt}\\end{center}\n"
+        "\\vspace{1.1\\baselineskip}\n"
         "\\tableofcontents\n"
         "\\endgroup"
     )
@@ -461,6 +465,8 @@ def replace_toc_marker(md: str, toc_depth: int, shift: int = 0) -> Tuple[str, bo
         toc_block += (
             "\n\n```{=html}\n"
             "<div class=\"toc\">\n"
+            "<hr class=\"toc-divider\" />\n"
+            "<div class=\"toc-title\">Table of Contents</div>\n"
             f"{html_toc}\n"
             "</div>\n"
             "```\n"

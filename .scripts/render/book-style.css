@@ -201,27 +201,52 @@ figcaption {
 .toc ul {
   list-style: none;
   padding-left: 0;
+  margin-left: 0;
+  counter-reset: item;
 }
 
 .toc li {
-  margin: 0.35em 0;
+  margin: 0.4em 0;
+  padding-left: 2.6em;
+  position: relative;
+  counter-increment: item;
+}
+
+.toc li::before {
+  content: counters(item, ".") ".";
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+  width: 2.2em;
+  text-align: right;
 }
 
 .toc a {
   text-decoration: none;
   color: var(--text);
-}
-
-.toc::before {
-  content: "Table of Contents";
-  display: block;
-  font-weight: 700;
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
+  border-bottom: 1px solid transparent;
 }
 
 .toc a:hover {
   color: var(--accent);
+  text-decoration: none;
+  border-bottom-color: var(--accent);
+}
+
+.toc-title {
+  display: block;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin: 0.5rem 0 0.4rem;
+  text-align: center;
+}
+
+.toc-divider {
+  width: 35%;
+  margin: 3.2rem auto 2.8rem;
+  border: 0;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.25);
 }
 
 .title-page {
