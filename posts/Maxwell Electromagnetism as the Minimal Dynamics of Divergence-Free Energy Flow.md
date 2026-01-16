@@ -8,6 +8,9 @@ summary: We show that Maxwell electromagnetism arises as the minimal dynamical c
 keywords: Maxwell theory, divergence-free flow, continuity equation, curl dynamics, minimal dynamics, electromagnetic foundations
 ---
 
+![](https://siran.github.io/assets/writing/energy-curls.png)
+
+
 ## Motivation
 
 Previous documents in this program established that:
