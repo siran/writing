@@ -1,10 +1,10 @@
 ---
 title: Defining Electromagnetic Fields from Continuity and Divergence-Free Structure
-subtitle: What Can and Cannot Be Reconstructed from Energy Density and Energy Flow
+subtitle: Two snapshots of a single scalar field define flow
 author: An M. Rodriguez, Alex Mercer
 date: 2026-01-17
 one-sentence-summary: Continuity and divergence-free structure force electromagnetic energy to be described by directional, circulating degrees of freedom; however, energy density and flux alone do not uniquely determine the electric and magnetic fields without additional relational data.
-summary: We clarify the conceptual bridge between a field-only ontology of electromagnetic energy flow and the usual electric/magnetic field variables. We show rigorously that a scalar energy density alone cannot define propagation, but that a continuity equation for energy together with divergence-free structure in three dimensions forces directional transport and circulation. We then prove a reconstruction result: given an energy density u and an energy flux S satisfying the standard inequality |S| ≤ c u, one can always construct at least one pair of fields E and B that reproduce u and S (non-uniquely). The non-uniqueness is not a flaw; it matches the true degrees of freedom (polarization/duality). We conclude with a precise statement of what is implied by continuity and what requires the full Maxwell dynamical law.
+summary: We clarify the conceptual bridge between a field-only ontology of electromagnetic energy flow and the usual electric and magnetic field variables. We show rigorously that a single scalar energy density does not define propagation, but that the relation between scalar configurations at different times, constrained by continuity, forces the introduction of directional transport. We prove a reconstruction result: given an energy density u and an energy flux S satisfying |S| ≤ c u, one can always construct at least one pair of fields E and B that reproduce u and S. The non-uniqueness of this reconstruction matches the true physical degrees of freedom identified as polarization. We conclude with a precise statement of what is implied by continuity and what requires the full Maxwell dynamical law.
 keywords: Maxwell theory, continuity equation, divergence-free fields, Poynting vector, energy density, field reconstruction, circulation, topology
 ---
 
@@ -12,29 +12,29 @@ keywords: Maxwell theory, continuity equation, divergence-free fields, Poynting 
 
 A recurring conceptual objection is:
 
-If electromagnetic energy is taken as the fundamental object, and energy density
-is a scalar field, how do the vector fields $\mathbf{E}$ and
-$\mathbf{B}$ arise?
+If electromagnetic energy is taken as primary, and energy density is a scalar
+field, how do vector fields such as $\mathbf{E}$ and $\mathbf{B}$ arise?
 
-The objection is valid if one assumes the map
+The objection is valid if one assumes that vectors must be extracted directly
+from a single scalar configuration. They cannot.
 
-scalar $\to$ vectors
+A single scalar field does not define flow. Flow is defined by the **relation
+between scalar configurations at different times under continuity**.
 
-should be direct and instantaneous.
-
-It is not.
+This distinction is central and non-negotiable.
 
 The correct ordering is:
 
-- scalar energy density $u(\mathbf{x},t)$ is an observable of a process,
-- the process is constrained by continuity,
-- continuity forces transport,
-- transport forces directional structure,
-- directional, divergence-free transport locally forces circulation,
-- circulation admits a minimal vector description.
+- a scalar energy density $u(\mathbf{x},t)$ is an observable of a process,
+- continuity relates changes of that observable across time,
+- the relation between two scalar configurations requires directional transport,
+- directional transport is necessarily described in vectorial language.
 
-This document makes that chain explicit and states exactly what can be derived
-from continuity and divergence-free structure.
+Thus, vectors do not arise from scalars by inspection. They arise from **change
+under constraint**.
+
+This document makes that chain explicit and states precisely what can be
+reconstructed from energy density and energy flow alone.
 
 
 ## Assumptions
@@ -44,50 +44,51 @@ We assume a source-free region.
 We assume that electromagnetic energy admits:
 
 1. A nonnegative energy density $u(\mathbf{x},t) \ge 0$.
+2. An energy flux $\mathbf{S}(\mathbf{x},t)$ satisfying a continuity description
 
-2. An energy flux $\mathbf{S}(\mathbf{x},t)$ satisfying a continuity equation
+   $$
+   \partial_t u + \nabla \cdot \mathbf{S} = 0.
+   $$
 
-$$
-\partial_t u + \nabla \cdot \mathbf{S} = 0.
-$$
+This equation expresses the observed fact that when energy moves through space,
+it does so continuously: changes in density are accounted for by transport.
 
-We also assume the usual empirical causal bound that energy flux does not exceed
-the local maximal propagation speed $c$:
+We also assume the empirically observed causal bound
 
-$$
-|\mathbf{S}| \le c\,u.
-$$
+   $$
+   |\mathbf{S}| \le c\,u,
+   $$
 
-This means that energy cannot flow faster than the speed of electromagnetic
-causality, $c$.
+which states that the rate of energy transport does not exceed the maximal
+observed propagation rate. This is an operational fact about how energy is seen
+to move through space, not a restriction on the possible ways transport may be
+organized or described.
 
-We do not assume particles, matter, constitutive media, quantum axioms, or any
-mechanical primitive.
+We do not assume particles, matter, constitutive media, quantum axioms, or
+mechanical primitives.
 
-We do not derive Maxwell’s equations from continuity alone. We instead show what
-continuity forces, and how $\mathbf{E}$ and $\mathbf{B}$ appear as a
-minimal representation of that forced structure.
+We do not derive Maxwell’s dynamical equations from continuity alone. We instead
+establish what continuity and divergence-free structure *force*, and what
+additional structure is required to describe evolution.
 
 
 ## Why a scalar field alone cannot encode propagation
 
-A scalar field $u(\mathbf{x},t)$ at a single time slice is insufficient to
-encode motion. Two snapshots, however, allow us to define the directional
-structure a scalar field must have in order to transport energy. Without energy
-transport there is nothing to describe.
+A scalar field $u(\mathbf{x},t)$ at a single time slice contains no information
+about direction. It specifies magnitude only.
 
-This is not only philosophical; it is a degrees-of-freedom statement:
+Two scalar snapshots, however, allow us to define transport. Given
+$u(\mathbf{x},t_1)$ and $u(\mathbf{x},t_2)$, continuity requires that
+differences between them be explained by motion through space.
 
-- A scalar specifies magnitude.
-- Transport requires magnitude and direction.
-- Direction is encoded in vectorial language.
+That motion cannot be described without direction.
 
-The continuity equation already checks these requirements: it does not close on
-$u$ alone; it involves a vector field defined everywhere,
-$\mathbf{S}$.
+Thus, the continuity equation does not close on $u$ alone. It
+introduces $\mathbf{S}$ as a necessary relational quantity. The pair
+$(u,\mathbf{S})$ is the minimal description of conserved flow.
 
-Thus, the fundamental object in a continuity-based ontology is not
-$u$ alone, but the pair $(u,\mathbf{S})$, i.e. a conserved flow.
+Vectors are therefore not additional structure. They are the minimal language
+required to describe change consistently.
 
 
 ## Divergence-free structure and circulation in 3D
@@ -195,7 +196,9 @@ $|\mathbf{S}| \le c u$. Choosing either root completes the construction.
 
 - The inequality $|\mathbf{S}| \le c u$ is exactly the condition required for
   reconstruction.
+
 - The choice of transverse frame corresponds to polarization freedom.
+
 - Continuous duality rotations leave $(u,\mathbf{S})$ invariant.
 
 Thus, $(u,\mathbf{S})$ underdetermines $(\mathbf{E},\mathbf{B})$ by exactly two
@@ -234,24 +237,35 @@ decomposes into windings around the two fundamental cycles. For example, a
 linear flow of rational slope on $T^2$ closes after $(m,n)$
 windings, enforcing discrete circulation classes.
 
-In a flow-first ontology:
+The integers $(m,n)$ do not define the electric or magnetic fields
+pointwise.
 
-- $(m,n)$ classify the global organization of energy transport on the
-  torus,
-- while $(\mathbf{E},\mathbf{B})$ provide a local representation of that same
-  organization.
+They characterize the global organization of a particular energy flow: how that
+flow wraps, closes, and circulates on a toroidal surface.
 
-The integers $(m,n)$ constrain which global field configurations are
-possible, not the local reconstruction itself.
+The fields $\mathbf{E}$ and $\mathbf{B}$ are a different kind of
+description. They provide a local, differential account of how energy is
+transported and rotated through space.
+
+These are not competing structures. They are complementary descriptions of the
+same underlying process.
+
+In the same way that energy and frequency describe the same electromagnetic
+phenomenon from different perspectives, $(m,n)$ describe the global
+pattern of a flow, while $(\mathbf{E},\mathbf{B})$ describe its local transport.
 
 
 ## Conclusions
 
 - A scalar energy density alone cannot encode propagation.
+
 - Continuity forces directional transport and hence vector structure.
+
 - Divergence-free structure locally forces circulation in three dimensions.
+
 - Given $(u,\mathbf{S})$ with $|\mathbf{S}|\le c u$, one can construct
   $\mathbf{E}$ and $\mathbf{B}$ reproducing the same energy and flux.
+
 - The reconstruction is necessarily non-unique, matching polarization degrees of
   freedom.
 
