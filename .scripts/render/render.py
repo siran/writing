@@ -41,6 +41,116 @@ def _inline_css(html_path: Path, css_path: Optional[Path]) -> None:
     html_path.write_text(html_txt, encoding="utf-8")
 
 
+_FENCE_RE = re.compile(
+    r'(^|\n)(?P<f>```+|~~~+)[^\n]*\n.*?(\n(?P=f)[ \t]*\n|$)', re.DOTALL
+)
+_INLINE_CODE_RE = re.compile(r'(?P<ticks>`+)(?P<body>[^`]*?)\1')
+_MATH_BLOCK_RE = re.compile(r'(^|\n)\$\$[\s\S]*?\$\$(?=\s*(\n|$))', re.MULTILINE)
+_INLINE_MATH_RE = re.compile(r'(?<!\$)\$(?!\$)(?:\\\$|[^$])+\$(?!\$)')
+
+def _protect_blocks_and_code(text: str):
+    blobs: list[str] = []
+
+    def stash(m: re.Match) -> str:
+        i = len(blobs)
+        blobs.append(m.group(0))
+        return f"\u0000B{i}\u0000"
+
+    text = _FENCE_RE.sub(stash, text)
+    text = _INLINE_CODE_RE.sub(stash, text)
+    text = _MATH_BLOCK_RE.sub(stash, text)
+    return text, blobs
+
+
+def _unprotect(text: str, blobs: list[str]) -> str:
+    return re.sub(r'\u0000B(\d+)\u0000', lambda mm: blobs[int(mm.group(1))], text)
+
+
+def _inline_math_to_blocks_md(md: str) -> str:
+    prot, blobs = _protect_blocks_and_code(md)
+
+    def repl(m: re.Match) -> str:
+        inner = m.group(0)[1:-1]
+        return f"\n$$\n{inner}\n$$\n"
+
+    prot = _INLINE_MATH_RE.sub(repl, prot)
+    return _unprotect(prot, blobs)
+
+
+def _blocks_pandoc_md_path(src: Path) -> Path:
+    name = src.name
+    if name.endswith(".blocks.pandoc.md"):
+        return src
+    if name.endswith(".pandoc.md"):
+        base = name[:-len(".pandoc.md")]
+    elif name.endswith(".md"):
+        base = name[:-len(".md")]
+    else:
+        base = src.stem
+    return src.with_name(f"{base}.blocks.pandoc.md")
+
+
+def _blocks_html_path(blocks_pandoc_md: Path) -> Path:
+    name = blocks_pandoc_md.name
+    if name.endswith(".blocks.pandoc.md"):
+        base = name[:-len(".blocks.pandoc.md")]
+    else:
+        base = blocks_pandoc_md.stem
+    return blocks_pandoc_md.with_name(f"{base}.blocks.html")
+
+
+def _render_blocks_html(
+    blocks_pandoc_md: Path,
+    *,
+    meta_args: list[str],
+    shift_args: list[str],
+    common_args: list[str],
+    timeout: int,
+    css_path: Optional[Path],
+    verbose: bool,
+    html_embed_resources: bool,
+) -> Optional[Path]:
+    if not blocks_pandoc_md or not blocks_pandoc_md.exists():
+        return None
+
+    from tempfile import mkdtemp
+
+    tmpdir = Path(mkdtemp(prefix="pnpmd_"))
+    in_tmp = tmpdir / "in.md"
+    in_tmp.write_text(blocks_pandoc_md.read_text(encoding="utf-8"), encoding="utf-8")
+
+    css_local = None
+    if css_path and css_path.exists():
+        css_local = tmpdir / css_path.name
+        css_local.write_text(css_path.read_text(encoding="utf-8"), encoding="utf-8")
+
+    out_html = tmpdir / "out.html"
+    html_log = tmpdir / "pandoc-html.log.json"
+    rc = render_html(
+        in_tmp,
+        out_html,
+        meta_args,
+        shift_args,
+        common_args,
+        timeout,
+        css_local,
+        log_path=html_log,
+        verbose=verbose,
+        math_mode="webtex",
+        embed_resources=html_embed_resources,
+    )
+    if verbose or rc != 0:
+        print_pandoc_log(html_log, label="HTML Blocks")
+    if rc != 0:
+        die(f"Docker pandoc (HTML Blocks) failed (rc={rc})")
+
+    blocks_html_path = _blocks_html_path(blocks_pandoc_md)
+    shutil.copy2(out_html, blocks_html_path)
+    if css_local:
+        _inline_css(blocks_html_path, css_local)
+    return blocks_html_path
+
+
 def _is_fdn_md(src: Path) -> bool:
     return src.name.lower().endswith(".fdn.md")
 
@@ -74,6 +184,7 @@ def render(
     verbose: bool = False,
     html_math: str = "mathjax",
     html_embed_resources: bool = False,
+    blocks: bool = False,
 ) -> tuple[Optional[Path], Optional[Path]]:
     """
     Main render entrypoint.
@@ -95,7 +206,7 @@ def render(
 
     # --- Book mode (YAML metadata) ---
     if src.suffix.lower() in (".yml", ".yaml"):
-        return render_book_yaml(
+        pdf_path, html_path = render_book_yaml(
             src,
             timeout=timeout,
             omit_toc=omit_toc,
@@ -112,6 +223,9 @@ def render(
             html_math=html_math,
             html_embed_resources=html_embed_resources,
         )
+        if blocks:
+            print("[WARN] --blocks is not supported for book mode.")
+        return pdf_path, html_path
 
     # --- Normal (single .md) mode ---
     if as_is:
@@ -147,6 +261,13 @@ def render(
         pdf_path = src.with_suffix(".pdf") if make_pdf else None
         html_path = src.with_suffix(".html") if make_html else None
         epub_path = src.with_suffix(".epub") if make_epub else None
+
+        blocks_pandoc_md: Optional[Path] = None
+        blocks_html_path: Optional[Path] = None
+        if blocks:
+            blocks_pandoc_md = _blocks_pandoc_md_path(src)
+            blocks_text = _inline_math_to_blocks_md(text)
+            blocks_pandoc_md.write_text(blocks_text, encoding="utf-8")
 
         if make_pdf:
             out_pdf = tmpdir / "out.pdf"
@@ -192,6 +313,17 @@ def render(
             shutil.copy2(out_html, html_path)
             if not html_path.exists():
                 die(f"Expected HTML output missing: {html_path}")
+            if blocks and blocks_pandoc_md:
+                blocks_html_path = _render_blocks_html(
+                    blocks_pandoc_md,
+                    meta_args=[],
+                    shift_args=shift_args,
+                    common_args=common_args,
+                    timeout=timeout,
+                    css_path=None,
+                    verbose=verbose,
+                    html_embed_resources=html_embed_resources,
+                )
 
         if make_epub:
             out_epub = tmpdir / "out.epub"
@@ -219,6 +351,8 @@ def render(
             [
                 ("PDF", pdf_path if make_pdf else None),
                 ("HTML", html_path if make_html else None),
+                ("Blocks Pandoc MD", blocks_pandoc_md if blocks else None),
+                ("HTML Blocks", blocks_html_path if blocks else None),
                 ("EPUB", epub_path if make_epub else None),
             ]
         )
@@ -252,6 +386,14 @@ def render(
     pdf_path = src.with_suffix(".pdf") if make_pdf else None
     html_path = src.with_suffix(".html") if make_html else None
     epub_path = src.with_suffix(".epub") if make_epub else None
+    blocks_pandoc_md: Optional[Path] = None
+    blocks_html_path: Optional[Path] = None
+    if blocks:
+        blocks_pandoc_md = _blocks_pandoc_md_path(final_pandoc_md)
+        blocks_src_text = final_pandoc_md.read_text(encoding="utf-8")
+        blocks_pandoc_md.write_text(
+            _inline_math_to_blocks_md(blocks_src_text), encoding="utf-8"
+        )
 
     if make_pdf:
         out_pdf = in_tmp.parent / "out.pdf"
@@ -299,6 +441,17 @@ def render(
         if not html_path.exists():
             die(f"Expected HTML output missing: {html_path}")
         _inline_css(html_path, css_path)
+        if blocks and blocks_pandoc_md:
+            blocks_html_path = _render_blocks_html(
+                blocks_pandoc_md,
+                meta_args=meta_args,
+                shift_args=shift_args,
+                common_args=common_args,
+                timeout=timeout,
+                css_path=css_path,
+                verbose=verbose,
+                html_embed_resources=html_embed_resources,
+            )
         if css_path and css_path.exists():
             try:
                 shutil.copy2(css_path, html_path.parent / css_path.name)
@@ -332,6 +485,8 @@ def render(
         [
             ("PDF", pdf_path if make_pdf else None),
             ("HTML", html_path if make_html else None),
+            ("Blocks Pandoc MD", blocks_pandoc_md if blocks else None),
+            ("HTML Blocks", blocks_html_path if blocks else None),
             ("EPUB", epub_path if make_epub else None),
             ("Pandoc MD", final_pandoc_md),
         ]
@@ -412,6 +567,11 @@ def main(argv=None):
         action="store_true",
         help="Render HTML math as images and embed resources (alias for --html-math=webtex --html-embed-resources).",
     )
+    ap.add_argument(
+        "--blocks",
+        action="store_true",
+        help="Also write .blocks.pandoc.md and .blocks.html with inline math rewritten as $$...$$.",
+    )
 
     g = ap.add_mutually_exclusive_group()
     g.add_argument("--pdf", action="store_true", help="Render PDF only.")
@@ -455,6 +615,7 @@ def main(argv=None):
             verbose=args.verbose,
             html_math=html_math,
             html_embed_resources=html_embed_resources,
+            blocks=args.blocks,
         )
     except SystemExit:
         raise
