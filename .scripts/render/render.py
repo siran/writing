@@ -238,7 +238,7 @@ def render(
             text = replace_unicode_superscripts(text)
         in_tmp.write_text(text, encoding="utf-8")
 
-        reader = "markdown+tex_math_dollars+raw_tex"
+        reader = "markdown+tex_math_dollars+raw_tex+autolink_bare_uris"
         if _is_fdn_md(src):
             reader += "+superscript"
 

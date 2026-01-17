@@ -715,7 +715,7 @@ def prepare_preprocessed(
         shift = 0
     shift_args = ["--shift-heading-level-by", str(shift)] if shift != 0 else []
 
-    reader = "markdown+yaml_metadata_block+tex_math_dollars+raw_tex"
+    reader = "markdown+yaml_metadata_block+tex_math_dollars+raw_tex+autolink_bare_uris"
     if src.name.lower().endswith(".fdn.md"):
         reader += "+superscript"
     toc_flag: List[str] = [] if (omit_toc or has_toc_marker) else ["--toc"]
