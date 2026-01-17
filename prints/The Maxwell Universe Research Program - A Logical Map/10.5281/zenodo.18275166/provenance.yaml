@@ -1,0 +1,81 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: The Maxwell Universe Research Program — A Logical Map
+doi: 10.5281/zenodo.18275166
+concept_doi: null
+permalink: "https://writing.preferredframe.com/prints/The Maxwell Universe Research Program - A Logical Map/10.5281/zenodo.18275166/"
+publication_date: '2026-01-16'
+publication_year: '2026'
+keywords:
+- Maxwell Universe
+- research program map
+- continuity equation
+- divergence-free flow
+- electromagnetic foundations
+- topology
+- minimal dynamics
+one_sentence_summary: A complete logical map of the Maxwell Universe Research Program, organizing its output documents by sections, claims, dependencies, and production status.
+abstract: This document provides a systematic, section-by-section map of the Maxwell Universe Research Program. Each output document is identified by its title and production status (published with DOI or in preparation). For every major section, we list its key claims, logical dependencies, consequences for later documents, and current status. The purpose is to preserve conceptual continuity, make dependencies explicit, and provide a stable reference point for extension and critique.
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+- name: Alex Mercer
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: The Maxwell Universe Research Program — A Logical Map
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  - name: Alex Mercer
+  description: This document provides a systematic, section-by-section map of the Maxwell Universe Research Program. Each output document is identified by its title and production status (published with DOI or in preparation). For every major section, we list its key claims, logical dependencies, consequences for later documents, and current status. The purpose is to preserve conceptual continuity, make dependencies explicit, and provide a stable reference point for extension and critique.
+  keywords:
+  - Maxwell Universe
+  - research program map
+  - continuity equation
+  - divergence-free flow
+  - electromagnetic foundations
+  - topology
+  - minimal dynamics
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-16'
+  license: cc-by-nc-nd-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/The Maxwell Universe Research Program - A Logical Map/10.5281/zenodo.18275166/The Maxwell Universe Research Program - A Logical Map.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/The Maxwell Universe Research Program - A Logical Map/10.5281/zenodo.18275166/The Maxwell Universe Research Program - A Logical Map.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/The Maxwell Universe Research Program - A Logical Map/10.5281/zenodo.18275166/The Maxwell Universe Research Program - A Logical Map.pdf"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/The Maxwell Universe Research Program - A Logical Map/10.5281/zenodo.18275166/The Maxwell Universe Research Program - A Logical Map.embed.html"
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: A complete logical map of the Maxwell Universe Research Program, organizing its output documents by sections, claims, dependencies, and production status.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: 22bdbead69bba9a437d3fa10129cfa77cfb8c2fb
+  filename: The Maxwell Universe Research Program - A Logical Map.md
+artifacts:
+  md: The Maxwell Universe Research Program - A Logical Map.md
+  md_url: "https://writing.preferredframe.com/prints/The Maxwell Universe Research Program - A Logical Map/10.5281/zenodo.18275166/The Maxwell Universe Research Program - A Logical Map.md"
+  pandoc_md_name: The Maxwell Universe Research Program - A Logical Map.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/The Maxwell Universe Research Program - A Logical Map/10.5281/zenodo.18275166/The Maxwell Universe Research Program - A Logical Map.pandoc.md"
+  pdf_name: The Maxwell Universe Research Program - A Logical Map.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/The Maxwell Universe Research Program - A Logical Map/10.5281/zenodo.18275166/The Maxwell Universe Research Program - A Logical Map.pdf"
+  html_name: The Maxwell Universe Research Program - A Logical Map.html
+  html_url: "https://writing.preferredframe.com/prints/The Maxwell Universe Research Program - A Logical Map/10.5281/zenodo.18275166/The Maxwell Universe Research Program - A Logical Map.html"
+  primary: md
+  embed_html_name: The Maxwell Universe Research Program - A Logical Map.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/The Maxwell Universe Research Program - A Logical Map/10.5281/zenodo.18275166/The Maxwell Universe Research Program - A Logical Map.embed.html"
