@@ -178,25 +178,25 @@ limitation of a Newtonian approximation.
 
 ## 7. Statement relative to the Clay problem
 
-The original conditions of the Clay problem are physically unrealizable. As a
-math excercise it might be interesting construct to "resolve".
+The original formulation of the Clay Millennium Problem is purely mathematical
+and permits flow regimes that are physically unrealizable, including unbounded
+transport speed and instantaneous energy delivery.
 
-However, we don't think that Clay Institute of Mathematical *Physics* is solely
-interested in the unphysical nauture of the flow-problem as was initially
-proposed by Navier and Stokes hundreds of years ago.
+As a mathematical exercise, the problem is well posed. As a statement about
+physical fluids, it is not.
 
-And thus, we sidestep the mathematical connundrum and instead solve the real
-physical problem of flow, showing that water doesn't blow up because *effects*
-need to be *caused*, and *causality* has a characteristic speed -- c, like
-dominoes falling.
+Rather than attempting to resolve the mathematical question within an unphysical
+Newtonian abstraction, we address the physical phenomenon the equations were
+intended to model. When flow is understood as continuous, causally bounded
+energy transport, finite-time blow-up is excluded on purely geometric grounds.
 
-So, we instead assert:
+We therefore assert:
 
 > The physical phenomenon Navier–Stokes attempts to model—water flow—cannot blow
 > up, because energy transport is continuous and causally bounded.
 
 
-Any mathematical model that allows unbounded transport speed necessarily admits
+Any mathematical model that permits unbounded transport speed necessarily admits
 unphysical singularities.
 
 
