@@ -17,14 +17,13 @@ statement about physical fluids.
 The Navier–Stokes equations are a Newtonian approximation that permits
 arbitrarily fast transport of momentum and energy. In contrast, all observed
 fluids transport energy continuously and causally. We show that once flow is
-reconceptualized as bounded energy transport—expressed solely through continuity
-and a causal flux bound—finite-time blow-up is kinematically impossible. The
-conclusion is not a conventional proof within the Navier–Stokes axioms, but a
-physical resolution: water does not blow up because it flows, and flow is
-causally bounded.
+reconceptualized as bounded energy transport —expressed solely through
+continuity and a causal flux bound— finite-time blow-up is kinematically
+impossible. The conclusion is a physical resolution of the flow problem: water
+does not blow up because it flows, and flow is causally bounded.
 
 
-## 1. The Clay problem and its hidden assumption
+## The Clay problem and its hidden assumption
 
 The incompressible Navier–Stokes equations on $\mathbb{R}^3$ are
 
@@ -46,10 +45,13 @@ large amounts of energy or momentum into an arbitrarily small region.
 This assumption is mathematical, not physical.
 
 
-## 2. Flow as energy transport
+## Flow as energy transport
 
 In physical fluids, what is observed is not an abstract velocity field but the
 transport of energy.
+
+To avoid confusion with the Navier–Stokes velocity, we emphasize that in what
+follows $u(x,t)$ denotes **energy density**, not velocity.
 
 We therefore take as primitive:
 
@@ -60,7 +62,7 @@ related by the continuity equation
 
 $$
 \partial_t u + \nabla\cdot S = 0.
-\tag{2.1}
+\tag{1}
 $$
 
 This equation expresses local bookkeeping: changes in energy density are
@@ -70,7 +72,7 @@ Continuity alone does not prescribe how energy moves, but it constrains any
 admissible evolution.
 
 
-## 3. The only empirical bound: causal transport
+## The only empirical bound: causal transport
 
 All observed energy transport satisfies a causal bound: energy does not
 propagate faster than a maximal speed $c$.
@@ -80,7 +82,7 @@ Operationally, this is expressed as
 $$
 |S(x,t)| \le c\,u(x,t)
 \quad \text{for all } (x,t).
-\tag{3.1}
+\tag{2}
 $$
 
 This inequality is not an axiom added for convenience; it is an empirical fact
@@ -90,25 +92,25 @@ Defining the flow velocity by
 
 $$
 v(x,t) := \frac{S(x,t)}{u(x,t)} \quad (u>0),
-\tag{3.2}
+\tag{3}
 $$
 
 we obtain immediately
 
 $$
 |v(x,t)| \le c.
-\tag{3.3}
+\tag{4}
 $$
 
 Thus, physical flow is a transport process with bounded speed.
 
 
-## 4. Why continuity plus a speed bound forbids blow-up
+## Why continuity plus a speed bound forbids blow-up
 
 Finite-time blow-up would require the concentration of a nonzero amount of
 energy into an arbitrarily small region in finite time.
 
-Let $\Omega\subset\mathbb{R}^3$ be any bounded region. Integrating (2.1) gives
+Let $\Omega\subset\mathbb{R}^3$ be any bounded region. Integrating (1) gives
 
 $$
 \frac{d}{dt}\int_\Omega u\,dx
@@ -118,7 +120,7 @@ $$
 \int_{\partial\Omega} |S|\,d\sigma
 \le
 c\int_{\partial\Omega} u\,d\sigma.
-\tag{4.1}
+\tag{5}
 $$
 
 This inequality bounds the rate at which energy can enter $\Omega$ by a
@@ -142,7 +144,7 @@ $$
 so that a finite amount of energy accumulates at a point.
 
 But then the required inflow rate would scale like $r^{-1}$, which is
-incompatible with the surface bound in (4.1).
+incompatible with the surface bound in (5).
 
 Therefore:
 
@@ -150,11 +152,12 @@ Therefore:
 > singularity if transport speed is bounded.
 
 
-This conclusion uses only continuity and the causal inequality (3.1). No
-constitutive law, viscosity, or smoothness assumption is required.
+This argument is purely geometric and kinematic. It relies only on continuity
+and the causal bound (2), and does not invoke viscosity, smoothness, or any
+constitutive law.
 
 
-## 6. Reconceptualizing Navier–Stokes
+## Reconceptualizing Navier–Stokes
 
 The Navier–Stokes equations allow velocity fields with no intrinsic speed limit.
 As a result, they permit mathematical scenarios in which energy is delivered to
@@ -176,7 +179,7 @@ Thus, the Millennium Problem does not describe a mystery of nature, but a
 limitation of a Newtonian approximation.
 
 
-## 7. Statement relative to the Clay problem
+## Statement relative to the Clay problem
 
 The original formulation of the Clay Millennium Problem is purely mathematical
 and permits flow regimes that are physically unrealizable, including unbounded
@@ -200,7 +203,7 @@ Any mathematical model that permits unbounded transport speed necessarily admits
 unphysical singularities.
 
 
-## 8. Conclusion
+## Conclusion
 
 Water does not blow up because it flows.
 
