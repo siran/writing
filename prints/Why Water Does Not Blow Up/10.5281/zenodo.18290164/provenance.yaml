@@ -1,0 +1,87 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: Why Water Does Not Blow Up
+doi: 10.5281/zenodo.18290164
+concept_doi: null
+permalink: "https://writing.preferredframe.com/prints/Why Water Does Not Blow Up/10.5281/zenodo.18290164/"
+publication_date: '2026-01-18'
+publication_year: '2026'
+keywords:
+- Navier–Stokes
+- Millennium Prize Problem
+- continuity equation
+- energy flow
+- causal transport
+- Maxwell universe
+- blow-up
+one_sentence_summary: The Navier–Stokes blow-up problem arises from a Newtonian abstraction that ignores the causal nature of energy transport; when flow is reconceptualized as bounded, continuous energy transport, finite-time blow-up is excluded for physical fluids.
+abstract: 'The Clay Millennium Problem on the global regularity of the three-dimensional incompressible Navier–Stokes equations asks whether smooth initial data can develop finite-time singularities. We argue that this question is ill-posed as a statement about physical fluids.
+
+
+  The Navier–Stokes equations are a Newtonian approximation that permits arbitrarily fast transport of momentum and energy. In contrast, all observed fluids transport energy continuously and causally. We show that once flow is reconceptualized as bounded energy transport —expressed solely through continuity and a causal flux bound— finite-time blow-up is kinematically impossible. The conclusion is a physical resolution of the flow problem: water does not blow up because it flows, and flow is causally bounded.'
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+- name: Alex Mercer
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: Why Water Does Not Blow Up
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  - name: Alex Mercer
+  description: 'The Clay Millennium Problem on the global regularity of the three-dimensional incompressible Navier–Stokes equations asks whether smooth initial data can develop finite-time singularities. We argue that this question is ill-posed as a statement about physical fluids.
+
+
+    The Navier–Stokes equations are a Newtonian approximation that permits arbitrarily fast transport of momentum and energy. In contrast, all observed fluids transport energy continuously and causally. We show that once flow is reconceptualized as bounded energy transport —expressed solely through continuity and a causal flux bound— finite-time blow-up is kinematically impossible. The conclusion is a physical resolution of the flow problem: water does not blow up because it flows, and flow is causally bounded.'
+  keywords:
+  - Navier–Stokes
+  - Millennium Prize Problem
+  - continuity equation
+  - energy flow
+  - causal transport
+  - Maxwell universe
+  - blow-up
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-18'
+  license: cc-by-nc-nd-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Why Water Does Not Blow Up/10.5281/zenodo.18290164/Why Water Does Not Blow Up.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Why Water Does Not Blow Up/10.5281/zenodo.18290164/Why Water Does Not Blow Up.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Why Water Does Not Blow Up/10.5281/zenodo.18290164/Why Water Does Not Blow Up.pdf"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Why Water Does Not Blow Up/10.5281/zenodo.18290164/Why Water Does Not Blow Up.embed.html"
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: The Navier–Stokes blow-up problem arises from a Newtonian abstraction that ignores the causal nature of energy transport; when flow is reconceptualized as bounded, continuous energy transport, finite-time blow-up is excluded for physical fluids.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: 7f294d2bf5b734bba0d6bd55b4dc0d5abd952a15
+  filename: Why Water Does Not Blow Up.md
+artifacts:
+  md: Why Water Does Not Blow Up.md
+  md_url: "https://writing.preferredframe.com/prints/Why Water Does Not Blow Up/10.5281/zenodo.18290164/Why Water Does Not Blow Up.md"
+  pandoc_md_name: Why Water Does Not Blow Up.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/Why Water Does Not Blow Up/10.5281/zenodo.18290164/Why Water Does Not Blow Up.pandoc.md"
+  pdf_name: Why Water Does Not Blow Up.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/Why Water Does Not Blow Up/10.5281/zenodo.18290164/Why Water Does Not Blow Up.pdf"
+  html_name: Why Water Does Not Blow Up.html
+  html_url: "https://writing.preferredframe.com/prints/Why Water Does Not Blow Up/10.5281/zenodo.18290164/Why Water Does Not Blow Up.html"
+  primary: md
+  embed_html_name: Why Water Does Not Blow Up.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/Why Water Does Not Blow Up/10.5281/zenodo.18290164/Why Water Does Not Blow Up.embed.html"
