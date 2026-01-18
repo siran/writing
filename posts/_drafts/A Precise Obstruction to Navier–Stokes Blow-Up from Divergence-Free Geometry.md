@@ -1,5 +1,5 @@
 ---
-title: A Precise Obstruction to Navier–Stokes Blow-Up from Divergence-Free Geometry
+title: ×
 subtitle: What “Divergence-Free + Curl Structure” Does (and Does Not) Forbid in 3D Incompressible Flow
 author: An M. Rodriguez, Alex Mercer
 date: 2026-01-17

@@ -32,8 +32,6 @@ We claim:
 “Fractal” here means: the set supporting most of the activity has a scaling law
 with non-integer dimension.
 
----
-
 
 ## Assumptions
 
