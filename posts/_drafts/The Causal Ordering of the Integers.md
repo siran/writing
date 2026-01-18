@@ -13,7 +13,7 @@ summary: We introduce a novel ordering of the natural numbers $\mathbb{N}$ based
 ### 1.1 The Causal Timeline
 
 We posit a discrete time variable $t \in \mathbb{N}_0$ representing "Generation
-Eras." At $t=0$, the Universe is empty except for the identity.
+Eras." At $t=0$, the Universe is empty except for the identity:
 
 $$
 U_0 = \{1\}
@@ -22,15 +22,10 @@ $$
 
 ### 1.2 The Injection Axiom (The Spark)
 
-At each time step $t \ge 1$, we introduce exactly one new element —the
-smallest integer not yet generated— to the universe. This element is the "Prime
-of the Era."
-
-Let $P_t$ be the smallest integer such that
-
-$$
-P_t \notin U_{t-1}
-$$
+At each time step $t \ge 1$, we introduce exactly one new element—the
+smallest integer not yet generated—to the universe. This element is the "Prime
+of the Era." Let $P_t$ be the smallest integer such that
+$P_t \notin U_{t-1}$.
 
 $$
 U_{t} = U_{t-1} \cup \{P_t\}
@@ -45,19 +40,8 @@ $t$-th prime ($p_t$).
 
 Upon the injection of $P_t$, the universe instantaneously expands to
 include all integers that can be formed by multiplying $P_t$ with
-existing elements.
-
-Formally, if
-
-$$
-n \in U_{t}
-$$
-
-then
-
-$$
-(n \cdot P_t) \in U_{t}
-$$
+existing elements. Formally, if $n \in U_{t}$, then
+$(n \cdot P_t) \in U_{t}$.
 
 By induction, $U_t$ contains all integers whose prime factors are
 subsets of $\{p_1, p_2, \dots, p_t\}$.
@@ -67,7 +51,7 @@ subsets of $\{p_1, p_2, \dots, p_t\}$.
 
 We define the **Causal Depth** (or "Birth Era") of an integer $n$,
 denoted $\tau(n)$, as the time step $t$ in which
-$n$ first appears in $U_t$.
+$n$ first appears in $U_t$:
 
 $$
 \tau(n) = \min \{ t \mid n \in U_t \}
@@ -82,9 +66,9 @@ $$
 $$
 
 (where $i_k$ is the index of the prime, e.g.,
-$\tau(2)=1, \tau(3)=2, \tau(5)=3$).
+$\tau(2)=1, \tau(3)=2, \tau(5)=3$). For convention, $\tau(1) = 0$.
 
-For convention, $\tau(1) = 0$.
+---
 
 
 ## 2. Structural Analysis
@@ -92,17 +76,13 @@ For convention, $\tau(1) = 0$.
 ### 2.1 The Inversion of Magnitude
 
 The standard ordering $<$ is based on magnitude ($n$
-vs $n+1$). The causal ordering $\prec$ is based on depth
-($\tau(n)$ vs $\tau(m)$). This leads to inversions where larger
-numbers are "older" (causally prior) than smaller numbers.
+vs $n+1$), while the causal ordering $\prec$ is based on
+depth ($\tau(n)$ vs $\tau(m)$). This leads to inversions where
+larger numbers are "older" (causally prior) than smaller numbers.
 
-* **Example:**
-
-Let $n = 1024 = 2^{10}$ and $m = 5$.
-
-* $\tau(1024) = \tau(2) = 1$. (Born in Era 1).
-
-* $\tau(5) = 3$. (Born in Era 3).
+For example, let $n = 1024 = 2^{10}$ and $m = 5$:
+* $\tau(1024) = \tau(2) = 1$ (Born in Era 1).
+* $\tau(5) = 3$ (Born in Era 3).
 
 Therefore, $1024 \prec 5$. The number 1024 is constructed before the number 5
 exists.
@@ -111,39 +91,28 @@ exists.
 ### 2.2 The Density of Eras
 
 Let $N(t, X)$ be the count of integers $n \le X$ such that
-$\tau(n) = t$.
+$\tau(n) = t$. This corresponds to the count of $t$-smooth
+numbers that are not $(t-1)$-smooth.
 
-This corresponds to the count of $t$-smooth numbers that are not
-$(t-1)$-smooth.
-
-* **Observation:**
-
-The "Population Curve" decays roughly as $1/t$.
-
-* **Implication:**
-
-The "Early Universe of Causal Natural Number" (Eras 1–10) generates the vast
-majority of small integers.
-
-The "Late Universe" (Eras > 1000) generates numbers sparsely.
-
-This confirms the "Cooling Universe" hypothesis in a combinatorial sense:
-
-entropy (new prime injection) becomes rarer as magnitude increases.
+The "Population Curve" decays roughly as $1/t$. This implies that the
+"Early Universe of Causal Natural Numbers" (Eras 1–10) generates the vast
+majority of small integers, while the "Late Universe" (Eras > 1000) generates
+numbers sparsely. This confirms the **"Cooling Universe"** hypothesis in a
+combinatorial sense: entropy (new prime injection) becomes rarer as magnitude
+increases.
 
 
 ### 2.3 Spectral Analysis
 
 The Fourier Transform of the signal $S(n) = \tau(n)$ reveals that the Number
 Line is a superposition of periodic waves.
-
 * The dominant frequency is $f=1/2$ (Period 2), corresponding to
   $\tau(n)=1$ (Evens).
-
 * The spectrum consists of spikes at frequencies $f_k = 1/p_k$, representing
   the "Prime Harmonics."
-
 * Magnitude is the interference pattern of these causal frequencies.
+
+---
 
 
 ## 3. Practical Applications
@@ -153,24 +122,16 @@ Line is a superposition of periodic waves.
 We propose $\tau(n)$ as a metric for detecting artificial or engineered
 data within large numerical datasets.
 
-- **Hypothesis:**
+**Hypothesis:** Human systems (engineering, finance, architecture) utilize
+integers with low Causal Depth (highly composite numbers, powers of 2/10).
+Nature (stochastic processes) utilizes integers with high Causal Depth (randomly
+distributed prime factors).
 
-Human systems (engineering, finance, architecture) utilize integers with low
-Causal Depth (highly composite numbers, powers of 2/10). Nature (stochastic
-processes) utilizes integers with high Causal Depth (randomly distributed prime
-factors).
-
-- **Validation:**
-
-In our simulation, we generated two datasets of magnitude $N \approx 10^6$.
-
--  **Structured Data (Machine):** Mean $\tau \approx 5.7$.
-
--  **Random Data (Noise):** Mean $\tau \approx 5738$.
-
--  **Separation:** ~1000x.
-
-- **Use Case:**
+**Validation:** In our simulation, we generated two datasets of magnitude
+$N \approx 10^6$.
+* **Structured Data (Machine):** Mean $\tau \approx 5.7$.
+* **Random Data (Noise):** Mean $\tau \approx 5738$.
+* **Separation:** ~1000x.
 
 This allows for $O(1)$ discrimination between signal and noise without
 needing context or metadata.
@@ -182,36 +143,23 @@ While standard compression (ZIP/LZ77) focuses on syntactic repetition (bit
 patterns), Causal Ordering enables **Semantic Compression** for structured
 numerical data.
 
-- **Method:**
-
-Represent integer $n$ as the tuple $(\tau(n), \text{residue})$.
-
-- **Efficiency:**
-
-For datasets dominated by "Old" numbers (e.g., scientific constants, harmonics),
-the entropy of the $\tau$ stream is near zero, allowing massive
-compression ratios unavailable to bit-wise algorithms.
-
-- **Constraint:**
-
-This method is inefficient for "Young" numbers (cryptographic keys, random
-noise), correctly identifying them as incompressible high-entropy objects.
+By representing integer $n$ as the tuple
+$(\tau(n), \text{residue})$, we achieve massive compression ratios for datasets
+dominated by "Old" numbers (e.g., scientific constants, harmonics), where the
+entropy of the $\tau$ stream is near zero. Conversely, this method
+correctly identifies "Young" numbers (cryptographic keys, random noise) as
+incompressible high-entropy objects.
 
 
 ### 3.3 Cryptographic Steganography
 
-The "Causal Void" provides a method for hiding information.
+The "Causal Void" provides a method for hiding information. By embedding a
+message only in numbers with a specific, high Causal Depth (e.g., "Only numbers
+born in Era 137"), the hidden channel remains invisible to standard statistical
+analysis (magnitude distribution, Benford's Law). The message is visible only to
+an observer who sorts the data by $\tau(n)$.
 
-- **Concept:**
-
-Embed a message only in numbers with a specific, high Causal Depth (e.g., "Only
-numbers born in Era 137").
-
-- **Invisibility:**
-
-To a standard statistical analysis (magnitude distribution, Benford's Law), the
-data appears normal. The hidden channel is visible only to an observer who sorts
-the data by $\tau(n)$.
+---
 
 
 ## 4. Conclusion
