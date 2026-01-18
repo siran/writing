@@ -195,8 +195,8 @@ energy transport, finite-time blow-up is excluded on purely geometric grounds.
 
 We therefore assert:
 
-> The physical phenomenon Navier–Stokes attempts to model—water flow—cannot blow
-> up, because energy transport is continuous and causally bounded.
+> The physical phenomenon Navier–Stokes attempts to model —water flow— cannot
+> blow up, because energy transport is continuous and causally bounded.
 
 
 Any mathematical model that permits unbounded transport speed necessarily admits
