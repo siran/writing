@@ -3,3 +3,7 @@ pyyaml
 markdown-it-py
 requests
 panflute
+numpy
+matplotlib
+scipy
+sympy
