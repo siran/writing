@@ -8,9 +8,9 @@ summary: We introduce a novel ordering of the natural numbers $\mathbb{N}$ based
 keywords: Number Theory, Causal Ordering, Signal Processing, Feature Extraction, Prime Factorization, Entropy, Semantic Compression
 ---
 
-## 1. Definitions and Axioms
+## Definitions and Axioms
 
-### 1.1 The Causal Timeline
+### The Causal Timeline
 
 We posit a discrete time variable $t \in \mathbb{N}_0$ representing "Generation
 Eras." At $t=0$, the Universe is empty except for the identity:
@@ -20,7 +20,7 @@ U_0 = \{1\}
 $$
 
 
-### 1.2 The Injection Axiom (The Spark)
+### The Injection Axiom (The Spark)
 
 At each time step $t \ge 1$, we introduce exactly one new element —the
 smallest integer not yet generated— to the universe. This element is the "Prime
@@ -37,7 +37,7 @@ standard sense. Thus, time $t$ corresponds to the index of the
 $t$-th prime ($p_t$).
 
 
-### 1.3 The Generation Axiom (The Avalanche)
+### The Generation Axiom (The Avalanche)
 
 Upon the injection of $P_t$, the universe instantaneously expands to
 include all integers that can be formed by multiplying $P_t$ with
@@ -48,7 +48,7 @@ By induction, $U_t$ contains all integers whose prime factors are
 subsets of $\{p_1, p_2, \dots, p_t\}$.
 
 
-### 1.4 Causal Depth ($\tau$)
+### Causal Depth ($\tau$)
 
 We define the **Causal Depth** (or "Birth Era") of an integer $n$,
 denoted $\tau(n)$, as the time step $t$ in which
@@ -70,9 +70,9 @@ $$
 $\tau(2)=1, \tau(3)=2, \tau(5)=3$). For convention, $\tau(1) = 0$.
 
 
-## 2. Structural Analysis
+## Structural Analysis
 
-### 2.1 The Inversion of Magnitude
+### The Inversion of Magnitude
 
 The standard ordering $<$ is based on magnitude ($n$
 vs $n+1$), while the causal ordering $\prec$ is based on
@@ -80,14 +80,15 @@ depth ($\tau(n)$ vs $\tau(m)$). This leads to inversions where
 larger numbers are "older" (causally prior) than smaller numbers.
 
 For example, let $n = 1024 = 2^{10}$ and $m = 5$:
-* $\tau(1024) = \tau(2) = 1$ (Born in Era 1).
+
+* $\tau(1024) = 1$ (Born in Era 1).
 * $\tau(5) = 3$ (Born in Era 3).
 
 Therefore, $1024 \prec 5$. The number 1024 is constructed before the number 5
 exists.
 
 
-### 2.2 The Density of Eras
+### The Density of Eras
 
 Let $N(t, X)$ be the count of integers $n \le X$ such that
 $\tau(n) = t$. This corresponds to the count of $t$-smooth
