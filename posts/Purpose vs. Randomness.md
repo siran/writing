@@ -19,6 +19,7 @@ We define **Purpose** as:
 
 
 This definition applies equally to:
+
 - Living systems
 - Civilizations
 - Long-lived artifacts
@@ -26,6 +27,7 @@ This definition applies equally to:
 - Post-biological systems
 
 And excludes:
+
 - Rocks
 - Stars
 - Thermal noise
@@ -109,6 +111,7 @@ $$
 $$
 
 Interpretation:
+
 - $\mathcal{P} = 0$ dB: indistinguishable from entropy (Randomness)
 - $\mathcal{P} > 0$: suppressed novelty
 - $\mathcal{P} \gg 1$: cost-paid persistence (Purpose)
@@ -203,6 +206,7 @@ structure.
 ## Scale Invariance
 
 Scatter plots of $\mathcal{P}$ versus $N$ show:
+
 - No systematic dependence on magnitude
 - A dense thermal floor at 0 dB
 - Sparse, magnitude-independent high-purpose spikes
@@ -239,6 +243,7 @@ This reframes the classical question:
 
 
 Life, artifacts, and enduring systems are detected as:
+
 - Persistent reuse of a small generative alphabet
 - Maintenance of structure far beyond stochastic expectation
 
@@ -264,8 +269,5 @@ not**.
 - N. G. de Bruijn, *On the number of positive integers ≤ x and free of prime
   factors > y*, 1951.
 - T. M. Cover, J. A. Thomas, *Elements of Information Theory*, Wiley, 2006.
-
----
-
-*Software implementing all analyses and figures is released separately as
-**Acausal Purpose Scanner (v7.4)**.*
+- E. Thorne, *Acausal Purpose Scanner (v8.2)* [Source Code], GitHub Gist, 2026.
+  <https://gist.github.com/siran/9ebc10c839c4fd760ab024f2c0fd727e>
