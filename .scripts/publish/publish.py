@@ -42,6 +42,36 @@ from zenodo_api import (
 )
 
 DEFAULT_ORCID = "0009-0009-9098-9468"
+MAX_EXTRA_ASSET_BYTES = 1024 * 1024
+
+ASSET_TYPE_ALIASES = {
+    "code": "software",
+    "script": "software",
+}
+RELATED_RESOURCE_TYPES = {
+    "dataset",
+    "image",
+    "lesson",
+    "other",
+    "physicalobject",
+    "poster",
+    "presentation",
+    "publication",
+    "publication-article",
+    "publication-book",
+    "publication-preprint",
+    "software",
+    "video",
+}
+
+
+@dataclass
+class ExtraAsset:
+    src: Path
+    asset_type: Optional[str] = None
+    name: Optional[str] = None
+    final_path: Optional[Path] = None
+    assets_url: Optional[str] = None
 
 
 # ---------------- git helpers ----------------
@@ -516,6 +546,20 @@ def parse_args():
         help="Subdirectory under the assets repo/base-url (default: preferredframe).",
     )
     ap.add_argument(
+        "--add-asset",
+        action="append",
+        default=[],
+        help="Add an extra file to the Zenodo deposit (repeatable, <=1MB).",
+    )
+    ap.add_argument(
+        "--asset-type",
+        default=None,
+        help=(
+            "Type for extra assets (e.g. Software). Maps to Zenodo related "
+            "resource_type."
+        ),
+    )
+    ap.add_argument(
         "--no-assets-push",
         action="store_true",
         help="Do not push the assets repo (default: push).",
@@ -587,6 +631,60 @@ def _split_csv_arg(raw: Optional[str]) -> List[str]:
     if not raw:
         return []
     return [s.strip() for s in raw.split(",") if s.strip()]
+
+
+def _normalize_asset_type(raw: Optional[str]) -> str:
+    s = (raw or "").strip().lower()
+    if not s:
+        return ""
+    s = s.replace("_", "-").replace(" ", "-")
+    s = re.sub(r"-{2,}", "-", s).strip("-")
+    return ASSET_TYPE_ALIASES.get(s, s)
+
+
+def _asset_resource_type(asset_type: Optional[str]) -> Optional[str]:
+    if not asset_type:
+        return None
+    norm = _normalize_asset_type(asset_type)
+    return norm if norm in RELATED_RESOURCE_TYPES else None
+
+
+def _parse_extra_assets(raw_paths: List[str], asset_type: Optional[str]) -> List[ExtraAsset]:
+    if not raw_paths:
+        return []
+
+    if not asset_type:
+        die(
+            "--asset-type is required when using --add-asset "
+            "(example: --asset-type Software)"
+        )
+
+    resource_type = _asset_resource_type(asset_type)
+    if not resource_type:
+        allowed = ", ".join(sorted(RELATED_RESOURCE_TYPES))
+        die(f"Unsupported --asset-type {asset_type!r}. Allowed: {allowed}")
+
+    assets: List[ExtraAsset] = []
+    seen_names = set()
+    for raw in raw_paths:
+        path_str = (raw or "").strip()
+        if not path_str:
+            continue
+        src = Path(path_str).expanduser().resolve()
+        if not src.exists():
+            die(f"--add-asset file not found: {src}")
+        if not src.is_file():
+            die(f"--add-asset is not a file: {src}")
+        size = src.stat().st_size
+        if size > MAX_EXTRA_ASSET_BYTES:
+            die(
+                f"--add-asset file too large (>1MB): {src} ({size} bytes)"
+            )
+        if src.name in seen_names:
+            die(f"--add-asset filename collision: {src.name}")
+        seen_names.add(src.name)
+        assets.append(ExtraAsset(src=src, asset_type=resource_type, name=src.name))
+    return assets
 
 
 def _apply_orcid_list(parsed: dict, orcids: List[str], *, warn_unused: bool = True) -> dict:
@@ -930,6 +1028,7 @@ def preview_actions(
     prov_path: Path,
     final_pdf: Path,
     final_epub: Optional[Path],
+    extra_assets: List[ExtraAsset],
     assets_prefix: str,
     stem: str,
     doi_prefix: str,
@@ -964,6 +1063,9 @@ def preview_actions(
         upload_list.append(final_embed_html)
     if final_epub is not None:
         upload_list.append(final_epub)
+    for asset in extra_assets:
+        if asset.final_path is not None:
+            upload_list.append(asset.final_path)
     for p in upload_list:
         echo(f" - {p.name}")
 
@@ -990,6 +1092,12 @@ def preview_actions(
                 f"  copy {final_epub} -> "
                 f"{args.assets_dir}/{assets_prefix}/{stem}/{doi_prefix}/{doi_suffix}/{final_epub.name}"
             )
+        for asset in extra_assets:
+            src = asset.final_path or asset.src
+            echo(
+                f"  copy {src} -> "
+                f"{args.assets_dir}/{assets_prefix}/{stem}/{doi_prefix}/{doi_suffix}/{asset.src.name}"
+            )
         echo("  git add <those files>")
         if not args.no_assets_push:
             echo("  git commit ...")
@@ -1001,10 +1109,14 @@ def preview_actions(
             f"(full metadata incl. related_identifiers)"
         )
         embed_label = ", embed.html" if final_embed_html is not None else ""
+        extra_label = (
+            f", {len(extra_assets)} extra asset(s)" if extra_assets else ""
+        )
         echo(
             "  PUT md, PDF, pandoc.md, html"
             + embed_label
             + (", epub" if final_epub is not None else "")
+            + extra_label
             + " to bucket"
         )
         echo("  POST /deposit/depositions/{id}/actions/publish")
@@ -1030,6 +1142,7 @@ def run_publish(args, ctx: PublishContext) -> None:
             die("Aborting: production environment not confirmed.")
 
     zenodo_enabled = not args.offline
+    extra_assets = _parse_extra_assets(args.add_asset, args.asset_type)
 
     # Preflight / context
     src_md, book_yaml, site_repo, src_commit, src_origin, site_base, subjournal = (
@@ -1290,6 +1403,18 @@ def run_publish(args, ctx: PublishContext) -> None:
     except Exception:
         pass
 
+    for asset in extra_assets:
+        dest = final_dir / asset.src.name
+        if dest.exists():
+            die(f"Extra asset would overwrite existing file: {dest}")
+        echo(f"+ copy {asset.src} -> {dest}")
+        shutil.copy2(asset.src, dest)
+        asset.final_path = dest
+        asset.assets_url = (
+            f"{args.assets_base_url.rstrip('/')}/{assets_prefix}/"
+            f"{stem}/{doi_prefix}/{doi_suffix}/{asset.src.name}"
+        )
+
     site_html_url = (
         f"{site_base}/{subjournal}/{stem}/{doi_prefix}/{doi_suffix}/{final_html.name}"
     )
@@ -1352,6 +1477,17 @@ def run_publish(args, ctx: PublishContext) -> None:
             }
         )
 
+    extra_related_identifiers = []
+    for asset in extra_assets:
+        if asset.assets_url and asset.asset_type:
+            extra_related_identifiers.append(
+                {
+                    "relation": "isIdenticalTo",
+                    "identifier": asset.assets_url,
+                    "resource_type": asset.asset_type,
+                }
+            )
+
     reference_related_identifiers = [
         {
             "relation": "cites",
@@ -1361,7 +1497,9 @@ def run_publish(args, ctx: PublishContext) -> None:
         for ref_url in parsed["reference_doi_urls"]
     ]
 
-    related_identifiers = self_related_identifiers + reference_related_identifiers
+    related_identifiers = (
+        self_related_identifiers + extra_related_identifiers + reference_related_identifiers
+    )
 
     # Notes must be non-empty; prefer one-sentence summary, then abstract, then title.
     notes_text = normalize_markdown_prose(parsed["one_sentence"])
@@ -1430,6 +1568,7 @@ def run_publish(args, ctx: PublishContext) -> None:
         prov_path,
         final_pdf,
         final_epub,
+        extra_assets,
         assets_prefix,
         stem,
         doi_prefix,
@@ -1467,6 +1606,10 @@ def run_publish(args, ctx: PublishContext) -> None:
             or p.suffix.lower() in {".md", ".pdf", ".html", ".epub"}
         )
     )
+    for asset in extra_assets:
+        if asset.final_path and asset.final_path not in upload_paths:
+            upload_paths.append(asset.final_path)
+    upload_paths = sorted(upload_paths, key=lambda p: p.name)
 
     echo("\n--- FILES TO UPLOAD TO ZENODO ---")
     for p in upload_paths:
@@ -1474,12 +1617,16 @@ def run_publish(args, ctx: PublishContext) -> None:
 
     # Commit site repo: stage non-binary artifacts only (.md/.html/.pandoc.md/.yml/.yaml/.json/.txt/.md).
     allowed_exts = {".md", ".html", ".yaml", ".yml", ".json", ".txt"}
+    extra_asset_paths = {
+        asset.final_path for asset in extra_assets if asset.final_path is not None
+    }
     files_to_stage = [
         p
         for p in final_dir.iterdir()
         if p.is_file()
         and not p.name.endswith(".embed.html")
         and (p.name.endswith(".pandoc.md") or p.suffix in allowed_exts)
+        and p not in extra_asset_paths
     ]
     if not files_to_stage:
         die(f"No files to stage in {final_dir}")
@@ -1603,6 +1750,21 @@ def run_publish(args, ctx: PublishContext) -> None:
             _copy_if_changed(final_epub, dest_epub)
             paths_to_add.append(os.path.relpath(dest_epub, assets_repo))
 
+        for asset in extra_assets:
+            if asset.final_path is None:
+                continue
+            size = asset.final_path.stat().st_size
+            if size > MAX_EXTRA_ASSET_BYTES:
+                die(
+                    f"Extra asset too large for assets repo (>1MB): "
+                    f"{asset.final_path} ({size} bytes)"
+                )
+            dest_asset = (
+                assets_repo / assets_prefix / stem / doi_prefix / doi_suffix / asset.final_path.name
+            )
+            _copy_if_changed(asset.final_path, dest_asset)
+            paths_to_add.append(os.path.relpath(dest_asset, assets_repo))
+
         run(["git", "add"] + paths_to_add, cwd=assets_repo)
         staged_paths = git_staged_paths(assets_repo)
         if not staged_paths:
@@ -1615,6 +1777,8 @@ def run_publish(args, ctx: PublishContext) -> None:
                 suffix_parts.append("embed.html")
             if final_epub is not None:
                 suffix_parts.append("epub")
+            if extra_assets:
+                suffix_parts.append("extra-assets")
             suffix = f", {', '.join(suffix_parts)}" if suffix_parts else ""
             run(
                 [
