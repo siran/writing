@@ -1,0 +1,81 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: The Causal Ordering of the Integers
+doi: 10.5281/zenodo.18302617
+concept_doi: 10.5281/zenodo.18302616
+permalink: "https://writing.preferredframe.com/prints/The Causal Ordering of the Integers/10.5281/zenodo.18302617/"
+publication_date: '2026-01-19'
+publication_year: '2026'
+keywords:
+- Number Theory
+- Causal Ordering
+- Signal Processing
+- Feature Extraction
+- Prime Factorization
+- Entropy
+- Semantic Compression
+one_sentence_summary: We introduce a causal ordering of integers based on the sequential discovery of prime factors, revealing a temporal structure that distinguishes semantic signal from stochastic noise.
+abstract: We introduce a novel ordering of the natural numbers $\mathbb{N}$ based on "causal generation" rather than magnitude. By defining the existence of a number as the moment its necessary prime factors are introduced, we reveal a hidden temporal structure to the number line. This structure separates integers into "low-entropy" (ancient/constructed) and "high-entropy" (young/random) classes. We demonstrate that this metric, "Causal Depth," serves as a potent feature for distinguishing semantic signals from stochastic noise.
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+- name: Alex Mercer
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: The Causal Ordering of the Integers
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  - name: Alex Mercer
+  description: We introduce a novel ordering of the natural numbers $\mathbb{N}$ based on "causal generation" rather than magnitude. By defining the existence of a number as the moment its necessary prime factors are introduced, we reveal a hidden temporal structure to the number line. This structure separates integers into "low-entropy" (ancient/constructed) and "high-entropy" (young/random) classes. We demonstrate that this metric, "Causal Depth," serves as a potent feature for distinguishing semantic signals from stochastic noise.
+  keywords:
+  - Number Theory
+  - Causal Ordering
+  - Signal Processing
+  - Feature Extraction
+  - Prime Factorization
+  - Entropy
+  - Semantic Compression
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-19'
+  license: cc-by-nc-nd-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/The Causal Ordering of the Integers/10.5281/zenodo.18302617/The Causal Ordering of the Integers.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/The Causal Ordering of the Integers/10.5281/zenodo.18302617/The Causal Ordering of the Integers.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/The Causal Ordering of the Integers/10.5281/zenodo.18302617/The Causal Ordering of the Integers.pdf"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/The Causal Ordering of the Integers/10.5281/zenodo.18302617/The Causal Ordering of the Integers.embed.html"
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: We introduce a causal ordering of integers based on the sequential discovery of prime factors, revealing a temporal structure that distinguishes semantic signal from stochastic noise.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: 4c39ff1ad51c698757255b1d6ad4b6672ed6fe5e
+  filename: The Causal Ordering of the Integers.md
+artifacts:
+  md: The Causal Ordering of the Integers.md
+  md_url: "https://writing.preferredframe.com/prints/The Causal Ordering of the Integers/10.5281/zenodo.18302617/The Causal Ordering of the Integers.md"
+  pandoc_md_name: The Causal Ordering of the Integers.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/The Causal Ordering of the Integers/10.5281/zenodo.18302617/The Causal Ordering of the Integers.pandoc.md"
+  pdf_name: The Causal Ordering of the Integers.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/The Causal Ordering of the Integers/10.5281/zenodo.18302617/The Causal Ordering of the Integers.pdf"
+  html_name: The Causal Ordering of the Integers.html
+  html_url: "https://writing.preferredframe.com/prints/The Causal Ordering of the Integers/10.5281/zenodo.18302617/The Causal Ordering of the Integers.html"
+  primary: md
+  embed_html_name: The Causal Ordering of the Integers.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/The Causal Ordering of the Integers/10.5281/zenodo.18302617/The Causal Ordering of the Integers.embed.html"
