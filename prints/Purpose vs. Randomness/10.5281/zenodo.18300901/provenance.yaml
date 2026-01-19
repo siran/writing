@@ -1,0 +1,92 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: Purpose vs Randomness
+doi: 10.5281/zenodo.18300901
+concept_doi: 10.5281/zenodo.18300900
+permalink: "https://writing.preferredframe.com/prints/Purpose vs. Randomness/10.5281/zenodo.18300901/"
+publication_date: '2026-01-19'
+publication_year: '2026'
+keywords:
+- Acausal Purpose
+- Purpose Index
+- SETI
+- Technosignatures
+- Signal Filtering
+- Entropy
+- Universal Constants
+- Persistence
+- Teleology
+- Biosignatures
+one_sentence_summary: We define the Acausal Purpose Invariant ($\mathcal{P}$), a scale-invariant metric that quantifies how strongly a structure resists the combinatorial entropy naturally associated with its size.
+abstract: We introduce the Acausal Purpose Invariant ($\mathcal{P}$), a decibel-scale measure of how atypical a number’s prime ancestry is relative to a stochastic background. Empirical sweeps reveal a sharp probabilistic cutoff separating random structure from cost-paid persistence, reframing the detection of life, artifacts, and purpose as a problem of entropy suppression rather than intelligence.
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+- name: Alex Mercer
+- name: Elias Thorne
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: Purpose vs Randomness
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  - name: Alex Mercer
+  - name: Elias Thorne
+  description: We introduce the Acausal Purpose Invariant ($\mathcal{P}$), a decibel-scale measure of how atypical a number’s prime ancestry is relative to a stochastic background. Empirical sweeps reveal a sharp probabilistic cutoff separating random structure from cost-paid persistence, reframing the detection of life, artifacts, and purpose as a problem of entropy suppression rather than intelligence.
+  keywords:
+  - Acausal Purpose
+  - Purpose Index
+  - SETI
+  - Technosignatures
+  - Signal Filtering
+  - Entropy
+  - Universal Constants
+  - Persistence
+  - Teleology
+  - Biosignatures
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-19'
+  license: cc-by-nc-nd-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Purpose vs. Randomness/10.5281/zenodo.18300901/Purpose vs. Randomness.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Purpose vs. Randomness/10.5281/zenodo.18300901/Purpose vs. Randomness.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Purpose vs. Randomness/10.5281/zenodo.18300901/Purpose vs. Randomness.pdf"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Purpose vs. Randomness/10.5281/zenodo.18300901/Purpose vs. Randomness.embed.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Purpose vs. Randomness/10.5281/zenodo.18300901/purpose_index.py"
+    resource_type: software
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: We define the Acausal Purpose Invariant ($\mathcal{P}$), a scale-invariant metric that quantifies how strongly a structure resists the combinatorial entropy naturally associated with its size.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: 96638dab7c61b2baa227152e1b9d383a02bcebda
+  filename: Purpose vs. Randomness.md
+artifacts:
+  md: Purpose vs. Randomness.md
+  md_url: "https://writing.preferredframe.com/prints/Purpose vs. Randomness/10.5281/zenodo.18300901/Purpose vs. Randomness.md"
+  pandoc_md_name: Purpose vs. Randomness.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/Purpose vs. Randomness/10.5281/zenodo.18300901/Purpose vs. Randomness.pandoc.md"
+  pdf_name: Purpose vs. Randomness.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/Purpose vs. Randomness/10.5281/zenodo.18300901/Purpose vs. Randomness.pdf"
+  html_name: Purpose vs. Randomness.html
+  html_url: "https://writing.preferredframe.com/prints/Purpose vs. Randomness/10.5281/zenodo.18300901/Purpose vs. Randomness.html"
+  primary: md
+  embed_html_name: Purpose vs. Randomness.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/Purpose vs. Randomness/10.5281/zenodo.18300901/Purpose vs. Randomness.embed.html"

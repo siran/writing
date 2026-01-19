@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="An M. Rodriguez" />
+  <meta name="author" content="Alex Mercer" />
+  <meta name="author" content="Elias Thorne" />
+  <meta name="dcterms.date" content="2026-01-19" />
+  <meta name="keywords" content="Acausal Purpose, Purpose Index, SETI,
+Technosignatures, Signal Filtering, Entropy, Universal Constants,
+Persistence, Teleology, Biosignatures" />
+  <title>Purpose vs Randomness</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <style>
+  html {
+    font-family: sans-serif;
+  }
+  body {
+    font-family: inherit;
+    font-variant-ligatures: common-ligatures;
+    font-kerning: normal;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .header-section-number::after,
+  .toc-section-number::after {
+    content: ". ";
+  }
+  .toc ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    counter-reset: item;
+  }
+  .toc li {
+    margin: 0.4em 0;
+    padding-left: 2.6em;
+    position: relative;
+    counter-increment: item;
+  }
+  .toc li::before {
+    content: counters(item, ".") ".";
+    position: absolute;
+    left: 0;
+    color: #666;
+    width: 2.2em;
+    text-align: right;
+  }
+  .toc-title {
+    display: block;
+    font-weight: 700;
+    font-size: 1.1em;
+    margin: 0.5em 0 0.4em;
+    text-align: center;
+  }
+  .toc-divider {
+    width: 35%;
+    margin: 3.2em auto 2.8em;
+    border: 0;
+    height: 1px;
+    background: rgba(0,0,0,0.25);
+  }
+  .toc a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid transparent;
+  }
+  .toc a:hover {
+    border-bottom-color: #1f5fbf;
+  }
+  .heading-anchor {
+    margin-left: 0.35em;
+    text-decoration: none;
+    opacity: 0;
+    font-size: 0.85em;
+    color: inherit;
+    transition: opacity 0.15s ease;
+  }
+  .heading-anchor::after {
+    content: "\1F517";
+  }
+  h1:hover .heading-anchor,
+  h2:hover .heading-anchor,
+  h3:hover .heading-anchor,
+  h4:hover .heading-anchor,
+  h5:hover .heading-anchor,
+  h6:hover .heading-anchor,
+  .heading-anchor:focus {
+    opacity: 1;
+  }
+  .heading-anchor:hover {
+    text-decoration: none;
+  }
+  </style>
+  <script>
+  (function () {
+    function slugify(text) {
+      return (text || "")
+        .toLowerCase()
+        .replace(/[^0-9a-zA-Z _-]+/g, "")
+        .trim()
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-")
+        .replace(/^-+|-+$/g, "") || "section";
+    }
+    function headingText(el) {
+      var clone = el.cloneNode(true);
+      var drop = clone.querySelectorAll(".heading-anchor, .header-section-number");
+      for (var i = 0; i < drop.length; i++) {
+        if (drop[i].parentNode) {
+          drop[i].parentNode.removeChild(drop[i]);
+        }
+      }
+      return (clone.textContent || "").trim();
+    }
+    function ensureId(el, used) {
+      var id = el.getAttribute("id") || "";
+      if (id) {
+        used[id] = true;
+        return id;
+      }
+      var base = slugify(headingText(el));
+      var cand = base;
+      var i = 1;
+      while (!cand || document.getElementById(cand) || used[cand]) {
+        cand = base + "-" + i;
+        i += 1;
+      }
+      el.setAttribute("id", cand);
+      used[cand] = true;
+      return cand;
+    }
+    function addAnchors(root) {
+      if (!root) {
+        return;
+      }
+      var headings = root.querySelectorAll("h1, h2, h3, h4, h5, h6");
+      var used = {};
+      for (var i = 0; i < headings.length; i++) {
+        var h = headings[i];
+        if (h.querySelector("a.heading-anchor")) {
+          continue;
+        }
+        var id = ensureId(h, used);
+        var a = document.createElement("a");
+        a.className = "heading-anchor";
+        a.href = "#" + id;
+        a.setAttribute("aria-label", "Link to this section");
+        a.setAttribute("title", "Link to this section");
+        h.appendChild(a);
+      }
+    }
+    function run() {
+      addAnchors(document.body);
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", run);
+    } else {
+      run();
+    }
+  })();
+  </script>
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Purpose vs Randomness</h1>
+<p class="subtitle">The Acausal Purpose Invariant</p>
+<p class="author">An M. Rodriguez</p>
+<p class="author">Alex Mercer</p>
+<p class="author">Elias Thorne</p>
+<p class="date">2026-01-19</p>
+</header>
+<p><strong>One-Sentence Summary.</strong> We define the Acausal Purpose
+Invariant (<span class="math inline">\(\mathcal{P}\)</span>), a
+scale-invariant metric that quantifies how strongly a structure resists
+the combinatorial entropy naturally associated with its size.</p>
+<p><strong>Abstract.</strong> We introduce the Acausal Purpose Invariant
+(<span class="math inline">\(\mathcal{P}\)</span>), a decibel-scale
+measure of how atypical a number’s prime ancestry is relative to a
+stochastic background. Empirical sweeps reveal a sharp probabilistic
+cutoff separating random structure from cost-paid persistence, reframing
+the detection of life, artifacts, and purpose as a problem of entropy
+suppression rather than intelligence.</p>
+<p><strong>Keywords.</strong> Acausal Purpose, Purpose Index, SETI,
+Technosignatures, Signal Filtering, Entropy, Universal Constants,
+Persistence, Teleology, Biosignatures</p>
+<div class="toc">
+<hr class="toc-divider" />
+<div class="toc-title">Table of Contents</div>
+<ul>
+<li><a href="#persistence-instead-of-intelligence">Persistence Instead of Intelligence</a>
+</li>
+<li><a href="#factor-inertia-and-numerical-entropy">Factor Inertia and Numerical Entropy</a>
+</li>
+<li><a href="#causal-ancestry-and-depth">Causal Ancestry and Depth</a>
+</li>
+<li><a href="#the-acausal-purpose-invariant">The Acausal Purpose Invariant</a>
+</li>
+<li><a href="#empirical-law-the-combinatorial-cliff">Empirical Law: The Combinatorial Cliff</a>
+</li>
+<li><a href="#scale-invariance">Scale Invariance</a>
+</li>
+<li><a href="#representational-anchoring">Representational Anchoring</a>
+</li>
+<li><a href="#implications-for-life-and-the-universe">Implications for Life and the Universe</a>
+</li>
+<li><a href="#conclusion">Conclusion</a>
+</li>
+<li><a href="#references">References</a>
+</li>
+</ul>
+</div>
+<hr class="meta-divider" style="width:35%; margin:2rem auto; border:0; height:1px; background: rgba(0,0,0,0.35);" />
+<h1 data-number="1" id="persistence-instead-of-intelligence"><span
+class="header-section-number">1</span> Persistence Instead of
+Intelligence</h1>
+<p>The concept of <em>intelligence</em> is anthropomorphic and fragile.
+The concept of <em>persistence</em> is not.</p>
+<p>We define <strong>Purpose</strong> as:</p>
+<blockquote>
+<p><strong>Active resistance to the entropic dissolution expected at a
+given scale.</strong></p>
+</blockquote>
+<p>This definition applies equally to:</p>
+<ul>
+<li>Living systems</li>
+<li>Civilizations</li>
+<li>Long-lived artifacts</li>
+<li>Autonomous probes</li>
+<li>Post-biological systems</li>
+</ul>
+<p>And excludes:</p>
+<ul>
+<li>Rocks</li>
+<li>Stars</li>
+<li>Thermal noise</li>
+<li>Random processes</li>
+</ul>
+<p>Purpose, in this sense, is not intent. It is <em>paid-for
+structure</em>.</p>
+<h1 data-number="2" id="factor-inertia-and-numerical-entropy"><span
+class="header-section-number">2</span> Factor Inertia and Numerical
+Entropy</h1>
+<p>Large integers naturally accumulate novel prime factors. This is the
+arithmetic expression of entropy.</p>
+<p>A number like</p>
+<p><span class="math display">\[
+2^{100} \approx 1.27 \times 10^{30}
+\]</span></p>
+<p>is therefore exceptional: it is enormous, yet built from a single
+generative atom.</p>
+<p>This condition is <strong>metastable</strong>.</p>
+<p>A minimal perturbation causes collapse:</p>
+<p><span class="math display">\[
+2^{100} \;\rightarrow\; 2^{100} + 1
+\]</span></p>
+<p>which introduces large, late-arriving prime factors and jumps many
+orders of magnitude in causal ancestry.</p>
+<p>This discontinuity constitutes a <strong>phase transition in factor
+space</strong>.</p>
+<figure>
+<img
+src="https://siran.github.io/assets/writing/alien_signal_detection.png"
+alt="Figure 1. The Cost of Structure. A comparison of “Machine” data (constructed from small primes) versus “Noise” (random integers). While random integers float at the entropy ceiling regardless of magnitude, structured integers cluster at the causal floor." />
+<figcaption aria-hidden="true">Figure 1. The Cost of Structure. A
+comparison of “Machine” data (constructed from small primes) versus
+“Noise” (random integers). While random integers float at the entropy
+ceiling regardless of magnitude, structured integers cluster at the
+causal floor.</figcaption>
+</figure>
+<h1 data-number="3" id="causal-ancestry-and-depth"><span
+class="header-section-number">3</span> Causal Ancestry and Depth</h1>
+<p>We view the integers not as a static set, but as a generative
+hierarchy where primes act as elementary particles.</p>
+<p>The <strong>causal ancestry</strong> of an integer <span
+class="math inline">\(N\)</span> is defined as its unique prime
+factorization — the specific set of generative atoms required to
+construct it. In a stochastic universe, this ancestry naturally tends
+toward novelty (larger, more numerous prime factors) as <span
+class="math inline">\(N\)</span> increases.</p>
+<p>To quantify the “age” of this ancestry, we define the <strong>causal
+depth</strong> <span class="math inline">\(\tau(N)\)</span> as:</p>
+<p><span class="math display">\[
+\tau(N) = \pi\!\left(\max\{p : p \mid N\}\right)
+\]</span></p>
+<p>where <span class="math inline">\(\pi(x)\)</span> is the
+prime-counting function.</p>
+<p><span class="math inline">\(\tau(N)\)</span> represents the index of
+the largest prime factor of <span class="math inline">\(N\)</span>. It
+measures how late in arithmetic history a structure depends on
+novelty.</p>
+<h1 data-number="4" id="the-acausal-purpose-invariant"><span
+class="header-section-number">4</span> The Acausal Purpose
+Invariant</h1>
+<p>To remove scale effects, define an empirical thermal baseline:</p>
+<p><span class="math display">\[
+\tau_*(N) = \mathrm{median}\{\tau(m) : m \in [N, 2N]\}
+\]</span></p>
+<p>The <strong>Acausal Purpose Invariant</strong> is:</p>
+<p><span class="math display">\[
+\boxed{
+\mathcal{P}(N)
+= 10 \log_{10}\!\left(\frac{\tau_*(N)}{\tau(N)}\right)
+}
+\]</span></p>
+<p>Interpretation:</p>
+<ul>
+<li><span class="math inline">\(\mathcal{P} = 0\)</span> dB:
+indistinguishable from entropy (Randomness)</li>
+<li><span class="math inline">\(\mathcal{P} &gt; 0\)</span>: suppressed
+novelty</li>
+<li><span class="math inline">\(\mathcal{P} \gg 1\)</span>: cost-paid
+persistence (Purpose)</li>
+</ul>
+<h1 data-number="5" id="empirical-law-the-combinatorial-cliff"><span
+class="header-section-number">5</span> Empirical Law: The Combinatorial
+Cliff</h1>
+<p>Large-scale sweeps of integers reveal a striking regularity: the
+probability of observing high <span
+class="math inline">\(\mathcal{P}\)</span> values collapses abruptly
+beyond a fixed threshold.</p>
+<figure>
+<img
+src="https://siran.github.io/assets/writing/sweep_focus_survival.png"
+alt="Figure 2. The Combinatorial Cliff. A survival curve showing the probability P(dB &gt; x) for random integers. The probability drops exponentially, revealing a “forbidden zone” beyond ~20 dB where stochastic generation is effectively impossible (P &lt; 1e-5)." />
+<figcaption aria-hidden="true">Figure 2. The Combinatorial Cliff. A
+survival curve showing the probability P(dB &gt; x) for random integers.
+The probability drops exponentially, revealing a “forbidden zone” beyond
+~20 dB where stochastic generation is effectively impossible (P &lt;
+1e-5).</figcaption>
+</figure>
+<h2 data-number="5.1"
+id="theorem-heuristic-tail-law-for-acausal-purpose"><span
+class="header-section-number">5.1</span> Theorem (Heuristic Tail Law for
+Acausal Purpose)</h2>
+<p>Let <span class="math inline">\(N\)</span> be large and let <span
+class="math inline">\(n\)</span> be sampled uniformly from <span
+class="math inline">\([N,2N]\)</span>. Write <span
+class="math inline">\(P^+(n)\)</span> for the largest prime factor of
+<span class="math inline">\(n\)</span> and recall <span
+class="math inline">\(\tau(n)=\pi(P^+(n))\)</span>. Define the thermal
+baseline</p>
+<p><span class="math display">\[
+\tau_*(N)=\mathrm{median}\{\tau(m):m\in[N,2N]\},
+\]</span></p>
+<p>and the Acausal Purpose</p>
+<p><span class="math display">\[
+\mathcal{P}(n)=10\log_{10}\!\left(\frac{\tau_*(N)}{\tau(n)}\right).
+\]</span></p>
+<p>Then for <span class="math inline">\(x \ge 0\)</span>,</p>
+<p><span class="math display">\[
+\mathbb{P}\big(\mathcal{P}(n) &gt; x\big)
+\;\approx\;
+\rho(u_x),
+\]</span></p>
+<p>where <span class="math inline">\(\rho\)</span> is the Dickman–de
+Bruijn function and</p>
+<p><span class="math display">\[
+u_x = \frac{\log N}{\log y_x}, \qquad
+y_x := \tau^{-1}\!\big(\tau_*(N)\,10^{-x/10}\big).
+\]</span></p>
+<p>Because <span class="math inline">\(\rho(u)\)</span> decays extremely
+rapidly for large <span class="math inline">\(u\)</span> (heuristically
+<span class="math inline">\(\log \rho(u) \sim -u \log u\)</span>), the
+survival probability <span class="math inline">\(\mathbb{P}(\mathcal{P}
+&gt; x)\)</span> exhibits an effective <strong>cutoff</strong> once
+<span class="math inline">\(x\)</span> exceeds a moderate constant.</p>
+<h2 data-number="5.2" id="proof-sketch-smooth-number-heuristic"><span
+class="header-section-number">5.2</span> Proof Sketch (Smooth-Number
+Heuristic)</h2>
+<p>The condition <span class="math inline">\(\mathcal{P}(n) &gt;
+x\)</span> is equivalent to</p>
+<p><span class="math display">\[
+\tau(n) &lt; \tau_*(N)\,10^{-x/10}.
+\]</span></p>
+<p>Since <span class="math inline">\(\tau(n)\)</span> is monotone in the
+largest prime factor <span class="math inline">\(P^+(n)\)</span>, this
+is approximately the event</p>
+<p><span class="math display">\[
+P^+(n) \le y_x,
+\]</span></p>
+<p>for the corresponding threshold <span
+class="math inline">\(y_x\)</span>.</p>
+<p>Thus <span
+class="math inline">\(\mathbb{P}(\mathcal{P}(n)&gt;x)\)</span> is
+approximately the probability that a random integer in <span
+class="math inline">\([N,2N]\)</span> is <span
+class="math inline">\(y_x\)</span>-smooth. Classical results on smooth
+numbers imply</p>
+<p><span class="math display">\[
+\mathbb{P}\big(P^+(n)\le y_x\big) \approx \rho\!\left(\frac{\log N}{\log
+y_x}\right),
+\]</span></p>
+<p>which yields the stated form. The rapid decay of <span
+class="math inline">\(\rho\)</span> explains the observed
+<strong>combinatorial cliff</strong>.</p>
+<h2 data-number="5.3" id="interpretation"><span
+class="header-section-number">5.3</span> Interpretation</h2>
+<p>Empirically, this cutoff occurs near <span
+class="math inline">\(\mathcal{P} \approx 20\)</span> dB: values beyond
+this point are not merely rare but <em>effectively forbidden</em> under
+stochastic generation. This establishes a <strong>universal detection
+threshold</strong> for cost-paid structure.</p>
+<h1 data-number="6" id="scale-invariance"><span
+class="header-section-number">6</span> Scale Invariance</h1>
+<p>Scatter plots of <span class="math inline">\(\mathcal{P}\)</span>
+versus <span class="math inline">\(N\)</span> show:</p>
+<ul>
+<li>No systematic dependence on magnitude</li>
+<li>A dense thermal floor at 0 dB</li>
+<li>Sparse, magnitude-independent high-purpose spikes</li>
+</ul>
+<p><strong>Magnitude is a mask.</strong> Structure is revealed only
+after normalization.</p>
+<figure>
+<img
+src="https://siran.github.io/assets/writing/sweep_focus_scatter.png"
+alt="Figure 3. Scale Invariance. A sweep of N vs Acausal Purpose showing that the distribution of structure is orthogonal to magnitude. The “thermal floor” remains constant while high-purpose artifacts appear as distinct, sparse spikes." />
+<figcaption aria-hidden="true">Figure 3. Scale Invariance. A sweep of N
+vs Acausal Purpose showing that the distribution of structure is
+orthogonal to magnitude. The “thermal floor” remains constant while
+high-purpose artifacts appear as distinct, sparse spikes.</figcaption>
+</figure>
+<h1 data-number="7" id="representational-anchoring"><span
+class="header-section-number">7</span> Representational Anchoring</h1>
+<p>Defined human constants (e.g. the speed of light encoded as <span
+class="math inline">\(299\,792\,458\)</span>) exhibit high <span
+class="math inline">\(\mathcal{P}\)</span> values. Measured natural
+constants do not.</p>
+<p>This demonstrates <strong>teleology of representation</strong>, not
+of physics: humans anchor units to numbers that suppress novelty. <span
+class="math inline">\(\mathcal{P}\)</span> correctly distinguishes these
+cases.</p>
+<figure>
+<img
+src="https://siran.github.io/assets/writing/acausal_constants_comparison.png"
+alt="Figure 4. The Teleological Signature. Defined constants (Green) cluster above the 20 dB threshold, indicating human anchoring. Measured constants (Red) fall into the thermal noise floor, indistinguishable from random primes." />
+<figcaption aria-hidden="true">Figure 4. The Teleological Signature.
+Defined constants (Green) cluster above the 20 dB threshold, indicating
+human anchoring. Measured constants (Red) fall into the thermal noise
+floor, indistinguishable from random primes.</figcaption>
+</figure>
+<h1 data-number="8" id="implications-for-life-and-the-universe"><span
+class="header-section-number">8</span> Implications for Life and the
+Universe</h1>
+<p>This reframes the classical question:</p>
+<blockquote>
+<p>Not “Where is intelligence?”</p>
+<p>But <strong>“Where does entropy fail to win?”</strong></p>
+</blockquote>
+<p>Life, artifacts, and enduring systems are detected as:</p>
+<ul>
+<li>Persistent reuse of a small generative alphabet</li>
+<li>Maintenance of structure far beyond stochastic expectation</li>
+</ul>
+<p>This criterion is substrate-independent and applies equally to
+biological, technological, and non-biological systems.</p>
+<h1 data-number="9" id="conclusion"><span
+class="header-section-number">9</span> Conclusion</h1>
+<p>Acausal Purpose is not a metaphor. It is a measurable invariant with
+a sharp probabilistic boundary.</p>
+<p>Purpose is not intent. Purpose is <strong>structure that survives
+where it should not</strong>.</p>
+<h1 data-number="10" id="references"><span
+class="header-section-number">10</span> References</h1>
+<ul>
+<li>C. E. Shannon, <em>A Mathematical Theory of Communication</em>, Bell
+System Technical Journal, 1948.</li>
+<li>K. Dickman, <em>On the frequency of numbers containing prime factors
+of a certain relative magnitude</em>, 1930.</li>
+<li>N. G. de Bruijn, <em>On the number of positive integers <span
+class="math inline">\(\leq\)</span> x and free of prime factors &gt;
+y</em>, 1951.</li>
+<li>T. M. Cover, J. A. Thomas, <em>Elements of Information Theory</em>,
+Wiley, 2006.</li>
+<li>E. Thorne, <em>Acausal Purpose Scanner (v8.2)</em> [Source Code],
+GitHub Gist, 2026. <a
+href="https://gist.github.com/siran/9ebc10c839c4fd760ab024f2c0fd727e"
+class="uri">https://gist.github.com/siran/9ebc10c839c4fd760ab024f2c0fd727e</a></li>
+</ul>
+</body>
+</html>
