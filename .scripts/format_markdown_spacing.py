@@ -6,6 +6,7 @@ Format Markdown in-place using numbertext-style wrapping plus spacing rules:
 - Do not change content inside code fences, inline code, or math ($ / $$).
 - Wrap paragraphs to 80 columns while preserving blockquote prefixes.
 - Keep image lines intact (no wrapping).
+- Keep Markdown tables intact (no wrapping).
 - Normalize blank lines between blocks:
   - 2 before headings (except after front matter or another heading).
   - 1 after headings.
@@ -43,6 +44,7 @@ FOOTNOTE_PREFIX_RE = re.compile(r"^(\s*\[\^[^\]]+\]:)\s*(.*)$")
 LIST_ITEM_RE = re.compile(r"^(\s*)([-*+]|[0-9]+[.)])(\s+|$)(.*)$")
 FENCE_START_RE = re.compile(r"^\s*(`{3,}|~{3,})")
 MATH_BLOCK_DELIM_RE = re.compile(r"^\s*\$\$\s*$")
+TABLE_CELL_RE = re.compile(r"^:?-{1,}:?$")
 WRAP_WIDTH = 80
 FRONT_MATTER_DELIMS = ("---", "+++")
 INLINE_TOKEN_PREFIX = "<<<CODEXSPAN"
@@ -235,6 +237,39 @@ def is_image_paragraph(blines: list[str]) -> bool:
     if end is None:
         return False
     return text[end + 1 :].strip() == ""
+
+
+def is_table_separator(line: str) -> bool:
+    core = line.strip()
+    if "|" not in core:
+        return False
+    if core.startswith("|"):
+        core = core[1:]
+    if core.endswith("|"):
+        core = core[:-1]
+    parts = [part.strip() for part in core.split("|")]
+    if not parts or any(not part for part in parts):
+        return False
+    return all(TABLE_CELL_RE.match(part) for part in parts)
+
+
+def is_table_paragraph(blines: list[str]) -> bool:
+    nonempty = [line for line in blines if line.strip()]
+    if len(nonempty) < 2:
+        return False
+    sep_idx = None
+    for idx, line in enumerate(nonempty):
+        if is_table_separator(line):
+            sep_idx = idx
+            break
+    if sep_idx is None or sep_idx == 0 or sep_idx == len(nonempty) - 1:
+        return False
+    for idx, line in enumerate(nonempty):
+        if idx == sep_idx:
+            continue
+        if "|" not in line.strip():
+            return False
+    return True
 
 
 def is_footnote_block(paragraph: str) -> bool:
@@ -562,6 +597,9 @@ def format_only(lines: list[str], leading_context: Optional[str] = None) -> str:
             paragraph = "".join(blines)
             if is_image_paragraph(blines):
                 block_kind = "image"
+                text = paragraph
+            elif is_table_paragraph(blines):
+                block_kind = "table"
                 text = paragraph
             else:
                 block_kind = "blockquote" if is_blockquote_paragraph(blines) else "para"
