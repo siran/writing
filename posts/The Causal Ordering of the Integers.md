@@ -97,72 +97,74 @@ numbers that are not $(t-1)$-smooth.
 The "Population Curve" decays roughly as $1/t$. This implies that the
 "Early Universe of Causal Natural Numbers" (Eras 1–10) generates the vast
 majority of small integers, while the "Late Universe" (Eras > 1000) generates
-numbers sparsely. This pictures a **"Cooling Universe of Natural Numbers"** in a
-combinatorial sense: entropy (new prime injection) becomes rarer as magnitude
-increases.
+numbers sparsely.
+
+This pictures a **Cooling Universe of Natural Numbers** in a combinatorial
+sense: entropy (new prime injection) becomes rarer as magnitude increases.
 
 
-### 2.3 Spectral Analysis
+### Spectral Analysis
 
-The Fourier Transform of the signal $S(n) = \tau(n)$ reveals that the Number
-Line is a superposition of periodic waves.
-* The dominant frequency is $f=1/2$ (Period 2), corresponding to
-  $\tau(n)=1$ (Evens).
-* The spectrum consists of spikes at frequencies $f_k = 1/p_k$, representing
-  the "Prime Harmonics."
-* Magnitude is the interference pattern of these causal frequencies.
+The Fourier Transform of the signal $S(n) = \tau(n)$ reveals that the number
+line is a superposition of periodic waves.
+
+* Dominant frequency $f = 1/2$ (Period 2), corresponding to evenness.
+* Harmonics at $f_k = 1/p_k$, the prime frequencies.
+* Magnitude emerges as interference between these causal waves.
 
 
-## 3. Practical Applications
+## Practical Applications
 
-### 3.1 Feature Extraction: The "Artificiality" Metric
+### Feature Extraction: Artificiality Detection
 
 We propose $\tau(n)$ as a metric for detecting artificial or engineered
 data within large numerical datasets.
 
-**Hypothesis:** Human systems (engineering, finance, architecture) utilize
-integers with low Causal Depth (highly composite numbers, powers of 2/10).
-Nature (stochastic processes) utilizes integers with high Causal Depth (randomly
-distributed prime factors).
+**Hypothesis:** Human systems preferentially reuse low-depth numbers. Natural
+stochastic processes generate high-depth numbers.
 
-**Validation:** In our simulation, we generated two datasets of magnitude
-$N \approx 10^6$.
-* **Structured Data (Machine):** Mean $\tau \approx 5.7$.
-* **Random Data (Noise):** Mean $\tau \approx 5738$.
-* **Separation:** ~1000x.
+**Observed separation (simulation, $N \sim 10^6$):**
 
-This allows for $O(1)$ discrimination between signal and noise without
-needing context or metadata.
+```text
+| Dataset              | Mean $\tau$       |
+|----------------------|-------------------|
+| Structured (machine) | $\approx 5.7$     |
+| Random noise         | $\approx 5{,}700$ |
+| Separation           | $\sim 10^3\times$ |
+```
 
-
-### 3.2 Semantic Data Compression
-
-While standard compression (ZIP/LZ77) focuses on syntactic repetition (bit
-patterns), Causal Ordering enables **Semantic Compression** for structured
-numerical data.
-
-By representing integer $n$ as the tuple
-$(\tau(n), \text{residue})$, we achieve massive compression ratios for datasets
-dominated by "Old" numbers (e.g., scientific constants, harmonics), where the
-entropy of the $\tau$ stream is near zero. Conversely, this method
-correctly identifies "Young" numbers (cryptographic keys, random noise) as
-incompressible high-entropy objects.
+This enables $O(1)$ discrimination without semantics.
 
 
-### 3.3 Cryptographic Steganography
+### Semantic Data Compression
 
-The "Causal Void" provides a method for hiding information. By embedding a
-message only in numbers with a specific, high Causal Depth (e.g., "Only numbers
-born in Era 137"), the hidden channel remains invisible to standard statistical
-analysis (magnitude distribution, Benford's Law). The message is visible only to
-an observer who sorts the data by $\tau(n)$.
+Represent integer $n$ as:
+
+$$
+n \mapsto (\tau(n), \text{residue})
+$$
+
+For datasets dominated by low-depth integers, entropy collapses in the
+$\tau$ stream, enabling **semantic compression** beyond syntactic
+methods (LZ, Huffman).
+
+Random data remains incompressible.
 
 
-## 4. Conclusion
+### Cryptographic Steganography
 
-The Causal Ordering of the integers is not merely a philosophical curiosity; it
-is a rigorous method for separating **Structure** from **Noise**. By viewing the
-number line as a dynamic, growing object, we recover the "genetic history" of
-integers. This history proves that while all numbers are equal in arithmetic,
-they are distinct in origin: some are ancient structural pillars, and others are
-transient fluctuations of the prime number chaotic sea.
+Messages can be embedded exclusively in integers of a specific causal era (e.g.,
+$\tau(n)=137$). Such channels evade magnitude statistics and Benford’s law,
+remaining visible only under causal ordering.
+
+
+## Conclusion
+
+The causal ordering of integers exposes a hidden temporal structure beneath the
+number line.
+
+All numbers are equal arithmetically. They are **not equal in origin**.
+
+Some are ancient structural pillars. Others are late, high-entropy fluctuations.
+
+Causal depth separates **structure from noise** using number theory alone.
