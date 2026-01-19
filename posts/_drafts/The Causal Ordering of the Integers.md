@@ -3,9 +3,9 @@ title: The Causal Ordering of the Integers
 subtitle: A Constructivist Number Theory for Signal Processing
 author: An M. Rodriguez, Alex Mercer
 date: 2026-01-18
-keywords: Number Theory, Causal Ordering, Signal Processing, Feature Extraction, Prime Factorization, Entropy, Semantic Compression
 one-sentence-summary: We introduce a causal ordering of integers based on the sequential discovery of prime factors, revealing a temporal structure that distinguishes semantic signal from stochastic noise.
 summary: We introduce a novel ordering of the natural numbers $\mathbb{N}$ based on "causal generation" rather than magnitude. By defining the existence of a number as the moment its necessary prime factors are introduced, we reveal a hidden temporal structure to the number line. This structure separates integers into "low-entropy" (ancient/constructed) and "high-entropy" (young/random) classes. We demonstrate that this metric, "Causal Depth," serves as a potent feature for distinguishing semantic signals from stochastic noise.
+keywords: Number Theory, Causal Ordering, Signal Processing, Feature Extraction, Prime Factorization, Entropy, Semantic Compression
 ---
 
 ## 1. Definitions and Axioms
@@ -22,10 +22,11 @@ $$
 
 ### 1.2 The Injection Axiom (The Spark)
 
-At each time step $t \ge 1$, we introduce exactly one new element—the
-smallest integer not yet generated—to the universe. This element is the "Prime
-of the Era." Let $P_t$ be the smallest integer such that
-$P_t \notin U_{t-1}$.
+At each time step $t \ge 1$, we introduce exactly one new element —the
+smallest integer not yet generated— to the universe. This element is the "Prime
+of the Era."
+
+Let $P_t$ be the smallest integer such that $P_t \notin U_{t-1}$.
 
 $$
 U_{t} = U_{t-1} \cup \{P_t\}
@@ -68,8 +69,6 @@ $$
 (where $i_k$ is the index of the prime, e.g.,
 $\tau(2)=1, \tau(3)=2, \tau(5)=3$). For convention, $\tau(1) = 0$.
 
----
-
 
 ## 2. Structural Analysis
 
@@ -97,7 +96,7 @@ numbers that are not $(t-1)$-smooth.
 The "Population Curve" decays roughly as $1/t$. This implies that the
 "Early Universe of Causal Natural Numbers" (Eras 1–10) generates the vast
 majority of small integers, while the "Late Universe" (Eras > 1000) generates
-numbers sparsely. This confirms the **"Cooling Universe"** hypothesis in a
+numbers sparsely. This pictures a **"Cooling Universe of Natural Numbers"** in a
 combinatorial sense: entropy (new prime injection) becomes rarer as magnitude
 increases.
 
@@ -111,8 +110,6 @@ Line is a superposition of periodic waves.
 * The spectrum consists of spikes at frequencies $f_k = 1/p_k$, representing
   the "Prime Harmonics."
 * Magnitude is the interference pattern of these causal frequencies.
-
----
 
 
 ## 3. Practical Applications
@@ -158,8 +155,6 @@ message only in numbers with a specific, high Causal Depth (e.g., "Only numbers
 born in Era 137"), the hidden channel remains invisible to standard statistical
 analysis (magnitude distribution, Benford's Law). The message is visible only to
 an observer who sorts the data by $\tau(n)$.
-
----
 
 
 ## 4. Conclusion
