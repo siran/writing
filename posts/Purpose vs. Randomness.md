@@ -1,14 +1,14 @@
 ---
-title: Acausal Focus
-subtitle: Quantifying Purpose as Resistance to Numerical Entropy
+title: Purpose vs Randomness
+subtitle: The Acausal Purpose Invariant
 author: An M. Rodriguez, Alex Mercer, Elias Thorne
 date: 2026-01-18
-one-sentence-summary: We define the Acausal Focus Invariant ($\mathcal{F}$), a scale-invariant metric that quantifies how strongly a structure resists the combinatorial entropy naturally associated with its size.
-summary: We introduce the Acausal Focus Invariant ($\mathcal{F}$), a decibel-scale measure of how atypical a number’s prime ancestry is relative to a stochastic background. Empirical sweeps reveal a sharp probabilistic cutoff separating random structure from cost-paid persistence, reframing the detection of life, artifacts, and purpose as a problem of entropy suppression rather than intelligence.
-keywords: Acausal Focus, Purpose Index, SETI, Technosignatures, Signal Filtering, Entropy, Universal Constants, Persistence, Teleology, Biosignatures
+one-sentence-summary: We define the Acausal Purpose Invariant ($\mathcal{P}$), a scale-invariant metric that quantifies how strongly a structure resists the combinatorial entropy naturally associated with its size.
+summary: We introduce the Acausal Purpose Invariant ($\mathcal{P}$), a decibel-scale measure of how atypical a number’s prime ancestry is relative to a stochastic background. Empirical sweeps reveal a sharp probabilistic cutoff separating random structure from cost-paid persistence, reframing the detection of life, artifacts, and purpose as a problem of entropy suppression rather than intelligence.
+keywords: Acausal Purpose, Purpose Index, SETI, Technosignatures, Signal Filtering, Entropy, Universal Constants, Persistence, Teleology, Biosignatures
 ---
 
-## 1. Persistence Instead of Intelligence
+## Persistence Instead of Intelligence
 
 The concept of *intelligence* is anthropomorphic and fragile. The concept of
 *persistence* is not.
@@ -19,7 +19,6 @@ We define **Purpose** as:
 
 
 This definition applies equally to:
-
 - Living systems
 - Civilizations
 - Long-lived artifacts
@@ -27,7 +26,6 @@ This definition applies equally to:
 - Post-biological systems
 
 And excludes:
-
 - Rocks
 - Stars
 - Thermal noise
@@ -35,10 +33,8 @@ And excludes:
 
 Purpose, in this sense, is not intent. It is *paid-for structure*.
 
-(Note: we *might* be surprised.)
 
-
-## 2. Factor Inertia and Numerical Entropy
+## Factor Inertia and Numerical Entropy
 
 Large integers naturally accumulate novel prime factors. This is the arithmetic
 expression of entropy.
@@ -65,22 +61,19 @@ magnitude in causal ancestry.
 
 This discontinuity constitutes a **phase transition in factor space**.
 
-![The Cost of Structure](https://siran.github.io/assets/writing/alien_signal_detection.png)
-
-
-*Figure 1. The Cost of Structure. A comparison of "Machine" data (constructed
+![Figure 1. The Cost of Structure. A comparison of "Machine" data (constructed
 from small primes) versus "Noise" (random integers). While random integers float
 at the entropy ceiling regardless of magnitude, structured integers cluster at
-the causal floor.*
+the causal floor.](https://siran.github.io/assets/writing/alien_signal_detection.png)
 
 
-## 3. Causal Ancestry and Depth
+## Causal Ancestry and Depth
 
 We view the integers not as a static set, but as a generative hierarchy where
 primes act as elementary particles.
 
 The **causal ancestry** of an integer $N$ is defined as its unique
-prime factorization — the specific set of generative atoms required to construct
+prime factorization—the specific set of generative atoms required to construct
 it. In a stochastic universe, this ancestry naturally tends toward novelty
 (larger, more numerous prime factors) as $N$ increases.
 
@@ -98,7 +91,7 @@ $N$. It measures how late in arithmetic history a structure depends
 on novelty.
 
 
-## 4. The Acausal Focus Invariant
+## The Acausal Purpose Invariant
 
 To remove scale effects, define an empirical thermal baseline:
 
@@ -106,38 +99,34 @@ $$
 \tau_*(N) = \mathrm{median}\{\tau(m) : m \in [N, 2N]\}
 $$
 
-The **Acausal Focus Invariant** is:
+The **Acausal Purpose Invariant** is:
 
 $$
 \boxed{
-\mathcal{F}(N)
+\mathcal{P}(N)
 = 10 \log_{10}\!\left(\frac{\tau_*(N)}{\tau(N)}\right)
 }
 $$
 
 Interpretation:
+- $\mathcal{P} = 0$ dB: indistinguishable from entropy (Randomness)
+- $\mathcal{P} > 0$: suppressed novelty
+- $\mathcal{P} \gg 1$: cost-paid persistence (Purpose)
 
-- $\mathcal{F} = 0$ dB: indistinguishable from entropy
-- $\mathcal{F} > 0$: suppressed novelty
-- $\mathcal{F} \gg 1$: cost-paid persistence
 
-
-## 5. Empirical Law: The Combinatorial Cliff
+## Empirical Law: The Combinatorial Cliff
 
 Large-scale sweeps of integers reveal a striking regularity: the probability of
-observing high $\mathcal{F}$ values collapses abruptly beyond a fixed
+observing high $\mathcal{P}$ values collapses abruptly beyond a fixed
 threshold.
 
-![The Combinatorial Cliff](https://siran.github.io/assets/writing/sweep_focus_survival.png)
-
-
-*Figure 2. The Combinatorial Cliff. A survival curve showing the probability
+![Figure 2. The Combinatorial Cliff. A survival curve showing the probability
 P(dB > x) for random integers. The probability drops exponentially, revealing a
 "forbidden zone" beyond ~20 dB where stochastic generation is effectively
-impossible (P < 1e-5).*
+impossible (P < 1e-5).](https://siran.github.io/assets/writing/sweep_focus_survival.png)
 
 
-### Theorem (Heuristic Tail Law for Acausal Focus)
+### Theorem (Heuristic Tail Law for Acausal Purpose)
 
 Let $N$ be large and let $n$ be sampled uniformly from
 $[N,2N]$. Write $P^+(n)$ for the largest prime factor of
@@ -147,16 +136,16 @@ $$
 \tau_*(N)=\mathrm{median}\{\tau(m):m\in[N,2N]\},
 $$
 
-and the Acausal Focus
+and the Acausal Purpose
 
 $$
-\mathcal{F}(n)=10\log_{10}\!\left(\frac{\tau_*(N)}{\tau(n)}\right).
+\mathcal{P}(n)=10\log_{10}\!\left(\frac{\tau_*(N)}{\tau(n)}\right).
 $$
 
 Then for $x \ge 0$,
 
 $$
-\mathbb{P}\big(\mathcal{F}(n) > x\big)
+\mathbb{P}\big(\mathcal{P}(n) > x\big)
 \;\approx\;
 \rho(u_x),
 $$
@@ -170,13 +159,13 @@ $$
 
 Because $\rho(u)$ decays extremely rapidly for large $u$
 (heuristically $\log \rho(u) \sim -u \log u$), the survival probability
-$\mathbb{P}(\mathcal{F} > x)$ exhibits an effective **cutoff** once
+$\mathbb{P}(\mathcal{P} > x)$ exhibits an effective **cutoff** once
 $x$ exceeds a moderate constant.
 
 
 ### Proof Sketch (Smooth-Number Heuristic)
 
-The condition $\mathcal{F}(n) > x$ is equivalent to
+The condition $\mathcal{P}(n) > x$ is equivalent to
 
 $$
 \tau(n) < \tau_*(N)\,10^{-x/10}.
@@ -191,7 +180,7 @@ $$
 
 for the corresponding threshold $y_x$.
 
-Thus $\mathbb{P}(\mathcal{F}(n)>x)$ is approximately the probability that a
+Thus $\mathbb{P}(\mathcal{P}(n)>x)$ is approximately the probability that a
 random integer in $[N,2N]$ is $y_x$-smooth. Classical results
 on smooth numbers imply
 
@@ -205,48 +194,42 @@ observed **combinatorial cliff**.
 
 ### Interpretation
 
-Empirically, this cutoff occurs near $\mathcal{F} \approx 20$ dB: values beyond
+Empirically, this cutoff occurs near $\mathcal{P} \approx 20$ dB: values beyond
 this point are not merely rare but *effectively forbidden* under stochastic
 generation. This establishes a **universal detection threshold** for cost-paid
 structure.
 
 
-## 6. Scale Invariance
+## Scale Invariance
 
-Scatter plots of $\mathcal{F}$ versus $N$ show:
-
+Scatter plots of $\mathcal{P}$ versus $N$ show:
 - No systematic dependence on magnitude
 - A dense thermal floor at 0 dB
-- Sparse, magnitude-independent high-focus spikes
+- Sparse, magnitude-independent high-purpose spikes
 
 **Magnitude is a mask.** Structure is revealed only after normalization.
 
-![Scale Invariance](https://siran.github.io/assets/writing/sweep_focus_scatter.png)
-
-
-*Figure 3. Scale Invariance. A sweep of N vs Acausal Focus showing that the
+![Figure 3. Scale Invariance. A sweep of N vs Acausal Purpose showing that the
 distribution of structure is orthogonal to magnitude. The "thermal floor"
-remains constant while high-focus artifacts appear as distinct, sparse spikes.*
+remains constant while high-purpose artifacts appear as distinct, sparse
+spikes.](https://siran.github.io/assets/writing/sweep_focus_scatter.png)
 
 
-## 7. Representational Anchoring
+## Representational Anchoring
 
 Defined human constants (e.g. the speed of light encoded as $299\,792\,458$)
-exhibit high $\mathcal{F}$ values. Measured natural constants do not.
+exhibit high $\mathcal{P}$ values. Measured natural constants do not.
 
 This demonstrates **teleology of representation**, not of physics: humans anchor
-units to numbers that suppress novelty. $\mathcal{F}$ correctly distinguishes
+units to numbers that suppress novelty. $\mathcal{P}$ correctly distinguishes
 these cases.
 
-![The Teleological Signature](https://siran.github.io/assets/writing/acausal_constants_comparison.png)
-
-
-*Figure 4. The Teleological Signature. Defined constants (Green) cluster above
+![Figure 4. The Teleological Signature. Defined constants (Green) cluster above
 the 20 dB threshold, indicating human anchoring. Measured constants (Red) fall
-into the thermal noise floor, indistinguishable from random primes.*
+into the thermal noise floor, indistinguishable from random primes.](https://siran.github.io/assets/writing/acausal_constants_comparison.png)
 
 
-## 8. Implications for Life and the Universe
+## Implications for Life and the Universe
 
 This reframes the classical question:
 
@@ -256,7 +239,6 @@ This reframes the classical question:
 
 
 Life, artifacts, and enduring systems are detected as:
-
 - Persistent reuse of a small generative alphabet
 - Maintenance of structure far beyond stochastic expectation
 
@@ -264,9 +246,9 @@ This criterion is substrate-independent and applies equally to biological,
 technological, and non-biological systems.
 
 
-## 9. Conclusion
+## Conclusion
 
-Acausal Focus is not a metaphor. It is a measurable invariant with a sharp
+Acausal Purpose is not a metaphor. It is a measurable invariant with a sharp
 probabilistic boundary.
 
 Purpose is not intent. Purpose is **structure that survives where it should
@@ -286,4 +268,4 @@ not**.
 ---
 
 *Software implementing all analyses and figures is released separately as
-**Acausal Focus Scanner (v7.4)**.*
+**Acausal Purpose Scanner (v7.4)**.*
