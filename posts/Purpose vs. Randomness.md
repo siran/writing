@@ -75,7 +75,7 @@ We view the integers not as a static set, but as a generative hierarchy where
 primes act as elementary particles.
 
 The **causal ancestry** of an integer $N$ is defined as its unique
-prime factorization—the specific set of generative atoms required to construct
+prime factorization — the specific set of generative atoms required to construct
 it. In a stochastic universe, this ancestry naturally tends toward novelty
 (larger, more numerous prime factors) as $N$ increases.
 
