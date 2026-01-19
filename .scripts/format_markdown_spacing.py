@@ -49,6 +49,36 @@ INLINE_TOKEN_PREFIX = "<<<CODEXSPAN"
 INLINE_TOKEN_SUFFIX = ">>>"
 
 
+def find_image_end(text: str) -> Optional[int]:
+    """Return index of closing ')' for a Markdown image, or None if incomplete."""
+    start = text.find("![")
+    if start == -1:
+        return None
+    i = start + 2
+    while i < len(text):
+        ch = text[i]
+        if ch == "\\":
+            i += 2
+            continue
+        if ch == "]":
+            j = i + 1
+            while j < len(text) and text[j].isspace():
+                j += 1
+            if j < len(text) and text[j] == "(":
+                i = j + 1
+                while i < len(text):
+                    ch = text[i]
+                    if ch == "\\":
+                        i += 2
+                        continue
+                    if ch == ")":
+                        return i
+                    i += 1
+                return None
+        i += 1
+    return None
+
+
 def split_blocks_with_implicit_breaks(lines: list[str]) -> list[tuple[str, list[str]]]:
     """
     Blocks: heading / blank / para.
@@ -103,6 +133,8 @@ def split_blocks_with_implicit_breaks(lines: list[str]) -> list[tuple[str, list[
         buf: list[str] = []
         prev_was_arrow = False
         prev_was_image = False
+        in_image_block = False
+        image_text = ""
 
         while i < len(lines):
             cur = lines[i]
@@ -114,7 +146,8 @@ def split_blocks_with_implicit_breaks(lines: list[str]) -> list[tuple[str, list[
                 break
 
             cur_is_arrow = bool(ARROW_LINE_RE.match(cur))
-            cur_is_image = bool(IMAGE_LINE_RE.match(cur))
+            cur_starts_image = bool(IMAGE_LINE_RE.match(cur))
+            cur_is_image = in_image_block or cur_starts_image
 
             if buf and prev_was_arrow and not cur_is_arrow:
                 blocks.append(("para", buf))
@@ -122,6 +155,8 @@ def split_blocks_with_implicit_breaks(lines: list[str]) -> list[tuple[str, list[
                 buf = []
                 prev_was_arrow = False
                 prev_was_image = False
+                in_image_block = False
+                image_text = ""
                 continue
 
             if buf and (not prev_was_arrow) and cur_is_arrow:
@@ -130,6 +165,8 @@ def split_blocks_with_implicit_breaks(lines: list[str]) -> list[tuple[str, list[
                 buf = []
                 prev_was_arrow = False
                 prev_was_image = False
+                in_image_block = False
+                image_text = ""
                 continue
 
             if buf and prev_was_image and not cur_is_image:
@@ -138,6 +175,8 @@ def split_blocks_with_implicit_breaks(lines: list[str]) -> list[tuple[str, list[
                 buf = []
                 prev_was_arrow = False
                 prev_was_image = False
+                in_image_block = False
+                image_text = ""
                 continue
 
             if buf and (not prev_was_image) and cur_is_image:
@@ -146,9 +185,24 @@ def split_blocks_with_implicit_breaks(lines: list[str]) -> list[tuple[str, list[
                 buf = []
                 prev_was_arrow = False
                 prev_was_image = False
+                in_image_block = False
+                image_text = ""
                 continue
 
             buf.append(cur)
+            if cur_is_image:
+                if not in_image_block and cur_starts_image:
+                    image_text = cur
+                elif in_image_block:
+                    image_text += cur
+                if image_text and find_image_end(image_text) is not None:
+                    in_image_block = False
+                    image_text = ""
+                else:
+                    in_image_block = True
+            else:
+                in_image_block = False
+                image_text = ""
             prev_was_arrow = cur_is_arrow
             prev_was_image = cur_is_image
             i += 1
@@ -171,14 +225,16 @@ def is_blockquote_paragraph(blines: list[str]) -> bool:
 
 
 def is_image_paragraph(blines: list[str]) -> bool:
-    has_content = False
-    for line in blines:
-        if line.strip() == "":
-            continue
-        has_content = True
-        if not IMAGE_LINE_RE.match(line):
-            return False
-    return has_content
+    text = "".join(blines)
+    if not text.strip().startswith("!["):
+        return False
+    start = text.find("![")
+    if text[:start].strip():
+        return False
+    end = find_image_end(text)
+    if end is None:
+        return False
+    return text[end + 1 :].strip() == ""
 
 
 def is_footnote_block(paragraph: str) -> bool:
