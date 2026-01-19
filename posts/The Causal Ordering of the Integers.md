@@ -125,13 +125,11 @@ stochastic processes generate high-depth numbers.
 
 **Observed separation (simulation, $N \sim 10^6$):**
 
-```text
 | Dataset              | Mean $\tau$       |
 |----------------------|-------------------|
 | Structured (machine) | $\approx 5.7$     |
 | Random noise         | $\approx 5{,}700$ |
 | Separation           | $\sim 10^3\times$ |
-```
 
 This enables $O(1)$ discrimination without semantics.
 
