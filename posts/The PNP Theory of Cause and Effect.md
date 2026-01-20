@@ -166,9 +166,9 @@ $$
 $$
 
 "Cause" is the state $\Phi(t)$. "Effect" is the state $\Phi(t+\Delta t)$.
-The link between them is not an axiom, but the **Propagator of
-Topological Persistence**. The effect is simply the next necessary configuration
-to prevent the loop from breaking.
+The link between them is not an axiom, but the **Propagator of Topological
+Persistence**. The effect is simply the next necessary configuration to prevent
+the loop from breaking.
 
 
 ## 5. Force from Stress–Flow
