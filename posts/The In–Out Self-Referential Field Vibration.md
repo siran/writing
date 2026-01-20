@@ -6,7 +6,7 @@ date: 2025-08-08
 one-sentence-summary: |
   Spatial orientation and the concepts of "in" and "out" are not fundamental primitives, but emerge as phase-dependent projections of the self-referential scalar field mode (1).
 summary: |
-  We develop a second‐order relational description of the Point–Not–Point (PNP) scalar‐field framework, showing how "in" and "out"—along with orientation, direction, and spatial geometry—emerge from the self‐referential phase structure of a single real scalar field $U(x,t)$. The minimal closed mode, denoted (1), exhibits a Möbius‐like phase inversion across its nodal surface, sustaining continuous energy circulation without requiring a background geometric twist. This work complements the dynamical theorems of PNP by providing the conceptual formulation of how a scalar field constructs spatial orientation.
+  We develop a second‐order relational description of the Point–Not–Point (PNP) scalar‐field framework, showing how "in" and "out" —along with orientation, direction, and spatial geometry— emerge from the self‐referential phase structure of a single real scalar field $U(x,t)$. The minimal closed mode, denoted (1), exhibits a Möbius‐like phase inversion across its nodal surface, sustaining continuous energy circulation without requiring a background geometric twist. This work complements the dynamical theorems of PNP by providing the conceptual formulation of how a scalar field constructs spatial orientation.
 keywords:
   - PNP Framework
   - Scalar Field Recursion
