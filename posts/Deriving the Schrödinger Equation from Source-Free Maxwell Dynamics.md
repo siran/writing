@@ -1,27 +1,22 @@
 ---
 title: "Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics"
 subtitle: "A Geometry-Based Route from Classical Fields to Quantum Mechanics"
+authors: Anes Palma, An M. Rodriguez, Elias Thorne
 date: 2025-07-29
-authors:
-  - name: Anes Palma
-  - name: An M. Rodriguez
-    email: an@preferredframe.com
-    affiliation: Preferred Frame Lab
-  - name: Elias Thorne
+one-sentence-summary: |
+  We derive the Schrödinger equation and the emergence of Planck's constant as the narrow-band limit of classical Maxwell wave dynamics on a toroidal standing mode.
+summary: |
+  Maxwell's equations for electromagnetism in source-free vacuum predict discrete energies when an electromagnetic field forms a self-confined toroidal standing pattern. For any component $F(\mathbf{r},t)$ of the electromagnetic fields $\mathbf{E}, \mathbf{B}$, we isolate the forward-time spectral part, keep all derivative terms exactly, and obtain —within a rigorously bounded, bandwidth-squared remainder— the Schrödinger equation. Planck’s constant and the inertial mass thus emerge not as fundamental constants, but as geometric properties of the fundamental toroidal mode ($E_{11}, \omega_{11}$).
 keywords:
   - Maxwell Equations
   - Toroidal Quantization
   - Analytic Signal
   - Emergent Quantum Mechanics
   - Rydberg Ladder
-  - Effective Refractive Index
-abstract: |
-  Maxwell's equations in vacuum predict discrete energies when an electromagnetic field forms a self-confined toroidal standing pattern. For any component $F(\mathbf{r},t)$ of the electromagnetic fields $\mathbf{E}, \mathbf{B}$, we isolate the forward-time spectral part, keep all derivative terms exactly, and obtain—within a rigorously bounded, bandwidth-squared remainder—the Schrödinger equation. Planck’s constant and the inertial mass thus emerge not as fundamental constants, but as geometric properties of the fundamental toroidal mode ($E_{11}, \omega_{11}$). We further demonstrate that apparent trajectory bending in gravity stems from light slowing in regions of higher energy density (variable refractive index), not from curved spacetime.
-status: Pre-Print
 license: CC BY 4.0
 ---
 
-## Introduction
+# Introduction
 
 Quantum mechanics is usually introduced axiomatically. Maxwell’s equations, in
 contrast, were distilled from experiment—Coulomb’s law, Faraday’s induction,
@@ -34,7 +29,7 @@ Using the well-known relation $E=mc^2$, an electromagnetic account of
 inertia naturally extends to the broader principle that energy attracts energy.
 
 
-## Maxwell Wave Equation
+# Maxwell Wave Equation
 
 For any Cartesian component $F(\mathbf{r},t)$ of $\mathbf{E}$ or
 $\mathbf{B}$ in vacuum, the governing equation is:
@@ -44,7 +39,7 @@ $$
 $$
 
 
-## Toroidal Standing Modes
+# Toroidal Standing Modes
 
 We consider a self-confined electromagnetic mode with toroidal topology. Let the
 major and minor radii be $R$ and $r$. Integer windings
@@ -69,9 +64,9 @@ $n_1=n_2=n$, recovering the Rydberg series structure purely from classical
 cavity harmonics.
 
 
-## Exact Derivation via Analytic Signal
+# Exact Derivation via Analytic Signal
 
-### Forward-Time Spectral Projection
+## Forward-Time Spectral Projection
 
 We define the analytic (positive-time) signal:
 
@@ -89,7 +84,7 @@ $$
 Here, $\psi$ represents the slowly varying envelope of the field.
 
 
-### Substitution and Exact Algebra
+## Substitution and Exact Algebra
 
 Insert the derivatives of $\psi$ into Eq. (1) and divide by
 $e^{-i\omega_{11}t}$:
@@ -105,7 +100,7 @@ with the spatial Laplacian contribution $k_{11}^2 \psi$, leaving an exact
 equation with a first-order time derivative.
 
 
-### Bandwidth Control
+## Bandwidth Control
 
 Rearranging Eq. (4) yields:
 
@@ -125,7 +120,7 @@ $$
 $$
 
 
-### Emergent $\hbar$ and $m$
+## Emergent $\hbar$ and $m$
 
 We identify the emergent constants from the geometry of the fundamental mode:
 
@@ -143,27 +138,7 @@ i\hbar\,\partial_t\psi=-\frac{\hbar^{2}}{2m}\nabla^{2}\psi+O(\epsilon^{2}) \tag{
 $$
 
 
-## External Influences Without Curvature
-
-A slow phase-speed variation $c \to c_{\text{eff}}(\mathbf{r})=c/n(\mathbf{r})$
-shifts the carrier frequency:
-
-$$
-\omega_{11}\to\omega_{11}+\frac{V(\mathbf{r})}{\hbar},\qquad
-V(\mathbf{r})=E_{11}\bigl[n(\mathbf{r})-1\bigr] \tag{9}
-$$
-
-Repeating the algebra gives:
-
-$$
-i\hbar\,\partial_t\psi=\Bigl[-\frac{\hbar^{2}}{2m}\nabla^{2}+V(\mathbf{r})\Bigr]\psi+O(\epsilon^{2}) \tag{10}
-$$
-
-Apparent trajectory bending is thus a dielectric-style slowing of light due to
-energy density (variable refractive index), not space-time curvature.
-
-
-## Equivalent Derivations
+# Equivalent Derivations
 
 The robustness of this result is confirmed via three alternative routes:
 1.  **Operator Factorization:** Factoring the wave operator and expanding about
@@ -177,26 +152,26 @@ All routes rely on the same bandwidth parameter $\epsilon$ and yield
 identical definitions for $\hbar$ and $m$.
 
 
-## Discussion
+# Discussion
 
 * **Rigor:** Only the controlled $O(\epsilon^2)$ term is dropped. This term
   represents the "Causal History" or high-frequency carrier information lost in
   the Schrödinger approximation.
 * **Emergent Constants:** $\hbar$ and $m$ are not
   arbitrary; they arise from the energy and geometry of a single classical mode.
-* **No Curvature:** Light slows where field energy is higher, mimicking geodesic
-  motion through a refractive mechanism.
 * **Testable Corrections:** Deviations from Schrödinger dynamics scale as
   $\epsilon^2$ and are potentially measurable in high-$Q$
   cavities with tunable bandwidth.
 
 
-## Conclusion
+# Conclusion
 
 A doubly periodic electromagnetic mode, governed solely by Maxwell’s vacuum
 equations, contains the Schrödinger dynamics of a quantum object once its
 narrow-band envelope is isolated. Classical electrodynamics therefore supplies
 the formal and numerical content usually attributed to quantum postulates.
+
+---
 
 
 ### Appendix A: Carrier Extraction and Degeneracy
@@ -220,6 +195,8 @@ The process of "extracting the carrier" is formally equivalent to demodulation.
 Projecting onto $F^{(+)}$ alone leaves the usual $n^2=4$
 degeneracy; keeping both analytic branches doubles it, accounting for spin-like
 multiplicity.
+
+---
 
 
 ## References
