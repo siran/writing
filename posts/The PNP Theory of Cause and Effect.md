@@ -102,9 +102,7 @@ $$
 **Physically, the $(1)$ mode traps the essence of a "continuous
 bounce."** The field flows through the core, inverts phase, and re-emerges,
 effectively reflecting off its own nodal structure without ever encountering a
-hard boundary. This self-referential flow is what dissolves the absolute
-distinction between "in" and "out," defining them instead as relational phases
-of the same continuous loop.
+hard boundary; a self-referential flow.
 
 Crucially, $\nu$ is a topological invariant. It cannot change
 continuously; it can only change via a **Phase Slip** (where $\rho \to 0$ at
