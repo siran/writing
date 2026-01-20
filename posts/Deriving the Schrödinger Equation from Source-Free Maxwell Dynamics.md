@@ -176,9 +176,10 @@ the formal and numerical content usually attributed to quantum postulates.
 
 ### Appendix A: Carrier Extraction and Degeneracy
 
-#### Carrier Extraction
+**Carrier Extraction**
 
 The process of "extracting the carrier" is formally equivalent to demodulation.
+
 * **Frequency Domain:** The positive spectrum is shifted left by
   $\omega_{11}$; the peak now sits at $\omega=0$.
 * **Time Domain:** The fast factor $e^{-i\omega_{11}t}$ is removed;
