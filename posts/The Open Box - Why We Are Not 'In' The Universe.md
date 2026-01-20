@@ -132,10 +132,8 @@ persisted flow that guarantees its continued existence.
 
 We are not **in**. We are not **out**. We **are**.
 
----
 
-
-## References
+# References
 
 1.  Freet, M., Hale, A., Rodriguez, A. M. (2025). *The In–Out Self-Referential
     Field Vibration*. Preferred Frame Lab.
