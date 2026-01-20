@@ -790,6 +790,16 @@ def _prompt_missing_orcids(parsed: dict) -> dict:
                 echo("Please answer Y or n.")
                 continue
             if raw.lower() in {"skip", "none", "n/a"}:
+                confirm = input(
+                    f"{name} has no ORCID. Skip remaining authors? [Y/n] "
+                ).strip().lower()
+                if confirm in ("", "y", "yes"):
+                    skip_remaining = True
+                elif confirm in ("n", "no"):
+                    pass
+                else:
+                    echo("Please answer Y or n.")
+                    continue
                 break
             orcid = _normalize_orcid_input(raw)
             if orcid:
