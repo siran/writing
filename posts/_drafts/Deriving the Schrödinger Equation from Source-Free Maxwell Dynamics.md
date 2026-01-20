@@ -224,9 +224,4 @@ multiplicity.
 
 ## References
 
-1.  Rodriguez, A. M., Palma, A. (2025). *Hydrogen Atom Quantization from Purely
-    Classical Maxwell Electromagnetic Fields*. Preferred Frame Lab. DOI:
-    10.13140/RG.2.2.36143.04005.
-2.  Bialynicki-Birula, I. (1996). *Photon Wave Function*. Progress in Optics 36,
-    245–294.
-3.  Jackson, J. D. (1998). *Classical Electrodynamics*, 3rd ed., Wiley.
+1. Jackson, J. D. (1998). *Classical Electrodynamics*, 3rd ed., Wiley.
