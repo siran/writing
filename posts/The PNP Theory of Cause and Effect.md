@@ -6,7 +6,7 @@ date: 2025-08-14
 one-sentence-summary: |
   Causality emerges in the PNP framework because a topologically non-trivial scalar field configuration cannot remain static without violating stress–energy conservation, forcing ordered temporal evolution.
 summary: |
-  We derive causality from first principles within the Point–Not–Point (PNP) framework. At its core lies the topological irreducibility of the fundamental $\nu=1$ mode: the simplest closed oscillation of a scalar field $U$ exhibiting a $\pi$ phase inversion. This $\mathbb{Z}_2$ invariant enforces loop persistence and forbids extinction without a phase slip. From this, we prove that such a mode cannot remain static, formalizing cause–effect not as a postulate, but as the inevitable action of the field propagator on a persistent topological sector. We further extend this result to suggest that stress gradients in the conserved flow induce gravitation-like dynamics for configurations whose energy density exhibits vortex-like decay.
+  We derive causality from first principles within the Point–Not–Point (PNP) framework. At its core lies the topological irreducibility of the fundamental $(1)$ mode: the simplest closed oscillation of a scalar field $U$ exhibiting a $\pi$ phase inversion. This $\mathbb{Z}_2$ invariant enforces loop persistence and forbids extinction without a phase slip. From this, we prove that such a mode cannot remain static, formalizing cause–effect not as a postulate, but as the inevitable action of the field propagator on a persistent topological sector. We further extend this result to suggest that stress gradients in the conserved flow induce gravitation-like dynamics for configurations whose energy density exhibits vortex-like decay.
 keywords:
   - PNP Framework
   - Topological Persistence
@@ -49,12 +49,16 @@ oscillatory structure in a real scalar field; no additional $U(1)$
 degrees of freedom are introduced.*
 
 
-### 2.1 The Topological Invariant
+### 2.1 Topological Sectors and the $(n)$ Notation
 
-We define a **(1) Mode** as a closed loop $C$ encircling a core
-such that one traversal advances the phase $\phi$ by $\pi$
-(a Möbius-like twist). This requires two traversals to return to the initial
-state.
+We denote topological sectors by $(n)$ with $n \in \mathbb{N}$,
+representing the winding number of the phase around the core. The fundamental
+non-trivial sector is the **$(1)$ mode**.
+
+We define the $(1)$ mode as a closed loop $C$ encircling
+a core such that one traversal advances the phase $\phi$ by
+$\pi$ (a Möbius-like twist). This requires two traversals to return
+to the initial state.
 
 The holonomy along $C$ is:
 
@@ -62,15 +66,15 @@ $$
 H(C) = \exp\!\left(i\oint_C \nabla\phi \cdot d\mathbf{l}\right) \in \{+1, -1\}
 $$
 
-This defines the discrete $\mathbb{Z}_2$ index $\nu$:
+This defines the discrete $\mathbb{Z}_2$ index $\nu$ (Parity):
 
 $$
-\nu = \frac{1 - H(C)}{2} \in \{0, 1\}
+\nu = \frac{1 - H(C)}{2} = n \pmod 2
 $$
 
-* $\nu=0$: Trivial topology (Phase advances by $2\pi$ or
-  $0$).
-* $\nu=1$: Non-trivial topology (Phase advances by $\pi$).
+* $\nu=0$: Trivial topology (Even $n$).
+* $\nu=1$: Non-trivial topology (Odd $n$, including the
+  fundamental $(1)$ mode).
 
 Crucially, $\nu$ is a topological invariant. It cannot change
 continuously; it can only change via a **Phase Slip** (where $\rho \to 0$ at
@@ -108,7 +112,7 @@ $$
 ## 4. Derivation of Causality
 
 We now prove that "Time" is a requirement for the existence of the
-$\nu=1$ mode.
+$(1)$ mode.
 
 
 ### 4.1 Sector Decomposition
@@ -130,31 +134,31 @@ $\Phi(t+\Delta t) = \Phi(t)$ for all $t$. This implies
 $\partial_t U = 0$ everywhere on the loop, which means the momentum flux density
 (energy flow) $T^{0i}$ must vanish.
 
-However, for a loop with $\pi$-twist topology ($\nu=1$), the
-phase gradient $\nabla \phi$ is non-zero and twisted. This implies nonzero
-spatial stress components ($T^{ij} \neq 0$). A static configuration with
-non-zero internal stress requires external support to maintain force balance
-($\partial_j T^{ij} \neq 0$ without flow).
+However, for a loop with $\pi$-twist topology (the $(1)$
+mode), the phase gradient $\nabla \phi$ is non-zero and twisted. This implies
+nonzero spatial stress components ($T^{ij} \neq 0$). A static configuration
+with non-zero internal stress requires external support to maintain force
+balance ($\partial_j T^{ij} \neq 0$ without flow).
 
 In a source-free vacuum, no such external force exists. Therefore, a static
-$\nu=1$ mode violates local momentum balance. **Topology alone does not
+$(1)$ mode violates local momentum balance. **Topology alone does not
 generate motion; rather, the incompatibility between nontrivial topology and
 static force balance in a source-free field enforces evolution.**
 
-**Conclusion:** To maintain $\nu=1$ (Persistence), the field **cannot
-be static**.
+**Conclusion:** To maintain the $(1)$ mode (Persistence), the field
+**cannot be static**.
 
 $$
 \Phi(t+\Delta t) \neq \Phi(t)
 $$
 
-Unlike conventional instabilities which depend on parameters, the
-$\nu=1$ instability is topologically protected.
+Unlike conventional instabilities which depend on parameters, the instability of
+a static $(1)$ mode is topologically protected.
 
 
 ### 4.3 Propagator Form of Cause–Effect
 
-Let $\mathcal{P}_{\Delta t}$ be the evolution operator. On the $\nu=1$
+Let $\mathcal{P}_{\Delta t}$ be the evolution operator. On the persistent
 sector:
 
 $$
@@ -162,9 +166,9 @@ $$
 $$
 
 "Cause" is the state $\Phi(t)$. "Effect" is the state $\Phi(t+\Delta t)$.
-The link between them is not an axiom, but the **Propagator of Topological
-Persistence**. The effect is simply the next necessary configuration to prevent
-the loop from breaking.
+The link between them is not an axiom, but the **Propagator of
+Topological Persistence**. The effect is simply the next necessary configuration
+to prevent the loop from breaking.
 
 
 ## 5. Force from Stress–Flow
@@ -195,8 +199,8 @@ without the need to postulate intrinsic mass.
 In the PNP framework, we do not need to postulate that "Time Flows" or "Gravity
 Attracts."
 
-1.  **Causality** is the result of **Topological Persistence** ($\nu=1$
-    implies $\partial_t \Phi \neq 0$).
+1.  **Causality** is the result of **Topological Persistence** (the
+    $(1)$ mode implies $\partial_t \Phi \neq 0$).
 2.  **Force** is the result of **Stress-Energy Conservation**
     ($\nabla_\mu T^{\mu\nu} = 0$).
 
