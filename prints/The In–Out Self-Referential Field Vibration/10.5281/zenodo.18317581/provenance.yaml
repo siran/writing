@@ -1,0 +1,83 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: The In–Out Self-Referential Field Vibration
+doi: 10.5281/zenodo.18317581
+concept_doi: null
+permalink: "https://writing.preferredframe.com/prints/The In–Out Self-Referential Field Vibration/10.5281/zenodo.18317581/"
+publication_date: '2026-01-20'
+publication_year: '2026'
+keywords:
+- PNP Framework
+- Scalar Field Recursion
+- Emergent Geometry
+- Mobius Phase Topology
+- Relational Space
+one_sentence_summary: Spatial orientation and the concepts of "in" and "out" are not fundamental primitives, but emerge as phase-dependent projections of the self-referential scalar field mode (1).
+abstract: We develop a second‐order relational description of the Point–Not–Point (PNP) scalar‐field framework, showing how "in" and "out" —along with orientation, direction, and spatial geometry— emerge from the self‐referential phase structure of a single real scalar field $U(x,t)$. The minimal closed mode, denoted (1), exhibits a Möbius‐like phase inversion across its nodal surface, sustaining continuous energy circulation without requiring a background geometric twist. This work complements the dynamical theorems of PNP by providing the conceptual formulation of how a scalar field constructs spatial orientation.
+authors:
+- name: Max Freet
+- name: Adrien Hale
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+references_doi:
+- https://doi.org/10.5281/zenodo.18317319
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: The In–Out Self-Referential Field Vibration
+  creators:
+  - name: Max Freet
+  - name: Adrien Hale
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  description: We develop a second‐order relational description of the Point–Not–Point (PNP) scalar‐field framework, showing how "in" and "out" —along with orientation, direction, and spatial geometry— emerge from the self‐referential phase structure of a single real scalar field $U(x,t)$. The minimal closed mode, denoted (1), exhibits a Möbius‐like phase inversion across its nodal surface, sustaining continuous energy circulation without requiring a background geometric twist. This work complements the dynamical theorems of PNP by providing the conceptual formulation of how a scalar field constructs spatial orientation.
+  keywords:
+  - PNP Framework
+  - Scalar Field Recursion
+  - Emergent Geometry
+  - Mobius Phase Topology
+  - Relational Space
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-20'
+  license: cc-by-nc-nd-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/The In–Out Self-Referential Field Vibration/10.5281/zenodo.18317581/The In–Out Self-Referential Field Vibration.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/The In–Out Self-Referential Field Vibration/10.5281/zenodo.18317581/The In–Out Self-Referential Field Vibration.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/The In–Out Self-Referential Field Vibration/10.5281/zenodo.18317581/The In–Out Self-Referential Field Vibration.pdf"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/The In–Out Self-Referential Field Vibration/10.5281/zenodo.18317581/The In–Out Self-Referential Field Vibration.embed.html"
+    resource_type: publication-article
+  - relation: cites
+    identifier: https://doi.org/10.5281/zenodo.18317319
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: Spatial orientation and the concepts of "in" and "out" are not fundamental primitives, but emerge as phase-dependent projections of the self-referential scalar field mode (1).
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: 806bc938352dc1489e975ec8f304291b4edd2390
+  filename: The In–Out Self-Referential Field Vibration.md
+artifacts:
+  md: The In–Out Self-Referential Field Vibration.md
+  md_url: "https://writing.preferredframe.com/prints/The In–Out Self-Referential Field Vibration/10.5281/zenodo.18317581/The In–Out Self-Referential Field Vibration.md"
+  pandoc_md_name: The In–Out Self-Referential Field Vibration.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/The In–Out Self-Referential Field Vibration/10.5281/zenodo.18317581/The In–Out Self-Referential Field Vibration.pandoc.md"
+  pdf_name: The In–Out Self-Referential Field Vibration.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/The In–Out Self-Referential Field Vibration/10.5281/zenodo.18317581/The In–Out Self-Referential Field Vibration.pdf"
+  html_name: The In–Out Self-Referential Field Vibration.html
+  html_url: "https://writing.preferredframe.com/prints/The In–Out Self-Referential Field Vibration/10.5281/zenodo.18317581/The In–Out Self-Referential Field Vibration.html"
+  primary: md
+  embed_html_name: The In–Out Self-Referential Field Vibration.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/The In–Out Self-Referential Field Vibration/10.5281/zenodo.18317581/The In–Out Self-Referential Field Vibration.embed.html"
