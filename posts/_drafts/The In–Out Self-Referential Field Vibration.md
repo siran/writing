@@ -1,35 +1,22 @@
 ---
 title: "The In–Out Self-Referential Field Vibration"
 subtitle: "Second-Order Relationality and the Emergence of Orientation in PNP"
+authors: Max Freet, Adrien Hale, An M. Rodriguez
 date: 2025-08-08
-authors:
-  - name: Max Freet
-  - name: Adrien Hale
-  - name: An M. Rodriguez
-    email: an@preferredframe.com
-    affiliation: Preferred Frame Lab
+one-sentence-summary: |
+  Spatial orientation and the concepts of "in" and "out" are not fundamental primitives, but emerge as phase-dependent projections of the self-referential scalar field mode (1).
+summary: |
+  We develop a second‐order relational description of the Point–Not–Point (PNP) scalar‐field framework, showing how "in" and "out"—along with orientation, direction, and spatial geometry—emerge from the self‐referential phase structure of a single real scalar field $U(x,t)$. The minimal closed mode, denoted (1), exhibits a Möbius‐like phase inversion across its nodal surface, sustaining continuous energy circulation without requiring a background geometric twist. This work complements the dynamical theorems of PNP by providing the conceptual formulation of how a scalar field constructs spatial orientation.
 keywords:
   - PNP Framework
   - Scalar Field Recursion
   - Emergent Geometry
   - Mobius Phase Topology
   - Relational Space
-abstract: |
-  We develop a second‐order relational description of the Point–Not–Point (PNP) scalar‐field framework, showing how "in" and "out"—along with orientation, direction, and spatial geometry—emerge from the self‐referential phase structure of a single real scalar field $U(x,t)$. The minimal closed mode, denoted (1), exhibits a Möbius‐like phase inversion across its nodal surface, sustaining continuous energy circulation without requiring a background geometric twist. This work complements the dynamical theorems of PNP by providing the conceptual formulation of how a scalar field constructs spatial orientation.
-status: Pre-Print
 license: CC BY 4.0
 ---
 
-# The In–Out Self-Referential Field Vibration
-
-**Subtitle: Second-Order Relationality and the Emergence of Orientation in PNP**
-
-**Authors:** Max Freet, Adrien Hale, An M. Rodriguez **Date:** August 8, 2025
-
----
-
-
-## 1. Introduction
+# Introduction
 
 In standard physics, space is treated as a container and orientation as a
 primitive. In the Point–Not–Point (PNP) framework, neither is fundamental: the
@@ -38,12 +25,13 @@ $U:\mathbb{R}^3\times\mathbb{R}\to\mathbb{R}$. Observable structure arises from
 the closed oscillations of $U$, with apparent directions and
 "in–out" relations emerging from nodal phase behavior.
 
-Here we show how the minimal $(1)$ mode defines a **self‐referential
+Building on the derivation of causality from topological persistence [1], we
+here show how the minimal $(1)$ mode defines a **self‐referential
 energy flow** that reverses orientation across a node without spatial inversion,
 grounding spatial concepts in scalar recursion.
 
 
-## 2. Scalar Field Recursion
+# Scalar Field Recursion
 
 The field dynamics are governed by the recursive definitions:
 
@@ -65,7 +53,7 @@ on the field gradients, not as a rigid structure dependent on a pre-existing
 metric background.*
 
 
-## 3. Minimal Mode and In–Out Reversal
+# Minimal Mode and In–Out Reversal
 
 We define the minimal spherical standing wave (referring to the symmetry of the
 nodal set, rather than a fundamental embedding space):
@@ -96,7 +84,7 @@ phase twist, creating a non-orientable topology from a simple scalar
 oscillation.
 
 
-## 4. Second‐Order Relationality
+# Second‐Order Relationality
 
 PNP’s relationality is two‐tiered:
 
@@ -109,7 +97,7 @@ PNP’s relationality is two‐tiered:
 Space itself is the stable pattern of these relations.
 
 
-## 5. Implications
+# Implications
 
 * **Emergent Orientation:** Orientation is locally reversible and defined only
   via field phase.
@@ -122,26 +110,18 @@ Space itself is the stable pattern of these relations.
   modes.
 
 
-## 6. Conclusion
+# Conclusion
 
 The minimal $(1)$ mode in PNP provides a self‐referential energy flow
 that defines "in" and "out" without presupposing space or orientation. This
-complements the formal derivation of PNP’s dynamics (Reference 1) and its
-gravitational application (Reference 2), offering a compact conceptual lens for
-interpreting the framework’s physical and philosophical reach.
-
----
+complements the formal derivation of PNP’s dynamics, offering a compact
+conceptual lens for interpreting the framework’s physical and philosophical
+reach.
 
 
-## References
+# References
 
-1.  **Nedrock, F., Vale, L., Freet, M., Rodríguez, A. M.** (2025). *The PNP
-    Theory of Cause and Effect: Causality from Topological Persistence*.
-    Preferred Frame Lab. (DOI: Pending).
-2.  **Rodríguez, A. M., Palma, A., Freet, M.** (2025). *Explaining Dark Matter
-    with the Point–Not–Point Framework and a PNP Theory of Gravitation*.
-    ResearchGate. DOI:
-    [10.13140/RG.2.2.16877.91368](https://doi.org/10.13140/RG.2.2.16877.91368)
-3.  **Rodríguez, A. M., Hale, A., Freet, M.** (2025). *The PNP Description of
-    Energy Flow*. Preferred Frame Lab. DOI:
-    [10.13140/RG.2.2.29880.25606](https://doi.org/10.13140/RG.2.2.29880.25606)
+1.  **Nedrock, F., Vale, L., Freet, M., Rodriguez, A. M.** (2025). *The PNP
+    Theory of Cause and Effect: Causality from Topological Persistence in Scalar
+    Fields*. Preferred Frame Lab.
+    https://writing.preferredframe.com/doi/10.5281/zenodo.18317319
