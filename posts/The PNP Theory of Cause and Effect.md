@@ -139,8 +139,8 @@ $$
 
 # Derivation of Causality
 
-We now prove that "Time" is a requirement for the existence of the
-$(1)$ mode.
+We now prove that "Time" is the byproduct of the $(1)$ mode's
+necessary self-perpetuation.
 
 
 ## Sector Decomposition
