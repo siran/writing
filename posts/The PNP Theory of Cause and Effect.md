@@ -6,7 +6,7 @@ date: 2025-08-14
 one-sentence-summary: |
   Causality emerges in the PNP framework because a topologically non-trivial scalar field configuration cannot remain static without violating stress–energy conservation, forcing ordered evolution.
 summary: |
-  We derive causality from first principles within the Point–Not–Point (PNP) framework. At its core lies the topological irreducibility of the fundamental $(1)$ mode: the simplest closed oscillation of a scalar field $U$ exhibiting a $\pi$ phase inversion. This $\mathbb{Z}_2$ invariant enforces loop persistence and forbids extinction without a phase slip. From this, we prove that such a mode cannot remain static, formalizing cause–effect not as a postulate, but as the inevitable action of the field propagator on a persistent topological sector.
+  We derive causality from first principles within the Point–Not–Point (PNP) framework. At its core lies the topological irreducibility of the fundamental $(1)$ mode: the simplest closed oscillation of a scalar field $U$ exhibiting a $\pi$ phase inversion. This $\mathbb{Z}_2$ invariant enforces loop persistence and forbids extinction without a phase slip. We explicitly ground this mode in the discrete solution space of source-free Maxwell dynamics (the toroidal hydrogenic spectrum). From this physically motivated topology, we prove that such a mode cannot remain static, formalizing cause–effect not as a postulate, but as the inevitable action of the field propagator on a persistent topological sector.
 keywords:
   - PNP Framework
   - Topological Persistence
@@ -17,10 +17,10 @@ keywords:
 license: CC BY 4.0
 ---
 
-## Introduction
+# Introduction
 
 In standard formulations of physics, causality is assumed as a primitive
-ordering of events —time exists, and things move through it. In the
+ordering of events—time exists, and things move through it. In the
 Point–Not–Point (PNP) framework, we invert this relationship. We propose that
 causality emerges from **Topology**: specifically, from the requirement that a
 non-trivial field configuration must evolve to maintain its structural
@@ -34,7 +34,7 @@ successive configurations required to preserve topology. Thus, cause–effect is
 the temporal manifestation of topological persistence.
 
 
-## The PNP Framework and the Fundamental Mode
+# The PNP Framework and the Fundamental Mode
 
 Let $U: \mathcal{M} \to \mathbb{R}$ be a real scalar energy field. We define the
 complex envelope $A(\mathbf{x},t)$ as a local phase–amplitude decomposition of
@@ -49,16 +49,39 @@ oscillatory structure in a real scalar field; no additional $U(1)$
 degrees of freedom are introduced.*
 
 
-### Topological Sectors and the $(n)$ Notation
+## The Physical Origin of the $(1)$ Mode
+
+The topological object central to this theory—the **$(1)$ mode**—is
+not an arbitrary mathematical postulate. It is the abstraction of the
+fundamental standing-wave solution to Maxwell's equations on a toroidal
+manifold.
+
+As demonstrated in the derivation of the Schrödinger equation from source-free
+electromagnetism [1], the imposition of single-valuedness on a toroidal field
+configuration yields a discrete spectrum of modes labeled by integer winding
+numbers $(n_1, n_2)$. For the symmetric case ($n_1 = n_2 = n$), the energy
+of these modes scales as $E \propto 1/n^2$, reproducing the Rydberg series
+characteristic of bound atomic states (Hydrogen) without invoking point charges.
+
+The **$(1)$ mode** corresponds to the ground state ($n=1$)
+of this physical hierarchy. It represents the "simplest knot" compatible with
+the wave equation—a closed loop of energy with a $\pi$ phase twist.
+While higher $n$ modes describe excited states, the
+$(1)$ mode represents the irreducible topological obstruction that
+defines the entity's existence. By focusing on the $(1)$ mode, we are
+not inventing a shape; we are analyzing the topological properties of the most
+fundamental stable structure allowed by classical field dynamics.
+
+
+## Topological Sectors and the $(n)$ Notation
 
 We denote topological sectors by $(n)$ with $n \in \mathbb{N}$,
-representing the winding number of the phase around the core. The fundamental
-non-trivial sector is the **$(1)$ mode**.
+representing the winding number of the phase around the core.
 
-We define the $(1)$ mode as a closed loop $C$ encircling
-a core such that one traversal advances the phase $\phi$ by
-$\pi$ (a Möbius-like twist). This requires two traversals to return
-to the initial state.
+The $(1)$ mode is defined geometrically as a closed loop
+$C$ encircling a core such that one traversal advances the phase
+$\phi$ by $\pi$ (a Möbius-like twist).  This requires two
+traversals to return to the initial state.
 
 The holonomy along $C$ is:
 
@@ -81,7 +104,7 @@ continuously; it can only change via a **Phase Slip** (where $\rho \to 0$ at
 a point on $C$), effectively breaking the loop.
 
 
-## Field Dynamics and Stress–Energy
+# Field Dynamics and Stress–Energy
 
 The source-free PNP equation of motion is given by the vanishing of the exterior
 derivative of the dual:
@@ -109,13 +132,13 @@ u = T^{00}, \qquad J^\mu = T^\mu{}_\nu\,t^\nu
 $$
 
 
-## Derivation of Causality
+# Derivation of Causality
 
 We now prove that "Time" is a requirement for the existence of the
 $(1)$ mode.
 
 
-### Sector Decomposition
+## Sector Decomposition
 
 The configuration space decomposes into disjoint sectors labeled by
 $\nu$. The evolution generated by $d(\star dU)=0$ preserves sector
@@ -127,7 +150,7 @@ $$
 $$
 
 
-### Persistence Forbids Stasis (The Proof)
+## Persistence Forbids Stasis (The Proof)
 
 Assume, for the sake of contradiction, that the field is static:
 $\Phi(t+\Delta t) = \Phi(t)$ for all $t$. This implies
@@ -156,7 +179,7 @@ Unlike conventional instabilities which depend on parameters, the instability of
 a static $(1)$ mode is topologically protected.
 
 
-### Propagator Form of Cause–Effect
+## Propagator Form of Cause–Effect
 
 Let $\mathcal{P}_{\Delta t}$ be the evolution operator. On the persistent
 sector:
@@ -171,7 +194,7 @@ Persistence**. The effect is simply the next necessary configuration to prevent
 the loop from breaking.
 
 
-## Force from Stress–Flow
+# Force from Stress–Flow
 
 We can extend this to interactions. From $\nabla_\mu T^{\mu\nu}=0$ in a
 stationary, spherically symmetric flow:
@@ -194,7 +217,7 @@ a gravitation-like interaction arising from the **Organization of Energy Flow**,
 without the need to postulate intrinsic mass.
 
 
-## Conclusion
+# Conclusion
 
 In the PNP framework, we do not need to postulate that "Time Flows" or "Gravity
 Attracts."
@@ -206,3 +229,10 @@ Attracts."
 
 Reality is a self-driving machine: it moves because it is topologically
 forbidden from standing still.
+
+
+# References
+
+1.  **Palma, A., Rodriguez, A. M., Thorne, E.** (2025). *Deriving the
+    Schrödinger Equation from Source-Free Maxwell Dynamics*. Preferred Frame
+    Lab. (DOI: Pending).
