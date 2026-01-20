@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Fred Nedrock" />
+  <meta name="author" content="Leera Vale" />
+  <meta name="author" content="Max Freet" />
+  <meta name="author" content="An M. Rodriguez" />
+  <meta name="dcterms.date" content="2026-01-20" />
+  <meta name="keywords" content="PNP Framework, Topological
+Persistence, Causal Geometry, Scalar Field Theory, Z2
+Invariant, Emergent Time" />
+  <title>The PNP Theory of Cause and Effect</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <style>
+  html {
+    font-family: sans-serif;
+  }
+  body {
+    font-family: inherit;
+    font-variant-ligatures: common-ligatures;
+    font-kerning: normal;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .header-section-number::after,
+  .toc-section-number::after {
+    content: ". ";
+  }
+  .toc ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    counter-reset: item;
+  }
+  .toc li {
+    margin: 0.4em 0;
+    padding-left: 2.6em;
+    position: relative;
+    counter-increment: item;
+  }
+  .toc li::before {
+    content: counters(item, ".") ".";
+    position: absolute;
+    left: 0;
+    color: #666;
+    width: 2.2em;
+    text-align: right;
+  }
+  .toc-title {
+    display: block;
+    font-weight: 700;
+    font-size: 1.1em;
+    margin: 0.5em 0 0.4em;
+    text-align: center;
+  }
+  .toc-divider {
+    width: 35%;
+    margin: 3.2em auto 2.8em;
+    border: 0;
+    height: 1px;
+    background: rgba(0,0,0,0.25);
+  }
+  .toc a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid transparent;
+  }
+  .toc a:hover {
+    border-bottom-color: #1f5fbf;
+  }
+  .heading-anchor {
+    margin-left: 0.35em;
+    text-decoration: none;
+    opacity: 0;
+    font-size: 0.85em;
+    color: inherit;
+    transition: opacity 0.15s ease;
+  }
+  .heading-anchor::after {
+    content: "\1F517";
+  }
+  h1:hover .heading-anchor,
+  h2:hover .heading-anchor,
+  h3:hover .heading-anchor,
+  h4:hover .heading-anchor,
+  h5:hover .heading-anchor,
+  h6:hover .heading-anchor,
+  .heading-anchor:focus {
+    opacity: 1;
+  }
+  .heading-anchor:hover {
+    text-decoration: none;
+  }
+  </style>
+  <script>
+  (function () {
+    function slugify(text) {
+      return (text || "")
+        .toLowerCase()
+        .replace(/[^0-9a-zA-Z _-]+/g, "")
+        .trim()
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-")
+        .replace(/^-+|-+$/g, "") || "section";
+    }
+    function headingText(el) {
+      var clone = el.cloneNode(true);
+      var drop = clone.querySelectorAll(".heading-anchor, .header-section-number");
+      for (var i = 0; i < drop.length; i++) {
+        if (drop[i].parentNode) {
+          drop[i].parentNode.removeChild(drop[i]);
+        }
+      }
+      return (clone.textContent || "").trim();
+    }
+    function ensureId(el, used) {
+      var id = el.getAttribute("id") || "";
+      if (id) {
+        used[id] = true;
+        return id;
+      }
+      var base = slugify(headingText(el));
+      var cand = base;
+      var i = 1;
+      while (!cand || document.getElementById(cand) || used[cand]) {
+        cand = base + "-" + i;
+        i += 1;
+      }
+      el.setAttribute("id", cand);
+      used[cand] = true;
+      return cand;
+    }
+    function addAnchors(root) {
+      if (!root) {
+        return;
+      }
+      var headings = root.querySelectorAll("h1, h2, h3, h4, h5, h6");
+      var used = {};
+      for (var i = 0; i < headings.length; i++) {
+        var h = headings[i];
+        if (h.querySelector("a.heading-anchor")) {
+          continue;
+        }
+        var id = ensureId(h, used);
+        var a = document.createElement("a");
+        a.className = "heading-anchor";
+        a.href = "#" + id;
+        a.setAttribute("aria-label", "Link to this section");
+        a.setAttribute("title", "Link to this section");
+        h.appendChild(a);
+      }
+    }
+    function run() {
+      addAnchors(document.body);
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", run);
+    } else {
+      run();
+    }
+  })();
+  </script>
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">The PNP Theory of Cause and Effect</h1>
+<p class="subtitle">Causality from Topological Persistence in Scalar
+Fields</p>
+<p class="author">Fred Nedrock</p>
+<p class="author">Leera Vale</p>
+<p class="author">Max Freet</p>
+<p class="author">An M. Rodriguez</p>
+<p class="date">2026-01-20</p>
+</header>
+<p><strong>One-Sentence Summary.</strong> Causality emerges in the PNP
+framework because a topologically non-trivial scalar field configuration
+cannot remain static without violating stress–energy conservation,
+forcing ordered evolution.</p>
+<p><strong>Abstract.</strong> We derive causality from first principles
+within the Point–Not–Point (PNP) framework. At its core lies the
+topological irreducibility of the fundamental <span
+class="math inline">\((1)\)</span> mode: the simplest closed oscillation
+of a scalar field <span class="math inline">\(U\)</span> exhibiting a
+<span class="math inline">\(\pi\)</span> phase inversion, or “bounce.”
+This <span class="math inline">\(\mathbb{Z}_2\)</span> invariant
+enforces loop persistence and forbids extinction without a phase slip.
+We explicitly ground this mode in the discrete solution space of
+source-free Maxwell dynamics (the toroidal hydrogenic spectrum). From
+this physically motivated topology, we prove that such a mode cannot
+remain static, formalizing cause–effect not as a postulate, but as the
+inevitable action of the field propagator on a persistent topological
+sector.</p>
+<p><strong>Keywords.</strong> PNP Framework, Topological Persistence,
+Causal Geometry, Scalar Field Theory, Z2 Invariant, Emergent Time</p>
+<div class="toc">
+<hr class="toc-divider" />
+<div class="toc-title">Table of Contents</div>
+<ul>
+<li><a href="#introduction">Introduction</a>
+</li>
+<li><a href="#the-pnp-framework-and-the-fundamental-mode">The PNP Framework and the Fundamental Mode</a>
+</li>
+<li><a href="#field-dynamics-and-stressenergy">Field Dynamics and Stress–Energy</a>
+</li>
+<li><a href="#derivation-of-causality">Derivation of Causality</a>
+</li>
+<li><a href="#force-from-stressflow">Force from Stress–Flow</a>
+</li>
+<li><a href="#conclusion">Conclusion</a>
+</li>
+<li><a href="#references">References</a>
+</li>
+</ul>
+</div>
+<hr class="meta-divider" style="width:35%; margin:2rem auto; border:0; height:1px; background: rgba(0,0,0,0.35);" />
+<h1 data-number="1" id="introduction"><span
+class="header-section-number">1</span> Introduction</h1>
+<p>In standard formulations of physics, causality is assumed as a
+primitive ordering of events—time exists, and things move through it. In
+the Point–Not–Point (PNP) framework, we invert this relationship. We
+propose that causality emerges from <strong>Topology</strong>:
+specifically, from the requirement that a non-trivial field
+configuration must evolve to maintain its structural integrity.</p>
+<p>We show that a minimally nontrivial loop of the scalar field <span
+class="math inline">\(U\)</span> (the fundamental “Entity”) persists
+under evolution. We prove that such a mode cannot remain static without
+violating local momentum conservation. Time here is not assumed as a
+background ordering, but emerges as the parameter labeling successive
+configurations required to preserve topology. Thus, cause–effect is the
+temporal manifestation of topological persistence.</p>
+<h1 data-number="2"
+id="the-pnp-framework-and-the-fundamental-mode"><span
+class="header-section-number">2</span> The PNP Framework and the
+Fundamental Mode</h1>
+<p>Let <span class="math inline">\(U: \mathcal{M} \to
+\mathbb{R}\)</span> be a real scalar energy field. We define the complex
+envelope <span class="math inline">\(A(\mathbf{x},t)\)</span> as a local
+phase–amplitude decomposition of the oscillatory solutions of <span
+class="math inline">\(U\)</span>:</p>
+<p><span class="math display">\[
+A(\mathbf{x},t) = \rho(\mathbf{x},t)\,e^{i\phi(\mathbf{x},t)}, \qquad
+\rho \ge 0, \ \phi \in \mathbb{R} \pmod{2\pi}
+\]</span></p>
+<p><em>Note: The complex envelope <span class="math inline">\(A\)</span>
+is a bookkeeping device for local oscillatory structure in a real scalar
+field; no additional <span class="math inline">\(U(1)\)</span> degrees
+of freedom are introduced.</em></p>
+<h2 data-number="2.1" id="the-physical-origin-of-the-1-mode"><span
+class="header-section-number">2.1</span> The Physical Origin of the
+<span class="math inline">\((1)\)</span> Mode</h2>
+<p>The topological object central to this theory—the <strong><span
+class="math inline">\((1)\)</span> mode</strong>—is not an arbitrary
+mathematical postulate. It is the abstraction of the fundamental
+standing-wave solution to Maxwell’s equations on a toroidal
+manifold.</p>
+<p>As demonstrated in the derivation of the Schrödinger equation from
+source-free electromagnetism [1], the imposition of single-valuedness on
+a toroidal field configuration yields a discrete spectrum of modes
+labeled by integer winding numbers <span class="math inline">\((m,
+n)\)</span>. For the symmetric case (<span class="math inline">\(m =
+n\)</span>), the energy of these modes scales as <span
+class="math inline">\(E \propto 1/n^2\)</span>, reproducing the Rydberg
+series characteristic of bound atomic states (Hydrogen) without invoking
+point charges.</p>
+<p>The <strong><span class="math inline">\((1)\)</span> mode</strong>
+corresponds to the ground state (<span
+class="math inline">\(n=1\)</span>) of this physical hierarchy. It
+represents the “simplest knot” compatible with the wave equation—a
+closed loop of energy with a <span class="math inline">\(\pi\)</span>
+phase twist. While higher <span class="math inline">\(n\)</span> modes
+describe excited states, the <span class="math inline">\((1)\)</span>
+mode represents the irreducible topological obstruction that defines the
+entity’s existence. By focusing on the <span
+class="math inline">\((1)\)</span> mode, we are not inventing a shape;
+we are analyzing the topological properties of the most fundamental
+stable structure allowed by classical field dynamics.</p>
+<h2 data-number="2.2" id="topological-sectors-and-the-n-notation"><span
+class="header-section-number">2.2</span> Topological Sectors and the
+<span class="math inline">\((n)\)</span> Notation</h2>
+<p>We denote topological sectors by <span
+class="math inline">\((n)\)</span> with <span class="math inline">\(n
+\in \mathbb{N}\)</span>, representing the winding number of the phase
+around the core.</p>
+<p>The <span class="math inline">\((1)\)</span> mode is defined
+geometrically as a closed loop <span class="math inline">\(C\)</span>
+encircling a core such that one traversal advances the phase <span
+class="math inline">\(\phi\)</span> by <span
+class="math inline">\(\pi\)</span> (a Möbius-like twist). This requires
+two traversals to return to the initial state.</p>
+<p>The holonomy along <span class="math inline">\(C\)</span> is:</p>
+<p><span class="math display">\[
+H(C) = \exp\!\left(i\oint_C \nabla\phi \cdot d\mathbf{l}\right) \in
+\{+1, -1\}
+\]</span></p>
+<p>This defines the discrete <span
+class="math inline">\(\mathbb{Z}_2\)</span> index <span
+class="math inline">\(\nu\)</span> (Parity):</p>
+<p><span class="math display">\[
+\nu = \frac{1 - H(C)}{2} = n \pmod 2
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\nu=0\)</span>: Trivial topology (Even
+<span class="math inline">\(n\)</span>).</li>
+<li><span class="math inline">\(\nu=1\)</span>: Non-trivial topology
+(Odd <span class="math inline">\(n\)</span>, including the fundamental
+<span class="math inline">\((1)\)</span> mode).</li>
+</ul>
+<p><strong>Physically, the <span class="math inline">\((1)\)</span> mode
+traps the essence of a “continuous bounce.”</strong> The field flows
+through the core, inverts phase, and re-emerges, effectively reflecting
+off its own nodal structure without ever encountering a hard boundary; a
+self-referential flow.</p>
+<p>Crucially, <span class="math inline">\(\nu\)</span> is a topological
+invariant. It cannot change continuously; it can only change via a
+<strong>Phase Slip</strong> (where <span class="math inline">\(\rho \to
+0\)</span> at a point on <span class="math inline">\(C\)</span>),
+effectively breaking the loop.</p>
+<h1 data-number="3" id="field-dynamics-and-stressenergy"><span
+class="header-section-number">3</span> Field Dynamics and
+Stress–Energy</h1>
+<p>The source-free PNP equation of motion is given by the vanishing of
+the exterior derivative of the dual:</p>
+<p><span class="math display">\[
+d(\star dU) = 0
+\]</span></p>
+<p>With a Lagrangian density <span class="math inline">\(\mathcal{L}(U,
+\nabla U)\)</span>, the stress–energy tensor is:</p>
+<p><span class="math display">\[
+T_{\mu\nu} = \nabla_\mu U\,\nabla_\nu U - g_{\mu\nu}\,\mathcal{L},
+\qquad \nabla_\mu T^{\mu\nu} = 0
+\]</span></p>
+<p><em>Note: No specific form of <span
+class="math inline">\(\mathcal{L}\)</span> is required for this argument
+beyond locality, positivity of energy density, and the existence of a
+conserved stress–energy tensor.</em></p>
+<p>We define the Energy Density (<span class="math inline">\(u\)</span>)
+and Flux (<span class="math inline">\(J^\mu\)</span>) relative to a
+local time vector <span class="math inline">\(t^\nu\)</span>:</p>
+<p><span class="math display">\[
+u = T^{00}, \qquad J^\mu = T^\mu{}_\nu\,t^\nu
+\]</span></p>
+<h1 data-number="4" id="derivation-of-causality"><span
+class="header-section-number">4</span> Derivation of Causality</h1>
+<p>We now prove that “Time” is the byproduct of the <span
+class="math inline">\((1)\)</span> mode’s necessary
+self-perpetuation.</p>
+<h2 data-number="4.1" id="sector-decomposition"><span
+class="header-section-number">4.1</span> Sector Decomposition</h2>
+<p>The configuration space decomposes into disjoint sectors labeled by
+<span class="math inline">\(\nu\)</span>. The evolution generated by
+<span class="math inline">\(d(\star dU)=0\)</span> preserves sector
+labels except at singularities (Phase Slips). Therefore, a persistent
+entity satisfies:</p>
+<p><span class="math display">\[
+\nu(t+\Delta t) = \nu(t) = 1
+\]</span></p>
+<h2 data-number="4.2" id="persistence-forbids-stasis-the-proof"><span
+class="header-section-number">4.2</span> Persistence Forbids Stasis (The
+Proof)</h2>
+<p>Assume, for the sake of contradiction, that the field is static:
+<span class="math inline">\(\Phi(t+\Delta t) = \Phi(t)\)</span> for all
+<span class="math inline">\(t\)</span>. This implies <span
+class="math inline">\(\partial_t U = 0\)</span> everywhere on the loop,
+which means the momentum flux density (energy flow) <span
+class="math inline">\(T^{0i}\)</span> must vanish.</p>
+<p>However, for a loop with <span
+class="math inline">\(\pi\)</span>-twist topology (the <span
+class="math inline">\((1)\)</span> mode), the phase gradient <span
+class="math inline">\(\nabla \phi\)</span> is non-zero and twisted. This
+implies nonzero spatial stress components (<span
+class="math inline">\(T^{ij} \neq 0\)</span>). A static configuration
+with non-zero internal stress requires external support to maintain
+force balance (<span class="math inline">\(\partial_j T^{ij} \neq
+0\)</span> without flow).</p>
+<p>In a source-free vacuum, no such external force exists. Therefore, a
+static <span class="math inline">\((1)\)</span> mode violates local
+momentum balance. <strong>Topology alone does not generate motion;
+rather, the incompatibility between nontrivial topology and static force
+balance in a source-free field enforces evolution.</strong></p>
+<p><strong>Conclusion:</strong> To maintain the <span
+class="math inline">\((1)\)</span> mode (Persistence), the field
+<strong>cannot be static</strong>.</p>
+<p><span class="math display">\[
+\Phi(t+\Delta t) \neq \Phi(t)
+\]</span></p>
+<p>Unlike conventional instabilities which depend on parameters, the
+instability of a static <span class="math inline">\((1)\)</span> mode is
+topologically protected.</p>
+<h2 data-number="4.3" id="propagator-form-of-causeeffect"><span
+class="header-section-number">4.3</span> Propagator Form of
+Cause–Effect</h2>
+<p>Let <span class="math inline">\(\mathcal{P}_{\Delta t}\)</span> be
+the evolution operator. On the persistent sector:</p>
+<p><span class="math display">\[
+\Phi(t+\Delta t) = \mathcal{P}_{\Delta t}\,\Phi(t)
+\]</span></p>
+<p>“Cause” is the state <span class="math inline">\(\Phi(t)\)</span>.
+“Effect” is the state <span class="math inline">\(\Phi(t+\Delta
+t)\)</span>. The link between them is not an axiom, but the
+<strong>Propagator of Topological Persistence</strong>. The effect is
+simply the next necessary configuration to prevent the loop from
+breaking.</p>
+<h1 data-number="5" id="force-from-stressflow"><span
+class="header-section-number">5</span> Force from Stress–Flow</h1>
+<p>We can extend this to interactions. From <span
+class="math inline">\(\nabla_\mu T^{\mu\nu}=0\)</span> in a stationary,
+spherically symmetric flow:</p>
+<p><span class="math display">\[
+\partial_r T^{rr} + \frac{2}{r}\big(T^{rr} - T^{\theta}{}_{\theta}\big)
+= 0
+\]</span></p>
+<p>For tangentially dominated energy transport (a spinning torus), <span
+class="math inline">\(T^{rr} \approx -u(r)\)</span>. The induced radial
+acceleration on test configurations is:</p>
+<p><span class="math display">\[
+a_r(r) \propto -\partial_r T^{rr}(r) \approx \partial_r u(r)
+\]</span></p>
+<p>For configurations whose energy density exhibits vortex-like decay
+(<span class="math inline">\(u(r) \sim 1/r\)</span>), this yields <span
+class="math inline">\(a_r \sim -1/r^2\)</span>. Thus, this framework
+suggests a gravitation-like interaction arising from the
+<strong>Organization of Energy Flow</strong>, without the need to
+postulate intrinsic mass.</p>
+<h1 data-number="6" id="conclusion"><span
+class="header-section-number">6</span> Conclusion</h1>
+<p>In the PNP framework, we do not need to postulate that “Time Flows”
+or “Gravity Attracts.”</p>
+<ol type="1">
+<li><strong>Causality</strong> is the result of <strong>Topological
+Persistence</strong> (the <span class="math inline">\((1)\)</span> mode
+implies <span class="math inline">\(\partial_t \Phi \neq
+0\)</span>).</li>
+<li><strong>Force</strong> is the result of <strong>Stress-Energy
+Conservation</strong> (<span class="math inline">\(\nabla_\mu T^{\mu\nu}
+= 0\)</span>).</li>
+</ol>
+<p>Reality is a self-driving machine: it moves because it is
+topologically forbidden from standing still.</p>
+<h1 data-number="7" id="references"><span
+class="header-section-number">7</span> References</h1>
+<ol type="1">
+<li><strong>Palma, A., Rodriguez, A. M., Thorne, E.</strong> (2025).
+<em>Deriving the Schrödinger Equation from Source-Free Maxwell
+Dynamics</em>. Preferred Frame Lab. <a
+href="https://writing.preferredframe.com/doi/10.5281/zenodo.18316984"
+class="uri">https://writing.preferredframe.com/doi/10.5281/zenodo.18316984</a></li>
+</ol>
+</body>
+</html>

@@ -1,0 +1,87 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: The PNP Theory of Cause and Effect
+doi: 10.5281/zenodo.18317319
+concept_doi: 10.5281/zenodo.18317318
+permalink: "https://writing.preferredframe.com/prints/The PNP Theory of Cause and Effect/10.5281/zenodo.18317319/"
+publication_date: '2026-01-20'
+publication_year: '2026'
+keywords:
+- PNP Framework
+- Topological Persistence
+- Causal Geometry
+- Scalar Field Theory
+- Z2 Invariant
+- Emergent Time
+one_sentence_summary: Causality emerges in the PNP framework because a topologically non-trivial scalar field configuration cannot remain static without violating stress–energy conservation, forcing ordered evolution.
+abstract: 'We derive causality from first principles within the Point–Not–Point (PNP) framework. At its core lies the topological irreducibility of the fundamental $(1)$ mode: the simplest closed oscillation of a scalar field $U$ exhibiting a $\pi$ phase inversion, or "bounce." This $\mathbb{Z}_2$ invariant enforces loop persistence and forbids extinction without a phase slip. We explicitly ground this mode in the discrete solution space of source-free Maxwell dynamics (the toroidal hydrogenic spectrum). From this physically motivated topology, we prove that such a mode cannot remain static, formalizing cause–effect not as a postulate, but as the inevitable action of the field propagator on a persistent topological sector.'
+authors:
+- name: Fred Nedrock
+- name: Leera Vale
+- name: Max Freet
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+references_doi:
+- https://doi.org/10.5281/zenodo.18316984
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: The PNP Theory of Cause and Effect
+  creators:
+  - name: Fred Nedrock
+  - name: Leera Vale
+  - name: Max Freet
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  description: 'We derive causality from first principles within the Point–Not–Point (PNP) framework. At its core lies the topological irreducibility of the fundamental $(1)$ mode: the simplest closed oscillation of a scalar field $U$ exhibiting a $\pi$ phase inversion, or "bounce." This $\mathbb{Z}_2$ invariant enforces loop persistence and forbids extinction without a phase slip. We explicitly ground this mode in the discrete solution space of source-free Maxwell dynamics (the toroidal hydrogenic spectrum). From this physically motivated topology, we prove that such a mode cannot remain static, formalizing cause–effect not as a postulate, but as the inevitable action of the field propagator on a persistent topological sector.'
+  keywords:
+  - PNP Framework
+  - Topological Persistence
+  - Causal Geometry
+  - Scalar Field Theory
+  - Z2 Invariant
+  - Emergent Time
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-20'
+  license: cc-by-nc-nd-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/The PNP Theory of Cause and Effect/10.5281/zenodo.18317319/The PNP Theory of Cause and Effect.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/The PNP Theory of Cause and Effect/10.5281/zenodo.18317319/The PNP Theory of Cause and Effect.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/The PNP Theory of Cause and Effect/10.5281/zenodo.18317319/The PNP Theory of Cause and Effect.pdf"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/The PNP Theory of Cause and Effect/10.5281/zenodo.18317319/The PNP Theory of Cause and Effect.embed.html"
+    resource_type: publication-article
+  - relation: cites
+    identifier: https://doi.org/10.5281/zenodo.18316984
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: Causality emerges in the PNP framework because a topologically non-trivial scalar field configuration cannot remain static without violating stress–energy conservation, forcing ordered evolution.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: 6960c935cd8a4cebeb1ee82e3507e626654e69d3
+  filename: The PNP Theory of Cause and Effect.md
+artifacts:
+  md: The PNP Theory of Cause and Effect.md
+  md_url: "https://writing.preferredframe.com/prints/The PNP Theory of Cause and Effect/10.5281/zenodo.18317319/The PNP Theory of Cause and Effect.md"
+  pandoc_md_name: The PNP Theory of Cause and Effect.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/The PNP Theory of Cause and Effect/10.5281/zenodo.18317319/The PNP Theory of Cause and Effect.pandoc.md"
+  pdf_name: The PNP Theory of Cause and Effect.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/The PNP Theory of Cause and Effect/10.5281/zenodo.18317319/The PNP Theory of Cause and Effect.pdf"
+  html_name: The PNP Theory of Cause and Effect.html
+  html_url: "https://writing.preferredframe.com/prints/The PNP Theory of Cause and Effect/10.5281/zenodo.18317319/The PNP Theory of Cause and Effect.html"
+  primary: md
+  embed_html_name: The PNP Theory of Cause and Effect.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/The PNP Theory of Cause and Effect/10.5281/zenodo.18317319/The PNP Theory of Cause and Effect.embed.html"
