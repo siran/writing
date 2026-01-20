@@ -189,18 +189,18 @@ Curl.**
 1.  **Nedrock, F., Vale, L., Freet, M., Rodríguez, A. M.** (2025). *The PNP
     Theory of Cause and Effect: Causality from Topological Persistence*.
     Preferred Frame Lab. (DOI: Pending).
-2.  **Rodriguez, A. M., Mercer, A.** (2026). *Why Water Does Not Blow Up*.
+2.  **Freet, M., Hale, A., Rodríguez, A. M.** (2025). *The In–Out
+    Self-Referential Field Vibration*. Preferred Frame Lab. (DOI: Pending).
+3.  **Rodriguez, A. M., Mercer, A.** (2026). *Why Water Does Not Blow Up*.
     Zenodo. DOI:
     [10.5281/zenodo.18290164](https://doi.org/10.5281/zenodo.18290164)
-3.  **Freet, M., Rodriguez, A. M.** (2026). *Geometric Inertia - Mass as Trapped
+4.  **Freet, M., Rodriguez, A. M.** (2026). *Geometric Inertia - Mass as Trapped
     Energy*. Zenodo. DOI:
     [10.5281/zenodo.18249230](https://doi.org/10.5281/zenodo.18249230)
-4.  **Palma, A., Rodriguez, A. M.** (2025). *Deriving the Schrödinger Equation
-    from Source-Free Maxwell Dynamics*. Preferred Frame Lab. (DOI: Pending).
-5.  **Rodriguez, A. M.** (2026). *The Causal Ordering of the Integers*. Zenodo.
+5.  **Palma, A., Rodriguez, A. M., Thorne, E.** (2025). *Deriving the
+    Schrödinger Equation from Source-Free Maxwell Dynamics*. Preferred Frame
+    Lab. (DOI: Pending).
+6.  **Rodriguez, A. M.** (2026). *The Causal Ordering of the Integers*. Zenodo.
     DOI: [10.5281/zenodo.18302617](https://doi.org/10.5281/zenodo.18302617)
-6.  **Rodriguez, A. M.** (2026). *Defining Electromagnetic Fields from
-    Continuity and Divergence-Free Structure*. Zenodo. DOI:
-    [10.5281/zenodo.18269184](https://doi.org/10.5281/zenodo.18269184)
 7.  **Rodriguez, A. M.** (2025). *A Maxwell Universe*. Zenodo. DOI:
     [10.5281/zenodo.17982297](https://doi.org/10.5281/zenodo.17982297)

@@ -18,17 +18,19 @@ keywords:
   - Scalar Field Theory
   - Z2 Invariant
   - Emergent Time
+abstract: |
+  We derive causality from first principles within the Point–Not–Point (PNP) framework. At its core lies the topological irreducibility of the fundamental $\nu=1$ mode: the simplest closed oscillation of a scalar field $U$ exhibiting a $\pi$ phase inversion. This $\mathbb{Z}_2$ invariant enforces loop persistence and forbids extinction without a phase slip. From this, we prove that such a mode cannot remain static, formalizing cause–effect not as a postulate, but as the inevitable action of the field propagator on a persistent topological sector. We further extend this result to suggest that stress gradients in the conserved flow induce gravitation-like dynamics for configurations whose energy density exhibits vortex-like decay.
+status: Pre-Print
 license: CC BY 4.0
 ---
 
 ## 1. Introduction
 
 In standard formulations of physics, causality is assumed as a primitive
-ordering of events — time exists, and things move through it.
-
-In the Point–Not–Point (PNP) framework, we invert this relationship. We propose
-that causality emerges from **Topology**: specifically, from the requirement
-that a non-trivial field configuration must evolve to maintain its structural
+ordering of events —time exists, and things move through it. In the
+Point–Not–Point (PNP) framework, we invert this relationship. We propose that
+causality emerges from **Topology**: specifically, from the requirement that a
+non-trivial field configuration must evolve to maintain its structural
 integrity.
 
 We show that a minimally nontrivial loop of the scalar field $U$
