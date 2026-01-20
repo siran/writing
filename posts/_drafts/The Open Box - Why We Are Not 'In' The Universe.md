@@ -25,7 +25,7 @@ illusion.
 We look at reality and we see a container. We imagine space as a box, time as a
 clock on the wall, and matter as the marbles rattling around inside. We assume
 that if you took the marbles out, the box would remain. We assume that to exist
-is to be "in" something; or that objects can be peeled of, layer after layer,
+is to be "in" something; or that objects can be peeled off, layer after layer,
 until a true, unimaginable, nonsensical void remains.
 
 This view is intuitive. It is practical for buying groceries. But as a
@@ -59,22 +59,20 @@ electromagnetic field is doing something specific.
 
 # The Geometry of the Open Box
 
-Imagine a Möbius strip [1]. It looks like a loop and it has a surface. But if
-you trace a line along the "inside," of the "loop" you eventually find yourself
-on the "outside" without ever crossing an edge.
+Imagine a Möbius strip [1].It looks like a loop and it has a surface. But if you
+trace a line along the "inside" of the "loop," you eventually find yourself on
+the "outside" without ever crossing an edge.
 
 In this topology, "inside" and "outside" are not locations; they are **phases**
-of a process, relative-opposite sides of a same coin.
+of a process, relative, opposite sides of the same coin.
 
 * **Phase A ($0$):** We call this "in."
-
 * **Phase B ($\pi$):** We call this "out."
 
 The field flows through the core, twists by $\pi$ radians, and
 re-emerges. The particle is not *in* the universe. The distinction between the
-object and the environment is purely a matter of phase relation.
-
-Reminds of breathing.
+object and the environment is purely a matter of phase relation — in/out, like
+breathing.
 
 
 # The Self-Confinement Mechanism
@@ -82,11 +80,9 @@ Reminds of breathing.
 If there is no container to hold the energy, why doesn't the energy simply
 dissipate? Why do "objects" stay objects?
 
-The fundamental unit of propagation is a wave that is trying to escape.
-
-In a linear system (light), it flies away at the speed of light
-($c$). But in the fundamental $(1)$ mode, the
-propagation path is closed.
+The fundamental unit of propagation is a wave that is trying to escape. In a
+linear system (light), it flies away at the speed of light ($c$).
+But in the fundamental $(1)$ mode, the propagation path is closed.
 
 The energy tries to escape. It pushes "outward." But because of the
 phase-twisted geometry, "outward" eventually curves back into "inward." The wave
@@ -111,27 +107,29 @@ the knot. To persist, the field *must* evolve.
 
 ## The "Propagator"
 
-We call he mathematical operator that drives this evolution is called the
-**propagator** [2]. To avoid dissipating, the field must continue it's phase
+The mathematical operator that drives this evolution is called the
+**propagator** [2]. To avoid dissipating, the field must continue its phase
 inversion to propagate onto itself. It has no option but to evolve, from state
-$t$ to state $t+\Delta t$ .
+$t$ to state $t+\Delta t$.
 
-Time is thus the byproduct of the need of energy to keep flow and to persist.
-The propagator just encodes this mathematically, and justifies it topologically
-- by the shape of its mere existence as a self-sustaining propagating loop of
+Time is thus the byproduct of the need of energy to keep flowing and to persist.
+The propagator just encodes this mathematically and justifies it topologically —
+by the shape of its mere existence as a self-sustaining propagating loop of
 energy.
 
 It is not a river that carries us; it is the sequence of necessary
 configurations the field must adopt to maintain its existence.
 
 
-# Conclusion: The Collapse of Prepositions
+# Conclusion
 
-We are used to defining ourselves by prepositions. We are **in** the room. We
-are **on** the planet. We move **through** time.
+We intuitively tend to define our existence by separation. We locate ourselves
+**in** a room, **on** a planet, drifting **through** time in a void. We assume a
+fundamental spatial distance between the observer and everything else.
 
-But if the "box" is an illusion, and the "object" is just a self-trapped
-vibration, then the prepositions collapse.
+We have shown a perspective where the "box" is an illusion, and "objects" are
+self-trapped energy circling around itself, and "time" is a byproduct of its
+persisted flow that guarantees its continued existence.
 
 We are not **in**. We are not **out**. We **are**.
 
