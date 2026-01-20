@@ -59,7 +59,7 @@ manifold.
 As demonstrated in the derivation of the Schrödinger equation from source-free
 electromagnetism [1], the imposition of single-valuedness on a toroidal field
 configuration yields a discrete spectrum of modes labeled by integer winding
-numbers $(n_1, n_2)$. For the symmetric case ($n_1 = n_2 = n$), the energy
+numbers $(m, n)$. For the symmetric case ($m = n$), the energy
 of these modes scales as $E \propto 1/n^2$, reproducing the Rydberg series
 characteristic of bound atomic states (Hydrogen) without invoking point charges.
 
@@ -240,4 +240,4 @@ forbidden from standing still.
 
 1.  **Palma, A., Rodriguez, A. M., Thorne, E.** (2025). *Deriving the
     Schrödinger Equation from Source-Free Maxwell Dynamics*. Preferred Frame
-    Lab. (DOI: Pending).
+    Lab. https://writing.preferredframe.com/doi/10.5281/zenodo.18316984
