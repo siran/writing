@@ -6,7 +6,7 @@ date: 2025-08-14
 one-sentence-summary: |
   Causality emerges in the PNP framework because a topologically non-trivial scalar field configuration cannot remain static without violating stress–energy conservation, forcing ordered evolution.
 summary: |
-  We derive causality from first principles within the Point–Not–Point (PNP) framework. At its core lies the topological irreducibility of the fundamental $(1)$ mode: the simplest closed oscillation of a scalar field $U$ exhibiting a $\pi$ phase inversion. This $\mathbb{Z}_2$ invariant enforces loop persistence and forbids extinction without a phase slip. We explicitly ground this mode in the discrete solution space of source-free Maxwell dynamics (the toroidal hydrogenic spectrum). From this physically motivated topology, we prove that such a mode cannot remain static, formalizing cause–effect not as a postulate, but as the inevitable action of the field propagator on a persistent topological sector.
+  We derive causality from first principles within the Point–Not–Point (PNP) framework. At its core lies the topological irreducibility of the fundamental $(1)$ mode: the simplest closed oscillation of a scalar field $U$ exhibiting a $\pi$ phase inversion, or "bounce." This $\mathbb{Z}_2$ invariant enforces loop persistence and forbids extinction without a phase slip. We explicitly ground this mode in the discrete solution space of source-free Maxwell dynamics (the toroidal hydrogenic spectrum). From this physically motivated topology, we prove that such a mode cannot remain static, formalizing cause–effect not as a postulate, but as the inevitable action of the field propagator on a persistent topological sector.
 keywords:
   - PNP Framework
   - Topological Persistence
@@ -98,6 +98,13 @@ $$
 * $\nu=0$: Trivial topology (Even $n$).
 * $\nu=1$: Non-trivial topology (Odd $n$, including the
   fundamental $(1)$ mode).
+
+**Physically, the $(1)$ mode traps the essence of a "continuous
+bounce."** The field flows through the core, inverts phase, and re-emerges,
+effectively reflecting off its own nodal structure without ever encountering a
+hard boundary. This self-referential flow is what dissolves the absolute
+distinction between "in" and "out," defining them instead as relational phases
+of the same continuous loop.
 
 Crucially, $\nu$ is a topological invariant. It cannot change
 continuously; it can only change via a **Phase Slip** (where $\rho \to 0$ at
