@@ -1,7 +1,6 @@
 ---
 title: "The PNP Theory of Cause and Effect"
 subtitle: "Causality from Topological Persistence in Scalar Fields"
-date: 2025-08-14
 authors:
   - name: Fred Nedrock
   - name: Leera Vale
@@ -9,8 +8,9 @@ authors:
   - name: An M. Rodriguez
     email: an@preferredframe.com
     affiliation: Preferred Frame Lab
-abstract: |
-  We derive causality from first principles within the Point–Not–Point (PNP) framework. At its core lies the topological irreducibility of the fundamental $\nu=1$ mode: the simplest closed oscillation of a scalar field $U$ exhibiting a $\pi$ phase inversion. This $\mathbb{Z}_2$ invariant enforces loop persistence and forbids extinction without a phase slip. From this, we prove that such a mode cannot remain static, formalizing cause–effect not as a postulate, but as the inevitable action of the field propagator on a persistent topological sector. We further extend this result to suggest that stress gradients in the conserved flow induce gravitation-like dynamics for configurations whose energy density exhibits vortex-like decay.
+date: 2025-08-14
+one-sentence-summary: Causality emerges in the PNP framework because a topologically non-trivial scalar field configuration cannot remain static without violating stress–energy conservation, forcing ordered temporal evolution.
+summary: We derive causality from first principles within the Point–Not–Point (PNP) framework. At its core lies the topological irreducibility of the fundamental $\nu=1$ mode: the simplest closed oscillation of a scalar field $U$ exhibiting a $\pi$ phase inversion. This $\mathbb{Z}_2$ invariant enforces loop persistence and forbids extinction without a phase slip. From this, we prove that such a mode cannot remain static, formalizing cause–effect not as a postulate, but as the inevitable action of the field propagator on a persistent topological sector. We further extend this result to suggest that stress gradients in the conserved flow induce gravitation-like dynamics for configurations whose energy density exhibits vortex-like decay.
 keywords:
   - PNP Framework
   - Topological Persistence
@@ -18,9 +18,6 @@ keywords:
   - Scalar Field Theory
   - Z2 Invariant
   - Emergent Time
-abstract: |
-  We derive causality from first principles within the Point–Not–Point (PNP) framework. At its core lies the topological irreducibility of the fundamental $\nu=1$ mode: the simplest closed oscillation of a scalar field $U$ exhibiting a $\pi$ phase inversion. This $\mathbb{Z}_2$ invariant enforces loop persistence and forbids extinction without a phase slip. From this, we prove that such a mode cannot remain static, formalizing cause–effect not as a postulate, but as the inevitable action of the field propagator on a persistent topological sector. We further extend this result to suggest that stress gradients in the conserved flow induce gravitation-like dynamics for configurations whose energy density exhibits vortex-like decay.
-status: Pre-Print
 license: CC BY 4.0
 ---
 
@@ -169,9 +166,9 @@ $$
 $$
 
 "Cause" is the state $\Phi(t)$. "Effect" is the state $\Phi(t+\Delta t)$.
-The link between them is not an arbitrary axiom, but the **Propagator of
-Topological Persistence**. The effect is simply the next necessary configuration
-to prevent the loop from breaking.
+The link between them is not an axiom, but the **Propagator of Topological
+Persistence**. The effect is simply the next necessary configuration to prevent
+the loop from breaking.
 
 
 ## 5. Force from Stress–Flow
