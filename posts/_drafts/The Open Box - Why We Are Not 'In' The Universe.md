@@ -59,9 +59,9 @@ electromagnetic field is doing something specific.
 
 # The Geometry of the Open Box
 
-Imagine a Möbius strip [1].It looks like a loop and it has a surface. But if you
-trace a line along the "inside" of the "loop," you eventually find yourself on
-the "outside" without ever crossing an edge.
+Imagine a Möbius strip [1]. It looks like a loop and it has a surface. But if
+you trace a line along the "inside" of the "loop," you eventually find yourself
+on the "outside" without ever crossing an edge.
 
 In this topology, "inside" and "outside" are not locations; they are **phases**
 of a process, relative, opposite sides of the same coin.
@@ -71,8 +71,7 @@ of a process, relative, opposite sides of the same coin.
 
 The field flows through the core, twists by $\pi$ radians, and
 re-emerges. The particle is not *in* the universe. The distinction between the
-object and the environment is purely a matter of phase relation — in/out, like
-breathing.
+object and the environment is purely a matter of phase relation.
 
 
 # The Self-Confinement Mechanism
@@ -113,8 +112,8 @@ inversion to propagate onto itself. It has no option but to evolve, from state
 $t$ to state $t+\Delta t$.
 
 Time is thus the byproduct of the need of energy to keep flowing and to persist.
-The propagator just encodes this mathematically and justifies it topologically —
-by the shape of its mere existence as a self-sustaining propagating loop of
+The propagator just encodes this mathematically and justifies it topologically
+—by the shape of its mere existence as a self-sustaining propagating loop of
 energy.
 
 It is not a river that carries us; it is the sequence of necessary
