@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Max Freet" />
+  <meta name="author" content="Adrien Hale" />
+  <meta name="author" content="An M. Rodriguez" />
+  <meta name="dcterms.date" content="2026-01-20" />
+  <meta name="keywords" content="PNP Framework, Scalar Field
+Recursion, Emergent Geometry, Mobius Phase Topology, Relational
+Space" />
+  <title>The In–Out Self-Referential Field Vibration</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <style>
+  html {
+    font-family: sans-serif;
+  }
+  body {
+    font-family: inherit;
+    font-variant-ligatures: common-ligatures;
+    font-kerning: normal;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .header-section-number::after,
+  .toc-section-number::after {
+    content: ". ";
+  }
+  .toc ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    counter-reset: item;
+  }
+  .toc li {
+    margin: 0.4em 0;
+    padding-left: 2.6em;
+    position: relative;
+    counter-increment: item;
+  }
+  .toc li::before {
+    content: counters(item, ".") ".";
+    position: absolute;
+    left: 0;
+    color: #666;
+    width: 2.2em;
+    text-align: right;
+  }
+  .toc-title {
+    display: block;
+    font-weight: 700;
+    font-size: 1.1em;
+    margin: 0.5em 0 0.4em;
+    text-align: center;
+  }
+  .toc-divider {
+    width: 35%;
+    margin: 3.2em auto 2.8em;
+    border: 0;
+    height: 1px;
+    background: rgba(0,0,0,0.25);
+  }
+  .toc a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid transparent;
+  }
+  .toc a:hover {
+    border-bottom-color: #1f5fbf;
+  }
+  .heading-anchor {
+    margin-left: 0.35em;
+    text-decoration: none;
+    opacity: 0;
+    font-size: 0.85em;
+    color: inherit;
+    transition: opacity 0.15s ease;
+  }
+  .heading-anchor::after {
+    content: "\1F517";
+  }
+  h1:hover .heading-anchor,
+  h2:hover .heading-anchor,
+  h3:hover .heading-anchor,
+  h4:hover .heading-anchor,
+  h5:hover .heading-anchor,
+  h6:hover .heading-anchor,
+  .heading-anchor:focus {
+    opacity: 1;
+  }
+  .heading-anchor:hover {
+    text-decoration: none;
+  }
+  </style>
+  <script>
+  (function () {
+    function slugify(text) {
+      return (text || "")
+        .toLowerCase()
+        .replace(/[^0-9a-zA-Z _-]+/g, "")
+        .trim()
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-")
+        .replace(/^-+|-+$/g, "") || "section";
+    }
+    function headingText(el) {
+      var clone = el.cloneNode(true);
+      var drop = clone.querySelectorAll(".heading-anchor, .header-section-number");
+      for (var i = 0; i < drop.length; i++) {
+        if (drop[i].parentNode) {
+          drop[i].parentNode.removeChild(drop[i]);
+        }
+      }
+      return (clone.textContent || "").trim();
+    }
+    function ensureId(el, used) {
+      var id = el.getAttribute("id") || "";
+      if (id) {
+        used[id] = true;
+        return id;
+      }
+      var base = slugify(headingText(el));
+      var cand = base;
+      var i = 1;
+      while (!cand || document.getElementById(cand) || used[cand]) {
+        cand = base + "-" + i;
+        i += 1;
+      }
+      el.setAttribute("id", cand);
+      used[cand] = true;
+      return cand;
+    }
+    function addAnchors(root) {
+      if (!root) {
+        return;
+      }
+      var headings = root.querySelectorAll("h1, h2, h3, h4, h5, h6");
+      var used = {};
+      for (var i = 0; i < headings.length; i++) {
+        var h = headings[i];
+        if (h.querySelector("a.heading-anchor")) {
+          continue;
+        }
+        var id = ensureId(h, used);
+        var a = document.createElement("a");
+        a.className = "heading-anchor";
+        a.href = "#" + id;
+        a.setAttribute("aria-label", "Link to this section");
+        a.setAttribute("title", "Link to this section");
+        h.appendChild(a);
+      }
+    }
+    function run() {
+      addAnchors(document.body);
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", run);
+    } else {
+      run();
+    }
+  })();
+  </script>
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">The In–Out Self-Referential Field Vibration</h1>
+<p class="subtitle">Second-Order Relationality and the Emergence of
+Orientation in PNP</p>
+<p class="author">Max Freet</p>
+<p class="author">Adrien Hale</p>
+<p class="author">An M. Rodriguez</p>
+<p class="date">2026-01-20</p>
+</header>
+<p><strong>One-Sentence Summary.</strong> Spatial orientation and the
+concepts of “in” and “out” are not fundamental primitives, but emerge as
+phase-dependent projections of the self-referential scalar field mode
+(1).</p>
+<p><strong>Abstract.</strong> We develop a second‐order relational
+description of the Point–Not–Point (PNP) scalar‐field framework, showing
+how “in” and “out” —along with orientation, direction, and spatial
+geometry— emerge from the self‐referential phase structure of a single
+real scalar field <span class="math inline">\(U(x,t)\)</span>. The
+minimal closed mode, denoted (1), exhibits a Möbius‐like phase inversion
+across its nodal surface, sustaining continuous energy circulation
+without requiring a background geometric twist. This work complements
+the dynamical theorems of PNP by providing the conceptual formulation of
+how a scalar field constructs spatial orientation.</p>
+<p><strong>Keywords.</strong> PNP Framework, Scalar Field Recursion,
+Emergent Geometry, Mobius Phase Topology, Relational Space</p>
+<div class="toc">
+<hr class="toc-divider" />
+<div class="toc-title">Table of Contents</div>
+<ul>
+<li><a href="#introduction">Introduction</a>
+</li>
+<li><a href="#scalar-field-recursion">Scalar Field Recursion</a>
+</li>
+<li><a href="#minimal-mode-and-inout-reversal">Minimal Mode and In–Out Reversal</a>
+</li>
+<li><a href="#secondorder-relationality">Second‐Order Relationality</a>
+</li>
+<li><a href="#implications">Implications</a>
+</li>
+<li><a href="#conclusion">Conclusion</a>
+</li>
+<li><a href="#references">References</a>
+</li>
+</ul>
+</div>
+<hr class="meta-divider" style="width:35%; margin:2rem auto; border:0; height:1px; background: rgba(0,0,0,0.35);" />
+<h1 data-number="1" id="introduction"><span
+class="header-section-number">1</span> Introduction</h1>
+<p>In standard physics, space is treated as a container and orientation
+as a primitive. In the Point–Not–Point (PNP) framework, neither is
+fundamental: the only ontic entity is a scalar energy field <span
+class="math inline">\(U:\mathbb{R}^3\times\mathbb{R}\to\mathbb{R}\)</span>.
+Observable structure arises from the closed oscillations of <span
+class="math inline">\(U\)</span>, with apparent directions and “in–out”
+relations emerging from nodal phase behavior.</p>
+<p>Building on the derivation of causality from topological persistence
+[1], we here show how the minimal <span
+class="math inline">\((1)\)</span> mode defines a
+<strong>self‐referential energy flow</strong> that reverses orientation
+across a node without spatial inversion, grounding spatial concepts in
+scalar recursion.</p>
+<h1 data-number="2" id="scalar-field-recursion"><span
+class="header-section-number">2</span> Scalar Field Recursion</h1>
+<p>The field dynamics are governed by the recursive definitions:</p>
+<p><span class="math display">\[
+F = d(*dU), \quad dF=0, \quad d*F=0
+\]</span></p>
+<p>from which electric‐ and magnetic‐like fields follow:</p>
+<p><span class="math display">\[
+\mathbf{B} = *\,dU, \quad \mathbf{E} = *\,d*\,dU
+\]</span></p>
+<p>These satisfy the source‐free Maxwell equations. In PNP, however,
+vectors are not primary: they are projections of the scalar’s own
+oscillatory recursion.</p>
+<p><em>Note: The Hodge dual (<span class="math inline">\(*\)</span>) is
+used here as a relational operator on the field gradients, not as a
+rigid structure dependent on a pre-existing metric background.</em></p>
+<h1 data-number="3" id="minimal-mode-and-inout-reversal"><span
+class="header-section-number">3</span> Minimal Mode and In–Out
+Reversal</h1>
+<p>We define the minimal spherical standing wave (referring to the
+symmetry of the nodal set, rather than a fundamental embedding
+space):</p>
+<p><span class="math display">\[
+U(r,t) = A\sin(k r - \omega t), \quad U(0,t) = U(R,t) = 0
+\]</span></p>
+<p>The boundary condition gives <span class="math inline">\(k R =
+\pi\)</span>. The field flows inward, cancels at <span
+class="math inline">\(r=0\)</span>, and reemerges outward with opposite
+phase.</p>
+<p>Let the effective orientation vector be:</p>
+<p><span class="math display">\[
+\hat{n}(r) = \frac{\nabla U}{|\nabla U|}
+\]</span></p>
+<p>Then, examining the limit across the node:</p>
+<p><span class="math display">\[
+\lim_{r\to 0^-} \hat{n} = -\lim_{r\to 0^+} \hat{n}
+\]</span></p>
+<p>This inversion is continuous in phase space (<span
+class="math inline">\(e^{i\pi} = -1\)</span>) but appears as a reversal
+in vector space. This is a <strong>Möbius‐like effect</strong> in the
+field’s orientation: the “inside” transforms continuously into the
+“outside” through a phase twist, creating a non-orientable topology from
+a simple scalar oscillation.</p>
+<h1 data-number="4" id="secondorder-relationality"><span
+class="header-section-number">4</span> Second‐Order Relationality</h1>
+<p>PNP’s relationality is two‐tiered:</p>
+<ol type="1">
+<li><strong>First‐order:</strong> Spatial relations arise from field
+phase gradients (Distance).</li>
+<li><strong>Second‐order:</strong> Those gradients are themselves
+defined by other relations—internal phase continuity across nodes
+(Orientation).</li>
+</ol>
+<p>“In” and “out” are thus not absolute directions but phase‐dependent
+projections. Space itself is the stable pattern of these relations.</p>
+<h1 data-number="5" id="implications"><span
+class="header-section-number">5</span> Implications</h1>
+<ul>
+<li><strong>Emergent Orientation:</strong> Orientation is locally
+reversible and defined only via field phase.</li>
+<li><strong>Relational Descriptors:</strong> “In” and “out” are not
+ontic; they are relational descriptors of recursion.</li>
+<li><strong>Epistemic Geometry:</strong> Geometry and topology are
+epistemic models of field closure, constrained only by measurable phase
+continuity, not fundamental givens.</li>
+<li><strong>Complexity:</strong> Complex structure results from nested
+and interacting closed modes.</li>
+</ul>
+<h1 data-number="6" id="conclusion"><span
+class="header-section-number">6</span> Conclusion</h1>
+<p>The minimal <span class="math inline">\((1)\)</span> mode in PNP
+provides a self‐referential energy flow that defines “in” and “out”
+without presupposing space or orientation. This complements the formal
+derivation of PNP’s dynamics, offering a compact conceptual lens for
+interpreting the framework’s physical and philosophical reach.</p>
+<h1 data-number="7" id="references"><span
+class="header-section-number">7</span> References</h1>
+<ol type="1">
+<li><strong>Nedrock, F., Vale, L., Freet, M., Rodriguez, A. M.</strong>
+(2025). <em>The PNP Theory of Cause and Effect: Causality from
+Topological Persistence in Scalar Fields</em>. Preferred Frame Lab. <a
+href="https://writing.preferredframe.com/doi/10.5281/zenodo.18317319"
+class="uri">https://writing.preferredframe.com/doi/10.5281/zenodo.18317319</a></li>
+</ol>
+</body>
+</html>
