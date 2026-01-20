@@ -42,6 +42,8 @@ from zenodo_api import (
 )
 
 DEFAULT_ORCID = "0009-0009-9098-9468"
+DEFAULT_ORCID_NAME = "An M. Rodriguez"
+DEFAULT_ORCID_EMAIL = "an@preferredframe.com"
 MAX_EXTRA_ASSET_BYTES = 1024 * 1024
 
 ASSET_TYPE_ALIASES = {
@@ -713,6 +715,19 @@ def _apply_orcid_list(parsed: dict, orcids: List[str], *, warn_unused: bool = Tr
     return updated
 
 
+def _find_default_orcid_author(authors: List[Dict]) -> Optional[int]:
+    target_key = _author_key(DEFAULT_ORCID_NAME)
+    for idx, author in enumerate(authors):
+        name_key = _author_key(author.get("name", ""))
+        if name_key and name_key == target_key:
+            return idx
+    for idx, author in enumerate(authors):
+        email = (author.get("email") or "").strip().lower()
+        if email == DEFAULT_ORCID_EMAIL:
+            return idx
+    return None
+
+
 def _apply_cli_overrides(parsed: dict, args) -> dict:
     updated = dict(parsed)
     if args.keywords is not None:
@@ -735,11 +750,13 @@ def _apply_cli_overrides(parsed: dict, args) -> dict:
         if default_orcid:
             authors = [dict(a) for a in (updated.get("authors") or [])]
             if authors:
-                first = authors[0]
-                if (first.get("name") or "").strip() and not first.get("orcid"):
-                    first["orcid"] = default_orcid
-                    authors[0] = first
-                    updated["authors"] = authors
+                idx = _find_default_orcid_author(authors)
+                if idx is not None:
+                    target = authors[idx]
+                    if (target.get("name") or "").strip() and not target.get("orcid"):
+                        target["orcid"] = default_orcid
+                        authors[idx] = target
+                        updated["authors"] = authors
     return updated
 
 
@@ -749,23 +766,54 @@ def _prompt_missing_orcids(parsed: dict) -> dict:
     """
     updated = dict(parsed)
     authors = [dict(a) for a in (updated.get("authors") or [])]
+    skip_remaining = False
     for author in authors:
         name = (author.get("name") or "").strip()
         if not name or author.get("orcid"):
             continue
+        if skip_remaining:
+            break
         while True:
             raw = input(
                 f"Enter ORCID for {name} "
                 "(format 0000-0000-0000-0000, or 'skip' to omit): "
             ).strip()
             if not raw:
-                echo("ORCID is required for Zenodo; enter an ORCID or type 'skip' to omit.")
+                confirm = input(
+                    f"{name} has no ORCID. Skip remaining authors? [Y/n] "
+                ).strip().lower()
+                if confirm in ("", "y", "yes"):
+                    skip_remaining = True
+                    break
+                if confirm in ("n", "no"):
+                    continue
+                echo("Please answer Y or n.")
                 continue
             if raw.lower() in {"skip", "none", "n/a"}:
                 break
             orcid = _normalize_orcid_input(raw)
             if orcid:
                 author["orcid"] = orcid
+                break
+            echo("Invalid ORCID format. Example: 0000-0000-0000-0000 or https://orcid.org/0000-0000-0000-0000")
+        if skip_remaining:
+            break
+
+    if authors and not any((a.get("orcid") or "").strip() for a in authors):
+        target = next((a for a in authors if (a.get("name") or "").strip()), None)
+        if not target:
+            die("At least one ORCID is required, but no authors were found.")
+        name = (target.get("name") or "").strip()
+        while True:
+            raw = input(
+                f"At least one ORCID is required. Enter ORCID for {name}: "
+            ).strip()
+            if not raw:
+                echo("ORCID is required to proceed.")
+                continue
+            orcid = _normalize_orcid_input(raw)
+            if orcid:
+                target["orcid"] = orcid
                 break
             echo("Invalid ORCID format. Example: 0000-0000-0000-0000 or https://orcid.org/0000-0000-0000-0000")
     updated["authors"] = authors
