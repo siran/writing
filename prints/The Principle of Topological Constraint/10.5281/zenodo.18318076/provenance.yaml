@@ -1,0 +1,119 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: The Principle of Topological Constraint
+doi: 10.5281/zenodo.18318076
+concept_doi: null
+permalink: "https://writing.preferredframe.com/prints/The Principle of Topological Constraint/10.5281/zenodo.18318076/"
+publication_date: '2026-01-20'
+publication_year: '2026'
+keywords:
+- Topological Constraint
+- Yang-Mills Mass Gap
+- Navier-Stokes Regularity
+- Emergent Time
+- Maxwell Universe
+- PNP Theory
+- Causal Geometry
+- Geometric Inertia
+one_sentence_summary: We propose the Principle of Topological Constraint, which unifies Causality, Fluid Regularity, and Mass as the inevitable geometric consequences of a conserved field topology that is strictly forbidden from being static, torn, or untied.
+abstract: 'We propose the Principle of Topological Constraint: the axiom that physical evolution is strictly the local reorganization of a conserved field topology in the present time slice. By enforcing the preservation of non-trivial topological invariants, we derive Causality, Regularity, and Mass not as separate laws, but as inevitable consequences of a field that is not allowed to be static, torn, or untied.'
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+- name: Fred Nedrock
+- name: Leera Vale
+- name: Max Freet
+- name: Alex Mercer
+- name: Elias Thorne
+references_doi:
+- https://doi.org/10.5281/zenodo.17982297
+- https://doi.org/10.5281/zenodo.18249230
+- https://doi.org/10.5281/zenodo.18290164
+- https://doi.org/10.5281/zenodo.18302617
+- https://doi.org/10.5281/zenodo.18316984
+- https://doi.org/10.5281/zenodo.18317319
+- https://doi.org/10.5281/zenodo.18317581
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: The Principle of Topological Constraint
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  - name: Fred Nedrock
+  - name: Leera Vale
+  - name: Max Freet
+  - name: Alex Mercer
+  - name: Elias Thorne
+  description: 'We propose the Principle of Topological Constraint: the axiom that physical evolution is strictly the local reorganization of a conserved field topology in the present time slice. By enforcing the preservation of non-trivial topological invariants, we derive Causality, Regularity, and Mass not as separate laws, but as inevitable consequences of a field that is not allowed to be static, torn, or untied.'
+  keywords:
+  - Topological Constraint
+  - Yang-Mills Mass Gap
+  - Navier-Stokes Regularity
+  - Emergent Time
+  - Maxwell Universe
+  - PNP Theory
+  - Causal Geometry
+  - Geometric Inertia
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-20'
+  license: cc-by-nc-nd-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/The Principle of Topological Constraint/10.5281/zenodo.18318076/The Principle of Topological Constraint.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/The Principle of Topological Constraint/10.5281/zenodo.18318076/The Principle of Topological Constraint.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/The Principle of Topological Constraint/10.5281/zenodo.18318076/The Principle of Topological Constraint.pdf"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/The Principle of Topological Constraint/10.5281/zenodo.18318076/The Principle of Topological Constraint.embed.html"
+    resource_type: publication-article
+  - relation: cites
+    identifier: https://doi.org/10.5281/zenodo.17982297
+    resource_type: publication-article
+  - relation: cites
+    identifier: https://doi.org/10.5281/zenodo.18249230
+    resource_type: publication-article
+  - relation: cites
+    identifier: https://doi.org/10.5281/zenodo.18290164
+    resource_type: publication-article
+  - relation: cites
+    identifier: https://doi.org/10.5281/zenodo.18302617
+    resource_type: publication-article
+  - relation: cites
+    identifier: https://doi.org/10.5281/zenodo.18316984
+    resource_type: publication-article
+  - relation: cites
+    identifier: https://doi.org/10.5281/zenodo.18317319
+    resource_type: publication-article
+  - relation: cites
+    identifier: https://doi.org/10.5281/zenodo.18317581
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: We propose the Principle of Topological Constraint, which unifies Causality, Fluid Regularity, and Mass as the inevitable geometric consequences of a conserved field topology that is strictly forbidden from being static, torn, or untied.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: 495a39da04399a405ec59b07afbcf4201057f42e
+  filename: The Principle of Topological Constraint.md
+artifacts:
+  md: The Principle of Topological Constraint.md
+  md_url: "https://writing.preferredframe.com/prints/The Principle of Topological Constraint/10.5281/zenodo.18318076/The Principle of Topological Constraint.md"
+  pandoc_md_name: The Principle of Topological Constraint.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/The Principle of Topological Constraint/10.5281/zenodo.18318076/The Principle of Topological Constraint.pandoc.md"
+  pdf_name: The Principle of Topological Constraint.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/The Principle of Topological Constraint/10.5281/zenodo.18318076/The Principle of Topological Constraint.pdf"
+  html_name: The Principle of Topological Constraint.html
+  html_url: "https://writing.preferredframe.com/prints/The Principle of Topological Constraint/10.5281/zenodo.18318076/The Principle of Topological Constraint.html"
+  primary: md
+  embed_html_name: The Principle of Topological Constraint.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/The Principle of Topological Constraint/10.5281/zenodo.18318076/The Principle of Topological Constraint.embed.html"
