@@ -1,0 +1,79 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics
+doi: 10.5281/zenodo.18316984
+concept_doi: null
+permalink: "https://writing.preferredframe.com/prints/Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics/10.5281/zenodo.18316984/"
+publication_date: '2026-01-20'
+publication_year: '2026'
+keywords:
+- Maxwell Equations
+- Toroidal Quantization
+- Analytic Signal
+- Emergent Quantum Mechanics
+- Rydberg Ladder
+one_sentence_summary: We derive the Schrödinger equation and the emergence of Planck's constant as the narrow-band limit of classical Maxwell wave dynamics on a toroidal standing mode.
+abstract: Maxwell's equations for electromagnetism in source-free vacuum predict discrete energies when an electromagnetic field forms a self-confined toroidal standing pattern. For any component $F(\mathbf{r},t)$ of the electromagnetic fields $\mathbf{E}, \mathbf{B}$, we isolate the forward-time spectral part, keep all derivative terms exactly, and obtain —within a rigorously bounded, bandwidth-squared remainder— the Schrödinger equation. Planck’s constant and the inertial mass thus emerge not as fundamental constants, but as geometric properties of the fundamental toroidal mode ($E_{11}, \omega_{11}$).
+authors:
+- name: Anes Palma
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+- name: Elias Thorne
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics
+  creators:
+  - name: Anes Palma
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  - name: Elias Thorne
+  description: Maxwell's equations for electromagnetism in source-free vacuum predict discrete energies when an electromagnetic field forms a self-confined toroidal standing pattern. For any component $F(\mathbf{r},t)$ of the electromagnetic fields $\mathbf{E}, \mathbf{B}$, we isolate the forward-time spectral part, keep all derivative terms exactly, and obtain —within a rigorously bounded, bandwidth-squared remainder— the Schrödinger equation. Planck’s constant and the inertial mass thus emerge not as fundamental constants, but as geometric properties of the fundamental toroidal mode ($E_{11}, \omega_{11}$).
+  keywords:
+  - Maxwell Equations
+  - Toroidal Quantization
+  - Analytic Signal
+  - Emergent Quantum Mechanics
+  - Rydberg Ladder
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-20'
+  license: cc-by-nc-nd-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics/10.5281/zenodo.18316984/Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics/10.5281/zenodo.18316984/Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics/10.5281/zenodo.18316984/Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics.pdf"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics/10.5281/zenodo.18316984/Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics.embed.html"
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: We derive the Schrödinger equation and the emergence of Planck's constant as the narrow-band limit of classical Maxwell wave dynamics on a toroidal standing mode.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: fd1473267431eb6f55fc4248c3406d68839697da
+  filename: Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics.md
+artifacts:
+  md: Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics.md
+  md_url: "https://writing.preferredframe.com/prints/Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics/10.5281/zenodo.18316984/Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics.md"
+  pandoc_md_name: Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics/10.5281/zenodo.18316984/Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics.pandoc.md"
+  pdf_name: Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics/10.5281/zenodo.18316984/Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics.pdf"
+  html_name: Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics.html
+  html_url: "https://writing.preferredframe.com/prints/Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics/10.5281/zenodo.18316984/Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics.html"
+  primary: md
+  embed_html_name: Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics/10.5281/zenodo.18316984/Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics.embed.html"
