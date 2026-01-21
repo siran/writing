@@ -1,0 +1,83 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: Why the Integers Do Not Explode
+doi: 10.5281/zenodo.18326998
+concept_doi: null
+permalink: "https://writing.preferredframe.com/prints/Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis/10.5281/zenodo.18326998/"
+publication_date: '2026-01-21'
+publication_year: '2026'
+keywords:
+- Riemann Hypothesis
+- Causal Ordering
+- Spectral Analysis
+- Prime Frequencies
+- Interference
+- Determinism
+one_sentence_summary: The Riemann Hypothesis is a stochastic question about a deterministic system; by reconceptualizing integers as a causal wave interference pattern, we show that unbounded error is structurally impossible.
+abstract: The Riemann Hypothesis asks if prime numbers behave randomly enough to cancel out errors. We argue this is a misleading stochastic question about a deterministic system. By reconceptualizing the number line as a causal interference pattern of prime frequencies, we demonstrate that the "error" is structurally bounded by the generation process itself — integers do not explode because they are overconstrained by their own factors.
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+- name: Alex Mercer
+references_doi:
+- https://doi.org/10.5281/zenodo.18300901
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: Why the Integers Do Not Explode
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  - name: Alex Mercer
+  description: The Riemann Hypothesis asks if prime numbers behave randomly enough to cancel out errors. We argue this is a misleading stochastic question about a deterministic system. By reconceptualizing the number line as a causal interference pattern of prime frequencies, we demonstrate that the "error" is structurally bounded by the generation process itself — integers do not explode because they are overconstrained by their own factors.
+  keywords:
+  - Riemann Hypothesis
+  - Causal Ordering
+  - Spectral Analysis
+  - Prime Frequencies
+  - Interference
+  - Determinism
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-21'
+  license: cc-by-nc-nd-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis/10.5281/zenodo.18326998/Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis/10.5281/zenodo.18326998/Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis/10.5281/zenodo.18326998/Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis.pdf"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis/10.5281/zenodo.18326998/Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis.embed.html"
+    resource_type: publication-article
+  - relation: cites
+    identifier: https://doi.org/10.5281/zenodo.18300901
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: The Riemann Hypothesis is a stochastic question about a deterministic system; by reconceptualizing integers as a causal wave interference pattern, we show that unbounded error is structurally impossible.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: 9ae0bc8794d3b5730f9cf8ab8694330e74656a11
+  filename: Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis.md
+artifacts:
+  md: Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis.md
+  md_url: "https://writing.preferredframe.com/prints/Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis/10.5281/zenodo.18326998/Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis.md"
+  pandoc_md_name: Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis/10.5281/zenodo.18326998/Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis.pandoc.md"
+  pdf_name: Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis/10.5281/zenodo.18326998/Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis.pdf"
+  html_name: Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis.html
+  html_url: "https://writing.preferredframe.com/prints/Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis/10.5281/zenodo.18326998/Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis.html"
+  primary: md
+  embed_html_name: Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis/10.5281/zenodo.18326998/Why the Integers Do Not Explode - Reconceptualizing the Riemann Hypothesis.embed.html"
