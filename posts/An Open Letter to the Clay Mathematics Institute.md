@@ -78,9 +78,9 @@ ambiguity of the prime distribution dissolves.
 
 Sincerely,
 
-**An M. Rodriguez & Alex Mercer** *Preferred Frame*
+**An M. Rodriguez & Alex Mercer**
 
----
+*Preferred Frame*
 
 
 # PART II: WHY THE INTEGERS DO NOT EXPLODE
