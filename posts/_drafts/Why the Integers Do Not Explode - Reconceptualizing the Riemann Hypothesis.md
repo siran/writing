@@ -2,9 +2,9 @@
 title: Why the Integers Do Not Explode
 subtitle: Reconceptualizing the Riemann Hypothesis
 author: An M. Rodriguez, Alex Mercer
-date: 2026-01-18
-one-sentence-summary: The Riemann Hypothesis arises from a stochastic abstraction that ignores the causal nature of integer generation; when arithmetic is reconceptualized as a deterministic wave interference process, unbounded error is excluded structurally.
-keywords: Riemann Hypothesis, Millennium Prize Problem, Causal Ordering, Spectral Analysis, Prime Frequencies, Interference, Dissolution
+date: 2026-01-21
+one-sentence-summary: The Riemann Hypothesis is a stochastic question about a deterministic system; by reconceptualizing integers as a causal wave interference pattern, we show that unbounded error is structurally impossible.
+keywords: Riemann Hypothesis, Causal Ordering, Spectral Analysis, Prime Frequencies, Interference, Determinism
 ---
 
 ## Abstract
@@ -19,9 +19,9 @@ The hypothesis is framed within an analytic approximation that treats primes as
 pseudo-random events, permitting hypothetical scenarios of "runaway"
 constructive interference (exploding error).
 
-In contrast, integers can be thought-of as being generated causally. We show
+In contrast, integers can be thought of as being generated causally. We show
 that once the number line is reconceptualized as a deterministic superposition
-of prime frequencies —expressed through causal ordering— unbounded error is
+of prime frequencies—expressed through causal ordering—unbounded error is
 structurally impossible. The conclusion is a physical resolution of the
 arithmetic problem: the integers do not explode because they are bound by their
 own generation.
@@ -32,10 +32,10 @@ own generation.
 The Riemann Hypothesis asserts that all non-trivial zeros of the Riemann zeta
 function $\zeta(s)$ lie on the critical line $\Re(s) = 1/2$. This
 implies that the distribution of primes follows the logarithmic integral
-$\text{Li}(x)$ with an error term bounded by
+$\text{Li}(x)$ with an error term bounded by:
 
 $$
-|\pi(x) - \text{Li}(x)| < \frac{1}{8\pi} \sqrt{x} \ln x.
+|\pi(x) - \text{Li}(x)| < \frac{1}{8\pi} \sqrt{x} \ln x
 $$
 
 Implicit in this formulation is a **stochastic assumption**: that the primes
@@ -49,15 +49,16 @@ integers themselves.
 
 ## Integers as Causal Interference
 
-In the actual generation of numbers, what is observed is not a stochastic
-arrival of primes, but a deterministic interference of frequencies.
+In a "causal ordering" view of the Natural numbers, what is observed is not a
+stochastic arrival of primes, but a deterministic interference of frequencies.
 
 We take as primitive the **Causal Ordering** ($\tau$), where the
 "time" $t$ corresponds to the introduction of the
 $t$-th prime $p_t$ as a new basis frequency
 $f_t = 1/p_t$.
 
-The number line is not a sequence of events; it is a **standing wave**.
+Rather than taking the number line as a sequence of events, we see it as a
+signal decomposed into frequencies (primes) and its magnitude.
 
 - **Frequencies:** Each prime $p$ introduces a periodic wave of
   period $p$.
@@ -71,7 +72,7 @@ In a stochastic system, independent variables can drift arbitrarily far from the
 mean (the "Gambler's Ruin"). But the integers are not independent variables.
 
 Every integer $n$ is the unique intersection of infinite periodic
-constraints.
+constraints:
 
 $$
 n \equiv 0 \pmod p \quad \forall p | n
@@ -88,7 +89,8 @@ from the mean.
 
 But because every new frequency is prime (coprime to all previous frequencies),
 such sustained coherence is **structurally unstable under prime injection**. The
-phases *must* de-correlate.
+phases *must* de-correlate; global resonance is impossible in a system built on
+unique factorization.
 
 
 ## Why Causal Generation forbids blow-up
@@ -98,11 +100,10 @@ Prime Number Theorem is equivalent to the noise floor of this signal.
 
 In our causal model:
 
-1.  New primes are injected at specific, deterministic intervals.
-2.  This injection creates a "combinatorial cliff" (as shown in our companion
-    paper *Purpose vs Randomness*).
-3.  This cliff enforces a strict bound on how "smooth" (low-entropy) numbers can
-    be at large magnitudes.
+1. New primes are injected at specific, deterministic intervals.
+2. This injection creates a "combinatorial cliff."
+3. This cliff enforces a strict bound on how "smooth" (low-entropy) numbers can
+   be at large magnitudes.
 
 Since the density of "smooth" numbers is strictly bounded by the causal
 generation process, the count of primes (the complement of smooth numbers) is
@@ -131,11 +132,8 @@ of analysis.
 Rather, we address the explanatory gap of the main question: **why prime
 irregularity remains globally bounded**.
 
-Our claim is that **boundedness follows from generative structure alone**.
-
-Any analytic framework that permits unbounded divergence necessarily models
-arithmetic as stochastic, and thus admits behaviors that are incompatible with a
-causal construction of $\mathbb{N}$.
+Our claim is that **boundedness follows from generative structure alone**. This
+is a pre-analytic, structural necessity.
 
 
 ## Statement relative to the Clay problem
@@ -149,14 +147,10 @@ Rather than attempting to prove the location of zeros using the very tools
 
 We therefore assert:
 
-> The phenomenon the Riemann Hypothesis models —prime regularity— is true not
+> The phenomenon the Riemann Hypothesis models—prime regularity—is true not
 > because of miraculous cancellation, but because the integers are a
 > deterministic, wave-complete system. Divergence is impossible in an
 > overconstrained interference pattern.
-
-
-Any model that permits divergence (randomness) necessarily admits unphysical
-solutions.
 
 
 ## Conclusion
@@ -178,3 +172,9 @@ Causal Number Theory answers a different question: how numbers are built.
 
 Numbers are built. They are built causally. And because of that, they do not
 explode.
+
+
+## References
+
+1. Mercer, A., Rodriguez, A.M., *Purpose vs Randomness* (2026). Preferred Frame.
+   https://writing.preferredframe.com/doi/10.5281/zenodo.18300901
