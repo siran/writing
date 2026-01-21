@@ -1,0 +1,85 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: 'An Open Letter to the Clay Mathematics Institute: Regarding the Structural Resolution of the Riemann Hypothesis'
+doi: 10.5281/zenodo.18328960
+concept_doi: null
+permalink: "https://writing.preferredframe.com/prints/An Open Letter to the Clay Mathematics Institute/10.5281/zenodo.18328960/"
+publication_date: '2026-01-21'
+publication_year: '2026'
+keywords:
+- Riemann Hypothesis
+- Open Letter
+- Clay Mathematics Institute
+- Structural Resolution
+- Number Theory
+one_sentence_summary: An open letter to the Clay Mathematics Institute declaring the structural resolution of the Riemann Hypothesis, referencing our published manuscript "Why the Integers Do Not Explode" which demonstrates that unbounded error is structurally impossible.
+abstract: 'We formally address the Scientific Advisory Board of the Clay Mathematics Institute to declare the Riemann Hypothesis resolved. This letter serves as notification that the "mystery" of prime distribution has been identified as a generative necessity rather than a probabilistic puzzle, as detailed in our published manuscript "Why the Integers Do Not Explode" (DOI: 10.5281/zenodo.18326998).'
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+- name: Alex Mercer
+references_doi:
+- https://doi.org/10.5281/zenodo.18300901
+- https://doi.org/10.5281/zenodo.18326998
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: 'An Open Letter to the Clay Mathematics Institute: Regarding the Structural Resolution of the Riemann Hypothesis'
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  - name: Alex Mercer
+  description: 'We formally address the Scientific Advisory Board of the Clay Mathematics Institute to declare the Riemann Hypothesis resolved. This letter serves as notification that the "mystery" of prime distribution has been identified as a generative necessity rather than a probabilistic puzzle, as detailed in our published manuscript "Why the Integers Do Not Explode" (DOI: 10.5281/zenodo.18326998).'
+  keywords:
+  - Riemann Hypothesis
+  - Open Letter
+  - Clay Mathematics Institute
+  - Structural Resolution
+  - Number Theory
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-21'
+  license: cc-by-nc-nd-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/An Open Letter to the Clay Mathematics Institute/10.5281/zenodo.18328960/An Open Letter to the Clay Mathematics Institute.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/An Open Letter to the Clay Mathematics Institute/10.5281/zenodo.18328960/An Open Letter to the Clay Mathematics Institute.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/An Open Letter to the Clay Mathematics Institute/10.5281/zenodo.18328960/An Open Letter to the Clay Mathematics Institute.pdf"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/An Open Letter to the Clay Mathematics Institute/10.5281/zenodo.18328960/An Open Letter to the Clay Mathematics Institute.embed.html"
+    resource_type: publication-article
+  - relation: cites
+    identifier: https://doi.org/10.5281/zenodo.18300901
+    resource_type: publication-article
+  - relation: cites
+    identifier: https://doi.org/10.5281/zenodo.18326998
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: An open letter to the Clay Mathematics Institute declaring the structural resolution of the Riemann Hypothesis, referencing our published manuscript "Why the Integers Do Not Explode" which demonstrates that unbounded error is structurally impossible.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: ed41c9b1bbab10b6488e12b62505d397522c95e3
+  filename: An Open Letter to the Clay Mathematics Institute.md
+artifacts:
+  md: An Open Letter to the Clay Mathematics Institute.md
+  md_url: "https://writing.preferredframe.com/prints/An Open Letter to the Clay Mathematics Institute/10.5281/zenodo.18328960/An Open Letter to the Clay Mathematics Institute.md"
+  pandoc_md_name: An Open Letter to the Clay Mathematics Institute.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/An Open Letter to the Clay Mathematics Institute/10.5281/zenodo.18328960/An Open Letter to the Clay Mathematics Institute.pandoc.md"
+  pdf_name: An Open Letter to the Clay Mathematics Institute.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/An Open Letter to the Clay Mathematics Institute/10.5281/zenodo.18328960/An Open Letter to the Clay Mathematics Institute.pdf"
+  html_name: An Open Letter to the Clay Mathematics Institute.html
+  html_url: "https://writing.preferredframe.com/prints/An Open Letter to the Clay Mathematics Institute/10.5281/zenodo.18328960/An Open Letter to the Clay Mathematics Institute.html"
+  primary: md
+  embed_html_name: An Open Letter to the Clay Mathematics Institute.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/An Open Letter to the Clay Mathematics Institute/10.5281/zenodo.18328960/An Open Letter to the Clay Mathematics Institute.embed.html"
