@@ -6,6 +6,7 @@ date: 2026-01-14
 keywords: geometric delay, helical path, effective velocity, emergent mass, Maxwell topology, classical derivation, energy circulation
 one-sentence-summary: When electromagnetic energy follows a non-straight, closed trajectory while locally propagating at light speed, geometric delay produces subluminal effective motion and inertial mass.
 summary: We derive subluminal velocity and inertial mass from first principles using only geometry and Maxwell kinematics. Electromagnetic energy always propagates locally at speed $c$, but if constrained to follow a helical or knotted trajectory, it must traverse a longer path to achieve the same forward displacement. This geometric delay reduces the effective forward speed. Momentum circulating in closed transverse directions does not contribute to translation and manifests as inertial mass. No constitutive medium, polarization response, or relativistic postulates are assumed. Mass emerges as a measure of trapped electromagnetic momentum.
+DOI: https://writing.preferredframe.com/doi/10.5281/zenodo.18249230
 ---
 
 ![AI generated illustration of knotted trajectories on a toroidal surface.](https://siran.github.io/assets/writing/unrolled-cylinder.png)

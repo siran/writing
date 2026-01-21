@@ -5,6 +5,7 @@ author: An M. Rodriguez, Alex Mercer
 date: 2026-01-18
 one-sentence-summary: The Navier–Stokes blow-up problem arises from a Newtonian abstraction that ignores the causal nature of energy transport; when flow is reconceptualized as bounded, continuous energy transport, finite-time blow-up is excluded for physical fluids.
 keywords: Navier–Stokes, Millennium Prize Problem, continuity equation, energy flow, causal transport, Maxwell universe, blow-up
+DOI: https://writing.preferredframe.com/doi/10.5281/zenodo.18290164
 ---
 
 ## Abstract

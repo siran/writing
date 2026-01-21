@@ -10,6 +10,7 @@ abstract: |
 keywords: Topological Constraint, Yang-Mills Mass Gap, Navier-Stokes Regularity, Emergent Time, Maxwell Universe, PNP Theory, Causal Geometry, Geometric Inertia
 status: Canonical Synthesis
 license: CC BY 4.0
+DOI: https://writing.preferredframe.com/doi/10.5281/zenodo.18318076
 ---
 
 # Abstract

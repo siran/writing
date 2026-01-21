@@ -15,6 +15,7 @@ keywords:
   - Z2 Invariant
   - Emergent Time
 license: CC BY 4.0
+DOI: https://writing.preferredframe.com/doi/10.5281/zenodo.18317319
 ---
 
 # Introduction

@@ -15,6 +15,7 @@ keywords:
   - Emergent Time
   - Geometric Mass
   - Phase Topology
+DOI: https://writing.preferredframe.com/doi/10.5281/zenodo.18319551
 ---
 
 # The Open Box: Why We Are Not "In" The Universe

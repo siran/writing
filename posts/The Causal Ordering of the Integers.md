@@ -6,6 +6,7 @@ date: 2026-01-18
 one-sentence-summary: We introduce a causal ordering of integers based on the sequential discovery of prime factors, revealing a temporal structure that distinguishes semantic signal from stochastic noise.
 summary: We introduce a novel ordering of the natural numbers $\mathbb{N}$ based on "causal generation" rather than magnitude. By defining the existence of a number as the moment its necessary prime factors are introduced, we reveal a hidden temporal structure to the number line. This structure separates integers into "low-entropy" (ancient/constructed) and "high-entropy" (young/random) classes. We demonstrate that this metric, "Causal Depth," serves as a potent feature for distinguishing semantic signals from stochastic noise.
 keywords: Number Theory, Causal Ordering, Signal Processing, Feature Extraction, Prime Factorization, Entropy, Semantic Compression
+DOI: https://writing.preferredframe.com/doi/10.5281/zenodo.18302617
 ---
 
 ## Definitions and Axioms

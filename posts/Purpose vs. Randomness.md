@@ -6,6 +6,7 @@ date: 2026-01-18
 one-sentence-summary: We define the Acausal Purpose Invariant ($\mathcal{P}$), a scale-invariant metric that quantifies how strongly a structure resists the combinatorial entropy naturally associated with its size.
 summary: We introduce the Acausal Purpose Invariant ($\mathcal{P}$), a decibel-scale measure of how atypical a number’s prime ancestry is relative to a stochastic background. Empirical sweeps reveal a sharp probabilistic cutoff separating random structure from cost-paid persistence, reframing the detection of life, artifacts, and purpose as a problem of entropy suppression rather than intelligence.
 keywords: Acausal Purpose, Purpose Index, SETI, Technosignatures, Signal Filtering, Entropy, Universal Constants, Persistence, Teleology, Biosignatures
+DOI: https://writing.preferredframe.com/doi/10.5281/zenodo.18300901
 ---
 
 ## Persistence Instead of Intelligence

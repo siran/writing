@@ -6,6 +6,7 @@ date: 2026-01-16
 one-sentence-summary: A complete logical map of the Maxwell Universe Research Program, organizing its output documents by sections, claims, dependencies, and production status.
 summary: This document provides a systematic, section-by-section map of the Maxwell Universe Research Program. Each output document is identified by its title and production status (published with DOI or in preparation). For every major section, we list its key claims, logical dependencies, consequences for later documents, and current status. The purpose is to preserve conceptual continuity, make dependencies explicit, and provide a stable reference point for extension and critique.
 keywords: Maxwell Universe, research program map, continuity equation, divergence-free flow, electromagnetic foundations, topology, minimal dynamics
+DOI: https://writing.preferredframe.com/doi/10.5281/zenodo.18275166
 ---
 
 This document serves as a **conceptual checkpoint** for the Maxwell Universe

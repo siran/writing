@@ -6,6 +6,7 @@ date: 2026-01-19
 one-sentence-summary: A precise statement of the methodological foundations, assumptions, and limits of the Maxwell Universe Research Program.
 summary: This document consolidates the guiding principles of the Maxwell Universe Research Program. It fixes the ontological stance, methodological rules, and logical boundaries that unify the program’s published works. The aim is not to introduce new results, but to preserve conceptual coherence, prevent regressions, and enable extension without reintroducing hidden postulates.
 keywords: Maxwell theory, foundations of physics, continuity equation, divergence-free flow, minimal dynamics, field-only ontology, topology
+DOI: https://writing.preferredframe.com/doi/10.5281/zenodo.18274175
 ---
 
 ## Purpose of this document

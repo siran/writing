@@ -14,6 +14,7 @@ keywords:
   - Emergent Quantum Mechanics
   - Rydberg Ladder
 license: CC BY 4.0
+DOI: https://writing.preferredframe.com/doi/10.5281/zenodo.18316984
 ---
 
 # Introduction
