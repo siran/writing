@@ -4,6 +4,8 @@ subtitle: Reconceptualizing the Riemann Hypothesis
 author: An M. Rodriguez, Alex Mercer
 date: 2026-01-21
 one-sentence-summary: The Riemann Hypothesis is a stochastic question about a deterministic system; by reconceptualizing integers as a causal wave interference pattern, we show that unbounded error is structurally impossible.
+summary: >-
+  The Riemann Hypothesis asks if prime numbers behave randomly enough to cancel out errors. We argue this is a misleading stochastic question about a deterministic system. By reconceptualizing the number line as a causal interference pattern of prime frequencies, we demonstrate that the "error" is structurally bounded by the generation process itself — integers do not explode because they are overconstrained by their own factors.
 keywords: Riemann Hypothesis, Causal Ordering, Spectral Analysis, Prime Frequencies, Interference, Determinism
 ---
 
