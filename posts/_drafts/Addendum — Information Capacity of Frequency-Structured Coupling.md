@@ -228,3 +228,209 @@ It is:
 
 Everything hinges on $B$ (selectivity) and $\mathrm{SNR}$
 (coherence vs unresolved background), not on raw amplitude in isolation.
+
+
+## Intuition as demodulated spectral bias
+
+A recurring experiential report is the feeling:
+
+> “I don’t know *why*, but I feel that …”
+
+
+Within the present framework, this has a precise interpretation.
+
+An intuitive judgement corresponds to a **regulatory variable** being biased by
+a drive channel whose structure is not explicitly represented symbolically.
+
+Formally, recall the receiver-side dynamics from the main document:
+
+$$
+\dot x = F(x) + \lambda\, y(t),
+$$
+
+where $y(t)$ is a projection of the electromagnetic field onto a
+sensitive coupling channel.
+
+If $y(t)$ is a demodulated envelope of a particular shared mode, then:
+
+- $x(t)$ changes deterministically,
+- the subject experiences a *directional tendency*,
+- but no explicit propositional content is available.
+
+This is intuition: **causal influence without linguistic representation**.
+
+The information is real, structured, and operative, but not encoded in words.
+
+
+## Animal vocalization as spectral communication (not semantics)
+
+This perspective immediately explains a well-known biological fact:
+
+When animals vocalize (mating calls, alarm cries, territorial signals), the
+primary information is **not** carried by lexical content.
+
+It is carried by:
+
+- fundamental frequency,
+- harmonic spacing,
+- spectral envelope,
+- temporal modulation patterns.
+
+Two cries with identical “loudness” but different harmonic structure can convey
+entirely different meanings: attraction, threat, distress, submission.
+
+From the present viewpoint:
+
+- the vocal apparatus is a **spectral modulator**,
+- the emitted sound reorganizes internal current timing and coherence,
+- which reorganizes the emitted electromagnetic spectral structure,
+- which couples into conspecific receivers via frequency-selective channels.
+
+This is why:
+
+- mating calls are species-specific in spectral pattern,
+- alarm calls are broadband and abrupt,
+- affiliative sounds are narrowband and rhythmic.
+
+The *content* is in the frequency structure, not the amplitude.
+
+
+## Body language as a parallel spectral channel
+
+Body posture, gesture, and movement act similarly.
+
+They are slow, spatially extended modulations of current flow and boundary
+conditions:
+
+- muscle tone,
+- joint angles,
+- respiration depth,
+- balance and sway.
+
+These modulate low-frequency components of $\mathbf{J}(\mathbf{x},t)$ and hence
+the occupied EM modes.
+
+This explains a familiar fact:
+
+> Body language often communicates “faster” and more reliably than speech.
+
+
+Because it bypasses symbolic decoding and acts directly on frequency-structured
+regulatory channels.
+
+
+## Why shared rhythm accelerates coupling
+
+When two systems entrain to a common rhythm (music, chanting, breathing, walking
+pace), several things happen simultaneously:
+
+1. **Spectral alignment** Both systems redistribute energy into the same narrow
+   frequency bands.
+
+2. **Phase stabilization** Relative phases become slowly varying rather than
+   rapidly decorrelating.
+
+3. **Mode selection** Only a subset of geometry-compatible modes remain
+   occupied.
+
+In Maxwellian terms:
+
+- cross-terms in energy density and induced drive channels stop averaging out,
+- specific modal envelopes $\alpha_m(t)$ become persistent,
+- effective $\mathrm{SNR}$ in those channels increases.
+
+No force increases. No energy transfer is required. Only *structure* is
+stabilized.
+
+
+## Quantitative intuition vs symbolic information
+
+We can now distinguish two kinds of information clearly:
+
+
+### 1. Symbolic / propositional information
+
+- Discrete symbols
+- High-level semantics
+- Requires explicit encoding/decoding
+- Typical of language
+
+
+### 2. Spectral / regulatory information
+
+- Continuous
+- Phase- and frequency-based
+- Acts directly on dynamical systems
+- Typical of affect, intuition, coordination, attraction, alarm
+
+Shannon capacity applies to both, but:
+
+- symbolic channels use many bits per symbol,
+- spectral channels use **few bits per second**, but those bits act at leverage
+  points (near criticality).
+
+This resolves an apparent paradox:
+
+> “How can such low-rate signals matter?”
+
+
+Because they act where the system’s response derivative is large.
+
+
+## Why amplitude language is misleading (final clarification)
+
+Amplitude is a poor organizing variable because:
+
+- amplitude alone does not define which mode is excited,
+- amplitude alone does not determine coupling selectivity,
+- amplitude alone does not predict receiver response.
+
+Frequency/phase structure determines:
+
+- which degrees of freedom are driven,
+- whether cross-terms persist,
+- whether a near-critical subsystem is engaged.
+
+Amplitude only scales *how fast* a given structured influence accumulates.
+
+
+## Experimental corollaries (clean, falsifiable)
+
+From this framework, several clean predictions follow:
+
+1. **Spectral specificity**
+   - Effects depend sharply on frequency structure.
+   - Broadband or mismatched signals produce no effect even at higher power.
+
+2. **Practice dependence**
+   - Training that improves spectral control (breath, voice, rhythm) increases
+     coupling efficacy.
+
+3. **Criticality dependence**
+   - Effects appear only when receiver subsystems are near critical transitions.
+
+4. **Phase sensitivity**
+   - Relative phase matters more than absolute intensity.
+
+5. **Slow accumulation**
+   - Observable effects integrate over time rather than appearing
+     instantaneously.
+
+None of these predictions involve nonlocality or violations of Maxwell theory.
+
+
+## Closing synthesis (plain language)
+
+Put plainly:
+
+- Living systems are extended electromagnetic antennas.
+- They naturally emit frequency-structured radiation.
+- Practice changes the *structure* of that radiation.
+- Geometry and rhythm define shared modes.
+- Near-critical biological subsystems are exquisitely sensitive to those modes.
+- Information is carried by frequency and phase, not by force.
+
+This is why tone, rhythm, posture, and “vibe” communicate so much — and why
+intuition feels informative without being verbal.
+
+The physics is ordinary. The implications are simply underappreciated.
