@@ -93,6 +93,59 @@
     main.paper * {
         white-space: normal;
     }
+
+    .dir-index {
+        white-space: normal;
+        padding: 0 1.25rem;
+        box-sizing: border-box;
+    }
+
+    .dir-index-controls {
+        margin: 0.5rem 0 1rem;
+        font-size: 0.95em;
+    }
+
+    .dir-index-controls .dir-index-label {
+        font-weight: 600;
+    }
+
+    .dir-index-controls a.is-active {
+        text-decoration: underline;
+    }
+
+    .dir-index-table {
+        width: 100%;
+        border-collapse: collapse;
+        white-space: normal;
+    }
+
+    .dir-index-table th,
+    .dir-index-table td {
+        text-align: left;
+        padding: 0.25rem 0.5rem;
+        border-bottom: 1px solid #ddd;
+        vertical-align: top;
+    }
+
+    .dir-index-table th.sortable {
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .dir-index-table th.is-sorted::after {
+        content: " ^";
+        font-size: 0.8em;
+        opacity: 0.6;
+    }
+
+    .dir-index-table th.is-sorted[data-dir="desc"]::after {
+        content: " v";
+    }
+
+    .dir-index-links {
+        font-size: 0.85em;
+        opacity: 0.8;
+    }
 </style>
 <script>
     (function () {
@@ -203,6 +256,157 @@
                 || document.querySelector(".md-container")
                 || document.body;
             addAnchors(root);
+        }
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", run);
+        } else {
+            run();
+        }
+    })();
+</script>
+<script>
+    (function () {
+        function defaultDirFor(key) {
+            if (key === "created" || key === "modified") {
+                return "desc";
+            }
+            return "asc";
+        }
+
+        function readValue(row, key) {
+            var raw = row.getAttribute("data-" + key) || "";
+            if (key === "created" || key === "modified") {
+                var num = parseFloat(raw);
+                return isNaN(num) ? 0 : num;
+            }
+            return raw.toLowerCase();
+        }
+
+        function setActiveHeader(table, key, dir) {
+            var headers = table.querySelectorAll("th[data-sort]");
+            for (var i = 0; i < headers.length; i++) {
+                var th = headers[i];
+                th.classList.remove("is-sorted");
+                th.removeAttribute("data-dir");
+                th.setAttribute("aria-sort", "none");
+            }
+            var active = table.querySelector('th[data-sort="' + key + '"]');
+            if (active) {
+                active.classList.add("is-sorted");
+                active.setAttribute("data-dir", dir);
+                active.setAttribute(
+                    "aria-sort",
+                    dir === "asc" ? "ascending" : "descending"
+                );
+            }
+        }
+
+        function setActiveLinks(table, key) {
+            var root = table.closest(".dir-index");
+            if (!root) {
+                return;
+            }
+            var links = root.querySelectorAll(".dir-index-controls a[data-sort-link]");
+            for (var i = 0; i < links.length; i++) {
+                var a = links[i];
+                if (a.getAttribute("data-sort-link") === key) {
+                    a.classList.add("is-active");
+                } else {
+                    a.classList.remove("is-active");
+                }
+            }
+        }
+
+        function sortTable(table, key, dir) {
+            var body = table.tBodies[0];
+            if (!body) {
+                return;
+            }
+            var rows = Array.prototype.slice.call(body.rows);
+            rows.sort(function (a, b) {
+                var va = readValue(a, key);
+                var vb = readValue(b, key);
+                if (va < vb) {
+                    return dir === "asc" ? -1 : 1;
+                }
+                if (va > vb) {
+                    return dir === "asc" ? 1 : -1;
+                }
+                var na = readValue(a, "name");
+                var nb = readValue(b, "name");
+                if (na < nb) {
+                    return -1;
+                }
+                if (na > nb) {
+                    return 1;
+                }
+                return 0;
+            });
+            for (var i = 0; i < rows.length; i++) {
+                body.appendChild(rows[i]);
+            }
+            table.setAttribute("data-sort", key);
+            table.setAttribute("data-dir", dir);
+            setActiveHeader(table, key, dir);
+            setActiveLinks(table, key);
+        }
+
+        function initTable(table) {
+            var headers = table.querySelectorAll("th[data-sort]");
+            for (var i = 0; i < headers.length; i++) {
+                (function (th) {
+                    var key = th.getAttribute("data-sort") || "name";
+                    th.setAttribute("tabindex", "0");
+                    th.addEventListener("click", function () {
+                        var currentKey = table.getAttribute("data-sort") || "name";
+                        var currentDir = table.getAttribute("data-dir") || defaultDirFor(currentKey);
+                        var dir = currentKey === key
+                            ? (currentDir === "asc" ? "desc" : "asc")
+                            : defaultDirFor(key);
+                        sortTable(table, key, dir);
+                    });
+                    th.addEventListener("keydown", function (e) {
+                        if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            th.click();
+                        }
+                    });
+                })(headers[i]);
+            }
+
+            var root = table.closest(".dir-index");
+            if (root) {
+                var links = root.querySelectorAll(".dir-index-controls a[data-sort-link]");
+                for (var j = 0; j < links.length; j++) {
+                    (function (a) {
+                        a.addEventListener("click", function (e) {
+                            if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) {
+                                return;
+                            }
+                            e.preventDefault();
+                            var key = a.getAttribute("data-sort-link") || "name";
+                            var currentKey = table.getAttribute("data-sort") || "name";
+                            var currentDir = table.getAttribute("data-dir") || defaultDirFor(currentKey);
+                            var dir = currentKey === key
+                                ? (currentDir === "asc" ? "desc" : "asc")
+                                : defaultDirFor(key);
+                            sortTable(table, key, dir);
+                        });
+                    })(links[j]);
+                }
+            }
+
+            var initKey = table.getAttribute("data-sort") || "name";
+            var initDir = table.getAttribute("data-dir") || defaultDirFor(initKey);
+            sortTable(table, initKey, initDir);
+        }
+
+        function run() {
+            var tables = document.querySelectorAll("table.dir-index-table");
+            for (var i = 0; i < tables.length; i++) {
+                initTable(tables[i]);
+            }
         }
 
         if (document.readyState === "loading") {
