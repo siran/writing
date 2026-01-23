@@ -1,11 +1,11 @@
 ---
 title: Modal Electromagnetic Coupling Between Two Biological Antennas Near Criticality
-subtitle: WIP - A Maxwellian Framework for Bias via Frequency Structure
-author: An M. Rodriguez, Alex Mercer, Alex Hankey (tbd by him), Elias Thorne
+subtitle: A Maxwellian Framework for Bias via Frequency Structure (WIP)
+author: An M. Rodriguez, Alex Mercer, Alex Hankey (tbd), Elias Thorne
 date: 2026-01-23
-keywords: Maxwell theory, biological electromagnetism, modal coupling, frequency modulation, coherence, higher-order critical points, HOCP, bias, antenna theory, near-field, far-field
-one-sentence-summary: Two extended biological current systems can couple through shared electromagnetic modes; frequency/phase structure—rather than amplitude—selects the coupling channel, and near-critical regulatory dynamics can be biased by small structured perturbations without violating Maxwell theory.
-summary: We present a strict Maxwellian framework for how two biological systems (treated as distributed current sources) can participate in a shared electromagnetic modal structure. The key variable is not field amplitude but the frequency/phase structure that selects which joint modes are occupied and how energy is partitioned among them. We show (i) how time-structured biological currents generate a modal spectrum, (ii) how geometry and separation define shared modes, (iii) how frequency modulation of sources shifts modal occupation and phase, and (iv) how a higher-order critical regulatory subsystem can act as a selective, high-gain transducer for perturbations in a specific mode. We include explicit derivations where needed and give two concrete toy examples: a 1D line-of-centers standing-wave mode and a coupled-oscillator/critical-response model that makes the “bias” notion precise without probabilistic postulates.
+keywords: Maxwell theory, biological electromagnetism, modal coupling, frequency modulation, coherence, higher-order critical points, HOCP, bias, antenna theory, near-field, far-field, spectral structure, matched coupling, information
+one-sentence-summary: Two extended biological current systems can couple through shared electromagnetic modes; frequency/phase structure selects the coupling channel, and near-critical regulatory dynamics can be biased by structured perturbations without violating Maxwell theory.
+summary: We present a strict Maxwellian framework for how two biological systems (distributed current sources) can participate in a shared electromagnetic modal structure. The operative variable is frequency/phase structure: how energy is partitioned among joint modes and how phase relations persist, not “raw amplitude.” We show (i) how time-structured biological currents generate spectral and modal structure, (ii) how geometry and separation define shared modes, (iii) how modulation of currents shifts modal partition and phase, (iv) how a near-critical regulatory subsystem (HOCP-like) can act as a selective transducer of a particular modal channel, and (v) how this supports an information-theoretic view in which modulation and mode-partition can carry information independently of lexical content (e.g., tone/harmonics in voice). Two explicit toy examples are given: a line-of-centers standing-wave mode model and a deterministic critical-response model that makes “bias” precise without stochastic postulates.
 ---
 
 # Modal Electromagnetic Coupling Between Two Biological Antennas Near Criticality
@@ -20,11 +20,11 @@ This is a category error.
 In a linear field theory like Maxwell electromagnetism, the decisive question is
 not “how big is the field,” but:
 
-- **Which modes are excited?**
-- **How are their phases related?**
-- **What part of the receiving system is actually coupled to those modes?**
-- **Is the receiver operating near a critical point where small structured
-  perturbations produce large regulatory consequences?**
+- Which modes are excited?
+- How are their phases related?
+- What part of the receiving system is actually coupled to those modes?
+- Is the receiver operating near a critical point where small structured
+  perturbations produce large regulatory consequences?
 
 This document formalizes a minimal, source-free Maxwellian mechanism:
 
@@ -36,51 +36,56 @@ This document formalizes a minimal, source-free Maxwellian mechanism:
 Nothing nonlocal is assumed. No violations of causality occur. No “zero-energy
 information” is required.
 
-The aim is clarity: to state precisely not only what Maxwell theory permits, but
-it logically *implies* can be done, rigorously and without hand-waiving, and
-what conditions are necessary for an effect to be detectable.
+The aim is clarity: to state precisely what Maxwell theory permits and what it
+logically implies can be done (given coupling), and what conditions are
+necessary for an effect to be detectable.
+
+---
 
 
 ## Assumptions
 
 We assume only:
 
-1. **Classical electromagnetism in a source-free propagation region.**
-   “Source-free” here means: there are no sources; biologogic systems are
-   treated as current loops, that can be modulated between known, calculatable,
-   biological, physical bounds, both in amplitude, frequency and "shape" (think
-   of regulating flow on stomach vs throat, vs even singing, humming,..)
+1. Classical electromagnetism in a source-free propagation region. “Source-free”
+   here refers to the field in the region between bodies: outside the compact
+   supports of biological currents, Maxwell’s vacuum equations hold. The
+   biological systems themselves are treated as bounded current/charge
+   distributions whose time-structure can be modulated within biological bounds
+   (in frequency and spatiotemporal pattern).
 
-2. **Two localized biological current distributions** (two bodies), each
-   represented by charge/current sources confined to bounded regions:
-   - region $\Omega_A$ which "sources" the radiation profile
-     $(\rho_A,\mathbf{J}_A)$
-   - region $\Omega_B$ which "sources" the radiation profile
-     $(\rho_B,\mathbf{J}_B)$
+2. Two localized biological current distributions (two bodies), each represented
+   by charge/current sources confined to bounded regions:
+   - region $\Omega_A$ with sources $(\rho_A,\mathbf{J}_A)$,
+   - region $\Omega_B$ with sources $(\rho_B,\mathbf{J}_B)$.
 
-3. **Linearity and superposition.** Fields from multiple sources add:
-   $$\mathbf{E}=\mathbf{E}_A+\mathbf{E}_B,\qquad \mathbf{B}=\mathbf{B}_A+\mathbf{B}_B.$$
+3. Linearity and superposition. Fields from multiple sources add:
 
-4. **No constitutive medium is assumed** for the propagation region (vacuum
-   propagation law). Any biological tissue is part of the sources and receiver
-   dynamics, not an external “dielectric background.” Also, everything --
-   "matter", in a modulation in the field: matter is a knot of energy flow, so
-   this electromagnetic modes use them as transport medium... even diffusive
-   media do not diffuse frequency structures...
+   $$
+   \mathbf{E}=\mathbf{E}_A+\mathbf{E}_B,\qquad
+   \mathbf{B}=\mathbf{B}_A+\mathbf{B}_B.
+   $$
 
-5. **A near-critical receiver subsystem** exists within $\Omega_B$ whose
+4. No constitutive medium is assumed for the propagation region (vacuum
+   propagation law). Any biological tissue is part of source/receiver dynamics,
+   not an external “dielectric background.” (If one adopts a Maxwell-universe
+   ontology, “matter” itself is structured field; the coupling discussion below
+   remains a discussion about field structure and boundary-like constraints.)
+
+5. A near-critical receiver subsystem exists within $\Omega_B$ whose
    effective susceptibility to a particular perturbation channel is large
    (HOCP-like sensitivity). This is not Maxwell; it is the receiver’s internal
    regulatory physics.
 
-We do not assume any stochastic postulate, since Maxwell equations are fully
-deterministic. Energy doesn't "escape" the system mysteriously. So, “noise” as
-unresolved deterministic degrees of freedom can be disregarded.
+No stochastic postulate is assumed. “Noise” refers only to unresolved
+deterministic degrees of freedom in coarse descriptions.
+
+---
 
 
 ## Maxwell equations and energy flow (baseline)
 
-In the propagation region:
+In the propagation region (outside the sources):
 
 $$
 \nabla\cdot \mathbf{E}=0,\qquad \nabla\cdot \mathbf{B}=0,
@@ -104,8 +109,10 @@ $$
 \partial_t u+\nabla\cdot \mathbf{S}=0.
 $$
 
-This is bookkeeping. It does not choose which modes exist; boundary conditions
-and sources do.
+This continuity equation constrains bookkeeping; it does not choose which field
+patterns exist. Patterns arise from source time-structure plus geometry.
+
+---
 
 
 ## What “mode” means here (non-arbitrary)
@@ -114,144 +121,155 @@ A “mode” in this document is not a philosophical basis choice.
 
 A “mode” means:
 
-> A solution family to Maxwell’s equations whose spatial structure is fixed by
-> geometry and boundary-like constraints, and whose time dependence is harmonic
-> (or decomposable into harmonics).
+> A family of Maxwell solutions whose spatial structure is constrained by
+> geometry and boundary-like conditions, with harmonic time dependence (or
+> decomposable into harmonics).
 
 
-In practice, modes appear whenever:
+In practice, such modes appear whenever there are:
 
-- there are characteristic lengths (body size, separation distance),
-- there are preferred orientations (dipole axes, spine direction),
-- there are time scales (heart rhythm, neural oscillations),
-- the environment supports standing or quasi-standing patterns (near-field
-  reactive storage, partial reflections, recurrent coupling).
+- characteristic lengths (body size, separation distance),
+- preferred orientations (dipole axis, spine direction),
+- time scales (heart rhythm, neural oscillations, breathing),
+- recurrent coupling or partial confinement (near-field storage, reflections,
+  guided pathways, repeated interaction).
 
 These define a *shared modal structure* between emitter and receiver.
 
+---
 
-## Step 1: biological currents are time-structured sources
 
-A time-varying current distribution $\mathbf{J}(\mathbf{x},t)$ generates
-electromagnetic radiation.
+## Step 1: time-structured biological currents imply spectral structure
 
-We do not need to guess microscopic details. We only need the fact:
+Let a biological current distribution be $\mathbf{J}(\mathbf{x},t)$. This
+generates fields via Maxwell theory with sources.
 
-- physiology and practice modulate $\mathbf{J}$ in time.
+The exact statement needed is only:
 
-Write the source current as a sum of temporal components (Fourier decomposition
-in time):
+- physiology/practice can modulate $\mathbf{J}$ in time.
+
+Write the temporal Fourier transform:
 
 $$
 \mathbf{J}(\mathbf{x},t)=\int_{-\infty}^{\infty}\mathbf{J}(\mathbf{x},\omega)e^{-i\omega t}\,d\omega,
 $$
 
-where
-
 $$
 \mathbf{J}(\mathbf{x},\omega)=\frac{1}{2\pi}\int_{-\infty}^{\infty}\mathbf{J}(\mathbf{x},t)e^{i\omega t}\,dt.
 $$
 
-This is exact.
+This is exact. It converts “time modulation” into “redistribution across
+frequencies.”
 
-Now the key point: **modulating physiology modulates spectral weight**. For
-example, if a physiological control variable $q(t)$ modulates the
-current:
+
+### Multiplicative modulation yields convolution (exact)
+
+If a control variable $q(t)$ modulates the current:
 
 $$
 \mathbf{J}(\mathbf{x},t)=q(t)\,\mathbf{J}_0(\mathbf{x},t),
 $$
 
-then the spectrum is a convolution:
+then in frequency space:
 
 $$
-\mathbf{J}(\mathbf{x},\omega) = \int \tilde q(\omega-\omega')\,\mathbf{J}_0(\mathbf{x},\omega')\,d\omega',
+\mathbf{J}(\mathbf{x},\omega)=\int \tilde q(\omega-\omega')\,\mathbf{J}_0(\mathbf{x},\omega')\,d\omega',
 $$
 
 where $\tilde q$ is the Fourier transform of $q$.
 
-This is the core “frequency modulation” mechanism in strict terms:
-- changing $q(t)$ changes the distribution of energy across
-  frequencies.
+This is the exact mathematical content of “frequency modulation by practice”:
+changing $q(t)$ changes spectral weight distribution, hence which
+frequency channels are occupied.
 
-No amplitude language is needed. What changes is *spectral structure*.
+---
 
 
-## Step 2: Maxwell is linear, but observables depend on the total field
+## Step 2: fields superpose, but energy flow depends on phase structure
 
-Superposition is a statement about fields:
-$$\mathbf{E}=\mathbf{E}_A+\mathbf{E}_B.$$
-
-But the energy density is quadratic:
+Superposition is linear:
 
 $$
-u = \frac{\epsilon_0}{2}|\mathbf{E}_A+\mathbf{E}_B|^2 + \frac{1}{2\mu_0}|\mathbf{B}_A+\mathbf{B}_B|^2.
+\mathbf{E}=\mathbf{E}_A+\mathbf{E}_B,\qquad \mathbf{B}=\mathbf{B}_A+\mathbf{B}_B.
+$$
+
+But observables like energy density are quadratic:
+
+$$
+u = \frac{\epsilon_0}{2}|\mathbf{E}_A+\mathbf{E}_B|^2
+  + \frac{1}{2\mu_0}|\mathbf{B}_A+\mathbf{B}_B|^2.
 $$
 
 Expanding:
 
 $$
-|\mathbf{E}_A+\mathbf{E}_B|^2 = |\mathbf{E}_A|^2+|\mathbf{E}_B|^2+2\,\mathbf{E}_A\cdot \mathbf{E}_B,
+|\mathbf{E}_A+\mathbf{E}_B|^2 = |\mathbf{E}_A|^2+|\mathbf{E}_B|^2
++2\,\mathbf{E}_A\cdot \mathbf{E}_B,
 $$
 
-and similarly for $\mathbf{B}$.
+(and similarly for $\mathbf{B}$).
 
-The cross-terms encode **phase relations**. They vanish only when phases average
-out.
+The cross-terms encode relative phase. They vanish only when phases decorrelate
+or average out. This is why “structure” matters: stable phase relations alter
+energy flow patterns without introducing new physics.
 
-Thus:
-- linearity does not mean “no interaction” at the level of energy flow.
-- it means fields add, and the *pattern* can change because quadratic
-  observables include cross-terms.
-
-This is why frequency/phase structure matters.
+---
 
 
-## Step 3: the receiver sees a *filtered projection* of the field
+## Step 3: the receiver responds through a selective coupling functional
 
-A biological receiver does not respond to “the field everywhere.” It responds
-through specific coupling channels.
+A biological receiver does not respond to the entire field; it responds through
+specific couplings.
 
-At the simplest Maxwellian level, charges and currents respond via Lorentz force
-density:
+A minimal physical coupling density is Lorentz force density:
 
 $$
 \mathbf{f}=\rho\mathbf{E}+\mathbf{J}\times\mathbf{B}.
 $$
 
-But in a regulatory subsystem, the relevant quantity is often some *functional*
-of the fields over a region (e.g., induced potential differences, timing of
-threshold crossings, phase-locking of endogenous oscillators).
-
-Abstractly: define a receiver observable $Y(t)$ as a functional of the
-field restricted to $\Omega_B$:
+But regulatory effects typically arise through induced potentials, timing,
+entrainment, and internal transduction. Abstractly, define a receiver observable
+$Y(t)$ as a functional of the field restricted to $\Omega_B$:
 
 $$
 Y(t)=\mathcal{K}\bigl[\mathbf{E}(\cdot,t),\mathbf{B}(\cdot,t)\bigr].
 $$
 
-The operator $\mathcal{K}$ encodes biological coupling geometry and internal
-transduction.
+Here $\mathcal{K}$ represents geometry + internal transduction. “Mode
+selectivity” is the statement that $\mathcal{K}$ has much larger response to
+some time-structures than others (matched channels).
 
-This is where “mode selectivity” enters:
-- $\mathcal{K}$ behaves like a filter or matched detector for certain time
-  structures.
+Near criticality, a subsystem can make $\mathcal{K}$ extremely selective.
 
-A near-critical subsystem can make $\mathcal{K}$ extremely sensitive to a
-narrow structured channel.
+---
 
 
-## Step 4: shared modal structure between two sources
+## Step 4: from frequency structure to shared mode structure
 
-Now we formalize the “shared mode” idea in the simplest possible setting.
+We now connect frequency structure to *shared modes*.
+
+The receiver’s coupling is not to “frequency in the abstract” but to frequency
+*as realized in spatial field patterns* that actually exist between A and B.
+
+The minimal conceptual bridge is:
+
+1. A time-structured source generates a spectrum.
+2. The environment + geometry defines a set of allowable spatial patterns at
+   each frequency (solutions of Maxwell with those boundary-like constraints).
+3. The realized field is the superposition of those patterns weighted by how the
+   source projects onto them.
+
+This is the same logic as cavity/waveguide physics: source projects onto modes.
+
+---
 
 
-### Example 1 (one-dimensional line-of-centers standing mode)
+## Example 1: line-of-centers standing-wave toy model
 
-Consider the line segment joining two localized sources, idealized as “nodes” at
-positions $x=0$ (source A) and $x=r$ (source B).
+Take the line segment joining two localized sources, idealized as “nodes” at
+$x=0$ and $x=r$.
 
-A simple wave equation analogue on $[0,r]$ has standing modes:
+A wave equation analogue on $[0,r]$ has standing modes:
 
 $$
 \phi_m(x,t)=a_m \sin\left(\frac{m\pi x}{r}\right)\cos(\omega_m t+\varphi_m),
@@ -263,52 +281,66 @@ $$
 \omega_m = c\frac{m\pi}{r}.
 $$
 
-This is not the full Maxwell field; it is a controlled toy model capturing a
-real point:
-- geometry and separation define discrete spatial patterns and frequencies.
+This is not the full Maxwell field. It is a toy model that isolates one
+essential point:
 
-Now connect it to fields:
+- geometry and separation define spatial patterns and frequency scales.
 
-In Maxwell, a similar role is played by field patterns that are recurrently
-reinforced by source geometry, near-field storage, and partial reflections in
-the environment.
+The *interaction channel* is not “amplitude,” but:
 
-The exact modal structure in real 3D is more complicated, but the logic is the
-same:
-- shared geometry defines families of patterns with well-defined frequency
-  content.
+- which $m$ are populated,
+- the phases $\varphi_m$,
+- how the receiver couples to $\phi_m$.
 
-The key variable is not “how big is $a_m$,” but:
-- which $m$ are present,
-- how their phases $\varphi_m$ align,
-- how the receiver’s coupling operator $\mathcal{K}$ projects onto these
-  modes.
+In a full Maxwell setting, the spatial patterns are vector fields and the mode
+spectrum depends on 3D geometry; the same logic holds.
 
 
-### Modal energy partition
+### Modal partition as the meaningful variable
 
-In any linear wave system with orthogonal modes, total energy decomposes as:
+In any linear wave system with orthogonal modes, total energy partitions:
 
 $$
-W = \sum_m W_m,
+W = \sum_m W_m.
 $$
 
-with each $W_m$ determined by modal amplitude and geometry.
+Changing the source time-structure changes the distribution across the
+$W_m$. A receiver can detect changes in the partition (or in phase
+relations) even if total energy is unchanged.
 
-This is the structural point:
-- changing the source’s temporal structure changes how energy is distributed
-  among the $W_m$.
-- the receiver can be sensitive to *changes in modal partition* even when total
-  emitted energy does not change.
+This is the “more information than words” point in physical terms.
 
-That is “frequency-based transport” in the sense you mean.
+---
 
 
-## Step 5: frequency modulation as redistribution of modal occupation
+## Step 5: Maxwell response maps source spectrum to field modal coefficients
 
-Let the emitted field in a shared region be expanded in a set of
-geometry-defined mode fields
-$\{\mathbf{E}_m(\mathbf{x}),\mathbf{B}_m(\mathbf{x})\}$:
+In frequency space, Maxwell theory with sources gives a linear mapping from
+$(\rho,\mathbf{J})$ to $(\mathbf{E},\mathbf{B})$:
+
+$$
+(\mathbf{E},\mathbf{B})(\omega)=\mathcal{L}(\omega)\,(\rho,\mathbf{J})(\omega),
+$$
+
+for a linear operator $\mathcal{L}(\omega)$ determined by Green’s functions and
+the geometry/boundary constraints of the environment.
+
+Now represent the field at each frequency as a sum over spatial mode patterns
+$\{\mathbf{E}_m(\mathbf{x};\omega),\mathbf{B}_m(\mathbf{x};\omega)\}$:
+
+$$
+\mathbf{E}(\mathbf{x},\omega)=\sum_m c_m(\omega)\,\mathbf{E}_m(\mathbf{x};\omega),
+$$
+
+$$
+\mathbf{B}(\mathbf{x},\omega)=\sum_m c_m(\omega)\,\mathbf{B}_m(\mathbf{x};\omega).
+$$
+
+The coefficients $c_m(\omega)$ are determined by how the sources project onto
+those modes.
+
+Time-domain fields follow by inverse transform. One convenient representation is
+envelope form:
 
 $$
 \mathbf{E}(\mathbf{x},t)=\sum_m \Re\{ \alpha_m(t)\,\mathbf{E}_m(\mathbf{x}) e^{-i\omega_m t}\},
@@ -318,196 +350,207 @@ $$
 \mathbf{B}(\mathbf{x},t)=\sum_m \Re\{ \alpha_m(t)\,\mathbf{B}_m(\mathbf{x}) e^{-i\omega_m t}\}.
 $$
 
-Here:
-- $\omega_m$ are mode frequencies determined by geometry and environment.
-- $\alpha_m(t)$ are slowly varying complex envelopes (exactly: any
-  sufficiently regular signal can be represented this way).
-
-Now how does a source modulate $\alpha_m(t)$?
-
-Because the source current has spectral content. In the frequency domain,
-Maxwell’s equations yield linear response:
+The chain is exact in content:
 
 $$
-(\mathbf{E},\mathbf{B})(\omega) = \mathcal{L}(\omega)\,(\rho,\mathbf{J})(\omega),
+\text{practice/attention} \to \mathbf{J}_A(t)
+\to \mathbf{J}_A(\omega)
+\to c_m(\omega)
+\to \alpha_m(t).
 $$
 
-for a linear operator $\mathcal{L}(\omega)$ determined by Green’s functions and
-boundary conditions.
+The difficulty is computational (real geometry), not conceptual.
 
-Therefore:
-- changing $\mathbf{J}_A(\omega)$ changes the coefficients with which modes are
-  excited.
-- a time modulation in physiology changes $\mathbf{J}_A(\omega)$, hence changes
-  $\alpha_m$.
-
-This is an exact chain:
-
-$$
-\text{practice/attention} \to \mathbf{J}_A(t) \to \mathbf{J}_A(\omega) \to \{\alpha_m\}.
-$$
-
-No approximation is required in principle; the only complication is that
-$\mathcal{L}$ is hard to compute in real geometry.
+---
 
 
-## Step 6: how a near-critical receiver converts modal shifts into bias
+## Step 6: near-critical receiver converts modal shifts into deterministic bias
 
-We now define “bias” precisely without probabilistic postulates.
-
-Let $x(t)$ denote a regulatory variable in the receiver (in
-$\Omega_B$). Let its dynamics be:
+Let $x(t)$ denote a receiver regulatory variable. Model its evolution
+as:
 
 $$
 \dot x = F(x) + \lambda\, y(t),
 $$
 
-where:
-- $F$ is the internal regulatory law,
-- $y(t)$ is the electromagnetically induced drive channel,
-- $\lambda$ is a coupling constant determined by biology.
+where $y(t)$ is the EM drive channel induced by the field, and
+$\lambda$ is a coupling constant determined by biology.
 
-Assume $y(t)$ is a projection of the fields onto a receiver-sensitive
-mode channel:
+Let $y(t)$ be a projection onto a receiver-sensitive modal channel:
 
 $$
-y(t) = \langle \mathcal{K}, \mathbf{E}(\cdot,t),\mathbf{B}(\cdot,t)\rangle.
+y(t)=\langle \mathcal{K}, \mathbf{E}(\cdot,t),\mathbf{B}(\cdot,t)\rangle.
 $$
 
-Near criticality, the system has a sharp response: small changes in
-$y(t)$ shift outcomes.
-
-A generic way to encode “critical sensitivity” is that the effective
-susceptibility
+Near criticality, effective susceptibility
 
 $$
-\chi_{\text{eff}} = \frac{\partial x}{\partial y}
+\chi_{\text{eff}}=\frac{\partial x}{\partial y}
 $$
 
-becomes large in some operating regime.
+can become large. Operationally: small changes in $y$ select
+different trajectories or outcomes.
 
-In HOCP language: the regulatory manifold has near-degenerate directions where
-small perturbations select one branch.
-
-In this document we do not need HOCP microphysics; we only need the operational
-fact:
-- near a critical point, the receiver’s response to a specific drive channel is
-  high.
-
-Now connect to modes:
-
-If
+If $\mathcal{K}$ is selective for a particular mode $m_*$, then:
 
 $$
-y(t) \approx \Re\{\alpha_{m_*}(t)e^{-i\omega_{m_*}t}\},
+y(t)\approx \Re\{\alpha_{m_*}(t)e^{-i\omega_{m_*}t}\}.
 $$
 
-because $\mathcal{K}$ is selective for mode $m_*$, then:
+Thus:
+- modulation of $\mathbf{J}_A(t)$ changes $\alpha_{m_*}(t)$,
+- this changes $y(t)$,
+- near criticality, this changes the receiver’s trajectory.
 
-- changing $\alpha_{m_*}(t)$ changes $y(t)$,
-- near criticality, small changes in $y$ alter the trajectory of
-  $x(t)$,
-- that altered trajectory is what we call *bias*.
+The result is deterministic: it is the integrated consequence of competing field
+contributions and internal dynamics.
 
-This is deterministic: the “drift” is the integrated result of coupled dynamics.
+---
 
 
-## Example 2 (explicit critical-response toy model)
+## Example 2: explicit deterministic critical selection model
 
-Consider a normal form for a pitchfork-like critical selection:
+Consider a pitchfork-like selection normal form:
 
 $$
 \dot x = \mu x - x^3 + \lambda y(t),
 $$
 
-where:
-- $\mu$ measures distance to criticality ($\mu\approx 0$ is
-  critical),
-- $y(t)$ is the EM drive channel.
+with $\mu$ measuring distance to criticality.
 
-When $\mu>0$ and $y=0$, equilibria are $x=\pm\sqrt{\mu}$
-(degenerate branches). A small $y$ breaks symmetry and selects one
-branch.
+For $\mu>0$ and $y=0$, equilibria are $x=\pm\sqrt{\mu}$
+(degenerate branches).
 
-In steady drive $y(t)=y_0$: equilibria satisfy
+A bias term $y$ breaks symmetry. For constant $y(t)=y_0$
+equilibria satisfy:
 
 $$
 0=\mu x - x^3 + \lambda y_0.
 $$
 
-For small $y_0$, the selected equilibrium shifts. The sign of
-$y_0$ chooses which branch is favored.
+The sign and structure of $y_0$ selects the branch. If
+$y_0$ is a demodulated component of $\alpha_{m_*}(t)$, then:
 
-Now if $y_0$ is the time-average of a mode envelope $\alpha_{m_*}(t)$
-(or a demodulated component of it), then:
+- changing modal structure changes the selected regulatory branch.
 
-> a small change in modal occupation/phase can select a different regulatory
-> branch.
+This is a deterministic statement: no randomness is required.
 
-
-No probability is needed. This is a deterministic bifurcation selection.
-
-This is the exact mathematical sense of “bias near criticality.”
+---
 
 
-## Why shared rhythm and music matter (mode selection, not amplitude)
+## Voice, tone, harmonics: information in spectral partition (beyond words)
 
-A shared external rhythm (breathing together, synchronized pulse, listening to a
-complex but common sound structure) can act as a *reference* that stabilizes and
-aligns internal current modulations.
+A sustained note can carry information in the distribution of its frequency
+components even if total radiated energy is held fixed.
 
-Maxwellian translation:
-- the sources’ currents become more phase-structured and spectrally organized
-  relative to a common template.
+In signal terms: different spectra can have the same total power. In physical
+terms: different mode partitions can have the same total energy.
 
-This has two consequences:
+Let $s(t)$ be a signal (e.g., a vocal waveform, or any physiological
+modulation waveform). Its power spectral density is $P(\omega)=|S(\omega)|^2$.
 
-1. **Mode alignment:** the set of excited modes $\{\omega_m\}$ becomes more
-   similar between A and B.
-2. **Phase coherence:** cross-terms like $\mathbf{E}_A\cdot \mathbf{E}_B$ become
-   persistent rather than averaging out.
+Two different signals $s_1,s_2$ can satisfy:
 
-Thus, shared practice is not “sending energy.” It is **synchronizing the
-spectral/mode structure that defines the coupling channel.**
+$$
+\int |S_1(\omega)|^2\,d\omega = \int |S_2(\omega)|^2\,d\omega,
+$$
+
+while having different distributions $|S_1(\omega)|^2 \neq |S_2(\omega)|^2$.
+
+This means: identical total energy, different spectral structure.
+
+A receiver with mode-selective coupling $\mathcal{K}$ can respond differently
+to these signals because $\mathcal{K}$ effectively weights frequencies and
+phases.
 
 
-## What is allowed or logically rigorously implied
+### Information-theoretic framing (minimal)
 
-### Allowed by Maxwell theory
+If a sender chooses among distinct modulation states (distinct spectral
+partitions or phase relations) and the receiver has a reliable way to map those
+states to distinguishable internal responses, then a communication channel
+exists.
 
-- Two biological current systems radiate fields.
-- Fields superpose.
-- Quadratic observables (energy flow, induced drive channels) contain
-  phase-dependent cross-terms.
-- Source modulation changes spectral content, hence modal occupation.
-- A selective receiver can respond strongly to a narrow structured channel.
-- Near criticality, small structured perturbations can select outcomes.
+In Shannon terms, the capacity depends on:
 
-None of this violates Maxwell theory.
+- how many distinguishable states can be produced by the sender (modulation
+  repertoire),
+- how selectively the receiver responds (matched coupling),
+- how stable the shared modal structure is over time.
+
+The physical point is prior to Shannon: Maxwell provides the carrier; modal
+structure provides the alphabet; near-critical selectivity provides gain.
+
+(Shannon analysis can be layered on once the state space and discrimination
+mechanism are defined.)
+
+---
+
+
+## Why shared music can assist coupling (a physical statement)
+
+Listening to the same structured sound piece can act as an external reference
+that entrains:
+
+- breathing rhythms,
+- heart-rate variability patterns,
+- neural oscillatory bands,
+- vocal tract posture and muscle tension (even silently).
+
+This can make internal current patterns more phase-structured relative to the
+same template in both bodies, which increases the persistence of cross-terms and
+stabilizes shared mode selection.
+
+The role is not “power,” but “structure alignment.”
+
+---
+
+
+## What is allowed or logically implied (tight statement)
+
+### Allowed / implied by Maxwell + coupling
+
+- Time-structured currents generate frequency-structured fields.
+- Geometry determines which spatial patterns (modes) are effectively supported.
+- Source modulation reshapes spectral weight and hence modal coefficients.
+- Receivers respond through specific couplings (functionals of the field).
+- Near criticality, selective couplings can have large regulatory consequences.
+
+
+### What remains empirical
+
+- Whether the relevant shared modes exist with sufficient stability in real
+  environments.
+- Whether biological HOCP-like subsystems exist and couple to the right channels
+  in the necessary way.
+- Quantitative effect sizes and ranges.
+
+---
 
 
 ## Minimal experimental posture (conceptual)
 
-If one were to test this framework in a controlled way, the relevant observables
-are not “force” or “motion,” but:
+The decisive tests are structural:
 
-- spectral changes in emitted fields correlated with practice,
-- phase-coherence measures between two systems,
-- receiver-side changes specifically near critical regulatory regimes,
-- demodulated signatures that track mode envelopes $\alpha_m(t)$.
+- Do practice-induced physiological changes produce measurable changes in
+  spectral/mode partition of emitted fields?
+- Can a receiver’s near-critical subsystem be shown to respond selectively to a
+  structured drive channel correlated with that partition?
+- Does shared entrainment (shared rhythm/music) measurably increase coherence of
+  relevant cross-terms or matched projections?
 
-The key prediction is modal/phase structure dependence:
-- effects track shared time-structure more than raw field magnitude.
+These tests target the actual claim: frequency-structural coupling and bias.
+
+---
 
 
 ## Summary (single statement)
 
-Maxwell theory supplies a linear, local field substrate in which extended
-time-varying biological currents generate frequency-structured radiation.
-Geometry and separation define shared electromagnetic mode families; physiology
-and practice modulate the spectral distribution across those modes. A receiver
-operating near a higher-order critical point can be selectively sensitive to
-perturbations in a specific mode channel, converting small changes in modal
-occupation/phase into deterministic bias in regulatory trajectories. The
-mechanism is frequency-structural, not force-based, and requires no nonlocality
-or violations of causality.
+Two extended biological current systems can participate in a shared Maxwellian
+modal structure. Practice and physiology modulate source currents, which
+deterministically redistributes spectral weight across joint modes and alters
+phase relations. A receiver with a near-critical regulatory subsystem can be
+selectively sensitive to a particular modal channel, converting small modal
+shifts into deterministic bias in regulatory evolution. The mechanism is
+frequency-structural rather than force-based, and assumes no nonlocality and no
+violations of causality.
