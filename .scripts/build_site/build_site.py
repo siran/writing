@@ -984,8 +984,25 @@ def build_article_pages() -> set[Path]:
         pf_block = data.get("parsed_from_pnpmd") or {}
 
         title    = (data.get("title") or pf_block.get("title") or "") or ""
-        abstract = (data.get("abstract") or pf_block.get("abstract") or "") or ""
+        abstract = (
+            data.get("summary")
+            or data.get("abstract")
+            or pf_block.get("summary")
+            or pf_block.get("abstract")
+            or ""
+        )
+        abstract = (abstract or "").strip()
         kws      = (data.get("keywords") or pf_block.get("keywords") or []) or []
+        if not isinstance(kws, list):
+            kws = [kws]
+        kws_list = []
+        for k in kws:
+            if k is None:
+                continue
+            ks = str(k).strip()
+            if ks:
+                kws_list.append(ks)
+        kws = kws_list
         onesent  = (
             data.get("one_sentence_summary")
             or pf_block.get("one_sentence_summary")
@@ -1212,36 +1229,30 @@ def build_article_pages() -> set[Path]:
             if authors_html:
                 body.append(f"<p class='authors'>{authors_html}</p>")
             body.append(f"<p class='publine'>{PREFERRED_JOURNAL} — {month_year(it['date'])}</p>")
-            if links_html:
-                body.append(links_html)
-            if share_html:
-                body.append(share_html)
-            if versions_ul:
-                body.append("<h2>Versions</h2>")
-                body.append(versions_ul)
-
             if it["onesent"]:
                 body.append("<h2>One-Sentence Summary</h2>")
                 body.append(f"<p>{it['onesent']}</p>")
 
             if it["abstract"]:
-                body.append("<h2>Abstract</h2>")
+                body.append("<h2>Summary</h2>")
                 body.append(f"<p>{it['abstract']}</p>")
 
-            if html_body:
-                body.append("<h2>Article</h2>")
-                body.append(html_body)
+            if it["kws"]:
+                body.append("<h2>Keywords</h2>")
+                body.append(
+                    "<ul class='keywords'>"
+                    + "".join(f"<li>{k}</li>" for k in it["kws"])
+                    + "</ul>"
+                )
 
-            if it["references_doi"]:
-                body.append("<h2>References (DOI)</h2>")
-                refs_items = []
-                for ref_url in it["references_doi"]:
-                    ref_url = (ref_url or "").strip()
-                    if not ref_url:
-                        continue
-                    refs_items.append(f'<li><a href="{ref_url}">{ref_url}</a></li>')
-                if refs_items:
-                    body.append("<ul>" + "".join(refs_items) + "</ul>")
+            if share_html or versions_ul or links_html:
+                body.append("<h2>Version</h2>" if len(same_family) <= 1 else "<h2>Versions</h2>")
+                if share_html:
+                    body.append(share_html)
+                if versions_ul:
+                    body.append(versions_ul)
+                if links_html:
+                    body.append(links_html)
 
             body.append("</main>")
 
@@ -1440,35 +1451,29 @@ def build_article_pages() -> set[Path]:
         if authors_html:
             body.append(f"<p class='authors'>{authors_html}</p>")
         body.append(f"<p class='publine'>{PREFERRED_JOURNAL} — {month_year(it['date'])}</p>")
-        if links_html:
-            body.append(links_html)
-        if share_html:
-            body.append(share_html)
-        if versions_ul:
-            body.append("<h2>Versions</h2>")
-            body.append(versions_ul)
         if it["onesent"]:
             body.append("<h2>One-Sentence Summary</h2>")
             body.append(f"<p>{it['onesent']}</p>")
 
         if it["abstract"]:
-            body.append("<h2>Abstract</h2>")
+            body.append("<h2>Summary</h2>")
             body.append(f"<p>{it['abstract']}</p>")
 
-        if html_body:
-            body.append("<h2>Article (latest)</h2>")
-            body.append(html_body)
-
-        if it["references_doi"]:
-            body.append("<h2>References (DOI)</h2>")
-            refs_items = []
-            for ref_url in it["references_doi"]:
-                ref_url = (ref_url or "").strip()
-                if not ref_url:
-                    continue
-                refs_items.append(f'<li><a href="{ref_url}">{ref_url}</a></li>')
-            if refs_items:
-                body.append("<ul>" + "".join(refs_items) + "</ul>")
+        if it["kws"]:
+            body.append("<h2>Keywords</h2>")
+            body.append(
+                "<ul class='keywords'>"
+                + "".join(f"<li>{k}</li>" for k in it["kws"])
+                + "</ul>"
+            )
+        if share_html or versions_ul or links_html:
+            body.append("<h2>Version</h2>" if len(same_family) <= 1 else "<h2>Versions</h2>")
+            if share_html:
+                body.append(share_html)
+            if versions_ul:
+                body.append(versions_ul)
+            if links_html:
+                body.append(links_html)
         body.append("</main>")
 
         stem_url = f"{origin}/{top}/{stem_seg}/"
