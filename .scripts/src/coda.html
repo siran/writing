@@ -94,19 +94,8 @@
         white-space: normal;
     }
 
-    .dir-index {
-        white-space: normal;
-        padding: 0 1.25rem;
-        box-sizing: border-box;
-    }
-
     .dir-index-controls {
-        margin: 0.5rem 0 1rem;
-        font-size: 0.95em;
-    }
-
-    .dir-index-controls .dir-index-label {
-        font-weight: 600;
+        margin: 0.5rem 0 0.75rem;
     }
 
     .dir-index-controls a.is-active {
@@ -114,37 +103,10 @@
     }
 
     .dir-index-table {
-        width: 100%;
-        border-collapse: collapse;
-        white-space: normal;
-    }
-
-    .dir-index-table th,
-    .dir-index-table td {
-        text-align: left;
-        padding: 0.25rem 0.5rem;
-        border-bottom: 1px solid #ddd;
-        vertical-align: top;
-    }
-
-    .dir-index-table th.sortable {
-        cursor: pointer;
-        user-select: none;
-    }
-
-    .dir-index-table th.is-sorted::after {
-        content: " ^";
-        font-size: 0.8em;
-        opacity: 0.6;
-    }
-
-    .dir-index-table th.is-sorted[data-dir="desc"]::after {
-        content: " v";
-    }
-
-    .dir-index-links {
-        font-size: 0.85em;
-        opacity: 0.8;
+        white-space: pre;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
     }
 </style>
 <script>
@@ -274,40 +236,125 @@
             return "asc";
         }
 
-        function readValue(row, key) {
-            var raw = row.getAttribute("data-" + key) || "";
-            if (key === "created" || key === "modified") {
-                var num = parseFloat(raw);
-                return isNaN(num) ? 0 : num;
+        function parseDate(text) {
+            var m = (text || "").match(/(\d{4})-(\d{2})-(\d{2})\s+(\d{2}):(\d{2})/);
+            if (!m) {
+                return 0;
             }
-            return raw.toLowerCase();
+            return Date.UTC(
+                parseInt(m[1], 10),
+                parseInt(m[2], 10) - 1,
+                parseInt(m[3], 10),
+                parseInt(m[4], 10),
+                parseInt(m[5], 10)
+            );
         }
 
-        function setActiveHeader(table, key, dir) {
-            var headers = table.querySelectorAll("th[data-sort]");
-            for (var i = 0; i < headers.length; i++) {
-                var th = headers[i];
-                th.classList.remove("is-sorted");
-                th.removeAttribute("data-dir");
-                th.setAttribute("aria-sort", "none");
+        function splitCells(line) {
+            var parts = (line || "").split("|");
+            if (parts.length < 4) {
+                return [];
             }
-            var active = table.querySelector('th[data-sort="' + key + '"]');
-            if (active) {
-                active.classList.add("is-sorted");
-                active.setAttribute("data-dir", dir);
-                active.setAttribute(
-                    "aria-sort",
-                    dir === "asc" ? "ascending" : "descending"
-                );
-            }
+            return parts.slice(1, -1).map(function (p) {
+                return p.trim();
+            });
         }
 
-        function setActiveLinks(table, key) {
-            var root = table.closest(".dir-index");
-            if (!root) {
-                return;
+        function cellText(html) {
+            var span = document.createElement("span");
+            span.innerHTML = html || "";
+            return (span.textContent || "").trim();
+        }
+
+        function nameSortKey(value) {
+            var text = (value || "").replace(/^[📂📄]\s*/, "");
+            return text.toLowerCase();
+        }
+
+        function isDir(value) {
+            return (value || "").indexOf("📂") === 0 ? 0 : 1;
+        }
+
+        function findTable(pre) {
+            var lines = (pre.innerHTML || "").split(/\r?\n/);
+            var headerIdx = -1;
+            for (var i = 0; i < lines.length; i++) {
+                var t = lines[i].trim().toLowerCase();
+                if (t === "| name | created | modified |") {
+                    headerIdx = i;
+                    break;
+                }
             }
-            var links = root.querySelectorAll(".dir-index-controls a[data-sort-link]");
+            if (headerIdx < 0 || headerIdx + 2 >= lines.length) {
+                return null;
+            }
+            var rowsStart = headerIdx + 2;
+            var rows = [];
+            var rowsEnd = rowsStart;
+            for (var j = rowsStart; j < lines.length; j++) {
+                var line = lines[j];
+                var trimmed = line.trim();
+                if (!trimmed || trimmed.charAt(0) !== "|") {
+                    break;
+                }
+                rows.push(line);
+                rowsEnd = j + 1;
+            }
+            return {
+                lines: lines,
+                rows: rows,
+                rowsStart: rowsStart,
+                rowsEnd: rowsEnd
+            };
+        }
+
+        function sortRows(rows, key, dir) {
+            var sorted = rows.slice();
+            sorted.sort(function (a, b) {
+                var ca = splitCells(a);
+                var cb = splitCells(b);
+                var nameA = cellText(ca[0] || "");
+                var nameB = cellText(cb[0] || "");
+                var dirA = isDir(nameA);
+                var dirB = isDir(nameB);
+                var baseA = nameSortKey(nameA);
+                var baseB = nameSortKey(nameB);
+
+                if (key === "name") {
+                    if (dirA !== dirB) {
+                        return dir === "asc" ? (dirA - dirB) : (dirB - dirA);
+                    }
+                    if (baseA < baseB) {
+                        return dir === "asc" ? -1 : 1;
+                    }
+                    if (baseA > baseB) {
+                        return dir === "asc" ? 1 : -1;
+                    }
+                    return 0;
+                }
+
+                var idx = key === "created" ? 1 : 2;
+                var ta = parseDate(cellText(ca[idx] || ""));
+                var tb = parseDate(cellText(cb[idx] || ""));
+                if (ta < tb) {
+                    return dir === "asc" ? -1 : 1;
+                }
+                if (ta > tb) {
+                    return dir === "asc" ? 1 : -1;
+                }
+                if (baseA < baseB) {
+                    return -1;
+                }
+                if (baseA > baseB) {
+                    return 1;
+                }
+                return 0;
+            });
+            return sorted;
+        }
+
+        function setActiveLinks(key) {
+            var links = document.querySelectorAll(".dir-index-controls a[data-sort-link]");
             for (var i = 0; i < links.length; i++) {
                 var a = links[i];
                 if (a.getAttribute("data-sort-link") === key) {
@@ -318,94 +365,59 @@
             }
         }
 
-        function sortTable(table, key, dir) {
-            var body = table.tBodies[0];
-            if (!body) {
+        function applySort(pre, key, dir) {
+            var data = findTable(pre);
+            if (!data) {
                 return;
             }
-            var rows = Array.prototype.slice.call(body.rows);
-            rows.sort(function (a, b) {
-                var va = readValue(a, key);
-                var vb = readValue(b, key);
-                if (va < vb) {
-                    return dir === "asc" ? -1 : 1;
-                }
-                if (va > vb) {
-                    return dir === "asc" ? 1 : -1;
-                }
-                var na = readValue(a, "name");
-                var nb = readValue(b, "name");
-                if (na < nb) {
-                    return -1;
-                }
-                if (na > nb) {
-                    return 1;
-                }
-                return 0;
-            });
-            for (var i = 0; i < rows.length; i++) {
-                body.appendChild(rows[i]);
-            }
-            table.setAttribute("data-sort", key);
-            table.setAttribute("data-dir", dir);
-            setActiveHeader(table, key, dir);
-            setActiveLinks(table, key);
+            var sorted = sortRows(data.rows, key, dir);
+            var updated = data.lines.slice();
+            updated.splice.apply(updated, [data.rowsStart, data.rows.length].concat(sorted));
+            pre.innerHTML = updated.join("\n");
+            pre.setAttribute("data-sort", key);
+            pre.setAttribute("data-dir", dir);
+            setActiveLinks(key);
         }
 
-        function initTable(table) {
-            var headers = table.querySelectorAll("th[data-sort]");
-            for (var i = 0; i < headers.length; i++) {
-                (function (th) {
-                    var key = th.getAttribute("data-sort") || "name";
-                    th.setAttribute("tabindex", "0");
-                    th.addEventListener("click", function () {
-                        var currentKey = table.getAttribute("data-sort") || "name";
-                        var currentDir = table.getAttribute("data-dir") || defaultDirFor(currentKey);
+        function parseHashSort() {
+            var h = window.location.hash || "";
+            var m = h.match(/sort=([a-z]+)/i);
+            return m ? m[1].toLowerCase() : "";
+        }
+
+        function initPre(pre) {
+            var links = document.querySelectorAll(".dir-index-controls a[data-sort-link]");
+            for (var i = 0; i < links.length; i++) {
+                (function (a) {
+                    a.addEventListener("click", function (e) {
+                        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) {
+                            return;
+                        }
+                        var key = a.getAttribute("data-sort-link") || "name";
+                        if (!key) {
+                            return;
+                        }
+                        e.preventDefault();
+                        var currentKey = pre.getAttribute("data-sort") || "name";
+                        var currentDir = pre.getAttribute("data-dir") || defaultDirFor(currentKey);
                         var dir = currentKey === key
                             ? (currentDir === "asc" ? "desc" : "asc")
                             : defaultDirFor(key);
-                        sortTable(table, key, dir);
+                        applySort(pre, key, dir);
                     });
-                    th.addEventListener("keydown", function (e) {
-                        if (e.key === "Enter" || e.key === " ") {
-                            e.preventDefault();
-                            th.click();
-                        }
-                    });
-                })(headers[i]);
+                })(links[i]);
             }
 
-            var root = table.closest(".dir-index");
-            if (root) {
-                var links = root.querySelectorAll(".dir-index-controls a[data-sort-link]");
-                for (var j = 0; j < links.length; j++) {
-                    (function (a) {
-                        a.addEventListener("click", function (e) {
-                            if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) {
-                                return;
-                            }
-                            e.preventDefault();
-                            var key = a.getAttribute("data-sort-link") || "name";
-                            var currentKey = table.getAttribute("data-sort") || "name";
-                            var currentDir = table.getAttribute("data-dir") || defaultDirFor(currentKey);
-                            var dir = currentKey === key
-                                ? (currentDir === "asc" ? "desc" : "asc")
-                                : defaultDirFor(key);
-                            sortTable(table, key, dir);
-                        });
-                    })(links[j]);
-                }
-            }
-
-            var initKey = table.getAttribute("data-sort") || "name";
-            var initDir = table.getAttribute("data-dir") || defaultDirFor(initKey);
-            sortTable(table, initKey, initDir);
+            var hashKey = parseHashSort();
+            var initKey = hashKey || pre.getAttribute("data-sort") || "name";
+            var initDir = pre.getAttribute("data-dir") || defaultDirFor(initKey);
+            applySort(pre, initKey, initDir);
         }
 
         function run() {
-            var tables = document.querySelectorAll("table.dir-index-table");
-            for (var i = 0; i < tables.length; i++) {
-                initTable(tables[i]);
+            var pres = document.querySelectorAll("pre.dir-index-table");
+            for (var i = 0; i < pres.length; i++) {
+                initPre(pres[i]);
             }
         }
 

@@ -15,7 +15,7 @@ from feedgen.feed import FeedGenerator
 EXCLUDE_NAMES = {
     "site","venv",".venv","env",".env","node_modules",".git",
     "__pycache__", ".mypy_cache",".pytest_cache",".ruff_cache",".cache",
-    "Makefile","index.html","index.created.html","index.modified.html","_staging", "pnpmd.map", "requirements.txt",
+    "Makefile","index.html","index.md.html","index.created.md.html","index.modified.md.html","_staging", "pnpmd.map", "requirements.txt",
     "gpt5push.sh",
     # Root pages that should be linked from nav but not listed in dir indexes
     "about.md",
@@ -1617,43 +1617,30 @@ def _format_dir_index_common(
     title = (rel_dir.name or f"{REPO} index")
 
     lines = []
-    lines.append("<main class=\"dir-index\">")
     lines.append(crumb_link(list(rel_dir.parts)))
+    lines.append("")
 
     sort_links = []
     for key, label, _default_dir in DIR_INDEX_SORTS:
-        href = "index.html" if key == "name" else f"index.{key}.html"
+        href = "index.md.html" if key == "name" else f"index.{key}.md.html"
         cls = " class=\"is-active\"" if key == sort_key else ""
         sort_links.append(
-            f'<a href="{href}" data-sort-link="{key}"{cls}>{label}</a>'
+            f'<a href="{href}#sort={key}" data-sort-link="{key}"{cls}>{html.escape(label)}</a>'
         )
     lines.append(
-        "<div class=\"dir-index-controls\">"
-        "<span class=\"dir-index-label\">Sort:</span> "
+        "<div class=\"dir-index-controls\">Sort: "
         + " | ".join(sort_links)
         + "</div>"
     )
+    lines.append("")
 
     items_sorted = _sort_dir_index_items(items, sort_key, sort_dir)
 
-    table = []
-    table.append(
-        f"<table class=\"dir-index-table\" data-sort=\"{sort_key}\" data-dir=\"{sort_dir}\">"
-    )
-    table.append(
-        "<thead><tr>"
-        "<th data-sort=\"name\" class=\"sortable\">Name</th>"
-        "<th data-sort=\"created\" class=\"sortable\">Created</th>"
-        "<th data-sort=\"modified\" class=\"sortable\">Modified</th>"
-        "</tr></thead>"
-    )
-    table.append("<tbody>")
+    table_lines = []
+    table_lines.append("| Name | Created | Modified |")
+    table_lines.append("| --- | --- | --- |")
 
     for it in items_sorted:
-        name_key = (it.name or "").lower()
-        name_sort = f"{0 if it.is_dir else 1}:{name_key}"
-        created_ts = int(it.ctime or 0)
-        modified_ts = int(it.mtime or 0)
         created_disp = _fmt_dir_index_ts(it.ctime)
         modified_disp = _fmt_dir_index_ts(it.mtime)
 
@@ -1661,7 +1648,10 @@ def _format_dir_index_common(
             href_rel = rel(it.path) if use_root_links else rel_out(it.path)
             href = (it.name + "/") if rel_dir.parts else (href_rel.as_posix() + "/")
             href = quote(href, safe="/:@-._~")
-            name_html = f'<a href="{html.escape(href, quote=True)}">📂 {html.escape(it.name)}/</a>'
+            name_html = (
+                f'📂 <a href="{html.escape(href, quote=True)}">'
+                f'{html.escape(it.name)}/</a>'
+            )
         else:
             p_rel = rel(it.path) if use_root_links else rel_out(it.path)
             ext = it.path.suffix.lower()
@@ -1689,10 +1679,11 @@ def _format_dir_index_common(
                     extra.append(f'<a href="{html.escape(gh_url, quote=True)}">GH</a>')
                 extra_html = ""
                 if extra:
-                    extra_html = " <span class=\"dir-index-links\">(" + " | ".join(extra) + ")</span>"
+                    extra_html = " (" + ", ".join(extra) + ")"
 
                 name_html = (
-                    f'<a href="{html.escape(url_local, quote=True)}">📄 {html.escape(it.name)}</a>'
+                    f'<a href="{html.escape(url_local, quote=True)}">'
+                    f'📄 {html.escape(it.name)}</a>'
                     f"{extra_html}"
                 )
             else:
@@ -1700,26 +1691,23 @@ def _format_dir_index_common(
                 if mirrored.exists():
                     rel_url = rel_out(mirrored).as_posix()
                     url_local = "/" + quote(rel_url, safe="/:@-._~")
-                    name_html = f'<a href="{html.escape(url_local, quote=True)}">📄 {html.escape(it.name)}</a>'
+                    name_html = (
+                        f'<a href="{html.escape(url_local, quote=True)}">'
+                        f'📄 {html.escape(it.name)}</a>'
+                    )
                 else:
                     # file exists in repo but wasn't mirrored (should not happen)
                     name_html = f"📄 {html.escape(it.name)}"
 
-        table.append(
-            "<tr"
-            f" data-name=\"{html.escape(name_sort, quote=True)}\""
-            f" data-created=\"{created_ts}\""
-            f" data-modified=\"{modified_ts}\""
-            ">"
-            f"<td>{name_html}</td>"
-            f"<td>{html.escape(created_disp)}</td>"
-            f"<td>{html.escape(modified_disp)}</td>"
-            "</tr>"
+        table_lines.append(
+            f"| {name_html} | {html.escape(created_disp)} | {html.escape(modified_disp)} |"
         )
 
-    table.append("</tbody></table>")
-    lines.extend(table)
-    lines.append("</main>")
+    lines.append(
+        f'<pre class="dir-index-table" data-sort="{sort_key}" data-dir="{sort_dir}">'
+    )
+    lines.extend(table_lines)
+    lines.append("</pre>")
     return title, "\n".join(lines)
 
 def format_dir_index(
@@ -1831,7 +1819,7 @@ def build_out_indexes(hidden_stems: set[tuple[str, str]], article_dirs: set[Path
         if d in article_dirs or _index_is_article_page(d):
             continue
         for key, _label, default_dir in DIR_INDEX_SORTS:
-            filename = "index.html" if key == "name" else f"index.{key}.html"
+            filename = "index.md.html" if key == "name" else f"index.{key}.md.html"
             out_html = d / filename
             title, md_body = format_dir_index_out(
                 d,
@@ -1840,6 +1828,8 @@ def build_out_indexes(hidden_stems: set[tuple[str, str]], article_dirs: set[Path
                 sort_dir=default_dir,
             )
             write_md_like_page(out_html, md_body, title=title, escape_html=False)
+            if key == "name":
+                write_md_like_page(d / "index.html", md_body, title=title, escape_html=False)
 
 def copy_static():
     OUT.mkdir(parents=True, exist_ok=True)
