@@ -147,6 +147,7 @@ _GIT_FILE_MTIMES: dict[str, int] | None = None
 _GIT_FILE_CTIMES: dict[str, int] | None = None
 _GIT_DIR_MTIMES: dict[str, int] | None = None
 _GIT_DIR_CTIMES: dict[str, int] | None = None
+_PROV_PDF_CACHE: dict[Path, str | None] = {}
 
 def _load_git_times() -> tuple[dict[str, int], dict[str, int]]:
     prefix = "__CODEX_COMMIT__"
@@ -227,6 +228,31 @@ def _git_time_for_out_path(out_path: Path, *, is_dir: bool, kind: str) -> float 
     else:
         ts = _GIT_FILE_MTIMES.get(rel_path) if kind == "mtime" else _GIT_FILE_CTIMES.get(rel_path)
     return float(ts) if ts is not None else None
+
+def _provenance_pdf_url(prov_path: Path) -> str | None:
+    cached = _PROV_PDF_CACHE.get(prov_path)
+    if prov_path in _PROV_PDF_CACHE:
+        return cached
+    try:
+        data = yaml.safe_load(prov_path.read_text(encoding="utf-8")) or {}
+    except Exception:
+        _PROV_PDF_CACHE[prov_path] = None
+        return None
+    artifacts = data.get("artifacts") or {}
+    assets = data.get("assets") or {}
+    canonical_assets = data.get("canonical_assets") or {}
+
+    pdf_url = ""
+    if isinstance(artifacts, dict):
+        pdf_url = (artifacts.get("pdf_url") or "").strip()
+    if not pdf_url:
+        pdf_url = _asset_url(assets.get("pdf"))
+    if not pdf_url:
+        pdf_url = _asset_url(canonical_assets.get("pdf"))
+
+    pdf_url = pdf_url.strip() if isinstance(pdf_url, str) else ""
+    _PROV_PDF_CACHE[prov_path] = pdf_url or None
+    return _PROV_PDF_CACHE[prov_path]
 
 def _file_sha256(path: Path) -> str:
     h = hashlib.sha256()
@@ -1768,12 +1794,23 @@ def _format_dir_index_common(
                         f"{BRANCH}/{gh_path}"
                     )
 
-                extra = [f'<a href="{html.escape(url_local_raw, quote=True)}">Raw</a>']
+                extra = [f'<a href="{html.escape(url_local_raw, quote=True)}">raw</a>']
+                pdf_url = None
+                prov_path = it.path.parent / "provenance.yaml"
+                if prov_path.exists():
+                    pdf_url = _provenance_pdf_url(prov_path)
+                else:
+                    pdf_url = (
+                        f"https://github.com/{OWNER}/{REPO}/blob/"
+                        f"{BRANCH}/{gh_path}"
+                    )
+                if pdf_url:
+                    extra.append(f'<a href="{html.escape(pdf_url, quote=True)}">pdf</a>')
                 if gh_url:
-                    extra.append(f'<a href="{html.escape(gh_url, quote=True)}">GH</a>')
+                    extra.append(f'<a href="{html.escape(gh_url, quote=True)}">gh</a>')
                 extra_html = ""
                 if extra:
-                    extra_html = " (" + ", ".join(extra) + ")"
+                    extra_html = " " + " ".join(f"[{link}]" for link in extra)
 
                 name_html = (
                     f'<a href="{html.escape(url_local, quote=True)}">'
