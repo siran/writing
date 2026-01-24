@@ -471,6 +471,37 @@ def _normalize_feed_url(url: str) -> str:
     except Exception:
         return url
 
+_INLINE_MATH_RE = re.compile(r"\$[^$\n]+\$")
+_LATEX_HINT_RE = re.compile(r"(\\\(|\\\[|\\begin\{|\\end\{)")
+
+def _needs_math(*parts: str) -> bool:
+    for part in parts:
+        if not part:
+            continue
+        text = str(part)
+        if _INLINE_MATH_RE.search(text):
+            return True
+        if _LATEX_HINT_RE.search(text):
+            return True
+    return False
+
+def _mathjax_head() -> str:
+    return (
+        "<script>\n"
+        "window.MathJax = {\n"
+        "  tex: {\n"
+        "    inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],\n"
+        "    displayMath: [['$$', '$$'], ['\\\\[', '\\\\]']]\n"
+        "  },\n"
+        "  options: {\n"
+        "    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']\n"
+        "  },\n"
+        "  svg: { fontCache: 'global' }\n"
+        "};\n"
+        "</script>\n"
+        "<script async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js\"></script>"
+    )
+
 # ---------- templating ----------
 def write_html(out_html: Path, body_html: str, head_extra: str = "", title: str = ""):
     # All pages (including *.md.html mirrors) get header + breadcrumb (for mirrors)
@@ -1295,7 +1326,7 @@ def build_article_pages() -> set[Path]:
             if local_html:
                 link_items.append(("HTML", local_html))
             if embed_link:
-                link_items.append(("HTML Embed", embed_link))
+                link_items.append(("HTML EMBED", embed_link))
             if local_md_html:
                 link_items.append(("MD.HTML", local_md_html))
             if local_md:
@@ -1325,16 +1356,10 @@ def build_article_pages() -> set[Path]:
                 + "<br>".join(share_lines)
                 + "</div>"
             )
-            links_html = ""
+            links_inline = ""
             if link_items:
-                links_html = (
-                    "<p class=\"links\"><strong>Latest:</strong></p>"
-                    + "<ul class=\"links\">"
-                    + "".join(
-                        f'<li><a href="{href}">{label}</a></li>'
-                        for label, href in link_items
-                    )
-                    + "</ul>"
+                links_inline = " ".join(
+                    f'<a href="{href}">[{label}]</a>' for label, href in link_items
                 )
 
             breadcrumbs = crumb_link([top, stem, it["doi_prefix"], it["doi_suffix"]])
@@ -1344,7 +1369,12 @@ def build_article_pages() -> set[Path]:
                 ver_url = f"/{top}/{stem_seg}/{v['doi_prefix']}/{v['doi_suffix']}/"
                 doi_disp = f"{v['doi_prefix']}/{v['doi_suffix']}"
                 date_disp = v["date"] or ""
-                versions_list.append(f"<li>{date_disp} — <a href=\"{ver_url}\">{doi_disp}</a></li>")
+                entry = f"{date_disp} — <a href=\"{ver_url}\">{doi_disp}</a>"
+                if v is latest:
+                    entry += " latest"
+                if v is it:
+                    entry = f"<strong>{entry}</strong>"
+                versions_list.append(f"<li>{entry}</li>")
             versions_ul = "<ul>" + "".join(versions_list) + "</ul>" if versions_list else ""
             display_authors = it["authors"]
             authors_html = ", ".join(filter(None, (fmt_author(a) for a in display_authors)))
@@ -1356,6 +1386,8 @@ def build_article_pages() -> set[Path]:
             if authors_html:
                 body.append(f"<p class='authors'>{authors_html}</p>")
             body.append(f"<p class='publine'>{PREFERRED_JOURNAL} — {month_year(it['date'])}</p>")
+            if links_inline:
+                body.append(f"<p class='links'>{links_inline}</p>")
             if it["onesent"]:
                 body.append("<h2>One-Sentence Summary</h2>")
                 body.append(f"<p>{it['onesent']}</p>")
@@ -1367,19 +1399,17 @@ def build_article_pages() -> set[Path]:
             if it["kws"]:
                 body.append("<h2>Keywords</h2>")
                 body.append(
-                    "<ul class='keywords'>"
-                    + "".join(f"<li>{k}</li>" for k in it["kws"])
-                    + "</ul>"
+                    "<p class='keywords'><strong>Keywords:</strong> "
+                    + ", ".join(it["kws"])
+                    + "</p>"
                 )
 
-            if share_html or versions_ul or links_html:
+            if share_html or versions_ul:
                 body.append("<h2>Version</h2>" if len(same_family) <= 1 else "<h2>Versions</h2>")
                 if share_html:
                     body.append(share_html)
                 if versions_ul:
                     body.append(versions_ul)
-                if links_html:
-                    body.append(links_html)
 
             body.append("</main>")
 
@@ -1413,6 +1443,8 @@ def build_article_pages() -> set[Path]:
             head.append('<meta property="og:type" content="article">')
             head.append(f'<meta property="og:title" content="{it["title"]}">')
             head.append(f'<meta property="og:url" content="{version_url}">')
+            if _needs_math(it.get("onesent"), it.get("abstract"), *it.get("kws", [])):
+                head.append(_mathjax_head())
 
             authors_ld = []
             for a in display_authors:
@@ -1524,7 +1556,12 @@ def build_article_pages() -> set[Path]:
             ver_url = f"/{top}/{stem_seg}/{v['doi_prefix']}/{v['doi_suffix']}/"
             doi_disp = f"{v['doi_prefix']}/{v['doi_suffix']}"
             date_disp = v["date"] or ""
-            versions_list.append(f"<li>{date_disp} — <a href=\"{ver_url}\">{doi_disp}</a></li>")
+            entry = f"{date_disp} — <a href=\"{ver_url}\">{doi_disp}</a>"
+            if v is latest:
+                entry += " latest"
+            if v is it:
+                entry = f"<strong>{entry}</strong>"
+            versions_list.append(f"<li>{entry}</li>")
         versions_ul = "<ul>" + "".join(versions_list) + "</ul>" if versions_list else ""
 
         local_md_html = f"{local_md}.html" if local_md else ""
@@ -1533,7 +1570,7 @@ def build_article_pages() -> set[Path]:
         if local_html:
             link_items.append(("HTML", local_html))
         if embed_link:
-            link_items.append(("HTML Embed", embed_link))
+            link_items.append(("HTML EMBED", embed_link))
         if local_md_html:
             link_items.append(("MD.HTML", local_md_html))
         if local_md:
@@ -1556,16 +1593,10 @@ def build_article_pages() -> set[Path]:
             + "<br>".join(share_lines)
             + "</div>"
         )
-        links_html = ""
+        links_inline = ""
         if link_items:
-            links_html = (
-                "<p class=\"links\"><strong>Latest:</strong></p>"
-                + "<ul class=\"links\">"
-                + "".join(
-                    f'<li><a href="{href}">{label}</a></li>'
-                    for label, href in link_items
-                )
-                + "</ul>"
+            links_inline = " ".join(
+                f'<a href="{href}">[{label}]</a>' for label, href in link_items
             )
 
         display_authors = it["authors"]
@@ -1578,6 +1609,8 @@ def build_article_pages() -> set[Path]:
         if authors_html:
             body.append(f"<p class='authors'>{authors_html}</p>")
         body.append(f"<p class='publine'>{PREFERRED_JOURNAL} — {month_year(it['date'])}</p>")
+        if links_inline:
+            body.append(f"<p class='links'>{links_inline}</p>")
         if it["onesent"]:
             body.append("<h2>One-Sentence Summary</h2>")
             body.append(f"<p>{it['onesent']}</p>")
@@ -1589,18 +1622,16 @@ def build_article_pages() -> set[Path]:
         if it["kws"]:
             body.append("<h2>Keywords</h2>")
             body.append(
-                "<ul class='keywords'>"
-                + "".join(f"<li>{k}</li>" for k in it["kws"])
-                + "</ul>"
+                "<p class='keywords'><strong>Keywords:</strong> "
+                + ", ".join(it["kws"])
+                + "</p>"
             )
-        if share_html or versions_ul or links_html:
+        if share_html or versions_ul:
             body.append("<h2>Version</h2>" if len(same_family) <= 1 else "<h2>Versions</h2>")
             if share_html:
                 body.append(share_html)
             if versions_ul:
                 body.append(versions_ul)
-            if links_html:
-                body.append(links_html)
         body.append("</main>")
 
         stem_url = f"{origin}/{top}/{stem_seg}/"
@@ -1632,6 +1663,8 @@ def build_article_pages() -> set[Path]:
         head.append('<meta property="og:type" content="article">')
         head.append(f'<meta property="og:title" content="{it["title"]}">')
         head.append(f'<meta property="og:url" content="{stem_url}">')
+        if _needs_math(it.get("onesent"), it.get("abstract"), *it.get("kws", [])):
+            head.append(_mathjax_head())
 
         authors_ld = []
         for a in display_authors:
