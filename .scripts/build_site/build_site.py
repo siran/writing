@@ -43,6 +43,7 @@ DIR_INDEX_SORTS = [
     ("name", "Name", "asc"),
     ("modified", "Modified", "desc"),
 ]
+DIR_INDEX_DEFAULT = "modified"
 
 MD_EXTS = {".md", ".markdown", ".pandoc.md"}
 SKIP_COPY_EXTS = {".pdf"}
@@ -2007,7 +2008,7 @@ def build_out_indexes(hidden_stems: set[tuple[str, str]], article_dirs: set[Path
                 sort_dir=default_dir,
             )
             write_md_like_page(out_html, md_body, title=title, escape_html=False)
-            if key == "name":
+            if key == DIR_INDEX_DEFAULT:
                 write_md_like_page(d / "index.html", md_body, title=title, escape_html=False)
 
 def copy_static():
