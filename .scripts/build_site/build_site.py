@@ -41,7 +41,6 @@ MIRROR_EXTS = {
 }
 DIR_INDEX_SORTS = [
     ("name", "Name", "asc"),
-    ("created", "Created", "desc"),
     ("modified", "Modified", "desc"),
 ]
 
@@ -453,12 +452,13 @@ def render_markdown_file(src: Path, dst_html: Path, title: str):
     rel_html = dst_html.relative_to(OUT).as_posix()
     origin = _current_origin()
     page_url = f"{origin}/{rel_html}"
-    head = [
-        '<meta charset="utf-8">',
-        f'<link rel="canonical" href="{page_url}">',
-        f'<meta name="description" content="Rendered Markdown view for {title}">',
-    ]
-    head_extra = "\n".join(head) + "\n"
+    title_tag = f"<title>{html.escape(title)} - {PREFERRED_JOURNAL}</title>"
+    head_extra = (
+        '<!DOCTYPE html><meta charset="UTF-8">'
+        f"{title_tag}"
+        f'<link rel="canonical" href="{html.escape(page_url, quote=True)}">'
+        '<meta name="robots" content="index,follow">\n'
+    )
 
     write_html(dst_html, body_html, head_extra=head_extra, title=title)
 
@@ -808,13 +808,13 @@ def write_md_like_page(
     page_url = f"{origin}/{rel_html}"
 
     t = title or ""
-    head = [
-        '<meta charset="utf-8">',
-        f'<link rel="canonical" href="{page_url}">',
-        '<meta name="robots" content="index,follow">',
-        f'<meta name="description" content="{t}">',
-    ]
-    head_extra = "\n".join(head) + "\n"
+    title_tag = f"<title>{html.escape(t)} - {PREFERRED_JOURNAL}</title>"
+    head_extra = (
+        '<!DOCTYPE html><meta charset="UTF-8">'
+        f"{title_tag}"
+        f'<link rel="canonical" href="{html.escape(page_url, quote=True)}">'
+        '<meta name="robots" content="index,follow">\n'
+    )
 
     write_html(out_html, body, head_extra=head_extra, title=t or "Index")
 
@@ -1636,12 +1636,21 @@ def _format_dir_index_common(
 
     items_sorted = _sort_dir_index_items(items, sort_key, sort_dir)
 
+    date_width = 16
+    gap = "  "
+
+    def pad_date(val: str) -> str:
+        return (val or "").ljust(date_width)
+
     table_lines = []
-    table_lines.append("| Name | Created | Modified |")
-    table_lines.append("| --- | --- | --- |")
+    table_lines.append(
+        f"{pad_date('Modified')}{gap}Name"
+    )
+    table_lines.append(
+        f"{'-'*date_width}{gap}{'-'*4}"
+    )
 
     for it in items_sorted:
-        created_disp = _fmt_dir_index_ts(it.ctime)
         modified_disp = _fmt_dir_index_ts(it.mtime)
 
         if it.is_dir:
@@ -1700,7 +1709,8 @@ def _format_dir_index_common(
                     name_html = f"📄 {html.escape(it.name)}"
 
         table_lines.append(
-            f"| {name_html} | {html.escape(created_disp)} | {html.escape(modified_disp)} |"
+            f"{pad_date(html.escape(modified_disp))}"
+            f"{gap}{name_html}"
         )
 
     lines.append(

@@ -230,11 +230,12 @@
 <script>
     (function () {
         function defaultDirFor(key) {
-            if (key === "created" || key === "modified") {
-                return "desc";
-            }
-            return "asc";
+            return key === "modified" ? "desc" : "asc";
         }
+
+        var DATE_WIDTH = 16;
+        var GAP = 2;
+        var NAME_OFFSET = DATE_WIDTH + GAP;
 
         function parseDate(text) {
             var m = (text || "").match(/(\d{4})-(\d{2})-(\d{2})\s+(\d{2}):(\d{2})/);
@@ -250,14 +251,16 @@
             );
         }
 
-        function splitCells(line) {
-            var parts = (line || "").split("|");
-            if (parts.length < 4) {
-                return [];
+        function parseRow(line) {
+            if (!line || line.length < NAME_OFFSET) {
+                return null;
             }
-            return parts.slice(1, -1).map(function (p) {
-                return p.trim();
-            });
+            var modified = line.slice(0, DATE_WIDTH).trim();
+            var nameHtml = line.slice(NAME_OFFSET).trim();
+            return {
+                modified: modified,
+                nameHtml: nameHtml
+            };
         }
 
         function cellText(html) {
@@ -268,6 +271,7 @@
 
         function nameSortKey(value) {
             var text = (value || "").replace(/^[📂📄]\s*/, "");
+            text = text.replace(/\s*\(.*\)\s*$/, "");
             return text.toLowerCase();
         }
 
@@ -279,8 +283,8 @@
             var lines = (pre.innerHTML || "").split(/\r?\n/);
             var headerIdx = -1;
             for (var i = 0; i < lines.length; i++) {
-                var t = lines[i].trim().toLowerCase();
-                if (t === "| name | created | modified |") {
+                var t = lines[i].trim();
+                if (/^Modified\s+Name$/.test(t)) {
                     headerIdx = i;
                     break;
                 }
@@ -294,7 +298,10 @@
             for (var j = rowsStart; j < lines.length; j++) {
                 var line = lines[j];
                 var trimmed = line.trim();
-                if (!trimmed || trimmed.charAt(0) !== "|") {
+                if (!trimmed) {
+                    break;
+                }
+                if (!parseRow(line)) {
                     break;
                 }
                 rows.push(line);
@@ -311,10 +318,10 @@
         function sortRows(rows, key, dir) {
             var sorted = rows.slice();
             sorted.sort(function (a, b) {
-                var ca = splitCells(a);
-                var cb = splitCells(b);
-                var nameA = cellText(ca[0] || "");
-                var nameB = cellText(cb[0] || "");
+                var ra = parseRow(a) || {};
+                var rb = parseRow(b) || {};
+                var nameA = cellText(ra.nameHtml || "");
+                var nameB = cellText(rb.nameHtml || "");
                 var dirA = isDir(nameA);
                 var dirB = isDir(nameB);
                 var baseA = nameSortKey(nameA);
@@ -333,9 +340,8 @@
                     return 0;
                 }
 
-                var idx = key === "created" ? 1 : 2;
-                var ta = parseDate(cellText(ca[idx] || ""));
-                var tb = parseDate(cellText(cb[idx] || ""));
+                var ta = parseDate(ra.modified || "");
+                var tb = parseDate(rb.modified || "");
                 if (ta < tb) {
                     return dir === "asc" ? -1 : 1;
                 }
@@ -382,7 +388,14 @@
         function parseHashSort() {
             var h = window.location.hash || "";
             var m = h.match(/sort=([a-z]+)/i);
-            return m ? m[1].toLowerCase() : "";
+            if (!m) {
+                return "";
+            }
+            var key = m[1].toLowerCase();
+            if (key === "name" || key === "modified") {
+                return key;
+            }
+            return "";
         }
 
         function initPre(pre) {
