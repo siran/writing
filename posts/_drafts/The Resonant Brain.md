@@ -5,7 +5,7 @@ author: —
 date: —
 keywords: Maxwell equations, biological electromagnetism, telepathy, modes, harmonics, spectral magnitude distribution, resonance, lock-in extraction, brain rhythms, microtubules, information measures
 one-sentence-summary: Electromagnetic telepathy is a mode-matching problem: one organism reshapes multi-path currents into shared spectral–modal structure, while the other extracts that structure through resonance-locked accumulation across scales, down to microtubule-coupled variables.
-summary: This document states a classical, testable account of telepathy as ordinary electromagnetic information transfer between organisms. Organisms are modeled as networks of modulatable current loops embedded in their own tissue media (brain–heart–spine and beyond). Their time-structured currents generate structured field modes whose spectral magnitude distributions can carry discriminative content, analogous to timbre in acoustics. The receiving organism is a resonant, multi-scale extractor that locks onto selected structure by rhythm-locked accumulation, reinforced by redundancy, continuity constraints, and memory-lagged inference. Microtubules are treated as a plausible and unavoidable resonant substrate: they matter when they sharpen selectivity, sustain phase-consistent accumulation windows, and couple their internal electrical variables into neural control variables influencing perception, thought, and decision. Existing neuroscience already treats spectral structure and rhythmic interactions as information-bearing via mutual information, microstate sequence analysis, and related measures.
+summary: This document states a classical, testable account of telepathy as ordinary electromagnetic information transfer between organisms. Organisms are modeled as networks of modulatable current loops embedded in their own tissue media (brain–heart–spine and beyond). Their time-structured currents generate structured field modes whose spectral magnitude distributions can carry discriminative content, analogous to timbre in acoustics. The receiving organism is a resonant, multi-scale extractor that locks onto selected structure by rhythm-locked accumulation, reinforced by redundancy, structured continuity of signal, and memory-lagged inference. Microtubules are treated as a plausible and unavoidable resonant substrate: they matter when they sharpen selectivity, sustain phase-consistent accumulation windows, and couple their internal electrical variables into neural control variables influencing perception, thought, and decision. Existing neuroscience already treats spectral structure and rhythmic interactions as information-bearing via mutual information, microstate sequence analysis, and related measures.
 ---
 
 # The Resonant Brain
@@ -201,7 +201,7 @@ organization, which reshapes mode weights, which reshapes the spectral magnitude
 distribution across modes.
 
 
-### 6.1 Magnitude carries content; phase carries additional constraints
+### 6.1 Magnitude carries content; phase carries additional information
 
 Magnitude structure is already informative: it classifies, distinguishes, and
 tracks. It does not uniquely specify every microscopic detail of the time
