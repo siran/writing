@@ -143,6 +143,91 @@ def is_gitignored(path: Path) -> bool:
             continue
     return False
 
+_GIT_FILE_MTIMES: dict[str, int] | None = None
+_GIT_FILE_CTIMES: dict[str, int] | None = None
+_GIT_DIR_MTIMES: dict[str, int] | None = None
+_GIT_DIR_CTIMES: dict[str, int] | None = None
+
+def _load_git_times() -> tuple[dict[str, int], dict[str, int]]:
+    prefix = "__CODEX_COMMIT__"
+    try:
+        out = subprocess.check_output(
+            [
+                "git",
+                "-c",
+                "core.quotepath=false",
+                "log",
+                "--name-only",
+                f"--pretty=format:{prefix}%ct",
+                "--diff-filter=ACMR",
+                "--",
+            ],
+            cwd=ROOT,
+            text=True,
+            stderr=subprocess.DEVNULL,
+        )
+    except Exception:
+        return {}, {}
+
+    file_mtimes: dict[str, int] = {}
+    file_ctimes: dict[str, int] = {}
+    current_ts: int | None = None
+
+    for raw in out.splitlines():
+        line = raw.rstrip("\n")
+        if not line:
+            continue
+        if line.startswith(prefix):
+            ts_str = line[len(prefix):]
+            try:
+                current_ts = int(ts_str)
+            except ValueError:
+                current_ts = None
+            continue
+        if current_ts is None:
+            continue
+        path = line
+        if path not in file_mtimes:
+            file_mtimes[path] = current_ts
+        file_ctimes[path] = current_ts
+
+    return file_mtimes, file_ctimes
+
+def _aggregate_dir_times(file_times: dict[str, int], *, use_max: bool) -> dict[str, int]:
+    dir_times: dict[str, int] = {}
+    for path, ts in file_times.items():
+        parts = Path(path).parts
+        for i in range(1, len(parts)):
+            key = Path(*parts[:i]).as_posix()
+            prev = dir_times.get(key)
+            if prev is None:
+                dir_times[key] = ts
+                continue
+            if use_max and ts > prev:
+                dir_times[key] = ts
+            elif not use_max and ts < prev:
+                dir_times[key] = ts
+    return dir_times
+
+def _ensure_git_times() -> None:
+    global _GIT_FILE_MTIMES, _GIT_FILE_CTIMES, _GIT_DIR_MTIMES, _GIT_DIR_CTIMES
+    if _GIT_FILE_MTIMES is not None:
+        return
+    file_mtimes, file_ctimes = _load_git_times()
+    _GIT_FILE_MTIMES = file_mtimes
+    _GIT_FILE_CTIMES = file_ctimes
+    _GIT_DIR_MTIMES = _aggregate_dir_times(file_mtimes, use_max=True)
+    _GIT_DIR_CTIMES = _aggregate_dir_times(file_ctimes, use_max=False)
+
+def _git_time_for_out_path(out_path: Path, *, is_dir: bool, kind: str) -> float | None:
+    _ensure_git_times()
+    rel_path = rel_out(out_path).as_posix()
+    if is_dir:
+        ts = _GIT_DIR_MTIMES.get(rel_path) if kind == "mtime" else _GIT_DIR_CTIMES.get(rel_path)
+    else:
+        ts = _GIT_FILE_MTIMES.get(rel_path) if kind == "mtime" else _GIT_FILE_CTIMES.get(rel_path)
+    return float(ts) if ts is not None else None
+
 def _file_sha256(path: Path) -> str:
     h = hashlib.sha256()
     with path.open("rb") as f:
@@ -1797,11 +1882,17 @@ def build_out_indexes(hidden_stems: set[tuple[str, str]], article_dirs: set[Path
         items: list[Item] = []
         for sub in sorted([d/nn for nn in dirnames], key=lambda x: x.name.lower()):
             st = sub.stat()
+            ctime = _git_time_for_out_path(sub, is_dir=True, kind="ctime")
+            mtime = _git_time_for_out_path(sub, is_dir=True, kind="mtime")
+            if ctime is None:
+                ctime = st.st_ctime
+            if mtime is None:
+                mtime = st.st_mtime
             items.append(Item(
                 name=sub.name,
                 is_dir=True,
-                ctime=st.st_ctime,
-                mtime=st.st_mtime,
+                ctime=ctime,
+                mtime=mtime,
                 path=sub,
             ))
         for fname in sorted(filenames, key=lambda x: x.lower()):
@@ -1811,16 +1902,24 @@ def build_out_indexes(hidden_stems: set[tuple[str, str]], article_dirs: set[Path
             if p.name in EXCLUDE_NAMES:
                 continue
             lower_name = p.name.lower()
+            if lower_name == "index.html" or (lower_name.startswith("index.") and lower_name.endswith(".html")):
+                continue
             if lower_name.endswith(".md.html") or lower_name.endswith(".markdown.html"):
                 continue
             if p.name in hide_names:
                 continue
             st = p.stat()
+            ctime = _git_time_for_out_path(p, is_dir=False, kind="ctime")
+            mtime = _git_time_for_out_path(p, is_dir=False, kind="mtime")
+            if ctime is None:
+                ctime = st.st_ctime
+            if mtime is None:
+                mtime = st.st_mtime
             items.append(Item(
                 name=p.name,
                 is_dir=False,
-                ctime=st.st_ctime,
-                mtime=st.st_mtime,
+                ctime=ctime,
+                mtime=mtime,
                 path=p,
             ))
 
