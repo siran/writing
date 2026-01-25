@@ -489,18 +489,21 @@ def render_in_staging(
     publication_date_iso: str,
     book_yaml: Optional[Path] = None,
     render_args: Optional[List[str]] = None,
-) -> Tuple[Path, Path, Path, Path, Optional[Path], Optional[Path]]:
+    include_pdf: bool = True,
+) -> Tuple[Path, Path, Optional[Path], Path, Optional[Path], Optional[Path]]:
     """
     Stage and render the main PNPMD .md, and optionally a book .yml (book mode).
 
     Returns:
-        staging_dir, staged_md, staged_pdf, staged_html, staged_embed_html, staged_epub (or None)
+        staging_dir, staged_md, staged_pdf (or None), staged_html, staged_embed_html,
+        staged_epub (or None)
     """
     stem = src_md.stem
     staging = site_repo / subjournal / "_staging" / stem
     staging.mkdir(parents=True, exist_ok=True)
 
     base_render_args = list(render_args or [])
+    render_mode = "--all" if include_pdf else "--html"
 
     script_dir = Path(__file__).resolve().parent
     render_py = script_dir.parent / "render" / "render.py"
@@ -537,7 +540,14 @@ def render_in_staging(
 
         dst_yaml = staging / book_yaml.name
         run(
-            [sys.executable, str(render_py), "--all", "--epub", *base_render_args, str(dst_yaml)],
+            [
+                sys.executable,
+                str(render_py),
+                render_mode,
+                "--epub",
+                *base_render_args,
+                str(dst_yaml),
+            ],
             cwd=staging,
             check=True,
         )
@@ -553,18 +563,21 @@ def render_in_staging(
         alt_pdf = pandoc_md.with_suffix(".pdf")  # legacy .pandoc.pdf
         alt_html = pandoc_md.with_suffix(".html")
         alt_epub = pandoc_md.with_suffix(".epub")
-        if not pdf_src.exists() and alt_pdf.exists():
+        if include_pdf and not pdf_src.exists() and alt_pdf.exists():
             alt_pdf.rename(pdf_src)
         if not html_src.exists() and alt_html.exists():
             alt_html.rename(html_src)
         if not epub_src.exists() and alt_epub.exists():
             alt_epub.rename(epub_src)
 
-        pdf_dst = pdf_src
+        pdf_dst = pdf_src if include_pdf else None
         html_dst = html_src
         epub_dst = epub_src
 
-        for p in (human_md, pdf_dst, html_dst, pandoc_md):
+        expected = [human_md, html_dst, pandoc_md]
+        if include_pdf:
+            expected.append(pdf_dst)
+        for p in expected:
             if not p.exists():
                 die(f"Expected artifact missing after render: {p}")
         staged_epub = epub_dst if epub_dst.exists() else None
@@ -592,15 +605,18 @@ def render_in_staging(
     dst_md.write_text(md_text, encoding="utf-8")
 
     run(
-        [sys.executable, str(render_py), "--all", *base_render_args, str(dst_md)],
+        [sys.executable, str(render_py), render_mode, *base_render_args, str(dst_md)],
         cwd=staging,
         check=True,
     )
 
-    dst_pdf = dst_md.with_suffix(".pdf")
+    dst_pdf = dst_md.with_suffix(".pdf") if include_pdf else None
     dst_html = dst_md.with_suffix(".html")
     dst_pmd = dst_md.with_suffix(".pandoc.md")
-    for p in (dst_pdf, dst_html, dst_pmd):
+    expected = [dst_html, dst_pmd]
+    if include_pdf:
+        expected.append(dst_pdf)
+    for p in expected:
         if not p.exists():
             die(f"Expected artifact missing after render: {p}")
 
@@ -614,7 +630,7 @@ def render_in_staging(
 def write_provenance(
     dst_dir: Path,
     dst_md: Path,
-    dst_pdf: Path,
+    dst_pdf: Optional[Path],
     dst_html: Path,
     dst_embed_html: Optional[Path],
     dst_pmd: Path,
@@ -628,7 +644,7 @@ def write_provenance(
     publication_year: str,
     doi: str,
     concept_doi: Optional[str],
-    assets_pdf_url: str,
+    assets_pdf_url: Optional[str],
     assets_epub_url: Optional[str],
     assets_embed_html_url: Optional[str],
     site_html_url: str,
@@ -647,12 +663,13 @@ def write_provenance(
         "md_url": site_md_url,
         "pandoc_md_name": dst_pmd.name,
         "pandoc_md_url": site_pandoc_md_url,
-        "pdf_name": dst_pdf.name,
-        "pdf_url": assets_pdf_url,
         "html_name": dst_html.name,
         "html_url": site_html_url,
         "primary": "md",
     }
+    if dst_pdf is not None and assets_pdf_url:
+        artifacts["pdf_name"] = dst_pdf.name
+        artifacts["pdf_url"] = assets_pdf_url
     if dst_embed_html is not None:
         artifacts["embed_html_name"] = dst_embed_html.name
         if assets_embed_html_url:

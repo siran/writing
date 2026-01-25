@@ -328,13 +328,16 @@ def _reuse_pending_artifacts(
     prov: Dict,
     assets_repo: Optional[Path],
     assets_prefix: Optional[str],
-) -> Optional[Tuple[Path, Path, Path, Path, Optional[Path], Optional[Path], Path]]:
+    include_pdf: bool = True,
+) -> Optional[Tuple[Path, Path, Optional[Path], Path, Optional[Path], Optional[Path], Path]]:
     artifacts = prov.get("artifacts") or {}
     md_name = artifacts.get("md")
     pdf_name = artifacts.get("pdf_name")
     html_name = artifacts.get("html_name")
     pmd_name = artifacts.get("pandoc_md_name")
-    if not (md_name and pdf_name and html_name and pmd_name):
+    if not (md_name and html_name and pmd_name):
+        return None
+    if include_pdf and not pdf_name:
         return None
 
     pending_dir = prov_path.parent
@@ -364,10 +367,14 @@ def _reuse_pending_artifacts(
         return None
 
     staged_md = copy_from(md_name)
-    staged_pdf = copy_from(pdf_name, allow_assets=True)
     staged_html = copy_from(html_name)
-    if not (staged_md and staged_pdf and staged_html):
+    if not (staged_md and staged_html):
         return None
+    staged_pdf = None
+    if include_pdf:
+        staged_pdf = copy_from(pdf_name, allow_assets=True)
+        if not staged_pdf:
+            return None
 
     pmd_dest_name = staged_md.with_suffix(".pandoc.md").name
     staged_pmd = copy_from(pmd_name, pmd_dest_name)
@@ -565,6 +572,13 @@ def parse_args():
         "--no-assets-push",
         action="store_true",
         help="Do not push the assets repo (default: push).",
+    )
+    ap.add_argument(
+        "--skip-pdf",
+        "--html",
+        dest="skip_pdf",
+        action="store_true",
+        help="Skip PDF generation and related assets (HTML-only render).",
     )
     ap.add_argument(
         "--omit-toc",
@@ -1084,7 +1098,7 @@ def preview_actions(
     final_embed_html: Optional[Path],
     final_pmd: Path,
     prov_path: Path,
-    final_pdf: Path,
+    final_pdf: Optional[Path],
     final_epub: Optional[Path],
     extra_assets: List[ExtraAsset],
     assets_prefix: str,
@@ -1116,7 +1130,10 @@ def preview_actions(
         echo(f" - {p.relative_to(site_repo)}")
 
     echo("\n--- FILES TO UPLOAD TO ZENODO ---")
-    upload_list = [final_md, final_pdf, final_pmd, final_html]
+    upload_list = [final_md]
+    if final_pdf is not None:
+        upload_list.append(final_pdf)
+    upload_list.extend([final_pmd, final_html])
     if final_embed_html is not None:
         upload_list.append(final_embed_html)
     if final_epub is not None:
@@ -1136,10 +1153,11 @@ def preview_actions(
     echo("  git commit ...")
     if args.assets_dir:
         echo("Assets repo:")
-        echo(
-            f"  copy {final_pdf} -> "
-            f"{args.assets_dir}/{assets_prefix}/{stem}/{doi_prefix}/{doi_suffix}/{final_pdf.name}"
-        )
+        if final_pdf is not None:
+            echo(
+                f"  copy {final_pdf} -> "
+                f"{args.assets_dir}/{assets_prefix}/{stem}/{doi_prefix}/{doi_suffix}/{final_pdf.name}"
+            )
         if final_embed_html is not None:
             echo(
                 f"  copy {final_embed_html} -> "
@@ -1170,8 +1188,12 @@ def preview_actions(
         extra_label = (
             f", {len(extra_assets)} extra asset(s)" if extra_assets else ""
         )
+        upload_labels = ["md"]
+        if final_pdf is not None:
+            upload_labels.append("PDF")
+        upload_labels.extend(["pandoc.md", "html"])
         echo(
-            "  PUT md, PDF, pandoc.md, html"
+            f"  PUT {', '.join(upload_labels)}"
             + embed_label
             + (", epub" if final_epub is not None else "")
             + extra_label
@@ -1310,6 +1332,8 @@ def run_publish(args, ctx: PublishContext) -> None:
     if args.toc_depth is not None:
         render_args += ["--toc-depth", str(args.toc_depth)]
 
+    include_pdf = not args.skip_pdf
+
     staged_pmd: Optional[Path] = None
     if pending_reuse:
         reused = _reuse_pending_artifacts(
@@ -1320,6 +1344,7 @@ def run_publish(args, ctx: PublishContext) -> None:
             prev_prov,
             assets_repo,
             assets_prefix,
+            include_pdf=include_pdf,
         )
         if reused:
             (
@@ -1344,6 +1369,7 @@ def run_publish(args, ctx: PublishContext) -> None:
             publication_date_iso,
             book_yaml=book_yaml,
             render_args=render_args,
+            include_pdf=include_pdf,
         )
         staged_pmd = staged_md.with_suffix(".pandoc.md")
 
@@ -1356,6 +1382,8 @@ def run_publish(args, ctx: PublishContext) -> None:
 
     if staged_pmd is None:
         die("Internal error: missing pandoc.md after staging.")
+    if include_pdf and staged_pdf is None:
+        die("Internal error: missing PDF after staging.")
 
     # Parse PNPMD
     parsed = parse_pnpmd(staged_md.read_text(encoding="utf-8"))
@@ -1433,7 +1461,7 @@ def run_publish(args, ctx: PublishContext) -> None:
     ctx.final_dir = final_dir
 
     final_md = final_dir / staged_md.name
-    final_pdf = final_dir / staged_pdf.name
+    final_pdf = final_dir / staged_pdf.name if staged_pdf is not None else None
     final_html = final_dir / staged_html.name
     final_embed_html = (
         final_dir / staged_embed_html.name if staged_embed_html is not None else None
@@ -1443,10 +1471,11 @@ def run_publish(args, ctx: PublishContext) -> None:
 
     move_pairs = [
         (staged_md, final_md),
-        (staged_pdf, final_pdf),
         (staged_html, final_html),
         (staged_pmd, final_pmd),
     ]
+    if staged_pdf is not None and final_pdf is not None:
+        move_pairs.append((staged_pdf, final_pdf))
     if staged_embed_html is not None:
         move_pairs.append((staged_embed_html, final_embed_html))
     if staged_epub is not None:
@@ -1483,10 +1512,12 @@ def run_publish(args, ctx: PublishContext) -> None:
         f"{site_base}/{subjournal}/{stem}/{doi_prefix}/{doi_suffix}/{final_pmd.name}"
     )
     version_permalink = f"{site_base}/{subjournal}/{stem}/{doi_prefix}/{doi_suffix}/"
-    assets_pdf_url = (
-        f"{args.assets_base_url.rstrip('/')}/{assets_prefix}/"
-        f"{stem}/{doi_prefix}/{doi_suffix}/{final_pdf.name}"
-    )
+    assets_pdf_url = None
+    if final_pdf is not None:
+        assets_pdf_url = (
+            f"{args.assets_base_url.rstrip('/')}/{assets_prefix}/"
+            f"{stem}/{doi_prefix}/{doi_suffix}/{final_pdf.name}"
+        )
     assets_embed_html_url = (
         f"{args.assets_base_url.rstrip('/')}/{assets_prefix}/"
         f"{stem}/{doi_prefix}/{doi_suffix}/{final_embed_html.name}"
@@ -1512,12 +1543,15 @@ def run_publish(args, ctx: PublishContext) -> None:
             "identifier": site_md_url,
             "resource_type": resource_type,
         },
-        {
-            "relation": "isIdenticalTo",
-            "identifier": assets_pdf_url,
-            "resource_type": resource_type,
-        },
     ]
+    if assets_pdf_url:
+        self_related_identifiers.append(
+            {
+                "relation": "isIdenticalTo",
+                "identifier": assets_pdf_url,
+                "resource_type": resource_type,
+            }
+        )
     if assets_embed_html_url:
         self_related_identifiers.append(
             {
@@ -1655,14 +1689,14 @@ def run_publish(args, ctx: PublishContext) -> None:
         sys.exit(0)
 
     # Determine rendered artifacts (ignore CSS).
+    allowed_exts = {".md", ".html", ".epub"}
+    if include_pdf:
+        allowed_exts.add(".pdf")
     upload_paths = sorted(
         p
         for p in final_dir.iterdir()
         if p.is_file()
-        and (
-            p.name.endswith(".pandoc.md")
-            or p.suffix.lower() in {".md", ".pdf", ".html", ".epub"}
-        )
+        and (p.name.endswith(".pandoc.md") or p.suffix.lower() in allowed_exts)
     )
     for asset in extra_assets:
         if asset.final_path and asset.final_path not in upload_paths:
@@ -1790,9 +1824,13 @@ def run_publish(args, ctx: PublishContext) -> None:
         if not (assets_repo / ".git").exists():
             die(f"Assets dir is not a git repo: {assets_repo}")
 
-        dest_pdf = assets_repo / assets_prefix / stem / doi_prefix / doi_suffix / final_pdf.name
-        _copy_if_changed(final_pdf, dest_pdf)
-        paths_to_add = [os.path.relpath(dest_pdf, assets_repo)]
+        paths_to_add: List[str] = []
+        if final_pdf is not None:
+            dest_pdf = (
+                assets_repo / assets_prefix / stem / doi_prefix / doi_suffix / final_pdf.name
+            )
+            _copy_if_changed(final_pdf, dest_pdf)
+            paths_to_add.append(os.path.relpath(dest_pdf, assets_repo))
 
         if final_embed_html is not None:
             dest_embed_html = (
@@ -1823,31 +1861,36 @@ def run_publish(args, ctx: PublishContext) -> None:
             _copy_if_changed(asset.final_path, dest_asset)
             paths_to_add.append(os.path.relpath(dest_asset, assets_repo))
 
-        run(["git", "add"] + paths_to_add, cwd=assets_repo)
-        staged_paths = git_staged_paths(assets_repo)
-        if not staged_paths:
-            echo("+ assets unchanged; skipping assets commit/push.")
-        elif args.no_assets_push:
-            echo("+ assets staged (--no-assets-push); skipping commit/push.")
+        if not paths_to_add:
+            echo("+ no assets to stage; skipping assets commit/push.")
         else:
-            suffix_parts = []
-            if final_embed_html is not None:
-                suffix_parts.append("embed.html")
-            if final_epub is not None:
-                suffix_parts.append("epub")
-            if extra_assets:
-                suffix_parts.append("extra-assets")
-            suffix = f", {', '.join(suffix_parts)}" if suffix_parts else ""
-            run(
-                [
-                    "git",
-                    "commit",
-                    "-m",
-                    f"{title}.pdf ({publication_date}, {doi}){suffix}",
-                ],
-                cwd=assets_repo,
-            )
-            run(["git", "push"], cwd=assets_repo)
+            run(["git", "add"] + paths_to_add, cwd=assets_repo)
+            staged_paths = git_staged_paths(assets_repo)
+            if not staged_paths:
+                echo("+ assets unchanged; skipping assets commit/push.")
+            elif args.no_assets_push:
+                echo("+ assets staged (--no-assets-push); skipping commit/push.")
+            else:
+                suffix_parts = []
+                if final_pdf is not None:
+                    suffix_parts.append("pdf")
+                if final_embed_html is not None:
+                    suffix_parts.append("embed.html")
+                if final_epub is not None:
+                    suffix_parts.append("epub")
+                if extra_assets:
+                    suffix_parts.append("extra-assets")
+                suffix = f", {', '.join(suffix_parts)}" if suffix_parts else ""
+                run(
+                    [
+                        "git",
+                        "commit",
+                        "-m",
+                        f"{title} ({publication_date}, {doi}){suffix}",
+                    ],
+                    cwd=assets_repo,
+                )
+                run(["git", "push"], cwd=assets_repo)
 
     # Merge branch into main
     run(["git", "checkout", "main"], cwd=site_repo)
