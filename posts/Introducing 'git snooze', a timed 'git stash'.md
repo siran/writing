@@ -9,7 +9,7 @@ summary: >
   fixed number of days. Unlike git stash, snoozed changes automatically
   reappear after their deadline and warn you, making forgotten work impossible.
 keywords: git, productivity, developer-tools, cli, workflow, vibe-coding
-DOI:
+DOI: https://writing.preferredframe.com/doi/10.5281/zenodo.18370930
 ---
 
 ![git snooze: git stash with a timer.](https://siran.github.io/assets/writing/git-snooze.png)
@@ -214,3 +214,6 @@ That’s the whole idea.
 ✅ 100% vibe-code "certified"! 💯
 
 ![git snooze -h](https://siran.github.io/assets/writing/image.png)
+
+
+DOI: https://writing.preferredframe.com/doi/10.5281/zenodo.18370930
