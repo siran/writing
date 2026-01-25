@@ -25,37 +25,40 @@ COMMANDS
   git snooze -u <path>|all              alias for unsnooze
   git snooze doctor [--repair]
 
-DB FORMAT (tab-separated)
-  mode<TAB>snoozed_or_dash<TAB>orig<TAB>start_epoch<TAB>days
-  index<TAB>-<TAB>path<TAB>...<TAB>...
-  rename<TAB>path.snoozed<TAB>path.orig<TAB>...<TAB>...
+INSTALL (for curl/wget workflows)
+  python3 git-snooze install --global
+  python3 git-snooze install --repo
+
+  --global installs to ~/.local/bin/git-snooze and sets global git aliases.
+  --repo installs to .scripts/tools/git-snooze inside the current repo and
+  installs the repo pre-commit hook + .gitignore rule.
 
 SAFETY
   - Refuse snoozing the snooze tool itself unless --force is passed.
   - `snooze all` never snoozes the tool or its common backups.
 
-TODO (easy future extensions)
-  - strict mode: fail commit if something was unsnoozed
-  - extend +/-Nd, until <date>, branch-scoped DB, dry-run
-  - tracked-only / untracked-only flags for "snooze all"
+COMPATIBILITY
+  - Python 3.6+ (no match/case; conservative stdlib only)
 """
 
 from __future__ import print_function
 
-import argparse
 import os
 import re
 import sys
 import time
+import stat
+import shutil
 import subprocess
+import urllib.request
 
 DB_REL = os.path.join(".git", "snooze.db")
 DEFAULT_DAYS = 4
-REPAIR_YEARS_DAYS = 365 * 100  # conservative: won't pop soon
+REPAIR_YEARS_DAYS = 365 * 100
 
 
 # ---------------------------
-# Small utilities
+# Utilities
 # ---------------------------
 
 def die(msg, code=1):
@@ -75,12 +78,11 @@ def run_git(args, cwd=None, capture=False, check=True):
         if check and p.returncode != 0:
             die("git command failed: {}\n{}".format(" ".join(cmd), err.strip()))
         return out
-    else:
-        p = subprocess.Popen(cmd, cwd=cwd)
-        rc = p.wait()
-        if check and rc != 0:
-            die("git command failed: {}".format(" ".join(cmd)))
-        return ""
+    p = subprocess.Popen(cmd, cwd=cwd)
+    rc = p.wait()
+    if check and rc != 0:
+        die("git command failed: {}".format(" ".join(cmd)))
+    return ""
 
 def is_git_repo():
     try:
@@ -108,15 +110,9 @@ def ensure_db(root):
             pass
     return db
 
-def warn_setup_once(root):
-    ig = os.path.join(root, ".gitignore")
-    hook = os.path.join(root, ".git", "hooks", "pre-commit")
-
-    if (not os.path.isfile(ig)) or (not grep_file(ig, r'^\*\.snoozed\.\*$')):
-        print("git-snooze: note: add to .gitignore: *.snoozed.*", file=sys.stderr)
-
-    if (not os.path.isfile(hook)) or (not grep_file(hook, r'git-snooze sweep')):
-        print("git-snooze: note: pre-commit hook missing/incorrect (auto-wake off)", file=sys.stderr)
+def make_executable(path):
+    st = os.stat(path)
+    os.chmod(path, st.st_mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 
 def grep_file(path, pattern):
     rx = re.compile(pattern)
@@ -129,8 +125,17 @@ def grep_file(path, pattern):
         return False
     return False
 
+def warn_setup_once(root):
+    ig = os.path.join(root, ".gitignore")
+    hook = os.path.join(root, ".git", "hooks", "pre-commit")
+
+    if (not os.path.isfile(ig)) or (not grep_file(ig, r'^\*\.snoozed\.\*$')):
+        print("git-snooze: note: add to .gitignore: *.snoozed.*", file=sys.stderr)
+
+    if (not os.path.isfile(hook)) or (not grep_file(hook, r'git-snooze sweep')):
+        print("git-snooze: note: pre-commit hook missing/incorrect (auto-wake off)", file=sys.stderr)
+
 def is_tracked(path):
-    # path is relative to repo root
     rc = subprocess.call(["git", "ls-files", "--error-unmatch", "--", path],
                          stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     return rc == 0
@@ -139,34 +144,25 @@ def set_skip_worktree(path):
     subprocess.check_call(["git", "update-index", "--skip-worktree", "--", path])
 
 def unset_skip_worktree(path):
-    # idempotent best-effort
     subprocess.call(["git", "update-index", "--no-skip-worktree", "--", path],
                     stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 def is_self_path(path):
-    # protect the tool from self-snoozing (unless forced)
     return (path == ".scripts/tools/git-snooze") or path.startswith(".scripts/tools/git-snooze.")
 
 def should_skip_in_all(path):
-    # never snooze the tool (or its backups) in "all"
-    if is_self_path(path):
-        return True
-    return False
+    return is_self_path(path)
 
 
 # ---------------------------
-# Name mangling for rename-mode
+# Rename-mode naming
 # ---------------------------
 
 def snoozed_name(days, relpath):
-    """
-    Insert ".<Nd>d.snoozed." before the last extension, or append if none.
-    Dotfile special-case: ".env" -> ".env.<Nd>d.snoozed"
-    """
     d = os.path.dirname(relpath)
     f = os.path.basename(relpath)
 
-    # dotfile with no extra dots => treat as no extension
+    # dotfile with no extra dots => no extension
     if f.startswith(".") and f.count(".") == 1:
         out = f + ".{}d.snoozed".format(days)
         return os.path.join(d, out) if d else out
@@ -180,12 +176,11 @@ def snoozed_name(days, relpath):
     return os.path.join(d, out) if d else out
 
 def unsnoozed_name_from_snoozed(relpath):
-    # remove ".<Nd>d.snoozed" segment
     return re.sub(r"\.[0-9]+d\.snoozed(\.|$)", r"\1", relpath)
 
 
 # ---------------------------
-# DB operations
+# DB ops
 # ---------------------------
 
 def db_read(db_path_):
@@ -238,15 +233,13 @@ def db_add_rename(db_path_, snoozed, orig, start_epoch, days):
 
 
 # ---------------------------
-# Core commands
+# Commands
 # ---------------------------
 
 def cmd_list(root, db_path_):
     now = now_epoch()
-    rows = db_read(db_path_)
-
     items = []
-    for mode, snoozed, orig, start, days in rows:
+    for mode, snoozed, orig, start, days in db_read(db_path_):
         try:
             start_i = int(start)
             days_i = int(days)
@@ -279,11 +272,10 @@ def cmd_list(root, db_path_):
 
 def cmd_sweep(root, db_path_):
     now = now_epoch()
-    rows = db_read(db_path_)
     keep = []
     unsnoozed_any = False
 
-    for mode, snoozed, orig, start, days in rows:
+    for mode, snoozed, orig, start, days in db_read(db_path_):
         try:
             start_i = int(start)
             days_i = int(days)
@@ -295,11 +287,8 @@ def cmd_sweep(root, db_path_):
             keep.append([mode, snoozed, orig, start, days])
             continue
 
-        # due -> unsnooze
         unsnoozed_any = True
-
         if mode == "index":
-            # Best effort
             if os.path.exists(os.path.join(root, orig)):
                 unset_skip_worktree(orig)
             print("UNSNOOZED(index): {}".format(orig))
@@ -322,16 +311,14 @@ def cmd_unsnooze_one(root, db_path_, target):
     if not target:
         die("usage: git snooze -u <path>|all")
 
+    # Accept orig-path or snoozed-path
     orig = target
 
-    # If it's tracked, always unfreeze index (DB-independent)
     if is_tracked(orig):
         unset_skip_worktree(orig)
 
-    # If DB has record, honor rename-mode too
     rec = db_lookup_by_orig(db_path_, orig)
     if rec is None:
-        # Maybe user passed snoozed path
         if ".snoozed" in target:
             snoozed = target
             orig2 = unsnoozed_name_from_snoozed(target)
@@ -356,8 +343,7 @@ def cmd_unsnooze_one(root, db_path_, target):
     print("UNSNOOZED: {}".format(orig_db))
 
 def cmd_unsnooze_all(root, db_path_):
-    rows = db_read(db_path_)
-    for mode, snoozed, orig, start, days in rows:
+    for mode, snoozed, orig, start, days in db_read(db_path_):
         if mode == "index":
             if os.path.exists(os.path.join(root, orig)):
                 unset_skip_worktree(orig)
@@ -384,19 +370,11 @@ def cmd_snooze_one(root, db_path_, path, days, force=False):
         die('refusing to snooze the snooze tool itself. Use: git snooze --force "{}" [days]'.format(path))
 
     start = now_epoch()
-
-    # replace-record semantics
     db_delete_orig(db_path_, path)
 
     ap = os.path.join(root, path)
-
-    # If path doesn't exist, but DB had a rename record earlier, allow resnooze:
-    if (not os.path.exists(ap)):
-        rec = db_lookup_by_orig(db_path_, path)
-        # we deleted above, so rec won't exist now; thus: try to find snoozed file by heuristic is not safe.
-        # For v1.0.0 keep it strict:
-        if not os.path.exists(ap):
-            die("file not found: {}".format(path))
+    if not os.path.exists(ap):
+        die("file not found: {}".format(path))
 
     if is_tracked(path):
         set_skip_worktree(path)
@@ -404,7 +382,6 @@ def cmd_snooze_one(root, db_path_, path, days, force=False):
         print("SNOOZED(index): {} ({}d)".format(path, days_i))
         return
 
-    # untracked -> rename
     snoozed = snoozed_name(days_i, path)
     sp = os.path.join(root, snoozed)
     if os.path.exists(sp):
@@ -424,7 +401,6 @@ def cmd_snooze_all(root, db_path_, days):
     start = now_epoch()
     print("SNOOZING ALL local changes ({}d)".format(days_i))
 
-    # tracked modified files
     tracked = run_git(["diff", "--name-only"], capture=True).splitlines()
     for f in tracked:
         f = f.strip()
@@ -435,7 +411,6 @@ def cmd_snooze_all(root, db_path_, days):
         db_add_index(db_path_, f, start, days_i)
         print("  tracked: {}".format(f))
 
-    # untracked files
     untracked = run_git(["ls-files", "--others", "--exclude-standard"], capture=True).splitlines()
     for f in untracked:
         f = f.strip()
@@ -462,7 +437,6 @@ def skip_worktree_files():
     out = run_git(["ls-files", "-v"], capture=True)
     files = []
     for line in out.splitlines():
-        # Format: "S path" indicates skip-worktree
         if line.startswith("S "):
             files.append(line[2:].strip())
     return files
@@ -473,7 +447,6 @@ def cmd_doctor(root, db_path_):
 
     ig = os.path.join(root, ".gitignore")
     hook = os.path.join(root, ".git", "hooks", "pre-commit")
-    db = db_path_
 
     if os.path.isfile(ig) and grep_file(ig, r'^\*\.snoozed\.\*$'):
         print("  .gitignore: OK")
@@ -485,7 +458,7 @@ def cmd_doctor(root, db_path_):
     else:
         print("  hook: missing/incorrect")
 
-    if os.path.isfile(db):
+    if os.path.isfile(db_path_):
         print("  db: OK")
     else:
         print("  db: will be created on first use")
@@ -501,7 +474,6 @@ def cmd_doctor_repair(root, db_path_):
         if not f:
             continue
         if db_lookup_by_orig(db_path_, f) is None:
-            # Add a conservative record (won't auto-pop soon).
             db_add_index(db_path_, f, start, REPAIR_YEARS_DAYS)
             print("  repaired: added db record for {} (duration={}d)".format(f, REPAIR_YEARS_DAYS))
             repaired += 1
@@ -514,40 +486,153 @@ def cmd_doctor_repair(root, db_path_):
 
 
 # ---------------------------
-# CLI parsing & dispatch
+# Install command
 # ---------------------------
 
-def build_parser():
-    p = argparse.ArgumentParser(add_help=False)
-    p.add_argument("cmd", nargs="?", default="")
-    p.add_argument("arg1", nargs="?", default=None)
-    p.add_argument("arg2", nargs="?", default=None)
-    return p
+def ensure_line_in_file(path, line):
+    try:
+        content = ""
+        if os.path.exists(path):
+            with open(path, "r") as f:
+                content = f.read()
+        if line.strip() in content.splitlines():
+            return False
+        with open(path, "a") as f:
+            if content and not content.endswith("\n"):
+                f.write("\n")
+            f.write(line.rstrip("\n") + "\n")
+        return True
+    except IOError as e:
+        die("cannot edit {}: {}".format(path, e))
+
+def write_file(path, text):
+    d = os.path.dirname(path)
+    if d and not os.path.isdir(d):
+        os.makedirs(d)
+    with open(path, "w") as f:
+        f.write(text)
+
+def install_repo(root, source_bytes):
+    target = os.path.join(root, ".scripts", "tools", "git-snooze")
+    write_file(target, source_bytes.decode("utf-8", "replace"))
+    make_executable(target)
+
+    # .gitignore rule
+    ensure_line_in_file(os.path.join(root, ".gitignore"), "*.snoozed.*")
+
+    # pre-commit hook
+    hook = os.path.join(root, ".git", "hooks", "pre-commit")
+    hook_text = "#!/bin/sh\n.scripts/tools/git-snooze sweep  || true\n"
+    write_file(hook, hook_text)
+    make_executable(hook)
+
+    print("installed: {}".format(target))
+    print("installed: {}".format(hook))
+    print("updated:   {}".format(os.path.join(root, ".gitignore")))
+    print("")
+    print("next:")
+    print("  git config --global alias.snooze '!.scripts/tools/git-snooze'")
+    print("  git config --global alias.snooze-list '!.scripts/tools/git-snooze list'")
+
+def install_global(source_bytes):
+    home = os.path.expanduser("~")
+    target_dir = os.path.join(home, ".local", "bin")
+    target = os.path.join(target_dir, "git-snooze")
+
+    if not os.path.isdir(target_dir):
+        os.makedirs(target_dir)
+
+    write_file(target, source_bytes.decode("utf-8", "replace"))
+    make_executable(target)
+
+    # global aliases pointing to git-snooze executable in PATH
+    # (user must have ~/.local/bin in PATH)
+    subprocess.call(["git", "config", "--global", "alias.snooze", "!git-snooze"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    subprocess.call(["git", "config", "--global", "alias.snooze-list", "!git-snooze list"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+    print("installed: {}".format(target))
+    print("updated:   global git aliases (alias.snooze, alias.snooze-list)")
+    print("")
+    print("ensure PATH contains ~/.local/bin, e.g.:")
+    print('  export PATH="$HOME/.local/bin:$PATH"')
+
+def cmd_install(argv0_path, args):
+    # Source can be:
+    #  - the running script file (default)
+    #  - a URL
+    #  - a local path
+    src = args.source
+    if src:
+        if re.match(r"^https?://", src):
+            with urllib.request.urlopen(src) as r:
+                source_bytes = r.read()
+        else:
+            with open(src, "rb") as f:
+                source_bytes = f.read()
+    else:
+        # read current script file
+        with open(argv0_path, "rb") as f:
+            source_bytes = f.read()
+
+    if args.global_install:
+        install_global(source_bytes)
+        return
+
+    # repo install (default if --repo)
+    if not is_git_repo():
+        die("install --repo requires running inside a git repo")
+    root = repo_root()
+    install_repo(root, source_bytes)
+
+
+# ---------------------------
+# Dispatch
+# ---------------------------
+
+def usage():
+    print("""git snooze: hide files for N days
+
+USAGE
+  git snooze <path> [days]
+  git snooze --force <path> [days]
+  git snooze all [days]
+  git snooze -l | list
+  git snooze sweep
+  git snooze unsnooze <path> | all
+  git snooze -u <path> | all
+  git snooze doctor [--repair]
+
+INSTALL
+  python3 git-snooze install --global [--source URL|PATH]
+  python3 git-snooze install --repo   [--source URL|PATH]
+
+SETUP (repo install)
+  .gitignore: *.snoozed.*
+  pre-commit: .scripts/tools/git-snooze sweep || true
+""")
 
 def main(argv):
+    # Allow running as: python3 script install ...
+    if len(argv) >= 2 and argv[1] == "install":
+        # parse install args (keep it minimal; no fancy features)
+        parser = argparse_install()
+        args = parser.parse_args(argv[2:])
+        cmd_install(argv[0], args)
+        return 0
+
+    # Normal git-snooze behavior
     if not is_git_repo():
         die("not a git repo")
 
     root = repo_root()
     db = ensure_db(root)
 
-    # Fast paths: -h, -l
     if len(argv) >= 2 and argv[1] in ("-h", "--help", "help"):
         usage()
         return 0
     if len(argv) >= 2 and argv[1] in ("-l", "--list", "list"):
         cmd_list(root, db)
         return 0
-
-    # Interpret top-level tokens with minimal “git alias” expectations.
-    # Supported syntaxes:
-    #   git snooze <path> [days]
-    #   git snooze --force <path> [days]
-    #   git snooze all [days]
-    #   git snooze sweep
-    #   git snooze doctor [--repair]
-    #   git snooze unsnooze <path>|all
-    #   git snooze -u <path>|all
 
     if len(argv) < 2:
         die("usage: git snooze <path> [days] | all [days] | -l | sweep | -u <path>|all | doctor [--repair]")
@@ -563,6 +648,7 @@ def main(argv):
             cmd_unsnooze_one(root, db, target)
         return 0
 
+    # subcommand form
     if cmd == "unsnooze":
         target = argv[2] if len(argv) >= 3 else None
         if target == "all":
@@ -608,24 +694,16 @@ def main(argv):
     cmd_list(root, db)
     return 0
 
-def usage():
-    print("""git snooze: hide files for N days
+def argparse_install():
+    # Minimal parser, compatible with older python3
+    import argparse
+    p = argparse.ArgumentParser(prog="git-snooze install", add_help=True)
+    g = p.add_mutually_exclusive_group(required=True)
+    g.add_argument("--global", dest="global_install", action="store_true", help="install to ~/.local/bin and set global git aliases")
+    g.add_argument("--repo", dest="repo_install", action="store_true", help="install to current repo and install hook/.gitignore")
+    p.add_argument("--source", default=None, help="URL or local path to install from (defaults to the running script)")
+    return p
 
-USAGE
-  git snooze <path> [days]
-  git snooze --force <path> [days]
-  git snooze all [days]
-  git snooze -l | list
-  git snooze sweep
-  git snooze unsnooze <path> | all
-  git snooze -u <path> | all
-  git snooze doctor [--repair]
-  git snooze -h | --help
-
-SETUP
-  .gitignore: *.snoozed.*
-  pre-commit: .scripts/tools/git-snooze sweep || true
-""")
 
 if __name__ == "__main__":
     try:
