@@ -214,6 +214,3 @@ That’s the whole idea.
 ✅ 100% vibe-code "certified"! 💯
 
 ![git snooze -h](https://siran.github.io/assets/writing/image.png)
-
-
-DOI:
