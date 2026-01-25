@@ -503,6 +503,101 @@ def _mathjax_head() -> str:
         "<script async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js\"></script>"
     )
 
+def _meta_list(val) -> list[str]:
+    if not val:
+        return []
+    if isinstance(val, list):
+        out: list[str] = []
+        for item in val:
+            if isinstance(item, dict):
+                name = (item.get("name") or item.get("full_name") or item.get("author") or "").strip()
+                if name:
+                    out.append(name)
+            else:
+                s = str(item).strip()
+                if s:
+                    out.append(s)
+        return out
+    if isinstance(val, dict):
+        name = (val.get("name") or val.get("full_name") or val.get("author") or "").strip()
+        return [name] if name else []
+    s = str(val).strip()
+    if not s or s in {"-", "—"}:
+        return []
+    return [p.strip() for p in s.split(",") if p.strip()]
+
+def _frontmatter_meta_block(front: str) -> str:
+    if not front:
+        return ""
+    try:
+        meta = yaml.safe_load(front) or {}
+    except Exception:
+        return ""
+    if not isinstance(meta, dict) or not meta:
+        return ""
+
+    meta_lower = {str(k).lower(): v for k, v in meta.items()}
+
+    def get(*keys):
+        for key in keys:
+            if key in meta:
+                return meta[key]
+            lk = str(key).lower()
+            if lk in meta_lower:
+                return meta_lower[lk]
+        return None
+
+    title = str(get("title") or "").strip()
+    subtitle = str(get("subtitle") or "").strip()
+    authors = _meta_list(get("authors", "author"))
+    date_val = get("date", "publication_date", "published")
+    date_str = iso_date_str(date_val).strip() if date_val is not None else ""
+    journal = str(get("journal") or "").strip()
+    onesent = str(get("one-sentence-summary", "one_sentence_summary", "onesent") or "").strip()
+    summary = str(get("summary", "abstract") or "").strip()
+    kws = _meta_list(get("keywords", "kws", "keyword"))
+    doi = str(get("doi", "DOI") or "").strip()
+
+    if not any([title, subtitle, authors, date_str, journal, onesent, summary, kws, doi]):
+        return ""
+
+    lines = ['<div class="md-meta">']
+    if title:
+        lines.append(f"<h1>{html.escape(title)}</h1>")
+    if subtitle:
+        lines.append(f"<p class=\"subtitle\">{html.escape(subtitle)}</p>")
+    if authors:
+        lines.append(f"<p class=\"authors\">{html.escape(', '.join(authors))}</p>")
+    if journal or date_str:
+        publine = " — ".join(p for p in (journal, date_str) if p)
+        lines.append(f"<p class=\"publine\">{html.escape(publine)}</p>")
+    if doi:
+        doi_href = doi
+        if not doi_href.startswith("http") and doi_href.startswith("10."):
+            doi_href = f"https://doi.org/{doi_href}"
+        doi_link = f'<a href="{html.escape(doi_href, quote=True)}">{html.escape(doi)}</a>'
+        lines.append(f"<p class=\"doi\"><strong>DOI:</strong> {doi_link}</p>")
+    if onesent:
+        lines.append(
+            "<p class=\"onesent\"><strong>One-Sentence Summary:</strong> "
+            + html.escape(onesent)
+            + "</p>"
+        )
+    if summary:
+        lines.append(
+            "<p class=\"summary\"><strong>Summary:</strong> "
+            + html.escape(summary)
+            + "</p>"
+        )
+    if kws:
+        lines.append(
+            "<p class=\"keywords\"><strong>Keywords:</strong> "
+            + html.escape(", ".join(kws))
+            + "</p>"
+        )
+    lines.append("</div>")
+    return "\n".join(lines) + "\n"
+
 # ---------- templating ----------
 def write_html(out_html: Path, body_html: str, head_extra: str = "", title: str = ""):
     # All pages (including *.md.html mirrors) get header + breadcrumb (for mirrors)
@@ -579,18 +674,16 @@ def render_markdown_file(src: Path, dst_html: Path, title: str):
     md = src.read_text(encoding="utf-8")
     # Replace YAML front matter with a Markdown H1 so mirrors show the title, not raw YAML.
     m_front = re.match(r"^---\s*\n(.*?)\n---\s*\n", md, flags=re.DOTALL)
+    meta_block = ""
     if m_front:
         front = m_front.group(1)
-        title_val = None
-        m_title = re.search(r"^title\s*:\s*(.+)$", front, flags=re.MULTILINE)
-        if m_title:
-            title_val = m_title.group(1).strip().strip('"\'')
+        meta_block = _frontmatter_meta_block(front)
         # Remove front matter
         md = md[m_front.end():]
-        if title_val:
-            md = f"# {title_val}\n\n" + md
     # Human-first: embed the markdown body as-is (styled by the site chrome).
     body_html = md
+    if meta_block:
+        body_html = meta_block + "\n" + body_html
 
     rel_html = dst_html.relative_to(OUT).as_posix()
     origin = _current_origin()
