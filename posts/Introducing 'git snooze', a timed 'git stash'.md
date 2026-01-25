@@ -12,6 +12,9 @@ keywords: git, productivity, developer-tools, cli, workflow
 DOI:
 ---
 
+![git snooze: git stash with a timer.](assets/git-snooze.png)
+
+
 ## Like git-stash with a timer
 
 `git stash` is useful.
@@ -24,8 +27,6 @@ Changes disappear. Context is lost. Work is forgotten.
 
 That’s not a Git problem. That’s a **human workflow** problem.
 
----
-
 
 ## The idea
 
@@ -37,8 +38,6 @@ That’s not a Git problem. That’s a **human workflow** problem.
 * Never rely on memory
 
 That’s `git snooze`.
-
----
 
 
 ## What is git snooze?
@@ -59,8 +58,6 @@ Think of it as:
 * 🧠 Impossible to forget
 * 🏠 Local-only (no history, no remotes)
 
----
-
 
 ## How it works (briefly)
 
@@ -75,8 +72,6 @@ Think of it as:
   snoozes are automatically undone → a warning is printed to stdout
 
 No commits. No branches. No magic.
-
----
 
 
 ## Installation (30 seconds)
@@ -109,8 +104,6 @@ That’s it.
 
   ```
 
----
-
 
 ## Basic usage
 
@@ -140,8 +133,6 @@ git snooze all git snooze all 14
 
 ```
 
----
-
 
 ## Unsnoozing
 
@@ -165,8 +156,6 @@ git snooze -u all
 Unsnoozing is **idempotent** and **index-authoritative**. Even if metadata is
 missing, the index is always restored.
 
----
-
 
 ## Seeing what’s snoozed
 
@@ -179,8 +168,6 @@ git snooze -l
 Output is grouped by **days remaining**, so you can see what’s about to
 reappear.
 
----
-
 
 ## Automatic reminders (the important part)
 
@@ -192,8 +179,6 @@ On every commit:
 
 You **cannot accidentally forget** snoozed work.
 
----
-
 
 ## Extra safety
 
@@ -201,8 +186,6 @@ You **cannot accidentally forget** snoozed work.
 * `git snooze all` never breaks your setup
 * `git snooze doctor --repair` can rebuild metadata if needed
 * `git snooze uninstall` cleans up cleanly (and asks before deleting state)
-
----
 
 
 ## Why this exists
@@ -214,8 +197,6 @@ Not because Git is bad — but because **humans forget**.
 `git snooze` doesn’t trust memory. It trusts **time**.
 
 That’s the whole idea.
-
----
 
 
 ## Source & license
@@ -230,6 +211,9 @@ That’s the whole idea.
 
 ---
 
-✅ 100% vibe-coded "certified"! 💯
+✅ 100% vibe-code "certified"! 💯
+
+![git snooze -h](assets/image.png)
+
 
 DOI:
