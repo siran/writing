@@ -1,14 +1,14 @@
 ---
 title: Introducing 'git snooze', a timed 'git stash'
 subtitle: A timed git-stash that resets automatically
-author: Jean Pierre
+author: An M. Rodriguez
 date: 2026-01-25
 one-sentence-summary: git snooze lets you defer local Git changes for a fixed time, and forces them to come back so they can’t be forgotten.
 summary: >
   git snooze is a small Git tool that temporarily hides local changes for a
   fixed number of days. Unlike git stash, snoozed changes automatically
   reappear after their deadline and warn you, making forgotten work impossible.
-keywords: git, productivity, developer-tools, cli, workflow
+keywords: git, productivity, developer-tools, cli, workflow, vibe-coding
 DOI:
 ---
 
