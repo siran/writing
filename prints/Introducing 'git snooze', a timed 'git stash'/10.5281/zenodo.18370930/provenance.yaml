@@ -1,0 +1,75 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: Introducing 'git snooze', a timed 'git stash'
+doi: 10.5281/zenodo.18370930
+concept_doi: null
+permalink: "https://writing.preferredframe.com/prints/Introducing 'git snooze', a timed 'git stash'/10.5281/zenodo.18370930/"
+publication_date: '2026-01-25'
+publication_year: '2026'
+keywords:
+- git
+- productivity
+- developer-tools
+- cli
+- workflow
+- vibe-coding
+one_sentence_summary: git snooze lets you defer local Git changes for a fixed time, and forces them to come back so they can’t be forgotten.
+abstract: git snooze is a small Git tool that temporarily hides local changes for a fixed number of days. Unlike git stash, snoozed changes automatically reappear after their deadline and warn you, making forgotten work impossible.
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: Introducing 'git snooze', a timed 'git stash'
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  description: git snooze is a small Git tool that temporarily hides local changes for a fixed number of days. Unlike git stash, snoozed changes automatically reappear after their deadline and warn you, making forgotten work impossible.
+  keywords:
+  - git
+  - productivity
+  - developer-tools
+  - cli
+  - workflow
+  - vibe-coding
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-25'
+  license: cc-by-nc-nd-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Introducing 'git snooze', a timed 'git stash'/10.5281/zenodo.18370930/Introducing 'git snooze', a timed 'git stash'.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Introducing 'git snooze', a timed 'git stash'/10.5281/zenodo.18370930/Introducing 'git snooze', a timed 'git stash'.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Introducing 'git snooze', a timed 'git stash'/10.5281/zenodo.18370930/Introducing 'git snooze', a timed 'git stash'.embed.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Introducing 'git snooze', a timed 'git stash'/10.5281/zenodo.18370930/git-snooze"
+    resource_type: software
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: git snooze lets you defer local Git changes for a fixed time, and forces them to come back so they can’t be forgotten.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: 66b48a22d1ae03ec07ee0526708ea79af6d07a34
+  filename: Introducing 'git snooze', a timed 'git stash'.md
+artifacts:
+  md: Introducing 'git snooze', a timed 'git stash'.md
+  md_url: "https://writing.preferredframe.com/prints/Introducing 'git snooze', a timed 'git stash'/10.5281/zenodo.18370930/Introducing 'git snooze', a timed 'git stash'.md"
+  pandoc_md_name: Introducing 'git snooze', a timed 'git stash'.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/Introducing 'git snooze', a timed 'git stash'/10.5281/zenodo.18370930/Introducing 'git snooze', a timed 'git stash'.pandoc.md"
+  html_name: Introducing 'git snooze', a timed 'git stash'.html
+  html_url: "https://writing.preferredframe.com/prints/Introducing 'git snooze', a timed 'git stash'/10.5281/zenodo.18370930/Introducing 'git snooze', a timed 'git stash'.html"
+  primary: md
+  embed_html_name: Introducing 'git snooze', a timed 'git stash'.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/Introducing 'git snooze', a timed 'git stash'/10.5281/zenodo.18370930/Introducing 'git snooze', a timed 'git stash'.embed.html"
