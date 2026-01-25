@@ -12,7 +12,7 @@ keywords: git, productivity, developer-tools, cli, workflow
 DOI:
 ---
 
-![git snooze: git stash with a timer.](assets/git-snooze.png)
+![git snooze: git stash with a timer.](https://siran.github.io/assets/writing/git-snooze.png)
 
 
 ## Like git-stash with a timer
@@ -213,7 +213,7 @@ That’s the whole idea.
 
 ✅ 100% vibe-code "certified"! 💯
 
-![git snooze -h](assets/image.png)
+![git snooze -h](https://siran.github.io/assets/writing/image.png)
 
 
 DOI:
