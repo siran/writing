@@ -1,101 +1,615 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
-# git-snooze v1.0.0
-#
-# PURPOSE
-#   Time-based deferral of local Git changes with automatic reappearance.
-#   Designed to avoid the "forgotten stash" problem.
-#
-# CORE IDEAS
-#   - Tracked files: git update-index --skip-worktree
-#   - Untracked files: rename to *.Nd.snoozed.* (gitignored)
-#   - Local DB: .git/snooze.db
-#   - pre-commit runs: git-snooze sweep
-#   - If sweep unsnoozes anything, it prints a warning to stdout
-#
-# COMMANDS
-#   git snooze <path> [days]              (default days=4)
-#   git snooze --force <path> [days]      (allow snoozing the tool itself)
-#   git snooze all [days]
-#   git snooze -l | list
-#   git snooze sweep
-#   git snooze unsnooze <path>|all
-#   git snooze -u <path>|all              (alias for unsnooze)
-#   git snooze doctor [--repair]
-#
-# TODO
-#   - strict mode: fail commit if something was unsnoozed
-#   - extend +/-Nd, until <date>, branch-scoped DB, dry-run
-#   - tracked-only / untracked-only flags for "snooze all"
+"""
+git-snooze v1.0.0 (Python)
 
-DB_REL=".git/snooze.db"
-REPAIR_YEARS_DAYS=$((365 * 100))   # conservative: won't pop soon
+PURPOSE
+  Time-based deferral of local Git changes with automatic reappearance.
+  Built to avoid the "forgotten stash" problem: snoozed work resurfaces.
 
-die(){ echo "git-snooze: $*" >&2; exit 1; }
+CORE IDEAS
+  - Tracked files: hidden via `git update-index --skip-worktree`.
+  - Untracked files: renamed to `*.Nd.snoozed.*` and ignored by .gitignore.
+  - Local-only state stored in `.git/snooze.db`.
+  - A pre-commit hook runs `git snooze sweep` to auto-unsnooze due items.
+  - If sweep unsnoozes anything, it prints a visible warning to stdout.
 
-is_git_repo(){ git rev-parse --is-inside-work-tree >/dev/null 2>&1; }
-repo_root(){ git rev-parse --show-toplevel 2>/dev/null; }
+COMMANDS
+  git snooze <path> [days]              default days=4
+  git snooze --force <path> [days]      allow snoozing the tool itself
+  git snooze all [days]
+  git snooze -l | list
+  git snooze sweep
+  git snooze unsnooze <path>|all
+  git snooze -u <path>|all              alias for unsnooze
+  git snooze doctor [--repair]
 
-db_path(){
-  local root
-  root="$(repo_root)" || return 1
-  echo "$root/$DB_REL"
-}
+DB FORMAT (tab-separated)
+  mode<TAB>snoozed_or_dash<TAB>orig<TAB>start_epoch<TAB>days
+  index<TAB>-<TAB>path<TAB>...<TAB>...
+  rename<TAB>path.snoozed<TAB>path.orig<TAB>...<TAB>...
 
-ensure_db(){
-  local db
-  db="$(db_path)" || die "not a git repo"
-  mkdir -p "$(dirname "$db")"
-  touch "$db"
-}
+SAFETY
+  - Refuse snoozing the snooze tool itself unless --force is passed.
+  - `snooze all` never snoozes the tool or its common backups.
 
-now_epoch(){ date +%s; }
+TODO (easy future extensions)
+  - strict mode: fail commit if something was unsnoozed
+  - extend +/-Nd, until <date>, branch-scoped DB, dry-run
+  - tracked-only / untracked-only flags for "snooze all"
+"""
 
-is_tracked(){ git ls-files --error-unmatch -- "$1" >/dev/null 2>&1; }
-set_hide_flag(){ git update-index --skip-worktree -- "$1"; }
-unset_hide_flag(){ git update-index --no-skip-worktree -- "$1"; }
+from __future__ import print_function
 
-is_snoozed_path(){
-  [[ "$1" == *".snoozed."* || "$1" == *".snoozed" ]]
-}
+import argparse
+import os
+import re
+import sys
+import time
+import subprocess
 
-# Refuse snoozing these unless forced (prevents bricking the alias).
-is_self_path(){
-  case "$1" in
-    .scripts/tools/git-snooze|.scripts/tools/git-snooze.*) return 0 ;;
-    *) return 1 ;;
-  esac
-}
+DB_REL = os.path.join(".git", "snooze.db")
+DEFAULT_DAYS = 4
+REPAIR_YEARS_DAYS = 365 * 100  # conservative: won't pop soon
 
-snoozed_name(){
-  local days="$1" path="$2"
-  local dir file base ext
-  dir="$(dirname -- "$path")"
-  file="$(basename -- "$path")"
 
-  # dotfile with no extra dots => treat as no extension
-  if [[ "$file" == .* && "$file" != *.*.* ]]; then
-    echo "$dir/$file.${days}d.snoozed"
-    return
-  fi
+# ---------------------------
+# Small utilities
+# ---------------------------
 
-  if [[ "$file" == *.* && "${file:0:1}" != "." ]]; then
-    base="${file%.*}"
-    ext="${file##*.}"
-    echo "$dir/${base}.${days}d.snoozed.${ext}"
-  else
-    echo "$dir/$file.${days}d.snoozed"
-  fi
-}
+def die(msg, code=1):
+    print("git-snooze: " + msg, file=sys.stderr)
+    raise SystemExit(code)
 
-unsnoozed_name_from_snoozed(){
-  echo "$1" | sed -E 's/\.[0-9]+d\.snoozed(\.|$)/\1/'
-}
+def now_epoch():
+    return int(time.time())
 
-usage(){
-  cat <<'EOF'
-git snooze: hide files for N days
+def run_git(args, cwd=None, capture=False, check=True):
+    cmd = ["git"] + list(args)
+    if capture:
+        p = subprocess.Popen(cmd, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        out, err = p.communicate()
+        out = out.decode("utf-8", "replace")
+        err = err.decode("utf-8", "replace")
+        if check and p.returncode != 0:
+            die("git command failed: {}\n{}".format(" ".join(cmd), err.strip()))
+        return out
+    else:
+        p = subprocess.Popen(cmd, cwd=cwd)
+        rc = p.wait()
+        if check and rc != 0:
+            die("git command failed: {}".format(" ".join(cmd)))
+        return ""
+
+def is_git_repo():
+    try:
+        out = run_git(["rev-parse", "--is-inside-work-tree"], capture=True, check=True).strip()
+        return out == "true"
+    except SystemExit:
+        return False
+
+def repo_root():
+    out = run_git(["rev-parse", "--show-toplevel"], capture=True).strip()
+    if not out:
+        die("not a git repo")
+    return out
+
+def abs_path(root, relpath):
+    return os.path.normpath(os.path.join(root, relpath))
+
+def ensure_db(root):
+    db = abs_path(root, DB_REL)
+    d = os.path.dirname(db)
+    if not os.path.isdir(d):
+        os.makedirs(d)
+    if not os.path.exists(db):
+        with open(db, "a"):
+            pass
+    return db
+
+def warn_setup_once(root):
+    ig = os.path.join(root, ".gitignore")
+    hook = os.path.join(root, ".git", "hooks", "pre-commit")
+
+    if (not os.path.isfile(ig)) or (not grep_file(ig, r'^\*\.snoozed\.\*$')):
+        print("git-snooze: note: add to .gitignore: *.snoozed.*", file=sys.stderr)
+
+    if (not os.path.isfile(hook)) or (not grep_file(hook, r'git-snooze sweep')):
+        print("git-snooze: note: pre-commit hook missing/incorrect (auto-wake off)", file=sys.stderr)
+
+def grep_file(path, pattern):
+    rx = re.compile(pattern)
+    try:
+        with open(path, "r") as f:
+            for line in f:
+                if rx.search(line):
+                    return True
+    except IOError:
+        return False
+    return False
+
+def is_tracked(path):
+    # path is relative to repo root
+    rc = subprocess.call(["git", "ls-files", "--error-unmatch", "--", path],
+                         stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    return rc == 0
+
+def set_skip_worktree(path):
+    subprocess.check_call(["git", "update-index", "--skip-worktree", "--", path])
+
+def unset_skip_worktree(path):
+    # idempotent best-effort
+    subprocess.call(["git", "update-index", "--no-skip-worktree", "--", path],
+                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+def is_self_path(path):
+    # protect the tool from self-snoozing (unless forced)
+    return (path == ".scripts/tools/git-snooze") or path.startswith(".scripts/tools/git-snooze.")
+
+def should_skip_in_all(path):
+    # never snooze the tool (or its backups) in "all"
+    if is_self_path(path):
+        return True
+    return False
+
+
+# ---------------------------
+# Name mangling for rename-mode
+# ---------------------------
+
+def snoozed_name(days, relpath):
+    """
+    Insert ".<Nd>d.snoozed." before the last extension, or append if none.
+    Dotfile special-case: ".env" -> ".env.<Nd>d.snoozed"
+    """
+    d = os.path.dirname(relpath)
+    f = os.path.basename(relpath)
+
+    # dotfile with no extra dots => treat as no extension
+    if f.startswith(".") and f.count(".") == 1:
+        out = f + ".{}d.snoozed".format(days)
+        return os.path.join(d, out) if d else out
+
+    if "." in f and not f.startswith("."):
+        base, ext = f.rsplit(".", 1)
+        out = "{}.{}d.snoozed.{}".format(base, days, ext)
+    else:
+        out = f + ".{}d.snoozed".format(days)
+
+    return os.path.join(d, out) if d else out
+
+def unsnoozed_name_from_snoozed(relpath):
+    # remove ".<Nd>d.snoozed" segment
+    return re.sub(r"\.[0-9]+d\.snoozed(\.|$)", r"\1", relpath)
+
+
+# ---------------------------
+# DB operations
+# ---------------------------
+
+def db_read(db_path_):
+    rows = []
+    try:
+        with open(db_path_, "r") as f:
+            for line in f:
+                line = line.rstrip("\n")
+                if not line:
+                    continue
+                parts = line.split("\t")
+                if len(parts) < 5:
+                    continue
+                rows.append(parts[:5])
+    except IOError:
+        pass
+    return rows
+
+def db_write(db_path_, rows):
+    tmp = db_path_ + ".tmp"
+    with open(tmp, "w") as f:
+        for r in rows:
+            f.write("\t".join([str(x) for x in r]) + "\n")
+    os.replace(tmp, db_path_)
+
+def db_delete_orig(db_path_, orig):
+    rows = db_read(db_path_)
+    rows2 = []
+    for r in rows:
+        if len(r) >= 3 and r[2] == orig:
+            continue
+        rows2.append(r)
+    db_write(db_path_, rows2)
+
+def db_lookup_by_orig(db_path_, orig):
+    for r in db_read(db_path_):
+        if len(r) >= 3 and r[2] == orig:
+            return r
+    return None
+
+def db_add_index(db_path_, orig, start_epoch, days):
+    rows = db_read(db_path_)
+    rows.append(["index", "-", orig, str(start_epoch), str(days)])
+    db_write(db_path_, rows)
+
+def db_add_rename(db_path_, snoozed, orig, start_epoch, days):
+    rows = db_read(db_path_)
+    rows.append(["rename", snoozed, orig, str(start_epoch), str(days)])
+    db_write(db_path_, rows)
+
+
+# ---------------------------
+# Core commands
+# ---------------------------
+
+def cmd_list(root, db_path_):
+    now = now_epoch()
+    rows = db_read(db_path_)
+
+    items = []
+    for mode, snoozed, orig, start, days in rows:
+        try:
+            start_i = int(start)
+            days_i = int(days)
+        except Exception:
+            continue
+        due = start_i + days_i * 86400
+        rem = due - now
+        if rem <= 0:
+            rdays = 0
+        else:
+            rdays = int((rem + 86399) // 86400)
+        items.append((rdays, mode, orig, snoozed))
+
+    items.sort(key=lambda x: (x[0], x[2]))
+
+    if not items:
+        print("SNOOZED FILES: (none)")
+        return
+
+    print("SNOOZED FILES (by days remaining):")
+    cur = None
+    for rdays, mode, orig, snoozed in items:
+        if cur != rdays:
+            cur = rdays
+            print("\n{} day{}:".format(cur, "" if cur == 1 else "s"))
+        if mode == "index":
+            print("  - {}  [tracked: skip-worktree]".format(orig))
+        else:
+            print("  - {}  <=  {}  [untracked: rename]".format(orig, snoozed))
+
+def cmd_sweep(root, db_path_):
+    now = now_epoch()
+    rows = db_read(db_path_)
+    keep = []
+    unsnoozed_any = False
+
+    for mode, snoozed, orig, start, days in rows:
+        try:
+            start_i = int(start)
+            days_i = int(days)
+        except Exception:
+            continue
+
+        due = start_i + days_i * 86400
+        if now < due:
+            keep.append([mode, snoozed, orig, start, days])
+            continue
+
+        # due -> unsnooze
+        unsnoozed_any = True
+
+        if mode == "index":
+            # Best effort
+            if os.path.exists(os.path.join(root, orig)):
+                unset_skip_worktree(orig)
+            print("UNSNOOZED(index): {}".format(orig))
+        else:
+            sp = os.path.join(root, snoozed)
+            op = os.path.join(root, orig)
+            if os.path.exists(sp) and (not os.path.exists(op)):
+                os.rename(sp, op)
+            print("UNSNOOZED(rename): {}".format(orig))
+
+    db_write(db_path_, keep)
+
+    if unsnoozed_any:
+        print("")
+        print("⚠ git-snooze: one or more files were automatically unsnoozed")
+        print("⚠ review changes before completing this commit")
+        print("")
+
+def cmd_unsnooze_one(root, db_path_, target):
+    if not target:
+        die("usage: git snooze -u <path>|all")
+
+    orig = target
+
+    # If it's tracked, always unfreeze index (DB-independent)
+    if is_tracked(orig):
+        unset_skip_worktree(orig)
+
+    # If DB has record, honor rename-mode too
+    rec = db_lookup_by_orig(db_path_, orig)
+    if rec is None:
+        # Maybe user passed snoozed path
+        if ".snoozed" in target:
+            snoozed = target
+            orig2 = unsnoozed_name_from_snoozed(target)
+            sp = os.path.join(root, snoozed)
+            op = os.path.join(root, orig2)
+            if os.path.exists(sp) and (not os.path.exists(op)):
+                os.rename(sp, op)
+            db_delete_orig(db_path_, orig2)
+            print("UNSNOOZED: {}".format(orig2))
+            return
+        print("UNSNOOZED(index): {} (no db record)".format(orig))
+        return
+
+    mode, snoozed, orig_db, start, days = rec
+    if mode == "rename":
+        sp = os.path.join(root, snoozed)
+        op = os.path.join(root, orig_db)
+        if os.path.exists(sp) and (not os.path.exists(op)):
+            os.rename(sp, op)
+
+    db_delete_orig(db_path_, orig_db)
+    print("UNSNOOZED: {}".format(orig_db))
+
+def cmd_unsnooze_all(root, db_path_):
+    rows = db_read(db_path_)
+    for mode, snoozed, orig, start, days in rows:
+        if mode == "index":
+            if os.path.exists(os.path.join(root, orig)):
+                unset_skip_worktree(orig)
+            print("UNSNOOZED(index): {}".format(orig))
+        else:
+            sp = os.path.join(root, snoozed)
+            op = os.path.join(root, orig)
+            if os.path.exists(sp) and (not os.path.exists(op)):
+                os.rename(sp, op)
+            print("UNSNOOZED(rename): {}".format(orig))
+    db_write(db_path_, [])
+
+def cmd_snooze_one(root, db_path_, path, days, force=False):
+    if not path:
+        die("usage: git snooze <path> [days]")
+    if days is None:
+        days = DEFAULT_DAYS
+    try:
+        days_i = int(days)
+    except Exception:
+        die("days must be a number")
+
+    if is_self_path(path) and (not force):
+        die('refusing to snooze the snooze tool itself. Use: git snooze --force "{}" [days]'.format(path))
+
+    start = now_epoch()
+
+    # replace-record semantics
+    db_delete_orig(db_path_, path)
+
+    ap = os.path.join(root, path)
+
+    # If path doesn't exist, but DB had a rename record earlier, allow resnooze:
+    if (not os.path.exists(ap)):
+        rec = db_lookup_by_orig(db_path_, path)
+        # we deleted above, so rec won't exist now; thus: try to find snoozed file by heuristic is not safe.
+        # For v1.0.0 keep it strict:
+        if not os.path.exists(ap):
+            die("file not found: {}".format(path))
+
+    if is_tracked(path):
+        set_skip_worktree(path)
+        db_add_index(db_path_, path, start, days_i)
+        print("SNOOZED(index): {} ({}d)".format(path, days_i))
+        return
+
+    # untracked -> rename
+    snoozed = snoozed_name(days_i, path)
+    sp = os.path.join(root, snoozed)
+    if os.path.exists(sp):
+        die("target exists: {}".format(snoozed))
+    os.rename(ap, sp)
+    db_add_rename(db_path_, snoozed, path, start, days_i)
+    print("SNOOZED(rename): {} -> {} ({}d)".format(path, snoozed, days_i))
+
+def cmd_snooze_all(root, db_path_, days):
+    if days is None:
+        days = DEFAULT_DAYS
+    try:
+        days_i = int(days)
+    except Exception:
+        die("days must be a number")
+
+    start = now_epoch()
+    print("SNOOZING ALL local changes ({}d)".format(days_i))
+
+    # tracked modified files
+    tracked = run_git(["diff", "--name-only"], capture=True).splitlines()
+    for f in tracked:
+        f = f.strip()
+        if not f:
+            continue
+        db_delete_orig(db_path_, f)
+        set_skip_worktree(f)
+        db_add_index(db_path_, f, start, days_i)
+        print("  tracked: {}".format(f))
+
+    # untracked files
+    untracked = run_git(["ls-files", "--others", "--exclude-standard"], capture=True).splitlines()
+    for f in untracked:
+        f = f.strip()
+        if not f:
+            continue
+        if should_skip_in_all(f):
+            print("  skip (self): {}".format(f))
+            continue
+
+        ap = os.path.join(root, f)
+        if not os.path.exists(ap):
+            continue
+
+        db_delete_orig(db_path_, f)
+        snoozed = snoozed_name(days_i, f)
+        sp = os.path.join(root, snoozed)
+        if os.path.exists(sp):
+            die("target exists: {}".format(snoozed))
+        os.rename(ap, sp)
+        db_add_rename(db_path_, snoozed, f, start, days_i)
+        print("  untracked: {} -> {}".format(f, snoozed))
+
+def skip_worktree_files():
+    out = run_git(["ls-files", "-v"], capture=True)
+    files = []
+    for line in out.splitlines():
+        # Format: "S path" indicates skip-worktree
+        if line.startswith("S "):
+            files.append(line[2:].strip())
+    return files
+
+def cmd_doctor(root, db_path_):
+    print("git-snooze doctor")
+    print("  repo: {}".format(root))
+
+    ig = os.path.join(root, ".gitignore")
+    hook = os.path.join(root, ".git", "hooks", "pre-commit")
+    db = db_path_
+
+    if os.path.isfile(ig) and grep_file(ig, r'^\*\.snoozed\.\*$'):
+        print("  .gitignore: OK")
+    else:
+        print("  .gitignore: missing *.snoozed.*")
+
+    if os.path.isfile(hook) and grep_file(hook, r'git-snooze sweep'):
+        print("  hook: OK")
+    else:
+        print("  hook: missing/incorrect")
+
+    if os.path.isfile(db):
+        print("  db: OK")
+    else:
+        print("  db: will be created on first use")
+
+def cmd_doctor_repair(root, db_path_):
+    print("git-snooze doctor --repair")
+    print("  scanning index for skip-worktree files...")
+
+    start = now_epoch()
+    repaired = 0
+
+    for f in skip_worktree_files():
+        if not f:
+            continue
+        if db_lookup_by_orig(db_path_, f) is None:
+            # Add a conservative record (won't auto-pop soon).
+            db_add_index(db_path_, f, start, REPAIR_YEARS_DAYS)
+            print("  repaired: added db record for {} (duration={}d)".format(f, REPAIR_YEARS_DAYS))
+            repaired += 1
+
+    if repaired == 0:
+        print("  nothing to repair.")
+    else:
+        print("  repaired {} file(s).".format(repaired))
+        print('  tip: set a real timer by re-snoozing: git snooze "<path>" 4')
+
+
+# ---------------------------
+# CLI parsing & dispatch
+# ---------------------------
+
+def build_parser():
+    p = argparse.ArgumentParser(add_help=False)
+    p.add_argument("cmd", nargs="?", default="")
+    p.add_argument("arg1", nargs="?", default=None)
+    p.add_argument("arg2", nargs="?", default=None)
+    return p
+
+def main(argv):
+    if not is_git_repo():
+        die("not a git repo")
+
+    root = repo_root()
+    db = ensure_db(root)
+
+    # Fast paths: -h, -l
+    if len(argv) >= 2 and argv[1] in ("-h", "--help", "help"):
+        usage()
+        return 0
+    if len(argv) >= 2 and argv[1] in ("-l", "--list", "list"):
+        cmd_list(root, db)
+        return 0
+
+    # Interpret top-level tokens with minimal “git alias” expectations.
+    # Supported syntaxes:
+    #   git snooze <path> [days]
+    #   git snooze --force <path> [days]
+    #   git snooze all [days]
+    #   git snooze sweep
+    #   git snooze doctor [--repair]
+    #   git snooze unsnooze <path>|all
+    #   git snooze -u <path>|all
+
+    if len(argv) < 2:
+        die("usage: git snooze <path> [days] | all [days] | -l | sweep | -u <path>|all | doctor [--repair]")
+
+    cmd = argv[1]
+
+    # -u / --unsnooze (flag form)
+    if cmd in ("-u", "--unsnooze"):
+        target = argv[2] if len(argv) >= 3 else None
+        if target == "all":
+            cmd_unsnooze_all(root, db)
+        else:
+            cmd_unsnooze_one(root, db, target)
+        return 0
+
+    if cmd == "unsnooze":
+        target = argv[2] if len(argv) >= 3 else None
+        if target == "all":
+            cmd_unsnooze_all(root, db)
+        else:
+            cmd_unsnooze_one(root, db, target)
+        return 0
+
+    if cmd == "sweep":
+        cmd_sweep(root, db)
+        return 0
+
+    if cmd == "doctor":
+        if len(argv) >= 3 and argv[2] == "--repair":
+            cmd_doctor_repair(root, db)
+        else:
+            cmd_doctor(root, db)
+        return 0
+
+    if cmd == "all":
+        days = argv[2] if len(argv) >= 3 else None
+        cmd_snooze_all(root, db, days)
+        warn_setup_once(root)
+        print("")
+        cmd_list(root, db)
+        return 0
+
+    if cmd in ("--force", "-f"):
+        path = argv[2] if len(argv) >= 3 else None
+        days = argv[3] if len(argv) >= 4 else None
+        cmd_snooze_one(root, db, path, days, force=True)
+        warn_setup_once(root)
+        print("")
+        cmd_list(root, db)
+        return 0
+
+    # Default: cmd is a path, optional days in argv[2]
+    path = cmd
+    days = argv[2] if len(argv) >= 3 else None
+    cmd_snooze_one(root, db, path, days, force=False)
+    warn_setup_once(root)
+    print("")
+    cmd_list(root, db)
+    return 0
+
+def usage():
+    print("""git snooze: hide files for N days
 
 USAGE
   git snooze <path> [days]
@@ -111,347 +625,10 @@ USAGE
 SETUP
   .gitignore: *.snoozed.*
   pre-commit: .scripts/tools/git-snooze sweep || true
+""")
 
-EOF
-}
-
-warn_setup_once(){
-  local root ig hook
-  root="$(repo_root)" || return 0
-  ig="$root/.gitignore"
-  hook="$root/.git/hooks/pre-commit"
-
-  if [[ ! -f "$ig" ]] || ! grep -qE '^\*\.snoozed\.\*$' "$ig"; then
-    echo "git-snooze: note: add to .gitignore: *.snoozed.*" >&2
-  fi
-  if [[ ! -f "$hook" ]] || ! grep -q 'git-snooze sweep' "$hook"; then
-    echo "git-snooze: note: pre-commit hook missing/incorrect (auto-wake off)" >&2
-  fi
-}
-
-# DB lines:
-#   mode<TAB>snoozed_or_dash<TAB>orig<TAB>start<TAB>days
-#   index<TAB>-<TAB>orig<TAB>...<TAB>...
-#   rename<TAB>snoozed<TAB>orig<TAB>...<TAB>...
-
-db_delete_orig(){
-  local orig="$1" db tmp
-  db="$(db_path)"
-  tmp="$(mktemp)"
-  awk -F'\t' -v o="$orig" '!(NF>=5 && $3==o)' "$db" > "$tmp"
-  mv -- "$tmp" "$db"
-}
-
-db_lookup(){
-  local orig="$1"
-  awk -F'\t' -v o="$orig" 'NF>=5 && $3==o {print; exit}' "$(db_path)" || true
-}
-
-cmd_list(){
-  ensure_db
-  local now
-  now="$(now_epoch)"
-
-  awk -F'\t' -v NOW="$now" '
-    NF>=5 {
-      mode=$1; snoozed=$2; orig=$3; start=$4; days=$5;
-      due = start + days*86400;
-      rem = due - NOW;
-      r = (rem<=0)?0:int((rem+86399)/86400);
-      print r "\t" mode "\t" orig "\t" snoozed;
-    }
-  ' "$(db_path)" | sort -n -k1,1 -k3,3 | awk -F'\t' '
-    BEGIN{shown=0; cur=-1}
-    {
-      if ($1!=cur) {
-        if (!shown) { print "SNOOZED FILES (by days remaining):"; shown=1; }
-        cur=$1;
-        printf "\n%d day%s:\n", cur, (cur==1?"":"s");
-      }
-      if ($2=="index") printf "  - %s  [tracked: skip-worktree]\n", $3;
-      else printf "  - %s  <=  %s  [untracked: rename]\n", $3, $4;
-    }
-    END{ if (!shown) print "SNOOZED FILES: (none)"; }
-  '
-}
-
-cmd_sweep(){
-  ensure_db
-  local now tmp unsnoozed_any
-  now="$(now_epoch)"
-  tmp="$(mktemp)"
-  unsnoozed_any=0
-
-  while IFS=$'\t' read -r mode snoozed orig start days; do
-    [[ -n "${mode:-}" && -n "${orig:-}" && -n "${start:-}" && -n "${days:-}" ]] || continue
-    local due
-    due=$(( start + days*86400 ))
-
-    if (( now < due )); then
-      printf "%s\t%s\t%s\t%s\t%s\n" "$mode" "$snoozed" "$orig" "$start" "$days" >> "$tmp"
-      continue
-    fi
-
-    unsnoozed_any=1
-    if [[ "$mode" == "index" ]]; then
-      [[ -e "$orig" ]] && unset_hide_flag "$orig"
-      echo "UNSNOOZED(index): $orig"
-    else
-      [[ -e "$snoozed" && ! -e "$orig" ]] && mv -- "$snoozed" "$orig"
-      echo "UNSNOOZED(rename): $orig"
-    fi
-  done < "$(db_path)"
-
-  mv -- "$tmp" "$(db_path)"
-
-  if [[ "$unsnoozed_any" -eq 1 ]]; then
-    echo ""
-    echo "⚠ git-snooze: one or more files were automatically unsnoozed"
-    echo "⚠ review changes before completing this commit"
-    echo ""
-  fi
-}
-
-cmd_unsnooze_one(){
-  local target="$1"
-  [[ -n "$target" ]] || die "usage: git snooze -u <path>|all"
-
-  local orig line mode snoozed
-  orig="$target"
-
-  # DB-independent: always unfreeze index if tracked (idempotent)
-  if is_tracked "$orig"; then
-    unset_hide_flag "$orig" || true
-  fi
-
-  # DB optional
-  line="$(db_lookup "$orig")"
-  if [[ -z "$line" ]]; then
-    echo "UNSNOOZED(index): $orig (no db record)"
-    return 0
-  fi
-
-  mode="$(echo "$line" | awk -F'\t' '{print $1}')"
-  snoozed="$(echo "$line" | awk -F'\t' '{print $2}')"
-
-  if [[ "$mode" == "rename" ]]; then
-    [[ -e "$snoozed" && ! -e "$orig" ]] && mv -- "$snoozed" "$orig"
-  fi
-
-  db_delete_orig "$orig"
-  echo "UNSNOOZED: $orig"
-}
-
-cmd_unsnooze_all(){
-  ensure_db
-  local mode snoozed orig start days
-  while IFS=$'\t' read -r mode snoozed orig start days; do
-    [[ -n "${mode:-}" && -n "${orig:-}" ]] || continue
-    if [[ "$mode" == "index" ]]; then
-      [[ -e "$orig" ]] && unset_hide_flag "$orig"
-      echo "UNSNOOZED(index): $orig"
-    else
-      [[ -e "$snoozed" && ! -e "$orig" ]] && mv -- "$snoozed" "$orig"
-      echo "UNSNOOZED(rename): $orig"
-    fi
-  done < "$(db_path)"
-  : > "$(db_path)"
-}
-
-dirty_tracked_files(){ git diff --name-only; }
-dirty_untracked_files(){ git ls-files --others --exclude-standard; }
-
-cmd_snooze_one(){
-  local path="$1" days="${2:-4}" force="${3:-0}"
-  [[ -n "$path" ]] || die "usage: git snooze <path> [days]"
-  [[ "$days" =~ ^[0-9]+$ ]] || die "days must be a number"
-
-  if is_self_path "$path" && [[ "$force" -ne 1 ]]; then
-    die "refusing to snooze the snooze tool itself. Use: git snooze --force \"$path\" [days]"
-  fi
-
-  local now orig snoozed
-  now="$(now_epoch)"
-  orig="$path"
-
-  # replace-record semantics
-  db_delete_orig "$orig"
-
-  if is_tracked "$orig"; then
-    [[ -e "$orig" ]] || die "tracked file missing on disk: $orig"
-    set_hide_flag "$orig"
-    printf "index\t-\t%s\t%s\t%s\n" "$orig" "$now" "$days" >> "$(db_path)"
-    echo "SNOOZED(index): $orig (${days}d)"
-    return
-  fi
-
-  [[ -e "$orig" ]] || die "file not found: $orig"
-  snoozed="$(snoozed_name "$days" "$orig")"
-  [[ ! -e "$snoozed" ]] || die "target exists: $snoozed"
-  mv -- "$orig" "$snoozed"
-  printf "rename\t%s\t%s\t%s\t%s\n" "$snoozed" "$orig" "$now" "$days" >> "$(db_path)"
-  echo "SNOOZED(rename): $orig -> $snoozed (${days}d)"
-}
-
-cmd_snooze_all(){
-  local days="${1:-4}" now
-  [[ "$days" =~ ^[0-9]+$ ]] || die "days must be a number"
-  now="$(now_epoch)"
-  echo "SNOOZING ALL local changes (${days}d)"
-
-  dirty_tracked_files | while read -r f; do
-    [[ -n "$f" ]] || continue
-    db_delete_orig "$f"
-    set_hide_flag "$f"
-    printf "index\t-\t%s\t%s\t%s\n" "$f" "$now" "$days" >> "$(db_path)"
-    echo "  tracked: $f"
-  done
-
-  dirty_untracked_files | while read -r f; do
-    [[ -n "$f" ]] || continue
-
-    # Never snooze the tool itself (or backups), or you brick the alias.
-    case "$f" in
-      .scripts/tools/git-snooze|.scripts/tools/git-snooze.* )
-        echo "  skip (self): $f"
-        continue
-        ;;
-    esac
-
-    local s
-    s="$(snoozed_name "$days" "$f")"
-    db_delete_orig "$f"
-    [[ ! -e "$s" ]] || die "target exists: $s"
-    mv -- "$f" "$s"
-    printf "rename\t%s\t%s\t%s\t%s\n" "$s" "$f" "$now" "$days" >> "$(db_path)"
-    echo "  untracked: $f -> $s"
-  done
-}
-
-skip_worktree_files(){
-  git ls-files -v | awk '/^S /{print substr($0,3)}'
-}
-
-cmd_doctor(){
-  local root db hook ig
-  root="$(repo_root)" || die "not a git repo"
-  db="$root/$DB_REL"
-  hook="$root/.git/hooks/pre-commit"
-  ig="$root/.gitignore"
-
-  echo "git-snooze doctor"
-  echo "  repo: $root"
-  if [[ -f "$ig" ]] && grep -qE '^\*\.snoozed\.\*$' "$ig"; then
-    echo "  .gitignore: OK"
-  else
-    echo "  .gitignore: missing *.snoozed.*"
-  fi
-  if [[ -f "$hook" ]] && grep -q 'git-snooze sweep' "$hook"; then
-    echo "  hook: OK"
-  else
-    echo "  hook: missing/incorrect"
-  fi
-  [[ -f "$db" ]] && echo "  db: OK" || echo "  db: will be created on first use"
-}
-
-cmd_doctor_repair(){
-  ensure_db
-  local now db repaired
-  now="$(now_epoch)"
-  db="$(db_path)"
-  repaired=0
-
-  echo "git-snooze doctor --repair"
-  echo "  scanning index for skip-worktree files..."
-
-  while IFS= read -r f; do
-    [[ -n "$f" ]] || continue
-    if [[ -z "$(db_lookup "$f")" ]]; then
-      printf "index\t-\t%s\t%s\t%s\n" "$f" "$now" "$REPAIR_YEARS_DAYS" >> "$db"
-      echo "  repaired: added db record for $f (duration=${REPAIR_YEARS_DAYS}d)"
-      repaired=$((repaired+1))
-    fi
-  done < <(skip_worktree_files)
-
-  if [[ "$repaired" -eq 0 ]]; then
-    echo "  nothing to repair."
-  else
-    echo "  repaired $repaired file(s)."
-    echo "  tip: set a real timer by re-snoozing:"
-    echo "       git snooze \"<path>\" 4"
-  fi
-}
-
-main(){
-  is_git_repo || die "not a git repo"
-  ensure_db
-
-  local cmd="${1:-}"
-  local from_unsnooze_flag=0
-
-  case "$cmd" in
-    -h|--help|help ) usage; exit 0 ;;
-    -l|--list|list ) cmd_list; exit 0 ;;
-  esac
-
-  # -u / --unsnooze flag alias
-  if [[ "$cmd" == "-u" || "$cmd" == "--unsnooze" ]]; then
-    from_unsnooze_flag=1
-    cmd="unsnooze"
-    shift || true   # consume -u, keep args intact
-  fi
-
-  case "$cmd" in
-    "" )
-      die "usage: git snooze <path> [days] | --force <path> [days] | all [days] | -l | sweep | -u <path>|all | doctor [--repair]"
-      ;;
-    sweep )
-      cmd_sweep
-      ;;
-    doctor )
-      if [[ "${2:-}" == "--repair" ]]; then
-        cmd_doctor_repair
-      else
-        cmd_doctor
-      fi
-      ;;
-    unsnooze )
-      # If invoked as "git snooze unsnooze ...", shift subcommand.
-      # If invoked as "git snooze -u ...", we already shifted the flag.
-      if [[ "$from_unsnooze_flag" -eq 0 ]]; then
-        shift || true
-      fi
-      case "${1:-}" in
-        "" ) die "usage: git snooze -u <path>|all" ;;
-        all ) cmd_unsnooze_all ;;
-        * ) cmd_unsnooze_one "$1" ;;
-      esac
-      ;;
-    all )
-      shift || true
-      cmd_snooze_all "${1:-4}"
-      warn_setup_once
-      echo ""
-      cmd_list
-      ;;
-    --force|-f )
-      local path="${2:-}"
-      local days="${3:-4}"
-      cmd_snooze_one "$path" "$days" 1
-      warn_setup_once
-      echo ""
-      cmd_list
-      ;;
-    * )
-      # git snooze <path> [days]
-      local path="$cmd"
-      local days="${2:-4}"
-      cmd_snooze_one "$path" "$days" 0
-      warn_setup_once
-      echo ""
-      cmd_list
-      ;;
-  esac
-}
-
-main "$@"
+if __name__ == "__main__":
+    try:
+        sys.exit(main(sys.argv))
+    except KeyboardInterrupt:
+        die("interrupted", code=130)
