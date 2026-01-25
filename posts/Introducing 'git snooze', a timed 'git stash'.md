@@ -1,5 +1,5 @@
 ---
-title: Introducing `git snooze`, a timed `git stash`
+title: Introducing 'git snooze', a timed 'git stash'
 subtitle: A timed git-stash that resets automatically
 author: Jean Pierre
 date: 2026-01-25
