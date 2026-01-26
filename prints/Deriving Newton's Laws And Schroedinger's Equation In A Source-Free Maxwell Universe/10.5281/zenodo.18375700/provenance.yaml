@@ -1,0 +1,99 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe
+doi: 10.5281/zenodo.18375700
+concept_doi: 10.5281/zenodo.18375699
+permalink: "https://writing.preferredframe.com/prints/Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe/10.5281/zenodo.18375700/"
+publication_date: '2026-01-26'
+publication_year: '2026'
+keywords:
+- Maxwell theory
+- source-free electromagnetism
+- continuity equation
+- Poynting theorem
+- Maxwell stress tensor
+- momentum conservation
+- angular momentum conservation
+- electromagnetic knots
+- toroidal standing modes
+- analytic signal
+- narrow-band limit
+- emergent inertia
+- emergent Planck constant
+- emergent quantum mechanics
+one_sentence_summary: In source-free Maxwell theory, the same local continuity structure yields (i) global conservation laws and Newton-like motion for localized energy knots, and (ii) the Schrödinger equation as the narrow-band envelope limit of a toroidal standing mode, with $m$ and $\hbar$ emerging from the fundamental mode.
+abstract: We start from source-free Maxwell equations and derive the wave equation, then derive exact local continuity laws for energy, momentum, and angular momentum using the Poynting theorem and the Maxwell stress tensor. Integrating these identities yields global conservation statements. When electromagnetic energy is localized into a persistent circulating knot, its center-of-energy motion obeys Newton-like inertia and momentum-balance relations as flux bookkeeping, not as postulates. We then study a self-confined toroidal standing mode and isolate its forward-time narrow-band envelope via an analytic-signal projection. Keeping derivative terms exactly gives an envelope equation with a controlled remainder of order $(\Delta\omega/\omega_{11})^2$; discarding only that bounded term yields the Schrödinger equation. In this construction, $m=E_{11}/c^2$ and $\hbar=E_{11}/\omega_{11}$ are geometric properties of the fundamental toroidal mode.
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+- name: Alex Mercer
+- name: Anes Palma
+- name: Elias Thorne
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  - name: Alex Mercer
+  - name: Anes Palma
+  - name: Elias Thorne
+  description: We start from source-free Maxwell equations and derive the wave equation, then derive exact local continuity laws for energy, momentum, and angular momentum using the Poynting theorem and the Maxwell stress tensor. Integrating these identities yields global conservation statements. When electromagnetic energy is localized into a persistent circulating knot, its center-of-energy motion obeys Newton-like inertia and momentum-balance relations as flux bookkeeping, not as postulates. We then study a self-confined toroidal standing mode and isolate its forward-time narrow-band envelope via an analytic-signal projection. Keeping derivative terms exactly gives an envelope equation with a controlled remainder of order $(\Delta\omega/\omega_{11})^2$; discarding only that bounded term yields the Schrödinger equation. In this construction, $m=E_{11}/c^2$ and $\hbar=E_{11}/\omega_{11}$ are geometric properties of the fundamental toroidal mode.
+  keywords:
+  - Maxwell theory
+  - source-free electromagnetism
+  - continuity equation
+  - Poynting theorem
+  - Maxwell stress tensor
+  - momentum conservation
+  - angular momentum conservation
+  - electromagnetic knots
+  - toroidal standing modes
+  - analytic signal
+  - narrow-band limit
+  - emergent inertia
+  - emergent Planck constant
+  - emergent quantum mechanics
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-26'
+  license: cc-by-nc-nd-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe/10.5281/zenodo.18375700/Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe/10.5281/zenodo.18375700/Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe/10.5281/zenodo.18375700/Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe.pdf"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe/10.5281/zenodo.18375700/Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe.embed.html"
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: In source-free Maxwell theory, the same local continuity structure yields (i) global conservation laws and Newton-like motion for localized energy knots, and (ii) the Schrödinger equation as the narrow-band envelope limit of a toroidal standing mode, with $m$ and $\hbar$ emerging from the fundamental mode.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: e1440c299992952f7deee78f28029b8d30409230
+  filename: Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe.md
+artifacts:
+  md: Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe.md
+  md_url: "https://writing.preferredframe.com/prints/Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe/10.5281/zenodo.18375700/Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe.md"
+  pandoc_md_name: Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe/10.5281/zenodo.18375700/Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe.pandoc.md"
+  html_name: Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe.html
+  html_url: "https://writing.preferredframe.com/prints/Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe/10.5281/zenodo.18375700/Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe.html"
+  primary: md
+  pdf_name: Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe/10.5281/zenodo.18375700/Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe.pdf"
+  embed_html_name: Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe/10.5281/zenodo.18375700/Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe.embed.html"

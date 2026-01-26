@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="An M. Rodriguez" />
+  <meta name="author" content="Alex Mercer" />
+  <meta name="author" content="Anes Palma" />
+  <meta name="author" content="Elias Thorne" />
+  <meta name="dcterms.date" content="2026-01-26" />
+  <meta name="keywords" content="Maxwell theory, source-free
+electromagnetism, continuity equation, Poynting theorem, Maxwell stress
+tensor, momentum conservation, angular momentum conservation,
+electromagnetic knots, toroidal standing modes, analytic signal,
+narrow-band limit, emergent inertia, emergent Planck constant, emergent
+quantum mechanics" />
+  <title>Deriving Newton's Laws And Schroedinger's Equation In A Source-Free Maxwell Universe</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <style>
+  html {
+    font-family: sans-serif;
+  }
+  body {
+    font-family: inherit;
+    font-variant-ligatures: common-ligatures;
+    font-kerning: normal;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .header-section-number::after,
+  .toc-section-number::after {
+    content: ". ";
+  }
+  .toc ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    counter-reset: item;
+  }
+  .toc li {
+    margin: 0.4em 0;
+    padding-left: 2.6em;
+    position: relative;
+    counter-increment: item;
+  }
+  .toc li::before {
+    content: counters(item, ".") ".";
+    position: absolute;
+    left: 0;
+    color: #666;
+    width: 2.2em;
+    text-align: right;
+  }
+  .toc-title {
+    display: block;
+    font-weight: 700;
+    font-size: 1.1em;
+    margin: 0.5em 0 0.4em;
+    text-align: center;
+  }
+  .toc-divider {
+    width: 35%;
+    margin: 3.2em auto 2.8em;
+    border: 0;
+    height: 1px;
+    background: rgba(0,0,0,0.25);
+  }
+  .toc a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid transparent;
+  }
+  .toc a:hover {
+    border-bottom-color: #1f5fbf;
+  }
+  .heading-anchor {
+    margin-left: 0.35em;
+    text-decoration: none;
+    opacity: 0;
+    font-size: 0.85em;
+    color: inherit;
+    transition: opacity 0.15s ease;
+  }
+  .heading-anchor::after {
+    content: "\1F517";
+  }
+  h1:hover .heading-anchor,
+  h2:hover .heading-anchor,
+  h3:hover .heading-anchor,
+  h4:hover .heading-anchor,
+  h5:hover .heading-anchor,
+  h6:hover .heading-anchor,
+  .heading-anchor:focus {
+    opacity: 1;
+  }
+  .heading-anchor:hover {
+    text-decoration: none;
+  }
+  </style>
+  <script>
+  (function () {
+    function slugify(text) {
+      return (text || "")
+        .toLowerCase()
+        .replace(/[^0-9a-zA-Z _-]+/g, "")
+        .trim()
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-")
+        .replace(/^-+|-+$/g, "") || "section";
+    }
+    function headingText(el) {
+      var clone = el.cloneNode(true);
+      var drop = clone.querySelectorAll(".heading-anchor, .header-section-number");
+      for (var i = 0; i < drop.length; i++) {
+        if (drop[i].parentNode) {
+          drop[i].parentNode.removeChild(drop[i]);
+        }
+      }
+      return (clone.textContent || "").trim();
+    }
+    function ensureId(el, used) {
+      var id = el.getAttribute("id") || "";
+      if (id) {
+        used[id] = true;
+        return id;
+      }
+      var base = slugify(headingText(el));
+      var cand = base;
+      var i = 1;
+      while (!cand || document.getElementById(cand) || used[cand]) {
+        cand = base + "-" + i;
+        i += 1;
+      }
+      el.setAttribute("id", cand);
+      used[cand] = true;
+      return cand;
+    }
+    function addAnchors(root) {
+      if (!root) {
+        return;
+      }
+      var headings = root.querySelectorAll("h1, h2, h3, h4, h5, h6");
+      var used = {};
+      for (var i = 0; i < headings.length; i++) {
+        var h = headings[i];
+        if (h.querySelector("a.heading-anchor")) {
+          continue;
+        }
+        var id = ensureId(h, used);
+        var a = document.createElement("a");
+        a.className = "heading-anchor";
+        a.href = "#" + id;
+        a.setAttribute("aria-label", "Link to this section");
+        a.setAttribute("title", "Link to this section");
+        h.appendChild(a);
+      }
+    }
+    function run() {
+      addAnchors(document.body);
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", run);
+    } else {
+      run();
+    }
+  })();
+  </script>
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Deriving Newton's Laws And Schroedinger's Equation In
+A Source-Free Maxwell Universe</h1>
+<p class="subtitle">Newton laws and Schroedinger's equation from
+continuous energy flow</p>
+<p class="author">An M. Rodriguez</p>
+<p class="author">Alex Mercer</p>
+<p class="author">Anes Palma</p>
+<p class="author">Elias Thorne</p>
+<p class="date">2026-01-26</p>
+</header>
+<p><strong>One-Sentence Summary.</strong> In source-free Maxwell theory,
+the same local continuity structure yields (i) global conservation laws
+and Newton-like motion for localized energy knots, and (ii) the
+Schrödinger equation as the narrow-band envelope limit of a toroidal
+standing mode, with <span class="math inline">\(m\)</span> and <span
+class="math inline">\(\hbar\)</span> emerging from the fundamental
+mode.</p>
+<p><strong>Abstract.</strong> We start from source-free Maxwell
+equations and derive the wave equation, then derive exact local
+continuity laws for energy, momentum, and angular momentum using the
+Poynting theorem and the Maxwell stress tensor. Integrating these
+identities yields global conservation statements. When electromagnetic
+energy is localized into a persistent circulating knot, its
+center-of-energy motion obeys Newton-like inertia and momentum-balance
+relations as flux bookkeeping, not as postulates. We then study a
+self-confined toroidal standing mode and isolate its forward-time
+narrow-band envelope via an analytic-signal projection. Keeping
+derivative terms exactly gives an envelope equation with a controlled
+remainder of order <span
+class="math inline">\((\Delta\omega/\omega_{11})^2\)</span>; discarding
+only that bounded term yields the Schrödinger equation. In this
+construction, <span class="math inline">\(m=E_{11}/c^2\)</span> and
+<span class="math inline">\(\hbar=E_{11}/\omega_{11}\)</span> are
+geometric properties of the fundamental toroidal mode.</p>
+<p><strong>Keywords.</strong> Maxwell theory, source-free
+electromagnetism, continuity equation, Poynting theorem, Maxwell stress
+tensor, momentum conservation, angular momentum conservation,
+electromagnetic knots, toroidal standing modes, analytic signal,
+narrow-band limit, emergent inertia, emergent Planck constant, emergent
+quantum mechanics</p>
+<div class="toc">
+<hr class="toc-divider" />
+<div class="toc-title">Table of Contents</div>
+<ul>
+<li><a href="#motivation">Motivation</a>
+</li>
+<li><a href="#assumptions-and-definitions">Assumptions and definitions</a>
+</li>
+<li><a href="#part-i-energy-continuity-is-exact">Part I — Energy continuity is exact</a>
+</li>
+<li><a href="#part-ii-momentum-continuity-is-exact">Part II — Momentum continuity is exact</a>
+</li>
+<li><a href="#part-iii-angular-momentum-continuity-is-exact">Part III — Angular momentum continuity is exact</a>
+</li>
+<li><a href="#part-iv-newton-like-laws-for-a-localized-electromagnetic-knot">Part IV — Newton-like laws for a localized electromagnetic knot</a>
+</li>
+<li><a href="#part-v-schrdinger-dynamics-as-a-narrow-band-maxwell-envelope">Part V — Schrödinger dynamics as a narrow-band Maxwell envelope</a>
+</li>
+<li><a href="#scope">Scope</a>
+</li>
+<li><a href="#closing-statement">Closing statement</a>
+</li>
+</ul>
+</div>
+<hr class="meta-divider" style="width:35%; margin:2rem auto; border:0; height:1px; background: rgba(0,0,0,0.35);" />
+<h1 data-number="1" id="motivation"><span
+class="header-section-number">1</span> Motivation</h1>
+<p>We want a document that does not assume:</p>
+<ul>
+<li>particles,</li>
+<li>mechanical “forces” as primitives,</li>
+<li>Newton’s laws as axioms,</li>
+<li>quantum postulates as axioms.</li>
+</ul>
+<p>We assume only:</p>
+<ul>
+<li>source-free Maxwell dynamics</li>
+</ul>
+<p>We show that: - Newton-like mechanics for a localized object is
+integrated continuity bookkeeping, - Schrödinger dynamics is the
+narrow-band envelope limit of Maxwell waves on a toroidal mode.</p>
+<h1 data-number="2" id="assumptions-and-definitions"><span
+class="header-section-number">2</span> Assumptions and definitions</h1>
+<h2 data-number="2.1" id="source-free-maxwell-equations"><span
+class="header-section-number">2.1</span> Source-free Maxwell
+equations</h2>
+<p>In a source-free region:</p>
+<p><span class="math display">\[
+\nabla \cdot \mathbf{E} = 0,
+\qquad
+\nabla \cdot \mathbf{B} = 0,
+\]</span></p>
+<p><span class="math display">\[
+\nabla \times \mathbf{E} = -\partial_t \mathbf{B},
+\qquad
+\nabla \times \mathbf{B} = \mu_0\epsilon_0\,\partial_t \mathbf{E}.
+\]</span></p>
+<p>From this system we derive wave propagation. Taking the curl of
+Faraday’s law and substituting the curl equation for <span
+class="math inline">\(\mathbf{B}\)</span> yields</p>
+<p><span class="math display">\[
+\nabla^2\mathbf{E}-\mu_0\epsilon_0\,\partial_t^2\mathbf{E}=0.
+\]</span></p>
+<p>An identical equation follows for <span
+class="math inline">\(\mathbf{B}\)</span>.</p>
+<p>From the coefficient of the time-derivative term, the wave speed
+is</p>
+<p><span class="math display">\[
+c=\frac{1}{\sqrt{\mu_0\epsilon_0}}.
+\]</span></p>
+<h2 data-number="2.2"
+id="electromagnetic-energy-density-and-energy-flux"><span
+class="header-section-number">2.2</span> Electromagnetic energy density
+and energy flux</h2>
+<p><span class="math display">\[
+u = \frac{\epsilon_0}{2}\mathbf{E}^2 + \frac{1}{2\mu_0}\mathbf{B}^2,
+\qquad
+\mathbf{S} = \frac{1}{\mu_0}\mathbf{E}\times\mathbf{B}.
+\]</span></p>
+<h2 data-number="2.3" id="electromagnetic-momentum-density"><span
+class="header-section-number">2.3</span> Electromagnetic momentum
+density</h2>
+<p><span class="math display">\[
+\mathbf{g} = \frac{\mathbf{S}}{c^2} =
+\epsilon_0\,\mathbf{E}\times\mathbf{B}.
+\]</span></p>
+<h2 data-number="2.4" id="maxwell-stress-tensor"><span
+class="header-section-number">2.4</span> Maxwell stress tensor</h2>
+<p><span class="math display">\[
+T_{ij}
+=
+\epsilon_0\left(E_iE_j - \frac{1}{2}\delta_{ij}\mathbf{E}^2\right)
++
+\frac{1}{\mu_0}\left(B_iB_j - \frac{1}{2}\delta_{ij}\mathbf{B}^2\right).
+\]</span></p>
+<p><span class="math inline">\(T_{ij}\)</span> is the local
+momentum-flux bookkeeping of the field.</p>
+<h1 data-number="3" id="part-i-energy-continuity-is-exact"><span
+class="header-section-number">3</span> Part I — Energy continuity is
+exact</h1>
+<h2 data-number="3.1" id="poynting-theorem"><span
+class="header-section-number">3.1</span> Poynting theorem</h2>
+<p>Start from:</p>
+<p><span class="math display">\[
+\nabla \times \mathbf{E} = -\partial_t \mathbf{B},
+\qquad
+\nabla \times \mathbf{B} = \mu_0\epsilon_0\,\partial_t \mathbf{E}.
+\]</span></p>
+<p>Use:</p>
+<p><span class="math display">\[
+\nabla\cdot(\mathbf{E}\times\mathbf{B})
+=
+\mathbf{B}\cdot(\nabla\times\mathbf{E})
+-
+\mathbf{E}\cdot(\nabla\times\mathbf{B}).
+\]</span></p>
+<p>Substitute Maxwell and rewrite as derivatives:</p>
+<p><span class="math display">\[
+\nabla\cdot\mathbf{S}=-\partial_t u,
+\qquad\Rightarrow\qquad
+\partial_t u + \nabla\cdot\mathbf{S} = 0.
+\]</span></p>
+<h2 data-number="3.2" id="global-energy-conservation"><span
+class="header-section-number">3.2</span> Global energy conservation</h2>
+<p>Integrate over a fixed volume <span class="math inline">\(V\)</span>
+with boundary <span class="math inline">\(\partial V\)</span>:</p>
+<p><span class="math display">\[
+\frac{d}{dt}\int_V u\,d^3x + \int_{\partial V}\mathbf{S}\cdot
+d\mathbf{A}=0.
+\]</span></p>
+<p>Define:</p>
+<p><span class="math display">\[
+U_V=\int_V u\,d^3x,
+\qquad
+\Phi_V=\int_{\partial V}\mathbf{S}\cdot d\mathbf{A},
+\]</span></p>
+<p>so:</p>
+<p><span class="math display">\[
+\frac{d}{dt}U_V=-\Phi_V.
+\]</span></p>
+<p>If <span class="math inline">\(\Phi_V=0\)</span>, then <span
+class="math inline">\(U_V\)</span> is constant.</p>
+<h1 data-number="4" id="part-ii-momentum-continuity-is-exact"><span
+class="header-section-number">4</span> Part II — Momentum continuity is
+exact</h1>
+<h2 data-number="4.1" id="local-momentum-continuity"><span
+class="header-section-number">4.1</span> Local momentum continuity</h2>
+<p>Start from:</p>
+<p><span class="math display">\[
+\mathbf{g}=\epsilon_0\,\mathbf{E}\times\mathbf{B}.
+\]</span></p>
+<p>Differentiate and substitute Maxwell:</p>
+<p><span class="math display">\[
+\partial_t\mathbf{g}
+=
+\frac{1}{\mu_0}(\nabla\times\mathbf{B})\times\mathbf{B}
+-
+\epsilon_0\,\mathbf{E}\times(\nabla\times\mathbf{E}).
+\]</span></p>
+<p>Use:</p>
+<p><span class="math display">\[
+(\nabla\times\mathbf{A})\times\mathbf{A}
+=
+(\mathbf{A}\cdot\nabla)\mathbf{A}
+-
+\frac{1}{2}\nabla(\mathbf{A}^2)
++
+\mathbf{A}(\nabla\cdot\mathbf{A}),
+\]</span></p>
+<p>and <span class="math inline">\(\nabla\cdot\mathbf{E}=0\)</span>,
+<span class="math inline">\(\nabla\cdot\mathbf{B}=0\)</span>, giving</p>
+<p><span class="math display">\[
+(\nabla\times\mathbf{A})\times\mathbf{A}
+=
+(\mathbf{A}\cdot\nabla)\mathbf{A}
+-
+\frac{1}{2}\nabla(\mathbf{A}^2).
+\]</span></p>
+<p>So:</p>
+<p><span class="math display">\[
+\partial_t\mathbf{g}
+=
+\frac{1}{\mu_0}\left((\mathbf{B}\cdot\nabla)\mathbf{B}-\frac{1}{2}\nabla(\mathbf{B}^2)\right)
+-
+\epsilon_0\left((\mathbf{E}\cdot\nabla)\mathbf{E}-\frac{1}{2}\nabla(\mathbf{E}^2)\right).
+\]</span></p>
+<p>In components, using <span
+class="math inline">\(\partial_j(B_iB_j)=(\mathbf{B}\cdot\nabla)B_i\)</span>
+and <span
+class="math inline">\(\partial_j(E_iE_j)=(\mathbf{E}\cdot\nabla)E_i\)</span>,
+this becomes:</p>
+<p><span class="math display">\[
+\partial_t g_i
+=
+-\partial_j\left[
+\epsilon_0\left(E_iE_j-\frac{1}{2}\delta_{ij}\mathbf{E}^2\right)
++
+\frac{1}{\mu_0}\left(B_iB_j-\frac{1}{2}\delta_{ij}\mathbf{B}^2\right)
+\right].
+\]</span></p>
+<p>With the definition of <span
+class="math inline">\(T_{ij}\)</span>:</p>
+<p><span class="math display">\[
+\partial_t g_i + \partial_j T_{ij} = 0,
+\qquad\text{equivalently}\qquad
+\partial_t\mathbf{g}+\nabla\cdot\mathbf{T}=0.
+\]</span></p>
+<h2 data-number="4.2" id="global-momentum-conservation"><span
+class="header-section-number">4.2</span> Global momentum
+conservation</h2>
+<p>Integrate over <span class="math inline">\(V\)</span>:</p>
+<p><span class="math display">\[
+\frac{d}{dt}\int_V g_i\,d^3x + \int_{\partial V}T_{ij}n_j\,dA=0.
+\]</span></p>
+<p>Define:</p>
+<p><span class="math display">\[
+P_i(V)=\int_V g_i\,d^3x,
+\qquad
+F_i^{(\text{boundary})}(V)=\int_{\partial V}T_{ij}n_j\,dA,
+\]</span></p>
+<p>so:</p>
+<p><span class="math display">\[
+\frac{d}{dt}P_i(V)=-F_i^{(\text{boundary})}(V).
+\]</span></p>
+<h1 data-number="5"
+id="part-iii-angular-momentum-continuity-is-exact"><span
+class="header-section-number">5</span> Part III — Angular momentum
+continuity is exact</h1>
+<h2 data-number="5.1" id="angular-momentum-density-and-flux"><span
+class="header-section-number">5.1</span> Angular momentum density and
+flux</h2>
+<p><span class="math display">\[
+\boldsymbol{\ell}=\mathbf{x}\times\mathbf{g},
+\qquad
+\mathbf{L}(V)=\int_V \mathbf{x}\times\mathbf{g}\,d^3x.
+\]</span></p>
+<p>Using momentum continuity, angular momentum changes only by torque
+flux:</p>
+<p><span class="math display">\[
+\frac{d}{dt}\mathbf{L}(V)
+=
+-\int_{\partial V}(\mathbf{x}\times(\mathbf{T}\cdot\mathbf{n}))\,dA.
+\]</span></p>
+<h1 data-number="6"
+id="part-iv-newton-like-laws-for-a-localized-electromagnetic-knot"><span
+class="header-section-number">6</span> Part IV — Newton-like laws for a
+localized electromagnetic knot</h1>
+<h2 data-number="6.1" id="localized-persistent-energy-region"><span
+class="header-section-number">6.1</span> Localized, persistent energy
+region</h2>
+<p>Let <span class="math inline">\(K(t)\)</span> be a moving region such
+that energy is concentrated inside it and boundary flux is small.</p>
+<p><span class="math display">\[
+E_K = \int_{K(t)} u\,d^3x,
+\qquad
+\mathbf{P}_K = \int_{K(t)} \mathbf{g}\,d^3x.
+\]</span></p>
+<h2 data-number="6.2"
+id="center-of-energy-and-emergent-inertial-mass"><span
+class="header-section-number">6.2</span> Center of energy and emergent
+inertial mass</h2>
+<p><span class="math display">\[
+\mathbf{X}_K = \frac{1}{E_K}\int_{K(t)} \mathbf{x}\,u\,d^3x.
+\]</span></p>
+<p>When boundary terms are negligible:</p>
+<p><span class="math display">\[
+E_K\,\dot{\mathbf{X}}_K \approx \int_K \mathbf{S}\,d^3x,
+\qquad
+\mathbf{P}_K \approx \frac{E_K}{c^2}\dot{\mathbf{X}}_K.
+\]</span></p>
+<p>Define:</p>
+<p><span class="math display">\[
+m_K:=\frac{E_K}{c^2}.
+\]</span></p>
+<h2 data-number="6.3" id="momentum-balance-as-the-net-force-law"><span
+class="header-section-number">6.3</span> Momentum balance as the
+net-force law</h2>
+<p><span class="math display">\[
+\frac{d}{dt}\mathbf{P}_K
+=
+-\int_{\partial K}\mathbf{T}\cdot\mathbf{n}\,dA
+=:\mathbf{F}_K.
+\]</span></p>
+<p>If <span class="math inline">\(E_K\)</span> is roughly constant:</p>
+<p><span class="math display">\[
+m_K\,\ddot{\mathbf{X}}_K \approx \mathbf{F}_K.
+\]</span></p>
+<h1 data-number="7"
+id="part-v-schrödinger-dynamics-as-a-narrow-band-maxwell-envelope"><span
+class="header-section-number">7</span> Part V — Schrödinger dynamics as
+a narrow-band Maxwell envelope</h1>
+<h2 data-number="7.1"
+id="maxwell-wave-equation-for-a-field-component"><span
+class="header-section-number">7.1</span> Maxwell wave equation for a
+field component</h2>
+<p>For any Cartesian component <span
+class="math inline">\(F(\mathbf{r},t)\)</span> of <span
+class="math inline">\(\mathbf{E}\)</span> or <span
+class="math inline">\(\mathbf{B}\)</span>:</p>
+<p><span class="math display">\[
+\left(\nabla^{2}-\frac{1}{c^{2}}\partial_t^{2}\right)F(\mathbf{r},t)=0.
+\]</span></p>
+<h2 data-number="7.2" id="toroidal-standing-modes"><span
+class="header-section-number">7.2</span> Toroidal standing modes</h2>
+<p>Take a toroidal topology with radii <span
+class="math inline">\(R\)</span> and <span
+class="math inline">\(r\)</span>. Integer windings <span
+class="math inline">\((n_1,n_2)\)</span> give</p>
+<p><span class="math display">\[
+k_1=\frac{n_1}{R},
+\qquad
+k_2=\frac{n_2}{r},
+\qquad
+k^{2}=k_1^{2}+k_2^{2},
+\qquad
+\omega_{n_1n_2}=ck.
+\]</span></p>
+<p>Define the fundamental mode <span
+class="math inline">\((1,1)\)</span> with <span
+class="math inline">\((E_{11},\omega_{11})\)</span> and</p>
+<p><span class="math display">\[
+\hbar=\frac{E_{11}}{\omega_{11}},
+\qquad
+m=\frac{E_{11}}{c^{2}}.
+\]</span></p>
+<h2 data-number="7.3"
+id="forward-time-spectral-projection-and-envelope"><span
+class="header-section-number">7.3</span> Forward-time spectral
+projection and envelope</h2>
+<p>Define the analytic (positive-frequency) signal:</p>
+<p><span class="math display">\[
+F^{(+)}(\mathbf{r},t)=\int_{0}^{\infty}\tilde
+F(\mathbf{r},\omega)\,e^{-i\omega t}\,d\omega.
+\]</span></p>
+<p>Extract the carrier at <span
+class="math inline">\(\omega_{11}\)</span>:</p>
+<p><span class="math display">\[
+\psi(\mathbf{r},t)=e^{i\omega_{11}t}\,F^{(+)}(\mathbf{r},t).
+\]</span></p>
+<h2 data-number="7.4"
+id="exact-envelope-equation-and-controlled-remainder"><span
+class="header-section-number">7.4</span> Exact envelope equation and
+controlled remainder</h2>
+<p>Substitution into the wave equation yields:</p>
+<p><span class="math display">\[
+\nabla^{2}\psi-\frac{1}{c^{2}}\partial_t^{2}\psi
++\frac{2i\omega_{11}}{c^{2}}\partial_t\psi
++\frac{\omega_{11}^{2}}{c^{2}}\psi=0.
+\]</span></p>
+<p>Rearrange:</p>
+<p><span class="math display">\[
+i\partial_t\psi=-\frac{c^{2}}{2\omega_{11}}\nabla^{2}\psi
++\frac{1}{2\omega_{11}c^{2}}\partial_t^{2}\psi.
+\]</span></p>
+<p>If the envelope has RMS bandwidth <span
+class="math inline">\(\Delta\omega\)</span> with <span
+class="math inline">\(\epsilon=\Delta\omega/\omega_{11}\ll1\)</span>,
+then the last term is bounded by <span
+class="math inline">\(O(\epsilon^2)\)</span> in norm.</p>
+<p>Dropping only this controlled term gives:</p>
+<p><span class="math display">\[
+i\partial_t\psi=-\frac{c^{2}}{2\omega_{11}}\nabla^{2}\psi+O(\epsilon^{2}).
+\]</span></p>
+<p>Using <span class="math inline">\(\hbar=E_{11}/\omega_{11}\)</span>
+and <span class="math inline">\(m=E_{11}/c^2\)</span> turns the
+coefficient into <span class="math inline">\(\hbar/(2m)\)</span>,
+yielding:</p>
+<p><span class="math display">\[
+i\hbar\,\partial_t\psi=-\frac{\hbar^{2}}{2m}\nabla^{2}\psi+O(\epsilon^{2}).
+\]</span></p>
+<h1 data-number="8" id="scope"><span
+class="header-section-number">8</span> Scope</h1>
+<h2 data-number="8.1"
+id="derived-from-source-free-maxwell-structure"><span
+class="header-section-number">8.1</span> Derived from source-free
+Maxwell structure</h2>
+<ul>
+<li>energy continuity: <span class="math display">\[\partial_t u +
+\nabla\cdot\mathbf{S}=0\]</span></li>
+<li>momentum continuity: <span class="math display">\[\partial_t
+\mathbf{g} + \nabla\cdot\mathbf{T}=0\]</span></li>
+<li>angular momentum flux balance</li>
+<li>Newton-like motion of localized energy knots as integrated flux
+bookkeeping</li>
+<li>Schrödinger dynamics as a narrow-band envelope limit with controlled
+<span class="math inline">\(O(\epsilon^2)\)</span> remainder</li>
+<li>emergent <span class="math inline">\(m\)</span> and <span
+class="math inline">\(\hbar\)</span> from <span
+class="math inline">\((E_{11},\omega_{11})\)</span></li>
+</ul>
+<h2 data-number="8.2" id="not-claimed-here"><span
+class="header-section-number">8.2</span> Not claimed here</h2>
+<ul>
+<li>existence and stability of knots for arbitrary initial data,</li>
+<li>uniqueness of the toroidal mode or its formation mechanism,</li>
+<li>full quantum measurement theory.</li>
+</ul>
+<p>These are separate questions.</p>
+<h1 data-number="9" id="closing-statement"><span
+class="header-section-number">9</span> Closing statement</h1>
+<p>In a source-free Maxwell universe, continuity laws are identities,
+not postulates. When energy localizes into a persistent knot, its coarse
+motion follows from flux balance and looks Newtonian. When a toroidal
+mode is narrow-band, its envelope obeys Schrödinger dynamics up to a
+controlled <span class="math inline">\(O(\epsilon^2)\)</span>
+correction.</p>
+</body>
+</html>
