@@ -20,7 +20,7 @@ keywords:
 DOI:
 ---
 
-![Opening a file from the WSL2 terminal using winopen, launching the native Windows viewer](assets/open-files-from-wsl2-terminal.png)
+![Opening a file from the WSL2 terminal using winopen, launching the native Windows viewer](https://siran.github.io/assets/writing/open-files-from-wsl2-terminal.png)
 
 
 WSL2 is fantastic.
@@ -260,7 +260,7 @@ friction, and a smoother dev loop always feels good 😊
 
 ---
 
-![ ](assets/image.png)
+![ ](https://siran.github.io/assets/writing/100-vc.png)
 
 
 *✅ 100% vibe-code certified 💯*
