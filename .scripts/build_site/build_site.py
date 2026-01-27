@@ -598,6 +598,46 @@ def _frontmatter_meta_block(front: str) -> str:
     lines.append("</div>")
     return "\n".join(lines) + "\n"
 
+def _frontmatter_meta(front: str) -> dict[str, str | list[str]]:
+    if not front:
+        return {}
+    try:
+        meta = yaml.safe_load(front) or {}
+    except Exception:
+        return {}
+    if not isinstance(meta, dict) or not meta:
+        return {}
+
+    meta_lower = {str(k).lower(): v for k, v in meta.items()}
+
+    def get(*keys):
+        for key in keys:
+            if key in meta:
+                return meta[key]
+            lk = str(key).lower()
+            if lk in meta_lower:
+                return meta_lower[lk]
+        return None
+
+    title = str(get("title") or "").strip()
+    subtitle = str(get("subtitle") or "").strip()
+    onesent = str(get("one-sentence-summary", "one_sentence_summary", "onesent") or "").strip()
+    summary = str(get("summary", "abstract") or "").strip()
+    kws = _meta_list(get("keywords", "kws", "keyword"))
+
+    out: dict[str, str | list[str]] = {}
+    if title:
+        out["title"] = title
+    if subtitle:
+        out["subtitle"] = subtitle
+    if onesent:
+        out["onesent"] = onesent
+    if summary:
+        out["summary"] = summary
+    if kws:
+        out["keywords"] = kws
+    return out
+
 # ---------- templating ----------
 def write_html(out_html: Path, body_html: str, head_extra: str = "", title: str = ""):
     # All pages (including *.md.html mirrors) get header + breadcrumb (for mirrors)
@@ -1856,7 +1896,6 @@ def _format_dir_index_common(
 
     lines = []
     lines.append(crumb_link(list(rel_dir.parts)))
-    lines.append("")
 
     sort_links = []
     for key, label, _default_dir in DIR_INDEX_SORTS:
@@ -1870,7 +1909,6 @@ def _format_dir_index_common(
         + " | ".join(sort_links)
         + "</div>"
     )
-    lines.append("")
 
     items_sorted = _sort_dir_index_items(items, sort_key, sort_dir)
 
@@ -2062,6 +2100,8 @@ def build_out_indexes(hidden_stems: set[tuple[str, str]], article_dirs: set[Path
         for fname in sorted(filenames, key=lambda x: x.lower()):
             if fname.startswith("."):
                 continue
+            if fname in {"robots.txt", "rss.xml", "sitemap.xml", "search-index.json"}:
+                continue
             p = d / fname
             if p.name in EXCLUDE_NAMES:
                 continue
@@ -2103,6 +2143,165 @@ def build_out_indexes(hidden_stems: set[tuple[str, str]], article_dirs: set[Path
             write_md_like_page(out_html, md_body, title=title, escape_html=False)
             if key == DIR_INDEX_DEFAULT:
                 write_md_like_page(d / "index.html", md_body, title=title, escape_html=False)
+
+def _provenance_meta_map() -> dict[str, dict[str, str | list[str]]]:
+    out: dict[str, dict[str, str | list[str]]] = {}
+    for prov in iter_provenance_files():
+        try:
+            data = yaml.safe_load(prov.read_text(encoding="utf-8")) or {}
+        except Exception:
+            continue
+        if not isinstance(data, dict):
+            continue
+        pf_block = data.get("parsed_from_pnpmd") or {}
+        title = (data.get("title") or pf_block.get("title") or "") or ""
+        title = (title or "").strip()
+        subtitle = (data.get("subtitle") or pf_block.get("subtitle") or "") or ""
+        subtitle = (subtitle or "").strip()
+        summary = (
+            data.get("summary")
+            or data.get("abstract")
+            or pf_block.get("summary")
+            or pf_block.get("abstract")
+            or ""
+        )
+        summary = (summary or "").strip()
+        kws = (data.get("keywords") or pf_block.get("keywords") or []) or []
+        if not isinstance(kws, list):
+            kws = [kws]
+        kws_list = []
+        for k in kws:
+            if k is None:
+                continue
+            ks = str(k).strip()
+            if ks:
+                kws_list.append(ks)
+        kws = kws_list
+        onesent = (
+            data.get("one_sentence_summary")
+            or pf_block.get("one_sentence_summary")
+            or pf_block.get("one_sentence")
+            or ""
+        )
+        onesent = (onesent or "").strip()
+
+        meta: dict[str, str | list[str]] = {}
+        if title:
+            meta["title"] = title
+        if subtitle:
+            meta["subtitle"] = subtitle
+        if onesent:
+            meta["onesent"] = onesent
+        if summary:
+            meta["summary"] = summary
+        if kws:
+            meta["keywords"] = kws
+        if not meta:
+            continue
+        rel_dir = rel(prov.parent).as_posix()
+        out[rel_dir] = meta
+    return out
+
+def _frontmatter_meta_from_path(path: Path) -> dict[str, str | list[str]]:
+    try:
+        with path.open("r", encoding="utf-8") as f:
+            head = f.read(65536)
+    except Exception:
+        return {}
+    m_front = re.match(r"^---\s*\n(.*?)\n---\s*\n", head, flags=re.DOTALL)
+    if not m_front:
+        return {}
+    return _frontmatter_meta(m_front.group(1))
+
+def build_search_index(hidden_stems: set[tuple[str, str]]):
+    prov_meta = _provenance_meta_map()
+    entries: list[dict[str, str | list[str]]] = []
+    for dirpath, dirnames, filenames in os.walk(OUT):
+        d = Path(dirpath)
+        rel_parts = rel_out(d).parts if d != OUT else ()
+        in_hidden = (
+            len(rel_parts) >= 2 and (rel_parts[0], rel_parts[1]) in hidden_stems
+        )
+        if in_hidden:
+            dirnames.clear()
+            continue
+
+        keep = []
+        for dd in list(dirnames):
+            if dd.startswith(".") and dd != ".well-known":
+                continue
+            child = d / dd
+            child_rel_parts = rel_out(child).parts
+            if len(child_rel_parts) >= 2 and (child_rel_parts[0], child_rel_parts[1]) in hidden_stems:
+                continue
+            if (child / "pyvenv.cfg").exists():
+                continue
+            keep.append(dd)
+        dirnames[:] = keep
+
+        for dd in keep:
+            child = d / dd
+            rel_path = rel_out(child).as_posix()
+            href = "/" + quote(rel_path, safe="/:@-._~") + "/"
+            entries.append({
+                "path": rel_path + "/",
+                "href": href,
+                "type": "dir",
+            })
+
+        hide_names = _book_artifact_hide_names(d)
+        for fname in filenames:
+            if fname.startswith("."):
+                continue
+            if fname in hide_names:
+                continue
+            if fname in EXCLUDE_NAMES:
+                continue
+            lower_name = fname.lower()
+            if lower_name == "search-index.json":
+                continue
+            if lower_name == "index.html" or (lower_name.startswith("index.") and lower_name.endswith(".html")):
+                continue
+            if lower_name.endswith(".md.html") or lower_name.endswith(".markdown.html"):
+                continue
+            p = d / fname
+            rel_path = rel_out(p).as_posix()
+            href = "/" + quote(rel_path, safe="/:@-._~")
+            if p.suffix.lower() in MD_EXTS:
+                rendered = p.with_suffix(p.suffix + ".html")
+                rel_rendered = rel_out(rendered).as_posix()
+                href = "/" + quote(rel_rendered, safe="/:@-._~")
+            entry: dict[str, str | list[str]] = {
+                "path": rel_path,
+                "href": href,
+                "type": "file",
+            }
+
+            meta: dict[str, str | list[str]] = {}
+            if p.suffix.lower() in MD_EXTS:
+                meta = _frontmatter_meta_from_path(p)
+
+            if not meta:
+                rel_dir = rel_out(p.parent).as_posix()
+                meta = prov_meta.get(rel_dir, {})
+
+            if meta:
+                if "title" in meta:
+                    entry["title"] = meta["title"]
+                if "subtitle" in meta:
+                    entry["subtitle"] = meta["subtitle"]
+                if "onesent" in meta:
+                    entry["onesent"] = meta["onesent"]
+                if "summary" in meta:
+                    entry["summary"] = meta["summary"]
+                if "keywords" in meta:
+                    entry["keywords"] = meta["keywords"]
+
+            entries.append(entry)
+
+    entries.sort(key=lambda e: e["path"].lower())
+    out_path = OUT / "search-index.json"
+    out_path.write_text(json.dumps(entries, ensure_ascii=True), encoding="utf-8")
 
 def copy_static():
     OUT.mkdir(parents=True, exist_ok=True)
@@ -2430,6 +2629,7 @@ def main():
 
     # Build directory indexes based on the final OUT tree (includes rendered books).
     build_out_indexes(hidden_stems, article_dirs)
+    build_search_index(hidden_stems)
 
     build_sitemap_and_robots()
     build_rss_feed()
