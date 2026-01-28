@@ -70,10 +70,14 @@ $$
 \int_{\text{paths through slit }j}\!\!\mathcal Dq\;
 \exp\!\left[
 \frac{i}{\hbar}
-\int dt\Big(\tfrac12 m\dot q^2 - V_0(q)\Big)
+\int dt\Big(\tfrac12 m\dot q^2 \Big)
 \right],
 \qquad j=1,2.
 $$
+
+Here the electron is taken to be free between source, slits, and screen; any
+potential common to both slits contributes equally to all paths and is therefore
+irrelevant to interference.
 
 The probability density is
 
@@ -96,24 +100,24 @@ families of paths.
 A detector is not an abstract observer. It is a physical device.
 
 By definition, a detector:
-
-- is a circuit with at least two metastable macroscopic states ("triggered" and
-  "not triggered"),
-- must contain an energetic barrier separating those states (to avoid continuous
-  firing),
-- and thus, requires an energy transfer to cross that barrier and register a
+- is a circuit with at least two metastable macroscopic states (“triggered” and
+  “not triggered”),
+- must contain an energetic barrier separating those states, in order to avoid
+  continuous firing,
+- and therefore requires an energy transfer to cross that barrier and register a
   detection event.
 
 Consequently, the presence of a detector near a slit necessarily introduces a
-localized interaction between the electron/photon/"quantum entity" and the
-detector's activation circuit, independent of whether a macroscopic click
-ultimately occurs. In a way, a detector looks to the electron like a barrier
-that takes energetic effort to overcome; this is independent of the detector
-firing. And so, a detectorless slit looks energetically costless.
+deterministic interaction between the electron and the detector’s circuit,
+independent of whether a macroscopic click ultimately occurs.
 
-In this picture, then, the electron wave deterministically traverses both slits,
-and each slit leaves its own energetic fingerprint in the phase of the electron,
-as seen in its phase -- a rotation.
+From the electron’s perspective, a detector constitutes an energetic influence
+that must be overcome. A detectorless slit, by contrast, is energetically
+costless.
+
+In this picture, the electron wave deterministically traverses both slits, and
+each slit imprints its own energetic signature on the electron through a phase
+shift determined by the interaction.
 
 
 ### Scope and Modeling Assumptions
@@ -121,11 +125,10 @@ as seen in its phase -- a rotation.
 All detector degrees of freedom are treated implicitly through slit-dependent
 interaction potentials. This involves no loss of generality: any microscopic
 detector model with additional degrees of freedom can be integrated out,
-yielding an effective action (or influence functional) acting on the electron
-alone. The resulting phase functional is equivalent to the suppression of
-interference obtained in standard decoherence treatments, expressed here
-entirely in Lagrangian and path-integral language. Only unitary dynamics of the
-full system are assumed.
+yielding an effective action happening on the electron alone. The resulting
+phase functional is equivalent to the suppression of interference obtained in
+standard decoherence treatments, expressed here entirely in Lagrangian and
+path-integral language. Only unitary dynamics of the full system are assumed.
 
 ---
 
@@ -133,7 +136,10 @@ full system are assumed.
 ## 4. Slit-Dependent Interaction Potentials
 
 Let the detector near slit $j$ introduce a localized interaction
-potential $V_j(q,t)$. The amplitudes become
+potential $V_j(q,t)$. Any potential common to both slits has been omitted,
+as it contributes equally to all paths and does not affect relative phases.
+
+The amplitudes become
 
 $$
 \psi_j(x)=
@@ -142,35 +148,34 @@ $$
 \frac{i}{\hbar}
 \int dt\Big(
 \tfrac12 m\dot q^2
-- V_0(q)
 - V_j(q,t)
 \Big)
 \right].
 $$
 
-All detector physics enters solely through $V_j$.
+All detector physics enters solely through the slit-dependent potentials
+$V_j$.
 
 ---
 
 
 ## 5. Phase Evolution Induced by the Detector
 
-Define the action difference between the two slit families:
+Define the action increment associated with each detector interaction:
 
 $$
-\Delta S
-=
-S_1-S_2
-=
--\int dt\,(V_1 - V_2).
+\Delta S_j = -\int dt\,V_j(q,t).
 $$
 
-The corresponding relative phase is
+Only differences between these action increments affect interference. The
+relative phase between the two slit contributions is
 
 $$
 \Delta\phi
 =
-\frac{\Delta S}{\hbar}.
+\frac{1}{\hbar}(\Delta S_2-\Delta S_1)
+=
+\frac{1}{\hbar}\int dt\,(V_1-V_2).
 $$
 
 The total amplitude at the screen can therefore be written as
@@ -183,122 +188,15 @@ $$
 e^{i\Delta\phi}\psi_2^{(0)}(x),
 $$
 
-where $\psi_j^{(0)}$ are the amplitudes in the absence of detector
-interaction.
+where $\psi_j^{(0)}$ denote the detectorless slit amplitudes.
 
-The probability density is
-
-$$
-P(x)
-=
-|\psi_1|^2
-+
-|\psi_2|^2
-+
-2\,\mathrm{Re}\!\left(
-\psi_1^{(0)}\psi_2^{(0)*} e^{i\Delta\phi}
-\right).
-$$
-
-The cross term depends entirely on the deterministic phase shift generated by
-$V_1 - V_2$.
+If the two detectors are energetically identical, $V_1=V_2$, then
+$\Delta\phi=0$ and full double-slit interference is recovered.
 
 ---
 
 
 ## 6. Continuous Suppression of Interference
-
-The presence of a detector introduces a slit-dependent interaction potential
-$V_1 - V_2$. This interaction modifies the relative phase between the two
-slit contributions.
-
-The amplitude at the screen is
-
-$$
-\psi(x)=\psi_1^{(0)}(x)+e^{i\Delta\phi}\psi_2^{(0)}(x),
-\qquad
-\Delta\phi=\frac{1}{\hbar}\int dt\,(V_1-V_2).
-$$
-
-
-### Derivation of the relative phase from first principles
-
-Denoting by $q(t)$ a continuous spacetime trajectory of the electron,
-with boundary condition $q(T)=x$ at the screen, the probability
-amplitude at $x$ can be written as
-
-$$
-\psi(x)=\int_{q(T)=x} \mathcal Dq\;
-\exp\!\left[
-\frac{i}{\hbar}
-\int_{0}^{T} dt\Big(
-\tfrac12 m\dot q^2 - V_0(q) - V(q,t)
-\Big)
-\right],
-$$
-
-where the functional integral runs over all trajectories $q(t)$
-originating at the source and terminating at the screen point $x$.
-No restriction is placed on the intermediate path; each trajectory contributes a
-phase determined by the action accumulated along it.
-
-Assume the detector produces a slit-localized interaction, so that along any
-path passing through slit $j$ the interaction term equals
-$V_j(q,t)$, and outside the detector region it vanishes. Then the
-amplitude decomposes as a sum over the two disjoint classes of paths:
-
-$$
-\psi(x)=\psi_1(x)+\psi_2(x),
-$$
-
-with
-
-$$
-\psi_j(x)=\int_{\text{paths via slit }j}\mathcal Dq\;
-\exp\!\left[
-\frac{i}{\hbar}
-\int dt\Big(
-\tfrac12 m\dot q^2 - V_0(q) - V_j(q,t)
-\Big)
-\right].
-$$
-
-Define the corresponding detectorless amplitudes
-
-$$
-\psi_j^{(0)}(x)=\int_{\text{paths via slit }j}\mathcal Dq\;
-\exp\!\left[
-\frac{i}{\hbar}
-\int dt\Big(
-\tfrac12 m\dot q^2 - V_0(q)
-\Big)
-\right].
-$$
-
-If, within each slit class, the detector interaction contributes an additive
-action increment
-
-$$
-\Delta S_j = -\int dt\,V_j(q,t),
-$$
-
-then each $\psi_j$ factors as
-
-$$
-\psi_j(x)=e^{\frac{i}{\hbar}\Delta S_j}\,\psi_j^{(0)}(x).
-$$
-
-Therefore the total amplitude can be written as
-
-$$
-\psi(x)=\psi_1^{(0)}(x)+e^{i\Delta\phi}\psi_2^{(0)}(x),
-\qquad
-\Delta\phi=\frac{1}{\hbar}(\Delta S_2-\Delta S_1)
-=\frac{1}{\hbar}\int dt\,(V_1-V_2).
-$$
-
-
-### Probability density
 
 The corresponding probability density is
 
@@ -314,17 +212,18 @@ P(x)
 \right).
 $$
 
-As the interaction strength is increased, the phase difference $\Delta\phi$
-becomes path-dependent. The cross term then ceases to contribute to the final
-probability distribution, yielding
+As the detector interaction strength is increased, the phase difference
+$\Delta\phi$ becomes dependent on the class of paths contributing to the
+amplitude. The cross term then ceases to contribute to the final probability
+distribution, yielding
 
 $$
 P(x)\;\rightarrow\;
 |\psi_1^{(0)}|^2+|\psi_2^{(0)}|^2.
 $$
 
-The interference pattern is therefore continuously deformed into the single-slit
-envelope. No discontinuity or additional postulate is involved.
+The interference pattern is continuously deformed into the single-slit envelope.
+No discontinuity or additional postulate is involved.
 
 ---
 
@@ -332,7 +231,6 @@ envelope. No discontinuity or additional postulate is involved.
 ## 7. No Measurement Postulate Required
 
 At no stage does the description require:
-
 - wavefunction collapse,
 - stochastic dynamics,
 - observer dependence,
@@ -348,19 +246,3 @@ The disappearance of interference is a consequence of deterministic phase
 evolution under interaction. Nothing else is required.
 
 ---
-
-
-## 8. Conclusion
-
-The which-way quantum double-slit experiment is an ordinary interference problem
-governed by deterministic dynamics.
-
-Which-way detectors:
-- introduce unavoidable interaction potentials,
-- rotate the relative phase of path amplitudes,
-- suppress interference continuously via action differences.
-
-The disappearance of interference is not a mystery. It is a consequence of phase
-evolution under interaction.
-
-Nothing more is required.
