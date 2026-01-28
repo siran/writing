@@ -1,0 +1,74 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: Open Images (or Any File) from WSL2 — Directly in Windows
+doi: 10.5281/zenodo.18396224
+concept_doi: null
+permalink: "https://writing.preferredframe.com/prints/Open Images (or Any File) from WSL2 — Directly in Windows/10.5281/zenodo.18396224/"
+publication_date: '2026-01-27'
+publication_year: '2026'
+keywords:
+- WSL2
+- Windows Subsystem for Linux
+- zsh
+- bash
+- Windows
+- productivity
+- developer tools
+one_sentence_summary: Open images and any other files from the WSL2 terminal directly in their native Windows applications.
+abstract: Working in WSL2 often breaks simple workflows like opening images or PDFs from the terminal. This article presents a minimal, reliable shell function that opens any file from WSL2 using Windows Explorer, avoiding common issues with UNC paths and unreliable direct application launches.
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: Open Images (or Any File) from WSL2 — Directly in Windows
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  description: Working in WSL2 often breaks simple workflows like opening images or PDFs from the terminal. This article presents a minimal, reliable shell function that opens any file from WSL2 using Windows Explorer, avoiding common issues with UNC paths and unreliable direct application launches.
+  keywords:
+  - WSL2
+  - Windows Subsystem for Linux
+  - zsh
+  - bash
+  - Windows
+  - productivity
+  - developer tools
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-27'
+  license: cc-by-nc-nd-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Open Images (or Any File) from WSL2 — Directly in Windows/10.5281/zenodo.18396224/Open Images (or Any File) from WSL2 — Directly in Windows.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Open Images (or Any File) from WSL2 — Directly in Windows/10.5281/zenodo.18396224/Open Images (or Any File) from WSL2 — Directly in Windows.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Open Images (or Any File) from WSL2 — Directly in Windows/10.5281/zenodo.18396224/Open Images (or Any File) from WSL2 — Directly in Windows.embed.html"
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: Open images and any other files from the WSL2 terminal directly in their native Windows applications.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: 86a0461491b5e7ecf9ba83c127484f793a313556
+  filename: Open Images (or Any File) from WSL2 — Directly in Windows.md
+artifacts:
+  md: Open Images (or Any File) from WSL2 — Directly in Windows.md
+  md_url: "https://writing.preferredframe.com/prints/Open Images (or Any File) from WSL2 — Directly in Windows/10.5281/zenodo.18396224/Open Images (or Any File) from WSL2 — Directly in Windows.md"
+  pandoc_md_name: Open Images (or Any File) from WSL2 — Directly in Windows.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/Open Images (or Any File) from WSL2 — Directly in Windows/10.5281/zenodo.18396224/Open Images (or Any File) from WSL2 — Directly in Windows.pandoc.md"
+  html_name: Open Images (or Any File) from WSL2 — Directly in Windows.html
+  html_url: "https://writing.preferredframe.com/prints/Open Images (or Any File) from WSL2 — Directly in Windows/10.5281/zenodo.18396224/Open Images (or Any File) from WSL2 — Directly in Windows.html"
+  primary: md
+  embed_html_name: Open Images (or Any File) from WSL2 — Directly in Windows.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/Open Images (or Any File) from WSL2 — Directly in Windows/10.5281/zenodo.18396224/Open Images (or Any File) from WSL2 — Directly in Windows.embed.html"
