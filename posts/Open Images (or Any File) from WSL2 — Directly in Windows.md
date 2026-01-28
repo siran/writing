@@ -7,8 +7,8 @@ one-sentence-summary: Open images and any other files from the WSL2 terminal dir
 summary: >
   Working in WSL2 often breaks simple workflows like opening images or PDFs from the terminal.
   This article presents a minimal, reliable shell function that opens any file from WSL2
-  using the default Windows application, avoiding common issues with explorer.exe,
-  UNC paths, and fragile aliases.
+  using Windows Explorer, avoiding common issues with UNC paths
+  and unreliable direct application launches.
 keywords:
   - WSL2
   - Windows Subsystem for Linux
@@ -44,10 +44,10 @@ Let’s fix this **properly** — with one small, reliable function.
 
 ## TL;DR
 
-To open **any file** from WSL2 in its *native* Windows app, add one small shell
+To open **any file** from WSL2 in its Windows environment, add one small shell
 function to your config file.
 
-⚠️ **Limitation:** works on **real paths only** (no symbolic links).
+⚠️ **Limitation:** this works on **real paths only** (no symbolic links).
 
 
 ## Quick Setup (60 seconds)
@@ -60,9 +60,9 @@ function to your config file.
 2. Paste this function:
 
 ```sh
-
-winopen() { cmd.exe /c 'cd /d C:\ && start "" "'"$(wslpath -w "$1")"'"' }
-
+winopen() {
+  explorer.exe "$(wslpath -w "$(realpath "$1")")"
+}
 ```
 
 3. Reload your shell:
@@ -97,9 +97,9 @@ vim ~/.zshrc
 Add this one-liner anywhere:
 
 ```zsh
-
-winopen() { cmd.exe /c 'cd /d C:\ && start "" "'"$(wslpath -w "$1")"'"' }
-
+winopen() {
+  explorer.exe "$(wslpath -w "$(realpath "$1")")"
+}
 ```
 
 
@@ -110,9 +110,9 @@ The same function works in Bash.
 Add it to `~/.bashrc`:
 
 ```bash
-
-winopen() { cmd.exe /c 'cd /d C:\ && start "" "'"$(wslpath -w "$1")"'"' }
-
+winopen() {
+  explorer.exe "$(wslpath -w "$(realpath "$1")")"
+}
 ```
 
 
@@ -121,9 +121,8 @@ winopen() { cmd.exe /c 'cd /d C:\ && start "" "'"$(wslpath -w "$1")"'"' }
 On Unix-like systems with a GUI, the equivalent is trivial:
 
 ```bash
-
-open file.png        # macOS xdg-open file.png    # Linux desktop
-
+open file.png        # macOS
+xdg-open file.png    # Linux desktop
 ```
 
 WSL2 is special because it crosses OS boundaries.
@@ -134,22 +133,22 @@ WSL2 is special because it crosses OS boundaries.
 Reload your shell:
 
 ```bash
-
-source ~/.zshrc   # or: source ~/.bashrc
-
+source ~/.zshrc   # or source ~/.bashrc
 ```
 
 Then:
 
 ```bash
-
 winopen image.png
 winopen file.pdf
 winopen video.mp4
-
 ```
 
-It opens instantly using the default Windows viewer.
+Windows Explorer opens at the correct location.
+
+Select the file. Hit **Enter**.
+
+The file opens using the default Windows application.
 
 
 ## The Problem (What’s Actually Going On)
@@ -158,92 +157,50 @@ WSL2 runs Linux in a VM. That means:
 
 * Your files live in a Linux filesystem
 * Windows apps expect Windows paths
-* `explorer.exe` is a **file manager**, not a file opener
-* Windows apps often break when launched from UNC paths like
-  `\\wsl.localhost\Ubuntu-22.04\...`
+* Windows sees WSL files as UNC paths like
+  `\\wsl.localhost\Ubuntu-22.04\home\username\...`
+* Many Windows applications handle UNC paths inconsistently
 
 So even when a command *looks* correct, it often fails silently.
 
 This is not user error. It’s impedance mismatch.
 
 
-## Why `explorer.exe` Is the Wrong Tool
+## Why Explorer Is the Right Tool
 
-* `explorer.exe` opens folders, not files
-* It does **not** reliably invoke file associations
-* It behaves inconsistently from WSL
-* It often opens Explorer instead of the viewer
+Windows Explorer:
 
-That’s why images don’t open in Photos / Preview.
+* Fully supports UNC paths
+* Is designed to browse network locations
+* Reliably dispatches files via default associations
+* Does not suffer from viewer-specific UNC bugs
 
-
-## The Correct Tool: `cmd.exe start`
-
-On Windows, the canonical way to open a file with its default app is:
-
-```cmd
-
-start "" file.ext
-
-```
-
-This invokes **ShellExecute**, which respects file associations.
-
-From WSL, two extra problems appear:
-
-1. Windows inherits a **UNC working directory**
-2. `start` has extremely fragile argument parsing
-
-The function fixes both.
+Explorer is the stable bridge between WSL and Windows.
 
 
-## Why This Works (No Hand-Waving)
+## The Correct Mental Model
 
-* `wslpath -w` converts Linux paths to real Windows paths
-* `cmd.exe /c start` invokes Windows file associations
-* `cd /d C:\` avoids Windows failing on UNC working directories
-* The empty `""` is required by `start` (window title)
-* A **function**, not an alias, handles arguments correctly
+WSL–Windows integration has multiple layers:
 
-This avoids every common WSL ↔ Windows failure mode.
+| Goal                    | Tool             | Reliability |
+| ----------------------- | ---------------- | ----------- |
+| Browse WSL files        | Windows Explorer | ✅ Always    |
+| Open via Enter          | Explorer         | ✅ Always    |
+| Open directly in app    | App-dependent    | ⚠️          |
+| Guaranteed native paths | `/mnt/c`         | ✅           |
 
-
-## Can This Be an Alias?
-
-Short answer: **don’t**.
-
-Aliases:
-
-* are text substitution
-* don’t handle arguments safely
-* break with nested quoting
-* fail silently
-
-Functions are the correct tool.
-
-If you want muscle memory:
-
-```bash
-
-alias o=winopen
-
-```
-
-⚠️ Double-edged sword — `o *` will try to open *everything* 💣💥
+Once you use the right layer, the problem disappears.
 
 
-## What Can It Open?
+## Recommendation
 
-Anything Windows knows how to open:
+* Use **Explorer** for anything under `/home/...`
+* Let Explorer handle UNC paths
+* Hit **Enter** to open files
+* Store files on `/mnt/c` only if you need guaranteed direct app
+  launches
 
-* Images
-* PDFs
-* Videos
-* Text files
-* Archives
-* Custom file types
-
-No special cases.
+Simple. Honest. Reliable.
 
 
 ## Final Thoughts
@@ -258,9 +215,9 @@ One command. Any file. Native Windows apps.
 Honestly, this one made me smile when it finally clicked — fewer hacks, less
 friction, and a smoother dev loop always feels good 😊
 
----
+* * *
 
-![ ](https://siran.github.io/assets/writing/100-vc.png)
+![ ](https://siran.github.io/assets/writing/100pc-vibe-coded.png)
 
 
 *✅ 100% vibe-code certified 💯*
