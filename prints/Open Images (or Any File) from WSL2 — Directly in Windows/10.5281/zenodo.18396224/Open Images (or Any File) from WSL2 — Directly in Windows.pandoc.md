@@ -20,6 +20,65 @@ keywords:
 DOI: https://writing.preferredframe.com/doi/10.5281/zenodo.18396224
 ---
 
+**One-Sentence Summary.** Open images and any other files from the WSL2 terminal directly in their native Windows applications.
+
+**Abstract.** Working in WSL2 often breaks simple workflows like opening images or PDFs from the terminal. This article presents a minimal, reliable shell function that opens any file from WSL2 using Windows Explorer, avoiding common issues with UNC paths and unreliable direct application launches.
+
+**Keywords.** WSL2, Windows Subsystem for Linux, zsh, bash, Windows, productivity, developer tools
+
+\begingroup
+\setcounter{tocdepth}{1}
+\renewcommand{\contentsname}{\centering Table of Contents}
+\renewcommand{\numberline}[1]{#1.\hspace{0.6em}}
+\setlength{\parskip}{0.35em}
+\vspace{1.0\baselineskip}
+\begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
+\vspace{1.1\baselineskip}
+\tableofcontents
+\endgroup
+
+```{=html}
+<div class="toc">
+<hr class="toc-divider" />
+<div class="toc-title">Table of Contents</div>
+<ul>
+<li><a href="#tldr">TL;DR</a>
+</li>
+<li><a href="#quick-setup-60-seconds">Quick Setup (60 seconds)</a>
+</li>
+<li><a href="#zsh-manual">ZSH (manual)</a>
+</li>
+<li><a href="#bash">Bash</a>
+</li>
+<li><a href="#macos-linux-bsd-for-reference">macOS, Linux, BSD (for reference)</a>
+</li>
+<li><a href="#use-it">Use It</a>
+</li>
+<li><a href="#the-problem-whats-actually-going-on">The Problem (What’s Actually Going On)</a>
+</li>
+<li><a href="#why-explorer-is-the-right-tool">Why Explorer Is the Right Tool</a>
+</li>
+<li><a href="#the-correct-mental-model">The Correct Mental Model</a>
+</li>
+<li><a href="#recommendation">Recommendation</a>
+</li>
+<li><a href="#final-thoughts">Final Thoughts</a>
+</li>
+</ul>
+</div>
+```
+
+
+```{=latex}
+\vspace{1.0\baselineskip}
+\begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
+\vspace{1.0\baselineskip}
+```
+
+```{=html}
+<hr class="meta-divider" style="width:35%; margin:2rem auto; border:0; height:1px; background: rgba(0,0,0,0.35);" />
+```
+
 ![Opening a file from the WSL2 terminal using winopen, launching the native Windows viewer](https://siran.github.io/assets/writing/open-files-from-wsl2-terminal.png)
 
 
@@ -54,8 +113,8 @@ function to your config file.
 
 1. Open your shell config file:
 
-   * ZSH → `~/.zshrc`
-   * Bash → `~/.bashrc`
+   * ZSH $\to$ `~/.zshrc`
+   * Bash $\to$ `~/.bashrc`
 
 2. Paste this function:
 
@@ -103,6 +162,7 @@ winopen() {
 ```
 
 
+
 ## Bash
 
 The same function works in Bash.
@@ -114,6 +174,7 @@ winopen() {
   explorer.exe "$(wslpath -w "$(realpath "$1")")"
 }
 ```
+
 
 
 ## macOS, Linux, BSD (for reference)
