@@ -2,14 +2,62 @@
 title: Light Speed as an Emergent Property of Electromagnetic Superposition
 subtitle: "Polarization Without Matter: A Field-Only Interpretation of Refraction"
 author: An M. Rodriguez
-date: 2026-01-10 13:20
+date: 2026-01-27
 keywords: Maxwell theory, electromagnetic superposition, polarization, linear response, refraction, phase delay, energy density, effective refractive index, variable light speed, field ontology
 one-sentence-summary: Light slows because electromagnetic waves interfere with phase-delayed secondary electromagnetic fields, making the effective speed of light an emergent, local property of electromagnetic superposition rather than a universal constant.
 summary: Polarization is treated as a secondary electromagnetic field rather than a property of matter. Within linear Maxwell theory and linear response, overlapping electromagnetic waves generate phase-delayed secondary fields whose superposition alters phase evolution and yields an effective refractive index. Electromagnetic waves therefore interact through the total field configuration they jointly create, and the effective local speed of light depends on the electromagnetic energy density of the environment. Refraction emerges as a consequence of field superposition and delayed response, without invoking particles, atoms, or nonlinear modifications of Maxwell’s equations.
 keywords: Maxwell theory, electromagnetic superposition, polarization, linear response, refraction, phase delay, energy density, effective refractive index, variable light speed, field ontology
 DOI: https://writing.preferredframe.com/doi/10.5281/zenodo.18396637
-concept_doi: https://writing.preferredframe.com/doi/10.5281/zenodo.18209800
 ---
+
+**One-Sentence Summary.** Light slows because electromagnetic waves interfere with phase-delayed secondary electromagnetic fields, making the effective speed of light an emergent, local property of electromagnetic superposition rather than a universal constant.
+
+**Abstract.** Polarization is treated as a secondary electromagnetic field rather than a property of matter. Within linear Maxwell theory and linear response, overlapping electromagnetic waves generate phase-delayed secondary fields whose superposition alters phase evolution and yields an effective refractive index. Electromagnetic waves therefore interact through the total field configuration they jointly create, and the effective local speed of light depends on the electromagnetic energy density of the environment. Refraction emerges as a consequence of field superposition and delayed response, without invoking particles, atoms, or nonlinear modifications of Maxwell’s equations.
+
+**Keywords.** Maxwell theory, electromagnetic superposition, polarization, linear response, refraction, phase delay, energy density, effective refractive index, variable light speed, field ontology
+
+\begingroup
+\setcounter{tocdepth}{1}
+\renewcommand{\contentsname}{\centering Table of Contents}
+\renewcommand{\numberline}[1]{#1.\hspace{0.6em}}
+\setlength{\parskip}{0.35em}
+\vspace{1.0\baselineskip}
+\begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
+\vspace{1.1\baselineskip}
+\tableofcontents
+\endgroup
+
+```{=html}
+<div class="toc">
+<hr class="toc-divider" />
+<div class="toc-title">Table of Contents</div>
+<ul>
+<li><a href="#summary">Summary</a>
+</li>
+<li><a href="#conceptual-clarification-linearity-superposition-and-interaction">Conceptual clarification: linearity, superposition, and interaction</a>
+</li>
+<li><a href="#goal">Goal</a>
+</li>
+<li><a href="#corollary">Corollary</a>
+</li>
+<li><a href="#derivation">Derivation</a>
+</li>
+<li><a href="#references">References</a>
+</li>
+</ul>
+</div>
+```
+
+
+```{=latex}
+\vspace{1.0\baselineskip}
+\begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
+\vspace{1.0\baselineskip}
+```
+
+```{=html}
+<hr class="meta-divider" style="width:35%; margin:2rem auto; border:0; height:1px; background: rgba(0,0,0,0.35);" />
+```
 
 ## Summary
 
@@ -80,6 +128,7 @@ spatial variations in electromagnetic field energy density across the universe.
 
 
 ## Derivation
+
 
 ### Maxwell theory and superposition
 

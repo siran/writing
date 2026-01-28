@@ -1,0 +1,85 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: Light Speed as an Emergent Property of Electromagnetic Superposition
+doi: 10.5281/zenodo.18396637
+concept_doi: 10.5281/zenodo.18209800
+permalink: "https://writing.preferredframe.com/prints/Light Speed as an Emergent Property of Electromagnetic Superposition/10.5281/zenodo.18396637/"
+publication_date: '2026-01-27'
+publication_year: '2026'
+keywords:
+- Maxwell theory
+- electromagnetic superposition
+- polarization
+- linear response
+- refraction
+- phase delay
+- energy density
+- effective refractive index
+- variable light speed
+- field ontology
+one_sentence_summary: Light slows because electromagnetic waves interfere with phase-delayed secondary electromagnetic fields, making the effective speed of light an emergent, local property of electromagnetic superposition rather than a universal constant.
+abstract: Polarization is treated as a secondary electromagnetic field rather than a property of matter. Within linear Maxwell theory and linear response, overlapping electromagnetic waves generate phase-delayed secondary fields whose superposition alters phase evolution and yields an effective refractive index. Electromagnetic waves therefore interact through the total field configuration they jointly create, and the effective local speed of light depends on the electromagnetic energy density of the environment. Refraction emerges as a consequence of field superposition and delayed response, without invoking particles, atoms, or nonlinear modifications of Maxwell’s equations.
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: Light Speed as an Emergent Property of Electromagnetic Superposition
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  description: Polarization is treated as a secondary electromagnetic field rather than a property of matter. Within linear Maxwell theory and linear response, overlapping electromagnetic waves generate phase-delayed secondary fields whose superposition alters phase evolution and yields an effective refractive index. Electromagnetic waves therefore interact through the total field configuration they jointly create, and the effective local speed of light depends on the electromagnetic energy density of the environment. Refraction emerges as a consequence of field superposition and delayed response, without invoking particles, atoms, or nonlinear modifications of Maxwell’s equations.
+  keywords:
+  - Maxwell theory
+  - electromagnetic superposition
+  - polarization
+  - linear response
+  - refraction
+  - phase delay
+  - energy density
+  - effective refractive index
+  - variable light speed
+  - field ontology
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-27'
+  license: cc-by-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Light Speed as an Emergent Property of Electromagnetic Superposition/10.5281/zenodo.18396637/Light Speed as an Emergent Property of Electromagnetic Superposition.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Light Speed as an Emergent Property of Electromagnetic Superposition/10.5281/zenodo.18396637/Light Speed as an Emergent Property of Electromagnetic Superposition.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Light Speed as an Emergent Property of Electromagnetic Superposition/10.5281/zenodo.18396637/Light Speed as an Emergent Property of Electromagnetic Superposition.pdf"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Light Speed as an Emergent Property of Electromagnetic Superposition/10.5281/zenodo.18396637/Light Speed as an Emergent Property of Electromagnetic Superposition.embed.html"
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: Light slows because electromagnetic waves interfere with phase-delayed secondary electromagnetic fields, making the effective speed of light an emergent, local property of electromagnetic superposition rather than a universal constant.
+change_log: improving summary, adding "Conceptual clarification"
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: d39accdc3b5dc2e4283a23f51ab8e4d35efba5f7
+  filename: Light Speed as an Emergent Property of Electromagnetic Superposition.md
+artifacts:
+  md: Light Speed as an Emergent Property of Electromagnetic Superposition.md
+  md_url: "https://writing.preferredframe.com/prints/Light Speed as an Emergent Property of Electromagnetic Superposition/10.5281/zenodo.18396637/Light Speed as an Emergent Property of Electromagnetic Superposition.md"
+  pandoc_md_name: Light Speed as an Emergent Property of Electromagnetic Superposition.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/Light Speed as an Emergent Property of Electromagnetic Superposition/10.5281/zenodo.18396637/Light Speed as an Emergent Property of Electromagnetic Superposition.pandoc.md"
+  html_name: Light Speed as an Emergent Property of Electromagnetic Superposition.html
+  html_url: "https://writing.preferredframe.com/prints/Light Speed as an Emergent Property of Electromagnetic Superposition/10.5281/zenodo.18396637/Light Speed as an Emergent Property of Electromagnetic Superposition.html"
+  primary: md
+  pdf_name: Light Speed as an Emergent Property of Electromagnetic Superposition.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/Light Speed as an Emergent Property of Electromagnetic Superposition/10.5281/zenodo.18396637/Light Speed as an Emergent Property of Electromagnetic Superposition.pdf"
+  embed_html_name: Light Speed as an Emergent Property of Electromagnetic Superposition.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/Light Speed as an Emergent Property of Electromagnetic Superposition/10.5281/zenodo.18396637/Light Speed as an Emergent Property of Electromagnetic Superposition.embed.html"
