@@ -25,6 +25,7 @@ from doc_utils import (
     detect_license,
     ORCID_URL_RE,
     ORCID_ID_RE,
+    DOI_RE,
 )
 
 # Make render helpers visible (for title_from_book_yaml).
@@ -259,6 +260,231 @@ def git_origin_url(repo: Path) -> str:
 # ---- zenodo DOI → record id ----
 
 ZENODO_DOI_RECID_RE = re.compile(r"zenodo\.(\d+)$")
+FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n(?:---|\.\.\.)\s*\n", re.DOTALL)
+FRONTMATTER_DOI_RE = re.compile(r"^(\s*)(doi)\s*:\s*(.*)$", re.IGNORECASE)
+FRONTMATTER_CONCEPT_DOI_RE = re.compile(
+    r"^(\s*)(concept[_-]?doi)\s*:\s*(.*)$", re.IGNORECASE
+)
+
+
+def _frontmatter_lines(md_text: str) -> Optional[Tuple[re.Match, List[str]]]:
+    m = FRONTMATTER_RE.match(md_text)
+    if not m:
+        return None
+    return m, m.group(1).splitlines()
+
+
+def _strip_wrapping_quotes(s: str) -> str:
+    s = (s or "").strip()
+    if len(s) >= 2 and s[0] == s[-1] and s[0] in {"'", '"'}:
+        return s[1:-1].strip()
+    return s
+
+
+def _extract_doi_from_value(s: str) -> str:
+    if not s:
+        return ""
+    m = DOI_RE.search(s)
+    if not m:
+        return ""
+    return m.group(0).rstrip(".,);:]")
+
+
+def _prompt_yes_no(prompt: str, *, default_yes: bool = True) -> bool:
+    while True:
+        ans = input(prompt).strip().lower()
+        if not ans:
+            return default_yes
+        if ans in ("y", "yes"):
+            return True
+        if ans in ("n", "no"):
+            return False
+        echo("Please answer y or n.")
+
+
+def _find_frontmatter_key(
+    lines: List[str], pattern: re.Pattern
+) -> Tuple[Optional[int], Optional[re.Match]]:
+    for i, line in enumerate(lines):
+        m = pattern.match(line)
+        if m:
+            return i, m
+    return None, None
+
+
+def _format_doi_value(raw_val: str, new_val: str) -> str:
+    raw = (raw_val or "").strip()
+    if len(raw) >= 2 and raw[0] == raw[-1] and raw[0] in {"'", '"'}:
+        return f"{raw[0]}{new_val}{raw[0]}"
+    return new_val
+
+
+def _maybe_update_frontmatter_doi(
+    src_md: Path,
+    site_repo: Path,
+    site_base: str,
+    doi: str,
+    concept_doi: Optional[str],
+) -> Tuple[bool, bool]:
+    """
+    Optionally update YAML front matter DOI in src_md.
+    Returns (updated, staged_in_site_repo).
+    """
+    if _is_pending_doi(doi):
+        echo("NOTE: pending DOI; skipping front matter DOI update.")
+        return False, False
+
+    md_text = src_md.read_text(encoding="utf-8")
+    fm = _frontmatter_lines(md_text)
+    if not fm:
+        echo("NOTE: no YAML front matter found; skipping DOI update.")
+        return False, False
+
+    m, lines = fm
+
+    doi_base = site_base.rstrip("/")
+    version_url = f"{doi_base}/doi/{doi}"
+    concept_url = f"{doi_base}/doi/{concept_doi}" if concept_doi else None
+
+    updated = False
+
+    # DOI (version)
+    doi_idx, doi_match = _find_frontmatter_key(lines, FRONTMATTER_DOI_RE)
+    doi_indent = doi_match.group(1) if doi_match else ""
+    doi_key = doi_match.group(2) if doi_match else "DOI"
+    doi_raw_val = doi_match.group(3) if doi_match else ""
+    doi_existing_val = _strip_wrapping_quotes(doi_raw_val)
+    doi_existing_doi = _extract_doi_from_value(doi_existing_val)
+
+    if doi_idx is None or not doi_existing_val:
+        echo("Front matter has no DOI value.")
+        if _prompt_yes_no(
+            f"Set front matter DOI (version) to {version_url}? [Y/n]: ",
+            default_yes=True,
+        ):
+            new_line = f"{doi_indent}{doi_key}: {_format_doi_value(doi_raw_val, version_url)}"
+            if doi_idx is None:
+                lines.append(new_line)
+                doi_idx = len(lines) - 1
+            else:
+                lines[doi_idx] = new_line
+            updated = True
+    elif doi_existing_val == version_url:
+        echo("Front matter DOI already points to the version DOI; leaving as-is.")
+    else:
+        if concept_doi and doi_existing_doi == concept_doi:
+            echo("Front matter DOI currently points to the concept DOI.")
+        elif doi_existing_doi == doi:
+            echo(f"Front matter DOI uses a non-canonical link: {doi_existing_val}")
+        else:
+            echo(f"Front matter DOI does not match the version DOI: {doi_existing_val}")
+        if _prompt_yes_no(f"Replace with {version_url}? [Y/n]: ", default_yes=True):
+            lines[doi_idx] = f"{doi_indent}{doi_key}: {_format_doi_value(doi_raw_val, version_url)}"
+            updated = True
+
+    # concept_doi (concept)
+    if concept_url:
+        c_idx, c_match = _find_frontmatter_key(lines, FRONTMATTER_CONCEPT_DOI_RE)
+        c_indent = c_match.group(1) if c_match else doi_indent
+        c_key = c_match.group(2) if c_match else "concept_doi"
+        c_raw_val = c_match.group(3) if c_match else ""
+        c_existing_val = _strip_wrapping_quotes(c_raw_val)
+        c_existing_doi = _extract_doi_from_value(c_existing_val)
+
+        if c_idx is None or not c_existing_val:
+            echo("Front matter has no concept_doi value.")
+            if _prompt_yes_no(
+                f"Set front matter concept_doi to {concept_url}? [Y/n]: ",
+                default_yes=True,
+            ):
+                new_line = f"{c_indent}{c_key}: {_format_doi_value(c_raw_val, concept_url)}"
+                if c_idx is None:
+                    insert_at = doi_idx + 1 if doi_idx is not None else len(lines)
+                    lines.insert(insert_at, new_line)
+                else:
+                    lines[c_idx] = new_line
+                updated = True
+        elif c_existing_val == concept_url:
+            echo("Front matter concept_doi already points to the concept DOI; leaving as-is.")
+        else:
+            if c_existing_doi == doi:
+                echo("Front matter concept_doi currently points to the version DOI.")
+            elif c_existing_doi == concept_doi:
+                echo(f"Front matter concept_doi uses a non-canonical link: {c_existing_val}")
+            else:
+                echo(f"Front matter concept_doi does not match the concept DOI: {c_existing_val}")
+            if _prompt_yes_no(f"Replace with {concept_url}? [Y/n]: ", default_yes=True):
+                lines[c_idx] = f"{c_indent}{c_key}: {_format_doi_value(c_raw_val, concept_url)}"
+                updated = True
+
+    if not updated:
+        return False, False
+
+    new_front = "\n".join(lines)
+    new_md = md_text[: m.start(1)] + new_front + md_text[m.end(1) :]
+    src_md.write_text(new_md, encoding="utf-8")
+    echo(f"+ updated DOI fields in front matter: {src_md}")
+
+    staged = False
+    try:
+        rel = src_md.resolve().relative_to(site_repo.resolve())
+        run(["git", "add", str(rel)], cwd=site_repo)
+        staged = True
+    except ValueError:
+        echo("NOTE: source file is not under the site repo; not staging DOI update.")
+    return True, staged
+
+
+def _update_rendered_frontmatter_doi(
+    md_path: Path,
+    site_base: str,
+    doi: str,
+    *,
+    strip_concept: bool = True,
+) -> bool:
+    """
+    Update DOI in a rendered/staged .md (version DOI only).
+    Optionally strip concept_doi from the rendered copy.
+    """
+    md_text = md_path.read_text(encoding="utf-8")
+    fm = _frontmatter_lines(md_text)
+    if not fm:
+        return False
+
+    m, lines = fm
+    changed = False
+
+    if strip_concept:
+        new_lines = [line for line in lines if not FRONTMATTER_CONCEPT_DOI_RE.match(line)]
+        if len(new_lines) != len(lines):
+            lines = new_lines
+            changed = True
+
+    if not _is_pending_doi(doi):
+        doi_base = site_base.rstrip("/")
+        version_url = f"{doi_base}/doi/{doi}"
+
+        doi_idx, doi_match = _find_frontmatter_key(lines, FRONTMATTER_DOI_RE)
+        doi_indent = doi_match.group(1) if doi_match else ""
+        doi_key = doi_match.group(2) if doi_match else "DOI"
+        doi_raw_val = doi_match.group(3) if doi_match else ""
+        new_line = f"{doi_indent}{doi_key}: {_format_doi_value(doi_raw_val, version_url)}"
+
+        if doi_idx is None:
+            lines.append(new_line)
+            changed = True
+        elif lines[doi_idx] != new_line:
+            lines[doi_idx] = new_line
+            changed = True
+
+    if not changed:
+        return False
+
+    new_front = "\n".join(lines)
+    new_md = md_text[: m.start(1)] + new_front + md_text[m.end(1) :]
+    md_path.write_text(new_md, encoding="utf-8")
+    echo(f"+ updated rendered DOI front matter: {md_path}")
+    return True
 
 
 def record_id_from_doi(doi: str) -> Optional[int]:
@@ -1113,6 +1339,7 @@ def preview_actions(
     args,
     zenodo_enabled: bool,
     zenodo_meta: Dict,
+    extra_commit_paths: Optional[List[Path]] = None,
 ):
     echo("\n--- PROVENANCE ---")
     print(prov_path)
@@ -1126,6 +1353,8 @@ def preview_actions(
 
     echo("\n--- FILES TO COMMIT (site repo) ---")
     files_to_commit = [final_md, final_html, final_pmd, prov_path]
+    if extra_commit_paths:
+        files_to_commit.extend(extra_commit_paths)
     for p in files_to_commit:
         echo(f" - {p.relative_to(site_repo)}")
 
@@ -1448,7 +1677,11 @@ def run_publish(args, ctx: PublishContext) -> None:
 
     license_id = detect_license(staged_md, book_yaml)
     if not license_id:
-        license_id = "cc-by-nc-nd-4.0"
+        license_id = "cc-by-4.0"
+
+    _update_rendered_frontmatter_doi(staged_md, site_base, doi)
+    if staged_pmd is not None:
+        _update_rendered_frontmatter_doi(staged_pmd, site_base, doi)
 
     # Final destination
     if "/" in doi:
@@ -1650,6 +1883,18 @@ def run_publish(args, ctx: PublishContext) -> None:
         publication_type=pub_type,
     )
 
+    extra_commit_paths: List[Path] = []
+    if src_md.suffix.lower() == ".md":
+        updated, staged = _maybe_update_frontmatter_doi(
+            src_md,
+            site_repo,
+            site_base,
+            doi,
+            concept_doi,
+        )
+        if updated and staged:
+            extra_commit_paths.append(src_md)
+
     # Preview
     preview_actions(
         site_repo,
@@ -1673,6 +1918,7 @@ def run_publish(args, ctx: PublishContext) -> None:
         args,
         zenodo_enabled,
         zenodo_meta,
+        extra_commit_paths=extra_commit_paths,
     )
 
     # Confirmation

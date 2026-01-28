@@ -9,7 +9,32 @@ import sys
 SIRAN_ROOT = Path.home() / "src" / "siran"
 ASSETS_ROOT = SIRAN_ROOT / "assets"
 BASE_URL = "https://siran.github.io/assets"
-TARGET_DIR = Path.cwd()   # only current directory
+
+
+def resolve_target(argv):
+    if not argv:
+        target_dir = Path.cwd()
+        md_files = list(target_dir.glob("*.md"))
+        return target_dir, md_files
+
+    if len(argv) > 1:
+        sys.exit("Usage: adjust-assets-url.py [path-to-md-or-dir]")
+
+    target = Path(argv[0]).expanduser()
+    if not target.is_absolute():
+        target = (Path.cwd() / target).resolve()
+
+    if target.is_dir():
+        target_dir = target
+        md_files = list(target_dir.glob("*.md"))
+        return target_dir, md_files
+
+    if target.is_file():
+        if target.suffix.lower() != ".md":
+            sys.exit(f"Target file is not .md: {target}")
+        return target.parent, [target]
+
+    sys.exit(f"Target path not found: {target}")
 
 # --- choose assets subdir ---
 if not ASSETS_ROOT.is_dir():
@@ -36,13 +61,14 @@ chosen_dir = ASSETS_ROOT / chosen
 
 print(f"\nUsing assets subdir: {chosen_dir}\n")
 
-# --- find asset links in markdown files (current dir only) ---
+# --- find asset links in markdown files (target dir or file) ---
 link_pattern = re.compile(r'(!?\[[^\]]*\]\()([^)]+)(\))')
 
 # local asset files referenced like assets/filename.ext
+TARGET_DIR, md_files = resolve_target(sys.argv[1:])
+if not md_files:
+    sys.exit(f"No markdown files found in: {TARGET_DIR}")
 local_assets = set()  # set of Paths relative to TARGET_DIR
-
-md_files = list(TARGET_DIR.glob("*.md"))
 
 for md in md_files:
     text = md.read_text(encoding="utf-8")
@@ -57,7 +83,7 @@ for md in md_files:
         # we care about links starting exactly with "assets/"
         if url.startswith("assets/"):
             rel_path = Path(url)  # e.g. assets/foo.png or assets/sub/foo.png
-            # assume the file is relative to the current dir
+            # assume the file is relative to the target dir
             local_assets.add(rel_path)
 
 print("Found asset references:")
@@ -105,7 +131,7 @@ print(f"  missing: {len(skipped_missing)}")
 print(f"  conflicts: {len(skipped_conflict)}")
 print()
 
-# --- rewrite URLs in markdown files (current dir only) ---
+# --- rewrite URLs in markdown files (target dir or file) ---
 def rewrite_url(url: str) -> str:
     # leave remote URLs as-is
     if url.startswith(("http://", "https://")):
