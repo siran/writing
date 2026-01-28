@@ -1233,21 +1233,24 @@ def _share_lines_versions(
     if not latest_alias or _is_pending_doi(_doi_value(latest)):
         return [f'"<a href="{stem_url}">{stem_display}</a>"', "(DOI pending)"]
 
-    lines = [f'latest version: <a href="{latest_alias}">{latest_alias}</a>']
     current_key = (
         current.get("doi_prefix"),
         current.get("doi_suffix"),
     ) if current else (None, None)
+    lines: list[str] = []
     for v in versions:
         date_disp = iso_date_str(v.get("date") or "")
         alias = _doi_alias(origin, v)
         label = date_disp or f"{v.get('doi_prefix','')}/{v.get('doi_suffix','')}"
-        if (v.get("doi_prefix"), v.get("doi_suffix")) == current_key:
-            label = f"{label} (this version)"
+        is_current = (v.get("doi_prefix"), v.get("doi_suffix")) == current_key
         if not alias or _is_pending_doi(_doi_value(v)):
-            lines.append(f"{label}: (DOI pending)" if label else "(DOI pending)")
+            line = f"{label} (DOI pending)" if label else "(DOI pending)"
         else:
-            lines.append(f'{label}: <a href="{alias}">{alias}</a>')
+            line = f'{label} <a href="{alias}">{alias}</a>'
+        if is_current:
+            line += " (this version)"
+            line = f"<strong>{line}</strong>"
+        lines.append(line)
     return lines
 
 # ---------- article pages ----------
@@ -1485,11 +1488,7 @@ def build_article_pages() -> set[Path]:
                 latest=latest,
                 current=it,
             )
-            share_html = (
-                "<div class=\"share\"><strong>Share as:</strong><br>"
-                + "<br>".join(share_lines)
-                + "</div>"
-            )
+            share_html = "<div class=\"share\">" + "<br>".join(share_lines) + "</div>"
             links_inline = ""
             if link_items:
                 links_inline = " ".join(
@@ -1498,18 +1497,7 @@ def build_article_pages() -> set[Path]:
 
             breadcrumbs = crumb_link([top, stem, it["doi_prefix"], it["doi_suffix"]])
             stem_seg = quote(stem, safe="")
-            versions_list = []
-            for v in same_family:
-                ver_url = f"/{top}/{stem_seg}/{v['doi_prefix']}/{v['doi_suffix']}/"
-                doi_disp = f"{v['doi_prefix']}/{v['doi_suffix']}"
-                date_disp = v["date"] or ""
-                entry = f"{date_disp} — <a href=\"{ver_url}\">{doi_disp}</a>"
-                if v is latest:
-                    entry += " latest"
-                if v is it:
-                    entry = f"<strong>{entry}</strong>"
-                versions_list.append(f"<li>{entry}</li>")
-            versions_ul = "<ul>" + "".join(versions_list) + "</ul>" if versions_list else ""
+            versions_ul = ""
             display_authors = it["authors"]
             authors_html = ", ".join(filter(None, (fmt_author(a) for a in display_authors)))
 
@@ -1538,12 +1526,12 @@ def build_article_pages() -> set[Path]:
                     + "</p>"
                 )
 
-            if share_html or versions_ul:
+            if share_html:
+                body.append("<h2>Share as:</h2>")
+                body.append(share_html)
+            if versions_ul:
                 body.append("<h2>Version</h2>" if len(same_family) <= 1 else "<h2>Versions</h2>")
-                if share_html:
-                    body.append(share_html)
-                if versions_ul:
-                    body.append(versions_ul)
+                body.append(versions_ul)
 
             body.append("</main>")
 
@@ -1685,18 +1673,7 @@ def build_article_pages() -> set[Path]:
                 same_family.append(v)
 
         stem_seg = quote(stem, safe="")
-        versions_list = []
-        for v in same_family:
-            ver_url = f"/{top}/{stem_seg}/{v['doi_prefix']}/{v['doi_suffix']}/"
-            doi_disp = f"{v['doi_prefix']}/{v['doi_suffix']}"
-            date_disp = v["date"] or ""
-            entry = f"{date_disp} — <a href=\"{ver_url}\">{doi_disp}</a>"
-            if v is latest:
-                entry += " latest"
-            if v is it:
-                entry = f"<strong>{entry}</strong>"
-            versions_list.append(f"<li>{entry}</li>")
-        versions_ul = "<ul>" + "".join(versions_list) + "</ul>" if versions_list else ""
+        versions_ul = ""
 
         local_md_html = f"{local_md}.html" if local_md else ""
 
@@ -1722,11 +1699,7 @@ def build_article_pages() -> set[Path]:
             latest=latest,
             current=None,
         )
-        share_html = (
-            "<div class=\"share\"><strong>Share as:</strong><br>"
-            + "<br>".join(share_lines)
-            + "</div>"
-        )
+        share_html = "<div class=\"share\">" + "<br>".join(share_lines) + "</div>"
         links_inline = ""
         if link_items:
             links_inline = " ".join(
@@ -1760,12 +1733,12 @@ def build_article_pages() -> set[Path]:
                 + ", ".join(it["kws"])
                 + "</p>"
             )
-        if share_html or versions_ul:
+        if share_html:
+            body.append("<h2>Share as:</h2>")
+            body.append(share_html)
+        if versions_ul:
             body.append("<h2>Version</h2>" if len(same_family) <= 1 else "<h2>Versions</h2>")
-            if share_html:
-                body.append(share_html)
-            if versions_ul:
-                body.append(versions_ul)
+            body.append(versions_ul)
         body.append("</main>")
 
         stem_url = f"{origin}/{top}/{stem_seg}/"

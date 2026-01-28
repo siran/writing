@@ -351,7 +351,7 @@ def _maybe_update_frontmatter_doi(
     # DOI (version)
     doi_idx, doi_match = _find_frontmatter_key(lines, FRONTMATTER_DOI_RE)
     doi_indent = doi_match.group(1) if doi_match else ""
-    doi_key = doi_match.group(2) if doi_match else "DOI"
+    doi_key = doi_match.group(2) if doi_match else "doi"
     doi_raw_val = doi_match.group(3) if doi_match else ""
     doi_existing_val = _strip_wrapping_quotes(doi_raw_val)
     doi_existing_doi = _extract_doi_from_value(doi_existing_val)
@@ -466,7 +466,7 @@ def _update_rendered_frontmatter_doi(
 
         doi_idx, doi_match = _find_frontmatter_key(lines, FRONTMATTER_DOI_RE)
         doi_indent = doi_match.group(1) if doi_match else ""
-        doi_key = doi_match.group(2) if doi_match else "DOI"
+        doi_key = doi_match.group(2) if doi_match else "doi"
         doi_raw_val = doi_match.group(3) if doi_match else ""
         new_line = f"{doi_indent}{doi_key}: {_format_doi_value(doi_raw_val, version_url)}"
 
@@ -639,6 +639,10 @@ class PublishContext:
     api: Optional[str] = None
     token: Optional[str] = None
     dep_id: Optional[int] = None
+    fm_path: Optional[Path] = None
+    fm_before: Optional[str] = None
+    fm_after: Optional[str] = None
+    merged_main: bool = False
 
 
 def cleanup_best_effort(ctx: PublishContext):
@@ -665,6 +669,39 @@ def cleanup_best_effort(ctx: PublishContext):
             echo(f"[cleanup] Removed final_dir {ctx.final_dir}")
         except Exception as e:
             echo(f"[cleanup] WARNING: failed to remove {ctx.final_dir}: {e}")
+
+    # 2.5) Restore front matter DOI (if we changed it)
+    if ctx.fm_path and ctx.fm_before is not None and ctx.fm_after is not None:
+        if ctx.merged_main:
+            echo("[cleanup] Skipping front matter rollback (already merged to main).")
+        else:
+            try:
+                if ctx.fm_path.exists():
+                    cur = ctx.fm_path.read_text(encoding="utf-8")
+                    if cur == ctx.fm_after:
+                        ctx.fm_path.write_text(ctx.fm_before, encoding="utf-8")
+                        echo(f"[cleanup] Restored front matter in {ctx.fm_path}")
+                        if ctx.site_repo:
+                            try:
+                                rel = ctx.fm_path.resolve().relative_to(
+                                    ctx.site_repo.resolve()
+                                )
+                                run(["git", "add", str(rel)], cwd=ctx.site_repo, check=False)
+                            except Exception as e:
+                                echo(
+                                    f"[cleanup] WARNING: failed to refresh git index for "
+                                    f"{ctx.fm_path}: {e}"
+                                )
+                    else:
+                        echo(
+                            "[cleanup] Skipping front matter rollback; file changed since update."
+                        )
+                else:
+                    echo(
+                        f"[cleanup] WARNING: front matter file missing: {ctx.fm_path}"
+                    )
+            except Exception as e:
+                echo(f"[cleanup] WARNING: failed to restore front matter: {e}")
 
     # 3) Git branches
     if ctx.site_repo and ctx.orig_branch:
@@ -1885,6 +1922,7 @@ def run_publish(args, ctx: PublishContext) -> None:
 
     extra_commit_paths: List[Path] = []
     if src_md.suffix.lower() == ".md":
+        fm_before = src_md.read_text(encoding="utf-8")
         updated, staged = _maybe_update_frontmatter_doi(
             src_md,
             site_repo,
@@ -1894,6 +1932,10 @@ def run_publish(args, ctx: PublishContext) -> None:
         )
         if updated and staged:
             extra_commit_paths.append(src_md)
+        if updated:
+            ctx.fm_path = src_md
+            ctx.fm_before = fm_before
+            ctx.fm_after = src_md.read_text(encoding="utf-8")
 
     # Preview
     preview_actions(
@@ -2141,6 +2183,7 @@ def run_publish(args, ctx: PublishContext) -> None:
     # Merge branch into main
     run(["git", "checkout", "main"], cwd=site_repo)
     run(["git", "merge", "--no-ff", branch_name], cwd=site_repo)
+    ctx.merged_main = True
     run(["git", "push", "origin", "main"], cwd=site_repo)
     run(["git", "branch", "-d", branch_name], cwd=site_repo)
 
