@@ -17,7 +17,6 @@ keywords:
   - Windows
   - productivity
   - developer tools
-DOI:
 ---
 
 ![Opening a file from the WSL2 terminal using winopen, launching the native Windows viewer](https://siran.github.io/assets/writing/open-files-from-wsl2-terminal.png)
