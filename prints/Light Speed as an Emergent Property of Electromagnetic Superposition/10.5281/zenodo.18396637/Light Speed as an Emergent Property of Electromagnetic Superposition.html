@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="An M. Rodriguez" />
+  <meta name="dcterms.date" content="2026-01-27" />
+  <meta name="keywords" content="Maxwell theory, electromagnetic
+superposition, polarization, linear response, refraction, phase delay,
+energy density, effective refractive index, variable light speed, field
+ontology" />
+  <title>Light Speed as an Emergent Property of Electromagnetic Superposition</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <style>
+  html {
+    font-family: sans-serif;
+  }
+  body {
+    font-family: inherit;
+    font-variant-ligatures: common-ligatures;
+    font-kerning: normal;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .header-section-number::after,
+  .toc-section-number::after {
+    content: ". ";
+  }
+  .toc ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    counter-reset: item;
+  }
+  .toc li {
+    margin: 0.4em 0;
+    padding-left: 2.6em;
+    position: relative;
+    counter-increment: item;
+  }
+  .toc li::before {
+    content: counters(item, ".") ".";
+    position: absolute;
+    left: 0;
+    color: #666;
+    width: 2.2em;
+    text-align: right;
+  }
+  .toc-title {
+    display: block;
+    font-weight: 700;
+    font-size: 1.1em;
+    margin: 0.5em 0 0.4em;
+    text-align: center;
+  }
+  .toc-divider {
+    width: 35%;
+    margin: 3.2em auto 2.8em;
+    border: 0;
+    height: 1px;
+    background: rgba(0,0,0,0.25);
+  }
+  .toc a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid transparent;
+  }
+  .toc a:hover {
+    border-bottom-color: #1f5fbf;
+  }
+  .heading-anchor {
+    margin-left: 0.35em;
+    text-decoration: none;
+    opacity: 0;
+    font-size: 0.85em;
+    color: inherit;
+    transition: opacity 0.15s ease;
+  }
+  .heading-anchor::after {
+    content: "\1F517";
+  }
+  h1:hover .heading-anchor,
+  h2:hover .heading-anchor,
+  h3:hover .heading-anchor,
+  h4:hover .heading-anchor,
+  h5:hover .heading-anchor,
+  h6:hover .heading-anchor,
+  .heading-anchor:focus {
+    opacity: 1;
+  }
+  .heading-anchor:hover {
+    text-decoration: none;
+  }
+  </style>
+  <script>
+  (function () {
+    function slugify(text) {
+      return (text || "")
+        .toLowerCase()
+        .replace(/[^0-9a-zA-Z _-]+/g, "")
+        .trim()
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-")
+        .replace(/^-+|-+$/g, "") || "section";
+    }
+    function headingText(el) {
+      var clone = el.cloneNode(true);
+      var drop = clone.querySelectorAll(".heading-anchor, .header-section-number");
+      for (var i = 0; i < drop.length; i++) {
+        if (drop[i].parentNode) {
+          drop[i].parentNode.removeChild(drop[i]);
+        }
+      }
+      return (clone.textContent || "").trim();
+    }
+    function ensureId(el, used) {
+      var id = el.getAttribute("id") || "";
+      if (id) {
+        used[id] = true;
+        return id;
+      }
+      var base = slugify(headingText(el));
+      var cand = base;
+      var i = 1;
+      while (!cand || document.getElementById(cand) || used[cand]) {
+        cand = base + "-" + i;
+        i += 1;
+      }
+      el.setAttribute("id", cand);
+      used[cand] = true;
+      return cand;
+    }
+    function addAnchors(root) {
+      if (!root) {
+        return;
+      }
+      var headings = root.querySelectorAll("h1, h2, h3, h4, h5, h6");
+      var used = {};
+      for (var i = 0; i < headings.length; i++) {
+        var h = headings[i];
+        if (h.querySelector("a.heading-anchor")) {
+          continue;
+        }
+        var id = ensureId(h, used);
+        var a = document.createElement("a");
+        a.className = "heading-anchor";
+        a.href = "#" + id;
+        a.setAttribute("aria-label", "Link to this section");
+        a.setAttribute("title", "Link to this section");
+        h.appendChild(a);
+      }
+    }
+    function run() {
+      addAnchors(document.body);
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", run);
+    } else {
+      run();
+    }
+  })();
+  </script>
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Light Speed as an Emergent Property of Electromagnetic
+Superposition</h1>
+<p class="subtitle">Polarization Without Matter: A Field-Only
+Interpretation of Refraction</p>
+<p class="author">An M. Rodriguez</p>
+<p class="date">2026-01-27</p>
+</header>
+<p><strong>One-Sentence Summary.</strong> Light slows because
+electromagnetic waves interfere with phase-delayed secondary
+electromagnetic fields, making the effective speed of light an emergent,
+local property of electromagnetic superposition rather than a universal
+constant.</p>
+<p><strong>Abstract.</strong> Polarization is treated as a secondary
+electromagnetic field rather than a property of matter. Within linear
+Maxwell theory and linear response, overlapping electromagnetic waves
+generate phase-delayed secondary fields whose superposition alters phase
+evolution and yields an effective refractive index. Electromagnetic
+waves therefore interact through the total field configuration they
+jointly create, and the effective local speed of light depends on the
+electromagnetic energy density of the environment. Refraction emerges as
+a consequence of field superposition and delayed response, without
+invoking particles, atoms, or nonlinear modifications of Maxwell’s
+equations.</p>
+<p><strong>Keywords.</strong> Maxwell theory, electromagnetic
+superposition, polarization, linear response, refraction, phase delay,
+energy density, effective refractive index, variable light speed, field
+ontology</p>
+<div class="toc">
+<hr class="toc-divider" />
+<div class="toc-title">Table of Contents</div>
+<ul>
+<li><a href="#summary">Summary</a>
+</li>
+<li><a href="#conceptual-clarification-linearity-superposition-and-interaction">Conceptual clarification: linearity, superposition, and interaction</a>
+</li>
+<li><a href="#goal">Goal</a>
+</li>
+<li><a href="#corollary">Corollary</a>
+</li>
+<li><a href="#derivation">Derivation</a>
+</li>
+<li><a href="#references">References</a>
+</li>
+</ul>
+</div>
+<hr class="meta-divider" style="width:35%; margin:2rem auto; border:0; height:1px; background: rgba(0,0,0,0.35);" />
+<h1 data-number="1" id="summary"><span
+class="header-section-number">1</span> Summary</h1>
+<p>Electromagnetic waves interact through the total field they jointly
+create. Polarization is an ordinary secondary electromagnetic field, not
+a special field generated by matter. Phase-delayed secondary fields
+modify phase evolution. An effective, local light speed emerges from the
+electromagnetic energy density itself, as fields interfere
+pointwise.</p>
+<h1 data-number="2"
+id="conceptual-clarification-linearity-superposition-and-interaction"><span
+class="header-section-number">2</span> Conceptual clarification:
+linearity, superposition, and interaction</h1>
+<p>It is commonly stated in classical electrodynamics that
+electromagnetic waves do not interact in vacuum because Maxwell’s
+equations are linear and admit superposition. This statement, however,
+is not a theorem of Maxwell theory.</p>
+<p>Linearity guarantees that if <span
+class="math inline">\((\mathbf{E}_1,\mathbf{B}_1)\)</span> and <span
+class="math inline">\((\mathbf{E}_2,\mathbf{B}_2)\)</span> are solutions
+of Maxwell’s equations, then their sum is also a solution. It does not,
+by itself, imply that one field configuration cannot influence the
+propagation of another through the total field they jointly create.</p>
+<p>The identification of “interaction” exclusively with forces on
+charges or with explicit nonlinear field equations is a conventional
+interpretive choice, widely adopted in standard treatments of classical
+electrodynamics [1]. This convention is not derived from Maxwell’s
+equations themselves.</p>
+<p>In the present work, interaction is defined operationally as
+modification of phase evolution or effective propagation parameters due
+to the total electromagnetic field configuration. This notion of
+interaction is fully compatible with linear field dynamics and does not
+require nonlinear modifications of Maxwell’s equations.</p>
+<h1 data-number="3" id="goal"><span
+class="header-section-number">3</span> Goal</h1>
+<p>Explain, mathematically and with an explicit ontological
+justification, how linear Maxwell theory allows electromagnetic waves to
+superpose and interact through the total field, and how an effective
+local propagation speed can arise from that total-field interaction.</p>
+<h1 data-number="4" id="corollary"><span
+class="header-section-number">4</span> Corollary</h1>
+<p>The maximum propagation speed of electromagnetic disturbances is
+<span class="math inline">\(c_0\)</span>, with</p>
+<p><span class="math display">\[
+c_0 = \frac{1}{\sqrt{\mu_0 \epsilon_0}}.
+\]</span></p>
+<p>However, <span class="math inline">\(c_0\)</span> need not take the
+same effective value everywhere in the universe. When electromagnetic
+waves propagate in a linear, nontrivial electromagnetic environment, the
+total field gives rise to an effective susceptibility <span
+class="math inline">\(\chi(\mathbf{x})\)</span>.</p>
+<p>The effective local propagation speed is then</p>
+<p><span class="math display">\[
+c_{\text{local}}(\mathbf{x}) = \frac{c_0}{\sqrt{1+\chi(\mathbf{x})}},
+\]</span></p>
+<p>and therefore depends on the local electromagnetic energy density
+through the induced effective <span
+class="math inline">\(\chi\)</span>.</p>
+<p>As a result, the effective speed of light varies from place to place,
+tracking spatial variations in electromagnetic field energy density
+across the universe.</p>
+<h1 data-number="5" id="derivation"><span
+class="header-section-number">5</span> Derivation</h1>
+<h2 data-number="5.1" id="maxwell-theory-and-superposition"><span
+class="header-section-number">5.1</span> Maxwell theory and
+superposition</h2>
+<p>In source-free regions, Maxwell’s equations are</p>
+<p><span class="math display">\[
+\nabla\cdot\mathbf{E}=0,\qquad \nabla\cdot\mathbf{B}=0,
+\]</span></p>
+<p><span class="math display">\[
+\nabla\times\mathbf{E}=-\partial_t\mathbf{B},\qquad
+\nabla\times\mathbf{B}=\mu_0\epsilon_0\,\partial_t\mathbf{E}.
+\]</span></p>
+<p>These equations are linear: if <span
+class="math inline">\((\mathbf{E}_1,\mathbf{B}_1)\)</span> and <span
+class="math inline">\((\mathbf{E}_2,\mathbf{B}_2)\)</span> are
+solutions, then their sum is also a solution.</p>
+<p>Linearity applies to the field equations themselves and does not
+constrain how physical observables are constructed from the fields.</p>
+<h2 data-number="5.2" id="quadratic-field-observables"><span
+class="header-section-number">5.2</span> Quadratic field
+observables</h2>
+<p>The electromagnetic energy density is</p>
+<p><span class="math display">\[
+u=\frac{\epsilon_0}{2}\left(\mathbf{E}^2+c^2\mathbf{B}^2\right).
+\]</span></p>
+<p>For a superposed field <span
+class="math inline">\(\mathbf{E}=\mathbf{E}_1+\mathbf{E}_2\)</span>,</p>
+<p><span class="math display">\[
+u=u_1+u_2+u_{12},
+\]</span></p>
+<p>with</p>
+<p><span class="math display">\[
+u_{12}=\epsilon_0\left(\mathbf{E}_1\cdot\mathbf{E}_2+c^2\mathbf{B}_1\cdot\mathbf{B}_2\right).
+\]</span></p>
+<p>Thus, overlapping waves produce cross terms in energy density and
+momentum flow. This constitutes a physical interaction at the level of
+observables.</p>
+<h2 data-number="5.3" id="polarization-written-purely-as-fields"><span
+class="header-section-number">5.3</span> Polarization written purely as
+fields</h2>
+<p>In macroscopic electrodynamics,</p>
+<p><span class="math display">\[
+\mathbf{D}=\epsilon_0\mathbf{E}+\mathbf{P},
+\]</span></p>
+<p>with linear response</p>
+<p><span class="math display">\[
+\mathbf{P}=\epsilon_0\chi\,\mathbf{E}.
+\]</span></p>
+<p>Maxwell’s equations do not specify the origin of <span
+class="math inline">\(\mathbf{P}\)</span>. Formally, <span
+class="math inline">\(\mathbf{P}\)</span> is an additional
+electromagnetic field proportional to <span
+class="math inline">\(\mathbf{E}\)</span>.</p>
+<p>Interpreted this way: - <span
+class="math inline">\(\mathbf{P}\)</span> is a secondary electromagnetic
+field. - The relation <span
+class="math inline">\(\mathbf{P}=\epsilon_0\chi\mathbf{E}\)</span> is a
+linear field–field coupling. - No ontological distinction between
+“matter” and “electromagnetic field” is required.</p>
+<h2 data-number="5.4" id="phase-delay-and-effective-propagation"><span
+class="header-section-number">5.4</span> Phase delay and effective
+propagation</h2>
+<p>In realistic linear response, proportionality is causal:</p>
+<p><span class="math display">\[
+\mathbf{P}(t)=\epsilon_0\int_{-\infty}^{t}\chi(t-t&#39;)\,\mathbf{E}(t&#39;)\,dt&#39;.
+\]</span></p>
+<p>In frequency space,</p>
+<p><span class="math display">\[
+\mathbf{P}(\omega)=\epsilon_0\chi(\omega)\mathbf{E}(\omega).
+\]</span></p>
+<p>The secondary field associated with <span
+class="math inline">\(\mathbf{P}\)</span> is phase-delayed relative to
+the primary field. The total field is the superposition of the incident
+electromagnetic wave and the delayed secondary electromagnetic wave,
+producing a shifted phase evolution.</p>
+<h2 data-number="5.5"
+id="emergence-of-an-effective-refractive-index"><span
+class="header-section-number">5.5</span> Emergence of an effective
+refractive index</h2>
+<p>With</p>
+<p><span class="math display">\[
+\mathbf{D}=\epsilon(\omega)\mathbf{E},\qquad
+\epsilon(\omega)=\epsilon_0\left[1+\chi(\omega)\right],
+\]</span></p>
+<p>Maxwell’s equations yield the wave equation</p>
+<p><span class="math display">\[
+\nabla^2\mathbf{E}-\mu_0\epsilon(\omega)\partial_t^2\mathbf{E}=0.
+\]</span></p>
+<p>Plane-wave solutions satisfy</p>
+<p><span class="math display">\[
+k^2=\mu_0\epsilon(\omega)\omega^2,
+\]</span></p>
+<p>so the phase velocity is</p>
+<p><span class="math display">\[
+v_p(\omega)=\frac{1}{\sqrt{\mu_0\epsilon(\omega)}}=\frac{c_0}{n(\omega)},\qquad
+n(\omega)=\sqrt{1+\chi(\omega)}.
+\]</span></p>
+<p>The reduction in propagation speed follows directly from interference
+with a phase-delayed secondary electromagnetic field.</p>
+<h2 data-number="5.6" id="two-wave-interaction"><span
+class="header-section-number">5.6</span> Two-wave interaction</h2>
+<p>Let</p>
+<p><span class="math display">\[
+\mathbf{E}=\mathbf{E}_1+\mathbf{E}_2.
+\]</span></p>
+<p>By linearity,</p>
+<p><span class="math display">\[
+\mathbf{P}=\epsilon_0\chi(\mathbf{E}_1+\mathbf{E}_2)
+          =\epsilon_0\chi\mathbf{E}_1+\epsilon_0\chi\mathbf{E}_2.
+\]</span></p>
+<p>Each wave generates a secondary electromagnetic field, and both
+contribute to the total response. Each wave therefore propagates in an
+environment determined by the combined electromagnetic
+configuration.</p>
+<h2 data-number="5.7" id="local-effective-light-speed"><span
+class="header-section-number">5.7</span> Local effective light
+speed</h2>
+<p>The local electromagnetic energy density is</p>
+<p><span class="math display">\[
+u(\mathbf{x})=\frac{\epsilon_0}{2}\left(\langle\mathbf{E}^2\rangle+c^2\langle\mathbf{B}^2\rangle\right).
+\]</span></p>
+<p>The effective refractive index is</p>
+<p><span class="math display">\[
+n(\mathbf{x})=\sqrt{1+\chi(\mathbf{x})},
+\]</span></p>
+<p>and the local propagation speed is</p>
+<p><span class="math display">\[
+c_{\text{local}}(\mathbf{x})=\frac{c_0}{n(\mathbf{x})}.
+\]</span></p>
+<h2 data-number="5.8" id="consequence"><span
+class="header-section-number">5.8</span> Consequence</h2>
+<p>Different regions of the universe, characterized by different
+electromagnetic field configurations and energy densities, exhibit
+different effective propagation speeds. Maxwell’s equations remain
+unchanged. The result follows solely from superposition, linear
+response, and a field-only interpretation of polarization.</p>
+<h1 data-number="6" id="references"><span
+class="header-section-number">6</span> References</h1>
+<ol type="1">
+<li>Jackson, J. D., <em>Classical Electrodynamics</em>, 3rd ed., Wiley
+(1999).</li>
+</ol>
+</body>
+</html>
