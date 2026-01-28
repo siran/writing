@@ -6,5 +6,5 @@ date:
 one-sentence-summary:
 summary:
 keywords:
-DOI:
+doi:
 ---
