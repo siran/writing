@@ -1,0 +1,81 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment
+doi: 10.5281/zenodo.18408255
+concept_doi: 10.5281/zenodo.18408254
+permalink: "https://writing.preferredframe.com/prints/A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment/10.5281/zenodo.18408255/"
+publication_date: '2026-01-28'
+publication_year: '2026'
+keywords:
+- quantum mechanics
+- double-slit experiment
+- which-way detection
+- determinism
+- propagator
+- path integral
+- phase evolution
+one_sentence_summary: Which-way detection alters double-slit interference deterministically through interaction-induced phase evolution, without collapse, observers, or stochastic dynamics.
+abstract: We present a first-principles, deterministic account of the quantum double-slit experiment with which-way detectors. Detectors are modeled as physical circuits possessing energetic barriers and therefore necessarily introduce localized interaction potentials. These interactions modify the action of electron paths and rotate the relative phase of each path. The continuous transition from interference to its suppression follows solely from unitary propagation. All probabilistic outcomes arise only from the quadratic mapping of the propagated state after propagation.
+authors:
+- name: Maria Hart
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment
+  creators:
+  - name: Maria Hart
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  description: We present a first-principles, deterministic account of the quantum double-slit experiment with which-way detectors. Detectors are modeled as physical circuits possessing energetic barriers and therefore necessarily introduce localized interaction potentials. These interactions modify the action of electron paths and rotate the relative phase of each path. The continuous transition from interference to its suppression follows solely from unitary propagation. All probabilistic outcomes arise only from the quadratic mapping of the propagated state after propagation.
+  keywords:
+  - quantum mechanics
+  - double-slit experiment
+  - which-way detection
+  - determinism
+  - propagator
+  - path integral
+  - phase evolution
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-28'
+  license: cc-by-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment/10.5281/zenodo.18408255/A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment/10.5281/zenodo.18408255/A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment/10.5281/zenodo.18408255/A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment.pdf"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment/10.5281/zenodo.18408255/A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment.embed.html"
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: Which-way detection alters double-slit interference deterministically through interaction-induced phase evolution, without collapse, observers, or stochastic dynamics.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: 893e2c9e89bc13ce93b6f8ba193a6f5cf1ba8563
+  filename: A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment.md
+artifacts:
+  md: A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment.md
+  md_url: "https://writing.preferredframe.com/prints/A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment/10.5281/zenodo.18408255/A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment.md"
+  pandoc_md_name: A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment/10.5281/zenodo.18408255/A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment.pandoc.md"
+  html_name: A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment.html
+  html_url: "https://writing.preferredframe.com/prints/A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment/10.5281/zenodo.18408255/A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment.html"
+  primary: md
+  pdf_name: A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment/10.5281/zenodo.18408255/A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment.pdf"
+  embed_html_name: A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment/10.5281/zenodo.18408255/A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment.embed.html"

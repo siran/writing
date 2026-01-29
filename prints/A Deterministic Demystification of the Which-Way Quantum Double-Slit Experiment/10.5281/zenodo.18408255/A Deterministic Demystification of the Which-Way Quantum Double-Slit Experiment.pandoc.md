@@ -23,6 +23,61 @@ keywords:
 doi: https://writing.preferredframe.com/doi/10.5281/zenodo.18408255
 ---
 
+**One-Sentence Summary.** Which-way detection alters double-slit interference deterministically through interaction-induced phase evolution, without collapse, observers, or stochastic dynamics.
+
+**Abstract.** We present a first-principles, deterministic account of the quantum double-slit experiment with which-way detectors. Detectors are modeled as physical circuits possessing energetic barriers and therefore necessarily introduce localized interaction potentials. These interactions modify the action of electron paths and rotate the relative phase of each path. The continuous transition from interference to its suppression follows solely from unitary propagation. All probabilistic outcomes arise only from the quadratic mapping of the propagated state after propagation.
+
+**Keywords.** quantum mechanics, double-slit experiment, which-way detection, determinism, propagator, path integral, phase evolution
+
+\begingroup
+\setcounter{tocdepth}{1}
+\renewcommand{\contentsname}{\centering Table of Contents}
+\renewcommand{\numberline}[1]{#1.\hspace{0.6em}}
+\setlength{\parskip}{0.35em}
+\vspace{1.0\baselineskip}
+\begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
+\vspace{1.1\baselineskip}
+\tableofcontents
+\endgroup
+
+```{=html}
+<div class="toc">
+<hr class="toc-divider" />
+<div class="toc-title">Table of Contents</div>
+<ul>
+<li><a href="#determinism-in-quantum-dynamics">Determinism in Quantum Dynamics</a>
+</li>
+<li><a href="#the-double-slit-without-detectors">The Double-Slit **Without Detectors**</a>
+</li>
+<li><a href="#modeling-the-detector-as-a-circuit">Modeling the Detector as a Circuit</a>
+</li>
+<li><a href="#the-double-slit-with-detectors">The Double-Slit **With** Detectors</a>
+</li>
+<li><a href="#phase-evolution-induced-by-the-detector">Phase Evolution Induced by the Detector</a>
+</li>
+<li><a href="#continuous-suppression-of-interference">Continuous Suppression of Interference</a>
+</li>
+<li><a href="#no-measurement-postulate-required">No Measurement Postulate Required</a>
+</li>
+<li><a href="#conclusion">Conclusion</a>
+</li>
+<li><a href="#references">References</a>
+</li>
+</ul>
+</div>
+```
+
+
+```{=latex}
+\vspace{1.0\baselineskip}
+\begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
+\vspace{1.0\baselineskip}
+```
+
+```{=html}
+<hr class="meta-divider" style="width:35%; margin:2rem auto; border:0; height:1px; background: rgba(0,0,0,0.35);" />
+```
+
 ## Determinism in Quantum Dynamics
 
 Quantum mechanics is probabilistic only at the level of outcome statistics. The
