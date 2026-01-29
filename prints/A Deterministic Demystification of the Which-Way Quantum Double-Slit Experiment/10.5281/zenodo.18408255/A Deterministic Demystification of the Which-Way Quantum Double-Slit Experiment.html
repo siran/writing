@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Maria Hart" />
+  <meta name="author" content="An M. Rodriguez" />
+  <meta name="dcterms.date" content="2026-01-28" />
+  <meta name="keywords" content="quantum mechanics, double-slit
+experiment, which-way detection, determinism, propagator, path
+integral, phase evolution" />
+  <title>A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <style>
+  html {
+    font-family: sans-serif;
+  }
+  body {
+    font-family: inherit;
+    font-variant-ligatures: common-ligatures;
+    font-kerning: normal;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .header-section-number::after,
+  .toc-section-number::after {
+    content: ". ";
+  }
+  .toc ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    counter-reset: item;
+  }
+  .toc li {
+    margin: 0.4em 0;
+    padding-left: 2.6em;
+    position: relative;
+    counter-increment: item;
+  }
+  .toc li::before {
+    content: counters(item, ".") ".";
+    position: absolute;
+    left: 0;
+    color: #666;
+    width: 2.2em;
+    text-align: right;
+  }
+  .toc-title {
+    display: block;
+    font-weight: 700;
+    font-size: 1.1em;
+    margin: 0.5em 0 0.4em;
+    text-align: center;
+  }
+  .toc-divider {
+    width: 35%;
+    margin: 3.2em auto 2.8em;
+    border: 0;
+    height: 1px;
+    background: rgba(0,0,0,0.25);
+  }
+  .toc a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid transparent;
+  }
+  .toc a:hover {
+    border-bottom-color: #1f5fbf;
+  }
+  .heading-anchor {
+    margin-left: 0.35em;
+    text-decoration: none;
+    opacity: 0;
+    font-size: 0.85em;
+    color: inherit;
+    transition: opacity 0.15s ease;
+  }
+  .heading-anchor::after {
+    content: "\1F517";
+  }
+  h1:hover .heading-anchor,
+  h2:hover .heading-anchor,
+  h3:hover .heading-anchor,
+  h4:hover .heading-anchor,
+  h5:hover .heading-anchor,
+  h6:hover .heading-anchor,
+  .heading-anchor:focus {
+    opacity: 1;
+  }
+  .heading-anchor:hover {
+    text-decoration: none;
+  }
+  </style>
+  <script>
+  (function () {
+    function slugify(text) {
+      return (text || "")
+        .toLowerCase()
+        .replace(/[^0-9a-zA-Z _-]+/g, "")
+        .trim()
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-")
+        .replace(/^-+|-+$/g, "") || "section";
+    }
+    function headingText(el) {
+      var clone = el.cloneNode(true);
+      var drop = clone.querySelectorAll(".heading-anchor, .header-section-number");
+      for (var i = 0; i < drop.length; i++) {
+        if (drop[i].parentNode) {
+          drop[i].parentNode.removeChild(drop[i]);
+        }
+      }
+      return (clone.textContent || "").trim();
+    }
+    function ensureId(el, used) {
+      var id = el.getAttribute("id") || "";
+      if (id) {
+        used[id] = true;
+        return id;
+      }
+      var base = slugify(headingText(el));
+      var cand = base;
+      var i = 1;
+      while (!cand || document.getElementById(cand) || used[cand]) {
+        cand = base + "-" + i;
+        i += 1;
+      }
+      el.setAttribute("id", cand);
+      used[cand] = true;
+      return cand;
+    }
+    function addAnchors(root) {
+      if (!root) {
+        return;
+      }
+      var headings = root.querySelectorAll("h1, h2, h3, h4, h5, h6");
+      var used = {};
+      for (var i = 0; i < headings.length; i++) {
+        var h = headings[i];
+        if (h.querySelector("a.heading-anchor")) {
+          continue;
+        }
+        var id = ensureId(h, used);
+        var a = document.createElement("a");
+        a.className = "heading-anchor";
+        a.href = "#" + id;
+        a.setAttribute("aria-label", "Link to this section");
+        a.setAttribute("title", "Link to this section");
+        h.appendChild(a);
+      }
+    }
+    function run() {
+      addAnchors(document.body);
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", run);
+    } else {
+      run();
+    }
+  })();
+  </script>
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">A Deterministic Demystification of the Which-Way
+Quantum Double-Slit Experiment</h1>
+<p class="subtitle">From Unitary Propagation to Interference
+Suppression</p>
+<p class="author">Maria Hart</p>
+<p class="author">An M. Rodriguez</p>
+<p class="date">2026-01-28</p>
+</header>
+<p><strong>One-Sentence Summary.</strong> Which-way detection alters
+double-slit interference deterministically through interaction-induced
+phase evolution, without collapse, observers, or stochastic
+dynamics.</p>
+<p><strong>Abstract.</strong> We present a first-principles,
+deterministic account of the quantum double-slit experiment with
+which-way detectors. Detectors are modeled as physical circuits
+possessing energetic barriers and therefore necessarily introduce
+localized interaction potentials. These interactions modify the action
+of electron paths and rotate the relative phase of each path. The
+continuous transition from interference to its suppression follows
+solely from unitary propagation. All probabilistic outcomes arise only
+from the quadratic mapping of the propagated state after
+propagation.</p>
+<p><strong>Keywords.</strong> quantum mechanics, double-slit experiment,
+which-way detection, determinism, propagator, path integral, phase
+evolution</p>
+<div class="toc">
+<hr class="toc-divider" />
+<div class="toc-title">Table of Contents</div>
+<ul>
+<li><a href="#determinism-in-quantum-dynamics">Determinism in Quantum Dynamics</a>
+</li>
+<li><a href="#the-double-slit-without-detectors">The Double-Slit **Without Detectors**</a>
+</li>
+<li><a href="#modeling-the-detector-as-a-circuit">Modeling the Detector as a Circuit</a>
+</li>
+<li><a href="#the-double-slit-with-detectors">The Double-Slit **With** Detectors</a>
+</li>
+<li><a href="#phase-evolution-induced-by-the-detector">Phase Evolution Induced by the Detector</a>
+</li>
+<li><a href="#continuous-suppression-of-interference">Continuous Suppression of Interference</a>
+</li>
+<li><a href="#no-measurement-postulate-required">No Measurement Postulate Required</a>
+</li>
+<li><a href="#conclusion">Conclusion</a>
+</li>
+<li><a href="#references">References</a>
+</li>
+</ul>
+</div>
+<hr class="meta-divider" style="width:35%; margin:2rem auto; border:0; height:1px; background: rgba(0,0,0,0.35);" />
+<h1 data-number="1" id="determinism-in-quantum-dynamics"><span
+class="header-section-number">1</span> Determinism in Quantum
+Dynamics</h1>
+<p>Quantum mechanics is probabilistic only at the level of outcome
+statistics. The dynamical evolution of the quantum state, as governed by
+the Schrödinger equation, is deterministic. This statement is
+independent of interpretational preferences and concerns only the
+propagation of the quantum state.</p>
+<p>Determinism of <em>evolution</em> is not a question.</p>
+<p>The <em>evolution</em> of a quantum state <span
+class="math inline">\(\psi(q,t)\)</span> is governed deterministically
+by the Schrödinger equation</p>
+<p><span class="math display">\[
+i\hbar \frac{\partial \psi}{\partial t}
+=
+\left(
+-\frac{\hbar^2}{2m}\nabla^2 + \sum_{i} V_i(q,t)
+\right)\psi
+\]</span></p>
+<p>This evolution is fully determined by the Hamiltonian —comprising the
+kinetic term and the interaction potentials <span
+class="math inline">\(V_i(q,t)\)</span>— together with the quantum state
+<span class="math inline">\(\psi\)</span>. No other consideration is
+necessary at the level of propagation to calculate the probabilities at
+the screen.</p>
+<p>In the present context, the Hamiltonian is not an independent or
+abstract object. It is a compact representation of the interaction
+structure of the system. All terms in the Hamiltonian arise from
+physical interactions between the electron and its environment
+(including the detectors as part of the environment).</p>
+<p>In the absence of detectors, the Hamiltonian reduces to free
+propagation or to interaction potentials common to all paths, which do
+not affect relative phases.</p>
+<p>When detectors are present, additional slit-dependent interaction
+potentials are introduced, modifying the Hamiltonian accordingly.</p>
+<h2 data-number="1.1"
+id="the-all-paths-integral-and-the-propagator"><span
+class="header-section-number">1.1</span> The all-paths integral and
+<em>the propagator</em></h2>
+<p>An equivalent formulation is provided by <em>the propagator</em>. The
+wavefunction at a spacetime point <span
+class="math inline">\((x,T)\)</span> is obtained by the action of the
+propagator on the initial state,</p>
+<p><span class="math display">\[
+\psi(x,T)
+=
+\int dx_0\; K(x,T;x_0,0)\,\psi(x_0,0),
+\]</span></p>
+<p>where the propagator, <span class="math inline">\(K\)</span>, is
+given by the path integral</p>
+<p><span class="math display">\[
+K(x,T;x_0,0)
+=
+\int_{q(0)=x_0}^{q(T)=x}\mathcal Dq\;
+\exp\!\left(\frac{i}{\hbar}S[q]\right)
+\]</span></p>
+<p>with action</p>
+<p><span class="math display">\[
+S[q]=\int_0^T dt\left(\tfrac12 m\dot q^2 - \sum_i V_i(q,t)\right)
+\]</span></p>
+<p>The propagator contains the full dynamical content of the theory; all
+interaction effects enter through its phase. Quantum mechanics is
+deterministic at the level of propagation; probabilities arise only from
+the quadratic map applied to the propagated state,</p>
+<p><span class="math display">\[
+P(x,T)=|\psi(x,T)|^2
+\]</span></p>
+<h1 data-number="2" id="the-double-slit-without-detectors"><span
+class="header-section-number">2</span> The Double-Slit <strong>Without
+Detectors</strong></h1>
+<p>An electron <em>quantum wave</em>, <span
+class="math inline">\(\psi\)</span>, propagates from a source to a
+screen through two slits.</p>
+<p>In the absence of detectors, the propagation is governed by a single
+propagator <span class="math inline">\(K_0\)</span>, corresponding to
+free propagation or to interaction potentials common to all paths.</p>
+<p>The wavefunction at the screen point <span
+class="math inline">\(x\)</span> is obtained by propagating the initial
+state through the two available spatial channels, “left slit” and “right
+slit”,</p>
+<p><span class="math display">\[
+\psi(x)
+=
+\psi_\text{left}(x)+\psi_\text{right}(x)
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[
+\psi_j(x)
+=
+\int dx_0\; K_0^{(j)}(x,T;x_0,0)\,\psi(x_0,0),
+\qquad j=\text{left},\text{right}.
+\]</span></p>
+<p>Here <span class="math inline">\(K_0^{(j)}\)</span> denotes the
+restriction of the propagator to trajectories passing through slit <span
+class="math inline">\(j\)</span>. In what follows, the slits are labeled
+by <span class="math inline">\(j=1,2,\dots\)</span>.</p>
+<p>Since “by construction” there is no distinction is between the slits,
+the propagator is identical for both path classes.</p>
+<p>The probability density at the screen is therefore</p>
+<p><span class="math display">\[
+P(x)
+=
+|\psi(x)|^2
+=
+|\psi_1|^2
++
+|\psi_2|^2
++
+2\,\mathrm{Re}\!\left(\psi_1\psi_2^*\right).
+\]</span></p>
+<p>The interference term arises from coherent phase relations generated
+by the common propagator acting on the two spatially distinct path
+families.</p>
+<h1 data-number="3" id="modeling-the-detector-as-a-circuit"><span
+class="header-section-number">3</span> Modeling the Detector as a
+Circuit</h1>
+<p>A detector is not an abstract “observer”. <strong>It is a physical
+device</strong>, a circuit of some kind.</p>
+<p>By definition, a detector:</p>
+<ul>
+<li><p>is a circuit with at least two metastable macroscopic states
+(“triggered” and “not triggered”);</p></li>
+<li><p>contains an energetic barrier separating those states;</p></li>
+<li><p>and therefore requires an energy transfer to cross that barrier
+and register a detection event.</p></li>
+</ul>
+<p>Consequently, the presence of a detector near a slit necessarily
+introduces a localized interaction between the electron and the
+detector’s activation circuit, independent of whether a macroscopic
+click ultimately occurs.</p>
+<p>From the electron’s perspective, a detector defines a spatial region
+<span class="math inline">\(\Omega_d\)</span> in which the electron may
+interact with the detector through an interaction potential <span
+class="math inline">\(V_d\)</span>, capable of deterministically
+triggering when an energetic threshold is crossed.</p>
+<p>Within the region <span class="math inline">\(\Omega_d\)</span>, the
+detector is capable of coupling to the particle and contributing an
+interaction term to the action. This interaction produces an energetic
+imprint in the phase of the propagated wavefunction and therefore
+affects the probability density <span
+class="math inline">\(|\psi|^2\)</span>, regardless of the final
+macroscopic state of the detector.</p>
+<h1 data-number="4" id="the-double-slit-with-detectors"><span
+class="header-section-number">4</span> The Double-Slit
+<strong>With</strong> Detectors</h1>
+<p>When detectors are placed near the slits, the electron propagates in
+the presence of an enlarged interaction environment. It is important to
+emphasize that the electron does not interact with only one detector or
+the other. Along all trajectories, the electron interacts with the full
+detector environment.</p>
+<p>Accordingly, the Hamiltonian contains interaction terms associated
+with both detectors, described by localized interaction potentials <span
+class="math inline">\(V_1(q,t)\)</span> and <span
+class="math inline">\(V_2(q,t)\)</span>. These potentials are present
+for all paths; what distinguishes the two slit contributions is not the
+presence or absence of an interaction, but the relative weight with
+which these interaction potentials contribute along different classes of
+trajectories.</p>
+<p>In propagator language, the wavefunction at the screen point <span
+class="math inline">\(x\)</span> is written as</p>
+<p><span class="math display">\[
+\psi(x,T) = \psi_1(x,T) + \psi_2(x,T),
+\]</span></p>
+<p>with each contribution obtained by propagating the initial state
+through the corresponding spatial channel,</p>
+<p><span class="math display">\[
+\psi_j(x,T)
+=
+\int dx_0\; K_j(x,T;x_0,0)\,\psi(x_0,0),
+\qquad j=1,2.
+\]</span></p>
+<p>The restricted propagators <span class="math inline">\(K_j\)</span>
+can be expressed as</p>
+<p><span class="math display">\[
+K_j(x,T;x_0,0)
+=
+\int_{q(0)=x_0}^{q(T)=x}\!\!\mathcal Dq\;
+\exp\!\left[
+\frac{i}{\hbar}
+\int_0^T dt\left(
+\tfrac12 m\dot q^2
+- V_1(q,t)
+- V_2(q,t)
+\right)
+\right],
+\]</span></p>
+<p>where the functional integral is restricted to trajectories belonging
+to slit-class <span class="math inline">\(j\)</span>. The interaction
+potentials <span class="math inline">\(V_1\)</span> and <span
+class="math inline">\(V_2\)</span> are present for all paths; what
+distinguishes the two classes is the relative contribution of these
+potentials along the corresponding trajectories.</p>
+<p>The physically relevant quantity controlling interference is the
+action difference between the two slit contributions, which defines the
+relative phase <span class="math inline">\(\Delta\phi\)</span>:</p>
+<p><span class="math display">\[
+\Delta\phi
+=
+\frac{1}{\hbar}\int_0^T dt\,(V_1 - V_2).
+\]</span></p>
+<h1 data-number="5" id="phase-evolution-induced-by-the-detector"><span
+class="header-section-number">5</span> Phase Evolution Induced by the
+Detector</h1>
+<p>Define the action increment associated with each detector
+interaction:</p>
+<p><span class="math display">\[
+\Delta S_j = -\int dt\,V_j(q,t).
+\]</span></p>
+<p>Only differences between these increments affect interference. The
+relative phase is</p>
+<p><span class="math display">\[
+\Delta\phi
+=
+\frac{1}{\hbar}(\Delta S_2-\Delta S_1)
+=
+\frac{1}{\hbar}\int dt\,(V_1-V_2).
+\]</span></p>
+<p>The total amplitude is therefore</p>
+<p><span class="math display">\[
+\psi(x)
+=
+\psi_1^{(0)}(x)
++
+e^{i\Delta\phi}\psi_2^{(0)}(x).
+\]</span></p>
+<p>Here the superscript <span class="math inline">\((0)\)</span> in
+<span class="math inline">\(\psi_j^{(0)}\)</span> denotes the reference
+amplitude computed for free propagation, or equivalently for symmetric
+interactions that do not produce a relative phase.</p>
+<h2 data-number="5.1"
+id="recovering-double-slit-pattern-with-two-detectors"><span
+class="header-section-number">5.1</span> Recovering Double-Slit Pattern
+with Two Detectors</h2>
+<p>The probability density <span class="math inline">\(P(x)\)</span> of
+finding the electron in some point in the screen calculated as:</p>
+<p><span class="math display">\[
+P(x)=|\psi(x)|^2
+=
+\left(\psi_1^{(0)}+e^{i\Delta\phi}\psi_2^{(0)}\right)
+\left(\psi_1^{(0)*}+e^{-i\Delta\phi}\psi_2^{(0)*}\right)
+\]</span></p>
+<p>so</p>
+<p><span class="math display">\[
+P(x)
+=
+|\psi_1^{(0)}|^2
++
+|\psi_2^{(0)}|^2
++
+e^{-i\Delta\phi}\psi_1^{(0)}\psi_2^{(0)*}
++
+e^{i\Delta\phi}\psi_1^{(0)*}\psi_2^{(0)}
+\]</span></p>
+<p>The last two terms are complex conjugates, hence</p>
+<p><span class="math display">\[
+P(x)
+=
+|\psi_1^{(0)}|^2
++
+|\psi_2^{(0)}|^2
++
+2\,\mathrm{Re}\!\left(
+e^{i\Delta\phi}\psi_1^{(0)*}\psi_2^{(0)}
+\right).
+\]</span></p>
+<p>If <span class="math inline">\(V_1=V_2\)</span>, then <span
+class="math inline">\(\Delta\phi=0\)</span> and therefore</p>
+<p><span class="math display">\[
+P(x)
+=
+|\psi_1^{(0)}|^2
++
+|\psi_2^{(0)}|^2
++
+2\,\mathrm{Re}\!\left(
+\psi_1^{(0)*}\psi_2^{(0)}
+\right),
+\]</span></p>
+<p>which is precisely the full double-slit interference expression.</p>
+<h1 data-number="6" id="continuous-suppression-of-interference"><span
+class="header-section-number">6</span> Continuous Suppression of
+Interference</h1>
+<p>Recall the expression for the probability density <span
+class="math inline">\(P(x)\)</span> to detect the electron at position
+<span class="math inline">\(x\)</span> on the screen:</p>
+<p><span class="math display">\[
+P(x)
+=
+|\psi_1^{(0)}|^2
++
+|\psi_2^{(0)}|^2
++
+2\,\mathrm{Re}\!\left(
+\psi_1^{(0)}\psi_2^{(0)*} e^{i\Delta\phi}
+\right)
+\]</span></p>
+<p>The probability density at a point on the screen depends on the
+relative phase <span class="math inline">\(\Delta\phi[V_1, V_2]\)</span>
+through the rotation factor <span
+class="math inline">\(e^{i\Delta\phi}\)</span>.</p>
+<p>That is, the mere presence of a detector modifies the probability
+distribution not by recording an outcome, but by altering the phase
+structure of the propagated amplitudes.</p>
+<p>When the two slits are energetically symmetric, such that <span
+class="math inline">\(V_1 = V_2\)</span>, the phase difference vanishes,
+<span class="math inline">\(\Delta\phi = 0\)</span>, and the
+interference term contributes maximally. In this case the familiar
+double-slit pattern is recovered. The visibility of the interference
+pattern therefore directly reflects the symmetry of the slit
+interactions.</p>
+<p>When a detector is present near one or both slits, the corresponding
+interaction potentials generally differ, <span class="math inline">\(V_1
+\neq V_2\)</span>. The resulting phase difference modifies the
+interference term and alters the probability distribution at the screen.
+This effect occurs independently of whether the detector ultimately
+triggers.</p>
+<h2 data-number="6.1" id="detector-triggers-or-does-not-trigger"><span
+class="header-section-number">6.1</span> Detector triggers or
+does-not-trigger</h2>
+<p>To make the “triggers / does-not-trigger” point explicit, introduce a
+detector outcome variable <span
+class="math inline">\(r_j\in\{0,1\}\)</span> for slit <span
+class="math inline">\(j\)</span>, where <span
+class="math inline">\(r_j=1\)</span> denotes a macroscopic firing event
+and <span class="math inline">\(r_j=0\)</span> denotes no firing.
+Crucially, the interaction potential <span
+class="math inline">\(V_j\)</span> is present in the Hamiltonian
+independently of the value of <span class="math inline">\(r_j\)</span>;
+<span class="math inline">\(r_j\)</span> labels a detector outcome, not
+the existence of an interaction.</p>
+<p>Accordingly, the screen amplitude must be written as an amplitude
+conditioned on detector outcomes. In the simplest which-way arrangement
+(exactly one slit is correlated with exactly one detector), the joint
+amplitude takes the form</p>
+<p><span class="math display">\[
+\Psi(x;r_1,r_2)=\psi_1(x)\,\delta_{r_1,1}\delta_{r_2,0}
++\psi_2(x)\,\delta_{r_1,0}\delta_{r_2,1},
+\]</span></p>
+<p>where <span class="math inline">\(\delta\)</span> is the Kronecker
+delta.</p>
+<p>The expression describes a superposition of two propagation channels:
+the slit-1 contribution correlated with the detector-outcome channel
+<span class="math inline">\((r_1,r_2)=(1,0)\)</span>, and the slit-2
+contribution correlated with <span
+class="math inline">\((r_1,r_2)=(0,1)\)</span>.</p>
+<p>The quantum wave functions <span
+class="math inline">\(\psi_1(x)\)</span> and <span
+class="math inline">\(\psi_2(x)\)</span> correspond to the propagated
+waves computed at the screen, in position <span
+class="math inline">\(x\)</span>, with the interaction potentials, <span
+class="math inline">\(V_1\)</span> and <span
+class="math inline">\(V_2\)</span> included in the action delta, <span
+class="math inline">\(\Delta S_j = -\int dt\,V_j(q,t)\)</span>.</p>
+<p>If one does not condition on the detector outcomes, the observed
+probability at the screen is obtained by summing explicitly over all
+detector outcomes <span
+class="math inline">\(r_1,r_2\in\{0,1\}\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(x)
+&amp;=
+\sum_{r_1,r_2} |\Psi(x;r_1,r_2)|^2 \\
+&amp;=
+|\Psi(x;1,0)|^2
++
+|\Psi(x;0,1)|^2
++
+|\Psi(x;0,0)|^2
++
+|\Psi(x;1,1)|^2.
+\end{aligned}
+\]</span></p>
+<p>For typical which-way arrangements , only the outcomes <span
+class="math inline">\((r_1,r_2)=(1,0)\)</span> and <span
+class="math inline">\((0,1)\)</span> contribute, with</p>
+<p><span class="math display">\[
+\Psi(x;1,0)=\psi_1(x), \qquad
+\Psi(x;0,1)=\psi_2(x),
+\]</span></p>
+<p>while</p>
+<p><span class="math display">\[
+\Psi(x;0,0)=\Psi(x;1,1)=0.
+\]</span></p>
+<p>Therefore,</p>
+<p><span class="math display">\[
+P(x)
+=
+|\psi_1(x)|^2
++
+|\psi_2(x)|^2.
+\]</span></p>
+<p>The cross term <span class="math inline">\(\psi_1^*\psi_2\)</span> is
+absent because the two slit contributions occupy orthogonal
+detector-outcome channels (classically either one detector fires,
+<code>none</code> or <code>both</code> cases are not typically
+considered).</p>
+<p>This absence is independent of whether a detector fires; it follows
+from summing over distinct outcomes rather than conditioning on one.</p>
+<p>No interference term appears in this unconditional probability,
+because the two slit contributions occupy disjoint detector-outcome
+channels <span class="math inline">\((r_1,r_2)=(1,0)\)</span> and <span
+class="math inline">\((0,1)\)</span>.</p>
+<p>This shows explicitly that the disappearance of interference is a
+deterministic consequence of the interaction potentials associated with
+the detectors. The interaction potentials <span
+class="math inline">\(V_j\)</span> are present during propagation
+regardless of whether a macroscopic firing event occurs.</p>
+<h2 data-number="6.2" id="ideal-scenarios"><span
+class="header-section-number">6.2</span> Ideal scenarios</h2>
+<p>The above Kronecker-delta form represents an idealized which-way
+detector with perfect efficiency and exclusive triggering. In general,
+non-ideal detector response permits additional outcome channels. The
+most general two-slit form can be written as</p>
+<p><span class="math display">\[
+\Psi(x;r_1,r_2)=\psi_1(x)\,a_{r_1,r_2}^{(1)}+\psi_2(x)\,a_{r_1,r_2}^{(2)},
+\]</span></p>
+<p>where <span class="math inline">\(a_{r_1,r_2}^{(j)}\)</span> is the
+detector response amplitude for outcome <span
+class="math inline">\((r_1,r_2)\)</span> conditioned on the slit-class
+<span class="math inline">\(j\)</span>.</p>
+<p>Summing over outcomes yields</p>
+<p><span class="math display">\[
+P(x)=\sum_{r_1,r_2}|\Psi(x;r_1,r_2)|^2
+=|\psi_1|^2+|\psi_2|^2
++2\,\mathrm{Re}\!\left(\psi_1^*\psi_2\sum_{r_1,r_2}
+a_{r_1,r_2}^{(1)}a_{r_1,r_2}^{(2)*}\right).
+\]</span></p>
+<p>Thus the interference term is controlled by the overlap factor</p>
+<p><span class="math display">\[
+\Gamma=\sum_{r_1,r_2} a_{r_1,r_2}^{(1)}a_{r_1,r_2}^{(2)*}.
+\]</span></p>
+<p>Ideal which-way detection corresponds to <span
+class="math inline">\(\Gamma=0\)</span> (distinct outcome channels);
+full interference corresponds to <span
+class="math inline">\(\Gamma=1\)</span> (indistinguishable detector
+response).</p>
+<h2 data-number="6.3"
+id="atypical-cases-or-predictions-of-the-mechanistic-view"><span
+class="header-section-number">6.3</span> Atypical cases, or predictions
+of the mechanistic view</h2>
+<p>The mechanistic view of detectors as energetic thresholds opens the
+posibility of <em>both</em> detectors firing and the electron be found
+in the screen.</p>
+<p>If both detectors fire, the corresponding detector response implies
+that the interaction experienced by the wave was effectively symmetric
+between the two slit regions. In such a case, the relative phase
+difference vanishes and the double-slit interference pattern is
+recovered.</p>
+<p>Similarly, if neither detector fires and the electron is nevertheless
+detected at the screen, the wavefunction must have evolved under the
+combined detector potential into a configuration with negligible
+amplitude in the detector regions. This evolution again corresponds to
+an effectively symmetric interaction and therefore permits
+interference.</p>
+<p>Detector outcomes label macroscopic response channels of the detector
+apparatus; they do not identify microscopic trajectories. In particular,
+outcomes such as <span class="math inline">\((r_1,r_2)=(1,1)\)</span> or
+<span class="math inline">\((0,0)\)</span> reflect how the detector
+circuitry responds to the incident wave, not where the electron “was” in
+a particle sense.</p>
+<p>When both detectors fire, the interaction potentials have coupled to
+wave amplitude in both slit regions.</p>
+<h2 data-number="6.4" id="wave-mechanical-tunnel-effect"><span
+class="header-section-number">6.4</span> Wave-Mechanical “Tunnel
+Effect”</h2>
+<p>It is instructive to note that, because the detector interaction
+potentials are spatially extended and possess nontrivial spatial
+structure, the Schrödinger equation admits solutions in which the
+electron wavefunction is strongly suppressed —potentially vanishing—
+within the detector regions while remaining finite at the screen. This
+behavior arises from wave interference under the combined potential
+<span class="math inline">\(V_1+V_2\)</span> and does not rely on
+penetration of a classically forbidden region.</p>
+<p>Transmission to the screen without detector triggering is therefore a
+purely wave-mechanical, deterministic effect. It reflects the fact that
+a wave —quantum or electromagnetic— is defined over all allowed space
+and can develop nodal or near-nodal regions as a consequence of its
+interaction with structured potentials.</p>
+<h1 data-number="7" id="no-measurement-postulate-required"><span
+class="header-section-number">7</span> No Measurement Postulate
+Required</h1>
+<p>At no stage does the description require:</p>
+<ul>
+<li>wavefunction collapse,</li>
+<li>stochastic dynamics,</li>
+<li>observer dependence,</li>
+<li>information-based causation, or</li>
+<li>interpretational assumptions.</li>
+</ul>
+<p>The electron evolves deterministically under unitary propagation.
+Probabilities arise only after applying the quadratic map to the
+propagated state.</p>
+<p>The disappearance of interference is a consequence of deterministic
+phase evolution under interaction. Nothing else is required.</p>
+<h1 data-number="8" id="conclusion"><span
+class="header-section-number">8</span> Conclusion</h1>
+<p>We have shown that, by following the deterministic evolution of an
+electron traversing a double slit in the presence of which-way
+detectors, one can recover continuously either the double-slit or the
+single-slit interference pattern without appealing to observers,
+information-theoretic notions, or quantum mysticism.</p>
+<p>By treating the quantum wave as a literal wave evolving under
+electromagnetic interaction potentials, we also uncover clear
+mechanistic explanations for phenomena commonly described using
+tunneling or nonlocal transfer language. Such effects arise from global
+wave propagation and interference under structured interactions, and do
+not require stochastic jumps, collapse, or special postulates beyond
+unitary quantum dynamics.</p>
+<h1 data-number="9" id="references"><span
+class="header-section-number">9</span> References</h1>
+<ol type="1">
+<li><p>C. Cohen-Tannoudji, B. Diu, F. Laloë, <em>Mécanique
+quantique</em>, Tomes I &amp; II, Hermann, Paris.</p></li>
+<li><p>R. P. Feynman, <em>QED: The Strange Theory of Light and
+Matter</em>, Princeton University Press, 1985.</p></li>
+<li><p>J. D. Jackson, <em>Classical Electrodynamics</em>, 3rd ed.,
+Wiley, 1998.</p></li>
+<li><p>M. Schlosshauer, <em>Decoherence and the Quantum-to-Classical
+Transition</em>, Springer, 2007.</p></li>
+</ol>
+</body>
+</html>
