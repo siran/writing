@@ -13,30 +13,17 @@ summary: The Standard Model divides physics into incompatible domains: Quantum M
 We have constructed a complete physical picture based on a single primitive:
 **Electromagnetic Energy Flow.**
 
-* **Genesis:** Matter is not created by a Big Bang; it is the compression of the
-  vacuum background ($T_{CMBR}$) into resonant knots.
-* **Structure:** Mass is not a scalar property; it is the geometric inertia of
-  trapped circulation.
-* **Interaction:** Gravity is not curved spacetime; it is the dielectric
-  response of the vacuum to energy density flux.
-
 This framework removes the artificial barriers between "Matter" and "Field," and
 between "Particle" and "Wave." There is only Flow, organized by Topology.
 
 
 ## 2. Scale Invariance: The Fractal Corollary
 
-Standard physics is plagued by scale dependence. The laws that govern the atom
-(QM) seemingly vanish at the scale of the galaxy (GR).
+Maxwell’s equations are linear, if $(\mathbf{E}, \mathbf{B})$ is a solution,
+then $(\mathbf{E}(\lambda \mathbf{x}), \mathbf{B}(\lambda \mathbf{x}))$ is also
+a solution, provided the energy density scales appropriately.
 
-Maxwell’s equations, however, are **Scale Invariant**. If
-$(\mathbf{E}, \mathbf{B})$ is a solution, then
-$(\mathbf{E}(\lambda \mathbf{x}), \mathbf{B}(\lambda \mathbf{x}))$ is also a
-solution, provided the energy density scales appropriately.
-
-This implies that the topological structures derived in this program—flux tubes,
-tori, and knots—should appear at *all* scales of the universe, not just the
-microscopic.
+<show how these laws are scale invariant>
 
 
 ### The Macroscopic Evidence
