@@ -40,7 +40,7 @@ sometimes disinterest in certain aspects of the other person come to mind. This 
 type of attraction that the Course is speaking of.
 
 In every relationship of attraction, there is a desire to belong. You may think of
-any romatic novel or movie and remember phrases like "make me yours" or "you will be mine."
+any romantic novel or movie and remember phrases like "make me yours" or "you will be mine."
 You may also think of certain beliefs, like "a family belongs to its own home," or the belief
 that children belong to their parents. The idea of possessing and being possessed
 is part of our nature.
@@ -66,7 +66,7 @@ making Him into something unable to do so.
 
 Avoiding God is one strategy. But we also have another, more prevalent, strategy up our
 sleeve: twisting the desire to be possessed by God into the desire to possess
-or be possessed in this world. Jesus typifies the four main ways in which we distort the attraction of God. I will only cover the first two forms that are the more relavant ones
+or be possessed in this world. Jesus typifies the four main ways in which we distort the attraction of God. I will only cover the first two forms that are the more relevant ones
 to the topic of money that this book is about.
 
 
@@ -85,11 +85,11 @@ Jesus typifies this type of distortion with these words:
 > interpretation is particularly vulnerable to psychosexual confusion. ([CE T-2.I.3](https://acimce.app/:T-2.I.3))
 
 It is evident that wanting to possess another person has everything to do with their body.
-That's the only thing that seems meaningful to posess in this world. There are plenty of
+That's the only thing that seems meaningful to possess in this world. There are plenty of
 unethical and also illegal ways that humans try to possess the bodies of others, for example
 through slavery. There are also others that are acceptable to our society and actively sought
 after, for example through sex. As with other forms of trying to possess bodies, there are things
-related to sex that are deemed unacceptable, while others are seens as desirable and
+related to sex that are deemed unacceptable, while others are seen as desirable and
 looked for.
 
 Here we can see that the classic roles of man and woman as a sexual couple are
@@ -101,7 +101,7 @@ confused state that is projected onto sex.
 Since our true desire of belonging to God is not solved by posessing bodies, but we do not
 recognize our true desire, we will experience that sex is unsatisfactory. This may lead
 many to explore other avenues related to sex that will be equally unfulfilling in the short
-or long run. This seeminly insatiable desire to possess bodies will inevitably makes us
+or long run. This seemingly insatiable desire to possess bodies will inevitably make us
 feel dirty, hurtful, and somehow evil.
 
 
@@ -120,12 +120,12 @@ part:
 > about "protecting the name" we mentioned before. ([CE T-2.I.4](https://acimce.app/:T-2.I.4))
 
 This is telling us that we first twisted the attraction of God into the desire of
-posessing people. As we saw, this ends up making us feel like we can hurt others. So,
+possessing people. As we saw, this ends up making us feel like we can hurt others. So,
 we devised a solution: We can keep our desire to possess external things without being
 harmful to others, and hopefully this would save us from feeling sinful and keep us
 away from the fear this produces.
 
-The "protecting the name" susperstition was an old jewish belief that people could be saved
+The "protecting the name" superstition was an old Jewish belief that people could be saved
 from death by changing their names. The idea was that, once the angel of death came for them,
 he would not find them, as their name would not match the name he had on his list.
 
@@ -154,7 +154,7 @@ remain together by sharing the desire to possess material things.
 ## Emergency Switches
 
 The desire to possess bodies and material things is an attempt to fill a void.
-Since these goals are relatively easy to achieve, ths desire to possess will tend to
+Since these goals are relatively easy to achieve, this desire to possess will tend to
 be compulsive. That is, it can lead us to a state where our behavior becomes
 uncontrollable.
 
@@ -166,7 +166,7 @@ the sea, and 'one nail drives out another!'
 
 **Are you sad?** Let's go shopping to lift your spirits.
 
-As we said before, these types of distortions are merely a way to supress our true
+As we said before, these types of distortions are merely a way to suppress our true
 desire to be back with God. The tension created by not satisfying this deep desire
 grows day by day, making the internal void even more voracious. This can lead us
 to place even more faith in these two distortions. The more faith we place in them,
@@ -174,8 +174,8 @@ the more emptiness and fear we generate. We could say we are imposing a regime o
 self-starvation on ourselves.
 
 This hunger, when taken to the extreme, results in highly undesirable,
-and even criminal behaviors. For instance, the desire to posssess bodies, in the extreme,
-leads to sex-crimes. The desire to possess material things may lead a person to stealing.
+and even criminal behaviors. For instance, the desire to possess bodies, in the extreme,
+leads to sex crimes. The desire to possess material things may lead a person to stealing.
 Although very few reach these extremes, there is a fear in the mind of each one of us that,
 in the darkest part of our being, there is a latent criminal.
 Have you ever had a completely inappropriate thought cross your mind? Weren't you afraid back
@@ -198,10 +198,10 @@ a way to allay the fear and emptiness generated by their desire to possess
 material things. It is similar to having an internal 'short circuit' that forces
 them to reset.
 
-Other examples of these short cicuits may be sexual dysfunctions for people with a
-strong desired to possess others sexually, losing it all for gambling addicts, 
-and Alhocol-related diseases for people who want to be possessed by alcoholic drinks.
-These are just extreme examples that make this phenomenon, but it make you wonder what
+Other examples of these short circuits may be sexual dysfunctions for people with a
+strong desire to possess others sexually, losing it all for gambling addicts, 
+and Alcohol-related diseases for people who want to be possessed by alcoholic drinks.
+These are just extreme examples that illustrate this phenomenon, but it makes you wonder what
 our own short-circuits are. How are we rendering ourselves less efficient as a result
 of accumulating fear through our possession drives?
 
@@ -274,6 +274,6 @@ Additionally, set your phone timer to remind you every 20 minutes of this idea:
 
 > "Today, I will not fight against my irresistible attraction to God."
 
-It goes without saying that this is not an excersize in abstinence. The goal
+It goes without saying that this is not an exercise in abstinence. The goal
 of the practice is to notice your needs as they come and to remind yourself what
 the real need behind this is.
