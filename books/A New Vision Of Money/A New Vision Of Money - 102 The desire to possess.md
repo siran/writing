@@ -29,16 +29,10 @@ explains it in the original dictation of the Course:
 > But you should consider whether you _want_ to wait, because you _can_ return
 > now, if you choose. ([CE T-2.I.1:3-4](https://acimce.app/:T-2.I.1:3-4))
 
-<<<<<<< Updated upstream:books/A New Vision Of Money/A New Vision Of Money - 102 The desire to possess.md
-
-In this world, however, we came with the idea of being separated from God. So
-that impulse of such irresistible attraction had to be suppressed.
-=======
-You may think of this attraction as haivng two sides.  On one hand, we feel attracted to God,
+You may think of this attraction as having two sides.  On one hand, we feel attracted to God,
 and on the other, God attracts us as if He were a force of gravity. The Course calls these two forces “the irresistible attraction of God.” Our natural state is one of total attraction
 to God. It is the only thing we desire; the elements of repulsion and disinterest are not
 present there. God is perfectly attractive.
->>>>>>> Stashed changes:books/A New Vision On Money/A New Vision Of Money - 102 The desire to possess.md
 
 When we think of the word attraction, we usually think of a romantic
 relationship. Inevitably, thoughts associated with desire, repulsion, and
@@ -90,8 +84,6 @@ Jesus typifies this type of distortion with these words:
 > conceived of as satisfying alone, and both will be associated with fear, this
 > interpretation is particularly vulnerable to psychosexual confusion. ([CE T-2.I.3](https://acimce.app/:T-2.I.3))
 
-<<<<<<< Updated upstream:books/A New Vision Of Money/A New Vision Of Money - 102 The desire to possess.md
-=======
 It is evident that wanting to possess another person has everything to do with their body.
 That's the only thing that seems meaningful to posess in this world. There are plenty of
 unethical and also illegal ways that humans try to possess the bodies of others, for example
@@ -99,7 +91,6 @@ through slavery. There are also others that are acceptable to our society and ac
 after, for example through sex. As with other forms of trying to possess bodies, there are things
 related to sex that are deemed unacceptable, while others are seens as desirable and
 looked for.
->>>>>>> Stashed changes:books/A New Vision On Money/A New Vision Of Money - 102 The desire to possess.md
 
 Here we can see that the classic roles of man and woman as a sexual couple are
 one of the more acceptable forms of this type of distortion in the times we live in.
@@ -128,16 +119,6 @@ part:
 > attempt to _protect_ people from one's possessiveness, like the superstition
 > about "protecting the name" we mentioned before. ([CE T-2.I.4](https://acimce.app/:T-2.I.4))
 
-<<<<<<< Updated upstream:books/A New Vision Of Money/A New Vision Of Money - 102 The desire to possess.md
-
-It is interesting to read that the desire to possess material things is a form
-of protection. It is as if the first distortion we resort to is the desire to
-possess other people. However, this causes fear, perhaps because we might harm
-the other person. The solution we find in our confusion is to divert the desire
-to possess bodies and turn it into the desire to possess material things. By
-diverting the desire, we think we are protecting the person whose body we wanted
-to possess.
-=======
 This is telling us that we first twisted the attraction of God into the desire of
 posessing people. As we saw, this ends up making us feel like we can hurt others. So,
 we devised a solution: We can keep our desire to possess external things without being
@@ -152,7 +133,6 @@ The new solution is to divert this desire to possess bodies into the desire to
 possess material things. By diverting the desire, we think we are protecting
 the person whose body we wanted to possess. That is, whenever our harmfulness wanted to find
 its target on another person, it would not succeed, as we gave our desire another name.
->>>>>>> Stashed changes:books/A New Vision On Money/A New Vision Of Money - 102 The desire to possess.md
 
 Have you ever felt the urge to buy something expensive after a breakup or
 romantic disappointment? For example, I know several people who drown their
@@ -164,15 +144,9 @@ obsessing about making the other person yours.
 
 ![](https://siran.github.io/assets/a_new_vision_on_money/shopping-spree.png)
 
-<<<<<<< Updated upstream:books/A New Vision Of Money/A New Vision Of Money - 102 The desire to possess.md
-
-Another interesting point that Jesus makes in his explanation is that many
-relationships are formed based on the first type of possession. But this is not
-=======
 An interesting point that Jesus makes in the quote above is that many
 relationships are formed based on the first type of possession. That is, on the desire
 to possess or be possessed by the other person. This desire is not 
->>>>>>> Stashed changes:books/A New Vision On Money/A New Vision Of Money - 102 The desire to possess.md
 what keeps them together in the long run. Once the romance fades, many couples
 remain together by sharing the desire to possess material things.
 
@@ -254,8 +228,6 @@ heal it with equal ease:
 > It is emphasized here that these differences have no effect at all on the
 > miracle, which can heal any of them with equal ease. ([CE T-2.I.21:1](https://acimce.app/:T-2.I.21:1))
 
-<<<<<<< Updated upstream:books/A New Vision Of Money/A New Vision Of Money - 102 The desire to possess.md
-=======
 ## Conclusion
 
 I think delving deeply into the topic of possession can help us understand
@@ -264,7 +236,6 @@ satisfy our distorted impulses to possess and that money itself can become the
 object we desire to possess or that possesses us. There is nothing inherently
 special about money from this perspective. It is simply a deep need for God that
 has not yet been healed.
->>>>>>> Stashed changes:books/A New Vision On Money/A New Vision Of Money - 102 The desire to possess.md
 
 ## Practice
 
@@ -287,16 +258,9 @@ you. That is why you need to be very vigilant to recognize the moments when you
 think you want these things. Once you have identified the thought, respond
 immediately:
 
-<<<<<<< Updated upstream:books/A New Vision Of Money/A New Vision Of Money - 102 The desire to possess.md
-
-> "I am confused because I think possessing ---------- is what will bring me
-> happiness [peace, freedom, etc.]. What I am really seeking through this is to
-> belong to God."
-=======
 > "I am confused because I think possessing ___________ is what will bring me
 > happiness [peace, freedom, etc.]. But, what I am really longing for is
 > belonging to God."
->>>>>>> Stashed changes:books/A New Vision On Money/A New Vision Of Money - 102 The desire to possess.md
 
 
 Just like in the previous practice, close your eyes and say these words very
