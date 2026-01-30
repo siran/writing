@@ -17,38 +17,9 @@ take a small detour to explain the desire to possess. After all, one of the main
 uses we give to money is to possess material things and also to control other
 people who work for us.
 
-Do not think that by separating from God we completely forgot about Him. Deep in
-the mind of each person lies a burning desire to return home. God did not forget
-about us either. He constantly calls us with His love and speaks to us
-throughout the day, reminding us how much He wants us to return to Him.
-
-On one hand, we feel attracted to God, and on the other, God attracts us as if
-He were a force of gravity. The Course calls these two forces “the irresistible
-attraction to God.”
-
-When we think of the word attraction, we usually think of a romantic
-relationship. Inevitably, thoughts associated with desire, repulsion, and
-sometimes disinterest in certain aspects of the other person come to mind.
-However, in heaven, our natural state is one of total attraction to God. It is
-the only thing we desire; the elements of repulsion and disinterest are not
-present there. God is perfectly attractive.
-
-In every relationship of attraction, there is a desire to belong. If you do not
-believe me, think of a soap opera - perhaps romantic movies - and remember
-phrases like "make me yours" or "you will be mine."
-
-Also beliefs like, "a family belongs to its own home," or that some people
-believe that children belong to their parents.
-
-The idea of possessing and being possessed is part of the nature of this world.
-
-By separating from God, we did not lose that deep desire to belong. We desire to
-belong to God. There is such an irresistible attraction to God that we naturally
-want God to make us His own.
-
 It may sound strange, but deep down, each of us desires to be possessed by God.
 Not in the sense that a spirit possesses a body, as seen in horror movies, but
-in the sense that a child belongs to their parents. That is the reality in
+in the sense that a child belongs to their parents. That is our reality in
 heaven, and also in this world, even if we do not realize it. This is how Jesus
 explains it in the original dictation of the Course:
 
@@ -58,32 +29,57 @@ explains it in the original dictation of the Course:
 > But you should consider whether you _want_ to wait, because you _can_ return
 > now, if you choose. ([CE T-2.I.1:3-4](https://acimce.app/:T-2.I.1:3-4))
 
+<<<<<<< Updated upstream:books/A New Vision Of Money/A New Vision Of Money - 102 The desire to possess.md
 
 In this world, however, we came with the idea of being separated from God. So
 that impulse of such irresistible attraction had to be suppressed.
+=======
+You may think of this attraction as haivng two sides.  On one hand, we feel attracted to God,
+and on the other, God attracts us as if He were a force of gravity. The Course calls these two forces “the irresistible attraction of God.” Our natural state is one of total attraction
+to God. It is the only thing we desire; the elements of repulsion and disinterest are not
+present there. God is perfectly attractive.
+>>>>>>> Stashed changes:books/A New Vision On Money/A New Vision Of Money - 102 The desire to possess.md
 
-One of the many ways we suppress that impulse is by avoiding God. For example,
-there are atheists who deny His existence. There are also those who believe in
+When we think of the word attraction, we usually think of a romantic
+relationship. Inevitably, thoughts associated with desire, repulsion, and
+sometimes disinterest in certain aspects of the other person come to mind. This is not the
+type of attraction that the Course is speaking of.
+
+In every relationship of attraction, there is a desire to belong. You may think of
+any romatic novel or movie and remember phrases like "make me yours" or "you will be mine."
+You may also think of certain beliefs, like "a family belongs to its own home," or the belief
+that children belong to their parents. The idea of possessing and being possessed
+is part of our nature.
+ 
+Deep in the mind of each person lies a burning desire to return home.
+However, we came to this world thanks to the idea of being separated from God.
+So, this impulse of such irresistible attraction had to be suppressed. We did not forget
+entirely about Him nor about His love for us. By separating from God, we did not lose
+that deep desire to belong. We still desire to belong to God.
+This is such an irresistible attraction that we naturally want God to make us His own again.
+God did not forget about us either. He constantly calls us with His love and speaks
+to us throughout the day, reminding us how much He wants us to return to His side.
+
+One of the many ways we suppress this impulse is by avoiding God. For example,
+atheists deny His existence. There are also those who believe in
 Him but think He is someone fearful or despotic and therefore undesirable.
 Interestingly, there are also those who want to believe in Him but strip Him of
-so many attributes that He ends up being a diluted God. For example, nowadays,
-we can hear many spiritual currents speaking of God as impersonal energy, the
-void, silence, universal consciousness, and also as a higher self. All these
-visions are attempts to avoid the desire to be possessed by God.
+so many attributes that He ends up being a diluted, distant, or impersonal God.
+For example, nowadays, we can hear many spiritual currents speaking of God as
+impersonal energy, the void, silence, universal consciousness, or simply a higher self.
+All these versions of God are attempts to avoid the desire to be possessed by God by
+making Him into something unable to do so.
 
-Suppressing the impulse of attraction is a strategy. But we also have another
-strategy up our sleeve: distorting the desire to be possessed by God into the
-desire to possess in this world.
-
-Jesus typifies the four main ways in which we distort the attraction to God. I
-will only cover the first two forms that are relevant to the topic of money that
-we are discussing this time.
+Avoiding God is one strategy. But we also have another, more prevalent, strategy up our
+sleeve: twisting the desire to be possessed by God into the desire to possess
+or be possessed in this world. Jesus typifies the four main ways in which we distort the attraction of God. I will only cover the first two forms that are the more relavant ones
+to the topic of money that this book is about.
 
 
 ## Type 1: The desire to possess bodies or be possessed by them
 
 Anyone who has fallen in love in this world has experienced the desire to
-possess the body of their beloved. As I mentioned earlier, soap operas are full
+possess the body of their beloved. As I mentioned earlier, romantic novels and movies are full
 of phrases that reveal the human desire to possess another or to be made theirs.
 Jesus typifies this type of distortion with these words:
 
@@ -94,12 +90,29 @@ Jesus typifies this type of distortion with these words:
 > conceived of as satisfying alone, and both will be associated with fear, this
 > interpretation is particularly vulnerable to psychosexual confusion. ([CE T-2.I.3](https://acimce.app/:T-2.I.3))
 
+<<<<<<< Updated upstream:books/A New Vision Of Money/A New Vision Of Money - 102 The desire to possess.md
+=======
+It is evident that wanting to possess another person has everything to do with their body.
+That's the only thing that seems meaningful to posess in this world. There are plenty of
+unethical and also illegal ways that humans try to possess the bodies of others, for example
+through slavery. There are also others that are acceptable to our society and actively sought
+after, for example through sex. As with other forms of trying to possess bodies, there are things
+related to sex that are deemed unacceptable, while others are seens as desirable and
+looked for.
+>>>>>>> Stashed changes:books/A New Vision On Money/A New Vision Of Money - 102 The desire to possess.md
 
 Here we can see that the classic roles of man and woman as a sexual couple are
-the product of a distortion. The man wants to possess the woman, and the woman
-wants the man to make her his. However, Jesus adds that neither role is
-satisfactory in itself, which leads to more confusion that is projected onto
-sex.
+one of the more acceptable forms of this type of distortion in the times we live in.
+The man wants to possess the woman, and the woman wants the man to make her his. However,
+Jesus adds that neither role is satisfactory in itself, which leads to an increased
+confused state that is projected onto sex.
+
+Since our true desire of belonging to God is not solved by posessing bodies, but we do not
+recognize our true desire, we will experience that sex is unsatisfactory. This may lead
+many to explore other avenues related to sex that will be equally unfulfilling in the short
+or long run. This seeminly insatiable desire to possess bodies will inevitably makes us
+feel dirty, hurtful, and somehow evil.
+
 
 
 ## Type 2: The desire to possess material things
@@ -115,6 +128,7 @@ part:
 > attempt to _protect_ people from one's possessiveness, like the superstition
 > about "protecting the name" we mentioned before. ([CE T-2.I.4](https://acimce.app/:T-2.I.4))
 
+<<<<<<< Updated upstream:books/A New Vision Of Money/A New Vision Of Money - 102 The desire to possess.md
 
 It is interesting to read that the desire to possess material things is a form
 of protection. It is as if the first distortion we resort to is the desire to
@@ -123,19 +137,42 @@ the other person. The solution we find in our confusion is to divert the desire
 to possess bodies and turn it into the desire to possess material things. By
 diverting the desire, we think we are protecting the person whose body we wanted
 to possess.
+=======
+This is telling us that we first twisted the attraction of God into the desire of
+posessing people. As we saw, this ends up making us feel like we can hurt others. So,
+we devised a solution: We can keep our desire to possess external things without being
+harmful to others, and hopefully this would save us from feeling sinful and keep us
+away from the fear this produces.
+
+The "protecting the name" susperstition was an old jewish belief that people could be saved
+from death by changing their names. The idea was that, once the angel of death came for them,
+he would not find them, as their name would not match the name he had on his list.
+
+The new solution is to divert this desire to possess bodies into the desire to
+possess material things. By diverting the desire, we think we are protecting
+the person whose body we wanted to possess. That is, whenever our harmfulness wanted to find
+its target on another person, it would not succeed, as we gave our desire another name.
+>>>>>>> Stashed changes:books/A New Vision On Money/A New Vision Of Money - 102 The desire to possess.md
 
 Have you ever felt the urge to buy something expensive after a breakup or
 romantic disappointment? For example, I know several people who drown their
 sorrows in shopping when things do not go well in love. The idea proposed here
 is that this behavior is due to the fear caused by the desire to possess the
-other person.
+other person. It feels safer and healthier to buy some things on the internet than
+obsessing about making the other person yours.
 
 
 ![](https://siran.github.io/assets/a_new_vision_on_money/shopping-spree.png)
 
+<<<<<<< Updated upstream:books/A New Vision Of Money/A New Vision Of Money - 102 The desire to possess.md
 
 Another interesting point that Jesus makes in his explanation is that many
 relationships are formed based on the first type of possession. But this is not
+=======
+An interesting point that Jesus makes in the quote above is that many
+relationships are formed based on the first type of possession. That is, on the desire
+to possess or be possessed by the other person. This desire is not 
+>>>>>>> Stashed changes:books/A New Vision On Money/A New Vision Of Money - 102 The desire to possess.md
 what keeps them together in the long run. Once the romance fades, many couples
 remain together by sharing the desire to possess material things.
 
@@ -143,35 +180,36 @@ remain together by sharing the desire to possess material things.
 ## Emergency Switches
 
 The desire to possess bodies and material things is an attempt to fill a void.
-Since these goals are relatively easy to achieve, the desires to possess tend to
-be compulsive. This means they can lead us to a state where our behavior becomes
+Since these goals are relatively easy to achieve, ths desire to possess will tend to
+be compulsive. That is, it can lead us to a state where our behavior becomes
 uncontrollable.
 
 Superficially, the desire to possess bodies and things seems completely
 harmless. In fact, they appear to have the power to keep fear and pain at bay.
 
-**Did your partner leave you?** It does not matter; there are plenty of fish in
+**Did your partner leave you?** It doesn't matter; there are plenty of fish in
 the sea, and 'one nail drives out another!'
 
 **Are you sad?** Let's go shopping to lift your spirits.
 
-What we do not realize is that the fear we are trying to keep at bay is the fear
-of returning to God. The tension created by not satisfying this deep desire
+As we said before, these types of distortions are merely a way to supress our true
+desire to be back with God. The tension created by not satisfying this deep desire
 grows day by day, making the internal void even more voracious. This can lead us
-to place even more faith in the first two distortions of the desire to possess.
-And the more faith we place in these solutions, the more emptiness and fear we
-generate. We could say we are imposing a regime of self-starvation on ourselves.
+to place even more faith in these two distortions. The more faith we place in them,
+the more emptiness and fear we generate. We could say we are imposing a regime of
+self-starvation on ourselves.
 
-This voracious hunger, when taken to the extreme, results in highly undesirable
-and even criminal behaviors. Although very few reach this extreme, there is a
-fear in the mind of each person that, in the darkest part of our being, there is
-a latent criminal. Have you ever had a completely inappropriate thought cross
-your mind? The idea that you could actually do it is one of the many promoters
-of fear.
+This hunger, when taken to the extreme, results in highly undesirable,
+and even criminal behaviors. For instance, the desire to posssess bodies, in the extreme,
+leads to sex-crimes. The desire to possess material things may lead a person to stealing.
+Although very few reach these extremes, there is a fear in the mind of each one of us that,
+in the darkest part of our being, there is a latent criminal.
+Have you ever had a completely inappropriate thought cross your mind? Weren't you afraid back
+then that you were capable of thinking of such a thing?
 
-No one really wants to see themselves as the villain of the story. So, in the
-midst of confusion, we come up with very creative ideas to avoid reaching the
-extreme, hoping that this will reduce the fear. The Course says that these ego
+No one really wants to see themselves as the villain of their story. So, in the
+midst of confusion, we come up with very creative ideas to avoid getting to the
+extremes, hoping that this will also reduce fear. The Course says that these ego
 solutions follow this logic:
 
 1. A child of God is efficient.
@@ -182,16 +220,16 @@ This means that the ego's solutions to keep fear at bay involve making you less
 efficient in achieving the desire you want to fulfill. For example, people who
 accumulate great wealth and then go bankrupt, sometimes multiple times
 throughout their lives. These individuals drive themselves to lose everything as
-a way to reduce the fear and emptiness generated by their desire to possess
+a way to allay the fear and emptiness generated by their desire to possess
 material things. It is similar to having an internal 'short circuit' that forces
 them to reset.
 
-Perhaps delving deeply into the topic of possession has helped you understand
-the role of money a bit better. We can see that money might be a means to
-satisfy our distorted impulses to possess and that money itself can become the
-object we desire to possess or that possesses us. There is nothing inherently
-special about money from this perspective. It is simply a deep need for God that
-has not yet been healed.
+Other examples of these short cicuits may be sexual dysfunctions for people with a
+strong desired to possess others sexually, losing it all for gambling addicts, 
+and Alhocol-related diseases for people who want to be possessed by alcoholic drinks.
+These are just extreme examples that make this phenomenon, but it make you wonder what
+our own short-circuits are. How are we rendering ourselves less efficient as a result
+of accumulating fear through our possession drives?
 
 
 ## Healing the Desire to Possess
@@ -208,14 +246,25 @@ healing the distortions we participate in:
 
 This is achieved through miracles. Miracles, which are expressions of love, are
 designed to fill the void left from our separation from God. By satisfying the
-true need, the distortions must disappear. It does not matter what type of
+true need, distortions must disappear. It does not matter what type of
 distortion arises or how difficult and persistent it may seem. The miracle can
-heal it:
+heal it with equal ease:
 
 
 > It is emphasized here that these differences have no effect at all on the
 > miracle, which can heal any of them with equal ease. ([CE T-2.I.21:1](https://acimce.app/:T-2.I.21:1))
 
+<<<<<<< Updated upstream:books/A New Vision Of Money/A New Vision Of Money - 102 The desire to possess.md
+=======
+## Conclusion
+
+I think delving deeply into the topic of possession can help us understand
+the role of money a bit better. We can see that money might be a means to
+satisfy our distorted impulses to possess and that money itself can become the
+object we desire to possess or that possesses us. There is nothing inherently
+special about money from this perspective. It is simply a deep need for God that
+has not yet been healed.
+>>>>>>> Stashed changes:books/A New Vision On Money/A New Vision Of Money - 102 The desire to possess.md
 
 ## Practice
 
@@ -238,10 +287,16 @@ you. That is why you need to be very vigilant to recognize the moments when you
 think you want these things. Once you have identified the thought, respond
 immediately:
 
+<<<<<<< Updated upstream:books/A New Vision Of Money/A New Vision Of Money - 102 The desire to possess.md
 
 > "I am confused because I think possessing ---------- is what will bring me
 > happiness [peace, freedom, etc.]. What I am really seeking through this is to
 > belong to God."
+=======
+> "I am confused because I think possessing ___________ is what will bring me
+> happiness [peace, freedom, etc.]. But, what I am really longing for is
+> belonging to God."
+>>>>>>> Stashed changes:books/A New Vision On Money/A New Vision Of Money - 102 The desire to possess.md
 
 
 Just like in the previous practice, close your eyes and say these words very
@@ -254,3 +309,7 @@ Additionally, set your phone timer to remind you every 20 minutes of this idea:
 
 
 > "Today, I will not fight against my irresistible attraction to God."
+
+It goes without saying that this is not an excersize in abstinence. The goal
+of the practice is to notice your needs as they come and to remind yourself what
+the real need behind this is.
