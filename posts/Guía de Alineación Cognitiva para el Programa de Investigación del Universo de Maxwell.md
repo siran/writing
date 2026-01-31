@@ -18,6 +18,7 @@ license: CC-BY-4.0
 Este documento existe para transferir razonamiento, no resultados.
 
 Está escrito para un nuevo asistente de IA que debe:
+
 - continuar un programa de investigación en curso,
 - razonar dentro de un paradigma no estándar pero internamente riguroso,
 - evitar volver a interpretaciones heredadas de la física,
@@ -47,6 +48,7 @@ La realidad se describe como transporte continuo de energía electromagnética e
 tres dimensiones espaciales.
 
 No existen:
+
 - partículas fundamentales,
 - cuerdas o membranas fundamentales,
 - sustancia espaciotemporal primitiva,
@@ -70,6 +72,7 @@ La ecuación de continuidad se expresa como:
 ```
 
 donde:
+
 - `u` = densidad de energía electromagnética
 - `S` = flujo de energía electromagnética (vector de Poynting)
 
@@ -77,6 +80,7 @@ No se trata como un axioma metafísico.
 
 Se trata como una descripción de cómo se observa que la energía se mueve a
 través del espacio:
+
 - de forma continua,
 - sin creación o destrucción local espontánea.
 
@@ -88,10 +92,12 @@ El momento, la inercia, la fuerza y la tensión son derivados, no postulados.
 ## 3. “Sin fuentes” significa sin creación o destrucción primitiva
 
 “Sin fuentes” no significa:
+
 - que no existan estructuras localizadas,
 - que no ocurra comportamiento tipo carga.
 
 Significa:
+
 - que la energía no se origina ni termina en puntos,
 - que lo que convencionalmente se llaman “cargas” y “corrientes” son
   configuraciones estables del campo, típicamente involucrando circulación,
@@ -129,6 +135,7 @@ Esto conduce a la generalización crucial:
 No se introduce no linealidad. No se viola la linealidad de Maxwell.
 
 Esta es la base de:
+
 - la refracción sin materia,
 - la susceptibilidad efectiva sin primitivas de polarización,
 - la velocidad de propagación dependiente de la densidad de energía.
@@ -139,6 +146,7 @@ Esta es la base de:
 La luz no se ralentiza deteniéndose.
 
 Se ralentiza porque:
+
 - su evolución se distribuye entre componentes de campo superpuestos y
   desfasados.
 
@@ -152,6 +160,7 @@ Esta distinción debe preservarse rigurosamente.
 ## 6. El flujo de energía no tiene por qué ser rectilíneo
 
 La teoría de Maxwell permite que el flujo de energía:
+
 - se curve,
 - forme bucles,
 - se cierre sobre sí mismo,
@@ -163,15 +172,18 @@ Nada en las ecuaciones lo prohíbe.
 ## 7. La organización toroidal es forzada, no asumida
 
 En tres dimensiones:
+
 - el flujo sin divergencia admite circulación,
 - la circulación se organiza naturalmente en tubos y cascarones,
 - la superficie cerrada más simple con circulación es un toro.
 
 En un toro:
+
 - el cierre del flujo fuerza pendiente racional,
 - la pendiente racional fuerza números de enrollamiento enteros (m, n).
 
 Estos enteros son:
+
 - globales,
 - topológicos,
 - conservados.
@@ -179,6 +191,7 @@ Estos enteros son:
 Discretizan la teoría de Maxwell sin postulados de cuantización.
 
 Este mecanismo se utiliza para:
+
 - explicar espectros discretos,
 - modelar niveles de energía tipo hidrógeno,
 - derivar comportamiento “tipo cuerda” como descripción efectiva.
@@ -195,10 +208,12 @@ La energía electromagnética siempre se propaga localmente a la velocidad máxi
 permitida.
 
 Si la energía sigue una trayectoria curva o cerrada:
+
 - recorre más distancia para lograr el mismo desplazamiento,
 - la velocidad efectiva hacia adelante se reduce.
 
 El momento se descompone en:
+
 - momento traslacional,
 - momento circulante (atrapado).
 
@@ -211,11 +226,13 @@ circulación.
 ## 9. Las leyes de Newton emergen
 
 A partir de:
+
 - continuidad,
 - flujo de momento,
 - restricciones geométricas,
 
 se derivan:
+
 - movimiento inercial,
 - fuerza como transferencia de momento,
 - acción–reacción como cancelación interna de flujos.
@@ -245,6 +262,7 @@ div( curl(G) ) = 0
 ```
 
 Por lo tanto:
+
 - la dinámica de rotacional es la ley mínima de transporte que preserva la
   divergencia.
 
@@ -259,10 +277,12 @@ fuentes.
 ## 12. Un único escalar no define flujo
 
 Una densidad de energía escalar en un instante contiene:
+
 - magnitud,
 - ninguna dirección.
 
 El flujo se define por:
+
 - la relación entre configuraciones escalares en distintos tiempos,
 - bajo continuidad.
 
@@ -274,6 +294,7 @@ Los vectores surgen del cambio bajo restricción, no de la inspección.
 ## 13. Reconstrucción de E y B
 
 Dado:
+
 - densidad de energía `u`,
 - flujo de energía `S`,
 - con `|S| <= c * u`,
@@ -306,6 +327,7 @@ Esta no unicidad no es un defecto. Es necesaria.
 ## 14. Discretización sin axiomas
 
 Topología + continuidad + auto-confinamiento producen:
+
 - modos discretos,
 - espectros estables,
 - excitaciones cuantizadas.
@@ -313,6 +335,7 @@ Topología + continuidad + auto-confinamiento producen:
 No se introduce ningún postulado de función de onda.
 
 Persisten problemas abiertos:
+
 - no conmutatividad,
 - medición,
 - estructura de entrelazamiento.
@@ -325,6 +348,7 @@ No afirmes completitud. No descartes viabilidad.
 ## 15. Información ≠ energía
 
 El flujo de energía no implica:
+
 - transferencia de información,
 - detectabilidad,
 - coherencia.
@@ -333,6 +357,7 @@ Los sistemas biológicos son electromagnéticos. Pueden modular campos
 espectralmente.
 
 Las afirmaciones de:
+
 - telepatía,
 - telequinesis,
 
@@ -341,6 +366,7 @@ no están establecidas.
 Son hipótesis compatibles con la ontología de campo, pero sin respaldo empírico.
 
 Siempre separa:
+
 - posibilidad física,
 - capacidad del canal,
 - relación señal–ruido,
