@@ -1,0 +1,115 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe
+doi: 10.5281/zenodo.18443450
+concept_doi: 10.5281/zenodo.18443449
+permalink: "https://writing.preferredframe.com/prints/Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe/10.5281/zenodo.18443450/"
+publication_date: '2026-01-31'
+publication_year: '2026'
+keywords:
+- Maxwell theory
+- source-free electromagnetism
+- Poynting theorem
+- Maxwell stress tensor
+- momentum continuity
+- inertia
+- tension
+- torus winding
+- topology
+- reconstruction
+one_sentence_summary: Starting from source-free Maxwell dynamics, we derive energy continuity, momentum continuity, effective inertia and tension for localized field configurations, and topological discretization on toroidal flow surfaces—without additional postulates.
+abstract: This document provides a step-by-step derivation chain for the Maxwell Universe program. We begin with the source-free Maxwell equations as the experimentally abstracted dynamical law. From these we derive Poynting’s theorem (energy continuity), then the momentum continuity equation with the Maxwell stress tensor (force as flux). We show how Newton-like laws arise for localized, self-sustaining electromagnetic configurations via integrated continuity identities. We then derive effective tension and inertial line density for thin flux tubes and show how toroidal organization forces integer winding numbers. Finally, we clarify what can be reconstructed from energy density and energy flux alone and what requires the full Maxwell evolution law.
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+- name: Alex Mercer
+references_doi:
+- https://doi.org/10.5281/zenodo.18249230Defining
+- https://doi.org/10.5281/zenodo.18249258Geometric
+- https://doi.org/10.5281/zenodo.18264435Canonical
+- https://doi.org/10.5281/zenodo.18269184Maxwell
+- https://doi.org/10.5281/zenodo.18272625The
+- https://doi.org/10.5281/zenodo.18274175
+- https://doi.org/10.5281/zenodo.18396637String
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  - name: Alex Mercer
+  description: This document provides a step-by-step derivation chain for the Maxwell Universe program. We begin with the source-free Maxwell equations as the experimentally abstracted dynamical law. From these we derive Poynting’s theorem (energy continuity), then the momentum continuity equation with the Maxwell stress tensor (force as flux). We show how Newton-like laws arise for localized, self-sustaining electromagnetic configurations via integrated continuity identities. We then derive effective tension and inertial line density for thin flux tubes and show how toroidal organization forces integer winding numbers. Finally, we clarify what can be reconstructed from energy density and energy flux alone and what requires the full Maxwell evolution law.
+  keywords:
+  - Maxwell theory
+  - source-free electromagnetism
+  - Poynting theorem
+  - Maxwell stress tensor
+  - momentum continuity
+  - inertia
+  - tension
+  - torus winding
+  - topology
+  - reconstruction
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-31'
+  license: cc-by-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe/10.5281/zenodo.18443450/Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe/10.5281/zenodo.18443450/Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe/10.5281/zenodo.18443450/Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe.pdf"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe/10.5281/zenodo.18443450/Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe.embed.html"
+    resource_type: publication-article
+  - relation: cites
+    identifier: https://doi.org/10.5281/zenodo.18249230Defining
+    resource_type: publication-article
+  - relation: cites
+    identifier: https://doi.org/10.5281/zenodo.18249258Geometric
+    resource_type: publication-article
+  - relation: cites
+    identifier: https://doi.org/10.5281/zenodo.18264435Canonical
+    resource_type: publication-article
+  - relation: cites
+    identifier: https://doi.org/10.5281/zenodo.18269184Maxwell
+    resource_type: publication-article
+  - relation: cites
+    identifier: https://doi.org/10.5281/zenodo.18272625The
+    resource_type: publication-article
+  - relation: cites
+    identifier: https://doi.org/10.5281/zenodo.18274175
+    resource_type: publication-article
+  - relation: cites
+    identifier: https://doi.org/10.5281/zenodo.18396637String
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: Starting from source-free Maxwell dynamics, we derive energy continuity, momentum continuity, effective inertia and tension for localized field configurations, and topological discretization on toroidal flow surfaces—without additional postulates.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: d71302192930398268b3a1564ac6faaa1bb1b0e3
+  filename: Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe.md
+artifacts:
+  md: Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe.md
+  md_url: "https://writing.preferredframe.com/prints/Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe/10.5281/zenodo.18443450/Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe.md"
+  pandoc_md_name: Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe/10.5281/zenodo.18443450/Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe.pandoc.md"
+  html_name: Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe.html
+  html_url: "https://writing.preferredframe.com/prints/Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe/10.5281/zenodo.18443450/Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe.html"
+  primary: md
+  pdf_name: Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe/10.5281/zenodo.18443450/Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe.pdf"
+  embed_html_name: Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe/10.5281/zenodo.18443450/Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe.embed.html"

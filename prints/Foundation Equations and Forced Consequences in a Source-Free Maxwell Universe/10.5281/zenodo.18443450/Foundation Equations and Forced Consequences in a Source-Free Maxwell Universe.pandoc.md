@@ -2,12 +2,71 @@
 title: Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe
 subtitle: From Maxwell Dynamics to Continuity, Momentum, Inertia, Tension, and Topological Discretization
 author: An M. Rodriguez, Alex Mercer
-date: 2026-01-20
+date: 2026-01-31
 keywords: Maxwell theory, source-free electromagnetism, Poynting theorem, Maxwell stress tensor, momentum continuity, inertia, tension, torus winding, topology, reconstruction
 one-sentence-summary: Starting from source-free Maxwell dynamics, we derive energy continuity, momentum continuity, effective inertia and tension for localized field configurations, and topological discretization on toroidal flow surfaces—without additional postulates.
 summary: This document provides a step-by-step derivation chain for the Maxwell Universe program. We begin with the source-free Maxwell equations as the experimentally abstracted dynamical law. From these we derive Poynting’s theorem (energy continuity), then the momentum continuity equation with the Maxwell stress tensor (force as flux). We show how Newton-like laws arise for localized, self-sustaining electromagnetic configurations via integrated continuity identities. We then derive effective tension and inertial line density for thin flux tubes and show how toroidal organization forces integer winding numbers. Finally, we clarify what can be reconstructed from energy density and energy flux alone and what requires the full Maxwell evolution law.
 doi: https://writing.preferredframe.com/doi/10.5281/zenodo.18443450
 ---
+
+**One-Sentence Summary.** Starting from source-free Maxwell dynamics, we derive energy continuity, momentum continuity, effective inertia and tension for localized field configurations, and topological discretization on toroidal flow surfaces—without additional postulates.
+
+**Abstract.** This document provides a step-by-step derivation chain for the Maxwell Universe program. We begin with the source-free Maxwell equations as the experimentally abstracted dynamical law. From these we derive Poynting’s theorem (energy continuity), then the momentum continuity equation with the Maxwell stress tensor (force as flux). We show how Newton-like laws arise for localized, self-sustaining electromagnetic configurations via integrated continuity identities. We then derive effective tension and inertial line density for thin flux tubes and show how toroidal organization forces integer winding numbers. Finally, we clarify what can be reconstructed from energy density and energy flux alone and what requires the full Maxwell evolution law.
+
+**Keywords.** Maxwell theory, source-free electromagnetism, Poynting theorem, Maxwell stress tensor, momentum continuity, inertia, tension, torus winding, topology, reconstruction
+
+\begingroup
+\setcounter{tocdepth}{1}
+\renewcommand{\contentsname}{\centering Table of Contents}
+\renewcommand{\numberline}[1]{#1.\hspace{0.6em}}
+\setlength{\parskip}{0.35em}
+\vspace{1.0\baselineskip}
+\begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
+\vspace{1.1\baselineskip}
+\tableofcontents
+\endgroup
+
+```{=html}
+<div class="toc">
+<hr class="toc-divider" />
+<div class="toc-title">Table of Contents</div>
+<ul>
+<li><a href="#scope-and-stance">Scope and stance</a>
+</li>
+<li><a href="#foundations">Foundations</a>
+</li>
+<li><a href="#step-1-energy-continuity-poynting-theorem">Step 1: Energy continuity (Poynting theorem)</a>
+</li>
+<li><a href="#step-2-momentum-continuity-and-force-as-flux">Step 2: Momentum continuity and force as flux</a>
+</li>
+<li><a href="#step-3-newton-like-laws-for-localized-electromagnetic-configurations">Step 3: Newton-like laws for localized electromagnetic configurations</a>
+</li>
+<li><a href="#step-4-effective-tension-and-inertia-of-a-thin-flux-tube">Step 4: Effective tension and inertia of a thin flux tube</a>
+</li>
+<li><a href="#step-5-toroidal-organization-forces-integer-winding">Step 5: Toroidal organization forces integer winding</a>
+</li>
+<li><a href="#step-6-discrete-modes-from-periodicity">Step 6: Discrete modes from periodicity</a>
+</li>
+<li><a href="#step-7-what-can-be-reconstructed-from-energy-density-and-flux">Step 7: What can be reconstructed from energy density and flux</a>
+</li>
+<li><a href="#what-has-been-derived-no-added-postulates">What has been derived (no added postulates)</a>
+</li>
+<li><a href="#references">References</a>
+</li>
+</ul>
+</div>
+```
+
+
+```{=latex}
+\vspace{1.0\baselineskip}
+\begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
+\vspace{1.0\baselineskip}
+```
+
+```{=html}
+<hr class="meta-divider" style="width:35%; margin:2rem auto; border:0; height:1px; background: rgba(0,0,0,0.35);" />
+```
 
 # Scope and stance
 
@@ -26,6 +85,7 @@ conservation axioms are postulated.
 
 
 # Foundations
+
 
 ## Maxwell dynamics in a source-free region
 
@@ -53,6 +113,7 @@ These four equations are the dynamical content we start from.
 
 
 # Step 1: Energy continuity (Poynting theorem)
+
 
 ## Energy density and flux
 
@@ -131,6 +192,7 @@ divergence.
 
 
 # Step 2: Momentum continuity and force as flux
+
 
 ## Momentum density
 

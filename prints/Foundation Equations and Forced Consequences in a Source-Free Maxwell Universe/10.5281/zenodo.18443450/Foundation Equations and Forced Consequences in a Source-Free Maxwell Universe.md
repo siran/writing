@@ -2,7 +2,7 @@
 title: Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe
 subtitle: From Maxwell Dynamics to Continuity, Momentum, Inertia, Tension, and Topological Discretization
 author: An M. Rodriguez, Alex Mercer
-date: 2026-01-20
+date: 2026-01-31
 keywords: Maxwell theory, source-free electromagnetism, Poynting theorem, Maxwell stress tensor, momentum continuity, inertia, tension, torus winding, topology, reconstruction
 one-sentence-summary: Starting from source-free Maxwell dynamics, we derive energy continuity, momentum continuity, effective inertia and tension for localized field configurations, and topological discretization on toroidal flow surfaces—without additional postulates.
 summary: This document provides a step-by-step derivation chain for the Maxwell Universe program. We begin with the source-free Maxwell equations as the experimentally abstracted dynamical law. From these we derive Poynting’s theorem (energy continuity), then the momentum continuity equation with the Maxwell stress tensor (force as flux). We show how Newton-like laws arise for localized, self-sustaining electromagnetic configurations via integrated continuity identities. We then derive effective tension and inertial line density for thin flux tubes and show how toroidal organization forces integer winding numbers. Finally, we clarify what can be reconstructed from energy density and energy flux alone and what requires the full Maxwell evolution law.
