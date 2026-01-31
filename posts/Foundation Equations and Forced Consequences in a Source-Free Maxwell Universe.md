@@ -484,4 +484,3 @@ Include the program documents here (DOIs to be inserted by editor):
 - Canonical Glossary of Terms and Symbols for the Maxwell Universe Research
   Program. DOI: [TO INSERT]
 - The Maxwell Universe Research Program — A Logical Map. DOI: [TO INSERT]
----
