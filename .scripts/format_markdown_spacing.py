@@ -11,6 +11,7 @@ Format Markdown in-place using numbertext-style wrapping plus spacing rules:
   - 2 before headings (except after front matter or another heading).
   - 1 after headings.
   - 2 after blockquotes/images.
+- Ensure lists have at least 1 blank line before and 2 after when followed by text.
 
 Useful to use with Emerald's `emeraldwalk.runonsave`:
 ```
@@ -272,6 +273,14 @@ def is_table_paragraph(blines: list[str]) -> bool:
     return True
 
 
+def is_list_paragraph(blines: list[str]) -> bool:
+    for line in blines:
+        if line.strip() == "":
+            continue
+        return bool(LIST_ITEM_RE.match(line))
+    return False
+
+
 def is_footnote_block(paragraph: str) -> bool:
     """Return True if paragraph begins with a footnote definition like [^w1-4]:."""
     for line in paragraph.splitlines():
@@ -410,6 +419,17 @@ def wrap_paragraph(text: str, width: int = WRAP_WIDTH) -> str:
     lines = text.splitlines()
     out_lines: list[str] = []
     buffer: list[str] = []
+    in_list_block = False
+
+    def ensure_trailing_blank_lines(count: int) -> None:
+        blanks = 0
+        i = len(out_lines) - 1
+        while i >= 0 and out_lines[i] == "":
+            blanks += 1
+            i -= 1
+        needed = count - blanks
+        if needed > 0:
+            out_lines.extend([""] * needed)
 
     def wrap_prefixed(
         prefix: str, content: str, *, repeat_prefix: bool = True
@@ -460,14 +480,26 @@ def wrap_paragraph(text: str, width: int = WRAP_WIDTH) -> str:
         line = lines[i]
         if line.strip() == "":
             flush_buffer()
-            out_lines.append("")
+            if in_list_block:
+                ensure_trailing_blank_lines(2)
+            else:
+                out_lines.append("")
+            in_list_block = False
             i += 1
             continue
 
-        m = LIST_ITEM_RE.match(line)
-        if m:
+        list_match = LIST_ITEM_RE.match(line)
+
+        if in_list_block and not list_match:
+            ensure_trailing_blank_lines(2)
+            in_list_block = False
+
+        if list_match:
             flush_buffer()
-            indent, marker, gap, content = m.groups()
+            if not in_list_block and out_lines and out_lines[-1] != "":
+                out_lines.append("")
+            in_list_block = True
+            indent, marker, gap, content = list_match.groups()
             prefix = f"{indent}{marker}{gap}"
             content_indent_len = len(prefix)
             parts: list[str] = []
@@ -602,7 +634,12 @@ def format_only(lines: list[str], leading_context: Optional[str] = None) -> str:
                 block_kind = "table"
                 text = paragraph
             else:
-                block_kind = "blockquote" if is_blockquote_paragraph(blines) else "para"
+                if is_blockquote_paragraph(blines):
+                    block_kind = "blockquote"
+                elif is_list_paragraph(blines):
+                    block_kind = "list"
+                else:
+                    block_kind = "para"
                 text = format_paragraph(paragraph)
 
         if block_kind == "literal":
@@ -616,6 +653,8 @@ def format_only(lines: list[str], leading_context: Optional[str] = None) -> str:
     def required_blank_lines_between(prev_kind: str, next_kind: str) -> int:
         required = 1
         if prev_kind in ("blockquote", "image"):
+            required = max(required, 2)
+        if prev_kind == "list":
             required = max(required, 2)
         if next_kind == "heading":
             required = max(required, 1 if prev_kind == "heading" else 2)
