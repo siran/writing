@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 """
-git-snooze v1.0.0
+git-snooze v1.0.1
+(provided as-is, MIT license)
 
 This script is self-installing.
 
@@ -59,6 +60,11 @@ DB FORMAT (tab-separated)
   mode<TAB>snoozed_or_dash<TAB>orig<TAB>start_epoch<TAB>days
   index<TAB>-<TAB>path<TAB>...<TAB>...
   rename<TAB>path.snoozed<TAB>path.orig<TAB>...<TAB>...
+
+DOCTOR
+  `git snooze doctor` also reports files hidden from `git status` via:
+    - skip-worktree (ls-files -v shows "S")
+    - assume-unchanged (ls-files -v shows "h")
 
 SAFETY
   - Refuse snoozing the snooze tool itself unless --force is passed.
@@ -307,6 +313,38 @@ def ask_yes_no(prompt, default_no=True):
 
 
 # ---------------------------
+# Index-hidden files (doctor)
+# ---------------------------
+
+def index_hidden_files():
+    """
+    Returns:
+      (skip_worktree_list, assume_unchanged_list)
+
+    git ls-files -v marks:
+      S <path>  => skip-worktree
+      h <path>  => assume-unchanged
+    """
+    out = run_git(["ls-files", "-v"], capture=True)
+    skip = []
+    assume = []
+    for line in out.splitlines():
+        if not line:
+            continue
+        if len(line) < 3:
+            continue
+        flag = line[0]
+        path = line[2:].strip()
+        if flag == "S":
+            skip.append(path)
+        elif flag == "h":
+            assume.append(path)
+    skip.sort()
+    assume.sort()
+    return skip, assume
+
+
+# ---------------------------
 # Commands
 # ---------------------------
 
@@ -538,6 +576,26 @@ def cmd_doctor(root, db_path_):
         print("  db: OK")
     else:
         print("  db: will be created on first use")
+
+    skip, assume = index_hidden_files()
+    print("")
+    print("INDEX-HIDDEN FILES (not shown by git status):")
+    if not skip and not assume:
+        print("  (none)")
+    else:
+        if skip:
+            print("  skip-worktree:")
+            for p in skip:
+                print("    - {}".format(p))
+        else:
+            print("  skip-worktree: (none)")
+
+        if assume:
+            print("  assume-unchanged:")
+            for p in assume:
+                print("    - {}".format(p))
+        else:
+            print("  assume-unchanged: (none)")
 
 def cmd_doctor_repair(root, db_path_):
     print("git-snooze doctor --repair")
