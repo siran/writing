@@ -471,16 +471,18 @@ explicitly, we derived:
 
 # References
 
-Include the program documents here (DOIs to be inserted by editor):
-
 - Light speed as an emergent property of electromagnetic superposition:
-  Polarization without matter. DOI: [TO INSERT]
-- String Theory Derivation in a Maxwell Universe. DOI: [TO INSERT]
-- Geometric Inertia: Mass as Trapped Energy. DOI: [TO INSERT]
+  Polarization without matter. DOI:
+  https://writing.preferredframe.com/doi/10.5281/zenodo.18396637
+- String Theory Derivation in a Maxwell Universe. DOI:
+  https://writing.preferredframe.com/doi/10.5281/zenodo.18249258
+- Geometric Inertia: Mass as Trapped Energy. DOI:
+  https://writing.preferredframe.com/doi/10.5281/zenodo.18249230
 - Defining Electromagnetic Fields from Continuity and Divergence-Free Structure.
-  DOI: [TO INSERT]
+  DOI: https://writing.preferredframe.com/doi/10.5281/zenodo.18269184
 - Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy
-  Flow. DOI: [TO INSERT]
+  Flow. DOI: https://writing.preferredframe.com/doi/10.5281/zenodo.18264435
 - Canonical Glossary of Terms and Symbols for the Maxwell Universe Research
-  Program. DOI: [TO INSERT]
-- The Maxwell Universe Research Program — A Logical Map. DOI: [TO INSERT]
+  Program. DOI: https://writing.preferredframe.com/doi/10.5281/zenodo.18272625
+- The Maxwell Universe Research Program — A Logical Map. DOI:
+  https://writing.preferredframe.com/doi/10.5281/zenodo.18274175
