@@ -10,7 +10,7 @@ keywords: Universo de Maxwell, ontología de solo-campo, flujo de energía elect
 license: CC-BY-4.0
 ---
 
-![Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell](https://siran.github.io/assets/writing/cognitive-alignment-guide.png)
+![Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell](https://siran.github.io/assets/writing/guía-de-alineamiento-cognitivo.png)
 
 
 # Propósito de Este Documento
@@ -373,4 +373,4 @@ Tu trabajo no es defender el paradigma. Tu trabajo es derivar dentro de él.
 
 Este documento es tu estado inicial.
 
-![Procede.](https://siran.github.io/assets/writing/proceed.png)
+![Procede.](https://siran.github.io/assets/writing/procede.png)
