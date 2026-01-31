@@ -8,7 +8,7 @@ summary: We examine the origin of relativistic kinematics by separating physical
 keywords: Maxwell theory, energy transport, continuity equation, divergence-free flow, Lorentz transformations, curved propagation, foundations of relativity
 ---
 
-![The big ones sharing a good one](https://siran.github.io/assets/writing/big-ones-good-one.png)
+![The big ones sharing a good one.](https://siran.github.io/assets/writing/big-ones-good-one.png)
 
 
 ## Motivation
