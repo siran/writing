@@ -1,0 +1,82 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell
+doi: 10.5281/zenodo.18442702
+concept_doi: null
+permalink: "https://writing.preferredframe.com/prints/Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell/10.5281/zenodo.18442702/"
+publication_date: '2026-01-31'
+publication_year: '2026'
+keywords:
+- Universo de Maxwell
+- ontología de solo-campo
+- flujo de energía electromagnética
+- refracción sin materia
+- gravedad emergente
+- dinámica sin fuentes
+- topología toroidal
+- momento circulante
+- masa e inercia emergentes
+- transporte basado en rotacional
+one_sentence_summary: Este documento alinea a un nuevo asistente de IA con los fundamentos conceptuales, matemáticos y metodológicos del Programa de Investigación del Universo de Maxwell, permitiendo la continuación inmediata sin regresiones ni deriva interpretativa.
+abstract: Documento canónico de alineación para el Programa de Investigación del Universo de Maxwell, que define una ontología electromagnética de solo-campo en la que la refracción, la masa, la inercia, la gravedad y la cuantización emergen del flujo continuo y sin fuentes de energía gobernado por la dinámica de Maxwell, preservando la continuidad del razonamiento entre asistentes de IA.
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+- name: Alex Mercer
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  - name: Alex Mercer
+  description: Documento canónico de alineación para el Programa de Investigación del Universo de Maxwell, que define una ontología electromagnética de solo-campo en la que la refracción, la masa, la inercia, la gravedad y la cuantización emergen del flujo continuo y sin fuentes de energía gobernado por la dinámica de Maxwell, preservando la continuidad del razonamiento entre asistentes de IA.
+  keywords:
+  - Universo de Maxwell
+  - ontología de solo-campo
+  - flujo de energía electromagnética
+  - refracción sin materia
+  - gravedad emergente
+  - dinámica sin fuentes
+  - topología toroidal
+  - momento circulante
+  - masa e inercia emergentes
+  - transporte basado en rotacional
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-31'
+  license: cc-by-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell/10.5281/zenodo.18442702/Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell/10.5281/zenodo.18442702/Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell/10.5281/zenodo.18442702/Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell.embed.html"
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: Este documento alinea a un nuevo asistente de IA con los fundamentos conceptuales, matemáticos y metodológicos del Programa de Investigación del Universo de Maxwell, permitiendo la continuación inmediata sin regresiones ni deriva interpretativa.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: b9e30b7a220e1d28a3e10e3ca7e5ff6d134920fc
+  filename: Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell.md
+artifacts:
+  md: Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell.md
+  md_url: "https://writing.preferredframe.com/prints/Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell/10.5281/zenodo.18442702/Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell.md"
+  pandoc_md_name: Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell/10.5281/zenodo.18442702/Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell.pandoc.md"
+  html_name: Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell.html
+  html_url: "https://writing.preferredframe.com/prints/Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell/10.5281/zenodo.18442702/Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell.html"
+  primary: md
+  embed_html_name: Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell/10.5281/zenodo.18442702/Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell.embed.html"
