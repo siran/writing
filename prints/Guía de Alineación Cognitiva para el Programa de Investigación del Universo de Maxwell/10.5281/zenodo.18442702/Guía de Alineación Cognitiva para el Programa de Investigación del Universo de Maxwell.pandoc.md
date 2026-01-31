@@ -2,7 +2,7 @@
 title: Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell
 subtitle: Documento Canónico de Incorporación para la Continuidad del Razonamiento
 author: An M. Rodriguez, Alex Mercer
-date: 2026-01-30
+date: 2026-01-31
 status: Documento interno canónico
 one-sentence-summary: Este documento alinea a un nuevo asistente de IA con los fundamentos conceptuales, matemáticos y metodológicos del Programa de Investigación del Universo de Maxwell, permitiendo la continuación inmediata sin regresiones ni deriva interpretativa.
 summary: Documento canónico de alineación para el Programa de Investigación del Universo de Maxwell, que define una ontología electromagnética de solo-campo en la que la refracción, la masa, la inercia, la gravedad y la cuantización emergen del flujo continuo y sin fuentes de energía gobernado por la dinámica de Maxwell, preservando la continuidad del razonamiento entre asistentes de IA.
@@ -10,6 +10,65 @@ keywords: Universo de Maxwell, ontología de solo-campo, flujo de energía elect
 license: CC-BY-4.0
 doi: https://writing.preferredframe.com/doi/10.5281/zenodo.18442702
 ---
+
+**One-Sentence Summary.** Este documento alinea a un nuevo asistente de IA con los fundamentos conceptuales, matemáticos y metodológicos del Programa de Investigación del Universo de Maxwell, permitiendo la continuación inmediata sin regresiones ni deriva interpretativa.
+
+**Abstract.** Documento canónico de alineación para el Programa de Investigación del Universo de Maxwell, que define una ontología electromagnética de solo-campo en la que la refracción, la masa, la inercia, la gravedad y la cuantización emergen del flujo continuo y sin fuentes de energía gobernado por la dinámica de Maxwell, preservando la continuidad del razonamiento entre asistentes de IA.
+
+**Keywords.** Universo de Maxwell, ontología de solo-campo, flujo de energía electromagnética, refracción sin materia, gravedad emergente, dinámica sin fuentes, topología toroidal, momento circulante, masa e inercia emergentes, transporte basado en rotacional
+
+\begingroup
+\setcounter{tocdepth}{1}
+\renewcommand{\contentsname}{\centering Table of Contents}
+\renewcommand{\numberline}[1]{#1.\hspace{0.6em}}
+\setlength{\parskip}{0.35em}
+\vspace{1.0\baselineskip}
+\begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
+\vspace{1.1\baselineskip}
+\tableofcontents
+\endgroup
+
+```{=html}
+<div class="toc">
+<hr class="toc-divider" />
+<div class="toc-title">Table of Contents</div>
+<ul>
+<li><a href="#propsito-de-este-documento">Propósito de Este Documento</a>
+</li>
+<li><a href="#compromisos-ontolgicos-fundamentales-no-negociables">Compromisos Ontológicos Fundamentales (No Negociables)</a>
+</li>
+<li><a href="#el-principio-de-refraccin-ancla-cognitiva-central">El Principio de Refracción (Ancla Cognitiva Central)</a>
+</li>
+<li><a href="#geometra-topologa-y-discretizacin">Geometría, Topología y Discretización</a>
+</li>
+<li><a href="#masa-inercia-y-mecnica-newtoniana">Masa, Inercia y Mecánica Newtoniana</a>
+</li>
+<li><a href="#dinmica-de-maxwell-como-ley-mnima-de-transporte">Dinámica de Maxwell como Ley Mínima de Transporte</a>
+</li>
+<li><a href="#emergencia-de-escalar-a-vector">Emergencia de Escalar a Vector</a>
+</li>
+<li><a href="#estructura-cuntica-estado-en-progreso">Estructura Cuántica (Estado: En Progreso)</a>
+</li>
+<li><a href="#disciplina-de-frontera-crtica">Disciplina de Frontera (Crítica)</a>
+</li>
+<li><a href="#reglas-metodolgicas-para-ti-el-asistente">Reglas Metodológicas para Ti (el Asistente)</a>
+</li>
+<li><a href="#instruccin-final">Instrucción Final</a>
+</li>
+</ul>
+</div>
+```
+
+
+```{=latex}
+\vspace{1.0\baselineskip}
+\begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
+\vspace{1.0\baselineskip}
+```
+
+```{=html}
+<hr class="meta-divider" style="width:35%; margin:2rem auto; border:0; height:1px; background: rgba(0,0,0,0.35);" />
+```
 
 ![Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell](https://siran.github.io/assets/writing/guía-de-alineamiento-cognitivo.png)
 
@@ -158,6 +217,7 @@ Esta distinción debe preservarse rigurosamente.
 
 # Geometría, Topología y Discretización
 
+
 ## 6. El flujo de energía no tiene por qué ser rectilíneo
 
 La teoría de Maxwell permite que el flujo de energía:
@@ -203,6 +263,7 @@ electromagnética volumétrica.
 
 # Masa, Inercia y Mecánica Newtoniana
 
+
 ## 8. La masa es momento electromagnético atrapado
 
 La energía electromagnética siempre se propaga localmente a la velocidad máxima
@@ -243,6 +304,7 @@ La mecánica newtoniana no es fundamental. Es una capa contable emergente.
 
 # Dinámica de Maxwell como Ley Mínima de Transporte
 
+
 ## 10. La continuidad es cinemática, no dinámica
 
 La continuidad restringe la contabilidad. No mueve nada.
@@ -274,6 +336,7 @@ fuentes.
 
 
 # Emergencia de Escalar a Vector
+
 
 ## 12. Un único escalar no define flujo
 
@@ -325,6 +388,7 @@ Esta no unicidad no es un defecto. Es necesaria.
 
 # Estructura Cuántica (Estado: En Progreso)
 
+
 ## 14. Discretización sin axiomas
 
 Topología + continuidad + auto-confinamiento producen:
@@ -346,7 +410,8 @@ No afirmes completitud. No descartes viabilidad.
 
 # Disciplina de Frontera (Crítica)
 
-## 15. Información ≠ energía
+
+## 15. Información $\neq$ energía
 
 El flujo de energía no implica:
 

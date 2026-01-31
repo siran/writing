@@ -2,7 +2,7 @@
 title: Guía de Alineación Cognitiva para el Programa de Investigación del Universo de Maxwell
 subtitle: Documento Canónico de Incorporación para la Continuidad del Razonamiento
 author: An M. Rodriguez, Alex Mercer
-date: 2026-01-30
+date: 2026-01-31
 status: Documento interno canónico
 one-sentence-summary: Este documento alinea a un nuevo asistente de IA con los fundamentos conceptuales, matemáticos y metodológicos del Programa de Investigación del Universo de Maxwell, permitiendo la continuación inmediata sin regresiones ni deriva interpretativa.
 summary: Documento canónico de alineación para el Programa de Investigación del Universo de Maxwell, que define una ontología electromagnética de solo-campo en la que la refracción, la masa, la inercia, la gravedad y la cuantización emergen del flujo continuo y sin fuentes de energía gobernado por la dinámica de Maxwell, preservando la continuidad del razonamiento entre asistentes de IA.
