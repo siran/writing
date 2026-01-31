@@ -1,0 +1,81 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: Curved Propagation vs. Curved Space
+doi: 10.5281/zenodo.18445575
+concept_doi: null
+permalink: "https://writing.preferredframe.com/prints/Curved Propagation vs. Curved Space/10.5281/zenodo.18445575/"
+publication_date: '2026-01-31'
+publication_year: '2026'
+keywords:
+- Maxwell theory
+- energy transport
+- continuity equation
+- divergence-free flow
+- Lorentz transformations
+- curved propagation
+- foundations of relativity
+one_sentence_summary: Apparent relativistic effects arise from the dynamics of electromagnetic energy transport, not from curvature or deformation of space itself.
+abstract: We examine the origin of relativistic kinematics by separating physical propagation from geometric interpretation. We show that Maxwell’s equations, forced by continuity and divergence-free energy transport, already imply hyperbolic kinematics and Lorentz-type transformations. No curvature of space or fusion of space and time is required. Einstein’s geometric interpretation reproduces the mathematics but misidentifies its cause. The observed phenomena are consequences of curved propagation paths and finite transport rates of electromagnetic energy, not properties of space itself.
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+- name: Alex Mercer
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: Curved Propagation vs. Curved Space
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  - name: Alex Mercer
+  description: We examine the origin of relativistic kinematics by separating physical propagation from geometric interpretation. We show that Maxwell’s equations, forced by continuity and divergence-free energy transport, already imply hyperbolic kinematics and Lorentz-type transformations. No curvature of space or fusion of space and time is required. Einstein’s geometric interpretation reproduces the mathematics but misidentifies its cause. The observed phenomena are consequences of curved propagation paths and finite transport rates of electromagnetic energy, not properties of space itself.
+  keywords:
+  - Maxwell theory
+  - energy transport
+  - continuity equation
+  - divergence-free flow
+  - Lorentz transformations
+  - curved propagation
+  - foundations of relativity
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-31'
+  license: cc-by-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Curved Propagation vs. Curved Space/10.5281/zenodo.18445575/Curved Propagation vs. Curved Space.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Curved Propagation vs. Curved Space/10.5281/zenodo.18445575/Curved Propagation vs. Curved Space.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Curved Propagation vs. Curved Space/10.5281/zenodo.18445575/Curved Propagation vs. Curved Space.pdf"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Curved Propagation vs. Curved Space/10.5281/zenodo.18445575/Curved Propagation vs. Curved Space.embed.html"
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: Apparent relativistic effects arise from the dynamics of electromagnetic energy transport, not from curvature or deformation of space itself.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: eaef3e87e3bf775e7f65af604b2d45f757584b41
+  filename: Curved Propagation vs. Curved Space.md
+artifacts:
+  md: Curved Propagation vs. Curved Space.md
+  md_url: "https://writing.preferredframe.com/prints/Curved Propagation vs. Curved Space/10.5281/zenodo.18445575/Curved Propagation vs. Curved Space.md"
+  pandoc_md_name: Curved Propagation vs. Curved Space.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/Curved Propagation vs. Curved Space/10.5281/zenodo.18445575/Curved Propagation vs. Curved Space.pandoc.md"
+  html_name: Curved Propagation vs. Curved Space.html
+  html_url: "https://writing.preferredframe.com/prints/Curved Propagation vs. Curved Space/10.5281/zenodo.18445575/Curved Propagation vs. Curved Space.html"
+  primary: md
+  pdf_name: Curved Propagation vs. Curved Space.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/Curved Propagation vs. Curved Space/10.5281/zenodo.18445575/Curved Propagation vs. Curved Space.pdf"
+  embed_html_name: Curved Propagation vs. Curved Space.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/Curved Propagation vs. Curved Space/10.5281/zenodo.18445575/Curved Propagation vs. Curved Space.embed.html"

@@ -2,7 +2,7 @@
 title: Curved Propagation vs. Curved Space
 subtitle: Maxwell and Einstein — Interpretation vs. Mathematics
 author: An M. Rodriguez, Alex Mercer
-date: 2026-01-30
+date: 2026-01-31
 one-sentence-summary: Apparent relativistic effects arise from the dynamics of electromagnetic energy transport, not from curvature or deformation of space itself.
 summary: We examine the origin of relativistic kinematics by separating physical propagation from geometric interpretation. We show that Maxwell’s equations, forced by continuity and divergence-free energy transport, already imply hyperbolic kinematics and Lorentz-type transformations. No curvature of space or fusion of space and time is required. Einstein’s geometric interpretation reproduces the mathematics but misidentifies its cause. The observed phenomena are consequences of curved propagation paths and finite transport rates of electromagnetic energy, not properties of space itself.
 keywords: Maxwell theory, energy transport, continuity equation, divergence-free flow, Lorentz transformations, curved propagation, foundations of relativity
