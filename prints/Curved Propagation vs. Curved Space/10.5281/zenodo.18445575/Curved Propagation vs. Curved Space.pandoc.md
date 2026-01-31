@@ -2,12 +2,71 @@
 title: Curved Propagation vs. Curved Space
 subtitle: Maxwell and Einstein — Interpretation vs. Mathematics
 author: An M. Rodriguez, Alex Mercer
-date: 2026-01-30
+date: 2026-01-31
 one-sentence-summary: Apparent relativistic effects arise from the dynamics of electromagnetic energy transport, not from curvature or deformation of space itself.
 summary: We examine the origin of relativistic kinematics by separating physical propagation from geometric interpretation. We show that Maxwell’s equations, forced by continuity and divergence-free energy transport, already imply hyperbolic kinematics and Lorentz-type transformations. No curvature of space or fusion of space and time is required. Einstein’s geometric interpretation reproduces the mathematics but misidentifies its cause. The observed phenomena are consequences of curved propagation paths and finite transport rates of electromagnetic energy, not properties of space itself.
 keywords: Maxwell theory, energy transport, continuity equation, divergence-free flow, Lorentz transformations, curved propagation, foundations of relativity
 doi: https://writing.preferredframe.com/doi/10.5281/zenodo.18445575
 ---
+
+**One-Sentence Summary.** Apparent relativistic effects arise from the dynamics of electromagnetic energy transport, not from curvature or deformation of space itself.
+
+**Abstract.** We examine the origin of relativistic kinematics by separating physical propagation from geometric interpretation. We show that Maxwell’s equations, forced by continuity and divergence-free energy transport, already imply hyperbolic kinematics and Lorentz-type transformations. No curvature of space or fusion of space and time is required. Einstein’s geometric interpretation reproduces the mathematics but misidentifies its cause. The observed phenomena are consequences of curved propagation paths and finite transport rates of electromagnetic energy, not properties of space itself.
+
+**Keywords.** Maxwell theory, energy transport, continuity equation, divergence-free flow, Lorentz transformations, curved propagation, foundations of relativity
+
+\begingroup
+\setcounter{tocdepth}{1}
+\renewcommand{\contentsname}{\centering Table of Contents}
+\renewcommand{\numberline}[1]{#1.\hspace{0.6em}}
+\setlength{\parskip}{0.35em}
+\vspace{1.0\baselineskip}
+\begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
+\vspace{1.1\baselineskip}
+\tableofcontents
+\endgroup
+
+```{=html}
+<div class="toc">
+<hr class="toc-divider" />
+<div class="toc-title">Table of Contents</div>
+<ul>
+<li><a href="#motivation">Motivation</a>
+</li>
+<li><a href="#what-is-physically-observed">What is physically observed</a>
+</li>
+<li><a href="#maxwell-theory-already-fixes-causal-structure">Maxwell theory already fixes causal structure</a>
+</li>
+<li><a href="#lorentz-transformations-as-transport-bookkeeping">Lorentz transformations as transport bookkeeping</a>
+</li>
+<li><a href="#the-michelsonmorley-misinterpretation">The Michelson–Morley misinterpretation</a>
+</li>
+<li><a href="#lorentz-and-einstein-same-math-different-causes">Lorentz and Einstein: same math, different causes</a>
+</li>
+<li><a href="#curved-propagation-without-curved-space">Curved propagation without curved space</a>
+</li>
+<li><a href="#why-local-flatness-is-not-an-explanation">Why “local flatness” is not an explanation</a>
+</li>
+<li><a href="#the-correct-hierarchy">The correct hierarchy</a>
+</li>
+<li><a href="#what-this-does-and-does-not-claim">What this does and does not claim</a>
+</li>
+<li><a href="#closing-statement">Closing statement</a>
+</li>
+</ul>
+</div>
+```
+
+
+```{=latex}
+\vspace{1.0\baselineskip}
+\begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
+\vspace{1.0\baselineskip}
+```
+
+```{=html}
+<hr class="meta-divider" style="width:35%; margin:2rem auto; border:0; height:1px; background: rgba(0,0,0,0.35);" />
+```
 
 ![The big ones sharing a good one.](https://siran.github.io/assets/writing/big-ones-good-one.png)
 

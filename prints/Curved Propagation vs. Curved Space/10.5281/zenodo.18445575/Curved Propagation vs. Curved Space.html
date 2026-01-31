@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="An M. Rodriguez" />
+  <meta name="author" content="Alex Mercer" />
+  <meta name="dcterms.date" content="2026-01-31" />
+  <meta name="keywords" content="Maxwell theory, energy transport,
+continuity equation, divergence-free flow, Lorentz transformations,
+curved propagation, foundations of relativity" />
+  <title>Curved Propagation vs. Curved Space</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <style>
+  html {
+    font-family: sans-serif;
+  }
+  body {
+    font-family: inherit;
+    font-variant-ligatures: common-ligatures;
+    font-kerning: normal;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .header-section-number::after,
+  .toc-section-number::after {
+    content: ". ";
+  }
+  .toc ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    counter-reset: item;
+  }
+  .toc li {
+    margin: 0.4em 0;
+    padding-left: 2.6em;
+    position: relative;
+    counter-increment: item;
+  }
+  .toc li::before {
+    content: counters(item, ".") ".";
+    position: absolute;
+    left: 0;
+    color: #666;
+    width: 2.2em;
+    text-align: right;
+  }
+  .toc-title {
+    display: block;
+    font-weight: 700;
+    font-size: 1.1em;
+    margin: 0.5em 0 0.4em;
+    text-align: center;
+  }
+  .toc-divider {
+    width: 35%;
+    margin: 3.2em auto 2.8em;
+    border: 0;
+    height: 1px;
+    background: rgba(0,0,0,0.25);
+  }
+  .toc a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid transparent;
+  }
+  .toc a:hover {
+    border-bottom-color: #1f5fbf;
+  }
+  .heading-anchor {
+    margin-left: 0.35em;
+    text-decoration: none;
+    opacity: 0;
+    font-size: 0.85em;
+    color: inherit;
+    transition: opacity 0.15s ease;
+  }
+  .heading-anchor::after {
+    content: "\1F517";
+  }
+  h1:hover .heading-anchor,
+  h2:hover .heading-anchor,
+  h3:hover .heading-anchor,
+  h4:hover .heading-anchor,
+  h5:hover .heading-anchor,
+  h6:hover .heading-anchor,
+  .heading-anchor:focus {
+    opacity: 1;
+  }
+  .heading-anchor:hover {
+    text-decoration: none;
+  }
+  </style>
+  <script>
+  (function () {
+    function slugify(text) {
+      return (text || "")
+        .toLowerCase()
+        .replace(/[^0-9a-zA-Z _-]+/g, "")
+        .trim()
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-")
+        .replace(/^-+|-+$/g, "") || "section";
+    }
+    function headingText(el) {
+      var clone = el.cloneNode(true);
+      var drop = clone.querySelectorAll(".heading-anchor, .header-section-number");
+      for (var i = 0; i < drop.length; i++) {
+        if (drop[i].parentNode) {
+          drop[i].parentNode.removeChild(drop[i]);
+        }
+      }
+      return (clone.textContent || "").trim();
+    }
+    function ensureId(el, used) {
+      var id = el.getAttribute("id") || "";
+      if (id) {
+        used[id] = true;
+        return id;
+      }
+      var base = slugify(headingText(el));
+      var cand = base;
+      var i = 1;
+      while (!cand || document.getElementById(cand) || used[cand]) {
+        cand = base + "-" + i;
+        i += 1;
+      }
+      el.setAttribute("id", cand);
+      used[cand] = true;
+      return cand;
+    }
+    function addAnchors(root) {
+      if (!root) {
+        return;
+      }
+      var headings = root.querySelectorAll("h1, h2, h3, h4, h5, h6");
+      var used = {};
+      for (var i = 0; i < headings.length; i++) {
+        var h = headings[i];
+        if (h.querySelector("a.heading-anchor")) {
+          continue;
+        }
+        var id = ensureId(h, used);
+        var a = document.createElement("a");
+        a.className = "heading-anchor";
+        a.href = "#" + id;
+        a.setAttribute("aria-label", "Link to this section");
+        a.setAttribute("title", "Link to this section");
+        h.appendChild(a);
+      }
+    }
+    function run() {
+      addAnchors(document.body);
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", run);
+    } else {
+      run();
+    }
+  })();
+  </script>
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Curved Propagation vs. Curved Space</h1>
+<p class="subtitle">Maxwell and Einstein — Interpretation vs.
+Mathematics</p>
+<p class="author">An M. Rodriguez</p>
+<p class="author">Alex Mercer</p>
+<p class="date">2026-01-31</p>
+</header>
+<p><strong>One-Sentence Summary.</strong> Apparent relativistic effects
+arise from the dynamics of electromagnetic energy transport, not from
+curvature or deformation of space itself.</p>
+<p><strong>Abstract.</strong> We examine the origin of relativistic
+kinematics by separating physical propagation from geometric
+interpretation. We show that Maxwell’s equations, forced by continuity
+and divergence-free energy transport, already imply hyperbolic
+kinematics and Lorentz-type transformations. No curvature of space or
+fusion of space and time is required. Einstein’s geometric
+interpretation reproduces the mathematics but misidentifies its cause.
+The observed phenomena are consequences of curved propagation paths and
+finite transport rates of electromagnetic energy, not properties of
+space itself.</p>
+<p><strong>Keywords.</strong> Maxwell theory, energy transport,
+continuity equation, divergence-free flow, Lorentz transformations,
+curved propagation, foundations of relativity</p>
+<div class="toc">
+<hr class="toc-divider" />
+<div class="toc-title">Table of Contents</div>
+<ul>
+<li><a href="#motivation">Motivation</a>
+</li>
+<li><a href="#what-is-physically-observed">What is physically observed</a>
+</li>
+<li><a href="#maxwell-theory-already-fixes-causal-structure">Maxwell theory already fixes causal structure</a>
+</li>
+<li><a href="#lorentz-transformations-as-transport-bookkeeping">Lorentz transformations as transport bookkeeping</a>
+</li>
+<li><a href="#the-michelsonmorley-misinterpretation">The Michelson–Morley misinterpretation</a>
+</li>
+<li><a href="#lorentz-and-einstein-same-math-different-causes">Lorentz and Einstein: same math, different causes</a>
+</li>
+<li><a href="#curved-propagation-without-curved-space">Curved propagation without curved space</a>
+</li>
+<li><a href="#why-local-flatness-is-not-an-explanation">Why “local flatness” is not an explanation</a>
+</li>
+<li><a href="#the-correct-hierarchy">The correct hierarchy</a>
+</li>
+<li><a href="#what-this-does-and-does-not-claim">What this does and does not claim</a>
+</li>
+<li><a href="#closing-statement">Closing statement</a>
+</li>
+</ul>
+</div>
+<hr class="meta-divider" style="width:35%; margin:2rem auto; border:0; height:1px; background: rgba(0,0,0,0.35);" />
+<figure>
+<img src="https://siran.github.io/assets/writing/big-ones-good-one.png"
+alt="The big ones sharing a good one." />
+<figcaption aria-hidden="true">The big ones sharing a good
+one.</figcaption>
+</figure>
+<h1 data-number="1" id="motivation"><span
+class="header-section-number">1</span> Motivation</h1>
+<p>Relativistic phenomena are often presented as evidence that <em>space
+itself</em> is non-Euclidean or that space and time form a single
+geometric object.</p>
+<p>This document argues the opposite.</p>
+<p>The observed effects traditionally attributed to geometric
+deformation arise instead from the <strong>dynamics of electromagnetic
+energy transport</strong>. The mathematics used in relativity is
+correct; the interpretation attached to it is not forced.</p>
+<p>We show that:</p>
+<ul>
+<li>Maxwell electromagnetism already implies hyperbolic kinematics,</li>
+<li>Lorentz-type transformations follow from transport constraints,</li>
+<li>no curvature of space is required,</li>
+<li>and no fusion of space and time is necessary.</li>
+</ul>
+<p>The distinction between <em>curved propagation</em> and <em>curved
+space</em> is central.</p>
+<h1 data-number="2" id="what-is-physically-observed"><span
+class="header-section-number">2</span> What is physically observed</h1>
+<p>Experimentally, we observe the following facts:</p>
+<ol type="1">
+<li>Electromagnetic energy propagates through space continuously.</li>
+<li>Transport occurs at a finite, bounded rate.</li>
+<li>Energy redistribution obeys continuity.</li>
+<li>Energy flow is divergence-free in source-free regions.</li>
+<li>Observed delays, redirections, and apparent “deflections” depend on
+field configuration and energy density.</li>
+</ol>
+<p>None of these observations require space itself to curve, stretch,
+contract, or respond dynamically.</p>
+<h1 data-number="3"
+id="maxwell-theory-already-fixes-causal-structure"><span
+class="header-section-number">3</span> Maxwell theory already fixes
+causal structure</h1>
+<p>From source-free Maxwell theory and the continuity equation,</p>
+<p><span class="math display">\[
+\partial_t u + \nabla \cdot \mathbf{S} = 0
+\]</span></p>
+<p>energy transport is constrained in two essential ways:</p>
+<ul>
+<li>energy cannot appear or disappear locally,</li>
+<li>energy must propagate through space rather than jump.</li>
+</ul>
+<p>These constraints force a <strong>finite causal propagation
+rate</strong>. This is not a postulate about coordinates or observers.
+It is a statement about how energy moves.</p>
+<p>Once a finite transport rate exists, additive (Galilean) kinematics
+is no longer consistent. Composition of motion must respect causal
+ordering. Hyperbolic composition follows automatically.</p>
+<h1 data-number="4"
+id="lorentz-transformations-as-transport-bookkeeping"><span
+class="header-section-number">4</span> Lorentz transformations as
+transport bookkeeping</h1>
+<p>Lorentz transformations are often described as transformations of
+“space and time.”</p>
+<p>In reality, they are <strong>bookkeeping rules</strong> for comparing
+measurements made using signals that propagate at finite speed.</p>
+<p>They encode:</p>
+<ul>
+<li>how delays accumulate,</li>
+<li>how synchronization depends on propagation,</li>
+<li>how energy flow constrains measurement procedures.</li>
+</ul>
+<p>They do <strong>not</strong> describe space itself changing.</p>
+<p>The mathematics tracks propagation constraints, not geometry.</p>
+<h1 data-number="5" id="the-michelsonmorley-misinterpretation"><span
+class="header-section-number">5</span> The Michelson–Morley
+misinterpretation</h1>
+<p>The Michelson–Morley experiment tested electromagnetic signal
+timing.</p>
+<p>It did <strong>not</strong> analyze electromagnetic fields
+dynamically.</p>
+<p>The null result demonstrates that Maxwell propagation enforces
+invariant causal structure. It does <em>not</em> demonstrate that space
+contracts, dilates, or reshapes itself.</p>
+<p>Had the experiment been interpreted using full Maxwell dynamics, the
+conclusion would have been:</p>
+<blockquote>
+<p>electromagnetic energy transport already enforces the observed
+invariances.</p>
+</blockquote>
+<p>Instead, geometry was invoked.</p>
+<h1 data-number="6"
+id="lorentz-and-einstein-same-math-different-causes"><span
+class="header-section-number">6</span> Lorentz and Einstein: same math,
+different causes</h1>
+<p>Lorentz:</p>
+<ul>
+<li>treated contraction as a dynamical response of matter to
+electromagnetic fields,</li>
+<li>remained closer to physical causation,</li>
+<li>but still assumed matter as primitive.</li>
+</ul>
+<p>Einstein:</p>
+<ul>
+<li>removed electromagnetic dynamics from the explanation,</li>
+<li>reinterpreted the same mathematics as geometric structure,</li>
+<li>treated measurement effects as properties of space itself.</li>
+</ul>
+<p>Both recover the same equations.</p>
+<p>Only one keeps the cause.</p>
+<h1 data-number="7" id="curved-propagation-without-curved-space"><span
+class="header-section-number">7</span> Curved propagation without curved
+space</h1>
+<p>Electromagnetic energy does not have to move in straight lines.</p>
+<p>Propagation can curve due to:</p>
+<ul>
+<li>superposition,</li>
+<li>refraction by other fields,</li>
+<li>self-induced delay,</li>
+<li>circulation and topology.</li>
+</ul>
+<p>A curved path through flat space produces the same observational
+effects as a straight path through curved space.</p>
+<p>Only one is required.</p>
+<p>Nothing in Maxwell theory demands that space itself respond to energy
+flow.</p>
+<h1 data-number="8" id="why-local-flatness-is-not-an-explanation"><span
+class="header-section-number">8</span> Why “local flatness” is not an
+explanation</h1>
+<p>The notion of “local flatness” treats curvature as an approximation
+artifact.</p>
+<p>But curvature and straightness are intrinsic, not local
+conveniences.</p>
+<p>If Maxwell theory required curved space, local flatness would not
+rescue it. The fact that Maxwell transport works identically everywhere
+indicates that <strong>space itself is not dynamically
+involved</strong>.</p>
+<p>Energy flow is curved. Space is not required to be.</p>
+<h1 data-number="9" id="the-correct-hierarchy"><span
+class="header-section-number">9</span> The correct hierarchy</h1>
+<p>The logically forced order is:</p>
+<ol type="1">
+<li>Continuity of energy transport</li>
+<li>Divergence-free structure</li>
+<li>Curl-based electromagnetic dynamics</li>
+<li>Finite propagation rate</li>
+<li>Hyperbolic kinematics</li>
+<li>Lorentz-type transformations</li>
+<li>Geometric reinterpretation (optional)</li>
+</ol>
+<p>Geometry is an interpretation layer, not a physical cause.</p>
+<h1 data-number="10" id="what-this-does-and-does-not-claim"><span
+class="header-section-number">10</span> What this does and does not
+claim</h1>
+<p>This document claims:</p>
+<ul>
+<li>relativistic kinematics follow from Maxwell transport,</li>
+<li>hyperbolicity reflects causal propagation, not spatial
+structure,</li>
+<li>curved propagation suffices to explain observed effects.</li>
+</ul>
+<p>It does not claim:</p>
+<ul>
+<li>that geometry is useless,</li>
+<li>that relativistic calculations are wrong,</li>
+<li>or that alternative descriptions are forbidden.</li>
+</ul>
+<p>It claims only that <strong>geometry is not required</strong>.</p>
+<h1 data-number="11" id="closing-statement"><span
+class="header-section-number">11</span> Closing statement</h1>
+<p>Electromagnetic energy moves through space. It does so continuously,
+causally, and at finite rate.</p>
+<p>From this alone follow the mathematical structures later
+reinterpreted as relativity.</p>
+<p>Space does not bend to accommodate energy. Energy bends its own
+paths.</p>
+<p>The mathematics survives. The interpretation changes.</p>
+<figure>
+<img src="https://siran.github.io/assets/writing/big-cheers.png"
+alt="Big ones cheering." />
+<figcaption aria-hidden="true">Big ones cheering.</figcaption>
+</figure>
+</body>
+</html>
