@@ -2,327 +2,216 @@
 title: Curved Propagation vs. Curved Space
 subtitle: Maxwell and Einstein — Interpretation vs. Mathematics
 author: An M. Rodriguez, Alex Mercer
-date: 2026-01-XX
-one-sentence-summary: We show that the phenomena historically attributed to spacetime curvature can be derived from curved electromagnetic energy propagation in flat space, without modifying Maxwell’s equations or reifying geometry.
-summary: This document disentangles mathematical formalism from physical interpretation in the treatment of light deflection and gravitational phenomena. Starting strictly from source-free Maxwell theory and energy continuity, we demonstrate that curved trajectories arise from structured electromagnetic propagation, not from curvature of space itself. We show that Maxwell’s equations require no geometric deformation to remain valid, that curved propagation is sufficient to explain observed effects, and that interpreting these effects as spacetime curvature is an optional, not necessary, inference.
-keywords: Maxwell theory, curved propagation, spacetime curvature, general relativity, energy transport, refraction, interpretation of physics
+date: 2026-01-30
+one-sentence-summary: Apparent relativistic effects arise from the dynamics of electromagnetic energy transport, not from curvature or deformation of space itself.
+summary: We examine the origin of relativistic kinematics by separating physical propagation from geometric interpretation. We show that Maxwell’s equations, forced by continuity and divergence-free energy transport, already imply hyperbolic kinematics and Lorentz-type transformations. No curvature of space or fusion of space and time is required. Einstein’s geometric interpretation reproduces the mathematics but misidentifies its cause. The observed phenomena are consequences of curved propagation paths and finite transport rates of electromagnetic energy, not properties of space itself.
+keywords: Maxwell theory, energy transport, continuity equation, divergence-free flow, Lorentz transformations, curved propagation, foundations of relativity
 ---
 
-## Maxwell and Einstein — Interpretation vs. Mathematics
+![The big ones sharing a good one](https://siran.github.io/assets/writing/big-ones-good-one.png)
 
-## 1. The question we are actually asking
 
-The historical question is usually phrased as:
+## Motivation
 
-> *Does mass curve spacetime?*
+Relativistic phenomena are often presented as evidence that *space itself* is
+non-Euclidean or that space and time form a single geometric object.
 
+This document argues the opposite.
 
-This document asks a different and more precise question:
+The observed effects traditionally attributed to geometric deformation arise
+instead from the **dynamics of electromagnetic energy transport**. The
+mathematics used in relativity is correct; the interpretation attached to it is
+not forced.
 
-> *Do the observed phenomena require space itself to be curved, or are they
-> fully explained by curved propagation of energy in flat space?*
+We show that:
 
+- Maxwell electromagnetism already implies hyperbolic kinematics,
+- Lorentz-type transformations follow from transport constraints,
+- no curvature of space is required,
+- and no fusion of space and time is necessary.
 
-This distinction matters.
 
-Curvature of **paths** is not the same as curvature of **space**. A curved
-trajectory does not, by itself, imply a curved geometry.
+The distinction between *curved propagation* and *curved space* is central.
 
-Our goal is not to dispute mathematical predictions. It is to examine whether
-the **interpretation** attached to those predictions is forced.
 
+## What is physically observed
 
-## 2. What Maxwell theory actually says
+Experimentally, we observe the following facts:
 
-Source-free Maxwell theory consists of:
+1. Electromagnetic energy propagates through space continuously.
+2. Transport occurs at a finite, bounded rate.
+3. Energy redistribution obeys continuity.
+4. Energy flow is divergence-free in source-free regions.
+5. Observed delays, redirections, and apparent “deflections” depend on field
+   configuration and energy density.
 
-* Local field evolution
-* Energy continuity
-* Finite propagation speed
-* No geometric postulates about space itself
 
-The equations describe how electromagnetic energy **moves**.
+None of these observations require space itself to curve, stretch, contract, or
+respond dynamically.
 
-They do **not** say:
 
-* that space bends,
-* that distances deform,
-* that geometry responds dynamically to energy.
+## Maxwell theory already fixes causal structure
 
-Maxwell theory is **agnostic** about geometry beyond assuming a differentiable
-manifold on which fields are defined.
+From source-free Maxwell theory and the continuity equation,
 
-This neutrality is crucial.
+$$
+\partial_t u + \nabla \cdot \mathbf{S} = 0
+$$
 
+energy transport is constrained in two essential ways:
 
-## 3. Energy transport is the primitive observable
+- energy cannot appear or disappear locally,
+- energy must propagate through space rather than jump.
 
-In this program, the primitive observable is not “field value” but **energy
-transport**.
 
-Energy transport is described operationally by:
+These constraints force a **finite causal propagation rate**. This is not a
+postulate about coordinates or observers. It is a statement about how energy
+moves.
 
-* energy densit, u,
-* energy flux, S,
-* continuity: dt(u) + div(S) = 0
+Once a finite transport rate exists, additive (Galilean) kinematics is no longer
+consistent. Composition of motion must respect causal ordering. Hyperbolic
+composition follows automatically.
 
-This equation does not mention curvature of space. It accounts only for **where
-energy goes**.
 
-Nothing in it distinguishes “straight space” from “curved space.”
+## Lorentz transformations as transport bookkeeping
 
+Lorentz transformations are often described as transformations of “space and
+time.”
 
-## 4. Curved propagation does not require curved space
+In reality, they are **bookkeeping rules** for comparing measurements made using
+signals that propagate at finite speed.
 
-A trajectory can curve for many reasons:
+They encode:
 
-* refraction,
-* waveguiding,
-* interference with background fields,
-* self-interaction via secondary fields,
-* constrained topology.
+- how delays accumulate,
+- how synchronization depends on propagation,
+- how energy flow constrains measurement procedures.
 
-All of these occur in flat Euclidean space.
 
-A simple example: Light bends in a gradient-index medium. No one concludes that
-the medium has curved geometry.
+They do **not** describe space itself changing.
 
-The path is curved. The space is not.
+The mathematics tracks propagation constraints, not geometry.
 
-This logical separation is often forgotten.
 
+## The Michelson–Morley misinterpretation
 
-## 5. The refraction analogy is not an analogy
+The Michelson–Morley experiment tested electromagnetic signal timing.
 
-In conventional dielectrics:
+It did **not** analyze electromagnetic fields dynamically.
 
-* an incident electromagnetic wave induces secondary electromagnetic fields,
-* the total field evolves more slowly or along altered directions,
-* the resulting trajectory bends.
+The null result demonstrates that Maxwell propagation enforces invariant causal
+structure. It does *not* demonstrate that space contracts, dilates, or reshapes
+itself.
 
-Crucially:
+Had the experiment been interpreted using full Maxwell dynamics, the conclusion
+would have been:
 
-> The incident wave does not interact with “matter.”
-> It interacts with **another electromagnetic field**.
+> electromagnetic energy transport already enforces the observed invariances.
 
 
-Matter is a *source* of secondary fields, not a new force.
+Instead, geometry was invoked.
 
-In the Maxwell Universe framework:
 
-* all interactions are field–field interactions,
-* matter is a stable electromagnetic configuration,
-* refraction is a universal mechanism, not a special case.
+## Lorentz and Einstein: same math, different causes
 
-There is no conceptual leap here.
+Lorentz:
 
+- treated contraction as a dynamical response of matter to electromagnetic
+  fields,
+- remained closer to physical causation,
+- but still assumed matter as primitive.
 
-## 6. Light interacting with light
 
-In vacuum, electromagnetic waves superpose linearly.
+Einstein:
 
-But **observables are quadratic**.
+- removed electromagnetic dynamics from the explanation,
+- reinterpreted the same mathematics as geometric structure,
+- treated measurement effects as properties of space itself.
 
-When a propagating field overlaps with another structured field:
 
-* energy density redistributes,
-* phase evolution changes,
-* effective propagation direction bends.
+Both recover the same equations.
 
-No nonlinearity is required. No modification of Maxwell is required. No
-spacetime curvature is required.
+Only one keeps the cause.
 
-The bending is a property of **energy flow organization**.
 
+## Curved propagation without curved space
 
-## 7. The Sun as a structured electromagnetic environment
+Electromagnetic energy does not have to move in straight lines.
 
-Near a massive object like the Sun:
+Propagation can curve due to:
 
-* there exists a large, structured electromagnetic energy distribution,
-* this distribution acts as a background field,
-* incident light propagates through this background.
+- superposition,
+- refraction by other fields,
+- self-induced delay,
+- circulation and topology.
 
-The light trajectory bends because:
 
-* local energy transport is redirected,
-* not because space itself is bent.
+A curved path through flat space produces the same observational effects as a
+straight path through curved space.
 
-This is curved **propagation**, not curved **space**.
+Only one is required.
 
+Nothing in Maxwell theory demands that space itself respond to energy flow.
 
-## 8. Why Maxwell survives everywhere
 
-Maxwell’s equations are local.
+## Why “local flatness” is not an explanation
 
-They:
+The notion of “local flatness” treats curvature as an approximation artifact.
 
-* do not require global flatness,
-* do not depend on embedding geometry,
-* propagate energy consistently wherever fields exist.
+But curvature and straightness are intrinsic, not local conveniences.
 
-If spacetime curvature were intrinsic and dynamical:
+If Maxwell theory required curved space, local flatness would not rescue it. The
+fact that Maxwell transport works identically everywhere indicates that **space
+itself is not dynamically involved**.
 
-* Maxwell’s equations would need modification or coupling terms,
-* energy transport rules would vary by location,
-* observable electromagnetic behavior would differ near massive bodies.
+Energy flow is curved. Space is not required to be.
 
-We do **not** observe this.
 
-Electromagnetism behaves the same everywhere.
+## The correct hierarchy
 
-This is not an approximation. It is an empirical fact.
+The logically forced order is:
 
+1. Continuity of energy transport
+2. Divergence-free structure
+3. Curl-based electromagnetic dynamics
+4. Finite propagation rate
+5. Hyperbolic kinematics
+6. Lorentz-type transformations
+7. Geometric reinterpretation (optional)
 
-## 9. The problem with “local flatness”
 
-The usual defense is:
+Geometry is an interpretation layer, not a physical cause.
 
-> “Spacetime is curved, but locally flat.”
 
-
-This is not an explanation. It is a workaround.
-
-Curvature is **intrinsic**, not coordinate-dependent.
-
-A curved manifold is not equivalent to a flat one, no matter how small the
-patch.
-
-If local flatness were sufficient:
-
-* curvature would have no physical consequences for local dynamics,
-* geometry would be observationally redundant.
-
-You cannot both claim curvature is real *and* that it disappears locally in
-every measurement.
-
-
-## 10. What Einstein’s equations actually do
-
-Einstein’s field equations relate:
-
-* a geometric object (the metric),
-* to an energy–momentum tensor.
-
-This is a **mathematical identification**, not a derivation.
-
-The equations do not prove that space *is* geometry. They encode gravitational
-effects **as if** geometry responds.
-
-This is an interpretive choice.
-
-A powerful one. But not a logically forced one.
-
-
-## 11. Why the eclipse prediction does not decide the issue
-
-The famous eclipse measurement confirms:
-
-> Light bends near the Sun by a specific amount.
-
-
-It does **not** confirm:
-
-* that space is curved,
-* that geometry is dynamical,
-* that Maxwell is incomplete.
-
-The same bending follows from:
-
-* structured electromagnetic propagation,
-* energy-dependent refraction,
-* continuity-constrained flow.
-
-Multiple mechanisms predict the same trajectory.
-
-Observation alone does not choose the ontology.
-
-
-## 12. Why flat space is sufficient
-
-In the Maxwell Universe framework:
-
-* all dynamics occur in energy flow,
-* curvature belongs to trajectories, not geometry.
-
-Flat Euclidean space:
-
-* supports curl,
-* supports divergence-free flow,
-* supports knots and circulation,
-* supports stable structures,
-* supports curved propagation.
-
-Nothing more is required.
-
-
-## 13. What “speed” really means here
-
-Transport requires a rate.
-
-This is not an imposed limit. It is a structural necessity.
-
-Energy cannot propagate without a characteristic speed.
-
-Hyperbolic kinematics arise because:
-
-* transport is causal,
-* curl dynamics are rotational,
-* composition of transport is constrained.
-
-This produces Minkowski-like structure **in motion**, not in space.
-
-
-## 14. Interpretation vs mathematics
-
-Both Maxwell and Einstein predict correct phenomena.
-
-The difference is not in equations. It is in **what is claimed to be real**.
-
-* Maxwell: energy flows, paths curve.
-* Einstein: space curves.
-
-Only one of these is directly observed.
-
-We observe:
-
-* energy,
-* motion,
-* trajectories,
-* interactions.
-
-We do not observe geometry acting.
-
-
-## 15. What this document does — and does not — claim
+## What this does and does not claim
 
 This document claims:
 
-* curved propagation is sufficient,
-* Maxwell theory survives unchanged,
-* spacetime curvature is not required.
+- relativistic kinematics follow from Maxwell transport,
+- hyperbolicity reflects causal propagation, not spatial structure,
+- curved propagation suffices to explain observed effects.
 
-It does **not** claim:
 
-* Einstein was “wrong” mathematically,
-* general relativity is useless,
-* geometric methods are invalid.
+It does not claim:
 
-It claims geometry is **descriptive**, not ontological.
+- that geometry is useless,
+- that relativistic calculations are wrong,
+- or that alternative descriptions are forbidden.
+
+
+It claims only that **geometry is not required**.
 
 
 ## Closing statement
 
-Light bends.
+Electromagnetic energy moves through space. It does so continuously, causally,
+and at finite rate.
 
-Paths curve.
+From this alone follow the mathematical structures later reinterpreted as
+relativity.
 
-Energy reorganizes.
+Space does not bend to accommodate energy. Energy bends its own paths.
 
-None of this requires space itself to curve.
+The mathematics survives. The interpretation changes.
 
-The mathematics allows both readings. The physics requires only one.
-
-Curved propagation is observed. Curved space is inferred.
-
-This document separates the two.
+![Big ones cheering.](https://siran.github.io/assets/writing/big-cheers.png)
