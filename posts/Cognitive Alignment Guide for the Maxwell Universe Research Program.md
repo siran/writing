@@ -5,7 +5,13 @@ author: An M. Rodriguez, Alex Mercer
 date: 2026-01-30
 status: Canonical internal document
 one-sentence-summary: This document aligns a new AI assistant with the conceptual, mathematical, and methodological foundations of the Maxwell Universe Research Program, enabling immediate continuation without regressions or reinterpretive drift.
+summary: Canonical alignment document for the Maxwell Universe Research Program, defining a field-only electromagnetic ontology in which refraction, mass, inertia, gravity, and quantization emerge from continuous, source-free energy flow governed by Maxwell dynamics, preserving continuity of reasoning across AI assistants.
+keywords: Maxwell Universe, field-only ontology, electromagnetic energy flow, refraction without matter, emergent gravity, source-free dynamics, toroidal topology, circulating momentum, emergent mass and inertia, curl-based transport
+license: CC-BY-4.0
 ---
+
+![Cognitive Alignment Guide for the Maxwell Universe Research Program](https://siran.github.io/assets/writing/cognitive-alignment-guide.png)
+
 
 # Purpose of This Document
 
@@ -407,3 +413,5 @@ not continuity of memory.
 This section exists to enforce that continuity explicitly.
 
 Proceed.
+
+![Proceed.](https://siran.github.io/assets/writing/proceed.png)
