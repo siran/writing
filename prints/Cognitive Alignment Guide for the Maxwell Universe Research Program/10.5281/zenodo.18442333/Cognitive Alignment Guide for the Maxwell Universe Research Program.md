@@ -2,7 +2,7 @@
 title: Cognitive Alignment Guide for the Maxwell Universe Research Program
 subtitle: A Canonical Onboarding Document for Continuity of Reasoning
 author: An M. Rodriguez, Alex Mercer
-date: 2026-01-30
+date: 2026-01-31
 status: Canonical internal document
 one-sentence-summary: This document aligns a new AI assistant with the conceptual, mathematical, and methodological foundations of the Maxwell Universe Research Program, enabling immediate continuation without regressions or reinterpretive drift.
 summary: Canonical alignment document for the Maxwell Universe Research Program, defining a field-only electromagnetic ontology in which refraction, mass, inertia, gravity, and quantization emerge from continuous, source-free energy flow governed by Maxwell dynamics, preserving continuity of reasoning across AI assistants.

@@ -1,0 +1,82 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: Cognitive Alignment Guide for the Maxwell Universe Research Program
+doi: 10.5281/zenodo.18442333
+concept_doi: 10.5281/zenodo.18442332
+permalink: "https://writing.preferredframe.com/prints/Cognitive Alignment Guide for the Maxwell Universe Research Program/10.5281/zenodo.18442333/"
+publication_date: '2026-01-31'
+publication_year: '2026'
+keywords:
+- Maxwell Universe
+- field-only ontology
+- electromagnetic energy flow
+- refraction without matter
+- emergent gravity
+- source-free dynamics
+- toroidal topology
+- circulating momentum
+- emergent mass and inertia
+- curl-based transport
+one_sentence_summary: This document aligns a new AI assistant with the conceptual, mathematical, and methodological foundations of the Maxwell Universe Research Program, enabling immediate continuation without regressions or reinterpretive drift.
+abstract: Canonical alignment document for the Maxwell Universe Research Program, defining a field-only electromagnetic ontology in which refraction, mass, inertia, gravity, and quantization emerge from continuous, source-free energy flow governed by Maxwell dynamics, preserving continuity of reasoning across AI assistants.
+authors:
+- name: An M. Rodriguez
+  orcid: 0009-0009-9098-9468
+- name: Alex Mercer
+references_doi: []
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: Cognitive Alignment Guide for the Maxwell Universe Research Program
+  creators:
+  - name: An M. Rodriguez
+    orcid: 0009-0009-9098-9468
+  - name: Alex Mercer
+  description: Canonical alignment document for the Maxwell Universe Research Program, defining a field-only electromagnetic ontology in which refraction, mass, inertia, gravity, and quantization emerge from continuous, source-free energy flow governed by Maxwell dynamics, preserving continuity of reasoning across AI assistants.
+  keywords:
+  - Maxwell Universe
+  - field-only ontology
+  - electromagnetic energy flow
+  - refraction without matter
+  - emergent gravity
+  - source-free dynamics
+  - toroidal topology
+  - circulating momentum
+  - emergent mass and inertia
+  - curl-based transport
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-01-31'
+  license: cc-by-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Cognitive Alignment Guide for the Maxwell Universe Research Program/10.5281/zenodo.18442333/Cognitive Alignment Guide for the Maxwell Universe Research Program.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Cognitive Alignment Guide for the Maxwell Universe Research Program/10.5281/zenodo.18442333/Cognitive Alignment Guide for the Maxwell Universe Research Program.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Cognitive Alignment Guide for the Maxwell Universe Research Program/10.5281/zenodo.18442333/Cognitive Alignment Guide for the Maxwell Universe Research Program.embed.html"
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: This document aligns a new AI assistant with the conceptual, mathematical, and methodological foundations of the Maxwell Universe Research Program, enabling immediate continuation without regressions or reinterpretive drift.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: 45425aa727e9792437663128bcc77a5954bca719
+  filename: Cognitive Alignment Guide for the Maxwell Universe Research Program.md
+artifacts:
+  md: Cognitive Alignment Guide for the Maxwell Universe Research Program.md
+  md_url: "https://writing.preferredframe.com/prints/Cognitive Alignment Guide for the Maxwell Universe Research Program/10.5281/zenodo.18442333/Cognitive Alignment Guide for the Maxwell Universe Research Program.md"
+  pandoc_md_name: Cognitive Alignment Guide for the Maxwell Universe Research Program.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/Cognitive Alignment Guide for the Maxwell Universe Research Program/10.5281/zenodo.18442333/Cognitive Alignment Guide for the Maxwell Universe Research Program.pandoc.md"
+  html_name: Cognitive Alignment Guide for the Maxwell Universe Research Program.html
+  html_url: "https://writing.preferredframe.com/prints/Cognitive Alignment Guide for the Maxwell Universe Research Program/10.5281/zenodo.18442333/Cognitive Alignment Guide for the Maxwell Universe Research Program.html"
+  primary: md
+  embed_html_name: Cognitive Alignment Guide for the Maxwell Universe Research Program.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/Cognitive Alignment Guide for the Maxwell Universe Research Program/10.5281/zenodo.18442333/Cognitive Alignment Guide for the Maxwell Universe Research Program.embed.html"

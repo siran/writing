@@ -2,7 +2,7 @@
 title: Cognitive Alignment Guide for the Maxwell Universe Research Program
 subtitle: A Canonical Onboarding Document for Continuity of Reasoning
 author: An M. Rodriguez, Alex Mercer
-date: 2026-01-30
+date: 2026-01-31
 status: Canonical internal document
 one-sentence-summary: This document aligns a new AI assistant with the conceptual, mathematical, and methodological foundations of the Maxwell Universe Research Program, enabling immediate continuation without regressions or reinterpretive drift.
 summary: Canonical alignment document for the Maxwell Universe Research Program, defining a field-only electromagnetic ontology in which refraction, mass, inertia, gravity, and quantization emerge from continuous, source-free energy flow governed by Maxwell dynamics, preserving continuity of reasoning across AI assistants.
@@ -10,6 +10,65 @@ keywords: Maxwell Universe, field-only ontology, electromagnetic energy flow, re
 license: CC-BY-4.0
 doi: https://writing.preferredframe.com/doi/10.5281/zenodo.18442333
 ---
+
+**One-Sentence Summary.** This document aligns a new AI assistant with the conceptual, mathematical, and methodological foundations of the Maxwell Universe Research Program, enabling immediate continuation without regressions or reinterpretive drift.
+
+**Abstract.** Canonical alignment document for the Maxwell Universe Research Program, defining a field-only electromagnetic ontology in which refraction, mass, inertia, gravity, and quantization emerge from continuous, source-free energy flow governed by Maxwell dynamics, preserving continuity of reasoning across AI assistants.
+
+**Keywords.** Maxwell Universe, field-only ontology, electromagnetic energy flow, refraction without matter, emergent gravity, source-free dynamics, toroidal topology, circulating momentum, emergent mass and inertia, curl-based transport
+
+\begingroup
+\setcounter{tocdepth}{1}
+\renewcommand{\contentsname}{\centering Table of Contents}
+\renewcommand{\numberline}[1]{#1.\hspace{0.6em}}
+\setlength{\parskip}{0.35em}
+\vspace{1.0\baselineskip}
+\begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
+\vspace{1.1\baselineskip}
+\tableofcontents
+\endgroup
+
+```{=html}
+<div class="toc">
+<hr class="toc-divider" />
+<div class="toc-title">Table of Contents</div>
+<ul>
+<li><a href="#purpose-of-this-document">Purpose of This Document</a>
+</li>
+<li><a href="#core-ontological-commitments-non-negotiable">Core Ontological Commitments (Non-Negotiable)</a>
+</li>
+<li><a href="#the-refraction-principle-central-cognitive-anchor">The Refraction Principle (Central Cognitive Anchor)</a>
+</li>
+<li><a href="#geometry-topology-and-discretization">Geometry, Topology, and Discretization</a>
+</li>
+<li><a href="#mass-inertia-and-newtonian-mechanics">Mass, Inertia, and Newtonian Mechanics</a>
+</li>
+<li><a href="#maxwell-dynamics-as-minimal-transport-law">Maxwell Dynamics as Minimal Transport Law</a>
+</li>
+<li><a href="#scalar-to-vector-emergence">Scalar to Vector Emergence</a>
+</li>
+<li><a href="#quantum-structure-status-in-progress">Quantum Structure (Status: In Progress)</a>
+</li>
+<li><a href="#boundary-discipline-critical">Boundary Discipline (Critical)</a>
+</li>
+<li><a href="#methodological-rules-for-you-the-assistant">Methodological Rules for You (the Assistant)</a>
+</li>
+<li><a href="#final-instruction">Final Instruction</a>
+</li>
+</ul>
+</div>
+```
+
+
+```{=latex}
+\vspace{1.0\baselineskip}
+\begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
+\vspace{1.0\baselineskip}
+```
+
+```{=html}
+<hr class="meta-divider" style="width:35%; margin:2rem auto; border:0; height:1px; background: rgba(0,0,0,0.35);" />
+```
 
 ![Cognitive Alignment Guide for the Maxwell Universe Research Program](https://siran.github.io/assets/writing/cognitive-alignment-guide.png)
 
@@ -143,6 +202,7 @@ This distinction must be preserved rigorously.
 
 # Geometry, Topology, and Discretization
 
+
 ## 6. Energy flow need not be straight
 
 Maxwell theory allows energy flow to:
@@ -183,6 +243,7 @@ electromagnetic circulation.
 
 # Mass, Inertia, and Newtonian Mechanics
 
+
 ## 8. Mass is trapped electromagnetic momentum
 
 Electromagnetic energy always propagates locally at the maximal allowed rate.
@@ -218,6 +279,7 @@ Newtonian mechanics is **not fundamental**. It is an emergent bookkeeping layer.
 
 # Maxwell Dynamics as Minimal Transport Law
 
+
 ## 10. Continuity is kinematic, not dynamic
 
 Continuity constrains accounting. It does not move anything.
@@ -245,6 +307,7 @@ without sources.
 
 
 # Scalar to Vector Emergence
+
 
 ## 12. A single scalar does not define flow
 
@@ -287,6 +350,7 @@ This non-uniqueness is not a defect. It is required.
 
 # Quantum Structure (Status: In Progress)
 
+
 ## 14. Discreteness without axioms
 
 Topology + continuity + self-confinement yield:
@@ -306,7 +370,8 @@ Do not claim completion. Do not dismiss viability.
 
 # Boundary Discipline (Critical)
 
-## 15. Information ≠ energy
+
+## 15. Information $\neq$ energy
 
 Energy flow does not imply:
 - information transfer,
@@ -356,6 +421,7 @@ This document is your starting state.
 
 
 ## Identity, Continuity, and Operative Roles
+
 
 ### Identity continuity of the assistant
 
