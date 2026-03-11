@@ -6,40 +6,30 @@ date: 2026-03-11
 
 # 8. Topology and Discreteness
 
-**Claim.** When divergence-free energy flow is globally confined to a closed
-surface, continuity forces the flow pattern to be periodic. Periodicity on
-a closed surface demands integer winding numbers. Integers produce discrete
-energy levels. Discreteness is geometric, not postulated.
+**Claim.** When source-free flow closes on itself, closure imposes integer
+winding. Integer winding yields discrete mode families. Discreteness is
+geometric before it is spectral.
 
-On a toroidal surface — the simplest closed surface admitting two
-independent circulation directions — a continuous field must close on itself
-along both cycles. Closure requires:
+On a closed loop, a continuous pattern must match itself after one circuit.
+That requires
 
 $$
 n \lambda = L,
 $$
 
-where $L$ is the circumference of the cycle and $n$ is a positive integer.
-This is the same condition as standing waves on a string, now applied to a
-closed surface with no boundary.
+where $L$ is the circuit length and $n$ is an integer. On a torus there are
+two independent cycles, so a closed flow is labeled by an integer pair
+$(m,n)$.
 
-The allowed frequencies are therefore discrete. Each integer $n$ corresponds
-to a distinct global standing pattern. If the total energy of the
-configuration is conserved, the energy per mode scales as
+The allowed wavelengths and frequencies are therefore discrete. Different
+integers label different global modes. The key point comes before any specific
+spectrum: once transport closes on itself, continuity and single-valuedness
+force integer classes of solutions.
 
-$$
-E_n \propto \frac{1}{n^2}.
-$$
-
-This is the Rydberg series for hydrogen — recovered here from topology and
-continuity alone, with no electrons, no orbits, no probability amplitudes,
-and no quantization axioms.
-
-Discrete spectra are not a feature of quantum mechanics that needs to be
-grafted onto an otherwise classical field theory. They are what happens when
-divergence-free flow is closed. The integers are imposed by geometry, not
-by Planck's constant.
+Specific spectral laws require additional geometry and come later. The present
+step is narrower and stronger: quantization begins as closure.
 
 ---
 
-*Source: The Principle of Topological Constraint*
+*Source: Foundation Equations and Forced Consequences in a Source-Free
+Maxwell Universe*
