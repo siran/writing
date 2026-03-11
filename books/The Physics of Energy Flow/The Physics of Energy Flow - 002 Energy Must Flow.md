@@ -6,37 +6,40 @@ date: 2026-03-11
 
 # 2. Energy Must Flow
 
-**Claim.** A single present configuration,
+**Claim.** A single registered configuration,
 
 $$
 u_1(\mathbf{r}),
 $$
 
-says only how much energy is present at each location. If a later present
+says only how much energy is present at each location. If a second registered
 configuration,
 
 $$
 u_2(\mathbf{r}),
 $$
 
-differs from the first, the difference must have been carried. A scalar density
-cannot do that by itself. Redistribution requires a directional quantity: a
-current.
+differs from the first, then change has been noticed by comparing records.
+What is observed is not arbitrary replacement, but continuous reconfiguration.
+That reconfiguration is what we call flow.
+
+A scalar density cannot describe reconfiguration by itself. To describe flow
+locally we need a directional quantity: a current. Once repeated
+registrations are ordered, we write
 
 $$
 \mathbf{J}(\mathbf{r}, t).
 $$
 
-The field $u$ tells us how much energy is present. It does not tell us where
-energy goes. The current $\mathbf{J}$ records the rate and direction at which
-energy crosses a unit area.
+The field $u$ tells us how much energy is present. The current $\mathbf{J}$
+tells us how the present configuration is being reconfigured: the rate and
+direction at which energy crosses a unit area.
 
-This introduces the bookkeeping parameter $t$: not as a primitive container,
-but as a label for successive present configurations and the transport between
-them.
+Here $t$ is not a primitive container. It is a bookkeeping parameter labeling
+ordered registrations of one changing present.
 
 This is not yet the Poynting vector. It is the most general current required by
-any local account of transport. The electromagnetic realization comes later.
+local transport. The electromagnetic realization comes later.
 
 ---
 
