@@ -9,13 +9,18 @@ date: 2026-03-11
 **Claim.** Cause is not directly observed. What is directly observed is
 registered change.
 
-A configuration changes. The change leaves a trace, alters what can happen
-next, and can be compared with later traces. Only after such ordering do we
-tell a causal story: this came before that; this produced that.
+We register configurations. We compare records. If the records differ,
+change has been noticed.
 
-Cause and consequence are therefore not primitive furniture of the world. They
-are compact descriptions of ordered, registered change. Change is primary.
-Cause is the interpretation added afterward.
+Because physical registrations do not present contradictions — a given
+record does not assign multiple incompatible values to the same quantity at
+the same location — we infer an order in the reconfiguration. That
+persistent order is what later receives causal language: this before that;
+this producing that.
+
+Cause and consequence are therefore not primitive furniture of the world.
+They are compact descriptions of ordered, registered reconfiguration.
+Change is primary. Cause is the interpretation added afterward.
 
 ---
 
