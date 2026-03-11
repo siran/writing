@@ -6,25 +6,24 @@ date: 2026-03-11
 
 # 2. Energy Must Flow
 
-**Claim.** A single snapshot of $u$ is inert. Two snapshots that differ
-require explanation: the change must be carried somewhere. This introduces
-a directional quantity — energy flux.
+**Claim.** If the energy density changes from one place or time to another,
+the change must be carried. A scalar density cannot do that by itself.
+Redistribution requires a current:
 
 $$
-\mathbf{S}(\mathbf{x}, t).
+\mathbf{J}(\mathbf{x}, t).
 $$
 
-The flux $\mathbf{S}$ is a vector field: at each point it records how much
-energy is crossing a unit area per unit time and in which direction.
+The field $u$ tells us how much energy is present. It does not tell us where
+energy goes. Direction requires a vector quantity.
 
-The need for $\mathbf{S}$ is not a choice. If $u(\mathbf{x}, t_1) \neq
-u(\mathbf{x}, t_2)$, something must account for the discrepancy. Energy
-does not teleport and does not appear from nothing. If it left one region it
-must have passed through the boundary of that region. The only mathematical
-object capable of describing that crossing is a vector field — a flux.
+The current $\mathbf{J}$ records the rate and direction at which energy crosses
+a unit area. If energy leaves one region and appears in another, it must have
+passed through the boundary in between. That crossing is what $\mathbf{J}$
+describes.
 
-So $\mathbf{S}$ is not introduced by analogy with electromagnetism. It is
-demanded by the requirement that redistribution be *traceable*.
+This is not yet the Poynting vector. It is the most general current required by
+any local account of transport. The electromagnetic realization comes later.
 
 ---
 
