@@ -30,12 +30,13 @@ $$
 $$
 
 The right-hand side is what we call *force*. It is not a primitive causal
-agent acting on a point mass. It is the net rate at which momentum is being
+agent acting on a particle. It is the net rate at which momentum is being
 transferred across the boundary of the region occupied by the configuration.
 
 A mediating "force field" inserted between supposedly independent substrates
-does not rescue their independence. If interaction is real, a common structure
-is already present, and force is only the bookkeeping of that coupling.
+does not rescue their independence. If interaction is real, a common
+structure is already present, and force is only the bookkeeping of that
+coupling.
 
 $F = dp/dt$ is bookkeeping for momentum flux. Nothing more is needed.
 Particles are regions; forces are boundary integrals; Newton's law is the
