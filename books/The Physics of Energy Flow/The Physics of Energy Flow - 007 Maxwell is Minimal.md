@@ -6,36 +6,42 @@ date: 2026-03-11
 
 # 7. Maxwell is Minimal
 
-**Claim.** The simplest coupled curl evolution in three dimensions — two
-vector fields each evolving as the curl of the other — is precisely Maxwell
-electromagnetism. It is not postulated; it is the minimal closure.
-
-In three dimensions, a single divergence-free vector field evolving by its
-own curl is too constrained to carry energy non-trivially. The minimal
-nontrivial closure requires two fields, $\mathbf{E}$ and $\mathbf{B}$,
-coupled by curl:
+**Claim.** One rotating field is not enough for self-advancing transport. A
+single curl gives local turning. Stable propagation requires complementary
+turning: one field rotates the other, and is rotated in return. The minimal
+closure is:
 
 $$
-\partial_t \mathbf{E} = \nabla \times \mathbf{B}, \qquad
-\partial_t \mathbf{B} = -\nabla \times \mathbf{E}.
+\partial_t \mathbf{E} = c\,\nabla \times \mathbf{B}, \qquad
+\partial_t \mathbf{B} = -c\,\nabla \times \mathbf{E}.
 $$
 
-These are Maxwell's equations in vacuum (in appropriate units), with no
-sources.
+This is Maxwell's vacuum dynamics. $\mathbf{E}$ and $\mathbf{B}$ are not two
+substances. They are two complementary rotational aspects of one organized
+flow.
 
-$\mathbf{E}$ and $\mathbf{B}$ are not separate substances. They are two
-components of the same organized energy flow — complementary aspects of a
-single pattern that rotates into itself as it propagates.
+Apply $\partial_t$ once more and use the source-free constraints. Each field
+then satisfies the wave equation:
 
-The minus sign in the second equation is not arbitrary. It is required for
-the system to support propagating solutions rather than growing or decaying
-ones. It is the only sign consistent with energy conservation under the
-coupling.
+$$
+\partial_t^2 \mathbf{E} = c^2 \nabla^2 \mathbf{E}, \qquad
+\partial_t^2 \mathbf{B} = c^2 \nabla^2 \mathbf{B}.
+$$
 
-Maxwell electromagnetism, viewed this way, is not a theory discovered by
-experiment and then codified. It is the answer to a well-posed question:
-*what is the simplest evolution law for divergence-free energy transport in
-three dimensions?* The answer is unique up to the choice of two fields.
+The mutual rotation does not merely recirculate. It advances. Locally the
+geometry is a double rotation. Globally the same motif appears in helical or
+toroidal flow.
+
+Only at this stage is the transport current identified with the Maxwell
+realization:
+
+$$
+\mathbf{J} = \mathbf{S} = \frac{1}{\mu_0}\,\mathbf{E}\times\mathbf{B}.
+$$
+
+Maxwell theory is therefore not introduced by naming $\mathbf{E}$ and
+$\mathbf{B}$ first. It appears as the minimal two-field closure of source-free
+rotational transport.
 
 ---
 
