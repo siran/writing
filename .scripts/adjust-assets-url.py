@@ -36,28 +36,79 @@ def resolve_target(argv):
 
     sys.exit(f"Target path not found: {target}")
 
+def extract_cover_image(book_yml: Path):
+    if not book_yml.exists():
+        return None
+
+    text = book_yml.read_text(encoding="utf-8")
+    m = re.search(r"^cover-image\s*:\s*(.+)$", text, re.MULTILINE)
+    if not m:
+        return None
+
+    val = m.group(1).strip()
+    if (val.startswith('"') and val.endswith('"')) or (
+        val.startswith("'") and val.endswith("'")
+    ):
+        val = val[1:-1].strip()
+
+    return val or None
+
+
+def update_cover_image(book_yml: Path, new_url: str):
+    text = book_yml.read_text(encoding="utf-8")
+    new_line = f"cover-image: {new_url}"
+    new_text, count = re.subn(
+        r"^cover-image\s*:\s*(.+)$",
+        new_line,
+        text,
+        count=1,
+        flags=re.MULTILINE,
+    )
+    if count == 0:
+        sys.exit(f"cover-image not found in {book_yml}")
+    book_yml.write_text(new_text, encoding="utf-8")
+
+
+TARGET_DIR, md_files = resolve_target(sys.argv[1:])
+if not md_files:
+    sys.exit(f"No markdown files found in: {TARGET_DIR}")
+
 # --- choose assets subdir ---
 if not ASSETS_ROOT.is_dir():
     sys.exit(f"Assets dir not found: {ASSETS_ROOT}")
 
-subdirs = [d.name for d in ASSETS_ROOT.iterdir() if d.is_dir()]
-if not subdirs:
-    sys.exit(f"No subdirs in {ASSETS_ROOT}")
+subdirs = sorted(
+    [d.name for d in ASSETS_ROOT.iterdir() if d.is_dir() and not d.name.startswith(".")],
+    key=str.casefold,
+)
 
 print("Choose assets subdir:")
 for i, name in enumerate(subdirs, 1):
     print(f"{i}) {name}")
+print(f"N) create new subdir [{TARGET_DIR.name}]")
 
-try:
-    idx = int(input("> ").strip())
-except ValueError:
-    sys.exit("Invalid choice (not a number)")
+choice = input("> ").strip()
 
-if not (1 <= idx <= len(subdirs)):
-    sys.exit("Invalid choice (out of range)")
+if choice.lower() in {"n", "new"}:
+    chosen = input(f"New subdir name [{TARGET_DIR.name}]: ").strip() or TARGET_DIR.name
+    if any(sep in chosen for sep in ("/", "\\")):
+        sys.exit("Subdir name must not contain path separators")
+    chosen_dir = ASSETS_ROOT / chosen
+    chosen_dir.mkdir(parents=True, exist_ok=True)
+elif choice in subdirs:
+    chosen = choice
+    chosen_dir = ASSETS_ROOT / chosen
+else:
+    try:
+        idx = int(choice)
+    except ValueError:
+        sys.exit("Invalid choice")
 
-chosen = subdirs[idx - 1]
-chosen_dir = ASSETS_ROOT / chosen
+    if not (1 <= idx <= len(subdirs)):
+        sys.exit("Invalid choice (out of range)")
+
+    chosen = subdirs[idx - 1]
+    chosen_dir = ASSETS_ROOT / chosen
 
 print(f"\nUsing assets subdir: {chosen_dir}\n")
 
@@ -65,9 +116,6 @@ print(f"\nUsing assets subdir: {chosen_dir}\n")
 link_pattern = re.compile(r'(!?\[[^\]]*\]\()([^)]+)(\))')
 
 # local asset files referenced like assets/filename.ext
-TARGET_DIR, md_files = resolve_target(sys.argv[1:])
-if not md_files:
-    sys.exit(f"No markdown files found in: {TARGET_DIR}")
 local_assets = set()  # set of Paths relative to TARGET_DIR
 
 for md in md_files:
@@ -90,6 +138,18 @@ print("Found asset references:")
 for p in sorted(local_assets):
     print("  ", p)
 print()
+
+# --- detect local cover-image in book.yml ---
+book_yml = TARGET_DIR / "book.yml"
+cover_value = extract_cover_image(book_yml)
+cover_src = None
+
+if cover_value and not cover_value.startswith(("http://", "https://")):
+    cover_path = Path(cover_value)
+    cover_src = cover_path if cover_path.is_absolute() else (TARGET_DIR / cover_path)
+    print("Found local cover-image:")
+    print("  ", cover_src)
+    print()
 
 # --- move assets into chosen_dir ---
 moved = []
@@ -124,11 +184,38 @@ for rel in sorted(local_assets):
     moved.append((src, dst))
     print(f"moved {src} -> {dst}")
 
+cover_updated = False
+if cover_src is not None:
+    dst = chosen_dir / cover_src.name
+
+    if not cover_src.exists():
+        skipped_missing.append((cover_src, "cover-image source missing"))
+    elif dst.exists():
+        try:
+            if cover_src.read_bytes() == dst.read_bytes():
+                cover_src.unlink()
+                print(f"deleted duplicate local cover-image: {cover_src}")
+                update_cover_image(book_yml, f"{BASE_URL}/{chosen}/{dst.name}")
+                cover_updated = True
+            else:
+                skipped_conflict.append((cover_src, "cover-image target exists with different content"))
+        except Exception as e:
+            skipped_conflict.append((cover_src, f"error comparing cover-image files: {e}"))
+    else:
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        shutil.move(str(cover_src), str(dst))
+        moved.append((cover_src, dst))
+        print(f"moved cover-image {cover_src} -> {dst}")
+        update_cover_image(book_yml, f"{BASE_URL}/{chosen}/{dst.name}")
+        cover_updated = True
+
 print()
 print("Summary of asset moves:")
 print(f"  moved: {len(moved)}")
 print(f"  missing: {len(skipped_missing)}")
 print(f"  conflicts: {len(skipped_conflict)}")
+if cover_updated:
+    print("  updated book.yml cover-image")
 print()
 
 # --- rewrite URLs in markdown files (target dir or file) ---
