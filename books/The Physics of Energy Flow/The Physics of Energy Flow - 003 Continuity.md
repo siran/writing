@@ -6,30 +6,25 @@ date: 2026-03-11
 
 # 3. Continuity
 
-**Claim.** The relationship between density change and flux is not
-arbitrary. It is the continuity equation — the precise mathematical
-statement that energy is neither created nor destroyed locally during
-transport.
+**Claim.** The relationship between density and current is fixed by local
+conservation. Energy changes in a region only by crossing its boundary. The
+local statement is:
 
 $$
-\partial_t u + \nabla \cdot \mathbf{S} = 0.
+\partial_t u + \nabla \cdot \mathbf{J} = 0.
 $$
 
-Read left to right: if the density at a point increases, the divergence of
-the flux must be negative — meaning net flow is *into* that point. If
-density decreases, flow is *out*. Nothing appears or disappears without
-a corresponding flow accounting for it.
+If the density at a point increases, the divergence of $\mathbf{J}$ must be
+negative: more energy is flowing in than out. If the density decreases, the
+divergence is positive: more is leaving than entering.
 
-This equation is kinematic, not dynamic. It constrains *bookkeeping*, not
-motion. It does not say how $\mathbf{S}$ moves or what determines its
-direction. It only says that whatever $\mathbf{S}$ does, the books must
-balance.
+This equation is accounting, not dynamics. It does not say how the current is
+generated or what determines its direction. It says only that any admissible
+transport must balance exactly.
 
-The continuity equation is therefore the minimal consistency requirement for
-any description of transport. Without it, redistribution is incoherent.
-With it, we have a framework — but not yet a theory. We know that energy
-flows and that flows must balance. We do not yet know *how* flows are
-organized in space.
+Continuity is therefore the minimal consistency requirement for transport. It
+gives a closed bookkeeping rule, but not yet the spatial organization of the
+flow.
 
 ---
 
