@@ -17,24 +17,20 @@ E = mc^2,
 $$
 
 or equivalently, $m = E/c^2$. This is not Einstein's formula applied after
-the fact. It is the definition of what mass *is* in this framework: the
-ratio of the total confined energy to the square of the propagation speed.
+the fact. In this framework it states what mass *is*: the ratio of total
+confined energy to the square of the propagation speed.
 
 Why does confined energy resist acceleration? Because redirecting a
-self-sustaining circulation pattern costs energy. The internal flow has a
-preferred self-referential geometry. Deflecting the entire structure requires
-work — and the measure of how much work it requires per unit of acquired
-velocity is what we call inertia, i.e., mass.
+self-sustaining circulation pattern requires reorganizing the whole closed
+flow. That resistance to redirection is inertia, and its measure is mass.
 
 There is no separate substance called "matter" that happens to also carry
 energy. There is only energy, organized into persistent topological
 structures. The word "mass" names one measurable property of that
 organization: its resistance to being redirected.
 
-Photons, massless, are not confined. Their energy propagates without a
-closed topology. A photon carries momentum $p = E/c$ but no inertial mass.
-This is consistent: mass appears precisely when and only when topology
-confines the flow.
+Unconfined propagation carries momentum $p = E/c$ but no inertial rest mass.
+Mass appears precisely when topology confines the flow.
 
 ---
 
