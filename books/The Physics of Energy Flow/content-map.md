@@ -4,19 +4,19 @@ Each chapter = one logical step in the thesis chain.
 
 | # | Chapter | Thesis step | Key math | Source print |
 |---|---------|-------------|----------|--------------|
-| 1 | Something Exists | a present configuration exists as nonnegative density | u(r) ≥ 0 | *Defining Electromagnetic Fields from Continuity and Divergence-Free Structure* |
-| 2 | Energy Must Flow | successive configurations require transport | u₁(r) → u₂(r), J(r,t) | *Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow* |
-| 3 | Continuity | local conservation is closed accounting | ∂ₜu + ∇·J = 0 | *Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow* |
+| 1 | Something Exists | a registered present configuration exists as nonnegative density | u(r) ≥ 0 | *Defining Electromagnetic Fields from Continuity and Divergence-Free Structure* |
+| 2 | Energy Must Flow | comparing records reveals reconfiguration, and reconfiguration is flow | u₁(r), u₂(r), J(r,t) | *Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow* |
+| 3 | Continuity | ordered reconfiguration satisfies local bookkeeping | ∂ₜu + ∇·J = 0 | *Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow* |
 | 4 | No Sources or Sinks | source-free means no added creation or destruction term | ∂ₜu + ∇·J = 0 | *The Maxwell Universe Research Program* |
 | 5 | Divergence-Free Flow | the transport structure in empty space has no primitive endpoints | ∇·F = 0 | *Defining Electromagnetic Fields from Continuity and Divergence-Free Structure* |
 | 6 | Curl Preserves Flow | curl preserves source-free flow identically | ∂ₜF = ∇×A[F] | *Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow* |
-| 7 | Maxwell is Minimal | stable propagation needs two coupled rotations | ∂ₜE = c∇×B, ∂ₜB = −c∇×E | *Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow* |
-| 8 | Topology and Discreteness | closed circulation imposes integer winding and discrete mode families | nλ = L, (m,n) ∈ ℤ² | *Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe* |
-| 9 | Mass as Trapped Energy | localized circulating energy has inertia | m = E/c² | *Geometric Inertia — Mass as Trapped Energy* |
-| 10 | Charge as Circulation | far-field projection of conserved winding, not substance | Intensity ∝ 1/r² | *Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe* |
+| 7 | Maxwell is Minimal | stable propagation needs two complementary coupled rotations | ∂ₜE = c∇×B, ∂ₜB = −c∇×E | *Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow* |
+| 8 | Topology and Discreteness | toroidal closure avoids forced defects and imposes integer winding | nλ = L, (m,n) ∈ ℤ² | *Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe* |
+| 9 | Mass as Trapped Energy | confined circulating energy resists redirection and so has inertia | m = E/c² | *Geometric Inertia — Mass as Trapped Energy* |
+| 10 | Charge as Circulation | far-field projection of conserved winding, not a separate substance | Intensity ∝ 1/r² | *Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe* |
 | 11 | Schrödinger as Narrow-Band Maxwell | envelope approximation of Maxwell wave equation | iℏ∂ₜψ = −(ℏ²/2m)∇²ψ + O(ε²) | *Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics* |
 | 12 | Newton as Flux Accounting | momentum flux through a surface → F = dp/dt | F = −∮ T·dA | *Deriving Newton's Laws and Schrödinger's Equation in a Source-Free Maxwell Universe* |
-| 13 | Gravity as Refraction | energy concentration raises local ε → light slows → bending | c = 1/√(εμ) | *Curved Propagation vs. Curved Space* |
+| 13 | Gravity as Refraction | energy concentration raises local ε, slows transport, and bends paths | c = 1/√(εμ) | *Curved Propagation vs. Curved Space* |
 
 ## Corollaries
 
@@ -26,9 +26,9 @@ consistent with the reconstruction.
 
 | # | Chapter | Thesis step | Key idea | Source |
 |---|---------|-------------|----------|--------|
-| 101 | What Is Cause? | change is primary; cause and consequence are later orderings | registered change comes first; causal language compresses ordered transitions | *A Maxwell Universe* |
-| 102 | What Is Time? | time is the ordering of persistent flow, counted by recurrence, not a primitive container | clocks count recurrent flow; coordinate time labels successive states | *A Maxwell Universe* |
-| 103 | What Is Space? | space is the collection of distances defined by causal-step counts, not a primitive stage | distance measures recurrent signal paths; geometry summarizes those relations | *A Maxwell Universe* |
+| 101 | What Is Cause? | change is primary; cause and consequence are later orderings | comparing records reveals ordered reconfiguration; causal language compresses it | *A Maxwell Universe* |
+| 102 | What Is Time? | time is the ordering of persistent flow, counted by recurrence, not a primitive container | clocks count recurrent flow; coordinate time labels ordered registrations | *A Maxwell Universe* |
+| 103 | What Is Space? | space is the collection of distances defined by recurrent signal counts, not a primitive stage | distance counts ordered signal steps; geometry summarizes those relations | *A Maxwell Universe* |
 | 104 | What Is Force? | force is derived bookkeeping for reconfiguration, not a primitive agent | momentum transfer replaces primitive push; interaction falsifies true substrate independence | *A Maxwell Universe* |
 
 ## Thesis (one sentence)
