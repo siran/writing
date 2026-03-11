@@ -8,7 +8,7 @@ date: 2026-03-11
 
 **Claim.** Electric charge is not a substance added to a field
 configuration. It is the far-field projection of conserved topological
-winding — a $1/r^2$ intensity falloff that results from a fixed total
+winding: a $1/r^2$ intensity falloff that results from a fixed total
 circulation spread over an expanding sphere.
 
 In source-free Maxwell dynamics, $\nabla \cdot \mathbf{E} = 0$ everywhere.
@@ -28,12 +28,12 @@ $$
 $$
 
 This is Coulomb's law — not derived from a point source, but from projection
-geometry. Charge is the name we give to the conserved quantity (total
-winding) whose projection we are measuring.
+geometry. Charge is the name we give to the conserved quantity whose
+projection we are measuring.
 
-Opposite "charges" — winding in opposite senses — cancel when their
-projections overlap, reproducing attraction and repulsion without any action
-at a distance.
+Opposite charge signs correspond to opposite senses of winding. Their
+interaction is then described without introducing any primitive action at a
+distance.
 
 ---
 
