@@ -6,7 +6,7 @@ date: 2026-03-11
 
 # 13. Gravity as Refraction
 
-**Claim.** Gravity is not a force, and it is not an independent spacetime
+Gravity is not a force, and it is not an independent spacetime
 substance. It is electromagnetic refraction: the bending of energy
 transport paths caused by a spatially varying propagation speed induced by
 concentrated energy density.
@@ -43,7 +43,3 @@ arguments, with no appeal to an independently curved spacetime.
 Spacetime curvature, in this reading, is a geometric restatement of the same
 refraction. The geometry follows from the transport, not the other way
 around.
-
----
-
-*Source: Curved Propagation vs. Curved Space*

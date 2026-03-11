@@ -6,7 +6,7 @@ date: 2026-03-11
 
 # 9. Mass as Trapped Energy
 
-**Claim.** A stable, localized circulation of electromagnetic energy behaves
+A stable, localized circulation of electromagnetic energy behaves
 exactly like a massive object. Mass is not a primitive property of matter; it
 is the inertia of trapped energy.
 
@@ -31,7 +31,3 @@ organization: its resistance to being redirected.
 
 Unconfined propagation carries momentum $p = E/c$ but no inertial rest mass.
 Mass appears precisely when topology confines the flow.
-
----
-
-*Source: Geometric Inertia — Mass as Trapped Energy*

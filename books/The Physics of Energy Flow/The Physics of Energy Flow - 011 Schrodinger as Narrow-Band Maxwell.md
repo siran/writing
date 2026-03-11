@@ -6,7 +6,7 @@ date: 2026-03-11
 
 # 11. Schrödinger as Narrow-Band Maxwell
 
-**Claim.** The Schrödinger equation is not a new postulate of quantum
+The Schrödinger equation is not a new postulate of quantum
 mechanics. It is a controlled approximation of Maxwell transport, valid when
 the frequency bandwidth of the field configuration is small relative to its
 central frequency.
@@ -42,8 +42,3 @@ Quantum mechanics, in this view, is the physics of slowly varying envelopes
 of electromagnetic energy. Its characteristic structure — superposition,
 interference, uncertainty — is inherited directly from the wave nature of
 Maxwell dynamics, not from a separate quantum layer of reality.
-
----
-
-*Source: Deriving the Schrödinger Equation from Source-Free Maxwell
-Dynamics*

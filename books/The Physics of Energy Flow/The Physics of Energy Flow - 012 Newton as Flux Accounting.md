@@ -6,7 +6,7 @@ date: 2026-03-11
 
 # 12. Newton as Flux Accounting
 
-**Claim.** Newton's second law is not a primitive description of how forces
+Newton's second law is not a primitive description of how forces
 act on particles. It is a statement about momentum flux through the surface
 surrounding a localized energy configuration.
 
@@ -41,8 +41,3 @@ coupling.
 $F = dp/dt$ is bookkeeping for momentum flux. Nothing more is needed.
 Particles are regions; forces are boundary integrals; Newton's law is the
 continuity equation applied to momentum.
-
----
-
-*Source: Deriving Newton's Laws and Schrödinger's Equation in a Source-Free
-Maxwell Universe*

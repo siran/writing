@@ -6,7 +6,7 @@ date: 2026-03-11
 
 # 1. Something Exists
 
-**Claim.** The minimal starting point of physical description is not a
+The minimal starting point of physical description is not a
 particle, a law, or even a named field. It is the bare fact that something
 can be registered: a nonnegative quantity distributed through space.
 
@@ -32,8 +32,3 @@ and can be measured.
 This single assumption — that something has a nonnegative magnitude at each
 location — is the entire ontological foundation of everything that follows.
 Physics, in this approach, never requires anything more primitive than this.
-
----
-
-*Source: Defining Electromagnetic Fields from Continuity and
-Divergence-Free Structure*

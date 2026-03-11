@@ -6,7 +6,7 @@ date: 2026-03-11
 
 # What Is Force?
 
-**Claim.** Force is not a primitive agent acting between separate substances. It
+Force is not a primitive agent acting between separate substances. It
 is a derived description of reconfiguration and momentum transfer.
 
 When a bounded region changes its motion, what has changed physically is the
@@ -20,7 +20,3 @@ which the coupling is taking place.
 
 Force is therefore descriptive, not ontological. It is bookkeeping for coupled
 change within one underlying physical organization.
-
----
-
-*Source: A Maxwell Universe*

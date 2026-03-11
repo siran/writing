@@ -30,8 +30,3 @@ that multiplication.
 If continuous electromagnetic energy transport is taken as primitive, and if
 its organization is analyzed without adding hidden substances or forces, then
 the familiar structures of physics reappear as consequences of flow.
-
----
-
-*This framing is consistent with the main derivation and with the conceptual
-corollaries on cause, time, space, and force.*

@@ -6,7 +6,7 @@ date: 2026-03-11
 
 # 4. No Sources or Sinks
 
-**Claim.** Source-free does not mean the current has zero divergence. It means
+Source-free does not mean the current has zero divergence. It means
 that no extra source term is introduced. All local change in energy density is
 accounted for by transport:
 
@@ -27,7 +27,3 @@ outflow, and so its stored energy changes.
 Source-free means: no primitive creation, no primitive annihilation, no added
 term beyond transport itself. The next question is different. It is not whether
 the current is divergence-free, but how transport is organized in space.
-
----
-
-*Source: The Maxwell Universe Research Program*

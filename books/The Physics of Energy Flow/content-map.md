@@ -5,7 +5,7 @@ Each chapter = one logical step in the thesis chain.
 | # | Chapter | Thesis step | Key math | Source print |
 |---|---------|-------------|----------|--------------|
 | 1 | Something Exists | a registered present configuration exists as nonnegative density | u(r) ≥ 0 | *Defining Electromagnetic Fields from Continuity and Divergence-Free Structure* |
-| 2 | Energy Must Flow | comparing records reveals reconfiguration, and reconfiguration is flow | u₁(r), u₂(r), J(r,t) | *Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow* |
+| 2 | Energy Must Flow | comparing records reveals reconfiguration, and reconfiguration is flow | u(r), u₁(r), u₂(r), J(r,t) | *Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow* |
 | 3 | Continuity | ordered reconfiguration satisfies local bookkeeping | ∂ₜu + ∇·J = 0 | *Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow* |
 | 4 | No Sources or Sinks | source-free means no added creation or destruction term | ∂ₜu + ∇·J = 0 | *The Maxwell Universe Research Program* |
 | 5 | Divergence-Free Flow | the transport structure in empty space has no primitive endpoints | ∇·F = 0 | *Defining Electromagnetic Fields from Continuity and Divergence-Free Structure* |
@@ -38,7 +38,7 @@ local transport law; all observed structure is organization of that transport.
 
 ## Inflation notes
 
-- Stubs first: claim + key equation + 1 paragraph + pointer to source print
+- Stubs first: opening idea + key equation + 1 paragraph + pointer to source print
 - Keep the spine strict; move operator proofs and technical side arguments into appendices
 - Inflate each chapter from its listed source print
 - After TPOEF is complete, carry distilled content back into AMU Part II chapters

@@ -6,7 +6,7 @@ date: 2026-03-11
 
 # 7. Maxwell is Minimal
 
-**Claim.** One rotating field is not enough for self-advancing transport. A
+One rotating field is not enough for self-advancing transport. A
 single curl gives local turning. Stable propagation requires complementary
 turning: one field rotates the other, and is rotated in return. The minimal
 real propagating closure is:
@@ -53,8 +53,3 @@ $$
 Maxwell theory is therefore not introduced by naming $\mathbf{E}$ and
 $\mathbf{B}$ first. It appears as the minimal two-field closure of
 source-free rotational transport.
-
----
-
-*Source: Maxwell Electromagnetism as the Minimal Dynamics of
-Divergence-Free Energy Flow*

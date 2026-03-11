@@ -6,7 +6,7 @@ date: 2026-03-11
 
 # 8. Topology and Discreteness
 
-**Claim.** When source-free flow closes on itself, closure imposes integer
+When source-free flow closes on itself, closure imposes integer
 winding. Integer winding yields discrete mode families. Discreteness is
 geometric before it is spectral.
 
@@ -35,8 +35,3 @@ single-valuedness force integer classes of solutions.
 
 Specific spectral laws require additional geometry and come later. The present
 step is narrower and stronger: quantization begins as closure.
-
----
-
-*Source: Foundation Equations and Forced Consequences in a Source-Free
-Maxwell Universe*

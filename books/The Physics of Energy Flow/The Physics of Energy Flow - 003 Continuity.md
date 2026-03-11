@@ -6,7 +6,7 @@ date: 2026-03-11
 
 # 3. Continuity
 
-**Claim.** Once ordered registrations of reconfiguration are in hand, the
+Once ordered registrations of reconfiguration are in hand, the
 relationship between density and current is fixed by local conservation.
 Energy changes in a region only by crossing its boundary. The local
 statement is:
@@ -29,8 +29,3 @@ changing present. It does not smuggle in time as an independent substance.
 Continuity is therefore the minimal consistency requirement for transport. It
 gives a closed bookkeeping rule, but not yet the spatial organization of the
 flow.
-
----
-
-*Source: Maxwell Electromagnetism as the Minimal Dynamics of
-Divergence-Free Energy Flow*

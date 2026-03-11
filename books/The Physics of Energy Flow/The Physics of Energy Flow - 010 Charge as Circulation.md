@@ -6,7 +6,7 @@ date: 2026-03-11
 
 # 10. Charge as Circulation
 
-**Claim.** Electric charge is not a substance added to a field
+Electric charge is not a substance added to a field
 configuration. It is the far-field projection of conserved topological
 winding: a $1/r^2$ intensity falloff that results from a fixed total
 circulation spread over an expanding sphere.
@@ -34,8 +34,3 @@ projection we are measuring.
 Opposite charge signs correspond to opposite senses of winding. Their
 interaction is then described without introducing any primitive action at a
 distance.
-
----
-
-*Source: Foundation Equations and Forced Consequences in a Source-Free
-Maxwell Universe*

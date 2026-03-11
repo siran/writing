@@ -6,7 +6,7 @@ date: 2026-03-11
 
 # What Is Space?
 
-**Claim.** Space is not a stage in which energy resides. It is the
+Space is not a stage in which energy resides. It is the
 collection of distances defined by ordered signal separation.
 
 A distance is not a primitive length. It is a count of how many recurrent
@@ -18,7 +18,3 @@ Geometry is therefore descriptive rather than ontological. It summarizes the
 organization of flow; it does not contain it. When the resulting distance
 relations can be represented coherently in three dimensions, we use that
 representation and call it space.
-
----
-
-*Source: A Maxwell Universe*

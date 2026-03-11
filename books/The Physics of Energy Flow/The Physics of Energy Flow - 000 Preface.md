@@ -42,9 +42,3 @@ assumptions as possible: if something exists and redistributes
 continuously, what must follow?
 
 The answer is all of physics.
-
----
-
-*The argument from shared substrate to universality is developed further
-in Chapter 1 (Something Exists) and in: Defining Electromagnetic Fields
-from Continuity and Divergence-Free Structure.*
