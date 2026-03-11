@@ -6,12 +6,13 @@ date: 2026-03-11
 
 # What Is Space?
 
-**Claim.** Space is not a stage in which energy resides. It is the collection
-of distances defined by causal separation.
+**Claim.** Space is not a stage in which energy resides. It is the
+collection of distances defined by ordered signal separation.
 
-A distance is not a primitive length. It is a measure of how many causal steps
-or recurrent signal steps separate two events or configurations. The total set
-of such separations forms the relational structure we call space.
+A distance is not a primitive length. It is a count of how many recurrent
+signal steps separate two configurations. Once such steps are ordered, they
+can also be described as causal steps. The total set of such separations
+forms the relational structure we call space.
 
 Geometry is therefore descriptive rather than ontological. It summarizes the
 organization of flow; it does not contain it. When the resulting distance
