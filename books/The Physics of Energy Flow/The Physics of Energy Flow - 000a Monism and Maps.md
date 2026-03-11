@@ -6,7 +6,8 @@ date: 2026-03-11
 
 # Monism and Maps
 
-This book advances a monistic reconstruction of physics.
+This book advances a monistic reconstruction of physics: known physics is
+derived from the continuous, source-free flow of electromagnetic energy.
 
 It does not begin from separate ontologies for matter, charge, force,
 gravity, and spacetime, and then ask how these independent kinds of thing
