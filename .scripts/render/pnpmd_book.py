@@ -375,6 +375,54 @@ def _inline_css(html_path: Path, css_path: Optional[Path]) -> None:
     html_path.write_text(html_txt, encoding="utf-8")
 
 
+def _move_html_toc_after_title_page(html_path: Path) -> None:
+    """
+    In Pandoc HTML, the template TOC nav is emitted before the body. For books
+    with an injected title/cover page, move that TOC nav after the title page
+    so the cover appears first in the rendered HTML.
+    """
+    if not html_path.exists():
+        return
+    try:
+        html_txt = html_path.read_text(encoding="utf-8")
+    except Exception:
+        return
+
+    nav_match = re.search(
+        r'<nav\b[^>]*\bid=["\'][^"\']*TOC[^"\']*["\'][^>]*>.*?</nav>',
+        html_txt,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    if not nav_match:
+        return
+
+    title_marker = '<div class="title-page">'
+    page_break_marker = '<div class="page-break"></div>'
+    title_idx = html_txt.find(title_marker)
+    if title_idx < 0 or nav_match.start() > title_idx:
+        return
+
+    insert_after = html_txt.find(page_break_marker, title_idx)
+    if insert_after < 0:
+        return
+    insert_after += len(page_break_marker)
+
+    nav_html = nav_match.group(0)
+    html_wo_nav = html_txt[: nav_match.start()] + html_txt[nav_match.end() :]
+    if nav_match.start() < insert_after:
+        insert_after -= len(nav_html)
+
+    new_html = (
+        html_wo_nav[:insert_after]
+        + "\n"
+        + nav_html
+        + "\n"
+        + html_wo_nav[insert_after:]
+    )
+    if new_html != html_txt:
+        html_path.write_text(new_html, encoding="utf-8")
+
+
 def _ensure_header_packages(path: Path, packages: list[str]) -> None:
     """
     Ensure the YAML front matter declares header-includes with the given LaTeX
@@ -965,6 +1013,7 @@ def render_book_yaml(
             die(f"Docker pandoc (HTML) failed (rc={rc})")
         shutil.copy2(out_html, html_path)
         _inline_css(html_path, css_path)
+        _move_html_toc_after_title_page(html_path)
 
     if make_epub:
         # Use the same input for EPUB so headings (including TOC/Ack) split pages consistently.
