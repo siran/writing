@@ -9,7 +9,7 @@ date: 2026-03-11
 **Claim.** One rotating field is not enough for self-advancing transport. A
 single curl gives local turning. Stable propagation requires complementary
 turning: one field rotates the other, and is rotated in return. The minimal
-closure is:
+real propagating closure is:
 
 $$
 \partial_t \mathbf{E} = c\,\nabla \times \mathbf{B}, \qquad
@@ -19,6 +19,17 @@ $$
 This is Maxwell's vacuum dynamics. $\mathbf{E}$ and $\mathbf{B}$ are not two
 substances. They are two complementary rotational aspects of one organized
 flow.
+
+If $\hat{\tau} = \mathbf{F}/|\mathbf{F}|$ is the local flow direction, then
+the complementary pair is transverse to it:
+
+$$
+\mathbf{E}\cdot\mathbf{B} = 0, \qquad
+\mathbf{E}\times\mathbf{B} \parallel \hat{\tau}.
+$$
+
+The two fields therefore form a rotating transverse frame whose mutual twist
+advances the flow along $\hat{\tau}$.
 
 Apply $\partial_t$ once more and use the source-free constraints. Each field
 then satisfies the wave equation:
@@ -40,8 +51,8 @@ $$
 $$
 
 Maxwell theory is therefore not introduced by naming $\mathbf{E}$ and
-$\mathbf{B}$ first. It appears as the minimal two-field closure of source-free
-rotational transport.
+$\mathbf{B}$ first. It appears as the minimal two-field closure of
+source-free rotational transport.
 
 ---
 
