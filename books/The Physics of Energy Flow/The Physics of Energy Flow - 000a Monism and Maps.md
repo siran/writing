@@ -8,10 +8,10 @@ date: 2026-03-11
 
 This book advances a monistic reconstruction of physics.
 
-It does not begin from separate ontologies for matter, charge, force, gravity,
-and spacetime, and then ask how these independent kinds of thing interact. It
-begins from one substrate only: electromagnetic energy and its organization in
-continuous flow.
+It does not begin from separate ontologies for matter, charge, force,
+gravity, and spacetime, and then ask how these independent kinds of thing
+interact. It begins from one substrate only: electromagnetic energy and its
+organization in continuous reconfiguration.
 
 On that view, matter is not a second substance. Charge is not an added essence.
 Force is not a primitive agent. Gravity is not a separate ontological field.
