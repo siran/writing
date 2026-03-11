@@ -26,8 +26,9 @@ E_R = \int_R u(\mathbf{r})\,dV.
 $$
 
 No additional structure is assumed. Not particles. Not forces. Not an
-observer. Not time as an independent variable. The field $u$ simply exists
-and can be measured.
+observer. Not time as an independent variable. The field $u$ simply exists.
+We know this because something exists, and we experience the effects of its
+change, which we interpret as flow.
 
 This single assumption — that something has a nonnegative magnitude at each
 location — is the entire ontological foundation of everything that follows.
