@@ -11,7 +11,7 @@ us what geometric structure carries transport through empty space. For that we
 introduce a flow field:
 
 $$
-\mathbf{F}(\mathbf{x}, t).
+\mathbf{F}(\mathbf{r}, t).
 $$
 
 In empty space, this flow has no primitive endpoints. Its organization is
@@ -25,8 +25,8 @@ This is not the continuity equation. It is a geometric condition on the flow
 pattern itself. It says the transport structure closes through space rather
 than starting or ending at points.
 
-Locally, the picture is circulation: flow bends, turns, and passes through,
-but does not terminate. That is the spatial structure we now need to preserve.
+Locally, the picture is circulation: flow bends, turns, and passes through
+without terminating. That is the spatial structure we now need to preserve.
 
 ---
 
