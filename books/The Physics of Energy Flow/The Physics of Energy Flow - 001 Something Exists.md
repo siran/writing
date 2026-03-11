@@ -10,15 +10,15 @@ date: 2026-03-11
 particle, a field, or a law. It is the bare fact that something exists —
 that there is a nonnegative quantity distributed through space.
 
-We represent this as a scalar field:
+We represent the present configuration as a scalar field:
 
 $$
-u(\mathbf{x}, t) \geq 0.
+u(\mathbf{r}) \geq 0.
 $$
 
 The name we give it is *energy density*. The name carries no extra weight
 at this stage. What matters is only the property: it is a real, nonnegative
-number attached to every point in space and every moment in time.
+number attached to each location.
 
 No additional structure is assumed. Not particles. Not forces. Not
 observers. Not time as an independent variable. The field $u$ simply exists,
