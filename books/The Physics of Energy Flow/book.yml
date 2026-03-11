@@ -1,0 +1,20 @@
+---
+title: The Physics of Energy Flow
+subtitle: |+
+  A Reconstruction of Physical Theory
+  from Continuity and Organization
+author: An M. Rodriguez
+description: Maxwell electromagnetism as the minimal local transport law of divergence-free energy; all observed structure as organization of that transport.
+publisher: Preferred Frame Prints
+editor: An M. Rodriguez
+lang: en-US
+rights: CC-BY-NC-ND-4.0
+fontsize: 12pt
+linestretch: 1.32
+header-includes:
+  - \renewcommand{\footnotesize}{\fontsize{11pt}{13pt}\selectfont}
+  - \setlength{\skip\footins}{16pt}
+  - \usepackage{titlesec}
+  - \titleformat{\section}[block]{\bfseries\Large\raggedleft}{\hfill\thesection.}{0.8em}{\hfill}
+  - \titlespacing*{\section}{0pt}{4ex plus 1ex minus 0.5ex}{1.8ex}
+---
