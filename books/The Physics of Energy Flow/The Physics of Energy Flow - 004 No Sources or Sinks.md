@@ -22,5 +22,10 @@ numerical accounting. $\mathbf{S}$ handles the accounting: how much energy
 crosses a surface, and in what direction. It does not yet tell us the full
 spatial pattern that transport takes.
 
+This book studies the source-free case. That choice is sufficient for the
+reconstruction that follows, and it does not preclude fundamental sources or
+sinks. It says only that they do not appear necessary for recovering known
+physics.
+
 The next step is to consider the source-free case in empty space and ask what
 forms of transport it permits.
