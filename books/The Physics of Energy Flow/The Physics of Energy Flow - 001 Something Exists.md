@@ -33,3 +33,11 @@ change, which we interpret as flow.
 This single assumption — that something has a nonnegative magnitude at each
 location — is the entire ontological foundation of everything that follows.
 Physics, in this approach, never requires anything more primitive than this.
+
+If $u(\mathbf{r})$ is all there is, there is nowhere else for energy to go.
+Every local change is a redistribution among what already exists. If $A$ moves
+to $B$, then $B$ must move elsewhere, and something must take the place of $A$.
+There is no outside to absorb the difference. Redistribution without an outside
+is closed flow. The mathematics that follows — continuity, divergence-free
+structure, curl dynamics — is the precise language for that closure. Nothing
+more is assumed. Nothing more is needed.
