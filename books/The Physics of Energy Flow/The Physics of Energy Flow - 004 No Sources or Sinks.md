@@ -19,8 +19,8 @@ added destruction term, only transport. The next question is different. It is
 not whether the flow balances locally, but what shape the reorganization of
 energy takes when understood as a complete process rather than region by region
 numerical accounting. $\mathbf{S}$ handles the accounting: how much energy
-crosses a surface, and in what direction. It does not yet tell us the full
-spatial pattern that transport takes.
+crosses a surface, and in what direction. Even taken as a whole, this does not
+yet reveal the structure of that transport, as the next chapters will show.
 
 This book studies the source-free case. That choice is sufficient for the
 reconstruction that follows, and it does not preclude fundamental sources or
