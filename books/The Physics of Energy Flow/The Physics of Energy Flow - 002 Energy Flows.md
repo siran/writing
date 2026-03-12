@@ -12,7 +12,7 @@ $$
 u(\mathbf{r}),
 $$
 
-says only how energy is distributed across the extent of $u$. If another registered
+says only how energy is configured across the extent of $u$. If another registered
 configuration differs from it, we may label the two records
 
 $$
