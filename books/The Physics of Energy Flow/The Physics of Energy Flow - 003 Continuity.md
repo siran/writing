@@ -37,6 +37,9 @@ This is accounting, not dynamics. It does not say how the current is
 generated or what determines its direction. It says only that any admissible
 reconfiguration must balance exactly.
 
+It is like counting how much paint enters or leaves a studio. It does not yet
+say how that paint is arranged on the canvas.
+
 More compact derivative notation can be introduced later. It does not
 change the content of the bookkeeping.
 
