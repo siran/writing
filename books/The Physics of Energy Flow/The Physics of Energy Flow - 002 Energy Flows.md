@@ -36,4 +36,4 @@ $$
 The flow field relates one registered distribution to another.
 
 The energy field $u$ tells us how much energy is present. The flow
-$\mathbf{S}$ tells us the way one distribution reconfigures into another.
+$\mathbf{S}$ maps one distribution into another.
