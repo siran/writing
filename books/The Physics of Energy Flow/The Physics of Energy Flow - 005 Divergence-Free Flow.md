@@ -17,17 +17,16 @@ $$
 
 $\mathbf{F}$ is not a second continuity current, and it is not introduced as a
 rival to $\mathbf{J}$. It is the local line structure of the transport: the
-way flow threads through space. The current can then be written schematically
-as an amount carried along that structure. For example,
+way flow threads through space. The current itself is more naturally written as
 
 $$
-\mathbf{J} = j\,\hat{\tau},
-\qquad
-\hat{\tau} = \frac{\mathbf{F}}{|\mathbf{F}|},
+\mathbf{J}=u\,\mathbf{v},
 $$
 
-where $j$ measures how much energy is transported and $\hat{\tau}$ gives the
-local direction of the flow.
+where $\mathbf{v}$ is the local redistribution velocity of the energy density.
+This says how much energy is being carried and in what direction. $\mathbf{F}$
+answers a different question: what line structure that transport follows
+through space.
 
 In empty space, this organization has no primitive endpoints. It is therefore
 source-free:
@@ -41,7 +40,7 @@ pattern itself. It says the transport structure closes through space rather
 than starting or ending at points. There is no contradiction with chapter 4:
 $\nabla\cdot\mathbf{F}=0$ constrains the geometry of the flow lines, while
 $\nabla\cdot\mathbf{J}=-\partial_t u$ tracks the local gain or loss of stored
-energy along those lines.
+energy carried by $\mathbf{v}$ along those lines.
 
 Locally, the picture is circulation: flow bends, turns, and passes through
 without terminating. That is the spatial structure we now need to preserve.
