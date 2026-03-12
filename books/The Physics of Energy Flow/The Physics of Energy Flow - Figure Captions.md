@@ -18,7 +18,7 @@ showing continuous reconfiguration rather than disappearance and reappearance.
 ## 3. Continuity
 
 3. Energy bookkeeping in a finite volume. A bounded region $V$ with inflow and
-outflow of current $\mathbf{J}$ across its boundary, and the interior density
+outflow of energy flow $\mathbf{S}$ across its boundary, and the interior density
 $u$ changing only through that boundary transport.
 
 ## 4. No Sources or Sinks
@@ -42,7 +42,7 @@ and no new endpoints introduced.
 ## 7. Maxwell is Minimal
 
 7. Complementary electric and magnetic aspects of one advancing flow. A local
-flow direction $\hat{\tau}$ with transverse $\mathbf{E}$ and $\mathbf{B}$,
+energy flow $\mathbf{S}$ with transverse $\mathbf{E}$ and $\mathbf{B}$,
 orthogonal to one another, and $\mathbf{E}\times\mathbf{B}$ aligned with the
 direction of transport.
 
