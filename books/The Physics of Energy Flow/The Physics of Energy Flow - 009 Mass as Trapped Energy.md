@@ -6,28 +6,114 @@ date: 2026-03-11
 
 # 9. Mass as Trapped Energy
 
-A stable, localized circulation of electromagnetic energy behaves
-exactly like a massive object. Mass is not a primitive property of matter; it
-is the inertia of trapped energy.
+Mass is not a primitive property of matter. It is what confined energy looks
+like when part of its momentum is trapped in closed circulation rather than
+available for straight translation.
 
-The energy stored in a confined electromagnetic configuration is
+Consider a localized flow whose energy moves along a smooth closed trajectory
+$X(s)$, parameterized by arclength $s$. Locally, the propagation speed is still
+$c$. Choose a macroscopic direction of motion $\hat{\mathbf{z}}$, and let
+$\hat{\mathbf{t}}(s)$ be the unit tangent to the flow. Define the local pitch
+angle by
 
 $$
-E = mc^2,
+\cos\theta(s)=\hat{\mathbf{t}}(s)\cdot\hat{\mathbf{z}}.
 $$
 
-or equivalently, $m = E/c^2$. This is not Einstein's formula applied after
-the fact. In this framework it states what mass *is*: the ratio of total
-confined energy to the square of the propagation speed.
+Over a segment $ds$, the forward displacement is
 
-Why does confined energy resist acceleration? Because redirecting a
-self-sustaining circulation pattern requires reorganizing the whole closed
-flow. That resistance to redirection is inertia, and its measure is mass.
+$$
+dz=\cos\theta(s)\,ds,
+$$
 
-There is no separate substance called "matter" that happens to also carry
-energy. There is only energy, organized into persistent topological
-structures. The word "mass" names one measurable property of that
-organization: its resistance to being redirected.
+while the elapsed time is
 
-Unconfined propagation carries momentum $p = E/c$ but no inertial rest mass.
-Mass appears precisely when topology confines the flow.
+$$
+dt=\frac{ds}{c}.
+$$
+
+So the local forward speed is
+
+$$
+v_{\text{forward}}(s)=\frac{dz}{dt}=c\cos\theta(s).
+$$
+
+Over one full circuit of length $L$, the effective forward speed is therefore
+
+$$
+v_{\text{eff}}
+=
+c\,\left\langle\cos\theta\right\rangle,
+$$
+
+where
+
+$$
+\left\langle\cos\theta\right\rangle
+:=
+\frac{1}{L}\int_0^L \cos\theta(s)\,ds.
+$$
+
+If the path were everywhere straight, $\langle\cos\theta\rangle=1$ and the
+energy would simply propagate at $c$. But once the trajectory has persistent
+transverse winding, part of the motion is no longer available for forward
+translation.
+
+Electromagnetic energy of total energy $E$ carries momentum of magnitude
+
+$$
+P=\frac{E}{c}.
+$$
+
+Only the component aligned with $\hat{\mathbf{z}}$ contributes to forward
+motion. Integrating around the loop gives
+
+$$
+P_z=\frac{E}{c}\left\langle\cos\theta\right\rangle.
+$$
+
+The rest is trapped in closed transverse circulation:
+
+$$
+P_{\perp,\text{eff}}
+:=
+\sqrt{P^2-P_z^2}
+=
+\frac{E}{c}\sqrt{1-\left\langle\cos\theta\right\rangle^2}.
+$$
+
+This trapped momentum is the reason the configuration resists redirection. To
+change the macroscopic motion of the object, one must reorient the circulating
+momentum throughout the whole closed path, not merely push a point.
+
+That is inertia. Its measure is
+
+$$
+m_{\text{eff}}
+:=
+\frac{P_{\perp,\text{eff}}}{c}
+=
+\frac{E}{c^2}\sqrt{1-\left\langle\cos\theta\right\rangle^2}.
+$$
+
+In the rest frame of the confined configuration, the net translational momentum
+vanishes, so $\langle\cos\theta\rangle=0$. Then
+
+$$
+m=\frac{E_0}{c^2},
+$$
+
+where $E_0$ is the rest energy of the closed mode.
+
+This is not Einstein's formula applied after the fact. In this framework it
+states what mass is: the energy trapped in circulation, measured in the frame
+where the closed flow has no net translation.
+
+Why does the energy not simply straighten its path and eliminate its mass?
+Because the circulation is topologically closed. Once winding exists, removing
+it would require reconnection of the flow itself. Mass is therefore not just
+kinematic delay. It is kinematic delay locked in by topology.
+
+Unconfined propagation carries momentum $p=E/c$ but no inertial rest mass.
+Mass appears when topology confines part of the momentum into persistent
+circulation.
