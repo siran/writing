@@ -7,8 +7,8 @@ date: 2026-03-11
 
 Across the extent of $u$, continuity holds. Energy transported across a region
 does not create or destroy energy there. Returning to the screen example, this
-is like recognizing that the image moves across pixels rather than appearing
-and disappearing from pixel to pixel.
+is like recognizing that brightness moves across pixels, and does not merely
+turn on or off from pixel to pixel.
 
 Since $u$ names what exists, its total quantity is given with it and is
 therefore fixed. A primitive source or sink would require that total to
