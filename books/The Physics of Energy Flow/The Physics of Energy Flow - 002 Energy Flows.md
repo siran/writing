@@ -19,7 +19,7 @@ $$
 u_1(\mathbf{r}), \qquad u_2(\mathbf{r}).
 $$
 
-Change is the registration of a different distribution $u_2(\mathbf{r})$.
+Change is the acknowledgement of a difference between distributions.
 What is observed is not disappearance in one part of the extent and
 reappearance in another, but continuous reconfiguration across that extent.
 Energy present in one part is registered in another. We interpret that
