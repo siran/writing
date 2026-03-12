@@ -15,6 +15,7 @@ Each chapter = one logical step in the thesis chain.
 | 9 | Mass as Trapped Energy | confined circulating energy resists redirection and so has inertia | m = E/c² | *Geometric Inertia — Mass as Trapped Energy* |
 | 10 | Charge as Circulation | far-field projection of conserved winding, not a separate substance | Intensity ∝ 1/r² | *Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe* |
 | 11 | Schrödinger as Narrow-Band Maxwell | free narrow-band envelope approximation of Maxwell wave equation | iℏ∂ₜψ = −(ℏ²/2m)∇²ψ + O(ε²) | *Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics* |
+| 11a | Interaction as Phase Accumulation | structured backgrounds enter as local phase shifts summarized by V(r,t) | Δφ = (1/ℏ)∫(V₁-V₂)dt | *A Deterministic Demystification of the Which-Way Quantum Double-Slit Experiment* |
 | 12 | Newton as Flux Accounting | momentum flux through a surface → F = dp/dt | F = −∮ T·dA | *Deriving Newton's Laws and Schrödinger's Equation in a Source-Free Maxwell Universe* |
 | 13 | Gravity as Refraction | energy concentration raises local ε, slows transport, and bends paths | c = 1/√(εμ) | *Curved Propagation vs. Curved Space* |
 
