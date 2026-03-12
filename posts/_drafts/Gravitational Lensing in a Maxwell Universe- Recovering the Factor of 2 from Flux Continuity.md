@@ -213,7 +213,7 @@ $$
 
 ## Interpretation
 
-The observed factor of 2 does not require curved spacetime. It requires that the
+The factor of 2 does not require curved spacetime. It requires that the
 gravitational background be treated as what it is in this framework:
 
 - electromagnetic,
@@ -221,7 +221,7 @@ gravitational background be treated as what it is in this framework:
 - and therefore symmetric in its electric and magnetic response.
 
 The Newtonian half-value is the bending produced by a one-channel constitutive
-model. The full observed value comes from the full electromagnetic medium.
+model. The full value comes from the full electromagnetic medium.
 
 This is also why the earlier flux-versus-mass intuition was pointing in the
 right direction. Light is not averaged trapped matter. It is directed
