@@ -124,3 +124,18 @@ rotational transport.
 
 Minimal does not mean unique. It means the weakest local closure that actually
 propagates source-free flow.
+
+The vacuum Maxwell equations are symmetric under the duality rotation
+
+$$
+\mathbf{E} \to c\mathbf{B}, \qquad c\mathbf{B} \to -\mathbf{E}.
+$$
+
+This is not an accident. It follows directly from the structure above: the two
+fields are the same rotating flow viewed at a $90°$ phase offset. Which
+component is called $\mathbf{E}$ and which $\mathbf{B}$ depends only on the
+orientation chosen for the transverse frame — a choice with no physical content
+in vacuum. The distinction arises locally when one flow configuration couples
+to another. But that coupling is also field interacting with field. There is no
+external matter to break the symmetry from outside; the symmetry breaks only
+within one unified flow.
