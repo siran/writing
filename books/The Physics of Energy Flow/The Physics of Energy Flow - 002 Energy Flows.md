@@ -1,10 +1,10 @@
 ---
-title: The Physics of Energy Flow – Energy Must Flow
+title: The Physics of Energy Flow - Energy Flows
 date: 2026-03-11
 ---
 
 
-# 2. Energy Must Flow
+# 2. Energy Flows
 
 A single registered configuration,
 
