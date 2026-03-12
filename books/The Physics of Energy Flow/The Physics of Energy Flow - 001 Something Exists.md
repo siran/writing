@@ -10,7 +10,8 @@ The minimal starting point of physical description is not a
 particle, a law, or even a named field. It is the bare fact that something
 can be registered: a nonnegative quantity distributed through space.
 
-We represent a registered present configuration as a scalar field:
+Begin with a region \(R\) in which energy is present. That energy is
+distributed through the region, so we describe it by a scalar field:
 
 $$
 u(\mathbf{r}) \geq 0.
@@ -19,11 +20,8 @@ $$
 The name we give it is *energy density*. The name carries no extra weight
 at this stage. What matters is only the property: it is a real, nonnegative
 value defined at each location. It tells us how much energy is present
-locally. The total energy in a region $R$ is obtained by integration:
-
-$$
-E_R = \int_R u(\mathbf{r})\,dV.
-$$
+locally. If we look at a volume small enough that the density is effectively
+uniform, the energy in that volume is just density times volume.
 
 No additional structure is assumed. Not particles. Not forces. Not an
 observer. Not time as an independent variable.
