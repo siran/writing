@@ -25,8 +25,9 @@ reappearance in another, but continuous reconfiguration across that extent.
 Energy present in one part is registered in another. We interpret that
 observed reconfiguration as flow.
 
-A scalar field cannot describe reconfiguration by itself. To describe flow
-locally we need a directional quantity: a current. Once repeated
+To describe energy flow is to describe its continuous redistribution within
+itself. A common name for this directed redistribution is current. A scalar
+field cannot describe that reconfiguration by itself. Once repeated
 registrations are ordered, we write
 
 $$
