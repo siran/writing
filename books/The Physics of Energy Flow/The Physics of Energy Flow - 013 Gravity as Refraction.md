@@ -1,5 +1,5 @@
 ---
-title: The Physics of Energy Flow – Gravity as Refraction
+title: The Physics of Energy Flow - Gravity as Refraction
 date: 2026-03-11
 ---
 
@@ -17,28 +17,76 @@ $$
 c = \frac{1}{\sqrt{\varepsilon_0 \mu_0}}.
 $$
 
-A concentrated energy configuration locally raises the effective energy
-density of the surrounding field. This acts as an effective increase in
-permittivity $\varepsilon$:
+A dielectric does not work by letting light pass through inert matter. The
+incident field drives an existing electromagnetic organization in the medium,
+and that response emits a secondary electromagnetic field. The macroscopic
+summary of that response is a change in the constitutive coefficients.
+Linearity does not forbid this. It means only that a probe field propagates
+linearly through coefficients set by a background.
+
+The same idea is used here. Mass is self-confined energy. A massive body is
+therefore a concentrated background organization of electromagnetic energy
+flow. A passing field perturbs that background, and the background response
+contributes a secondary electromagnetic field. Because the background is
+itself electromagnetic, the response is not electric-only. Both constitutive
+channels shift together:
 
 $$
-c_\text{local} = \frac{1}{\sqrt{\varepsilon(\mathbf{r}) \mu_0}} < c.
+\varepsilon_\text{eff}(r)=\varepsilon_0\bigl(1+2\eta(r)\bigr),
+\qquad
+\mu_\text{eff}(r)=\mu_0\bigl(1+2\eta(r)\bigr),
 $$
 
-Energy moves more slowly near a concentrated energy configuration. In
-optics, when a wave propagates through a medium of varying speed, it bends
+with
+
+$$
+\eta(r)=\frac{GM}{rc^2}.
+$$
+
+This symmetric change preserves the local vacuum impedance,
+
+$$
+Z_\text{eff}=\sqrt{\frac{\mu_\text{eff}}{\varepsilon_\text{eff}}}=Z_0,
+$$
+
+while lowering the local propagation speed:
+
+$$
+c_\text{local}(r)=\frac{1}{\sqrt{\varepsilon_\text{eff}(r)\mu_\text{eff}(r)}}
+=\frac{c}{1+2\eta(r)}.
+$$
+
+The corresponding refractive index is therefore
+
+$$
+n(r)=\frac{c}{c_\text{local}(r)}
+=1+\frac{2GM}{rc^2}.
+$$
+
+If only one constitutive channel were perturbed, this first-order shift would
+be halved, giving the Newtonian half-value. The observed factor of two is the
+signature of a full electromagnetic medium rather than an electric-only one.
+
+In optics, when a wave propagates through a medium of varying speed, it bends
 toward the slower region. This is refraction.
 
-Gravity, in this framework, is that refraction — applied to all energy
+Gravity, in this framework, is that refraction applied to all energy
 transport, not just light. The trajectory of any moving configuration curves
 toward regions of high energy density, because those are the regions of lower
 propagation speed.
 
-This recovers the correct predictions: light bending around the Sun (with
-the factor-of-two correction over Newtonian gravity, which treats light as a
-particle rather than a wave), gravitational redshift, and clock-rate
-slowing often described as time dilation — all from index-of-refraction
-arguments, with no appeal to an independently curved spacetime.
+For a ray passing a body with impact parameter $b$, the weak-field bending is
+
+$$
+\theta \approx \int_{-\infty}^{\infty}\nabla_\perp n\,dz
+= \frac{4GM}{bc^2}.
+$$
+
+At the solar limb this is about $1.75$ arcseconds.
+
+On this reading, light bending, gravitational redshift, and clock-rate
+slowing are consequences of index-of-refraction arguments, with no appeal to
+an independently curved spacetime.
 
 Spacetime curvature, in this reading, is a geometric restatement of the same
 refraction. The geometry follows from the transport, not the other way
