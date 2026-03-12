@@ -1,159 +1,252 @@
 ---
-title: "Gravitational Lensing in a Maxwell Universe: Recovering the Factor of 2 from Flux Continuity"
-subtitle: "Deriving the 1.75 arcsecond deflection using Vector Flux rather than Scalar Mass"
+title: "Gravitational Lensing in a Maxwell Universe: Recovering the Factor of 2 from Electromagnetic Constitutive Symmetry"
+subtitle: "Why a Full Electromagnetic Medium Gives 1.75 Arcseconds"
 author: An M. Rodriguez, Alex Mercer
 date: 2026-01-17
-keywords: gravitational lensing, Eddington number, dielectric gravity, Maxwell equations, Poynting vector, flux vs mass, continuity equation
-one-sentence-summary: We demonstrate that the discrepancy between Newtonian (0.875'') and Relativistic (1.75'') light bending predictions arises from treating light as averaged mass rather than instantaneous flux; preserving the vector nature of propagation in a dielectric vacuum naturally recovers the missing factor of 2.
-summary: Standard semi-classical derivations of light bending treat photons as "massive particles" with effective mass E/c^2, yielding a deflection of 0.875 arcseconds—exactly half the observed value. General Relativity corrects this by invoking spatial curvature. We propose an alternative resolution within classical field theory. By treating gravity as a dielectric variation in the vacuum, and—crucially—coupling the gradient to the instantaneous energy flux S rather than the time-averaged energy density u, we show that the averaging penalty (1/2) inherent to massive matter does not apply to free radiation. This vector-flux coupling naturally yields the full 1.75 arcsecond deflection derived from Maxwell’s equations and continuity alone.
+keywords: gravitational lensing, dielectric gravity, refractive index, constitutive symmetry, permittivity, permeability, Maxwell universe
+one-sentence-summary: The Newtonian half-value for light bending arises from treating the gravitational background as an electric-only medium. In a Maxwell universe the background is electromagnetic, so both permittivity and permeability shift together, yielding the full 1.75 arcsecond deflection.
+summary: A dielectric analogy that modifies only the electric response of the vacuum yields the Newtonian bending angle, 0.875 arcseconds at the solar limb. That is only half an electromagnetic medium. In a Maxwell universe the background responsible for gravity is itself electromagnetic energy, so the constitutive response must be symmetric: both permittivity and permeability change together. This preserves the local impedance of vacuum while lowering the local propagation speed. The resulting refractive index is n(r)=1+2GM/(rc^2), and the weak-field ray integral gives the full deflection angle 4GM/(bc^2), equal to 1.75 arcseconds at the solar limb.
 ---
 
-## The Problem: The Newtonian Deficit
+## The problem
 
-It is well known that treating light as a projectile with mass $m = E/c^2$
-falling in a gravitational field yields a deflection angle of:
-
-$$
-\theta_{\text{Newton}} = \frac{2GM}{Rc^2} \approx 0.875 \text{ arcseconds (at Solar limb)}.
-$$
-
-Observation confirms the value is twice this:
+The classical projectile treatment of light gives the well-known half-value:
 
 $$
-\theta_{\text{Observed}} \approx 1.75 \text{ arcseconds}.
+\theta_{\text{Newton}} = \frac{2GM}{bc^2}.
 $$
 
-General Relativity resolves this by attributing half the bending to time
-dilation (the Newtonian part) and half to spatial curvature.
-
-In a **Maxwell Universe**, where there is no spatial curvature, we must explain
-this factor of 2 through electrodynamics.
-
-
-## Gravity as a Dielectric Gradient
-
-As established in *Gravity as a Dielectric* (Rodriguez, 2025), we model the
-gravitational potential $\Phi$ as an increase in the electromagnetic
-density of the vacuum, creating an effective refractive index $n(\mathbf{r})$.
+At the solar limb this is about
 
 $$
-c(\mathbf{r}) = \frac{c_0}{n(\mathbf{r})}.
+\theta_{\text{Newton}} \approx 0.875 \text{ arcseconds}.
 $$
 
-The standard assumption is that refractive index scales linearly with the
-potential energy density:
+Observation gives twice this:
 
 $$
-n(\mathbf{r}) \approx 1 + \frac{|\Phi|}{c^2} = 1 + \frac{GM}{rc^2}.
+\theta_{\text{obs}} \approx 1.75 \text{ arcseconds}.
 $$
 
-Applying Fermat’s Principle (or Snell’s Law) to this refractive profile yields:
+In a Maxwell universe, where gravity is interpreted as refraction rather than
+spacetime curvature, the question is direct:
+
+**what refractive profile gives the observed value, and why?**
+
+
+## The half-result comes from a half-medium
+
+The standard dielectric-style argument treats the gravitational background as an
+effective change in permittivity only:
 
 $$
-\theta = \int_{-\infty}^{\infty} \nabla_\perp n \, dz = \frac{2GM}{Rc^2}.
+\varepsilon_{\text{eff}}(r)=\varepsilon_0\bigl(1+2\eta(r)\bigr),\qquad
+\mu_{\text{eff}}(r)=\mu_0,
 $$
 
-This reproduces the Newtonian result (0.875''). The model appears to fail.
-
-
-## The Error: Averaging the Flux
-
-The failure arises from a hidden assumption: treating the electromagnetic wave
-as a "particle" of mass.
-
-Mass, in the Maxwell Universe, is **Geometric Inertia**—a consequence of
-trapped, circulating energy. As derived in *Geometric Inertia* (2026), effective
-mass $m$ is related to total energy $E$ by the average
-forward propagation:
+with
 
 $$
-m = \frac{E}{c^2} \langle \sin^2 \psi \rangle,
+\eta(r)=\frac{GM}{rc^2}\ll 1.
 $$
 
-where $\psi$ is the pitch angle of the flow. For a trapped particle
-(virialized knot), the energy is equipartitioned between circulation and
-translation.
-
-**Averaging Penalty:** When we define the "mass equivalent" of energy, we are
-effectively taking a time-average of a dynamic wave. This introduces a factor of
-**1/2**.
-
-The Newtonian calculation implicitly treats light as "matter moving at
-$c$." It applies the coupling rules of averaged matter to raw
-radiation.
-
-
-## The Correction: Flux Continuity
-
-Light is not matter. It is pure, untrapped flux.
-
-In Maxwell theory, the primary ontological object is the **Poynting Vector
-$\mathbf{S}$**, not the scalar mass.
-
-When a wave propagates through a dielectric gradient, the bending is driven by
-the **instantaneous wavefront**, not the time-averaged energy envelope.
-
-
-### The Symmetry Argument
-
-1.  **Massive Matter (Scalar Average):** Gravity acts on the trapped energy. The
-    trapped energy is the "Sine" component of the flow. Due to the virial
-    symmetry of the knot, only **half** the total field energy contributes to
-    the inertial interaction in any single vector direction.
-    $$\text{Coupling}_{\text{Matter}} \propto \frac{1}{2}$$
-
-2.  **Free Radiation (Vector Flux):** Gravity (the dielectric gradient) acts on
-    the flow $\mathbf{S}$. The flow is the "Cosine" component. For free
-    radiation, $\cos(0) = 1$. The flow is fully aligned. There is no
-    circulation, no averaging, and no "sine" component to dilute the
-    interaction. $$\text{Coupling}_{\text{Flux}} \propto 1$$
-
-
-### The Ratio
-
-The ratio of the coupling strength of **Raw Flux** (Light) to **Averaged Mass**
-(Matter) is:
+The resulting refractive index is
 
 $$
-\frac{\text{Flux Coupling}}{\text{Mass Coupling}} = \frac{1}{1/2} = 2.
+n(r)=\sqrt{\frac{\varepsilon_{\text{eff}}\mu_{\text{eff}}}
+{\varepsilon_0\mu_0}}
+=\sqrt{1+2\eta}
+\approx 1+\eta
+=1+\frac{GM}{rc^2}.
+$$
+
+Using the weak-deflection ray integral,
+
+$$
+\theta \approx \int_{-\infty}^{\infty}\nabla_\perp n\,dz,
+$$
+
+this gives
+
+$$
+\theta = \frac{2GM}{bc^2}.
+$$
+
+That is the Newtonian half-value.
+
+The result is not wrong. The model is incomplete. It perturbs only one
+constitutive channel of an electromagnetic medium.
+
+
+## Gravity acts through a full electromagnetic background
+
+In this framework, the background around a massive body is not inert matter. It
+is organized electromagnetic energy. A passing wave does not encounter an
+electric-only response. It encounters a full electromagnetic response.
+
+That matters because light propagation depends on both constitutive coefficients:
+
+$$
+c_{\text{local}} = \frac{1}{\sqrt{\varepsilon_{\text{eff}}\mu_{\text{eff}}}},
+\qquad
+n = \sqrt{\frac{\varepsilon_{\text{eff}}\mu_{\text{eff}}}
+{\varepsilon_0\mu_0}}.
+$$
+
+If the background is itself electromagnetic, there is no reason to privilege
+the electric channel and ignore the magnetic one.
+
+The weak-field constitutive law must therefore be symmetric:
+
+$$
+\varepsilon_{\text{eff}}(r)=\varepsilon_0\bigl(1+2\eta(r)\bigr),
+\qquad
+\mu_{\text{eff}}(r)=\mu_0\bigl(1+2\eta(r)\bigr),
+$$
+
+with the same
+
+$$
+\eta(r)=\frac{GM}{rc^2}.
 $$
 
 
-## Result: The Eddington Number
+## Why the symmetry is physically required
 
-If the Newtonian prediction (based on mass equivalence) is $\theta_{N}$,
-then the Maxwell prediction (based on flux continuity) must be:
+This symmetric choice does two things at once.
 
-$$
-\theta_{\text{Maxwell}} = 2 \times \theta_{N}.
-$$
+First, it reflects the ontology. The background is electromagnetic energy, not a
+purely electric dielectric.
 
-Substituting the Newtonian value:
+Second, it preserves the local vacuum impedance:
 
 $$
-\theta_{\text{Maxwell}} = 2 \times \left( \frac{2GM}{Rc^2} \right) = \frac{4GM}{Rc^2}.
+Z_{\text{eff}}=\sqrt{\frac{\mu_{\text{eff}}}{\varepsilon_{\text{eff}}}}
+=\sqrt{\frac{\mu_0}{\varepsilon_0}}
+= Z_0.
 $$
 
+So the background changes propagation speed without introducing an arbitrary
+electric-magnetic mismatch. The medium bends rays by delay, not by inventing a
+new polarization asymmetry.
+
+
+## The full weak-field refractive index
+
+With both channels modified equally,
+
 $$
-\theta_{\text{Maxwell}} \approx 1.75 \text{ arcseconds}.
+n(r)=\sqrt{(1+2\eta)(1+2\eta)} = 1+2\eta + O(\eta^2).
 $$
+
+Therefore
+
+$$
+n(r)\approx 1+\frac{2GM}{rc^2}.
+$$
+
+This is the full electromagnetic refractive profile.
+
+Compared with the electric-only half-medium, the first-order index shift is
+doubled.
+
+
+## Weak-field bending calculation
+
+Let a ray pass the gravitating body with impact parameter $b$, and use the
+straight-line approximation
+
+$$
+r=\sqrt{b^2+z^2}.
+$$
+
+Then
+
+$$
+n(r)=1+\frac{2GM}{c^2\sqrt{b^2+z^2}}.
+$$
+
+The transverse gradient is
+
+$$
+\frac{\partial n}{\partial b}
+= -\frac{2GM}{c^2}\frac{b}{(b^2+z^2)^{3/2}}.
+$$
+
+The total deflection magnitude is
+
+$$
+\theta
+= \int_{-\infty}^{\infty}\left|\frac{\partial n}{\partial b}\right|dz
+= \frac{2GM}{c^2}\int_{-\infty}^{\infty}
+\frac{b\,dz}{(b^2+z^2)^{3/2}}.
+$$
+
+Using
+
+$$
+\int_{-\infty}^{\infty}\frac{b\,dz}{(b^2+z^2)^{3/2}} = \frac{2}{b},
+$$
+
+we obtain
+
+$$
+\theta = \frac{4GM}{bc^2}.
+$$
+
+This is exactly the observed weak-field result.
+
+
+## Solar-limb value
+
+For a ray grazing the Sun, $b=R_\odot$, so
+
+$$
+\theta_\odot = \frac{4GM_\odot}{R_\odot c^2}
+\approx 8.48\times10^{-6}\ \text{rad}
+\approx 1.75 \text{ arcseconds}.
+$$
+
+
+## Interpretation
+
+The observed factor of 2 does not require curved spacetime. It requires that the
+gravitational background be treated as what it is in this framework:
+
+- electromagnetic,
+- source-free,
+- and therefore symmetric in its electric and magnetic response.
+
+The Newtonian half-value is the bending produced by a one-channel constitutive
+model. The full observed value comes from the full electromagnetic medium.
+
+This is also why the earlier flux-versus-mass intuition was pointing in the
+right direction. Light is not averaged trapped matter. It is directed
+electromagnetic transport. But the exact coefficient is not fixed by that
+intuition alone. It is fixed by the constitutive symmetry of the background.
 
 
 ## Conclusion
 
-The "missing" bending angle in classical gravity is not a failure of Euclidean
-geometry, but a failure of the "mass-energy equivalence" heuristic.
+In a Maxwell universe, gravity is refraction produced by organized background
+electromagnetic energy.
 
-- **Matter** is time-averaged field energy (mass).
-- **Light** is instantaneous field flux.
+If that background is modeled as electric-only, one recovers the Newtonian
+half-value:
 
-Treating light as mass incorrectly applies a 1/2 averaging penalty. Treating
-light as flux recovers the full interaction strength.
+$$
+\theta = \frac{2GM}{bc^2}.
+$$
 
-The Maxwell Universe accurately predicts the 1.75 arcsecond deflection of
-starlight assuming only:
-1.  Maxwell's Equations.
-2.  Continuity of Energy.
-3.  Gravity as a dielectric modification of vacuum density.
+If it is modeled as a full electromagnetic medium, with symmetric weak-field
+changes in both permittivity and permeability, one obtains
 
-No curved spacetime is required.
+$$
+\theta = \frac{4GM}{bc^2}.
+$$
+
+At the solar limb this is 1.75 arcseconds.
+
+The factor of 2 is not evidence that space itself is curved. It is evidence
+that gravity acts through the full electromagnetic constitutive structure of the
+vacuum.
