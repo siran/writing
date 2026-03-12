@@ -33,15 +33,18 @@ registrations $1$ and $2$.
 If more energy enters than leaves, the stored density increases. If more
 leaves than enters, the stored density decreases.
 
-This is accounting, not dynamics. It does not say how the current is
+This is accounting, not yet full dynamics. It does not say how the current is
 generated or what determines its direction. It says only that any admissible
 reconfiguration must balance exactly.
 
-It is like counting how much paint enters or leaves a studio. It does not yet
-say how that paint is arranged on the canvas.
+It is like counting how much paint enters or leaves a studio. That does not
+yet say how the strokes make the painting.
 
-More compact derivative notation can be introduced later. It does not
-change the content of the bookkeeping.
+Taken by itself, this relates $u_1$ and $u_2$ only by bookkeeping, not yet by
+geometric structure. But once the redistribution is recognized as
+continuous and, in the absence of added terms, source-free, the possible forms
+of transport become sharply constrained. From that point, the familiar
+symbolic formulations of physics can begin to emerge.
 
 Continuity is therefore the minimal consistency requirement for transport. It
 gives a closed bookkeeping rule, but not yet the spatial organization of the
