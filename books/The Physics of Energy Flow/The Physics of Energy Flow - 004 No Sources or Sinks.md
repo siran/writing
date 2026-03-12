@@ -33,3 +33,7 @@ process rather than region by region numerical accounting. $\mathbf{S}$ handles
 the accounting: how much energy crosses a surface, and in what direction. It
 does not yet tell us the full spatial pattern that transport takes through
 empty space.
+
+Once the redistribution is recognized as continuous and source-free in empty
+space, the possible forms of transport become constrained. The next step is to
+see what those constraints are.
