@@ -26,8 +26,7 @@ Energy present in one part is registered in another. We interpret that
 observed reconfiguration as flow.
 
 To describe energy flow is to describe its continuous redistribution within
-itself. Because redistribution has both amount and direction, we write it as a
-vector field
+itself. We write it as a vector field
 
 $$
 \mathbf{S}(\mathbf{r};1,2).
