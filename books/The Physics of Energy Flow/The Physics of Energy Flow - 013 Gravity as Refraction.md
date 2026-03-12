@@ -27,9 +27,11 @@ linearly through coefficients set by a background.
 The same idea is used here. Mass is self-confined energy. A massive body is
 therefore a concentrated background organization of electromagnetic energy
 flow. A passing field perturbs that background, and the background response
-contributes a secondary electromagnetic field. Because the background is
-itself electromagnetic, the response is not electric-only. Both constitutive
-channels shift together:
+contributes a secondary electromagnetic field. In chapter 7, $\mathbf{E}$ and
+$\mathbf{B}$ were identified as complementary aspects of one organized flow,
+not as independent substances. For that reason the response is not
+electric-only. A perturbation of the background shifts both constitutive
+channels together:
 
 $$
 \varepsilon_\text{eff}(r)=\varepsilon_0\bigl(1+2\eta(r)\bigr),
@@ -64,8 +66,9 @@ n(r)=\frac{c}{c_\text{local}(r)}
 $$
 
 If only one constitutive channel were perturbed, this first-order shift would
-be halved, giving the Newtonian half-value. The observed factor of two is the
-signature of a full electromagnetic medium rather than an electric-only one.
+be halved, giving the Newtonian half-value. The observed factor of two is
+therefore not an added correction. It is the signature of a full
+electromagnetic medium rather than an electric-only one.
 
 In optics, when a wave propagates through a medium of varying speed, it bends
 toward the slower region. This is refraction.
@@ -84,9 +87,8 @@ $$
 
 At the solar limb this is about $1.75$ arcseconds.
 
-On this reading, light bending, gravitational redshift, and clock-rate
-slowing are consequences of index-of-refraction arguments, with no appeal to
-an independently curved spacetime.
+On this reading, light bending follows from index-of-refraction arguments,
+with no appeal to an independently curved spacetime.
 
 Spacetime curvature, in this reading, is a geometric restatement of the same
 refraction. The geometry follows from the transport, not the other way
