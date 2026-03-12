@@ -27,3 +27,6 @@ outflow, and so its stored energy changes.
 Source-free means: no primitive creation, no primitive annihilation, no added
 term beyond transport itself. The next question is different. It is not whether
 the current is divergence-free, but how transport is organized in space.
+$\mathbf{J}$ handles the accounting: how much energy crosses a surface, and in
+what direction. It does not yet tell us what spatial pattern that transport
+takes through empty space.
