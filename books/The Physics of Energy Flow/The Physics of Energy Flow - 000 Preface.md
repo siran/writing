@@ -10,10 +10,11 @@ There is an old observation, so obvious it is easy to overlook: for two
 things to interact, they must share something that can be mutually affected.
 
 The fact that we register interaction at all implies a shared substrate.
-We call that shared substrate **energy**.
+We call it **energy**.
 
-The substrate itself is inaccessible. We are downstream of it, registering
-its effects, never the thing itself.
+What is inaccessible is not the existence of that substrate, but its nature
+in itself. We do not observe energy directly. We infer its quantity and
+organization from measurable effects.
 
 We can describe how energy redistributes, how it circulates, and how it
 organizes. We cannot observe what is doing the redistributing.
