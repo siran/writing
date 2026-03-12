@@ -8,7 +8,7 @@ date: 2026-03-11
 
 Source-free does not mean the current has zero divergence. It means
 that no extra source term is introduced. All local change in energy density is
-accounted for by transport:
+accounted for by transport. In later local shorthand, this is written:
 
 $$
 \partial_t u + \nabla \cdot \mathbf{J} = 0.

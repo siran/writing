@@ -7,14 +7,13 @@ date: 2026-03-11
 # 3. Continuity
 
 Once ordered registrations of reconfiguration are in hand, $u_2$ is related
-to $u_1$ through a current $\mathbf{J}$. The current encodes how one
-registered distribution changes into another.
+to $u_1$ through a current $\mathbf{J}(\mathbf{r};1,2)$. The current encodes
+how one registered distribution changes into another.
 
-If the same two registrations are indexed as $t_1$ and $t_2$, then the
-difference
+The difference
 
 $$
-u(\mathbf{r},t_2)-u(\mathbf{r},t_1)
+u_2(\mathbf{r})-u_1(\mathbf{r})
 $$
 
 is understood as the result of a continuous redistribution of energy within
@@ -25,8 +24,11 @@ changes only by crossing its boundary.
 In one dimension, the local statement is
 
 $$
-\partial_t u + \partial_x J = 0.
+u_2-u_1+\partial_x J_{12}=0.
 $$
+
+Here $J_{12}$ abbreviates the redistribution current connecting
+registrations $1$ and $2$.
 
 If more energy enters than leaves, the stored density increases. If more
 leaves than enters, the stored density decreases.
@@ -35,9 +37,8 @@ This is accounting, not dynamics. It does not say how the current is
 generated or what determines its direction. It says only that any admissible
 reconfiguration must balance exactly.
 
-The derivative notation is shorthand for comparing ordered registrations of
-the changing present. It does not smuggle in time as an independent
-substance.
+More compact derivative notation can be introduced later. It does not
+change the content of the bookkeeping.
 
 Continuity is therefore the minimal consistency requirement for transport. It
 gives a closed bookkeeping rule, but not yet the spatial organization of the

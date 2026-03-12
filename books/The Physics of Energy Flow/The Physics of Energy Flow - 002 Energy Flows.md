@@ -30,7 +30,7 @@ itself. A common name for this directed redistribution is *current*. Because
 redistribution has both amount and direction, we write it as a vector field
 
 $$
-\mathbf{J}(\mathbf{r}).
+\mathbf{J}(\mathbf{r};1,2).
 $$
 
 Current relates one registered distribution to another.
