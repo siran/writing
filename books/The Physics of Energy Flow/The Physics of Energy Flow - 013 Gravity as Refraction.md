@@ -66,9 +66,9 @@ n(r)=\frac{c}{c_\text{local}(r)}
 $$
 
 If only one constitutive channel were perturbed, this first-order shift would
-be halved, giving the Newtonian half-value. The observed factor of two is
-therefore not an added correction. It is the signature of a full
-electromagnetic medium rather than an electric-only one.
+be halved, giving the Newtonian half-value. The factor of two is therefore not
+an added correction. It is forced by the ontology: a full electromagnetic
+medium rather than an electric-only one.
 
 In optics, when a wave propagates through a medium of varying speed, it bends
 toward the slower region. This is refraction.
