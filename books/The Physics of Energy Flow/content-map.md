@@ -14,7 +14,7 @@ Each chapter = one logical step in the thesis chain.
 | 8 | Topology and Discreteness | toroidal closure avoids forced defects, imposes integer winding, and yields intrinsic spin classes | nλ = L, (m,n) ∈ ℤ², L = ∫ r × (S/c²) dV | *Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe* |
 | 9 | Mass as Trapped Energy | confined circulating energy resists redirection and so has inertia | m = E/c² | *Geometric Inertia — Mass as Trapped Energy* |
 | 10 | Charge as Circulation | far-field projection of conserved winding, not a separate substance | Intensity ∝ 1/r² | *Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe* |
-| 11 | Schrödinger as Narrow-Band Maxwell | envelope approximation of Maxwell wave equation | iℏ∂ₜψ = −(ℏ²/2m)∇²ψ + O(ε²) | *Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics* |
+| 11 | Schrödinger as Narrow-Band Maxwell | free narrow-band envelope approximation of Maxwell wave equation | iℏ∂ₜψ = −(ℏ²/2m)∇²ψ + O(ε²) | *Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics* |
 | 12 | Newton as Flux Accounting | momentum flux through a surface → F = dp/dt | F = −∮ T·dA | *Deriving Newton's Laws and Schrödinger's Equation in a Source-Free Maxwell Universe* |
 | 13 | Gravity as Refraction | energy concentration raises local ε, slows transport, and bends paths | c = 1/√(εμ) | *Curved Propagation vs. Curved Space* |
 
