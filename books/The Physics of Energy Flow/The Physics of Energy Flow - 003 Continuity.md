@@ -24,7 +24,7 @@ is understood as the result of a continuous redistribution of energy within
 itself, described by a flow connecting the two registrations. Energy in a region
 changes only by crossing its boundary to a neighboring region.
 
-In one direction, say the 'x-direction', the statement is
+In one direction, say the x-direction, the statement is
 
 $$
 u_2-u_1+\partial_x S_{12}=0.
@@ -33,22 +33,16 @@ $$
 Here $S_{12}$ refers to the redistribution flow connecting
 registrations $1$ and $2$.
 
-If more energy enters than leaves, the stored density increases. If more
-leaves than enters, the stored density decreases.
+This is accounting of energy, not yet its dynamics. It is like recording the
+light in the different pixels of a screen without yet recognizing the movement
+of the image across them. It says only that any admissible reconfiguration
+must balance exactly.
 
-This is accounting, not yet full dynamics. It does not say how the flow is
-generated or what determines its direction. It says only that any admissible
-reconfiguration must balance exactly.
-
-It is like counting how much paint enters or leaves a studio. That does not
-yet say how the strokes make the painting.
-
-Taken by itself, this relates $u_1$ and $u_2$ only by bookkeeping, not yet by
-geometric structure. But once the redistribution is recognized as
-continuous and, in the absence of added terms, source-free, the possible forms
-of transport become sharply constrained. From that point, the familiar
-symbolic formulations of physics can begin to emerge.
+Once the energy redistribution is recognized as continuous and, in the absence
+of added terms, source-free, the possible forms of transport become
+constrained. From that point, the familiar symbolic formulations of physics
+begin to emerge.
 
 Continuity is therefore the minimal consistency requirement for transport. It
-gives a closed bookkeeping rule, but not yet the spatial organization of the
-flow.
+gives closed bookkeeping. We now turn to the forced consequences of that
+energy accounting in free space.
