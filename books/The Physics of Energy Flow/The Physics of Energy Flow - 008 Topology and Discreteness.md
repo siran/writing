@@ -28,16 +28,19 @@ where $L$ is the circuit length and $n$ is an integer. On a torus there are
 two independent cycles, so a closed flow is labeled by an integer pair
 $(m,n)$.
 
-Those same winding classes determine intrinsic circulation. The angular
-momentum carried by the closed flow is
+Those winding classes do more than label allowed modes. They classify the
+circulation itself. The same closed winding that forces discrete matching also
+carries intrinsic angular momentum:
 
 $$
 \mathbf{L}=\int \mathbf{r}\times\frac{\mathbf{S}}{c^2}\,dV.
 $$
 
 Spin is this intrinsic angular momentum of the self-closing flow. It is not a
-separate property added afterward. Different winding classes $(m,n)$, together
-with their handedness, define different discrete spin classes.
+separate property added afterward. Its sign is set by handedness: the
+orientation of the circulation relative to the direction of advance.
+Different winding classes $(m,n)$, together with that handedness, define
+different discrete spin classes.
 
 The allowed wavelengths and frequencies are therefore discrete. Different
 integers label different global modes. The key point comes before any specific
