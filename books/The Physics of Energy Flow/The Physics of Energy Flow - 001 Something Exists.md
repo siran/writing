@@ -1,5 +1,5 @@
 ---
-title: The Physics of Energy Flow – Something Exists
+title: The Physics of Energy Flow - Something Exists
 date: 2026-03-11
 ---
 
@@ -26,18 +26,14 @@ E_R = \int_R u(\mathbf{r})\,dV.
 $$
 
 No additional structure is assumed. Not particles. Not forces. Not an
-observer. Not time as an independent variable. The field $u$ simply exists.
-We know this because something exists, and we experience the effects of its
-change, which we interpret as flow.
+observer. Not time as an independent variable.
 
-This single assumption — that something has a nonnegative magnitude at each
-location — is the entire ontological foundation of everything that follows.
-Physics, in this approach, never requires anything more primitive than this.
+Something exists. Call it $u$. If apparently distinct things interact, they
+are not fundamentally independent substances. They must share the same
+physical reality. We therefore treat them as configurations of $u$,
+interacting with itself.
 
-If $u(\mathbf{r})$ is all there is, there is nowhere else for energy to go.
-Every local change is a redistribution among what already exists. If $A$ moves
-to $B$, then $B$ must move elsewhere, and something must take the place of $A$.
-There is no outside to absorb the difference. Redistribution without an outside
-is closed flow. The mathematics that follows — continuity, divergence-free
-structure, curl dynamics — is the precise language for that closure. Nothing
-more is assumed. Nothing more is needed.
+In this book, $u$ names that one interacting substance: all that physically
+exists. This single assumption - that something real is present as a
+nonnegative magnitude at each location - is the ontological foundation of
+everything that follows. Nothing more primitive is assumed.
