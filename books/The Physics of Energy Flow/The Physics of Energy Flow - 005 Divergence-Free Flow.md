@@ -29,18 +29,19 @@ answers a different question: what line structure that transport follows
 through space.
 
 In empty space, this organization has no primitive endpoints. It is therefore
-source-free:
+divergence-free:
 
 $$
 \nabla \cdot \mathbf{F} = 0.
 $$
 
 This is not the continuity equation. It is a geometric condition on the flow
-pattern itself. It says the transport structure closes through space rather
-than starting or ending at points. There is no contradiction with chapter 4:
-$\nabla\cdot\mathbf{F}=0$ constrains the geometry of the flow lines, while
+pattern itself. It says the transport structure does not begin or end at
+points. There is no contradiction with chapter 4: $\nabla\cdot\mathbf{F}=0$
+constrains the geometry of the flow lines, while
 $\nabla\cdot\mathbf{J}=-\partial_t u$ tracks the local gain or loss of stored
-energy carried by $\mathbf{v}$ along those lines.
+energy carried by $\mathbf{v}$ along those lines. Any such local change is
+accounted for by transport, not by an added source term.
 
 Locally, the picture is circulation: flow bends, turns, and passes through
 without terminating. That is the spatial structure we now need to preserve.
