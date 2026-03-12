@@ -33,8 +33,7 @@ $$
 \mathbf{J}(\mathbf{r}).
 $$
 
-It is not yet parameterized by time. It relates one registered distribution
-to another.
+Current relates one registered distribution to another.
 
-The energy field $u$ tells us how much energy is present. The current $\mathbf{J}$
-tells us how one present distribution is reconfigured into another.
+The energy field $u$ tells us how much energy is present. The current
+$\mathbf{J}$ tells us the way one distribution reconfigures into another.
