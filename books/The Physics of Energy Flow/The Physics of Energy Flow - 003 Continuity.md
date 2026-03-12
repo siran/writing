@@ -35,7 +35,7 @@ registrations $1$ and $2$.
 
 This is accounting of energy, not yet its dynamics. It is like accounting for
 the brightness of the pixels on a screen without yet recognizing the image
-they compose.
+they compose.[^platos-allegory]
 
 Once the energy redistribution is recognized as continuous and, in the absence
 of added terms, source-free, the possible forms of transport become
@@ -45,3 +45,10 @@ begin to emerge.
 Continuity is therefore the minimal consistency requirement for transport. It
 gives closed bookkeeping. We now turn to the forced consequences of that
 energy accounting in free space.
+
+[^platos-allegory]: As Plato and many others observed, one can become skilled
+at recognizing images, patterns, and regular sequences of appearance while
+remaining ignorant of what produces them. Physics can encode repeatable
+regularities without thereby laying hold of the underlying causes. Even so,
+such encoding is far better than treating the screen as uniform brightness
+alone.
