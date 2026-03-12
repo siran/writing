@@ -14,16 +14,16 @@ mere local turning?
 The first attempt is a single self-curl field:
 
 $$
-\partial_t \mathbf{F} = c\,\nabla \times \mathbf{F}.
+\partial_t \mathbf{Q} = c\,\nabla \times \mathbf{Q}.
 $$
 
-This preserves $\nabla\cdot\mathbf{F}=0$ identically. But preservation is not
+This preserves source-free turning identically. But preservation is not
 enough. Transport must also propagate as a bounded wave.
 
 Take a transverse plane-wave mode
 
 $$
-\mathbf{F}(\mathbf{r},t)=\mathbf{A}\,e^{i(\mathbf{k}\cdot\mathbf{r}-\omega t)},
+\mathbf{Q}(\mathbf{r},t)=\mathbf{A}\,e^{i(\mathbf{k}\cdot\mathbf{r}-\omega t)},
 \qquad
 \mathbf{k}\cdot\mathbf{A}=0.
 $$
@@ -99,23 +99,22 @@ $$
 $$
 
 $\mathbf{E}$ and $\mathbf{B}$ are not two substances. They are two
-complementary rotational aspects of one organized flow. If
-$\hat{\tau}=\mathbf{F}/|\mathbf{F}|$ is the local transport direction, then the
-pair is transverse to it:
+complementary rotational aspects of one organized flow. Their cross relation
+fixes the local direction of transport:
 
 $$
 \mathbf{E}\cdot\mathbf{B}=0,\qquad
-\mathbf{E}\times\mathbf{B}\parallel\hat{\tau}.
+\mathbf{E}\times\mathbf{B}\parallel\mathbf{S}.
 $$
 
 The two fields form a rotating transverse frame whose mutual twist advances the
-flow along $\hat{\tau}$. Locally the geometry is a double rotation. Globally
-the same motif appears in helical and toroidal closure.
+flow. Locally the geometry is a double rotation. Globally the same motif
+appears in helical and toroidal closure.
 
-Only at this stage can bookkeeping and geometry be reunited:
+Only at this stage can the energy flow be written in Maxwell form:
 
 $$
-\mathbf{J}=\mathbf{S}=\frac{1}{\mu_0}\,\mathbf{E}\times\mathbf{B}.
+\mathbf{S}=\frac{1}{\mu_0}\,\mathbf{E}\times\mathbf{B}.
 $$
 
 Maxwell theory is therefore not introduced by naming $\mathbf{E}$ and
