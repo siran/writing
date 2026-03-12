@@ -5,11 +5,11 @@ Each chapter = one logical step in the thesis chain.
 | # | Chapter | Thesis step | Key math | Source print |
 |---|---------|-------------|----------|--------------|
 | 1 | Something Exists | a registered present configuration exists as nonnegative density | u(r) ≥ 0 | *Defining Electromagnetic Fields from Continuity and Divergence-Free Structure* |
-| 2 | Energy Flows | comparing records reveals reconfiguration, and that observed reconfiguration is flow | u(r), u₁(r), u₂(r), J(r;1,2) | *Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow* |
-| 3 | Continuity | ordered reconfiguration satisfies local bookkeeping | u₂-u₁ + ∂ₓJ₁₂ = 0 | *Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow* |
-| 4 | No Sources or Sinks | source-free means no added creation or destruction term; J is the accounting current | ∂ₜu + ∇·J = 0 | *The Maxwell Universe Research Program* |
-| 5 | Divergence-Free Flow | F is the source-free line organization of transport, not a rival current | J = uv, ∇·F = 0 | *Defining Electromagnetic Fields from Continuity and Divergence-Free Structure* |
-| 6 | Curl Preserves Flow | curl preserves source-free flow identically | ∂ₜF = ∇×A[F] | *Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow* |
+| 2 | Energy Flows | comparing records reveals reconfiguration, and that observed reconfiguration is flow | u(r), u₁(r), u₂(r), S(r;1,2) | *Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow* |
+| 3 | Continuity | ordered reconfiguration satisfies local bookkeeping | u₂-u₁ + ∂ₓS₁₂ = 0 | *Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow* |
+| 4 | No Sources or Sinks | source-free means no added creation or destruction term; S is the accounting flow | ∂ₜu + ∇·S = 0 | *The Maxwell Universe Research Program* |
+| 5 | Divergence-Free Flow | source-free transport, understood as a whole, has no primitive endpoints | source-free flow is connected transport | *Defining Electromagnetic Fields from Continuity and Divergence-Free Structure* |
+| 6 | Curl Preserves Flow | curl preserves source-free transport identically | ∇·(∇×A) = 0 | *Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow* |
 | 7 | Maxwell is Minimal | stable propagation needs two complementary coupled rotations | ∂ₜE = c∇×B, ∂ₜB = −c∇×E | *Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow* |
 | 8 | Topology and Discreteness | toroidal closure avoids forced defects, imposes integer winding, and yields intrinsic spin classes | nλ = L, (m,n) ∈ ℤ², L = ∫ r × (S/c²) dV | *Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe* |
 | 9 | Mass as Trapped Energy | confined circulating energy resists redirection and so has inertia | m = E/c² | *Geometric Inertia — Mass as Trapped Energy* |
