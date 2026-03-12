@@ -9,7 +9,7 @@ be usable both as a book caption and as the basis for image generation.
 field $u(\mathbf{r})$ shown as continuous contours or a low relief surface,
 with no particles or point objects, only distributed presence.
 
-## 2. Energy Must Flow
+## 2. Energy Flows
 
 2. Two registered configurations of the same field. An initial density
 $u_1(\mathbf{r})$ and a later registered density $u_2(\mathbf{r})$, with arrows
