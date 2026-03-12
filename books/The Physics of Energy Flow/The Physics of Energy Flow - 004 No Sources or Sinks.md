@@ -7,8 +7,8 @@ date: 2026-03-11
 # 4. No Sources or Sinks
 
 In free space, there are no energy sources or sinks. Energy transported across
-a region does not change this fact. It changes only how much energy is stored
-there. In later local shorthand, this is written:
+a region does not change this fact. It changes how much energy is transported
+to be stored there. In later local shorthand, this is written:
 
 $$
 \partial_t u + \nabla \cdot \mathbf{S} = 0.
