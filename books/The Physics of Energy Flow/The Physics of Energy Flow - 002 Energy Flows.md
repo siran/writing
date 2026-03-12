@@ -26,14 +26,14 @@ Energy present in one part is registered in another. We interpret that
 observed reconfiguration as flow.
 
 To describe energy flow is to describe its continuous redistribution within
-itself. A common name for this directed redistribution is *current*. Because
-redistribution has both amount and direction, we write it as a vector field
+itself. Because redistribution has both amount and direction, we write it as a
+vector field
 
 $$
-\mathbf{J}(\mathbf{r};1,2).
+\mathbf{S}(\mathbf{r};1,2).
 $$
 
-Current relates one registered distribution to another.
+The flow field relates one registered distribution to another.
 
-The energy field $u$ tells us how much energy is present. The current
-$\mathbf{J}$ tells us the way one distribution reconfigures into another.
+The energy field $u$ tells us how much energy is present. The flow
+$\mathbf{S}$ tells us the way one distribution reconfigures into another.
