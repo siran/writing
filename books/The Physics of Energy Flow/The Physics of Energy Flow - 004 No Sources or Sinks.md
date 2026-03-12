@@ -10,8 +10,9 @@ does not create or destroy energy there. It changes how much energy is stored
 there by moving it from one region to another.
 
 Since $u$ names what exists, its total quantity is given with it and is
-therefore fixed. A primitive source or sink would require that total to
-change.
+therefore fixed. A primitive source or sink would require either that total to
+change or that disconnected regions compensate one another without transport
+between them.
 
 This is the source-free continuity statement itself: no added creation term, no
 added destruction term, only transport. The next question is different. It is
