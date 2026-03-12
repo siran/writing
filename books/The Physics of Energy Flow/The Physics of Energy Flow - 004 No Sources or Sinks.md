@@ -24,6 +24,11 @@ A nonzero divergence of $\mathbf{S}$ therefore does not mean that energy begins
 or ends at a point. It means only that a region has a net inflow or outflow,
 and so its stored energy changes.
 
+This is not an added stipulation. Since $u$ names what physically exists, the
+total energy of $u$ is given with it. A primitive source or sink would require
+energy to come from outside what exists or vanish into it, and no such outside
+has been introduced.
+
 This is the source-free continuity statement itself: no added creation term, no
 added destruction term, only transport. The next question is different. It is
 not whether the flow balances locally, but what shape the reorganization of
