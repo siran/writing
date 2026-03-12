@@ -6,39 +6,96 @@ date: 2026-03-11
 
 # 11. Schrödinger as Narrow-Band Maxwell
 
-The Schrödinger equation is not a new postulate of quantum
-mechanics. It is a controlled approximation of Maxwell transport, valid when
-the frequency bandwidth of the field configuration is small relative to its
-central frequency.
+The Schrödinger equation is not introduced here as a new ontology. It appears
+as a controlled envelope limit of Maxwell transport. Chapters 8 and 9 already
+gave two things needed for that limit: discrete stable modes and an emergent
+mass scale. The remaining task is to describe slow modulation of one such mode.
 
-Each component of the Maxwell field satisfies the wave equation:
-
-$$
-\left( \nabla^2 - \frac{1}{c^2} \partial_t^2 \right) F = 0.
-$$
-
-Consider a solution dominated by a narrow band of frequencies around a
-central frequency $\omega_0$, with fractional bandwidth $\varepsilon =
-\Delta\omega / \omega_0 \ll 1$. Write the field as a slowly varying
-envelope $\psi(\mathbf{r}, t)$ modulating a carrier:
+Each Cartesian component $F(\mathbf{r},t)$ of $\mathbf{E}$ or $\mathbf{B}$
+satisfies the vacuum wave equation:
 
 $$
-F(\mathbf{r}, t) = \psi(\mathbf{r}, t) \, e^{i(\mathbf{k}_0 \cdot \mathbf{r} - \omega_0 t)}.
+\left(\nabla^2-\frac{1}{c^2}\partial_t^2\right)F=0.
 $$
 
-Substituting into the wave equation and retaining terms to leading order in
-$\varepsilon$ yields:
+Select the positive-frequency part of the field near a stable carrier frequency
+$\omega_0$, and demodulate the carrier:
 
 $$
-i\hbar \, \partial_t \psi = -\frac{\hbar^2}{2m} \nabla^2 \psi + O(\varepsilon^2).
+\psi(\mathbf{r},t)=e^{i\omega_0 t}F^{(+)}(\mathbf{r},t).
 $$
 
-The Schrödinger equation emerges as the envelope equation. $\hbar$ and $m$
-are not inserted as a separate ontology; they encode the central frequency
-and the geometry of the stable mode: $\hbar \propto \omega_0$ and
-$m = \hbar \omega_0 / c^2$.
+The field is narrow-band when
 
-Quantum mechanics, in this view, is the physics of slowly varying envelopes
-of electromagnetic energy. Its characteristic structure — superposition,
-interference, uncertainty — is inherited directly from the wave nature of
-Maxwell dynamics, not from a separate quantum layer of reality.
+$$
+\varepsilon = \frac{\Delta\omega}{\omega_0}\ll 1,
+$$
+
+so the envelope $\psi$ varies slowly compared with the carrier. After
+separating the carrier and the base-mode contribution, and using the fact that
+the carrier already satisfies the dispersion relation of the underlying stable
+mode, the exact envelope identity is
+
+$$
+i\partial_t\psi
+=
+-\frac{c^2}{2\omega_0}\nabla^2\psi
++\frac{1}{2\omega_0 c^2}\partial_t^2\psi.
+$$
+
+The last term is the difference between exact Maxwell transport and the
+Schrödinger limit. For spectral width $\Delta\omega$, it is controlled by
+
+$$
+\left\|\frac{1}{2\omega_0 c^2}\partial_t^2\psi\right\|
+\le
+\frac{\Delta\omega^2}{2\omega_0 c^2}\|\psi\|
+=
+O(\varepsilon^2)\|\psi\|.
+$$
+
+So, to leading order in the narrow-band parameter,
+
+$$
+i\partial_t\psi
+=
+-\frac{c^2}{2\omega_0}\nabla^2\psi
++O(\varepsilon^2).
+$$
+
+Now define the emergent constants from the carrier mode itself:
+
+$$
+\hbar=\frac{E_0}{\omega_0},\qquad
+m=\frac{E_0}{c^2},
+$$
+
+where $E_0$ is the rest energy of the underlying stable mode. Then
+
+$$
+\frac{c^2}{2\omega_0}=\frac{\hbar}{2m}.
+$$
+
+Multiplying by $\hbar$ gives
+
+$$
+i\hbar\,\partial_t\psi
+=
+-\frac{\hbar^2}{2m}\nabla^2\psi
++O(\varepsilon^2).
+$$
+
+This is the free Schrödinger equation. It is not postulated. It is the
+narrow-band envelope equation of a stable Maxwell mode.
+
+The interaction case does not require a second ontology either. In structured
+backgrounds, the envelope accumulates additional region-dependent phase. The
+double-slit treatment later represents such interaction regions by localized
+potentials $V_j$ that rotate the relative phase of the propagation channels.
+The potential term is therefore a summary of background interaction in the same
+envelope dynamics, not a primitive new ingredient. This chapter, however,
+derives only the free narrow-band case.
+
+Superposition, interference, and uncertainty enter because the envelope remains
+a wave field. Quantum mechanics is the effective theory of slowly varying
+Maxwell envelopes, not a separate layer of reality.
