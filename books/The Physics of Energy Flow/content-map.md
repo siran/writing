@@ -11,7 +11,7 @@ Each chapter = one logical step in the thesis chain.
 | 5 | Divergence-Free Flow | the transport structure in empty space has no primitive endpoints | ∇·F = 0 | *Defining Electromagnetic Fields from Continuity and Divergence-Free Structure* |
 | 6 | Curl Preserves Flow | curl preserves source-free flow identically | ∂ₜF = ∇×A[F] | *Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow* |
 | 7 | Maxwell is Minimal | stable propagation needs two complementary coupled rotations | ∂ₜE = c∇×B, ∂ₜB = −c∇×E | *Maxwell Electromagnetism as the Minimal Dynamics of Divergence-Free Energy Flow* |
-| 8 | Topology and Discreteness | toroidal closure avoids forced defects and imposes integer winding | nλ = L, (m,n) ∈ ℤ² | *Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe* |
+| 8 | Topology and Discreteness | toroidal closure avoids forced defects, imposes integer winding, and yields intrinsic spin classes | nλ = L, (m,n) ∈ ℤ², L = ∫ r × (S/c²) dV | *Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe* |
 | 9 | Mass as Trapped Energy | confined circulating energy resists redirection and so has inertia | m = E/c² | *Geometric Inertia — Mass as Trapped Energy* |
 | 10 | Charge as Circulation | far-field projection of conserved winding, not a separate substance | Intensity ∝ 1/r² | *Foundation Equations and Forced Consequences in a Source-Free Maxwell Universe* |
 | 11 | Schrödinger as Narrow-Band Maxwell | envelope approximation of Maxwell wave equation | iℏ∂ₜψ = −(ℏ²/2m)∇²ψ + O(ε²) | *Deriving the Schrödinger Equation from Source-Free Maxwell Dynamics* |
