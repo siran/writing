@@ -10,7 +10,7 @@ There is an old observation, so obvious it is easy to overlook: for two
 things to interact, they must share a substrate.
 
 If a wide mesh and grains of sand appear not to interact, the sand falls
-through, the mesh holds its form, neither seems to notice the other. But this
+through the mesh. But this
 appearance is a matter of scale and geometry. If you wanted the mesh and the
 sand to truly interact - to push, deform, heat, bind - they would have to
 share a substrate. You could not get any effect from something made of a
