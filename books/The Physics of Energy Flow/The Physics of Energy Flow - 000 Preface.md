@@ -13,7 +13,7 @@ The fact that we register interaction at all implies a shared substrate.
 We call it **energy**.
 
 What is inaccessible is not the existence of that substrate, but its nature
-in itself. We do not observe energy directly. From measurable effects we
+in itself. We do not observe energy directly. By registering its effects, we
 infer its quantity, its organization, and its continuous flow.
 
 This is not a limitation to be overcome. It is the correct epistemic
