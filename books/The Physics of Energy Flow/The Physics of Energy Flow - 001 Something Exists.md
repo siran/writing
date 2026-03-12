@@ -6,11 +6,11 @@ date: 2026-03-11
 
 # 1. Something Exists
 
-The minimal starting point of physical description is not a
-particle, a law, or even a named field. It is the bare fact that something
-can be registered: a nonnegative quantity distributed through space.
+The minimal starting point of physical description is the bare fact that
+something exists and is seen to change. We notice change because we register
+differences: a scratch on a table, a shifted shadow, a moved object.
 
-Something exists. Call it $u$. Its presence can be at least partially
+Call this something $u$. Its presence can be at least partially
 described relative to itself by writing $u(\mathbf{r})$, where
 $\mathbf{r}$ is a label for relative position within the extent of $u$:
 
