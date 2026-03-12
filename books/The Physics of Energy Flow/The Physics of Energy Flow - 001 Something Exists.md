@@ -25,6 +25,9 @@ independent substances. They are configurations of $u$. Interaction is
 therefore between $u$ and itself.
 
 In this book, $u$ names that one interacting substance: all that physically
-exists. This single assumption - that something real is present as a
+exists.[^existence] This single assumption - that something real is present as a
 nonnegative magnitude across its extent - is the ontological foundation of
 everything that follows. Nothing more primitive is assumed.
+
+[^existence]: There cannot, by definition, be another kind of existence if it
+    is to interact with the physical.
