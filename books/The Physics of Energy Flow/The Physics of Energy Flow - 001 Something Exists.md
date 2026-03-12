@@ -18,17 +18,11 @@ $$
 u(\mathbf{r}) \geq 0.
 $$
 
-The name we give it is *energy density*. The name carries no extra weight
-at this stage. What matters is only the property: it is a real, nonnegative
-value defined at each location. It tells us how much energy is present
-locally. If we look at a volume small enough that the density is effectively
-uniform, the energy in that volume is just density times volume.
+The name we give to $u$ is *energy*.
 
-No additional structure is assumed. Not particles. Not forces. Not an
-observer. Not time as an independent variable. If apparently distinct things
-interact, they are not fundamentally independent substances. They must share
-the same physical reality. We therefore treat them as configurations of $u$,
-interacting with itself.
+If apparently distinct things exist and interact, they are not fundamentally
+independent substances. They are configurations of $u$. Interaction is
+therefore $u$ interacting with itself.
 
 In this book, $u$ names that one interacting substance: all that physically
 exists. This single assumption - that something real is present as a
