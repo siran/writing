@@ -16,10 +16,8 @@ What is inaccessible is not the existence of that substrate, but its nature
 in itself. We do not observe energy directly. By registering its effects, we
 infer its quantity, its organization, and its continuous flow.
 
-This is not a limitation to be overcome. It is the correct epistemic
-situation, and physics that pretends otherwise mistakes a model for
-reality. What we have access to is the flow - its patterns, its
-constraints, its consequences. And it turns out that is enough.
+This is not a limitation to be overcome. What we have access to is the
+consequence of its flow. And it turns out that is enough.
 
 The pages that follow ask a single question, pursued with as few
 assumptions as possible: if something exists and redistributes
