@@ -3,16 +3,15 @@ title: The Physics of Energy Flow - Continuity
 date: 2026-03-11
 ---
 
-
 # 3. Continuity
 
 Reconfiguration in a region of $u$ is a fact of $u$ itself. It is not private
 to one part of the extent. The surrounding extent must accord with that
 change. If it did not, the reconfiguration could not be said to have occurred
-in $u$ at all. That makes an ordering of registrations possible. Label two such ordered registrations
-$1$ and $2$. Then $u_2$ is related to $u_1$ through a flow field
-$\mathbf{S}(\mathbf{r};1,2)$, which encodes how one registered distribution
-changes into another.
+in $u$ at all. That makes an ordering of registrations possible. Label two
+such ordered registrations $1$ and $2$. Then $u_2$ is related to $u_1$
+through a flow field $\mathbf{S}(\mathbf{r};1,2)$, which encodes how one
+registered distribution changes into another.
 
 The difference
 
@@ -37,13 +36,11 @@ This is accounting of energy, not yet its dynamics. It is like accounting for
 the brightness of the pixels on a screen without yet recognizing the image
 they compose.[^platos-allegory]
 
-Once the energy redistribution is recognized as continuous and source-free in
-empty space, the possible forms of transport become constrained. From that
-point, the familiar symbolic formulations of physics begin to emerge.
-
 Continuity is therefore the minimal consistency requirement for transport. It
-gives closed bookkeeping. We now turn to the forced consequences of that
-energy accounting in free space.
+gives closed bookkeeping.
+
+We now turn to exploring the implied consequences of this energy accounting in
+free space.
 
 [^platos-allegory]: As Plato and many others observed, one can become skilled
 at recognizing images, patterns, and regular sequences of appearance while
