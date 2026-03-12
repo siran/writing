@@ -26,20 +26,15 @@ Energy present in one part is registered in another. We interpret that
 observed reconfiguration as flow.
 
 To describe energy flow is to describe its continuous redistribution within
-itself. A common name for this directed redistribution is current. A scalar
-field cannot describe that reconfiguration by itself. Once repeated
-registrations are ordered, we write
+itself. A common name for this directed redistribution is *current*. Because
+redistribution has both amount and direction, we write it as a vector field
 
 $$
-\mathbf{J}(\mathbf{r}, t).
+\mathbf{J}(\mathbf{r}).
 $$
 
-The field $u$ tells us how much energy is present. The current $\mathbf{J}$
-tells us how the present configuration is being reconfigured: the rate and
-direction at which energy crosses a unit area.
+It is not yet parameterized by time. It relates one registered distribution
+to another.
 
-Here $t$ is not a primitive container. It is a bookkeeping parameter labeling
-ordered registrations of one changing present.
-
-This is not yet the Poynting vector. It is the most general current required by
-local transport. The electromagnetic realization comes later.
+The energy field $u$ tells us how much energy is present. The current $\mathbf{J}$
+tells us how one present distribution is reconfigured into another.
