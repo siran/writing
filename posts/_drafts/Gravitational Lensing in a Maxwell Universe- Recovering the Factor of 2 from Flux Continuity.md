@@ -94,7 +94,10 @@ n = \sqrt{\frac{\varepsilon_{\text{eff}}\mu_{\text{eff}}}
 $$
 
 If the background is itself electromagnetic, there is no reason to privilege
-the electric channel and ignore the magnetic one.
+the electric channel and ignore the magnetic one. In the Maxwell closure,
+$\mathbf{E}$ and $\mathbf{B}$ are complementary aspects of one organized flow,
+not separate substances. An electric-only perturbation would split what the
+theory has already identified as inseparable.
 
 The weak-field constitutive law must therefore be symmetric:
 
@@ -223,7 +226,8 @@ model. The full observed value comes from the full electromagnetic medium.
 This is also why the earlier flux-versus-mass intuition was pointing in the
 right direction. Light is not averaged trapped matter. It is directed
 electromagnetic transport. But the exact coefficient is not fixed by that
-intuition alone. It is fixed by the constitutive symmetry of the background.
+intuition alone. It is fixed by the constitutive symmetry forced by the
+electromagnetic character of the background.
 
 
 ## Conclusion
