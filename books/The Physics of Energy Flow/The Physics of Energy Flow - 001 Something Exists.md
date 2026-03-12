@@ -22,7 +22,7 @@ The name we give to $u$ is *energy*.
 
 If apparently distinct things exist and interact, they are not fundamentally
 independent substances. They are configurations of $u$. Interaction is
-therefore $u$ interacting with itself.
+therefore between $u$ and itself.
 
 In this book, $u$ names that one interacting substance: all that physically
 exists. This single assumption - that something real is present as a
