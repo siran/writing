@@ -7,9 +7,9 @@ date: 2026-03-11
 # 3. Continuity
 
 Reconfiguration in a region of $u$ is a fact of $u$ itself. It is not private
-to one part of the extent. The surrounding extent must agree with it, because
-the redistribution through one part belongs to one continuous flow. That makes
-an ordering of registrations possible. Label two such ordered registrations
+to one part of the extent. The surrounding extent must accord with that
+change. If it did not, the reconfiguration could not be said to have occurred
+in $u$ at all. That makes an ordering of registrations possible. Label two such ordered registrations
 $1$ and $2$. Then $u_2$ is related to $u_1$ through a flow field
 $\mathbf{S}(\mathbf{r};1,2)$, which encodes how one registered distribution
 changes into another.
