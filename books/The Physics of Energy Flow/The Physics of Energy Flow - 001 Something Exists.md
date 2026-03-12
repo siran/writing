@@ -10,8 +10,9 @@ The minimal starting point of physical description is not a
 particle, a law, or even a named field. It is the bare fact that something
 can be registered: a nonnegative quantity distributed through space.
 
-Begin with a region \(R\) in which energy is present. That energy is
-distributed through the region, so we describe it by a scalar field:
+Something exists. Call it $u$. Its presence can be at least partially
+described relative to itself by writing $u(\mathbf{r})$, where
+$\mathbf{r}$ is a label for relative position within the extent of $u$:
 
 $$
 u(\mathbf{r}) \geq 0.
@@ -24,11 +25,9 @@ locally. If we look at a volume small enough that the density is effectively
 uniform, the energy in that volume is just density times volume.
 
 No additional structure is assumed. Not particles. Not forces. Not an
-observer. Not time as an independent variable.
-
-Something exists. Call it $u$. If apparently distinct things interact, they
-are not fundamentally independent substances. They must share the same
-physical reality. We therefore treat them as configurations of $u$,
+observer. Not time as an independent variable. If apparently distinct things
+interact, they are not fundamentally independent substances. They must share
+the same physical reality. We therefore treat them as configurations of $u$,
 interacting with itself.
 
 In this book, $u$ names that one interacting substance: all that physically
