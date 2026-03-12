@@ -7,7 +7,7 @@ date: 2026-03-11
 
 Across the extent of $u$, continuity holds. Energy transported across a region
 does not create or destroy energy there. It changes how much energy is stored
-there.
+there by moving it from one region to another.
 
 Since $u$ names what exists, its total quantity is given with it and is
 therefore fixed. A primitive source or sink would require that total to
