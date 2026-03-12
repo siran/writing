@@ -16,16 +16,11 @@ between them.
 
 This is the source-free continuity statement itself: no added creation term, no
 added destruction term, only transport. The next question is different. It is
-not whether the flow balances locally, but what shape the reorganization of
-energy takes when understood as a complete process rather than region by region
-numerical accounting. $\mathbf{S}$ handles the accounting: how much energy
-crosses a surface, and in what direction. Even taken as a whole, this does not
-yet reveal the structure of that transport, as the next chapters will show.
+not whether energy moves from one region to a neighboring region, but what
+shape the reorganization of energy takes when understood as a complete process
+rather than region by region numerical accounting. Although $\mathbf{S}$
+handles a directional accounting of how energy is transported, even taken as a
+whole it does not yet reveal the structure of that transport, as the next
+chapters will show.
 
-This book studies the source-free case. That choice is sufficient for the
-reconstruction that follows, and it does not preclude fundamental sources or
-sinks. It says only that they do not appear necessary for recovering known
-physics.
-
-The next step is to consider the source-free case in empty space and ask what
-forms of transport it permits.
+We next consider the transport of energy across empty space.
