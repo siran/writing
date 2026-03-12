@@ -21,11 +21,10 @@ u_2(\mathbf{r})-u_1(\mathbf{r})
 $$
 
 is understood as the result of a continuous redistribution of energy within
-itself, described by a flow connecting the two registrations. The
-mathematics of this becomes local by conservation: energy in a small region
-changes only by crossing its boundary.
+itself, described by a flow connecting the two registrations. Energy in a region
+changes only by crossing its boundary to a neighboring region.
 
-In one dimension, the local statement is
+In one direction, say the 'x-direction', the statement is
 
 $$
 u_2-u_1+\partial_x S_{12}=0.
