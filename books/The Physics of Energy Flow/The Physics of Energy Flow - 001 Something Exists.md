@@ -26,5 +26,5 @@ therefore $u$ interacting with itself.
 
 In this book, $u$ names that one interacting substance: all that physically
 exists. This single assumption - that something real is present as a
-nonnegative magnitude at each location - is the ontological foundation of
+nonnegative magnitude across its extent - is the ontological foundation of
 everything that follows. Nothing more primitive is assumed.
