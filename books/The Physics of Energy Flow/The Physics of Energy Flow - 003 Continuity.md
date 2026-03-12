@@ -27,7 +27,7 @@ $$
 u_2-u_1+\partial_x J_{12}=0.
 $$
 
-Here $J_{12}$ abbreviates the redistribution current connecting
+Here $J_{12}$ refers to the redistribution current connecting
 registrations $1$ and $2$.
 
 If more energy enters than leaves, the stored density increases. If more
