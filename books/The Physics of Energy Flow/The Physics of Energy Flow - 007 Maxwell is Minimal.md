@@ -1,5 +1,5 @@
 ---
-title: The Physics of Energy Flow – Maxwell is Minimal
+title: The Physics of Energy Flow - Maxwell is Minimal
 date: 2026-03-11
 ---
 
@@ -131,11 +131,9 @@ $$
 \mathbf{E} \to c\mathbf{B}, \qquad c\mathbf{B} \to -\mathbf{E}.
 $$
 
-This is not an accident. It follows directly from the structure above: the two
-fields are the same rotating flow viewed at a $90°$ phase offset. Which
-component is called $\mathbf{E}$ and which $\mathbf{B}$ depends only on the
-orientation chosen for the transverse frame — a choice with no physical content
-in vacuum. The distinction arises locally when one flow configuration couples
-to another. But that coupling is also field interacting with field. There is no
-external matter to break the symmetry from outside; the symmetry breaks only
-within one unified flow.
+This is not an accident. It reflects the complementary status of the two
+fields within one transport law. The symmetry does not collapse
+$\mathbf{E}$ and $\mathbf{B}$ into a single field, and it does not erase
+their distinct roles in a given solution. In a propagating configuration they
+remain two transverse aspects of one organized flow, whose cross relation
+determines the direction of transport.
