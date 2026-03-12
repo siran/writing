@@ -7,15 +7,30 @@ date: 2026-03-11
 # 5. Divergence-Free Flow
 
 Conservation uses the current $\mathbf{J}$, but it does not yet tell
-us what geometric structure carries transport through empty space. For that we
-introduce a flow field:
+us what geometric structure carries transport through empty space. The current
+measures the amount transported. We now separate that from the organization of
+the transport itself and introduce a flow field:
 
 $$
 \mathbf{F}(\mathbf{r}, t).
 $$
 
-In empty space, this flow has no primitive endpoints. Its organization is
-therefore source-free:
+$\mathbf{F}$ is not a second continuity current, and it is not introduced as a
+rival to $\mathbf{J}$. It is the local line structure of the transport: the
+way flow threads through space. The current can then be written schematically
+as an amount carried along that structure. For example,
+
+$$
+\mathbf{J} = j\,\hat{\tau},
+\qquad
+\hat{\tau} = \frac{\mathbf{F}}{|\mathbf{F}|},
+$$
+
+where $j$ measures how much energy is transported and $\hat{\tau}$ gives the
+local direction of the flow.
+
+In empty space, this organization has no primitive endpoints. It is therefore
+source-free:
 
 $$
 \nabla \cdot \mathbf{F} = 0.
@@ -23,7 +38,10 @@ $$
 
 This is not the continuity equation. It is a geometric condition on the flow
 pattern itself. It says the transport structure closes through space rather
-than starting or ending at points.
+than starting or ending at points. There is no contradiction with chapter 4:
+$\nabla\cdot\mathbf{F}=0$ constrains the geometry of the flow lines, while
+$\nabla\cdot\mathbf{J}=-\partial_t u$ tracks the local gain or loss of stored
+energy along those lines.
 
 Locally, the picture is circulation: flow bends, turns, and passes through
 without terminating. That is the spatial structure we now need to preserve.
