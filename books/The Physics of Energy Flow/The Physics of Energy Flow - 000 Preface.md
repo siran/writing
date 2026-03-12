@@ -23,4 +23,4 @@ The pages that follow ask a single question, pursued with as few
 assumptions as possible: if something exists and redistributes
 continuously, what must follow?
 
-The answer is all of physics.
+The answer is, as we shall see, at least all of known physics.
