@@ -33,10 +33,9 @@ $$
 Here $S_{12}$ refers to the redistribution flow connecting
 registrations $1$ and $2$.
 
-This is accounting of energy, not yet its dynamics. It is like recording the
-light in the different pixels of a screen without yet recognizing the movement
-of the image across them. It says only that any admissible reconfiguration
-must balance exactly.
+This is accounting of energy, not yet its dynamics. It is like accounting for
+the brightness of the pixels on a screen without yet recognizing the image
+they compose.
 
 Once the energy redistribution is recognized as continuous and, in the absence
 of added terms, source-free, the possible forms of transport become
