@@ -1,5 +1,5 @@
 ---
-title: The Physics of Energy Flow – Divergence-Free Flow
+title: The Physics of Energy Flow - Divergence-Free Flow
 date: 2026-03-11
 ---
 
@@ -46,6 +46,6 @@ Locally, the picture is circulation: flow bends, turns, and passes through
 without terminating. That is the spatial structure we now need to preserve.
 
 The condition $\nabla\cdot\mathbf{F}=0$ is therefore not the origin of anything.
-It is the mathematical encoding of a prior physical fact: flow lines are closed. A moves to B, B moves to C, C moves to A.
-The closed structure comes first. The vector equation is the language we later
-use to write it down.
+It is the mathematical encoding of a prior physical fact: source-free flow has
+no primitive beginnings or endings. The connected structure comes first. The
+vector equation is the language we later use to write it down.
