@@ -6,24 +6,26 @@ date: 2026-03-11
 
 # 2. Energy Flows
 
-A single registered configuration,
+A single registered distribution,
 
 $$
 u(\mathbf{r}),
 $$
 
-says only how energy is configured across the extent of $u$. If another registered
-configuration differs from it, we may label the two records
+says only how energy is distributed across the extent of $u$. If another
+registered distribution differs from it, we may label the two records
 
 $$
 u_1(\mathbf{r}), \qquad u_2(\mathbf{r}).
 $$
 
-Change is then noticed by comparing records. What is observed is not
-arbitrary replacement, but continuous reconfiguration. That reconfiguration
-is what we call flow.
+Change is the registration of a different distribution $u_2(\mathbf{r})$.
+What is observed is not disappearance in one part of the extent and
+reappearance in another, but continuous reconfiguration across that extent.
+Energy present in one part is registered in another. We interpret that
+observed reconfiguration as flow.
 
-A scalar density cannot describe reconfiguration by itself. To describe flow
+A scalar field cannot describe reconfiguration by itself. To describe flow
 locally we need a directional quantity: a current. Once repeated
 registrations are ordered, we write
 
