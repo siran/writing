@@ -10,10 +10,10 @@ Newton's second law is not a primitive law of particles pushed by forces. It is
 the integrated continuity law for momentum in a localized electromagnetic
 configuration.
 
-Chapter 7 identified the transport current with the Maxwell realization
+Chapter 7 identified the energy flow with the Maxwell realization
 
 $$
-\mathbf{J}=\mathbf{S}=\frac{1}{\mu_0}\,\mathbf{E}\times\mathbf{B}.
+\mathbf{S}=\frac{1}{\mu_0}\,\mathbf{E}\times\mathbf{B}.
 $$
 
 The same transport therefore carries momentum. The electromagnetic momentum
