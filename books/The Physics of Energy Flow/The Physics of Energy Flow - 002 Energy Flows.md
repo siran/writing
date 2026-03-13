@@ -6,7 +6,7 @@ date: 2026-03-11
 
 # 2. Energy Flows
 
-A single registered distribution,
+A single registered distribution of energy,
 
 $$
 u(\mathbf{r}),
