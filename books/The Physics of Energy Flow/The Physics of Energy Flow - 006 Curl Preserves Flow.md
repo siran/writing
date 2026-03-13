@@ -45,17 +45,20 @@ $$
 \Delta \mathbf{F} = \nabla \phi.
 $$
 
-But then, taking the divergence $\nabla \cdot$,
+then, taking the divergence $\nabla \cdot$,
 
 $$
 \nabla \cdot (\Delta \mathbf{F}) = \nabla^2 \phi,
 $$
 
-which is generally nonzero. Such an update can compress, expand, begin, or end
-the transport. It does not preserve source-free reorganization.
+which is generally nonzero.
 
-What does preserve the source-free condition identically is a rotation. For any
-vector field $\mathbf{A}$, we can express source-free evolution of
+Such an update can compress, expand, begin, or end the transport. It does not
+preserve source-free reorganization.
+
+What does preserve the source-free condition identically is a rotation.
+
+For any vector field $\mathbf{A}$, we can express source-free evolution of
 $\mathbf{F}$ as
 
 $$
@@ -64,7 +67,7 @@ $$
 \nabla \cdot (\Delta \mathbf{F}) = 0.
 $$
 
-In three dimensions, write
+To make this explicit, in three dimensions, write
 
 $$
 \mathbf{A} = (A_x,A_y,A_z).
