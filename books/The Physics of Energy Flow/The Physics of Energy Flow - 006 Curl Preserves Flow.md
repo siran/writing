@@ -56,24 +56,37 @@ $$
 \nabla \cdot (\nabla \times \mathbf{A}) = 0.
 $$
 
-In three dimensions, for example, take
+In three dimensions, write
 
 $$
-\mathbf{A} = \left(0,0,\frac{x^2+y^2}{2}\right).
+\mathbf{A} = (A_x,A_y,A_z).
 $$
 
 Then
 
 $$
-\nabla \times \mathbf{A} = (y,-x,0),
+\nabla \times \mathbf{A}
+=
+(
+\partial_y A_z - \partial_z A_y,\;
+\partial_z A_x - \partial_x A_z,\;
+\partial_x A_y - \partial_y A_x
+),
 $$
 
-which circles around the $z$-axis. The flow bends continuously
-without starting or stopping, and
+and therefore
 
 $$
-\nabla \cdot (y,-x,0) = 0.
+\nabla \cdot (\nabla \times \mathbf{A})
+=
+\partial_x\partial_y A_z - \partial_x\partial_z A_y
++ \partial_y\partial_z A_x - \partial_y\partial_x A_z
++ \partial_z\partial_x A_y - \partial_z\partial_y A_x
+= 0.
 $$
+
+The mixed derivatives cancel pairwise. That is why curl preserves the
+source-free condition identically.
 
 Curl therefore preserves source-free structure identically. It is the
 differential form of source-free reorganization: continuous turning, with no
