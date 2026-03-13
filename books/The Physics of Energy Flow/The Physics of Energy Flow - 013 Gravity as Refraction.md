@@ -6,8 +6,7 @@ date: 2026-03-11
 
 # 13. Gravity as Refraction
 
-Gravity is not a force, and it is not an independent spacetime
-substance. It is electromagnetic refraction: the bending of energy
+Gravity appears here as electromagnetic refraction: the bending of energy
 transport paths caused by a spatially varying propagation speed induced by
 concentrated energy density.
 
@@ -28,9 +27,8 @@ The same idea is used here. Mass is self-confined energy. A massive body is
 therefore a concentrated background organization of electromagnetic energy
 flow. A passing field perturbs that background, and the background response
 contributes a secondary electromagnetic field. In chapter 7, $\mathbf{E}$ and
-$\mathbf{B}$ were identified as complementary aspects of one organized flow,
-not as independent substances. For that reason the response is not
-electric-only. A perturbation of the background shifts both constitutive
+$\mathbf{B}$ were identified as complementary aspects of one organized flow.
+For that reason a perturbation of the background shifts both constitutive
 channels together:
 
 $$
@@ -66,15 +64,14 @@ n(r)=\frac{c}{c_\text{local}(r)}
 $$
 
 If only one constitutive channel were perturbed, this first-order shift would
-be halved, giving the Newtonian half-value. The factor of two is therefore not
-an added correction. It is forced by the ontology: a full electromagnetic
-medium rather than an electric-only one.
+be halved, giving the Newtonian half-value. The factor of two is forced by the
+ontology: a full electromagnetic medium.
 
 In optics, when a wave propagates through a medium of varying speed, it bends
 toward the slower region. This is refraction.
 
 Gravity, in this framework, is that refraction applied to all energy
-transport, not just light. The trajectory of any moving configuration curves
+transport. The trajectory of any moving configuration curves
 toward regions of high energy density, because those are the regions of lower
 propagation speed.
 
@@ -87,8 +84,8 @@ $$
 
 At the solar limb this is about $1.75$ arcseconds.
 
-On this reading, light bending follows from index-of-refraction arguments,
-with no appeal to an independently curved spacetime.
+On this reading, light bending follows from index-of-refraction arguments
+within the transport picture.
 
 Spacetime curvature, in this reading, is a geometric restatement of the same
 refraction. The geometry follows from the transport, not the other way
