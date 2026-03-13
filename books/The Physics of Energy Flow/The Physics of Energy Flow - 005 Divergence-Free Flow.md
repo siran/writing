@@ -3,20 +3,18 @@ title: The Physics of Energy Flow - Divergence-Free Flow
 date: 2026-03-11
 ---
 
-
 # 5. Divergence-Free Flow
 
-Regional conservation uses the flow $\mathbf{S}$, but it does not yet tell us
-what shape the reorganization takes when understood as a complete process
+Regional conservation uses the flow $\mathbf{S}$, but it does not yet tell
+us what shape the reorganization takes when understood as a complete process
 rather than region by region numerical accounting.
 
 In empty space, a source-free transport cannot begin or end at an isolated
-point. If energy leaves one small region, it must pass into another. Looked at
-as a whole, the transport forms connected lines of passage rather than
-disconnected starts and stops.
+point. If energy leaves one small region, it must pass into another
+neighboring one. Looked at as a whole, the transport forms connected lines of
+passage rather than disconnected starts and stops.
 
-This is the geometric content of calling the flow divergence-free. It does not
-introduce a second field beyond $\mathbf{S}$. It says only that source-free
+This is the geometric content of calling the flow divergence-free. Source-free
 transport, understood as a complete pattern, has no primitive endpoints. Local
 gain or loss of stored energy is still tracked by the regional accounting of
 chapter 4. What is added here is the shape of the process as a whole.
@@ -26,5 +24,5 @@ without terminating. That is the spatial structure we now need to preserve.
 
 Divergence-free language is therefore not the origin of anything. It is the
 mathematical encoding of a prior physical fact: source-free flow has no
-primitive beginnings or endings. The connected structure comes first. The
-vector equation is the language we later use to write it down.
+primitive beginnings or endings. The connected structure comes first. The vector
+equation is the language we later use to write it down.
