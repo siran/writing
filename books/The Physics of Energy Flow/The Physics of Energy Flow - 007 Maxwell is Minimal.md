@@ -17,7 +17,8 @@ $$
 $$
 
 This preserves source-free turning identically. But preservation is not
-enough. Transport must also propagate as a bounded wave.
+enough. The transport must also carry energy from one region into another in a
+bounded way.
 
 Take a transverse plane-wave mode
 
