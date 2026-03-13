@@ -44,7 +44,7 @@ expressed by an axis of advance together with two complementary transverse
 degrees of freedom of the same flow. Call these two aspects
 
 $$
-\mathbf{F}_{\text{circle}}, \qquad \mathbf{F}_{\text{circledot}}.
+\mathbf{F}_{\circlearrowleft}, \qquad \mathbf{F}_{\circlearrowright}.
 $$
 
 These are not yet new fields. They are a local way of expressing the two
@@ -53,15 +53,15 @@ complementary rotational freedoms of $\mathbf{F}$.
 The minimal first-order local law that realizes this double turning is
 
 $$
-\partial_t \mathbf{F}_{\text{circle}} = c\,\nabla \times \mathbf{F}_{\text{circledot}}, \qquad
-\partial_t \mathbf{F}_{\text{circledot}} = -c\,\nabla \times \mathbf{F}_{\text{circle}},
+\partial_t \mathbf{F}_{\circlearrowleft} = c\,\nabla \times \mathbf{F}_{\circlearrowright}, \qquad
+\partial_t \mathbf{F}_{\circlearrowright} = -c\,\nabla \times \mathbf{F}_{\circlearrowleft},
 $$
 
 with
 
 $$
-\nabla\cdot\mathbf{F}_{\text{circle}}=0,\qquad
-\nabla\cdot\mathbf{F}_{\text{circledot}}=0.
+\nabla\cdot\mathbf{F}_{\circlearrowleft}=0,\qquad
+\nabla\cdot\mathbf{F}_{\circlearrowright}=0.
 $$
 
 Now each aspect changes by the curl of the other. This is the minimal real
@@ -72,8 +72,8 @@ At this point the two complementary aspects are recognized, up to the usual
 unit convention, as the fields later called
 
 $$
-\mathbf{E} \equiv \mathbf{F}_{\text{circle}}, \qquad
-\mathbf{B} \equiv \mathbf{F}_{\text{circledot}}.
+\mathbf{E} \equiv \mathbf{F}_{\circlearrowleft}, \qquad
+\mathbf{B} \equiv \mathbf{F}_{\circlearrowright}.
 $$
 
 The contrast with a single self-curl field can be checked directly:
