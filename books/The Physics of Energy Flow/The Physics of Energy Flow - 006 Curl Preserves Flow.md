@@ -91,7 +91,3 @@ source-free condition identically.
 Curl therefore preserves source-free structure identically. It is the
 differential form of source-free reorganization: continuous turning, with no
 tearing and no start or end points introduced by the evolution itself.
-
-A single local rotation only recirculates the flow. It turns the structure
-without yet carrying it forward as transport. The next question is whether one
-self-turning field is enough for stable propagation.
