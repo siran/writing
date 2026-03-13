@@ -5,10 +5,12 @@ date: 2026-03-11
 
 # 6. Curl Preserves Flow
 
-To preserve the source-free character of transport, local evolution must allow
-the flow of energy without introducing primitive endpoints. We therefore ask
-what kinds of local update can reorganize $\mathbf{F}$ while keeping it
-source-free.
+Recall the energy flow field, $\mathbf{F}(\mathbf{r})$.
+
+To preserve the source-free character of the transport seen in experiments,
+local evolution must allow the flow of energy without introducing primitive
+endpoints. We therefore ask what kinds of local update can reorganize
+$\mathbf{F}$ while maintaining its source-free nature.
 
 To express more precisely the idea of accounting for flow across a boundary,
 take any region $V$ with closed boundary $\partial V$. Gauss's
@@ -32,17 +34,18 @@ $$
 \mathbf{F} \mapsto \lambda \mathbf{F},
 $$
 
-can strengthen or weaken what is already there, but it does not explain how
-the flow turns or reorganizes in space. It leaves zeros where they are and
-adds no new spatial structure.
+can strengthen or weaken what is already there, but it does not explain how the
+flow turns or reorganizes in space in more complex ways. Furthermore, it leaves
+zeros where they are and adds no new spatial structure.
 
-A gradient-type update does introduce spatial structure:
+If the evolution of $\mathbf{F}$ is written as the gradient of some field
+$\phi$,
 
 $$
 \Delta \mathbf{F} = \nabla \phi.
 $$
 
-But then
+But then, taking the divergence $\nabla \cdot$,
 
 $$
 \nabla \cdot (\Delta \mathbf{F}) = \nabla^2 \phi,
@@ -51,8 +54,9 @@ $$
 which is generally nonzero. Such an update can compress, expand, begin, or end
 the transport. It does not preserve source-free reorganization.
 
-What does preserve the source-free condition identically is curl. For any
-vector field $\mathbf{A}$,
+What does preserve the source-free condition identically is a rotation. For any
+vector field $\mathbf{A}$, we can express source-free evolution of
+$\mathbf{F}$ as
 
 $$
 \Delta \mathbf{F} = \nabla \times \mathbf{A}
@@ -66,7 +70,7 @@ $$
 \mathbf{A} = (A_x,A_y,A_z).
 $$
 
-Then
+Then, by definition,
 
 $$
 \nabla \times \mathbf{A}
