@@ -12,14 +12,17 @@ $$
 u(\mathbf{r}),
 $$
 
-says only how energy is distributed across the extent of $u$. If another
-registered distribution differs from it, we may label the two records
+says only how energy is distributed across the extent of $u$.
+
+If another registered distribution differs from it, we may label the two
+records
 
 $$
 u_1(\mathbf{r}), \qquad u_2(\mathbf{r}).
 $$
 
 Change is the acknowledgement of a difference between distributions.
+
 What is observed is not disappearance in one part of the extent and
 reappearance in another, but continuous reconfiguration across that extent.
 Energy present in one part is registered in another. We interpret that
