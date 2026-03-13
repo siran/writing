@@ -20,8 +20,8 @@ added destruction term, only transport.
 Continuity gives local accounting. We now explore what it implies for the
 shape of energy reorganization as a complete process.
 
-$\mathbf{S}$ handles a directional accounting of how energy is transported.
-Even taken as a whole, it does not yet reveal the structure of that transport,
-as the next chapters will show.
+Although $\mathbf{S}$ handles a directional accounting of how energy is
+transported, even taken as a whole it still fails to reveal the structure of
+that transport. The next chapters develop that structure.
 
 We next consider the transport of energy across empty space.
