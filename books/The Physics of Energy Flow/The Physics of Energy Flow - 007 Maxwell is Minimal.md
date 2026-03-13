@@ -8,8 +8,7 @@ date: 2026-03-11
 
 Chapter 6 established that source-free flow must evolve by curl if it is to
 preserve its divergence-free structure. That still leaves a narrower question:
-what is the simplest curl-based law that gives stable propagation rather than
-mere local turning?
+what is the simplest curl-based law that gives stable propagation?
 
 The first attempt is a single self-curl field:
 
@@ -58,7 +57,7 @@ $$
 \nabla\cdot\mathbf{E}=0,\qquad \nabla\cdot\mathbf{B}=0.
 $$
 
-Now each field changes by the curl of the other rather than by its own curl.
+Now each field changes by the curl of the other.
 This is the minimal real closed propagation law: no sources, no action at a
 distance, no extra fields, and no higher-order operators.
 
@@ -117,8 +116,7 @@ $$
 \mathbf{S}=\frac{1}{\mu_0}\,\mathbf{E}\times\mathbf{B}.
 $$
 
-Maxwell theory is therefore not introduced by naming $\mathbf{E}$ and
-$\mathbf{B}$ first. It appears as the minimal two-field closure of source-free
+Maxwell theory appears here as the minimal two-field closure of source-free
 rotational transport.
 
 Minimal does not mean unique. It means the weakest local closure that actually
@@ -130,8 +128,8 @@ $$
 \mathbf{E} \to c\mathbf{B}, \qquad c\mathbf{B} \to -\mathbf{E}.
 $$
 
-This is not an accident. It reflects the complementary status of the two
-fields within one transport law. The symmetry does not collapse
+This reflects the complementary status of the two fields within one transport
+law. The symmetry does not collapse
 $\mathbf{E}$ and $\mathbf{B}$ into a single field, and it does not erase
 their distinct roles in a given solution. In a propagating configuration they
 remain two transverse aspects of one organized flow, whose cross relation
