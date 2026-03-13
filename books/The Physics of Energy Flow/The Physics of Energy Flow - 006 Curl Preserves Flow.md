@@ -10,6 +10,22 @@ To preserve the source-free character of transport, the local evolution law
 must turn a flow without introducing primitive endpoints. Curl does this
 identically.
 
+Not every local update has that property. If the change were described by a
+gradient field,
+
+$$
+\partial \mathbf{S} = \nabla \phi,
+$$
+
+then its divergence would be
+
+$$
+\nabla \cdot (\partial \mathbf{S}) = \nabla^2 \phi,
+$$
+
+which is generally nonzero. Such an update can compress, expand, begin, or end
+the transport. It does not preserve a source-free structure.
+
 For any vector field $\mathbf{A}$,
 
 $$
