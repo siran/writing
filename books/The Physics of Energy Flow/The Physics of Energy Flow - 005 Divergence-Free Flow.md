@@ -7,21 +7,28 @@ date: 2026-03-11
 
 Regional conservation uses the flow $\mathbf{S}$. It gives region by region
 numerical accounting. The shape of the reorganization as a complete process
-comes next.
+comes next. For that we introduce a flow field $\mathbf{F}$.
 
 In empty space, a source-free transport cannot begin or end at an isolated
 point. If energy leaves one small region, it must pass into another
 neighboring one. Looked at as a whole, the transport forms closed loops rather
 than disconnected starts and stops.
 
-This is the geometric content of calling the flow divergence-free. Source-free
-transport, understood as a complete pattern, has no primitive endpoints. Local
-gain or loss of stored energy is still tracked by the regional accounting of
-chapter 4. What is added here is the shape of the process as a whole.
+This is the geometric content of calling the flow divergence-free. For the
+fundamental flow field, that condition is
+
+$$
+\nabla \cdot \mathbf{F} = 0.
+$$
+
+Source-free transport, understood as a complete pattern, has no primitive
+endpoints. Local gain or loss of stored energy is still tracked by the
+regional accounting of chapter 4 through $\mathbf{S}$. What is added here is
+the shape of the process as a whole, described by $\mathbf{F}$.
 
 Locally, the picture is circulation. Circulation lines are closed. The next
-question is how local evolution must be described in order to preserve this
-source-free structure.
+question is how local evolution of $\mathbf{F}$ must be described in order to
+preserve this source-free structure.
 
 Divergence-free language is therefore not the origin of anything. It is the
 mathematical encoding of a prior physical fact: source-free flow has no
