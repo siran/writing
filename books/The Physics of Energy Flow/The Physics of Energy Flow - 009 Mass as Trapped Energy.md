@@ -6,9 +6,8 @@ date: 2026-03-11
 
 # 9. Mass as Trapped Energy
 
-Mass is not a primitive property of matter. It is what confined energy looks
-like when part of its momentum is trapped in closed circulation rather than
-available for straight translation.
+Mass is what confined energy becomes when part of its momentum is trapped in
+closed circulation and no longer available for straight translation.
 
 Consider a localized flow whose energy moves along a smooth closed trajectory
 $X(s)$, parameterized by arclength $s$. Locally, the propagation speed is still
@@ -105,14 +104,14 @@ $$
 
 where $E_0$ is the rest energy of the closed mode.
 
-This is not Einstein's formula applied after the fact. In this framework it
-states what mass is: the energy trapped in circulation, measured in the frame
-where the closed flow has no net translation.
+In this framework, this states what mass is: the energy trapped in
+circulation, measured in the frame where the closed flow has no net
+translation.
 
 Why does the energy not simply straighten its path and eliminate its mass?
 Because the circulation is topologically closed. Once winding exists, removing
-it would require reconnection of the flow itself. Mass is therefore not just
-kinematic delay. It is kinematic delay locked in by topology.
+it would require reconnection of the flow itself. Mass is kinematic delay
+locked in by topology.
 
 Unconfined propagation carries momentum $p=E/c$ but no inertial rest mass.
 Mass appears when topology confines part of the momentum into persistent
