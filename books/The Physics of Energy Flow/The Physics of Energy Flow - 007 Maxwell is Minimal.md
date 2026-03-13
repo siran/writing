@@ -65,72 +65,12 @@ Now each aspect changes by the curl of the other. This is the minimal real
 closed transport law: no sources, no action at a distance, no extra fields,
 and no higher-order operators.
 
-The contrast with a single self-curl field can be checked directly:
-
-$$
-\partial_t \mathbf{F} = k\,\nabla \times \mathbf{F}.
-$$
-
-Take a transverse Fourier mode
-
-$$
-\mathbf{F}(\mathbf{r},t)=\mathbf{A}\,e^{i(\mathbf{k}\cdot\mathbf{r}-\omega t)},
-\qquad
-\mathbf{k}\cdot\mathbf{A}=0.
-$$
-
-Substitution gives
-
-$$
--i\omega\,\mathbf{A}=ik\,\mathbf{k}\times\mathbf{A}.
-$$
-
-On the transverse plane, $\mathbf{k}\times$ acts as a quarter-turn operator.
-Its eigenvalues are $\pm i|\mathbf{k}|$. Therefore
-
-$$
-\omega = \pm i\,k|\mathbf{k}|.
-$$
-
-The modes grow or decay instead of remaining neutral. A single real curl field
-turns, but it does not sustain transport.
-
-Apply $\partial_t$ once more. For $\mathbf{F}_{+}$,
-
-$$
-\partial_t^2\mathbf{F}_{+}
-=
-k\,\nabla\times(\partial_t\mathbf{F}_{-})
-=
--k^2\,\nabla\times\nabla\times\mathbf{F}_{+}.
-$$
-
-Using
-
-$$
-\nabla\times\nabla\times\mathbf{F}_{+}
-=
-\nabla(\nabla\cdot\mathbf{F}_{+})-\nabla^2\mathbf{F}_{+},
-$$
-
-and $\nabla\cdot\mathbf{F}_{+}=0$, we obtain
-
-$$
-\partial_t^2\mathbf{F}_{+}=k^2\nabla^2\mathbf{F}_{+}.
-$$
-
-The same argument gives
-
-$$
-\partial_t^2\mathbf{F}_{-}=k^2\nabla^2\mathbf{F}_{-}.
-$$
-
-So the double rotation does more than preserve source-free turning. It carries
-the transport forward, and in doing so it yields the wave equation:
-
-$$
-\omega^2=k^2|\mathbf{k}|^2.
-$$
+Each complementary turn maps one configuration of the flow into another. From
+that mapping one can abstract an order between configurations, then write the
+ordered difference in differential form. In that later form, the double
+rotation appears as a wave equation for each aspect. For the present argument,
+the essential point is simpler: one rotation recirculates, while two
+complementary rotations transport.
 
 The two aspects form a rotating transverse frame whose mutual twist advances the
 flow. Locally the geometry is a double rotation. Globally the same motif
