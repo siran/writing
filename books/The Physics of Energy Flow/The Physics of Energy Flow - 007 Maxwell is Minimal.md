@@ -10,15 +10,33 @@ Chapter 6 established that source-free flow must evolve by curl if it is to
 preserve its divergence-free structure. That still leaves a narrower question:
 what is the simplest curl-based law that makes transport possible?
 
-The first attempt is a single self-curl field:
+A single local rotation only recirculates the flow. It turns the structure
+around itself, but it does not yet carry energy from one region into another.
+Transport requires a second, complementary rotation. A point rotated once
+circulates. Rotated twice in a complementary way, it advances.
+
+That complementary turning takes the form
+
+$$
+\partial_t \mathbf{E} = c\,\nabla \times \mathbf{B}, \qquad
+\partial_t \mathbf{B} = -c\,\nabla \times \mathbf{E},
+$$
+
+with
+
+$$
+\nabla\cdot\mathbf{E}=0,\qquad \nabla\cdot\mathbf{B}=0.
+$$
+
+Now each field changes by the curl of the other. This is the minimal real
+closed transport law: no sources, no action at a distance, no extra fields,
+and no higher-order operators.
+
+The contrast with a single self-curl field can be checked directly:
 
 $$
 \partial_t \mathbf{Q} = c\,\nabla \times \mathbf{Q}.
 $$
-
-This preserves source-free turning identically. But preservation is not
-enough. One field turning itself still recirculates locally. It does not yet
-show how energy is carried from one region into another.
 
 Take a transverse Fourier mode
 
@@ -43,24 +61,6 @@ $$
 
 The modes grow or decay instead of remaining neutral. A single real curl field
 turns, but it does not sustain transport.
-
-To obtain transport, the turning must be complementary. One field must rotate
-another:
-
-$$
-\partial_t \mathbf{E} = c\,\nabla \times \mathbf{B}, \qquad
-\partial_t \mathbf{B} = -c\,\nabla \times \mathbf{E},
-$$
-
-with
-
-$$
-\nabla\cdot\mathbf{E}=0,\qquad \nabla\cdot\mathbf{B}=0.
-$$
-
-Now each field changes by the curl of the other.
-This is the minimal real closed transport law: no sources, no action at a
-distance, no extra fields, and no higher-order operators.
 
 Apply $\partial_t$ once more. For $\mathbf{E}$,
 
