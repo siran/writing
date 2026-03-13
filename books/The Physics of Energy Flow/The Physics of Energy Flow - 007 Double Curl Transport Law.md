@@ -72,9 +72,13 @@ rotation appears as a wave equation for each aspect. For the present argument,
 the essential point is simpler: one rotation recirculates, while two
 complementary rotations transport.
 
-The two aspects form a rotating transverse frame whose mutual twist advances the
-flow. Locally the geometry is a double rotation. Globally the same motif
-appears in helical and toroidal closure.
+This is the simplest transport law built from two complementary closed turns.
+In its local ideal form it gives plane-wave transport: the same organized
+advance repeated from point to point, without yet requiring helical closure.
+One may picture the transverse frame as precessing about the local axis of
+advance, so that the forward projection remains nonzero while the transverse
+orientation oscillates. Helical and toroidal forms are global closures of the
+same local geometry.
 
 Only at this stage, after choosing conventional scale factors and absorbing
 them into the electromagnetic normalization, are the two aspects named
