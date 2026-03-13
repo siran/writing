@@ -42,24 +42,46 @@ $$
 So transport is not a gradient added to a rotation. It is a rotation of a
 rotation.
 
-The minimal first-order local way to realize that double turning is to resolve
-the fundamental flow into two complementary aspects, $\mathbf{E}$ and
-$\mathbf{B}$. Their mutual turning takes the form
+Locally, a transporting configuration of $\mathbf{F}$ can therefore be
+decomposed into an axis of advance and two complementary transverse rotations
+of the same flow. Call these two aspects
 
 $$
-\partial_t \mathbf{E} = c\,\nabla \times \mathbf{B}, \qquad
-\partial_t \mathbf{B} = -c\,\nabla \times \mathbf{E},
+\mathbf{F}_{\text{circle}}, \qquad \mathbf{F}_{\text{circledot}}.
+$$
+
+Their cross relation fixes the forward transport direction:
+
+$$
+\mathbf{F}_{\text{circle}} \times \mathbf{F}_{\text{circledot}}
+\parallel \mathbf{S}.
+$$
+
+The minimal first-order local law that realizes this double turning is
+
+$$
+\partial_t \mathbf{F}_{\text{circle}} = c\,\nabla \times \mathbf{F}_{\text{circledot}}, \qquad
+\partial_t \mathbf{F}_{\text{circledot}} = -c\,\nabla \times \mathbf{F}_{\text{circle}},
 $$
 
 with
 
 $$
-\nabla\cdot\mathbf{E}=0,\qquad \nabla\cdot\mathbf{B}=0.
+\nabla\cdot\mathbf{F}_{\text{circle}}=0,\qquad
+\nabla\cdot\mathbf{F}_{\text{circledot}}=0.
 $$
 
-Now each field changes by the curl of the other. This is the minimal real
+Now each aspect changes by the curl of the other. This is the minimal real
 closed transport law: no sources, no action at a distance, no extra fields,
 and no higher-order operators.
+
+At this point the two complementary aspects are recognized, up to the usual
+unit convention, as the fields later called
+
+$$
+\mathbf{E} \equiv \mathbf{F}_{\text{circle}}, \qquad
+\mathbf{B} \equiv \mathbf{F}_{\text{circledot}}.
+$$
 
 The contrast with a single self-curl field can be checked directly:
 
