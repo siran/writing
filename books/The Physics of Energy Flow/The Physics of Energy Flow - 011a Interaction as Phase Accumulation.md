@@ -1,12 +1,12 @@
 ---
-title: The Physics of Energy Flow – Interaction as Phase Accumulation
+title: The Physics of Energy Flow - Interaction as Phase Accumulation
 date: 2026-03-11
 ---
 
 
 # 11a. Interaction as Phase Accumulation
 
-Chapter 11 derived the free Schrödinger equation as the narrow-band envelope of
+Chapter 11 derived the free Schrodinger equation as the narrow-band envelope of
 a stable Maxwell mode. Interaction enters when that envelope propagates through
 a structured background.
 
@@ -20,9 +20,8 @@ i\hbar\,\partial_t\psi
 \right)\psi.
 $$
 
-$V$ is not a new substance or a new causal layer. It is a compact summary of
-how the background changes the phase accumulated by the envelope during
-propagation.
+$V$ is a compact summary of how the background changes the phase accumulated by
+the envelope during propagation.
 
 The propagator makes this explicit:
 
@@ -39,7 +38,7 @@ K(x,T;x_0,0)
 $$
 
 All interaction enters through the action in the exponential. The background
-does not destroy the wave. It rotates its phase.
+rotates the phase of the wave.
 
 This is especially clear in the double-slit case. If two spatial channels
 experience different interaction backgrounds, represented by $V_1$ and $V_2$,
@@ -66,9 +65,8 @@ propagation.
 
 If $V_1 = V_2$, then $\Delta\phi = 0$ and the full interference pattern is
 recovered. If the two backgrounds differ, the relative phase changes and the
-pattern changes with it. What disappears is not wave character, but coherent
-phase relation.
+pattern changes with it. What disappears is coherent phase relation.
 
 This closes the loop left open in chapter 11. The potential term in
-Schrödinger's equation does not introduce a separate ontology. It summarizes
-background interaction in the same wave-envelope dynamics.
+Schrodinger's equation summarizes background interaction in the same
+wave-envelope dynamics.
