@@ -19,8 +19,8 @@ transport, understood as a complete pattern, has no primitive endpoints. Local
 gain or loss of stored energy is still tracked by the regional accounting of
 chapter 4. What is added here is the shape of the process as a whole.
 
-Locally, the picture is circulation: flow bends, turns, and passes through
-without terminating. That is the spatial structure we now need to preserve.
+Locally, the picture is circulation. Circulation lines are closed. That is the
+spatial structure we now need to preserve.
 
 Divergence-free language is therefore not the origin of anything. It is the
 mathematical encoding of a prior physical fact: source-free flow has no
