@@ -1,10 +1,10 @@
 ---
-title: The Physics of Energy Flow - Maxwell is Minimal
+title: The Physics of Energy Flow - Double Curl Transport Law
 date: 2026-03-11
 ---
 
 
-# 7. Maxwell is Minimal
+# 7. Double Curl Transport Law
 
 Chapter 6 established that the fundamental flow $\mathbf{F}$ must evolve by
 curl if it is to preserve its divergence-free structure. That still leaves a

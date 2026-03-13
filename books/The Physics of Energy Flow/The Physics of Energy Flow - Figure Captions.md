@@ -39,7 +39,7 @@ begins or ends at isolated points.
 field turning around itself under curl evolution, with circulation maintained
 and no new endpoints introduced.
 
-## 7. Maxwell is Minimal
+## 7. Double Curl Transport Law
 
 7. Complementary electric and magnetic aspects of one advancing flow. A local
 energy flow $\mathbf{S}$ with transverse $\mathbf{E}$ and $\mathbf{B}$,
