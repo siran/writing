@@ -14,7 +14,7 @@ possible?
 A single self-curl law,
 
 $$
-\partial_t \mathbf{F} = c\,\nabla \times \mathbf{F},
+\partial_t \mathbf{F} = k\,\nabla \times \mathbf{F},
 $$
 
 preserves source-free turning. But one local rotation only recirculates the
@@ -50,8 +50,8 @@ $$
 The minimal first-order local law that realizes this double turning is
 
 $$
-\partial_t \mathbf{F}_{+} = c\,\nabla \times \mathbf{F}_{-}, \qquad
-\partial_t \mathbf{F}_{-} = -c\,\nabla \times \mathbf{F}_{+},
+\partial_t \mathbf{F}_{+} = k\,\nabla \times \mathbf{F}_{-}, \qquad
+\partial_t \mathbf{F}_{-} = -k\,\nabla \times \mathbf{F}_{+},
 $$
 
 with
@@ -68,7 +68,7 @@ and no higher-order operators.
 The contrast with a single self-curl field can be checked directly:
 
 $$
-\partial_t \mathbf{F} = c\,\nabla \times \mathbf{F}.
+\partial_t \mathbf{F} = k\,\nabla \times \mathbf{F}.
 $$
 
 Take a transverse Fourier mode
@@ -82,14 +82,14 @@ $$
 Substitution gives
 
 $$
--i\omega\,\mathbf{A}=ic\,\mathbf{k}\times\mathbf{A}.
+-i\omega\,\mathbf{A}=ik\,\mathbf{k}\times\mathbf{A}.
 $$
 
 On the transverse plane, $\mathbf{k}\times$ acts as a quarter-turn operator.
 Its eigenvalues are $\pm i|\mathbf{k}|$. Therefore
 
 $$
-\omega = \pm i\,c|\mathbf{k}|.
+\omega = \pm i\,k|\mathbf{k}|.
 $$
 
 The modes grow or decay instead of remaining neutral. A single real curl field
@@ -100,9 +100,9 @@ Apply $\partial_t$ once more. For $\mathbf{F}_{+}$,
 $$
 \partial_t^2\mathbf{F}_{+}
 =
-c\,\nabla\times(\partial_t\mathbf{F}_{-})
+k\,\nabla\times(\partial_t\mathbf{F}_{-})
 =
--c^2\,\nabla\times\nabla\times\mathbf{F}_{+}.
+-k^2\,\nabla\times\nabla\times\mathbf{F}_{+}.
 $$
 
 Using
@@ -116,20 +116,20 @@ $$
 and $\nabla\cdot\mathbf{F}_{+}=0$, we obtain
 
 $$
-\partial_t^2\mathbf{F}_{+}=c^2\nabla^2\mathbf{F}_{+}.
+\partial_t^2\mathbf{F}_{+}=k^2\nabla^2\mathbf{F}_{+}.
 $$
 
 The same argument gives
 
 $$
-\partial_t^2\mathbf{F}_{-}=c^2\nabla^2\mathbf{F}_{-}.
+\partial_t^2\mathbf{F}_{-}=k^2\nabla^2\mathbf{F}_{-}.
 $$
 
 So the double rotation does more than preserve source-free turning. It carries
 the transport forward, and in doing so it yields the wave equation:
 
 $$
-\omega^2=c^2|\mathbf{k}|^2.
+\omega^2=k^2|\mathbf{k}|^2.
 $$
 
 The two aspects form a rotating transverse frame whose mutual twist advances the
