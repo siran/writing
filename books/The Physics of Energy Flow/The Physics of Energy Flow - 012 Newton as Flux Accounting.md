@@ -6,9 +6,8 @@ date: 2026-03-11
 
 # 12. Newton as Flux Accounting
 
-Newton's second law is not a primitive law of particles pushed by forces. It is
-the integrated continuity law for momentum in a localized electromagnetic
-configuration.
+Newton's second law is the integrated continuity law for momentum in a
+localized electromagnetic configuration.
 
 Chapter 7 identified the energy flow with the Maxwell realization
 
@@ -78,8 +77,8 @@ $$
 -\int_{\partial K}\mathbf{T}\cdot\mathbf{n}\,dA.
 $$
 
-The right-hand side is what later language calls force. It is not a primitive
-agent. It is the net rate at which momentum crosses the boundary.
+The right-hand side is what later language calls force. It is the net rate at
+which momentum crosses the boundary.
 
 To connect this with motion of the object as a whole, define the energy in the
 region and its center of energy:
@@ -118,8 +117,7 @@ $$
 \mathbf{F}=\frac{d\mathbf{P}}{dt}.
 $$
 
-The law does not describe a primitive force acting on a primitive particle. It
-describes momentum bookkeeping for a bounded region of field.
+The law describes momentum bookkeeping for a bounded region of field.
 
 A mediating force field inserted between supposedly independent substrates does
 not rescue their independence. If interaction is real, a common structure is
