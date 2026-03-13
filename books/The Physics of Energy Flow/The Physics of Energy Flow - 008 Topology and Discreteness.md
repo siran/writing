@@ -36,8 +36,8 @@ $$
 \mathbf{L}=\int \mathbf{r}\times\frac{\mathbf{S}}{c^2}\,dV.
 $$
 
-Spin is this intrinsic angular momentum of the self-closing flow. It is not a
-separate property added afterward. Its sign is set by handedness: the
+Spin is this intrinsic angular momentum of the self-closing flow. Its sign is
+set by handedness: the
 orientation of the circulation relative to the direction of advance.
 Different winding classes $(m,n)$, together with that handedness, define
 different discrete spin classes.
