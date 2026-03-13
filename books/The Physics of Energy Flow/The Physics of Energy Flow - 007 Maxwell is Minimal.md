@@ -65,14 +65,6 @@ Now each aspect changes by the curl of the other. This is the minimal real
 closed transport law: no sources, no action at a distance, no extra fields,
 and no higher-order operators.
 
-At this point the two complementary aspects can be named, up to constant scale
-factors, as the fields later called
-
-$$
-\mathbf{E} \equiv \alpha\,\mathbf{F}_{+}, \qquad
-\mathbf{B} \equiv \beta\,\mathbf{F}_{-}.
-$$
-
 The contrast with a single self-curl field can be checked directly:
 
 $$
@@ -103,34 +95,34 @@ $$
 The modes grow or decay instead of remaining neutral. A single real curl field
 turns, but it does not sustain transport.
 
-Apply $\partial_t$ once more. For $\mathbf{E}$,
+Apply $\partial_t$ once more. For $\mathbf{F}_{+}$,
 
 $$
-\partial_t^2\mathbf{E}
+\partial_t^2\mathbf{F}_{+}
 =
-c\,\nabla\times(\partial_t\mathbf{B})
+c\,\nabla\times(\partial_t\mathbf{F}_{-})
 =
--c^2\,\nabla\times\nabla\times\mathbf{E}.
+-c^2\,\nabla\times\nabla\times\mathbf{F}_{+}.
 $$
 
 Using
 
 $$
-\nabla\times\nabla\times\mathbf{E}
+\nabla\times\nabla\times\mathbf{F}_{+}
 =
-\nabla(\nabla\cdot\mathbf{E})-\nabla^2\mathbf{E},
+\nabla(\nabla\cdot\mathbf{F}_{+})-\nabla^2\mathbf{F}_{+},
 $$
 
-and $\nabla\cdot\mathbf{E}=0$, we obtain
+and $\nabla\cdot\mathbf{F}_{+}=0$, we obtain
 
 $$
-\partial_t^2\mathbf{E}=c^2\nabla^2\mathbf{E}.
+\partial_t^2\mathbf{F}_{+}=c^2\nabla^2\mathbf{F}_{+}.
 $$
 
 The same argument gives
 
 $$
-\partial_t^2\mathbf{B}=c^2\nabla^2\mathbf{B}.
+\partial_t^2\mathbf{F}_{-}=c^2\nabla^2\mathbf{F}_{-}.
 $$
 
 So the double rotation does more than preserve source-free turning. It carries
@@ -140,20 +132,30 @@ $$
 \omega^2=c^2|\mathbf{k}|^2.
 $$
 
-$\mathbf{E}$ and $\mathbf{B}$ are not two substances. They are two
-complementary aspects of the same organized flow $\mathbf{F}$. Their cross
-relation fixes the local direction of transport:
+The two aspects form a rotating transverse frame whose mutual twist advances the
+flow. Locally the geometry is a double rotation. Globally the same motif
+appears in helical and toroidal closure.
+
+Only at this stage, after choosing conventional scale factors and absorbing
+them into the electromagnetic normalization, are the two aspects named
+
+$$
+\mathbf{E} \equiv k_{+}\,\mathbf{F}_{+}, \qquad
+\mathbf{B} \equiv k_{-}\,\mathbf{F}_{-}.
+$$
+
+They are not two substances. They are two complementary aspects of the same
+organized flow $\mathbf{F}$. Their cross relation fixes the local direction of
+transport:
 
 $$
 \mathbf{E}\cdot\mathbf{B}=0,\qquad
 \mathbf{E}\times\mathbf{B}\parallel\mathbf{S}.
 $$
 
-The two fields form a rotating transverse frame whose mutual twist advances the
-flow. Locally the geometry is a double rotation. Globally the same motif
-appears in helical and toroidal closure.
-
-Only at this stage can the energy flow be written in Maxwell form:
+The scale choices are then absorbed into the usual constitutive constants
+$\varepsilon_0$ and $\mu_0$, and the energy flow can be written in Maxwell
+form:
 
 $$
 \mathbf{S}=\frac{1}{\mu_0}\,\mathbf{E}\times\mathbf{B}.
