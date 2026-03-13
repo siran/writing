@@ -5,9 +5,9 @@ date: 2026-03-11
 
 # 5. Divergence-Free Flow
 
-Regional conservation uses the flow $\mathbf{S}$, but it does not yet tell
-us what shape the reorganization takes when understood as a complete process
-rather than region by region numerical accounting.
+Regional conservation uses the flow $\mathbf{S}$. It gives region by region
+numerical accounting. The shape of the reorganization as a complete process
+comes next.
 
 In empty space, a source-free transport cannot begin or end at an isolated
 point. If energy leaves one small region, it must pass into another
