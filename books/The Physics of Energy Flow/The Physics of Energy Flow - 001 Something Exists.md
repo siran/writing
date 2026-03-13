@@ -22,12 +22,12 @@ The name we give to $u$ is *energy*.
 
 If apparently distinct things exist and interact, they are not fundamentally
 independent substances. They are configurations of $u$. Interaction is
-therefore between $u$ and itself.
+therefore always only between $u$ and itself.
 
 In this book, $u$ names that one interacting substance: all that physically
 exists.[^existence] This single assumption - that something real is present as a
 nonnegative magnitude across its extent - is the ontological foundation of
-everything that follows. Nothing more primitive is assumed.
+all known physics. Nothing more primitive is assumed in what follows.
 
 [^existence]: There cannot, by definition, be another kind of existence if it
     is to interact with the physical.
