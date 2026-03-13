@@ -11,8 +11,8 @@ rather than region by region numerical accounting.
 
 In empty space, a source-free transport cannot begin or end at an isolated
 point. If energy leaves one small region, it must pass into another
-neighboring one. Looked at as a whole, the transport forms connected lines of
-passage rather than disconnected starts and stops.
+neighboring one. Looked at as a whole, the transport forms closed loops rather
+than disconnected starts and stops.
 
 This is the geometric content of calling the flow divergence-free. Source-free
 transport, understood as a complete pattern, has no primitive endpoints. Local
