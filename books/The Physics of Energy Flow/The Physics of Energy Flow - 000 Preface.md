@@ -12,9 +12,9 @@ things to interact, they must share something that can be mutually affected.
 The fact that we register interaction at all implies a shared substrate.
 We call it **energy**.
 
-What is inaccessible is not the existence of that substrate, but its nature
-in itself. We do not observe energy directly. By registering its effects, we
-infer its quantity, its organization, and its continuous flow.
+We do not observe energy directly. By registering its effects, we infer its
+existence, its quantity, its organization, and its continuous flow. What
+remains inaccessible is its nature in itself.
 
 This is not a limitation to be overcome. What we have access to is the
 consequence of its flow. And it turns out that is enough.
