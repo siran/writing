@@ -21,7 +21,7 @@ Continuity gives local accounting. We now explore what it implies for the
 shape of energy reorganization as a complete process.
 
 Although $\mathbf{S}$ handles a directional accounting of how energy is
-transported, even taken as a whole it still fails to reveal the structure of
+transported, even when taken as a whole it still fails to reveal the structure of
 that transport. The next chapters develop that structure.
 
 We next consider the transport of energy across empty space.
