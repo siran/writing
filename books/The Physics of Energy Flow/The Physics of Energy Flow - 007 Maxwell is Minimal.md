@@ -47,9 +47,6 @@ $$
 \mathbf{F}_{+}, \qquad \mathbf{F}_{-}.
 $$
 
-These are not yet new fields. They are a local way of expressing the two
-complementary rotational freedoms of $\mathbf{F}$.
-
 The minimal first-order local law that realizes this double turning is
 
 $$
@@ -68,12 +65,12 @@ Now each aspect changes by the curl of the other. This is the minimal real
 closed transport law: no sources, no action at a distance, no extra fields,
 and no higher-order operators.
 
-At this point the two complementary aspects are recognized, up to the usual
-unit convention, as the fields later called
+At this point the two complementary aspects can be named, up to constant scale
+factors, as the fields later called
 
 $$
-\mathbf{E} \equiv \mathbf{F}_{+}, \qquad
-\mathbf{B} \equiv \mathbf{F}_{-}.
+\mathbf{E} \equiv \alpha\,\mathbf{F}_{+}, \qquad
+\mathbf{B} \equiv \beta\,\mathbf{F}_{-}.
 $$
 
 The contrast with a single self-curl field can be checked directly:
