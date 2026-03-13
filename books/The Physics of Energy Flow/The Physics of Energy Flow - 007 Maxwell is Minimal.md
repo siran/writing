@@ -39,23 +39,16 @@ $$
 \nabla \times (\nabla \times \mathbf{F}) = -\nabla^2 \mathbf{F}.
 $$
 
-So transport is not a gradient added to a rotation. It is a rotation of a
-rotation.
-
 Locally, a transporting configuration of $\mathbf{F}$ can therefore be
-decomposed into an axis of advance and two complementary transverse rotations
-of the same flow. Call these two aspects
+expressed by an axis of advance together with two complementary transverse
+degrees of freedom of the same flow. Call these two aspects
 
 $$
 \mathbf{F}_{\text{circle}}, \qquad \mathbf{F}_{\text{circledot}}.
 $$
 
-Their cross relation fixes the forward transport direction:
-
-$$
-\mathbf{F}_{\text{circle}} \times \mathbf{F}_{\text{circledot}}
-\parallel \mathbf{S}.
-$$
+These are not yet new fields. They are a local way of expressing the two
+complementary rotational freedoms of $\mathbf{F}$.
 
 The minimal first-order local law that realizes this double turning is
 
