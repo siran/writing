@@ -13,7 +13,8 @@ The fact that we register interaction at all implies a shared substrate.
 Throughout this book, we call that substrate **energy**.
 
 All that is required to recover known physics is the concept of energy.
-Static energy would be inert and could not be experienced. What
+Static energy, in the sense developed in what follows, would be inert and
+could not be experienced. What
 reaches us are the effects of its redistribution. By registering those
 effects, as in experiment, we infer its continuous flow.
 
