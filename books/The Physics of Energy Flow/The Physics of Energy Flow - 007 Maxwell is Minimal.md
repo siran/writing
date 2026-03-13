@@ -8,7 +8,7 @@ date: 2026-03-11
 
 Chapter 6 established that source-free flow must evolve by curl if it is to
 preserve its divergence-free structure. That still leaves a narrower question:
-what is the simplest curl-based law that gives stable propagation?
+what is the simplest curl-based law that makes transport possible?
 
 The first attempt is a single self-curl field:
 
@@ -17,10 +17,10 @@ $$
 $$
 
 This preserves source-free turning identically. But preservation is not
-enough. The transport must also carry energy from one region into another in a
-bounded way.
+enough. One field turning itself still recirculates locally. It does not yet
+show how energy is carried from one region into another.
 
-Take a transverse plane-wave mode
+Take a transverse Fourier mode
 
 $$
 \mathbf{Q}(\mathbf{r},t)=\mathbf{A}\,e^{i(\mathbf{k}\cdot\mathbf{r}-\omega t)},
@@ -41,11 +41,11 @@ $$
 \omega = \pm i\,c|\mathbf{k}|.
 $$
 
-The modes grow or decay instead of oscillating. A single real curl field turns,
-but it does not yield neutral propagation.
+The modes grow or decay instead of remaining neutral. A single real curl field
+turns, but it does not sustain transport.
 
-To obtain bounded advance, the turning must be complementary. One field must
-rotate another:
+To obtain transport, the turning must be complementary. One field must rotate
+another:
 
 $$
 \partial_t \mathbf{E} = c\,\nabla \times \mathbf{B}, \qquad
@@ -59,7 +59,7 @@ $$
 $$
 
 Now each field changes by the curl of the other.
-This is the minimal real closed propagation law: no sources, no action at a
+This is the minimal real closed transport law: no sources, no action at a
 distance, no extra fields, and no higher-order operators.
 
 Apply $\partial_t$ once more. For $\mathbf{E}$,
@@ -92,7 +92,8 @@ $$
 \partial_t^2\mathbf{B}=c^2\nabla^2\mathbf{B}.
 $$
 
-So the coupled system produces genuine wave propagation, with
+So the double rotation does more than preserve source-free turning. It carries
+the transport forward, and in doing so it yields the wave equation:
 
 $$
 \omega^2=c^2|\mathbf{k}|^2.
