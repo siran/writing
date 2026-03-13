@@ -10,15 +10,6 @@ the flow of energy without introducing primitive endpoints. We therefore ask
 what kinds of local update can reorganize $\mathbf{F}$ while keeping it
 source-free.
 
-A purely algebraic change, such as rescaling
-
-$$
-\mathbf{F} \mapsto \lambda \mathbf{F},
-$$
-
-can strengthen or weaken an existing flow, but it does not explain how the flow
-turns or reorganizes in space.
-
 To express more precisely the idea of accounting for flow across a boundary,
 take any region $V$ with closed boundary $\partial V$. Gauss's
 theorem gives
@@ -34,6 +25,16 @@ In the source-free case, every such boundary must give zero net flow. No
 separate charges, masses, sources, or sinks are inserted into the accounting:
 there is only energy being transported. The divergence must therefore remain
 identically zero.
+
+A purely algebraic change, such as rescaling
+
+$$
+\mathbf{F} \mapsto \lambda \mathbf{F},
+$$
+
+can strengthen or weaken what is already there, but it does not explain how
+the flow turns or reorganizes in space. It leaves zeros where they are and
+adds no new spatial structure.
 
 A gradient-type update does introduce spatial structure:
 
