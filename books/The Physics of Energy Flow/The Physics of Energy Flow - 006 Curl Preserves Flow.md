@@ -31,8 +31,10 @@ $$
 \nabla \cdot (\Delta \mathbf{S}) = \nabla^2 \phi,
 $$
 
-which is generally nonzero. Such an update can compress, expand, begin, or end
-the transport. It does not preserve source-free reorganization.
+Divergence measures whether transport begins or ends locally. In the
+source-free case it must therefore remain identically zero. Here it is
+generally nonzero. Such an update can compress, expand, begin, or end the
+transport. It does not preserve source-free reorganization.
 
 The remaining possibility is local turning. In three dimensions, take
 
