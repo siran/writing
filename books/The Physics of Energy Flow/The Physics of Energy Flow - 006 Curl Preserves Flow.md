@@ -19,8 +19,8 @@ $$
 can strengthen or weaken an existing flow, but it does not explain how the
 flow turns or reorganizes in space.
 
-To say this more precisely, take any region $V$ with closed boundary
-$\partial V$. Gauss's theorem gives
+To express more precisely the idea of accounting for flow across a boundary,
+take any region $V$ with closed boundary $\partial V$. Gauss's theorem gives
 
 $$
 \int_V \nabla \cdot (\Delta \mathbf{S})\,dV
@@ -28,10 +28,11 @@ $$
 \oint_{\partial V} \Delta \mathbf{S} \cdot d\mathbf{A}.
 $$
 
-So divergence measures the net transport across a closed boundary. If it is
-nonzero, more flow leaves than enters, or more enters than leaves. In that
-case the transport behaves locally like a source or a sink. In the source-free
-case it must therefore remain identically zero.
+This says that divergence measures the net transport across a closed boundary.
+In the source-free case, every such boundary must give zero net flow. No
+separate charges, masses, sources, or sinks are inserted into the accounting:
+there is only energy being transported. The divergence must therefore remain
+identically zero.
 
 A gradient-type update does introduce spatial structure:
 
