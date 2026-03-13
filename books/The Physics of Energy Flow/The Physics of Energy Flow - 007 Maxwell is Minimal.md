@@ -6,16 +6,25 @@ date: 2026-03-11
 
 # 7. Maxwell is Minimal
 
-Chapter 6 established that source-free flow must evolve by curl if it is to
-preserve its divergence-free structure. That still leaves a narrower question:
-what is the simplest curl-based law that makes transport possible?
+Chapter 6 established that the fundamental flow $\mathbf{F}$ must evolve by
+curl if it is to preserve its divergence-free structure. That still leaves a
+narrower question: what is the simplest curl-based law that makes transport
+possible?
 
-A single local rotation only recirculates the flow. It turns the structure
-around itself, but it does not yet carry energy from one region into another.
-Transport requires a second, complementary rotation. A point rotated once
-circulates. Rotated twice in a complementary way, it advances.
+A single self-curl law,
 
-That complementary turning takes the form
+$$
+\partial_t \mathbf{F} = c\,\nabla \times \mathbf{F},
+$$
+
+preserves source-free turning. But one local rotation only recirculates the
+flow. It turns the structure around itself, but it does not yet carry energy
+from one region into another. Transport requires a second, complementary
+rotation. A point rotated once circulates. Rotated twice in a complementary
+way, it advances.
+
+The fundamental flow is therefore resolved locally into two complementary
+aspects, $\mathbf{E}$ and $\mathbf{B}$. Their mutual turning takes the form
 
 $$
 \partial_t \mathbf{E} = c\,\nabla \times \mathbf{B}, \qquad
@@ -35,13 +44,13 @@ and no higher-order operators.
 The contrast with a single self-curl field can be checked directly:
 
 $$
-\partial_t \mathbf{Q} = c\,\nabla \times \mathbf{Q}.
+\partial_t \mathbf{F} = c\,\nabla \times \mathbf{F}.
 $$
 
 Take a transverse Fourier mode
 
 $$
-\mathbf{Q}(\mathbf{r},t)=\mathbf{A}\,e^{i(\mathbf{k}\cdot\mathbf{r}-\omega t)},
+\mathbf{F}(\mathbf{r},t)=\mathbf{A}\,e^{i(\mathbf{k}\cdot\mathbf{r}-\omega t)},
 \qquad
 \mathbf{k}\cdot\mathbf{A}=0.
 $$
@@ -100,8 +109,8 @@ $$
 $$
 
 $\mathbf{E}$ and $\mathbf{B}$ are not two substances. They are two
-complementary rotational aspects of one organized flow. Their cross relation
-fixes the local direction of transport:
+complementary aspects of the same organized flow $\mathbf{F}$. Their cross
+relation fixes the local direction of transport:
 
 $$
 \mathbf{E}\cdot\mathbf{B}=0,\qquad
@@ -118,7 +127,7 @@ $$
 \mathbf{S}=\frac{1}{\mu_0}\,\mathbf{E}\times\mathbf{B}.
 $$
 
-Maxwell theory appears here as the minimal two-field closure of source-free
+Maxwell theory appears here as the minimal two-aspect closure of source-free
 rotational transport.
 
 Minimal does not mean unique. It means the weakest local closure that actually
@@ -134,5 +143,5 @@ This reflects the complementary status of the two fields within one transport
 law. The symmetry does not collapse
 $\mathbf{E}$ and $\mathbf{B}$ into a single field, and it does not erase
 their distinct roles in a given solution. In a propagating configuration they
-remain two transverse aspects of one organized flow, whose cross relation
-determines the direction of transport.
+remain two transverse aspects of the same organized flow $\mathbf{F}$, whose
+cross relation determines the direction of transport.
