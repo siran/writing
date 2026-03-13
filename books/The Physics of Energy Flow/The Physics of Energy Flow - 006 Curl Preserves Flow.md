@@ -7,12 +7,13 @@ date: 2026-03-11
 
 To preserve the source-free character of transport, local evolution must allow
 the flow of energy without introducing primitive endpoints. We therefore ask
-what kinds of local update can reorganize a flow while keeping it source-free.
+what kinds of local update can reorganize $\mathbf{F}$ while keeping it
+source-free.
 
 A purely algebraic change, such as rescaling
 
 $$
-\mathbf{S} \mapsto \lambda \mathbf{S},
+\mathbf{F} \mapsto \lambda \mathbf{F},
 $$
 
 can strengthen or weaken an existing flow, but it does not explain how the flow
@@ -23,9 +24,9 @@ take any region $V$ with closed boundary $\partial V$. Gauss's
 theorem gives
 
 $$
-\int_V \nabla \cdot (\Delta \mathbf{S})\,dV
+\int_V \nabla \cdot (\Delta \mathbf{F})\,dV
 =
-\oint_{\partial V} \Delta \mathbf{S} \cdot d\mathbf{A}.
+\oint_{\partial V} \Delta \mathbf{F} \cdot d\mathbf{A}.
 $$
 
 This says that divergence measures the net transport across a closed boundary.
@@ -37,13 +38,13 @@ identically zero.
 A gradient-type update does introduce spatial structure:
 
 $$
-\Delta \mathbf{S} = \nabla \phi.
+\Delta \mathbf{F} = \nabla \phi.
 $$
 
 But then
 
 $$
-\nabla \cdot (\Delta \mathbf{S}) = \nabla^2 \phi,
+\nabla \cdot (\Delta \mathbf{F}) = \nabla^2 \phi,
 $$
 
 which is generally nonzero. Such an update can compress, expand, begin, or end
@@ -53,7 +54,9 @@ What does preserve the source-free condition identically is curl. For any
 vector field $\mathbf{A}$,
 
 $$
-\nabla \cdot (\nabla \times \mathbf{A}) = 0.
+\Delta \mathbf{F} = \nabla \times \mathbf{A}
+\qquad\Longrightarrow\qquad
+\nabla \cdot (\Delta \mathbf{F}) = 0.
 $$
 
 In three dimensions, write
@@ -77,7 +80,7 @@ $$
 and therefore
 
 $$
-\nabla \cdot (\nabla \times \mathbf{A})
+\nabla \cdot (\Delta \mathbf{F})
 =
 \partial_x\partial_y A_z - \partial_x\partial_z A_y
 + \partial_y\partial_z A_x - \partial_y\partial_x A_z
