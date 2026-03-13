@@ -10,11 +10,12 @@ There is an old observation, so obvious it is easy to overlook: for two
 things to interact, they must share something that can be mutually affected.
 
 The fact that we register interaction at all implies a shared substrate.
-We call it **energy**.
+Throughout this book, we call that substrate **energy**.
 
-We do not observe energy directly. By registering its effects, we infer its
-existence, its quantity, its organization, and its continuous flow. What
-remains inaccessible is its nature in itself.
+All that is required to recover known physics is the concept of energy.
+Static energy would be inert and could not be experienced. What
+reaches us are the effects of its redistribution. By registering those
+effects, as in experiment, we infer its continuous flow.
 
 This is not a limitation to be overcome. What we have access to is the
 consequence of its flow. And it turns out that is enough.
