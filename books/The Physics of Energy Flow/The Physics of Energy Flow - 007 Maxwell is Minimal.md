@@ -23,8 +23,28 @@ from one region into another. Transport requires a second, complementary
 rotation. A point rotated once circulates. Rotated twice in a complementary
 way, it advances.
 
-The fundamental flow is therefore resolved locally into two complementary
-aspects, $\mathbf{E}$ and $\mathbf{B}$. Their mutual turning takes the form
+A second step cannot be a gradient, because chapter 6 already showed that a
+gradient update generically introduces divergence. The next admissible
+possibility is therefore a second source-free rotation:
+
+$$
+\nabla \times (\nabla \times \mathbf{F}).
+$$
+
+In the source-free case,
+
+$$
+\nabla \cdot \mathbf{F} = 0
+\qquad\Longrightarrow\qquad
+\nabla \times (\nabla \times \mathbf{F}) = -\nabla^2 \mathbf{F}.
+$$
+
+So transport is not a gradient added to a rotation. It is a rotation of a
+rotation.
+
+The minimal first-order local way to realize that double turning is to resolve
+the fundamental flow into two complementary aspects, $\mathbf{E}$ and
+$\mathbf{B}$. Their mutual turning takes the form
 
 $$
 \partial_t \mathbf{E} = c\,\nabla \times \mathbf{B}, \qquad
