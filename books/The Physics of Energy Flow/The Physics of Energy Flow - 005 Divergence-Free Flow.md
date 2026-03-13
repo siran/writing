@@ -20,7 +20,8 @@ gain or loss of stored energy is still tracked by the regional accounting of
 chapter 4. What is added here is the shape of the process as a whole.
 
 Locally, the picture is circulation. Circulation lines are closed. The next
-question is what local evolution preserves that structure.
+question is how local evolution must be described in order to preserve this
+source-free structure.
 
 Divergence-free language is therefore not the origin of anything. It is the
 mathematical encoding of a prior physical fact: source-free flow has no
