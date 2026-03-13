@@ -1,15 +1,15 @@
 ---
-title: The Physics of Energy Flow – Schrödinger as Narrow-Band Maxwell
+title: The Physics of Energy Flow - Schrodinger as Narrow-Band Maxwell
 date: 2026-03-11
 ---
 
 
-# 11. Schrödinger as Narrow-Band Maxwell
+# 11. Schrodinger as Narrow-Band Maxwell
 
-The Schrödinger equation is not introduced here as a new ontology. It appears
-as a controlled envelope limit of Maxwell transport. Chapters 8 and 9 already
-gave two things needed for that limit: discrete stable modes and an emergent
-mass scale. The remaining task is to describe slow modulation of one such mode.
+The Schrodinger equation appears here as a controlled envelope limit of
+Maxwell transport. Chapters 8 and 9 already gave two things needed for that
+limit: discrete stable modes and an emergent mass scale. The remaining task is
+to describe slow modulation of one such mode.
 
 Each Cartesian component $F(\mathbf{r},t)$ of $\mathbf{E}$ or $\mathbf{B}$
 satisfies the vacuum wave equation:
@@ -44,7 +44,7 @@ i\partial_t\psi
 $$
 
 The last term is the difference between exact Maxwell transport and the
-Schrödinger limit. For spectral width $\Delta\omega$, it is controlled by
+Schrodinger limit. For spectral width $\Delta\omega$, it is controlled by
 
 $$
 \left\|\frac{1}{2\omega_0 c^2}\partial_t^2\psi\right\|
@@ -85,17 +85,17 @@ i\hbar\,\partial_t\psi
 +O(\varepsilon^2).
 $$
 
-This is the free Schrödinger equation. It is not postulated. It is the
-narrow-band envelope equation of a stable Maxwell mode.
+This is the free Schrodinger equation. It arises as the narrow-band envelope
+equation of a stable Maxwell mode.
 
-The interaction case does not require a second ontology either. In structured
-backgrounds, the envelope accumulates additional region-dependent phase. The
-double-slit treatment later represents such interaction regions by localized
-potentials $V_j$ that rotate the relative phase of the propagation channels.
-The potential term is therefore a summary of background interaction in the same
-envelope dynamics, not a primitive new ingredient. This chapter, however,
-derives only the free narrow-band case.
+The interaction case uses the same ontology. In structured backgrounds, the
+envelope accumulates additional region-dependent phase. The double-slit
+treatment later represents such interaction regions by localized potentials
+$V_j$ that rotate the relative phase of the propagation channels. The
+potential term is therefore a summary of background interaction in the same
+envelope dynamics. This chapter, however, derives only the free narrow-band
+case.
 
 Superposition, interference, and uncertainty enter because the envelope remains
 a wave field. Quantum mechanics is the effective theory of slowly varying
-Maxwell envelopes, not a separate layer of reality.
+Maxwell envelopes.
