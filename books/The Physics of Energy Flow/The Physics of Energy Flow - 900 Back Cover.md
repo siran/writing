@@ -16,7 +16,7 @@ must follow if energy exists, flows, closes, and organizes.
 The result is a reconstruction in which Maxwell dynamics is the minimal
 local law of transport, quantization begins as topological closure, mass is
 trapped energy, force is bookkeeping for momentum transfer, and gravity is
-refraction rather than curvature of a separate geometric substance.
+refraction.
 
 This is not a denial of mathematics. It is a refusal to mistake mathematical
 maps for the territory they describe.
