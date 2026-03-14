@@ -51,9 +51,9 @@ $$
 \nabla \times (\nabla \times \mathbf{F}) = -\nabla^2 \mathbf{F}.
 $$
 
-So a double curl of a source-free flow reduces to the spatial Laplacian of the
-field, up to sign. This is the step that later yields a wave equation for each
-complementary aspect, as made explicit in Appendix 203.
+So a double curl of a source-free flow reduces exactly to minus the spatial
+Laplacian of the field. This is the step that later yields a wave equation for
+each complementary aspect, as made explicit in Appendix 203.
 
 Locally, a transporting configuration of $\mathbf{F}$ can therefore be
 expressed by an axis of advance together with two complementary transverse

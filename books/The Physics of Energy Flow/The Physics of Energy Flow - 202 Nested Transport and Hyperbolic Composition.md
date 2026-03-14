@@ -16,19 +16,21 @@ again acts on field structure. It produces a higher spatial operator. It does
 not by itself describe one transport riding on another.
 
 Nested transport belongs to kinematics, not to repeated application of the
-field operator. The question is this: if one transport process is nested inside
-another, and both respect the same invariant transport speed $k$, what is the
+field operator. For a given approximately uniform region, let $k$ denote the
+local transport speed singled out there by the electromagnetic closure. The
+question is this: if one transport process is nested inside another, and both
+are described within a region where the same local $k$ applies, what is the
 resulting law of composition?
 
-For clarity, consider one spatial direction $x$. The invariant transport speed
-$k$ means that the distinguished transport lines are
+For clarity, consider one spatial direction $x$. In such a region, the local
+transport speed $k$ means that the distinguished transport lines are
 
 $$
 x = \pm kt.
 $$
 
-These are the boundaries of the transport cone. Any admissible change of frame
-must preserve them.
+These are the boundaries of the local transport cone. Any admissible change of
+frame within that region must preserve them.
 
 Assume two frames are related by uniform relative motion along $x$. Because the
 transport background is homogeneous, the change of coordinates must be linear.
@@ -148,10 +150,11 @@ So the distinction is exact:
 
 - double curl organizes source-free transport locally
 - repeated double curl changes field structure
-- nested transport composes moving frames that preserve the same transport cone
+- nested transport composes moving frames that preserve the same local
+  transport cone
 - preserving that cone forces hyperbolic composition
 
 The train-and-passenger image is therefore valid, but only at the kinematic
 level. One transport process may be nested inside another. The resulting
-composition is hyperbolic because the same invariant transport speed $k$ is
+composition is hyperbolic because the same local transport speed $k$ is
 preserved at each level.

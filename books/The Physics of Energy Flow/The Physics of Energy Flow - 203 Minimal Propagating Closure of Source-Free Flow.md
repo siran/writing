@@ -32,7 +32,10 @@ $$
 \nabla \cdot \mathbf{F} = 0.
 $$
 
-This expresses the absence of primitive beginnings or endings of the flow.
+This expresses the absence of primitive beginnings or endings of the flow. If a
+primitive start or end point were enclosed by a closed surface, the net flux
+through that surface would not vanish. The source-free condition says that this
+does not happen: the enclosed net flow remains identically zero.
 
 ## 203.2 Divergence Preservation Under Evolution
 
@@ -129,10 +132,10 @@ $$
 
 This is not the neutral propagating wave equation, in which the second
 temporal derivative term and the spatial Laplacian term appear with opposite
-signs. A single self-curl evolution therefore does not by itself furnish the
-propagating closure we seek. It preserves turning, but the second-order
-relation has the wrong relative sign between the temporal and spatial
-derivative terms for neutral propagation.
+signs. Here both second-order terms enter with the same sign. A single
+self-curl evolution therefore does not by itself furnish the propagating
+closure we seek. It preserves turning, but it does not produce the neutral
+propagating form.
 
 ## 203.4 Coupled Curl Evolution
 
@@ -202,9 +205,9 @@ The same derivation holds for $\mathbf{F}_-$.
 
 The analysis shows:
 
-- a single divergence-preserving self-curl evolution yields the wrong
-  relative sign between the temporal and spatial derivative terms for neutral
-  propagation
+- a single divergence-preserving self-curl evolution makes the temporal and
+  spatial second-order terms enter with the same sign, not the neutral
+  propagating form
 - two coupled curl evolutions do yield neutral wave propagation
 
 So the minimal propagating closure in this class is
@@ -259,8 +262,8 @@ compatible with divergence-free flow.
 Starting from divergence-free transport:
 
 - curl preserves the source-free condition
-- a single self-curl evolution gives the wrong relative sign between the
-  temporal and spatial derivative terms for neutral propagation
+- a single self-curl evolution makes the temporal and spatial second-order
+  terms enter with the same sign, not the neutral propagating form
 - two coupled curl evolutions yield neutral wave propagation
 - the resulting equations coincide with the source-free Maxwell system
 
