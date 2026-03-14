@@ -6,8 +6,8 @@ date: 2026-03-11
 
 # 12. Newton as Flux Accounting
 
-Newton's second law is the integrated continuity law for momentum in a
-localized electromagnetic configuration.
+Newton's second law is the integrated continuity law for momentum in a nearly
+stable localized electromagnetic configuration.
 
 Chapter 7 identified the energy flow with the Maxwell realization
 
@@ -63,7 +63,8 @@ $$
 This is the momentum analogue of Poynting's theorem. Momentum does not appear or
 disappear. It changes only by flux through the boundary of a region.
 
-Integrate over a localized region $K$ containing a stable configuration:
+Integrate over a localized region $K$ containing a nearly stable bounded
+configuration:
 
 $$
 \mathbf{P}_K=\int_K \mathbf{g}\,d^3x.
@@ -89,7 +90,7 @@ E_K=\int_K u\,d^3x,
 \mathbf{X}_K=\frac{1}{E_K}\int_K \mathbf{x}\,u\,d^3x.
 $$
 
-When boundary leakage is small,
+When boundary leakage is small and the mode remains coherent,
 
 $$
 E_K\,\dot{\mathbf{X}}_K \approx \int_K \mathbf{S}\,d^3x,
@@ -97,7 +98,7 @@ E_K\,\dot{\mathbf{X}}_K \approx \int_K \mathbf{S}\,d^3x,
 \mathbf{P}_K \approx \frac{E_K}{c^2}\dot{\mathbf{X}}_K.
 $$
 
-Define
+For such a bounded configuration, define the effective inertial mass
 
 $$
 m_K := \frac{E_K}{c^2}.
@@ -111,17 +112,17 @@ m_K\,\ddot{\mathbf{X}}_K
 -\int_{\partial K}\mathbf{T}\cdot\mathbf{n}\,dA.
 $$
 
-This is Newton's second law in its proper form:
+This is Newton's second law in its effective form for a stable bounded mode:
 
 $$
 \mathbf{F}=\frac{d\mathbf{P}}{dt}.
 $$
 
-The law describes momentum bookkeeping for a bounded region of field.
+It describes momentum bookkeeping for a bounded region of field.
 
 A mediating force field inserted between supposedly independent substrates does
 not rescue their independence. If interaction is real, a common structure is
 already present, and force is only the accounting of that coupling.
 
-Particles are localized regions. Forces are boundary integrals. Newton's law is
-momentum continuity applied to a stable electromagnetic knot.
+Particles are localized regions. Forces are boundary integrals. Newton's second
+law is momentum continuity applied to a stable electromagnetic knot.

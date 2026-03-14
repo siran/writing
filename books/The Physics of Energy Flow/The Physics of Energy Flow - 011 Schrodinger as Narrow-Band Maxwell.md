@@ -11,18 +11,18 @@ Maxwell transport. Chapters 8 and 9 already gave two things needed for that
 limit: discrete stable modes and an emergent mass scale. The remaining task is
 to describe slow modulation of one such mode.
 
-Each Cartesian component $F(\mathbf{r},t)$ of $\mathbf{E}$ or $\mathbf{B}$
+Each Cartesian component $f(\mathbf{r},t)$ of $\mathbf{E}$ or $\mathbf{B}$
 satisfies the vacuum wave equation:
 
 $$
-\left(\nabla^2-\frac{1}{c^2}\partial_t^2\right)F=0.
+\left(\nabla^2-\frac{1}{c^2}\partial_t^2\right)f=0.
 $$
 
 Select the positive-frequency part of the field near a stable carrier frequency
 $\omega_0$, and demodulate the carrier:
 
 $$
-\psi(\mathbf{r},t)=e^{i\omega_0 t}F^{(+)}(\mathbf{r},t).
+\psi(\mathbf{r},t)=e^{i\omega_0 t}f^{(+)}(\mathbf{r},t).
 $$
 
 The field is narrow-band when

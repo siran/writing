@@ -19,16 +19,18 @@ fixed total circulation, with winding numbers $(m, n)$ characterizing the
 closed flow. The total is conserved. Now enclose the configuration in a sphere
 of radius $r$ much larger than the torus. The sphere's area is $4\pi r^2$.
 
-A fixed quantity, spread over a growing area, produces an intensity that
-falls as:
+A fixed quantity, spread over a growing area, produces an average projected
+intensity that falls as:
 
 $$
 \text{Intensity} \propto \frac{1}{r^2}.
 $$
 
-This yields the Coulomb form from projection geometry. Charge is the name we
-give to the conserved quantity whose projection we are measuring.
+This yields the inverse-square far-field scaling from projection geometry.
+Charge is the name we give to the conserved quantity whose projection we are
+measuring.
 
-Opposite charge signs correspond to opposite senses of winding. Their
-interaction is then described without introducing any primitive action at a
-distance.
+Opposite charge signs correspond to opposite senses of winding. The present
+chapter identifies the geometric far-field character of charge. The detailed
+interaction between such configurations belongs later, when momentum transfer
+and flux accounting are made explicit.

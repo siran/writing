@@ -28,7 +28,7 @@ therefore a concentrated background organization of electromagnetic energy
 flow. A passing field perturbs that background, and the background response
 contributes a secondary electromagnetic field. In chapter 7, $\mathbf{E}$ and
 $\mathbf{B}$ were identified as complementary aspects of one organized flow.
-For that reason a perturbation of the background shifts both constitutive
+The constitutive closure adopted here therefore shifts both constitutive
 channels together:
 
 $$
@@ -64,8 +64,8 @@ n(r)=\frac{c}{c_\text{local}(r)}
 $$
 
 If only one constitutive channel were perturbed, this first-order shift would
-be halved, giving the Newtonian half-value. The factor of two is forced by the
-ontology: a full electromagnetic medium.
+be halved, giving the Newtonian half-value. Within this symmetric
+electromagnetic constitutive closure, the full factor of two follows.
 
 In optics, when a wave propagates through a medium of varying speed, it bends
 toward the slower region. This is refraction.
