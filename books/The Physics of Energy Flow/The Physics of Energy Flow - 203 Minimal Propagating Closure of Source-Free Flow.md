@@ -130,7 +130,8 @@ $$
 This is not the neutral propagating wave equation, whose time and space terms
 appear with opposite signs. A single self-curl evolution therefore does not by
 itself furnish the propagating closure we seek. It preserves turning, but the
-second-order relation has the wrong sign for neutral propagation.
+second-order relation has the wrong relative sign between its time and space
+terms for neutral propagation.
 
 ## 203.4 Coupled Curl Evolution
 
@@ -201,7 +202,7 @@ The same derivation holds for $\mathbf{F}_-$.
 The analysis shows:
 
 - a single divergence-preserving self-curl evolution yields the wrong
-  second-order sign for neutral propagation
+  relative sign between time and space terms for neutral propagation
 - two coupled curl evolutions do yield neutral wave propagation
 
 So the minimal propagating closure in this class is
@@ -256,8 +257,8 @@ compatible with divergence-free flow.
 Starting from divergence-free transport:
 
 - curl preserves the source-free condition
-- a single self-curl evolution gives the wrong second-order sign for neutral
-  propagation
+- a single self-curl evolution gives the wrong relative sign between time and
+  space terms for neutral propagation
 - two coupled curl evolutions yield neutral wave propagation
 - the resulting equations coincide with the source-free Maxwell system
 
