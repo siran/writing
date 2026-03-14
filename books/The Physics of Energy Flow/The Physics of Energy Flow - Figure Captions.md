@@ -73,8 +73,9 @@ circulation must reorganize when its motion changes.
 ## 10. Charge as Circulation
 
 13. Near field and far field of a circulating toroidal configuration. Detailed
-closed local flow near the torus, transitioning at large distance to an
-spherically spreading inverse-square projection.
+closed local flow near the torus, with a signed through-hole flux across the
+torus aperture, transitioning at large distance to a spherically spreading
+inverse-square projection.
 
 ## 11. Schrödinger as Narrow-Band Maxwell
 

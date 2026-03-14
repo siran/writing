@@ -16,8 +16,23 @@ falloff in field intensity around what we call a "charged particle."
 
 There is no contradiction. Consider a toroidal energy configuration with a
 fixed total circulation, with winding numbers $(m, n)$ characterizing the
-closed flow. The total is conserved. Now enclose the configuration in a sphere
-of radius $r$ much larger than the torus. The sphere's area is $4\pi r^2$.
+closed flow. The total is conserved.
+
+A torus has a distinguished aperture. Choose a spanning surface $\Sigma$
+across that aperture. The closed circulation carries a signed through-hole
+flux
+
+$$
+\Phi_\Sigma=\int_\Sigma \mathbf{S}\cdot d\mathbf{A}.
+$$
+
+This is not a source or sink. It is the oriented through-hole moment of the
+closed circulation. Its sign reverses with handedness.
+
+Far from the torus, the detailed local winding is no longer resolved. What
+remains visible is the projection of that conserved oriented quantity. Now
+enclose the configuration in a sphere of radius $r$ much larger than the
+torus. The sphere's area is $4\pi r^2$.
 
 A fixed quantity, spread over a growing area, produces an average projected
 intensity that falls as:
@@ -27,10 +42,11 @@ $$
 $$
 
 This yields the inverse-square far-field scaling from projection geometry.
-Charge is the name we give to the conserved quantity whose projection we are
-measuring.
+Charge is the name we give to the conserved oriented quantity whose projection
+we are measuring.
 
-Opposite charge signs correspond to opposite senses of winding. The present
-chapter identifies the geometric far-field character of charge. The detailed
-interaction between such configurations belongs later, when momentum transfer
-and flux accounting are made explicit.
+Opposite charge signs correspond to opposite senses of winding, equivalently to
+opposite signs of the through-hole flux. The present chapter identifies the
+geometric far-field character of charge. The detailed interaction between such
+configurations belongs later, when momentum transfer and flux accounting are
+made explicit.
