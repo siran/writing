@@ -94,12 +94,14 @@ simpler: one rotation recirculates, while two complementary rotations
 transport.
 
 This is the simplest transport law built from two complementary closed turns.
-In its local ideal form it gives plane-wave transport: the same organized
-advance repeated from point to point, without yet requiring helical closure.
-One may picture the transverse frame as precessing about the local axis of
-advance, so that the forward projection remains nonzero while the transverse
-orientation oscillates. Helical and toroidal forms are global closures of the
-same local geometry.
+In its local ideal form it gives the plane-wave idealization of transport: the
+same organized advance repeated from point to point, without yet requiring
+helical closure. Such an idealization already picks out a local axis of
+advance, but because it extends everywhere it does not yet describe a bounded
+from-here-to-there transfer. One may picture the transverse frame as
+precessing about that local axis, so that the forward projection remains
+nonzero while the transverse orientation oscillates. Helical and toroidal
+forms are global closures of the same local geometry.
 
 Only at this stage, after choosing conventional scale factors and absorbing
 them into the electromagnetic normalization, are the two aspects named
