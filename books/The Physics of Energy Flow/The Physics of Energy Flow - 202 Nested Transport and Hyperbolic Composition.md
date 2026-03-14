@@ -20,141 +20,109 @@ field operator. For a given approximately uniform region, let $k$ denote the
 local transport speed singled out there by the electromagnetic closure. The
 question is this: if one transport process is nested inside another, and both
 are described within a region where the same local $k$ applies, what is the
-resulting law of composition?
+resulting relation of composition?
 
-For clarity, consider one spatial direction $x$. In such a region, the local
-transport speed $k$ means that the distinguished transport lines are
-
-$$
-x = \pm kt.
-$$
-
-These are the boundaries of the local transport cone. Any admissible change of
-frame within that region must preserve them.
-
-Assume two frames are related by uniform relative motion along $x$. Because the
-transport background is homogeneous, the change of coordinates must be linear.
-Instead of $(t,x)$, write the null coordinates
+To keep the discussion in one lab, consider motion along one spatial direction
+$x$. Let $u$ denote the speed produced from rest by one standard transport
+pulse in that region. If a body is already moving at speed $v$, let
 
 $$
-u = t + \frac{x}{k}, \qquad w = t - \frac{x}{k}.
+v \oplus u
 $$
 
-Then the transport lines are simply
+denote the speed measured in the same lab after applying that same standard
+pulse again.
+
+The composition operation $\oplus$ should satisfy four basic requirements:
+
+- identity: $v\oplus 0 = v$ and $0\oplus u = u$
+- associativity: successive standard pulses can be grouped arbitrarily
+- oddness: reversing both directions reverses the result
+- boundedness: if $|v|<k$ and $|u|<k$, then $|v\oplus u|<k$
+
+For any smooth one-dimensional associative composition law, there exists a
+monotone parameter $\eta=\phi(v)$ that turns composition into addition:
 
 $$
-u = 0 \qquad\text{or}\qquad w = 0.
+\phi(v\oplus u)=\phi(v)+\phi(u).
 $$
 
-Preserving the transport cone means preserving these null directions. So the
-most general admissible linear transformation is
+Because the admissible speeds are bounded by $\pm k$, this additive parameter
+must diverge as $v\to\pm k$. A convenient odd smooth choice, normalized at the
+origin, is
 
 $$
-u' = \lambda u, \qquad w' = \lambda^{-1} w,
+\eta=\phi(v)=\operatorname{artanh}\!\left(\frac{v}{k}\right).
 $$
 
-for some positive constant $\lambda$.
-
-Returning to $(t,x)$ coordinates gives
-
-$$
-t' = \frac{u'+w'}{2}
-=
-\frac{\lambda+\lambda^{-1}}{2}\,t
-+ \frac{\lambda-\lambda^{-1}}{2k}\,x,
-$$
-
-and
-
-$$
-x' = \frac{k(u'-w')}{2}
-=
-\frac{k(\lambda-\lambda^{-1})}{2}\,t
-+ \frac{\lambda+\lambda^{-1}}{2}\,x.
-$$
-
-Now choose the sign convention so that the primed origin moves with speed $v$
-in the unprimed frame. Writing
-
-$$
-\lambda = e^{-\eta},
-$$
-
-we have
-
-$$
-\frac{\lambda+\lambda^{-1}}{2} = \cosh \eta, \qquad
-\frac{\lambda-\lambda^{-1}}{2} = -\sinh \eta.
-$$
-
-Therefore
-
-$$
-t' = \cosh\eta\,t - \frac{\sinh\eta}{k}\,x,
-$$
-
-$$
-x' = -k\sinh\eta\,t + \cosh\eta\,x.
-$$
-
-If $x'=0$, then the primed origin satisfies
-
-$$
-x = k\tanh\eta \, t.
-$$
-
-So the relative speed is
+So
 
 $$
 v = k\tanh\eta.
 $$
 
-This is the hyperbolic parametrization of velocity.
+This is the hyperbolic parametrization of speed. Successive identical pulses do
+not add linearly in $v$. They add linearly in $\eta$.
 
-Now compose two such frame changes, with parameters $\eta_1$ and $\eta_2$. In
-null coordinates,
-
-$$
-u'' = e^{-\eta_2}u' = e^{-(\eta_1+\eta_2)}u,
-$$
+If one pulse contributes $\eta_0$, then after $n$ identical pulses the lab
+speed is
 
 $$
-w'' = e^{\eta_2}w' = e^{\eta_1+\eta_2}w.
+v_n = k\tanh(n\eta_0).
 $$
 
-So the parameters add:
+More generally, if
 
 $$
-\eta_{\mathrm{tot}} = \eta_1 + \eta_2.
+v_1 = k\tanh\eta_1,
+\qquad
+v_2 = k\tanh\eta_2,
 $$
 
-Since
+then
 
 $$
-v = k\tanh\eta,
-$$
-
-the composed speed is
-
-$$
-v_{\mathrm{tot}}
+v_1\oplus v_2
 =
 k\tanh(\eta_1+\eta_2)
 =
 \frac{v_1+v_2}{1+v_1v_2/k^2}.
 $$
 
-This is the hyperbolic composition law.
+This is the hyperbolic composition relation.
+
+The same result can be written in the more compressed coordinate language. In
+the same approximately uniform region, the local transport speed $k$ picks out
+the lines
+
+$$
+x = \pm kt,
+$$
+
+which bound the local transport cone. Writing the null coordinates
+
+$$
+u = t + \frac{x}{k}, \qquad w = t - \frac{x}{k},
+$$
+
+any linear map preserving those directions takes the form
+
+$$
+u' = \lambda u, \qquad w' = \lambda^{-1} w.
+$$
+
+Writing $\lambda=e^{-\eta}$ recovers the same additive parameter $\eta$ and
+therefore the same hyperbolic composition rule above.
 
 So the distinction is exact:
 
 - double curl organizes source-free transport locally
 - repeated double curl changes field structure
-- nested transport composes moving frames that preserve the same local
-  transport cone
+- nested transport composes successive transport increments that preserve the
+  same local bound $k$
 - preserving that cone forces hyperbolic composition
 
 The train-and-passenger image is therefore valid, but only at the kinematic
 level. One transport process may be nested inside another. The resulting
 composition is hyperbolic because the same local transport speed $k$ is
-preserved at each level.
+preserved at each step.
