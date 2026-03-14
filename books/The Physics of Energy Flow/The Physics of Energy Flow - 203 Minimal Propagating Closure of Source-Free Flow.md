@@ -280,6 +280,93 @@ $$
 
 The same derivation holds for $\mathbf{F}_-$.
 
+There is also an explicit transporting branch.
+
+Let $\phi:\mathbb{R}\to\mathbb{R}$ be any smooth scalar profile, and define
+
+$$
+\mathbf{F}_+(\mathbf{r},t)=\phi(x-kt)\,\mathbf{e}_y,
+\qquad
+\mathbf{F}_-(\mathbf{r},t)=\phi(x-kt)\,\mathbf{e}_z.
+$$
+
+Then
+
+$$
+\nabla\cdot\mathbf{F}_+=0,
+\qquad
+\nabla\cdot\mathbf{F}_-=0,
+$$
+
+because each field has only one transverse component and depends only on $x$.
+
+Now compute the curls:
+
+$$
+\nabla\times\mathbf{F}_-
+=
+\nabla\times(0,0,\phi(x-kt))
+=
+(0,-\partial_x\phi(x-kt),0),
+$$
+
+and
+
+$$
+\nabla\times\mathbf{F}_+
+=
+\nabla\times(0,\phi(x-kt),0)
+=
+(0,0,\partial_x\phi(x-kt)).
+$$
+
+Also,
+
+$$
+\partial_t\mathbf{F}_+
+=
+(0,-k\,\partial_x\phi(x-kt),0),
+$$
+
+and
+
+$$
+\partial_t\mathbf{F}_-
+=
+(0,0,-k\,\partial_x\phi(x-kt)).
+$$
+
+Therefore
+
+$$
+\partial_t\mathbf{F}_+
+=
+k\,\nabla\times\mathbf{F}_-,
+\qquad
+\partial_t\mathbf{F}_-
+=
+-k\,\nabla\times\mathbf{F}_+.
+$$
+
+So the coupled curl system admits exact translating solutions.
+
+If the initial profile $\phi$ is supported in an interval $[a,b]$, then at time
+$t$ the transported profile is supported in the shifted interval
+
+$$
+[a+kt,b+kt].
+$$
+
+Thus the doubled structure does what the single self-curl relation cannot do:
+it carries a profile from one region to another. The transport is explicit. The
+shape is preserved, and the profile advances rigidly at speed $k$ along the
+$x$ direction.
+
+This establishes the existence of a genuine transport branch. It is a
+one-direction translating profile embedded in three dimensions. Additional
+closure is needed later to build bounded self-sustained modes from such
+transport.
+
 ## 203.5 Minimal Propagating Closure
 
 The analysis shows:
@@ -287,6 +374,8 @@ The analysis shows:
 - a single divergence-preserving self-curl evolution makes the temporal and
   spatial second-order terms enter with the same sign, not the neutral
   propagating form
+- the coupled system has exact translating branches carrying a profile from one
+  region to another
 - two coupled curl evolutions do yield neutral wave propagation
 
 So the minimal propagating closure in this class is
