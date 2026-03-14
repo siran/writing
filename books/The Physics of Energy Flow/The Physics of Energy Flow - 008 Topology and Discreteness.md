@@ -25,22 +25,33 @@ n \lambda = L,
 $$
 
 where $L$ is the circuit length and $n$ is an integer. On a torus there are
-two independent cycles, so a closed flow is labeled by an integer pair
-$(m,n)$.
+two independent non-contractible cycles, so a closed flow is labeled by an
+integer pair $(m,n)$.
 
 Those winding classes do more than label allowed modes. They classify the
 circulation itself. The same closed winding that forces discrete matching also
-carries intrinsic angular momentum:
+carries angular momentum about the center of the bounded mode. If
+$\mathbf{X}$ is that center, write the relative position within the mode as
 
 $$
-\mathbf{L}=\int \mathbf{r}\times\frac{\mathbf{S}}{c^2}\,dV.
+\boldsymbol{\rho}=\mathbf{x}-\mathbf{X}.
 $$
 
-Spin is this intrinsic angular momentum of the self-closing flow. Its sign is
-set by handedness: the
-orientation of the circulation relative to the direction of advance.
-Different winding classes $(m,n)$, together with that handedness, define
-different discrete spin classes.
+Then the angular momentum of the closed circulation is
+
+$$
+\mathbf{L}=\int \boldsymbol{\rho}\times\frac{\mathbf{S}}{c^2}\,dV.
+$$
+
+Spin is this angular momentum of the self-closing toroidal circulation. Charge,
+introduced in chapter 10, is a different global aspect of the same mode: the
+signed through-hole flux across the torus aperture. The torus therefore
+supports more than one discrete global aspect of one circulation, because it
+has more than one non-contractible cycle.
+
+The sign of spin is set by handedness: the orientation of the circulation
+relative to the direction of advance. Different winding classes $(m,n)$,
+together with that handedness, define different discrete circulation classes.
 
 The allowed wavelengths and frequencies are therefore discrete. Different
 integers label different global modes. The key point comes before any specific

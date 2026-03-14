@@ -56,13 +56,13 @@ recirculating swirl.
 defect in any smooth tangential flow, beside a torus supporting continuous
 closed circulation without enforced stagnation points.
 
-10. Two independent winding cycles on a torus. A toroidal flow labeled by
-integer winding numbers $(m,n)$, with one cycle around the tube and one around
-the hole.
+10. Two independent non-contractible winding cycles on a torus. A toroidal flow
+labeled by integer winding numbers $(m,n)$, with one cycle around the tube and
+one around the hole.
 
-11. Intrinsic spin as toroidal circulation. A self-closing toroidal flow with
-angular momentum vector $\mathbf{L}$, where winding class and handedness fix the
-sign and class of the intrinsic circulation.
+11. Spin as angular momentum of toroidal circulation. A self-closing toroidal
+flow with angular momentum vector $\mathbf{L}$ about the mode's center, where
+winding class and handedness fix the sign and class of the circulation.
 
 ## 9. Mass as Trapped Energy
 
@@ -74,8 +74,9 @@ circulation must reorganize when its motion changes.
 
 13. Near field and far field of a circulating toroidal configuration. Detailed
 closed local flow near the torus, with a signed through-hole flux across the
-torus aperture, transitioning at large distance to a spherically spreading
-inverse-square projection.
+torus aperture and a definite angular momentum about the mode's center,
+transitioning at large distance to a spherically spreading inverse-square
+projection.
 
 ## 11. Schrödinger as Narrow-Band Maxwell
 

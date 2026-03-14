@@ -49,6 +49,10 @@ This yields the inverse-square far-field scaling from projection geometry.
 Charge is the name we give to the conserved oriented quantity whose projection
 we are measuring. In this sense, charge is quantized before any force law is
 written: its sign and class are fixed by the discrete closed circulation.
+Spin and charge are therefore not separate ontologies. They are different
+global aspects of the same toroidal mode: charge measures the signed
+through-hole flux, while spin measures the angular momentum of the closed
+circulation about the mode's center.
 
 Opposite charge signs correspond to opposite senses of winding, equivalently to
 opposite signs of the through-hole flux. The present chapter identifies the
