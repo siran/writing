@@ -65,12 +65,30 @@ Now each aspect changes by the curl of the other. This is the minimal real
 closed transport law: no sources, no action at a distance, no extra fields,
 and no higher-order operators.
 
-Each complementary turn maps one configuration of the flow into another. From
-that mapping one can abstract an order between configurations, then write the
-ordered difference in differential form. In that later form, the double
-rotation appears as a wave equation for each aspect. For the present argument,
-the essential point is simpler: one rotation recirculates, while two
-complementary rotations transport.
+Transport becomes legible only after the flow is resolved into these
+complementary aspects, because the law acts on the pair as a whole. If we
+write one complete local state as
+
+$$
+C = (\mathbf{F}_{+},\mathbf{F}_{-}),
+$$
+
+then one application of the law maps one configuration $C_1$ into another
+configuration $C_2$. Repeated application therefore generates an ordered chain
+of configurations:
+
+$$
+(\mathbf{F}_{+},\mathbf{F}_{-})_1,\;
+(\mathbf{F}_{+},\mathbf{F}_{-})_2,\;
+(\mathbf{F}_{+},\mathbf{F}_{-})_3,\;\dots
+$$
+
+That order is abstracted from the mapping itself. Only afterward is it
+conveniently labeled by a parameter and written in differential form. In that
+later form, the double rotation yields the wave equation for each aspect, as
+shown in Appendix 203. For the present argument, the essential point is
+simpler: one rotation recirculates, while two complementary rotations
+transport.
 
 This is the simplest transport law built from two complementary closed turns.
 In its local ideal form it gives plane-wave transport: the same organized
