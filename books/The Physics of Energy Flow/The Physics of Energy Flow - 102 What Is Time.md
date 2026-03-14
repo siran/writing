@@ -8,6 +8,9 @@ date: 2026-03-11
 
 Time is the ordering of persistent flow, counted by recurrence.
 
+The later configuration is not created from nothing. It is the same continuous
+energy, rotating other parts of its extent into present registration.
+
 A stable flow registers change by continuing to reconfigure. When records of
 that reconfiguration recur, the recurrence can be counted. Any recurrent
 pattern of flow can therefore serve as a clock. Time is the count of such
