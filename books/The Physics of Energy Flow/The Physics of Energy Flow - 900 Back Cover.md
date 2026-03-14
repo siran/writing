@@ -14,7 +14,7 @@ and curved spacetime, this book starts from one substrate only and asks what
 must follow if energy exists, flows, closes, and organizes.
 
 The result is a reconstruction in which Maxwell dynamics is the minimal
-local law of transport, quantization begins as topological closure, mass is
+local closure of transport, quantization begins as topological closure, mass is
 trapped energy, force is bookkeeping for momentum transfer, and gravity is
 refraction.
 

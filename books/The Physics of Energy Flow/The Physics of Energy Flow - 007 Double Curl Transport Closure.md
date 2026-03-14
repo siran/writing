@@ -1,17 +1,17 @@
 ---
-title: The Physics of Energy Flow - Double Curl Transport Law
+title: The Physics of Energy Flow - Double Curl Transport Closure
 date: 2026-03-11
 ---
 
 
-# 7. Double Curl Transport Law
+# 7. Double Curl Transport Closure
 
 Chapter 6 established that the fundamental flow $\mathbf{F}$ must evolve by
 curl if it is to preserve its divergence-free structure. That still leaves a
-narrower question: what is the simplest curl-based law that makes transport
+narrower question: what is the simplest curl-based closure that makes transport
 possible?
 
-A single self-curl law,
+A single self-curl relation,
 
 $$
 \partial_t \mathbf{F} = k\,\nabla \times \mathbf{F},
@@ -50,7 +50,7 @@ $$
 \mathbf{F}_{+}, \qquad \mathbf{F}_{-}.
 $$
 
-The minimal first-order local law that realizes this double turning is
+The minimal first-order local relation that realizes this double turning is
 
 $$
 \partial_t \mathbf{F}_{+} = k\,\nabla \times \mathbf{F}_{-}, \qquad
@@ -65,18 +65,19 @@ $$
 $$
 
 Now each aspect changes by the curl of the other. This is the minimal real
-closed transport law: no sources, no action at a distance, no extra fields,
-and no higher-order operators.
+closed transport relation: no sources, no action at a distance, no extra
+fields, and no higher-order operators.
 
 Transport becomes legible only after the flow is resolved into these
-complementary aspects, because the law acts on the pair as a whole. If we
+complementary aspects, because the coupled update acts on the pair as a whole.
+If we
 write one complete local state as
 
 $$
 C = (\mathbf{F}_{+},\mathbf{F}_{-}),
 $$
 
-then one application of the law maps one configuration $C_1$ into another
+then one application of the coupled update maps one configuration $C_1$ into another
 configuration $C_2$. Repeated application therefore generates an ordered chain
 of configurations:
 
@@ -93,7 +94,8 @@ shown in Appendix 203. For the present argument, the essential point is
 simpler: one rotation recirculates, while two complementary rotations
 transport.
 
-This is the simplest transport law built from two complementary closed turns.
+This is the simplest transport closure built from two complementary closed
+turns.
 In its local ideal form it gives the plane-wave idealization of transport: the
 same organized advance repeated from point to point, without yet requiring
 helical closure. Such an idealization already picks out a local axis of
@@ -141,7 +143,7 @@ $$
 $$
 
 This reflects the complementary status of the two fields within one transport
-law. The symmetry does not collapse
+relation. The symmetry does not collapse
 $\mathbf{E}$ and $\mathbf{B}$ into a single field, and it does not erase
 their distinct roles in a given solution. In a propagating configuration they
 remain two transverse aspects of the same organized flow $\mathbf{F}$, whose

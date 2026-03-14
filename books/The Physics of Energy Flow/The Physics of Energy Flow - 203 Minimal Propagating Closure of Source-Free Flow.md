@@ -36,7 +36,7 @@ This expresses the absence of primitive beginnings or endings of the flow.
 
 ## 203.2 Divergence Preservation Under Evolution
 
-Assume a local first-order evolution law
+Assume a local first-order evolution relation
 
 $$
 \partial_t \mathbf{F} = \mathcal{D}(\mathbf{F}),
@@ -50,7 +50,7 @@ $$
 \nabla \cdot (\partial_t \mathbf{F}) = 0.
 $$
 
-Substituting the evolution law gives
+Substituting the evolution relation gives
 
 $$
 \nabla \cdot \mathcal{D}(\mathbf{F}) = 0
@@ -73,9 +73,9 @@ $$
 \partial_t \mathbf{F} = k\,\nabla \times \mathbf{F}.
 $$
 
-We now examine whether this law yields propagating transport.
+We now examine whether this relation yields propagating transport.
 
-## 203.3 Dynamics of the Single Self-Curl Law
+## 203.3 Dynamics of the Single Self-Curl Relation
 
 Consider plane-wave modes
 

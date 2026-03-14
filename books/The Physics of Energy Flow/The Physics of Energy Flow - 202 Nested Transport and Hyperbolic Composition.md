@@ -5,7 +5,7 @@ date: 2026-03-13
 
 # 202. Nested Transport and Hyperbolic Composition
 
-The double-curl transport law of chapter 7 should not be composed with itself
+The double-curl transport closure of chapter 7 should not be composed with itself
 naively. Applying
 
 $$
