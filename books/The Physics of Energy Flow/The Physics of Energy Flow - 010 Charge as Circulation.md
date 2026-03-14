@@ -29,6 +29,10 @@ $$
 This is not a source or sink. It is the oriented through-hole moment of the
 closed circulation. Its sign reverses with handedness.
 
+Because the circulation closes in integer winding classes, this through-hole
+flux is not arbitrary. For a stable toroidal mode it comes in discrete classes
+set by the winding itself.
+
 Far from the torus, the detailed local winding is no longer resolved. What
 remains visible is the projection of that conserved oriented quantity. Now
 enclose the configuration in a sphere of radius $r$ much larger than the
@@ -43,7 +47,8 @@ $$
 
 This yields the inverse-square far-field scaling from projection geometry.
 Charge is the name we give to the conserved oriented quantity whose projection
-we are measuring.
+we are measuring. In this sense, charge is quantized before any force law is
+written: its sign and class are fixed by the discrete closed circulation.
 
 Opposite charge signs correspond to opposite senses of winding, equivalently to
 opposite signs of the through-hole flux. The present chapter identifies the
