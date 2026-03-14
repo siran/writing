@@ -137,6 +137,85 @@ self-curl evolution therefore does not by itself furnish the propagating
 closure we seek. It preserves turning, but it does not produce the neutral
 propagating form.
 
+There is also a direct obstruction to bodily transport.
+
+Assume, for contradiction, that a nontrivial bounded closure could be carried
+bodily by the single self-curl relation. Then there would exist a smooth
+localized profile $\mathbf{G}$ and a constant drift velocity $\mathbf{v}$ such
+that
+
+$$
+\mathbf{F}(\mathbf{r},t)=\mathbf{G}(\mathbf{r}-\mathbf{v}t).
+$$
+
+Differentiating gives
+
+$$
+\partial_t\mathbf{F}
+=
+-(\mathbf{v}\cdot\nabla)\mathbf{G},
+\qquad
+\partial_t^2\mathbf{F}
+=
+(\mathbf{v}\cdot\nabla)^2\mathbf{G}.
+$$
+
+Substituting this translating ansatz into
+
+$$
+\partial_t^2 \mathbf{F} + k^2\nabla^2\mathbf{F}=0
+$$
+
+gives
+
+$$
+(\mathbf{v}\cdot\nabla)^2\mathbf{G}+k^2\nabla^2\mathbf{G}=0.
+$$
+
+Now take the Euclidean inner product with $\mathbf{G}$ and integrate over all
+space. Because $\mathbf{G}$ is localized, the boundary terms vanish under
+integration by parts. Therefore
+
+$$
+\int \mathbf{G}\cdot(\mathbf{v}\cdot\nabla)^2\mathbf{G}\,dV
+=
+-\int \left|(\mathbf{v}\cdot\nabla)\mathbf{G}\right|^2\,dV
+$$
+
+and
+
+$$
+\int \mathbf{G}\cdot\nabla^2\mathbf{G}\,dV
+=
+-\int |\nabla\mathbf{G}|^2\,dV.
+$$
+
+So
+
+$$
+\int \left|(\mathbf{v}\cdot\nabla)\mathbf{G}\right|^2\,dV
++
+k^2\int |\nabla\mathbf{G}|^2\,dV
+=
+0.
+$$
+
+Both integrands are nonnegative. Hence both integrals must vanish:
+
+$$
+(\mathbf{v}\cdot\nabla)\mathbf{G}=0,
+\qquad
+\nabla\mathbf{G}=0.
+$$
+
+So $\mathbf{G}$ is constant. Since $\mathbf{G}$ is localized, that constant
+must be zero. Therefore the only localized rigidly translating solution of the
+single self-curl relation is the trivial one.
+
+This proves the point needed in the main text: a single self-curl update can
+turn a structure, but it cannot carry a nontrivial bounded closure bodily from
+one region to another.
+
 ## 203.4 Coupled Curl Evolution
 
 Now introduce two divergence-free fields
