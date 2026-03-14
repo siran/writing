@@ -75,23 +75,17 @@ $$
 
 We now examine whether this relation yields propagating transport.
 
-## 203.3 Dynamics of the Single Self-Curl Relation
+## 203.3 Failure of the Single Self-Curl Relation
 
-Consider plane-wave modes
+The simplest test is to differentiate the self-curl relation once more:
 
 $$
-\mathbf{F}(\mathbf{r},t)
+\partial_t^2 \mathbf{F}
 =
-\mathbf{f}\,e^{i(\mathbf{k}\cdot\mathbf{r}-\omega t)}.
+k\,\nabla\times(\partial_t\mathbf{F}).
 $$
 
-Because $\nabla\cdot\mathbf{F}=0$, the amplitude must satisfy
-
-$$
-\mathbf{k}\cdot\mathbf{f}=0.
-$$
-
-Substituting into
+Substituting
 
 $$
 \partial_t \mathbf{F} = k\,\nabla \times \mathbf{F}
@@ -100,41 +94,43 @@ $$
 gives
 
 $$
--i\omega\mathbf{f}
+\partial_t^2 \mathbf{F}
 =
-ik(\mathbf{k}\times\mathbf{f}).
+k^2\,\nabla\times(\nabla\times\mathbf{F}).
 $$
 
-Rearranging,
+Using the vector identity
 
 $$
-\omega\mathbf{f}
+\nabla \times (\nabla \times \mathbf{F})
 =
--k(\mathbf{k}\times\mathbf{f}).
+\nabla(\nabla\cdot\mathbf{F})-\nabla^2\mathbf{F},
 $$
 
-On the transverse plane, the operator $\mathbf{k}\times$ has eigenvalues
+and the source-free condition
 
 $$
-\pm i|\mathbf{k}|.
+\nabla\cdot\mathbf{F}=0,
 $$
 
-Therefore
+we obtain
 
 $$
-\omega = \pm i\,k|\mathbf{k}|.
+\partial_t^2 \mathbf{F}
+=
+-k^2\nabla^2\mathbf{F}.
 $$
 
-The time dependence becomes
+Equivalently,
 
 $$
-e^{-i\omega t} = e^{\pm k|\mathbf{k}|t}.
+\partial_t^2 \mathbf{F} + k^2\nabla^2\mathbf{F}=0.
 $$
 
-So the modes either grow or decay exponentially.
-
-A single self-curl evolution therefore does not produce neutral wave
-propagation. It generates unstable rotational modes.
+This is not the neutral propagating wave equation, whose time and space terms
+appear with opposite signs. A single self-curl evolution therefore does not by
+itself furnish the propagating closure we seek. It preserves turning, but the
+second-order relation has the wrong sign for neutral propagation.
 
 ## 203.4 Coupled Curl Evolution
 
@@ -204,8 +200,8 @@ The same derivation holds for $\mathbf{F}_-$.
 
 The analysis shows:
 
-- a single divergence-preserving self-curl evolution does not yield neutral
-  propagating solutions
+- a single divergence-preserving self-curl evolution yields the wrong
+  second-order sign for neutral propagation
 - two coupled curl evolutions do yield neutral wave propagation
 
 So the minimal propagating closure in this class is
@@ -260,7 +256,8 @@ compatible with divergence-free flow.
 Starting from divergence-free transport:
 
 - curl preserves the source-free condition
-- a single self-curl evolution produces unstable rotational modes
+- a single self-curl evolution gives the wrong second-order sign for neutral
+  propagation
 - two coupled curl evolutions yield neutral wave propagation
 - the resulting equations coincide with the source-free Maxwell system
 
