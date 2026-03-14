@@ -41,7 +41,10 @@ $$
 
 Locally, a transporting configuration of $\mathbf{F}$ can therefore be
 expressed by an axis of advance together with two complementary transverse
-degrees of freedom of the same flow. Call these two aspects
+degrees of freedom of the same flow. The same local point serves as the
+fulcrum for both turns, but the turns occur in different transverse
+orientations. That difference is what makes them complementary rather than
+redundant. Call these two aspects
 
 $$
 \mathbf{F}_{+}, \qquad \mathbf{F}_{-}.
