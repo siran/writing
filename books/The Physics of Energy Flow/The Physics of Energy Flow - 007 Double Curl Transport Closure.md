@@ -31,13 +31,29 @@ $$
 \nabla \times (\nabla \times \mathbf{F}).
 $$
 
-In the source-free case,
+To see what this means, use the standard vector identity
 
 $$
-\nabla \cdot \mathbf{F} = 0
-\qquad\Longrightarrow\qquad
+\nabla \times (\nabla \times \mathbf{F})
+=
+\nabla(\nabla\cdot\mathbf{F})-\nabla^2\mathbf{F}.
+$$
+
+So in the source-free case,
+
+$$
+\nabla \cdot \mathbf{F} = 0,
+$$
+
+the first term vanishes and we obtain
+
+$$
 \nabla \times (\nabla \times \mathbf{F}) = -\nabla^2 \mathbf{F}.
 $$
+
+So a double curl of a source-free flow reduces to the spatial Laplacian of the
+field, up to sign. This is the step that later yields a wave equation for each
+complementary aspect, as made explicit in Appendix 203.
 
 Locally, a transporting configuration of $\mathbf{F}$ can therefore be
 expressed by an axis of advance together with two complementary transverse
