@@ -219,13 +219,15 @@ What still remains:
 Status:
 
 This is now completed in Appendix 213 at the level of a consistent
-variable-background balance-law extension built on the adopted relation
-$\mathbf{g}=\mathbf{S}/k^2$. The variable-background coarse-grained density,
+variable-background balance-law extension. Appendix 214 derives the relation
+$\mathbf{g}=\mathbf{S}/k^2$ exactly inside the symmetric constitutive closure
+used in the gravity chapters. The variable-background coarse-grained density,
 momentum density, continuity equation, and momentum equation are all derived
-explicitly in that class. What remains open is deriving that local momentum
-relation itself for a genuinely variable substrate, together with the
-constitutive selection of the background momentum-exchange term and the
-deviatoric stress for any given closure.
+explicitly in that class. What remains open is the full resolved background
+momentum-exchange term for general fields, together with the constitutive
+selection of that term and of the deviatoric stress for any given closure, and
+the question of how far the same momentum relation survives beyond the
+symmetric closure.
 
 Original goal:
 

@@ -27,9 +27,11 @@ ingredients are adopted:
   \mathbf{f}_{\mathrm{bg}}.
   $$
 
-What is not yet derived here is the substrate-specific closure that fixes those
-objects from the underlying transport. The novelty is that once $k$ varies, one
-must distinguish carefully between:
+Appendix 214 derives the first of these exactly inside the symmetric
+constitutive closure used in the gravity chapters. What is not yet derived here
+is the full substrate-specific closure that fixes both objects from the
+underlying transport. The novelty is that once $k$ varies, one must distinguish
+carefully between:
 
 - conserved coarse-grained energy,
 - effective inertial density,
@@ -575,7 +577,7 @@ What remains constitutive is:
 
 - the local momentum relation $\mathbf{g}=\mathbf{S}/k^2$ for a genuinely
   variable background, unless it is separately derived from the chosen
-  constitutive closure,
+  constitutive closure, as it is in appendix 214 for the symmetric closure,
 - the exact resolved form of $\mathbf{f}_{\mathrm{bg}}$ for a chosen
   background closure,
 - the constitutive closure of the deviatoric stress.
@@ -640,4 +642,6 @@ It has a definite new structure:
 - momentum exchange with the background enters explicitly.
 
 This is a consistent variable-background extension of appendix 207 within the
-adopted matched constitutive relation $\mathbf{g}=\mathbf{S}/k^2$.
+matched constitutive relation $\mathbf{g}=\mathbf{S}/k^2$, derived in appendix
+214 for the symmetric closure and otherwise still to be fixed by the chosen
+background structure.
