@@ -172,7 +172,15 @@ What still remains:
 
 ### 4. Full weak-field gravity closure, not only light bending
 
-Goal:
+Status:
+
+This is now completed in Appendix 212 for the static weak-field benchmark set
+within the adopted symmetric constitutive closure. The same closure now
+recovers redshift, light bending, Shapiro delay, and perihelion precession
+from one weak-field transport geometry. What remains open is the dynamic
+sector, especially any retained weak-field gravitational-wave interpretation.
+
+Original goal:
 
 Use one constitutive closure to recover the standard weak-field tests together.
 
@@ -189,6 +197,21 @@ What must be shown in one coherent closure:
 - perihelion precession,
 - consistency with weak-field gravitational-wave transport if that language is
   retained.
+
+What is now shown:
+
+- determination of the weak-field metric directly from the adopted
+  constitutive closure plus the Newtonian slow-mode limit,
+- gravitational redshift,
+- light bending,
+- one-way Shapiro delay,
+- perihelion precession.
+
+What still remains:
+
+- decide whether the framework should retain a gravitational-wave sector at all,
+- if so, derive its weak-field transport form from the same constitutive
+  closure rather than importing it from external geometry.
 
 ### 5. Variable-\(k(\mathbf r)\) hydrodynamic limit
 
@@ -356,15 +379,16 @@ Why fifth:
 
 The most rational next order is:
 
-1. only then push the gravity closure harder,
-2. in parallel, extend the hydrodynamic derivation to variable background,
-3. refine the Lorentz-force appendix by deriving the same result directly from
+1. in parallel, extend the hydrodynamic derivation to variable background,
+2. refine the Lorentz-force appendix by deriving the same result directly from
    toroidal closure geometry,
-4. refine the two-charge appendix by deriving the same result directly from
+3. refine the two-charge appendix by deriving the same result directly from
    toroidal closure geometry and then extending it to the fully retarded
    moving case,
-5. decide whether the uniqueness theorem should be enlarged beyond the present
-   stated class.
+4. decide whether the uniqueness theorem should be enlarged beyond the present
+   stated class,
+5. decide whether the gravity program should retain and derive a dynamic
+   weak-field wave sector or stop at the static constitutive closure.
 
 This order is recommended because it attacks the shortest path from
 mathematical coherence to public scientific credibility.

@@ -85,7 +85,9 @@ $$
 At the solar limb this is about $1.75$ arcseconds.
 
 On this reading, light bending follows from index-of-refraction arguments
-within the transport picture.
+within the transport picture. Appendix 212 develops the same constitutive
+closure into the full static weak-field benchmark set: redshift, Shapiro delay,
+and perihelion precession as well as light bending.
 
 Spacetime curvature, in this reading, is a geometric restatement of the same
 refraction. The geometry follows from the transport, not the other way
