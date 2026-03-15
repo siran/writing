@@ -218,11 +218,14 @@ What still remains:
 
 Status:
 
-This is now completed at the exact balance-law level in Appendix 213. The
-variable-background coarse-grained density, momentum density, continuity
-equation, and momentum equation are all derived explicitly. What remains open
-is the constitutive selection of the background momentum-exchange term and the
-deviatoric stress for any given substrate closure.
+This is now completed in Appendix 213 at the level of a consistent
+variable-background balance-law extension built on the adopted relation
+$\mathbf{g}=\mathbf{S}/k^2$. The variable-background coarse-grained density,
+momentum density, continuity equation, and momentum equation are all derived
+explicitly in that class. What remains open is deriving that local momentum
+relation itself for a genuinely variable substrate, together with the
+constitutive selection of the background momentum-exchange term and the
+deviatoric stress for any given closure.
 
 Original goal:
 

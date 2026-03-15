@@ -15,10 +15,21 @@ $$
 
 varies across the resolved continuum.
 
-The result is exact up to the same final constitutive choice for the unresolved
-stress and up to the exact specification of the background momentum-exchange
-term. The novelty is that once $k$ varies, one must distinguish carefully
-between:
+The balance-law structure derived here is exact once two variable-background
+ingredients are adopted:
+
+- the matched constitutive relation
+  $$
+  \mathbf{g}=\frac{\mathbf{S}}{k^2},
+  $$
+- the residual background momentum-exchange term
+  $$
+  \mathbf{f}_{\mathrm{bg}}.
+  $$
+
+What is not yet derived here is the substrate-specific closure that fixes those
+objects from the underlying transport. The novelty is that once $k$ varies, one
+must distinguish carefully between:
 
 - conserved coarse-grained energy,
 - effective inertial density,
@@ -46,7 +57,8 @@ $$
 \partial_t u+\nabla\cdot\mathbf{S}=0.
 $$
 
-As in the uniform-region case, define the local momentum density by
+Adopt, as the variable-background extension of the uniform-region relation, the
+local momentum density
 
 $$
 \mathbf{g}:=\beta\,\mathbf{S}=\frac{\mathbf{S}}{k^2}.
@@ -67,9 +79,10 @@ $$
 \mathbf{f}_{\mathrm{bg}}.
 $$
 
-This is not a new force law. It is the exact bookkeeping term for momentum
-transferred between the resolved transport variables and the unresolved
-background constitutive organization.
+This is not a new force law. It is the exact residual bookkeeping term once
+$\mathbf{g}$ and $\mathbf{T}$ are specified: whatever momentum is not balanced
+by the resolved stress transport is, by definition, momentum exchanged with the
+unresolved background constitutive organization.
 
 In a uniform region,
 
@@ -142,8 +155,8 @@ $$
 $$
 
 Only $\bar u$ obeys a source-free continuity equation. The quantity $\rho$ is
-an effective inertial density, and when $k$ varies it is not conserved by
-itself.
+an effective inertial density, and when $k$ varies it does not satisfy a
+source-free continuity law by itself.
 
 Define the coarse-grained momentum density by
 
@@ -222,7 +235,8 @@ $$
 \partial_t\rho+\nabla\cdot(\rho\mathbf{v})=\sigma_k.
 $$
 
-This is the exact continuity equation for the effective inertial density.
+This is the exact balance law for the effective inertial density once
+$\rho=\langle u/k^2\rangle$ has been adopted.
 
 Now write it directly in terms of $k$. Since
 
@@ -244,7 +258,7 @@ $$
 \sigma_k
 =
 -2\left\langle
-\beta u\left(\partial_t\ln k+\frac{\mathbf{S}}{u}\cdot\nabla\ln k\right)
+\beta\left(u\,\partial_t\ln k+\mathbf{S}\cdot\nabla\ln k\right)
 \right\rangle.
 $$
 
@@ -386,8 +400,7 @@ $$
 So the variable background enters in two distinct ways:
 
 - through the explicit momentum-exchange term $\mathbf{f}$,
-- through the nonconservation of effective inertial density encoded by
-  $\sigma_k$.
+- through the density-conversion term encoded by $\sigma_k$.
 
 These two effects should not be conflated.
 
@@ -534,7 +547,14 @@ Compared with the uniform-region case, the new terms are exactly those tied to
 ## 213.9 What Is Exact and What Is Not
 
 Up to the introduction of the constitutive form of $\boldsymbol{\tau}$, the
-derivation is exact once the background-exchange term
+derivation is exact once
+
+- the variable-background momentum relation
+  $$
+  \mathbf{g}=\frac{\mathbf{S}}{k^2}
+  $$
+  is adopted,
+- the background-exchange term
 
 $$
 \mathbf{f}_{\mathrm{bg}}
@@ -546,12 +566,16 @@ background.
 So the exact conclusions are:
 
 - coarse-grained energy density remains conserved,
-- effective inertial density is not conserved when $k$ varies,
+- effective inertial density obeys a balance law with a conversion term when
+  $k$ varies,
 - the convective momentum equation acquires both an explicit background force
   term and a density-conversion term.
 
 What remains constitutive is:
 
+- the local momentum relation $\mathbf{g}=\mathbf{S}/k^2$ for a genuinely
+  variable background, unless it is separately derived from the chosen
+  constitutive closure,
 - the exact resolved form of $\mathbf{f}_{\mathrm{bg}}$ for a chosen
   background closure,
 - the constitutive closure of the deviatoric stress.
@@ -615,4 +639,5 @@ It has a definite new structure:
 - background variation creates density-conversion terms,
 - momentum exchange with the background enters explicitly.
 
-This is the correct variable-background extension of appendix 207.
+This is a consistent variable-background extension of appendix 207 within the
+adopted matched constitutive relation $\mathbf{g}=\mathbf{S}/k^2$.
