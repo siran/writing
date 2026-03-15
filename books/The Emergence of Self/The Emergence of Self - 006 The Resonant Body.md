@@ -98,6 +98,48 @@ configuration that later responds selectively to matching input. Resonance is
 one natural way such selective response could occur.
 
 
+## From Thermal Hum to Biological Selection
+
+There is one bridge still missing unless it is stated explicitly.
+
+In the broader Maxwellian picture developed elsewhere in this research program,
+heat and blackbody radiation are not treated as random emission from inert
+matter. They are treated as the collective spectral hum of many organized
+electromagnetic modes. Closed circulations labeled by integer winding classes
+\((m,n)\), together with more primitive self-sustaining mode families such as
+the fundamental \((1)\) type, do not vibrate arbitrarily. They support allowed
+families of oscillation. A hot body is therefore not a chaos of unrelated
+frequencies, but an immense superposition of structured local ringings whose
+statistical envelope appears smooth at macroscopic scale.
+
+That matters here because it changes how one imagines the biological problem.
+If the substrate is already full of organized spectral activity, then a living
+cell does not sit in a dead thermal bath waiting for cognition to be added from
+outside. It sits inside a structured electromagnetic hum. The question is no
+longer "How does life create signal out of pure noise?" but "How does a living
+loop selectively recognize, retain, and amplify the tiny part of that hum that
+matters for its own persistence?"
+
+This is where resonant cavities become important. A cavity does not need to
+create the world of modes from nothing. It only needs to be selective. It can
+favor some frequencies, suppress others, and hold a stable relation among them.
+On that picture, cognition begins not as arbitrary symbol manipulation but as
+physical selection from an already structured field of possibilities.
+
+This also clarifies why stochastic amplification belongs in the story. A weak,
+coherent signal need not dominate the entire background energetically in order
+to matter. It only needs to bias a threshold-sensitive system in a consistent
+direction. If living loops operate near thresholds - electrical, chemical,
+mechanical, or oscillatory - then a tiny patterned bias can be magnified into a
+real steering difference. The amplifier is the loop itself.
+
+So the microtubule proposal is not an isolated biological curiosity. It is a
+candidate local selector inside a universe already understood, in companion
+work, as mode-rich and resonant. Blackbody hum, topological mode families,
+cellular cavities, and stochastic threshold amplification are not separate
+stories. They are different scales of the same physical picture.
+
+
 ## The Body Does Not Think Only in the Brain
 
 The standard picture places cognition in the brain and treats the rest of the
