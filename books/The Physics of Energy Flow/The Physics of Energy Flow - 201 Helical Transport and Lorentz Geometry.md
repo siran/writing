@@ -57,4 +57,5 @@ circulation.
 This is why the helical aspect of Lorentz motion matters here. It shows, in a
 standard physical setting, that transport does not require a primitive push
 along a line. It can arise from persistent transverse turning together with a
-nonvanishing forward component.
+nonvanishing forward component. Appendix 209 then derives the corresponding
+Lorentz-force form from boundary stress transfer.

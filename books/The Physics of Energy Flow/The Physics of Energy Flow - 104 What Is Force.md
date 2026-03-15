@@ -19,3 +19,7 @@ which the coupling is taking place.
 
 Force is descriptive. It is bookkeeping for coupled change within one
 underlying physical organization.
+
+Appendix 209 makes this exact for the electromagnetic case: the Lorentz-force
+form is derived there as boundary stress transfer and field-momentum
+bookkeeping for a localized charged closure.

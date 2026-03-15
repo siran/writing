@@ -41,7 +41,14 @@ The following derivations are ranked by scientific leverage.
 
 ### 1. Exact Lorentz-force form from stress bookkeeping
 
-Goal:
+Status:
+
+This is now completed at the effective localized-mode level in Appendix 209.
+What remains open is the sharper version in which the same result is derived
+directly from the detailed toroidal closure geometry without first passing
+through the effective source description.
+
+Original goal:
 
 Derive
 
@@ -60,11 +67,19 @@ Why it matters:
 - it would anchor the later particle-like chapters in the same derivational
   style already used for continuity and Maxwell.
 
-What must be shown:
+What is now shown:
 
-- identify a localized charged mode as a bounded organized circulation,
-- compute the net stress-flux transfer on its boundary in a background field,
-- recover the electric term and the magnetic cross term in one derivation.
+- the exact local momentum balance with effective charge/current sources,
+- the exact integrated force on a localized charged mode,
+- the compact-mode limit
+  $$
+  \mathbf{F}=q(\mathbf{E}+\mathbf{v}\times\mathbf{B}).
+  $$
+
+What still remains:
+
+- derive the same result directly from the toroidal mode geometry itself, with
+  less reliance on effective source notation.
 
 ### 2. Exact interaction law for two toroidal charged modes
 
@@ -292,11 +307,12 @@ Why fifth:
 
 The most rational next order is:
 
-1. finish the exact Lorentz-force derivation,
-2. finish the two-charge interaction derivation,
-3. state and prove the uniqueness theorem for the Maxwell closure class,
-4. only then push the gravity closure harder,
-5. in parallel, extend the hydrodynamic derivation to variable background.
+1. finish the two-charge interaction derivation,
+2. state and prove the uniqueness theorem for the Maxwell closure class,
+3. only then push the gravity closure harder,
+4. in parallel, extend the hydrodynamic derivation to variable background,
+5. refine the Lorentz-force appendix by deriving the same result directly from
+   toroidal closure geometry.
 
 This order is recommended because it attacks the shortest path from
 mathematical coherence to public scientific credibility.
