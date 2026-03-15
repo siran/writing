@@ -185,10 +185,10 @@ Appendix 215 sharpens one part of this. The factor of two in light bending
 should not be treated as explained by arbitrary constitutive symmetry. It
 belongs more deeply to the equal two-aspect stress of a null Maxwell probe.
 Appendix 216 reduces the remaining gap further: within the symmetry-allowed
-weak interaction class, the full bending law depends on one coefficient $B$
-that measures coupling to the probe's longitudinal momentum flux. What still
-remains is to derive $B=1$ from the detailed same-substrate interaction of the
-bounded mass closure with the passing null probe.
+leading weak-field interaction class, the full bending law depends on one
+coefficient $B$ that measures coupling to the probe's longitudinal momentum
+flux. What still remains is to derive $B=1$ from the detailed same-substrate
+interaction of the bounded mass closure with the passing null probe.
 
 Original goal:
 

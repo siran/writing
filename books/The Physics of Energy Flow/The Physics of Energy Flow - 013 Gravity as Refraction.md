@@ -68,7 +68,8 @@ n(r)=\frac{c}{c_\text{local}(r)}
 =1+\frac{2GM}{rc^2}.
 $$
 
-A scalar one-channel treatment would produce only half this first-order shift.
+A scalar one-channel treatment would produce only half this leading weak-field
+shift.
 The full factor of two belongs to a null two-aspect probe.
 
 In optics, when the transport speed varies across a wavefront, the path bends
@@ -91,9 +92,11 @@ At the solar limb this is about $1.75$ arcseconds.
 On this reading, light bending follows from index-of-refraction arguments
 within the transport picture. Appendix 212 develops the same constitutive
 closure into the full static weak-field benchmark set: redshift, Shapiro delay,
-and perihelion precession as well as light bending. Appendix 215 explains why
-the factor of two should be traced to the two-aspect stress of the probe rather
-than to an arbitrary constitutive choice.
+and perihelion precession as well as light bending. Those appendices treat the
+weak-field sector because that is the measured solar-system regime being
+matched here, not because the framework is meant to stop at that order.
+Appendix 215 explains why the factor of two should be traced to the two-aspect
+stress of the probe rather than to an arbitrary constitutive choice.
 
 Spacetime curvature, in this reading, is a geometric restatement of the same
 refraction. The geometry follows from the transport, not the other way

@@ -7,16 +7,17 @@ date: 2026-03-15
 
 Appendix 215 identified the structural source of the weak-field factor of two:
 a null Maxwell probe carries two equal stress sectors. What remained open was
-to state, in exact local form, what kind of weak interaction operator a static
+to state, in exact local form, what kind of interaction operator a static
 bounded mass closure can exert on a narrow passing probe.
 
-This appendix does that. It derives the general leading interaction class,
-fixes one coefficient from the Newtonian slow-mode limit, and isolates the one
-remaining coefficient that must be determined from the detailed closure of the
-mass mode itself.
+This appendix does that at the leading weak-field level. It isolates the first
+nontrivial term in the exact interaction operator, fixes one coefficient from
+the Newtonian slow-mode limit, and isolates the one remaining coefficient that
+must be determined from the detailed closure of the mass mode itself.
 
 The point is not yet to claim the final gravity derivation is complete. The
-point is to reduce it to one sharp mathematical question.
+point is to reduce the exact gravity problem to one sharp mathematical
+question in its weak-field regime.
 
 ## 216.1 Setup
 
@@ -65,12 +66,13 @@ vanishes in the strict slow-mode limit.
 
 ## 216.2 The General Leading Interaction Class
 
-Assume the weak interaction between the static mass closure and the narrow
-probe is:
+Assume the interaction between the static mass closure and the narrow probe is
+expanded in the weak-field parameter and retained through its leading
+nontrivial term. At that order the interaction is:
 
 1. local on the scale of the packet,
 2. linear in the probe variables,
-3. first order in the weak field $\eta$ and its gradient,
+3. retained only through leading weak-field order in $\eta$ and its gradient,
 4. static, parity-even, and spherically symmetric in the rest frame of the mass
    closure.
 
@@ -109,7 +111,7 @@ $$
 No pseudovector term is allowed, because the mass closure is static and
 spherically symmetric and introduces no handedness.
 
-Hence the most general leading local force density has the form
+Hence the most general leading weak-field local force density has the form
 
 $$
 \mathbf f
@@ -126,7 +128,8 @@ $$
 A,\ B,\ C,\ D.
 $$
 
-This is the full leading interaction class under the stated assumptions.
+This is the full leading weak-field interaction class under the stated
+assumptions.
 
 ## 216.3 Transverse Bending Depends on Two Coefficients Only
 
@@ -164,7 +167,7 @@ A,\qquad B.
 $$
 
 The coefficients $C$ and $D$ affect only longitudinal transport bookkeeping,
-not the first-order deflection angle.
+not the leading weak-field deflection angle.
 
 ## 216.4 Newtonian Calibration Fixes $A=1$
 
@@ -329,9 +332,9 @@ This isolates the exact role of the remaining coefficient:
 
 ## 216.6 Interpretation of $B$
 
-The coefficient $B$ measures how strongly the static mass closure couples to
-the longitudinal momentum flux of the probe, in addition to its stored energy
-density.
+In the leading weak-field truncation, the coefficient $B$ measures how
+strongly the static mass closure couples to the longitudinal momentum flux of
+the probe, in addition to its stored energy density.
 
 So the remaining gravity question is no longer vague. It is:
 

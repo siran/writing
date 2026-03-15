@@ -15,8 +15,8 @@ $$
 That summary is useful, but it should not be mistaken for the deepest
 explanation of the factor of two. The deeper point is that the probe is a null
 Maxwell mode. It carries two equal aspects, electric and magnetic, and any
-admissible first-order interaction with a static mass closure must couple to
-both.
+admissible leading weak-field term in the exact interaction with a static mass
+closure must couple to both.
 
 This appendix isolates exactly what is already forced by that fact and what
 still remains open.
@@ -157,12 +157,14 @@ transport stress of the probe.
 That equality is exact. It does not depend on weak gravity. It is a structural
 fact about null Maxwell transport.
 
-## 215.2 Consequence for First-Order Bending
+## 215.2 Consequence for the Leading Weak-Field Bending Term
 
-Now consider a weak static bounded mass mode. Suppose the first-order
-interaction of that closure with the probe is:
+Now consider a weak static bounded mass mode. Suppose the exact interaction of
+that closure with the probe is expanded in the weak-field parameter and
+retained through its leading nontrivial term. At that order the interaction
+is:
 
-1. linear to first order in the probe amplitude,
+1. linear in the probe variables,
 2. local on scales large compared to the probe wavelength,
 3. isotropic at leading order in the background rest frame,
 4. symmetric between the two Maxwell aspects of the probe.
@@ -173,8 +175,8 @@ $$
 \mathcal{L}_\perp
 $$
 
-denote the linear operator that sends the probe stress to its first-order
-transverse momentum transfer density.
+denote the linear operator that sends the probe stress to its leading
+weak-field transverse momentum transfer density.
 
 By linearity,
 
@@ -206,15 +208,15 @@ $$
 }.
 $$
 
-So a one-channel treatment captures only half the first-order transverse
-interaction of a null Maxwell probe.
+So a one-channel treatment captures only half the leading weak-field
+transverse interaction of a null Maxwell probe.
 
 Within the stated interaction class, this is the structural origin of the familiar
 factor of two:
 
 - a scalar or one-channel model sees only one half,
 - a null electromagnetic probe carries two equal stress channels,
-- any admissible first-order interaction must act on both.
+- any admissible leading weak-field interaction term must act on both.
 
 ## 215.3 Why Raw Vacuum Superposition Is Not Yet the Full Derivation
 
@@ -262,7 +264,7 @@ field.
 So the exact role of the argument above is not to claim that raw vacuum
 superposition already gives the full interaction law. Its role is sharper:
 
-- it shows what any correct first-order interaction law must do,
+- it shows what any correct leading weak-field interaction term must do,
 - it shows why a one-channel account gives only the Newtonian half-value,
 - it shows why the full electromagnetic interaction must double that result.
 
@@ -287,7 +289,7 @@ So the logical order is:
 
 1. a null electromagnetic probe carries two equal stress sectors,
 2. a one-channel theory gives only half the effect,
-3. the full first-order interaction must couple to both,
+3. the full weak-field interaction term must couple to both,
 4. the symmetric constitutive summary used in chapter 13 is the macroscopic
    encoding of that doubled interaction.
 
@@ -304,7 +306,8 @@ law.
 In particular, a complete derivation should:
 
 - start from a bounded mass mode and a passing null probe,
-- compute the first-order interaction of the bounded mass closure with the
+- compute the leading weak-field term in the interaction of the bounded mass
+  closure with the
   passing probe,
 - integrate the resulting transverse momentum transfer along the probe path,
 - recover
@@ -326,8 +329,8 @@ $$
 and the electric and magnetic sectors contribute equally to the longitudinal
 transport stress.
 
-Therefore any admissible first-order interaction law that treats the two
-Maxwell aspects symmetrically must produce
+Therefore any admissible leading weak-field interaction term that treats the
+two Maxwell aspects symmetrically must produce
 
 $$
 \text{full null interaction}
@@ -339,6 +342,6 @@ So the weak-field factor of two should not be explained by arbitrary
 constitutive symmetry. It belongs more deeply to the two-aspect stress
 structure of the probe itself.
 
-Appendix 216 makes the remaining step more precise by deriving the full weak
-interaction class for a static mass closure and reducing the gravity problem to
-one remaining coefficient in that class.
+Appendix 216 makes the remaining step more precise by deriving the full
+leading weak-field interaction class for a static mass closure and reducing the
+gravity problem to one remaining coefficient in that class.
