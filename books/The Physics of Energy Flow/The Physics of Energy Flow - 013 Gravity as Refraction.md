@@ -16,23 +16,22 @@ $$
 c = \frac{1}{\sqrt{\varepsilon_0 \mu_0}}.
 $$
 
-A dielectric does not work by letting light pass through inert matter. The
-incident field drives an existing electromagnetic organization in the medium,
-and that response emits a secondary electromagnetic field. The macroscopic
-summary of that response is a change in the constitutive coefficients.
-Linearity does not forbid this. It means only that a probe field propagates
-linearly through coefficients set by a background.
+A dielectric analogy is useful only if read carefully. The probe and the
+massive mode are not two substances, one moving through the other. They are
+two organized motions of the same electromagnetic substrate. Their
+superposition is already the interaction. No second medium is inserted, and no
+extra field has to be imagined over and above the total field.
 
-The same idea is used here. Mass is self-confined energy. A massive body is
-therefore a concentrated background organization of electromagnetic energy
-flow. A passing field perturbs that background, and the background response
-contributes a secondary electromagnetic field. In chapter 7, $\mathbf{E}$ and
-$\mathbf{B}$ were identified as complementary aspects of one organized flow.
+Mass is self-confined energy. A massive body is therefore a bounded organized
+electromagnetic closure. A passing field and that closure reorganize one
+another as one common field. In chapter 7, $\mathbf{E}$ and $\mathbf{B}$ were
+identified as complementary aspects of one organized flow.
 A null electromagnetic probe therefore does not carry one channel only. Its
 electric and magnetic sectors are equal aspects of the same transport. A
 one-channel treatment gives only the Newtonian half-value. The symmetric
 constitutive closure written below is used here as the macroscopic summary of
-that two-aspect response; appendix 215 states the sharper stress-based
+that same-field two-aspect interaction; appendix 215 states the sharper
+stress-based
 derivation target.
 
 The constitutive summary used in this chapter is:
@@ -72,7 +71,7 @@ $$
 A scalar one-channel treatment would produce only half this first-order shift.
 The full factor of two belongs to a null two-aspect probe.
 
-In optics, when a wave propagates through a medium of varying speed, it bends
+In optics, when the transport speed varies across a wavefront, the path bends
 toward the slower region. This is refraction.
 
 Gravity, in this framework, is that refraction applied to all energy

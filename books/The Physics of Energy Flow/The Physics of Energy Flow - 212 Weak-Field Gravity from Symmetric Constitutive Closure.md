@@ -21,8 +21,9 @@ that one geometry the standard first-order observables:
 Appendix 215 explains why the light-bending factor of two should be traced more
 deeply to the two-aspect stress of a null Maxwell probe. The present appendix
 does not replace that deeper derivation. It keeps the symmetric constitutive
-closure as the macroscopic summary used in chapter 13 and derives its static
-weak-field consequences.
+closure as the macroscopic summary used in chapter 13 for the interaction of a
+probe with a static bounded mass closure and derives its static weak-field
+consequences.
 
 The time-dependent radiative sector is not treated here.
 
@@ -713,5 +714,5 @@ So within the symmetric constitutive summary used here, chapter 13 no longer
 rests on light bending alone. The full static weak-field benchmark set is
 recovered from one and the same transport geometry. Appendix 215 then isolates
 the deeper factor-of-two point: a null electromagnetic probe carries two equal
-stress channels, and any complete first-order background response must couple
-to both.
+stress channels, and any complete first-order interaction with a static mass
+closure must couple to both.
