@@ -1,0 +1,311 @@
+---
+title: The Physics of Energy Flow - Ranked Research Agenda and Falsification Program
+date: 2026-03-14
+---
+
+# 208. Ranked Research Agenda and Falsification Program
+
+The purpose of this appendix is not to defend the framework by rhetoric. It is
+to state, in a form as operational as possible, what still has to be proved,
+what still has to be tested, what would count as failure, and which papers
+would most efficiently convert the present program into a public scientific
+contribution.
+
+The guiding attitude is simple:
+
+- preserve all measured values,
+- reinterpret the ontology and derivation,
+- state clearly where the framework is complete,
+- state clearly where it can fail.
+
+## 208.1 Present Status
+
+At the present stage, the book contains a coherent derivational spine for:
+
+- continuity of energy transport,
+- source-free closure,
+- curl as the local divergence-preserving update,
+- doubled curl as the minimal transporting closure,
+- Maxwell identification,
+- structural Michelson-Morley in a uniform region,
+- coarse-grained Euler/Navier-Stokes-like form in a uniform region.
+
+That is already substantial.
+
+What remains are the places where the framework is not yet forced, not yet
+unique, or not yet fully confronted with the existing body of results.
+
+## 208.2 Ranked Must-Prove Derivations
+
+The following derivations are ranked by scientific leverage.
+
+### 1. Exact Lorentz-force form from stress bookkeeping
+
+Goal:
+
+Derive
+
+$$
+\mathbf{F}=q(\mathbf{E}+\mathbf{v}\times\mathbf{B})
+$$
+
+as a flux-accounting consequence of interaction between localized bounded modes
+and the surrounding organized flow.
+
+Why it matters:
+
+- it would connect the transport ontology directly to the operational force law
+  of classical electrodynamics,
+- it would sharply test the toroidal charge picture,
+- it would anchor the later particle-like chapters in the same derivational
+  style already used for continuity and Maxwell.
+
+What must be shown:
+
+- identify a localized charged mode as a bounded organized circulation,
+- compute the net stress-flux transfer on its boundary in a background field,
+- recover the electric term and the magnetic cross term in one derivation.
+
+### 2. Exact interaction law for two toroidal charged modes
+
+Goal:
+
+Recover the long-range interaction between two localized charge modes from
+their oriented closure geometry and stress transfer.
+
+Why it matters:
+
+- chapter 10 now gives the geometric far-field character of charge, but not the
+  full interaction law,
+- this is the most direct stress test of the charge interpretation.
+
+What must be shown:
+
+- how opposite and like through-hole orientations couple through the surrounding
+  flow,
+- how the inverse-square structure and force direction arise,
+- how magnetic interaction appears for moving configurations.
+
+### 3. Uniqueness theorem for the Maxwell closure inside a stated class
+
+Goal:
+
+Prove, or sharply delimit, in what class of local source-free closures the
+Maxwell pair is genuinely minimal or unique.
+
+Why it matters:
+
+- the book currently gives a strong minimality argument,
+- but public scientific weight increases sharply if the admissible class is
+  stated and the uniqueness claim is proved there.
+
+What must be shown:
+
+- precisely define the class: local, real, first-order, source-free,
+  divergence-preserving, transporting closures,
+- prove whether every element of that class is equivalent to the doubled curl
+  / Maxwell form up to change of variables.
+
+### 4. Full weak-field gravity closure, not only light bending
+
+Goal:
+
+Use one constitutive closure to recover the standard weak-field tests together.
+
+Why it matters:
+
+- chapter 13 currently gives a strong refraction picture,
+- but one successful observable is not enough.
+
+What must be shown in one coherent closure:
+
+- light bending,
+- gravitational redshift,
+- Shapiro delay,
+- perihelion precession,
+- consistency with weak-field gravitational-wave transport if that language is
+  retained.
+
+### 5. Variable-\(k(\mathbf r)\) hydrodynamic limit
+
+Goal:
+
+Extend appendices 206-207 beyond the uniform-region case.
+
+Why it matters:
+
+- the hydrodynamic derivation is now complete only in the simplest coarse
+  setting,
+- a real continuum theory must handle spatially varying substrate conditions.
+
+What must be shown:
+
+- how density, momentum density, and stress are defined when $k$ varies,
+- how the coarse-grained balance laws change,
+- what constitutive closure the substrate itself selects there.
+
+## 208.3 Ranked Must-Test Benchmarks
+
+These are the most important comparisons with already known results.
+
+### 1. Classical electrodynamic benchmark set
+
+- Coulomb interaction
+- Lorentz force
+- radiation pressure
+- dipole radiation scaling
+- Larmor-type power balance
+
+### 2. Weak-field gravity benchmark set
+
+- solar light bending
+- redshift
+- Shapiro delay
+- perihelion precession
+
+### 3. Quantum benchmark set
+
+- narrow-band Maxwell to Schrödinger correspondence
+- hydrogenic bound-state structure
+- Zeeman-type splitting
+- Aharonov-Bohm-type phase effects
+
+### 4. Fluid benchmark set
+
+- Euler limit
+- viscous correction structure
+- wave transport in varying background
+- coarse-grained stress from unresolved local circulation
+
+The point is not that all of these must be solved at once. The point is that
+the framework becomes progressively more scientific as it survives each set.
+
+## 208.4 Explicit Failure Conditions
+
+The framework should be treated as vulnerable to the following failures.
+
+### Failure A. The charge geometry does not yield the correct interaction law
+
+If the toroidal charge picture cannot recover the exact long-range interaction
+form, then chapter 10 remains only a geometric analogy, not a derivation.
+
+### Failure B. Another local source-free transporting closure works equally well
+
+If a nonequivalent closure in the same stated class reproduces the same body of
+results, then the claim of Maxwell minimality weakens.
+
+### Failure C. One constitutive gravity closure cannot fit the weak-field test set
+
+If the same closure does not recover the standard weak-field observables
+together, then the refraction chapter is incomplete.
+
+### Failure D. Coarse-graining does not select a physically admissible stress
+
+If the substrate does not yield a stable effective stress law under
+coarse-graining, then the hydrodynamic program weakens.
+
+### Failure E. The framework makes a distinctive prediction that is false
+
+This would be the cleanest kind of failure, and therefore the most useful one.
+
+## 208.5 Distinctive Predictions Worth Seeking
+
+The framework becomes much stronger if it produces predictions not already
+forced by standard formalisms.
+
+The most promising areas are:
+
+- topological restrictions on admissible charge/spin classes,
+- constitutive relations between local transport scale and background energy
+  organization,
+- stability thresholds for bounded knot-like modes,
+- corrections to coarse-grained stress in nonuniform transport media.
+
+At present these are research targets, not established predictions.
+
+## 208.6 Highest-Payoff Papers
+
+If the program were to be turned into publishable papers, the highest-payoff
+sequence would be:
+
+### Paper 1. Minimal transporting closure of source-free flow
+
+Core claim:
+
+- single curl reorganizes locally,
+- doubled curl transports,
+- Maxwell is the minimal transporting closure in the stated class.
+
+Why first:
+
+- it is already closest to publication,
+- it anchors the rest of the program mathematically.
+
+### Paper 2. Michelson-Morley from moving closure
+
+Core claim:
+
+- contraction follows from coherence of moving bounded closure,
+- Michelson-Morley null follows structurally in a uniform region.
+
+Why second:
+
+- it is distinctive,
+- it gives the program a clear reinterpretive result that is mathematically
+  concrete.
+
+### Paper 3. Charge as toroidal flux and the exact interaction problem
+
+Core claim:
+
+- charge is a discrete signed through-hole flux class,
+- interaction law follows from stress transfer between localized modes.
+
+Why third:
+
+- it is the most decisive nontrivial test of the ontology.
+
+### Paper 4. Emergent hydrodynamics from coarse-grained energy transport
+
+Core claim:
+
+- Euler/Navier-Stokes-like form emerges from the same continuity and momentum
+  transport structure.
+
+Why fourth:
+
+- it broadens the program beyond electrodynamics and spacetime questions.
+
+### Paper 5. Gravity as constitutive refraction of organized transport
+
+Core claim:
+
+- weak-field gravity is recovered as transport through a background-altered
+  constitutive medium.
+
+Why fifth:
+
+- high payoff if successful,
+- but riskier because the observational benchmark set is broader.
+
+## 208.7 Order of Attack
+
+The most rational next order is:
+
+1. finish the exact Lorentz-force derivation,
+2. finish the two-charge interaction derivation,
+3. state and prove the uniqueness theorem for the Maxwell closure class,
+4. only then push the gravity closure harder,
+5. in parallel, extend the hydrodynamic derivation to variable background.
+
+This order is recommended because it attacks the shortest path from
+mathematical coherence to public scientific credibility.
+
+## 208.8 Summary
+
+The program is now strong enough that its next stage should be guided not by
+further broad philosophical claims, but by a ranked list of derivations,
+benchmark tests, and explicit failure conditions.
+
+That is the threshold at which a reconstruction framework becomes a scientific
+research program in the full sense.
