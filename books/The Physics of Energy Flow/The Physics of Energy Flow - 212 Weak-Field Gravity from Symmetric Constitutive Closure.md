@@ -18,7 +18,7 @@ that one geometry the standard first-order observables:
 - Shapiro delay,
 - perihelion precession.
 
-The dynamic gravitational-wave sector is not treated here.
+The time-dependent radiative sector is not treated here.
 
 ## 212.1 Adopted Constitutive Closure
 

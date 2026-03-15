@@ -177,8 +177,9 @@ Status:
 This is now completed in Appendix 212 for the static weak-field benchmark set
 within the adopted symmetric constitutive closure. The same closure now
 recovers redshift, light bending, Shapiro delay, and perihelion precession
-from one weak-field transport geometry. What remains open is the dynamic
-sector, especially any retained weak-field gravitational-wave interpretation.
+from one weak-field transport geometry. What remains open is the time-dependent
+radiative sector, especially if any weak-field gravitational-wave language is
+retained.
 
 Original goal:
 
