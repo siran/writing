@@ -28,8 +28,14 @@ therefore a concentrated background organization of electromagnetic energy
 flow. A passing field perturbs that background, and the background response
 contributes a secondary electromagnetic field. In chapter 7, $\mathbf{E}$ and
 $\mathbf{B}$ were identified as complementary aspects of one organized flow.
-The constitutive closure adopted here therefore shifts both constitutive
-channels together:
+A null electromagnetic probe therefore does not carry one channel only. Its
+electric and magnetic sectors are equal aspects of the same transport. A
+one-channel treatment gives only the Newtonian half-value. The symmetric
+constitutive closure written below is used here as the macroscopic summary of
+that two-aspect response; appendix 215 states the sharper stress-based
+derivation target.
+
+The constitutive summary used in this chapter is:
 
 $$
 \varepsilon_\text{eff}(r)=\varepsilon_0\bigl(1+2\eta(r)\bigr),
@@ -63,9 +69,8 @@ n(r)=\frac{c}{c_\text{local}(r)}
 =1+\frac{2GM}{rc^2}.
 $$
 
-If only one constitutive channel were perturbed, this first-order shift would
-be halved, giving the Newtonian half-value. Within this symmetric
-electromagnetic constitutive closure, the full factor of two follows.
+A scalar one-channel treatment would produce only half this first-order shift.
+The full factor of two belongs to a null two-aspect probe.
 
 In optics, when a wave propagates through a medium of varying speed, it bends
 toward the slower region. This is refraction.
@@ -87,7 +92,9 @@ At the solar limb this is about $1.75$ arcseconds.
 On this reading, light bending follows from index-of-refraction arguments
 within the transport picture. Appendix 212 develops the same constitutive
 closure into the full static weak-field benchmark set: redshift, Shapiro delay,
-and perihelion precession as well as light bending.
+and perihelion precession as well as light bending. Appendix 215 explains why
+the factor of two should be traced to the two-aspect stress of the probe rather
+than to an arbitrary constitutive choice.
 
 Spacetime curvature, in this reading, is a geometric restatement of the same
 refraction. The geometry follows from the transport, not the other way

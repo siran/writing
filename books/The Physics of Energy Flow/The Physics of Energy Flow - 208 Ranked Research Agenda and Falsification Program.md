@@ -181,6 +181,12 @@ from one weak-field transport geometry. What remains open is the time-dependent
 radiative sector, especially if any weak-field gravitational-wave language is
 retained.
 
+Appendix 215 sharpens one part of this. The factor of two in light bending
+should not be treated as explained by arbitrary constitutive symmetry. It
+belongs more deeply to the equal two-aspect stress of a null Maxwell probe.
+What still remains is the exact background-response derivation that turns that
+structural fact into the full weak-field interaction law.
+
 Original goal:
 
 Use one constitutive closure to recover the standard weak-field tests together.
@@ -212,7 +218,10 @@ What still remains:
 
 - decide whether the framework should retain a gravitational-wave sector at all,
 - if so, derive its weak-field transport form from the same constitutive
-  closure rather than importing it from external geometry.
+  closure rather than importing it from external geometry,
+- derive the full light-bending factor directly from the background response to
+  a null two-aspect probe, so the constitutive symmetry is no longer
+  explanatory input.
 
 ### 5. Variable-\(k(\mathbf r)\) hydrodynamic limit
 
