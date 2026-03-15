@@ -80,9 +80,9 @@ $$
 \alpha = \frac{Z_0}{2 R_K}.
 $$
 
-If we identify the intrinsic impedance of the fundamental knot (the electron)
-with the quantum of resistance $R_K$, the fine structure constant becomes simply
-a measure of the impedance mismatch:
+If we tentatively identify the intrinsic impedance of a fundamental charged
+bounded closure with the quantum of resistance $R_K$, the fine structure
+constant becomes a measure of the impedance mismatch:
 
 $$
 \alpha = \frac{Z_0}{2 Z_{\text{knot}}}.
