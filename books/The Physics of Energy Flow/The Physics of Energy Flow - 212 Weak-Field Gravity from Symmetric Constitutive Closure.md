@@ -715,4 +715,5 @@ rests on light bending alone. The full static weak-field benchmark set is
 recovered from one and the same transport geometry. Appendix 215 then isolates
 the deeper factor-of-two point: a null electromagnetic probe carries two equal
 stress channels, and any complete first-order interaction with a static mass
-closure must couple to both.
+closure must couple to both. Appendix 216 then reduces the remaining open
+gravity step to one explicit coefficient in the weak interaction operator.

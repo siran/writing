@@ -184,9 +184,11 @@ retained.
 Appendix 215 sharpens one part of this. The factor of two in light bending
 should not be treated as explained by arbitrary constitutive symmetry. It
 belongs more deeply to the equal two-aspect stress of a null Maxwell probe.
-What still remains is the exact interaction derivation that turns that
-structural fact into the full weak-field law for a bounded mass closure and a
-passing null probe.
+Appendix 216 reduces the remaining gap further: within the symmetry-allowed
+weak interaction class, the full bending law depends on one coefficient $B$
+that measures coupling to the probe's longitudinal momentum flux. What still
+remains is to derive $B=1$ from the detailed same-substrate interaction of the
+bounded mass closure with the passing null probe.
 
 Original goal:
 
@@ -220,9 +222,9 @@ What still remains:
 - decide whether the framework should retain a gravitational-wave sector at all,
 - if so, derive its weak-field transport form from the same constitutive
   closure rather than importing it from external geometry,
-- derive the full light-bending factor directly from the interaction between a
-  bounded mass closure and a null two-aspect probe, so the constitutive
-  symmetry is no longer explanatory input.
+- derive the coefficient $B=1$ in appendix 216 directly from the detailed
+  interaction between a bounded mass closure and a null two-aspect probe, so
+  the constitutive symmetry is no longer explanatory input.
 
 ### 5. Variable-\(k(\mathbf r)\) hydrodynamic limit
 

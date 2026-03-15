@@ -339,5 +339,6 @@ So the weak-field factor of two should not be explained by arbitrary
 constitutive symmetry. It belongs more deeply to the two-aspect stress
 structure of the probe itself.
 
-What remains open is the exact interaction derivation that turns this
-structural fact into the full light-bending law.
+Appendix 216 makes the remaining step more precise by deriving the full weak
+interaction class for a static mass closure and reducing the gravity problem to
+one remaining coefficient in that class.
