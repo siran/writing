@@ -58,4 +58,5 @@ Opposite charge signs correspond to opposite senses of winding, equivalently to
 opposite signs of the through-hole flux. The present chapter identifies the
 geometric far-field character of charge. The detailed interaction between such
 configurations belongs later, when momentum transfer and flux accounting are
-made explicit.
+made explicit. Appendices 209 and 210 do that at the effective localized-mode
+level.

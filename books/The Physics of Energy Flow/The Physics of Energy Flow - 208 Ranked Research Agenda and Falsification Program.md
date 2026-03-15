@@ -83,7 +83,17 @@ What still remains:
 
 ### 2. Exact interaction law for two toroidal charged modes
 
-Goal:
+Status:
+
+This is now completed at the effective two-mode level in Appendix 210. The
+exact cross-stress interaction law is derived for two localized charged modes,
+and the static point-mode idealization gives the exact Coulomb force. What
+remains open is the sharper version in which the same result is derived
+directly from detailed toroidal closure geometry, and then extended to fully
+retarded moving interaction without leaning first on effective source
+notation.
+
+Original goal:
 
 Recover the long-range interaction between two localized charge modes from
 their oriented closure geometry and stress transfer.
@@ -100,6 +110,20 @@ What must be shown:
   flow,
 - how the inverse-square structure and force direction arise,
 - how magnetic interaction appears for moving configurations.
+
+What is now shown:
+
+- the exact local cross-interaction balance for two localized charged modes,
+- the exact integrated force on each mode due to the other,
+- the compact-mode limit reducing to the localized Lorentz form,
+- the static point-mode idealization giving the exact Coulomb law.
+
+What still remains:
+
+- derive the same interaction directly from the detailed toroidal mode
+  geometry,
+- extend the moving case to the full retarded two-mode interaction without
+  first idealizing through effective source notation.
 
 ### 3. Uniqueness theorem for the Maxwell closure inside a stated class
 
@@ -307,12 +331,14 @@ Why fifth:
 
 The most rational next order is:
 
-1. finish the two-charge interaction derivation,
-2. state and prove the uniqueness theorem for the Maxwell closure class,
-3. only then push the gravity closure harder,
-4. in parallel, extend the hydrodynamic derivation to variable background,
-5. refine the Lorentz-force appendix by deriving the same result directly from
-   toroidal closure geometry.
+1. state and prove the uniqueness theorem for the Maxwell closure class,
+2. only then push the gravity closure harder,
+3. in parallel, extend the hydrodynamic derivation to variable background,
+4. refine the Lorentz-force appendix by deriving the same result directly from
+   toroidal closure geometry,
+5. refine the two-charge appendix by deriving the same result directly from
+   toroidal closure geometry and then extending it to the fully retarded
+   moving case.
 
 This order is recommended because it attacks the shortest path from
 mathematical coherence to public scientific credibility.

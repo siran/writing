@@ -353,4 +353,5 @@ q\bigl(\mathbf{E}+\mathbf{v}\times\mathbf{B}\bigr).
 $$
 
 Thus the Lorentz-force form is derived here as boundary stress transfer and
-field-momentum bookkeeping for a localized charged closure.
+field-momentum bookkeeping for a localized charged closure. Appendix 210 then
+extends the same bookkeeping to the exact interaction between two such modes.
