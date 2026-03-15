@@ -8,12 +8,13 @@ date: 2026-03-15
 
 The primitive unit of selfhood is the self-sustaining causal loop.
 
-One clarification has to come first. The loop does have a physical support. But
-what the loop later recognizes as "the body" is already an imprint of that
-support: an internally organized pattern by which it tracks its own boundary,
-reach, vulnerability, and continuity. So the primitive unit is not the body as
-experienced, not the organ, and not the image in the mirror. It is the
-recurrent loop that can come to carry such imprints.
+One clarification has to come first. The loop is physically realized, but it
+does not need the idea of a body in order to persist. What the loop later
+recognizes as "the body" is already an imprint: an internally organized image
+by which it tracks boundary, reach, vulnerability, and continuity. So the
+primitive unit is not the body as experienced, not the organ, and not the image
+in the mirror. It is the recurrent loop that may later come to carry such an
+image.
 
 Let a system have an internal state \(x_t\) and receive an environmental input
 \(u_t\). Write its update in the abstract form
@@ -51,12 +52,10 @@ structure.
 At this primitive stage, it is acceptable to say that the self is the loop. But
 that sentence must be handled carefully. Later chapters will distinguish the
 loop itself from the imprints through which it experiences body and world. The
-loop does have a physical support. But what the loop recognizes as "the body"
-is already an internally organized imprint of that support: a stabilized
-pattern by which the loop tracks its own boundary, reach, vulnerability, and
-continuity. The self is not identical either to the bare support or to the
-body-imprint taken in isolation. It is the recurrent organization carried by
-the support and steered through such imprints.
+body is not the primitive condition of the loop. It is a later self-identifying
+image the loop may form and consult. The self is not identical to that
+body-imprint. It is the recurrent organization that can survive, learn, and
+steer whether or not such an image has yet become explicit.
 
 This matters because the loop can outstrip any particular local signal. Once a
 system closes over itself, incoming events no longer determine it one by one.

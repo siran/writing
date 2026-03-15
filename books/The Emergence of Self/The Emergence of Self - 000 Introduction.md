@@ -48,12 +48,13 @@ body, self, value, time, and space all enter the story in this form. They are
 not second substances. They are internally carried organizations that steer the
 loop.
 
-This is why the self cannot be reduced either to the body taken as bare support
-or to an abstract "mind" floating above biology. The loop has a physical
-support. But what it recognizes as body is already an imprint of that support:
-an internally stabilized organization of boundary, reach, damage, need,
-position, and continuity. The self is the recurrent steering loop carried by
-that support and guided through such imprints.
+This is why the self cannot be reduced either to the body or to an abstract
+"mind" floating above biology. The loop is physically realized, of course, but
+it does not need the idea of a body in order to persist. What it later
+recognizes as body is already an imprint: an internally stabilized image of
+boundary, reach, damage, need, position, and continuity. The self is the
+recurrent steering loop; the body is one of the images by which that loop may
+come to identify itself.
 
 From this perspective, several old disputes change shape.
 

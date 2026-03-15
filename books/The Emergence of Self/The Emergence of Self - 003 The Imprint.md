@@ -61,11 +61,11 @@ internally carried organizations that help the loop interpret, compress, and
 steer its experience.
 
 The body therefore enters the theory in a new way. The loop is not simply the
-body. The loop has a physical support, but the body as lived and recognized is
-an imprint of that support. It is a working internal organization of what
-counts as inside, outside, damage, position, movement, reach, and capability.
-Only a loop rich enough in pattern matching can stabilize such an imprint and
-recognize it as itself. There may also be multiple body-imprints, layered and
+body, and the body is not the primitive condition of the loop. The body as
+lived and recognized is an imprint: a working internal image of what counts as
+inside, outside, damage, position, movement, reach, and capability. Only a loop
+rich enough in pattern matching can stabilize such an imprint and use it to
+identify itself. There may also be multiple body-imprints, layered and
 partially inconsistent, just as there can be multiple self-imprints,
 future-imprints, or social imprints.
 

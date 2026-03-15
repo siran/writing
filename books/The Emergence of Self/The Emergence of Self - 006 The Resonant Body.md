@@ -193,9 +193,9 @@ organizing picture even if the precise hardware remains under debate.
 
 ## From Body Support to Body Imprint
 
-Earlier chapters insisted on a distinction: the loop has a physical support, but
-what the loop experiences as "the body" is already an imprint of that support.
-Chapter 6 sharpens that point biologically.
+Earlier chapters insisted on a distinction: the loop can persist before it ever
+forms an explicit body-image, and what it later experiences as "the body" is
+already an imprint. Chapter 6 sharpens that point biologically.
 
 The lived body is not a lump of tissue passively represented somewhere else. It
 is the ongoing, dynamically updated internal organization by which the loop
@@ -382,6 +382,6 @@ abstract models. Living bodies already contain:
   current brain-centric models usually acknowledge.
 
 So the self is not a ghost riding a body, and not a brain floating above one. It
-is a whole-organism steering loop whose support is bodily, whose body is
-imprinted, and whose future is shaped by the persistent internal organization it
-has learned to carry.
+is a whole-organism steering loop whose future is shaped by the persistent
+internal organization it has learned to carry, and whose body is one of the
+images by which it later comes to recognize itself.
