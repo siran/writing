@@ -41,12 +41,14 @@ cross it, the environment perturbs it, but the loop closes over itself and
 continues. Without that closure there may be process, but there is no enduring
 center of steering.
 
-The second is **imprint**. A loop becomes deep when it no longer reacts only to
-what reaches it now. It begins to carry traces of what has happened before, and
+The second is **imprint**. A loop does not need imprints in order to exist. It
+can persist before carrying any explicit internal image of itself, of time, or
+of the world. But a loop becomes deep when it no longer reacts only to what
+reaches it now. It begins to carry traces of what has happened before, and
 those traces bias what can happen next. Memory, expectation, habit, category,
-body, self, value, time, and space all enter the story in this form. They are
-not second substances. They are internally carried organizations that steer the
-loop.
+body, self, value, time, and space all enter the story in this form when they
+appear. They are not second substances. They are internally carried
+organizations that steer the loop.
 
 This is why the self cannot be reduced either to the body or to an abstract
 "mind" floating above biology. The loop is physically realized, of course, but

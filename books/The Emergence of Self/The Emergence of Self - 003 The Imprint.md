@@ -6,8 +6,10 @@ date: 2026-03-15
 
 # The Imprint
 
-A loop becomes deep when it does not merely continue, but continues under the
-influence of traces it carries from its own past. Those traces are imprints.
+A loop does not need imprints in order to exist. It can persist before carrying
+any explicit internal image of self, body, time, or world. But a loop becomes
+deep when it does not merely continue, but continues under the influence of
+traces it carries from its own past. Those traces are imprints.
 
 An imprint is an internally carried difference that is produced by past
 interaction and later consulted in the production of future states. It is not a
@@ -54,11 +56,12 @@ Examples are everywhere:
 - A concept is an imprint that allows a loop to respond to categories rather
   than to raw stimuli alone.
 
-This last point is central. Time, space, body, self, other, and value are all
-imprints in this sense. So are color and ideas more generally. They are not
-fundamental objects waiting outside the loop to be discovered whole. They are
-internally carried organizations that help the loop interpret, compress, and
-steer its experience.
+This last point is central. Time, space, body, self, other, and value can all
+appear as imprints in this sense. So can color and ideas more generally. A loop
+need not carry all of them, and it need not acquire them in any fixed order.
+They are not fundamental objects waiting outside the loop to be discovered
+whole. They are internally carried organizations that, when present, help the
+loop interpret, compress, and steer its experience.
 
 The body therefore enters the theory in a new way. The loop is not simply the
 body, and the body is not the primitive condition of the loop. The body as

@@ -39,7 +39,9 @@ that happens to occupy it at a given moment.
 This already distinguishes a loop from a mere chain. A chain can transmit
 effects and end. A loop must return influence into itself. Without that return,
 there is no persistence of organization, and without persistence there is no
-self to speak of.
+self to speak of. None of this yet requires an imprint of body, self, time, or
+world. Those may arise later, but they are not the primitive condition of the
+loop.
 
 The simplest useful distinction is between external forcing and internal
 steering. External forcing is whatever reaches the loop from outside. Internal
@@ -68,7 +70,8 @@ What matters is not whether a system moves when pushed. Everything moves when
 pushed. What matters is whether the system carries forward its own constraints
 and uses them to shape what the push will become.
 
-The next step is therefore unavoidable. A loop that persists must preserve more
-than a bare cycle. It must preserve traces, biases, remembered paths, or stable
-internal differences that alter what comes next. Those internal differences are
+The next step is therefore not primitive but developmental. A loop may persist
+with no explicit imprint at all. But once it begins to preserve traces, biases,
+remembered paths, or other stable internal differences that alter what comes
+next, it has entered a deeper regime. Those internally retained differences are
 what I will call imprints.
