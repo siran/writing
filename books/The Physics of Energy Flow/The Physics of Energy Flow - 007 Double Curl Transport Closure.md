@@ -17,11 +17,10 @@ $$
 \partial_t \mathbf{F} = k\,\nabla \times \mathbf{F},
 $$
 
-preserves source-free turning. But one local rotation only recirculates the
-flow. It turns the structure around itself, but it does not yet carry energy
-from one region into another. Transport requires a second, complementary
-rotation. A point rotated once circulates. Rotated twice in a complementary
-way, it advances.
+preserves source-free turning. Appendix 203 proves the precise limitation:
+single curl reorganizes locally, but it does not bodily carry a nontrivial
+bounded closure from one region into another. Transport requires a second,
+complementary rotation.
 
 A second step cannot be a gradient, because chapter 6 already showed that a
 gradient update generically introduces divergence. The next admissible
@@ -107,8 +106,7 @@ That order is abstracted from the mapping itself. Only afterward is it
 conveniently labeled by a parameter and written in differential form. In that
 later form, the double rotation yields the wave equation for each aspect, as
 shown in Appendix 203. For the present argument, the essential point is
-simpler: one rotation recirculates, while two complementary rotations
-transport.
+simpler: single curl reorganizes locally; doubled curl transports.
 
 This is the simplest transport closure built from two complementary closed
 turns.

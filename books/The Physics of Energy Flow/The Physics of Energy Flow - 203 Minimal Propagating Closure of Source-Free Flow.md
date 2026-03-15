@@ -315,6 +315,9 @@ than rigid-body motion: internal reorientation, internal deformation, or phase
 progression on a fixed support. Those possibilities are not classified by the
 present no-go result.
 
+This is the precise content of the chapter-7 summary: single curl reorganizes
+locally.
+
 ## 203.4 Coupled Curl Evolution
 
 Now introduce two divergence-free fields
@@ -473,6 +476,8 @@ The analysis shows:
 - a single divergence-preserving self-curl evolution makes the temporal and
   spatial second-order terms enter with the same sign, not the neutral
   propagating form
+- single curl reorganizes locally, but does not bodily carry a nontrivial
+  bounded closure
 - the coupled system has exact translating branches carrying a profile from one
   region to another
 - two coupled curl evolutions do yield neutral wave propagation
