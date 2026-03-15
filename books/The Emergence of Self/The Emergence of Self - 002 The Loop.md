@@ -6,8 +6,14 @@ date: 2026-03-15
 
 # The Loop
 
-The primitive unit of selfhood is not the body, the organ, or the image in the
-mirror. It is the self-sustaining causal loop.
+The primitive unit of selfhood is the self-sustaining causal loop.
+
+One clarification has to come first. The loop does have a physical support. But
+what the loop later recognizes as "the body" is already an imprint of that
+support: an internally organized pattern by which it tracks its own boundary,
+reach, vulnerability, and continuity. So the primitive unit is not the body as
+experienced, not the organ, and not the image in the mirror. It is the
+recurrent loop that can come to carry such imprints.
 
 Let a system have an internal state \(x_t\) and receive an environmental input
 \(u_t\). Write its update in the abstract form
@@ -45,9 +51,12 @@ structure.
 At this primitive stage, it is acceptable to say that the self is the loop. But
 that sentence must be handled carefully. Later chapters will distinguish the
 loop itself from the imprints through which it experiences body and world. The
-body is the current physical support of the loop. The self is not identical to
-the body in the crude sense of flesh at a point in time. It is the recurrent
-organization carried by that support.
+loop does have a physical support. But what the loop recognizes as "the body"
+is already an internally organized imprint of that support: a stabilized
+pattern by which the loop tracks its own boundary, reach, vulnerability, and
+continuity. The self is not identical either to the bare support or to the
+body-imprint taken in isolation. It is the recurrent organization carried by
+the support and steered through such imprints.
 
 This matters because the loop can outstrip any particular local signal. Once a
 system closes over itself, incoming events no longer determine it one by one.

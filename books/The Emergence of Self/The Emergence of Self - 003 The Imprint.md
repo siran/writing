@@ -47,23 +47,27 @@ Examples are everywhere:
 
 - DNA is an imprint that steers development across generations of cellular
   persistence.
-- A synaptic change is an imprint that alters future neural response.
 - A learned aversion is an imprint that causes the organism to turn away before
   damage recurs.
+- A remembered route is an imprint that lets the loop return to a resource or
+  avoid a danger it has encountered before.
 - A concept is an imprint that allows a loop to respond to categories rather
   than to raw stimuli alone.
 
 This last point is central. Time, space, body, self, other, and value are all
-imprints in this sense. They are not fundamental objects waiting outside the
-loop to be discovered whole. They are internally carried organizations that
-help the loop interpret, compress, and steer its experience.
+imprints in this sense. So are color and ideas more generally. They are not
+fundamental objects waiting outside the loop to be discovered whole. They are
+internally carried organizations that help the loop interpret, compress, and
+steer its experience.
 
 The body therefore enters the theory in a new way. The loop is not simply the
-body. The loop carries an imprint of body: a working internal organization of
-what counts as inside, outside, damage, position, movement, reach, and
-capability. There may also be multiple body-imprints, layered and partially
-inconsistent, just as there can be multiple self-imprints, future-imprints, or
-social imprints.
+body. The loop has a physical support, but the body as lived and recognized is
+an imprint of that support. It is a working internal organization of what
+counts as inside, outside, damage, position, movement, reach, and capability.
+Only a loop rich enough in pattern matching can stabilize such an imprint and
+recognize it as itself. There may also be multiple body-imprints, layered and
+partially inconsistent, just as there can be multiple self-imprints,
+future-imprints, or social imprints.
 
 This is why ideas matter physically. An idea is not "made of nothing." It is an
 imprint that can bias the loop's future reconfiguration. If the loop carries the

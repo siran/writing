@@ -31,6 +31,11 @@ herring is not itself red. The point is not that the experience vanishes. The
 point is that the loop can carry higher-order imprints built from lower-order
 ones.
 
+Color, idea, and body belong to the same family in this respect. The lived body
+is not the bare physical support any more than the idea of red is a wavelength.
+All are imprints through which the loop organizes and recognizes itself and its
+world.
+
 What another observer sees, however, is only the public side of the loop:
 
 - neural activity,
