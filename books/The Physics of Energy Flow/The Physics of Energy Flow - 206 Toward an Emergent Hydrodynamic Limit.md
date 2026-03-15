@@ -5,9 +5,10 @@ date: 2026-03-14
 
 # 206. Toward an Emergent Hydrodynamic Limit
 
-This appendix does not derive Navier-Stokes. It states, as explicitly as
-possible, what would have to be shown in order to recover a Navier-Stokes-like
-description from the principles already developed in this book.
+This appendix does not itself derive Navier-Stokes. It states, as explicitly as
+possible, what must be shown in order to recover a Navier-Stokes-like
+description from the principles already developed in this book. Appendix 207
+then carries out that derivation in the simplest uniform-region setting.
 
 The point is to separate three levels that should not be conflated:
 
@@ -195,7 +196,7 @@ then asks what macroscopic medium theory emerges.
 
 ## 206.8 Summary
 
-The present book has not derived Navier-Stokes.
+The present appendix has not derived Navier-Stokes.
 
 What it has derived is a continuous transport substrate with local continuity
 and closure constraints. That is enough to justify the hydrodynamic question.
@@ -205,6 +206,7 @@ The next mathematical objective is therefore clear:
 > derive momentum density, momentum flux, and stress from the same underlying
 > transport, then coarse-grain them to obtain the emergent continuum limit.
 
-If that program succeeds, Navier-Stokes-like dynamics would appear not as a
+Appendix 207 shows that this program can already be completed in the simplest
+uniform-region case. There, Navier-Stokes-like dynamics appears not as a
 primitive description of matter, but as an effective large-scale theory of
 organized energy transport.

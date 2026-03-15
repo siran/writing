@@ -126,3 +126,6 @@ already present, and force is only the accounting of that coupling.
 
 Particles are localized regions. Forces are boundary integrals. Newton's second
 law is momentum continuity applied to a stable electromagnetic knot.
+
+Appendix 207 carries this same momentum continuity law to the coarse-grained
+continuum limit, where Euler-like and Navier-Stokes-like forms emerge.
