@@ -1,0 +1,85 @@
+---
+title: The Emergence of Self - The Imprint
+date: 2026-03-15
+---
+
+
+# The Imprint
+
+A loop becomes deep when it does not merely continue, but continues under the
+influence of traces it carries from its own past. Those traces are imprints.
+
+An imprint is an internally carried difference that is produced by past
+interaction and later consulted in the production of future states. It is not a
+second substance and not a symbolic ghost floating above the loop. It is a
+physical organization inside the loop that biases what the loop can become next.
+
+Write the evolving loop abstractly as
+
+$$
+\dot{x} = f(x, m, u),
+$$
+
+where \(x\) is the present state of the loop, \(u\) is current environmental
+input, and \(m\) is an internally retained imprint. The imprint itself evolves:
+
+$$
+\dot{m} = g(x, m, u).
+$$
+
+The loop is imprint-sensitive when the future evolution depends nontrivially on
+the retained imprint:
+
+$$
+\frac{\partial f}{\partial m} \neq 0.
+$$
+
+This is deliberately a weak criterion. It does not yet amount to full selfhood,
+rich awareness, or reflective consciousness. It marks the step beyond pure
+signal-following. The system is no longer reacting only to what reaches it now.
+It is reacting partly to what it has become.
+
+That change is profound. Once imprints exist, the loop acquires an inner
+history. It can now act differently in the same outer circumstances because the
+same outer circumstances arrive at a differently imprinted loop.
+
+Examples are everywhere:
+
+- DNA is an imprint that steers development across generations of cellular
+  persistence.
+- A synaptic change is an imprint that alters future neural response.
+- A learned aversion is an imprint that causes the organism to turn away before
+  damage recurs.
+- A concept is an imprint that allows a loop to respond to categories rather
+  than to raw stimuli alone.
+
+This last point is central. Time, space, body, self, other, and value are all
+imprints in this sense. They are not fundamental objects waiting outside the
+loop to be discovered whole. They are internally carried organizations that
+help the loop interpret, compress, and steer its experience.
+
+The body therefore enters the theory in a new way. The loop is not simply the
+body. The loop carries an imprint of body: a working internal organization of
+what counts as inside, outside, damage, position, movement, reach, and
+capability. There may also be multiple body-imprints, layered and partially
+inconsistent, just as there can be multiple self-imprints, future-imprints, or
+social imprints.
+
+This is why ideas matter physically. An idea is not "made of nothing." It is an
+imprint that can bias the loop's future reconfiguration. If the loop carries the
+imprint "the stove burns," then the future motion of the arm is altered. If it
+carries the imprint "I am a liar," future speech is altered. If it carries the
+imprint "red means danger" then perception, attention, and response are altered.
+
+The importance of the imprint is therefore not representational but causal. An
+imprint matters because it steers.
+
+This also explains why imprints can outlive the episodes that produced them. The
+event is gone, but its steering consequence remains. The loop is not locked to
+the present instant. It carries a working past into the production of the next
+state.
+
+Once that happens, a new problem appears. If experience is mediated by imprints,
+then what we call "the world as felt" is already an internally transformed
+version of the world as coupled. That is where the so-called hard problem will
+have to be re-examined.
