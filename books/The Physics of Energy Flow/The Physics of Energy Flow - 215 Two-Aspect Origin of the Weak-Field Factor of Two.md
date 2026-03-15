@@ -14,9 +14,9 @@ $$
 
 That summary is useful, but it should not be mistaken for the deepest
 explanation of the factor of two. The deeper point is that the probe is a null
-Maxwell mode. It carries two equal aspects, electric and magnetic, and any
-admissible leading weak-field term in the exact interaction with a static mass
-closure must couple to both.
+Maxwell mode. It carries two equal aspects, electric and magnetic, and a
+static toroidal closure must sample both when it loads the probe along its
+axial transport line.
 
 This appendix isolates exactly what is already forced by that fact and what
 still remains open.
@@ -42,6 +42,13 @@ $$
 \mathbf{n}\cdot\mathbf{B}=0,
 \qquad
 \mathbf{B}=\frac{1}{k}\,\mathbf{n}\times\mathbf{E}.
+$$
+
+This means the probe has no trapped rest component. Its transport is fully
+carried along $\mathbf n$, so locally
+
+$$
+|\mathbf S|=ku.
 $$
 
 Its energy density splits into electric and magnetic pieces:
@@ -159,64 +166,29 @@ fact about null Maxwell transport.
 
 ## 215.2 Consequence for the Leading Weak-Field Bending Term
 
-Now consider a weak static bounded mass mode. Suppose the exact interaction of
-that closure with the probe is expanded in the weak-field parameter and
-retained through its leading nontrivial term. At that order the interaction
-is:
+Now consider a weak static bounded mass mode. The result above means that any
+correct interaction cannot treat the probe as one channel only.
 
-1. linear in the probe variables,
-2. local on scales large compared to the probe wavelength,
-3. isotropic at leading order in the background rest frame,
-4. symmetric between the two Maxwell aspects of the probe.
+The remaining question is not whether there are two equal sectors. That is
+already forced. The remaining question is how a static bounded closure samples
+them.
 
-Let
-
-$$
-\mathcal{L}_\perp
-$$
-
-denote the linear operator that sends the probe stress to its leading
-weak-field transverse momentum transfer density.
-
-By linearity,
+Appendix 216 answers that directly. A static toroidal closure interacts
+through its axial line, and because it is static it samples the two opposite
+axial directions symmetrically. When that symmetric axial load is written in
+terms of the probe transport data, it becomes
 
 $$
-\mathcal{L}_\perp[T]
-=
-\mathcal{L}_\perp[T^{(E)}]
-+
-\mathcal{L}_\perp[T^{(B)}].
+u+\Pi_n.
 $$
 
-By two-aspect symmetry,
+For a null Maxwell probe, $\Pi_n=u$, so the static closure sees
 
 $$
-\mathcal{L}_\perp[T^{(E)}]
-=
-\mathcal{L}_\perp[T^{(B)}].
+u+\Pi_n=2u.
 $$
 
-Therefore
-
-$$
-\boxed{
-\mathcal{L}_\perp[T]
-=
-2\,\mathcal{L}_\perp[T^{(E)}]
-=
-2\,\mathcal{L}_\perp[T^{(B)}]
-}.
-$$
-
-So a one-channel treatment captures only half the leading weak-field
-transverse interaction of a null Maxwell probe.
-
-Within the stated interaction class, this is the structural origin of the familiar
-factor of two:
-
-- a scalar or one-channel model sees only one half,
-- a null electromagnetic probe carries two equal stress channels,
-- any admissible leading weak-field interaction term must act on both.
+That is the structural origin of the factor of two.
 
 ## 215.3 Why Raw Vacuum Superposition Is Not Yet the Full Derivation
 
@@ -264,9 +236,9 @@ field.
 So the exact role of the argument above is not to claim that raw vacuum
 superposition already gives the full interaction law. Its role is sharper:
 
-- it shows what any correct leading weak-field interaction term must do,
 - it shows why a one-channel account gives only the Newtonian half-value,
-- it shows why the full electromagnetic interaction must double that result.
+- it shows why a null Maxwell probe carries the second equal sector,
+- it prepares the axial-load derivation of appendix 216.
 
 ## 215.4 Relation to Chapter 13 and Appendix 212
 
@@ -289,34 +261,19 @@ So the logical order is:
 
 1. a null electromagnetic probe carries two equal stress sectors,
 2. a one-channel theory gives only half the effect,
-3. the full weak-field interaction term must couple to both,
+3. a static toroidal closure must sample both axial channels symmetrically,
 4. the symmetric constitutive summary used in chapter 13 is the macroscopic
-   encoding of that doubled interaction.
+   encoding of that doubled axial interaction.
 
 ## 215.5 What Still Remains Open
 
-The remaining task is not to guess the factor of two. Within the stated
-interaction class, that part is already fixed by the two-aspect structure of the
-probe.
+Appendix 216 now completes the weak exterior factor-of-two derivation by doing
+exactly that axial sampling step. What still remains open is not the factor of
+two itself, but the full exact interaction beyond the weak exterior regime:
 
-The remaining task is to derive the actual interaction operator of a localized
-massive closure and to show that it yields the full weak-field interaction
-law.
-
-In particular, a complete derivation should:
-
-- start from a bounded mass mode and a passing null probe,
-- compute the leading weak-field term in the interaction of the bounded mass
-  closure with the
-  passing probe,
-- integrate the resulting transverse momentum transfer along the probe path,
-- recover
-  $$
-  \theta=\frac{4GM}{bc^2}
-  $$
-  without treating the symmetric constitutive form as explanatory input.
-
-That is the sharper gravity target inside the present framework.
+- finite-size corrections of the bounded mass closure,
+- strong-field interaction,
+- time-dependent and radiative sectors.
 
 ## 215.6 Summary
 
@@ -340,8 +297,8 @@ $$
 
 So the weak-field factor of two should not be explained by arbitrary
 constitutive symmetry. It belongs more deeply to the two-aspect stress
-structure of the probe itself.
+structure of the probe itself and to the sign-symmetric axial loading by a
+static toroidal closure.
 
-Appendix 216 makes the remaining step more precise by deriving the full
-leading weak-field interaction class for a static mass closure and reducing the
-gravity problem to one remaining coefficient in that class.
+Appendix 216 completes that weak exterior derivation directly from axial
+transport.

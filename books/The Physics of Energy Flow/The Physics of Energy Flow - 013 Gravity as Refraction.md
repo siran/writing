@@ -30,9 +30,9 @@ A null electromagnetic probe therefore does not carry one channel only. Its
 electric and magnetic sectors are equal aspects of the same transport. A
 one-channel treatment gives only the Newtonian half-value. The symmetric
 constitutive closure written below is used here as the macroscopic summary of
-that same-field two-aspect interaction; appendix 215 states the sharper
-stress-based
-derivation target.
+that same-field two-aspect interaction; appendices 215 and 216 derive the
+factor of two more sharply from the sign-symmetric axial loading of a static
+toroidal closure.
 
 The constitutive summary used in this chapter is:
 
@@ -95,8 +95,9 @@ closure into the full static weak-field benchmark set: redshift, Shapiro delay,
 and perihelion precession as well as light bending. Those appendices treat the
 weak-field sector because that is the measured solar-system regime being
 matched here, not because the framework is meant to stop at that order.
-Appendix 215 explains why the factor of two should be traced to the two-aspect
-stress of the probe rather than to an arbitrary constitutive choice.
+Appendices 215 and 216 explain why the factor of two should be traced to the
+two-aspect axial loading of the probe rather than to an arbitrary constitutive
+choice.
 
 Spacetime curvature, in this reading, is a geometric restatement of the same
 refraction. The geometry follows from the transport, not the other way

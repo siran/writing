@@ -23,11 +23,12 @@ that one geometry the standard leading weak-field observables:
 - perihelion precession.
 
 Appendix 215 explains why the light-bending factor of two should be traced more
-deeply to the two-aspect stress of a null Maxwell probe. The present appendix
-does not replace that deeper derivation. It keeps the symmetric constitutive
-closure as the macroscopic summary used in chapter 13 for the interaction of a
-probe with a static bounded mass closure and derives its static weak-field
-consequences.
+deeply to the two-aspect stress of a null Maxwell probe, and appendix 216
+derives the same weak exterior factor directly from the sign-symmetric axial
+loading of a static toroidal closure. The present appendix does not replace
+that deeper derivation. It keeps the symmetric constitutive closure as the
+macroscopic summary used in chapter 13 for the interaction of a probe with a
+static bounded mass closure and derives its static weak-field consequences.
 
 The time-dependent radiative sector is not treated here.
 
@@ -593,38 +594,124 @@ u_0(\phi)
 \frac{GM}{h^2}\bigl(1+e\cos\phi\bigr).
 $$
 
-To absorb the relativistic correction, write the perturbed solution as
+Now write
 
 $$
-u(\phi)
-=
-\frac{GM}{h^2}\Bigl(1+e\cos\bigl((1-\delta)\phi\bigr)\Bigr),
+u=u_0+u_1,
 $$
 
-with $\delta\ll 1$.
-
-Substituting this ansatz into the corrected orbit equation and retaining only
-leading order in $\delta$ and $GM/c^2$ yields
+where $u_1$ is first order in $GM/c^2$. Substituting into
 
 $$
-\frac{GM}{h^2}
-+
-2\delta e\,\frac{GM}{h^2}\cos\phi
+u''+u
 =
 \frac{GM}{h^2}
 +
-\frac{3GM}{c^2}
+\frac{3GM}{c^2}u^2
+$$
+
+and retaining only first order in $GM/c^2$ gives
+
+$$
+u_1''+u_1
+=
+\frac{3GM}{c^2}u_0^2.
+$$
+
+Since
+
+$$
+u_0^2
+=
 \left(\frac{GM}{h^2}\right)^2
-\bigl(1+2e\cos\phi+e^2\cos^2\phi\bigr).
+\bigl(1+2e\cos\phi+e^2\cos^2\phi\bigr)
 $$
 
-The constant and $\cos(2\phi)$ pieces only change the detailed shape. The
-resonant $\cos\phi$ term determines the precession. Matching those terms gives
+and
 
 $$
-2\delta e\,\frac{GM}{h^2}
+\cos^2\phi=\frac{1+\cos 2\phi}{2},
+$$
+
+the forcing becomes
+
+$$
+u_1''+u_1
 =
-\frac{6GM}{c^2}\left(\frac{GM}{h^2}\right)^2 e,
+\frac{3GM}{c^2}\left(\frac{GM}{h^2}\right)^2
+\left(
+1+\frac{e^2}{2}+2e\cos\phi+\frac{e^2}{2}\cos 2\phi
+\right).
+$$
+
+The constant term and the $\cos 2\phi$ term change the detailed shape of the
+orbit but do not accumulate a secular phase shift. The resonant term
+
+$$
+2e\,\frac{3GM}{c^2}\left(\frac{GM}{h^2}\right)^2\cos\phi
+$$
+
+does.
+
+To isolate that secular part, solve
+
+$$
+y''+y=A\cos\phi.
+$$
+
+A direct check shows that
+
+$$
+y_p(\phi)=\frac{A}{2}\phi\sin\phi
+$$
+
+is a particular solution, because
+
+$$
+\left(\frac{A}{2}\phi\sin\phi\right)''
++
+\frac{A}{2}\phi\sin\phi
+=
+A\cos\phi.
+$$
+
+Therefore the resonant contribution to $u_1$ is
+
+$$
+u_{1,\mathrm{res}}(\phi)
+=
+\frac{3GM}{c^2}\left(\frac{GM}{h^2}\right)^2 e\,\phi\sin\phi.
+$$
+
+Now compare with a precessing ellipse
+
+$$
+\frac{GM}{h^2}
+\Bigl(1+e\cos((1-\delta)\phi)\Bigr),
+\qquad
+\delta\ll 1.
+$$
+
+Using
+
+$$
+\cos((1-\delta)\phi)
+=
+\cos\phi+\delta\,\phi\sin\phi+O(\delta^2),
+$$
+
+the secular correction produced by a precession $\delta$ is
+
+$$
+\frac{GM}{h^2}e\,\delta\,\phi\sin\phi.
+$$
+
+Matching this with $u_{1,\mathrm{res}}$ gives
+
+$$
+\frac{GM}{h^2}e\,\delta
+=
+\frac{3GM}{c^2}\left(\frac{GM}{h^2}\right)^2 e,
 $$
 
 so
@@ -641,7 +728,7 @@ $$
 h^2=GMa(1-e^2),
 $$
 
-so
+therefore
 
 $$
 \delta
@@ -649,7 +736,7 @@ $$
 \frac{3GM}{a(1-e^2)c^2}.
 $$
 
-After one orbit, the perihelion advance is therefore
+After one orbit, the perihelion advance is
 
 $$
 \Delta\omega
@@ -717,9 +804,7 @@ From that one weak-field closure follow:
 
 So within the symmetric constitutive summary used here, chapter 13 no longer
 rests on light bending alone. The full static weak-field benchmark set is
-recovered from one and the same transport geometry. Appendix 215 then isolates
-the deeper factor-of-two point: a null electromagnetic probe carries two equal
-stress channels, and any complete weak-field interaction with a static mass
-closure must couple to both. Appendix 216 then reduces the remaining open
-gravity step to one explicit coefficient in the leading weak-field interaction
-operator.
+recovered from one and the same transport geometry. Appendices 215 and 216
+then isolate the deeper factor-of-two point: a null electromagnetic probe
+carries two equal stress channels, and a static toroidal closure samples both
+through its axial line.

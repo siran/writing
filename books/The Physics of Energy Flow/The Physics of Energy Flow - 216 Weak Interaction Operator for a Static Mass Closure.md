@@ -1,240 +1,80 @@
 ---
-title: The Physics of Energy Flow - Weak Interaction Operator for a Static Mass Closure
+title: The Physics of Energy Flow - Axial Interaction of a Static Mass Closure with a Null Probe
 date: 2026-03-15
 ---
 
-# 216. Weak Interaction Operator for a Static Mass Closure
+# 216. Axial Interaction of a Static Mass Closure with a Null Probe
 
-Appendix 215 identified the structural source of the weak-field factor of two:
-a null Maxwell probe carries two equal stress sectors. What remained open was
-to state, in exact local form, what kind of interaction operator a static
-bounded mass closure can exert on a narrow passing probe.
+Appendix 215 established that a null Maxwell probe carries two equal stress
+sectors. That alone explains why a one-channel account gives only half the
+full bending, but it does not yet say how a static bounded mass closure
+samples those two sectors.
 
-This appendix does that at the leading weak-field level. It isolates the first
-nontrivial term in the exact interaction operator, fixes one coefficient from
-the Newtonian slow-mode limit, and isolates the one remaining coefficient that
-must be determined from the detailed closure of the mass mode itself.
+This appendix derives that missing step directly from axial transport.
 
-The point is not yet to claim the final gravity derivation is complete. The
-point is to reduce the exact gravity problem to one sharp mathematical
-question in its weak-field regime.
-
-## 216.1 Setup
-
-Let a bounded static mass mode be centered at the origin. In the weak-field
-regime, write its strength as
+The key geometric point is simple. A compact toroidal closure interacts
+through its axial line. For a static closure there is no preferred sign along
+that line, so the leading weak exterior interaction must sample the probe
+through both axial directions equally. When that symmetric axial load is
+written in terms of the probe's energy-momentum tensor, it is exactly
 
 $$
-\eta(r):=\frac{GM}{rc^2},
-\qquad
-\eta\ll 1.
+u+\Pi_n,
 $$
 
-Consider a narrow probe packet whose support is small compared to the length
-scale on which $\eta$ varies. Let
+where $u$ is the probe energy density and $\Pi_n$ is its longitudinal momentum
+flux. For a slow bounded mode this reduces to $u$. For a null Maxwell probe it
+becomes $2u$. The weak-field factor of two therefore follows from axial
+transport itself, not from a later adjustment.
 
-$$
-\mathbf{n}
-$$
+## 216.1 Probe Transport Data
 
-be its local propagation direction, with
+Work in the rest frame of the static bounded mass closure.
 
-$$
-|\mathbf{n}|=1.
-$$
-
-Write the probe energy density as
-
-$$
-u=T^{00},
-$$
-
-and define its longitudinal momentum-flux density by
-
-$$
-\Pi_n:=-n_in_jT_{ij}.
-$$
-
-For a null Maxwell probe, appendix 215 proved
-
-$$
-\Pi_n=u.
-$$
-
-For a slowly moving bounded probe, $\Pi_n$ is of higher order in $v/c$ and
-vanishes in the strict slow-mode limit.
-
-## 216.2 The General Leading Interaction Class
-
-Assume the interaction between the static mass closure and the narrow probe is
-expanded in the weak-field parameter and retained through its leading
-nontrivial term. At that order the interaction is:
-
-1. local on the scale of the packet,
-2. linear in the probe variables,
-3. retained only through leading weak-field order in $\eta$ and its gradient,
-4. static, parity-even, and spherically symmetric in the rest frame of the mass
-   closure.
-
-Because the packet is narrow compared to the background scale, internal probe
-gradients contribute only at higher order in the expansion and are not part of
-the leading interaction class.
-
-At leading order, the only background scalar is $\eta(r)$ and the only
-background vector is
-
-$$
-\nabla\eta.
-$$
-
-For the probe, the only zeroth-derivative scalars relevant to a narrow packet
-are
+For a narrow probe packet, write its local energy density, momentum density,
+and spatial stress as
 
 $$
 u,
 \qquad
-\Pi_n.
-$$
-
-The only available vectors at this order are therefore
-
-$$
-u\,\nabla\eta,
+\mathbf g,
 \qquad
-\Pi_n\,\nabla\eta,
+T_{ij},
+$$
+
+with
+
+$$
+\mathbf g=\frac{\mathbf S}{c^2}.
+$$
+
+Introduce the corresponding energy-momentum tensor
+
+$$
+\Theta^{00}=u,
 \qquad
-u\,(\mathbf n\cdot\nabla\eta)\mathbf n,
+\Theta^{0i}=c\,g_i,
 \qquad
-\Pi_n\,(\mathbf n\cdot\nabla\eta)\mathbf n.
+\Theta^{ij}=-T_{ij}.
 $$
 
-No pseudovector term is allowed, because the mass closure is static and
-spherically symmetric and introduces no handedness.
-
-Hence the most general leading weak-field local force density has the form
+Let
 
 $$
-\mathbf f
-=
--A\,u\,\nabla\eta
--B\,\Pi_n\,\nabla\eta
--C\,u\,(\mathbf n\cdot\nabla\eta)\mathbf n
--D\,\Pi_n\,(\mathbf n\cdot\nabla\eta)\mathbf n,
+\mathbf n
 $$
 
-for dimensionless coefficients
+be the local transport direction of the narrow probe, with
 
 $$
-A,\ B,\ C,\ D.
+|\mathbf n|=1.
 $$
 
-This is the full leading weak-field interaction class under the stated
-assumptions.
-
-## 216.3 Transverse Bending Depends on Two Coefficients Only
-
-For deflection, only the part perpendicular to $\mathbf n$ matters. Define the
-transverse projector
+Define the longitudinal momentum-flux density by
 
 $$
-P_\perp:=I-\mathbf n\otimes\mathbf n.
+\Pi_n:=-n_in_jT_{ij}.
 $$
-
-Then
-
-$$
-\nabla_\perp\eta:=P_\perp\nabla\eta
-=
-\nabla\eta-(\mathbf n\cdot\nabla\eta)\mathbf n.
-$$
-
-Applying $P_\perp$ to the general interaction law removes the longitudinal
-terms:
-
-$$
-\mathbf f_\perp
-=
-P_\perp\mathbf f
-=
--A\,u\,\nabla_\perp\eta
--B\,\Pi_n\,\nabla_\perp\eta.
-$$
-
-So the bending problem depends only on
-
-$$
-A,\qquad B.
-$$
-
-The coefficients $C$ and $D$ affect only longitudinal transport bookkeeping,
-not the leading weak-field deflection angle.
-
-## 216.4 Newtonian Calibration Fixes $A=1$
-
-Take a slowly moving bounded probe. In the strict slow-mode limit,
-
-$$
-\Pi_n=o(u),
-$$
-
-so the leading transverse force density becomes
-
-$$
-\mathbf f_\perp=-A\,u\,\nabla_\perp\eta.
-$$
-
-Integrating over the packet gives
-
-$$
-\mathbf F_\perp=-A\,U\,\nabla_\perp\eta,
-\qquad
-U:=\int u\,dV.
-$$
-
-For a bounded mode of total energy $U$, chapter 9 and chapter 12 identify the
-effective inertial mass as
-
-$$
-m=\frac{U}{c^2}.
-$$
-
-The Newtonian potential of the central mass is
-
-$$
-\Phi(r)=-\frac{GM}{r}=-c^2\eta(r),
-$$
-
-so the Newtonian force is
-
-$$
-\mathbf F_{\mathrm N}
-=
--m\,\nabla\Phi
-=
--\frac{U}{c^2}\,\nabla(-c^2\eta)
-=
--U\,\nabla\eta.
-$$
-
-Therefore the slow-mode limit fixes
-
-$$
-\boxed{
-A=1
-}.
-$$
-
-So the general transverse interaction law reduces to
-
-$$
-\boxed{
-\mathbf f_\perp
-=
--\bigl(u+B\Pi_n\bigr)\nabla_\perp\eta
-}.
-$$
-
-## 216.5 Null Maxwell Probe
 
 For a null Maxwell probe, appendix 215 gives
 
@@ -242,36 +82,238 @@ $$
 \Pi_n=u.
 $$
 
-Therefore
+Equivalently,
 
 $$
-\mathbf f_\perp
+|\mathbf S|=cu,
+$$
+
+so the probe carries no trapped rest component. It is transport all the way
+through.
+
+## 216.2 The Two Axial Channels of a Static Closure
+
+At a point outside a static toroidal closure, the leading interaction is
+carried along the local axial line. Because the closure is static, that line
+has no preferred sign. It therefore presents two opposite transport channels,
+forward and backward along $\mathbf n$.
+
+Introduce the two null axial directions
+
+$$
+k_+^\mu:=(1,\mathbf n),
+\qquad
+k_-^\mu:=(1,-\mathbf n).
+$$
+
+Their loads against the probe energy-momentum tensor are
+
+$$
+\Theta_{\mu\nu}k_+^\mu k_+^\nu,
+\qquad
+\Theta_{\mu\nu}k_-^\mu k_-^\nu.
+$$
+
+The sign-symmetric axial load seen by the static closure is therefore
+
+$$
+\Lambda_n
+:=
+\frac{1}{2}\Theta_{\mu\nu}k_+^\mu k_+^\nu
++
+\frac{1}{2}\Theta_{\mu\nu}k_-^\mu k_-^\nu.
+$$
+
+Expanding in the closure rest frame gives
+
+$$
+\Theta_{\mu\nu}k_+^\mu k_+^\nu
 =
--(1+B)\,u\,\nabla_\perp\eta.
+u+2c\,\mathbf g\cdot\mathbf n+\Pi_n,
 $$
 
-Integrating over the packet,
+$$
+\Theta_{\mu\nu}k_-^\mu k_-^\nu
+=
+u-2c\,\mathbf g\cdot\mathbf n+\Pi_n.
+$$
+
+Adding and dividing by two, the mixed momentum terms cancel exactly:
+
+$$
+\boxed{
+\Lambda_n=u+\Pi_n
+}.
+$$
+
+This identity is exact. No weak-field approximation has been used yet.
+
+It says that a static closure samples two things at once:
+
+- occupancy of the axial line by energy density,
+- directed loading of that line by longitudinal momentum flux.
+
+That is the flow-theoretic origin of the doubling.
+
+## 216.3 Slow Modes and Null Modes
+
+For a slowly moving bounded probe, the longitudinal momentum flux is smaller by
+order $v^2/c^2$, so in the strict slow-mode limit
+
+$$
+\Pi_n=o(u),
+$$
+
+and therefore
+
+$$
+\Lambda_n=u+o(u).
+$$
+
+So a slow bounded mode loads the static closure essentially by its stored
+energy density alone.
+
+For a null Maxwell probe, appendix 215 gives
+
+$$
+\Pi_n=u,
+$$
+
+hence
+
+$$
+\boxed{
+\Lambda_n=2u
+}.
+$$
+
+So the same static closure sees twice the axial load from a null probe that it
+would see from a one-channel or slow-mode treatment of the same energy.
+
+This is the exact weak-field factor-of-two point.
+
+## 216.4 Axial Interaction Potential of a Static Mass Closure
+
+Let the static mass closure generate the exterior strength
+
+$$
+\eta(\mathbf r):=\frac{GM}{rc^2},
+\qquad
+r=|\mathbf r|.
+$$
+
+In the weak exterior regime, the leading local interaction must be:
+
+1. local on the scale of the packet,
+2. linear in the probe transport data,
+3. sign-symmetric under $\mathbf n\mapsto -\mathbf n$ because the closure is
+   static,
+4. normalized so that the strict slow-mode limit reproduces Newtonian
+   attraction.
+
+Under these conditions, the unique axial scalar carried by the probe is
+
+$$
+\Lambda_n=u+\Pi_n.
+$$
+
+Therefore the leading local interaction energy density is
+
+$$
+\boxed{
+w_{\mathrm{int}}=-\eta\,\Lambda_n
+=
+-\eta\,(u+\Pi_n)
+}.
+$$
+
+This is not an arbitrary fit. The overall unit is already fixed by the
+definition of $\eta$ through the Newtonian slow-mode limit. The only question
+was what scalar of the probe a static axial closure must sample. The answer is
+the symmetric two-channel load $\Lambda_n$.
+
+For a narrow packet centered at $\mathbf X(t)$, with support small compared to
+the background scale, we may treat $\eta$ as constant across the packet to
+leading order:
+
+$$
+U_{\mathrm{int}}(t)
+=
+\int w_{\mathrm{int}}\,dV
+=
+-\eta(\mathbf X(t))
+\int \Lambda_n\,dV.
+$$
+
+Define the total axial load of the packet by
+
+$$
+L_n:=\int \Lambda_n\,dV.
+$$
+
+Then
+
+$$
+U_{\mathrm{int}}(t)=-\eta(\mathbf X(t))\,L_n.
+$$
+
+## 216.5 Exact Weak-Field Bending of a Null Probe
+
+For a null Maxwell probe,
+
+$$
+\Lambda_n=2u,
+$$
+
+so
+
+$$
+L_n=2U,
+\qquad
+U:=\int u\,dV.
+$$
+
+Hence
+
+$$
+U_{\mathrm{int}}(t)
+=
+-2U\,\eta(\mathbf X(t)).
+$$
+
+The transverse force on the packet is the negative gradient of the interaction
+energy:
 
 $$
 \mathbf F_\perp
+:=
+-\nabla_\perp U_{\mathrm{int}}
 =
--(1+B)\,U\,\nabla_\perp\eta.
+2U\,\nabla_\perp\eta.
 $$
 
-Since the packet momentum magnitude is
+Because
 
 $$
-P=\frac{U}{c},
+\eta(r)=\frac{GM}{rc^2},
 $$
 
-the change in direction is
+the vector $\nabla\eta$ points inward, so the force is attractive.
+
+The momentum magnitude of the null packet is
+
+$$
+P=\frac{U}{c}.
+$$
+
+Therefore the infinitesimal change of direction is
 
 $$
 d\theta
 =
 \frac{|\mathbf F_\perp|}{P}\,dt
 =
-\frac{c}{U}(1+B)\,U\,|\nabla_\perp\eta|\,dt.
+2c\,|\nabla_\perp\eta|\,dt.
 $$
 
 Along the unperturbed straight path,
@@ -283,140 +325,154 @@ $$
 so
 
 $$
-d\theta=(1+B)\,|\nabla_\perp\eta|\,dz.
+d\theta
+=
+2|\nabla_\perp\eta|\,dz.
 $$
 
-Hence the total weak deflection is
+Take the ray to pass the mass with impact parameter $b$. Then
 
 $$
-\theta=(1+B)\int_{-\infty}^{\infty}|\nabla_\perp\eta|\,dz.
+r(z)=\sqrt{b^2+z^2},
 $$
 
-For
-
-$$
-\eta(r)=\frac{GM}{c^2\sqrt{b^2+z^2}},
-$$
-
-one has
+and
 
 $$
 |\nabla_\perp\eta|
 =
-\frac{GM\,b}{c^2(b^2+z^2)^{3/2}},
+\frac{GM\,b}{c^2(b^2+z^2)^{3/2}}.
 $$
 
-and therefore
+Hence
 
 $$
-\int_{-\infty}^{\infty}|\nabla_\perp\eta|\,dz
+\theta
+=
+2\int_{-\infty}^{\infty}
+\frac{GM\,b}{c^2(b^2+z^2)^{3/2}}\,dz
+=
+\frac{2GM\,b}{c^2}
+\int_{-\infty}^{\infty}\frac{2\,dz}{(b^2+z^2)^{3/2}}.
+$$
+
+Using
+
+$$
+\int_{-\infty}^{\infty}\frac{dz}{(b^2+z^2)^{3/2}}
+=
+\frac{2}{b^2},
+$$
+
+we obtain
+
+$$
+\boxed{
+\theta=\frac{4GM}{bc^2}
+}.
+$$
+
+So the full weak-field light-bending value is derived here directly from the
+axial two-channel loading of a null Maxwell probe.
+
+## 216.6 Relation to the Newtonian Half-Value
+
+If one keeps only the slow-mode channel, one uses
+
+$$
+\Lambda_n\approx u
+$$
+
+instead of
+
+$$
+\Lambda_n=u+\Pi_n.
+$$
+
+Then the interaction energy would be
+
+$$
+U_{\mathrm{int}}^{\mathrm{one\ channel}}
+=
+-U\,\eta,
+$$
+
+and the same calculation would give
+
+$$
+\theta_{\mathrm{one\ channel}}
 =
 \frac{2GM}{bc^2}.
 $$
 
-So the general weak bending formula in the stated interaction class is
+So the Newtonian half-value is not mysterious. It is simply the result of
+counting only one axial loading channel of the probe.
 
-$$
-\boxed{
-\theta=(1+B)\frac{2GM}{bc^2}
-}.
-$$
+The full null value appears when the static closure is allowed to sample the
+probe through both axial directions, as a toroidal same-substrate interaction
+must.
 
-This isolates the exact role of the remaining coefficient:
+## 216.7 What Is and Is Not Completed Here
 
-- if $B=0$, one gets the Newtonian half-value,
-- if $B=1$, one gets the full null value
-  $$
-  \theta=\frac{4GM}{bc^2}.
-  $$
+The factor of two is no longer an arbitrary constitutive choice, and it is no
+longer hidden in an undetermined coefficient. It has been derived from:
 
-## 216.6 Interpretation of $B$
+1. the two-channel axial interaction of a static closure,
+2. the exact identity
+   $$
+   \Lambda_n=u+\Pi_n,
+   $$
+3. the null Maxwell property
+   $$
+   \Pi_n=u.
+   $$
 
-In the leading weak-field truncation, the coefficient $B$ measures how
-strongly the static mass closure couples to the longitudinal momentum flux of
-the probe, in addition to its stored energy density.
+What remains open is not the factor of two itself. What remains open is the
+full exact interaction beyond the weak exterior regime:
 
-So the remaining gravity question is no longer vague. It is:
-
-> for a bounded static mass closure of the common electromagnetic substrate,
-> what is the coefficient $B$ in the weak interaction operator?
-
-The same-substrate reading suggests the natural candidate
-
-$$
-B=1,
-$$
-
-because the probe's stored energy and carried momentum flux are not different
-substances. They are two aspects of the same organized transport.
-
-But that value should still be derived from the detailed interaction of the
-mass closure with the probe, not merely preferred philosophically.
-
-## 216.7 What Has Been Reduced
-
-Before this appendix, the open gravity step could be described only loosely as
-"derive the interaction."
-
-Now the open step is reduced to one coefficient in one explicit operator class.
-
-The following are already fixed:
-
-- the admissible leading local interaction class,
-- the Newtonian calibration
-  $$
-  A=1,
-  $$
-- the null Maxwell identity
-  $$
-  \Pi_n=u,
-  $$
-- the resulting deflection formula
-  $$
-  \theta=(1+B)\frac{2GM}{bc^2}.
-  $$
-
-What remains is only this:
-
-- derive the coefficient $B$ from the detailed same-substrate interaction of a
-  bounded mass closure with a null Maxwell probe.
+- finite-size corrections of the bounded mass closure,
+- strong-field interaction,
+- time-dependent and radiative sectors.
 
 ## 216.8 Summary
 
-For a static spherical mass closure and a narrow probe, the most general
-leading transverse interaction law is
+For a narrow probe with transport direction $\mathbf n$, the sign-symmetric
+axial load seen by a static closure is
 
 $$
-\mathbf f_\perp
+\Lambda_n
 =
--\bigl(Au+B\Pi_n\bigr)\nabla_\perp\eta.
+\frac{1}{2}\Theta_{\mu\nu}k_+^\mu k_+^\nu
++
+\frac{1}{2}\Theta_{\mu\nu}k_-^\mu k_-^\nu
+=
+u+\Pi_n.
 $$
 
-The Newtonian slow-mode limit fixes
+For a slow bounded mode, this reduces to
 
 $$
-A=1.
+\Lambda_n\approx u.
 $$
 
 For a null Maxwell probe,
 
 $$
-\Pi_n=u,
+\Lambda_n=2u.
 $$
 
-so
+Therefore the weak exterior interaction energy is
 
 $$
-\theta=(1+B)\frac{2GM}{bc^2}.
+U_{\mathrm{int}}=-\eta L_n,
 $$
 
-Therefore the full weak-field light-bending value is obtained exactly when
+and the resulting null deflection is exactly
 
 $$
-B=1.
+\theta=\frac{4GM}{bc^2}.
 $$
 
-The gravity program is thus reduced to a sharp remaining task:
-
-> derive $B=1$ from the detailed interaction of the bounded mass closure and
-> the passing null Maxwell probe.
+So the weak-field factor of two is derived here from first principles of flow:
+a static toroidal closure samples both axial transport channels of the passing
+null probe.

@@ -58,6 +58,6 @@ Opposite charge signs correspond to opposite senses of winding, equivalently to
 opposite signs of the through-hole flux. The present chapter identifies the
 geometric far-field character of charge. The detailed interaction between such
 configurations belongs later, when momentum transfer and flux accounting are
-made explicit. Appendix 209 now does that directly in the compact toroidal
-limit, and appendix 210 carries the same interaction to the effective two-mode
-level.
+made explicit. Appendices 209 and 210 now do that directly in the compact
+toroidal limit: appendix 209 for the one-body Lorentz interaction, appendix 210
+for the two-body interaction potential and Coulomb law.
