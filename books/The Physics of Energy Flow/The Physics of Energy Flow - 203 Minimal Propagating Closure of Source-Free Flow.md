@@ -76,6 +76,10 @@ $$
 \partial_t \mathbf{F} = k\,\nabla \times \mathbf{F}.
 $$
 
+This relation is posed simultaneously for all $\mathbf{r}$ in the extent. It
+is therefore a whole-field update, not a rule for tracking one individually
+marked point through space.
+
 We now examine whether this relation yields propagating transport.
 
 ## 203.3 Failure of the Single Self-Curl Relation

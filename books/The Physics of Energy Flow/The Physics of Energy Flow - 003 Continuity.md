@@ -32,6 +32,11 @@ $$
 Here $S_{12}$ refers to the redistribution flow connecting
 registrations $1$ and $2$.
 
+The statement is local, but it is imposed at once for all positions in the
+extent. It does not move one marked point through a pre-given background. It
+constrains how the whole registered distribution can change while remaining one
+continuous reconfiguration of $u$.
+
 This is accounting of energy, not yet its dynamics. It is like accounting for
 the brightness of the pixels on a screen without yet recognizing the image
 they compose.[^platos-allegory]

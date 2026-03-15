@@ -37,6 +37,11 @@ $$
 \mathbf{S}(\mathbf{r};1,2).
 $$
 
+This notation is not a recipe for following one tagged parcel of energy from
+place to place. It is a relation posed simultaneously for all $\mathbf{r}$ in
+the extent. It describes how the whole registered distribution reorganizes at
+once.
+
 The flow lines of $\mathbf{S}$ trace the reconfiguration by which $u_1$
 becomes $u_2$.
 

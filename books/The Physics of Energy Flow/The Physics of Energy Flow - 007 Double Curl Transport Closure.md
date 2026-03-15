@@ -83,6 +83,11 @@ Now each aspect changes by the curl of the other. This is the minimal real
 closed transport relation: no sources, no action at a distance, no extra
 fields, and no higher-order operators.
 
+Like every field relation in this book, this coupled update is posed
+simultaneously for all $\mathbf{r}$ in the extent. It does not describe the
+path of one individually tagged point. It describes how the whole organized
+flow reorganizes at once.
+
 Transport becomes legible only after the flow is resolved into these
 complementary aspects, because the coupled update acts on the pair as a whole.
 If we
