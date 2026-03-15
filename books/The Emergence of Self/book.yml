@@ -9,6 +9,7 @@ lang: en-US
 rights: CC-BY-NC-ND-4.0
 fontsize: 12pt
 linestretch: 1.32
+cover-image: https://siran.github.io/assets/The Emergence of Self/The Emergence of Self.png
 header-includes:
   - \renewcommand{\footnotesize}{\fontsize{11pt}{13pt}\selectfont}
   - \setlength{\skip\footins}{16pt}

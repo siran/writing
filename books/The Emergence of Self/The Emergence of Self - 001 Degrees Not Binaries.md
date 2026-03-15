@@ -3,7 +3,6 @@ title: The Emergence of Self - Degrees Not Binaries
 date: 2026-03-15
 ---
 
-
 # Degrees, Not Binaries
 
 Life and consciousness are degrees, not binaries. A thermostat is weakly alive:
@@ -40,6 +39,7 @@ We therefore begin from a minimal thesis:
 
 > A self is a self-sustaining causal loop that carries imprints of its own past
 > and uses them to steer its future.
+
 
 Consciousness and selfhood then vary with the depth, richness, and autonomy of
 that steering.
