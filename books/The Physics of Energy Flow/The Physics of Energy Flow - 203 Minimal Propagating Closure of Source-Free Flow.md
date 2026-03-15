@@ -216,6 +216,105 @@ This proves the point needed in the main text: a single self-curl update can
 turn a structure, but it cannot carry a nontrivial bounded closure bodily from
 one region to another.
 
+The same argument rules out rigid bodily rotation of a localized closure.
+
+Assume that a nontrivial bounded closure rotates rigidly about a fixed axis. Let
+$Q(t)=e^{t\Omega}$ be the corresponding one-parameter family of rotation
+matrices, with $\Omega$ a constant skew-symmetric matrix, and suppose
+
+$$
+\mathbf{F}(\mathbf{r},t)=Q(t)\,\mathbf{G}(Q(t)^{-1}\mathbf{r}).
+$$
+
+Define the linear operator
+
+$$
+A_\Omega \mathbf{G}
+:=
+\Omega \mathbf{G}-(\Omega\mathbf{r})\cdot\nabla \mathbf{G}.
+$$
+
+Then
+
+$$
+\partial_t\mathbf{F}\big|_{t=0}=A_\Omega\mathbf{G},
+\qquad
+\partial_t^2\mathbf{F}\big|_{t=0}=A_\Omega^2\mathbf{G}.
+$$
+
+Substituting into
+
+$$
+\partial_t^2 \mathbf{F} + k^2\nabla^2\mathbf{F}=0
+$$
+
+at $t=0$ gives
+
+$$
+A_\Omega^2\mathbf{G}+k^2\nabla^2\mathbf{G}=0.
+$$
+
+Now take the $L^2$ inner product with $\mathbf{G}$. The operator $A_\Omega$ is
+skew-adjoint on compactly supported fields:
+
+- $\Omega$ is pointwise skew-symmetric, so
+  $$
+  \int \mathbf{U}\cdot(\Omega\mathbf{V})\,dV
+  =
+  -\int (\Omega\mathbf{U})\cdot\mathbf{V}\,dV
+  $$
+- the vector field $\Omega\mathbf{r}$ has zero divergence because
+  $\mathrm{tr}(\Omega)=0$, so integration by parts gives
+  $$
+  \int \mathbf{U}\cdot\big((\Omega\mathbf{r})\cdot\nabla\mathbf{V}\big)\,dV
+  =
+  -\int \big((\Omega\mathbf{r})\cdot\nabla\mathbf{U}\big)\cdot\mathbf{V}\,dV
+  $$
+
+Therefore
+
+$$
+\int \mathbf{G}\cdot A_\Omega^2\mathbf{G}\,dV
+=
+-\int |A_\Omega\mathbf{G}|^2\,dV.
+$$
+
+Together with
+
+$$
+\int \mathbf{G}\cdot\nabla^2\mathbf{G}\,dV
+=
+-\int |\nabla\mathbf{G}|^2\,dV,
+$$
+
+we obtain
+
+$$
+\int |A_\Omega\mathbf{G}|^2\,dV
++
+k^2\int |\nabla\mathbf{G}|^2\,dV
+=
+0.
+$$
+
+Again both terms are nonnegative, so both must vanish. Hence
+
+$$
+A_\Omega\mathbf{G}=0,
+\qquad
+\nabla\mathbf{G}=0.
+$$
+
+Thus $\mathbf{G}$ is constant, and since it is localized, it must be zero.
+Therefore the only localized rigidly rotating solution of the single self-curl
+relation is the trivial one.
+
+So the one-field self-curl update does not bodily move a bounded closure,
+either by translation or by rigid rotation. What remains possible is weaker
+than rigid-body motion: internal reorientation, internal deformation, or phase
+progression on a fixed support. Those possibilities are not classified by the
+present no-go result.
+
 ## 203.4 Coupled Curl Evolution
 
 Now introduce two divergence-free fields
