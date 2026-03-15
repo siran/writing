@@ -1,237 +1,339 @@
 ---
-title: A Maxwell Universe – Mechanics and Self-Refraction
-date: 2025-12-31 20:15
+title: A Maxwell Universe - Mechanics and Self-Refraction
+date: 2026-03-15
 ---
 
 
-## From Spectral Structure to Mechanics
+# Mechanics and Self-Refraction
 
-In the preceding chapter, we showed that discrete spectral structure—exemplified
-by the Rydberg series—arises naturally when electromagnetic fields are confined
-by global continuity conditions. Discreteness emerged not from particles,
-forces, or quantization rules, but from topology: the requirement that a field
-defined on a compact configuration match itself after completing closed cycles.
+In the preceding chapter, discreteness appeared not from particles or quantum
+rules, but from continuity and topology. The electromagnetic field could close
+on itself only in discrete global classes.
 
-At that stage, the discussion concerned only internal structure: how energy
-redistributes within a self-confined electromagnetic configuration. Yet a
-question remains unavoidable. If such configurations are to be identified with
-ordinary matter, how do they move? How do they carry momentum, resist
-acceleration, and obey the conservation laws that govern everyday mechanics?
+That result concerned internal organization. A further question immediately
+follows. If such bounded configurations are to count as ordinary matter, how do
+they move? How do they carry momentum, resist acceleration, and persist instead
+of dispersing?
 
-The answer cannot be imported from Newtonian axioms or particle models, because
-neither exists in a Maxwell Universe. If mechanics is to arise at all, it must
-arise from electromagnetic field dynamics alone.
+In a Maxwell Universe, these questions cannot be answered by importing
+Newtonian particles or external containers. They must be answered by the field
+itself.
 
-The purpose of the present chapter is to show that it does—inevitably.
+This chapter does two things:
+
+- it shows how mechanics emerges from electromagnetic energy and momentum
+  balance,
+- it sharpens the self-refraction principle so it no longer means a vague
+  "effective medium," but the redirection of one organized part of the field by
+  the transport geometry induced by the rest of that same field.
 
 
 ## Conservation Laws in a Maxwell Universe
 
-In a Maxwell Universe, the electromagnetic field is the only fundamental entity.
-There are no particles, no intrinsic masses, and no independent mechanical
-postulates. All physical objects are structured, self-confined electromagnetic
-field configurations evolving according to the source-free Maxwell equations:
+The only fundamental entity is the organized electromagnetic field. In the
+resolved Maxwell form, its source-free dynamics is
 
 $$
-\nabla\cdot\vec{E}=0,\qquad \nabla\cdot\vec{B}=0,
-$$
-
-$$
-\nabla\times\vec{E}=-\frac{\partial\vec{B}}{\partial t},
+\nabla\cdot\mathbf E=0,
 \qquad
-\nabla\times\vec{B}=\mu_0\epsilon_0\frac{\partial\vec{E}}{\partial t}.
+\nabla\cdot\mathbf B=0,
 $$
 
-These four equations supply the entire dynamics. What we call “matter” is
-nothing more than a persistent solution of these equations.
-
-
-### Energy and Momentum Are Field Properties
-
-Maxwell’s theory assigns energy and momentum directly to fields. The local
-electromagnetic energy density is
-
 $$
-u=\tfrac12\bigl(\epsilon_0|\vec{E}|^2+\mu_0^{-1}|\vec{B}|^2\bigr),
+\nabla\times\mathbf E=-\partial_t\mathbf B,
+\qquad
+\nabla\times\mathbf B=\mu_0\varepsilon_0\,\partial_t\mathbf E.
 $$
 
-and the flow of this energy is given by the Poynting vector,
+These equations are not added to a particle world. They are the resolved
+two-aspect transport closure of the same continuous field.
+
+
+### Energy and Momentum Are Already Field Properties
+
+The local energy density is
 
 $$
-\vec{S}=\mu_0^{-1}\,\vec{E}\times\vec{B}.
+u=\frac12\left(\varepsilon_0|\mathbf E|^2+\mu_0^{-1}|\mathbf B|^2\right),
 $$
 
-Momentum is not an added concept; it is already present in the field. The
-momentum density is
+and the energy flux is
 
 $$
-\vec{g}=\frac{\vec{S}}{c^2}=\epsilon_0\,\vec{E}\times\vec{B}.
+\mathbf S=\mu_0^{-1}\mathbf E\times\mathbf B.
 $$
 
-For any localized electromagnetic configuration occupying a region $V$, the
-total momentum is therefore
+Momentum is not an extra ingredient. It is already present in the field:
 
 $$
-\vec{P}=\int_V \vec{g}\,d^3x.
+\mathbf g=\frac{\mathbf S}{c^2}=\varepsilon_0\,\mathbf E\times\mathbf B.
 $$
 
-No mass parameter has been introduced.
-
-
-### Why Momentum Is Conserved
-
-The conservation of momentum follows directly from Maxwell dynamics.
-Differentiating the momentum density and using Maxwell’s equations yields the
-local balance law
+The total momentum of a localized configuration in a region $V$ is therefore
 
 $$
-\frac{\partial\vec{g}}{\partial t}+\nabla\cdot\mathbf{T}=0,
+\mathbf P=\int_V \mathbf g\,d^3x.
 $$
 
-where $\mathbf{T}$ is the Maxwell stress tensor. Integrating over a volume $V$
-gives
+No independent mass parameter has yet been introduced.
+
+
+### Local Balance Laws
+
+Maxwell transport gives two exact local balance equations.
+
+Energy continuity:
 
 $$
-\frac{d\vec{P}}{dt} = -\!\int_{\partial V}\mathbf{T}\cdot d\vec{A}.
+\partial_t u+\nabla\cdot\mathbf S=0.
 $$
 
-Momentum changes only when electromagnetic stress crosses the boundary. For a
-self-confined configuration whose external fields cancel on $\partial V$, the
-surface integral vanishes and $\vec{P}$ remains constant.
-
-Momentum conservation is therefore not a postulate, but a consequence of
-source-free Maxwell dynamics.
-
-
-### Inertia Without Mass
-
-Define the total electromagnetic energy in $V$,
+Momentum continuity:
 
 $$
-U=\int_V u\,d^3x,
+\partial_t g_i-\partial_j T_{ij}=0,
 $$
 
-and the center of energy,
+where the Maxwell stress tensor is
 
 $$
-\vec{R}(t)=\frac{1}{U}\int_V \vec{r}\,u\,d^3x.
+T_{ij}
+=
+\varepsilon_0\left(E_iE_j-\frac12\delta_{ij}\mathbf E^2\right)
++
+\frac{1}{\mu_0}\left(B_iB_j-\frac12\delta_{ij}\mathbf B^2\right).
 $$
 
-Electromagnetic field theory gives the exact relation
+Integrating the momentum law over a volume $V$ gives
 
 $$
-\vec{P}=\frac{U}{c^{2}}\,\frac{d\vec{R}}{dt}.
+\frac{d\mathbf P}{dt}
+=
+\int_{\partial V}\mathbf T\cdot d\mathbf A.
 $$
 
-If $\vec{P}$ is constant, then $d\vec{R}/dt$ is constant. A localized
-electromagnetic configuration therefore moves at uniform velocity unless acted
-upon by external electromagnetic stress.
-
-This is inertia.
+So momentum changes only when electromagnetic stress crosses the boundary.
+Mechanics is already here. It is bookkeeping for transported field momentum.
 
 
-### Emergence of Newton’s Second Law
+### Center of Energy and Inertia
 
-From local energy conservation,
+Let
 
 $$
-\frac{\partial u}{\partial t}+\nabla\cdot\vec{S}=0,
+U=\int_V u\,d^3x
 $$
 
-we define the enclosed energy of the self-sustaining electromagnetic
-configuration $U(t)$ and its energy centroid $\vec{R}(t)$.
-
-Differentiating the numerator of the centroid definition:
+be the total energy of a bounded configuration, and define its center of energy
 
 $$
-\frac{d}{dt}\int_V \vec{r}\,u\,d^3x
-=\int_V \vec{r}\,\frac{\partial u}{\partial t}\,d^3x
-=-\int_V \vec{r}\,\nabla\cdot\vec{S}\,d^3x.
+\mathbf R(t)=\frac{1}{U}\int_V \mathbf r\,u\,d^3x.
 $$
 
-Using the vector identity
-$\nabla\cdot(\vec{r}\,\vec{S})=\vec{S}+\vec{r}\,\nabla\cdot\vec{S}$, we rewrite
-the integral and apply the divergence theorem:
+For an isolated bounded mode, the boundary energy flux vanishes, so $U$ is
+constant. Using
 
 $$
-\frac{d}{dt}\int_V \vec{r}\,u\,d^3x
-=\int_V \vec{S}\,d^3x-\oint_{\partial V} \vec{r}\,(\vec{S}\cdot d\vec{A}).
+\partial_t u=-\nabla\cdot\mathbf S,
 $$
 
-For a self-confined configuration (no net energy flux across $\partial V$), the surface term vanishes. Using $\vec{P} = (1/c^2) \int \vec{S} d^3x$, we obtain:
+one obtains
 
 $$
-\frac{d}{dt}\int_V \vec{r}\,u\,d^3x=c^2\vec{P}.
+\frac{d}{dt}\int_V \mathbf r\,u\,d^3x
+=
+\int_V \mathbf S\,d^3x,
 $$
 
-Finally, differentiating $\vec{R}$ gives the center-of-energy identity:
+hence
 
 $$
-\boxed{\;\vec{P}=\frac{U}{c^{2}}\,\frac{d\vec{R}}{dt}\;}
+\mathbf P
+=
+\frac{1}{c^2}\int_V \mathbf S\,d^3x
+=
+\frac{U}{c^2}\,\frac{d\mathbf R}{dt}.
 $$
 
-Thus the translational velocity of the configuration is not an assumption but a ratio of conserved field integrals.
+This is the exact center-of-energy identity.
 
-Define the inertial mass of the bounded configuration by
-
-$$
-m=\frac{U}{c^{2}}.
-$$
-
-Differentiating $\vec{P}$ yields the general momentum-balance law:
+It suggests the inertial mass of a bounded mode:
 
 $$
-\vec{F}_{\text{ext}} =\frac{d\vec{P}}{dt} =\frac{1}{c^{2}}\frac{dU}{dt}\,\vec{v} +m\,\vec{a}.
+m:=\frac{U}{c^2}.
 $$
 
-For a closed, self-sustained configuration where $dU/dt=0$, the motion of the center of energy obeys identically:
+Then
 
 $$
-\vec{F}_{\text{ext}}=m\,\vec{a}.
+\mathbf P=m\,\dot{\mathbf R},
 $$
 
-Inertia is therefore the persistence of field momentum. Mechanics is the natural behavior of structured electromagnetic fields.
-
-
-## Self-Refraction and Electromagnetic Stability
-
-In the preceding analysis, we treated a localized electromagnetic configuration
-as a given. We must now explain why such a configuration can exist at all, given
-the tendency of electromagnetic waves to disperse.
-
-In a Maxwell Universe, there is no container and no material substrate. Any mechanism of confinement must arise from the field’s own dynamics. We call this mechanism **self-refraction**.
-
-
-### Self-Generated Electromagnetic Environment
-
-Refraction does not require matter; it requires a phase-delayed electromagnetic response. In a Maxwell Universe, this response arises from the field configuration itself.
-
-A self-sustained electromagnetic structure continuously generates secondary electromagnetic fields through its internal dynamics. These secondary fields are phase-delayed relative to the primary energy flow. An electromagnetic wave propagating within such a configuration therefore propagates through an electromagnetic environment created by the configuration itself.
-
-The configuration acts as its own effective medium.
-
-
-### Self-Refraction
-
-In a Maxwell Universe, refraction is expected to happen without matter; it requires relative phase structure within the electromagnetic field that redirects energy flow through interference.
-
-No modification of Maxwell’s equations is required. The equations remain linear and source-free everywhere. The apparent bending of energy flow arises from interference between components of a single self-consistent Maxwell solution.
-
-Writing the total field as a superposition
-$\vec{E}=\sum \vec{E}_k$ and $\vec{B}=\sum \vec{B}_k$, the Poynting vector becomes:
+and the boundary stress law becomes
 
 $$
-\vec{S} =\frac{1}{\mu_0}\sum_{k,\ell}\vec{E}_k\times\vec{B}_\ell .
+\mathbf F_{\mathrm{ext}}
+:=
+\frac{d\mathbf P}{dt}
+=
+\int_{\partial V}\mathbf T\cdot d\mathbf A.
 $$
 
-The cross terms encode the redistribution of electromagnetic energy and momentum
-that continuously redirects propagation, producing closed circulation without
-invoking nonlinearity or an external medium.
+For a closed mode with constant $U$,
+
+$$
+\mathbf F_{\mathrm{ext}}=m\,\ddot{\mathbf R}.
+$$
+
+So inertia and Newtonian-looking mechanics are not primitive axioms. They are
+compact descriptions of electromagnetic energy and momentum bookkeeping for a
+bounded closure.
 
 
-### Stability as Identity
+## Why a Bounded Mode Can Exist
 
-A self-sustained electromagnetic configuration persists because its own fields generate the delayed response required to redirect subsequent propagation. The configuration exists not despite dispersion, but because dispersion is exactly balanced by self-refraction.
+Mechanics explains how a bounded configuration moves if it already exists. It
+does not yet explain why such a configuration does not simply disperse.
 
-Matter, in this view, is not light trapped by an external medium.
-Matter is electromagnetic energy whose own self-generated field structure continuously refracts it into closed, self-consistent circulation.
+The answer cannot be an external box or a material background, because neither
+exists in a Maxwell Universe. The closure must persist by the field's own
+transport.
+
+Here the distinction between local reorganization and transport matters.
+
+- A single curl reorganizes locally.
+- A doubled curl transports.
+
+An open transporting pattern is not yet matter. A material mode is transport
+folded back onto itself so that the transport closure remains bounded.
+
+That folded transport is what AMU Part II calls **self-refraction**.
+
+
+## Self-Refraction
+
+The phrase should now be read precisely.
+
+Self-refraction does **not** mean:
+
+- propagation through a second medium,
+- a delayed secondary field added on top of the first,
+- a modification of Maxwell's equations.
+
+It means:
+
+> one organized part of the field redirects another part of the same field
+> because the total transport geometry is determined by the whole configuration
+> at once.
+
+The field does not travel through something else. The field is the thing that
+sets the transport conditions.
+
+
+### Why Superposition Is Already Interaction
+
+Write a bounded configuration as a sum of coherent components:
+
+$$
+\mathbf E=\sum_k \mathbf E_k,
+\qquad
+\mathbf B=\sum_k \mathbf B_k.
+$$
+
+Then the Poynting vector is
+
+$$
+\mathbf S
+=
+\frac{1}{\mu_0}\sum_{k,\ell}\mathbf E_k\times\mathbf B_\ell.
+$$
+
+The Maxwell stress is likewise quadratic:
+
+$$
+T_{ij}
+=
+\varepsilon_0\left(E_iE_j-\frac12\delta_{ij}\mathbf E^2\right)
++
+\frac{1}{\mu_0}\left(B_iB_j-\frac12\delta_{ij}\mathbf B^2\right).
+$$
+
+So when coherent parts of the same bounded mode overlap, cross terms appear in
+both energy transport and momentum transport.
+
+Those cross terms are not optional corrections. They are the exact
+redistribution terms of the total field. They redirect energy flow and stress
+across the entire extent at once.
+
+That is the rigorous content of "the field interacts with itself."
+
+
+### Self-Refraction as Same-Substrate Redirection
+
+Because the transport relation is imposed simultaneously for all points in the
+extent, self-refraction is not the path of a tagged bit of substance through a
+pre-existing medium.
+
+It is the whole-field statement that one region of the closure changes the
+transport geometry seen by neighboring regions of that same closure.
+
+In a toroidal or helical mode:
+
+- one part of the circulation loads the axial path,
+- another part carries the transport around the closure,
+- the transported energy is continuously redirected back into the bounded mode
+  instead of leaking away.
+
+So a knot is not "light trapped in a box." It is transport whose own geometry
+keeps turning subsequent transport back into the closure.
+
+This is why the phrase `self-refraction` is worth keeping. It names the fact
+that the field is both the transported thing and the thing that shapes the path
+of that transport.
+
+
+## Stability as Identity
+
+A bounded electromagnetic mode persists when dispersion is balanced by this
+same-substrate redirection.
+
+The mode exists because:
+
+- transport is real,
+- transport can close on itself,
+- the closure redirects later transport back into the same organized pattern.
+
+The identity of the object is therefore not a separate substance hidden behind
+the field. The identity **is** the persistent closure.
+
+Matter, on this view, is electromagnetic transport maintained by its own
+self-refraction.
+
+
+## Summary
+
+Mechanics emerges from the exact field balances
+
+$$
+\partial_t u+\nabla\cdot\mathbf S=0,
+\qquad
+\partial_t g_i-\partial_jT_{ij}=0.
+$$
+
+For a bounded mode,
+
+$$
+\mathbf P=\frac{U}{c^2}\dot{\mathbf R},
+\qquad
+m=\frac{U}{c^2},
+$$
+
+so inertia and Newton-like motion are compact descriptions of electromagnetic
+energy and momentum transport.
+
+Stability requires more: not merely local turning, but transporting closure
+folded back onto itself.
+
+That folded transport is self-refraction. It is not a second medium and not a
+secondary field. It is the exact redirection of one organized part of the field
+by the transport geometry induced by the rest of that same field.

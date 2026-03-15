@@ -169,28 +169,26 @@ $$
 everywhere. No electric field originates from a point. How, then, does a
 particle appear to have charge?
 
-Consider the standing wave on the torus. The field lines wrap around the two
-independent cycles, characterized by the winding numbers $(m,n)$. These
-windings represent closed circulations of electromagnetic energy.
+A torus has a distinguished aperture. Choose a spanning surface $\Sigma$
+across that aperture. The closed circulation carries a signed through-hole
+flux
 
-At any local patch of the surface, the field lines entering and leaving balance
-so that the net flux vanishes. However, the global circulation -for example,
-circulation tangent to the surface- does not vanish.
+$$
+\Phi_\Sigma=\int_\Sigma \mathbf S\cdot d\mathbf A.
+$$
 
-Now, enclose this configuration within a spherical surface of radius $r$ much
-larger than the torus itself.
+This is not a source or sink. It is the oriented through-hole moment of the
+closed circulation, and its sign reverses with handedness. Because the closure
+is fixed by winding classes such as $(m,n)$, this through-hole flux comes in
+discrete topological classes.
 
-The total electromagnetic circulation (the "topological charge, $(m,n)$") is a
-conserved quantity fixed by the winding numbers $m$ and $n$. This energy,
-thought as a bulb turned-off (no radiation, no point source), is constant; so we
-can think that it's energy is spread evenly around it. This energy, spread
-accross the area of the sensor we use to measure it (the eye is a sensory organ,
-"a sensor", as well) is what we measure as a $1/r^2$ dependence.
+Far from the torus, the detailed winding is no longer resolved. What remains
+visible is the projection of this conserved oriented quantity. Enclose the
+torus in a sphere of radius $r$ much larger than the torus itself. The sphere
+has area $4\pi r^2$.
 
-
-As this fixed quantity is projected
-through a sphere whose area grows as $4\pi r^2$, the observed field intensity
-necessarily falls off as:
+A fixed conserved quantity, spread over a growing area, produces an average
+projected intensity that falls as
 
 $$
 \text{Intensity} \propto \frac{1}{r^2}.
@@ -199,5 +197,5 @@ $$
 This reproduces the phenomenology of charge.
 
 In this view, charge is not a primitive substance added to the universe. It is
-an effective, topological quantity: the far-field signature of closed
-electromagnetic circulation.
+the far-field signature of a discrete signed through-hole flux class carried by
+a closed toroidal circulation.

@@ -69,11 +69,17 @@ Classically, two light beams crossing each other are said not to interact. They 
 
 This objection rests on a misunderstanding of what "superposition" implies.
 
-When light enters a material (like glass), it slows down. The standard explanation is that the light polarizes the atoms in the glass ($P = \chi E$), creating a secondary field that interferes with the first, effectively slowing the phase velocity.
+When light enters a material (like glass), the standard explanation says that
+the light polarizes the atoms in the glass ($P=\chi E$), and that this
+organized response changes the propagation speed.
 
-But what is the "atom" in this picture? It is a collection of bound charged particles. And what are charged particles? In our view, they are localized electromagnetic structures.
+But what is an "atom" in this picture? In our view, it is already a bounded
+electromagnetic closure. So the fundamental event is not one thing generating a
+secondary field inside some alien matter. It is one organized electromagnetic
+pattern reorganizing another part of the same field.
 
-Therefore, the "interaction of light with matter" is, at its root, **the interaction of light with light**.
+Therefore, the "interaction of light with matter" is, at root,
+**the interaction of light with organized light**.
 
 Standard Maxwell theory already allows for this interaction via the energy density. The energy density of a field is quadratic:
 
@@ -89,7 +95,10 @@ $$
 
 This cross-term ($2\mathbf{E}_1 \cdot \mathbf{E}_2$) represents a real redistribution of energy and momentum in the region of overlap. Superposition does not mean non-interaction; it means the interaction is handled by the energy configuration of the combined system.
 
-In a Maxwell Universe, the "material" that refracts the light is the field itself.
+In a Maxwell Universe, the "material" that refracts the light is the field
+itself. Later chapters name this more sharply: self-refraction is the
+redirection of transport by transport conditions induced by the field's own
+organization.
 
 
 ## Structure Without Sources
