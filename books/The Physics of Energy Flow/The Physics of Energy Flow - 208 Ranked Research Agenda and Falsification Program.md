@@ -127,7 +127,15 @@ What still remains:
 
 ### 3. Uniqueness theorem for the Maxwell closure inside a stated class
 
-Goal:
+Status:
+
+This is now completed in Appendix 211 for the explicit class actually used by
+chapters 6 and 7: real, linear, local, homogeneous, isotropic, first-order,
+purely differential, divergence-preserving two-field closures. In that class,
+every neutral isotropic transporting closure is proved equivalent, by a real
+linear recombination of the two fields, to the Maxwell pair.
+
+Original goal:
 
 Prove, or sharply delimit, in what class of local source-free closures the
 Maxwell pair is genuinely minimal or unique.
@@ -144,6 +152,23 @@ What must be shown:
   divergence-preserving, transporting closures,
 - prove whether every element of that class is equivalent to the doubled curl
   / Maxwell form up to change of variables.
+
+What is now shown:
+
+- exact classification of all closures in the stated class,
+- reduction of the transport question to a real $2\times 2$ field-space matrix,
+- exact criterion
+  $$
+  M^2=-k^2I
+  $$
+  for neutral isotropic transport,
+- real similarity reduction of every such transporting matrix to the canonical
+  Maxwell form.
+
+What still remains:
+
+- extend the uniqueness result beyond the purely differential linear isotropic
+  class if a broader public claim is desired.
 
 ### 4. Full weak-field gravity closure, not only light bending
 
@@ -273,7 +298,7 @@ Core claim:
 
 - single curl reorganizes locally,
 - doubled curl transports,
-- Maxwell is the minimal transporting closure in the stated class.
+- Maxwell is the minimal and unique transporting closure in the stated class.
 
 Why first:
 
@@ -331,14 +356,15 @@ Why fifth:
 
 The most rational next order is:
 
-1. state and prove the uniqueness theorem for the Maxwell closure class,
-2. only then push the gravity closure harder,
-3. in parallel, extend the hydrodynamic derivation to variable background,
-4. refine the Lorentz-force appendix by deriving the same result directly from
+1. only then push the gravity closure harder,
+2. in parallel, extend the hydrodynamic derivation to variable background,
+3. refine the Lorentz-force appendix by deriving the same result directly from
    toroidal closure geometry,
-5. refine the two-charge appendix by deriving the same result directly from
+4. refine the two-charge appendix by deriving the same result directly from
    toroidal closure geometry and then extending it to the fully retarded
-   moving case.
+   moving case,
+5. decide whether the uniqueness theorem should be enlarged beyond the present
+   stated class.
 
 This order is recommended because it attacks the shortest path from
 mathematical coherence to public scientific credibility.

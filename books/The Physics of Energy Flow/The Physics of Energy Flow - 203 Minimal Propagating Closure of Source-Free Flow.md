@@ -544,4 +544,6 @@ Starting from divergence-free transport:
 - the resulting equations coincide with the source-free Maxwell system
 
 Maxwell dynamics therefore appears here as the minimal propagating closure of
-source-free rotational transport.
+source-free rotational transport. Appendix 211 then proves that within the
+stated real local isotropic first-order two-field class, this closure is also
+unique up to real field recombination.

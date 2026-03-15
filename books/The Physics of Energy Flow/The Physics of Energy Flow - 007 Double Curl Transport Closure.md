@@ -153,7 +153,9 @@ Maxwell theory appears here as the minimal two-aspect closure of source-free
 rotational transport.
 
 Minimal does not mean unique. It means the weakest local closure that actually
-propagates source-free flow.
+propagates source-free flow. Appendix 211 proves the corresponding uniqueness
+statement in the exact class used here: real, local, homogeneous, isotropic,
+first-order, purely differential, divergence-preserving two-field closures.
 
 The vacuum Maxwell equations are symmetric under the duality rotation
 
