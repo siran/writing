@@ -60,6 +60,31 @@ come to identify itself.
 
 From this perspective, several old disputes change shape.
 
+More concretely, this perspective aims to close, or at least sharply dissolve,
+the following philosophical problems:
+
+- the binary split between life and non-life, by treating organization and
+  steering as graded;
+- the binary split between consciousness and non-consciousness, by treating
+  inner depth as a matter of imprint and loop complexity rather than a magical
+  threshold;
+- the mind-body problem, by rejecting separate substances and treating mind as
+  organization within a physically realized loop;
+- the hard problem, by recasting it as a translation problem between the public
+  description of a loop and the lived imprint-organization of that same loop;
+- the problem of personal identity through material change, by locating identity
+  in continuity of steering rather than continuity of matter;
+- the false choice between determinism and agency, by treating agency as
+  internally guided selection within a causally closed process;
+- the confusion between self and body, by treating the body as a later imprint
+  or self-image rather than the primitive unit of selfhood;
+- the idea that values must lie outside physics, by treating values as stable
+  internal steering structures;
+- the thought that meaning is fundamentally linguistic or abstract, by treating
+  concepts and ideas as imprints that steer real loops;
+- and the assumption that cognition must be brain-only, by opening the door to
+  a distributed bodily loop in which the brain is dominant but not isolated.
+
 The hard problem of consciousness becomes less a question of how matter produces
 an alien private glow, and more a question of translation between two
 descriptions of one process: the public description of the loop from outside and
