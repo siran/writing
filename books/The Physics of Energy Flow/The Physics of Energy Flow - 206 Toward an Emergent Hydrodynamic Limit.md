@@ -9,6 +9,7 @@ This appendix does not itself derive Navier-Stokes. It states, as explicitly as
 possible, what must be shown in order to recover a Navier-Stokes-like
 description from the principles already developed in this book. Appendix 207
 then carries out that derivation in the simplest uniform-region setting.
+Appendix 213 extends the exact balance-law derivation to variable background.
 
 The point is to separate three levels that should not be conflated:
 

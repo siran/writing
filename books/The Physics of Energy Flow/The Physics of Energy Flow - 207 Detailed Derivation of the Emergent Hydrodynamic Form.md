@@ -355,4 +355,5 @@ coarse-graining identities up to the final constitutive closure.
 Thus the book does not merely point toward hydrodynamics in the abstract. It
 already contains the detailed route by which Euler-like and Navier-Stokes-like
 equations emerge from continuity, momentum flux, and coarse-graining of the
-same underlying transport substrate.
+same underlying transport substrate. Appendix 213 then extends the same
+derivation to variable background.

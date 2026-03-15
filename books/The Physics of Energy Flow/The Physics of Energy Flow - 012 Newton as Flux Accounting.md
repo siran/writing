@@ -129,5 +129,6 @@ law is momentum continuity applied to a stable electromagnetic knot.
 
 Appendix 207 carries this same momentum continuity law to the coarse-grained
 continuum limit, where Euler-like and Navier-Stokes-like forms emerge.
+Appendix 213 extends that coarse-grained derivation to variable background.
 Appendix 209 applies the same momentum continuity law to a localized charged
 mode in a background field and derives the Lorentz-force form.
