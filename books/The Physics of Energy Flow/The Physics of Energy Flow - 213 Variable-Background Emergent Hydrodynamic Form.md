@@ -76,7 +76,7 @@ $$
 by the local balance law
 
 $$
-\partial_t\mathbf{g}+\nabla\cdot\mathbf{T}
+\partial_t\mathbf{g}-\nabla\cdot\mathbf{T}
 =
 \mathbf{f}_{\mathrm{bg}}.
 $$
@@ -123,8 +123,7 @@ The effective momentum balance is
 
 $$
 \partial_t\langle\mathbf{g}\rangle
-+
-\nabla\cdot\langle\mathbf{T}\rangle
+\;-\;\nabla\cdot\langle\mathbf{T}\rangle
 =
 \langle\mathbf{f}_{\mathrm{bg}}\rangle.
 $$
@@ -301,8 +300,7 @@ The coarse-grained momentum balance is
 
 $$
 \partial_t(\rho\mathbf{v})
-+
-\nabla\cdot\langle\mathbf{T}\rangle
+\;-\;\nabla\cdot\langle\mathbf{T}\rangle
 =
 \mathbf{f},
 $$
@@ -318,7 +316,7 @@ Define, exactly as before, the residual stress tensor
 $$
 \boldsymbol{\Sigma}
 :=
-\langle\mathbf{T}\rangle-\rho\,\mathbf{v}\otimes\mathbf{v}.
+\rho\,\mathbf{v}\otimes\mathbf{v}-\langle\mathbf{T}\rangle.
 $$
 
 Then
@@ -327,8 +325,7 @@ $$
 \partial_t(\rho\mathbf{v})
 +
 \nabla\cdot(\rho\,\mathbf{v}\otimes\mathbf{v})
-+
-\nabla\cdot\boldsymbol{\Sigma}
+-\nabla\cdot\boldsymbol{\Sigma}
 =
 \mathbf{f}.
 $$

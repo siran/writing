@@ -26,7 +26,7 @@ u,
 \qquad
 \mathbf{g}=\frac{\mathbf{S}}{k^2},
 \qquad
-\partial_t \mathbf{g}+\nabla\cdot\mathbf{T}=0.
+\partial_t \mathbf{g}-\nabla\cdot\mathbf{T}=0.
 $$
 
 The last equation is the exact local momentum continuity law already obtained
@@ -57,7 +57,7 @@ $$
 and
 
 $$
-\partial_t \langle \mathbf{g}\rangle + \nabla\cdot\langle \mathbf{T}\rangle = 0.
+\partial_t \langle \mathbf{g}\rangle - \nabla\cdot\langle \mathbf{T}\rangle = 0.
 $$
 
 These are still exact at the coarse-grained level. No constitutive assumption
@@ -107,10 +107,10 @@ At this point nothing has been postulated beyond:
 The averaged momentum equation is
 
 $$
-\partial_t(\rho \mathbf{v}) + \nabla\cdot\langle \mathbf{T}\rangle = 0.
+\partial_t(\rho \mathbf{v}) - \nabla\cdot\langle \mathbf{T}\rangle = 0.
 $$
 
-This still contains the full coarse-grained stress tensor
+This still contains the full coarse-grained momentum-flux tensor
 
 $$
 \langle \mathbf{T}\rangle.
@@ -122,11 +122,11 @@ stress tensor
 $$
 \boldsymbol{\Sigma}
 :=
-\langle \mathbf{T}\rangle - \rho\,\mathbf{v}\otimes\mathbf{v}.
+\rho\,\mathbf{v}\otimes\mathbf{v}-\langle \mathbf{T}\rangle.
 $$
 
 This is an exact definition, not an approximation. It says simply that the
-total coarse-grained stress is decomposed into:
+total coarse-grained momentum flux is decomposed into:
 
 - momentum carried by the mean motion,
 - everything else.
@@ -137,8 +137,7 @@ $$
 \partial_t(\rho \mathbf{v})
 +
 \nabla\cdot(\rho\,\mathbf{v}\otimes\mathbf{v})
-+
-\nabla\cdot\boldsymbol{\Sigma}
+-\nabla\cdot\boldsymbol{\Sigma}
 =
 0.
 $$

@@ -67,11 +67,10 @@ $$
 
 ## 210.2 Exact Local Cross-Interaction Balance
 
-For any effective source distribution, appendix 209 gave the exact local
-momentum balance
+At the effective-source level, the local momentum balance is
 
 $$
-\partial_t\mathbf{g}+\nabla\cdot\mathbf{T}
+\partial_t\mathbf{g}-\nabla\cdot\mathbf{T}
 =
 -\bigl(\rho\mathbf{E}+\mathbf{J}\times\mathbf{B}\bigr),
 $$
@@ -121,8 +120,7 @@ Then the exact local cross-interaction balance is
 
 $$
 \partial_t\mathbf{g}_{\times}
-+
-\nabla\cdot\mathbf{T}_{\times}
+-\nabla\cdot\mathbf{T}_{\times}
 =
 -\bigl(
 \rho_1\mathbf{E}_2+\mathbf{J}_1\times\mathbf{B}_2
@@ -135,8 +133,8 @@ This is the exact local momentum balance for the interaction between the two
 modes.
 
 Nothing has been approximated. The right-hand side is the mutual force density,
-and the left-hand side is the loss of cross field momentum together with the
-cross stress flowing through boundaries.
+and the left-hand side is the change of cross field momentum together with the
+cross stress transmitted through boundaries.
 
 ## 210.3 Exact Force on One Mode Due to the Other
 
@@ -152,8 +150,7 @@ Integrating the cross-interaction balance over $V_1$ gives
 
 $$
 \frac{d}{dt}\int_{V_1}\mathbf{g}_{\times}\,dV
-+
-\int_{\partial V_1}\mathbf{T}_{\times}\cdot\mathbf{n}\,dA
+-\int_{\partial V_1}\mathbf{T}_{\times}\cdot\mathbf{n}\,dA
 =
 -\int_{V_1}
 \bigl(\rho_1\mathbf{E}_2+\mathbf{J}_1\times\mathbf{B}_2\bigr)\,dV.
@@ -170,8 +167,9 @@ $$
 
 $$
 =
--\frac{d}{dt}\int_{V_1}\mathbf{g}_{\times}\,dV
--\int_{\partial V_1}\mathbf{T}_{\times}\cdot\mathbf{n}\,dA.
+\frac{d}{dt}\int_{V_1}\mathbf{g}_{\times}\,dV
++
+\int_{\partial V_1}\mathbf{T}_{\times}\cdot\mathbf{n}\,dA.
 $$
 
 Similarly, if $V_2$ contains $K_2$ but not $K_1$, then
@@ -185,8 +183,9 @@ $$
 
 $$
 =
--\frac{d}{dt}\int_{V_2}\mathbf{g}_{\times}\,dV
--\int_{\partial V_2}\mathbf{T}_{\times}\cdot\mathbf{n}\,dA.
+\frac{d}{dt}\int_{V_2}\mathbf{g}_{\times}\,dV
++
+\int_{\partial V_2}\mathbf{T}_{\times}\cdot\mathbf{n}\,dA.
 $$
 
 These formulas are exact. They say that the interaction between the two modes
@@ -450,8 +449,7 @@ For two localized charged modes, the exact local cross-interaction balance is
 
 $$
 \partial_t\mathbf{g}_{\times}
-+
-\nabla\cdot\mathbf{T}_{\times}
+-\nabla\cdot\mathbf{T}_{\times}
 =
 -\bigl(
 \rho_1\mathbf{E}_2+\mathbf{J}_1\times\mathbf{B}_2

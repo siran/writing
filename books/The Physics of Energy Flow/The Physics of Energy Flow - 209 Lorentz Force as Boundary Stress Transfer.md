@@ -1,357 +1,615 @@
 ---
 title: The Physics of Energy Flow - Lorentz Force as Boundary Stress Transfer
-date: 2026-03-14
+date: 2026-03-15
 ---
 
 # 209. Lorentz Force as Boundary Stress Transfer
 
-This appendix derives the Lorentz-force form as a consequence of momentum
-continuity for a localized charged mode interacting with a background field.
+This appendix derives the Lorentz-force form directly from the source-free
+stress transfer of a compact toroidal charged mode.
 
-The point is not to introduce a primitive force law. The point is to show that
-the familiar Lorentz expression is the compact form taken by boundary momentum
-transfer when a bounded charged configuration is described at scales larger
-than its internal closure.
+No effective charge density or current density is introduced. The bounded mode
+is a self-closing toroidal organization of one continuous field. The familiar
+Lorentz formula appears as the exact point-mode limit of its interaction with a
+smooth external Maxwell field.
 
-## 209.1 Effective Source Description of a Localized Mode
+For definiteness, take the compact mode to be an axisymmetric torus with equal
+winding class $(m,m)$ and symmetry axis $\hat{\mathbf a}$. Nothing essential
+depends on that simplifying choice. It only makes the geometric bookkeeping
+cleaner. The leading interaction depends solely on the signed through-hole flux
+class carried along the torus axis. All finer toroidal structure enters only
+through higher multipoles.
 
-Fundamentally, the book treats all transport as source-free and continuous.
-But once a bounded charged mode is viewed from scales large compared to its
-internal toroidal closure, it admits an effective source description.
+## 209.1 Compact Toroidal Charged Modes
 
-Write the self-field of the localized mode as
+Let
 
 $$
-\mathbf{E}_{\mathrm{self}},
+K_\varepsilon
+$$
+
+be a coherent toroidal charged mode of size $\varepsilon$, centered at the
+worldline
+
+$$
+X(\tau),
+$$
+
+with proper time $\tau$.
+
+Chapter 10 associated charge with the signed through-hole flux class across the
+torus aperture. Write that class as the scalar
+
+$$
+q.
+$$
+
+In the instantaneous rest frame of the mode, choose Cartesian coordinates with
+origin at the center of energy and let
+
+$$
+\mathbf r = R\,\mathbf n,
 \qquad
-\mathbf{B}_{\mathrm{self}},
+|\mathbf n|=1.
 $$
 
-and let
+The compact toroidal mode is assumed to have the far-field behavior established
+in chapter 10:
 
 $$
-\rho(\mathbf{r},t),
-\qquad
-\mathbf{J}(\mathbf{r},t)
-$$
-
-denote the effective charge and current densities of that coarse description.
-They satisfy
-
-$$
-\nabla\cdot\mathbf{E}_{\mathrm{self}}=\frac{\rho}{\varepsilon_0},
-$$
-
-$$
-\nabla\times\mathbf{B}_{\mathrm{self}}-\frac{1}{c^2}\partial_t\mathbf{E}_{\mathrm{self}}
+\mathbf E_{\mathrm s}(\mathbf r)
 =
-\mu_0\mathbf{J},
+\frac{q}{4\pi\varepsilon_0}\frac{\mathbf n}{R^2}
++
+\mathbf e_{\mathrm{rem}}(\mathbf r),
+$$
+
+$$
+\mathbf B_{\mathrm s}(\mathbf r)
+=
+\mathbf b_{\mathrm{rem}}(\mathbf r),
+$$
+
+with bounds
+
+$$
+|\mathbf e_{\mathrm{rem}}(\mathbf r)|
+\le
+C_E\frac{\varepsilon}{R^3},
+\qquad
+|\mathbf b_{\mathrm{rem}}(\mathbf r)|
+\le
+C_B\frac{\varepsilon}{R^3},
+$$
+
+for every
+
+$$
+R\ge 2\varepsilon.
+$$
+
+So the leading exterior field of the compact torus is the inverse-square
+monopole term determined by the through-hole flux class, while all finer
+toroidal structure decays at least one power faster.
+
+Let the external Maxwell field be smooth near the mode center. On a sphere
+
+$$
+S_R:=\{\,\mathbf x : |\mathbf x-X(\tau)|=R\,\},
+$$
+
+write
+
+$$
+\mathbf E_{\mathrm e}(X(\tau)+R\mathbf n,\tau)
+=
+\mathbf E_0(\tau)+\mathbf E_1(R,\mathbf n,\tau),
+$$
+
+$$
+\mathbf B_{\mathrm e}(X(\tau)+R\mathbf n,\tau)
+=
+\mathbf B_0(\tau)+\mathbf B_1(R,\mathbf n,\tau),
+$$
+
+with
+
+$$
+|\mathbf E_1(R,\mathbf n,\tau)|\le C'_E R,
+\qquad
+|\mathbf B_1(R,\mathbf n,\tau)|\le C'_B R.
+$$
+
+This is just the first-order smoothness expansion of the external field near
+the mode center.
+
+## 209.2 Exact Source-Free Interaction Balance
+
+Let the total field be
+
+$$
+\mathbf E=\mathbf E_{\mathrm s}+\mathbf E_{\mathrm e},
+\qquad
+\mathbf B=\mathbf B_{\mathrm s}+\mathbf B_{\mathrm e}.
+$$
+
+Everywhere outside the compact toroidal core, the total field is source-free,
+so the exact local momentum balance is
+
+$$
+\partial_t g_i - \partial_j T_{ij}=0,
+$$
+
+where
+
+$$
+\mathbf g=\varepsilon_0\,\mathbf E\times\mathbf B,
 $$
 
 and
 
 $$
-\partial_t\rho+\nabla\cdot\mathbf{J}=0.
-$$
-
-This is not a second ontology. It is the effective large-scale description of a
-bounded source-free closure whose far field has already been identified with
-charge.
-
-## 209.2 Local Momentum Continuity with Effective Sources
-
-Let the total field be
-
-$$
-\mathbf{E}=\mathbf{E}_{\mathrm{self}}+\mathbf{E}_{\mathrm{ext}},
-\qquad
-\mathbf{B}=\mathbf{B}_{\mathrm{self}}+\mathbf{B}_{\mathrm{ext}},
-$$
-
-where the external fields satisfy the source-free Maxwell equations in the
-neighborhood of the mode.
-
-As in chapter 12, define
-
-$$
-\mathbf{g}=\varepsilon_0\,\mathbf{E}\times\mathbf{B},
-$$
-
-and the Maxwell stress tensor
-
-$$
 T_{ij}
 =
-\varepsilon_0\left(E_iE_j-\frac{1}{2}\delta_{ij}\mathbf{E}^2\right)
+\varepsilon_0\left(E_iE_j-\frac{1}{2}\delta_{ij}\mathbf E^2\right)
 +
-\frac{1}{\mu_0}\left(B_iB_j-\frac{1}{2}\delta_{ij}\mathbf{B}^2\right).
+\frac{1}{\mu_0}\left(B_iB_j-\frac{1}{2}\delta_{ij}\mathbf B^2\right).
 $$
 
-Differentiate $\mathbf{g}$:
+Decompose
 
 $$
-\partial_t\mathbf{g}
+\mathbf g
 =
-\varepsilon_0\,\partial_t\mathbf{E}\times\mathbf{B}
+\mathbf g_{\mathrm s}
 +
-\varepsilon_0\,\mathbf{E}\times\partial_t\mathbf{B}.
-$$
-
-Use the effective-source Maxwell equations:
-
-$$
-\varepsilon_0\,\partial_t\mathbf{E}
-=
-\frac{1}{\mu_0}\nabla\times\mathbf{B}-\mathbf{J},
-\qquad
-\partial_t\mathbf{B}=-\nabla\times\mathbf{E}.
-$$
-
-Then
-
-$$
-\partial_t\mathbf{g}
-=
-\frac{1}{\mu_0}(\nabla\times\mathbf{B})\times\mathbf{B}
-- \mathbf{J}\times\mathbf{B}
-- \varepsilon_0\,\mathbf{E}\times(\nabla\times\mathbf{E}).
-$$
-
-Now use the same vector identities as in chapter 12, but keep the source term
-$\nabla\cdot\mathbf{E}=\rho/\varepsilon_0$ instead of setting it to zero. The
-field terms rearrange into the divergence of the Maxwell stress tensor. The
-result is the exact local balance law
-
-$$
-\partial_t g_i + \partial_j T_{ij}
-=
--\rho E_i-(\mathbf{J}\times\mathbf{B})_i.
-$$
-
-Equivalently,
-
-$$
-\partial_t\mathbf{g}+\nabla\cdot\mathbf{T}
-=
--\bigl(\rho\mathbf{E}+\mathbf{J}\times\mathbf{B}\bigr).
-$$
-
-So the Lorentz force density is not inserted by hand. It is the negative of the
-field momentum loss plus stress outflow.
-
-## 209.3 Exact Integrated Force on a Localized Mode
-
-Let $K$ be a region containing the localized charged mode. Integrating the
-local balance law gives
-
-$$
-\frac{d}{dt}\int_K \mathbf{g}\,dV
+\mathbf g_{\mathrm e}
 +
-\int_{\partial K}\mathbf{T}\cdot\mathbf{n}\,dA
-=
--\int_K \bigl(\rho\mathbf{E}+\mathbf{J}\times\mathbf{B}\bigr)\,dV.
+\mathbf g_{\times},
 $$
 
-Therefore the exact force exerted on the localized mode is
-
 $$
-\mathbf{F}_K
+\mathbf T
 =
-\int_K \bigl(\rho\mathbf{E}+\mathbf{J}\times\mathbf{B}\bigr)\,dV
-=
--\frac{d}{dt}\int_K \mathbf{g}\,dV
--\int_{\partial K}\mathbf{T}\cdot\mathbf{n}\,dA.
-$$
-
-This is the exact integrated Lorentz-force expression. In the language of this
-book, it says that force on a bounded charged mode is boundary stress transfer
-together with the change of field momentum stored in the surrounding region.
-
-## 209.4 Separation of Self and External Contributions
-
-Now separate the total field into self and external parts.
-
-Because the stress tensor is quadratic in the fields,
-
-$$
-\mathbf{T}
-=
-\mathbf{T}_{\mathrm{self}}
+\mathbf T_{\mathrm s}
 +
-\mathbf{T}_{\mathrm{ext}}
+\mathbf T_{\mathrm e}
 +
-\mathbf{T}_{\mathrm{cross}}.
+\mathbf T_{\times},
 $$
 
-The external field alone is source-free in the neighborhood of the mode, so it
-does not push on the mode by itself. The self-field describes internal
-stresses of the mode. The net externally induced force is carried by the cross
-terms, equivalently by evaluating the integrated Lorentz density against the
-external field:
+where the cross terms are
 
 $$
-\mathbf{F}^{\mathrm{ext}}_K
-=
-\int_K \bigl(\rho\mathbf{E}_{\mathrm{ext}}
-+
-\mathbf{J}\times\mathbf{B}_{\mathrm{ext}}\bigr)\,dV.
-$$
-
-This is exact at the level of the effective localized description.
-
-## 209.5 Compact-Mode Limit
-
-Assume now that the external fields vary only weakly across the support of the
-localized mode. Let $\mathbf{X}(t)$ denote the center of the mode. Then
-
-$$
-\mathbf{E}_{\mathrm{ext}}(\mathbf{r},t)
-=
-\mathbf{E}_{\mathrm{ext}}(\mathbf{X},t)
-+
-O\!\left(\ell\,\nabla\mathbf{E}_{\mathrm{ext}}\right),
-$$
-
-and similarly for $\mathbf{B}_{\mathrm{ext}}$, where $\ell$ is the size of the
-mode.
-
-Substituting into the exact integrated force gives
-
-$$
-\mathbf{F}^{\mathrm{ext}}_K
-=
-\left(\int_K \rho\,dV\right)\mathbf{E}_{\mathrm{ext}}(\mathbf{X},t)
-+
-\left(\int_K \mathbf{J}\,dV\right)\times\mathbf{B}_{\mathrm{ext}}(\mathbf{X},t)
-+
-O(\ell\nabla\mathbf{E}_{\mathrm{ext}},\,\ell\nabla\mathbf{B}_{\mathrm{ext}}).
-$$
-
-Define the total charge
-
-$$
-q:=\int_K \rho\,dV.
-$$
-
-To evaluate the current integral, use charge continuity. Componentwise,
-
-$$
-\frac{d}{dt}\int_K x_i\rho\,dV
-=
-\int_K x_i\partial_t\rho\,dV
-=
--\int_K x_i\partial_j J_j\,dV.
-$$
-
-Integrating by parts and using compact support of the mode gives
-
-$$
-\frac{d}{dt}\int_K x_i\rho\,dV
-=
-\int_K J_i\,dV.
-$$
-
-Define the center of charge
-
-$$
-\mathbf{X}_q
+\mathbf g_{\times}
 :=
-\frac{1}{q}\int_K \mathbf{x}\,\rho\,dV.
+\varepsilon_0\bigl(
+\mathbf E_{\mathrm s}\times\mathbf B_{\mathrm e}
++
+\mathbf E_{\mathrm e}\times\mathbf B_{\mathrm s}
+\bigr),
+$$
+
+and
+
+$$
+(T_{\times})_{ij}
+:=
+\varepsilon_0\left(
+E_{{\mathrm s}i}E_{{\mathrm e}j}
++
+E_{{\mathrm e}i}E_{{\mathrm s}j}
+-
+\delta_{ij}\,\mathbf E_{\mathrm s}\cdot\mathbf E_{\mathrm e}
+\right)
++
+\frac{1}{\mu_0}\left(
+B_{{\mathrm s}i}B_{{\mathrm e}j}
++
+B_{{\mathrm e}i}B_{{\mathrm s}j}
+-
+\delta_{ij}\,\mathbf B_{\mathrm s}\cdot\mathbf B_{\mathrm e}
+\right).
+$$
+
+Subtracting the self and external balances from the total balance gives the
+exact cross-balance
+
+$$
+\partial_t(\mathbf g_{\times})_i
+-
+\partial_j(T_{\times})_{ij}
+=
+0.
+$$
+
+Integrating over the ball
+
+$$
+B_R:=\{\,\mathbf x : |\mathbf x-X(\tau)|\le R\,\}
+$$
+
+gives
+
+$$
+\frac{d}{dt}\int_{B_R}\mathbf g_{\times}\,dV
+=
+\int_{S_R}\mathbf T_{\times}\cdot\mathbf n\,dA.
+$$
+
+For the monist reading used in this book, the right-hand side is the exact rate
+at which external stress transfers momentum into the compact closure across the
+surrounding sphere.
+
+Define therefore
+
+$$
+\mathbf F_R(\tau)
+:=
+\int_{S_R}\mathbf T_{\times}\cdot\mathbf n\,dA.
+$$
+
+The Lorentz force will be the exact limit of $\mathbf F_R$ as the mode is
+shrunk to a point while the surrounding sphere shrinks with it but remains
+outside the toroidal core.
+
+## 209.3 Rest-Frame Compact-Mode Theorem
+
+Choose an event on the worldline and work in the instantaneous rest frame of
+the toroidal mode at that event.
+
+Let
+
+$$
+\alpha(R):=\frac{q}{4\pi\varepsilon_0 R^2}.
+$$
+
+On $S_R$ write
+
+$$
+\mathbf E_{\mathrm s}
+=
+\alpha(R)\,\mathbf n + \mathbf e_{\mathrm{rem}},
+$$
+
+with
+
+$$
+|\mathbf e_{\mathrm{rem}}|\le C_E\frac{\varepsilon}{R^3},
+\qquad
+|\mathbf B_{\mathrm s}|\le C_B\frac{\varepsilon}{R^3}.
+$$
+
+The electric cross term on the sphere is
+
+$$
+\mathbf T_{\times}^{(E)}\cdot\mathbf n
+=
+\varepsilon_0\left[
+(\mathbf E_{\mathrm s}\cdot\mathbf n)\mathbf E_{\mathrm e}
++
+(\mathbf E_{\mathrm e}\cdot\mathbf n)\mathbf E_{\mathrm s}
+-
+(\mathbf E_{\mathrm s}\cdot\mathbf E_{\mathrm e})\mathbf n
+\right].
+$$
+
+Substitute
+
+$$
+\mathbf E_{\mathrm s}=\alpha\mathbf n+\mathbf e_{\mathrm{rem}},
+\qquad
+\mathbf E_{\mathrm e}=\mathbf E_0+\mathbf E_1.
+$$
+
+The leading terms simplify exactly:
+
+$$
+\varepsilon_0\left[
+(\alpha\mathbf n\cdot\mathbf n)\mathbf E_0
++
+(\mathbf E_0\cdot\mathbf n)\alpha\mathbf n
+-
+(\alpha\mathbf n\cdot\mathbf E_0)\mathbf n
+\right]
+=
+\varepsilon_0\,\alpha\,\mathbf E_0.
+$$
+
+So
+
+$$
+\mathbf T_{\times}^{(E)}\cdot\mathbf n
+=
+\frac{q}{4\pi R^2}\,\mathbf E_0
++
+\mathbf R_E(R,\mathbf n),
+$$
+
+where the remainder satisfies
+
+$$
+|\mathbf R_E(R,\mathbf n)|
+\le
+C_1\frac{|q|}{R^2}\,R
++
+C_2\frac{\varepsilon}{R^3}.
+$$
+
+Therefore
+
+$$
+\int_{S_R}\mathbf T_{\times}^{(E)}\cdot\mathbf n\,dA
+=
+q\,\mathbf E_0
++
+O(R)
++
+O\!\left(\frac{\varepsilon}{R}\right).
+$$
+
+For the magnetic cross term,
+
+$$
+\mathbf T_{\times}^{(B)}\cdot\mathbf n
+=
+\frac{1}{\mu_0}\left[
+(\mathbf B_{\mathrm s}\cdot\mathbf n)\mathbf B_{\mathrm e}
++
+(\mathbf B_{\mathrm e}\cdot\mathbf n)\mathbf B_{\mathrm s}
+-
+(\mathbf B_{\mathrm s}\cdot\mathbf B_{\mathrm e})\mathbf n
+\right],
+$$
+
+so
+
+$$
+\left|
+\int_{S_R}\mathbf T_{\times}^{(B)}\cdot\mathbf n\,dA
+\right|
+\le
+C_3\,R^2\sup_{S_R}|\mathbf B_{\mathrm s}|\,\sup_{S_R}|\mathbf B_{\mathrm e}|
+=
+O\!\left(\frac{\varepsilon}{R}\right).
+$$
+
+Hence
+
+$$
+\mathbf F_R
+=
+q\,\mathbf E_0
++
+O(R)
++
+O\!\left(\frac{\varepsilon}{R}\right).
+$$
+
+Take a two-scale limit in which
+
+$$
+\varepsilon\to 0,
+\qquad
+R\to 0,
+\qquad
+\frac{\varepsilon}{R}\to 0.
 $$
 
 Then
 
 $$
-\int_K \mathbf{J}\,dV = q\,\dot{\mathbf{X}}_q.
-$$
-
-If the charged mode moves coherently so that its center of charge moves with
-velocity
-
-$$
-\mathbf{v}:=\dot{\mathbf{X}}_q,
-$$
-
-then
-
-$$
-\mathbf{F}^{\mathrm{ext}}_K
+\boxed{
+\lim_{\varepsilon\to 0}\mathbf F_R
 =
-q\,\mathbf{E}_{\mathrm{ext}}(\mathbf{X},t)
-+
-q\,\mathbf{v}\times\mathbf{B}_{\mathrm{ext}}(\mathbf{X},t)
-+
-O(\ell\nabla\mathbf{E}_{\mathrm{ext}},\,\ell\nabla\mathbf{B}_{\mathrm{ext}}).
+q\,\mathbf E_0
+}.
 $$
 
-In the point-mode idealization, or in a truly uniform external field, the
-correction terms vanish and we obtain exactly
+So a compact toroidal charged mode at rest experiences exactly the electric
+force
 
 $$
-\mathbf{F}
+\mathbf F_{\mathrm{rest}}=q\,\mathbf E_{\mathrm e}(X).
+$$
+
+No magnetic term appears in the rest frame, because the static toroidal mode
+has no magnetic monopole part. The toroidal details affect only the discarded
+higher multipoles.
+
+## 209.4 Exact Covariant Extension
+
+The previous sections used only source-free stress continuity and the compact
+toroidal asymptotics of chapter 10. To pass from the instantaneous rest frame
+to an arbitrary inertial frame, use the transport covariance already developed
+earlier in the book.
+
+Let
+
+$$
+U^\mu
+$$
+
+be the four-velocity of the compact toroidal mode, and let
+
+$$
+F^{\mu\nu}_{\mathrm e}
+$$
+
+be the external field tensor, with convention
+
+$$
+F^{0i}=-\frac{E_i}{c},
+\qquad
+F^{i0}=\frac{E_i}{c},
+\qquad
+F^{ij}=-\varepsilon^{ijk}B_k.
+$$
+
+In the instantaneous rest frame, the theorem above gives the four-force
+
+$$
+f'^\mu=(0,q\mathbf E').
+$$
+
+Now ask for the exact covariant extension that is:
+
+1. linear in the external field,
+2. linear in the charge class $q$,
+3. orthogonal to $U^\mu$,
+4. equal to $(0,q\mathbf E')$ in the rest frame.
+
+At a point, the only covariant vectors linear in $F^{\mu\nu}_{\mathrm e}$ and
+$U^\mu$ are
+
+$$
+F^{\mu\nu}_{\mathrm e}U_\nu,
+\qquad
+{}^\star\!F^{\mu\nu}_{\mathrm e}U_\nu.
+$$
+
+The dual term is excluded, because in the rest frame it would couple the
+toroidal electric charge class to the magnetic field instead of the electric
+field. That would contradict the rest-frame theorem just proved.
+
+Therefore the unique exact covariant extension is
+
+$$
+\boxed{
+f^\mu
 =
-q\bigl(\mathbf{E}+\mathbf{v}\times\mathbf{B}\bigr).
+q\,F^{\mu\nu}_{\mathrm e}U_\nu
+}.
 $$
 
-This is the Lorentz force law.
+Write
+
+$$
+U^\mu=\gamma(c,\mathbf v).
+$$
+
+Then
+
+$$
+f^0
+=
+\gamma\,\frac{q}{c}\,\mathbf E\cdot\mathbf v,
+$$
+
+and
+
+$$
+f^i
+=
+\gamma\,q\bigl(\mathbf E+\mathbf v\times\mathbf B\bigr)^i.
+$$
+
+Since
+
+$$
+f^\mu=\frac{dP^\mu}{d\tau},
+\qquad
+\frac{dP^i}{d\tau}
+=
+\gamma\,\frac{dp^i}{dt},
+$$
+
+it follows that
+
+$$
+\boxed{
+\frac{d\mathbf p}{dt}
+=
+q\bigl(\mathbf E+\mathbf v\times\mathbf B\bigr)
+}.
+$$
+
+This is exactly the Lorentz force law.
+
+The temporal component gives the power law
+
+$$
+\frac{dE}{dt}
+=
+q\,\mathbf E\cdot\mathbf v.
+$$
+
+So the full relativistic force-energy relation is recovered at the same time.
+
+## 209.5 What the Derivation Used
+
+The argument used only the following ingredients:
+
+1. source-free Maxwell stress continuity,
+2. the toroidal charge interpretation of chapter 10,
+3. the compact-mode far-field asymptotic
+   $$
+   \mathbf E_{\mathrm s}
+   =
+   \frac{q}{4\pi\varepsilon_0}\frac{\mathbf n}{R^2}
+   +
+   O\!\left(\frac{\varepsilon}{R^3}\right),
+   $$
+4. smoothness of the external field near the mode center,
+5. transport covariance already established elsewhere in the book.
+
+No effective source density was needed.
+
+The role of the equal-winding $(m,m)$ torus was only to give a clean axis and a
+clean aperture-flux class. The Lorentz law depends only on the resulting scalar
+$q$ at monopole order. All finer toroidal geometry survives only in higher
+multipole corrections beyond the point-mode limit.
 
 ## 209.6 Interpretation
 
-Within this framework, the Lorentz law is not a primitive rule about particles
-being pushed by fields.
+Within this framework, the Lorentz force is not a primitive rule about a
+particle being pushed by an external field.
 
-It is the compact expression of a deeper statement:
+It is the compact expression of one exact statement:
 
-- the mode is a bounded organized closure of the same energy substrate,
-- its effective charge is the large-scale summary of that closure,
-- the surrounding field transfers momentum through boundary stress,
-- the familiar force expression is the integrated form of that transfer.
+- a charged body is a bounded toroidal closure of one common field,
+- its signed through-hole flux class determines the monopole coefficient $q$,
+- external stress transfers momentum across a shrinking sphere around that
+  closure,
+- transport covariance turns the rest-frame electric result into the exact
+  moving-frame Lorentz form.
 
-So the Lorentz force is not outside the continuity program. It is one of its
-effective consequences.
+So the Lorentz law is not imported. It is the point-mode limit of toroidal
+boundary stress transfer.
 
-## 209.7 Relation to Charge as Toroidal Flux
+## 209.7 Summary
 
-Chapter 10 identified charge with the signed through-hole flux class of a
-toroidal mode. The present appendix uses the corresponding large-scale
-effective source description of that same object.
-
-So the logical order is:
-
-1. the bounded mode is fundamentally source-free,
-2. at large scales it is represented by effective $\rho$ and $\mathbf{J}$,
-3. momentum continuity then yields the Lorentz force law.
-
-This is why the derivation belongs here. It connects the topological charge
-picture to the standard dynamical force formula without abandoning the monist
-ontology.
-
-## 209.8 Summary
-
-The exact local momentum balance with effective sources is
+For a compact toroidal charged mode, the exact source-free cross-stress
+transfer across a sphere $S_R$ is
 
 $$
-\partial_t\mathbf{g}+\nabla\cdot\mathbf{T}
+\mathbf F_R
 =
--\bigl(\rho\mathbf{E}+\mathbf{J}\times\mathbf{B}\bigr).
+\int_{S_R}\mathbf T_{\times}\cdot\mathbf n\,dA.
 $$
 
-Integrating over a localized charged mode gives the exact force formula
+In the instantaneous rest frame, the compact-mode limit gives
 
 $$
-\mathbf{F}_K
+\lim_{\varepsilon\to 0}\mathbf F_R
 =
-\int_K \bigl(\rho\mathbf{E}+\mathbf{J}\times\mathbf{B}\bigr)\,dV.
+q\,\mathbf E_{\mathrm e}(X).
 $$
 
-For a compact coherent mode in a slowly varying external field, this reduces to
+Transport covariance then forces the unique exact extension
 
 $$
-\mathbf{F}
+f^\mu=q\,F^{\mu\nu}_{\mathrm e}U_\nu,
+$$
+
+whose spatial part is
+
+$$
+\frac{d\mathbf p}{dt}
 =
-q\bigl(\mathbf{E}+\mathbf{v}\times\mathbf{B}\bigr).
+q\bigl(\mathbf E+\mathbf v\times\mathbf B\bigr).
 $$
 
-Thus the Lorentz-force form is derived here as boundary stress transfer and
-field-momentum bookkeeping for a localized charged closure. Appendix 210 then
-extends the same bookkeeping to the exact interaction between two such modes.
+Thus the Lorentz-force form is derived here directly from first principles:
+compact toroidal charge, exact source-free stress transfer, and covariant
+transport of one common electromagnetic substrate.

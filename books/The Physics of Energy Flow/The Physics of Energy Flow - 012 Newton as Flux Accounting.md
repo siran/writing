@@ -51,13 +51,13 @@ $\nabla\cdot\mathbf{B}=0$, this rearranges into the exact local momentum
 continuity law
 
 $$
-\partial_t g_i + \partial_j T_{ij} = 0,
+\partial_t g_i - \partial_j T_{ij} = 0,
 $$
 
 or, in vector form,
 
 $$
-\partial_t\mathbf{g}+\nabla\cdot\mathbf{T}=0.
+\partial_t\mathbf{g}-\nabla\cdot\mathbf{T}=0.
 $$
 
 This is the momentum analogue of Poynting's theorem. Momentum does not appear or
@@ -75,11 +75,11 @@ Then
 $$
 \frac{d}{dt}\mathbf{P}_K
 =
--\int_{\partial K}\mathbf{T}\cdot\mathbf{n}\,dA.
+\int_{\partial K}\mathbf{T}\cdot\mathbf{n}\,dA.
 $$
 
 The right-hand side is what later language calls force. It is the net rate at
-which momentum crosses the boundary.
+which momentum is transferred across the boundary into the region.
 
 To connect this with motion of the object as a whole, define the energy in the
 region and its center of energy:
@@ -109,7 +109,7 @@ If the energy of the localized configuration is roughly constant, then
 $$
 m_K\,\ddot{\mathbf{X}}_K
 \approx
--\int_{\partial K}\mathbf{T}\cdot\mathbf{n}\,dA.
+\int_{\partial K}\mathbf{T}\cdot\mathbf{n}\,dA.
 $$
 
 This is Newton's second law in its effective form for a stable bounded mode:

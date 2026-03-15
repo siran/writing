@@ -43,10 +43,10 @@ The following derivations are ranked by scientific leverage.
 
 Status:
 
-This is now completed at the effective localized-mode level in Appendix 209.
-What remains open is the sharper version in which the same result is derived
-directly from the detailed toroidal closure geometry without first passing
-through the effective source description.
+This is now completed in Appendix 209 directly at the compact toroidal
+point-mode level. What remains open is the sharper version in which the
+finite-size toroidal corrections are derived explicitly from the closure
+geometry instead of being absorbed into the compact limit.
 
 Original goal:
 
@@ -69,17 +69,25 @@ Why it matters:
 
 What is now shown:
 
-- the exact local momentum balance with effective charge/current sources,
-- the exact integrated force on a localized charged mode,
-- the compact-mode limit
+- the exact source-free cross-stress balance for a compact toroidal charged
+  mode,
+- the exact rest-frame sphere-integral theorem
+  $$
+  \mathbf{F}_{\mathrm{rest}}=q\,\mathbf{E},
+  $$
+- the unique covariant extension
+  $$
+  f^\mu=qF^{\mu\nu}U_\nu,
+  $$
+- the exact compact-mode limit
   $$
   \mathbf{F}=q(\mathbf{E}+\mathbf{v}\times\mathbf{B}).
   $$
 
 What still remains:
 
-- derive the same result directly from the toroidal mode geometry itself, with
-  less reliance on effective source notation.
+- derive the finite-size correction terms directly from the toroidal mode
+  geometry itself, beyond the exact compact-mode limit.
 
 ### 2. Exact interaction law for two toroidal charged modes
 
@@ -429,11 +437,11 @@ Why fifth:
 
 The most rational next order is:
 
-1. refine the Lorentz-force appendix by deriving the same result directly from
-   toroidal closure geometry,
-2. refine the two-charge appendix by deriving the same result directly from
+1. refine the two-charge appendix by deriving the same result directly from
    toroidal closure geometry and then extending it to the fully retarded
    moving case,
+2. derive the finite-size toroidal correction terms to appendix 209 beyond the
+   exact compact-mode limit,
 3. decide whether the uniqueness theorem should be enlarged beyond the present
    stated class,
 4. decide whether the gravity program should retain and derive a dynamic
