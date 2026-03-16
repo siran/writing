@@ -10,10 +10,10 @@ question that naturally arises from the preceding chapters:
 
 > Why does the transport picture keep suggesting a medium?
 
-The answer is not that the book has derived ordinary fluid mechanics. It has
-not. The answer is that the structures already established are those of a
+The answer is stronger: the structures already established are those of a
 continuous substrate whose reorganization is governed locally across its whole
-extent.
+extent. In that sense the present program is already a fluid-mechanics theory,
+with electromagnetic energy itself playing the role of the fluid.
 
 ## 205.1 What Has Already Been Established
 
@@ -94,8 +94,9 @@ is different.
 
 ## 205.3 Why Navier-Stokes Comes to Mind
 
-Navier-Stokes is not derived in this book. But it remains a useful intuition
-because it shares the following structural features:
+Navier-Stokes comes to mind because the present framework is already doing
+continuum mechanics in the strong sense. It shares the following structural
+features:
 
 - a state defined throughout a region,
 - local conservation,
@@ -105,22 +106,24 @@ because it shares the following structural features:
 So when the imagination reaches for fluid motion, it is responding to
 something real in the mathematics.
 
-What it is responding to is not viscosity, pressure, or ordinary matter. It is
-the fact that the ontology has already shifted from point particles in empty
-space to organized motion in a continuous substrate.
+What it is responding to is the fact that the ontology has already shifted from
+point particles in empty space to organized motion in a continuous substrate.
+The fluid is electromagnetic energy, and the localized bodies later discussed
+in the book are bounded closures of that same fluid.
 
-## 205.4 Why This Is Not Yet Ordinary Fluid Mechanics
+## 205.4 The Electromagnetic Fluid Closure
 
-The analogy must still be kept under control.
+The point is not that the book merely resembles fluid mechanics. The point is
+that it already has the same continuum architecture:
 
-Nothing in the book so far has derived:
+- a state defined throughout an extent,
+- local conservation,
+- transport between neighboring regions,
+- closure relations governing reorganization.
 
-- a mass-density field distinct from energy density,
-- a constitutive pressure law,
-- a viscous stress tensor,
-- the advective nonlinearity of Navier-Stokes.
-
-The closure derived here is instead source-free and curl-based:
+What differs is the choice of primitive variables and closure. Here the fluid
+is electromagnetic energy itself, and the primitive transport closure is
+source-free and curl-based:
 
 $$
 \partial_t\mathbf{F}_{+}=k\,\nabla\times\mathbf{F}_{-},
@@ -128,11 +131,15 @@ $$
 \partial_t\mathbf{F}_{-}=-k\,\nabla\times\mathbf{F}_{+}.
 $$
 
-So the present claim is not that the substrate is an ordinary classical fluid.
-The claim is narrower and more precise:
+Pressure, viscosity, and the standard advective form do not disappear. They
+belong to the coarse-grained descriptions developed later. Appendices 207, 213,
+and 214 show how the familiar hydrodynamic conservation forms reappear when the
+electromagnetic substrate is averaged into effective continuum variables.
 
-> the mathematics already requires a continuous substrate picture, and that is
-> why medium intuition keeps reappearing.
+So the right claim is:
+
+> this is fluid mechanics with electromagnetic energy as the fluid, and the
+> later hydrodynamic variables are emergent summaries of that deeper closure.
 
 ## 205.5 The Interpretive Gain
 
@@ -156,10 +163,10 @@ direction already implied by the mathematics.
 
 ## 205.6 Summary
 
-The transport framework developed in the book is naturally medium-like because
-it describes one continuous substrate whose state is defined across an extent
-and whose changes are governed by local redistribution and closure relations.
+The transport framework developed in the book is a continuum mechanics of one
+continuous substrate whose state is defined across an extent and whose changes
+are governed by local redistribution and closure relations.
 
-That does not mean the book has derived Navier-Stokes or ordinary fluid
-mechanics. It means that the energy substrate is already being treated as a
-continuous medium in the minimal structural sense required by the mathematics.
+In that sense it is already a fluid-mechanics theory. The fluid is
+electromagnetic energy itself, while the familiar hydrodynamic variables arise
+later as coarse-grained summaries of the deeper transport closure.
