@@ -21,6 +21,11 @@ into a narrower empirical question, or shown to rest on a false opposition.
 The classical formulation assumes a sharp ontological divide: things are either
 alive or not alive.
 
+In older forms this often appeared as vitalism: the idea that living beings
+possess some extra principle absent from non-living matter. In a more modern
+form, it appears in the habit of speaking as if "life" begins only when some
+special ingredient has been added to otherwise inert mechanism.
+
 TEOS closes that binary formulation. A living system is not a second substance.
 It is a self-sustaining loop with some degree of internally guided persistence.
 Simple loops preserve themselves shallowly. Richer loops preserve themselves
@@ -40,6 +45,10 @@ That is not the same problem. The binary problem is closed.
 The classical formulation asks where consciousness switches on, as if it were a
 single indivisible property added to otherwise non-conscious matter.
 
+This picture is reinforced whenever consciousness is treated as though it must
+arrive all at once or not at all. The question is then framed as one of a sharp
+cut: which systems are truly inside the circle, and which are outside it?
+
 TEOS closes that formulation too. Consciousness is not taken as a binary light
 that is either present or absent in full. It is treated as depth of inner
 organization: the degree to which a loop carries imprints and is steered by
@@ -58,6 +67,12 @@ Again, the binary problem is closed.
 
 The classical mind-body problem assumes that the mental and the bodily are two
 different kinds of thing and asks how they could possibly interact.
+
+This is the problem in its most famous form in Descartes. In the *Meditations*,
+mind is treated as thinking substance and body as extended substance. Once the
+two are defined that way, their interaction becomes mysterious. Princess
+Elisabeth's objection to Descartes presses exactly this point: how could
+something non-extended move or affect something extended?
 
 TEOS closes this by refusing the two-substance setup. The self is not an extra
 mental substance added to a body. It is a recurrent steering organization
@@ -79,6 +94,11 @@ collapses with it.
 The classical hard problem asks how physical process could ever produce felt
 experience at all.
 
+David Chalmers gave the now-standard formulation in "Facing Up to the Problem of
+Consciousness" (1995). His point was that explaining function, discrimination,
+report, and behavior still seems not to explain why there is anything it is like
+to be the system.
+
 TEOS closes the ontological form of that problem. Experience is not treated as a
 mysterious extra property added to mechanism from outside. It is the internally
 lived organization of a loop being steered by imprints. The outside observer
@@ -91,6 +111,13 @@ problem is no longer "How does dead matter become private experience?" It is
 "How do two descriptions of one organized process fail to translate perfectly
 into one another?"
 
+That is why the issue is dissolved rather than denied. TEOS does not say that
+experience is unreal, and it does not say that public description automatically
+captures lived life. It says the old form of the puzzle depended on asking how
+one kind of thing could produce another kind of thing. Once the loop's lived
+organization and the loop's public description are treated as two descriptions
+of one process, the ontological gap disappears.
+
 That is a much narrower and different problem. The hard problem in its old
 ontological form is closed.
 
@@ -99,6 +126,13 @@ ontological form is closed.
 
 The classical problem asks how a person can remain the same individual while the
 matter composing the body changes continuously.
+
+John Locke gave the modern form of the problem in Book II, Chapter XXVII of the
+*Essay Concerning Human Understanding*. There the issue is not merely material
+continuity, but what makes a later person the same person as an earlier one.
+Subsequent philosophy repeatedly returns to this question under the pressure of
+memory, bodily continuity, psychological continuity, and replacement thought
+experiments.
 
 TEOS closes that formulation by relocating identity. Personal identity is not
 continuity of atoms, tissues, or location. It is continuity of steering. A loop
@@ -118,6 +152,12 @@ showing that material turnover was never the right identity criterion.
 
 The classical dispute says: either the world is determined, in which case agency
 is illusion, or the world is undetermined, in which case action is noise.
+
+In different forms this is the old problem of liberty and necessity. Hume gives
+one classical statement of it in Section VIII of the *Enquiry Concerning Human
+Understanding*. Modern discussions sharpen it further into an apparent dilemma:
+if causes fix what happens, then nothing is free; if causes do not fix what
+happens, then outcomes are random.
 
 TEOS closes that false dichotomy. A loop may be fully embedded in a causally
 closed world and yet become an internally steering organization. Agency is not
@@ -152,11 +192,21 @@ So the self is neither reducible to a bodily heap nor detachable from physical
 realization altogether. The confusion is closed by separating loop, physical
 realization, and body-image.
 
+This matters because many philosophical mistakes arise from sliding between
+those three without noticing. The loop is the persistent organization. Physical
+realization is what carries it. Body-image is how a sufficiently rich loop may
+come to represent and identify that realization from within.
+
 
 ## A.8 Values Outside Physics
 
 The classical picture often treats values as something added from beyond nature:
 moral facts, divine commands, pure reason, or subjective projection.
+
+One influential modern form of this appears in G. E. Moore's insistence, in
+*Principia Ethica*, that the good is not reducible to any natural property.
+TEOS does not settle every issue in metaethics, but it does close one common
+motivation for taking value to be extraphysical.
 
 TEOS closes the idea that value must lie outside physics. A value is, first of
 all, a stable internal steering structure. It is an imprint that biases future
@@ -176,6 +226,11 @@ The old outside-physics formulation is closed.
 The classical reduction says meaning is either a property of language alone or a
 purely abstract relation detached from physical process.
 
+That reduction appears whenever meaning is treated as though it begins only once
+symbols, propositions, or sentences are in play. But loops already carry
+meaningful distinctions long before formal language: danger, safety, boundary,
+food, kin, goal, obstacle.
+
 TEOS closes that reduction. Meaning is not exhausted by words. It begins as
 imprint. A color category, a danger cue, a remembered place, a bodily boundary,
 a social role, or a self-concept can all be meaningful before they are verbal.
@@ -192,6 +247,11 @@ So the linguistic-only picture is closed.
 
 The classical reduction locates cognition in the brain and treats the rest of
 the body as peripheral support.
+
+This assumption is already under pressure in embodied and enactive traditions.
+For example, Varela, Thompson, and Rosch in *The Embodied Mind* argued that
+cognition should not be understood as skull-contained symbol manipulation alone.
+TEOS radicalizes that move by making the whole-organism steering loop primary.
 
 TEOS closes the necessity of that assumption. The organism is a nested body-loop
 of distributed regulation, signaling, and self-management. The brain is plainly
