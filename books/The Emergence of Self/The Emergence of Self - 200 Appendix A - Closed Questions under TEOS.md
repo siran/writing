@@ -32,8 +32,8 @@ Simple loops preserve themselves shallowly. Richer loops preserve themselves
 through longer horizons, more variables, and deeper internal steering. The
 difference is one of organizational depth, not of metaphysical category.
 
-This is not a claim made in a vacuum. Biology already contains many edge cases
-that strain the binary picture.
+This is not a claim made in a vacuum. Biology already contains many cases that
+the old binary picture misdescribes from the start.
 
 Single-celled organisms can learn. A lone cell with no brain can still retain a
 trace of prior disturbance and alter its next response accordingly. That already
@@ -56,8 +56,10 @@ well described as mere inert aggregates either.
 
 These cases do not all prove the same thing, and TEOS does not pretend they do.
 What they show is narrower and more decisive: the old sharp divide between
-"alive" and "not alive" fails to track the actual gradations of self-sustaining
-and self-steering organization we observe.
+"alive" and "not alive" does not track the actual gradations of
+self-sustaining and self-steering organization we observe. The task is not to
+keep rescuing that divide with exceptions and special pleadings. The task is to
+replace it with a graded operational description that fits what is there.
 
 Once this is stated, the original problem changes form. The question is no
 longer "At what magic point does life appear?" It becomes: how much
@@ -97,6 +99,10 @@ carry traces, compare present input against prior organization, and steer later
 states accordingly, there is already something to grade. The issue is no longer
 whether a magic light has switched on. It is how deep the loop's inwardly
 consulted organization has become.
+
+Here too the point is not to defend the old boundary with a more complicated
+list of exceptions. It is to say that the boundary was the wrong starting
+picture. TEOS replaces the switch model with a depth model.
 
 Once this is seen, the question changes from "Which systems are truly conscious
 and which are not?" to "How rich is the imprint-organization through which a
