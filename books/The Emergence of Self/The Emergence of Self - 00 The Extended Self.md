@@ -1,15 +1,14 @@
----
-title: The Emergence of Self - The Self Is Not a Point
+title: The Emergence of Self - The Extended Self
 date: 2026-03-15
 ---
 
 
-# The Self Is Not a Point
+# The Extended Self
 
-One of the oldest confusions about selfhood is spatial in form. The self is
-imagined as though it had to be somewhere: a point behind the eyes, a private
-observer inside the head, a hidden witness standing apart from the body it is
-supposed to govern.
+The self is extended.
+
+It is not a point behind the eyes, not a private observer inside the head, and
+not a hidden witness standing apart from the body it is supposed to govern.
 
 This book rejects that image from the beginning.
 
