@@ -154,6 +154,19 @@ describes the loop publicly: behavior, neural activity, bodily state,
 correlation structure. The loop itself is organized by active imprints that
 constitute what the world is like from within that loop.
 
+This means that the feel of an experience is not an idle decoration hanging off
+function. It is part of how the imprint steers. The taste of salt, the pain of
+pain, or the redness of red are not second substances attached to processing
+after the real work is done. They are the lived side of the steering
+organization itself.
+
+It also means TEOS does not need the strong and ungrounded assumption that every
+observer must internally realize the same worldly pattern in exactly the same
+felt way. Synesthesia, direct stimulation, and ordinary interpersonal opacity
+already show that the route from world to lived imprint is not trivial. What
+must be shared is not a hidden universal inner token, but enough structure for
+recognition and guidance.
+
 The gap that remains is a gap of translation, not a gap of substance. The
 problem is no longer "How does dead matter become private experience?" It is
 "How do two descriptions of one organized process fail to translate perfectly

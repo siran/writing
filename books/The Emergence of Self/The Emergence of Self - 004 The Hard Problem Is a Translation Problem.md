@@ -31,6 +31,23 @@ herring is not itself red. The point is not that the experience vanishes. The
 point is that the loop can carry higher-order imprints built from lower-order
 ones.
 
+The same applies to taste. The taste of salt is not an ornamental glow added to
+salt processing after the fact. It is the way a salt-related imprint steers the
+loop from within. If salt were wholly without felt character for the loop, it
+would not guide appetite, aversion, memory, comparison, or expectation in the
+same lived way. The qualitative side is therefore not an extra problem laid on
+top of steering. It is part of how steering is carried by the loop.
+
+This also helps with one source of confusion. Nothing in the argument requires
+that all loops internally realize the same imprint in exactly the same felt
+manner. People already differ. Synesthesia shows that the same worldly pattern
+can be coupled to very different internal organizations. Artificial stimulation
+shows that experience can be produced by routes other than the ordinary sensory
+one. Even without pathology or experiment, no one has ever shown that the
+redness of red is internally identical across all observers. TEOS does not need
+that assumption. What matters is that the imprint is detailed enough to guide
+the loop's recognition, discrimination, and response.
+
 Color, idea, and body belong to the same family in this respect. The lived body
 is not the bare physical support any more than the idea of red is a wavelength.
 All are imprints through which the loop organizes and recognizes itself and its

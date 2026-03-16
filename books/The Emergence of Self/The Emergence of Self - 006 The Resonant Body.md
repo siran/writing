@@ -192,6 +192,15 @@ matching, phase-locking, gating, and synchronization to regulate what is
 selected, amplified, or ignored. Resonance may therefore be the right
 organizing picture even if the precise hardware remains under debate.
 
+This also suggests a useful agnosticism about representation. The recognizing
+pattern does not need to resemble, in any pictorial sense, what it models. It
+only needs to preserve enough structure to steer correctly. Different loops may
+therefore carry different internal realizations and still refer to the same
+object, color, danger, route, or social meaning. What matters is not identity
+of inner carrier but adequacy of steering. The pattern is answerable to what it
+guides, not to a requirement that all selves must feel it in the same internal
+way.
+
 
 ## From Body Support to Body Imprint
 
