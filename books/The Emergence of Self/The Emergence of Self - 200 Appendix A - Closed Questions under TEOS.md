@@ -219,6 +219,21 @@ realization. If the body-image changes while those imprints and the recurrent
 steering organization remain continuous enough, the self remains continuous in
 the relevant sense as well.
 
+Duplication thought experiments sharpen the same issue from the other side.
+Suppose two beings were copied with perfect internal similarity and then allowed
+to continue from different spatial positions. Even if the copy were exact at the
+initial moment, numerical identity would not thereby remain one. Position is not
+an irrelevant extra. Different positions imply different couplings, however
+small at first. Different couplings produce different incoming relations.
+Different incoming relations begin to modify imprint. And once imprint begins to
+drift, steering begins to drift with it.
+
+So TEOS does not need to ask which of two exact copies is the "real one" in some
+mystical sense. The very fact of distinct placement already opens distinct
+causal paths. What existed as one recurrent organization has become two. Their
+similarity may remain extremely high for a time, but their perspectives are no
+longer identical because their couplings are no longer identical.
+
 So the old problem - how the same self survives material turnover - is closed by
 showing that material turnover was never the right identity criterion.
 
