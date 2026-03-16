@@ -39,14 +39,16 @@ unique, or not yet fully confronted with the existing body of results.
 
 The following derivations are ranked by scientific leverage.
 
-### 1. Exact Lorentz-force form from stress bookkeeping
+### 1. Compact Lorentz-force form from stress and transport bookkeeping
 
 Status:
 
-This is now completed in Appendix 209 directly at the compact toroidal
-point-mode level. What remains open is the sharper version in which the
-finite-size toroidal corrections are derived explicitly from the closure
-geometry instead of being absorbed into the compact limit.
+This is now completed in Appendix 209 at compact toroidal monopole order. The
+rest-frame electric theorem is derived from exact boundary stress transfer, and
+the moving magnetic term is then derived from moving-aperture transport of the
+same toroidal charge class. What remains open is the sharper version in which
+the full moving two-scale interaction is derived directly from the resolved
+closure geometry, without compressing the torus to monopole order.
 
 Original goal:
 
@@ -75,19 +77,21 @@ What is now shown:
   $$
   \mathbf{F}_{\mathrm{rest}}=q\,\mathbf{E},
   $$
-- the unique covariant extension
+- the moving-aperture transport identity
   $$
-  f^\mu=qF^{\mu\nu}U_\nu,
+  \mathbf E_{\mathrm e}+\mathbf v\times\mathbf B_{\mathrm e},
   $$
-- the exact compact-mode limit
+- the compact toroidal monopole force law
   $$
   \mathbf{F}=q(\mathbf{E}+\mathbf{v}\times\mathbf{B}).
   $$
 
 What still remains:
 
+- derive the moving interaction directly from the resolved toroidal closure,
+  without reducing first to the moving-aperture monopole load,
 - derive the finite-size correction terms directly from the toroidal mode
-  geometry itself, beyond the exact compact-mode limit.
+  geometry itself, beyond the compact monopole limit.
 
 ### 2. Exact interaction law for two toroidal charged modes
 

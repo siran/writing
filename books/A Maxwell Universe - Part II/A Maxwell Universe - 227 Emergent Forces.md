@@ -94,14 +94,15 @@ toroidal charged closure.
 
 ## The Moving Form
 
-The rest-frame result has a unique covariant extension linear in the field and
-in the charge class:
+The rest-frame result is not extended here by a separate covariance ansatz.
+The torus itself already supplies the moving term, because a transported
+aperture samples the external field through
 
 $$
-f^\mu=qF_{\mathrm{ext}}^{\mu\nu}U_\nu.
+\mathbf E_{\mathrm{ext}}+\mathbf v\times\mathbf B_{\mathrm{ext}}.
 $$
 
-Its spatial part is exactly
+So the compact moving form is
 
 $$
 \frac{d\mathbf p}{dt}
@@ -110,7 +111,8 @@ q(\mathbf E_{\mathrm{ext}}+\mathbf v\times\mathbf B_{\mathrm{ext}}).
 $$
 
 So the Lorentz force law is not an external rule for particles. It is the
-compact moving-frame expression of toroidal boundary stress transfer.
+compact toroidal expression of boundary stress transfer together with
+moving-aperture transport.
 
 The quantity $q$ is simply the compact summary of the torus topology, and the
 "force" is the net momentum transferred through the surrounding field.
@@ -201,8 +203,8 @@ In a Maxwell Universe:
 
 - charge is the compact scalar summary of a torus' signed through-hole flux
   class,
-- the Lorentz force is the compact moving-frame expression of boundary stress
-  transfer into that toroidal closure,
+- the Lorentz force is the compact moving-aperture transport form of boundary
+  stress transfer into that toroidal closure,
 - the Coulomb force is the gradient of the compact-limit cross energy of two
   such closures.
 

@@ -417,126 +417,204 @@ No magnetic term appears in the rest frame, because the static toroidal mode
 has no magnetic monopole part. The toroidal details affect only the discarded
 higher multipoles.
 
-## 209.4 Exact Covariant Extension
+## 209.4 Moving Aperture Transport
 
-The previous sections used only source-free stress continuity and the compact
-toroidal asymptotics of chapter 10. To pass from the instantaneous rest frame
-to an arbitrary inertial frame, use the transport covariance already developed
-earlier in the book.
+The rest-frame theorem gives the monopole coupling of the toroidal charge class
+to a smooth electric load. To get the moving magnetic term, one should not
+jump immediately to a covariant ansatz. The torus itself already tells us what
+has to be sampled: a moving aperture of one common field.
 
 Let
 
 $$
-U^\mu
+\Sigma_\varepsilon(t)
 $$
 
-be the four-velocity of the compact toroidal mode, and let
+be a spanning surface across the torus aperture, transported with the compact
+mode, and let
 
 $$
-F^{\mu\nu}_{\mathrm e}
+\mathbf u(\mathbf y,t)
 $$
 
-be the external field tensor, with convention
+be the local velocity of the material point
 
 $$
-F^{0i}=-\frac{E_i}{c},
-\qquad
-F^{i0}=\frac{E_i}{c},
-\qquad
-F^{ij}=-\varepsilon^{ijk}B_k.
+\mathbf y\in \Sigma_\varepsilon(t).
 $$
 
-In the instantaneous rest frame, the theorem above gives the four-force
+For any moving surface, Maxwell-Faraday transport gives
 
 $$
-f'^\mu=(0,q\mathbf E').
+\frac{d}{dt}\int_{\Sigma_\varepsilon(t)}\mathbf B_{\mathrm e}\cdot d\mathbf A
+=
+-\oint_{\partial\Sigma_\varepsilon(t)}
+\bigl(
+\mathbf E_{\mathrm e}
++
+\mathbf u\times \mathbf B_{\mathrm e}
+\bigr)\cdot d\boldsymbol\ell.
 $$
 
-Now ask for the exact covariant extension that is:
-
-1. linear in the external field,
-2. linear in the charge class $q$,
-3. orthogonal to $U^\mu$,
-4. equal to $(0,q\mathbf E')$ in the rest frame.
-
-At a point, the only covariant vectors linear in $F^{\mu\nu}_{\mathrm e}$ and
-$U^\mu$ are
+So the local field sampled by a moving aperture is not
 
 $$
-F^{\mu\nu}_{\mathrm e}U_\nu,
-\qquad
-{}^\star\!F^{\mu\nu}_{\mathrm e}U_\nu.
+\mathbf E_{\mathrm e}
 $$
 
-The dual term is excluded, because in the rest frame it would couple the
-toroidal electric charge class to the magnetic field instead of the electric
-field. That would contradict the rest-frame theorem just proved.
+alone, but
 
-Therefore the unique exact covariant extension is
+$$
+\mathbf E_{\mathrm e}+\mathbf u\times\mathbf B_{\mathrm e}.
+$$
+
+This is the transport meaning of the magnetic term.
+
+For a rigidly drifting compact torus, decompose
+
+$$
+\mathbf u(\mathbf y,t)=\mathbf v(t)+\mathbf u_{\mathrm{int}}(\mathbf y,t),
+$$
+
+where
+
+$$
+\mathbf v(t)=\dot{\mathbf X}(t)
+$$
+
+is the drift of the torus center and
+
+$$
+\mathbf u_{\mathrm{int}}
+$$
+
+is the internal helical traversal of the closure.
+
+Define the aperture average of a field over $\Sigma_\varepsilon(t)$ by
+
+$$
+\langle \mathbf W\rangle_{\Sigma_\varepsilon(t)}
+:=
+\frac{1}{A(\Sigma_\varepsilon(t))}
+\int_{\Sigma_\varepsilon(t)}\mathbf W\,dA.
+$$
+
+Because the external field is smooth on the compact scale,
+
+$$
+\langle \mathbf E_{\mathrm e}\rangle_{\Sigma_\varepsilon(t)}
+=
+\mathbf E_{\mathrm e}(\mathbf X(t),t)+O(\varepsilon),
+$$
+
+$$
+\langle \mathbf B_{\mathrm e}\rangle_{\Sigma_\varepsilon(t)}
+=
+\mathbf B_{\mathrm e}(\mathbf X(t),t)+O(\varepsilon).
+$$
+
+For the equal-winding axisymmetric torus, the internal traversal has no
+monopole average across the aperture:
+
+$$
+\langle \mathbf u_{\mathrm{int}}\rangle_{\Sigma_\varepsilon(t)}=0.
+$$
+
+Geometrically, opposite points of the aperture carry opposite tangential
+traversal velocities, so the internal helical motion cancels at monopole
+order. It affects only higher multipoles.
+
+Therefore
+
+$$
+\left\langle
+\mathbf E_{\mathrm e}
++
+\mathbf u\times\mathbf B_{\mathrm e}
+\right\rangle_{\Sigma_\varepsilon(t)}
+=
+\mathbf E_{\mathrm e}(\mathbf X(t),t)
++
+\mathbf v(t)\times\mathbf B_{\mathrm e}(\mathbf X(t),t)
++
+O(\varepsilon).
+$$
+
+The moving compact torus therefore samples the smooth external field through
+the effective transport load
 
 $$
 \boxed{
-f^\mu
+\mathbf L_{\mathrm{mov}}
 =
-q\,F^{\mu\nu}_{\mathrm e}U_\nu
+\mathbf E_{\mathrm e}(\mathbf X(t),t)
++
+\mathbf v(t)\times\mathbf B_{\mathrm e}(\mathbf X(t),t)
 }.
 $$
 
-Write
+## 209.5 Compact Moving-Mode Theorem
+
+Section 209.3 proved that the compact toroidal charge class couples at
+monopole order by
 
 $$
-U^\mu=\gamma(c,\mathbf v).
+q\times(\text{smooth load sampled across the aperture}).
 $$
 
-Then
+For a static torus, that sampled load is
 
 $$
-f^0
+\mathbf E_{\mathrm e}(X).
+$$
+
+For a translating torus, section 209.4 shows that the sampled load is
+
+$$
+\mathbf L_{\mathrm{mov}}
 =
-\gamma\,\frac{q}{c}\,\mathbf E\cdot\mathbf v,
+\mathbf E_{\mathrm e}(\mathbf X(t),t)
++
+\mathbf v(t)\times\mathbf B_{\mathrm e}(\mathbf X(t),t).
 $$
 
-and
-
-$$
-f^i
-=
-\gamma\,q\bigl(\mathbf E+\mathbf v\times\mathbf B\bigr)^i.
-$$
-
-Since
-
-$$
-f^\mu=\frac{dP^\mu}{d\tau},
-\qquad
-\frac{dP^i}{d\tau}
-=
-\gamma\,\frac{dp^i}{dt},
-$$
-
-it follows that
+Therefore, in the same compact two-scale limit,
 
 $$
 \boxed{
-\frac{d\mathbf p}{dt}
+\mathbf F
 =
-q\bigl(\mathbf E+\mathbf v\times\mathbf B\bigr)
+q\,\mathbf L_{\mathrm{mov}}
+=
+q\bigl(
+\mathbf E_{\mathrm e}
++
+\mathbf v\times\mathbf B_{\mathrm e}
+\bigr)
 }.
 $$
 
-This is exactly the Lorentz force law.
+This is the Lorentz-force form at compact toroidal monopole order.
 
-The temporal component gives the power law
+The associated power law follows immediately:
 
 $$
 \frac{dE}{dt}
 =
-q\,\mathbf E\cdot\mathbf v.
+\mathbf F\cdot\mathbf v
+=
+q\,\mathbf E_{\mathrm e}\cdot\mathbf v,
 $$
 
-So the full relativistic force-energy relation is recovered at the same time.
+because
 
-## 209.5 What the Derivation Used
+$$
+(\mathbf v\times\mathbf B_{\mathrm e})\cdot\mathbf v=0.
+$$
+
+So the magnetic part redirects transport but does no work.
+
+## 209.6 What the Derivation Used
 
 The argument used only the following ingredients:
 
@@ -551,7 +629,9 @@ The argument used only the following ingredients:
    O\!\left(\frac{\varepsilon}{R^3}\right),
    $$
 4. smoothness of the external field near the mode center,
-5. transport covariance already established elsewhere in the book.
+5. Maxwell-Faraday transport for a moving aperture,
+6. cancellation of the internal helical traversal at monopole order for an
+   axisymmetric compact torus.
 
 No effective source density was needed.
 
@@ -560,7 +640,7 @@ clean aperture-flux class. The Lorentz law depends only on the resulting scalar
 $q$ at monopole order. All finer toroidal geometry survives only in higher
 multipole corrections beyond the point-mode limit.
 
-## 209.6 Interpretation
+## 209.7 Interpretation
 
 Within this framework, the Lorentz force is not a primitive rule about a
 particle being pushed by an external field.
@@ -571,13 +651,17 @@ It is the compact expression of one exact statement:
 - its signed through-hole flux class determines the monopole coefficient $q$,
 - external stress transfers momentum across a shrinking sphere around that
   closure,
-- transport covariance turns the rest-frame electric result into the exact
-  moving-frame Lorentz form.
+- the moving aperture samples the same field through
+  $$
+  \mathbf E_{\mathrm e}+\mathbf v\times\mathbf B_{\mathrm e},
+  $$
+- internal helical traversal cancels at monopole order, leaving only the drift
+  correction.
 
 So the Lorentz law is not imported. It is the point-mode limit of toroidal
-boundary stress transfer.
+boundary stress transfer together with moving-aperture transport.
 
-## 209.7 Summary
+## 209.8 Summary
 
 For a compact toroidal charged mode, the exact source-free cross-stress
 transfer across a sphere $S_R$ is
@@ -596,20 +680,22 @@ $$
 q\,\mathbf E_{\mathrm e}(X).
 $$
 
-Transport covariance then forces the unique exact extension
+For a moving compact torus, the transported aperture samples the smooth
+external field through
 
 $$
-f^\mu=q\,F^{\mu\nu}_{\mathrm e}U_\nu,
+\mathbf E_{\mathrm e}+\mathbf v\times\mathbf B_{\mathrm e}.
 $$
 
-whose spatial part is
+Therefore the compact toroidal monopole force is
 
 $$
 \frac{d\mathbf p}{dt}
 =
-q\bigl(\mathbf E+\mathbf v\times\mathbf B\bigr).
+q\bigl(\mathbf E_{\mathrm e}+\mathbf v\times\mathbf B_{\mathrm e}\bigr).
 $$
 
-Thus the Lorentz-force form is derived here directly from first principles:
-compact toroidal charge, exact source-free stress transfer, and covariant
-transport of one common electromagnetic substrate.
+Thus the Lorentz-force form is derived here directly from first principles at
+compact toroidal monopole order: compact toroidal charge, exact source-free
+stress transfer, and moving-aperture transport of one common electromagnetic
+substrate.

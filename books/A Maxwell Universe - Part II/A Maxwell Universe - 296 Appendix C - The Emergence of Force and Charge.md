@@ -133,13 +133,14 @@ $$
 
 This is the exact rest-frame force theorem.
 
-Its unique covariant extension is
+For a moving compact torus, the transported aperture samples the smooth
+external field through
 
 $$
-f^\mu=qF_{\mathrm e}^{\mu\nu}U_\nu.
+\mathbf E_{\mathrm e}+\mathbf v\times\mathbf B_{\mathrm e}.
 $$
 
-The spatial part is
+So the compact moving form is
 
 $$
 \boxed{
@@ -149,8 +150,8 @@ q(\mathbf E_{\mathrm e}+\mathbf v\times\mathbf B_{\mathrm e})
 }.
 $$
 
-So the Lorentz force law is the compact moving-frame expression of toroidal
-boundary stress transfer.
+So the Lorentz force law is the compact moving-aperture transport form of
+toroidal boundary stress transfer.
 
 
 ## 3. Two-Charge Interaction from Cross Energy
@@ -225,8 +226,8 @@ The logic is now clean.
 - Its signed through-hole flux class appears externally as the scalar $q$.
 - Force is momentum transfer through the common field.
 - Coulomb interaction is the compact-limit cross energy of two closures.
-- Lorentz interaction is the compact moving-frame form of that same stress
-  transfer.
+- Lorentz interaction is the compact moving-aperture transport form of that
+  same stress transfer.
 
 So standard electrodynamics is not discarded. It is recovered as the compact
 mechanics of organized electromagnetic closures.
@@ -242,13 +243,7 @@ $$
 \mathbf F_{\mathrm{rest}}=q\,\mathbf E_{\mathrm e}.
 $$
 
-Its covariant extension is
-
-$$
-f^\mu=qF_{\mathrm e}^{\mu\nu}U_\nu,
-$$
-
-whose spatial part is the Lorentz law
+The compact moving form is the Lorentz law
 
 $$
 \frac{d\mathbf p}{dt}
