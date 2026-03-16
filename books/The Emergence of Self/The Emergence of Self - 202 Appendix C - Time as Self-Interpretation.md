@@ -36,6 +36,29 @@ future. A memory is a shortened past. A concept is a shortened pattern. A
 tradition is a shortened social history. In each case, long causal structure is
 carried inward as a steering imprint.
 
+There is a second aspect as well: the rate at which the loop itself updates.
+Selves need not live only at different depths. They may also live at different
+effective frequencies, or more cautiously, at different dominant timescales of
+recurrent organization.
+
+If one loop updates, samples, and reconfigures itself very rapidly while another
+changes only slowly, the two need not register one another symmetrically. Fast
+variation may average out for a slow loop and never rise into a stable imprint.
+Very slow variation may be treated by a fast loop as background rather than as
+event. In that sense, two selves can coexist concurrently and still inhabit
+different temporal grains of the same world.
+
+This helps clarify the perception of time. Lived time depends not only on how
+much causal length a loop can compress, but also on the rate at which it can
+refresh, compare, and stabilize those compressions. A self organized around
+faster recurrent cycles may live a denser present. A self organized around
+slower cycles may live a broader but less finely resolved one.
+
+The point should not be overstated. A self is not defined by one scalar
+frequency, and biological loops are nested across many interacting timescales.
+Still, the general consequence is real: temporal experience depends partly on
+the rate structure of the loop itself, not only on an external clock.
+
 This is why different selves can live in different times without occupying
 different physical moments. The difference is not metaphysical. It is
 organizational. The richer the temporal imprinting of a loop, the more of
