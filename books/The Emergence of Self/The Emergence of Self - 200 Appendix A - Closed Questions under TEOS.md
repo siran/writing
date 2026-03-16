@@ -192,6 +192,20 @@ This does not make identity arbitrary. It makes it organizational. The loop is
 the persistent unit; the matter flowing through it is not the criterion of
 selfhood.
 
+This also sharpens a harder case. Destruction, replacement, or radical
+alteration of a particular body does not by itself amount to destruction of the
+self. What matters is whether the recurrent steering organization continues. The
+body, in the sense relevant to lived identity, is already an imprint by which
+the loop recognizes and locates itself. That imprint can be damaged, revised,
+fragmented, or rebuilt without thereby proving that the loop itself has
+vanished.
+
+Memories make the same point. They are not memories "of the body" in the sense
+of being stored in body-image alone. They are imprints carried by the loop's
+realization. If the body-image changes while those imprints and the recurrent
+steering organization remain continuous enough, the self remains continuous in
+the relevant sense as well.
+
 So the old problem - how the same self survives material turnover - is closed by
 showing that material turnover was never the right identity criterion.
 
@@ -244,6 +258,14 @@ This matters because many philosophical mistakes arise from sliding between
 those three without noticing. The loop is the persistent organization. Physical
 realization is what carries it. Body-image is how a sufficiently rich loop may
 come to represent and identify that realization from within.
+
+Once that distinction is held firmly, a further consequence follows. Damage to,
+loss of, or change in the body-image is not identical with destruction of the
+self. The self is not the image it uses to identify its bodily situation. A loop
+may continue while that image is revised, impoverished, or rebuilt. The
+important question is not whether one bodily picture has been preserved intact,
+but whether the recurrent steering organization that carried and consulted it
+still persists.
 
 
 ## A.8 Values Outside Physics

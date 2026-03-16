@@ -63,6 +63,19 @@ They are not fundamental objects waiting outside the loop to be discovered
 whole. They are internally carried organizations that, when present, help the
 loop interpret, compress, and steer its experience.
 
+This also means that imprints need not be present all at once or in finished
+form. A loop builds them as needed. It stabilizes distinctions when those
+distinctions become useful for steering. What later appears as an articulated
+world of bodies, places, durations, dangers, tools, colors, intentions, and
+social roles need not have been there from the beginning as a complete inner
+map. It can emerge piece by piece, at the granularity required by the loop's own
+persistence.
+
+That is why the loop does not need to carry "the whole universe" in order to
+act within one. It needs only the imprints it has formed and can consult.
+Reality may be vastly richer than what is currently represented, but the loop is
+not obliged to model all of it at once. It builds the working world it can use.
+
 The body therefore enters the theory in a new way. The loop is not simply the
 body, and the body is not the primitive condition of the loop. The body as
 lived and recognized is an imprint: a working internal image of what counts as
