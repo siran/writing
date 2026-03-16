@@ -230,6 +230,20 @@ This does not deny causality. It re-locates freedom. Freedom is not freedom
 from causality; it is increasing freedom from immediate external determination
 through internal organization.
 
+This is also why self-determination is real without being magical. A
+self-determining loop is not independent of everything around it. It still
+depends on support, history, nourishment, coupling, and constraint. What changes
+is the locus of steering. The loop increasingly acts from its own carried
+organization rather than merely as a consequence of the latest environmental
+push.
+
+The point applies within one species as well as across species. Different human
+beings are not equally alive in this operational sense at every moment. Some
+are more inwardly organized, more value-steered, more capable of revising
+themselves, and less captured by immediate external command. TEOS treats that
+variation as a real difference in selfhood's depth, not as an insult, not as a
+moral rank, and not as a second substance appearing in some and not in others.
+
 Once agency is understood this way, determinism no longer abolishes it. The old
 opposition is closed.
 

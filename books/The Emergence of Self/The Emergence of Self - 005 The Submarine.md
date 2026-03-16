@@ -41,6 +41,15 @@ forced here. The point is operational: a system is more self-directed when its
 future is increasingly steered by its retained organization rather than by the
 latest push from outside.
 
+This also clarifies what self-determination means. It is not exemption from the
+world, and not a fantasy of absolute independence. The loop never becomes
+uncaused. It remains coupled to its surroundings at every moment. But once a
+loop is deep enough, it can increasingly take itself as a source of steering.
+It can accept, consult, and enforce its own carried constraints rather than
+letting the environment dictate its course at each step. Self-determination is
+therefore the degree to which the loop lives on its own internal terms while
+remaining fully embedded in the larger world.
+
 This makes room for values. A value is not first a moral sentence. It is a
 stable imprint that biases future selection. Hunger is a value in this minimal
 sense. Safety is a value. Social approval, truth, beauty, loyalty, and revenge

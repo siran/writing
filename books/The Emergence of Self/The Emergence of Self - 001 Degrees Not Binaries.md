@@ -17,6 +17,14 @@ metaphor. The world does not contain one kingdom of dead mechanisms and another
 kingdom of living selves. It contains organized systems whose ability to
 preserve themselves, remember, predict, and steer varies by degree.
 
+That comparison does not stop at the species boundary. Different humans are also
+alive, aware, and self-directed to different degrees at different times. One
+person may be inwardly organized, future-steering, and capable of revising
+their own course; another may be almost entirely captured by immediate pressure,
+habit, fear, or external command. TEOS does not flatten those differences into
+mere moral judgment. It treats them as differences in the depth and autonomy of
+the loop's steering.
+
 That is why the argument cannot begin with brains. A bacterium already keeps
 itself within a narrow range of viable states. A cell already regulates,
 repairs, and reorients itself. Even simple organisms with no brain can display
