@@ -63,6 +63,15 @@ They are not fundamental objects waiting outside the loop to be discovered
 whole. They are internally carried organizations that, when present, help the
 loop interpret, compress, and steer its experience.
 
+Time enters in exactly this way. The loop does not first encounter a ready-made
+flowing time and then merely read it off. In the broader physical account, time
+is the ordering of persistent change. For the self, time is the internally
+carried way that ordered change is interpreted, compressed, and used. A loop
+with richer temporal imprints can shorten long causal chains into expectations,
+habits, plans, debts, promises, deadlines, and histories. In that sense, lived
+time is not something added to the loop from outside. It is one of the forms in
+which the loop organizes its own persistence.
+
 This also means that imprints need not be present all at once or in finished
 form. A loop builds them as needed. It stabilizes distinctions when those
 distinctions become useful for steering. What later appears as an articulated
