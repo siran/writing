@@ -32,6 +32,33 @@ Simple loops preserve themselves shallowly. Richer loops preserve themselves
 through longer horizons, more variables, and deeper internal steering. The
 difference is one of organizational depth, not of metaphysical category.
 
+This is not a claim made in a vacuum. Biology already contains many edge cases
+that strain the binary picture.
+
+Single-celled organisms can learn. A lone cell with no brain can still retain a
+trace of prior disturbance and alter its next response accordingly. That already
+shows that the old habit of equating meaningful inner steering with nervous
+systems is too narrow.
+
+Regenerating organisms such as planaria complicate the picture further. They can
+undergo radical bodily change while preserving organized behavior. Whether one
+wants to describe that in terms of memory, continuity, or distributed bodily
+pattern, the point is the same: organized persistence does not map neatly onto a
+fixed bodily heap.
+
+There are also larger systems that ordinary language hesitates to call alive,
+yet which begin to qualify once the criterion is operational rather than
+taxonomic. Biofilms, social insect colonies, immune systems, and other
+distributed regulatory assemblies can maintain boundaries, discriminate threat
+from safety, preserve functional organization, and alter later behavior in light
+of prior states. They are not all selves in the rich sense. But they are not
+well described as mere inert aggregates either.
+
+These cases do not all prove the same thing, and TEOS does not pretend they do.
+What they show is narrower and more decisive: the old sharp divide between
+"alive" and "not alive" fails to track the actual gradations of self-sustaining
+and self-steering organization we observe.
+
 Once this is stated, the original problem changes form. The question is no
 longer "At what magic point does life appear?" It becomes: how much
 self-sustaining, self-preserving, and self-steering organization is present in
@@ -55,6 +82,21 @@ organization: the degree to which a loop carries imprints and is steered by
 them. A loop may exist with no explicit imprint at all. It may then acquire
 memory-like traces, then self-relevant traces, then temporally organized and
 value-laden traces. Inner life deepens by degree.
+
+Again, the empirical landscape already points in this direction. Single-celled
+organisms can exhibit learning without brains. Planaria complicate any simple
+equation between bodily continuity and behavioral continuity. Even some larger
+distributed systems that are not usually granted the title of "alive" begin to
+look different when the relevant question becomes how much internally guided
+organization they sustain rather than whether they belong to a favored natural
+kind.
+
+This does not mean that every regulatory system is conscious in the rich human
+sense. It means the old all-or-nothing question was badly formed. Once loops can
+carry traces, compare present input against prior organization, and steer later
+states accordingly, there is already something to grade. The issue is no longer
+whether a magic light has switched on. It is how deep the loop's inwardly
+consulted organization has become.
 
 Once this is seen, the question changes from "Which systems are truly conscious
 and which are not?" to "How rich is the imprint-organization through which a
