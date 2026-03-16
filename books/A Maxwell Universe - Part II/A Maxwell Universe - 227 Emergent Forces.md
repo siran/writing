@@ -49,8 +49,9 @@ the compact scalar summary of the torus' signed through-hole flux class.
 ## Force as Boundary Stress Transfer
 
 Let a compact toroidal charged mode move in a smooth external Maxwell field.
-Outside the toroidal core, the total field is source-free, so the local
-momentum balance is
+The total field is source-free everywhere. The surrounding sphere is chosen
+outside the toroidal core only so the compact exterior asymptotic can be used.
+The local momentum balance is
 
 $$
 \partial_t g_i-\partial_jT_{ij}=0,
@@ -74,7 +75,7 @@ $$
 
 Split the field into the compact self-field and the external field. The
 cross-stress part of $T_{ij}$ gives the exact rate at which external momentum
-is transferred into the compact closure across a sphere surrounding it:
+flux is transferred into the compact closure across a sphere surrounding it:
 
 $$
 \mathbf F_R
@@ -111,8 +112,9 @@ q(\mathbf E_{\mathrm{ext}}+\mathbf v\times\mathbf B_{\mathrm{ext}}).
 $$
 
 So the Lorentz force law is not an external rule for particles. It is the
-compact toroidal expression of boundary stress transfer together with
-moving-aperture transport.
+compact toroidal expression of momentum-flux transfer together with
+moving-aperture transport. Power is then the associated rate of energy
+transfer, obtained by $\mathbf F\cdot\mathbf v$.
 
 The quantity $q$ is simply the compact summary of the torus topology, and the
 "force" is the net momentum transferred through the surrounding field.

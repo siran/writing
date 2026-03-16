@@ -121,9 +121,9 @@ that it already has the same continuum architecture:
 - transport between neighboring regions,
 - closure relations governing reorganization.
 
-What differs is the choice of primitive variables and closure. Here the fluid
-is electromagnetic energy itself, and the primitive transport closure is
-source-free and curl-based:
+The present fluid closure uses electromagnetic energy itself as the primitive
+fluid variable, and it organizes that fluid by a source-free doubled-curl
+transport relation:
 
 $$
 \partial_t\mathbf{F}_{+}=k\,\nabla\times\mathbf{F}_{-},
@@ -131,10 +131,10 @@ $$
 \partial_t\mathbf{F}_{-}=-k\,\nabla\times\mathbf{F}_{+}.
 $$
 
-Pressure, viscosity, and the standard advective form do not disappear. They
-belong to the coarse-grained descriptions developed later. Appendices 207, 213,
-and 214 show how the familiar hydrodynamic conservation forms reappear when the
-electromagnetic substrate is averaged into effective continuum variables.
+Pressure, viscosity, and the standard advective form appear at the
+coarse-grained level developed later. Appendices 207, 213, and 214 show how
+the familiar hydrodynamic conservation forms arise when the electromagnetic
+substrate is averaged into effective continuum variables.
 
 So the right claim is:
 

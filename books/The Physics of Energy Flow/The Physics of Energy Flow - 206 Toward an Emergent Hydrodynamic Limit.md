@@ -5,20 +5,19 @@ date: 2026-03-14
 
 # 206. Toward an Emergent Hydrodynamic Limit
 
-This appendix does not itself derive Navier-Stokes. It states, as explicitly as
-possible, what must be shown in order to recover a Navier-Stokes-like
-description from the principles already developed in this book. Appendix 207
-then carries out that derivation in the simplest uniform-region setting.
-Appendix 213 extends the exact balance-law derivation to variable background.
+This appendix states the derivational route by which hydrodynamic form emerges
+from the principles already developed in this book. Appendix 207 carries out
+that derivation in the simplest uniform-region setting. Appendix 213 extends
+the same balance-law structure to variable background.
 
-The point is to separate three levels that should not be conflated:
+The point is to keep three levels distinct:
 
 - fundamental closure of the energy substrate,
 - coarse-grained transport of bounded organized modes,
 - emergent continuum equations for that coarse-grained transport.
 
-Only the first level has been derived in the main chain. The present appendix
-describes the remaining route.
+The main chain establishes the first level. The present appendix lays out the
+remaining derivational route.
 
 ## 206.1 What Continuity Already Gives
 
@@ -33,11 +32,9 @@ or, in earlier notation between ordered registrations, its discrete analogue.
 This is the conservation of energy under redistribution. It says that local
 change of stored energy is accounted for by neighboring transport.
 
-By itself, this is not enough to recover fluid dynamics. It supplies one local
-balance law, but not yet a balance law for momentum, nor a constitutive
-relation for stress.
-
-So continuity is the necessary first step, not the whole derivation.
+This is the first hydrodynamic balance law of the theory. It supplies the
+conservation of energy under redistribution and fixes the starting point for
+the continuum limit.
 
 ## 206.2 The Next Necessary Object: Momentum Density
 
@@ -49,27 +46,26 @@ $$
 
 together with a flux of momentum across neighboring regions.
 
-At the fundamental level, the natural candidate must be built from the same
+At the fundamental level, the natural candidate is built from the same
 transport structure that already appears as energy flow. In a sufficiently
-uniform region, one expects a relation of the general form
+uniform region, it takes the form
 
 $$
 \mathbf{g}=\mathcal{G}(u,\mathbf{S},k,\ldots),
 $$
 
 where $k$ denotes the local transport scale of the region and the ellipsis
-indicates any additional local closure data needed by the actual derivation.
+marks any additional local closure data carried by the actual substrate.
 
-The exact form of $\mathcal{G}$ is not yet derived here. What matters is the
-logical requirement:
+The logical requirement is:
 
-> a hydrodynamic limit cannot emerge without a local momentum density built
-> from the same underlying transport that carries energy.
+> a hydrodynamic limit emerges by building local momentum density from the same
+> underlying transport that carries energy.
 
 ## 206.3 The Next Balance Law: Momentum Continuity
 
-Once a momentum density is defined, the next required equation is a local
-balance law of the form
+Once a momentum density is defined, the next equation is a local balance law of
+the form
 
 $$
 \partial_t \mathbf{g} + \nabla\cdot\mathbf{T}=0,
@@ -85,11 +81,8 @@ is the momentum-flux tensor, or stress tensor, of the coarse-grained
 transport.
 
 This is the direct analogue, for momentum, of what chapter 3 already does for
-energy.
-
-Without such a tensor, there is no route from the present transport framework
-to Euler or Navier-Stokes-like equations. So the true next target is not a
-velocity field by itself, but a stress description.
+energy. The next target is therefore a stress description, not a velocity field
+in isolation.
 
 ## 206.4 Coarse-Graining
 
@@ -105,12 +98,11 @@ $$
 \mathbf{T}_{\mathrm{eff}}.
 $$
 
-The important point is that these effective fields would not be fundamental.
-They would summarize unresolved local circulation, transport, and closure
-within each averaging region.
+These effective fields summarize unresolved local circulation, transport, and
+closure within each averaging region.
 
 This is exactly where pressure, viscosity, and related effective quantities
-would have to appear if they are real emergent observables of the substrate.
+appear as observables of the coarse-grained substrate.
 
 ## 206.5 What a Navier-Stokes-like Closure Would Require
 
@@ -142,25 +134,17 @@ So the real derivation target is:
 4. identify the conditions under which the effective stress takes the familiar
    hydrodynamic form.
 
-Only after those steps would it be justified to say that Navier-Stokes-like
-dynamics has been recovered from the present program.
+These steps produce the hydrodynamic limit of the present program.
 
 ## 206.6 Where Pressure and Viscosity Would Come From
 
-In the present framework, pressure and viscosity should not be primitive.
-
-They would have to emerge from unresolved internal organization:
+In the present framework, pressure and viscosity emerge from unresolved
+internal organization:
 
 - local trapped circulation,
 - local exchange between neighboring closures,
 - anisotropic redistribution within the coarse-graining region,
 - delayed relaxation of that organization under transport.
-
-So the physical hypothesis is not:
-
-> the energy substrate already contains pressure and viscosity as basic fields.
-
-It is instead:
 
 > pressure and viscosity, if they appear, are effective summaries of unresolved
 > local closure and transport.
@@ -191,23 +175,16 @@ The derivation program can therefore be stated in a strict order.
 7. Determine when the effective stress reduces to Euler-like or
    Navier-Stokes-like form.
 
-This is a real research path. It does not begin from ordinary particles or
-from fluid axioms. It begins from continuity and source-free transport closure,
+This derivation path begins from continuity and source-free transport closure,
 then asks what macroscopic medium theory emerges.
 
 ## 206.8 Summary
 
-The present appendix has not derived Navier-Stokes.
-
-What it has derived is a continuous transport substrate with local continuity
-and closure constraints. That is enough to justify the hydrodynamic question.
-
-The next mathematical objective is therefore clear:
+The hydrodynamic objective is therefore clear:
 
 > derive momentum density, momentum flux, and stress from the same underlying
 > transport, then coarse-grain them to obtain the emergent continuum limit.
 
 Appendix 207 shows that this program can already be completed in the simplest
-uniform-region case. There, Navier-Stokes-like dynamics appears not as a
-primitive description of matter, but as an effective large-scale theory of
-organized energy transport.
+uniform-region case. There, Navier-Stokes-like dynamics appears as an
+effective large-scale theory of organized energy transport.

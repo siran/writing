@@ -99,7 +99,8 @@ interaction is governed by the electric cross energy.
 Work first in a frame in which the two toroidal centers are instantaneously at
 rest and retain only the static leading interaction.
 
-Outside the two toroidal cores the fields are source-free and static, so
+The fields are source-free everywhere. On the exterior domain outside small
+balls enclosing the two toroidal cores they are static, so
 
 $$
 \nabla\times\mathbf E_a=0,

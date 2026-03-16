@@ -290,7 +290,7 @@ $$
 So the familiar hydrodynamic equations arise as constitutive limits of the
 coarse-grained momentum balance.
 
-## 207.8 What Is Exact and What Is Not
+## 207.8 Forced Hydrodynamic Structure
 
 Up to the introduction of $\boldsymbol{\Sigma}$, everything in this appendix is
 an exact rewriting of:
@@ -299,18 +299,21 @@ an exact rewriting of:
 - local momentum continuity,
 - coarse-grained definitions of density and velocity.
 
-The first constitutive choice enters only when one asks how the unresolved
-stress should depend on the resolved fields.
+The unresolved stress $\boldsymbol{\Sigma}$ is therefore the place where
+specific hydrodynamic material behavior enters.
 
 So the exact conclusion is:
 
 > the present program already yields the exact hydrodynamic conservation form.
 
-The further statement
+Choosing an Euler closure sets
 
-> the effective stress is Newtonian and therefore Navier-Stokes
+$$
+\boldsymbol{\tau}=0.
+$$
 
-is an additional closure hypothesis. It is plausible, but it is not automatic.
+Choosing a Newtonian viscous closure gives the Navier-Stokes form written in
+section 207.7.
 
 ## 207.9 Physical Interpretation
 
@@ -349,7 +352,7 @@ $$
 $$
 
 with $\rho$, $\mathbf{v}$, $p$, and $\boldsymbol{\tau}$ defined by exact
-coarse-graining identities up to the final constitutive closure.
+coarse-graining identities together with the chosen hydrodynamic closure.
 
 Thus the book does not merely point toward hydrodynamics in the abstract. It
 already contains the detailed route by which Euler-like and Navier-Stokes-like

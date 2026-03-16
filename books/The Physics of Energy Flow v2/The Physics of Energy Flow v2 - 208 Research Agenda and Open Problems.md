@@ -1,22 +1,21 @@
 ---
-title: The Physics of Energy Flow - Ranked Research Agenda and Falsification Program
+title: The Physics of Energy Flow v2 - Research Agenda and Open Problems
 date: 2026-03-14
 ---
 
-# 208. Ranked Research Agenda and Falsification Program
+# 208. Research Agenda and Open Problems
 
-The purpose of this appendix is not to defend the framework by rhetoric. It is
-to state, in a form as operational as possible, what still has to be proved,
-what still has to be tested, what would count as failure, and which papers
-would most efficiently convert the present program into a public scientific
-contribution.
+The purpose of this appendix is to state, in as operational a form as
+possible, what still has to be proved, what still has to be tested, and which
+papers would most efficiently convert the present program into a public
+scientific contribution.
 
 The guiding attitude is simple:
 
 - preserve all measured values,
 - reinterpret the ontology and derivation,
 - state clearly where the framework is complete,
-- state clearly where it can fail.
+- state clearly which decisive questions still govern its development.
 
 ## 208.1 Present Status
 
@@ -337,33 +336,36 @@ These are the most important comparisons with already known results.
 The point is not that all of these must be solved at once. The point is that
 the framework becomes progressively more scientific as it survives each set.
 
-## 208.4 Explicit Failure Conditions
+## 208.4 Critical Resolution Criteria
 
-The framework should be treated as vulnerable to the following failures.
+The framework advances by resolving the following decisive questions.
 
-### Failure A. The charge geometry does not yield the correct interaction law
+### A. Charge geometry and long-range interaction
 
-If the toroidal charge picture cannot recover the exact long-range interaction
-form, then chapter 10 remains only a geometric analogy, not a derivation.
+Resolve whether the toroidal charge picture recovers the exact long-range
+interaction form, so chapter 10 stands as derivation rather than geometry
+alone.
 
-### Failure B. Another local source-free transporting closure works equally well
+### B. Uniqueness of the local transporting closure
 
-If a nonequivalent closure in the same stated class reproduces the same body of
-results, then the claim of Maxwell minimality weakens.
+Determine whether any nonequivalent closure in the same stated class reproduces
+the same body of results, or whether the Maxwell closure remains uniquely
+preferred there.
 
-### Failure C. One constitutive gravity closure cannot fit the weak-field test set
+### C. Coherent weak-field gravity closure
 
-If the same closure does not recover the standard weak-field observables
-together, then the refraction chapter is incomplete.
+Identify one closure that recovers the standard weak-field observables
+together, so the refraction chapter closes as one coherent transport picture.
 
-### Failure D. Coarse-graining does not select a physically admissible stress
+### D. Coarse-grained stress selection
 
-If the substrate does not yield a stable effective stress law under
-coarse-graining, then the hydrodynamic program weakens.
+Derive a stable effective stress law under coarse-graining, so the
+hydrodynamic program closes as a genuine continuum theory of the substrate.
 
-### Failure E. The framework makes a distinctive prediction that is false
+### E. Distinctive predictions
 
-This would be the cleanest kind of failure, and therefore the most useful one.
+Extract predictions that distinguish the framework cleanly at the experimental
+level.
 
 ## 208.5 Distinctive Predictions Worth Seeking
 
@@ -468,7 +470,7 @@ mathematical coherence to public scientific credibility.
 
 The program is now strong enough that its next stage should be guided not by
 further broad philosophical claims, but by a ranked list of derivations,
-benchmark tests, and explicit failure conditions.
+benchmark tests, and critical open questions.
 
 That is the threshold at which a reconstruction framework becomes a scientific
 research program in the full sense.

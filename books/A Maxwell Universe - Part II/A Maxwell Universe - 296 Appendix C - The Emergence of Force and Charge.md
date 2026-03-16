@@ -82,8 +82,9 @@ $$
 (\mathbf E_{\mathrm e},\mathbf B_{\mathrm e}).
 $$
 
-Outside the toroidal core, the total field is source-free, so the exact local
-momentum balance is
+The total field is source-free everywhere. The sphere used below is taken
+outside the toroidal core only so the compact exterior asymptotic can be used.
+The exact local momentum balance is
 
 $$
 \partial_t g_i-\partial_jT_{ij}=0,
@@ -114,7 +115,8 @@ $$
 $$
 
 The exact interaction across a sphere $S_R$ surrounding the compact torus is
-carried by the cross-stress tensor:
+carried by the cross-stress tensor, that is, by momentum-flux transfer across
+the surrounding surface:
 
 $$
 \mathbf F_R

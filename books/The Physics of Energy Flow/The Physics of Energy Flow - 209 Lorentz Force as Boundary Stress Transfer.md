@@ -133,8 +133,9 @@ $$
 \mathbf B=\mathbf B_{\mathrm s}+\mathbf B_{\mathrm e}.
 $$
 
-Everywhere outside the compact toroidal core, the total field is source-free,
-so the exact local momentum balance is
+The total field is source-free everywhere. We evaluate the balance on spheres
+lying outside the compact toroidal core only so the exterior asymptotic form of
+the compact closure can be used cleanly. The exact local momentum balance is
 
 $$
 \partial_t g_i - \partial_j T_{ij}=0,
@@ -468,7 +469,9 @@ $$
 \mathbf E_{\mathrm e}+\mathbf u\times\mathbf B_{\mathrm e}.
 $$
 
-This is the transport meaning of the magnetic term.
+This is the transport meaning of the magnetic term: the moving toroidal
+aperture samples the surrounding momentum-flux geometry through its transport
+across the transverse external field.
 
 For a rigidly drifting compact torus, decompose
 
@@ -614,6 +617,10 @@ $$
 
 So the magnetic part redirects transport but does no work.
 
+Force here is therefore the rate at which cross stress transfers momentum into
+the compact closure. Power is the corresponding energy-transfer rate obtained
+by contracting that momentum transfer with the drift velocity.
+
 ## 209.6 What the Derivation Used
 
 The argument used only the following ingredients:
@@ -657,6 +664,14 @@ It is the compact expression of one exact statement:
   $$
 - internal helical traversal cancels at monopole order, leaving only the drift
   correction.
+
+Geometrically, the toroidal charge class is carried by an axial energy-moment
+orthogonal to the local transverse pair $(\mathbf F_+,\mathbf F_-)$. When that
+axis drifts through the external transverse organization, the sampled
+momentum-flux load resolves into the lateral transport term
+$
+\mathbf v\times\mathbf B_{\mathrm e}.
+$
 
 So the Lorentz law is not imported. It is the point-mode limit of toroidal
 boundary stress transfer together with moving-aperture transport.
