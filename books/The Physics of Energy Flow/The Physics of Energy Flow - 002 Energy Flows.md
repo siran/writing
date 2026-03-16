@@ -28,6 +28,11 @@ reappearance in another, but continuous reconfiguration.
 Energy present in one part is registered in another. We interpret that
 observed reconfiguration as flow.
 
+This source-free continuity explains how organized existence can persist without
+local creation or annihilation. It does not claim to derive structured becoming
+from a trivial zero state; some nontrivial seed or originary structure must
+already be present.
+
 To describe energy flow is to describe its continuous redistribution within
 itself.
 
