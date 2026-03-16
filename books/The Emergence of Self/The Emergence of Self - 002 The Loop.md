@@ -6,7 +6,10 @@ date: 2026-03-15
 
 # The Loop
 
-The primitive unit of selfhood is the self-sustaining causal loop.
+The primitive unit of selfhood is the self-sustaining causal loop. But an
+actual self is usually not one loop alone. It is an organized assembly of loops
+whose recurrent coordination itself closes into a greater loop capable of
+persistence, imprint-carrying, and steering.
 
 One clarification has to come first. The loop is physically realized, but it
 does not need the idea of a body in order to persist. What the loop later
@@ -51,11 +54,13 @@ system would have no depth. It would be an immediate transducer. A loop becomes
 more self-like as more of its next state depends on its own persisting
 structure.
 
-At this primitive stage, it is acceptable to say that the self is the loop. But
-that sentence must be handled carefully. Later chapters will distinguish the
-loop itself from the imprints through which it experiences body and world. The
-body is not the primitive condition of the loop. It is a later self-identifying
-image the loop may form and consult. The self is not identical to that
+At this primitive stage, it is acceptable to say that the self begins from the
+loop. But that sentence must be handled carefully. A rich self is not merely a
+heap of loops. It is a higher-order loop formed by the coordination of many
+smaller ones. Later chapters will distinguish the recurrent organization itself
+from the imprints through which it experiences body and world. The body is not
+the primitive condition of the loop. It is a later self-identifying image the
+greater loop may form and consult. The self is not identical to that
 body-imprint. It is the recurrent organization that can survive, learn, and
 steer whether or not such an image has yet become explicit.
 
@@ -71,7 +76,8 @@ pushed. What matters is whether the system carries forward its own constraints
 and uses them to shape what the push will become.
 
 The next step is therefore not primitive but developmental. A loop may persist
-with no explicit imprint at all. But once it begins to preserve traces, biases,
-remembered paths, or other stable internal differences that alter what comes
-next, it has entered a deeper regime. Those internally retained differences are
-what I will call imprints.
+with no explicit imprint at all. Loops may also join into larger recurrent
+assemblies before any rich self-image appears. But once such organization
+begins to preserve traces, biases, remembered paths, or other stable internal
+differences that alter what comes next, it has entered a deeper regime. Those
+internally retained differences are what I will call imprints.

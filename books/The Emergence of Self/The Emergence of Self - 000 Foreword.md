@@ -15,6 +15,10 @@ That picture is simple in statement, though not trivial in consequence:
 > A self is a self-sustaining causal loop that carries imprints of its own past
 > and uses them to steer its future.
 
+Stated more fully, the self is not usually one isolated loop. It is an
+organized assembly of nested loops whose recurrent coordination itself forms a
+greater loop capable of carrying imprints and steering its own future.
+
 Once this is taken seriously, a number of philosophical oppositions begin to
 collapse.
 
@@ -70,9 +74,10 @@ That one correction already removes several persistent confusions.
 The architecture is therefore layered:
 
 1. A loop persists.
-2. A loop may begin to carry imprints.
-3. A loop may come to steer itself through those imprints.
-4. A loop may eventually carry explicit images of body, self, time, value, and
+2. Loops can assemble into richer recurrent organizations.
+3. Such assemblies may begin to carry imprints.
+4. They may come to steer themselves through those imprints.
+5. They may eventually carry explicit images of body, self, time, value, and
    world.
 
 This is not only a theory of consciousness. It is a reorganization of several

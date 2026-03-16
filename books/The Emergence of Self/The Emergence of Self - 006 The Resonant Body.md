@@ -157,7 +157,9 @@ The body is full of loops that monitor, regulate, predict, and respond:
 
 These are not metaphors. They are genuine steering structures. A body is not a
 single command center with passive appendages attached. It is a nested hierarchy
-of loops.
+of loops. A self, on this picture, is therefore not one isolated loop but a
+greater loop formed by the coordination of many smaller ones, capable of
+carrying and consulting shared imprints.
 
 This does not mean that the brain is unimportant. It plainly dominates explicit
 modeling, language, abstraction, and flexible recombination. But it does mean
