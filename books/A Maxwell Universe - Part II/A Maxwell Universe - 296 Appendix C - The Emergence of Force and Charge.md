@@ -236,16 +236,16 @@ mechanics of organized electromagnetic closures.
 
 Charge is the compact scalar summary of a toroidal through-hole flux class.
 
-The rest-frame interaction theorem is
+The rest-frame interaction theorem in a smooth external field is
 
 $$
-\mathbf F_{\mathrm{rest}}=q\,\mathbf E.
+\mathbf F_{\mathrm{rest}}=q\,\mathbf E_{\mathrm e}.
 $$
 
 Its covariant extension is
 
 $$
-f^\mu=qF^{\mu\nu}U_\nu,
+f^\mu=qF_{\mathrm e}^{\mu\nu}U_\nu,
 $$
 
 whose spatial part is the Lorentz law
@@ -253,7 +253,7 @@ whose spatial part is the Lorentz law
 $$
 \frac{d\mathbf p}{dt}
 =
-q(\mathbf E+\mathbf v\times\mathbf B).
+q(\mathbf E_{\mathrm e}+\mathbf v\times\mathbf B_{\mathrm e}).
 $$
 
 For two compact toroidal charged modes, the static cross energy is
