@@ -91,7 +91,8 @@ The chapters that follow build the argument in order:
 - imprint before self-image,
 - translation before mystery,
 - internal steering before metaphysical freedom,
-- and distributed realization before any brain-only picture.
+- distributed realization before any brain-only picture,
+- and self-driven evolution before any passive picture of selection.
 
 Appendix A expands, one by one, the specific philosophical problems this book
 claims to close. The appendix is not an afterthought. It is the sharp form of
