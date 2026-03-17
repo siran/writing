@@ -34,8 +34,9 @@ and every position is considered anew in that registration.
 
 What is observed is not disappearance in one part of the extent of $u$ and
 reappearance in another, but continuous reconfiguration.
-Energy present in one part is registered in another. We interpret that
-observed reconfiguration as flow.
+Energy present in one part is registered in another. This reconfiguration is
+not one fact, with transport added afterward as an interpretation. The
+transport is the local form of the reconfiguration itself.
 
 This source-free continuity explains how organized existence can persist without
 local creation or annihilation. It does not claim to derive structured becoming
@@ -43,7 +44,9 @@ from a trivial zero state; some nontrivial seed or originary structure must
 already be present.
 
 To describe energy flow is to describe how the same energy is redistributed
-within itself from one ordered registration to another.
+within itself from one ordered registration to another. Reconfiguration in
+$u$ and transport through $u$ are therefore the same event, viewed in scalar
+and vector form.
 
 We write it as
 

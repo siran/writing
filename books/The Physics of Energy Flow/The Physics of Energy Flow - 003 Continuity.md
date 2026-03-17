@@ -30,7 +30,9 @@ reconfigured, rather than an unrelated second distribution?
 The answer is transport. The later registration must be a redistribution of
 the same energy already present in the earlier one. We encode that local
 accounting by a flow field $\mathbf{S}(\mathbf{r};1,2)$, which relates one
-registered distribution to the other.
+registered distribution to the other. So transport is not something that
+happens after reconfiguration; it is the local structure of that
+reconfiguration.
 
 The difference
 
@@ -63,7 +65,9 @@ they compose.[^platos-allegory]
 
 Continuity is therefore the statement that an ordered difference between
 registrations is a redistribution of the same energy, locally accountable by
-transport. It gives closed bookkeeping.
+transport. The scalar change in $u$ and the vector accounting by $\mathbf S$
+are two expressions of the same continuous event. It gives closed
+bookkeeping.
 
 We now turn to exploring the implied consequences of this energy accounting in
 free space.
