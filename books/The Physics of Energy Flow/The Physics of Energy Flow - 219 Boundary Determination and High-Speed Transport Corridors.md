@@ -123,9 +123,10 @@ This is the exact sense in which one may speak of a high-speed communication
 tube. It is not faster than the tube's own local causal speed. It is faster
 than transport through neighboring more heavily loaded regions.
 
-## 219.5 Why a Faster Corridor Is Not Automatically Self-Guiding
+## 219.5 Guidance and Turning Are Engineering Problems
 
-The speed advantage does not by itself imply passive confinement.
+The speed advantage does not by itself fix how the corridor turns or guides a
+packet. That is a separate design problem.
 
 For a narrow radiative packet in a static background, appendix 214 gives
 
@@ -133,23 +134,25 @@ $$
 \dot{\mathbf p}=-U\,\nabla\ln k.
 $$
 
-So rays bend toward lower $k$, not toward higher $k$.
+So passive static gradients bend rays toward lower $k$, not toward higher $k$.
 
-Therefore a faster core is not automatically a self-guiding core. If a tubular
-region has larger $k$ than its surroundings, then:
+Therefore, if a tubular region has larger $k$ than its surroundings, then:
 
 - transport through it is faster once the packet is kept in the tube,
-- but passive static gradients alone tend to bend rays outward from the higher
-  $k$ core.
+- but the desired routing is not supplied automatically by the speed contrast
+  alone.
 
-So a practical high-speed corridor would require additional structure:
+Making such a corridor turn, branch, or remain tightly guided is an
+engineering problem. It requires additional structure, for example:
 
 - boundary shaping,
 - reflective closure,
 - or active transduction along the path.
 
-The speed claim is still exact. Only the confinement claim needs extra
-engineering.
+So the exact derivational statement is:
+
+- lower loading gives faster transport in the corridor,
+- controlled routing of that transport requires engineered guidance.
 
 ## 219.6 Final Statement
 
