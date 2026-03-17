@@ -115,6 +115,9 @@ simpler: single curl reorganizes locally; doubled curl transports.
 
 This is the simplest transport closure built from two complementary closed
 turns.
+We will refer to it interchangeably as double-curl transport or Maxwellian
+transport.
+
 In its local ideal form it gives the plane-wave idealization of transport: the
 same organized advance repeated from point to point, without yet requiring
 helical closure. Such an idealization already picks out a local axis of
@@ -150,7 +153,9 @@ $$
 $$
 
 Maxwell theory appears here as the minimal two-aspect closure of rotational
-transport without primitive source terms.
+transport without primitive source terms. In this sense, Maxwellian transport
+is precisely the double-curl transport closure written in conventional
+electromagnetic normalization.
 
 Minimal does not mean unique. It means the weakest local closure that actually
 propagates source-free flow. Appendix 211 proves the corresponding uniqueness

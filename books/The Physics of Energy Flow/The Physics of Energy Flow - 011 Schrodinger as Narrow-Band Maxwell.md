@@ -7,7 +7,8 @@ date: 2026-03-11
 # 11. Schrodinger as Narrow-Band Maxwell
 
 The Schrodinger equation appears here as a controlled envelope limit of
-Maxwell transport. Chapters 8 and 9 already gave two things needed for that
+double-curl or Maxwellian transport. Chapters 8 and 9 already gave two things
+needed for that
 limit: discrete stable modes and an emergent mass scale. The remaining task is
 to describe slow modulation of one such mode.
 
@@ -43,7 +44,7 @@ i\partial_t\psi
 +\frac{1}{2\omega_0 c^2}\partial_t^2\psi.
 $$
 
-The last term is the difference between exact Maxwell transport and the
+The last term is the difference between exact Maxwellian transport and the
 Schrodinger limit. For spectral width $\Delta\omega$, it is controlled by
 
 $$
