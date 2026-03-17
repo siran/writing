@@ -49,6 +49,14 @@ This yields the inverse-square far-field scaling from projection geometry.
 Charge is the name we give to the conserved oriented quantity whose projection
 we are measuring. In this sense, charge is quantized before any force law is
 written: its sign and class are fixed by the discrete closed circulation.
+So the behavior classically attributed to an electric source is already
+present inside the source-free theory once structured electromagnetic
+configurations are admitted.
+
+If one prefers the later sourced Maxwell notation, that source term can be
+read here as an idealized or effective summary of the same toroidal closure,
+not as the primitive origin of the field.
+
 Spin and charge are therefore not separate ontologies. They are different
 global aspects of the same toroidal mode: charge measures the signed
 through-hole flux, while spin measures the angular momentum of the closed
