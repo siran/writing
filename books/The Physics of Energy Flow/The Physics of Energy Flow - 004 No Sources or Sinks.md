@@ -9,13 +9,16 @@ Across the extent of $u$, continuity holds. Energy transported across a region
 does not create or destroy energy there. Rather, it changes how much energy is
 stored there by moving it across regions.
 
-Since $u$ is what is given to exist, its total quantity is given with it and
-can therefore be considered fixed. A primitive source or sink would require
-either that total to change or that disconnected regions compensate one another
-without transport between them.
+In the present book we follow the source-free branch of analysis: energy
+transported across a region does not create or destroy energy there. A
+primitive source or sink would require either that the total amount of $u$
+change or that disconnected regions compensate one another without transport
+between them.
 
-This is the source-free continuity statement itself: no added creation term, no
-added destruction term, only transport.
+This is the source-free continuity statement used from here on: no added
+creation term, no added destruction term, only transport. Other branches of
+analysis could study genuine sources or sinks. They are simply not the subject
+of the present argument.
 
 Continuity gives local accounting. We now explore what it implies for the
 shape of energy reorganization as a complete process.
