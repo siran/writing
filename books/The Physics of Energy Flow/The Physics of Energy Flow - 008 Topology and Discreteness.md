@@ -60,3 +60,9 @@ single-valuedness force integer classes of solutions.
 
 Specific spectral laws require additional geometry and come later. The present
 step is narrower and stronger: quantization begins as closure.
+
+Once a bounded toroidal mode exists, those same winding classes already supply
+the first data of an effective string description: a closed one-dimensional
+support, integer winding numbers, and periodic mode labels. Appendix 217 makes
+that reduction explicit and derives the corresponding line tension, inertial
+density, and discrete closed-mode spectrum directly from Maxwellian transport.

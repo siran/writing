@@ -116,3 +116,9 @@ locked in by topology.
 Unconfined propagation carries momentum $p=E/c$ but no inertial rest mass.
 Mass appears when topology confines part of the momentum into persistent
 circulation.
+
+If that confined circulation is concentrated in a thin closed tube, the same
+trapped load defines an effective one-dimensional description. Energy per unit
+length becomes line tension, and the corresponding inertial line density is
+that tension divided by $c^2$. Appendix 217 develops that effective string
+description directly from the bounded Maxwellian mode.
