@@ -80,8 +80,8 @@ $$
 $$
 
 Now each aspect changes by the curl of the other. This is the minimal real
-closed transport relation: no sources, no action at a distance, no extra
-fields, and no higher-order operators.
+closed transport relation: no primitive source terms, no action at a distance,
+no extra fields, and no higher-order operators.
 
 Like every field relation in this book, this coupled update is posed
 simultaneously for all $\mathbf{r}$ in the extent. It does not describe the
@@ -149,8 +149,8 @@ $$
 \mathbf{S}=\frac{1}{\mu_0}\,\mathbf{E}\times\mathbf{B}.
 $$
 
-Maxwell theory appears here as the minimal two-aspect closure of source-free
-rotational transport.
+Maxwell theory appears here as the minimal two-aspect closure of rotational
+transport without primitive source terms.
 
 Minimal does not mean unique. It means the weakest local closure that actually
 propagates source-free flow. Appendix 211 proves the corresponding uniqueness
