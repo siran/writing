@@ -23,6 +23,15 @@ $$
 
 Change is the acknowledgement of a difference between distributions.
 
+Nothing in this step assumes a primitive infinitesimal or minimal change. The
+whole extent is registered again as
+
+$$
+u_2(\mathbf{r}),
+$$
+
+and every position is considered anew in that registration.
+
 What is observed is not disappearance in one part of the extent of $u$ and
 reappearance in another, but continuous reconfiguration.
 Energy present in one part is registered in another. We interpret that
@@ -33,8 +42,8 @@ local creation or annihilation. It does not claim to derive structured becoming
 from a trivial zero state; some nontrivial seed or originary structure must
 already be present.
 
-To describe energy flow is to describe its continuous redistribution within
-itself.
+To describe energy flow is to describe how the same energy is redistributed
+within itself from one ordered registration to another.
 
 We write it as
 
@@ -45,7 +54,7 @@ $$
 This notation is not a recipe for following one tagged parcel of energy from
 place to place. It is a relation posed simultaneously for all $\mathbf{r}$ in
 the extent. It describes how the whole registered distribution reorganizes at
-once.
+once, not how one marked point is carried through a pre-given background.
 
 The flow lines of $\mathbf{S}$ trace the reconfiguration by which $u_1$
 becomes $u_2$.

@@ -9,9 +9,28 @@ Reconfiguration in a region of $u$ is a fact of $u$ itself. It is not private
 to one part of the extent. The surrounding extent must accord with that
 change. If it did not, the reconfiguration could not be said to have occurred
 in $u$ at all. That makes an ordering of registrations possible. Label two
-such ordered registrations $1$ and $2$. Then $u_2$ is related to $u_1$
-through a flow field $\mathbf{S}(\mathbf{r};1,2)$, which encodes how one
-registered distribution changes into another.
+such ordered registrations $1$ and $2$.
+
+Continuity does not begin from a primitive minimal change. It begins from the
+fact that the whole extent is registered again as
+
+$$
+u_2(\mathbf{r}),
+$$
+
+rather than
+
+$$
+u_1(\mathbf{r}).
+$$
+
+The question is then: in what sense is $u_2$ the same energy, continuously
+reconfigured, rather than an unrelated second distribution?
+
+The answer is transport. The later registration must be a redistribution of
+the same energy already present in the earlier one. We encode that local
+accounting by a flow field $\mathbf{S}(\mathbf{r};1,2)$, which relates one
+registered distribution to the other.
 
 The difference
 
@@ -19,9 +38,9 @@ $$
 u_2(\mathbf{r})-u_1(\mathbf{r})
 $$
 
-is understood as the result of a continuous redistribution of energy within
-itself, described by a flow connecting the two registrations. Energy in a region
-changes only by crossing its boundary to a neighboring region.
+is understood as the result of a redistribution of the same energy within
+itself, described by a flow connecting the two registrations. Energy in a
+region changes only by crossing its boundary to a neighboring region.
 
 In one direction, say the x-direction, the statement is
 
@@ -29,8 +48,9 @@ $$
 u_2-u_1+\partial_x S_{12}=0.
 $$
 
-Here $S_{12}$ refers to the redistribution flow connecting
-registrations $1$ and $2$.
+Here $S_{12}$ refers to the redistribution flow connecting registrations $1$
+and $2$. The equation does not say that change is small. It says that the
+difference between registrations is locally accountable by transport.
 
 The statement is local, but it is imposed at once for all positions in the
 extent. It does not move one marked point through a pre-given background. It
@@ -41,8 +61,9 @@ This is accounting of energy, not yet its dynamics. It is like accounting for
 the brightness of the pixels on a screen without yet recognizing the image
 they compose.[^platos-allegory]
 
-Continuity is therefore the minimal consistency requirement for transport. It
-gives closed bookkeeping.
+Continuity is therefore the statement that an ordered difference between
+registrations is a redistribution of the same energy, locally accountable by
+transport. It gives closed bookkeeping.
 
 We now turn to exploring the implied consequences of this energy accounting in
 free space.
