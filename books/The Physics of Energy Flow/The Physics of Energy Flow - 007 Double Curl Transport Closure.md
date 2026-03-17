@@ -152,6 +152,30 @@ $$
 \mathbf{S}=\frac{1}{\mu_0}\,\mathbf{E}\times\mathbf{B}.
 $$
 
+The primary identification remains the one just made:
+
+$$
+\mathbf E \equiv k_+ \mathbf F_+,
+\qquad
+\mathbf B \equiv k_- \mathbf F_-.
+$$
+
+Appendix 218 only proves the converse representation statement: once a local
+energy density $u>0$ and energy flux $\mathbf{S}$ are known, and once they
+satisfy the transport bound
+
+$$
+|\mathbf{S}| \le c\,u,
+$$
+
+one can construct at least one pair $(\mathbf{E},\mathbf{B})$ reproducing
+those same observables in Maxwell form. This does not replace the derivation
+from $\mathbf F_+$ and $\mathbf F_-$. It shows only that the already-derived
+two-aspect transport admits a local Maxwell representation in terms of the
+observable pair $(u,\mathbf S)$. The reconstruction is not unique. The
+remaining freedom is the local polarization or duality freedom of the
+two-aspect transport.
+
 Maxwell theory appears here as the minimal two-aspect closure of rotational
 transport without primitive source terms. In this sense, Maxwellian transport
 is precisely the double-curl transport closure written in conventional
