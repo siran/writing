@@ -170,3 +170,12 @@ are governed by local redistribution and closure relations.
 In that sense it is already a fluid-mechanics theory. The fluid is
 electromagnetic energy itself, while the familiar hydrodynamic variables arise
 later as coarse-grained summaries of the deeper transport closure.
+
+Appendix 219 develops one corollary of that fluid picture for passive regions:
+complete transport data on a closed boundary constrain the interior strongly
+enough to determine passive transport there, and relative unloading of a region
+raises its local transport speed and can therefore create a faster transport
+corridor.
+
+Appendix 220 develops the complementary corollary for bounded modes: matter is
+the persistent closed causal loop of that same Maxwellian transport.

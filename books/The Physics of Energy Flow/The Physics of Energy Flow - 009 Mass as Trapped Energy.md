@@ -122,3 +122,7 @@ trapped load defines an effective one-dimensional description. Energy per unit
 length becomes line tension, and the corresponding inertial line density is
 that tension divided by $c^2$. Appendix 217 develops that effective string
 description directly from the bounded Maxwellian mode.
+
+Appendix 220 sharpens the same point one step further: matter is a persistent
+closed causal loop of Maxwellian transport. Its mass is the trapped load of
+that loop.
