@@ -359,3 +359,47 @@ already contains the detailed route by which Euler-like and Navier-Stokes-like
 equations emerge from continuity, momentum flux, and coarse-graining of the
 same underlying transport substrate. Appendix 213 then extends the same
 derivation to variable background.
+
+## 207.11 Bounded Transport Dissolves the Physical Blow-Up Scenario
+
+The emergent hydrodynamic form derived above inherits the underlying transport
+bound of the electromagnetic substrate. In a uniform region,
+
+$$
+|\mathbf{S}| \le k\,u.
+$$
+
+So for any bounded region $\Omega$ with outward normal $\mathbf n$,
+
+$$
+\frac{d}{dt}\int_\Omega u\,dV
+=
+-\int_{\partial\Omega}\mathbf S\cdot\mathbf n\,dA
+\le
+\int_{\partial\Omega}|\mathbf S|\,dA
+\le
+k\int_{\partial\Omega}u\,dA.
+$$
+
+This says that the rate at which energy can be driven into a region is bounded
+by what is already being transported across its boundary.
+
+That is the decisive physical point. The emergent fluid here is not an
+unrestricted Newtonian continuum in which arbitrarily large amounts of energy
+or momentum may be delivered into an arbitrarily small region with no transport
+ceiling. It is a causally bounded transport medium. Any concentration process
+must be fed through the boundary at finite speed.
+
+So the physical blow-up picture is dissolved at the level of ontology:
+
+- transport is continuous,
+- transport is bounded,
+- singular concentration cannot be treated as an admissible physical transport
+  mechanism.
+
+This does not attempt to rescue every nonphysical branch of an unrestricted
+Newtonian PDE idealization. It makes the narrower and stronger claim relevant
+to the present book:
+
+> in the electromagnetic-fluid ontology derived here, the physical phenomenon
+> of finite-time blow-up is excluded because transport itself is bounded.
