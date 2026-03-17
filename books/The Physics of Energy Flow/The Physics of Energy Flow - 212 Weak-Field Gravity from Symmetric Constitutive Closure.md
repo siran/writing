@@ -13,9 +13,10 @@ actual target. This appendix keeps only the leading weak-field term because
 the benchmark observables treated here are measured in that regime.
 
 The point is not to assume spacetime curvature first and then reinterpret it.
-The point is to begin from the constitutive closure adopted in chapter 13,
-derive the corresponding weak-field transport geometry, and then recover from
-that one geometry the standard leading weak-field observables:
+The point is to begin from the exterior mass-potential of a bounded trapped
+closure, write its weak-field transport summary, derive the corresponding
+transport geometry, and then recover from that one geometry the standard
+leading weak-field observables:
 
 - gravitational redshift,
 - light bending,
@@ -27,27 +28,29 @@ deeply to the two-aspect stress of a null Maxwell probe, and appendix 216
 derives the same weak exterior factor directly from the sign-symmetric axial
 loading of a static toroidal closure. The present appendix does not replace
 that deeper derivation. It keeps the symmetric constitutive closure as the
-macroscopic summary used in chapter 13 for the interaction of a probe with a
-static bounded mass closure and derives its static weak-field consequences.
+weak-field macroscopic writing of the same exterior mass-potential interaction
+and derives its static benchmark consequences.
 
 The time-dependent radiative sector is not treated here.
 
-## 212.1 Constitutive Summary Used Here
+## 212.1 Exterior Mass-Potential and Weak-Field Summary
 
-Chapter 13 used the symmetric constitutive modification
-
-$$
-\varepsilon_{\mathrm{eff}}(r)=\varepsilon_0\bigl(1+2\eta(r)\bigr),
-\qquad
-\mu_{\mathrm{eff}}(r)=\mu_0\bigl(1+2\eta(r)\bigr),
-$$
-
-with
+Chapter 13 used the exterior mass-potential
 
 $$
 \eta(r):=\frac{GM}{rc^2},
 \qquad
 \eta\ll 1.
+$$
+
+This is the spherical unresolved exterior of a bounded mass closure, in direct
+analogy with the charge chapter's far-field monopole summary. The weak-field
+constitutive writing used here is then
+
+$$
+\varepsilon_{\mathrm{eff}}(r)=\varepsilon_0\bigl(1+2\eta(r)\bigr),
+\qquad
+\mu_{\mathrm{eff}}(r)=\mu_0\bigl(1+2\eta(r)\bigr),
 $$
 
 The corresponding local propagation speed is

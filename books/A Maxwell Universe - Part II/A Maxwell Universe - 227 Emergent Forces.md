@@ -184,7 +184,7 @@ The word `emergent` must be read carefully.
 
 It does not mean:
 
-- approximate because we do not know the real law,
+- approximate because the deeper law is unknown,
 - phenomenological because particles are really something else.
 
 It means:

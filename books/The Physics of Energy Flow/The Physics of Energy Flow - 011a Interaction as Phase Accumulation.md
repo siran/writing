@@ -6,9 +6,9 @@ date: 2026-03-11
 
 # 11a. Interaction as Phase Accumulation
 
-Chapter 11 derived the free Schrodinger equation as the narrow-band envelope of
-a stable Maxwell mode. Interaction enters when that envelope propagates through
-a structured background.
+Chapter 11 derived the free Schrodinger equation as the effective narrow-band
+sector of a stable Maxwellian mode. Interaction enters when that envelope
+propagates through a structured background.
 
 In the envelope description, such a background appears as a local potential:
 
@@ -20,8 +20,10 @@ i\hbar\,\partial_t\psi
 \right)\psi.
 $$
 
-$V$ is a compact summary of how the background changes the phase accumulated by
-the envelope during propagation.
+$V$ is the compact interaction writing for how the background changes the phase
+accumulated by the envelope during propagation. Once the background is given,
+this term is fully writable; what varies from case to case is only how much of
+that background structure is already known.
 
 The propagator makes this explicit:
 
@@ -68,5 +70,5 @@ recovered. If the two backgrounds differ, the relative phase changes and the
 pattern changes with it. What disappears is coherent phase relation.
 
 This closes the loop left open in chapter 11. The potential term in
-Schrodinger's equation summarizes background interaction in the same
-wave-envelope dynamics.
+Schrodinger's equation is the compact phase-writing of background interaction
+inside the same wave-envelope dynamics.
