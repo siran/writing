@@ -20,6 +20,11 @@ creation term, no added destruction term, only transport. Other branches of
 analysis could study genuine sources or sinks. They are simply not the subject
 of the present argument.
 
+This does not mean the present branch cannot recover what classical physics
+calls sources. It means that charge, mass, and related source-like quantities
+must appear here as organized closures or effective summaries of one continuous
+transport, not as primitive terms inserted into the continuity equation.
+
 Continuity gives local accounting. We now explore what it implies for the
 shape of energy reorganization as a complete process.
 
