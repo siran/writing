@@ -48,7 +48,87 @@ The composition operation $\oplus$ should satisfy four basic requirements:
 - oddness: reversing both directions reverses the result
 - boundedness: if $|v|<k$ and $|u|<k$, then $|v\oplus u|<k$
 
-The composition law can now be derived directly from the transport cone. In the
+The same law can also be derived from momentum-flux bookkeeping, and this is
+arguably the more physical route.
+
+In one spatial direction, the local transport cone gives two causal channels:
+forward and backward. Let $T_{++}\ge 0$ and $T_{--}\ge 0$ denote the
+corresponding channel loads through a transverse cut. Then the total energy
+density and flux are
+
+$$
+u = T_{++}+T_{--},
+\qquad
+S = k(T_{++}-T_{--}).
+$$
+
+For a coherent moving mode, the measured lab speed is therefore
+
+$$
+v=\frac{S}{u}
+=
+k\,\frac{T_{++}-T_{--}}{T_{++}+T_{--}}.
+$$
+
+So the speed is determined entirely by the ratio
+
+$$
+R(v):=\frac{T_{++}}{T_{--}}
+=
+\frac{k+v}{k-v}.
+$$
+
+A standard transport pulse preserving the same two causal channels cannot alter
+the local bound $k$; it can only rebalance the forward and backward channel
+loads. So such a pulse acts by
+
+$$
+T_{++}\mapsto a\,T_{++},
+\qquad
+T_{--}\mapsto b\,T_{--},
+$$
+
+with $a,b>0$. Therefore the ratio transforms multiplicatively:
+
+$$
+R \mapsto \frac{a}{b}R.
+$$
+
+If one standard pulse sends rest to speed $u$, then since rest has $R(0)=1$,
+that same pulse has
+
+$$
+R(u)=\frac{a}{b}.
+$$
+
+Applying it to a state already moving at speed $v$ gives
+
+$$
+R(v\oplus u)=R(u)\,R(v).
+$$
+
+Therefore
+
+$$
+\frac{k+v\oplus u}{k-v\oplus u}
+=
+\frac{k+u}{k-u}\cdot\frac{k+v}{k-v}.
+$$
+
+Solving this relation gives
+
+$$
+\boxed{
+v\oplus u
+=
+\frac{v+u}{1+vu/k^2}
+}.
+$$
+
+This is the hyperbolic composition law forced by bounded momentum-flux
+transport.
+
+The same result can be written geometrically from the transport cone. In the
 same approximately uniform region, the local transport speed $k$ picks out the
 lines
 
@@ -73,19 +153,13 @@ $$
 with $a,b>0$. For speed composition only the ratio matters, so write
 
 $$
-\lambda^2:=\frac{a}{b}.
+\Lambda^2:=\frac{a}{b}.
 $$
 
-Now consider a line of constant speed $v$:
+Along a line of constant speed $v$, the null-coordinate ratio is
 
 $$
-x=vt.
-$$
-
-Along that line the null-coordinate ratio is
-
-$$
-R(v):=\frac{\xi}{\chi}
+\frac{\xi}{\chi}
 =
 \frac{t+x/k}{t-x/k}
 =
@@ -94,40 +168,9 @@ R(v):=\frac{\xi}{\chi}
 \frac{k+v}{k-v}.
 $$
 
-The rest line has $R(0)=1$. If one standard pulse from rest produces speed
-$u$, then the corresponding cone-preserving map has
-
-$$
-R(u)=\lambda(u)^2.
-$$
-
-Applying that same pulse to a line already moving at speed $v$ multiplies the
-same null ratio by the same factor:
-
-$$
-R(v\oplus u)=\lambda(u)^2R(v)=R(u)\,R(v).
-$$
-
-Therefore
-
-$$
-\frac{k+v\oplus u}{k-v\oplus u}
-=
-\frac{k+u}{k-u}\cdot\frac{k+v}{k-v}.
-$$
-
-Solving this relation gives
-
-$$
-\boxed{
-v\oplus u
-=
-\frac{v+u}{1+vu/k^2}
-}.
-$$
-
-This is the hyperbolic composition law forced by preservation of the same local
-transport cone.
+So the momentum-flux ratio $R(v)$ is exactly the null-coordinate ratio. A
+cone-preserving map rescales it by $\Lambda^2$, which is the same
+multiplicative law obtained above from channel rebalancing.
 
 Only after this step is it useful to introduce an additive parameter. Taking
 the logarithm of $R(v)$ gives
