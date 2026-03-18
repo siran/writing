@@ -27,9 +27,50 @@ consider next is therefore the surface of a torus. It has two independent
 non-contractible cycles, so closure must hold in two independent directions at
 once.
 
-Idealize the support as a thin torus with major radius $R$ and minor radius
-$r$. Let the standing wave close on the long cycle and on the short cycle.
-Global self-consistency then requires
+In the thin-support idealization, use angular coordinates $(\phi,\theta)$ on
+the torus, where $\phi$ runs around the major cycle of radius $R$ and
+$\theta$ around the minor cycle of radius $r$. Restrict attention to one
+Cartesian component $f$ of the transporting field. The wave equation on that
+support becomes
+
+$$
+\partial_t^2 f
+=
+c^2\left(
+\frac{1}{R^2}\partial_\phi^2 f
++
+\frac{1}{r^2}\partial_\theta^2 f
+\right).
+$$
+
+Because the support is closed, the field must be periodic on both cycles:
+
+$$
+f(\phi+2\pi,\theta,t)=f(\phi,\theta,t),
+\qquad
+f(\phi,\theta+2\pi,t)=f(\phi,\theta,t).
+$$
+
+Now seek a separated standing mode
+
+$$
+f(\phi,\theta,t)=A\cos(m\phi)\cos(n\theta)\cos(\omega t).
+$$
+
+The periodicity conditions force the mode numbers to be integers
+$m,n\in\mathbb Z_{\ge 0}$. Substituting this form into the wave equation gives
+
+$$
+\omega^2
+=
+c^2\left(\frac{m^2}{R^2}+\frac{n^2}{r^2}\right).
+$$
+
+So the torus discretizes the transport immediately. The closed geometry permits
+only integer mode numbers and therefore only discrete standing-wave
+frequencies.
+
+The same result can be written as closure in wavelength form:
 
 $$
 m\lambda_\phi = 2\pi R,
@@ -45,12 +86,8 @@ k_\phi=\frac{m}{R},
 k_\theta=\frac{n}{r}.
 $$
 
-The two winding numbers therefore appear immediately. A bounded toroidal
-standing wave is not labeled by a continuous parameter, but by an integer pair
-$(m,n)$.
-
-In the thin-support idealization, the mode frequency is then fixed by the same
-wave equation:
+So a bounded toroidal standing wave is not labeled by a continuous parameter,
+but by an integer pair $(m,n)$, and its frequency is
 
 $$
 \omega_{mn}
