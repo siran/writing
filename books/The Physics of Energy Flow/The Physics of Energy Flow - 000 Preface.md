@@ -26,3 +26,7 @@ assumptions as possible: if something exists and redistributes
 continuously, what must follow?
 
 The answer is, as we shall see, at least all of known physics.
+
+The book is divided accordingly. Part I gives the main derivational spine in
+thirteen chapters. Part II collects corollaries and technical appendices that
+clarify, extend, or prove later points without interrupting that spine.
