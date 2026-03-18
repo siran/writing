@@ -14,10 +14,12 @@ $$
 \left(\nabla^2-\frac{1}{c^2}\partial_t^2\right)f=0.
 $$
 
-If matter is bounded Maxwellian transport, then the first bounded idealization
-is a standing electromagnetic wave on a closed support. The natural closed
-support is a torus. It has two independent non-contractible cycles, so closure
-must hold in two independent directions at once.
+If matter is trapped energy flow, then the first bounded idealization is a
+standing electromagnetic wave on a closed support. A sphere cannot sustain a
+continuous nowhere-vanishing tangential flow, by the hairy ball theorem. The
+simplest closed support to consider next is therefore the surface of a torus.
+It has two independent non-contractible cycles, so closure must hold in two
+independent directions at once.
 
 Idealize the support as a thin torus with major radius $R$ and minor radius
 $r$. Let the standing wave close on the long cycle and on the short cycle.
