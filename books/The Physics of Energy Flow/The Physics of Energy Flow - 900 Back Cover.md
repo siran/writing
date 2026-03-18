@@ -6,17 +6,19 @@ date: 2026-03-11
 
 # Back Cover
 
-**The Physics of Energy Flow** presents a derivation of known physics
-from continuous electromagnetic energy transport.
+**The Physics of Energy Flow** derives known physics from first principles as
+energy transport.
 
 Instead of assigning independent ontologies to matter, charge, force, gravity,
 and curved spacetime, this book starts from one substrate only and asks what
 must follow if energy exists and flows continuously.
 
-The result is a reconstruction in which Maxwell dynamics is the minimal
-local closure of transport, quantization begins as topological closure, mass is
-trapped energy, force is bookkeeping for momentum transfer, and gravity is
-refraction.
+The result is a reconstruction in which the Maxwell equations are identified as
+the complementary rotations of a single flow, with `E` and `B` as
+complementary aspects of that flow. Quantization begins as topological
+closure, mass is energy transport closing on itself under the self-refraction
+principle, force is bookkeeping for momentum transfer, and gravity emerges as
+refraction of energy flow.
 
 This is not a denial of mathematics. It is a refusal to mistake mathematical
 maps for the territory they describe.
