@@ -164,4 +164,5 @@ Within that same framework, lowering the relative electromagnetic loading of a
 region raises its local transport speed. A suitably maintained tubular region
 of lower loading is therefore a faster transport corridor relative to more
 heavily loaded surroundings. Appendix 221 derives the corresponding lensing and
-guidance laws for such field-shaped transport profiles.
+guidance laws for such field-shaped transport profiles, and appendix 222
+derives boundary superposition as one fundamental unloading mechanism.

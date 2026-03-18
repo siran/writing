@@ -15,7 +15,8 @@ $$
 
 Appendix 219 used that law to show that lower loading can create a faster
 transport corridor. The present appendix derives the corresponding lensing and
-guidance consequences.
+guidance consequences. Appendix 222 derives one fundamental way such unloading
+can be produced: boundary subtraction of a selected passive mode.
 
 The point is simple. Once a static field configuration creates a spatial
 loading profile and therefore a spatial transport-speed profile
