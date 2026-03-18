@@ -5,22 +5,17 @@ date: 2026-03-13
 
 # 202. Nested Transport and Hyperbolic Composition
 
-The double-curl transport closure of chapter 7 should not be composed with itself
-naively. Applying
+The double-curl transport closure of chapter 7 determines the local transport
+cone. Reapplying
 
 $$
 \nabla\times(\nabla\times\mathbf{F})
 $$
 
-again acts on field structure. It produces a higher spatial operator. It does
-not by itself describe one transport riding on another.
-
-Nested transport belongs to kinematics, not to repeated application of the
-field operator. For a given approximately uniform region, let $k$ denote the
-local transport speed singled out there by the electromagnetic closure. The
-question is this: if one transport process is nested inside another, and both
-are described within a region where the same local $k$ applies, what is the
-resulting relation of composition?
+acts again on field structure and raises the spatial operator. Nested transport
+is a different question. It belongs to kinematics: how do successive bounded
+transport increments compose when they occur in the same approximately uniform
+region and therefore share the same local transport speed $k$?
 
 To keep the discussion in one lab, consider motion along one spatial direction
 $x$. Let $u$ denote the speed produced from rest by one standard transport
@@ -33,6 +28,19 @@ $$
 denote the speed measured in the same lab after applying that same standard
 pulse again.
 
+Because $k$ is the local transport speed singled out by the electromagnetic
+closure, no transport process native to that region can push a mode outside the
+admissible interval $|v|<k$. So the composition law must preserve that bound.
+This already rules out Galilean additivity as an exact transport law, since
+
+$$
+v+u
+$$
+
+can exceed $k$ even when both $|v|<k$ and $|u|<k$ separately hold. The problem
+is therefore not whether the bound survives composition, but what exact shape
+the composition law must take once that bound is respected.
+
 The composition operation $\oplus$ should satisfy four basic requirements:
 
 - identity: $v\oplus 0 = v$ and $0\oplus u = u$
@@ -40,79 +48,114 @@ The composition operation $\oplus$ should satisfy four basic requirements:
 - oddness: reversing both directions reverses the result
 - boundedness: if $|v|<k$ and $|u|<k$, then $|v\oplus u|<k$
 
-For any smooth one-dimensional associative composition law, there exists a
-monotone parameter $\eta=\phi(v)$ that turns composition into addition:
-
-$$
-\phi(v\oplus u)=\phi(v)+\phi(u).
-$$
-
-Because the admissible speeds are bounded by $\pm k$, this additive parameter
-must diverge as $v\to\pm k$. A convenient odd smooth choice, normalized at the
-origin, is
-
-$$
-\eta=\phi(v)=\operatorname{artanh}\!\left(\frac{v}{k}\right).
-$$
-
-So
-
-$$
-v = k\tanh\eta.
-$$
-
-This is the hyperbolic parametrization of speed. Successive identical pulses do
-not add linearly in $v$. They add linearly in $\eta$.
-
-If one pulse contributes $\eta_0$, then after $n$ identical pulses the lab
-speed is
-
-$$
-v_n = k\tanh(n\eta_0).
-$$
-
-More generally, if
-
-$$
-v_1 = k\tanh\eta_1,
-\qquad
-v_2 = k\tanh\eta_2,
-$$
-
-then
-
-$$
-v_1\oplus v_2
-=
-k\tanh(\eta_1+\eta_2)
-=
-\frac{v_1+v_2}{1+v_1v_2/k^2}.
-$$
-
-This is the hyperbolic composition relation.
-
-The same result can be written in the more compressed coordinate language. In
-the same approximately uniform region, the local transport speed $k$ picks out
-the lines
+The composition law can now be derived directly from the transport cone. In the
+same approximately uniform region, the local transport speed $k$ picks out the
+lines
 
 $$
 x = \pm kt,
 $$
 
-which bound the local transport cone. Writing the null coordinates
+which bound the local transport cone. Writing the corresponding null
+coordinates
 
 $$
-u = t + \frac{x}{k}, \qquad w = t - \frac{x}{k},
+\xi = t + \frac{x}{k}, \qquad \chi = t - \frac{x}{k},
 $$
 
-any linear map preserving those directions takes the form
+any orientation-preserving linear map fixing those two directions takes the
+form
 
 $$
-u' = \lambda u, \qquad w' = \lambda^{-1} w.
+\xi' = a\,\xi, \qquad \chi' = b\,\chi,
 $$
 
-Writing $\lambda=e^{-\eta}$ recovers the same additive parameter $\eta$ and
-therefore the same hyperbolic composition rule above.
+with $a,b>0$. For speed composition only the ratio matters, so write
+
+$$
+\lambda^2:=\frac{a}{b}.
+$$
+
+Now consider a line of constant speed $v$:
+
+$$
+x=vt.
+$$
+
+Along that line the null-coordinate ratio is
+
+$$
+R(v):=\frac{\xi}{\chi}
+=
+\frac{t+x/k}{t-x/k}
+=
+\frac{1+v/k}{1-v/k}
+=
+\frac{k+v}{k-v}.
+$$
+
+The rest line has $R(0)=1$. If one standard pulse from rest produces speed
+$u$, then the corresponding cone-preserving map has
+
+$$
+R(u)=\lambda(u)^2.
+$$
+
+Applying that same pulse to a line already moving at speed $v$ multiplies the
+same null ratio by the same factor:
+
+$$
+R(v\oplus u)=\lambda(u)^2R(v)=R(u)\,R(v).
+$$
+
+Therefore
+
+$$
+\frac{k+v\oplus u}{k-v\oplus u}
+=
+\frac{k+u}{k-u}\cdot\frac{k+v}{k-v}.
+$$
+
+Solving this relation gives
+
+$$
+\boxed{
+v\oplus u
+=
+\frac{v+u}{1+vu/k^2}
+}.
+$$
+
+This is the hyperbolic composition law forced by preservation of the same local
+transport cone.
+
+Only after this step is it useful to introduce an additive parameter. Taking
+the logarithm of $R(v)$ gives
+
+$$
+\eta(v):=\frac12\ln\!\frac{k+v}{k-v}.
+$$
+
+Then
+
+$$
+\eta(v\oplus u)=\eta(v)+\eta(u).
+$$
+
+Equivalently,
+
+$$
+\eta(v)=\operatorname{artanh}\!\left(\frac{v}{k}\right),
+\qquad
+v=k\tanh\eta.
+$$
+
+So successive identical pulses add linearly in $\eta$, not in $v$. If one
+pulse contributes $\eta_0$, then after $n$ identical pulses the lab speed is
+
+$$
+v_n=k\tanh(n\eta_0).
+$$
 
 So the distinction is exact:
 
