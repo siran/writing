@@ -14,11 +14,11 @@ $$
 \left(\nabla^2-\frac{1}{c^2}\partial_t^2\right)f=0.
 $$
 
-The next question is whether a bounded standing electromagnetic wave on a torus
-already forces discreteness. If it does, then the same construction should also
-reproduce the basic hydrogen pattern: allowed integer modes and the
-Rydberg-type $1/n^2$ scaling. Since hydrogen is matter, that would be a first
-serious clue that matter itself may be standing electromagnetic waves.
+We now consider a bounded standing electromagnetic wave on a torus. In the
+thin-support idealization developed below, that construction yields allowed
+integer modes and the Rydberg-type $1/n^2$ scaling. Since hydrogen is matter,
+this is a first serious clue that matter itself may be standing
+electromagnetic waves.
 
 To make that idea precise, we need a closed support on which energy flow can be
 trapped continuously. A sphere cannot sustain a continuous nowhere-vanishing
