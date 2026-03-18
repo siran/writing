@@ -6,7 +6,7 @@ date: 2026-03-11
 
 # Back Cover
 
-**The Physics of Energy Flow** presents a monistic derivation of physics
+**The Physics of Energy Flow** presents a derivation of known physics
 from continuous electromagnetic energy transport.
 
 Instead of assigning independent ontologies to matter, charge, force, gravity,
