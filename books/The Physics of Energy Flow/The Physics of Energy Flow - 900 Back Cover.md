@@ -15,10 +15,12 @@ must follow if energy exists and flows continuously.
 
 The result is a reconstruction in which the Maxwell equations are identified as
 the complementary rotations of a single flow, with `E` and `B` as
-complementary aspects of that flow. Quantization begins as topological
-closure, mass is energy transport closing on itself under the self-refraction
-principle, force is bookkeeping for momentum transfer, and gravity emerges as
-refraction of energy flow.
+complementary aspects of that flow.
+
+When the flow organizes in standing-wave patterns, quantization naturally
+follows.
+
+Then, if matter is standing waves of energy flow, gravity follows.
 
 This is not a denial of mathematics. It is a refusal to mistake mathematical
 maps for the territory they describe.
