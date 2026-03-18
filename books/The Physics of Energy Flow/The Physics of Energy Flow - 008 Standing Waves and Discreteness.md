@@ -14,12 +14,18 @@ $$
 \left(\nabla^2-\frac{1}{c^2}\partial_t^2\right)f=0.
 $$
 
-If matter is trapped energy flow, then the first bounded idealization is a
-standing electromagnetic wave on a closed support. A sphere cannot sustain a
-continuous nowhere-vanishing tangential flow, by the hairy ball theorem. The
-simplest closed support to consider next is therefore the surface of a torus.
-It has two independent non-contractible cycles, so closure must hold in two
-independent directions at once.
+A standing electromagnetic wave on a torus already discretizes
+electromagnetic transport. In the thin-support idealization developed below, it
+also reproduces the basic hydrogen pattern: allowed integer modes and the
+Rydberg-type $1/n^2$ scaling. Since hydrogen is matter, this is the first
+serious clue that matter itself may be standing electromagnetic waves.
+
+To make that idea precise, we need a closed support on which energy flow can be
+trapped continuously. A sphere cannot sustain a continuous nowhere-vanishing
+tangential flow, by the hairy ball theorem. The simplest closed support to
+consider next is therefore the surface of a torus. It has two independent
+non-contractible cycles, so closure must hold in two independent directions at
+once.
 
 Idealize the support as a thin torus with major radius $R$ and minor radius
 $r$. Let the standing wave close on the long cycle and on the short cycle.
