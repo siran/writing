@@ -11,7 +11,7 @@ from continuous electromagnetic energy transport.
 
 Instead of assigning independent ontologies to matter, charge, force, gravity,
 and curved spacetime, this book starts from one substrate only and asks what
-must follow if energy exists, flows, closes, and organizes.
+must follow if energy exists and flows continuously.
 
 The result is a reconstruction in which Maxwell dynamics is the minimal
 local closure of transport, quantization begins as topological closure, mass is
