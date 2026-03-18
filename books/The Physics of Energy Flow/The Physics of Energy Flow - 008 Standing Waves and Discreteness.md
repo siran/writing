@@ -14,7 +14,8 @@ $$
 \left(\nabla^2-\frac{1}{c^2}\partial_t^2\right)f=0.
 $$
 
-We now consider a bounded standing electromagnetic wave on a torus. In the
+We now consider a bounded standing electromagnetic wave on the surface of a
+torus. In the
 thin-support idealization developed below, that construction yields allowed
 integer modes and the Rydberg-type $1/n^2$ scaling. Since hydrogen is matter,
 this is a first serious clue that matter itself may be standing
