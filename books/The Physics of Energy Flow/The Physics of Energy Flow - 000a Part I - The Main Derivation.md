@@ -16,7 +16,7 @@ The thirteen chapters that follow carry that chain through the first physical
 reconstructions: topology and discreteness, mass, charge, the Schrödinger
 sector, Newtonian flux accounting, and gravity as refraction.
 
-Part II then gathers what comes after the spine itself:
+The companion Part II then gathers what comes after the spine itself:
 
 - corollaries that clarify the ontology,
 - and appendices that supply later technical derivations without interrupting

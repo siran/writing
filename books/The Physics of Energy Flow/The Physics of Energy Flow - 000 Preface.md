@@ -27,6 +27,7 @@ continuously, what must follow?
 
 The answer is, as we shall see, at least all of known physics.
 
-The book is divided accordingly. Part I gives the main derivational spine in
-thirteen chapters. Part II collects corollaries and technical appendices that
-clarify, extend, or prove later points without interrupting that spine.
+This volume is Part I of that program. It gives the main derivational spine in
+thirteen chapters. The companion Part II collects the corollaries and
+technical appendices that clarify, extend, or prove later points without
+interrupting that spine.
