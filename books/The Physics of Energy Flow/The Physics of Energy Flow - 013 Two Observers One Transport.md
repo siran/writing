@@ -75,6 +75,9 @@ Therefore: **Galilean addition is incompatible with source-free Maxwell
 transport.** This is a theorem. It follows from the existence of the bound
 and the requirement that a change-of-description preserve it.
 
+We now derive the unique linear re-description that does preserve that same
+transport law.
+
 
 ## The wave operator forces the unique re-description
 
