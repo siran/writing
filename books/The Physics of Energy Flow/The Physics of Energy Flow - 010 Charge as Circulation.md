@@ -6,9 +6,11 @@ date: 2026-03-11
 
 # 10. Charge as Circulation
 
-Electric charge is the far-field projection of conserved topological
-winding: a $1/r^2$ intensity falloff that results from a fixed total
-circulation spread over an expanding sphere.
+Electric charge is the exterior reading of conserved topological
+winding: the torus's $(m,n)$ circulation sustains a divergence-free
+exterior continuation that appears on growing enclosing shells as
+matched inward and outward normal-to-shell currents whose magnitude
+falls as $1/r^2$.
 
 In source-free Maxwell dynamics, $\nabla \cdot \mathbf{E} = 0$ everywhere.
 No electric field lines originate or terminate. Yet we observe a $1/r^2$
@@ -33,22 +35,25 @@ Because the circulation closes in integer winding classes, this through-hole
 flux is not arbitrary. For a stable toroidal mode it comes in discrete classes
 set by the winding itself.
 
-Far from the torus, the detailed local winding is no longer resolved. What
-remains visible is the projection of that conserved oriented quantity. Now
-enclose the configuration in a sphere of radius $r$ much larger than the
-torus. The sphere's area is $4\pi r^2$.
+The tangential $(m,n)$ flow does not terminate at the torus. It sustains a
+source-free exterior continuation of the same organized flow. On growing
+enclosing shells that continuation appears as matched inward and outward
+currents normal to the shell. Their signed total over the full closed shell
+still balances to zero, because the field remains divergence-free everywhere.
+But the same organized continuation is now distributed across shell area that
+grows as $r^2$.
 
-A fixed quantity, spread over a growing area, produces an average projected
-intensity that falls as:
+Its magnitude therefore falls as:
 
 $$
-\text{Intensity} \propto \frac{1}{r^2}.
+\text{Normal-to-shell current magnitude} \propto \frac{1}{r^2}.
 $$
 
-This yields the inverse-square far-field scaling from projection geometry.
-Charge is the name we give to the conserved oriented quantity whose projection
-we are measuring. In this sense, charge is quantized before any force law is
-written: its sign and class are fixed by the discrete closed circulation.
+This yields the inverse-square far-field scaling without any primitive source.
+Charge is the name we give to the conserved oriented quantity whose exterior
+continuation we are measuring. In this sense, charge is quantized before any
+force law is written: its sign and class are fixed by the discrete closed
+circulation.
 So the behavior classically attributed to an electric source is already
 present inside the source-free theory once structured electromagnetic
 configurations are admitted.

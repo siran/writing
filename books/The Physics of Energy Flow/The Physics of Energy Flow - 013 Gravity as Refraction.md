@@ -29,10 +29,11 @@ $$
 E_{\mathrm{mass}}=Mc^2.
 $$
 
-Far from the closure, the internal winding is no longer resolved. As in the
-charge chapter, only the exterior monopole survives. But here the relevant
-conserved quantity is the total trapped momentum content of the bounded mode.
-The corresponding exterior scalar strength is therefore the mass-potential
+Far from the closure, the far field is again read on growing enclosing shells.
+As in the charge chapter, no primitive source is inserted. But here the
+relevant conserved quantity is the total trapped momentum content of the
+bounded mode. The corresponding exterior scalar strength is therefore the
+mass-potential
 
 $$
 \eta(r)=\frac{GM}{rc^2}.
@@ -46,8 +47,7 @@ $$
 -\frac{GM}{c^2r^2}\,\hat{\mathbf r}.
 $$
 
-so the same unresolved spherical exterior immediately yields the inverse-square
-gravitational pull.
+This immediately yields the inverse-square gravitational pull.
 
 A passing field and that mass closure reorganize one another as one common
 field. When the transport is written in conventional electromagnetic variables,
