@@ -1,132 +1,130 @@
 ---
 title: The Physics of Energy Flow - Newton as Flux Accounting
-date: 2026-03-11
+date: 2026-03-19
 ---
 
 
 # 11. Newton as Flux Accounting
 
-Newton's second law is the integrated continuity law for momentum in a nearly
-stable localized electromagnetic configuration.
+Newton's second law is the integrated continuity law for momentum in a bounded
+region of directed energy flow.
 
-When the same transport is written in conventional electromagnetic variables,
-the energy flow takes the Maxwell form
-
-$$
-\mathbf{S}=\frac{1}{\mu_0}\,\mathbf{E}\times\mathbf{B}.
-$$
-
-The same transport therefore carries momentum. The electromagnetic momentum
-density is
+Chapter 3 gave the continuity equation for energy density $u$. In the present
+language of directed transport, that same statement is
 
 $$
-\mathbf{g}=\frac{\mathbf{S}}{c^2}
+\partial_t u + \nabla\cdot \mathbf{F} = 0,
+$$
+
+where $\mathbf{F}$ is the directed energy-flow density.
+
+Because energy flow carries momentum, define the momentum density by
+
+$$
+\mathbf{p}=\frac{\mathbf{F}}{c^2}.
+$$
+
+To describe how momentum crosses boundaries, introduce the stress tensor
+$\mathbf{T}$. This is the momentum-flux density of the same flow. Its
+component $T_{ij}$ is the $i$-component of momentum transferred across a
+surface whose normal points in the $j$ direction.
+
+The local momentum continuity law is then
+
+$$
+\partial_t p_i - \partial_j T_{ij} = 0,
+$$
+
+or, in tensor form,
+
+$$
+\partial_t \mathbf{p} - \nabla\cdot\mathbf{T}=0.
+$$
+
+Momentum does not appear or disappear. It changes only by flux through the
+boundary of a region.
+
+Now choose a bounded region $\Omega$ containing a nearly stable localized
+configuration. Define its total momentum and total energy:
+
+$$
+\mathbf{P}_\Omega
 =
-\epsilon_0\,\mathbf{E}\times\mathbf{B}.
-$$
-
-To track how momentum moves through a surface, we use the Maxwell stress tensor:
-
-$$
-T_{ij}
+\int_\Omega \mathbf{p}\,dV
 =
-\epsilon_0\left(E_iE_j-\frac{1}{2}\delta_{ij}\mathbf{E}^2\right)
-+
-\frac{1}{\mu_0}\left(B_iB_j-\frac{1}{2}\delta_{ij}\mathbf{B}^2\right).
+\frac{1}{c^2}\int_\Omega \mathbf{F}\,dV,
 $$
 
-Differentiate $\mathbf{g}$ in time and substitute Maxwell's equations. The
-first result is
+$$
+E_\Omega=\int_\Omega u\,dV.
+$$
+
+Integrating the local momentum continuity law gives
 
 $$
-\partial_t\mathbf{g}
+\frac{d}{dt}\mathbf{P}_\Omega
 =
-\frac{1}{\mu_0}(\nabla\times\mathbf{B})\times\mathbf{B}
--
-\epsilon_0\,\mathbf{E}\times(\nabla\times\mathbf{E}).
-$$
-
-Using the standard vector identity for $(\nabla\times\mathbf{A})\times
-\mathbf{A}$ and the source-free conditions $\nabla\cdot\mathbf{E}=0$,
-$\nabla\cdot\mathbf{B}=0$, this rearranges into the exact local momentum
-continuity law
-
-$$
-\partial_t g_i - \partial_j T_{ij} = 0,
-$$
-
-or, in vector form,
-
-$$
-\partial_t\mathbf{g}-\nabla\cdot\mathbf{T}=0.
-$$
-
-This is the momentum analogue of Poynting's theorem. Momentum does not appear or
-disappear. It changes only by flux through the boundary of a region.
-
-Integrate over a localized region $K$ containing a nearly stable bounded
-configuration:
-
-$$
-\mathbf{P}_K=\int_K \mathbf{g}\,d^3x.
-$$
-
-Then
-
-$$
-\frac{d}{dt}\mathbf{P}_K
-=
-\int_{\partial K}\mathbf{T}\cdot\mathbf{n}\,dA.
+\int_{\partial\Omega}\mathbf{T}\cdot\mathbf{n}\,dA.
 $$
 
 The right-hand side is what later language calls force. It is the net rate at
-which momentum is transferred across the boundary into the region.
+which momentum is transferred across the boundary into the localized region.
 
-To connect this with motion of the object as a whole, define the energy in the
-region and its center of energy:
+To connect this with motion of the bounded mode as a whole, define its center
+of energy:
 
 $$
-E_K=\int_K u\,d^3x,
-\qquad
-\mathbf{X}_K=\frac{1}{E_K}\int_K \mathbf{x}\,u\,d^3x.
+\mathbf{X}_\Omega
+=
+\frac{1}{E_\Omega}\int_\Omega \mathbf{x}\,u\,dV.
 $$
 
 When boundary leakage is small and the mode remains coherent,
 
 $$
-E_K\,\dot{\mathbf{X}}_K \approx \int_K \mathbf{S}\,d^3x,
-\qquad
-\mathbf{P}_K \approx \frac{E_K}{c^2}\dot{\mathbf{X}}_K.
-$$
-
-For such a bounded configuration, define the effective inertial mass
-
-$$
-m_K := \frac{E_K}{c^2}.
-$$
-
-If the energy of the localized configuration is roughly constant, then
-
-$$
-m_K\,\ddot{\mathbf{X}}_K
+E_\Omega\,\dot{\mathbf{X}}_\Omega
 \approx
-\int_{\partial K}\mathbf{T}\cdot\mathbf{n}\,dA.
+\int_\Omega \mathbf{F}\,dV,
 $$
 
-This is Newton's second law in its effective form for a stable bounded mode:
+so
 
 $$
-\mathbf{F}=\frac{d\mathbf{P}}{dt}.
+\mathbf{P}_\Omega
+\approx
+\frac{E_\Omega}{c^2}\dot{\mathbf{X}}_\Omega.
 $$
 
-It describes momentum bookkeeping for a bounded region of field.
+If the total energy of the bounded configuration is roughly constant, define
 
-A mediating force field inserted between supposedly independent substrates does
-not rescue their independence. If interaction is real, a common structure is
-already present, and force is only the accounting of that coupling.
+$$
+m_\Omega := \frac{E_\Omega}{c^2}.
+$$
 
-Particles are localized regions. Forces are boundary integrals. Newton's second
-law is momentum continuity applied to a stable electromagnetic knot.
+Then
+
+$$
+m_\Omega\,\ddot{\mathbf{X}}_\Omega
+\approx
+\int_{\partial\Omega}\mathbf{T}\cdot\mathbf{n}\,dA.
+$$
+
+This is Newton's second law in effective form for a stable bounded mode:
+
+$$
+\mathbf{F}_{\mathrm{ext}}=\frac{d\mathbf{P}_\Omega}{dt}.
+$$
+
+So Newton's law is not an independent primitive. It is momentum bookkeeping for
+a bounded region of energy flow.
+
+When the same transport is written in conventional electromagnetic variables,
+$\mathbf{F}$ becomes the Poynting vector and $\mathbf{T}$ becomes the Maxwell
+stress tensor. But the logic does not depend on that representation. The
+content is already present in the flow language itself.
+
+Particles are localized regions. Forces are boundary momentum fluxes.
+Newton's second law is continuity applied to a stable knot of energy flow.
 
 Appendix 207 carries this same momentum continuity law to the coarse-grained
 continuum limit, where Euler-like and Navier-Stokes-like forms emerge.
