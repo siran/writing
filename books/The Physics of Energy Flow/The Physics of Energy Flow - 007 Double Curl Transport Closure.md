@@ -63,9 +63,38 @@ $$
 $$
 
 The derivation is now explicit. Chapter 6 identified curl as the differential
-form of source-free reorganization. Applying that rotational update twice gives
-the minimal closed transport law for the same flow. In the source-free case,
-double curl reduces to the Laplacian, and the wave equation follows directly.
+form of source-free reorganization. Here that same rotational update is
+applied twice to the same flow. The identity
+
+$$
+\nabla \times (\nabla \times \mathbf{F})
+=
+\nabla(\nabla\cdot\mathbf{F})-\nabla^2\mathbf{F}
+$$
+
+together with
+
+$$
+\nabla\cdot\mathbf{F}=0
+$$
+
+leaves
+
+$$
+\nabla \times (\nabla \times \mathbf{F}) = -\nabla^2 \mathbf{F},
+$$
+
+so
+
+$$
+\partial_t^2 \mathbf{F}
+=
+-c^2\,\nabla \times (\nabla \times \mathbf{F})
+=
+c^2\nabla^2 \mathbf{F}.
+$$
+
+That is the wave equation just written.
 
 Like every field relation in this book, this law is posed simultaneously for
 all $\mathbf{r}$ in the extent. It does not track one tagged parcel of energy
