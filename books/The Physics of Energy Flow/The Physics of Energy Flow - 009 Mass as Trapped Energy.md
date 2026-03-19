@@ -1,128 +1,69 @@
 ---
-title: The Physics of Energy Flow – Mass as Trapped Energy
-date: 2026-03-11
+title: The Physics of Energy Flow - Mass as Trapped Energy
+date: 2026-03-19
 ---
 
 
 # 9. Mass as Trapped Energy
 
-Mass is what confined energy becomes when part of its momentum is trapped in
-closed circulation and no longer available for straight translation.
+Chapter 8 showed that source-free energy flow can form bounded stationary
+standing waves on a torus. Those stationary modes come with discrete winding
+numbers $(m,n)$ and reproduce the hydrogenic $1/n^2$ ladder. That is already
+the kind of explanatory work quantum theory once had to do for matter: explain
+the allowed energies of hydrogen.
 
-Consider a localized flow whose energy moves along a smooth closed trajectory
-$X(s)$, parameterized by arclength $s$. Locally, the propagation speed is still
-$c$. Choose a macroscopic direction of motion $\hat{\mathbf{z}}$, and let
-$\hat{\mathbf{t}}(s)$ be the unit tangent to the flow. Define the local pitch
-angle by
+So mass is not introduced here as a primitive ingredient that makes matter
+possible. Once stationary bounded energy-flow waves explain hydrogen, matter is
+already being explained as stationary organized flow.
 
-$$
-\cos\theta(s)=\hat{\mathbf{t}}(s)\cdot\hat{\mathbf{z}}.
-$$
+Why can such a bounded mode exist at all? Because the transport bends toward
+regions of higher electromagnetic load. When that nonuniform load is produced
+by the flow itself, the regime is self-refraction. The flow no longer simply
+runs away as unbounded propagation. Its local evolution is slower where its own
+load is higher, so the transport bends back toward itself. If that bending
+closes consistently on both toroidal cycles, the result is a stationary
+standing organization.
 
-Over a segment $ds$, the forward displacement is
-
-$$
-dz=\cos\theta(s)\,ds,
-$$
-
-while the elapsed time is
-
-$$
-dt=\frac{ds}{c}.
-$$
-
-So the local forward speed is
+So the relevant object is a bounded self-refracting mode of source-free
+transport, labeled by winding numbers $(m,n)$. Let $V$ be the region occupied
+by one such stationary closure. Its total trapped energy is
 
 $$
-v_{\text{forward}}(s)=\frac{dz}{dt}=c\cos\theta(s).
+E_0=\int_V u\,dV.
 $$
 
-Over one full circuit of length $L$, the effective forward speed is therefore
+This is the rest energy of the mode. Nothing further is needed in order to
+state its mass. We simply read
 
 $$
-v_{\text{eff}}
-=
-c\,\left\langle\cos\theta\right\rangle,
+m=\frac{E_0}{c^2}.
 $$
 
-where
+This is not a new mechanism inserted into the transport. It is the later
+mechanical interpretation of the total energy of a stationary bounded flow.
 
-$$
-\left\langle\cos\theta\right\rangle
-:=
-\frac{1}{L}\int_0^L \cos\theta(s)\,ds.
-$$
+In that sense, the phrase trapped circulation should be read carefully. The
+energy is trapped not because some forward component was geometrically lost into
+sideways motion. It is trapped because the flow has closed on itself into a
+persistent stationary wave. Its energy is no longer unbounded propagation
+through space. It is organized load held in a self-sustained closure.
 
-If the path were everywhere straight, $\langle\cos\theta\rangle=1$ and the
-energy would simply propagate at $c$. But once the trajectory has persistent
-transverse winding, part of the motion is no longer available for forward
-translation.
+That is why unconfined radiation carries energy and momentum but no inertial
+rest mass, while a stationary bounded mode does. The first propagates onward.
+The second remains as matter.
 
-Electromagnetic energy of total energy $E$ carries momentum of magnitude
+Hydrogen is therefore the first decisive example. If a stationary
+electromagnetic standing wave explains hydrogen's allowed energies, then at
+least one class of matter is already explained as stationary energy flow. The
+word mass is the later reading of the total trapped energy of that stationary
+structure.
 
-$$
-P=\frac{E}{c}.
-$$
+To change the motion of such a mode is to reorganize the whole stationary
+closure, not to push an isolated point. That is why the same trapped energy
+later appears as inertial load in the flux accounting chapters.
 
-Only the component aligned with $\hat{\mathbf{z}}$ contributes to forward
-motion. Integrating around the loop gives
+So the conclusion of this chapter is simple: matter is stationary wave
+structure of energy flow, and mass is the name given to the total trapped
+energy of that stationary structure.
 
-$$
-P_z=\frac{E}{c}\left\langle\cos\theta\right\rangle.
-$$
-
-The rest is trapped in closed transverse circulation:
-
-$$
-P_{\perp,\text{eff}}
-:=
-\sqrt{P^2-P_z^2}
-=
-\frac{E}{c}\sqrt{1-\left\langle\cos\theta\right\rangle^2}.
-$$
-
-This trapped momentum is the reason the configuration resists redirection. To
-change the macroscopic motion of the object, one must reorient the circulating
-momentum throughout the whole closed path, not merely push a point.
-
-That is inertia. Its measure is
-
-$$
-m_{\text{eff}}
-:=
-\frac{P_{\perp,\text{eff}}}{c}
-=
-\frac{E}{c^2}\sqrt{1-\left\langle\cos\theta\right\rangle^2}.
-$$
-
-In the rest frame of the confined configuration, the net translational momentum
-vanishes, so $\langle\cos\theta\rangle=0$. Then
-
-$$
-m=\frac{E_0}{c^2},
-$$
-
-where $E_0$ is the rest energy of the closed mode.
-
-In this framework, this states what mass is: the energy trapped in
-circulation, measured in the frame where the closed flow has no net
-translation.
-
-Why does the energy not simply straighten its path and eliminate its mass?
-Because the circulation is topologically closed. Once winding exists, removing
-it would require reconnection of the flow itself. Mass is kinematic delay
-locked in by topology.
-
-Unconfined propagation carries momentum $p=E/c$ but no inertial rest mass.
-Mass appears when topology confines part of the momentum into persistent
-circulation.
-
-If that confined circulation is concentrated in a thin closed tube, the same
-trapped load defines an effective one-dimensional description. Energy per unit
-length becomes line tension, and the corresponding inertial line density is
-that tension divided by $c^2$. Appendix 217 develops that effective string
-description directly from the bounded Maxwellian mode.
-
-Appendix 220 sharpens the same point one step further: matter is a persistent
-closed causal loop of Maxwellian transport. Its mass is the trapped load of
-that loop.
+Charge is the next global aspect of the same toroidal closure.

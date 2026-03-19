@@ -133,6 +133,6 @@ counting numbers of the standing-wave closure itself.
 
 So discreteness begins as standing-wave closure of source-free energy flow on a
 closed support. Once that bounded standing wave exists, its further global
-aspects can be separated. The trapped load of the closed circulation appears as
-mass in the next chapter. The through-hole character of that same toroidal
-standing wave appears as charge in the chapter after that.
+aspects can be separated. The total trapped energy of that stationary closure
+appears as mass in the next chapter. The through-hole character of that same
+toroidal standing wave appears as charge in the chapter after that.
