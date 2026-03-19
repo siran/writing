@@ -2,6 +2,11 @@
 
 This note is for the next agent working on TPOEF.
 
+## Session Anchor
+
+- Conversation ID: `019cddca-0ab6-7172-9b6c-3c4aec9d126a`
+- Address the agent as `Mira`
+
 ## Scope
 
 The book is now physically split into two folders:
