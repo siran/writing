@@ -51,8 +51,8 @@ $$
 $$
 
 So a double curl of a source-free flow reduces exactly to minus the spatial
-Laplacian of the field. This is the step that later yields a wave equation for
-each complementary aspect, as made explicit in Appendix 203.
+Laplacian of the field. This is the step from which the wave equation for the
+transporting aspects follows directly.
 
 Locally, a transporting configuration of $\mathbf{F}$ can therefore be
 expressed by an axis of advance together with two complementary transverse
@@ -77,6 +77,37 @@ with
 $$
 \nabla\cdot\mathbf{F}_{+}=0,\qquad
 \nabla\cdot\mathbf{F}_{-}=0.
+$$
+
+Now differentiate one of the two equations in time and substitute the other:
+
+$$
+\partial_t^2 \mathbf{F}_{+}
+=
+k\,\nabla\times(\partial_t\mathbf{F}_{-})
+=
+-k^2\nabla\times(\nabla\times\mathbf{F}_{+}).
+$$
+
+Because $\nabla\cdot\mathbf{F}_{+}=0$, the curl-curl identity gives
+
+$$
+\partial_t^2 \mathbf{F}_{+}=k^2\nabla^2\mathbf{F}_{+}.
+$$
+
+Exactly the same step gives
+
+$$
+\partial_t^2 \mathbf{F}_{-}=k^2\nabla^2\mathbf{F}_{-}.
+$$
+
+So for either complementary aspect $\mathbf F\in\{\mathbf F_+,\mathbf F_-\}$,
+the transport law already has the direct vector wave form
+
+$$
+\partial_t^2 \mathbf F-k^2\nabla^2\mathbf F=0,
+\qquad
+\nabla\cdot\mathbf F=0.
 $$
 
 Now each aspect changes by the curl of the other. This is the minimal real
@@ -108,10 +139,10 @@ $$
 $$
 
 That order is abstracted from the mapping itself. Only afterward is it
-conveniently labeled by a parameter and written in differential form. In that
-later form, the double rotation yields the wave equation for each aspect, as
-shown in Appendix 203. For the present argument, the essential point is
-simpler: single curl reorganizes locally; doubled curl transports.
+conveniently labeled by a parameter and written in differential form. The
+wave equation already follows from the coupled closure just written. For the
+present argument, the essential point is simpler: single curl reorganizes
+locally; doubled curl transports.
 
 This is the simplest transport closure built from two complementary closed
 turns.
