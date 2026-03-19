@@ -5,32 +5,9 @@ date: 2026-03-11
 
 # 3. Continuity
 
-Reconfiguration in a region of $u$ is a fact of $u$ itself. It is not private
-to one part of the extent. The surrounding extent must accord with that
-change. If it did not, the reconfiguration could not be said to have occurred
-in $u$ at all. That makes an ordering of registrations possible. Label two
-such ordered registrations $1$ and $2$.
-
-Continuity does not begin from a primitive minimal change. It begins from the
-fact that the whole extent is registered again as
-
-$$
-u_2(\mathbf{r}),
-$$
-
-rather than
-
-$$
-u_1(\mathbf{r}).
-$$
-
-The question is then: in what sense is $u_2$ the same energy, continuously
-reconfigured, rather than an unrelated second distribution?
-
-The answer is continuous flow. The later registration must be a redistribution
-of the same energy already present in the earlier one. Chapter 2 named that
-joining flow $\mathbf F$. For a particular ordered pair of registrations, we
-now write the local bookkeeping of that same flow as
+Chapter 2 named the continuous joining flow $\mathbf F$. For a particular
+ordered pair of registrations, we now write the local bookkeeping of that same
+flow as
 
 $$
 \mathbf{S}(\mathbf{r};1,2).
@@ -41,10 +18,8 @@ registration-to-registration accounting of that one continuous flow for the
 ordered pair $(1,2)$. So transport is not something that happens after
 reconfiguration; it is the local structure of that reconfiguration.
 
-This does not begin by assuming that the whole pattern is simply translated.
-Such a picture would already require an added drift telling the pattern where
-to go. The present claim is more primitive: a region changes only through
-exchange with neighboring regions across its boundary.
+Continuity now makes a local claim: a region changes only through exchange with
+neighboring regions across its boundary.
 
 The difference
 
@@ -69,9 +44,8 @@ says that the difference between registrations is locally accountable by
 transport.
 
 The statement is local, but it is imposed at once for all positions in the
-extent. It does not move one marked point through a pre-given background. It
-constrains how the whole registered distribution can change while remaining one
-continuous reconfiguration of $u$.
+extent. It constrains how the whole registered distribution can change while
+remaining one continuous reconfiguration of $u$.
 
 This is accounting of energy, not yet its dynamics. It is like accounting for
 the brightness of the pixels on a screen without yet recognizing the image
