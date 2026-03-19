@@ -8,13 +8,13 @@ date: 2026-03-18
 
 Chapter 6 established that source-free energy flow must reorganize by curl if
 it is to preserve its divergence-free structure. That identifies the admissible
-local turn. The next question is what closed transport law follows from that
+local turn. The next question is what closed transport form follows from that
 fact.
 
-A single curl gives one local reorganization of the flow. To describe
-transport, the update must close on the same flow through ordered
-registrations. The minimal closure is therefore a second curl acting back on
-the same field. Write
+A single curl gives one local reorganization of the flow. But the flow is
+present at every point, so the closure must remain within that same field
+throughout the extent. The minimal closure is therefore a second curl of the
+same field. Write
 
 $$
 \partial_t^2 \mathbf{F}
@@ -46,7 +46,7 @@ $$
 \nabla \times (\nabla \times \mathbf{F}) = -\nabla^2 \mathbf{F}.
 $$
 
-Substituting this into the transport law gives
+Substituting this into the expression above gives
 
 $$
 \partial_t^2 \mathbf{F}
@@ -63,8 +63,8 @@ $$
 $$
 
 The derivation is now explicit. Chapter 6 identified curl as the differential
-form of source-free reorganization. Here that same rotational update is
-applied twice to the same flow. The identity
+form of source-free reorganization. Here energy is flowing at every point, and
+that same field appears under curl twice. The identity
 
 $$
 \nabla \times (\nabla \times \mathbf{F})
@@ -96,7 +96,7 @@ $$
 
 That is the wave equation just written.
 
-Like every field relation in this book, this law is posed simultaneously for
+Like every field relation in this book, this equation is posed simultaneously for
 all $\mathbf{r}$ in the extent. It does not track one tagged parcel of energy
 through a pre-given background. It constrains how the whole organized flow can
 reconfigure while remaining one continuous transport.
@@ -116,5 +116,5 @@ $$
 $$
 
 That later resolution does not change the point established here. The
-transporting object is the one source-free flow $\mathbf F$, and its local law
-is the wave equation just derived.
+transporting object is the one source-free flow $\mathbf F$, and its local
+form is the wave equation just derived.
