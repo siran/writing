@@ -172,11 +172,6 @@ Key insight:
 
 The dielectric is a *mediator*, not the interacting entity.
 
-This is also the correct gravity anchor:
-
-> Gravity is the refraction of a self-sustained energy flow by another
-> self-sustained electromagnetic flow.
-
 This leads to the crucial generalization:
 
 - Overlapping electromagnetic fields **superpose**.
