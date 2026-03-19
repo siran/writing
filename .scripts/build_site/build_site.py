@@ -7,7 +7,7 @@ from pathlib import Path
 from dataclasses import dataclass
 from urllib.parse import urlparse, quote
 from datetime import datetime, date, timezone
-from zoneinfo import ZoneInfo
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 import yaml
 from feedgen.feed import FeedGenerator
 
@@ -17,6 +17,7 @@ EXCLUDE_NAMES = {
     "__pycache__", ".mypy_cache",".pytest_cache",".ruff_cache",".cache",
     "Makefile","index.html","index.md.html","index.created.md.html","index.modified.md.html","_staging", "pnpmd.map", "requirements.txt",
     "gpt5push.sh",
+    "AGENTS.md",
     # Root pages that should be linked from nav but not listed in dir indexes
     "about.md",
     "about.md.html",
@@ -47,6 +48,35 @@ DIR_INDEX_DEFAULT = "modified"
 
 MD_EXTS = {".md", ".markdown", ".pandoc.md"}
 SKIP_COPY_EXTS = {".pdf"}
+
+def _normalize_publish_name(name: str) -> str:
+    out = name.lower()
+    for suffix in (".pandoc.md.html", ".pandoc.md", ".markdown.html", ".md.html", ".markdown", ".md", ".html"):
+        if out.endswith(suffix):
+            out = out[: -len(suffix)]
+            break
+    out = out.replace("_", " ").replace("-", " ")
+    out = re.sub(r"\s+", " ", out).strip()
+    return out
+
+def _is_auxiliary_book_markdown(path: Path) -> bool:
+    normalized = _normalize_publish_name(path.name)
+    if "content map" in normalized:
+        return True
+    if normalized.startswith("tmp "):
+        return True
+    return False
+
+def _is_internal_publish_artifact(path: Path) -> bool:
+    lower_name = path.name.lower()
+    if lower_name.endswith(".pandoc.md") or lower_name.endswith(".pandoc.md.html"):
+        return True
+    if _is_auxiliary_book_markdown(path):
+        return True
+    return False
+
+def _should_publish_path(path: Path) -> bool:
+    return not _is_internal_publish_artifact(path)
 
 # ---------- Journal naming based on CNAME ----------
 DEFAULT_JOURNAL = "Preferred Frame"
@@ -110,7 +140,16 @@ OWNER, REPO, BRANCH = detect_repo_branch()
 ROOT = Path(__file__).resolve().parents[2]
 OUT  = ROOT / "site"
 SRC  = ROOT / ".scripts" / "src"
+RENDER_SRC = ROOT / ".scripts" / "render"
 MD_TEMPLATE_DEPS = [SRC / "header.html", SRC / "footer.html", SRC / "coda.html"]
+BOOK_RENDER_DEPS = [
+    RENDER_SRC / "render.py",
+    RENDER_SRC / "pnpmd_book.py",
+    RENDER_SRC / "pnpmd_preprocess.py",
+    RENDER_SRC / "pnpmd_pandoc.py",
+    RENDER_SRC / "pnpmd_util.py",
+    RENDER_SRC / "book-style.css",
+]
 
 # ---------- .gitignore handling ----------
 def load_gitignored_paths() -> set[Path]:
@@ -272,7 +311,9 @@ def _files_identical(src: Path, dst: Path) -> bool:
         return False
     if s_stat.st_size != d_stat.st_size:
         return False
-    if int(s_stat.st_mtime) == int(d_stat.st_mtime):
+    s_mtime_ns = getattr(s_stat, "st_mtime_ns", int(s_stat.st_mtime * 1_000_000_000))
+    d_mtime_ns = getattr(d_stat, "st_mtime_ns", int(d_stat.st_mtime * 1_000_000_000))
+    if s_mtime_ns == d_mtime_ns:
         return True
     try:
         return _file_sha256(src) == _file_sha256(dst)
@@ -683,15 +724,10 @@ def write_html(out_html: Path, body_html: str, head_extra: str = "", title: str 
         else:
             doc = head_extra + doc
 
-    ny = ZoneInfo("America/New_York")
-    now = datetime.now(ny)
-    offset = now.utcoffset()
-    hrs = int(offset.total_seconds() // 3600) if offset else 0
-    stamp = f"(built: {now.strftime('%Y-%m-%d %H:%M %Z')} UTC{hrs:+d})"
-
     if not doc.endswith("\n"):
         doc += "\n"
-    doc += stamp
+    if os.getenv("GITHUB_ACTIONS", "").lower() == "true":
+        doc += _build_stamp()
 
     if coda:
         doc += coda
@@ -707,6 +743,16 @@ def _should_render_markdown(src: Path, dst_html: Path) -> bool:
         return dep_mtime > dst_html.stat().st_mtime
     except Exception:
         return True
+
+def _build_stamp() -> str:
+    try:
+        tz = ZoneInfo("America/New_York")
+    except ZoneInfoNotFoundError:
+        tz = datetime.now().astimezone().tzinfo or timezone.utc
+    now = datetime.now(tz)
+    offset = now.utcoffset()
+    hrs = int(offset.total_seconds() // 3600) if offset else 0
+    return f"(built: {now.strftime('%Y-%m-%d %H:%M %Z')} UTC{hrs:+d})"
 
 def render_markdown_file(src: Path, dst_html: Path, title: str):
     if not _should_render_markdown(src, dst_html):
@@ -795,6 +841,8 @@ def _book_input_files(book_dir: Path, meta_path: Path, base: str) -> list[Path]:
             continue
         if p.name.endswith(".pandoc.md"):
             continue
+        if not _should_publish_path(p):
+            continue
         inputs.append(p)
     return inputs
 
@@ -818,6 +866,61 @@ def _book_output_files(
         outputs.append(book_dir / f"{base}.epub")
     return outputs
 
+def _sync_out_book_dir_with_source(book_dir: Path, meta_name: str) -> str:
+    try:
+        rel_dir = rel_out(book_dir)
+    except Exception:
+        return "ok"
+
+    src_book_dir = ROOT / rel_dir
+    src_meta = src_book_dir / meta_name
+    if not src_meta.exists():
+        shutil.rmtree(book_dir, ignore_errors=True)
+        return "removed"
+
+    base = _book_base_from_yaml(book_dir / meta_name)
+    generated_keep = {
+        meta_name,
+        f"{base}.md",
+        f"{base}.md.html",
+        f"{base}.pandoc.md",
+        f"{base}.pandoc.md.html",
+        f"{base}.html",
+        f"{base}.pdf",
+        f"{base}.epub",
+        "book-style.css",
+        "index.html",
+        "index.md.html",
+        "index.modified.md.html",
+    }
+
+    touched = False
+    for path in list(book_dir.iterdir()):
+        if not path.is_file():
+            continue
+        if path.name in generated_keep:
+            continue
+
+        remove = False
+        if path.name.lower().endswith(".md.html"):
+            src_name = path.name[:-5]
+            if not (src_book_dir / src_name).exists():
+                remove = True
+        elif path.suffix.lower() == ".md":
+            if not (src_book_dir / path.name).exists():
+                remove = True
+
+        if not remove:
+            continue
+
+        try:
+            path.unlink()
+            touched = True
+        except Exception:
+            continue
+
+    return "changed" if touched else "ok"
+
 def _book_needs_render(
     book_dir: Path,
     meta_path: Path,
@@ -827,7 +930,11 @@ def _book_needs_render(
     include_html: bool,
 ) -> bool:
     base = _book_base_from_yaml(meta_path)
-    inputs = _book_input_files(book_dir, meta_path, base)
+    inputs = _book_input_files(book_dir, meta_path, base) + [p for p in BOOK_RENDER_DEPS if p.exists()]
+    try:
+        inputs.append(ROOT / rel_out(book_dir))
+    except Exception:
+        pass
     outputs = _book_output_files(
         book_dir,
         base,
@@ -951,6 +1058,7 @@ def render_book_dirs(
         print(f"[DEBUG] render.py not found at {render_py}; skipping book renders")
         return
 
+    forced_render_dirs: set[Path] = set()
     seen: set[Path] = set()
     candidates: list[Path] = []
     for ext in ("book.yml", "book.yaml"):
@@ -977,6 +1085,12 @@ def render_book_dirs(
         book_dir = meta.parent
         if book_dir in seen:
             continue
+        if base == OUT:
+            sync_state = _sync_out_book_dir_with_source(book_dir, meta.name)
+            if sync_state == "removed":
+                continue
+            if sync_state == "changed":
+                forced_render_dirs.add(book_dir)
         seen.add(book_dir)
         book_entries.append((book_dir, meta))
 
@@ -991,7 +1105,7 @@ def render_book_dirs(
 
     render_entries: list[tuple[Path, str]] = []
     for book_dir, meta in book_entries:
-        if _book_needs_render(
+        if book_dir in forced_render_dirs or _book_needs_render(
             book_dir,
             meta,
             include_pdf=include_pdf,
@@ -1053,6 +1167,8 @@ def render_book_dirs(
     for book_dir, _meta in book_entries:
         try:
             for md_file in book_dir.glob("*.md"):
+                if not _should_publish_path(md_file):
+                    continue
                 render_markdown_file(
                     md_file,
                     md_file.with_suffix(md_file.suffix + ".html"),
@@ -1437,6 +1553,8 @@ def build_article_pages() -> set[Path]:
                     continue
                 if f.suffix.lower() in SKIP_COPY_EXTS:
                     continue
+                if not _should_publish_path(f):
+                    continue
                 # Mirror assets and all rendered outputs; also mirror the parent stem dir (for DOI alias).
                 if f.suffix.lower() in MIRROR_EXTS or f.name.endswith(".md.html"):
                     dst = OUT / rel(f)
@@ -1641,6 +1759,8 @@ def build_article_pages() -> set[Path]:
             if not f.is_file():
                 continue
             if f.suffix.lower() in SKIP_COPY_EXTS:
+                continue
+            if not _should_publish_path(f):
                 continue
             if f.suffix.lower() in MIRROR_EXTS:
                 dst = OUT / rel(f)
@@ -2076,6 +2196,8 @@ def build_out_indexes(hidden_stems: set[tuple[str, str]], article_dirs: set[Path
             if fname in {"robots.txt", "rss.xml", "sitemap.xml", "search-index.json"}:
                 continue
             p = d / fname
+            if not _should_publish_path(p):
+                continue
             if p.name in EXCLUDE_NAMES:
                 continue
             lower_name = p.name.lower()
@@ -2238,6 +2360,8 @@ def build_search_index(hidden_stems: set[tuple[str, str]]):
             if lower_name.endswith(".md.html") or lower_name.endswith(".markdown.html"):
                 continue
             p = d / fname
+            if not _should_publish_path(p):
+                continue
             rel_path = rel_out(p).as_posix()
             href = "/" + quote(rel_path, safe="/:@-._~")
             if p.suffix.lower() in MD_EXTS:
@@ -2284,8 +2408,31 @@ def copy_static():
             dst = OUT / name
             copy_if_changed(src, dst)
 
+def prune_unpublished_out_files():
+    for path in sorted(OUT.rglob("*"), key=lambda p: len(p.parts), reverse=True):
+        if not path.exists():
+            continue
+        if path.is_file() and _is_internal_publish_artifact(path):
+            try:
+                path.unlink()
+            except Exception:
+                pass
+            continue
+        if path.is_dir() and path != OUT:
+            try:
+                next(path.iterdir())
+            except StopIteration:
+                try:
+                    path.rmdir()
+                except Exception:
+                    pass
+            except Exception:
+                pass
+
 # ---------- sitemap & robots ----------
 def _url_from_out_path(p: Path) -> str:
+    if not _should_publish_path(p):
+        return ""
     rp = rel_out(p).as_posix()
     suf = p.suffix.lower()
 
@@ -2514,6 +2661,8 @@ def main():
                 continue
             rel_path = src_path.relative_to(site_src)
             print(f"[DEBUG] site asset found: {rel_path}")
+            if not _should_publish_path(src_path):
+                continue
             if src_path.suffix.lower() == ".md":
                 dst_md = OUT / rel_path
                 copy_if_changed(src_path, dst_md)
@@ -2576,6 +2725,8 @@ def main():
                 continue
             if p.suffix.lower() in SKIP_COPY_EXTS:
                 continue
+            if not _should_publish_path(p):
+                continue
 
             if d == ROOT and fname == "index.html":
                 continue
@@ -2599,6 +2750,7 @@ def main():
         max_workers=args.book_workers,
         base_dir=OUT,
     )
+    prune_unpublished_out_files()
 
     # Build directory indexes based on the final OUT tree (includes rendered books).
     build_out_indexes(hidden_stems, article_dirs)
