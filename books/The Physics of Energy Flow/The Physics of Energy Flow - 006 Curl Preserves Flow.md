@@ -40,6 +40,12 @@ can strengthen or weaken what is already there, but it does not explain how the
 flow turns or reorganizes in space in more complex ways. Furthermore, it leaves
 zeros where they are and adds no new spatial structure.
 
+Nor is it enough to say that the whole pattern is simply translated. That
+would already require an imposed drift carrying the pattern through space. The
+present question is narrower and more primitive: what local reorganization of
+the field itself preserves source-free continuity without importing such extra
+structure?
+
 If the evolution of $\mathbf{F}$ is written as the gradient of some field
 $\phi$,
 

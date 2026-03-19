@@ -27,6 +27,11 @@ continuously, what must follow?
 
 The answer is, as we shall see, at least all of known physics.
 
+Mathematical note. Unless stated otherwise, Part I works in a local smooth
+differential regime. Fields are assumed regular enough for derivatives and
+integral identities to make sense. The transport core is source-free: a region
+changes only by what crosses its boundary.
+
 This volume is Part I of that program. It gives the main derivational spine in
 thirteen chapters. The companion Part II collects the corollaries and
 technical appendices that clarify, extend, or prove later points without

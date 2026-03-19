@@ -8,7 +8,9 @@ date: 2026-03-11
 Regional conservation uses the accounting field $\mathbf{S}$. It gives
 region-by-region bookkeeping between ordered registrations. The shape of the
 continuous transport joining those registrations comes next. For that we use
-the flow field $\mathbf{F}$.
+the flow field $\mathbf{F}$. This is not an imposed drift carrying a pattern
+through space. It is the shape of the same transport itself as a continuous
+whole.
 
 In empty space, a source-free transport cannot begin or end at an isolated
 point. If energy leaves one small region, it must pass into another

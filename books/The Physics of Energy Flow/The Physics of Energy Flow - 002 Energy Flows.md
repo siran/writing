@@ -21,7 +21,16 @@ $$
 u_1(\mathbf{r}), \qquad u_2(\mathbf{r}).
 $$
 
-Change is the acknowledgement of a difference between distributions.
+Change is the acknowledgement of a difference between distributions. But the
+ordered difference
+
+$$
+u_1 \to u_2
+$$
+
+is not yet continuity. It says only that one registration follows another. It
+does not yet say whether the later registration is reached by local
+redistribution, by imposed drift, or by primitive creation and annihilation.
 
 Nothing in this step assumes a primitive infinitesimal or minimal change. The
 whole extent is registered again as

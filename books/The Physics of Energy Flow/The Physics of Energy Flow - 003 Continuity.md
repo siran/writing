@@ -35,6 +35,11 @@ registered distribution to the other. So transport is not something that
 happens after reconfiguration; it is the local structure of that
 reconfiguration.
 
+This does not begin by assuming that the whole pattern is simply translated.
+Such a picture would already require an added drift telling the pattern where
+to go. The present claim is more primitive: a region changes only through
+exchange with neighboring regions across its boundary.
+
 The difference
 
 $$
