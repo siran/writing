@@ -7,8 +7,8 @@ date: 2026-03-11
 # 13. Gravity as Refraction
 
 Gravity appears here as electromagnetic refraction: the bending of energy
-transport paths caused by the exterior mass-potential of a bounded trapped
-closure.
+transport paths of one self-sustained flow by another, caused by the exterior
+mass-potential of a bounded trapped closure.
 
 The propagation speed of electromagnetic energy in vacuum is:
 
@@ -20,7 +20,8 @@ A dielectric analogy is useful only if read carefully. The probe and the
 massive mode are not two substances, one moving through the other. They are
 two organized motions of the same electromagnetic substrate. Their
 superposition is already the interaction. No second medium is inserted, and no
-extra field has to be imagined over and above the total field.
+extra field has to be imagined over and above the total field. What refracts a
+passing flow is always another electromagnetic flow.
 
 Mass is self-confined energy. A massive body is therefore a bounded organized
 electromagnetic closure carrying total trapped load
