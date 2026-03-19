@@ -1,12 +1,12 @@
 ---
 title: The Physics of Energy Flow - Interaction as Phase Accumulation
-date: 2026-03-11
+date: 2026-03-19
 ---
 
 
-# 11a. Interaction as Phase Accumulation
+# 9a. Interaction as Phase Accumulation
 
-Chapter 11 derived the free Schrodinger equation as the effective narrow-band
+Chapter 9 derived the free Schrodinger equation as the effective narrow-band
 sector of a stable Maxwellian mode. Interaction enters when that envelope
 propagates through a structured background.
 
@@ -69,6 +69,6 @@ If $V_1 = V_2$, then $\Delta\phi = 0$ and the full interference pattern is
 recovered. If the two backgrounds differ, the relative phase changes and the
 pattern changes with it. What disappears is coherent phase relation.
 
-This closes the loop left open in chapter 11. The potential term in
+This closes the loop left open in chapter 9. The potential term in
 Schrodinger's equation is the compact phase-writing of background interaction
 inside the same wave-envelope dynamics.

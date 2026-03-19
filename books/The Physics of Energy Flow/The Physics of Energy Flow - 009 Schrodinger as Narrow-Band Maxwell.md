@@ -1,15 +1,15 @@
 ---
 title: The Physics of Energy Flow - Schrodinger as Narrow-Band Maxwell
-date: 2026-03-11
+date: 2026-03-19
 ---
 
 
-# 11. Schrodinger as Narrow-Band Maxwell
+# 9. Schrodinger as Narrow-Band Maxwell
 
 The Schrodinger equation appears here as the precisely identified effective
-sector of double-curl or Maxwellian transport. Chapters 8 and 9 already gave
-two things needed for that sector: discrete stable modes and an emergent mass
-scale. The remaining task is to describe slow modulation of one such mode.
+sector of double-curl or Maxwellian transport. Chapter 8 already gave the
+needed bounded discrete modes. The remaining task is to describe slow
+modulation of one such stable mode.
 
 Each Cartesian component $f(\mathbf{r},t)$ of $\mathbf{E}$ or $\mathbf{B}$
 satisfies the vacuum wave equation:
@@ -71,7 +71,7 @@ $$
 m=\frac{E_0}{c^2},
 $$
 
-where $E_0$ is the rest energy of the underlying stable mode. Then
+where $E_0$ is the total energy of the underlying stable mode. Then
 
 $$
 \frac{c^2}{2\omega_0}=\frac{\hbar}{2m}.

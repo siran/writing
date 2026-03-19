@@ -1,10 +1,10 @@
 ---
-title: The Physics of Energy Flow – Newton as Flux Accounting
+title: The Physics of Energy Flow - Newton as Flux Accounting
 date: 2026-03-11
 ---
 
 
-# 12. Newton as Flux Accounting
+# 11. Newton as Flux Accounting
 
 Newton's second law is the integrated continuity law for momentum in a nearly
 stable localized electromagnetic configuration.

@@ -4,7 +4,7 @@ date: 2026-03-11
 ---
 
 
-# 13. Gravity as Refraction
+# 12. Gravity as Refraction
 
 Gravity appears here as electromagnetic refraction: the bending of energy
 transport paths of one self-sustained flow by another, caused by the exterior
