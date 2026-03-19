@@ -28,12 +28,18 @@ The question is then: in what sense is $u_2$ the same energy, continuously
 reconfigured, rather than an unrelated second distribution?
 
 The answer is continuous flow. The later registration must be a redistribution
-of the same energy already present in the earlier one. Call that joining flow
-$\mathbf F$. For a particular ordered pair of registrations, we write the local
-accounting of that same flow as $\mathbf{S}(\mathbf{r};1,2)$, which relates one
-registered distribution to the other. So transport is not something that
-happens after reconfiguration; it is the local structure of that
-reconfiguration.
+of the same energy already present in the earlier one. Chapter 2 named that
+joining flow $\mathbf F$. For a particular ordered pair of registrations, we
+now write the local bookkeeping of that same flow as
+
+$$
+\mathbf{S}(\mathbf{r};1,2).
+$$
+
+This does not introduce a second flow beside $\mathbf F$. It is the
+registration-to-registration accounting of that one continuous flow for the
+ordered pair $(1,2)$. So transport is not something that happens after
+reconfiguration; it is the local structure of that reconfiguration.
 
 This does not begin by assuming that the whole pattern is simply translated.
 Such a picture would already require an added drift telling the pattern where

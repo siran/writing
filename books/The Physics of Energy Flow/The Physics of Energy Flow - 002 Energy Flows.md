@@ -65,24 +65,11 @@ $$
 This is not a second substance added to $u$. It is the same energy considered
 in motion rather than as a registered scalar distribution.
 
-When two particular registrations are compared, the local bookkeeping of that
-same transport may be written as
-
-$$
-\mathbf{S}(\mathbf{r};1,2).
-$$
-
-This notation does not introduce a second flow beside $\mathbf F$. It is the
-registration-to-registration accounting of that one continuous flow for the
-ordered pair $(1,2)$.
-
-Neither $\mathbf F$ nor $\mathbf S$ is a recipe for following one tagged parcel
-of energy from place to place. They are posed simultaneously for all
-$\mathbf{r}$ in the extent. They describe how the whole registered
-distribution reorganizes at once, not how one marked point is carried through
-a pre-given background.
+$\mathbf F$ is not a recipe for following one tagged parcel of energy from
+place to place. It is posed simultaneously for all $\mathbf{r}$ in the extent.
+It describes how the whole registered distribution reorganizes at once, not
+how one marked point is carried through a pre-given background.
 
 The energy field $u$ tells us how much energy is present. The flow
-$\mathbf{F}$ tells us that the same energy moves continuously. The accounting
-field $\mathbf{S}$ summarizes how one ordered registration is locally obtained
-from another.
+$\mathbf{F}$ tells us that the same energy moves continuously. The local
+bookkeeping for particular ordered registrations is the next step.
