@@ -9,7 +9,8 @@ date: 2026-03-11
 Newton's second law is the integrated continuity law for momentum in a nearly
 stable localized electromagnetic configuration.
 
-Chapter 7 identified the energy flow with the Maxwell realization
+When the same transport is written in conventional electromagnetic variables,
+the energy flow takes the Maxwell form
 
 $$
 \mathbf{S}=\frac{1}{\mu_0}\,\mathbf{E}\times\mathbf{B}.

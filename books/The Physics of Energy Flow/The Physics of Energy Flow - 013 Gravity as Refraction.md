@@ -50,12 +50,13 @@ so the same unresolved spherical exterior immediately yields the inverse-square
 gravitational pull.
 
 A passing field and that mass closure reorganize one another as one common
-field. In chapter 7, $\mathbf{E}$ and $\mathbf{B}$ were identified as
-complementary aspects of one organized flow. A null electromagnetic probe
-therefore does not carry one channel only. Its electric and magnetic sectors
-are equal aspects of the same transport. A one-channel treatment gives only
-the Newtonian half-value. Appendices 215 and 216 derive the full factor of two
-from the sign-symmetric axial loading of a static toroidal closure.
+field. When the transport is written in conventional electromagnetic variables,
+$\mathbf{E}$ and $\mathbf{B}$ are complementary aspects of one organized flow.
+A null electromagnetic probe therefore does not carry one channel only. Its
+electric and magnetic sectors are equal aspects of the same transport. A
+one-channel treatment gives only the Newtonian half-value. Appendices 215 and
+216 derive the full factor of two from the sign-symmetric axial loading of a
+static toroidal closure.
 
 The constitutive summary used in this chapter is the weak-field macroscopic
 writing of that same mass-potential interaction:

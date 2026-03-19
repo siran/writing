@@ -6,20 +6,25 @@ date: 2026-03-18
 
 # 8. Standing Waves and Discreteness
 
-Chapter 7 established Maxwellian transport as the minimal two-aspect closure of
-source-free flow. In that closure, each Cartesian component of the transporting
-field satisfies the wave equation
+Chapter 7 established that source-free energy flow satisfies the wave equation
+
+$$
+\partial_t^2 \mathbf F-c^2\nabla^2\mathbf F=0,
+\qquad
+\nabla\cdot\mathbf F=0.
+$$
+
+Each Cartesian component therefore satisfies
 
 $$
 \left(\nabla^2-\frac{1}{c^2}\partial_t^2\right)f=0.
 $$
 
-We now consider a bounded standing electromagnetic wave on the surface of a
-torus. In the
-thin-support idealization developed below, that construction yields allowed
-integer modes and the Rydberg-type $1/n^2$ scaling. Since hydrogen is matter,
-this is a first serious clue that matter itself may be standing
-electromagnetic waves.
+We now consider a bounded standing wave of that flow on the surface of a
+torus. In the thin-support idealization developed below, that construction
+yields allowed integer modes and the Rydberg-type $1/n^2$ scaling. Since
+hydrogen is matter, this is a first serious clue that matter itself may be
+standing waves of organized energy flow.
 
 To make that idea precise, we need a closed support on which energy flow can be
 trapped continuously. A sphere cannot sustain a continuous nowhere-vanishing
@@ -104,8 +109,8 @@ allowed.
 
 This is the right way to read the early quantum fact that hydrogen radiates in
 discrete lines. The discreteness does not require an electron moving on
-planet-like orbits. It requires only that bounded electromagnetic transport
-reorganize itself between allowed standing-wave closures.
+planet-like orbits. It requires only that bounded energy flow reorganize
+itself between allowed standing-wave closures.
 
 The observed Rydberg pattern can then be read as a special family of such
 reorganizations. If a fixed toroidal support is refined into an $N\times N$
@@ -126,7 +131,7 @@ $$
 The integers are not mysterious labels imposed from outside. They are the
 counting numbers of the standing-wave closure itself.
 
-So discreteness begins as standing-wave closure of Maxwellian transport on a
+So discreteness begins as standing-wave closure of source-free energy flow on a
 closed support. Once that bounded standing wave exists, its further global
 aspects can be separated. The trapped load of the closed circulation appears as
 mass in the next chapter. The through-hole character of that same toroidal
