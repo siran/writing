@@ -5,7 +5,9 @@ date: 2026-03-11
 
 # 6. Curl Preserves Flow
 
-Recall the energy flow field, $\mathbf{F}(\mathbf{r})$.
+Recall the continuous energy flow field, $\mathbf{F}(\mathbf{r})$, whose
+ordered bookkeeping between registrations was written in earlier chapters as
+$\mathbf{S}(\mathbf{r};1,2)$.
 
 To preserve the source-free character of the transport seen in experiments,
 local evolution must allow the flow of energy without introducing primitive

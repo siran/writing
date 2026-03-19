@@ -27,9 +27,10 @@ $$
 The question is then: in what sense is $u_2$ the same energy, continuously
 reconfigured, rather than an unrelated second distribution?
 
-The answer is transport. The later registration must be a redistribution of
-the same energy already present in the earlier one. We encode that local
-accounting by a flow field $\mathbf{S}(\mathbf{r};1,2)$, which relates one
+The answer is continuous flow. The later registration must be a redistribution
+of the same energy already present in the earlier one. Call that joining flow
+$\mathbf F$. For a particular ordered pair of registrations, we write the local
+accounting of that same flow as $\mathbf{S}(\mathbf{r};1,2)$, which relates one
 registered distribution to the other. So transport is not something that
 happens after reconfiguration; it is the local structure of that
 reconfiguration.
@@ -51,8 +52,10 @@ u_2-u_1+\partial_x S_{12}=0.
 $$
 
 Here $S_{12}$ refers to the redistribution flow connecting registrations $1$
-and $2$. The equation does not say that change is small. It says that the
-difference between registrations is locally accountable by transport.
+and $2$, that is, the bookkeeping summary of the continuous flow $\mathbf F$
+across that ordered pair. The equation does not say that change is small. It
+says that the difference between registrations is locally accountable by
+transport.
 
 The statement is local, but it is imposed at once for all positions in the
 extent. It does not move one marked point through a pre-given background. It
@@ -65,9 +68,9 @@ they compose.[^platos-allegory]
 
 Continuity is therefore the statement that an ordered difference between
 registrations is a redistribution of the same energy, locally accountable by
-transport. The scalar change in $u$ and the vector accounting by $\mathbf S$
-are two expressions of the same continuous event. It gives closed
-bookkeeping.
+transport. The scalar change in $u$, the continuous joining flow $\mathbf F$,
+and the ordered bookkeeping by $\mathbf S$ are three writings of the same
+continuous event. It gives closed bookkeeping.
 
 We now turn to exploring the implied consequences of this energy accounting in
 free space.

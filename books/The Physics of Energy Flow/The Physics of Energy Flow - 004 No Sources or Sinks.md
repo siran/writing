@@ -23,22 +23,23 @@ not needed to derive the transport core developed in this book.
 This does not mean the present argument cannot recover what classical physics
 calls sources. It means that charge, mass, and related source-like quantities
 must appear here as organized closures or effective summaries of one continuous
-electromagnetic transport, not as primitive terms inserted from outside. Even
-if one later writes source terms in Maxwell's equations, those terms still
-belong in this framework to the same field and its organized closures.
+energy flow, not as primitive terms inserted from outside. Even if one later
+writes source terms in Maxwell's equations, those terms still belong in this
+framework to the same flow and its organized closures.
 
 So the point is not that source notation is forbidden. The point is that it is
 not primitive. The transport core and the behaviors later attributed to charge
-or mass are already present once structured electromagnetic configurations are
+or mass are already present once structured configurations of the same flow are
 allowed. If a reader prefers sourced Maxwell notation, those terms can be
 introduced later as ideal or effective summaries, much as dielectric response
 is introduced as a macroscopic description of underlying field organization.
 
 Continuity gives local accounting. We now explore what it implies for the
-shape of energy reorganization as a complete process.
+shape of the continuous flow as a complete process.
 
 Although $\mathbf{S}$ handles a directional accounting of how energy is
-transported, even when taken as a whole it still fails to reveal the structure of
-that transport. The next chapters develop that structure.
+transported from one registration to another, it does not yet reveal the
+structure of the continuous flow $\mathbf F$ itself. The next chapters develop
+that structure.
 
 We next consider the transport of energy across empty space.

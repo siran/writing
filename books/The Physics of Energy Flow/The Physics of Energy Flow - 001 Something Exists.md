@@ -29,5 +29,8 @@ exists.[^existence] This single assumption - that something real is present as a
 nonnegative magnitude across its extent - is the ontological foundation of
 all known physics. Nothing more primitive is assumed in what follows.
 
+So $u$ states what is present. The next task is to describe how that same
+presence redistributes continuously without ceasing to be one thing.
+
 [^existence]: There cannot, by definition, be another kind of existence if it
     is to interact with the physical.

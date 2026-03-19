@@ -5,9 +5,10 @@ date: 2026-03-11
 
 # 5. Divergence-Free Flow
 
-Regional conservation uses the flow $\mathbf{S}$. It gives region by region
-numerical accounting. The shape of the reorganization as a complete process
-comes next. For that we introduce a flow field $\mathbf{F}$.
+Regional conservation uses the accounting field $\mathbf{S}$. It gives
+region-by-region bookkeeping between ordered registrations. The shape of the
+continuous transport joining those registrations comes next. For that we use
+the flow field $\mathbf{F}$.
 
 In empty space, a source-free transport cannot begin or end at an isolated
 point. If energy leaves one small region, it must pass into another
@@ -26,7 +27,8 @@ $$
 Source-free transport, understood as a complete pattern, has no primitive
 endpoints. Local gain or loss of stored energy is still tracked by the
 regional accounting of chapter 4 through $\mathbf{S}$. What is added here is
-the shape of the process as a whole, described by $\mathbf{F}$.
+the shape of the same process as a continuous whole, described by
+$\mathbf{F}$.
 
 Locally, the picture is circulation. Circulatory structure is natural in the
 source-free case, even though not every individual flow line need be a closed
