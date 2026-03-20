@@ -7,7 +7,7 @@ from typing import Optional, Tuple, Set, Dict, List
 
 import yaml
 
-from pnpmd_util import find_repo_root, load_map, die
+from pnpmd_util import find_repo_root, load_map, die, make_staging_dir
 
 # ---------- Protection of code, math ----------
 _FENCE_RE = re.compile(r'(^|\n)(?P<f>```+|~~~+)[^\n]*\n.*?(\n(?P=f)[ \t]*\n|$)', re.DOTALL)
@@ -665,7 +665,7 @@ def prepare_preprocessed(
     if not omit_toc:
         body2, has_toc_marker = replace_toc_marker(body2, toc_depth, shift_preview)
 
-    tmpdir = Path(tempfile.mkdtemp(prefix="pnpmd_"))
+    tmpdir = make_staging_dir()
     in_tmp = tmpdir / "in.md"
     text_for_pandoc = keep_head + (body2 if not omit_toc else body)
     in_tmp.write_text(text_for_pandoc, encoding="utf-8")

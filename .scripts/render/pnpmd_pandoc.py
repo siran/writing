@@ -1,6 +1,8 @@
 # pnpmd_pandoc.py
 
 import os
+import shutil
+import subprocess
 import time
 from pathlib import Path
 from typing import List, Optional
@@ -9,12 +11,54 @@ from pnpmd_util import run_visible
 
 
 _PANDOC_IMAGE = os.environ.get("PNPMD_PANDOC_IMAGE", "pandoc/extra:3.1")
+_CONTAINER_CMD = os.environ.get("PNPMD_CONTAINER_CMD", "podman")
+_PANDOC_CMD = os.environ.get("PNPMD_PANDOC_CMD", "pandoc")
+_PANDOC_CROSSREF_CMD = os.environ.get("PNPMD_PANDOC_CROSSREF_CMD", "pandoc-crossref")
 _MATHJAX_URL = os.environ.get(
     "PNPMD_MATHJAX_URL",
     "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js",
 )
 _WEBTEX_URL = os.environ.get("PNPMD_WEBTEX_URL", "")
 _IMAGE_READY = False
+_CONTAINER_WARNED = False
+_LOCAL_HTML_FALLBACK_WARNED = False
+_LOCAL_CROSSREF_WARNED = False
+
+def _container_available() -> bool:
+    if not shutil.which(_CONTAINER_CMD):
+        return False
+    try:
+        proc = subprocess.run(
+            [_CONTAINER_CMD, "info"],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            timeout=5,
+        )
+        return proc.returncode == 0
+    except Exception:
+        return False
+
+def _local_pandoc_available() -> bool:
+    return shutil.which(_PANDOC_CMD) is not None
+
+def _local_filter_args() -> List[str]:
+    global _LOCAL_CROSSREF_WARNED
+    if shutil.which(_PANDOC_CROSSREF_CMD):
+        return ["--filter", _PANDOC_CROSSREF_CMD]
+    if not _LOCAL_CROSSREF_WARNED:
+        print("[WARN] pandoc-crossref not found locally; rendering HTML without that filter")
+        _LOCAL_CROSSREF_WARNED = True
+    return []
+
+def _container_ready_or_warn() -> bool:
+    global _CONTAINER_WARNED
+    ready = _container_available()
+    if ready:
+        return True
+    if not _CONTAINER_WARNED:
+        print(f"[WARN] {_CONTAINER_CMD} unavailable; container-backed PDF/EPUB renders will be skipped")
+        _CONTAINER_WARNED = True
+    return False
 
 
 def _ensure_image(image: str, retries: int = 2, delay: float = 2.0) -> int:
@@ -27,7 +71,7 @@ def _ensure_image(image: str, retries: int = 2, delay: float = 2.0) -> int:
         return 0
     last_rc = 0
     for attempt in range(retries + 1):
-        last_rc = run_visible(["docker", "pull", image])
+        last_rc = run_visible([_CONTAINER_CMD, "pull", image])
         if last_rc == 0:
             _IMAGE_READY = True
             return 0
@@ -83,12 +127,15 @@ def render_pdf(
     except Exception:
         header_args = []
 
+    if not _container_ready_or_warn():
+        return 125
+
     rc = _ensure_image(_PANDOC_IMAGE)
     if rc != 0:
         return rc
 
     cmd = [
-        "docker",
+        _CONTAINER_CMD,
         "run",
         "--rm",
         "--mount",
@@ -337,19 +384,49 @@ def render_html(
     verbose_args: List[str] = ["--verbose"] if verbose else []
     embed_args: List[str] = ["--embed-resources"] if embed_resources else []
 
-    rc = _ensure_image(_PANDOC_IMAGE)
-    if rc != 0:
+    rc = 1
+    if _container_ready_or_warn():
+        rc = _ensure_image(_PANDOC_IMAGE)
+        if rc == 0:
+            cmd = [
+                _CONTAINER_CMD,
+                "run",
+                "--rm",
+                "--mount",
+                f"type=bind,source={str(in_tmp.parent)},target=/data",
+                "-w",
+                "/data",
+                _PANDOC_IMAGE,
+                "--standalone",
+                *log_args,
+                *verbose_args,
+                *embed_args,
+                *common_args,
+                *shift_args,
+                *meta_args,
+                *css_args,
+                *header_args,
+                *math_args,
+                "--filter",
+                "pandoc-crossref",
+                "in.md",
+                "-t",
+                "html5",
+                "-o",
+                out_tmp.name,
+            ]
+            return run_visible(cmd, timeout=timeout)
+
+    if not _local_pandoc_available():
         return rc
 
-    cmd = [
-        "docker",
-        "run",
-        "--rm",
-        "--mount",
-        f"type=bind,source={str(in_tmp.parent)},target=/data",
-        "-w",
-        "/data",
-        _PANDOC_IMAGE,
+    global _LOCAL_HTML_FALLBACK_WARNED
+    if not _LOCAL_HTML_FALLBACK_WARNED:
+        print("[WARN] Container pandoc unavailable; falling back to local pandoc for HTML")
+        _LOCAL_HTML_FALLBACK_WARNED = True
+
+    local_cmd = [
+        _PANDOC_CMD,
         "--standalone",
         *log_args,
         *verbose_args,
@@ -360,15 +437,14 @@ def render_html(
         *css_args,
         *header_args,
         *math_args,
-        "--filter",
-        "pandoc-crossref",
+        *_local_filter_args(),
         "in.md",
         "-t",
         "html5",
         "-o",
         out_tmp.name,
     ]
-    return run_visible(cmd, timeout=timeout)
+    return run_visible(local_cmd, timeout=timeout, cwd=in_tmp.parent)
 
 
 def render_epub(
@@ -405,12 +481,15 @@ def render_epub(
     log_args: List[str] = [f"--log={log_path.name}"] if log_path else []
     verbose_args: List[str] = ["--verbose"] if verbose else []
 
+    if not _container_ready_or_warn():
+        return 125
+
     rc = _ensure_image(_PANDOC_IMAGE)
     if rc != 0:
         return rc
 
     cmd = [
-        "docker",
+        _CONTAINER_CMD,
         "run",
         "--rm",
         "--mount",

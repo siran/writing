@@ -1,12 +1,39 @@
 # pnpmd_util.py
 
 import json
+import os
 import re
 import subprocess
 import sys
 import time
+import uuid
 from pathlib import Path
 from typing import List, Tuple
+
+def _configure_stdio() -> None:
+    for name in ("stdout", "stderr"):
+        stream = getattr(sys, name, None)
+        if not hasattr(stream, "reconfigure"):
+            continue
+        try:
+            stream.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
+
+_configure_stdio()
+
+def make_staging_dir(prefix: str = "pnpmd_") -> Path:
+    """
+    Create a unique staging directory for a render run.
+    Uses PNPMD_STAGING_DIR env var if set, otherwise .pnpmd/ in CWD.
+    Avoids system /tmp to prevent permission issues with container bind mounts.
+    """
+    base_env = os.environ.get("PNPMD_STAGING_DIR", "").strip()
+    base = Path(base_env) if base_env else Path.cwd() / ".pnpmd"
+    base.mkdir(parents=True, exist_ok=True)
+    d = base / f"{prefix}{uuid.uuid4().hex[:8]}"
+    d.mkdir(parents=True, exist_ok=True)
+    return d
 
 
 _PRINTED_CMD = False
@@ -24,12 +51,12 @@ def _quote(s: str) -> str:
     return shlex.quote(s)
 
 
-def run_visible(cmd_list: List[str], *, timeout: int = 0) -> int:
+def run_visible(cmd_list: List[str], *, timeout: int = 0, cwd: Path | None = None) -> int:
     echo_cmd(cmd_list)
     start = time.time()
     import subprocess as sp
     try:
-        p = sp.Popen(cmd_list)
+        p = sp.Popen(cmd_list, cwd=cwd)
         while True:
             if p.poll() is not None:
                 return p.returncode

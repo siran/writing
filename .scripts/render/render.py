@@ -10,7 +10,7 @@ from typing import Optional
 from pnpmd_preprocess import prepare_preprocessed, replace_unicode_superscripts
 from pnpmd_pandoc import render_pdf, render_html, render_epub
 from pnpmd_book import render_book_yaml
-from pnpmd_util import discover_md_in_cwd, die, print_pandoc_log
+from pnpmd_util import discover_md_in_cwd, die, print_pandoc_log, make_staging_dir
 
 
 def _inline_css(html_path: Path, css_path: Optional[Path]) -> None:
@@ -113,9 +113,7 @@ def _render_blocks_html(
     if not blocks_pandoc_md or not blocks_pandoc_md.exists():
         return None
 
-    from tempfile import mkdtemp
-
-    tmpdir = Path(mkdtemp(prefix="pnpmd_"))
+    tmpdir = make_staging_dir()
     in_tmp = tmpdir / "in.md"
     in_tmp.write_text(blocks_pandoc_md.read_text(encoding="utf-8"), encoding="utf-8")
 
@@ -229,9 +227,7 @@ def render(
 
     # --- Normal (single .md) mode ---
     if as_is:
-        from tempfile import mkdtemp
-
-        tmpdir = Path(mkdtemp(prefix="pnpmd_"))
+        tmpdir = make_staging_dir()
         in_tmp = tmpdir / "in.md"
         text = src.read_text(encoding="utf-8")
         if _is_fdn_md(src):

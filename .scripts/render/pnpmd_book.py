@@ -32,6 +32,24 @@ _TOC_TITLES = {
     "table de contenidos",
 }
 
+def _normalized_file_stem(path: Path) -> str:
+    stem = path.name
+    if stem.lower().endswith(".pandoc.md"):
+        stem = stem[:-len(".pandoc.md")]
+    elif stem.lower().endswith(".md"):
+        stem = stem[:-len(".md")]
+    stem = stem.replace("_", " ").replace("-", " ")
+    stem = _SPACE_RE.sub(" ", stem).strip().lower()
+    return stem
+
+def _is_auxiliary_book_markdown(path: Path) -> bool:
+    stem = _normalized_file_stem(path)
+    if "content map" in stem:
+        return True
+    if stem.startswith("tmp "):
+        return True
+    return False
+
 def _print_wrote(items: list[tuple[str, Optional[Path]]]) -> None:
     for label, path in items:
         if path:
@@ -574,6 +592,7 @@ def render_book_yaml(
         and p.suffix.lower() == ".md"
         and p.name != f"{base}.md"
         and p.name != f"{base}.pandoc.md"
+        and not _is_auxiliary_book_markdown(p)
     )
     if not md_files:
         die(f"No .md files found in {book_dir}")
