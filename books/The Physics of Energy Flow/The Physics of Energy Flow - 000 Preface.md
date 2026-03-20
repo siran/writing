@@ -1,7 +1,7 @@
 ---
 title: The Physics of Energy Flow - Preface
 date: 2026-03-11
-summary: Interaction implies a shared substrate, identified here as energy, and ordered registrations such as u1 and u2 belong to one continuous reality only when they are joined by flow rather than by primitive creation or annihilation. From that source-free relation, the observed structure of physics is recovered in a local smooth differential regime.
+summary: Interaction implies a shared substrate, identified here as energy. The Preface frames the program by treating the observed effects of energy redistribution as evidence of continuous flow and by asking what must follow if something exists and redistributes continuously. It also states the mathematical regime used in what follows: a local smooth differential description with source-free transport, where a region changes only by what crosses its boundary.
 ---
 
 # Preface
