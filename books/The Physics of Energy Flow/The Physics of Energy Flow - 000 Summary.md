@@ -3,7 +3,7 @@ title: The Physics of Energy Flow - Summary
 date: 2026-03-20
 kind: summary
 part: Front Matter
-summary: A compressed overview of the book's central argument: source-free energy flow is treated as primitive, Maxwellian transport is recovered as its local law, bounded standing flow yields discreteness and the Schrodinger regime, and charge, mechanics, gravity, and observer kinematics are read as properties of organized electromagnetic closure.
+summary: A compressed overview of the book's central argument: source-free energy flow is treated as primitive, and within that description the behaviors known from classical physics are identified as consequences of organized transport and closure, including Maxwellian transport, standing-wave discreteness, the Schrodinger regime, charge, mechanics, gravity, and observer kinematics.
 keywords:
   - energy flow
   - source-free continuity
@@ -33,7 +33,7 @@ than replace it by a new one. The book argues that this is exactly what curl
 does, and that closing the same reorganization on the same field gives
 double-curl transport. On the divergence-free sector, that closure reduces to
 the wave equation. In this sense, the source-free Maxwell transport core is
-recovered as the local law of one continuous energy flow.
+identified as the local law of one continuous energy flow.
 
 Once the same flow is required to close on itself, discreteness appears. When
 self-refracting flow closes on itself, the simplest shape it can take is
@@ -51,8 +51,8 @@ therefore not introduced by new postulates but by a change of regime within the
 same transport picture. Charge is then read as the exterior sign and class of a
 topologically protected closure. In the toroidal worked geometry, conserved
 through-hole winding produces an exterior continuation whose matched shell
-currents fall with inverse-square magnitude, so the behavior attributed to
-electric source can be recovered inside a source-free field theory.
+currents fall with inverse-square magnitude, so the behavior known from
+classical source theory can be identified inside a source-free field theory.
 
 The same picture gives mechanics in effective form. Energy flow carries
 momentum, and force is the net momentum flux across the boundary of a bounded
@@ -66,7 +66,7 @@ not as an independent spacetime postulate.
 Gravity is treated in the same spirit. A self-sustained bounded closure creates
 an exterior organized load, and another self-sustained flow bends in response to
 that load. Gravity is therefore read as refraction of one electromagnetic flow
-by another. The weak-field constitutive summary then recovers the standard
+by another. The weak-field constitutive summary then identifies the familiar
 inverse-square pull and light bending as consequences of transport through a
 nonuniform organized field rather than as the action of a separate gravitational
 substance.
@@ -74,4 +74,5 @@ substance.
 The unifying claim of the book is not that mathematics is unnecessary, but that
 fewer primitive ontologies are necessary. One substrate, one continuity
 principle, one transport law, and one standing-wave logic are taken to be enough
-to recover the familiar structure of physics in progressively richer forms.
+to describe the physics of energy flow and to identify within it the familiar
+behavior of physics in progressively richer forms.
