@@ -1,7 +1,18 @@
 ---
 title: The Physics of Energy Flow - Summary
 date: 2026-03-20
+kind: summary
+part: Front Matter
 summary: A compressed overview of the book's central argument: source-free energy flow is treated as primitive, Maxwellian transport is recovered as its local law, bounded standing flow yields discreteness and the Schrodinger regime, and charge, mechanics, gravity, and observer kinematics are read as properties of organized electromagnetic closure.
+keywords:
+  - energy flow
+  - source-free continuity
+  - Maxwell transport
+  - standing waves
+  - Schrodinger
+  - charge
+  - gravity
+  - observer kinematics
 ---
 
 # Summary
