@@ -17,6 +17,7 @@ from pnpmd_pandoc import render_pdf, render_html, render_epub
 _H1_RE = re.compile(r"^\s*#\s+(.*)$")
 _NON_ALNUM_RE = re.compile(r"[^0-9A-Za-z _-]+")
 _SPACE_RE = re.compile(r"\s+")
+_MANUAL_SECTION_PREFIX_RE = re.compile(r"^\d+[A-Za-z]?\.\s+")
 _ACK_TITLE_MARKERS = (
     "acknowledgment",
     "acknowledgement",
@@ -30,6 +31,12 @@ _TOC_TITLES = {
     "tabla de contenidos",
     "tabla de contenido",
     "table de contenidos",
+}
+_UNNUMBERED_FRONT_TITLES = {
+    "preface",
+    "summary",
+    "back cover",
+    "synopsis",
 }
 
 def _normalized_file_stem(path: Path) -> str:
@@ -58,6 +65,19 @@ def _print_wrote(items: list[tuple[str, Optional[Path]]]) -> None:
 
 def _normalize_title_key(text: str) -> str:
     return _SPACE_RE.sub(" ", text.strip().lower())
+
+
+def _is_manually_numbered_title(text: str) -> bool:
+    return _MANUAL_SECTION_PREFIX_RE.match(text.strip()) is not None
+
+
+def _is_unnumbered_section_title(text: str) -> bool:
+    norm = _normalize_title_key(text)
+    return (
+        norm in _UNNUMBERED_FRONT_TITLES
+        or norm.startswith("part ")
+        or _is_manually_numbered_title(text)
+    )
 
 
 def _extract_first_h1(body: str) -> tuple[Optional[str], str]:
@@ -708,11 +728,16 @@ def render_book_yaml(
                     fp.write(title_block)
                     fp.write("```{=latex}\n\\vspace*{0.18\\textheight}\n```\n")
                     is_part_heading = sec_title.strip().lower().startswith("part ")
+                    is_unnumbered_heading = _is_unnumbered_section_title(sec_title)
                     hid = _slugify(sec_title)
                     if is_part_heading:
-                        heading_line = f"# {sec_title} {{#{hid}}}"
+                        classes = " .unnumbered" if is_unnumbered_heading else ""
+                        heading_line = f"# {sec_title} {{#{hid}{classes}}}"
                     else:
-                        heading_line = f"# {sec_title} {{#{hid} .chapter}}"
+                        classes = " .chapter"
+                        if is_unnumbered_heading:
+                            classes += " .unnumbered"
+                        heading_line = f"# {sec_title} {{#{hid}{classes}}}"
                     fp.write(f"{heading_line}\n\n")
                     fp.write(body_stripped + "\n\n")
 
