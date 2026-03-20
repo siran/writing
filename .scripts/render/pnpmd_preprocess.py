@@ -331,6 +331,7 @@ def atsec_to_nameref(md: str) -> str:
 
 
 _BARE_HASH_RE = re.compile(r'(?<![#A-Za-z0-9_{(])#([A-Za-z0-9_:-]+)\b(?!\()')
+_MANUAL_SECTION_PREFIX_RE = re.compile(r"^\d+[A-Za-z]?\.\s+")
 
 
 def rewrite_hash_anchors(md: str) -> str:
@@ -344,6 +345,10 @@ def rewrite_hash_anchors(md: str) -> str:
     new_lines = [repl_line(ln) for ln in prot.splitlines()]
     prot2 = "\n".join(new_lines)
     return _unprotect(prot2, blobs)
+
+
+def _strip_manual_section_prefix(text: str) -> str:
+    return _MANUAL_SECTION_PREFIX_RE.sub("", text.strip(), count=1)
 
 
 def _build_html_toc(md: str, depth: int, shift: int = 0) -> str:
@@ -375,6 +380,8 @@ def _build_html_toc(md: str, depth: int, shift: int = 0) -> str:
             span_id = span_match.group(1)
             raw_title = re.sub(r'\s*\[\]\s*\{#([^\}]+)\}\s*', '', raw_title).strip()
 
+        display_title = _strip_manual_section_prefix(raw_title)
+
         anchor = None
         for mm in _ATTR_ID_RE.finditer(attrs):
             anchor = mm.group(1)
@@ -382,7 +389,7 @@ def _build_html_toc(md: str, depth: int, shift: int = 0) -> str:
             anchor = span_id
         anchor = anchor or _auto_slug(raw_title)
 
-        items.append((lvl, raw_title, anchor))
+        items.append((lvl, display_title, anchor))
 
     if not items:
         return ""
