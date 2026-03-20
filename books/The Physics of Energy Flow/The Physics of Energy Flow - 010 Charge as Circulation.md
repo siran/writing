@@ -6,19 +6,25 @@ date: 2026-03-11
 
 # 10. Charge as Circulation
 
-Electric charge is the exterior reading of conserved topological
-winding: the torus's $(m,n)$ circulation sustains a divergence-free
-exterior continuation that appears on growing enclosing shells as
-matched inward and outward normal-to-shell currents whose magnitude
-falls as $1/r^2$.
+Chapter 8 established that self-refracting flow can close on itself, and that
+the simplest closed shape it can take is toroidal — a sphere with a
+through-hole. The resulting closure has two independent non-contractible
+cycles, two integer winding numbers $(m,n)$, and discrete standing-wave
+frequencies. That chapter used the toroidal closure to account for discrete
+energy levels and Rydberg-type scaling.
+
+The same mode carries global aspects that chapter 8 did not yet name.
+The most immediate is the through-hole flux threading the aperture. This
+chapter names it, derives its $1/r^2$ exterior scaling, and shows it is
+conserved by topology alone.
 
 In source-free Maxwell dynamics, $\nabla \cdot \mathbf{E} = 0$ everywhere.
 No electric field lines originate or terminate. Yet we observe a $1/r^2$
 falloff in field intensity around what we call a "charged particle."
 
-There is no contradiction. Consider a toroidal energy configuration with a
-fixed total circulation, with winding numbers $(m, n)$ characterizing the
-closed flow. The total is conserved.
+There is no contradiction. The toroidal mode of chapter 8, with winding
+numbers $(m,n)$ characterizing the closed flow, carries a conserved
+through-hole flux.
 
 A torus has a distinguished aperture. Choose a spanning surface $\Sigma$
 across that aperture. The closed circulation carries a signed through-hole
@@ -96,24 +102,55 @@ normal-to-shell sector falls as $1/r^2$.
 
 This yields the inverse-square far-field scaling without any primitive source.
 Charge is the name we give to the conserved oriented quantity whose exterior
-continuation we are measuring. In this sense, charge is quantized before any
-force law is written: its sign and class are fixed by the discrete closed
-circulation.
+continuation we are measuring. Its sign and class are fixed by the discrete
+closed circulation before any force law is written.
+
 So the behavior classically attributed to an electric source is already
 present inside the source-free theory once structured electromagnetic
-configurations are admitted.
+configurations are admitted. If one prefers the later sourced Maxwell
+notation, that source term is read here as an idealized summary of the same
+toroidal closure, not as its primitive origin.
 
-If one prefers the later sourced Maxwell notation, that source term can be
-read here as an idealized or effective summary of the same toroidal closure,
-not as the primitive origin of the field.
 
-Within a toroidal mode, charge and spin are read from the same closure but
-from different global quantities. Charge measures the signed through-hole
-flux, while spin measures the angular momentum of the closed circulation about
-the mode's center.
+## Conservation of charge
 
-Opposite charge signs correspond to opposite senses of winding, equivalently to
-opposite signs of the through-hole flux. The present chapter identifies the
-geometric far-field character of charge. The detailed interaction between such
-configurations belongs later, when momentum transfer and flux accounting are
-made explicit.
+The winding numbers $(m,n)$ that fix the through-hole flux class are
+topological invariants. They count how many times the circulation wraps each
+cycle of the torus. Continuous evolution cannot change an integer winding
+count without the field passing through zero — a phase slip that would
+require the toroidal mode to momentarily vanish at a point.
+
+In source-free Maxwell dynamics, such a discontinuity cannot occur under
+smooth evolution: the transport law is linear, the field is regular, and no
+mechanism exists to force a zero crossing from within the source-free sector.
+The winding class is therefore rigid under continuous source-free dynamics.
+
+Charge conservation is thus not a separate axiom. It is a corollary of
+topological rigidity: the same feature of the transport law that forces
+integer quantization of the mode also prevents its class from changing.
+
+
+## What remains
+
+Charge is fully accounted for here: it is the exterior reading of a
+conserved topological winding class, quantized by closure, conserved by
+topological rigidity, scaling as $1/r^2$ by the spreading of non-contractible
+$\mathbf{G}$-tubes in the non-simply-connected exterior.
+
+The $(m,n)$ winding also encodes an orientational character — a handedness.
+What we call spin is presumably this orientational structure, but the present
+framework does not yet derive it. Applying the classical angular momentum
+integral $\mathbf{L} = (1/c^2)\int \mathbf{r}\times\mathbf{F}\,dV$ to the
+toroidal mode would import a mechanical formula rather than derive an
+emergence. A proper account of spin from energy flow requires showing how the
+rotating mode's intrinsic angular momentum per unit energy falls out of the
+wave structure itself — the same way charge fell out of the winding topology.
+That derivation belongs elsewhere.
+
+Mass is similarly not introduced here. It is the total trapped energy of the
+mode, $E/c^2$, developed in the preceding chapters.
+
+Charge, spin, and mass are three independent characterizations of the toroidal
+mode: a topological class, an orientational structure, and a scalar amplitude.
+The interaction between charged configurations — momentum transfer across the
+boundary between two toroidal modes — is the subject of the next chapter.

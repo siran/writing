@@ -20,24 +20,26 @@ $$
 \left(\nabla^2-\frac{1}{c^2}\partial_t^2\right)f=0.
 $$
 
-We now consider a bounded standing wave of that flow on the surface of a
-torus. In the thin-support idealization developed below, that construction
-yields allowed integer modes and the Rydberg-type $1/n^2$ scaling. Since
-hydrogen is matter, this is a first serious clue that matter itself may be
-standing waves of organized energy flow.
+The wave equation permits both open propagating transport and organized
+closures. When a flow configuration refracts its own transport — curving its
+own path through the field it generates — it can close on itself. Such a
+self-refracting closure must be a shape that admits continuous
+nowhere-vanishing tangential flow. A sphere does not: by the hairy ball
+theorem, no continuous nowhere-vanishing tangential vector field exists on a
+sphere. The simplest closed shape that can sustain such flow is a torus — a
+sphere with a through-hole. It has two independent non-contractible cycles,
+and the flow must close in both directions at once.
 
-To make that idea precise, we need a closed support on which energy flow can be
-trapped continuously. A sphere cannot sustain a continuous nowhere-vanishing
-tangential flow, by the hairy ball theorem. The simplest closed support to
-consider next is therefore the surface of a torus. It has two independent
-non-contractible cycles, so closure must hold in two independent directions at
-once.
+A self-refracting flow closing toroidally yields integer modes and the
+Rydberg-type $1/n^2$ scaling. Since hydrogen is matter, this is a first
+serious clue that matter itself may be organized self-refracting closures of
+energy flow.
 
-In the thin-support idealization, use angular coordinates $(\phi,\theta)$ on
-the torus, where $\phi$ runs around the major cycle of radius $R$ and
-$\theta$ around the minor cycle of radius $r$. Restrict attention to one
-Cartesian component $f$ of the transporting field. The wave equation on that
-support becomes
+For modes organized along the toroidal closure — those whose dominant
+structure wraps the two cycles — use angular coordinates $(\phi,\theta)$,
+where $\phi$ runs around the major cycle of radius $R$ and $\theta$ around
+the minor cycle of radius $r$. Restricting to one Cartesian component $f$ of
+the transporting field, the wave equation on that closure becomes
 
 $$
 \partial_t^2 f
@@ -49,7 +51,7 @@ c^2\left(
 \right).
 $$
 
-Because the support is closed, the field must be periodic on both cycles:
+Because the closure is self-consistent, the field must be periodic on both cycles:
 
 $$
 f(\phi+2\pi,\theta,t)=f(\phi,\theta,t),
@@ -113,7 +115,7 @@ planet-like orbits. It requires only that bounded energy flow reorganize
 itself between allowed standing-wave closures.
 
 The observed Rydberg pattern can then be read as a special family of such
-reorganizations. If a fixed toroidal support is refined into an $N\times N$
+reorganizations. If a fixed toroidal closure is refined into an $N\times N$
 standing-wave partition, the same total energy is distributed across $N^2$
 coherent cells. The characteristic energy per cell therefore scales as
 
@@ -131,9 +133,9 @@ $$
 The integers are not mysterious labels imposed from outside. They are the
 counting numbers of the standing-wave closure itself.
 
-So discreteness begins as standing-wave closure of source-free energy flow on a
-closed support. Once that bounded standing wave exists, its further global
-aspects can be separated. The narrow-band envelope sector of the same bounded
+So discreteness begins as standing-wave closure of source-free energy flow in
+a self-refracting toroidal configuration. Once that closure exists, its
+further global aspects can be separated. The narrow-band envelope sector of the same bounded
 mode appears as Schrodinger dynamics in the next chapter. The through-hole
 character of that same toroidal standing wave appears as charge in the chapter
 after that.
