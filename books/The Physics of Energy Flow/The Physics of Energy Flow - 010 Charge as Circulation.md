@@ -1,102 +1,104 @@
 ---
 title: The Physics of Energy Flow - Charge as Circulation
-date: 2026-03-11
+date: 2026-03-21
 ---
 
 
 # 10. Charge as Circulation
 
 Chapter 8 established that self-refracting flow can close on itself, and that
-the simplest closed shape it can take is toroidal — a sphere with a
-through-hole. The resulting closure has two independent non-contractible
-cycles, two integer winding numbers $(m,n)$, and discrete standing-wave
-frequencies. That chapter used the toroidal closure to account for discrete
-energy levels and Rydberg-type scaling.
+the simplest closed shape it can take is toroidal — a sphere with a through-hole
+sustains continuous nowhere-vanishing tangential flow in two independent
+directions, while a plain sphere does not. The resulting closure has two
+independent non-contractible cycles, two integer winding numbers $(m,n)$, and
+discrete standing-wave frequencies.
 
-The same mode carries global aspects that chapter 8 did not yet name.
-The most immediate is the through-hole flux threading the aperture. This
-chapter names it, derives its $1/r^2$ exterior scaling, and shows it is
-conserved by topology alone.
+This chapter asks what this mode looks like from the outside.
 
-In source-free Maxwell dynamics, $\nabla \cdot \mathbf{E} = 0$ everywhere.
-No electric field lines originate or terminate. Yet we observe a $1/r^2$
-falloff in field intensity around what we call a "charged particle."
 
-There is no contradiction. The toroidal mode of chapter 8, with winding
-numbers $(m,n)$ characterizing the closed flow, carries a conserved
-through-hole flux.
+## The organized shell
 
-A torus has a distinguished aperture. Choose a spanning surface $\Sigma$
-across that aperture. The closed circulation carries a signed through-hole
-flux
+The toroidal closure carries a total organized energy $E$ in its $(m,n)$ flow
+pattern. The energy flow is continuous and divergence-free: it does not stop at
+the surface of the closure. The same $(m,n)$ organized flow that runs on the
+closure surface continues to organize all successive enclosing shells.
+
+On a shell at radius $r$, the same total organized energy is spread over area
+$4\pi r^2$. The surface density of organized $(m,n)$ energy on that shell is
+therefore
 
 $$
-\Phi_\Sigma=\int_\Sigma \mathbf{S}\cdot d\mathbf{A}.
+\frac{E_{(m,n)}}{4\pi r^2} \propto \frac{1}{r^2}.
 $$
 
-This is not a source or sink. It is the oriented through-hole moment of the
-closed circulation. Its sign reverses with handedness.
+This is not an approximation. It is area spreading of a conserved total, applied
+to every enclosing shell for as long as the mode sustains its energy.
 
-Because the circulation closes in integer winding classes, this through-hole
-flux is not arbitrary. For a stable toroidal mode it comes in discrete classes
-set by the winding itself.
+This is what charge is: the exterior reading of the organized $(m,n)$ energy of
+the toroidal closure, distributed over shells of increasing area.
 
-The through-hole of the toroidal closure is a directed aperture through which
-the $(m,n)$ flow threads. It acts as a magnetic moment: an oriented, conserved
-quantity fixed by the winding before any exterior measurement is made.
 
-The exterior scaling follows from geometry alone. $\Phi_\Sigma$ is fixed by
-the topology of the closure. It does not change as it is read on
-successively larger enclosing shells. The area of those shells grows as $r^2$.
-Therefore the surface density of the through-hole flow on any enclosing shell
-falls as
+## Sign and quantization
 
-$$
-|\mathbf{S}_\perp(r)| \propto \frac{\Phi_\Sigma}{4\pi r^2} \propto \frac{1}{r^2}.
-$$
+The $(m,n)$ flow on the closure has a handedness — the circulation runs one way
+or the other around each cycle. This handedness is the sign of the charge. Two
+closures whose $(m,n)$ flows run in the same sense on their enclosing shells
+repel; those running in opposite senses attract.
 
-This is not an approximation. It is the exact consequence of a fixed oriented
-flux spreading over shells of increasing area.
+The winding numbers are integers. The charge class is therefore discrete and
+does not take arbitrary values. For the simplest closure, $|m| = 1$ gives
+elementary charge. The sign is the global orientation of the $(m,n)$ flow on
+the shells: not a local property of the torus surface, but a reading available
+on any enclosing shell.
 
-This yields the inverse-square far-field scaling without any primitive source.
-Charge is the name we give to the conserved oriented quantity whose exterior
-continuation we are measuring. Its sign and class are fixed by the discrete
-closed circulation before any force law is written.
 
-So the behavior classically attributed to an electric source is already
-present inside the source-free theory once structured electromagnetic
-configurations are admitted. If one prefers the later sourced Maxwell
-notation, that source term is read here as an idealized summary of the same
-toroidal closure, not as its primitive origin.
+## The axial through-hole flux is magnetic
+
+Separately from the shell energy picture, the toroidal closure has a
+distinguished aperture. The through-hole carries an oriented axial flux — a
+directed quantity set by the winding before any exterior measurement is made.
+This axial flux is the magnetic moment of the closure: oriented along the hole
+axis, reversing sign with handedness.
+
+It is not charge. The shell energy density is isotropic on enclosing shells.
+The axial flux is not — it is directed along the hole axis. These are two
+independent exterior properties of the same mode: the organized shell energy
+(charge) and the axial through-hole structure (magnetic moment).
 
 
 ## Conservation of charge
 
-The winding numbers $(m,n)$ that fix the through-hole flux class are
-topological invariants. They count how many times the circulation wraps each
-cycle of the torus. Continuous evolution cannot change an integer winding
-count without the field passing through zero — a phase slip that would
-require the toroidal mode to momentarily vanish at a point.
+The winding numbers $(m,n)$ that fix the charge class are topological
+invariants. They count how many times the circulation wraps each cycle of the
+torus. Continuous evolution cannot change an integer winding count without the
+field passing through zero — a phase slip that would require the toroidal mode
+to momentarily vanish at a point.
 
-In source-free Maxwell dynamics, such a discontinuity cannot occur under
-smooth evolution: the transport law is linear, the field is regular, and no
-mechanism exists to force a zero crossing from within the source-free sector.
-The winding class is therefore rigid under continuous source-free dynamics.
+In source-free Maxwell dynamics, such a discontinuity cannot occur under smooth
+evolution: the transport law is linear, the field is regular, and no mechanism
+exists to force a zero crossing from within the source-free sector. The winding
+class is therefore rigid under continuous source-free dynamics.
 
-Charge conservation is thus not a separate axiom. It is a corollary of
-topological rigidity: the same feature of the transport law that forces
-integer quantization of the mode also prevents its class from changing.
+Charge conservation is not a separate axiom. It is a corollary of topological
+rigidity: the same feature of the transport law that forces integer quantization
+of the mode also prevents its class from changing.
 
 
 ## What remains
 
-Charge is fully accounted for here: it is the exterior reading of the
-conserved oriented through-hole flux, set by the toroidal winding, and scaling
-as $1/r^2$ by the spreading of that fixed flux over shells of increasing area.
+Three things characterize the toroidal mode from the outside:
 
-Mass is not a property of a single toroidal mode but the aggregate scalar
-energy of many such modes, measured as $E/c^2$.
+- **Charge**: the organized $(m,n)$ surface energy density on shells,
+  $E_{(m,n)}/4\pi r^2$, signed by circulation handedness, quantized by
+  integer winding.
+- **Magnetic moment**: the axial through-hole flux, oriented along the hole
+  axis, independent of the shell energy reading.
+- **Mass**: the scalar amplitude $E/c^2$ of total trapped energy. For a single
+  toroid this is small. For large aggregates of toroids with random
+  orientations, the $(m,n)$ structure averages out and what remains at large
+  distance is the unstructured scalar energy $NE/c^2$ spread isotropically over
+  shells — also $1/r^2$, unsigned, always attractive. That is gravity.
 
-The primary interaction between two simple toroidal closures is always through
-their axial charges — the directed through-hole fluxes of the two modes meeting
-across the exterior. That momentum transfer is the subject of the next chapter.
+The primary interaction between two simple toroidal closures is through their
+charge shells — the organized $(m,n)$ energy densities meeting across the
+exterior. That momentum transfer is the subject of the next chapter.
