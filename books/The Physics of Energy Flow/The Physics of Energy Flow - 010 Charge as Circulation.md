@@ -41,64 +41,22 @@ Because the circulation closes in integer winding classes, this through-hole
 flux is not arbitrary. For a stable toroidal mode it comes in discrete classes
 set by the winding itself.
 
-To see how the exterior continuation acquires inverse-square scaling, take a
-small open patch of the torus surface and follow the nested open patches
-generated outward from it. The local $(m,n)$ transport is tangential on the
-torus patch, so on every such patch Stokes' theorem gives
+The through-hole of the toroidal closure is a directed aperture through which
+the $(m,n)$ flow threads. It acts as a magnetic moment: an oriented, conserved
+quantity fixed by the winding before any exterior measurement is made.
+
+The exterior scaling follows from geometry alone. $\Phi_\Sigma$ is fixed by
+the topology of the closure. It does not change as it is read on
+successively larger enclosing shells. The area of those shells grows as $r^2$.
+Therefore the surface density of the through-hole flow on any enclosing shell
+falls as
 
 $$
-\int_{\Sigma_r} (\nabla \times \mathbf{F})\cdot \mathbf{n}\, dA
-=
-\oint_{\partial \Sigma_r} \mathbf{F}\cdot d\mathbf{l}.
+|\mathbf{S}_\perp(r)| \propto \frac{\Phi_\Sigma}{4\pi r^2} \propto \frac{1}{r^2}.
 $$
 
-This ties the normal continuation on the patch directly to the tangential
-circulation. Now let
-
-$$
-\mathbf G:=\nabla\times\mathbf F.
-$$
-
-Since
-
-$$
-\nabla\cdot\mathbf G=\nabla\cdot(\nabla\times\mathbf F)=0,
-$$
-
-the normal continuation itself is divergence-free. Build a thin tube between
-two corresponding open patches $\Sigma_{r_1}$ and $\Sigma_{r_2}$, with side
-walls everywhere tangent to $\mathbf G$. The divergence theorem then gives
-
-$$
-\int_{\Sigma_{r_2}} \mathbf G\cdot \mathbf n\, dA
--
-\int_{\Sigma_{r_1}} \mathbf G\cdot \mathbf n\, dA
-=
-0.
-$$
-
-So the same winding sector carries the same signed normal continuation as it is
-taken outward. Denote that sector strength by
-
-$$
-J_\perp:=\int_{\Sigma_r} \mathbf G\cdot \mathbf n\, dA.
-$$
-
-On large enclosing shells, corresponding patches scale like
-
-$$
-A(\Sigma_r)\propto r^2.
-$$
-
-So the shell-normal continuation carried by that sector must scale as
-
-$$
-|j_\perp(r)| \propto \frac{|J_\perp|}{A(\Sigma_r)} \propto \frac{1}{r^2}.
-$$
-
-Across a full closed shell these sectors occur in matched inward and outward
-patches, so the signed total still balances to zero. But the magnitude of each
-normal-to-shell sector falls as $1/r^2$.
+This is not an approximation. It is the exact consequence of a fixed oriented
+flux spreading over shells of increasing area.
 
 This yields the inverse-square far-field scaling without any primitive source.
 Charge is the name we give to the conserved oriented quantity whose exterior
@@ -132,28 +90,13 @@ integer quantization of the mode also prevents its class from changing.
 
 ## What remains
 
-Charge is fully accounted for here: it is the exterior reading of a
-conserved topological winding class, quantized by closure, conserved by
-topological rigidity, scaling as $1/r^2$ by the spreading of non-contractible
-$\mathbf{G}$-tubes in the non-simply-connected exterior.
-
-The $(m,n)$ winding pair encodes a second conserved topological invariant
-alongside charge. The winding number $n$ — counting how many times the flow
-wraps the longitudinal cycle of the torus — is independent of $m$ and equally
-rigid under source-free evolution. What we call spin is this second winding
-number. It is not a mechanical angular momentum imported from elsewhere; it
-emerges from the same topological closure that gives charge, differing only in
-which non-contractible cycle it counts. Both invariants are conserved for the
-same reason: no phase slip is possible under smooth source-free dynamics.
+Charge is fully accounted for here: it is the exterior reading of the
+conserved oriented through-hole flux, set by the toroidal winding, and scaling
+as $1/r^2$ by the spreading of that fixed flux over shells of increasing area.
 
 Mass is not a property of a single toroidal mode but the aggregate scalar
-energy of many such modes, measured as $E/c^2$. A collection of toroidal
-closures carries a total trapped energy whose exterior shell distribution
-produces the organized field responsible for gravitational interaction.
+energy of many such modes, measured as $E/c^2$.
 
-Charge, spin, and mass are three independent characterizations of the toroidal
-structure: charge and spin are topological winding numbers on the two
-non-contractible cycles, and mass is the scalar amplitude of aggregated trapped
-energy. The primary interaction between two simple toroidal closures is always
-through their axial charges — the directed through-hole fluxes meeting across
-the exterior. That momentum transfer is the subject of the next chapter.
+The primary interaction between two simple toroidal closures is always through
+their axial charges — the directed through-hole fluxes of the two modes meeting
+across the exterior. That momentum transfer is the subject of the next chapter.
