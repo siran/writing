@@ -299,25 +299,53 @@ The sign of the force is $Q_1 Q_2 = \sigma_1\sigma_2 Q_0^2$: same handedness
 repels, opposite handedness attracts. It is a vector coupling between two
 organized fields, not a scalar loading of the vacuum.
 
-**Why gravity cannot repel.** Since $\eta = GM/rc^2$ with $M = NE/c^2 > 0$
-(scalar energy is always positive), the gradient $\nabla n$ always points
-inward. No property of the probe can flip the sign of $\nabla n$.
+**Why gravity cannot repel.** Since $\eta = GM/rc^2$ with $M = NE/c^2 > 0$,
+the gradient $\nabla n$ always points inward. No property of the probe
+can flip its sign.
 
-**Why the energy-density picture fails for Coulomb.** The energy density of
-the combined charge field,
+**The eikonal integral for gravity.** Consider a ray traveling along $z$ with
+impact parameter $b$, so $r^2 = b^2 + z^2$ to leading order. With
+$n(r) = 1 + 2GM/rc^2$,
 
 $$
-u_E = \tfrac{1}{2}|\mathbf{f}_1 + \mathbf{f}_2|^2
-    = \tfrac{1}{2}|\mathbf{f}_1|^2 + \mathbf{f}_1\cdot\mathbf{f}_2
-    + \tfrac{1}{2}|\mathbf{f}_2|^2,
+\nabla n = -\frac{2GM}{c^2 r^2}\,\hat{\mathbf{r}}
+= -\frac{2GM}{c^2}\,\frac{b\,\hat{\mathbf{b}} + z\,\hat{\mathbf{z}}}{(b^2+z^2)^{3/2}}.
 $$
 
-has gradient $\nabla u_E \sim Q_1 Q_2 / d^3$ at the location of toroid 2 —
-falling as $1/d^3$, not $1/d^2$. A force derived from $\mathbf{F} = -\nabla
-u_E$ gives the wrong power. The correct $1/d^2$ Coulomb force comes from the
-stress tensor, whose off-diagonal structure $f_{1,i}f_{2,j}$ carries the
-interaction at one lower power of $d$ than the energy density gradient. Scalar
-energy-density refraction and the Coulomb mechanism are dimensionally distinct.
+The transverse (perpendicular to $\hat{\mathbf{z}}$) component governs the
+bending. Since $n \approx 1$ in the weak-field limit, the ray equation
+$d(n\,d\mathbf{r}/ds)/ds = \nabla n$ gives
+
+$$
+\frac{d\alpha}{dz} \approx (\nabla n)_\perp
+= -\frac{2GM\,b}{c^2\,(b^2+z^2)^{3/2}}.
+$$
+
+Integrating along the unperturbed ray:
+
+$$
+\Delta\alpha
+= \int_{-\infty}^{\infty} (\nabla n)_\perp\,dz
+= -\frac{2GM\,b}{c^2}
+  \int_{-\infty}^{\infty} \frac{dz}{(b^2+z^2)^{3/2}}.
+$$
+
+The integral evaluates by the substitution $z = b\tan\varphi$:
+
+$$
+\int_{-\infty}^{\infty}\frac{dz}{(b^2+z^2)^{3/2}}
+= \frac{1}{b^2}\int_{-\pi/2}^{\pi/2}\cos\varphi\,d\varphi
+= \frac{2}{b^2}.
+$$
+
+Therefore
+
+$$
+\Delta\alpha = -\frac{4GM}{c^2 b}\,\hat{\mathbf{b}},
+$$
+
+directed toward the mass. The probe's charge, handedness, and internal
+winding structure are absent from every line of this calculation.
 
 
 ## Summary
@@ -325,6 +353,6 @@ energy-density refraction and the Coulomb mechanism are dimensionally distinct.
 Particles are localized regions. Forces are boundary momentum fluxes.
 Newton's second law is continuity applied to a stable knot of energy flow.
 The Coulomb force is the stress-tensor cross-coupling of two organized charge
-fields: same mechanism, wrong sign gives repulsion, right sign gives
-attraction. Gravity is a different mechanism entirely — scalar refractive
-loading of the vacuum — which is why it cannot repel.
+fields — a vector interaction whose sign is set by relative handedness.
+Gravity is a scalar refractive loading of the vacuum — probe-independent and
+always attractive. Both produce $1/r^2$ fields. The mechanisms are distinct.
