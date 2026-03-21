@@ -137,20 +137,23 @@ conserved topological winding class, quantized by closure, conserved by
 topological rigidity, scaling as $1/r^2$ by the spreading of non-contractible
 $\mathbf{G}$-tubes in the non-simply-connected exterior.
 
-The $(m,n)$ winding also encodes an orientational character — a handedness.
-What we call spin is presumably this orientational structure, but the present
-framework does not yet derive it. Applying the classical angular momentum
-integral $\mathbf{L} = (1/c^2)\int \mathbf{r}\times\mathbf{F}\,dV$ to the
-toroidal mode would import a mechanical formula rather than derive an
-emergence. A proper account of spin from energy flow requires showing how the
-rotating mode's intrinsic angular momentum per unit energy falls out of the
-wave structure itself — the same way charge fell out of the winding topology.
-That derivation belongs elsewhere.
+The $(m,n)$ winding pair encodes a second conserved topological invariant
+alongside charge. The winding number $n$ — counting how many times the flow
+wraps the longitudinal cycle of the torus — is independent of $m$ and equally
+rigid under source-free evolution. What we call spin is this second winding
+number. It is not a mechanical angular momentum imported from elsewhere; it
+emerges from the same topological closure that gives charge, differing only in
+which non-contractible cycle it counts. Both invariants are conserved for the
+same reason: no phase slip is possible under smooth source-free dynamics.
 
-Mass is similarly not introduced here. It is the total trapped energy of the
-mode, $E/c^2$, developed in the preceding chapters.
+Mass is not a property of a single toroidal mode but the aggregate scalar
+energy of many such modes, measured as $E/c^2$. A collection of toroidal
+closures carries a total trapped energy whose exterior shell distribution
+produces the organized field responsible for gravitational interaction.
 
 Charge, spin, and mass are three independent characterizations of the toroidal
-mode: a topological class, an orientational structure, and a scalar amplitude.
-The interaction between charged configurations — momentum transfer across the
-boundary between two toroidal modes — is the subject of the next chapter.
+structure: charge and spin are topological winding numbers on the two
+non-contractible cycles, and mass is the scalar amplitude of aggregated trapped
+energy. The primary interaction between two simple toroidal closures is always
+through their axial charges — the directed through-hole fluxes meeting across
+the exterior. That momentum transfer is the subject of the next chapter.
