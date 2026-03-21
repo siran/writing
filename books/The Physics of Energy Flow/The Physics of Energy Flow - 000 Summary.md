@@ -58,19 +58,16 @@ torus is the primitive case.
 A torus carries exactly two independent non-contractible cycles. The flow
 winding around each cycle is an integer, so the toroidal mode is characterized
 by a winding pair $(m, n)$. These integers are topologically rigid under
-source-free evolution: smooth dynamics cannot change an integer winding without
-a phase slip, and source-free Maxwell dynamics forbids phase slips. The two
-conserved winding numbers are recovered as charge and spin. Neither is a
-separately postulated quantity; both emerge from the topology of the simplest
-self-sustaining closure.
+continuous source-free evolution. The through-hole of the toroidal closure acts
+as a directed magnetic moment — an oriented, conserved quantity whose sign and
+class are fixed by the winding before any force law is written.
 
-The through-hole flux of the toroidal mode — the oriented projection of the
-winding through the aperture — extends outward into the non-simply-connected
-exterior. Because $\nabla\cdot\mathbf{G} = 0$ everywhere, this flux is
-distributed over shells of increasing area and therefore falls as $1/r^2$.
-This is the source-free account of the inverse-square field attributed to a
-charged body: no primitive source is required, only a topologically non-trivial
-closure.
+Charge is recovered as the $(m, n)$ energy flow of the toroidal shell projected
+onto successive enclosing shells. Because the same organized flow is distributed
+over shells of increasing area, its surface density falls as $1/r^2$. This is
+the source-free account of the inverse-square field: no primitive source is
+required, only a topologically non-trivial closure whose interior organization
+continues outward.
 
 The same picture gives mechanics in effective form. Energy flow carries
 momentum, and force is the net momentum flux across the boundary of a localized
@@ -86,11 +83,7 @@ energy of many such modes, measured as $E/c^2$. The primary interaction between
 two simple toroidal closures is always through their axial charges — the
 directed through-hole fluxes of the two modes meeting across the exterior.
 Gravity, by contrast, is the interaction of large aggregates of toroids through
-their cumulative shell-distributed mass-energy. One aggregate creates an
-exterior organized load; another self-sustained flow refracts in response to
-that load. The weak-field account then recovers the standard inverse-square pull
-and light bending as consequences of transport through a nonuniform organized
-field, not as the action of a separate gravitational substance.
+their cumulative shell-distributed energy.
 
 The unifying claim of the book is not that mathematics is unnecessary, but that
 fewer primitive ontologies are necessary. One substrate, one continuity
