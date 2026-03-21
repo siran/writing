@@ -303,17 +303,17 @@ organized fields, not a scalar loading of the vacuum.
 the gradient $\nabla n$ always points inward. No property of the probe
 can flip its sign.
 
-**The ray bending integral.** Consider a ray traveling along $z$ with
-impact parameter $b$, so $r^2 = b^2 + z^2$ to leading order. With
-$n(r) = 1 + 2GM/rc^2$,
+**The ray bending integral.** Consider a ray traveling along $\hat{\mathbf{z}}$
+at perpendicular distance $b$ from the center of the mass, so that
+$r^2 = b^2 + z^2$ to leading order. With $n(r) = 1 + 2GM/rc^2$,
 
 $$
 \nabla n = -\frac{2GM}{c^2 r^2}\,\hat{\mathbf{r}}
 = -\frac{2GM}{c^2}\,\frac{b\,\hat{\mathbf{b}} + z\,\hat{\mathbf{z}}}{(b^2+z^2)^{3/2}}.
 $$
 
-The transverse (perpendicular to $\hat{\mathbf{z}}$) component governs the
-bending. Since $n \approx 1$ in the weak-field limit, the ray equation
+The component perpendicular to $\hat{\mathbf{z}}$ governs the deflection.
+Since $n \approx 1$ in the weak-field limit, the ray equation
 $d(n\,d\mathbf{r}/ds)/ds = \nabla n$ gives
 
 $$

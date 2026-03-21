@@ -102,7 +102,7 @@ transport. The trajectory of any moving configuration curves toward the
 aggregate mass because the exterior mass-potential lowers the local propagation
 speed as one approaches the center.
 
-For a ray passing a body with impact parameter $b$, the weak-field bending is
+For a ray passing at perpendicular distance $b$ from the center, the weak-field bending is
 
 $$
 \theta \approx \int_{-\infty}^{\infty}\nabla_\perp n\,dz
