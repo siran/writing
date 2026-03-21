@@ -3,8 +3,8 @@ title: Sound From Energy Flow
 subtitle: Deriving the Acoustic Wave Equation from Source-Free Maxwell Transport
 author: An M. Rodriguez
 date: 2026-03-20
-one-sentence-summary: The sound wave equation is not an independent mechanical law but the coarse-grained, longitudinal mode of the electromagnetic wave equation acting on a medium of organized toroidal closures, with propagation speed set entirely by the electromagnetic structure of the medium.
-summary: In a source-free Maxwell universe, matter is aggregate toroidal closures of electromagnetic energy flow. A perturbation in the arrangement of these closures propagates via their primary coupling — the axial charge interaction — and the continuum limit of that propagation is exactly the acoustic wave equation. The operator structure is inherited from the EM wave equation; the propagation speed is derived from the charge coupling stiffness and the trapped-energy mass density, both of which are EM quantities. No mechanical postulate enters. Acoustics is recovered as a slow, longitudinal, coarse-grained regime of Maxwell transport.
+one-sentence-summary: The sound wave equation is not an independent mechanical law but the coarse-grained, longitudinal mode of the electromagnetic wave equation acting on a medium of organized toroidal closures, with propagation speed, dispersion, and dissipation all set by the electromagnetic structure of the medium.
+summary: In a source-free Maxwell universe, matter is aggregate toroidal closures of electromagnetic energy flow. A perturbation in the arrangement of these closures propagates via their primary coupling — the axial charge interaction — and the continuum limit of that propagation is exactly the acoustic wave equation. The operator structure is inherited from the EM wave equation; the propagation speed is derived from the charge coupling stiffness and the trapped-energy mass density, both of which are electromagnetic quantities. Dissipation occurs when the driving frequency excites partial internal circulations that do not re-close into stable modes; below the internal resonance threshold the propagation is lossless and elastic; in the fully coherent limit this recovers dissipation-free propagation — superfluidity — without additional postulates. No mechanical postulate enters at any step. Acoustics is recovered as a slow, longitudinal, coarse-grained regime of Maxwell transport.
 keywords:
   - sound
   - acoustic wave equation
@@ -12,7 +12,9 @@ keywords:
   - energy flow
   - toroidal closure
   - charge coupling
-  - coarse-graining
+  - dispersion
+  - dissipation
+  - superfluid
 ---
 
 
@@ -49,7 +51,7 @@ M = E/c^2.
 $$
 
 Its exterior carries an axial charge field that falls as $1/r^2$, sustained by
-the non-contractible through-hole flux of the winding (Ch 10).
+the non-contractible through-hole flux of the winding.
 
 A bulk material is a regular arrangement of $n$ such toroids per unit volume,
 at equilibrium separation $d_0 \sim n^{-1/3}$.
@@ -107,7 +109,7 @@ K = n\,K_\text{local}
 \qquad\text{(bulk stiffness, from charge coupling between neighbors)}
 $$
 
-Newton's second law for the displacement field becomes, in the continuum limit,
+The equation of motion for the displacement field becomes, in the continuum limit,
 
 $$
 \rho\,\partial_t^2\,\boldsymbol{\xi} = K\,\nabla^2\boldsymbol{\xi}.
@@ -175,29 +177,63 @@ inter-toroid coupling weaker than toroid self-energy, or it would not be a
 stable arrangement of distinct closures at all.
 
 
-## Dissipation
+## Dissipation and its disappearance
 
-Sound dissipates. Source-free Maxwell transport is time-reversible. The tension
-is resolved by the Entropy draft: dissipation occurs when a perturbation excites
-partial circulations in the toroidal closures that do not re-close into stable
+Dissipation occurs when the driving perturbation excites partial internal
+circulations within the toroidal closures that do not re-close into stable
 modes. Those open circulations — circulation that does not fold back on itself
-— radiate outward as EM transport. What acoustics calls "thermal dissipation"
-is, at the electromagnetic level, radiation from partial non-closing
-circulations. The energy goes back into the EM field, not into a separate
-thermal substance.
+— radiate outward as electromagnetic transport. What acoustics calls thermal
+dissipation is, at the electromagnetic level, radiation from partial
+non-closing circulations. The energy returns to the EM field, not to a
+separate thermal substance.
+
+Whether this happens depends on the driving frequency relative to the internal
+mode structure of the toroids. Each toroidal closure has a discrete set of
+natural internal frequencies $\omega_0 < \omega_1 < \omega_2 < \cdots$, set by
+its winding numbers and geometry. Three regimes follow.
+
+**Sub-resonant, $\omega \ll \omega_0$.**
+The perturbation is too slow to excite any internal circulation. The toroids
+move as rigid bodies, adiabatically tracking the displacement field. No
+partial circulations arise. Propagation is elastic and lossless.
+
+**Resonant, $\omega = \omega_n$.**
+The driving frequency matches a natural mode. The perturbation couples into a
+complete standing wave inside the closure — a circulation that does re-close.
+No open circulations arise. Energy is absorbed into the stable internal mode,
+not dissipated as radiation.
+
+**Inter-resonance, $\omega_n < \omega < \omega_{n+1}$.**
+The driving frequency lies between natural modes. Partial circulations are
+excited that cannot settle into a complete standing wave. These radiate. This
+is the dissipative regime.
+
+Sound therefore has an acoustic band structure — transparent windows and
+absorbing peaks — derived entirely from the internal electromagnetic mode
+structure of the toroidal closures. No phonon postulate is needed.
+
+**The coherent limit: superfluidity.**
+If all toroids in the medium occupy the same mode — every winding aligned,
+every phase synchronized — a perturbation either couples to the collective mode
+coherently or does not couple at all. The effective $\omega_0 \to 0$ and the
+entire acoustic spectrum falls in the sub-resonant regime. Propagation is
+lossless at all frequencies. This is the superfluid: not a separate phenomenon
+added to the framework, but the limit of full toroidal coherence in which the
+dissipation mechanism is structurally absent.
 
 
 ## What this closes
 
 - The acoustic wave equation requires no independent mechanical postulate.
-- The operator form $\partial_t^2 - v^2\,\nabla^2$ is universal because it
-  comes from Maxwell; $v$ depends on the regime (fine-scale: $v = c$;
-  coarse-grained medium: $v = v_s \ll c$).
-- Propagation speed $v_s$ is derived from the charge coupling stiffness $K$
-  and the mass density $\rho$, both EM quantities.
+- The operator $\partial_t^2 - v^2\,\nabla^2$ is the same at all scales;
+  only $v$ changes, and that change is derived from the EM constitution of
+  the medium.
+- Propagation speed $v_s = \sqrt{K/\rho}$ is set entirely by charge coupling
+  stiffness and trapped-energy mass density — both EM quantities.
 - $v_s \ll c$ is forced by medium stability, not assumed.
-- Dissipation of sound = EM radiation from non-closing partial circulations,
-  not an independent thermal mechanism.
+- Dissipation is frequency-gated by the internal EM mode structure of the
+  toroids: absent below $\omega_0$, absent at resonances, present between them.
+- Superfluidity is the fully coherent limit of the same structure.
 
 Acoustics is a slow, longitudinal, coarse-grained regime of Maxwell transport.
 No new ontology is introduced at any step.
