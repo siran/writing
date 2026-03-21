@@ -303,7 +303,7 @@ organized fields, not a scalar loading of the vacuum.
 the gradient $\nabla n$ always points inward. No property of the probe
 can flip its sign.
 
-**The eikonal integral for gravity.** Consider a ray traveling along $z$ with
+**The ray bending integral.** Consider a ray traveling along $z$ with
 impact parameter $b$, so $r^2 = b^2 + z^2$ to leading order. With
 $n(r) = 1 + 2GM/rc^2$,
 
