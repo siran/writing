@@ -46,8 +46,11 @@ charge: a global orientation of the $(m,n)$ flow on the shells, readable on
 any enclosing shell, not a local property of the torus surface.
 
 The winding numbers are integers. The charge class is therefore discrete and
-does not take arbitrary values. For the simplest closure, $|m| = 1$ gives
-elementary charge.
+does not take arbitrary values. The torus is the simplest topological example
+of a self-sustaining closure, but topology admits more complex configurations —
+trefoils and other knotted closures — each carrying its own winding class.
+Which configuration corresponds to the minimum stable self-sustaining mode, and
+therefore to elementary charge, is not determined at this level of analysis.
 
 Whether same-sign closures repel and opposite-sign closures attract is not
 established here. It requires computing the net momentum flux between two
