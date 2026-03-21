@@ -42,19 +42,30 @@ energy of the toroidal closure, distributed over shells of increasing area.
 
 The $(m,n)$ flow on the closure has a handedness — the circulation runs
 one way or the other around each cycle. This handedness is the sign of the
-charge: a global orientation of the $(m,n)$ flow on the shells, readable on
-any enclosing shell, not a local property of the torus surface.
+charge: a global orientation of the $(m,n)$ flow on the shells,
+readable on any enclosing shell, not a local property of the torus surface.
 
 The winding numbers are integers. The charge class is therefore discrete and
-does not take arbitrary values. The torus is the simplest topological example
-of a self-sustaining closure, but topology admits more complex configurations —
-trefoils and other knotted closures — each carrying its own winding class.
-Which configuration corresponds to the minimum stable self-sustaining mode, and
+does not take arbitrary values. The torus is the simplest topological example of
+a self-sustaining closure, but topology admits more complex configurations —
+trefoils and other knotted closures — each carrying its own winding class. Which
+configuration corresponds to the minimum stable self-sustaining mode, and
 therefore to elementary charge, is not determined at this level of analysis.
 
 Whether same-sign closures repel and opposite-sign closures attract is not
 established here. It requires computing the net momentum flux between two
 interacting modes — the tools of the next chapter.
+
+
+## Net chirality is required
+
+A toroidal geometry alone does not guarantee a net charge or magnetic moment.
+Counter-propagating windings — equal $(m,n)$ and $(-m,-n)$ flows on the same
+toroid — carry energy but cancel both the net handedness and the net axial
+flux. Such a closure has $Q = 0$ and $\boldsymbol{\mu} = 0$: it contributes
+to gravity (its scalar energy remains) but carries no charge and no magnetic
+moment. Net charge and net axial flux both require a net chiral winding —
+a definite excess of one handedness over the other.
 
 
 ## The axial through-hole flux is magnetic
@@ -100,12 +111,12 @@ Three things characterize the toroidal mode from the outside:
   axis, independent of the shell energy reading.
 - **Mass**: the scalar amplitude $E/c^2$ of total trapped energy. For a
   single toroid this is small. For large aggregates of toroids with random
-  orientations, the $(m,n)$ structure averages out and what remains at
-  large distance is the unstructured scalar energy $NE/c^2$ spread
-  isotropically over shells — also $1/r^2$, unsigned, always
-  attractive. That is gravity.
+  orientations, the $(m,n)$ structure averages out and what remains is
+  the unstructured scalar energy $NE/c^2$ spread isotropically over
+  shells — also $1/r^2$, unsigned, always attractive. That is gravity.
 
 
 The primary interaction between two simple toroidal closures is through their
 charge shells — the organized $(m,n)$ energy densities meeting across
-the exterior. That momentum transfer is the subject of the next chapter.
+the exterior. The next chapter computes the momentum flux between two such
+modes and recovers Coulomb's law.
