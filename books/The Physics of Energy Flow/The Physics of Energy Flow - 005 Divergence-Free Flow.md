@@ -7,17 +7,21 @@ date: 2026-03-11
 
 Regional conservation uses the accounting field $\mathbf{S}$. It gives
 region-by-region bookkeeping between ordered registrations. The shape of the
-continuous transport joining those registrations comes next. For that we use
-the flow field $\mathbf{F}$. This is not an imposed drift carrying a pattern
-through space. It is the shape of the same transport itself as a continuous
-whole.
+continuous transport joining those registrations comes next. For that we use the
+flow field $\mathbf{F}$. This is not an imposed drift carrying a pattern
+through space. It is the shape of the redistribution of energy as a whole.
 
-In empty space, a source-free transport cannot begin or end at an isolated
-point. If energy leaves one small region, it must pass into another
-neighboring one. Looked at as a whole, the transport has no primitive starts or
-stops. It may therefore close on itself, pass from boundary to boundary, or
-form other connected recurrent structure rather than disconnected beginnings
-and endings.
+Source-free transport cannot begin or end at an isolated point, since such
+points would by definition be a source or a sink of flow
+[^chosen-boundaries]. If energy leaves one small region, it must pass into
+another neighboring one. Looked at as a whole, the transport has no primitive
+starts or stops. It may therefore close on itself, cross the chosen boundaries
+of neighboring regions, or form other connected recurrent structure rather than
+disconnected beginnings and endings.
+
+[^chosen-boundaries]: The boundaries here are chosen bookkeeping surfaces inside
+$u$, not physical edges where flow begins or ends. The same continuous flow
+crosses them from one region into the next.
 
 This is the geometric content of calling the flow divergence-free. For the
 fundamental flow field, that condition is
@@ -27,10 +31,9 @@ $$
 $$
 
 Source-free transport, understood as a complete pattern, has no primitive
-endpoints. Local gain or loss of stored energy is still tracked by the
-regional accounting of chapter 4 through $\mathbf{S}$. What is added here is
-the shape of the same process as a continuous whole, described by
-$\mathbf{F}$.
+endpoints. Local gain or loss of stored energy is still tracked by the regional
+accounting of chapter 4 through $\mathbf{S}$. What is added here is the
+shape of the same process as a continuous whole, described by $\mathbf{F}$.
 
 Locally, the picture is circulation. Circulatory structure is natural in the
 source-free case, even though not every individual flow line need be a closed
