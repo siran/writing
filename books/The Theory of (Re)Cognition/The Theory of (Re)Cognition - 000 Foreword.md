@@ -49,8 +49,11 @@ The chapters that follow build from that starting point.
   organization itself.
 - The third chapter asks what a pattern is and what it means to encode one
   without copying it.
-- Later chapters can ask how error, novelty, and imitation belong to the same
-  field, and what kind of self must exist to recognize anything at all.
+- The fourth chapter argues that finite recognition proceeds by estimate before
+  it ever reaches exactness.
+- Later chapters can ask how error, novelty, imitation, and shared recognition
+  belong to the same field, and what kind of self must exist to recognize
+  anything at all.
 
 This is not a final definition of truth. It is an attempt to stand where truth
 actually first becomes available: in encounter, retention, and recognition.

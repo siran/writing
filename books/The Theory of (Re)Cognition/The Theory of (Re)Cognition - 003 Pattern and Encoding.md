@@ -279,6 +279,7 @@ This chapter commits only to the following:
 
 That is enough for now.
 
-The next step is clear. If loops encode partially and differently, then we must
-ask how they learn, imitate, correct, and sometimes share recognition across
-different bodies and different histories.
+The next step is clear. If loops encode partially and differently, then finite
+recognition must proceed by estimate. Only then can we ask how loops learn,
+imitate, correct, and sometimes share recognition across different bodies and
+different histories.
