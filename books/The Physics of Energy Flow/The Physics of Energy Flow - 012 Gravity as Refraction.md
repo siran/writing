@@ -89,6 +89,92 @@ scalar read in two complementary ways: shell density on the one hand, cumulative
 weak-field potential on the other.
 
 
+## The gravitational coupling
+
+The scalar potential just obtained is written in the conventional form
+
+$$
+\eta(\mathbf{x})
+=
+\frac{G}{c^4}\int
+\frac{\rho_E(\mathbf{x}')}{|\mathbf{x}-\mathbf{x}'|}\,d^3x',
+$$
+
+where $\rho_E$ is energy density and $G$ is the gravitational constant. This
+form makes the weak-field comparison with standard gravity immediate, but the
+present derivation also shows more precisely what role $G$ is playing.
+
+If the same weak-field scalar is written in Coulomb form, introduce an
+energy-loading constant $\varepsilon_u$ by
+
+$$
+\eta(\mathbf{x})
+=
+\frac{1}{4\pi\varepsilon_u}\int
+\frac{\rho_E(\mathbf{x}')}{|\mathbf{x}-\mathbf{x}'|}\,d^3x'.
+$$
+
+For a localized closure of total energy $E$ this gives
+
+$$
+\eta(r)=\frac{E}{4\pi\varepsilon_u r}.
+$$
+
+Comparing with the form already derived in this chapter,
+
+$$
+\eta(r)=\frac{GE}{c^4r},
+$$
+
+one obtains the exact relation
+
+$$
+\frac{1}{4\pi\varepsilon_u}=\frac{G}{c^4},
+$$
+
+or equivalently
+
+$$
+G=\frac{c^4}{4\pi\varepsilon_u}.
+$$
+
+Since
+
+$$
+c^2=\frac{1}{\varepsilon_0\mu_0},
+$$
+
+this may also be written as
+
+$$
+G=\frac{1}{4\pi\varepsilon_u\,\varepsilon_0^2\mu_0^2}.
+$$
+
+So the geometry of shell spreading contributes the factor $4\pi$, the
+electromagnetic transport constants $\varepsilon_0$ and $\mu_0$ enter through
+$c^4$, and the remaining independent quantity is $\varepsilon_u$: the weak
+self-loading constant telling how strongly energy sources the same field into a
+gravitational potential.
+
+The corresponding field equation is the Poisson form
+
+$$
+\nabla^2\eta=-\frac{\rho_E}{\varepsilon_u}.
+$$
+
+At the present stage, the book has not recovered the numerical value of $G$
+from deeper first principles. What it has recovered is the place of $G$ in the
+theory: it is the weak-field coupling between energy density and the scalar
+potential that refracts transport. Equivalently, the book has recovered that
+if a more fundamental derivation fixes $\varepsilon_u$, then
+
+$$
+G=\frac{c^4}{4\pi\varepsilon_u}
+$$
+
+follows immediately.
+
+
 ## Refraction by the mass-potential
 
 A dielectric analogy is useful only if read carefully. The probe and the
