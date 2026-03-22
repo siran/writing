@@ -49,8 +49,9 @@ The chapters that follow build from that starting point.
   organization itself.
 - The third chapter asks what a pattern is and what it means to encode one
   without copying it.
-- The fourth chapter argues that finite recognition proceeds by estimate before
-  it ever reaches exactness.
+- The fourth chapter asks how a resonant structure might actually hold many
+  patterns, and whether spectral storage in microtubules is a plausible part of
+  that answer.
 - Later chapters can ask how error, novelty, imitation, and shared recognition
   belong to the same field, and what kind of self must exist to recognize
   anything at all.

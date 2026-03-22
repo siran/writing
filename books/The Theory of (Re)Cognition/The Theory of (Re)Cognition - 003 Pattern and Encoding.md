@@ -279,7 +279,8 @@ This chapter commits only to the following:
 
 That is enough for now.
 
-The next step is clear. If loops encode partially and differently, then finite
-recognition must proceed by estimate. Only then can we ask how loops learn,
-imitate, correct, and sometimes share recognition across different bodies and
-different histories.
+The next step is clear. If loops encode without copying, then we must ask how
+such encodings are physically retained at all. A resonance-based theory of
+recognition must say something about storage: how many patterns a resonant
+structure can hold, how those patterns are revisited, and whether microtubules
+are plausible sites of such spectral memory.

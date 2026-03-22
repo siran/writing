@@ -32,6 +32,13 @@ why some patterns "take" and others do not.
 Recognition, on this picture, is not magic. It is patterned encounter meeting
 patterned susceptibility.
 
+This also gives the first limit of recognition. The resonating circuit does not
+resonate to the whole thing. It resonates to part of it. A loop becomes
+coupled, often increasingly coupled, to recurrent structure through sub-loop
+resonances. That coupling may be useful without yet being faithful. Recognition
+may therefore be resonance to a constructed reality assembled from other
+resonances rather than to the thing in its full truth.
+
 
 ## The Recognizer Is Not a Power Meter
 
@@ -78,6 +85,11 @@ This is one reason repeated exposure deepens knowability. It is not only that
 the system "stores more data." It becomes better tuned to what should count as
 the return of the same pattern.
 
+But repeated accumulation still does not guarantee truth. A loop may accumulate
+the wrong regularity, stabilize a partial shadow, or become exquisitely tuned
+to one aspect while remaining blind to another. So resonance explains how
+recognition happens, not why every recognition should be trusted.
+
 
 ## Cognition as Recognition of Organization
 
@@ -104,6 +116,11 @@ This is important because it keeps the word "(re)cognition" honest.
 So the deeper thesis of this chapter is not only that resonance helps explain
 recognition. It is that cognition itself may be understood as recognition of
 organization.
+
+This makes the cave image useful again. A loop may become highly skilled at
+recognizing shadows, relations among shadows, and better or worse ways of
+organizing those shadows. That is already significant. But it is not yet the
+same as knowing the full thing casting them.
 
 
 ## The Body as a Multi-Scale Recognizing Assembly

@@ -19,6 +19,11 @@ stabilizes, varies within limits, and becomes something we can register again.
 This does not mean that recognition is infallible. It means only that there is
 no path to knowledge that does not pass through it.
 
+But that also means recognition is not yet knowledge. A loop may become
+selectively coupled to recurrent structure through partial and constructed
+encodings that are useful without yet being true. We do not first know the
+thing. We first resonate to traces of it.
+
 Truth is therefore approached here through three inseparable moments:
 
 1. the ways a pattern interacts with us;
@@ -65,6 +70,11 @@ The point is not to reduce truth to psychology. Truth is not whatever we happen
 to recognize. Rather, recognition is the only door through which truth can
 become available to us at all. If we want to understand knowing, we must study
 that door carefully.
+
+And we must study it without flattering it. The door is narrow. A recognizing
+loop does not take in the whole of what is. It couples to parts, to recurrent
+shadows, to traces that can be retained and revisited. That awareness is not a
+small correction. It is one of the main safeguards of the whole theory.
 
 So the task of this book is not to define truth into submission. It is to ask,
 step by step, how truth becomes accessible to a recognizing being, how that
