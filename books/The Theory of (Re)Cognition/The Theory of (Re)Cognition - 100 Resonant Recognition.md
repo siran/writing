@@ -4,7 +4,7 @@ This note extracts a reusable core from earlier drafts on the resonant brain
 and the resonant body.
 
 Its purpose is narrow. It does not try to prove one exclusive biological
-mechanism for cognition. It isolates a physical picture that fits this book's
+mechanism for recognition. It isolates a physical picture that fits this book's
 main claim: recognition may be implemented, in part, as selective resonance.
 
 
@@ -113,7 +113,7 @@ already well motivated: the brain does not work only through static wiring.
 
 Oscillatory coupling, phase relation, and multi-band coordination matter for
 memory, attention, timing, and selection. This does not by itself prove a full
-resonance theory of cognition, but it strongly supports the more modest claim
+resonance theory of recognition, but it strongly supports the more modest claim
 that recognition is at least partly a matter of dynamic matching rather than
 static representation alone.
 
@@ -131,7 +131,7 @@ geometry and material setting make it physically intelligible to treat them as
 sites of selective electrical or electromechanical response, and therefore as
 natural microscopic loci of resonance-like recognition.
 
-It still does not make them the one proven seat of cognition.
+It still does not make them the one proven seat of recognition.
 
 So the right statement is:
 
@@ -172,9 +172,9 @@ What matters is adequacy of steering, not sameness of inner carrier.
 This note commits only to the following:
 
 - recognition can be understood physically as selective matching;
-- resonance is a strong candidate image for that matching;
+- resonance is the key physical feature in that matching;
 - the recognizing self is a distributed bodily assembly, not a point-reader;
-- dynamic timing, gating, and accumulation likely matter for cognition;
+- dynamic timing, gating, and accumulation likely matter for recognition;
 - microtubules are resonant cavities, but not yet grounds for
   doctrinal exclusivity.
 
