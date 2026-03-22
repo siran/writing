@@ -17,22 +17,50 @@ This chapter asks what this mode looks like from the outside.
 
 ## The organized shell
 
-The toroidal closure carries a total organized energy $E$ in its
-$(m,n)$ flow pattern. This circular pattern creates perpendicular
-intra-shell currents, while keeping no net flux with counter circulating
-currents. The same $(m,n)$ organized flow then continues to organize
-all successive enclosing shells.
+Take a small patch $\Sigma$ on the toroidal closure. Along the boundary
+$\partial\Sigma$, the $(m,n)$ winding gives a nonzero tangential circulation
+of the flow. Stokes' theorem then gives
 
-On a shell at radius $r$, the same total organized energy is spread
-over area $4\pi r^2$. The surface density of organized $(m,n)$
-energy on that shell is therefore
+$$
+\oint_{\partial\Sigma}\mathbf{F}\cdot d\mathbf{l}
+=
+\int_{\Sigma}(\nabla\times\mathbf{F})\cdot\mathbf{n}\,dA.
+$$
+
+So the tangential $(m,n)$ circulation on the closure is not confined to the
+surface itself. It is accompanied by a normal curl through the patch. This is
+the local reason the organized toroidal flow has an exterior continuation.
+
+Now choose two corresponding patches, $\Sigma_1$ and $\Sigma_2$, on two
+neighboring enclosing shells, and connect their boundaries by a thin tube
+whose sidewall is tangent to the continuation. For that tube volume $V$,
+
+$$
+\int_V \nabla\cdot(\nabla\times\mathbf{F})\,dV = 0,
+$$
+
+because the divergence of a curl vanishes identically. Since no component of
+the continuation crosses the sidewall, the normal curl through the two end
+patches must match:
+
+$$
+\int_{\Sigma_1}(\nabla\times\mathbf{F})\cdot\mathbf{n}\,dA
+=
+\int_{\Sigma_2}(\nabla\times\mathbf{F})\cdot\mathbf{n}\,dA.
+$$
+
+The same organized sector therefore continues from shell to shell without
+primitive creation or loss. What changes outward is not the total organized
+shell content, but the area across which it is distributed.
+
+Let $E_{(m,n)}$ denote the total organized shell energy carried by that
+continuation. On an enclosing shell at radius $r$, the isotropic shell reading
+of that same organized total is spread over area $4\pi r^2$. Its shell density
+is therefore
 
 $$
 \frac{E_{(m,n)}}{4\pi r^2} \propto \frac{1}{r^2}.
 $$
-
-This is not an approximation. It is area spreading of a conserved total, applied
-to every enclosing shell for as long as the mode sustains its energy.
 
 This is what charge is: the exterior reading of the organized $(m,n)$
 energy of the toroidal closure, distributed over shells of increasing area.
@@ -53,8 +81,8 @@ configuration corresponds to the minimum stable self-sustaining mode, and
 therefore to elementary charge, is not determined at this level of analysis.
 
 Whether same-sign closures repel and opposite-sign closures attract is not
-established here. It requires computing the net momentum flux between two
-interacting modes — the tools of the next chapter.
+established here. It requires deriving the interaction law between two such
+organized shell readings — the task of the next chapter.
 
 
 ## Net chirality is required
@@ -82,24 +110,6 @@ independent exterior properties of the same mode: the organized shell energy
 (charge) and the axial through-hole structure (magnetic moment).
 
 
-## Conservation of charge
-
-The winding numbers $(m,n)$ that fix the charge class are topological
-invariants. They count how many times the circulation wraps each cycle of the
-torus. Continuous evolution cannot change an integer winding count without the
-field passing through zero — a phase slip that would require the toroidal mode
-to momentarily vanish at a point.
-
-In source-free Maxwell dynamics, such a discontinuity cannot occur under smooth
-evolution: the transport law is linear, the field is regular, and no mechanism
-exists to force a zero crossing from within the source-free sector. The winding
-class is therefore rigid under continuous source-free dynamics.
-
-Charge conservation is not a separate axiom. It is a corollary of topological
-rigidity: the same feature of the transport law that forces integer quantization
-of the mode also prevents its class from changing.
-
-
 ## What remains
 
 Three things characterize the toroidal mode from the outside:
@@ -109,7 +119,7 @@ Three things characterize the toroidal mode from the outside:
   winding.
 - **Magnetic moment**: the axial through-hole flux, oriented along the hole
   axis, independent of the shell energy reading.
-- **Mass**: the scalar amplitude $E/c^2$ of total trapped energy. For a
+- **Mass**: the scalar amplitude $E/c^2$ of total closure energy. For a
   single toroid this is small. For large aggregates of toroids with random
   orientations, the $(m,n)$ structure averages out and what remains is
   the unstructured scalar energy $NE/c^2$ spread isotropically over
@@ -118,5 +128,5 @@ Three things characterize the toroidal mode from the outside:
 
 The primary interaction between two simple toroidal closures is through their
 charge shells — the organized $(m,n)$ energy densities meeting across
-the exterior. The next chapter computes the momentum flux between two such
-modes and recovers Coulomb's law.
+the exterior. The next chapter derives Coulomb's law from the signed shell
+potential of two such modes.

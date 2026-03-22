@@ -79,11 +79,12 @@ kinematics is therefore recovered as a consequence of transport invariance, not
 as an independent spacetime postulate.
 
 Mass is not a property of a single toroidal mode but the aggregate scalar
-energy of many such modes, measured as $E/c^2$. The primary interaction between
-two simple toroidal closures is always through their axial charges — the
-directed through-hole fluxes of the two modes meeting across the exterior.
-Gravity, by contrast, is the interaction of large aggregates of toroids through
-their cumulative shell-distributed energy.
+energy of many such modes, measured as $E/c^2$. Two simple toroidal closures
+interact electromagnetically through the signed shell potential carried by
+their net chiral $(m,n)$ organization. Gravity, by contrast, comes from the
+surviving scalar monopole of many positive closure energies: the oriented
+structures cancel in the aggregate, while the positive energies sum and bend
+passing transport by refraction.
 
 The unifying claim of the book is not that mathematics is unnecessary, but that
 fewer primitive ontologies are necessary. One substrate, one continuity
