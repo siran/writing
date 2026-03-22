@@ -28,8 +28,8 @@ u_2(\mathbf{r})-u_1(\mathbf{r})
 $$
 
 is understood as the result of a redistribution of the same energy within
-itself, described by a flow connecting the two registrations. Energy in a
-region changes only by crossing its boundary to a neighboring region.
+itself, described by a flow connecting the two registrations. Energy in a region
+changes only by crossing its boundary to a neighboring region.
 
 In one direction, say the x-direction, the statement is
 
@@ -37,32 +37,31 @@ $$
 u_2-u_1+\partial_x S_{12}=0.
 $$
 
-Here $S_{12}$ refers to the redistribution flow connecting registrations $1$
-and $2$, that is, the bookkeeping summary of the continuous flow $\mathbf F$
-across that ordered pair. The equation does not say that change is small. It
-says that the difference between registrations is locally accountable by
-transport.
+Here $S_{12}$ refers to the redistribution flow connecting registrations
+$1$ and $2$, that is, the bookkeeping summary of the
+continuous flow $\mathbf F$ across that ordered pair. The equation does not
+say that change is small. It says that the difference between registrations is
+locally accountable by transport.
 
-The statement is local, but it is imposed at once for all positions in the
-extent. It constrains how the whole registered distribution can change while
+The statement is local, but it is imposed at once across the whole extent of
+$u$. It constrains how the whole registered distribution can change while
 remaining one continuous reconfiguration of $u$.
 
 This is accounting of energy, not yet its dynamics. It is like accounting for
-the brightness of the pixels on a screen without yet recognizing the image
-they compose.[^platos-allegory]
+the brightness of the pixels on a screen without yet recognizing the image they
+compose.[^platos-allegory]
 
 Continuity is therefore the statement that an ordered difference between
-registrations is a redistribution of the same energy, locally accountable by
-transport. The scalar change in $u$, the continuous joining flow $\mathbf F$,
-and the ordered bookkeeping by $\mathbf S$ are three writings of the same
-continuous event. It gives closed bookkeeping.
+registrations is a redistribution of the same energy. The scalar change in the
+energy field $u$, the continuous joining flow $\mathbf F$, and the ordered
+bookkeeping by $\mathbf S$ are three writings of the same continuous event.
+Together they give closed bookkeeping.
 
 We now turn to exploring the implied consequences of this energy accounting in
 free space.
 
-[^platos-allegory]: As Plato and many others observed, one can become skilled
-at recognizing images, patterns, and regular sequences of appearance while
+[^platos-allegory]: As Plato and many others observed, one can become skilled at
+recognizing images, patterns, and regular sequences of appearance while
 remaining ignorant of what produces them. Physics can encode repeatable
-regularities without thereby laying hold of the underlying causes. Even so,
-such encoding is far better than treating the screen as uniform brightness
-alone.
+regularities without thereby laying hold of the underlying causes. Even so, such
+encoding is far better than treating the screen as uniform brightness alone.
