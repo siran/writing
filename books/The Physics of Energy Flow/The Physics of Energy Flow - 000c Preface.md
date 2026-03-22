@@ -22,8 +22,8 @@ Throughout this book, we call that substrate **energy**.
 
 All that is required to recover known physics is the concept of energy. Static
 energy, in the sense developed in what follows, could not be experienced. What
-reaches us are the effects of the redistribution of energy. By registering
-those effects we infer its continuous flow.
+reaches us are the effects of the redistribution of energy. By registering those
+effects we infer its continuous flow.
 
 This is not a limitation to be overcome. What we have access to is the
 consequence of its flow. And it turns out that is enough.

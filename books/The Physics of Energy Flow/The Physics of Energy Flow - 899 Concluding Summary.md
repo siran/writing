@@ -1,8 +1,8 @@
 ---
-title: The Physics of Energy Flow - Summary
+title: The Physics of Energy Flow - Concluding Summary
 date: 2026-03-20
 kind: summary
-part: Front Matter
+part: Back Matter
 summary: A compressed overview of the book's central argument: source-free energy flow is treated as primitive, and from it the familiar behaviors of physics are derived — Maxwellian transport, standing-wave discreteness, the Schrodinger regime, charge, mechanics, gravity, and observer kinematics.
 keywords:
   - energy flow
@@ -15,7 +15,7 @@ keywords:
   - observer kinematics
 ---
 
-# Summary
+# Concluding Summary
 
 This book begins from one ontological claim only: interaction implies a shared
 substrate. That substrate is identified here as energy. Physics is therefore not
@@ -51,9 +51,8 @@ regime within the same transport picture.
 Self-refracting flow can close on itself. When it does, the simplest
 topologically self-sustaining shape is toroidal — a sphere with a through-hole
 sustains continuous nowhere-vanishing tangential flow in two independent
-directions, while a plain sphere does not. More complex closures — trefoils and
-other knotted configurations — are also admitted by the same dynamics, but the
-torus is the primitive case.
+directions. More complex closures — trefoils and other knotted configurations —
+are also admitted by the same dynamics, but the torus is the primitive case.
 
 A torus carries exactly two independent non-contractible cycles. The flow
 winding around each cycle is an integer, so the toroidal mode is characterized
@@ -62,12 +61,12 @@ continuous source-free evolution. The through-hole of the toroidal closure acts
 as a directed magnetic moment — an oriented, conserved quantity whose sign and
 class are fixed by the winding before any force law is written.
 
-Charge is recovered as the $(m, n)$ energy flow of the toroidal shell projected
-onto successive enclosing shells. Because the same organized flow is distributed
-over shells of increasing area, its surface density falls as $1/r^2$. This is
-the source-free account of the inverse-square field: no primitive source is
-required, only a topologically non-trivial closure whose interior organization
-continues outward.
+Charge is recovered as the $(m, n)$ energy flow of the toroidal shell
+projected onto successive enclosing shells. Because the same organized flow is
+distributed over shells of increasing area, its surface density falls as
+$1/r^2$. This is the source-free account of the inverse-square field:
+no primitive source is required, only a topologically non-trivial closure whose
+interior organization continues outward.
 
 The same picture gives mechanics in effective form. Energy flow carries
 momentum, and force is the net momentum flux across the boundary of a localized
@@ -78,10 +77,10 @@ law, the admissible re-description of motion takes Lorentz form. The book's
 kinematics is therefore recovered as a consequence of transport invariance, not
 as an independent spacetime postulate.
 
-Mass is not a property of a single toroidal mode but the aggregate scalar
-energy of many such modes, measured as $E/c^2$. Two simple toroidal closures
-interact electromagnetically through the signed shell potential carried by
-their net chiral $(m,n)$ organization. Gravity, by contrast, comes from the
+Mass is not a property of a single toroidal mode but the aggregate scalar energy
+of many such modes, measured as $E/c^2$. Two simple toroidal closures
+interact electromagnetically through the signed shell potential carried by their
+net chiral $(m,n)$ organization. Gravity, by contrast, comes from the
 surviving scalar monopole of many positive closure energies: the oriented
 structures cancel in the aggregate, while the positive energies sum and bend
 passing transport by refraction.
