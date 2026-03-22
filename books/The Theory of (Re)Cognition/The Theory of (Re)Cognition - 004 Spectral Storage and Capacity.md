@@ -88,21 +88,26 @@ but:
 > how many distinguishable spectral organizations can the recognizing system
 > reliably write, retain, and read?
 
-At the most abstract level, if a cavity offers `M` independently usable modal
-degrees of freedom, and the `m`-th degree of freedom has `N_m` reliably
+In a first-pass decoupled schema, if a cavity offers `M` independently usable
+modal degrees of freedom, and the `m`-th degree of freedom has `N_m` reliably
 distinguishable states, then the rough storage capacity is
 
 \[
 C \sim \sum_{m=1}^{M} \log_2 N_m.
 \]
 
-This is only a schema, but it is the right one. Capacity grows with:
+This is only a schema, but it is the right starting one. Capacity grows with:
 
 - the number of independently usable modes,
 - the number of distinguishable states per mode,
 - and the reliability of writing and reading those states.
 
 It does not grow merely because a structure is small or numerous.
+
+When the modes are strongly coupled, this expression stops being a literal
+count and becomes a coarse-grained upper-bound style guide. That is enough for
+the present purpose. The point is not exact arithmetic yet, but the right form
+of the storage question.
 
 
 ## What Controls the Real Capacity

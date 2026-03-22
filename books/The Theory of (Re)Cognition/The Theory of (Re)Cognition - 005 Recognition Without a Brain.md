@@ -39,31 +39,20 @@ But the recognitional structure is already clear: imprint formation is not a
 neural monopoly. It is older than neurons.
 
 
-## The Immune System
+## One Cell Is Enough
 
-The immune system of vertebrates recognizes.
+One example already breaks the brain requirement.
 
-It discriminates self from non-self. It identifies molecular patterns it has
-not encountered before. After clearing a pathogen, it retains a changed
-organization — memory cells — that allow faster and stronger response to the
-same pattern on later encounter.
-
-The mechanism here is not resonance. It is structural complementarity: a
-molecular lock-and-key match, not a frequency match. That distinction matters.
-This chapter does not claim that all recognition is resonance at the molecular
-level. It claims something more modest: that the recognitional structure —
-encounter, encoding, re-recognition — appears in biological systems that have
-no brain.
-
-The immune system satisfies that structure. It encodes a prior encounter in a
-physically revisitable form and uses that encoding to modify its response to
-future encounters. It does so across every vertebrate body, operating in
-parallel with neural recognition without depending on it.
+Once a single cell can be affected by patterned encounter, retain a change, and
+respond differently when that pattern returns, the minimal recognitional claim
+is established. The case does not need to be multiplied too quickly. What
+matters is that the loop can reorganize and later re-enter that organization in
+a way that changes what it does.
 
 
 ## What the Minimal Conditions Are
 
-These cases let the minimal conditions be stated precisely.
+This case lets the minimal conditions be stated precisely.
 
 A loop recognizes when:
 
@@ -80,7 +69,7 @@ reflective thought.
 What the conditions require is a physical system that can be changed by
 encounter in a way that persists and influences future response. That is a
 very general description. Living systems satisfy it at many scales: cellular,
-immunological, endocrine, muscular, neural, and organismal.
+endocrine, muscular, neural, and organismal.
 
 Recognition, on this picture, is not the invention of brains. It is a
 pervasive physical capacity that brains inherited, deepened, accelerated, and
@@ -92,10 +81,10 @@ made flexible.
 The substrate-independence of recognition matters for two reasons.
 
 The first is biological. A theory that places recognition exclusively in neural
-hardware will misread the evidence. Learning in *Stentor*, immune memory,
-cellular signaling, and the enteric nervous system are not pale imitations of
-real cognition. They are recognizing loops in their own right, operating at
-appropriate scales, doing the same basic work with different hardware.
+hardware will misread the evidence. Learning in *Stentor*, cellular signaling,
+and the enteric nervous system are not pale imitations of real recognition.
+They are recognizing loops in their own right, operating at appropriate
+scales, doing the same basic work with different hardware.
 
 The second reason is conceptual. If recognition required a brain, then the
 theory would secretly be a theory of one kind of nervous system dressed up as
@@ -138,11 +127,8 @@ graduated answer. Not yes or no, but: how deeply does it resonate?
 This chapter commits only to the following:
 
 - recognition does not require a brain;
-- the minimal conditions for recognition are satisfied at the cellular and
-  immunological level;
-- the mechanism differs across substrates — resonance at one scale,
-  structural complementarity at another — but the recognitional structure is
-  the same;
+- the minimal conditions for recognition are satisfied at the cellular level;
+- recognition can therefore begin below the neural threshold;
 - recognition is substrate-independent in its basic structure;
 - the difference between minimal and rich recognition is one of depth, not
   of kind: how deeply does it resonate?
@@ -150,6 +136,6 @@ This chapter commits only to the following:
 That is enough for now.
 
 The next step is to ask not what recognition is, but what it does. If it runs
-this deep — from single cells to immune systems to brains — then it must be
-doing something more than accumulating records. It must be doing something
-for the organism. The answer to that is the next chapter.
+this deep — from single cells upward through larger bodily and neural loops —
+then it must be doing something more than accumulating records. It must be
+doing something for the organism. The answer to that is the next chapter.

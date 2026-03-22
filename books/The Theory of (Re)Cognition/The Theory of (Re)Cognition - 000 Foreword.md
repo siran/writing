@@ -30,17 +30,18 @@ recognition. The failure to fit is itself part of what is recognized, even when
 its causes are not yet understood.
 
 This is why the book speaks of "(re)cognition." Cognition is not detached from
-recognition. It is recognition deepened, layered, corrected, and made explicit.
-To know is not merely to possess statements. It is to have learned how a
-pattern returns, differs, resists, and can be recognized again.
+recognition. It is recognition deepened, layered, corrected, made explicit,
+and, in richer loops, turned onto organization itself. To know is not merely
+to possess statements. It is to have learned how a pattern returns, differs,
+resists, and can be recognized again.
 
 The chapters that follow build from that starting point.
 
 - The first chapter states why truth must be recognized before it can be
   proven.
-- The second chapter argues that recognition is physically realized as
-  selective resonance, and that what we call cognition is recognition acting on
-  organization itself.
+- The second chapter argues that recognition is most usefully understood as
+  physically realized through selective resonance, and that what we call
+  cognition is recognition acting on organization itself.
 - The third chapter asks what a pattern is and what it means to encode one
   without copying it.
 - The fourth chapter asks how a resonant structure might actually hold many

@@ -2,7 +2,8 @@
 
 Recognition is not only an epistemic word. It is also a physical event.
 
-This chapter develops one concrete claim: recognition is physically realized as
+This chapter develops one concrete claim in the line pursued by this book:
+recognition is most usefully understood as physically realized through
 selective resonance.
 
 That does not mean that every resonance is already recognition. It means that a
@@ -143,7 +144,6 @@ and respond:
 - neural rhythms,
 - cardiac and respiratory timing,
 - hormonal and metabolic feedback,
-- immune discrimination,
 - interoceptive signaling,
 - muscular readiness,
 - intracellular electrical and mechanical organization.
@@ -184,7 +184,7 @@ Microtubules are resonant cavities inside living cells.
 They are nearly universal internal structures of eukaryotic cells. Their
 geometry and material setting make it physically intelligible to treat them as
 sites of selective electrical or electromechanical response, and therefore as
-natural microscopic loci of resonance-like recognition.
+natural microscopic loci at which resonance-like recognition may be organized.
 
 It still does not make them the one proven seat of recognition.
 

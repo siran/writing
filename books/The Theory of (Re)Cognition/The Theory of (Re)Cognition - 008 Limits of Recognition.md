@@ -13,12 +13,13 @@ Recognition requires match. A pattern must meet a loop already capable of
 being affected by it — capable of taking up enough of its organization to
 retain something, and to recognize its return.
 
-If the world contains structures that no available loop can resonate with,
-those structures do not become accessible through effort, attention, or
-desire. They remain outside. Not hidden behind a door that could be opened
-with better tools, but outside in a more complete sense: they leave no trace
-in any loop that encounters them, and so they cannot be encoded, retained,
-or recognized.
+If the world contains structures that a given loop, or even a whole family of
+current loops, cannot resonate with, those structures do not become accessible
+through effort, attention, or desire alone. For those loops they remain
+outside current recognition. They leave no usable trace in the loops that
+encounter them, and so they cannot yet be encoded, retained, or recognized.
+New forms of encounter may be needed before what is now outside becomes
+available.
 
 This is not a claim about any particular domain. It is a structural fact
 about what recognition requires. The world does not owe any loop a match.
@@ -34,16 +35,15 @@ That is true. But inference does not escape the limit — and it does
 something more troubling than merely inheriting it.
 
 Inference builds on encoded patterns. Those patterns were themselves partial,
-lossy, and shaped by what the loop happened to encounter. Every inference
-that extends them reaches not toward reality, but toward a construction:
-a model assembled from limited evidence and projected outward as though it
-were the shape of what is.
+lossy, and shaped by what the loop happened to encounter. Every inference that
+extends them reaches toward reality through a construction: a model assembled
+from limited evidence and projected outward as a proposed shape of what is.
 
-The ceiling inference reaches is therefore not the real boundary of the
-knowable. It is a constructed ceiling — a local limit made of the same
-material as the encodings that built it. It may look like the edge of what
-can be known. It is more likely the edge of what this particular loop, with
-this particular history of encounter, can currently project.
+The ceiling inference reaches is therefore not necessarily the real boundary of
+the knowable. It is a constructed ceiling — a provisional local limit made of
+the same material as the encodings that built it. It may look like the edge of
+what can be known. It is more likely the edge of what this particular loop,
+with this particular history of encounter, can currently project.
 
 Reality is under no obligation to end where our constructions do.
 
@@ -166,7 +166,8 @@ This chapter commits only to the following:
 
 - a finite loop can only resonate with what its structure allows;
 - inference constructs a ceiling based on limited evidence — this is not
-  the real boundary of the knowable, but a local, projected limit;
+  necessarily the real boundary of the knowable, but a local, projected
+  limit;
 - reality is under no obligation to end where our constructions do;
 - the limit is recognized from below: we can know it exists without seeing
   what lies beyond it;
