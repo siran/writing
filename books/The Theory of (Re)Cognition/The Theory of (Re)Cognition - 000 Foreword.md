@@ -1,19 +1,13 @@
 # Foreword
 
-This book begins from a simple difficulty.
-
-Truth can't first be proven true. Every proof already depends on rules,
-symbols, prior recognitions, and accepted moves. If truth had to wait for proof
-before it could be known at all, then nothing could ever get started.
-
-Something else has to happen first.
-
-That first thing is recognition.
-
-Before we define, classify, prove, or formalize, we encounter recurring
-patterns. They affect us in more than one way. We register them, encode them,
-compare them, and later recognize them again. What we call truth is approached
-through that repeated commerce with what is.
+Truth can't be proven true. So, how, then, does one know that Truth is True?
+One has to recognize it as such. Truth, in this way, is here thought of as the
+multiple ways a pattern interacts with us, the way we encode it, and the way
+we recognize it. Note, very importantly, that we have not defined truth, but
+thought of it in some way that allows us to better capture it. Even the
+events, and more so them, that deviate from similar multiple exposures that we
+think as truth, are here included as part of the identification, or
+recognition, of what is. Their causes we yet can't explain with this theory.
 
 This book therefore does not begin by defining truth once and for all. It
 begins more carefully. It asks how truth is handled by a recognizing being.
