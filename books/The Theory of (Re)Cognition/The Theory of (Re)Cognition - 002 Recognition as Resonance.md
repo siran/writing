@@ -39,6 +39,16 @@ resonances. That coupling may be useful without yet being faithful. Recognition
 may therefore be resonance to a constructed reality assembled from other
 resonances rather than to the thing in its full truth.
 
+This is why modern artificial recognizers provide a useful analogy. In machine
+vision, some units respond strongly to edges, orientations, contrast changes,
+textures, or local shapes. Later organization is built from those partial
+feature responses. No one unit recognizes the whole thing. The larger system
+organizes many partial recognitions into a usable result.
+
+The biological picture proposed here is not identical in implementation. But
+the abstract structure is similar: sub-loops resonate to aspects, and the
+larger loop assembles those partial resonances into a world.
+
 
 ## The Recognizer Is Not a Power Meter
 

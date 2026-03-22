@@ -46,6 +46,11 @@ from the side, in poor light, older than before, happier than before, or partly
 hidden, and still be recognized. The recognizer is not waiting for exact
 repetition. It is tracking what remains structurally the same through change.
 
+This also explains why recognition can be assembled from partial features. A
+system need not first seize the whole object in one act. Some parts of it may
+respond mostly to edge, contour, shadow, contrast, orientation, or motion.
+Later organization can then build from those partial feature recognitions.
+
 
 ## Patterns Are Relational
 
