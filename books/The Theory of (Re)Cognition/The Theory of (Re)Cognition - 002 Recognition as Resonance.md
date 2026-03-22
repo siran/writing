@@ -157,9 +157,8 @@ viscerally before they are named. Some are stabilized linguistically only after
 they have already been bodily tracked. Some are never made explicit at all, and
 yet still steer action.
 
-This fits the broader line of TEOS as well: the self is not a point. It is an
-extended, looped organization. Recognition therefore need not be localized to a
-single narrow site either.
+The self is not a point. It is an extended, looped organization. Recognition
+therefore need not be localized to a single narrow site either.
 
 
 ## Rhythms Help Organize Recognition

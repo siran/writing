@@ -213,5 +213,6 @@ This chapter commits only to the following:
 
 That is enough for now.
 
-The next step is then how loops share, borrow, imitate, and correct one
-another's encodings across different bodies and different histories.
+The next step is to ask how deep recognition runs — whether it requires the
+machinery of a brain at all, or whether the minimal conditions for recognizing
+are already present in simpler living systems.

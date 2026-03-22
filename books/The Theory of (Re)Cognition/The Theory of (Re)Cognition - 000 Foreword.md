@@ -52,9 +52,16 @@ The chapters that follow build from that starting point.
 - The fourth chapter asks how a resonant structure might actually hold many
   patterns, and whether spectral storage in microtubules is a plausible part of
   that answer.
-- Later chapters can ask how error, novelty, imitation, and shared recognition
-  belong to the same field, and what kind of self must exist to recognize
-  anything at all.
+- The fifth chapter shows that recognition does not require a brain: the
+  minimal conditions for recognizing are satisfied at the cellular level and
+  below.
+- The sixth chapter asks what recognition does — and finds that it steers.
+  The self moves through what it can resonate with.
+- The seventh chapter takes that claim to its most immediate form: climax as
+  recognition at full intensity, stripped of symbolic mediation.
+- The eighth chapter names the honest ceiling: a finite loop can only
+  resonate with what its structure allows, and the world is larger than any
+  loop.
 
 This is not a final definition of truth. It is an attempt to stand where truth
 actually first becomes available: in encounter, retention, and recognition.
