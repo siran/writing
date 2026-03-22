@@ -2,7 +2,7 @@
 title: The Physics of Energy Flow - Summary
 date: 2026-03-20
 kind: summary
-part: Front Matter
+part: Back Matter
 summary: A compressed overview of the book's central argument: source-free energy flow is treated as primitive, and from it the familiar behaviors of physics are derived — Maxwellian transport, standing-wave discreteness, the Schrodinger regime, charge, mechanics, gravity, and observer kinematics.
 keywords:
   - energy flow
