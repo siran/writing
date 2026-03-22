@@ -119,6 +119,58 @@ but:
 > them recognize, discriminate, and steer in relation to the same world?
 
 
+## One Loop Can Carry Multiple Encodings
+
+The same point applies within one loop as well.
+
+A self does not need to carry only one encoding for one kind of input. It may
+carry several.
+
+The same event can be encoded:
+
+- perceptually,
+- emotionally,
+- bodily,
+- linguistically,
+- socially,
+- or symbolically.
+
+These are not redundant by default. They may preserve different aspects of the
+same encountered organization.
+
+This matters because a richer loop does not only recognize the world. It can
+also compare its own encodings of the world.
+
+One encoding may be immediate but crude. Another may be abstract but slow.
+Another may be inherited from peers, institutions, or culture. Another may be
+copied, borrowed, or hinted by nature itself through repeated situation.
+
+Some encodings may be better called art. Others may be better called science.
+
+Art preserves and reorganizes lived salience, relation, mood, tone, and
+meaning. Science preserves and reorganizes explicit relation, invariance,
+repeatable distinction, and formal constraint.
+
+They are not enemies in this picture. They are different encoding styles by
+which a loop can return to the same world.
+
+That gives the loop a new power: it can return to the same pattern through more
+than one path.
+
+It can:
+
+- compare encodings,
+- translate among them,
+- discard one,
+- refine another,
+- or discover that a new encoding is more useful than the old one.
+
+So encoding is not only storage. It is also a field of internal variation.
+
+And because the self can be changed by comparing its own encodings, recognition
+is one of the ways the self evolves.
+
+
 ## Encoding Is a Change in the Recognizer
 
 Encoding is therefore not a passive receipt. It is a change in the recognizing
@@ -221,6 +273,7 @@ This chapter commits only to the following:
 - patterns are relational both internally and with respect to a recognizer;
 - encoding is not copying but induced reorganization;
 - the same pattern can be encoded differently by different loops;
+- one loop may also carry multiple encodings of the same encountered pattern;
 - good encoding is measured by later recognition, discrimination, and steering;
 - error is not outside encoding but one of its possible outcomes.
 
