@@ -1,11 +1,13 @@
-# Resonant Recognition
+# Recognition as Resonance
 
-This note extracts a reusable core from earlier drafts on the resonant brain
-and the resonant body.
+Recognition is not only an epistemic word. It is also a physical event.
 
-Its purpose is narrow. It does not try to prove one exclusive biological
-mechanism for recognition. It isolates a physical picture that fits this book's
-main claim: recognition may be implemented, in part, as selective resonance.
+This chapter develops one concrete claim: recognition is physically realized as
+selective resonance.
+
+That does not mean that every resonance is already recognition. It means that a
+recognizing loop is a loop whose patterned susceptibilities allow some
+encounters to accumulate, stabilize, and become reusable while others wash out.
 
 
 ## Recognition as Selective Matching
@@ -75,6 +77,33 @@ Recognition then becomes the success of accumulation across repeated encounter.
 This is one reason repeated exposure deepens knowability. It is not only that
 the system "stores more data." It becomes better tuned to what should count as
 the return of the same pattern.
+
+
+## Cognition as Recognition of Organization
+
+Recognition does not stop at objects or events "out there."
+
+A loop can also recognize better and worse ways of organizing its own current
+patterns.
+
+That is where cognition enters the picture.
+
+Cognition is not something added on top of recognition. It is recognition
+acting on organization itself. A loop does not only recognize objects or
+events. It also recognizes more or less apt ways of organizing its own current
+patterns, sometimes from its own unfolding, sometimes by incorporating patterns
+offered by other loops, situations, or nature.
+
+This is important because it keeps the word "(re)cognition" honest.
+
+- recognition is the patterned match;
+- cognition is the uptake and reuse of better organization;
+- re-cognition is the return of pattern into a loop already capable of being
+  changed by it.
+
+So the deeper thesis of this chapter is not only that resonance helps explain
+recognition. It is that cognition itself may be understood as recognition of
+organization.
 
 
 ## The Body as a Multi-Scale Recognizing Assembly
@@ -167,9 +196,9 @@ requires identical inner display.
 What matters is adequacy of steering, not sameness of inner carrier.
 
 
-## What This Note Commits To
+## What This Chapter Commits To
 
-This note commits only to the following:
+This chapter commits only to the following:
 
 - recognition can be understood physically as selective matching;
 - resonance is the key physical feature in that matching;
@@ -180,5 +209,5 @@ This note commits only to the following:
 
 That is enough for now.
 
-It gives the new book a physical bridge between pattern and recognition without
-forcing it too early into one narrow hardware thesis.
+It gives the book a first physical bridge between pattern and recognition
+without forcing it too early into one narrow hardware thesis.

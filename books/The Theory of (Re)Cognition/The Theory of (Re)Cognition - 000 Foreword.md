@@ -44,9 +44,12 @@ The chapters that follow build from that starting point.
 
 - The first chapter states why truth must be recognized before it can be
   proven.
-- Later chapters can ask what a pattern is, what an encoding is, how error and
-  novelty belong to the same field, and what kind of self must exist to
-  recognize anything at all.
+- The second chapter argues that recognition is physically realized as
+  selective resonance, and that what we call cognition is recognition acting on
+  organization itself.
+- Later chapters can ask what a pattern is, what an encoding is, how error,
+  novelty, and imitation belong to the same field, and what kind of self must
+  exist to recognize anything at all.
 
 This is not a final definition of truth. It is an attempt to stand where truth
 actually first becomes available: in encounter, retention, and recognition.
