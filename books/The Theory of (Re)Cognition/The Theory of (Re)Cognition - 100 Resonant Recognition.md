@@ -106,10 +106,10 @@ extended, looped organization. Recognition therefore need not be localized to a
 single narrow site either.
 
 
-## Brain Rhythms and Information-Bearing Structure
+## Rhythms Help Organize Recognition
 
 At the scale of ordinary neuroscience, one part of the resonance picture is
-already well motivated: brain dynamics are not exhausted by static wiring.
+already well motivated: the brain does not work only through static wiring.
 
 Oscillatory coupling, phase relation, and multi-band coordination matter for
 memory, attention, timing, and selection. This does not by itself prove a full
@@ -117,28 +117,25 @@ resonance theory of cognition, but it strongly supports the more modest claim
 that recognition is at least partly a matter of dynamic matching rather than
 static representation alone.
 
-This is important for the theory of recognition because it weakens a crude
-picture in which knowing would consist only in storing internal symbols.
-Recognizing may also depend on timing structure, recurrent gating, and
-selective amplification across scales.
+This matters for the theory of recognition because it weakens a crude picture
+in which knowing would consist only in storing internal symbols. Recognizing
+also depends on timing, gating, and selective amplification across scales.
 
 
-## Microtubules as Candidate Mechanism
+## Microtubules Are Resonant Cavities
 
-Microtubules are worth taking seriously here, but at the right rank.
+Microtubules are resonant cavities inside living cells.
 
 They are nearly universal internal structures of eukaryotic cells. Their
-geometry and material setting make it physically intelligible to ask whether
-they participate in selective electrical or electromechanical response, and
-therefore in resonance-like recognition at microscopic scale.
+geometry and material setting make it physically intelligible to treat them as
+sites of selective electrical or electromechanical response, and therefore as
+natural microscopic loci of resonance-like recognition.
 
-That is enough to make them a serious candidate.
-
-It is not enough to make them the one proven seat of cognition.
+It still does not make them the one proven seat of cognition.
 
 So the right statement is:
 
-> If microtubules matter, they matter as candidate local selectors inside a
+> If microtubules matter, they matter as resonant cavities inside a
 > much larger recognizing body.
 
 This also preserves the broader thesis. Recognition cannot depend on one
@@ -148,7 +145,7 @@ hierarchy:
 
 - widespread bodily loops;
 - large-scale neural and physiological coordination;
-- candidate microscopic selectors such as microtubules;
+- microscopic resonant cavities such as microtubules;
 - and the larger self as the coordinated recognizing loop formed from all of
   them.
 
@@ -178,8 +175,8 @@ This note commits only to the following:
 - resonance is a strong candidate image for that matching;
 - the recognizing self is a distributed bodily assembly, not a point-reader;
 - dynamic timing, gating, and accumulation likely matter for cognition;
-- microtubules are worth keeping as candidate mechanism, not as doctrinal
-  exclusivity.
+- microtubules are resonant cavities, but not yet grounds for
+  doctrinal exclusivity.
 
 That is enough for now.
 
