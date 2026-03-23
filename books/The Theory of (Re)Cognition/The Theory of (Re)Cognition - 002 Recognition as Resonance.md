@@ -86,6 +86,11 @@ pathway, the structure of the signal is damped and recognition fails. What
 matters is not bare transmission alone, but transmission that preserves enough
 organized difference for later use.
 
+This also means that noise is not simply the opposite of signal. Very often it
+is signal that a given loop cannot yet organize, preserve, or use. What is
+noise for one loop may become signal for another, or for the same loop after a
+different encoding has been learned.
+
 That is why ordinary recognition often works this way already. A person
 recognizes a familiar melody through noise, a face through poor lighting, a
 danger through incomplete cues, or a sentence through distortion. What survives

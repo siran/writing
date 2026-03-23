@@ -64,6 +64,11 @@ recognize patterns in its own failure: the encounter that leaves no grip,
 the concept that will not stay, the question that produces only noise where
 an answer should form.
 
+But even here, noise is not nothing. It is often structured encounter that the
+current loop cannot yet organize into usable form. In that sense, noise still
+belongs to the field of signal. It marks not sheer absence, but a failure of
+current uptake.
+
 But recognizing that a ceiling exists is not the same as seeing what is
 above it. The loop can know that something escapes it without knowing what
 that something is. The shape of the gap is visible from below. Its contents
