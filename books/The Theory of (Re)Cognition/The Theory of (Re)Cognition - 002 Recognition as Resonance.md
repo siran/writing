@@ -33,6 +33,19 @@ why some patterns "take" and others do not.
 Recognition, on this picture, is not magic. It is patterned encounter meeting
 patterned susceptibility.
 
+The radio gives a simple image of this. A continuum of electromagnetic input is
+present, but the radio only takes up a narrow band to which it is tuned. In
+that simple case recognition is mostly frequency selection. Living recognition
+is richer, but the structural point survives: a loop does not seize the whole
+continuum. It couples selectively to some organized part of it.
+
+Color shows the same thing in a more complex biological form. We do not first
+possess "redness" as an inner object. Bodily structures couple differentially
+to ranges of electromagnetic input, and later organization turns that selective
+uptake into a recognizable distinction such as red. What is preserved is not a
+pictorial duplicate of the world, but a usable organization that can steer the
+loop.
+
 This also gives the first limit of recognition. The resonating circuit does not
 resonate to the whole thing. It resonates to part of it. A loop becomes
 coupled, often increasingly coupled, to recurrent structure through sub-loop
@@ -67,6 +80,11 @@ What matters is not raw magnitude alone, but structured relation:
 
 A weak but structured signal can matter more than a strong but irrelevant one
 if the weak signal matches the system's selective windows.
+
+If the incoming difference cannot be selectively taken up and preserved by the
+pathway, the structure of the signal is damped and recognition fails. What
+matters is not bare transmission alone, but transmission that preserves enough
+organized difference for later use.
 
 That is why ordinary recognition often works this way already. A person
 recognizes a familiar melody through noise, a face through poor lighting, a

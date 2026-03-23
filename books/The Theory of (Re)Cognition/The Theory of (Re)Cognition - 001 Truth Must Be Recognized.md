@@ -10,6 +10,13 @@ the same move, or the same conclusion. Proof can extend and discipline
 knowledge, but it cannot be the first act by which truth becomes available at
 all.
 
+This also means that formal truth and lived truth should not be confused.
+Formal systems define truth relative to axioms. But axioms are themselves
+constructs. They are not dropped into thought from nowhere. They are abstracted
+from repeated patterns we have already learned to recognize as stable enough to
+carry forward. In that sense, proof begins downstream of recognition, not prior
+to it.
+
 So how, then, does one know that truth is true?
 
 One has to recognize it as such.
@@ -31,7 +38,9 @@ Truth is therefore approached here through three inseparable moments:
 3. the way we later recognize the pattern again.
 
 This is not yet a definition of truth. It is an operational grip on truth. It
-describes how truth becomes accessible to a finite recognizing being.
+describes how truth becomes accessible to a finite recognizing being, while
+still allowing that what is operationally true for a loop may fall short of
+truth itself.
 
 Consider what happens before a child knows any theory of language, color, or
 causation. Something recurs. A face returns. A tone returns. Warmth, salt,
