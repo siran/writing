@@ -119,6 +119,12 @@ This is one reason repeated exposure deepens knowability. It is not only that
 the system "stores more data." It becomes better tuned to what should count as
 the return of the same pattern.
 
+But repeated input does not guarantee repeated resonance. The loop that meets a
+pattern for the second time is no longer exactly the loop that met it the
+first. Prior encounter may have retuned one pathway, damped another, primed a
+new comparison, or shifted the scale at which uptake occurs. So the "same"
+input may grip one loop and not another, or the same loop now and not later.
+
 But repeated accumulation still does not guarantee truth. A loop may accumulate
 the wrong regularity, stabilize a partial shadow, or become exquisitely tuned
 to one aspect while remaining blind to another. So resonance explains how

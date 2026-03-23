@@ -213,6 +213,13 @@ The event is not unreal because its encoding differs. It only means that
 recognition is always the meeting of world and recognizer, never the unilateral
 printing of one into the other.
 
+This also means that the same input does not produce the same encoding by
+default, even in the same self. A repeated argument may be taken up one day and
+wash out the next. A melody once remembered may later fail to return. A
+warning once ignored may suddenly become gripping. What changed is not only the
+input, but the state of the loop meeting it. Encoding is therefore historical:
+the recognizer carries its prior reorganizations into every new encounter.
+
 
 ## Good Encoding Is Measured by Future Use
 
