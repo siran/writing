@@ -36,6 +36,13 @@ If the pattern were identical with one particular material carrier, none of
 that would be possible. The pattern persists because a relation among elements
 is being preserved across changes of scale, medium, detail, or context.
 
+The same point appears in instrumental recognition. One loop may recognize a
+bassoon by its sound, not by the particular note or melody being played. A
+more abstract loop may resonate instead to the melody, the harmonic movement,
+or the song itself across many instruments. What returns is not one fixed
+token, but a characteristic organization that survives across many different
+emissions and many levels of uptake.
+
 So the first correction is simple:
 
 > a pattern is not the carrier;
