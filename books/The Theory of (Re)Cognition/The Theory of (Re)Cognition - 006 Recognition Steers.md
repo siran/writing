@@ -25,6 +25,12 @@ already been recognized as relevant, as threatening, as welcoming, as
 familiar, as wrong. The loop is already turning. Deliberation refines that
 turn. It does not initiate it.
 
+This is what lets a tennis player react on time. The player does not first
+calculate the serve in propositions and only then move. Angle, speed, rhythm,
+spin, and prior imprint are taken up quickly enough for the body to turn, set,
+and answer. That is not something other than recognition. It is recognition
+deep enough and nuanced enough to steer before language can catch up.
+
 This means the question of how a self finds its way in the world is answered
 first by recognition, not by reasoning. The self moves through what it can
 resonate with.
@@ -63,6 +69,10 @@ returned, what opened, what closed.
 A richer loop encodes more, recognizes more, and therefore steers with greater
 precision and range. But the direction of that richness is always the same:
 toward a loop that can navigate better.
+
+This is why deeper recognition is not merely more data. It is finer timing,
+faster discrimination, better inhibition, better release, and more apt action
+under pressure. Nuance matters because steering happens in time.
 
 This is why encoding was measured by future use in chapter 3. The criterion
 was not resemblance but adequacy of steering. Now the reason is clear. The
