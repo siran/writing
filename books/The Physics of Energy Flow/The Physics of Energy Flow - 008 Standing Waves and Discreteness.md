@@ -57,9 +57,23 @@ $$
 $$
 
 Here $\beta$ is the local winding angle. Unlike the later standing-wave
-labels, it need not be fixed a priori. A later chapter treats the constitutive
-step more carefully; schematically, one may think of the local transport speed
-as decreasing with normalized energy loading,
+labels, it need not be fixed a priori. In the ordinary $E/B$ representation,
+the local energy density is quadratic:
+
+$$
+u(E,B)=\frac12\left(\epsilon |E|^2+\frac{1}{\mu}|B|^2\right).
+$$
+
+So when neighboring portions of the same flow overlap, the energy density
+contains interference terms:
+
+$$
+u(E_1+E_2,B_1+B_2)
+=
+u_1+u_2+\epsilon\,E_1\!\cdot\!E_2+\frac{1}{\mu}B_1\!\cdot\!B_2.
+$$
+
+If local transport speed decreases with normalized energy loading,
 
 $$
 c_{\mathrm{eff}}(u)=\frac{c}{n(u)},
@@ -67,10 +81,14 @@ c_{\mathrm{eff}}(u)=\frac{c}{n(u)},
 n(u)\sim \sqrt{1+\frac{u}{u_\star}},
 $$
 
-where $u_\star$ is the reference energy density scale at which self-loading
-becomes order one. This chapter needs only the geometric consequence: once the
-loading is strong enough to produce a thin nearly uniform toroidal closure, the
-winding can be treated as approximately uniform.
+where $u_\star$ is the reference energy density scale at which this
+self-refraction becomes order one, then the side of the flow carrying greater
+overlap energy transports more slowly. That speed difference bends the flow
+toward the higher-loading side, just as refraction bends light in a dielectric.
+The resulting bend is what the local winding angle $\beta$ records. This
+chapter needs only the geometric consequence: once self-refraction has produced
+a thin nearly uniform toroidal closure, the winding can be treated as
+approximately uniform.
 
 At the level needed to count allowed standing closures, take a thin nearly
 uniform toroidal closure: the cross-sectional radius is approximately constant
