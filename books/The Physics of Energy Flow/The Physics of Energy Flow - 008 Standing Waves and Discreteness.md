@@ -3,7 +3,6 @@ title: The Physics of Energy Flow - Standing Waves and Discreteness
 date: 2026-03-18
 ---
 
-
 # 8. Standing Waves and Discreteness
 
 Chapter 7 established that source-free energy flow satisfies the wave equation
@@ -14,32 +13,90 @@ $$
 \nabla\cdot\mathbf F=0.
 $$
 
-Each Cartesian component therefore satisfies
+As a useful representation, each Cartesian component therefore satisfies
 
 $$
 \left(\nabla^2-\frac{1}{c^2}\partial_t^2\right)f=0.
 $$
 
-The wave equation permits both open propagating transport and organized
-closures. When a flow configuration refracts its own transport — curving its
-own path through the field it generates — it can close on itself. Such a
-self-refracting closure must be a shape that admits continuous
-nowhere-vanishing tangential flow. A sphere does not: by the hairy ball
-theorem, no continuous nowhere-vanishing tangential vector field exists on a
-sphere. The simplest closed shape that can sustain such flow is a torus — a
-sphere with a through-hole. It has two independent non-contractible cycles,
-and the flow must close in both directions at once.
+The wave equation permits both open propagating transport and organized, closed
+closures. When a flow configuration refracts its own transport — curving its own
+path through the field it generates — it can close on itself. Such a
+self-refracting closure must be a shape that admits continuous nowhere-vanishing
+tangential flow. A sphere does not: by the hairy ball theorem, no continuous
+nowhere-vanishing tangential vector field exists on a sphere. The simplest
+closed shape that can sustain such flow is a torus — a sphere with a smooth
+through-hole. It has two independent non-contractible cycles, and the flow must
+close in both directions at the same time.
 
 A self-refracting flow closing toroidally yields integer modes and the
 Rydberg-type $1/n^2$ scaling. Since hydrogen is matter, this is a first
 serious clue that matter itself may be organized self-refracting closures of
 energy flow.
 
-For modes organized along the toroidal closure — those whose dominant
-structure wraps the two cycles — use angular coordinates $(\phi,\theta)$,
-where $\phi$ runs around the major cycle of radius $R$ and $\theta$ around
-the minor cycle of radius $r$. Restricting to one Cartesian component $f$ of
-the transporting field, the wave equation on that closure becomes
+For modes organized along the toroidal closure — those whose dominant structure
+wraps the two cycles — use angular coordinates $(\phi,\theta)$, where
+$\phi$ runs around the major cycle of radius $R$ and
+$\theta$ around the minor cycle of radius $r$. The turning is better read in a
+local tangent frame than in fixed Cartesian components. Let $\hat{\mathbf s}$
+be tangent to the helical transport and let $\hat{\mathbf q}$ be the
+orthogonal turning direction within the tangent plane of the toroidal closure.
+With local pitch angle $\alpha$,
+
+$$
+\hat{\mathbf s}
+=
+\cos\alpha\,\hat{\boldsymbol\phi}
++
+\sin\alpha\,\hat{\boldsymbol\theta},
+\qquad
+\hat{\mathbf q}
+=
+-\sin\alpha\,\hat{\boldsymbol\phi}
++
+\cos\alpha\,\hat{\boldsymbol\theta}.
+$$
+
+At the level needed to count allowed standing closures, resolve the field by a
+scalar amplitude $f(\phi,\theta,t)$ in this turning frame. The corresponding
+directional derivatives are
+
+$$
+\partial_s
+=
+\frac{\cos\alpha}{R}\partial_\phi
++
+\frac{\sin\alpha}{r}\partial_\theta,
+\qquad
+\partial_q
+=
+-\frac{\sin\alpha}{R}\partial_\phi
++
+\frac{\cos\alpha}{r}\partial_\theta.
+$$
+
+The exact vector equation also carries curvature terms from the turning of the
+frame itself, but those do not change the integer closure counting below.
+
+Then the local tangent-plane wave equation is
+
+$$
+\partial_t^2 f
+=
+c^2\left(\partial_s^2 f+\partial_q^2 f\right).
+$$
+
+The mixed terms cancel, so
+
+$$
+\partial_s^2+\partial_q^2
+=
+\frac{1}{R^2}\partial_\phi^2
++
+\frac{1}{r^2}\partial_\theta^2.
+$$
+
+So in angular coordinates the same closure condition becomes
 
 $$
 \partial_t^2 f
@@ -51,7 +108,8 @@ c^2\left(
 \right).
 $$
 
-Because the closure is self-consistent, the field must be periodic on both cycles:
+Because the closure is self-consistent, the field must be periodic on both
+cycles:
 
 $$
 f(\phi+2\pi,\theta,t)=f(\phi,\theta,t),
@@ -75,8 +133,7 @@ c^2\left(\frac{m^2}{R^2}+\frac{n^2}{r^2}\right).
 $$
 
 So the torus discretizes the transport immediately. The closed geometry permits
-only integer mode numbers and therefore only discrete standing-wave
-frequencies.
+only integer mode numbers and therefore only discrete standing-wave frequencies.
 
 The same result can be written as closure in wavelength form:
 
@@ -111,13 +168,14 @@ allowed.
 
 This is the right way to read the early quantum fact that hydrogen radiates in
 discrete lines. The discreteness does not require an electron moving on
-planet-like orbits. It requires only that bounded energy flow reorganize
-itself between allowed standing-wave closures.
+planet-like orbits. It requires only that bounded energy flow reorganize itself
+between allowed standing-wave closures.
 
 The observed Rydberg pattern can then be read as a special family of such
 reorganizations. If a fixed toroidal closure is refined into an $N\times N$
-standing-wave partition, the same total energy is distributed across $N^2$
-coherent cells. The characteristic energy per cell therefore scales as
+standing-wave partition, the same total energy is distributed across
+$N^2$ coherent cells. The characteristic energy per cell therefore
+scales as
 
 $$
 E_N \propto \frac{E_1}{N^2}.
@@ -133,9 +191,9 @@ $$
 The integers are not mysterious labels imposed from outside. They are the
 counting numbers of the standing-wave closure itself.
 
-So discreteness begins as standing-wave closure of source-free energy flow in
-a self-refracting toroidal configuration. Once that closure exists, its
-further global aspects can be separated. The narrow-band envelope sector of the same bounded
-mode appears as Schrodinger dynamics in the next chapter. The through-hole
-character of that same toroidal standing wave appears as charge in the chapter
-after that.
+So discreteness begins as standing-wave closure of source-free energy flow in a
+self-refracting toroidal configuration. Once that closure exists, its further
+global aspects can be separated. The narrow-band envelope sector of the same
+bounded mode appears as Schrodinger dynamics in the next chapter. The
+through-hole character of that same toroidal standing wave appears as charge in
+the chapter after that.
