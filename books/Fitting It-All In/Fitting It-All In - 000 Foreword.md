@@ -22,4 +22,6 @@ symmetric relation, one to one. A non-unit split can then be read not as two
 different substances, but as the same flow entering a loaded region and being
 skewed there, much as light is refracted on entering glass. What standard
 electromagnetism calls impedance can, in that rough picture, be read instead as
-the measurable skew of one flow passing through an energetic field.
+the measurable skew, and therefore the measurable resistance, of one flow
+passing through an energetic field. The flow literally curves there, and that
+value is the measure of its curving.

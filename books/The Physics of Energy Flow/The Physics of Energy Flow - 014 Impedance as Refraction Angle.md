@@ -46,10 +46,12 @@ $$
 Z = \sqrt{\frac{\mu}{\epsilon}}.
 $$
 
-The claim is not that empty space resists motion as a material medium. The
+The claim is not that empty space dissipates motion as a material medium. The
 claim is that the non-unit ratio records how a unitary flow is refracted as it
-traverses a loaded energetic region. In this reading, impedance is not a
-separate ontology but the measurable trace of aspect skew.
+traverses a loaded energetic region. In this reading, impedance is correctly
+read as resistance: not resistance by loss, but resistance to straight
+traversal. The flow literally curves, and the measured value is the trace of
+that curving written into the two-aspect split.
 
 A symmetric one-to-one relation would give
 
@@ -97,6 +99,7 @@ incidence. The flow is tangent to the shell it traverses, not orthogonal to it.
 
 The point of this chapter is not that the standard constants have already been
 fully derived from that picture. The point is that what appears in standard
-language as impedance can be read here as refraction angle. If that reading is
-right, the observed two-aspect split is evidence that the flow we call vacuum
-is already inside a larger energetic geometry.
+language as impedance can be read here as refraction angle and as the
+resistance of a unitary flow to straight passage through a loaded region. If
+that reading is right, the observed two-aspect split is evidence that the flow
+we call vacuum is already inside a larger energetic geometry.
