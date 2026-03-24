@@ -47,18 +47,13 @@ $$
 =
 \cos\beta\,\hat{\mathbf t}
 +
-\sin\beta\,\hat{\boldsymbol\theta},
-\qquad
-\hat{\mathbf q}
-=
--\sin\beta\,\hat{\mathbf t}
-+
-\cos\beta\,\hat{\boldsymbol\theta}.
+\sin\beta\,\hat{\boldsymbol\theta}.
 $$
 
-Here $\beta$ is the local winding angle. Unlike the later standing-wave
-labels, it need not be fixed a priori. In the ordinary $E/B$ representation,
-the local energy density is quadratic:
+Here $\beta$ is the local winding angle, measured from the centerline tangent.
+To see what sets it, write the overlap energy of two neighboring portions of
+the same flow. In the ordinary $E/B$ representation, the local energy density
+is quadratic:
 
 $$
 u(E,B)=\frac12\left(\epsilon |E|^2+\frac{1}{\mu}|B|^2\right).
@@ -70,24 +65,73 @@ contains interference terms:
 $$
 u(E_1+E_2,B_1+B_2)
 =
-u_1+u_2+\epsilon\,E_1\!\cdot\!E_2+\frac{1}{\mu}B_1\!\cdot\!B_2.
-$$
-
-If local transport speed decreases with normalized energy loading,
-
-$$
-c_{\mathrm{eff}}(u)=\frac{c}{n(u)},
+u_1+u_2+u_{\mathrm{int}},
 \qquad
-n(u)\sim \sqrt{1+\frac{u}{u_\star}},
+u_{\mathrm{int}}
+=
+\epsilon\,E_1\!\cdot\!E_2+\frac{1}{\mu}B_1\!\cdot\!B_2.
 $$
 
-where $u_\star$ is the reference energy density scale at which this
-self-refraction becomes order one, then the side of the flow carrying greater
-overlap energy transports more slowly. That speed difference bends the flow
-toward the higher-loading side, just as refraction bends light in a dielectric.
-The resulting bend is what the local winding angle $\beta$ records. This
-chapter needs only the geometric consequence: once self-refraction has produced
-a thin nearly uniform toroidal closure, the winding can be treated as
+Take the simplest symmetric constitutive loading,
+
+$$
+\epsilon_{\mathrm{eff}}
+=
+\epsilon\left(1+\frac{u_{\mathrm{int}}}{u_\star}\right),
+\qquad
+\mu_{\mathrm{eff}}
+=
+\mu\left(1+\frac{u_{\mathrm{int}}}{u_\star}\right),
+$$
+
+where $u_\star$ is the reference energy density at which self-refraction
+becomes order one. Then
+
+$$
+c_{\mathrm{eff}}
+=
+\frac{1}{\sqrt{\mu_{\mathrm{eff}}\epsilon_{\mathrm{eff}}}},
+\qquad
+n_{\mathrm{eff}}
+=
+\frac{c}{c_{\mathrm{eff}}}
+=
+\sqrt{\frac{\mu_{\mathrm{eff}}\epsilon_{\mathrm{eff}}}{\mu\epsilon}}
+=
+1+\frac{u_{\mathrm{int}}}{u_\star}.
+$$
+
+So overlap increases the local refractive index. Approximating the overlap
+region as a higher-index layer of the same field, with exterior index $1$, and
+approximating the entering transport as locally tangent to that layer, Snell's
+law, with angles measured from the local normal, gives
+
+$$
+\sin\theta_{\mathrm{in}}
+=
+n_{\mathrm{eff}}\sin\theta_{\mathrm{tr}},
+\qquad
+\theta_{\mathrm{in}}=\frac{\pi}{2},
+$$
+
+so
+
+$$
+\sin\theta_{\mathrm{tr}}=\frac{1}{n_{\mathrm{eff}}}.
+$$
+
+Since $\beta$ is the complementary angle to the centerline tangent,
+
+$$
+\beta=\frac{\pi}{2}-\theta_{\mathrm{tr}},
+\qquad
+\cos\beta=\frac{1}{n_{\mathrm{eff}}},
+\qquad
+\tan\beta=\sqrt{n_{\mathrm{eff}}^2-1}.
+$$
+
+This chapter needs only the geometric consequence: once self-refraction has
+produced a thin nearly uniform toroidal closure, the winding can be treated as
 approximately uniform.
 
 At the level needed to count allowed standing closures, take a thin nearly
@@ -116,6 +160,30 @@ $$
 So closure of a single helical streamline is exactly the statement that its
 slope is rational: it returns only after integer counts on the two
 non-contractible cycles.
+
+Combining the geometric closure with the constitutive refraction relation gives
+
+$$
+\tan\beta=\frac{nr}{mR}=\sqrt{n_{\mathrm{eff}}^2-1},
+$$
+
+so equivalently
+
+$$
+\beta
+=
+\arctan\!\left(\frac{nr}{mR}\right)
+=
+\arccos\!\left(\frac{1}{n_{\mathrm{eff}}}\right),
+$$
+
+and
+
+$$
+n_{\mathrm{eff}}
+=
+\sqrt{1+\left(\frac{nr}{mR}\right)^2}.
+$$
 
 The standing field is a stronger condition than closure of one streamline. It
 must be single-valued on both cycles of the toroidal closure. Resolve the field
