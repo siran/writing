@@ -20,8 +20,10 @@ One way to hold that fitting in mind is to begin from unitary flow. If one flow
 is primary, then its two complementary aspects should first be read in a
 symmetric relation, one to one. A non-unit split can then be read not as two
 different substances, but as the same flow entering a loaded region and being
-skewed there, much as light is refracted on entering glass. What standard
+skewed there, much as light is refracted on entering glass. It is the same
+self-refraction principle: the denser energetic region resists the flow and
+forces an angular change. What standard
 electromagnetism calls impedance can, in that rough picture, be read instead as
 the measurable skew, and therefore the measurable resistance, of one flow
-passing through an energetic field. The flow literally curves there, and that
-value is the measure of its curving.
+passing through a denser energetic field. The flow changes angle there, and
+that value is the measure of the resistance it encounters.
