@@ -20,12 +20,12 @@ $$
 $$
 
 The wave equation permits both open propagating transport and organized, closed
-closures. When a flow configuration refracts its own transport — curving its own
-path through the field it generates — it can close on itself. Such a
+closures. When a flow configuration refracts its own transport, curving its own
+path through the field it generates, it can close on itself. Such a
 self-refracting closure must be a shape that admits continuous nowhere-vanishing
 tangential flow. A sphere does not: by the hairy ball theorem, no continuous
 nowhere-vanishing tangential vector field exists on a sphere. The simplest
-closed shape that can sustain such flow is a torus — a sphere with a smooth
+closed shape that can sustain such flow is a torus, a sphere with a smooth
 through-hole. It has two independent non-contractible cycles, and the flow must
 close in both directions at the same time.
 
@@ -34,69 +34,103 @@ Rydberg-type $1/n^2$ scaling. Since hydrogen is matter, this is a first
 serious clue that matter itself may be organized self-refracting closures of
 energy flow.
 
-For modes organized along the toroidal closure — those whose dominant structure
-wraps the two cycles — use angular coordinates $(\phi,\theta)$, where
-$\phi$ runs around the major cycle of radius $R$ and
-$\theta$ around the minor cycle of radius $r$. The turning is better read in a
-local tangent frame than in fixed Cartesian components. Let $\hat{\mathbf s}$
-be tangent to the helical transport and let $\hat{\mathbf q}$ be the
-orthogonal turning direction within the tangent plane of the toroidal closure.
-With local pitch angle $\alpha$,
+For modes organized along the toroidal closure, those whose dominant structure
+wraps the two cycles, the natural starting point is not a fixed Cartesian
+component and not even fixed toroidal angles. Start with a closed centerline
+$\gamma(s)$ parametrized by arclength $s\in[0,L)$, and around it choose a local
+orthonormal frame $(\hat{\mathbf t},\hat{\boldsymbol\rho},\hat{\boldsymbol\theta})$,
+where $\hat{\mathbf t}$ is tangent to the centerline and
+$\hat{\boldsymbol\theta}$ is the turning direction around the local
+cross-section. The transporting direction is then a helical tangent
 
 $$
-\hat{\mathbf s}
+\hat{\mathbf f}
 =
-\cos\alpha\,\hat{\boldsymbol\phi}
+\cos\beta\,\hat{\mathbf t}
 +
-\sin\alpha\,\hat{\boldsymbol\theta},
+\sin\beta\,\hat{\boldsymbol\theta},
 \qquad
 \hat{\mathbf q}
 =
--\sin\alpha\,\hat{\boldsymbol\phi}
+-\sin\beta\,\hat{\mathbf t}
 +
-\cos\alpha\,\hat{\boldsymbol\theta}.
+\cos\beta\,\hat{\boldsymbol\theta}.
 $$
 
-At the level needed to count allowed standing closures, resolve the field by a
-scalar amplitude $f(\phi,\theta,t)$ in this turning frame. The corresponding
-directional derivatives are
+Here $\beta$ is the local winding angle. Unlike the later standing-wave labels,
+it need not be fixed a priori: in a fuller self-refracting description it can
+depend on the flow itself, just as the local cross-sectional radius and the
+curvature of $\gamma$ can depend on the flow itself.
 
-$$
-\partial_s
-=
-\frac{\cos\alpha}{R}\partial_\phi
-+
-\frac{\sin\alpha}{r}\partial_\theta,
-\qquad
-\partial_q
-=
--\frac{\sin\alpha}{R}\partial_\phi
-+
-\frac{\cos\alpha}{r}\partial_\theta.
-$$
-
-The exact vector equation also carries curvature terms from the turning of the
-frame itself, but those do not change the integer closure counting below.
-
-Then the local tangent-plane wave equation is
+At the level needed to count allowed standing closures, take a thin nearly
+uniform toroidal closure: the cross-sectional radius is approximately constant
+$r$, the centerline length is approximately constant $L=2\pi R$, and the frame
+varies slowly enough that the leading closure counting comes from the two
+periodic directions themselves. Resolve the field by a scalar amplitude
+$f(s,\theta,t)$ in this moving frame. Then, to leading order,
 
 $$
 \partial_t^2 f
 =
-c^2\left(\partial_s^2 f+\partial_q^2 f\right).
-$$
-
-The mixed terms cancel, so
-
-$$
-\partial_s^2+\partial_q^2
-=
-\frac{1}{R^2}\partial_\phi^2
+c^2\left(
+\partial_s^2 f
 +
-\frac{1}{r^2}\partial_\theta^2.
+\frac{1}{r^2}\partial_\theta^2 f
+\right),
 $$
 
-So in angular coordinates the same closure condition becomes
+with lower-order curvature terms omitted because they do not change the integer
+closure counting below.
+
+Because the closure is self-consistent, the field must be periodic on both
+cycles:
+
+$$
+f(s+L,\theta,t)=f(s,\theta,t),
+\qquad
+f(s,\theta+2\pi,t)=f(s,\theta,t).
+$$
+
+Now seek a separated standing mode
+
+$$
+f(s,\theta,t)=A\cos(ks)\cos(n\theta)\cos(\omega t).
+$$
+
+The periodicity conditions force
+
+$$
+kL=2\pi m,
+\qquad
+m,n\in\mathbb Z_{\ge 0}.
+$$
+
+Since $L=2\pi R$, this gives
+
+$$
+k=\frac{m}{R}.
+$$
+
+Substituting the standing mode into the wave equation yields
+
+$$
+\omega^2
+=
+c^2\left(k^2+\frac{n^2}{r^2}\right)
+=
+c^2\left(\frac{m^2}{R^2}+\frac{n^2}{r^2}\right).
+$$
+
+So the torus discretizes the transport immediately. The closed geometry permits
+only integer mode numbers and therefore only discrete standing-wave frequencies.
+
+If one prefers the more familiar angular coordinate around the major cycle,
+
+$$
+\phi = \frac{s}{R},
+$$
+
+then the same leading-order closure equation becomes
 
 $$
 \partial_t^2 f
@@ -108,37 +142,10 @@ c^2\left(
 \right).
 $$
 
-Because the closure is self-consistent, the field must be periodic on both
-cycles:
-
-$$
-f(\phi+2\pi,\theta,t)=f(\phi,\theta,t),
-\qquad
-f(\phi,\theta+2\pi,t)=f(\phi,\theta,t).
-$$
-
-Now seek a separated standing mode
-
-$$
-f(\phi,\theta,t)=A\cos(m\phi)\cos(n\theta)\cos(\omega t).
-$$
-
-The periodicity conditions force the mode numbers to be integers
-$m,n\in\mathbb Z_{\ge 0}$. Substituting this form into the wave equation gives
-
-$$
-\omega^2
-=
-c^2\left(\frac{m^2}{R^2}+\frac{n^2}{r^2}\right).
-$$
-
-So the torus discretizes the transport immediately. The closed geometry permits
-only integer mode numbers and therefore only discrete standing-wave frequencies.
-
 The same result can be written as closure in wavelength form:
 
 $$
-m\lambda_\phi = 2\pi R,
+m\lambda_s = L = 2\pi R,
 \qquad
 n\lambda_\theta = 2\pi r,
 $$
@@ -146,7 +153,7 @@ $$
 for integers $m,n\in\mathbb Z_{>0}$. Equivalently,
 
 $$
-k_\phi=\frac{m}{R},
+k_s=\frac{m}{R},
 \qquad
 k_\theta=\frac{n}{r}.
 $$
@@ -157,14 +164,14 @@ but by an integer pair $(m,n)$, and its frequency is
 $$
 \omega_{mn}
 =
-c\sqrt{k_\phi^2+k_\theta^2}
+c\sqrt{k_s^2+k_\theta^2}
 =
 c\sqrt{\frac{m^2}{R^2}+\frac{n^2}{r^2}}.
 $$
 
 So discreteness enters before any particle picture. Once the field is required
-to close on itself on a torus, only certain standing-wave organizations are
-allowed.
+to close on itself in a toroidal closure, only certain standing-wave
+organizations are allowed.
 
 This is the right way to read the early quantum fact that hydrogen radiates in
 discrete lines. The discreteness does not require an electron moving on
