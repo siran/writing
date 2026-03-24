@@ -105,6 +105,12 @@ kL=2\pi m,
 m,n\in\mathbb Z_{\ge 0}.
 $$
 
+These integers belong to the standing field on the two fundamental cycles of
+the toroidal closure. Rationality enters at a different level: a single
+helical streamline closes only when its slope returns after $m$ turns of one
+cycle and $n$ of the other, so closed streamline winding is exactly the
+statement that the ratio of the two cycle counts is rational.
+
 Since $L=2\pi R$, this gives
 
 $$
