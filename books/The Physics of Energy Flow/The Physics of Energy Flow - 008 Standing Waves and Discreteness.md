@@ -29,18 +29,17 @@ closed shape that can sustain such flow is a torus, a sphere with a smooth
 through-hole. It has two independent non-contractible cycles, and the flow must
 close in both directions at the same time.
 
-A self-refracting flow closing toroidally yields integer modes and the
-Rydberg-type $1/n^2$ scaling. Since hydrogen is matter, this is a first
-serious clue that matter itself may be organized self-refracting closures of
-energy flow.
+As we shall see, a self-refracting flow closing toroidally yields integer modes
+and the Rydberg-type $1/n^2$ scaling. Since hydrogen is matter, this is
+a first serious clue that matter itself may be organized self-refracting
+closures of energy flow.
 
 For modes organized along the toroidal closure, those whose dominant structure
 wraps the two cycles, the natural starting point is not a fixed Cartesian
 component and not even fixed toroidal angles. Start with a closed centerline
-$\gamma(s)$ parametrized by arclength $s\in[0,L)$, and around it choose a local
-orthonormal frame $(\hat{\mathbf t},\hat{\boldsymbol\rho},\hat{\boldsymbol\theta})$,
-where $\hat{\mathbf t}$ is tangent to the centerline and
-$\hat{\boldsymbol\theta}$ is the turning direction around the local
+$\gamma(s)$ parametrized by arclength $s\in[0,L)$, and around it
+choose a local frame in which $\hat{\mathbf t}$ is tangent to the centerline
+and $\hat{\boldsymbol\theta}$ is the turning direction around the local
 cross-section. The transporting direction is then a helical tangent
 
 $$
@@ -57,17 +56,53 @@ $$
 \cos\beta\,\hat{\boldsymbol\theta}.
 $$
 
-Here $\beta$ is the local winding angle. Unlike the later standing-wave labels,
-it need not be fixed a priori: in a fuller self-refracting description it can
-depend on the flow itself, just as the local cross-sectional radius and the
-curvature of $\gamma$ can depend on the flow itself.
+Here $\beta$ is the local winding angle. Unlike the later standing-wave
+labels, it need not be fixed a priori. A later chapter treats the constitutive
+step more carefully; schematically, one may think of the local transport speed
+as decreasing with normalized energy loading,
+
+$$
+c_{\mathrm{eff}}(u)=\frac{c}{n(u)},
+\qquad
+n(u)\sim \sqrt{1+\frac{u}{u_\star}},
+$$
+
+where $u_\star$ is the reference energy density scale at which self-loading
+becomes order one. This chapter needs only the geometric consequence: once the
+loading is strong enough to produce a thin nearly uniform toroidal closure, the
+winding can be treated as approximately uniform.
 
 At the level needed to count allowed standing closures, take a thin nearly
 uniform toroidal closure: the cross-sectional radius is approximately constant
-$r$, the centerline length is approximately constant $L=2\pi R$, and the frame
-varies slowly enough that the leading closure counting comes from the two
-periodic directions themselves. Resolve the field by a scalar amplitude
-$f(s,\theta,t)$ in this moving frame. Then, to leading order,
+$r$, the centerline length is approximately constant
+$L=2\pi R$, and the winding angle $\beta$ is approximately constant along a
+closed streamline. If one such streamline winds $m$ times around the major
+cycle and $n$ times around the minor cycle before returning to itself, then
+
+$$
+\Delta s = mL,
+\qquad
+\Delta\theta = 2\pi n.
+$$
+
+Since $\tan\beta$ is the ratio of transverse advance to longitudinal advance,
+
+$$
+\tan\beta
+=
+\frac{r\,\Delta\theta}{\Delta s}
+=
+\frac{nr}{mR}.
+$$
+
+So closure of a single helical streamline is exactly the statement that its
+slope is rational: it returns only after integer counts on the two
+non-contractible cycles.
+
+The standing field is a stronger condition than closure of one streamline. It
+must be single-valued on both cycles of the toroidal closure. Resolve the field
+by a scalar amplitude $f(s,\theta,t)$ in this moving frame. Then, to leading
+order,
 
 $$
 \partial_t^2 f
@@ -97,19 +132,23 @@ $$
 f(s,\theta,t)=A\cos(ks)\cos(n\theta)\cos(\omega t).
 $$
 
-The periodicity conditions force
+The $\theta$-periodicity forces
+
+$$
+n\in\mathbb Z_{\ge 0},
+$$
+
+while the $s$-periodicity forces
 
 $$
 kL=2\pi m,
 \qquad
-m,n\in\mathbb Z_{\ge 0}.
+m\in\mathbb Z_{\ge 0}.
 $$
 
-These integers belong to the standing field on the two fundamental cycles of
-the toroidal closure. Rationality enters at a different level: a single
-helical streamline closes only when its slope returns after $m$ turns of one
-cycle and $n$ of the other, so closed streamline winding is exactly the
-statement that the ratio of the two cycle counts is rational.
+So the same pair of integers appears twice: first as the winding counts of a
+closed helical streamline, and second as the phase counts of a standing field
+that is single-valued on the two fundamental cycles.
 
 Since $L=2\pi R$, this gives
 
