@@ -350,8 +350,8 @@ def save_plot(state: dict, plot_path: Path) -> None:
         plt.xlabel("log10(N)")
     else:
         plt.xlabel("N")
-    plt.ylabel("p(N)")
-    title = f"Prime count recovered from era-bounded admission through era {state['current_era']}"
+    plt.ylabel("pi_E(N)")
+    title = f"Era-truncated prime-counting function through era {state['current_era']}"
     if use_log10:
         title += " (log10 scale on N)"
     plt.title(title)

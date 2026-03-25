@@ -21,7 +21,7 @@ It now works era by era rather than through a fixed numerical cutoff. On each
 run it:
 
 1. loads the cached era state, if any;
-2. saves a rolling `latest` image of the current `p(N)` plot;
+2. saves a rolling `latest` image of the current era-truncated counting plot;
 3. reports the known eras and the size of the admitted set;
 4. asks how many more eras to compute, together with a timing estimate based on
    the most recent era;
@@ -32,6 +32,17 @@ run it:
 When the admitted right endpoint becomes too large for ordinary floating-point
 plotting, the script automatically switches the horizontal axis to `log10(N)`
 so the plot does not fail on late eras.
+
+The plotted function is not the classical prime-counting function `pi(N)`.
+It is the era-truncated version
+
+$$
+\pi_E(N)=\#\{p\le N : p \text{ is prime and has been admitted through era } E\}.
+$$
+
+That distinction matters. The point of the experiment is to watch `\pi_E(N)`
+approach the familiar jagged prime frontier as more eras are added, not to
+pretend that a low-era truncation is already the full classical `\pi(N)`.
 
 It uses the current era rule:
 
