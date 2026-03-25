@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
-from math import isqrt
+from math import isqrt, log10
 from pathlib import Path
 from time import perf_counter
 
@@ -17,6 +17,7 @@ DEFAULT_CACHE = Path(".scripts/cache/era_order_cache.json")
 DEFAULT_LATEST_PLOT = Path(".scripts/cache/era_order_latest.png")
 DEFAULT_PLOT_DIR = Path(".scripts/cache/era_order_plots")
 MATERIALIZE_LIMIT = 100_000
+MAX_LINEAR_PLOT_INT = 10**300
 
 
 def is_prime(n: int) -> bool:
@@ -326,14 +327,34 @@ def plot_points(state: dict) -> tuple[list[int], list[int]]:
     return x, y
 
 
+def log10_bigint(n: int) -> float:
+    if n <= 0:
+        raise ValueError("log10_bigint requires a positive integer")
+    if n <= MAX_LINEAR_PLOT_INT:
+        return log10(n)
+    bits = n.bit_length()
+    keep = 53
+    shift = max(0, bits - keep)
+    mantissa = n >> shift
+    return log10(mantissa) + shift * log10(2)
+
+
 def save_plot(state: dict, plot_path: Path) -> None:
     x, y = plot_points(state)
+    use_log10 = any(value > MAX_LINEAR_PLOT_INT for value in x)
+    x_plot = [log10_bigint(value) for value in x] if use_log10 else x
     plot_path.parent.mkdir(parents=True, exist_ok=True)
     plt.figure(figsize=(9, 5.5))
-    plt.step(x, y, where="post", linewidth=1.8, color="#0b5c7a")
-    plt.xlabel("N")
+    plt.step(x_plot, y, where="post", linewidth=1.8, color="#0b5c7a")
+    if use_log10:
+        plt.xlabel("log10(N)")
+    else:
+        plt.xlabel("N")
     plt.ylabel("p(N)")
-    plt.title(f"Prime count recovered from era-bounded admission through era {state['current_era']}")
+    title = f"Prime count recovered from era-bounded admission through era {state['current_era']}"
+    if use_log10:
+        title += " (log10 scale on N)"
+    plt.title(title)
     plt.grid(alpha=0.25)
     plt.tight_layout()
     plt.savefig(plot_path, dpi=160)

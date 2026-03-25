@@ -29,6 +29,10 @@ run it:
    a refreshed `latest` plot;
 6. can optionally save checkpoint plots during materialized eras.
 
+When the admitted right endpoint becomes too large for ordinary floating-point
+plotting, the script automatically switches the horizontal axis to `log10(N)`
+so the plot does not fail on late eras.
+
 It uses the current era rule:
 
 $$
