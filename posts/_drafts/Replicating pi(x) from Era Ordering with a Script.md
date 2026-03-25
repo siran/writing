@@ -44,6 +44,15 @@ That distinction matters. The point of the experiment is to watch `\pi_E(N)`
 approach the familiar jagged prime frontier as more eras are added, not to
 pretend that a low-era truncation is already the full classical `\pi(N)`.
 
+Each saved image now contains two panels built from the same sparse frontier
+data:
+
+1. the staircase `\pi_E(N)` itself;
+2. the compressed growth view `\log_{10}(\pi_E(N)+1)`.
+
+That keeps the staircase shape visible while making long-run growth easier to
+read.
+
 It uses the current era rule:
 
 $$

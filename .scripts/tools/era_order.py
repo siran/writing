@@ -343,22 +343,34 @@ def save_plot(state: dict, plot_path: Path) -> None:
     x, y = plot_points(state)
     use_log10 = any(value > MAX_LINEAR_PLOT_INT for value in x)
     x_plot = [log10_bigint(value) for value in x] if use_log10 else x
+    y_log = [log10(value + 1) for value in y]
     plot_path.parent.mkdir(parents=True, exist_ok=True)
-    plt.figure(figsize=(9, 5.5))
-    plt.step(x_plot, y, where="post", linewidth=1.8, color="#0b5c7a")
+    fig, (ax_top, ax_bottom) = plt.subplots(
+        2,
+        1,
+        figsize=(9, 7.5),
+        sharex=True,
+        gridspec_kw={"height_ratios": [3, 2]},
+    )
+    ax_top.step(x_plot, y, where="post", linewidth=1.8, color="#0b5c7a")
     if use_log10:
-        plt.xlabel("log10(N)")
+        ax_bottom.set_xlabel("log10(N)")
     else:
-        plt.xlabel("N")
-    plt.ylabel("pi_E(N)")
+        ax_bottom.set_xlabel("N")
+    ax_top.set_ylabel("pi_E(N)")
     title = f"Era-truncated prime-counting function through era {state['current_era']}"
     if use_log10:
         title += " (log10 scale on N)"
-    plt.title(title)
-    plt.grid(alpha=0.25)
-    plt.tight_layout()
-    plt.savefig(plot_path, dpi=160)
-    plt.close()
+    ax_top.set_title(title)
+    ax_top.grid(alpha=0.25)
+
+    ax_bottom.step(x_plot, y_log, where="post", linewidth=1.6, color="#b03a2e")
+    ax_bottom.set_ylabel("log10(pi_E(N)+1)")
+    ax_bottom.grid(alpha=0.25)
+
+    fig.tight_layout()
+    fig.savefig(plot_path, dpi=160)
+    plt.close(fig)
 
 
 def save_plot_set(state: dict, latest_plot: Path, plot_dir: Path, tag: str) -> None:
