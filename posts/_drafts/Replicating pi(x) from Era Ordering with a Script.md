@@ -4,7 +4,7 @@ subtitle: "A numerical probe of generational admissibility"
 author: "An M. Rodriguez"
 date: "2026-03-25"
 one-sentence-summary: "A small script computes era-bounded integers, sorts the cumulative generated set, and bins the recovered primes to compare causal ordering with the usual prime-counting picture."
-summary: "This note records a numerical experiment for the era-ordering idea. Integers are bounded to the earliest era in which their generators are available, with power formation treated as primitive and coprime recombination admitted afterward. A script computes the era function tau(n) era by era, caches prior runs, and plots both a dense local staircase and the global truncated frontier. The point is not to recover a smooth density but to watch a jagged prime-counting profile emerge from discrete generational admission."
+summary: "This note records a numerical experiment for the era-ordering idea. Integers are bounded to the earliest era in which their generators are available, with power formation treated as primitive and coprime recombination admitted afterward. A script computes the era function tau(n) era by era, caches prior runs safely even for enormous late-era endpoints, and plots a dense local staircase. The point is not to recover a smooth density but to watch a jagged prime-counting profile emerge from discrete generational admission."
 keywords: "prime counting, pi(x), era ordering, natural numbers, generational admissibility, scripts"
 ---
 
@@ -29,9 +29,9 @@ run it:
    a refreshed `latest` plot;
 6. can optionally save checkpoint plots during materialized eras.
 
-When the admitted right endpoint becomes too large to read comfortably, the
-script automatically switches the global horizontal axis to `log10(N)` so late
-eras remain visible and very large integer endpoints do not break plotting.
+Late eras produce endpoints with thousands of decimal digits. The cache now
+stores those very large integers in a safe encoded form, so extending the run
+does not fail when JSON tries to serialize a huge decimal expansion.
 
 The plotted function is not the classical prime-counting function `pi(N)`.
 It is the era-truncated version
@@ -44,18 +44,12 @@ That distinction matters. The point of the experiment is to watch `\pi_E(N)`
 approach the familiar jagged prime frontier as more eras are added, not to
 pretend that a low-era truncation is already the full classical `\pi(N)`.
 
-Each saved image now contains two complementary panels:
-
-1. a dense local staircase, with one plotted point for each successive
-   integer in a finite window;
-2. the global compressed frontier of `\pi_E(N)` across the whole admitted
-   range.
-
-By default the dense local window runs from `1` through the current era, so the
-upper panel shows the recovered staircase in the region where it is already
-classical. A larger dense window can be requested explicitly with
-`--dense-xmax`, in which case the plot plateaus after the currently admitted
-primes.
+Each saved image is a dense local staircase, with one plotted point for each
+successive integer in a finite window. By default that window runs from `1`
+through the current era, so the saved figure stays close to the familiar
+staircase shape of `\pi(x)`. A larger dense window can be requested explicitly
+with `--dense-xmax`, in which case the staircase plateaus after the currently
+admitted primes.
 
 It uses the current era rule:
 

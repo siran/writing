@@ -2,7 +2,8 @@ from __future__ import annotations
 
 import argparse
 import json
-from math import isqrt, log10
+import sys
+from math import isqrt
 from pathlib import Path
 from time import perf_counter
 
@@ -11,6 +12,9 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
+if hasattr(sys, "set_int_max_str_digits"):
+    sys.set_int_max_str_digits(0)
+
 
 CACHE_VERSION = 3
 DEFAULT_CACHE = Path(".scripts/cache/era_order_cache.json")
@@ -18,8 +22,8 @@ DEFAULT_LATEST_PLOT = Path(".scripts/cache/era_order_latest.png")
 DEFAULT_PLOT_DIR = Path(".scripts/cache/era_order_plots")
 DEFAULT_DENSE_XMAX = None
 MATERIALIZE_LIMIT = 100_000
-MAX_LINEAR_PLOT_INT = 10**300
-GLOBAL_LOG10_THRESHOLD = 10**6
+BIGINT_CACHE_BITS = 4096
+BIGINT_CACHE_MARKER = "__hex_int__"
 
 
 def is_prime(n: int) -> bool:
@@ -245,12 +249,36 @@ def migrate_v2(data: dict) -> dict:
     }
 
 
+def cache_encode(value):
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, int):
+        if value.bit_length() > BIGINT_CACHE_BITS:
+            return {BIGINT_CACHE_MARKER: hex(value)}
+        return value
+    if isinstance(value, list):
+        return [cache_encode(item) for item in value]
+    if isinstance(value, dict):
+        return {key: cache_encode(item) for key, item in value.items()}
+    return value
+
+
+def cache_decode(value):
+    if isinstance(value, list):
+        return [cache_decode(item) for item in value]
+    if isinstance(value, dict):
+        if set(value) == {BIGINT_CACHE_MARKER}:
+            return int(value[BIGINT_CACHE_MARKER], 16)
+        return {key: cache_decode(item) for key, item in value.items()}
+    return value
+
+
 def load_cache(cache_path: Path) -> dict:
     if not cache_path.exists():
         return new_state()
 
     try:
-        data = json.loads(cache_path.read_text(encoding="utf-8"))
+        data = cache_decode(json.loads(cache_path.read_text(encoding="utf-8")))
     except (json.JSONDecodeError, OSError):
         return new_state()
 
@@ -276,7 +304,7 @@ def load_cache(cache_path: Path) -> dict:
 
 def save_cache(cache_path: Path, state: dict) -> None:
     cache_path.parent.mkdir(parents=True, exist_ok=True)
-    cache_path.write_text(json.dumps(state), encoding="utf-8")
+    cache_path.write_text(json.dumps(cache_encode(state)), encoding="utf-8")
 
 
 def preview_next_era(state: dict) -> dict[str, object]:
@@ -315,20 +343,6 @@ def extend_one_era(
     return state, summary, elapsed
 
 
-def plot_points(state: dict) -> tuple[list[int], list[int]]:
-    primes = [int(p) for p in state["primes"]]
-    max_admitted = int(state["max_admitted"])
-    x = [1]
-    y = [0]
-    for count, prime in enumerate(primes, start=1):
-        x.append(prime)
-        y.append(count)
-    if max_admitted > x[-1]:
-        x.append(max_admitted)
-        y.append(len(primes))
-    return x, y
-
-
 def dense_plot_limit(state: dict, dense_xmax: int | None) -> int:
     if dense_xmax is None:
         return max(1, int(state["current_era"]))
@@ -351,51 +365,19 @@ def dense_local_points(state: dict, dense_xmax: int) -> tuple[list[int], list[in
     return x, y
 
 
-def log10_bigint(n: int) -> float:
-    if n <= 0:
-        raise ValueError("log10_bigint requires a positive integer")
-    if n <= MAX_LINEAR_PLOT_INT:
-        return log10(n)
-    bits = n.bit_length()
-    keep = 53
-    shift = max(0, bits - keep)
-    mantissa = n >> shift
-    return log10(mantissa) + shift * log10(2)
-
-
 def save_plot(state: dict, plot_path: Path, dense_xmax: int | None) -> None:
     x_dense, y_dense = dense_local_points(state, dense_plot_limit(state, dense_xmax))
-    x_global, y_global = plot_points(state)
-    use_log10 = any(value > MAX_LINEAR_PLOT_INT for value in x_global) or int(
-        state["max_admitted"]
-    ) > GLOBAL_LOG10_THRESHOLD
-    x_global_plot = [log10_bigint(value) for value in x_global] if use_log10 else x_global
     plot_path.parent.mkdir(parents=True, exist_ok=True)
-    fig, (ax_top, ax_bottom) = plt.subplots(
-        2,
-        1,
-        figsize=(9, 7.5),
-        gridspec_kw={"height_ratios": [3, 2]},
-    )
+    fig, ax = plt.subplots(figsize=(9, 5.5))
     fig.suptitle(f"Era-truncated prime counting through era {state['current_era']}")
 
-    ax_top.step(x_dense, y_dense, where="post", linewidth=1.6, color="#0b5c7a")
+    ax.step(x_dense, y_dense, where="post", linewidth=1.6, color="#0b5c7a")
     if len(x_dense) <= 2_000:
-        ax_top.scatter(x_dense, y_dense, s=12, color="#0b5c7a")
-    ax_top.set_xlabel("x")
-    ax_top.set_ylabel("pi_E(x)")
-    ax_top.set_title(f"Dense local staircase on 1..{x_dense[-1]}")
-    ax_top.grid(alpha=0.25)
-
-    ax_bottom.step(x_global_plot, y_global, where="post", linewidth=1.8, color="#b03a2e")
-    if use_log10:
-        ax_bottom.set_xlabel("log10(N)")
-        ax_bottom.set_title("Global frontier of pi_E(N) (log10 scale on N)")
-    else:
-        ax_bottom.set_xlabel("N")
-        ax_bottom.set_title("Global frontier of pi_E(N)")
-    ax_bottom.set_ylabel("pi_E(N)")
-    ax_bottom.grid(alpha=0.25)
+        ax.scatter(x_dense, y_dense, s=12, color="#0b5c7a")
+    ax.set_xlabel("x")
+    ax.set_ylabel("pi_E(x)")
+    ax.set_title(f"Dense local staircase on 1..{x_dense[-1]}")
+    ax.grid(alpha=0.25)
 
     fig.tight_layout()
     fig.savefig(plot_path, dpi=160)
