@@ -123,8 +123,14 @@ def print_era(era: int, values: list[int]) -> None:
     print(f"era {era}: {values}")
 
 
-def ask_continue(next_era: int) -> bool:
-    answer = input(f"\nContinue to era {next_era}? [y/N]: ").strip().lower()
+def ask_continue(next_era: int, values: list[int], limit: int) -> bool:
+    count = len(values)
+    lo = values[0]
+    hi = values[-1]
+    answer = input(
+        f"\nContinue to era {next_era}? "
+        f"({count} numbers through {limit}, range {lo}..{hi}) [y/N]: "
+    ).strip().lower()
     return answer in {"y", "yes"}
 
 
@@ -185,7 +191,7 @@ def main() -> None:
         for era in all_eras:
             if era <= stop_era:
                 continue
-            if not ask_continue(era):
+            if not ask_continue(era, eras[era], args.limit):
                 break
             print_era(era, eras[era])
             displayed_era = era
