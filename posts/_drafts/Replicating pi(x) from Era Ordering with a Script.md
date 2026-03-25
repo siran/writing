@@ -21,11 +21,13 @@ It now works era by era rather than through a fixed numerical cutoff. On each
 run it:
 
 1. loads the cached era state, if any;
-2. saves an image of the current `p(N)` plot;
+2. saves a rolling `latest` image of the current `p(N)` plot;
 3. reports the known eras and the size of the admitted set;
 4. asks how many more eras to compute, together with a timing estimate based on
    the most recent era;
-5. computes those eras, updates the cache, and saves a new plot.
+5. computes those eras, updates the cache, and saves both per-era snapshots and
+   a refreshed `latest` plot;
+6. can optionally save checkpoint plots during materialized eras.
 
 It uses the current era rule:
 
@@ -52,6 +54,12 @@ Example:
 
 ```powershell
 python .scripts/tools/era_order.py
+```
+
+Optional:
+
+```powershell
+python .scripts/tools/era_order.py --checkpoint-every 50000
 ```
 
 The working hypothesis is not that a smooth prime density is being derived.
