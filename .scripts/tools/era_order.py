@@ -2,100 +2,16 @@ from __future__ import annotations
 
 import argparse
 import json
-from collections import defaultdict
-from math import gcd, isqrt
+from math import isqrt
 from pathlib import Path
+from time import perf_counter
+
+import matplotlib.pyplot as plt
 
 
-CACHE_VERSION = 1
+CACHE_VERSION = 2
 DEFAULT_CACHE = Path(".scripts/cache/era_order_cache.json")
-
-
-def power_cost(n: int) -> int:
-    """Least generator ceiling needed to realize n as a^b with b >= 1."""
-    best = n
-    max_b = n.bit_length() + 1
-    for b in range(2, max_b + 1):
-        lo = 2
-        hi = n
-        while lo <= hi:
-            mid = (lo + hi) // 2
-            value = mid**b
-            if value == n:
-                best = min(best, max(mid, b))
-                break
-            if value < n:
-                lo = mid + 1
-            else:
-                hi = mid - 1
-    return best
-
-
-def load_cache(cache_path: Path) -> list[int]:
-    if not cache_path.exists():
-        return [0, 1]
-
-    try:
-        data = json.loads(cache_path.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError):
-        return [0, 1]
-
-    if data.get("version") != CACHE_VERSION:
-        return [0, 1]
-
-    tau = data.get("tau")
-    if not isinstance(tau, list) or len(tau) < 2:
-        return [0, 1]
-
-    if tau[0] != 0 or tau[1] != 1:
-        return [0, 1]
-
-    return [int(value) for value in tau]
-
-
-def save_cache(cache_path: Path, tau: list[int]) -> None:
-    cache_path.parent.mkdir(parents=True, exist_ok=True)
-    payload = {
-        "version": CACHE_VERSION,
-        "limit": len(tau) - 1,
-        "tau": tau,
-    }
-    cache_path.write_text(json.dumps(payload), encoding="utf-8")
-
-
-def ensure_tau(limit: int, cache_path: Path) -> tuple[list[int], str]:
-    tau = load_cache(cache_path)
-    cached_limit = len(tau) - 1
-
-    if limit <= cached_limit:
-        return tau[: limit + 1], f"Loaded cached eras through {cached_limit}."
-
-    tau.extend([0] * (limit - cached_limit))
-    start = max(2, cached_limit + 1)
-    for n in range(start, limit + 1):
-        best = power_cost(n)
-        for a in range(2, isqrt(n) + 1):
-            if n % a != 0:
-                continue
-            b = n // a
-            if gcd(a, b) != 1:
-                continue
-            best = min(best, max(tau[a], tau[b]))
-        tau[n] = best
-
-    save_cache(cache_path, tau)
-    return tau, f"Extended cache from {cached_limit} to {limit}."
-
-
-def era_sets(tau: list[int]) -> dict[int, list[int]]:
-    eras: dict[int, list[int]] = defaultdict(list)
-    for n in range(1, len(tau)):
-        eras[tau[n]].append(n)
-    return dict(sorted(eras.items()))
-
-
-def cumulative_sorted(tau: list[int], max_era: int) -> list[int]:
-    return sorted(n for n in range(1, len(tau)) if tau[n] <= max_era)
+DEFAULT_PLOT = Path(".scripts/cache/era_order_pi.png")
 
 
 def is_prime(n: int) -> bool:
@@ -111,107 +27,272 @@ def is_prime(n: int) -> bool:
     return True
 
 
-def prime_frontier_histogram(values: list[int], bin_size: int) -> list[tuple[int, int]]:
-    bins: dict[int, int] = defaultdict(int)
-    for n in values:
-        if is_prime(n):
-            bins[(n - 1) // bin_size] += 1
-    return sorted((k * bin_size + 1, count) for k, count in bins.items())
+def primes_up_to(limit: int) -> list[int]:
+    if limit < 2:
+        return []
+    sieve = [True] * (limit + 1)
+    sieve[0] = False
+    sieve[1] = False
+    for n in range(2, isqrt(limit) + 1):
+        if not sieve[n]:
+            continue
+        start = n * n
+        step = n
+        sieve[start : limit + 1 : step] = [False] * (((limit - start) // step) + 1)
+    return [n for n in range(2, limit + 1) if sieve[n]]
 
 
-def print_era(era: int, values: list[int]) -> None:
-    print(f"era {era}: {values}")
+def available_exponents(prime: int, era: int) -> list[int]:
+    exponents: set[int] = set()
+    base = prime
+    f = 1
+    while base <= era:
+        for b in range(1, era + 1):
+            exponents.add(f * b)
+        f += 1
+        base *= prime
+    return sorted(exponents)
 
 
-def ask_continue(next_era: int, values: list[int], limit: int) -> bool:
+def available_prime_powers(prime: int, era: int) -> list[int]:
+    return [prime**exponent for exponent in available_exponents(prime, era)]
+
+
+def build_channels(era: int) -> dict[str, list[int]]:
+    channels: dict[str, list[int]] = {}
+    for prime in primes_up_to(era):
+        channels[str(prime)] = available_prime_powers(prime, era)
+    return channels
+
+
+def build_admitted(channels: dict[str, list[int]]) -> list[int]:
+    admitted = {1}
+    for prime in sorted(int(key) for key in channels):
+        prime_powers = channels[str(prime)]
+        current = list(admitted)
+        for base in current:
+            for value in prime_powers:
+                admitted.add(base * value)
+    return sorted(admitted)
+
+
+def new_state() -> dict:
+    return {
+        "version": CACHE_VERSION,
+        "current_era": 1,
+        "channels": {},
+        "era_sets": {"1": [1]},
+        "admitted": [1],
+        "timings": {},
+    }
+
+
+def load_cache(cache_path: Path) -> dict:
+    if not cache_path.exists():
+        return new_state()
+
+    try:
+        data = json.loads(cache_path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return new_state()
+
+    if data.get("version") != CACHE_VERSION:
+        return new_state()
+
+    required = {"current_era", "channels", "era_sets", "admitted", "timings"}
+    if not required.issubset(data):
+        return new_state()
+
+    if data["admitted"] != sorted(set(int(n) for n in data["admitted"])):
+        return new_state()
+
+    return data
+
+
+def save_cache(cache_path: Path, state: dict) -> None:
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    cache_path.write_text(json.dumps(state), encoding="utf-8")
+
+
+def extend_one_era(state: dict) -> tuple[dict, float]:
+    next_era = int(state["current_era"]) + 1
+    started = perf_counter()
+
+    channels = build_channels(next_era)
+    admitted = build_admitted(channels)
+
+    previous_admitted = set(int(n) for n in state["admitted"])
+    new_values = sorted(n for n in admitted if n not in previous_admitted)
+
+    state["current_era"] = next_era
+    state["channels"] = channels
+    state["admitted"] = admitted
+    state["era_sets"][str(next_era)] = new_values
+
+    elapsed = perf_counter() - started
+    state["timings"][str(next_era)] = elapsed
+    return state, elapsed
+
+
+def prime_count_curve(values: list[int]) -> tuple[list[int], list[int]]:
+    x: list[int] = []
+    y: list[int] = []
+    count = 0
+    for value in values:
+        if is_prime(value):
+            count += 1
+        x.append(value)
+        y.append(count)
+    return x, y
+
+
+def save_plot(state: dict, plot_path: Path) -> None:
+    values = [int(n) for n in state["admitted"]]
+    x, y = prime_count_curve(values)
+
+    plot_path.parent.mkdir(parents=True, exist_ok=True)
+    plt.figure(figsize=(9, 5.5))
+    plt.step(x, y, where="post", linewidth=1.6, color="#0b5c7a")
+    plt.scatter(x, y, s=8, color="#b03a2e")
+    plt.xlabel("N")
+    plt.ylabel("p(N)")
+    plt.title(f"Prime count recovered from era-bounded admission through era {state['current_era']}")
+    plt.grid(alpha=0.25)
+    plt.tight_layout()
+    plt.savefig(plot_path, dpi=160)
+    plt.close()
+
+
+def format_duration(seconds: float) -> str:
+    if seconds < 1e-3:
+        return f"{seconds * 1e6:.1f} us"
+    if seconds < 1:
+        return f"{seconds * 1e3:.1f} ms"
+    return f"{seconds:.3f} s"
+
+
+def summarize_era(era: int, values: list[int]) -> str:
     count = len(values)
     lo = values[0]
     hi = values[-1]
-    answer = input(
-        f"\nContinue to era {next_era}? "
-        f"({count} numbers through {limit}, range {lo}..{hi}) [y/N]: "
-    ).strip().lower()
-    return answer in {"y", "yes"}
+    if count <= 24:
+        return f"era {era}: {values}"
+    head = ", ".join(str(n) for n in values[:8])
+    tail = ", ".join(str(n) for n in values[-5:])
+    return (
+        f"era {era}: {count} numbers, range {lo}..{hi} "
+        f"[{head}, ..., {tail}]"
+    )
+
+
+def print_state_summary(state: dict) -> None:
+    admitted = [int(n) for n in state["admitted"]]
+    current_era = int(state["current_era"])
+    print(f"Known through era {current_era}.")
+    print(f"Admitted integers: {len(admitted)}")
+    print(f"Range: {admitted[0]}..{admitted[-1]}")
+    print()
+    print("Known eras")
+    for era_text in sorted(state["era_sets"], key=lambda item: int(item)):
+        era = int(era_text)
+        values = [int(n) for n in state["era_sets"][era_text]]
+        print(summarize_era(era, values))
+
+
+def describe_estimate(state: dict) -> str:
+    current_era = int(state["current_era"])
+    last_elapsed = state["timings"].get(str(current_era))
+    if last_elapsed is None:
+        return "No timing history yet for the next era."
+    return (
+        f"Last computed era ({current_era}) took about {format_duration(last_elapsed)}. "
+        "The next era should be of the same order or slower."
+    )
+
+
+def ask_more_eras(state: dict) -> int:
+    print()
+    print(describe_estimate(state))
+    answer = input("How many more eras should be computed? [0 to stop]: ").strip()
+    if not answer:
+        return 0
+    extra_eras = max(0, int(answer))
+    if extra_eras == 0:
+        return 0
+
+    current_era = int(state["current_era"])
+    last_elapsed = state["timings"].get(str(current_era))
+    if last_elapsed is not None:
+        rough = extra_eras * last_elapsed
+        print(f"Rough batch estimate from the last era: {format_duration(rough)}.")
+    return extra_eras
+
+
+def run_batch(state: dict, extra_eras: int) -> dict:
+    for _ in range(extra_eras):
+        next_era = int(state["current_era"]) + 1
+        state, elapsed = extend_one_era(state)
+        values = [int(n) for n in state["era_sets"][str(next_era)]]
+        print()
+        print(summarize_era(next_era, values))
+        print(f"elapsed: {format_duration(elapsed)}")
+    return state
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Compute causal eras for integers.")
-    parser.add_argument("--limit", type=int, default=1000, help="largest integer to compute")
-    parser.add_argument(
-        "--through-era",
-        type=int,
-        default=10,
-        help="print eras through this level before prompting",
-    )
+    parser = argparse.ArgumentParser(description="Explore era-bounded integer generation.")
     parser.add_argument(
         "--cache-file",
         type=Path,
         default=DEFAULT_CACHE,
-        help="JSON cache file for tau values",
+        help="JSON cache file for the era explorer",
+    )
+    parser.add_argument(
+        "--plot-file",
+        type=Path,
+        default=DEFAULT_PLOT,
+        help="image file for the saved p(N) plot",
+    )
+    parser.add_argument(
+        "--add-eras",
+        type=int,
+        default=None,
+        help="compute this many more eras and stop",
     )
     parser.add_argument(
         "--no-prompt",
         action="store_true",
-        help="stop after --through-era instead of prompting to continue",
-    )
-    parser.add_argument(
-        "--show-cumulative",
-        action="store_true",
-        help="print the cumulative sorted set through the last displayed era",
-    )
-    parser.add_argument(
-        "--bin-size",
-        type=int,
-        default=100,
-        help="prime histogram bin size; set to 0 to suppress histogram",
+        help="do not ask interactively; requires --add-eras for extensions",
     )
     args = parser.parse_args()
 
-    if args.limit < 1:
-        raise ValueError("--limit must be at least 1")
-
-    tau, cache_message = ensure_tau(args.limit, args.cache_file)
-    eras = era_sets(tau)
-    all_eras = sorted(eras)
-
-    print(cache_message)
-    print(f"Computed tau(n) for 1 <= n <= {args.limit}.")
+    state = load_cache(args.cache_file)
+    save_plot(state, args.plot_file)
+    print(f"Saved plot to {args.plot_file}.")
     print()
-    print("Era sets")
+    print_state_summary(state)
 
-    displayed_era = 0
-    stop_era = args.through_era
-    for era in all_eras:
-        if era > stop_era:
-            break
-        print_era(era, eras[era])
-        displayed_era = era
-
-    if not args.no_prompt:
-        for era in all_eras:
-            if era <= stop_era:
-                continue
-            if not ask_continue(era, eras[era], args.limit):
-                break
-            print_era(era, eras[era])
-            displayed_era = era
-
-    if displayed_era == 0:
+    if args.no_prompt:
+        if args.add_eras:
+            state = run_batch(state, args.add_eras)
+            save_cache(args.cache_file, state)
+            save_plot(state, args.plot_file)
+            print()
+            print(f"Saved plot to {args.plot_file}.")
         return
 
-    values = cumulative_sorted(tau, displayed_era)
-
-    if args.show_cumulative:
+    while True:
+        extra_eras = args.add_eras if args.add_eras is not None else ask_more_eras(state)
+        args.add_eras = None
+        if extra_eras <= 0:
+            break
+        state = run_batch(state, extra_eras)
+        save_cache(args.cache_file, state)
+        save_plot(state, args.plot_file)
         print()
-        print(f"Cumulative sorted values through era {displayed_era}:")
-        print(values)
-
-    if args.bin_size > 0:
+        print(f"Saved plot to {args.plot_file}.")
         print()
-        print(f"Prime histogram (bin size {args.bin_size}) through era {displayed_era}:")
-        for start, count in prime_frontier_histogram(values, args.bin_size):
-            end = start + args.bin_size - 1
-            print(f"[{start:>5}, {end:>5}]  {count}")
+        print_state_summary(state)
 
 
 if __name__ == "__main__":

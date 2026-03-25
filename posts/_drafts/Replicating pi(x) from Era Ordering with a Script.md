@@ -17,6 +17,16 @@ look like when it is sorted back into the usual order on `N`?
 The script for this experiment now lives at
 [`C:\Users\an\src\siran\writing\.scripts\tools\era_order.py`](C:\Users\an\src\siran\writing\.scripts\tools\era_order.py).
 
+It now works era by era rather than through a fixed numerical cutoff. On each
+run it:
+
+1. loads the cached era state, if any;
+2. saves an image of the current `p(N)` plot;
+3. reports the known eras and the size of the admitted set;
+4. asks how many more eras to compute, together with a timing estimate based on
+   the most recent era;
+5. computes those eras, updates the cache, and saves a new plot.
+
 It uses the current era rule:
 
 $$
@@ -38,17 +48,10 @@ $$
 where $\kappa(n)$ is the least generator ceiling among power representations
 $n=a^b$ with $b\ge 1$.
 
-The script does four things:
-
-1. computes $\tau(n)$ up to a chosen cutoff;
-2. caches the resulting table for later runs;
-3. prints era sets through era `10` by default, then asks whether to continue;
-4. sorts the cumulative admitted set and bins the surviving primes.
-
 Example:
 
 ```powershell
-python .scripts/tools/era_order.py --limit 1000 --show-cumulative --bin-size 100
+python .scripts/tools/era_order.py
 ```
 
 The working hypothesis is not that a smooth prime density is being derived.
