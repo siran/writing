@@ -138,8 +138,10 @@ n(r)=\frac{c}{c_\text{local}(r)}
 =1+\frac{2GM}{rc^2}.
 $$
 
-The factor of two is a direct consequence of equal loading of both aspects of
-the probe.
+The factor of two is a macroscopic summary of the more detailed derivation that
+follows in chapters 12a and 12b: a null Maxwell probe carries two equal stress
+sectors, and a static toroidal closure samples both axial channels
+symmetrically.
 
 
 ## Light bending
