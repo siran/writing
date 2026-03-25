@@ -72,20 +72,21 @@ u_{\mathrm{int}}
 \epsilon\,E_1\!\cdot\!E_2+\frac{1}{\mu}B_1\!\cdot\!B_2.
 $$
 
-Take the simplest symmetric constitutive loading,
+Treat that overlap in the same constitutive way one treats an ordinary
+dielectric: the interference loading changes the effective permittivity and
+permeability of the same field,
 
 $$
 \epsilon_{\mathrm{eff}}
-=
-\epsilon\left(1+\frac{u_{\mathrm{int}}}{u_\star}\right),
+ =
+\epsilon_{\mathrm{eff}}(u_{\mathrm{int}}),
 \qquad
 \mu_{\mathrm{eff}}
-=
-\mu\left(1+\frac{u_{\mathrm{int}}}{u_\star}\right),
+ =
+\mu_{\mathrm{eff}}(u_{\mathrm{int}}).
 $$
 
-where $u_\star$ is the reference energy density at which self-refraction
-becomes order one. Then
+Then
 
 $$
 c_{\mathrm{eff}}
@@ -97,8 +98,6 @@ n_{\mathrm{eff}}
 \frac{c}{c_{\mathrm{eff}}}
 =
 \sqrt{\frac{\mu_{\mathrm{eff}}\epsilon_{\mathrm{eff}}}{\mu\epsilon}}
-=
-1+\frac{u_{\mathrm{int}}}{u_\star}.
 $$
 
 So overlap increases the local refractive index. Approximating the overlap
