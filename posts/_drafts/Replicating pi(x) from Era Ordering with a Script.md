@@ -17,6 +17,13 @@ look like when it is sorted back into the usual order on `N`?
 The script for this experiment now lives at
 [`C:\Users\an\src\siran\writing\.scripts\tools\era_order.py`](C:\Users\an\src\siran\writing\.scripts\tools\era_order.py).
 
+A companion experiment now lives at
+[`C:\Users\an\src\siran\writing\.scripts\tools\era_factor_heuristic.py`](C:\Users\an\src\siran\writing\.scripts\tools\era_factor_heuristic.py).
+It computes exact `\tau(n)` values up to a numerical cutoff, then compares
+naive prime-divisor search up to `\sqrt{n}` against an era-filtered search up
+to `\min(\tau(n),\sqrt{n})`. That gives a direct way to test whether era depth
+actually shrinks the candidate-prime set for factoring.
+
 It now works era by era rather than through a fixed numerical cutoff. On each
 run it:
 
@@ -88,6 +95,12 @@ To widen the dense local staircase:
 
 ```powershell
 python .scripts/tools/era_order.py --dense-xmax 200
+```
+
+To run the factorization heuristic experiment:
+
+```powershell
+python .scripts/tools/era_factor_heuristic.py --limit 200000 --top-k 12 --verify-limit 2000
 ```
 
 The working hypothesis is not that a smooth prime density is being derived.
