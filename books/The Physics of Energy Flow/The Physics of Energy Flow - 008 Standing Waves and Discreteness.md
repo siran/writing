@@ -51,13 +51,43 @@ $$
 $$
 
 Here $\beta$ is the local winding angle, measured from the centerline tangent.
-To see what sets it, use the ordinary $E/B$ representation and let one portion
-of the flow act on a neighboring portion through its retarded field. Write the
-local field on a small segment of the closure as
-$\left(E_{\mathrm{loc}},B_{\mathrm{loc}}\right)$, and let
-$\left(E_{\mathrm{ret}},B_{\mathrm{ret}}\right)$ denote the retarded field at
-that segment produced by neighboring segments of the same closure. The exact
-causal bookkeeping can then be written in constitutive form as
+To see what sets it, use the ordinary $E/B$ representation and let a local
+segment of the closure at arclength $s$ interact with retarded source positions
+$s_{\mathrm{ret}}$ on the same closure. The exact causal variable is still the
+retarded time $t_{\mathrm{ret}}$, but on a periodic closure it is cleaner to
+label the interaction by the retarded source position, related by
+
+$$
+\left|\gamma(s)-\gamma(s_{\mathrm{ret}})\right|
+=
+c\,(t-t_{\mathrm{ret}}).
+$$
+
+For a harmonic mode with period $T=2\pi/\omega$,
+
+$$
+E(s,t)=\Re\!\left[\widetilde E(s)e^{-i\omega t}\right],
+\qquad
+B(s,t)=\Re\!\left[\widetilde B(s)e^{-i\omega t}\right],
+$$
+
+so the retarded contribution can be written as
+
+$$
+E_{\mathrm{ret}}(s,t)
+=
+E(s_{\mathrm{ret}},t_{\mathrm{ret}})
+=
+\Re\!\left[\widetilde E(s_{\mathrm{ret}})e^{-i\omega t}e^{\,i\omega\tau}\right],
+\qquad
+\tau=t-t_{\mathrm{ret}},
+$$
+
+and likewise for $B_{\mathrm{ret}}$. Thus the retarded self-action enters as a
+phase lag $\omega\tau$ along the closure. When $\tau=NT$ for some integer $N$,
+the retarded field is in phase with the present field, so the flow interferes
+constructively with an earlier cycle of itself. The exact causal bookkeeping
+can then be written in constitutive form as
 
 $$
 D
