@@ -16,8 +16,10 @@ CACHE_VERSION = 3
 DEFAULT_CACHE = Path(".scripts/cache/era_order_cache.json")
 DEFAULT_LATEST_PLOT = Path(".scripts/cache/era_order_latest.png")
 DEFAULT_PLOT_DIR = Path(".scripts/cache/era_order_plots")
+DEFAULT_DENSE_XMAX = None
 MATERIALIZE_LIMIT = 100_000
 MAX_LINEAR_PLOT_INT = 10**300
+GLOBAL_LOG10_THRESHOLD = 10**6
 
 
 def is_prime(n: int) -> bool:
@@ -327,6 +329,28 @@ def plot_points(state: dict) -> tuple[list[int], list[int]]:
     return x, y
 
 
+def dense_plot_limit(state: dict, dense_xmax: int | None) -> int:
+    if dense_xmax is None:
+        return max(1, int(state["current_era"]))
+    return max(1, dense_xmax)
+
+
+def dense_local_points(state: dict, dense_xmax: int) -> tuple[list[int], list[int]]:
+    primes = [int(p) for p in state["primes"]]
+    x = list(range(1, dense_xmax + 1))
+    y: list[int] = []
+    count = 0
+    prime_index = 0
+    while prime_index < len(primes) and primes[prime_index] < 1:
+        prime_index += 1
+    for value in x:
+        while prime_index < len(primes) and primes[prime_index] <= value:
+            count += 1
+            prime_index += 1
+        y.append(count)
+    return x, y
+
+
 def log10_bigint(n: int) -> float:
     if n <= 0:
         raise ValueError("log10_bigint requires a positive integer")
@@ -339,33 +363,38 @@ def log10_bigint(n: int) -> float:
     return log10(mantissa) + shift * log10(2)
 
 
-def save_plot(state: dict, plot_path: Path) -> None:
-    x, y = plot_points(state)
-    use_log10 = any(value > MAX_LINEAR_PLOT_INT for value in x)
-    x_plot = [log10_bigint(value) for value in x] if use_log10 else x
-    y_log = [log10(value + 1) for value in y]
+def save_plot(state: dict, plot_path: Path, dense_xmax: int | None) -> None:
+    x_dense, y_dense = dense_local_points(state, dense_plot_limit(state, dense_xmax))
+    x_global, y_global = plot_points(state)
+    use_log10 = any(value > MAX_LINEAR_PLOT_INT for value in x_global) or int(
+        state["max_admitted"]
+    ) > GLOBAL_LOG10_THRESHOLD
+    x_global_plot = [log10_bigint(value) for value in x_global] if use_log10 else x_global
     plot_path.parent.mkdir(parents=True, exist_ok=True)
     fig, (ax_top, ax_bottom) = plt.subplots(
         2,
         1,
         figsize=(9, 7.5),
-        sharex=True,
         gridspec_kw={"height_ratios": [3, 2]},
     )
-    ax_top.step(x_plot, y, where="post", linewidth=1.8, color="#0b5c7a")
-    if use_log10:
-        ax_bottom.set_xlabel("log10(N)")
-    else:
-        ax_bottom.set_xlabel("N")
-    ax_top.set_ylabel("pi_E(N)")
-    title = f"Era-truncated prime-counting function through era {state['current_era']}"
-    if use_log10:
-        title += " (log10 scale on N)"
-    ax_top.set_title(title)
+    fig.suptitle(f"Era-truncated prime counting through era {state['current_era']}")
+
+    ax_top.step(x_dense, y_dense, where="post", linewidth=1.6, color="#0b5c7a")
+    if len(x_dense) <= 2_000:
+        ax_top.scatter(x_dense, y_dense, s=12, color="#0b5c7a")
+    ax_top.set_xlabel("x")
+    ax_top.set_ylabel("pi_E(x)")
+    ax_top.set_title(f"Dense local staircase on 1..{x_dense[-1]}")
     ax_top.grid(alpha=0.25)
 
-    ax_bottom.step(x_plot, y_log, where="post", linewidth=1.6, color="#b03a2e")
-    ax_bottom.set_ylabel("log10(pi_E(N)+1)")
+    ax_bottom.step(x_global_plot, y_global, where="post", linewidth=1.8, color="#b03a2e")
+    if use_log10:
+        ax_bottom.set_xlabel("log10(N)")
+        ax_bottom.set_title("Global frontier of pi_E(N) (log10 scale on N)")
+    else:
+        ax_bottom.set_xlabel("N")
+        ax_bottom.set_title("Global frontier of pi_E(N)")
+    ax_bottom.set_ylabel("pi_E(N)")
     ax_bottom.grid(alpha=0.25)
 
     fig.tight_layout()
@@ -373,10 +402,16 @@ def save_plot(state: dict, plot_path: Path) -> None:
     plt.close(fig)
 
 
-def save_plot_set(state: dict, latest_plot: Path, plot_dir: Path, tag: str) -> None:
-    save_plot(state, latest_plot)
+def save_plot_set(
+    state: dict,
+    latest_plot: Path,
+    plot_dir: Path,
+    tag: str,
+    dense_xmax: int | None,
+) -> None:
+    save_plot(state, latest_plot, dense_xmax)
     plot_dir.mkdir(parents=True, exist_ok=True)
-    save_plot(state, plot_dir / tag)
+    save_plot(state, plot_dir / tag, dense_xmax)
 
 
 def checkpoint_callback_factory(
@@ -384,6 +419,7 @@ def checkpoint_callback_factory(
     next_era: int,
     latest_plot: Path,
     plot_dir: Path,
+    dense_xmax: int | None,
 ):
     base_count = int(state["admitted_count"])
     base_max = int(state["max_admitted"])
@@ -398,7 +434,7 @@ def checkpoint_callback_factory(
             "primes": base_primes,
         }
         tag = f"era-{next_era:04d}-checkpoint-{processed:08d}.png"
-        save_plot_set(preview, latest_plot, plot_dir, tag)
+        save_plot_set(preview, latest_plot, plot_dir, tag, dense_xmax)
 
     return callback
 
@@ -474,6 +510,7 @@ def run_batch(
     latest_plot: Path,
     plot_dir: Path,
     checkpoint_every: int,
+    dense_xmax: int | None,
 ) -> dict:
     for _ in range(extra_eras):
         next_era = int(state["current_era"]) + 1
@@ -484,6 +521,7 @@ def run_batch(
                 next_era,
                 latest_plot,
                 plot_dir,
+                dense_xmax,
             )
         state, summary, elapsed = extend_one_era(
             state,
@@ -491,7 +529,7 @@ def run_batch(
             checkpoint_callback=checkpoint_callback,
         )
         save_cache(cache_file, state)
-        save_plot_set(state, latest_plot, plot_dir, f"era-{next_era:04d}.png")
+        save_plot_set(state, latest_plot, plot_dir, f"era-{next_era:04d}.png", dense_xmax)
         print()
         print(format_summary(summary))
         print(f"elapsed: {format_duration(elapsed)}")
@@ -535,6 +573,12 @@ def main() -> None:
         default=0,
         help="save checkpoint plots every so many newly materialized values within an era",
     )
+    parser.add_argument(
+        "--dense-xmax",
+        type=int,
+        default=DEFAULT_DENSE_XMAX,
+        help="pointwise staircase window for the dense local plot; defaults to the current era",
+    )
     args = parser.parse_args()
 
     state = load_cache(args.cache_file)
@@ -543,6 +587,7 @@ def main() -> None:
         args.latest_plot,
         args.plot_dir,
         f"era-{int(state['current_era']):04d}.png",
+        args.dense_xmax,
     )
     print(f"Saved plots to {args.latest_plot} and {args.plot_dir}.")
     print()
@@ -557,6 +602,7 @@ def main() -> None:
                 args.latest_plot,
                 args.plot_dir,
                 args.checkpoint_every,
+                args.dense_xmax,
             )
             print()
             print(f"Saved plots to {args.latest_plot} and {args.plot_dir}.")
@@ -574,6 +620,7 @@ def main() -> None:
             args.latest_plot,
             args.plot_dir,
             args.checkpoint_every,
+            args.dense_xmax,
         )
         print()
         print(f"Saved plots to {args.latest_plot} and {args.plot_dir}.")

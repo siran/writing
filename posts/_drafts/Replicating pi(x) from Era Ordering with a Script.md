@@ -4,7 +4,7 @@ subtitle: "A numerical probe of generational admissibility"
 author: "An M. Rodriguez"
 date: "2026-03-25"
 one-sentence-summary: "A small script computes era-bounded integers, sorts the cumulative generated set, and bins the recovered primes to compare causal ordering with the usual prime-counting picture."
-summary: "This note records a numerical experiment for the era-ordering idea. Integers are bounded to the earliest era in which their generators are available, with power formation treated as primitive and coprime recombination admitted afterward. A script computes the era function tau(n) up to a cutoff, caches prior runs, prints era sets through a chosen frontier, and bins the primes that survive in the cumulative generated set. The point is not to recover a smooth density but to watch a jagged prime-counting profile emerge from discrete generational admission."
+summary: "This note records a numerical experiment for the era-ordering idea. Integers are bounded to the earliest era in which their generators are available, with power formation treated as primitive and coprime recombination admitted afterward. A script computes the era function tau(n) era by era, caches prior runs, and plots both a dense local staircase and the global truncated frontier. The point is not to recover a smooth density but to watch a jagged prime-counting profile emerge from discrete generational admission."
 keywords: "prime counting, pi(x), era ordering, natural numbers, generational admissibility, scripts"
 ---
 
@@ -21,7 +21,7 @@ It now works era by era rather than through a fixed numerical cutoff. On each
 run it:
 
 1. loads the cached era state, if any;
-2. saves a rolling `latest` image of the current era-truncated counting plot;
+2. saves a rolling `latest` image of the current era-truncated counting plots;
 3. reports the known eras and the size of the admitted set;
 4. asks how many more eras to compute, together with a timing estimate based on
    the most recent era;
@@ -29,9 +29,9 @@ run it:
    a refreshed `latest` plot;
 6. can optionally save checkpoint plots during materialized eras.
 
-When the admitted right endpoint becomes too large for ordinary floating-point
-plotting, the script automatically switches the horizontal axis to `log10(N)`
-so the plot does not fail on late eras.
+When the admitted right endpoint becomes too large to read comfortably, the
+script automatically switches the global horizontal axis to `log10(N)` so late
+eras remain visible and very large integer endpoints do not break plotting.
 
 The plotted function is not the classical prime-counting function `pi(N)`.
 It is the era-truncated version
@@ -44,14 +44,18 @@ That distinction matters. The point of the experiment is to watch `\pi_E(N)`
 approach the familiar jagged prime frontier as more eras are added, not to
 pretend that a low-era truncation is already the full classical `\pi(N)`.
 
-Each saved image now contains two panels built from the same sparse frontier
-data:
+Each saved image now contains two complementary panels:
 
-1. the staircase `\pi_E(N)` itself;
-2. the compressed growth view `\log_{10}(\pi_E(N)+1)`.
+1. a dense local staircase, with one plotted point for each successive
+   integer in a finite window;
+2. the global compressed frontier of `\pi_E(N)` across the whole admitted
+   range.
 
-That keeps the staircase shape visible while making long-run growth easier to
-read.
+By default the dense local window runs from `1` through the current era, so the
+upper panel shows the recovered staircase in the region where it is already
+classical. A larger dense window can be requested explicitly with
+`--dense-xmax`, in which case the plot plateaus after the currently admitted
+primes.
 
 It uses the current era rule:
 
@@ -84,6 +88,12 @@ Optional:
 
 ```powershell
 python .scripts/tools/era_order.py --checkpoint-every 50000
+```
+
+To widen the dense local staircase:
+
+```powershell
+python .scripts/tools/era_order.py --dense-xmax 200
 ```
 
 The working hypothesis is not that a smooth prime density is being derived.
