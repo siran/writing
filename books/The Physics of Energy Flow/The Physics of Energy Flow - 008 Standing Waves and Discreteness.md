@@ -52,31 +52,57 @@ $$
 
 Here $\beta$ is the local winding angle, measured from the centerline tangent.
 To see what sets it, use the ordinary $E/B$ representation and let one portion
-of the flow act on a neighboring portion through its retarded field. The exact
-causal bookkeeping can be written in constitutive form as
+of the flow act on a neighboring portion through its retarded field. Write the
+local field on a small segment of the closure as
+$\left(E_{\mathrm{loc}},B_{\mathrm{loc}}\right)$, and let
+$\left(E_{\mathrm{ret}},B_{\mathrm{ret}}\right)$ denote the retarded field at
+that segment produced by neighboring segments of the same closure. The exact
+causal bookkeeping can then be written in constitutive form as
 
 $$
 D
 =
-\epsilon E + P_{\mathrm{self}}[E,B]_{\mathrm{ret}},
+\epsilon E_{\mathrm{loc}} + P_{\mathrm{self}}[E_{\mathrm{ret}},B_{\mathrm{ret}}],
 \qquad
 H
 =
-\frac{1}{\mu}B - M_{\mathrm{self}}[E,B]_{\mathrm{ret}}.
+\frac{1}{\mu}B_{\mathrm{loc}} - M_{\mathrm{self}}[E_{\mathrm{ret}},B_{\mathrm{ret}}].
 $$
 
 That is the same mathematical role played by polarization and magnetization in
 ordinary media, except that here the response is produced by delayed portions
-of the same flow. In the thin nearly uniform regime used in this chapter, that
-exact retarded response is approximated locally by
+of the same flow. No scalar energy density is used to compute this interaction:
+the primary objects are the retarded electric and magnetic fields themselves.
+
+In the thin nearly uniform, slowly varying regime used in this chapter,
+linearize that exact retarded response against the local field and write
 
 $$
-D \approx \epsilon_{\mathrm{eff}} E,
+P_{\mathrm{self}}\approx \epsilon\,\chi_{e,\mathrm{eff}}\,E_{\mathrm{loc}},
 \qquad
-B \approx \mu_{\mathrm{eff}} H.
+M_{\mathrm{self}}\approx \chi_{m,\mathrm{eff}}\,H.
 $$
+
+Here $\chi_{e,\mathrm{eff}}$ and $\chi_{m,\mathrm{eff}}$ are local
+approximations to the underlying retarded response functionals.
 
 Then
+
+$$
+D \approx \epsilon_{\mathrm{eff}}E_{\mathrm{loc}},
+\qquad
+B_{\mathrm{loc}} \approx \mu_{\mathrm{eff}}H,
+$$
+
+with
+
+$$
+\epsilon_{\mathrm{eff}}=\epsilon(1+\chi_{e,\mathrm{eff}}),
+\qquad
+\mu_{\mathrm{eff}}=\mu(1+\chi_{m,\mathrm{eff}}).
+$$
+
+Therefore
 
 $$
 c_{\mathrm{eff}}
@@ -87,34 +113,15 @@ n_{\mathrm{eff}}
 =
 \frac{c}{c_{\mathrm{eff}}}
 =
-\sqrt{\frac{\mu_{\mathrm{eff}}\epsilon_{\mathrm{eff}}}{\mu\epsilon}}.
-$$
-
-The corresponding energy density is still useful as a scalar diagnostic of the
-overlap region:
-
-$$
-u(E,B)=\frac12\left(\epsilon |E|^2+\frac{1}{\mu}|B|^2\right),
-$$
-
-and for two overlapping portions of the same flow,
-
-$$
-u(E_1+E_2,B_1+B_2)
+\sqrt{\frac{\mu_{\mathrm{eff}}\epsilon_{\mathrm{eff}}}{\mu\epsilon}}
 =
-u_1+u_2+u_{\mathrm{int}},
-\qquad
-u_{\mathrm{int}}
-=
-\epsilon\,E_1\!\cdot\!E_2+\frac{1}{\mu}B_1\!\cdot\!B_2.
+\sqrt{(1+\chi_{e,\mathrm{eff}})(1+\chi_{m,\mathrm{eff}})}.
 $$
 
-This scalar overlap term does not determine the full constitutive response by
-itself, but it marks where the retarded self-loading is strongest. In those
-regions the effective refractive index is larger. Approximating the overlap
-region as a higher-index layer of the same field, with exterior index $1$, and
-approximating the entering transport as locally tangent to that layer, Snell's
-law, with angles measured from the local normal, gives
+Approximating the local overlap region as a higher-index layer of the same
+field, with exterior index $1$, and approximating the entering transport as
+locally tangent to that layer, Snell's law, with angles measured from the local
+normal, gives
 
 $$
 \sin\theta_{\mathrm{in}}
