@@ -51,39 +51,29 @@ $$
 $$
 
 Here $\beta$ is the local winding angle, measured from the centerline tangent.
-To see what sets it, write the overlap energy of two neighboring portions of
-the same flow. In the ordinary $E/B$ representation, the local energy density
-is quadratic:
+To see what sets it, use the ordinary $E/B$ representation and let one portion
+of the flow act on a neighboring portion through its retarded field. The exact
+causal bookkeeping can be written in constitutive form as
 
 $$
-u(E,B)=\frac12\left(\epsilon |E|^2+\frac{1}{\mu}|B|^2\right).
-$$
-
-So when neighboring portions of the same flow overlap, the energy density
-contains interference terms:
-
-$$
-u(E_1+E_2,B_1+B_2)
+D
 =
-u_1+u_2+u_{\mathrm{int}},
+\epsilon E + P_{\mathrm{self}}[E,B]_{\mathrm{ret}},
 \qquad
-u_{\mathrm{int}}
+H
 =
-\epsilon\,E_1\!\cdot\!E_2+\frac{1}{\mu}B_1\!\cdot\!B_2.
+\frac{1}{\mu}B - M_{\mathrm{self}}[E,B]_{\mathrm{ret}}.
 $$
 
-Treat that overlap in the same constitutive way one treats an ordinary
-dielectric: the interference loading changes the effective permittivity and
-permeability of the same field,
+That is the same mathematical role played by polarization and magnetization in
+ordinary media, except that here the response is produced by delayed portions
+of the same flow. In the thin nearly uniform regime used in this chapter, that
+exact retarded response is approximated locally by
 
 $$
-\epsilon_{\mathrm{eff}}
- =
-\epsilon_{\mathrm{eff}}(u_{\mathrm{int}}),
+D \approx \epsilon_{\mathrm{eff}} E,
 \qquad
-\mu_{\mathrm{eff}}
- =
-\mu_{\mathrm{eff}}(u_{\mathrm{int}}).
+B \approx \mu_{\mathrm{eff}} H.
 $$
 
 Then
@@ -97,10 +87,31 @@ n_{\mathrm{eff}}
 =
 \frac{c}{c_{\mathrm{eff}}}
 =
-\sqrt{\frac{\mu_{\mathrm{eff}}\epsilon_{\mathrm{eff}}}{\mu\epsilon}}
+\sqrt{\frac{\mu_{\mathrm{eff}}\epsilon_{\mathrm{eff}}}{\mu\epsilon}}.
 $$
 
-So overlap increases the local refractive index. Approximating the overlap
+The corresponding energy density is still useful as a scalar diagnostic of the
+overlap region:
+
+$$
+u(E,B)=\frac12\left(\epsilon |E|^2+\frac{1}{\mu}|B|^2\right),
+$$
+
+and for two overlapping portions of the same flow,
+
+$$
+u(E_1+E_2,B_1+B_2)
+=
+u_1+u_2+u_{\mathrm{int}},
+\qquad
+u_{\mathrm{int}}
+=
+\epsilon\,E_1\!\cdot\!E_2+\frac{1}{\mu}B_1\!\cdot\!B_2.
+$$
+
+This scalar overlap term does not determine the full constitutive response by
+itself, but it marks where the retarded self-loading is strongest. In those
+regions the effective refractive index is larger. Approximating the overlap
 region as a higher-index layer of the same field, with exterior index $1$, and
 approximating the entering transport as locally tangent to that layer, Snell's
 law, with angles measured from the local normal, gives
