@@ -9,13 +9,15 @@ Chapter 7 recovered the source-free wave equation, and chapter 7a resolved the
 one transporting field into two complementary transverse aspects. That still
 does not yet say how the same field could bend its own path.
 
-The point of this chapter is that no second substrate is needed. One portion
-of the same electromagnetic flow can alter the local transport law seen by a
-later portion of that flow through retarded self-action. That is the
-self-refraction principle.
+The point of this chapter is that no second substrate is needed. Distinct
+portions of the same electromagnetic flow interact directly when they meet as
+one common field. Two coherent sources interfere for exactly that reason. For
+self-refracting closure, the most important concrete case is retarded
+self-action: a later portion of the flow enters a region already shaped by an
+earlier portion of that same flow. That is the self-refraction principle.
 
 
-## Retarded self-action of one flow on itself
+## The retarded case
 
 Write those two aspects in their conventional electromagnetic variables
 
@@ -58,6 +60,12 @@ $$
 and likewise for $B_{\mathrm{ret}}$. So the retarded self-action enters as a
 phase lag $\omega\tau$ carried by earlier portions of the same flow.
 
+This is the closure-relevant special case of a more general fact: when two
+coherent portions of the same field overlap, they do not need any further
+substrate in order to interact. They already are one field. The retarded case
+is singled out here because it is the natural causal mechanism when a flow
+bends back and meets its own earlier transport.
+
 
 ## Constitutive writing
 
@@ -75,8 +83,9 @@ H
 \frac{1}{\mu}B_{\mathrm{loc}} - M_{\mathrm{self}}[E_{\mathrm{ret}},B_{\mathrm{ret}}].
 $$
 
-Nothing in this step assumes a closed path. It says only that the same flow
-can act back on its later transport through its retarded fields.
+Nothing in this step assumes a closed path. It says only that the same field
+can alter its own later transport, and that retarded self-action is the
+closure-relevant causal form of that self-interaction.
 
 In the thin, nearly uniform, slowly varying regime, linearize the exact
 retarded response against the local field:
@@ -170,8 +179,8 @@ It shows:
 
 - how one portion of the electromagnetic flow can act back on a later portion
   of the same flow,
-- how that retarded self-action can be written as a constitutive loading of the
-  same field,
+- how that self-interaction is written, in the closure-relevant retarded case,
+  as a constitutive loading of the same field,
 - and how that loading bends transport by ordinary refraction.
 
 It does **not** yet require closure.
