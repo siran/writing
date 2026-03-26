@@ -110,6 +110,27 @@ u=4u_1,
 \mathbf S = 4\mathbf S_1.
 $$
 
+This is a pointwise statement about the local observables in the overlap
+region. It does not mean energy has been created there. In a source-free
+overlap region the Poynting balance is still
+
+$$
+\partial_t u+\nabla\cdot\mathbf S=0,
+$$
+
+so any local increase of $u$ is paid for by converging flux. If explicit
+emitters are present, the source term $-\mathbf J\cdot\mathbf E$ supplies the
+additional work. There is therefore no second additive law for energy. The
+addition law is linear at the level of the fields, and the energy observable
+is quadratic in that total field.
+
+If the phases are uncorrelated, or if one averages over an ensemble that
+washes out the cross terms, one recovers the additive reading
+
+$$
+\langle u\rangle \approx \langle u_1\rangle+\langle u_2\rangle.
+$$
+
 The overlap itself is the effect.
 
 
