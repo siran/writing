@@ -3,7 +3,6 @@ title: The Physics of Energy Flow - Two Observers, One Transport
 date: 2026-03-19
 ---
 
-
 # 13. Two Observers, One Transport
 
 Chapter 7 established that source-free energy flow satisfies the wave equation
@@ -16,8 +15,9 @@ $$
 
 The same transport process can be described by different observers in relative
 motion. This chapter asks: what change-of-description is consistent with that
-same wave equation? The answer forces a particular kinematics — not as a
-postulate, but as an algebraic consequence of preserving the transport law.
+same wave transport? The answer is forced by one simple invariant: if two
+observers describe the same propagated pattern between the same shared events,
+they must agree on how many wavelengths have passed.
 
 
 ## Isolated observers
@@ -27,185 +27,196 @@ flux of $\mathbf{F}/c^2$ through any large closed surface vanishes. This is
 the flow-language statement that no external transport organizes the region.
 
 Two isolated observers in relative uniform motion, both describing the same
-transport process, must be able to write the same wave operator with the same
-constant $c$. This is the only requirement imposed. It is not a statement about
-geometry or space. It is the statement that two descriptions of the same
-transport process agree on the transport law.
-
-The equality of that constant is not a second postulate. It is the normalization
-implicit in saying that the observers describe the same law rather than two
-different rescalings of units. If one wrote $c_1$ and $c_2$ instead, the linear
-invariance algebra would determine only their ratio as part of the relative
-normalization of space and time. Requiring that the change of description reduce
-to the identity when the relative rate is $v=0$ removes that ambiguity: at
-$v=0$ the map must be $x'=x$, $t'=t$, so the two operator constants must agree,
+transport process, must be able to write the same source-free wave equation
+with the same constant $c$. This is not a separate geometric postulate. It is
+the statement that they describe one transport law rather than two different
+unit rescalings. When the relative rate is $v=0$, the change of description
+must reduce to the identity, so the transport constant must also agree:
 $c_1=c_2=:c$.
 
 
-## The transport bound
+## Shared phase count
 
-For propagating solutions of the wave equation — organized wavefronts moving
-at rate $c$ — energy density and energy flux satisfy
-
-$$
-|\mathbf{F}| = c\,u.
-$$
-
-For general configurations (superpositions of modes propagating in different
-directions), the net flux is bounded:
+In one spatial dimension, a right-moving monochromatic component has the form
 
 $$
-|\mathbf{F}| \leq c\,u.
-$$
-
-Define the operational transport rate by
-
-$$
-\mathbf{v} := \frac{\mathbf{F}}{u}
-\qquad (u > 0).
-$$
-
-Then $|\mathbf{v}| \leq c$. This bound is not postulated. It is an identity
-consequence of the wave-equation structure established in Chapter 7.
-
-
-## Galilean addition violates the bound
-
-Galilean composition assigns
-
-$$
-u \oplus_G v = u + v.
-$$
-
-For any $0 < u < c$ and $0 < v < c$ with $u + v > c$ — always achievable —
-Galilean composition gives $u \oplus_G v > c$, violating the bound above.
-
-Therefore: **Galilean addition is incompatible with source-free Maxwell
-transport.** This is a theorem. It follows from the existence of the bound
-and the requirement that a change-of-description preserve it.
-
-We now derive the unique linear re-description that does preserve that same
-transport law.
-
-
-## The wave operator forces the unique re-description
-
-Let two isolated observers be in relative uniform translation at rate $v$
-along the $x$-axis. Assume the change-of-description is differentiable.
-Homogeneity of space and time means its Jacobian cannot depend on $x$ or $t$:
-otherwise the same local transport experiment, shifted to a different location
-or time, would transform by a different law. A differentiable map with constant
-Jacobian is affine. Choosing the origins to coincide at one event removes the
-additive constants, so the map is linear. Uniform relative translation along
-the $x$-axis and transverse symmetry then leave only $x$-$t$ mixing:
-$y' = y$, $z' = z$. Write the most general linear form:
-
-$$
-x' = a x + b t,
+f(x,t)=A\cos(kx-\omega t),
 \qquad
-t' = d x + e t.
-$$
-
-Derivatives transform by the chain rule:
-
-$$
-\partial_x = a\,\partial_{x'} + d\,\partial_{t'},
+\omega = ck,
 \qquad
-\partial_t = b\,\partial_{x'} + e\,\partial_{t'}.
+\lambda = \frac{2\pi}{k}.
 $$
 
-Impose wave-operator invariance in 1+1 dimensions:
+Fix one crest at the shared origin event $(x,t)=(0,0)$. Between that event and
+any later event $(x,t)$, the number of wavelengths transported is
 
 $$
-\partial_t^2 - c^2 \partial_x^2
+N_+ = \frac{kx-\omega t}{2\pi}
 =
-\lambda\!\left(\partial_{t'}^2 - c^2 \partial_{x'}^2\right),
-\qquad \lambda \neq 0.
+\frac{x-ct}{\lambda}.
 $$
 
-Expanding the left side and collecting by differential operator:
-
-- Cross-term must vanish: $be = c^2 a d$.
-- Coefficient of $\partial_{t'}^2$: $e^2 - c^2 d^2 = \lambda$.
-- Coefficient of $\partial_{x'}^2$: $b^2 - c^2 a^2 = -\lambda c^2$.
-
-The primed origin $x' = 0$ satisfies $ax + bt = 0$, so the relative rate is
-$v = -b/a$, giving $b = -av$. From the cross-term condition: $d = -ve/c^2$.
-Substituting into the coefficient equations:
+For the same right-moving component, the second observer writes
 
 $$
-e^2\!\left(1 - \frac{v^2}{c^2}\right) = \lambda,
+N_+' = \frac{x'-ct'}{\lambda'}.
+$$
+
+Because it is the same transported pattern between the same shared events,
+
+$$
+N_+'=N_+.
+$$
+
+The wavelengths $\lambda$ and $\lambda'$ may differ, since different observers
+can assign different Doppler-shifted wavelengths. Therefore the invariant count
+implies not equality of the null coordinates themselves, but proportionality:
+
+$$
+x'-ct' = \alpha(v)\,(x-ct),
+$$
+
+where $\alpha(v)=\lambda'/\lambda$ depends only on the relative rate $v$.
+
+The same argument for a left-moving monochromatic component gives
+
+$$
+x'+ct' = \beta(v)\,(x+ct).
+$$
+
+So the two null directions can scale differently, but the wavelength count
+along each must be preserved.
+
+
+## The unique re-description
+
+Add and subtract the two null-coordinate relations:
+
+$$
+x' = \frac{\alpha+\beta}{2}\,x + \frac{c(\beta-\alpha)}{2}\,t,
+$$
+
+$$
+t' = \frac{\beta-\alpha}{2c}\,x + \frac{\alpha+\beta}{2}\,t.
+$$
+
+So the change of description is already linear. The primed origin $x'=0$
+therefore moves in the unprimed description at rate
+
+$$
+v = \frac{x}{t}
+=
+c\,\frac{\alpha-\beta}{\alpha+\beta}.
+$$
+
+Now use two symmetry requirements.
+
+First, reversing the spatial direction exchanges right-moving and left-moving
+transport, so
+
+$$
+\beta(v)=\alpha(-v).
+$$
+
+Second, the inverse transformation must have the same form with $v\mapsto -v$.
+Applying the transformation and its inverse in succession must return the same
+null coordinate, so
+
+$$
+\alpha(v)\alpha(-v)=1.
+$$
+
+Together these give
+
+$$
+\alpha(v)\beta(v)=1.
+$$
+
+Let $\beta=1/\alpha$. Then
+
+$$
+\frac{v}{c}
+=
+\frac{\alpha-\alpha^{-1}}{\alpha+\alpha^{-1}}
+=
+\frac{\alpha^2-1}{\alpha^2+1}.
+$$
+
+So
+
+$$
+\alpha^2 = \frac{1+v/c}{1-v/c},
 \qquad
-a^2\!\left(1 - \frac{v^2}{c^2}\right) = \lambda.
+\beta^2 = \frac{1-v/c}{1+v/c}.
 $$
 
-So $a^2 = e^2$. Choosing the orientation-preserving branch and $\lambda = 1$
-so that the inverse transformation takes the same form:
+Choose the orientation-preserving branch,
 
 $$
-a = e = \gamma
-:= \frac{1}{\sqrt{1 - v^2/c^2}},
+\alpha = \sqrt{\frac{1+v/c}{1-v/c}},
 \qquad
-b = -\gamma v,
-\qquad
-d = -\frac{\gamma v}{c^2}.
+\beta = \sqrt{\frac{1-v/c}{1+v/c}}.
 $$
 
-The unique linear change-of-description consistent with Maxwell transport is
-therefore
+Substituting into the linear form and writing
 
 $$
-x' = \gamma(x - vt),
+\gamma := \frac{1}{\sqrt{1-v^2/c^2}},
+$$
+
+gives
+
+$$
+x' = \gamma(x-vt),
 \qquad
-t' = \gamma\!\left(t - \frac{v}{c^2}\,x\right),
+t' = \gamma\!\left(t-\frac{v}{c^2}x\right),
 \qquad
 y' = y,
 \quad
 z' = z.
 $$
 
-This is not assumed. It is the only linear map that preserves the wave
-operator. Note that $\gamma$ requires $|v| < c$: a relative translation rate
-at or above $c$ would prevent any wavefront emitted by one observer from
-reaching the other — no closed measurement is possible.
+This is the unique change-of-description consistent with preserving wavelength
+count for both right-moving and left-moving Maxwell transport.
+Because $x' \mp ct'$ are only rescaled copies of $x \mp ct$, the source-free
+wave equation is preserved as well: the phase-count derivation and the
+wave-operator derivation are the same statement written in two forms.
 
 
 ## Composed transport rate
 
-Let a transport feature move at rate $u = dx/dt$ in the first description.
+Let a transport feature move at rate $u=dx/dt$ in the first description.
 Differentiating the transformation gives
 
 $$
 u'
-= \frac{dx'}{dt'}
-= \frac{u - v}{1 - \dfrac{uv}{c^2}}.
+=
+\frac{dx'}{dt'}
+=
+\frac{u-v}{1-\dfrac{uv}{c^2}}.
 $$
 
-This is the unique composition law consistent with Maxwell transport. It is
-not postulated; it is a corollary of the operator invariance above.
+This is the unique composition law consistent with the same transport process
+being described by both observers.
 
-In particular, if $u = c$:
+In particular, if $u=c$,
 
 $$
-u' = \frac{c - v}{1 - v/c} = c.
+u' = \frac{c-v}{1-v/c}=c.
 $$
 
-The transport bound is absolute: every isolated observer assigns the same rate
-$c$ to a propagating wavefront. No composition of rates below $c$ reaches or
-exceeds $c$.
+So every isolated observer assigns the same rate $c$ to a propagating
+wavefront.
 
 
-## Michelson–Morley
+## Michelson-Morley
 
 The 1887 experiment compared round-trip travel times along two perpendicular
-arms of equal rest length $L$. The classic analysis assumed Galilean
-composition: outbound rate $c - v$ and return rate $c + v$ along the arm
-aligned with the laboratory's motion, producing unequal arm times and a
-predicted fringe shift.
+arms of equal rest length $L$. The classical $c\pm v$ prediction inserts
+Galilean addition into the transport step. That step is not available here.
 
-That step is not available here. The composition law derived above gives the
-transport rate as $c$ in all directions in the apparatus description — the one
-in which the wave operator holds with that same constant. Both arms give
+In the apparatus description, the transport law is the same in both directions,
+and the propagation rate is $c$ along each arm. So both round-trip times are
 
 $$
 T = \frac{2L}{c},
@@ -213,7 +224,6 @@ T = \frac{2L}{c},
 \Delta T := T_\parallel - T_\perp = 0.
 $$
 
-The null result is not a surprise requiring additional hypotheses. It is the
-only answer consistent with Maxwell transport. The $c \pm v$ argument inserts
-Galilean addition at exactly one step; that step contradicts the operator
-invariance derived in this chapter. The null result closes the argument.
+The null result is therefore not surprising. It is the direct consequence of
+requiring two observers to preserve the same transported wavelength count of the
+same source-free Maxwell process.
