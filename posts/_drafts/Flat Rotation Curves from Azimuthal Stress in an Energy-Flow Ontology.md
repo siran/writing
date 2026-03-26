@@ -3,7 +3,7 @@ title: "Flat Rotation Curves from Azimuthal Stress in an Energy-Flow Ontology"
 date: 2026-03-26
 keywords: flat rotation curves, dark matter, lensing, azimuthal stress, hoop stress, momentum flux, energy flow, galaxy dynamics
 one-sentence-summary: In an extended rotating galaxy, co-rotating closures leave a nonvanishing azimuthal second moment of momentum flux. Its hoop-stress term supplies the inward radial load behind flat rotation curves, and the same weak constitutive summary yields the corresponding logarithmic lensing law.
-summary: We derive a dark-matter-like flat-curve regime from the exact coarse-grained momentum balance already recovered in The Physics of Energy Flow. The key correction is that a galaxy should not be reduced to the scalar monopole of randomly oriented closures. A rotating disk retains a coherent azimuthal second moment of transport. That second moment appears as an azimuthal stress component whose cylindrical divergence supplies inward radial loading. Under explicit outer-disk assumptions, the circular speed satisfies v_phi^2 approximately equal to Sigma_phiphi / rho. If the fraction of local energy stored in aligned unresolved azimuthal transport is slowly varying, the rotation curve is flat. The same slow-mode radial load defines a logarithmic weak scalar, and under the same symmetric constitutive summary used in the gravity chapters a null probe is then deflected by an angle Delta alpha = 2 pi v_f^2 / c^2 in the flat regime. The "dark halo" becomes the mass one would falsely infer by fitting a stress-supported disk with a monopole law.
+summary: We derive a dark-matter-like flat-curve regime from the exact coarse-grained momentum balance already recovered in The Physics of Energy Flow. The key correction is that a galaxy should not be reduced to the scalar monopole of randomly oriented closures. A rotating disk retains a coherent azimuthal second moment of transport. That second moment appears as an azimuthal stress component whose cylindrical divergence supplies inward radial loading. Under explicit outer-disk assumptions, the circular speed satisfies v_phi^2 approximately equal to Sigma_phiphi / rho. If the fraction of local energy stored in aligned unresolved azimuthal transport is slowly varying, the rotation curve is flat. The same recovered slow-mode radial load then fixes a logarithmic weak scalar, and under the same symmetric constitutive summary used in the gravity chapters a null probe is deflected by an angle Delta alpha = 2 pi v_f^2 / c^2 in the flat regime. The "dark halo" becomes the mass one would falsely infer by fitting a stress-supported disk with a monopole law. The note resolves the flat-curve mechanism and its matching weak lensing inside that constitutive class; it does not yet solve every phenomenon grouped under the dark-matter label.
 ---
 
 # Flat Rotation Curves from Azimuthal Stress in an Energy-Flow Ontology
@@ -35,6 +35,12 @@ The dark-matter question is therefore recast as follows:
 
 Under the assumptions stated below, the answer is yes at the level of the
 rotation-curve problem itself.
+
+More precisely: the note recovers a concrete mechanism for the flat-curve
+regime, and then derives the matching logarithmic weak-lensing law inside the
+same weak constitutive closure already used in the gravity chapters. It does
+not yet derive the outer-disk constitutive data from galactic microphysics, so
+it should not be read as the final word on every dark-matter observable.
 
 
 ## 2. Why the monopole average misses the galactic case
@@ -277,6 +283,10 @@ $$
 \Sigma_{\phi\phi}\approx u_\phi.
 $$
 
+This is the coarse-grained form of the packet statement above: each unresolved
+azimuthal transport element contributes its local energy density to the
+azimuthal second moment, and those contributions add.
+
 Inside the same constitutive class already used in the gravity appendices,
 
 $$
@@ -390,16 +400,22 @@ $$
 a_R(R)=-\frac{v_f^2}{R}.
 $$
 
-Define the corresponding weak scalar by
+Appendix 213 gives the slow-mode potential
 
 $$
-a_R=-c^2\,\partial_R\eta_{\mathrm{gal}}.
+\Phi_k=-c^2\eta.
 $$
 
-Then
+Therefore the radial acceleration is
 
 $$
-\partial_R\eta_{\mathrm{gal}}=\frac{v_f^2}{c^2R},
+a_R=-\partial_R\Phi_k=c^2\,\partial_R\eta_{\mathrm{gal}}.
+$$
+
+Substituting the flat-curve load gives
+
+$$
+\partial_R\eta_{\mathrm{gal}}=-\frac{v_f^2}{c^2R},
 $$
 
 so
@@ -408,7 +424,7 @@ $$
 \boxed{
 \eta_{\mathrm{gal}}(R)
 =
-\frac{v_f^2}{c^2}\ln\!\frac{R}{R_0},
+\eta_0-\frac{v_f^2}{c^2}\ln\!\frac{R}{R_0},
 }
 $$
 
@@ -419,7 +435,7 @@ Therefore the corresponding refractive index is
 $$
 n(R)
 =
-1+\frac{2v_f^2}{c^2}\ln\!\frac{R}{R_0}.
+1+2\eta_0-\frac{2v_f^2}{c^2}\ln\!\frac{R}{R_0}.
 $$
 
 Take a null probe with impact parameter $b$ in the scale-free outer regime,
@@ -434,15 +450,16 @@ along the unperturbed path. Then
 $$
 \partial_\perp n
 =
-\frac{2v_f^2}{c^2}\,\frac{b}{b^2+z^2}.
+-\frac{2v_f^2}{c^2}\,\frac{b}{b^2+z^2}.
 $$
 
-Using the same weak-ray law as chapter 12,
+The sign is inward. Using the same weak-ray law as chapter 12, the deflection
+magnitude is
 
 $$
 \Delta\alpha
 =
-\int_{-\infty}^{\infty}\partial_\perp n\,dz
+\int_{-\infty}^{\infty}\bigl|\partial_\perp n\bigr|\,dz
 =
 \frac{2v_f^2}{c^2}
 \int_{-\infty}^{\infty}\frac{b\,dz}{b^2+z^2}
