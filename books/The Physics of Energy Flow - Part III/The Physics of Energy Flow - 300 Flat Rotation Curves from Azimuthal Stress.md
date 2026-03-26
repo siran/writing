@@ -1,12 +1,12 @@
 ---
-title: "Flat Rotation Curves from Azimuthal Stress in an Energy-Flow Ontology"
+title: "The Physics of Energy Flow - Flat Rotation Curves from Azimuthal Stress"
 date: 2026-03-26
 keywords: flat rotation curves, dark matter, lensing, azimuthal stress, hoop stress, momentum flux, energy flow, galaxy dynamics
-one-sentence-summary: In an extended rotating galaxy, co-rotating closures leave a nonvanishing azimuthal second moment of momentum flux. Its hoop-stress term supplies the inward radial load behind flat rotation curves, and the same weak constitutive summary yields the corresponding logarithmic lensing law.
-summary: We derive a dark-matter-like flat-curve regime from the exact coarse-grained momentum balance already recovered in The Physics of Energy Flow. The key correction is that a galaxy should not be reduced to the scalar monopole of randomly oriented closures. A rotating disk retains a coherent azimuthal second moment of transport. That second moment appears as an azimuthal stress component whose cylindrical divergence supplies inward radial loading. Under explicit outer-disk assumptions, the circular speed satisfies v_phi^2 approximately equal to Sigma_phiphi / rho. If the fraction of local energy stored in aligned unresolved azimuthal transport is slowly varying, the rotation curve is flat. The same recovered slow-mode radial load then fixes a logarithmic weak scalar, and under the same symmetric constitutive summary used in the gravity chapters a null probe is deflected by an angle Delta alpha = 2 pi v_f^2 / c^2 in the flat regime. The "dark halo" becomes the mass one would falsely infer by fitting a stress-supported disk with a monopole law. The note resolves the flat-curve mechanism and its matching weak lensing inside that constitutive class; it does not yet solve every phenomenon grouped under the dark-matter label.
+one-sentence-summary: In an extended rotating galaxy, co-rotating closures leave a nonvanishing azimuthal second moment of momentum flux. Its hoop-stress term can supply the inward radial load behind flat rotation curves, and the same weak constitutive summary then yields the corresponding logarithmic lensing law.
+summary: This note develops a dark-matter-like flat-curve regime from the exact coarse-grained momentum balance already recovered in The Physics of Energy Flow. The key correction is that a galaxy should not be reduced to the scalar monopole of randomly oriented closures. A rotating disk retains a coherent azimuthal second moment of transport. That second moment appears as an azimuthal stress component whose cylindrical divergence supplies inward radial loading. Under explicit outer-disk assumptions, the circular speed satisfies v_phi^2 approximately equal to Sigma_phiphi / rho. If the fraction of local energy stored in aligned unresolved azimuthal transport is slowly varying, the rotation curve is flat. The same recovered slow-mode radial load then fixes a logarithmic weak scalar, and under the same symmetric constitutive summary used in the gravity chapters a null probe is deflected by an angle Delta alpha = 2 pi v_f^2 / c^2 in the flat regime. The "dark halo" becomes the mass one would falsely infer by fitting a stress-supported disk with a monopole law. The note closes the flat-curve mechanism and its matching weak lensing only inside that constitutive class; it does not yet solve every phenomenon grouped under the dark-matter label.
 ---
 
-# Flat Rotation Curves from Azimuthal Stress in an Energy-Flow Ontology
+# 300. Flat Rotation Curves from Azimuthal Stress
 
 ## 1. The point of departure
 
@@ -33,14 +33,13 @@ The dark-matter question is therefore recast as follows:
 > azimuthal stress of organized energy flow, rather than from additional
 > unseen matter?
 
-Under the assumptions stated below, the answer is yes at the level of the
-rotation-curve problem itself.
-
-More precisely: the note recovers a concrete mechanism for the flat-curve
-regime, and then derives the matching logarithmic weak-lensing law inside the
-same weak constitutive closure already used in the gravity chapters. It does
-not yet derive the outer-disk constitutive data from galactic microphysics, so
-it should not be read as the final word on every dark-matter observable.
+This text sits in Part III rather than in the main book or its technical
+appendices because the galactic regime is not yet closed. What is developed
+here is a serious candidate mechanism for the flat-curve regime, together with
+the matching logarithmic weak-lensing law inside the same weak constitutive
+closure already used in the gravity chapters. What is *not* yet recovered is
+the full galactic microphysics that would make those outer-disk assumptions
+follow automatically.
 
 
 ## 2. Why the monopole average misses the galactic case

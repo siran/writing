@@ -1,0 +1,19 @@
+---
+title: The Physics of Energy Flow
+subtitle: Part III - Open Regimes and Explorations
+author: An M. Rodriguez
+description: "Part III of The Physics of Energy Flow, collecting exploratory extensions, open regimes, and incomplete but promising derivations that stand downstream of the main transport spine."
+publisher: Preferred Frame Prints
+editor: An M. Rodriguez
+lang: en-US
+rights: CC-BY-NC-ND-4.0
+cover-image: https://siran.github.io/assets/The%20Physics%20of%20Energy%20Flow/The%20Physics%20of%20Energy%20Flow.png
+fontsize: 12pt
+linestretch: 1.32
+header-includes:
+  - \renewcommand{\footnotesize}{\fontsize{11pt}{13pt}\selectfont}
+  - \setlength{\skip\footins}{16pt}
+  - \usepackage{titlesec}
+  - \titleformat{\section}[block]{\bfseries\Large\raggedleft}{\hfill\thesection.}{0.8em}{\hfill}
+  - \titlespacing*{\section}{0pt}{4ex plus 1ex minus 0.5ex}{1.8ex}
+---
