@@ -91,9 +91,14 @@ transport law.
 ## The wave operator forces the unique re-description
 
 Let two isolated observers be in relative uniform translation at rate $v$
-along the $x$-axis. By homogeneity and straight-line preservation, the
-change-of-description is linear. By transverse symmetry, $y' = y$,
-$z' = z$. Write the most general linear mixing:
+along the $x$-axis. Assume the change-of-description is differentiable.
+Homogeneity of space and time means its Jacobian cannot depend on $x$ or $t$:
+otherwise the same local transport experiment, shifted to a different location
+or time, would transform by a different law. A differentiable map with constant
+Jacobian is affine. Choosing the origins to coincide at one event removes the
+additive constants, so the map is linear. Uniform relative translation along
+the $x$-axis and transverse symmetry then leave only $x$-$t$ mixing:
+$y' = y$, $z' = z$. Write the most general linear form:
 
 $$
 x' = a x + b t,
