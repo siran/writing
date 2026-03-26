@@ -19,7 +19,7 @@ $$
 \left(\nabla^2-\frac{1}{c^2}\partial_t^2\right)f=0.
 $$
 
-Chapter 7a derived the self-refraction principle: retarded portions of the
+Chapter 7b derived the self-refraction principle: retarded portions of the
 same flow alter the local transport law and bend later transport of that same
 field. This chapter asks what follows once that bending becomes strong enough
 to make the path close on itself.
@@ -53,7 +53,7 @@ $$
 $$
 
 Here $\beta$ is the local winding angle, measured from the centerline tangent.
-Chapter 7a already derived that local self-refraction fixes the bending angle
+Chapter 7b already derived that local self-refraction fixes the bending angle
 through
 
 $$

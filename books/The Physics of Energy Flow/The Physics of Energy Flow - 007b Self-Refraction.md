@@ -3,11 +3,11 @@ title: The Physics of Energy Flow - Self-Refraction
 date: 2026-03-26
 ---
 
-# 7a. Self-Refraction
+# 7b. Self-Refraction
 
-Chapter 7 recovered the source-free wave equation. That equation permits open
-propagating transport, but by itself it does not yet say how the same field
-could bend its own path.
+Chapter 7 recovered the source-free wave equation, and chapter 7a resolved the
+one transporting field into two complementary transverse aspects. That still
+does not yet say how the same field could bend its own path.
 
 The point of this chapter is that no second substrate is needed. One portion
 of the same electromagnetic flow can alter the local transport law seen by a
@@ -17,7 +17,7 @@ self-refraction principle.
 
 ## Retarded self-action of one flow on itself
 
-Write the transport in the ordinary electromagnetic variables
+Write those two aspects in their conventional electromagnetic variables
 
 $$
 \mathbf E,

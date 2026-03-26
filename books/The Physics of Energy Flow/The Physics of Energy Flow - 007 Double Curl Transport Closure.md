@@ -103,19 +103,13 @@ reconfigure while remaining one continuous transport.
 
 This wave equation does not yet impose a particular global closure. It permits
 propagating organization in open space and standing organization on a closed
-support. The next chapter derives the self-refraction principle by which the
-field can bend its own transport. The chapter after that asks what standing
-organizations remain once that self-bending becomes strong enough to produce
-closure.
+support. The next chapter resolves this one transporting flow into two
+complementary aspects, written later in the familiar variables
+$\mathbf E$ and $\mathbf B$. The chapter after that derives the
+self-refraction principle by which those two aspects bend the transport of the
+same field. Only after that does the book ask what standing organizations
+remain once that self-bending becomes strong enough to produce closure.
 
-Later, when one wants the conventional electromagnetic writing, the same
-transport can be expressed in the familiar variables $\mathbf E$ and
-$\mathbf B$, with energy flux written in Maxwell form as
-
-$$
-\mathbf{S}=\frac{1}{\mu_0}\,\mathbf{E}\times\mathbf{B}.
-$$
-
-That later resolution does not change the point established here. The
-transporting object is the one source-free flow $\mathbf F$, and its local
-form is the wave equation just derived.
+That later two-aspect resolution does not change the point established here.
+The transporting object is still the one source-free flow $\mathbf F$, and its
+local form is the wave equation just derived.
