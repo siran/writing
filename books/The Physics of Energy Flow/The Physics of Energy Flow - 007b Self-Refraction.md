@@ -92,46 +92,42 @@ overlap region is therefore more heavily loaded than either isolated portion.
 In that sense, one region of the field acts for another as a denser
 electromagnetic medium.
 
-
-## Constitutive summary
-
-In ordinary media, one electromagnetic field modifies the local transport of
-another through polarization and magnetization. Here the same effect is read
-internally: coherent overlap of the same field alters the local constitutive
-response of that overlap region. Write that local response as
+If the exact overlapping fields are kept, nothing further is needed. The
+interaction is already present in the total-field observables written above.
+For example, if the two coherent portions are locally equal and in phase,
 
 $$
-D \approx \epsilon_{\mathrm{eff}}E,
+\mathbf E_2=\mathbf E_1,
 \qquad
-B \approx \mu_{\mathrm{eff}}H,
+\mathbf B_2=\mathbf B_1,
 $$
 
-with
+then
 
 $$
-\epsilon_{\mathrm{eff}}>\epsilon,
+u=4u_1,
 \qquad
-\mu_{\mathrm{eff}}>\mu
+\mathbf S = 4\mathbf S_1.
 $$
 
-in the loaded overlap region.
+The overlap itself is the effect.
 
-Therefore
+
+## Effective-medium summary
+
+Sometimes one wants a local summary of that loaded overlap region without
+tracking each contributing portion separately. Then it is convenient to write
+the exact overlap phenomenologically as a local effective index
 
 $$
-c_{\mathrm{eff}}
-=
-\frac{1}{\sqrt{\mu_{\mathrm{eff}}\epsilon_{\mathrm{eff}}}},
+n_{\mathrm{eff}}>1,
 \qquad
-n_{\mathrm{eff}}
-=
-\frac{c}{c_{\mathrm{eff}}}
-=
-\sqrt{\frac{\mu_{\mathrm{eff}}\epsilon_{\mathrm{eff}}}{\mu\epsilon}}.
+c_{\mathrm{eff}}=\frac{c}{n_{\mathrm{eff}}}.
 $$
 
-So coherent overlap increases the local refractive index and lowers the local
-transport speed.
+This does not replace the exact superposition above. It is only a compact
+summary of the fact that the loaded overlap region advances more slowly than
+an isolated portion would.
 
 
 ## Local bending
@@ -216,7 +212,7 @@ The retarded case is therefore not the definition of self-interaction. It is
 the closure-relevant causal specialization of the overlap principle already
 derived above.
 
-In the retarded case one may write the same constitutive step more explicitly
+In the retarded case one may write the same coarse-grained summary more explicitly
 as
 
 $$
@@ -283,10 +279,10 @@ It shows:
 
 - how coherent overlap of distinct portions of the same field produces
   non-null interaction terms in the observables,
-- how that overlap is written phenomenologically as a constitutive loading of
-  the same field,
+- how that overlap is summarized phenomenologically by a local effective
+  refractive index,
 - how the closure-relevant retarded case fits inside that more general
-  self-interaction picture,
+  self-interaction picture and can be written in dielectric form,
 - and how that loading bends transport by ordinary refraction.
 
 It does **not** yet require closure.
