@@ -320,219 +320,7 @@ So the "dark matter" can be, at the level of flat rotation curves, a stress
 misread as mass.
 
 
-## 8. Direct source derivation of the weak scalar
-
-The flat-curve derivation above concerns slow bounded transport. The missing
-step is to derive the corresponding weak scalar directly from the galactic
-source itself rather than infer it afterward from the slow-mode force law.
-
-Appendix 216 already gives the weak interaction operator seen by a probe with
-channel direction $\mathbf n$:
-
-$$
-\Lambda_n=u+\Pi_n,
-\qquad
-\Pi_n:=-n_in_jT_{ij}.
-$$
-
-Because the weak interaction energy is bilinear and symmetric between source
-and probe, the same scalar must also appear on the source side. For a general
-static source with local energy density $u_s$ and stress tensor $T^{(s)}_{ij}$,
-define the source load density in the channel $\mathbf n$ by
-
-$$
-q_n
-:=
-u_s+\Pi_n^{(s)}
-=
-u_s-n_in_jT^{(s)}_{ij}.
-$$
-
-The weak scalar sourced by that channel is then
-
-$$
-\boxed{
-\eta_n(\mathbf x)
-=
-\frac{G}{c^4}
-\int
-\frac{q_n(\mathbf x')}{|\mathbf x-\mathbf x'|}\,d^3x'.
-}
-$$
-
-This is the natural source-side extension of appendix 216 inside the same weak
-bilinear interaction class. It is not yet a claim about the full exact
-strong-field kernel.
-
-For a compact mixed aggregate, the directional part averages away and this
-reduces to the scalar monopole of chapter 12.
-
-For the rotating galactic disk, the relevant slow bounded transport is
-azimuthal. Take therefore
-
-$$
-\mathbf n=\hat{\mathbf e}_\phi.
-$$
-
-In the same coarse-grained notation as above,
-
-$$
-q_\phi
-=
-u+\Pi_\phi
-\approx
-u+\Sigma_{\phi\phi}.
-$$
-
-Here the approximation is the same outer-disk coarse-graining already used in
-sections 3 through 6: the surviving source-side directional load is the
-unresolved azimuthal second moment.
-
-In the outer azimuthal-stress regime,
-
-$$
-\Sigma_{\phi\phi}\approx f\,u,
-$$
-
-so
-
-$$
-q_\phi\approx (1+f)\,u=(1+f)\rho k^2.
-$$
-
-Now pass to the thin-disk approximation and define the corresponding surface
-load density
-
-$$
-q_{\Sigma,\phi}(R):=\int_{-\infty}^{\infty}q_\phi(R,z)\,dz.
-$$
-
-To obtain a logarithmic far field in the outer disk, assume that over that
-range the azimuthal source load per annulus is approximately constant. Then
-the corresponding thin-disk surface load has the form
-
-$$
-\boxed{
-q_{\Sigma,\phi}(R)=\frac{Q_0}{R},
-}
-$$
-
-where $Q_0$ is the azimuthal source load carried by each logarithmic annulus.
-
-Use the standard axisymmetric Hankel representation for a thin sheet:
-
-$$
-\eta_{\mathrm{gal}}(R,z)
-=
-\frac{2\pi G}{c^4}
-\int_0^\infty
-S(k)\,J_0(kR)\,e^{-k|z|}\,dk,
-$$
-
-with
-
-$$
-S(k)
-:=
-\int_0^\infty q_{\Sigma,\phi}(R')\,J_0(kR')\,R'\,dR'.
-$$
-
-Substituting $q_{\Sigma,\phi}(R')=Q_0/R'$ gives
-
-$$
-S(k)
-=
-Q_0\int_0^\infty J_0(kR')\,dR'
-=
-\frac{Q_0}{k}.
-$$
-
-Therefore on the midplane,
-
-$$
-\eta_{\mathrm{gal}}(R,0)
-=
-\frac{2\pi GQ_0}{c^4}
-\int_0^\infty \frac{J_0(kR)}{k}\,dk.
-$$
-
-Using
-
-$$
-\int_0^\infty \frac{J_0(kR)}{k}\,dk
-=
-\text{const.}-\ln R,
-$$
-
-we obtain
-
-$$
-\boxed{
-\eta_{\mathrm{gal}}(R)
-=
-\eta_0
--\frac{2\pi GQ_0}{c^4}\ln\!\frac{R}{R_0},
-}
-$$
-
-with $\eta_0$ an irrelevant additive constant.
-
-Differentiate:
-
-$$
-\partial_R\eta_{\mathrm{gal}}
-=
--\frac{2\pi GQ_0}{c^4R}.
-$$
-
-Appendix 213 gives the slow-mode potential
-
-$$
-\Phi_k=-c^2\eta,
-$$
-
-so the radial acceleration is
-
-$$
-a_R
-=
--\partial_R\Phi_k
-=
-c^2\partial_R\eta_{\mathrm{gal}}
-=
--\frac{2\pi GQ_0}{c^2R}.
-$$
-
-Hence the circular-speed law is
-
-$$
-\boxed{
-v_f^2=\frac{2\pi GQ_0}{c^2},
-}
-$$
-
-and therefore
-
-$$
-\boxed{
-\eta_{\mathrm{gal}}(R)
-=
-\eta_0-\frac{v_f^2}{c^2}\ln\!\frac{R}{R_0}.
-}
-$$
-
-So, within the weak source-side extension above and the explicit outer-disk
-assumption
-
-$$
-q_{\Sigma,\phi}(R)=\frac{Q_0}{R},
-$$
-
-the logarithmic weak scalar is generated directly by the disk source itself,
-not backed out afterward from the observed slow-mode force law.
-
-
-## 9. Null-probe lensing from the same source-derived scalar
+## 8. Null-probe lensing from the same outer-disk regime
 
 Adopt the same weak constitutive summary already recovered in the gravity
 chapters for null probes:
@@ -543,15 +331,43 @@ n=1+2\eta,
 k=\frac{c}{1+2\eta}.
 $$
 
-Using the source-derived scalar above,
+The slow radial load in the flat outer regime is
+
+$$
+a_R(R)=-\frac{v_f^2}{R}.
+$$
+
+Define the corresponding weak scalar by
+
+$$
+a_R=-c^2\,\partial_R\eta_{\mathrm{gal}}.
+$$
+
+Then
+
+$$
+\partial_R\eta_{\mathrm{gal}}=\frac{v_f^2}{c^2R},
+$$
+
+so
+
+$$
+\boxed{
+\eta_{\mathrm{gal}}(R)
+=
+\frac{v_f^2}{c^2}\ln\!\frac{R}{R_0},
+}
+$$
+
+up to an irrelevant additive constant.
+
+Therefore the corresponding refractive index is
 
 $$
 n(R)
 =
-n_0-\frac{2v_f^2}{c^2}\ln\!\frac{R}{R_0},
+1+\frac{2v_f^2}{c^2}\ln\!\frac{R}{R_0}.
 $$
-
-where the constant part $n_0:=1+2\eta_0$ plays no role in bending.
 
 Take a null probe with impact parameter $b$ in the scale-free outer regime,
 and write
@@ -565,15 +381,15 @@ along the unperturbed path. Then
 $$
 \partial_\perp n
 =
--\frac{2v_f^2}{c^2}\,\frac{b}{b^2+z^2}.
+\frac{2v_f^2}{c^2}\,\frac{b}{b^2+z^2}.
 $$
 
-Using the same weak-ray law as chapter 12, the inward deflection magnitude is
+Using the same weak-ray law as chapter 12,
 
 $$
 \Delta\alpha
 =
-\int_{-\infty}^{\infty}\bigl|\partial_\perp n\bigr|\,dz
+\int_{-\infty}^{\infty}\partial_\perp n\,dz
 =
 \frac{2v_f^2}{c^2}
 \int_{-\infty}^{\infty}\frac{b\,dz}{b^2+z^2}
@@ -592,18 +408,16 @@ $$
 }
 $$
 
-This is the characteristic logarithmic-lens result of the outer
-`Q_0/R` regime:
+This is the characteristic logarithmic-lens result of the flat regime:
 
 - it is determined by the same plateau speed $v_f$ that governs the rotation
   curve,
 - it is independent of impact parameter inside the scale-free regime,
-- and it is recovered from the same source-derived weak scalar once the galaxy
-  is treated as a stress-supported disk rather than as a compact scalar
-  monopole.
+- and it is recovered without adding a dark halo once the galaxy is treated as
+  a stress-supported disk rather than as a compact scalar monopole.
 
 
-## 10. What this does and does not explain
+## 9. What this does and does not explain
 
 This derivation explains the original flat-curve trigger of the dark-matter
 problem inside the energy-flow ontology, together with the corresponding
@@ -621,14 +435,14 @@ matter label.
 
 Still open are:
 
-- a constitutive derivation of the outer-disk azimuthal transport fraction
-  $f_0$ from the microphysics of galactic closures,
-- a derivation of the outer-disk source law
-  $q_{\Sigma,\phi}(R)=Q_0/R$ from that same microphysics, rather than taking
-  it as the macroscopic assumption that yields a logarithmic weak scalar,
+- a constitutive derivation of the plateau fraction $f_0$ from the microphysics
+  of galactic closures,
 - the relation, if any, between this stress mechanism and the baryonic
   Tully-Fisher law,
-- and the non-ideal corrections from finite disk thickness, disk truncation,
+- a direct derivation of the weak scalar $\eta_{\mathrm{gal}}$ from the full
+  axisymmetric source stress, rather than inferring it from the slow-mode
+  radial load,
+- the non-ideal corrections from finite disk thickness, disk truncation,
   and non-axisymmetric structure.
 
 So the present result should be read narrowly and exactly:
@@ -639,7 +453,7 @@ So the present result should be read narrowly and exactly:
 > extended axisymmetric disk.
 
 
-## 11. Final statement
+## 10. Final statement
 
 The correct collective object for a rotating galaxy is not the scalar monopole
 of a compact random aggregate. It is the stress tensor of an extended organized
@@ -655,16 +469,11 @@ Under the explicit outer-disk assumptions above,
 $$
 v_\phi^2 \approx \frac{\Sigma_{\phi\phi}}{\rho}\approx f\,k^2,
 \qquad
-\eta_{\mathrm{gal}}(R)
-\approx
-\eta_0-\frac{v_f^2}{c^2}\ln\!\frac{R}{R_0},
-\qquad
 \Delta\alpha \approx \frac{2\pi v_f^2}{c^2},
 $$
 
 so a slowly varying azimuthal transport fraction produces a flat rotation
-curve, the corresponding outer-disk source law `Q_0/R` produces the logarithmic weak
-scalar, and the same weak constitutive summary yields the matching
+curve, and the same weak constitutive summary yields the matching
 logarithmic-regime lensing strength.
 
 At that level, the missing mass is not missing matter. It is missing stress.
