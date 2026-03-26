@@ -105,11 +105,15 @@ c = \frac{1}{\sqrt{\varepsilon_0 \mu_0}}.
 $$
 
 A passing field and the mass aggregate reorganize one another as one common
-field. When the transport is written in conventional electromagnetic variables,
+field. This is the same self-refraction principle already used in chapter 8:
+there it bends a flow strongly enough to close on itself, while here only the
+weak exterior effect of a large aggregate is kept. In the present chapter that
+weak exterior effect is written phenomenologically, at leading order, as a
+small constitutive loading of the local transport law.
+
+When the transport is written in conventional electromagnetic variables,
 $\mathbf{E}$ and $\mathbf{B}$ are complementary aspects of one organized flow.
-A null electromagnetic probe therefore does not carry one channel only. Its
-electric and magnetic sectors are equal aspects of the same transport. The
-weak-field constitutive summary must therefore load both sectors equally:
+So the weak constitutive summary used here loads the two sectors together:
 
 $$
 \varepsilon_\text{eff}(r)=\varepsilon_0\bigl(1+2\eta(r)\bigr),
@@ -138,10 +142,11 @@ n(r)=\frac{c}{c_\text{local}(r)}
 =1+\frac{2GM}{rc^2}.
 $$
 
-The factor of two is a macroscopic summary of the more detailed derivation that
-follows in chapters 12a and 12b: a null Maxwell probe carries two equal stress
-sectors, and a static toroidal closure samples both axial channels
-symmetrically.
+This chapter does not yet derive that equal loading in full detail. It uses it
+as the weak-field macroscopic writing of self-refraction. The reason the two
+sectors must be loaded equally is derived later in appendices 215 and 216: a
+null Maxwell probe carries two equal stress sectors, and a static toroidal
+closure samples both axial channels symmetrically.
 
 
 ## Light bending
