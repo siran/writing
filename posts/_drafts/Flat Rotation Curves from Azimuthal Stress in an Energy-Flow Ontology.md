@@ -1,9 +1,9 @@
 ---
 title: "Flat Rotation Curves from Azimuthal Stress in an Energy-Flow Ontology"
 date: 2026-03-26
-keywords: flat rotation curves, dark matter, azimuthal stress, hoop stress, momentum flux, energy flow, galaxy dynamics
-one-sentence-summary: In an extended rotating galaxy, co-rotating closures leave a nonvanishing azimuthal second moment of momentum flux. Its hoop-stress term supplies an inward radial load that can produce flat rotation curves without additional matter.
-summary: We derive a dark-matter-like flat-curve regime from the exact coarse-grained momentum balance already recovered in The Physics of Energy Flow. The key correction is that a galaxy should not be reduced to the scalar monopole of randomly oriented closures. A rotating disk retains a coherent azimuthal second moment of transport. That second moment appears as an azimuthal stress component whose cylindrical divergence supplies inward radial loading. Under explicit outer-disk assumptions, the circular speed satisfies v_phi^2 ≈ Sigma_phiphi / rho. If the fraction of local energy stored in aligned unresolved azimuthal transport is slowly varying, the rotation curve is flat. The "dark halo" then becomes the mass one would falsely infer by fitting a stress-supported disk with a monopole law.
+keywords: flat rotation curves, dark matter, lensing, azimuthal stress, hoop stress, momentum flux, energy flow, galaxy dynamics
+one-sentence-summary: In an extended rotating galaxy, co-rotating closures leave a nonvanishing azimuthal second moment of momentum flux. Its hoop-stress term supplies the inward radial load behind flat rotation curves, and the same weak constitutive summary yields the corresponding logarithmic lensing law.
+summary: We derive a dark-matter-like flat-curve regime from the exact coarse-grained momentum balance already recovered in The Physics of Energy Flow. The key correction is that a galaxy should not be reduced to the scalar monopole of randomly oriented closures. A rotating disk retains a coherent azimuthal second moment of transport. That second moment appears as an azimuthal stress component whose cylindrical divergence supplies inward radial loading. Under explicit outer-disk assumptions, the circular speed satisfies v_phi^2 approximately equal to Sigma_phiphi / rho. If the fraction of local energy stored in aligned unresolved azimuthal transport is slowly varying, the rotation curve is flat. The same slow-mode radial load defines a logarithmic weak scalar, and under the same symmetric constitutive summary used in the gravity chapters a null probe is then deflected by an angle Delta alpha = 2 pi v_f^2 / c^2 in the flat regime. The "dark halo" becomes the mass one would falsely infer by fitting a stress-supported disk with a monopole law.
 ---
 
 # Flat Rotation Curves from Azimuthal Stress in an Energy-Flow Ontology
@@ -320,15 +320,120 @@ So the "dark matter" can be, at the level of flat rotation curves, a stress
 misread as mass.
 
 
-## 8. What this does and does not explain
+## 8. Null-probe lensing from the same outer-disk regime
+
+The flat-curve derivation above concerns slow bounded transport. To connect it
+to lensing, adopt the same weak constitutive summary already recovered in the
+gravity chapters for null probes:
+
+$$
+n=1+2\eta,
+\qquad
+k=\frac{c}{1+2\eta}.
+$$
+
+The slow radial load in the flat outer regime is
+
+$$
+a_R(R)=-\frac{v_f^2}{R}.
+$$
+
+Define the corresponding weak scalar by
+
+$$
+a_R=-c^2\,\partial_R\eta_{\mathrm{gal}}.
+$$
+
+Then
+
+$$
+\partial_R\eta_{\mathrm{gal}}=\frac{v_f^2}{c^2R},
+$$
+
+so
+
+$$
+\boxed{
+\eta_{\mathrm{gal}}(R)
+=
+\frac{v_f^2}{c^2}\ln\!\frac{R}{R_0},
+}
+$$
+
+up to an irrelevant additive constant.
+
+Therefore the corresponding refractive index is
+
+$$
+n(R)=1+\frac{2v_f^2}{c^2}\ln\!\frac{R}{R_0}.
+$$
+
+Take a null probe with impact parameter $b$ in the scale-free outer regime,
+and write
+
+$$
+R^2=b^2+z^2
+$$
+
+along the unperturbed path. Then
+
+$$
+\partial_\perp n
+=
+\frac{2v_f^2}{c^2}\,\frac{b}{b^2+z^2}.
+$$
+
+Using the same weak-ray law as chapter 12,
+
+$$
+\Delta\alpha
+=
+\int_{-\infty}^{\infty}\partial_\perp n\,dz,
+$$
+
+gives
+
+$$
+\Delta\alpha
+=
+\frac{2v_f^2}{c^2}
+\int_{-\infty}^{\infty}\frac{b\,dz}{b^2+z^2}
+=
+\frac{2v_f^2}{c^2}
+\left[\arctan\!\frac{z}{b}\right]_{-\infty}^{\infty}.
+$$
+
+Therefore
+
+$$
+\boxed{
+\Delta\alpha
+=
+\frac{2\pi v_f^2}{c^2}.
+}
+$$
+
+This is the characteristic logarithmic-lens result of the flat regime:
+
+- it is determined by the same plateau speed $v_f$ that governs the rotation
+  curve,
+- it is independent of impact parameter inside the scale-free regime,
+- and it is recovered without adding a dark halo once the galaxy is treated as
+  a stress-supported disk rather than as a compact scalar monopole.
+
+
+## 9. What this does and does not explain
 
 This derivation explains the original flat-curve trigger of the dark-matter
-problem inside the energy-flow ontology:
+problem inside the energy-flow ontology, together with the corresponding
+logarithmic lensing law of the same regime:
 
 - no additional matter is required,
 - no empirical force-law modification is required,
 - the effect is produced by the exact coarse-grained momentum equation already
-  recovered from source-free transport.
+  recovered from source-free transport,
+- and the null deflection follows from the same weak constitutive summary
+  already used in the gravity chapters.
 
 But it does **not** yet explain everything commonly grouped under the dark
 matter label.
@@ -339,16 +444,21 @@ Still open are:
   of galactic closures,
 - the relation, if any, between this stress mechanism and the baryonic
   Tully-Fisher law,
-- and the corresponding lensing calculation.
+- a direct derivation of the weak scalar $\eta_{\mathrm{gal}}$ from the full
+  axisymmetric source stress, rather than inferring it from the slow-mode
+  radial load,
+- and the non-ideal corrections from finite disk thickness, disk truncation,
+  and non-axisymmetric structure.
 
 So the present result should be read narrowly and exactly:
 
-> flat galactic rotation curves can be recovered, in this ontology, from the
-> surviving azimuthal stress of organized co-rotating transport in an extended
-> axisymmetric disk.
+> flat galactic rotation curves, together with the corresponding logarithmic
+> lensing law of the same outer regime, can be recovered in this ontology from
+> the surviving azimuthal stress of organized co-rotating transport in an
+> extended axisymmetric disk.
 
 
-## 9. Final statement
+## 10. Final statement
 
 The correct collective object for a rotating galaxy is not the scalar monopole
 of a compact random aggregate. It is the stress tensor of an extended organized
@@ -363,9 +473,12 @@ Under the explicit outer-disk assumptions above,
 
 $$
 v_\phi^2 \approx \frac{\Sigma_{\phi\phi}}{\rho}\approx f\,k^2,
+\qquad
+\Delta\alpha \approx \frac{2\pi v_f^2}{c^2},
 $$
 
 so a slowly varying azimuthal transport fraction produces a flat rotation
-curve.
+curve, and the same weak constitutive summary yields the matching
+logarithmic-regime lensing strength.
 
 At that level, the missing mass is not missing matter. It is missing stress.
