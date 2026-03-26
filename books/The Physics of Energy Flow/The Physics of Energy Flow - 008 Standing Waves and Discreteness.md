@@ -19,15 +19,17 @@ $$
 \left(\nabla^2-\frac{1}{c^2}\partial_t^2\right)f=0.
 $$
 
-The wave equation permits both open propagating transport and organized, closed
-closures. When a flow configuration refracts its own transport, curving its own
-path through the field it generates, it can close on itself. Such a
-self-refracting closure must be a shape that admits continuous nowhere-vanishing
-tangential flow. A sphere does not: by the hairy ball theorem, no continuous
-nowhere-vanishing tangential vector field exists on a sphere. The simplest
-closed shape that can sustain such flow is a torus, a sphere with a smooth
-through-hole. It has two independent non-contractible cycles, and the flow must
-close in both directions at the same time.
+Chapter 7a derived the self-refraction principle: retarded portions of the
+same flow alter the local transport law and bend later transport of that same
+field. This chapter asks what follows once that bending becomes strong enough
+to make the path close on itself.
+
+Such a self-refracting closure must be a shape that admits continuous
+nowhere-vanishing tangential flow. A sphere does not: by the hairy ball
+theorem, no continuous nowhere-vanishing tangential vector field exists on a
+sphere. The simplest closed shape that can sustain such flow is a torus, a
+sphere with a smooth through-hole. It has two independent non-contractible
+cycles, and the flow must close in both directions at the same time.
 
 As we shall see, a self-refracting flow closing toroidally yields integer modes
 and the Rydberg-type $1/n^2$ scaling. Since hydrogen is matter, this is
@@ -51,127 +53,10 @@ $$
 $$
 
 Here $\beta$ is the local winding angle, measured from the centerline tangent.
-To see what sets it, use the ordinary $E/B$ representation and let a local
-segment of the closure at arclength $s$ interact with retarded source positions
-$s_{\mathrm{ret}}$ on the same closure. The exact causal variable is still the
-retarded time $t_{\mathrm{ret}}$, but on a periodic closure it is cleaner to
-label the interaction by the retarded source position, related by
+Chapter 7a already derived that local self-refraction fixes the bending angle
+through
 
 $$
-\left|\gamma(s)-\gamma(s_{\mathrm{ret}})\right|
-=
-c\,(t-t_{\mathrm{ret}}).
-$$
-
-For a harmonic mode with period $T=2\pi/\omega$,
-
-$$
-E(s,t)=\Re\!\left[\widetilde E(s)e^{-i\omega t}\right],
-\qquad
-B(s,t)=\Re\!\left[\widetilde B(s)e^{-i\omega t}\right],
-$$
-
-so the retarded contribution can be written as
-
-$$
-E_{\mathrm{ret}}(s,t)
-=
-E(s_{\mathrm{ret}},t_{\mathrm{ret}})
-=
-\Re\!\left[\widetilde E(s_{\mathrm{ret}})e^{-i\omega t}e^{\,i\omega\tau}\right],
-\qquad
-\tau=t-t_{\mathrm{ret}},
-$$
-
-and likewise for $B_{\mathrm{ret}}$. Thus the retarded self-action enters as a
-phase lag $\omega\tau$ along the closure. When $\tau=NT$ for some integer $N$,
-the retarded field is in phase with the present field, so the flow interferes
-constructively with an earlier cycle of itself. The exact causal bookkeeping
-can then be written in constitutive form as
-
-$$
-D
-=
-\epsilon E_{\mathrm{loc}} + P_{\mathrm{self}}[E_{\mathrm{ret}},B_{\mathrm{ret}}],
-\qquad
-H
-=
-\frac{1}{\mu}B_{\mathrm{loc}} - M_{\mathrm{self}}[E_{\mathrm{ret}},B_{\mathrm{ret}}].
-$$
-
-That is the same mathematical role played by polarization and magnetization in
-ordinary media, except that here the response is produced by delayed portions
-of the same flow. No scalar energy density is used to compute this interaction:
-the primary objects are the retarded electric and magnetic fields themselves.
-
-In the thin nearly uniform, slowly varying regime used in this chapter,
-linearize that exact retarded response against the local field and write
-
-$$
-P_{\mathrm{self}}\approx \epsilon\,\chi_{e,\mathrm{eff}}\,E_{\mathrm{loc}},
-\qquad
-M_{\mathrm{self}}\approx \chi_{m,\mathrm{eff}}\,H.
-$$
-
-Here $\chi_{e,\mathrm{eff}}$ and $\chi_{m,\mathrm{eff}}$ are local
-approximations to the underlying retarded response functionals.
-
-Then
-
-$$
-D \approx \epsilon_{\mathrm{eff}}E_{\mathrm{loc}},
-\qquad
-B_{\mathrm{loc}} \approx \mu_{\mathrm{eff}}H,
-$$
-
-with
-
-$$
-\epsilon_{\mathrm{eff}}=\epsilon(1+\chi_{e,\mathrm{eff}}),
-\qquad
-\mu_{\mathrm{eff}}=\mu(1+\chi_{m,\mathrm{eff}}).
-$$
-
-Therefore
-
-$$
-c_{\mathrm{eff}}
-=
-\frac{1}{\sqrt{\mu_{\mathrm{eff}}\epsilon_{\mathrm{eff}}}},
-\qquad
-n_{\mathrm{eff}}
-=
-\frac{c}{c_{\mathrm{eff}}}
-=
-\sqrt{\frac{\mu_{\mathrm{eff}}\epsilon_{\mathrm{eff}}}{\mu\epsilon}}
-=
-\sqrt{(1+\chi_{e,\mathrm{eff}})(1+\chi_{m,\mathrm{eff}})}.
-$$
-
-Approximating the local overlap region as a higher-index layer of the same
-field, with exterior index $1$, and approximating the entering transport as
-locally tangent to that layer, Snell's law, with angles measured from the local
-normal, gives
-
-$$
-\sin\theta_{\mathrm{in}}
-=
-n_{\mathrm{eff}}\sin\theta_{\mathrm{tr}},
-\qquad
-\theta_{\mathrm{in}}=\frac{\pi}{2},
-$$
-
-so
-
-$$
-\sin\theta_{\mathrm{tr}}=\frac{1}{n_{\mathrm{eff}}}.
-$$
-
-Since $\beta$ is the complementary angle to the centerline tangent,
-
-$$
-\beta=\frac{\pi}{2}-\theta_{\mathrm{tr}},
-\qquad
 \cos\beta=\frac{1}{n_{\mathrm{eff}}},
 \qquad
 \tan\beta=\sqrt{n_{\mathrm{eff}}^2-1}.

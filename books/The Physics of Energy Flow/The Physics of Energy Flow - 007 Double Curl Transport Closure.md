@@ -103,9 +103,10 @@ reconfigure while remaining one continuous transport.
 
 This wave equation does not yet impose a particular global closure. It permits
 propagating organization in open space and standing organization on a closed
-support. The next chapter uses exactly this point: once the same flow is
-required to close on itself, only certain standing organizations remain
-allowed.
+support. The next chapter derives the self-refraction principle by which the
+field can bend its own transport. The chapter after that asks what standing
+organizations remain once that self-bending becomes strong enough to produce
+closure.
 
 Later, when one wants the conventional electromagnetic writing, the same
 transport can be expressed in the familiar variables $\mathbf E$ and

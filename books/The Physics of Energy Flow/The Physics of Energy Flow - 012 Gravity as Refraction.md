@@ -105,11 +105,12 @@ c = \frac{1}{\sqrt{\varepsilon_0 \mu_0}}.
 $$
 
 A passing field and the mass aggregate reorganize one another as one common
-field. This is the same self-refraction principle already used in chapter 8:
-there it bends a flow strongly enough to close on itself, while here only the
-weak exterior effect of a large aggregate is kept. In the present chapter that
-weak exterior effect is written phenomenologically, at leading order, as a
-small constitutive loading of the local transport law.
+field. This is the same self-refraction principle derived just after chapter 7
+and then used in chapter 8 to explain how a flow can bend strongly enough to
+close on itself. Here only the weak exterior effect of a large aggregate is
+kept. In the present chapter that weak exterior effect is written
+phenomenologically, at leading order, as a small constitutive loading of the
+local transport law.
 
 When the transport is written in conventional electromagnetic variables,
 $\mathbf{E}$ and $\mathbf{B}$ are complementary aspects of one organized flow.
