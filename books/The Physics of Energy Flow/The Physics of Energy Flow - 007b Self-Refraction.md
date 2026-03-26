@@ -11,13 +11,11 @@ does not yet say how the same field could bend its own path.
 
 The point of this chapter is that no second substrate is needed. Distinct
 portions of the same electromagnetic flow interact directly when they meet as
-one common field. Two coherent sources interfere for exactly that reason. For
-self-refracting closure, the most important concrete case is retarded
-self-action: a later portion of the flow enters a region already shaped by an
-earlier portion of that same flow. That is the self-refraction principle.
+one common field. Two coherent sources interfere for exactly that reason. The
+question is what that overlap does to transport.
 
 
-## The retarded case
+## Coherent overlap
 
 Write those two aspects in their conventional electromagnetic variables
 
@@ -26,6 +24,160 @@ $$
 \qquad
 \mathbf B.
 $$
+
+Write two coherent portions of the same field as
+
+$$
+\mathbf E_1,\ \mathbf B_1,
+\qquad
+\mathbf E_2,\ \mathbf B_2.
+$$
+
+When they overlap, the observables are computed from the total field,
+
+$$
+\mathbf E=\mathbf E_1+\mathbf E_2,
+\qquad
+\mathbf B=\mathbf B_1+\mathbf B_2.
+$$
+
+So the local energy density is
+
+$$
+u
+=
+\frac{\epsilon}{2}|\mathbf E|^2
++
+\frac{1}{2\mu}|\mathbf B|^2
+$$
+
+that is,
+
+$$
+u
+=
+u_1+u_2
++
+\epsilon\,\mathbf E_1\!\cdot\!\mathbf E_2
++
+\frac{1}{\mu}\,\mathbf B_1\!\cdot\!\mathbf B_2.
+$$
+
+Likewise the energy flux is
+
+$$
+\mathbf S
+=
+\frac{1}{\mu}\,\mathbf E\times\mathbf B
+$$
+
+so
+
+$$
+\mathbf S
+=
+\mathbf S_1+\mathbf S_2
++
+\frac{1}{\mu}\,\mathbf E_1\times\mathbf B_2
++
+\frac{1}{\mu}\,\mathbf E_2\times\mathbf B_1.
+$$
+
+These cross terms are the interaction terms. They are not added by hand. They
+appear because overlapping portions of the same field are read as one common
+field.
+
+For in-phase coherent overlap, the energy cross terms are non-null. The
+overlap region is therefore more heavily loaded than either isolated portion.
+In that sense, one region of the field acts for another as a denser
+electromagnetic medium.
+
+
+## Constitutive summary
+
+In ordinary media, one electromagnetic field modifies the local transport of
+another through polarization and magnetization. Here the same effect is read
+internally: coherent overlap of the same field alters the local constitutive
+response of that overlap region. Write that local response as
+
+$$
+D \approx \epsilon_{\mathrm{eff}}E,
+\qquad
+B \approx \mu_{\mathrm{eff}}H,
+$$
+
+with
+
+$$
+\epsilon_{\mathrm{eff}}>\epsilon,
+\qquad
+\mu_{\mathrm{eff}}>\mu
+$$
+
+in the loaded overlap region.
+
+Therefore
+
+$$
+c_{\mathrm{eff}}
+=
+\frac{1}{\sqrt{\mu_{\mathrm{eff}}\epsilon_{\mathrm{eff}}}},
+\qquad
+n_{\mathrm{eff}}
+=
+\frac{c}{c_{\mathrm{eff}}}
+=
+\sqrt{\frac{\mu_{\mathrm{eff}}\epsilon_{\mathrm{eff}}}{\mu\epsilon}}.
+$$
+
+So coherent overlap increases the local refractive index and lowers the local
+transport speed.
+
+
+## Local bending
+
+Once different sides of a local wavefront are loaded differently, they do not
+advance at the same speed. The more heavily loaded side moves more slowly, so
+the transport bends toward it. That is refraction.
+
+Approximating the overlap region as a higher-index layer of the same field,
+with exterior index $1$, and approximating the entering transport as locally
+tangent to that layer, Snell's law gives
+
+$$
+\sin\theta_{\mathrm{in}}
+=
+n_{\mathrm{eff}}\sin\theta_{\mathrm{tr}},
+\qquad
+\theta_{\mathrm{in}}=\frac{\pi}{2},
+$$
+
+so
+
+$$
+\sin\theta_{\mathrm{tr}}=\frac{1}{n_{\mathrm{eff}}}.
+$$
+
+If $\beta$ denotes the complementary angle to the local tangent, then
+
+$$
+\beta=\frac{\pi}{2}-\theta_{\mathrm{tr}},
+\qquad
+\cos\beta=\frac{1}{n_{\mathrm{eff}}},
+\qquad
+\tan\beta=\sqrt{n_{\mathrm{eff}}^2-1}.
+$$
+
+This is the local self-refraction law: stronger coherent loading means larger
+$n_{\mathrm{eff}}$, stronger bending, and larger departure from a straight
+transport line.
+
+
+## The retarded case
+
+For a self-refracting closure, the overlap is not produced by two independent
+laboratory sources. It is produced when a later portion of the same flow
+enters a region already shaped by an earlier portion of that same flow.
 
 Let $\gamma(s)$ describe a local transport line, parameterized by arclength
 $s$. A local segment at position $s$ interacts causally with earlier source
@@ -60,18 +212,12 @@ $$
 and likewise for $B_{\mathrm{ret}}$. So the retarded self-action enters as a
 phase lag $\omega\tau$ carried by earlier portions of the same flow.
 
-This is the closure-relevant special case of a more general fact: when two
-coherent portions of the same field overlap, they do not need any further
-substrate in order to interact. They already are one field. The retarded case
-is singled out here because it is the natural causal mechanism when a flow
-bends back and meets its own earlier transport.
+The retarded case is therefore not the definition of self-interaction. It is
+the closure-relevant causal specialization of the overlap principle already
+derived above.
 
-
-## Constitutive writing
-
-In ordinary media, one electromagnetic field modifies the local transport of
-another through polarization and magnetization. Here the same mathematics is
-used, but the response is produced by delayed portions of the same flow:
+In the retarded case one may write the same constitutive step more explicitly
+as
 
 $$
 D
@@ -82,10 +228,6 @@ H
 =
 \frac{1}{\mu}B_{\mathrm{loc}} - M_{\mathrm{self}}[E_{\mathrm{ret}},B_{\mathrm{ret}}].
 $$
-
-Nothing in this step assumes a closed path. It says only that the same field
-can alter its own later transport, and that retarded self-action is the
-closure-relevant causal form of that self-interaction.
 
 In the thin, nearly uniform, slowly varying regime, linearize the exact
 retarded response against the local field:
@@ -128,47 +270,9 @@ n_{\mathrm{eff}}
 \sqrt{(1+\chi_{e,\mathrm{eff}})(1+\chi_{m,\mathrm{eff}})}.
 $$
 
-So delayed portions of the same flow can increase the local refractive index
-and lower the local transport speed.
-
-
-## Local bending
-
-Once different sides of a local wavefront are loaded differently, they do not
-advance at the same speed. The more heavily self-loaded side moves more
-slowly, so the transport bends toward it. That is refraction.
-
-Approximating the local overlap region as a higher-index layer of the same
-field, with exterior index $1$, and approximating the entering transport as
-locally tangent to that layer, Snell's law gives
-
-$$
-\sin\theta_{\mathrm{in}}
-=
-n_{\mathrm{eff}}\sin\theta_{\mathrm{tr}},
-\qquad
-\theta_{\mathrm{in}}=\frac{\pi}{2},
-$$
-
-so
-
-$$
-\sin\theta_{\mathrm{tr}}=\frac{1}{n_{\mathrm{eff}}}.
-$$
-
-If $\beta$ denotes the complementary angle to the local tangent, then
-
-$$
-\beta=\frac{\pi}{2}-\theta_{\mathrm{tr}},
-\qquad
-\cos\beta=\frac{1}{n_{\mathrm{eff}}},
-\qquad
-\tan\beta=\sqrt{n_{\mathrm{eff}}^2-1}.
-$$
-
-This is the local self-refraction law: stronger delayed self-loading means
-larger $n_{\mathrm{eff}}$, stronger bending, and larger departure from a
-straight transport line.
+This recovers the same local refraction law, now written in the explicit
+causal form relevant when the field bends back and meets its own earlier
+transport.
 
 
 ## What This Does and Does Not Yet Give
@@ -177,10 +281,12 @@ This chapter derives the principle, not yet the global shape.
 
 It shows:
 
-- how one portion of the electromagnetic flow can act back on a later portion
-  of the same flow,
-- how that self-interaction is written, in the closure-relevant retarded case,
-  as a constitutive loading of the same field,
+- how coherent overlap of distinct portions of the same field produces
+  non-null interaction terms in the observables,
+- how that overlap is written phenomenologically as a constitutive loading of
+  the same field,
+- how the closure-relevant retarded case fits inside that more general
+  self-interaction picture,
 - and how that loading bends transport by ordinary refraction.
 
 It does **not** yet require closure.

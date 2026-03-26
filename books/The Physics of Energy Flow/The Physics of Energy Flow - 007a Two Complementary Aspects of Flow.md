@@ -235,7 +235,5 @@ The two-aspect resolution is local. It says how one transporting field is
 written at a point.
 
 The next chapter asks what happens when distinct portions of those same two
-aspects meet and interact as one common field. For a self-refracting closure,
-the most important concrete case is retarded self-action, where earlier
-portions of the flow act back on later portions. That is the self-refraction
+aspects meet and interact as one common field. That is the self-refraction
 principle.
