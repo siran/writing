@@ -65,6 +65,59 @@ scalar energy and discards the directional part. A rotating disk keeps a
 directional second moment, and that second moment contributes to radial
 balance.
 
+This point can be written directly. Let
+
+$$
+\mathbf A(R,z)=A_\phi(R,z)\,\hat{\mathbf e}_\phi
+$$
+
+be a purely azimuthal axisymmetric transport field. Then
+
+$$
+\nabla\cdot\mathbf A
+=
+\frac{1}{R}\partial_\phi A_\phi
+=
+0.
+$$
+
+So the first moment is divergence-free.
+
+But now form its second moment:
+
+$$
+\mathbf Q:=\mathbf A\otimes\mathbf A.
+$$
+
+Its only nonzero component is
+
+$$
+Q_{\phi\phi}=A_\phi^2.
+$$
+
+Using the cylindrical divergence formula,
+
+$$
+\bigl(\nabla\cdot\mathbf Q\bigr)_R
+=
+\partial_R Q_{RR}
++
+\frac{Q_{RR}-Q_{\phi\phi}}{R}
++
+\partial_z Q_{Rz}
+=
+-\frac{A_\phi^2}{R}.
+$$
+
+So a purely azimuthal divergence-free flow still carries an inward radial load
+through the divergence of its second moment. That is the exact mathematical
+form of hoop stress.
+
+This is the sense in which a vortex-like `(m,n)` organization can add pull
+without adding source or sink: not through $\nabla\cdot\mathbf A$, but through
+$\nabla\cdot(\mathbf A\otimes\mathbf A)$ and its coarse-grained stress
+descendants.
+
 
 ## 3. Exact coarse-grained momentum balance
 
