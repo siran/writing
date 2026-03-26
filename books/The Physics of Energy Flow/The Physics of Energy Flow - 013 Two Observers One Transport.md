@@ -32,6 +32,15 @@ constant $c$. This is the only requirement imposed. It is not a statement about
 geometry or space. It is the statement that two descriptions of the same
 transport process agree on the transport law.
 
+The equality of that constant is not a second postulate. It is the normalization
+implicit in saying that the observers describe the same law rather than two
+different rescalings of units. If one wrote $c_1$ and $c_2$ instead, the linear
+invariance algebra would determine only their ratio as part of the relative
+normalization of space and time. Requiring that the change of description reduce
+to the identity when the relative rate is $v=0$ removes that ambiguity: at
+$v=0$ the map must be $x'=x$, $t'=t$, so the two operator constants must agree,
+$c_1=c_2=:c$.
+
 
 ## The transport bound
 
