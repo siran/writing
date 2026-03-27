@@ -99,12 +99,12 @@ level of the fields, and the energy observable is quadratic in that total
 field.
 
 Energy is additive when the two portions occupy disjoint regions or orthogonal
-transport modes. If the phases are uncorrelated, or if one averages over an
-ensemble that washes out the cross terms, one recovers the additive reading
-
-$$
-\langle u\rangle \approx \langle u_1\rangle+\langle u_2\rangle.
-$$
+transport modes. But once coherent portions occupy the same region in the same
+mode, the quadratic observable need not split into separately additive parts.
+That result can feel strange, but it is not peculiar to electromagnetism. It
+is a standard fact of wave mechanics: amplitudes add, and the local load read
+from their square can become large enough to produce effects not present in
+either part taken alone.
 
 The head-on case gives a simple exact example. If two equal coherent portions
 move toward one another, then at a point where their electric sectors add one
@@ -161,6 +161,11 @@ while the dark output carries none. So passive recombination conserves the
 total energy exactly. The apparent $4u$ paradox comes from treating two fully
 overlapped non-orthogonal contributions as though they still carried the same
 separately additive energies they had before recombination.
+
+This is one reason interference has often been spoken of as though a quantum
+of light could interfere only with itself. But the underlying mathematical
+fact is more general and more ordinary: whenever wave amplitudes combine
+coherently, the quadratic observables need not add term by term.
 
 The overlap itself is the effect.
 
