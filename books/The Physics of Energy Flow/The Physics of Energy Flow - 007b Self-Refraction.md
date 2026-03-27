@@ -94,46 +94,21 @@ electromagnetic medium.
 
 If the exact overlapping fields are kept, nothing further is needed. The
 interaction is already present in the total-field observables written above.
-If two equal coherent portions are locally parallel and co-propagating, so
-that both sectors add,
+There is no second additive law for energy. The addition law is linear at the
+level of the fields, and the energy observable is quadratic in that total
+field.
 
-$$
-\mathbf E_2=\mathbf E_1,
-\qquad
-\mathbf B_2=\mathbf B_1,
-$$
-
-then
-
-$$
-u=4u_1,
-\qquad
-\mathbf S = 4\mathbf S_1.
-$$
-
-That is a pointwise statement about the local observables in the overlap
-region. It does not mean energy has been created there. In a source-free
-overlap region the Poynting balance is still
-
-$$
-\partial_t u+\nabla\cdot\mathbf S=0,
-$$
-
-so any local increase of $u$ is paid for by converging flux. If explicit
-emitters are present, the source term $-\mathbf J\cdot\mathbf E$ supplies the
-additional work. There is therefore no second additive law for energy. The
-addition law is linear at the level of the fields, and the energy observable
-is quadratic in that total field.
-
-If the phases are uncorrelated, or if one averages over an ensemble that
-washes out the cross terms, one recovers the additive reading
+Energy is additive when the two portions occupy disjoint regions or orthogonal
+transport modes. If the phases are uncorrelated, or if one averages over an
+ensemble that washes out the cross terms, one recovers the additive reading
 
 $$
 \langle u\rangle \approx \langle u_1\rangle+\langle u_2\rangle.
 $$
 
-The head-on case is different. If two equal coherent portions move toward one
-another, then at a point where their electric sectors add one has
+The head-on case gives a simple exact example. If two equal coherent portions
+move toward one another, then at a point where their electric sectors add one
+has
 
 $$
 \mathbf E_2=\mathbf E_1,
@@ -155,6 +130,37 @@ the two approaching regions remains
 $$
 E_{\mathrm{tot}}=E_A+E_B.
 $$
+
+The co-propagating recombination case must be read just as carefully. In
+passive optics, two equal coherent inputs are combined unitarily. For a
+50/50 combiner the output amplitudes are
+
+$$
+\mathbf E_\pm=\frac{\mathbf E_A\pm \mathbf E_B}{\sqrt2},
+\qquad
+\mathbf B_\pm=\frac{\mathbf B_A\pm \mathbf B_B}{\sqrt2}.
+$$
+
+If the two inputs are equal and in phase, then
+
+$$
+\mathbf E_+=\sqrt2\,\mathbf E_A,
+\qquad
+\mathbf E_-=0,
+$$
+
+and likewise for $\mathbf B$. The bright output therefore carries
+
+$$
+u_+=2u_A,
+\qquad
+\mathbf S_+=2\mathbf S_A,
+$$
+
+while the dark output carries none. So passive recombination conserves the
+total energy exactly. The apparent $4u$ paradox comes from treating two fully
+overlapped non-orthogonal contributions as though they still carried the same
+separately additive energies they had before recombination.
 
 The overlap itself is the effect.
 
