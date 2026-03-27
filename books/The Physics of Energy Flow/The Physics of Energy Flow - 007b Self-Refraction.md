@@ -94,7 +94,8 @@ electromagnetic medium.
 
 If the exact overlapping fields are kept, nothing further is needed. The
 interaction is already present in the total-field observables written above.
-For example, if the two coherent portions are locally equal and in phase,
+If two equal coherent portions are locally parallel and co-propagating, so
+that both sectors add,
 
 $$
 \mathbf E_2=\mathbf E_1,
@@ -110,7 +111,7 @@ u=4u_1,
 \mathbf S = 4\mathbf S_1.
 $$
 
-This is a pointwise statement about the local observables in the overlap
+That is a pointwise statement about the local observables in the overlap
 region. It does not mean energy has been created there. In a source-free
 overlap region the Poynting balance is still
 
@@ -129,6 +130,30 @@ washes out the cross terms, one recovers the additive reading
 
 $$
 \langle u\rangle \approx \langle u_1\rangle+\langle u_2\rangle.
+$$
+
+The head-on case is different. If two equal coherent portions move toward one
+another, then at a point where their electric sectors add one has
+
+$$
+\mathbf E_2=\mathbf E_1,
+\qquad
+\mathbf B_2=-\mathbf B_1,
+$$
+
+so
+
+$$
+u=2u_1,
+\qquad
+\mathbf S=0.
+$$
+
+There the local loading doubles while the flux cancels. The total energy of
+the two approaching regions remains
+
+$$
+E_{\mathrm{tot}}=E_A+E_B.
 $$
 
 The overlap itself is the effect.
