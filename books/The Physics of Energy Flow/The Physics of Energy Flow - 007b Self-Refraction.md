@@ -135,25 +135,32 @@ $$
 
 The extra $2$ is exactly the interference term between $1$ and $1$.
 
-That result is strange enough to have encouraged the operational dogma that a
-photon interferes only with itself. But mathematically it is just ordinary
-wave mechanics: amplitudes add linearly, while the observable load is
-quadratic in the total field.
+In this ontology the square is read geometrically, not just algebraically. A
+localized pulse may be pictured as an occupied normal extent above the local
+$\mathbf E\times\mathbf B$ base area. Two separate equal pulses therefore
+realize two base areas and two normal extents. When those pulses overlap
+coherently and in phase, the two base areas collapse into one shared base, the
+two normal extents add, and that doubled extent is compacted into the one
+surviving base cell. One factor of two comes from merging the two occupied
+bases into one, and the other comes from doubling the normal extent above that
+base. That is the geometric reading of the fourfold local density.
 
-There is therefore no second additive law for energy. What fails is only the
-attempt to keep treating the two coherent contributions as separately additive
-local energies after they have been fully overlapped in the same mode. Once
-the overlap is exact, the local observables belong to the total field.
-
-This does not violate continuity. The conserved law is
+So the statement is not that four times the total energy has appeared out of
+nowhere. The statement is that the same total field, when reorganized into one
+coherent occupied region, can carry four times the local energy density. The
+result concerns local loading. The total bookkeeping still belongs to the full
+field through
 
 $$
 \partial_t u+\nabla\cdot\mathbf S=0,
 $$
 
-for the total field, not term-by-term additivity under a non-orthogonal
-decomposition. Constructive loading in one region is balanced elsewhere by the
-global field configuration, just as in any other wave system.
+applied to the total field.
+
+That result is strange enough to have encouraged the operational dogma that a
+photon interferes only with itself. But mathematically it is just ordinary
+wave mechanics: amplitudes add linearly, while the observable load is
+quadratic in the total field.
 
 The overlap itself is the effect.
 
