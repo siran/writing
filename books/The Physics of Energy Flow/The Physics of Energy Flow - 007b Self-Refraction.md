@@ -94,114 +94,66 @@ electromagnetic medium.
 
 If the exact overlapping fields are kept, nothing further is needed. The
 interaction is already present in the total-field observables written above.
-There is no second additive law for energy. The addition law is linear at the
-level of the fields, and the energy observable is quadratic in that total
-field.
-
-Energy is additive when the two portions occupy disjoint regions or orthogonal
-transport modes. But once coherent portions occupy the same region in the same
-mode, the quadratic observable need not split into separately additive parts.
-That result can feel strange, but it is not peculiar to electromagnetism. It
-is a standard fact of wave mechanics: amplitudes add, and the local load read
-from their square can become large enough to produce effects not present in
-either part taken alone.
-
-The head-on case gives a simple exact example. If two equal coherent portions
-move toward one another, then at a point where their electric sectors add one
-has
+For the simplest local case, take the two portions to be parallel and
+co-propagating, with the same polarization and a definite relative phase
+$\Delta$. Then the local loading law can be written as
 
 $$
-\mathbf E_2=\mathbf E_1,
+u
+=
+u_1+u_2+2\sqrt{u_1u_2}\cos\Delta,
+$$
+
+and likewise
+
+$$
+\mathbf S
+=
+\mathbf S_1+\mathbf S_2+2\sqrt{|\mathbf S_1||\mathbf S_2|}\cos\Delta\,
+\hat{\mathbf s}
+$$
+
+when the two fluxes are parallel to the same unit direction
+$\hat{\mathbf s}$.
+
+So if one wants an addition law for the local load rather than for the field,
+this is it.
+
+For equal in-phase overlap, $\Delta=0$ and $u_1=u_2$, so
+
+$$
+u=(\sqrt{u_1}+\sqrt{u_2})^2=4u_1,
 \qquad
-\mathbf B_2=-\mathbf B_1,
+\mathbf S=4\mathbf S_1.
 $$
 
-so
+Written in normalized units, the point is simply
 
 $$
-u=2u_1,
-\qquad
-\mathbf S=0.
+1+1+2=4.
 $$
 
-There the local loading doubles while the flux cancels. The total energy of
-the two approaching regions remains
+The extra $2$ is exactly the interference term between $1$ and $1$.
+
+That result is strange enough to have encouraged the operational dogma that a
+photon interferes only with itself. But mathematically it is just ordinary
+wave mechanics: amplitudes add linearly, while the observable load is
+quadratic in the total field.
+
+There is therefore no second additive law for energy. What fails is only the
+attempt to keep treating the two coherent contributions as separately additive
+local energies after they have been fully overlapped in the same mode. Once
+the overlap is exact, the local observables belong to the total field.
+
+This does not violate continuity. The conserved law is
 
 $$
-E_{\mathrm{tot}}=E_A+E_B.
+\partial_t u+\nabla\cdot\mathbf S=0,
 $$
 
-The co-propagating recombination case must be read just as carefully. In
-passive optics, take an ideal symmetric lossless 50/50 combiner and write its
-two outputs as
-
-$$
-\mathbf E_\pm=\alpha(\mathbf E_A\pm \mathbf E_B),
-\qquad
-\mathbf B_\pm=\alpha(\mathbf B_A\pm \mathbf B_B).
-$$
-
-The coefficient is fixed by losslessness. If only input $A$ is present, then
-
-$$
-\mathbf E_+=\alpha\mathbf E_A,
-\qquad
-\mathbf E_-=\alpha\mathbf E_A,
-$$
-
-and likewise for $\mathbf B$. Each output therefore carries local loading
-
-$$
-u_\pm=\alpha^2 u_A.
-$$
-
-Since the combiner is lossless and splits symmetrically,
-
-$$
-u_+ + u_- = u_A,
-$$
-
-so
-
-$$
-2\alpha^2=1,
-\qquad
-\alpha=\frac{1}{\sqrt2}.
-$$
-
-Therefore
-
-$$
-\mathbf E_\pm=\frac{\mathbf E_A\pm \mathbf E_B}{\sqrt2},
-\qquad
-\mathbf B_\pm=\frac{\mathbf B_A\pm \mathbf B_B}{\sqrt2}.
-$$
-
-If the two inputs are equal and in phase, then
-
-$$
-\mathbf E_+=\sqrt2\,\mathbf E_A,
-\qquad
-\mathbf E_-=0,
-$$
-
-and likewise for $\mathbf B$. The bright output therefore carries
-
-$$
-u_+=2u_A,
-\qquad
-\mathbf S_+=2\mathbf S_A,
-$$
-
-while the dark output carries none. So passive recombination conserves the
-total energy exactly. The apparent $4u$ paradox comes from treating two fully
-overlapped non-orthogonal contributions as though they still carried the same
-separately additive energies they had before recombination.
-
-This is one reason interference has often been spoken of as though a quantum
-of light could interfere only with itself. But the underlying mathematical
-fact is more general and more ordinary: whenever wave amplitudes combine
-coherently, the quadratic observables need not add term by term.
+for the total field, not term-by-term additivity under a non-orthogonal
+decomposition. Constructive loading in one region is balanced elsewhere by the
+global field configuration, just as in any other wave system.
 
 The overlap itself is the effect.
 
