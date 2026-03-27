@@ -153,6 +153,13 @@ their vectors add on that same occupied region. The local density then rises
 not because extra energy has appeared, but because the same $2E$ is now carried
 in less realized extent.
 
+The same compaction can be read in two physical steps. First, the two occupied
+supports are joined into one shared support. Relative to either isolated pulse,
+that alone doubles the density from $u$ to $2u$, because the same pulse energy
+is now realized in half the extent available before overlap. Second, the equal
+energy of the other pulse is present on that same shared support, so the local
+density doubles again from $2u$ to $4u$.
+
 If exact in-phase overlap gives local density $4u$, then conservation forces
 the occupied three-dimensional extent of the merged coherent region to be
 
