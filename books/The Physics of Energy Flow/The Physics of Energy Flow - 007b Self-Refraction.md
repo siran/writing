@@ -145,6 +145,36 @@ surviving base cell. One factor of two comes from merging the two occupied
 bases into one, and the other comes from doubling the normal extent above that
 base. That is the geometric reading of the fourfold local density.
 
+The halved realized support follows from the same arithmetic. Let one isolated
+pulse carry energy $E$ on base area $A$ and normal extent $h$, so
+
+$$
+u=\frac{E}{Ah}.
+$$
+
+Two equal pulses carry $2E$. If exact in-phase overlap gives local density
+$4u$, then the occupied three-dimensional extent of the merged coherent region
+must be
+
+$$
+V_{\mathrm{occ}}
+=
+\frac{2E}{4u}
+=
+\frac{2E}{4E/(Ah)}
+=
+\frac{Ah}{2}.
+$$
+
+So relative to one original pulse the realized occupied extent is halved. This
+is not an additional postulate. It is the quantity forced by keeping the total
+energy $2E$ while taking the exact coherent-overlap law $u_{\mathrm{overlap}}=4u$
+seriously.
+
+Since the in-plane base after overlap is the one shared area $A$, the normal
+extent itself must be reduced to $h/2$. This is the precise sense in which the
+doubled normal extent is compacted back into the one surviving base cell.
+
 So the statement is not that four times the total energy has appeared out of
 nowhere. The statement is that the same total field, when reorganized into one
 coherent occupied region, can carry four times the local energy density. The
