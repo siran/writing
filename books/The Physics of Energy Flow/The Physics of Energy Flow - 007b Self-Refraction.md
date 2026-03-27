@@ -163,6 +163,21 @@ occupied extent $2V$. Under exact coherent in-phase overlap, those two occupied
 extents are no longer separate. They are realized as one common occupied
 region.
 
+Equivalently, if the two pre-overlap supports are written as disjoint equal
+regions $V_1$ and $V_2$, each of extent $V$, then the occupied extent of the
+pair is their union
+
+$$
+U:=V_1\cup V_2,
+\qquad
+|U|=2V.
+$$
+
+Coherent overlap removes one of those two available supports and leaves one
+surviving support of extent $V$. In that sense, the available occupied space
+has halved before one even asks how much energy is realized on the surviving
+support.
+
 The compaction can then be read in two physical steps. First, relative to
 either isolated pulse, the available realized extent is halved from $V$ to
 $V/2$. That step alone doubles the density:
