@@ -132,8 +132,44 @@ E_{\mathrm{tot}}=E_A+E_B.
 $$
 
 The co-propagating recombination case must be read just as carefully. In
-passive optics, two equal coherent inputs are combined unitarily. For a
-50/50 combiner the output amplitudes are
+passive optics, take an ideal symmetric lossless 50/50 combiner and write its
+two outputs as
+
+$$
+\mathbf E_\pm=\alpha(\mathbf E_A\pm \mathbf E_B),
+\qquad
+\mathbf B_\pm=\alpha(\mathbf B_A\pm \mathbf B_B).
+$$
+
+The coefficient is fixed by losslessness. If only input $A$ is present, then
+
+$$
+\mathbf E_+=\alpha\mathbf E_A,
+\qquad
+\mathbf E_-=\alpha\mathbf E_A,
+$$
+
+and likewise for $\mathbf B$. Each output therefore carries local loading
+
+$$
+u_\pm=\alpha^2 u_A.
+$$
+
+Since the combiner is lossless and splits symmetrically,
+
+$$
+u_+ + u_- = u_A,
+$$
+
+so
+
+$$
+2\alpha^2=1,
+\qquad
+\alpha=\frac{1}{\sqrt2}.
+$$
+
+Therefore
 
 $$
 \mathbf E_\pm=\frac{\mathbf E_A\pm \mathbf E_B}{\sqrt2},
