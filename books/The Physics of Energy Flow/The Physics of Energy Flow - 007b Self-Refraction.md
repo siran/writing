@@ -135,26 +135,26 @@ $$
 
 The extra $2$ is exactly the interference term between $1$ and $1$.
 
-In this ontology the square is read geometrically, not just algebraically. A
-localized pulse may be pictured as an occupied normal extent above the local
-$\mathbf E\times\mathbf B$ base area. Two separate equal pulses therefore
-realize two base areas and two normal extents. When those pulses overlap
-coherently and in phase, the two base areas collapse into one shared base, the
-two normal extents add, and that doubled extent is compacted into the one
-surviving base cell. One factor of two comes from merging the two occupied
-bases into one, and the other comes from doubling the normal extent above that
-base. That is the geometric reading of the fourfold local density.
+But the physical point is not exhausted by noting the algebraic square. The
+question is where the greater local density comes from without creating energy.
+It comes from redistribution.
 
-The halved realized support follows from the same arithmetic. Let one isolated
-pulse carry energy $E$ on base area $A$ and normal extent $h$, so
+Let one isolated pulse carry energy $E$ on base area $A$ and normal extent
+$h$, so
 
 $$
 u=\frac{E}{Ah}.
 $$
 
-Two equal pulses carry $2E$. If exact in-phase overlap gives local density
-$4u$, then the occupied three-dimensional extent of the merged coherent region
-must be
+Two separate equal pulses therefore carry total energy $2E$ across two
+separate occupied supports. Under exact coherent in-phase overlap, those two
+supports are no longer separate. The pulses are realized on one shared base, so
+their vectors add on that same occupied region. The local density then rises
+not because extra energy has appeared, but because the same $2E$ is now carried
+in less realized extent.
+
+If exact in-phase overlap gives local density $4u$, then conservation forces
+the occupied three-dimensional extent of the merged coherent region to be
 
 $$
 V_{\mathrm{occ}}
@@ -173,12 +173,12 @@ seriously.
 
 Since the in-plane base after overlap is the one shared area $A$, the normal
 extent itself must be reduced to $h/2$. This is the precise sense in which the
-doubled normal extent is compacted back into the one surviving base cell.
+same total energy is compacted into half the support.
 
 So the statement is not that four times the total energy has appeared out of
-nowhere. The statement is that the same total field, when reorganized into one
-coherent occupied region, can carry four times the local energy density. The
-result concerns local loading. The total bookkeeping still belongs to the full
+nowhere. The statement is that coherent overlap redistributes the same total
+energy into a smaller occupied region, and the fourfold local density is the
+reading of that concentration. The total bookkeeping still belongs to the full
 field through
 
 $$
@@ -188,9 +188,9 @@ $$
 applied to the total field.
 
 That result is strange enough to have encouraged the operational dogma that a
-photon interferes only with itself. But mathematically it is just ordinary
-wave mechanics: amplitudes add linearly, while the observable load is
-quadratic in the total field.
+photon interferes only with itself. Mathematically, amplitudes add linearly and
+the observable load is quadratic in the total field. Physically, the same total
+energy is being concentrated by overlap rather than created by it.
 
 The overlap itself is the effect.
 
