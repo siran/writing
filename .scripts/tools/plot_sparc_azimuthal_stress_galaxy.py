@@ -21,8 +21,6 @@ SPARC_URL = "https://astroweb.case.edu/SPARC/MassModels_Lelli2016c.mrt"
 DEFAULT_GALAXIES = ("NGC3198",)
 FIDUCIAL_ML_DISK = 0.5
 FIDUCIAL_ML_BULGE = 0.7
-TREFOIL_M = 3
-TREFOIL_N = 2
 
 
 @dataclass
@@ -78,34 +76,37 @@ class SparcGalaxy:
         return np.sqrt(self.delta_v2)
 
     @property
-    def trefoil32_fraction(self) -> float:
-        numerator = 4.0 * TREFOIL_M**2
-        denominator = numerator + TREFOIL_N**2
-        return numerator / denominator
-
-    @property
-    def delta_v2_interaction_lower_bound(self) -> np.ndarray:
+    def delta_v2_coherence_upper_bound(self) -> np.ndarray:
         cross_sum = (
             self.gas_positive_amplitude * self.disk_visible_amplitude
             + self.gas_positive_amplitude * self.bulge_visible_amplitude
             + self.disk_visible_amplitude * self.bulge_visible_amplitude
         )
-        return 2.0 * self.trefoil32_fraction * cross_sum
+        return 2.0 * cross_sum
 
     @property
-    def v_stress_interaction_lower_bound(self) -> np.ndarray:
-        return np.sqrt(self.delta_v2_interaction_lower_bound)
+    def v_stress_coherence_upper_bound(self) -> np.ndarray:
+        return np.sqrt(self.delta_v2_coherence_upper_bound)
 
     @property
-    def v_energy_flow_interaction_lower_bound(self) -> np.ndarray:
-        return np.sqrt(self.v_bar2_visible + self.delta_v2_interaction_lower_bound)
+    def v_energy_flow_coherence_upper_bound(self) -> np.ndarray:
+        return np.sqrt(self.v_bar2_visible + self.delta_v2_coherence_upper_bound)
+
+    @property
+    def lambda_req(self) -> np.ndarray:
+        denominator = self.delta_v2_coherence_upper_bound
+        values = np.full_like(denominator, np.nan, dtype=float)
+        mask = denominator > 1e-9
+        values[mask] = self.delta_v2[mask] / denominator[mask]
+        values[~mask] = 0.0
+        return values
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
             "Plot observed SPARC rotation curves against visible baryons and a "
-            "baryonic coherent-interaction energy-flow model for one or more galaxies."
+            "resolved baryonic coherence band for one or more galaxies."
         )
     )
     parser.add_argument(
@@ -220,11 +221,11 @@ def export_extracted_csv(galaxy: SparcGalaxy, data_dir: Path) -> Path:
                 "a_d_coherent_kms",
                 "a_b_coherent_kms",
                 "v_bar_visible_kms",
-                "v_stress_interaction_lower_bound_kms",
-                "v_energy_flow_interaction_lower_bound_kms",
+                "v_stress_coherence_upper_bound_kms",
+                "v_energy_flow_coherence_upper_bound_kms",
                 "v_stress_required_kms",
-                "trefoil32_fraction",
-                "delta_v2_interaction_lower_bound_kms2",
+                "lambda_req",
+                "delta_v2_coherence_upper_bound_kms2",
                 "delta_v2_kms2",
             ]
         )
@@ -239,10 +240,11 @@ def export_extracted_csv(galaxy: SparcGalaxy, data_dir: Path) -> Path:
             galaxy.disk_visible_amplitude,
             galaxy.bulge_visible_amplitude,
             galaxy.v_bar_visible,
-            galaxy.v_stress_interaction_lower_bound,
-            galaxy.v_energy_flow_interaction_lower_bound,
+            galaxy.v_stress_coherence_upper_bound,
+            galaxy.v_energy_flow_coherence_upper_bound,
             galaxy.v_stress_required,
-            galaxy.delta_v2_interaction_lower_bound,
+            galaxy.lambda_req,
+            galaxy.delta_v2_coherence_upper_bound,
             galaxy.delta_v2,
             strict=True,
         ):
@@ -250,7 +252,6 @@ def export_extracted_csv(galaxy: SparcGalaxy, data_dir: Path) -> Path:
                 [
                     galaxy.display_name,
                     *[f"{value:.6f}" for value in values[:-1]],
-                    f"{galaxy.trefoil32_fraction:.6f}",
                     f"{values[-1]:.6f}",
                 ]
             )
@@ -258,8 +259,8 @@ def export_extracted_csv(galaxy: SparcGalaxy, data_dir: Path) -> Path:
 
 
 def write_caption(galaxy: SparcGalaxy, output_dir: Path, image_filename: str) -> Path:
-    caption_path = output_dir / f"{slugify(galaxy.display_name)}-observed-newtonian-and-coherent-interaction-energy-flow.md"
-    caption = f"""# {galaxy.display_name}: Observed Rotation, Newtonian Baryons, and a Coherent-Interaction Energy-Flow Curve
+    caption_path = output_dir / f"{slugify(galaxy.display_name)}-observed-newtonian-and-resolved-coherence-band.md"
+    caption = f"""# {galaxy.display_name}: Observed Rotation, Newtonian Baryons, and the Resolved Coherence Band
 
 This figure is meant to be read in two steps.
 
@@ -267,7 +268,7 @@ The top panel shows three curves for the same galaxy.
 
 - The dark points are the directly observed circular speed `V_obs(R)` from the SPARC mass-model table.
 - The orange curve is the Newtonian visible-baryonic prediction `V_N(R)`, built from the SPARC gas, disk, and bulge components using the fiducial stellar mass-to-light choices quoted in the SPARC paper: `Upsilon_disk = 0.5` and `Upsilon_bulge = 0.7` at 3.6 um.
-- The blue-green curve is the coherent-interaction energy-flow curve `V_EF,x(R)`, obtained from the visible baryons alone by keeping the positive cross term of the coherent azimuthal second moment.
+- The blue-green curve is the resolved coherence upper bound `V_coh,max(R)`, obtained by letting the resolved gas, disk, and bulge families add with maximal positive coherence.
 
 The construction is stepwise.
 
@@ -285,51 +286,51 @@ A_d(R) = sqrt(0.5) V_disk(R),
 A_b(R) = sqrt(0.7) V_bulge(R).
 ```
 
-3. In the aligned azimuthal regime, coherent loading means the local azimuthal stress is the square of the amplitude sum, not just the sum of diagonal pieces:
+3. At resolved-family level, the ordinary baryonic curve keeps only the diagonal part
 
 ```text
-Sigma_phiphi,coh ~ (sum_a a_a)^2 = sum_a a_a^2 + 2 sum_{{a<b}} a_a a_b.
+V_N^2(R) = A_g^2(R) + A_d^2(R) + A_b^2(R).
 ```
 
-So the missing galactic interaction term is the positive cross part.
-
-4. Assume each baryonic closure is a `(3,2)` trefoil with coherent `4u` strengthening in the toroidal sector. The corresponding toroidal fraction is
+4. Allow coherent pair loading between the resolved families:
 
 ```text
-chi_32 = (4 m^2) / (4 m^2 + n^2) = 36 / 40 = 0.9.
+V_EF^2(R) = V_N^2(R) + 2[lambda_gd A_g(R)A_d(R) + lambda_gb A_g(R)A_b(R) + lambda_db A_d(R)A_b(R)],
 ```
 
-5. Truncate the coherent interaction to the resolved SPARC families gas, disk, and bulge. This gives the resolved lower-bound interaction term
+with `0 <= lambda_ij <= 1`.
+
+5. This gives a rigorous lower and upper bound:
 
 ```text
-Delta V_x^2(R) = 2 chi_32 [A_g(R) A_d(R) + A_g(R) A_b(R) + A_d(R) A_b(R)].
+V_N^2(R) <= V_EF^2(R) <= (A_g(R) + A_d(R) + A_b(R))^2.
 ```
 
-and the corresponding coherent-interaction energy-flow curve
+So the upper curve in the top panel is
 
 ```text
-V_EF,x^2(R) = V_N^2(R) + Delta V_x^2(R).
+V_coh,max(R) = A_g(R) + A_d(R) + A_b(R),
 ```
 
-This is not the observed gap inserted back into the curve. It is a baryonic-only interaction expression built from the visible baryons together with the coherent cross-term rule.
-
-The bottom panel compares two different completion terms:
+and its excess above Newtonian is
 
 ```text
-V_x(R) = sqrt(Delta V_x^2(R))
+Delta V_coh,max^2(R) = 2[A_g(R)A_d(R) + A_g(R)A_b(R) + A_d(R)A_b(R)].
 ```
 
-from the resolved coherent-interaction lower bound, and
+This is shape-independent at the coarse resolved-family level. It does not require picking a microscopic knot. It only uses the positive baryonic amplitudes recovered from the resolved gas, disk, and bulge content.
+
+The bottom panel then asks whether the observed gap fits inside that resolved-family band. Define the required effective resolved coherence
 
 ```text
-V_stress,req(R) = sqrt(max(V_obs^2(R) - V_N^2(R), 0))
+lambda_req(R) = [V_obs^2(R) - V_N^2(R)] / Delta V_coh,max^2(R).
 ```
 
-required by the observed gap.
+If `0 <= lambda_req(R) <= 1`, then the observed excess is recovered inside the resolved gas-disk-bulge coherence band alone. If `lambda_req(R) > 1`, then the resolved SPARC families undercount the full positive cross term and finer baryonic decomposition or additional unresolved baryonic families must still contribute.
 
-So the lower panel is the actual test. If the resolved coherent interaction is sufficient, the blue curve should track the gray required-completion curve. If it stays below it, the resolved SPARC truncation undercounts the full coherent interaction.
+In the plot, very large values of `lambda_req` are clipped at `5` only for readability. Those spikes occur where the resolved cross budget in the denominator is very small, so they should be read simply as "well above the resolved-family band."
 
-For NGC 3198, that is exactly what this first test shows: the coherent-interaction lower bound improves on the Newtonian baryonic curve and tracks the inner rise in the right direction, but it still stays below the observed outer rotation and below the required completion through most of the disk. So the construction is now honest and baryonic-only, and the remaining gap has a clean interpretation: the resolved gas-disk-bulge split is only a lower bound on the full positive cross term of all finer baryonic closures.
+For NGC 3198, this is exactly what the figure shows. The upper coherence curve already tracks the inner rise shape far better than the Newtonian baryonic curve, which means the omitted positive cross term is pointed in the right direction. But across most of the outer disk the observed rotation still lies above the resolved-family upper curve, and the lower panel correspondingly pushes `lambda_req(R)` above `1`. So the resolved visible families do not close the galaxy by themselves, but they do recover the correct structural mechanism and a nontrivial lower/upper band.
 
 In the language of the book, the required gap still represents the local excess `Delta v_phi^2(R)` that must be supplied by organized azimuthal stress if no extra unseen matter is added. By the envelope derivation in the azimuthal-stress note, that same quantity must satisfy
 
@@ -352,7 +353,7 @@ Figure file: `{image_filename}`
 
 def plot_galaxy(galaxy: SparcGalaxy, output_dir: Path) -> Path:
     output_dir.mkdir(parents=True, exist_ok=True)
-    filename = f"{slugify(galaxy.display_name)}-observed-newtonian-and-coherent-interaction-energy-flow.png"
+    filename = f"{slugify(galaxy.display_name)}-observed-newtonian-and-resolved-coherence-band.png"
     output_path = output_dir / filename
 
     fig, (ax_top, ax_bottom) = plt.subplots(
@@ -366,9 +367,8 @@ def plot_galaxy(galaxy: SparcGalaxy, output_dir: Path) -> Path:
     fig.patch.set_facecolor("#f8f4ec")
     radius = galaxy.radius_kpc
     v_bar = galaxy.v_bar_visible
-    v_stress_model = galaxy.v_stress_interaction_lower_bound
-    v_stress_required = galaxy.v_stress_required
-    v_energy_flow = galaxy.v_energy_flow_interaction_lower_bound
+    v_energy_flow = galaxy.v_energy_flow_coherence_upper_bound
+    lambda_req = galaxy.lambda_req
 
     ax_top.set_facecolor("#fffdf9")
     ax_top.fill_between(radius, v_bar, v_energy_flow, color="#cfe6d8", alpha=0.35)
@@ -390,7 +390,7 @@ def plot_galaxy(galaxy: SparcGalaxy, output_dir: Path) -> Path:
         v_energy_flow,
         color="#2f6b5f",
         linewidth=2.7,
-        label="Coherent-interaction lower bound",
+        label="Resolved coherence upper bound",
     )
     ax_top.fill_between(radius, 0.0, v_bar, color="#efcf9f", alpha=0.18)
     ax_top.set_ylabel("Circular speed [km/s]")
@@ -398,34 +398,45 @@ def plot_galaxy(galaxy: SparcGalaxy, output_dir: Path) -> Path:
     ax_top.legend(loc="best", fontsize=10)
 
     ax_bottom.set_facecolor("#fbfdff")
+    ax_bottom.axhspan(
+        0.0,
+        1.0,
+        color="#d9efe3",
+        alpha=0.65,
+        label=r"Resolved-family band $0 \leq \lambda_{\mathrm{eff}} \leq 1$",
+    )
+    clipped_lambda = np.minimum(lambda_req, 5.0)
     ax_bottom.plot(
         radius,
-        v_stress_model,
+        clipped_lambda,
         color="#2f6b8a",
         linewidth=2.5,
-        label=r"Resolved interaction lower bound $\sqrt{\Delta V_{\times}^2}$",
+        label=r"Required coherence $\lambda_{\mathrm{req}}$",
     )
-    ax_bottom.plot(
-        radius,
-        v_stress_required,
-        color="#3e3e3e",
-        linewidth=1.9,
-        linestyle="--",
-        label=r"Completion required by observation $\sqrt{V_{\mathrm{obs}}^2 - V_N^2}$",
-    )
-    ax_bottom.fill_between(radius, 0.0, v_stress_model, color="#c4dceb", alpha=0.40)
+    overflow_mask = lambda_req > 5.0
+    if np.any(overflow_mask):
+        ax_bottom.scatter(
+            radius[overflow_mask],
+            np.full(np.count_nonzero(overflow_mask), 5.0),
+            marker="^",
+            s=48,
+            color="#2f6b8a",
+            label=r"$\lambda_{\mathrm{req}}>5$ (clipped)",
+            zorder=5,
+        )
     ax_bottom.set_xlabel("Galactocentric radius [kpc]")
-    ax_bottom.set_ylabel("Stress completion [km/s]")
+    ax_bottom.set_ylabel(r"Effective coherence $\lambda_{\mathrm{req}}$")
     ax_bottom.set_title(
-        "Model stress completion versus the completion required by the data",
+        "Required resolved-family coherence versus the admissible band",
         fontsize=11.5,
     )
     ax_bottom.grid(True, alpha=0.25)
     ax_bottom.legend(loc="best", fontsize=10)
+    ax_bottom.set_ylim(0.0, 5.05)
 
     formula_text = (
-        r"$\chi_{32} = \frac{4m^2}{4m^2+n^2} = 0.9$" "\n"
-        r"$\Delta V_{\times}^2 = 2\chi_{32}(A_gA_d+A_gA_b+A_dA_b)$"
+        r"$V_N^2 \leq V_{\mathrm{EF}}^2 \leq (A_g+A_d+A_b)^2$" "\n"
+        r"$\lambda_{\mathrm{req}} = \frac{V_{\mathrm{obs}}^2 - V_N^2}{2(A_gA_d+A_gA_b+A_dA_b)}$"
     )
     ax_bottom.text(
         0.98,
@@ -442,7 +453,7 @@ def plot_galaxy(galaxy: SparcGalaxy, output_dir: Path) -> Path:
     fig.text(
         0.5,
         0.955,
-        "Observed, Newtonian baryons, and a resolved coherent-interaction model with trefoil `4u` weighting",
+        "Observed rotation, Newtonian baryons, and the shape-independent resolved coherence band",
         ha="center",
         va="top",
         fontsize=10.0,
@@ -460,9 +471,9 @@ def print_summary(galaxy: SparcGalaxy, image_path: Path, csv_path: Path, caption
     print(f"  radii: {galaxy.radius_kpc.size}")
     print(f"  observed peak [km/s]: {float(np.max(galaxy.v_obs_kms)):.2f}")
     print(f"  Newtonian peak [km/s]: {float(np.max(galaxy.v_bar_visible)):.2f}")
-    print(f"  interaction-model peak [km/s]: {float(np.max(galaxy.v_energy_flow_interaction_lower_bound)):.2f}")
-    print(f"  interaction lower-bound completion peak [km/s]: {float(np.max(galaxy.v_stress_interaction_lower_bound)):.2f}")
-    print(f"  required completion peak [km/s]: {float(np.max(galaxy.v_stress_required)):.2f}")
+    print(f"  coherence-band upper peak [km/s]: {float(np.max(galaxy.v_energy_flow_coherence_upper_bound)):.2f}")
+    finite_lambda = galaxy.lambda_req[np.isfinite(galaxy.lambda_req)]
+    print(f"  lambda_req range: {float(np.min(finite_lambda)):.3f} to {float(np.max(finite_lambda)):.3f}")
     print(f"  figure: {image_path}")
     print(f"  extracted data: {csv_path}")
     print(f"  caption: {caption_path}")

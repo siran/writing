@@ -506,104 +506,90 @@ would lie outside the capacity of this mechanism.
 ### 6.1. Coherent interaction term from aligned baryonic closures
 
 The envelope above only bounds what the azimuthal-stress channel can supply.
-To recover an explicit interaction expression, now add the coherent same-base
-loading discussed in the self-refraction chapters.
+To recover a more explicit coarse-grained expression, now suppress the
+microscopic knot details and keep only the positive baryonic family amplitudes.
 
-Let the local co-rotating unresolved elements be labeled by $a$, and in the
-aligned azimuthal regime define their positive azimuthal amplitudes by
-
-$$
-a_a
-:=
-\sqrt{\chi_{32}\,u_a}\,(\hat{\mathbf n}_a\cdot\hat{\mathbf e}_\phi),
-\qquad
-\chi_{32}:=\frac{4m^2}{4m^2+n^2}.
-$$
-
-For a `(3,2)` trefoil,
+Let the resolved co-rotating baryonic families be labeled by $I$, with local
+positive azimuthal amplitudes
 
 $$
-\chi_{32}=\frac{36}{40}=0.9.
+A_I(R,z)\ge 0.
 $$
 
-The factor $\chi_{32}$ is the toroidal weighting recovered from the trefoil
-split together with the coherent `4u` strengthening of the same-base azimuthal
-loading.
-
-In the aligned regime, the coherent azimuthal second moment is not just the
-sum of the diagonal packet pieces. It is the square of the total local
-azimuthal amplitude:
+Their diagonal energy content is
 
 $$
-\Sigma_{\phi\phi}^{\mathrm{coh}}
+U_I:=A_I^2.
+$$
+
+The ordinary baryonic baseline then keeps only the diagonal contribution:
+
+$$
+V_N^2=\sum_I U_I.
+$$
+
+Now allow coherent loading between different families. At the same
+coarse-grained point, write the pairwise coherence factors as
+
+$$
+0\le \lambda_{IJ}\le 1,
+\qquad I<J.
+$$
+
+Then the aligned azimuthal second moment at resolved-family level is
+
+$$
+\Sigma_{\phi\phi}^{\mathrm{fam}}
 \approx
-\left(\sum_a a_a\right)^2.
-$$
-
-Expanding gives
-
-$$
-\Sigma_{\phi\phi}^{\mathrm{coh}}
-\approx
-\sum_a a_a^2
+\sum_I U_I
 +
-2\sum_{a<b} a_a a_b.
+2\sum_{I<J}\lambda_{IJ}A_IA_J.
 $$
 
-So the coherent azimuthal stress splits into
+So the coherent excess above the diagonal baryonic baseline is
 
 $$
-\Sigma_{\phi\phi}^{\mathrm{coh}}
-=
-\Sigma_{\phi\phi}^{\mathrm{diag}}
-+
-\Sigma_{\phi\phi}^{\mathrm{int}},
-$$
-
-with
-
-$$
-\Sigma_{\phi\phi}^{\mathrm{diag}}
+\Delta v_{\mathrm{coh}}^2
 \approx
-\sum_a a_a^2,
-\qquad
-\Sigma_{\phi\phi}^{\mathrm{int}}
-\approx
-2\sum_{a<b} a_a a_b.
+2\sum_{I<J}\lambda_{IJ}A_IA_J.
 $$
 
-This is the clean structural origin of the galactic interaction term. If one
-adds baryonic contributions only as isolated scalar pieces, one keeps the
-diagonal part and discards the positive cross term.
+This is the clean structural origin of the galactic interaction term. Standard
+baryonic addition keeps the diagonal part $\sum_I U_I$ and drops the positive
+cross term.
 
-Now group the unresolved elements into any coarser positive families $I$, and
-define
-
-$$
-A_I:=\sum_{a\in I} a_a.
-$$
-
-Then the interaction term recovered at that coarser resolution is
+Because each $\lambda_{IJ}$ lies between zero and one, the resolved-family
+coherent term obeys the exact coarse bounds
 
 $$
-\Sigma_{\phi\phi,\mathrm{int}}^{\mathrm{coarse}}
-\approx
-2\sum_{I<J} A_I A_J.
-$$
-
-Because the omitted within-family pairs are also positive, one has the strict
-lower-bound relation
-
-$$
-\Sigma_{\phi\phi,\mathrm{int}}^{\mathrm{coarse}}
+\boxed{
+0
 \le
-\Sigma_{\phi\phi,\mathrm{int}}^{\mathrm{fine}}.
+\Delta v_{\mathrm{coh}}^2
+\le
+2\sum_{I<J}A_IA_J.
+}
 $$
 
-So any coarse baryonic decomposition can only undercount the full coherent
-interaction term.
+Equivalently,
 
-For the resolved SPARC components, take
+$$
+\boxed{
+V_N^2
+\le
+V_{\mathrm{EF}}^2
+\le
+\left(\sum_I A_I\right)^2.
+}
+$$
+
+So the diagonal Newtonian curve is the lower bound, while the fully coherent
+resolved-family sum is the upper bound. No detailed knot shape is needed for
+this step. The local `4u` principle enters only in justifying that positive
+cross-loading is real; the coarse bound itself depends only on positivity and
+bounded coherence.
+
+For the resolved SPARC families gas, disk, and bulge, take
 
 $$
 A_g:=\sqrt{\max(V_g|V_g|,0)},
@@ -621,31 +607,55 @@ $$
 \Upsilon_b=0.7.
 $$
 
-Then the resolved coherent interaction term is
+Then the resolved-family coherence band becomes
 
 $$
 \boxed{
-\Delta v_{\times}^2(R)
-\approx
-2\chi_{32}\bigl(A_gA_d+A_gA_b+A_dA_b\bigr).
+V_N^2(R)
+\le
+V_{\mathrm{EF}}^2(R)
+\le
+\bigl(A_g(R)+A_d(R)+A_b(R)\bigr)^2.
 }
 $$
 
-and the corresponding resolved energy-flow curve is
+and the maximum resolved coherent excess is
 
 $$
 \boxed{
-V_{\mathrm{EF},\times}^2(R)
+\Delta v_{\mathrm{coh,max}}^2(R)
 =
-V_N^2(R)+\Delta v_{\times}^2(R).
+2\bigl(A_gA_d+A_gA_b+A_dA_b\bigr).
 }
 $$
 
-This is not yet the full galactic interaction law. It is the rigorous
-component-level lower bound recovered when the visible baryons are truncated to
-the resolved gas, disk, and bulge families. Any finer positive decomposition
-of the same baryonic matter produces more positive cross pairs and therefore a
-larger coherent interaction term.
+Define the required effective resolved coherence by
+
+$$
+\boxed{
+\lambda_{\mathrm{req}}(R)
+:=
+\frac{v_{\mathrm{obs}}^2(R)-V_N^2(R)}
+{2\bigl(A_gA_d+A_gA_b+A_dA_b\bigr)}.
+}
+$$
+
+Whenever
+
+$$
+0\le \lambda_{\mathrm{req}}(R)\le 1,
+$$
+
+the observed excess can be recovered inside the resolved gas-disk-bulge
+coherence band alone. If instead
+
+$$
+\lambda_{\mathrm{req}}(R)>1,
+$$
+
+then the resolved families undercount the full positive cross term, and finer
+baryonic decomposition or additional unresolved baryonic families must still
+contribute.
 
 
 ## 7. Flat curves
