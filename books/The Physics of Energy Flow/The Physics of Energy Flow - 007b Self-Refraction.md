@@ -220,6 +220,22 @@ On this reading, concentration is not the cause of the squeeze. Strengthened
 closure is the cause, and the higher density is the scalar reading of the same
 compaction.
 
+This same reading is consistent with the later effective-string reduction of a
+bounded Maxwellian closure. Part II, appendix 217 derives the line energy
+density
+
+$$
+\mathcal{T}=\int_{\Sigma}u\,dA
+$$
+
+as effective line tension along a thin closed tube. The present overlap
+argument is the transverse counterpart of that same ontology. The closed path
+is still one Maxwellian closure, not a new object. Coherent overlap increases
+the tangential closure stress carried along that path; the strengthened
+tangential stress then contracts the two transverse scales of the occupied
+cell, so the union extent $2V$ is driven to $V/2$ and the same total
+$2E$ is realized as $4u$.
+
 If exact in-phase overlap gives local density $4u$, then conservation forces
 the occupied three-dimensional extent of the merged coherent region to be
 
