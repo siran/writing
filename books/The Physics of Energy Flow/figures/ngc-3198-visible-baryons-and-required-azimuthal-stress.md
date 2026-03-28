@@ -10,6 +10,8 @@ V_bar^2(R) = V_gas(R)|V_gas(R)| + 0.5 V_disk^2(R) + 0.7 V_bulge^2(R).
 
 So the orange curve is the speed expected from the visible baryons alone under the standard SPARC fiducial normalization.
 
+That top panel is already the full observed galactic attraction written as the measured circular speed. In the stress-tensor reading of the Part III note, the task is not to add some second force to it, but to recover that full observed load from the full stress decomposition.
+
 The bottom panel rewrites the same discrepancy as the azimuthal-stress term required by the Part III derivation. It plots
 
 ```text
@@ -29,6 +31,7 @@ Delta v_phi^2(R) <= k^2(R).
 ```
 
 So the blue curve is also the minimum local transport-speed scale that any admissible `k(R)` profile would have to exceed if this channel accounts for the full galactic excess.
+It is only the azimuthal part of the total stress-tensor accounting, not the whole galactic load by itself.
 
 Data source:
 - SPARC machine-readable mass models: https://astroweb.case.edu/SPARC/MassModels_Lelli2016c.mrt

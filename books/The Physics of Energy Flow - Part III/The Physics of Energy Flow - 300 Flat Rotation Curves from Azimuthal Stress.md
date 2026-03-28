@@ -365,6 +365,17 @@ v_\phi^2 = v_{\mathrm{base}}^2 + \frac{\Sigma_{\phi\phi}}{\rho}.
 }
 $$
 
+This is the key structural point. The full observed radial load
+
+$$
+\frac{v_\phi^2}{R}
+$$
+
+is not partly outside the stress description. It is exactly what the stress
+tensor accounts for once all contributing terms are retained. The azimuthal
+term is an additional surviving part of that same tensorial load, not a second
+force laid on top from elsewhere.
+
 So the excess above the non-azimuthal baseline is
 
 $$
@@ -708,6 +719,10 @@ The vector part of the azimuthal transport can cancel around the galaxy. The
 second moment does not. That surviving second moment is an azimuthal stress,
 and its cylindrical hoop-stress term supplies the inward radial loading needed
 for circular motion.
+
+So the completed galactic attraction must coincide with what is observed, and
+in this framework that completed load is read as stress-tensor structure all
+the way through: the non-azimuthal baseline plus the surviving azimuthal term.
 
 Under the explicit outer-disk assumptions above,
 
