@@ -88,6 +88,15 @@ The $1/r^2$ shell loading and the $1/r$ mass-potential are the same far-field
 scalar read in two complementary ways: shell density on the one hand, cumulative
 weak-field potential on the other.
 
+That compact scalar reduction is not the whole story for every organized
+aggregate. It is the correct leading description for a roughly compact, mixed,
+and orientation-averaged body. An extended rotating galaxy is different: its
+vector first moment can cancel while an anisotropic stress survives. In that
+case the additional inward load commonly attributed to dark matter belongs, in
+this framework, to the organized stress of the galactic transport itself rather
+than to additional unseen matter. The structural source of that extra galactic
+load is therefore shape and organized transport, not a second substance.
+
 
 ## Refraction by the mass-potential
 

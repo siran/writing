@@ -84,7 +84,11 @@ interact electromagnetically through the signed shell potential carried by
 their net chiral $(m,n)$ organization. Gravity, by contrast, comes from the
 surviving scalar monopole of many positive closure energies: the oriented
 structures cancel in the aggregate, while the positive energies sum and bend
-passing transport by refraction.
+passing transport by refraction. For extended rotating systems, however, the
+scalar monopole is not the whole collective object. A surviving anisotropic
+stress can remain, and the extra galactic inward load commonly attributed to
+dark matter is recovered here as a stress-supported shape effect rather than as
+additional unseen matter.
 
 The unifying claim of the book is not that mathematics is unnecessary, but that
 fewer primitive ontologies are necessary. One substrate, one continuity
