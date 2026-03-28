@@ -316,7 +316,89 @@ $$
 This is the strongest compact form of the result.
 
 
-## 6. Flat curves
+## 6. A built-in stress envelope
+
+The same derivation already supplies a lower and upper bound on what this
+channel can explain.
+
+Resolve the unresolved local transport into narrow elements labeled by $a$,
+with local energy densities $u_a$ and unit directions $\hat{\mathbf n}_a$.
+Each element contributes to the azimuthal second moment by the square of its
+azimuthal projection:
+
+$$
+(\Sigma_{\phi\phi})_a \approx u_a\,(\hat{\mathbf n}_a\cdot\hat{\mathbf e}_\phi)^2.
+$$
+
+Because
+
+$$
+0\le (\hat{\mathbf n}_a\cdot\hat{\mathbf e}_\phi)^2 \le 1,
+$$
+
+the summed azimuthal stress satisfies
+
+$$
+0 \le \Sigma_{\phi\phi} \le \sum_a u_a = u.
+$$
+
+So the azimuthal fraction is automatically bounded:
+
+$$
+\boxed{
+0\le f=\frac{\Sigma_{\phi\phi}}{u}\le 1.
+}
+$$
+
+Inside the same constitutive class, the local transport speed is
+
+$$
+k=\frac{1}{\sqrt{\varepsilon\mu}},
+$$
+
+and since $\rho=u/k^2$, the azimuthal-stress contribution to the circular load
+obeys
+
+$$
+\boxed{
+0\le \frac{\Sigma_{\phi\phi}}{\rho}=f\,k^2\le k^2.
+}
+$$
+
+If one separates the observed circular speed into a baryonic monopole part and
+an excess part supplied by azimuthal stress,
+
+$$
+\Delta v_\phi^2:=v_{\mathrm{obs}}^2-v_{\mathrm{bar}}^2,
+$$
+
+then the present mechanism predicts the envelope
+
+$$
+\boxed{
+0\le \Delta v_\phi^2 \approx f\,k^2 \le k^2.
+}
+$$
+
+This gives a direct structural test. If the observed galactic excess satisfies
+
+$$
+0\le \frac{\Delta v_\phi^2}{k^2}\le 1,
+$$
+
+then that case lies inside the azimuthal-stress envelope. If a case requires
+
+$$
+\Delta v_\phi^2 > k^2,
+$$
+
+then this channel alone cannot explain it. If this mechanism is the correct
+structural source of the galactic excess, the observed dark-matter cases
+should fall inside this envelope. If they do, the mechanism is not merely
+qualitatively plausible. It has the correct structural capacity.
+
+
+## 7. Flat curves
 
 Equation
 
@@ -351,7 +433,7 @@ The ontology is then clear:
   fitting that stress-supported motion with a monopole law.
 
 
-## 7. Why the standard dark-halo inference appears
+## 8. Why the standard dark-halo inference appears
 
 Observers often translate the measured circular speed into an inferred enclosed
 mass by the spherical Newtonian relation
@@ -382,7 +464,7 @@ So the "dark matter" can be, at the level of flat rotation curves, a stress
 misread as mass.
 
 
-## 8. Null-probe lensing from the same outer-disk regime
+## 9. Null-probe lensing from the same outer-disk regime
 
 Adopt the same weak constitutive summary already recovered in the gravity
 chapters for null probes:
@@ -486,7 +568,7 @@ This is the characteristic logarithmic-lens result of the flat regime:
   a stress-supported disk rather than as a compact scalar monopole.
 
 
-## 9. What this does and does not explain
+## 10. What this does and does not explain
 
 This derivation explains the original flat-curve trigger of the dark-matter
 problem inside the energy-flow ontology, together with the corresponding
@@ -522,7 +604,7 @@ So the present result should be read narrowly and exactly:
 > extended axisymmetric disk.
 
 
-## 10. Final statement
+## 11. Final statement
 
 The correct collective object for a rotating galaxy is not the scalar monopole
 of a compact random aggregate. It is the stress tensor of an extended organized
