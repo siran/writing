@@ -318,84 +318,178 @@ This is the strongest compact form of the result.
 
 ## 6. A built-in stress envelope
 
-The same derivation already supplies a lower and upper bound on what this
-channel can explain.
+The same mechanism already supplies a lower and upper bound on what this
+channel can explain. The derivation is step by step.
 
-Resolve the unresolved local transport into narrow elements labeled by $a$,
-with local energy densities $u_a$ and unit directions $\hat{\mathbf n}_a$.
-Each element contributes to the azimuthal second moment by the square of its
-azimuthal projection:
+First, return to the exact radial balance from section 3:
 
 $$
-(\Sigma_{\phi\phi})_a \approx u_a\,(\hat{\mathbf n}_a\cdot\hat{\mathbf e}_\phi)^2.
+\rho\,\frac{v_\phi^2}{R}
+=
+-\partial_R \Sigma_{RR}
+-
+\frac{\Sigma_{RR}-\Sigma_{\phi\phi}}{R}
+-
+\partial_z \Sigma_{Rz}.
 $$
 
-Because
+Multiply by $R/\rho$ and regroup the terms:
 
 $$
-0\le (\hat{\mathbf n}_a\cdot\hat{\mathbf e}_\phi)^2 \le 1,
+v_\phi^2
+=
+\left(
+-\frac{R}{\rho}\partial_R \Sigma_{RR}
+-\frac{\Sigma_{RR}}{\rho}
+-\frac{R}{\rho}\partial_z \Sigma_{Rz}
+\right)
++
+\frac{\Sigma_{\phi\phi}}{\rho}.
 $$
 
-the summed azimuthal stress satisfies
+Define the non-azimuthal baseline by
 
 $$
-0 \le \Sigma_{\phi\phi} \le \sum_a u_a = u.
+v_{\mathrm{base}}^2
+:=
+-\frac{R}{\rho}\partial_R \Sigma_{RR}
+-\frac{\Sigma_{RR}}{\rho}
+-\frac{R}{\rho}\partial_z \Sigma_{Rz}.
 $$
 
-So the azimuthal fraction is automatically bounded:
-
-$$
-\boxed{
-0\le f=\frac{\Sigma_{\phi\phi}}{u}\le 1.
-}
-$$
-
-Inside the same constitutive class, the local transport speed is
-
-$$
-k=\frac{1}{\sqrt{\varepsilon\mu}},
-$$
-
-and since $\rho=u/k^2$, the azimuthal-stress contribution to the circular load
-obeys
-
-$$
-\boxed{
-0\le \frac{\Sigma_{\phi\phi}}{\rho}=f\,k^2\le k^2.
-}
-$$
-
-If one separates the observed circular speed into a baryonic monopole part and
-an excess part supplied by azimuthal stress,
-
-$$
-\Delta v_\phi^2:=v_{\mathrm{obs}}^2-v_{\mathrm{bar}}^2,
-$$
-
-then the present mechanism predicts the envelope
+Then the circular speed splits exactly as
 
 $$
 \boxed{
-0\le \Delta v_\phi^2 \approx f\,k^2 \le k^2.
+v_\phi^2 = v_{\mathrm{base}}^2 + \frac{\Sigma_{\phi\phi}}{\rho}.
 }
 $$
 
-This gives a direct structural test. If the observed galactic excess satisfies
+So the excess above the non-azimuthal baseline is
 
 $$
-0\le \frac{\Delta v_\phi^2}{k^2}\le 1,
+\boxed{
+\Delta v_\phi^2
+:=
+v_\phi^2-v_{\mathrm{base}}^2
+=
+\frac{\Sigma_{\phi\phi}}{\rho}.
+}
 $$
 
-then that case lies inside the azimuthal-stress envelope. If a case requires
+Second, bound $\Sigma_{\phi\phi}$ from the unresolved transport itself. Inside
+the same narrow-packet coarse-graining already used in section 5, resolve the
+local unresolved transport into elements labeled by $a$, with local energy
+densities $u_a$ and unit directions $\hat{\mathbf n}_a$. For each element, the
+packet result gives the local momentum-flux tensor
 
 $$
-\Delta v_\phi^2 > k^2,
+\mathbf Q^{(a)} \approx u_a\,\hat{\mathbf n}_a\otimes\hat{\mathbf n}_a.
 $$
 
-then this channel alone cannot explain it. If this mechanism is the correct
-structural source of the galactic excess, the observed dark-matter cases
-should fall inside this envelope. If they do, the mechanism is not merely
-qualitatively plausible. It has the correct structural capacity.
+Its azimuthal component is therefore
+
+$$
+Q^{(a)}_{\phi\phi}
+\approx
+u_a\,(\hat{\mathbf n}_a\cdot\hat{\mathbf e}_\phi)^2.
+$$
+
+Coarse-graining over all unresolved elements gives
+
+$$
+\Sigma_{\phi\phi}
+\approx
+\sum_a u_a\,(\hat{\mathbf n}_a\cdot\hat{\mathbf e}_\phi)^2.
+$$
+
+Now
+
+$$
+0\le (\hat{\mathbf n}_a\cdot\hat{\mathbf e}_\phi)^2 \le 1
+$$
+
+for every element, so summing yields
+
+$$
+0
+\le
+\Sigma_{\phi\phi}
+\le
+\sum_a u_a.
+$$
+
+But the local coarse-grained energy density is just
+
+$$
+u=\sum_a u_a,
+$$
+
+so
+
+$$
+\boxed{
+0\le \Sigma_{\phi\phi}\le u.
+}
+$$
+
+Equivalently, the azimuthal fraction obeys
+
+$$
+\boxed{
+0\le f:=\frac{\Sigma_{\phi\phi}}{u}\le 1.
+}
+$$
+
+Third, convert that stress bound into a velocity-squared bound. Inside the same
+constitutive class,
+
+$$
+\rho=\frac{u}{k^2},
+\qquad
+k=\frac{1}{\sqrt{\varepsilon\mu}}.
+$$
+
+Therefore
+
+$$
+0\le \frac{\Sigma_{\phi\phi}}{\rho}\le \frac{u}{\rho}=k^2,
+$$
+
+that is,
+
+$$
+\boxed{
+0\le \Delta v_\phi^2 = \frac{\Sigma_{\phi\phi}}{\rho}\le k^2.
+}
+$$
+
+This is the envelope expression.
+
+If one uses an observational baryonic baseline $v_{\mathrm{bar}}^2$ to
+represent the same non-azimuthal contribution, then the observable excess
+
+$$
+\Delta v_\phi^2:=v_{\mathrm{obs}}^2-v_{\mathrm{bar}}^2
+$$
+
+should satisfy the same envelope:
+
+$$
+\boxed{
+0\le \Delta v_\phi^2 \le k^2.
+}
+$$
+
+So the structural test is immediate. If the galactic dark-matter cases really
+come from this azimuthal-stress channel, they should fall inside that
+envelope. A case requiring
+
+$$
+\Delta v_\phi^2 > k^2
+$$
+
+would lie outside the capacity of this mechanism.
 
 
 ## 7. Flat curves
