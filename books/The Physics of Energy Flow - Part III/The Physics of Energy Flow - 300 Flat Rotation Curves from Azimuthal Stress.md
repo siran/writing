@@ -503,6 +503,151 @@ $$
 would lie outside the capacity of this mechanism.
 
 
+### 6.1. Coherent interaction term from aligned baryonic closures
+
+The envelope above only bounds what the azimuthal-stress channel can supply.
+To recover an explicit interaction expression, now add the coherent same-base
+loading discussed in the self-refraction chapters.
+
+Let the local co-rotating unresolved elements be labeled by $a$, and in the
+aligned azimuthal regime define their positive azimuthal amplitudes by
+
+$$
+a_a
+:=
+\sqrt{\chi_{32}\,u_a}\,(\hat{\mathbf n}_a\cdot\hat{\mathbf e}_\phi),
+\qquad
+\chi_{32}:=\frac{4m^2}{4m^2+n^2}.
+$$
+
+For a `(3,2)` trefoil,
+
+$$
+\chi_{32}=\frac{36}{40}=0.9.
+$$
+
+The factor $\chi_{32}$ is the toroidal weighting recovered from the trefoil
+split together with the coherent `4u` strengthening of the same-base azimuthal
+loading.
+
+In the aligned regime, the coherent azimuthal second moment is not just the
+sum of the diagonal packet pieces. It is the square of the total local
+azimuthal amplitude:
+
+$$
+\Sigma_{\phi\phi}^{\mathrm{coh}}
+\approx
+\left(\sum_a a_a\right)^2.
+$$
+
+Expanding gives
+
+$$
+\Sigma_{\phi\phi}^{\mathrm{coh}}
+\approx
+\sum_a a_a^2
++
+2\sum_{a<b} a_a a_b.
+$$
+
+So the coherent azimuthal stress splits into
+
+$$
+\Sigma_{\phi\phi}^{\mathrm{coh}}
+=
+\Sigma_{\phi\phi}^{\mathrm{diag}}
++
+\Sigma_{\phi\phi}^{\mathrm{int}},
+$$
+
+with
+
+$$
+\Sigma_{\phi\phi}^{\mathrm{diag}}
+\approx
+\sum_a a_a^2,
+\qquad
+\Sigma_{\phi\phi}^{\mathrm{int}}
+\approx
+2\sum_{a<b} a_a a_b.
+$$
+
+This is the clean structural origin of the galactic interaction term. If one
+adds baryonic contributions only as isolated scalar pieces, one keeps the
+diagonal part and discards the positive cross term.
+
+Now group the unresolved elements into any coarser positive families $I$, and
+define
+
+$$
+A_I:=\sum_{a\in I} a_a.
+$$
+
+Then the interaction term recovered at that coarser resolution is
+
+$$
+\Sigma_{\phi\phi,\mathrm{int}}^{\mathrm{coarse}}
+\approx
+2\sum_{I<J} A_I A_J.
+$$
+
+Because the omitted within-family pairs are also positive, one has the strict
+lower-bound relation
+
+$$
+\Sigma_{\phi\phi,\mathrm{int}}^{\mathrm{coarse}}
+\le
+\Sigma_{\phi\phi,\mathrm{int}}^{\mathrm{fine}}.
+$$
+
+So any coarse baryonic decomposition can only undercount the full coherent
+interaction term.
+
+For the resolved SPARC components, take
+
+$$
+A_g:=\sqrt{\max(V_g|V_g|,0)},
+\qquad
+A_d:=\sqrt{\Upsilon_d}\,V_d,
+\qquad
+A_b:=\sqrt{\Upsilon_b}\,V_b,
+$$
+
+with the SPARC fiducial values
+
+$$
+\Upsilon_d=0.5,
+\qquad
+\Upsilon_b=0.7.
+$$
+
+Then the resolved coherent interaction term is
+
+$$
+\boxed{
+\Delta v_{\times}^2(R)
+\approx
+2\chi_{32}\bigl(A_gA_d+A_gA_b+A_dA_b\bigr).
+}
+$$
+
+and the corresponding resolved energy-flow curve is
+
+$$
+\boxed{
+V_{\mathrm{EF},\times}^2(R)
+=
+V_N^2(R)+\Delta v_{\times}^2(R).
+}
+$$
+
+This is not yet the full galactic interaction law. It is the rigorous
+component-level lower bound recovered when the visible baryons are truncated to
+the resolved gas, disk, and bulge families. Any finer positive decomposition
+of the same baryonic matter produces more positive cross pairs and therefore a
+larger coherent interaction term.
+
+
 ## 7. Flat curves
 
 Equation
