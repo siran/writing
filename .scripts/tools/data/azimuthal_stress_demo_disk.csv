@@ -1,0 +1,13 @@
+name,radius_kpc,v_obs_kms,v_bar_kms,k_kms
+Demo Disk,1,110,90,220
+Demo Disk,2,150,120,220
+Demo Disk,3,180,140,220
+Demo Disk,4,195,160,220
+Demo Disk,5,205,170,220
+Demo Disk,6,210,175,220
+Demo Disk,8,212,170,220
+Demo Disk,10,210,160,220
+Demo Disk,12,208,150,220
+Demo Disk,15,205,140,220
+Demo Disk,18,202,130,220
+Demo Disk,22,198,120,220
