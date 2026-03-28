@@ -163,50 +163,27 @@ occupied extent $2V$. Under exact coherent in-phase overlap, those two occupied
 extents are no longer separate. They are realized as one common occupied
 region.
 
-Equivalently, if the two pre-overlap supports are written as disjoint equal
-regions $V_1$ and $V_2$, each of extent $V$, then the occupied extent of the
-pair is their union
+The cleanest bookkeeping is therefore immediate: what had previously occupied
+two equal extents is now realized on one common extent $V$. Before any further
+tightening of closure is counted, the density has already doubled:
 
 $$
-U:=V_1\cup V_2,
-\qquad
-|U|=2V.
+\frac{2E}{V}=2u.
 $$
 
-Coherent overlap removes one of those two available supports and leaves one
-surviving support of extent $V$. In that sense, the available occupied space
-has halved before one even asks how much energy is realized on the surviving
-support.
-
-The bookkeeping can then be read in two physical steps. First, relative to
-either isolated pulse, the available realized extent is halved from $V$ to
-$V/2$. That step alone doubles the density:
-
-$$
-\frac{E}{V/2}=2u.
-$$
-
-Second, the equal energy of the other pulse is present on that same common
-extent, so the density doubles again:
-
-$$
-\frac{2E}{V/2}=4u.
-$$
-
-So the local density rises not because extra energy has appeared, but because
-the same total $2E$ is now carried in less realized extent.
+So even the first compression step does not create energy. It simply realizes
+the same total $2E$ on one occupied extent rather than two.
 
 But bookkeeping alone does not yet say what contracts the region. The proposed
 agent here is the tangential closure stress of the same self-refracting flow.
 Coherent overlap adds not only the propagating amplitudes, but also the
 closure-carrying tangential stress sectors. If that tangential closure stress
-doubles coherently, then the characteristic transverse cell scale is reduced by
-a factor of two in each transverse direction. Starting from the pre-overlap
-union of size $2V$, that fourfold transverse contraction gives the realized
-occupied extent
+doubles coherently, then the characteristic transverse cell scale of that
+common extent is reduced by a factor of two in each transverse direction. That
+further tightening drives the realized occupied extent from $V$ to
 
 $$
-V_{\mathrm{occ}}=\frac{2V}{4}=\frac{V}{2}.
+V_{\mathrm{occ}}=\frac{V}{2}.
 $$
 
 With total energy $2E$ carried on that contracted extent, the local density is
@@ -218,7 +195,9 @@ $$
 
 On this reading, concentration is not the cause of the squeeze. Strengthened
 closure is the cause, and the higher density is the scalar reading of the same
-compaction.
+compaction. The full $4u$ picture is thus two-step: first $2E$ is realized on
+$V$ instead of $2V$, and then strengthened closure contracts that common extent
+from $V$ to $V/2$.
 
 This same reading is consistent with the later effective-string reduction of a
 bounded Maxwellian closure. Part II, appendix 217 derives the line energy
@@ -233,8 +212,8 @@ argument is the transverse counterpart of that same ontology. The closed path
 is still one Maxwellian closure, not a new object. Coherent overlap increases
 the tangential closure stress carried along that path; the strengthened
 tangential stress then contracts the two transverse scales of the occupied
-cell, so the union extent $2V$ is driven to $V/2$ and the same total
-$2E$ is realized as $4u$.
+cell, so the same total $2E$ is realized first on $V$ and then on $V/2$,
+yielding $4u$.
 
 If exact in-phase overlap gives local density $4u$, then conservation forces
 the occupied three-dimensional extent of the merged coherent region to be
