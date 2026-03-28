@@ -178,7 +178,7 @@ surviving support of extent $V$. In that sense, the available occupied space
 has halved before one even asks how much energy is realized on the surviving
 support.
 
-The compaction can then be read in two physical steps. First, relative to
+The bookkeeping can then be read in two physical steps. First, relative to
 either isolated pulse, the available realized extent is halved from $V$ to
 $V/2$. That step alone doubles the density:
 
@@ -195,6 +195,30 @@ $$
 
 So the local density rises not because extra energy has appeared, but because
 the same total $2E$ is now carried in less realized extent.
+
+But bookkeeping alone does not yet say what contracts the region. The proposed
+agent here is the tangential closure stress of the same self-refracting flow.
+Coherent overlap adds not only the propagating amplitudes, but also the
+closure-carrying tangential stress sectors. If that tangential closure stress
+doubles coherently, then the characteristic transverse cell scale is reduced by
+a factor of two in each transverse direction. Starting from the pre-overlap
+union of size $2V$, that fourfold transverse contraction gives the realized
+occupied extent
+
+$$
+V_{\mathrm{occ}}=\frac{2V}{4}=\frac{V}{2}.
+$$
+
+With total energy $2E$ carried on that contracted extent, the local density is
+therefore
+
+$$
+\frac{2E}{V/2}=4u.
+$$
+
+On this reading, concentration is not the cause of the squeeze. Strengthened
+closure is the cause, and the higher density is the scalar reading of the same
+compaction.
 
 If exact in-phase overlap gives local density $4u$, then conservation forces
 the occupied three-dimensional extent of the merged coherent region to be
@@ -232,8 +256,9 @@ applied to the total field.
 
 That result is strange enough to have encouraged the operational dogma that a
 photon interferes only with itself. Mathematically, amplitudes add linearly and
-the observable load is quadratic in the total field. Physically, the same total
-energy is being concentrated by overlap rather than created by it.
+the observable load is quadratic in the total field. Physically, the contracting
+agent is the strengthened tangential closure of the same field, while the same
+total energy is being concentrated rather than created.
 
 The overlap itself is the effect.
 
