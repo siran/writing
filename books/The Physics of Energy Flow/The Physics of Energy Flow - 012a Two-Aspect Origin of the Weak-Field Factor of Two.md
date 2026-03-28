@@ -19,8 +19,8 @@ two. The deeper point is that the probe is a null Maxwell mode. It carries two
 equal aspects, electric and magnetic, and a static toroidal closure must sample
 both when it loads the probe along its axial transport line.
 
-This chapter isolates exactly what is already forced by that fact and what
-still remains open.
+This chapter isolates exactly what is already forced by that fact and prepares
+the direct axial derivation completed in chapter 12b.
 
 ## 12a.1 Null Maxwell Modes Carry Two Equal Stress Sectors
 
@@ -266,15 +266,12 @@ So the logical order is:
 4. the symmetric constitutive summary used in chapter 12 is the macroscopic
    encoding of that doubled axial interaction.
 
-## 12a.5 What Still Remains Open
+## 12a.5 What This Fixes
 
-The next chapter completes the weak exterior factor-of-two derivation by doing
-exactly that axial sampling step. What still remains open is not the factor of
-two itself, but the full exact interaction beyond the weak exterior regime:
-
-- finite-size corrections of the bounded mass closure,
-- strong-field interaction,
-- time-dependent and radiative sectors.
+The point established here is exact and sufficient for the weak-field factor of
+two: a null Maxwell probe carries two equal stress sectors, so any admissible
+interaction with a static closure must count both. The next chapter completes
+that same conclusion by deriving the axial sampling step directly.
 
 ## 12a.6 Summary
 

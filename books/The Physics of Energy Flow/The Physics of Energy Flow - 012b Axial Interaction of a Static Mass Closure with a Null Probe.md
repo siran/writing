@@ -7,7 +7,7 @@ date: 2026-03-25
 
 Chapter 12a established that a null Maxwell probe carries two equal stress
 sectors. That alone explains why a one-channel account gives only half the
-full bending, but it does not yet say how a static bounded mass closure
+full bending. This chapter derives directly how a static bounded mass closure
 samples those two sectors.
 
 This chapter derives that missing step directly from axial transport.
@@ -427,12 +427,10 @@ longer hidden in an undetermined coefficient. It has been derived from:
    \Pi_n=u.
    $$
 
-What remains open is not the factor of two itself. What remains open is the
-full exact interaction beyond the weak exterior regime:
-
-- finite-size corrections of the bounded mass closure,
-- strong-field interaction,
-- time-dependent and radiative sectors.
+This closes the factor of two at the level needed here. The weak exterior
+null-bending value is no longer an undetermined coefficient or an arbitrary
+constitutive choice. It follows from the flow itself once the static closure is
+recognized as sampling both axial transport channels of the passing probe.
 
 ## 12b.8 Summary
 

@@ -152,11 +152,10 @@ n(r)=\frac{c}{c_\text{local}(r)}
 =1+\frac{2GM}{rc^2}.
 $$
 
-This chapter does not yet derive that equal loading in full detail. It uses it
-as the weak-field macroscopic writing of self-refraction. The reason the two
-sectors must be loaded equally is derived later in appendices 215 and 216: a
-null Maxwell probe carries two equal stress sectors, and a static toroidal
-closure samples both axial channels symmetrically.
+This equal loading is the weak-field macroscopic writing of self-refraction.
+Chapters 12a and 12b recover it directly from the flow: a null Maxwell probe
+carries two equal stress sectors, and a static toroidal closure samples both
+axial channels symmetrically.
 
 
 ## Light bending

@@ -7,9 +7,11 @@ date: 2026-03-23
 
 The earlier chapters recovered source-free Maxwell transport from source-free
 continuity and then used refraction to explain gravity-like bending. This
-chapter adds a late structural hypothesis. It is not needed for those earlier
-derivations. It asks how the standard vacuum ratio between the two
-electromagnetic aspects should be read if there is only one flow.
+chapter extends that same logic into a more speculative direction. It asks how
+the standard vacuum ratio between the two electromagnetic aspects should be
+read if there is only one flow, and whether what is called impedance records
+an angular organization of transport rather than a primitive split between two
+substances.
 
 If one flow is primary, its most unitary two-aspect reading is symmetric. In
 that reference case the two aspects cycle one into the other in a one-to-one
@@ -99,9 +101,14 @@ $$
 In this rough picture the unitary flow reaches the loaded region at grazing
 incidence. The flow is tangent to the shell it traverses, not orthogonal to it.
 
-The point of this chapter is not that the standard constants have already been
-fully derived from that picture. The point is that what appears in standard
-language as impedance can be read here as refraction angle and as the
-resistance encountered by a unitary flow passing through a loaded region. If
-that reading is right, the observed two-aspect split is evidence that the flow
-we call vacuum is already inside a larger energetic geometry.
+The point of this chapter is not that the standard constants have been derived
+in final form. The point is that what appears in standard language as
+impedance can be read here as refraction angle and as the resistance
+encountered by a unitary flow passing through a loaded region. If that reading
+is right, the observed vacuum value need not be the only possible angular
+reading. Other angles may exist as other organized transport relations. What
+is not fixed here is whether changing that angle changes only the two-aspect
+ratio or also the propagation speed, since $\mu$ and $\epsilon$ enter both the
+ratio $\sqrt{\mu/\epsilon}$ and the speed $c=1/\sqrt{\mu\epsilon}$. The
+chapter therefore opens a direction: transport may be reoriented even when the
+full constant structure is not yet closed.
