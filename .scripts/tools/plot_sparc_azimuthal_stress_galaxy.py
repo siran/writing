@@ -97,6 +97,10 @@ class SparcGalaxy:
         values[~mask] = 0.0
         return values
 
+    @property
+    def v_energy_flow_correlator_accounted(self) -> np.ndarray:
+        return np.sqrt(self.v_bar2_visible + self.delta_v2_coherence_upper_bound * self.c_req)
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -218,6 +222,7 @@ def export_extracted_csv(galaxy: SparcGalaxy, data_dir: Path) -> Path:
                 "a_b_coherent_kms",
                 "v_bar_visible_kms",
                 "v_energy_flow_correlator_upper_bound_kms",
+                "v_energy_flow_correlator_accounted_kms",
                 "v_stress_required_kms",
                 "c_req",
                 "delta_v2_coherence_upper_bound_kms2",
@@ -236,6 +241,7 @@ def export_extracted_csv(galaxy: SparcGalaxy, data_dir: Path) -> Path:
             galaxy.bulge_visible_amplitude,
             galaxy.v_bar_visible,
             galaxy.v_energy_flow_correlator_upper_bound,
+            galaxy.v_energy_flow_correlator_accounted,
             galaxy.v_stress_required,
             galaxy.c_req,
             galaxy.delta_v2_coherence_upper_bound,
@@ -331,6 +337,70 @@ In the language of the book, the required gap still represents the local excess 
 ```text
 Delta v_phi^2(R) <= k^2(R).
 ```
+
+Data source:
+- SPARC machine-readable mass models: https://astroweb.case.edu/SPARC/MassModels_Lelli2016c.mrt
+- SPARC paper: Lelli, McGaugh, and Schombert (2016), https://astroweb.case.edu/ssm/papers/AJv152n157.pdf
+
+Local extracted data file:
+- `.scripts/tools/data/sparc/{slugify(galaxy.display_name)}-sparc-visible-baryons.csv`
+
+Figure file: `{image_filename}`
+"""
+    caption_path.write_text(caption, encoding="utf-8")
+    return caption_path
+
+
+def write_accounting_caption(galaxy: SparcGalaxy, output_dir: Path, image_filename: str) -> Path:
+    caption_path = output_dir / f"{slugify(galaxy.display_name)}-observed-newtonian-and-correlator-accounting.md"
+    caption = f"""# {galaxy.display_name}: Observed Rotation, Newtonian Baryons, and Correlator Accounting of the Excess
+
+This figure is the accounting companion to the resolved correlator band.
+
+The top panel shows three curves:
+
+- The dark points are the directly observed SPARC rotation curve `V_obs(R)`.
+- The orange curve is the Newtonian visible-baryonic prediction `V_N(R)`.
+- The blue-green curve is the correlator-accounted excess curve `V_corr,acc(R)`.
+
+The construction uses the same resolved baryonic amplitudes
+
+```text
+A_g(R) = sqrt(max(V_g(R)|V_g(R)|, 0)),
+A_d(R) = sqrt(0.5) V_disk(R),
+A_b(R) = sqrt(0.7) V_bulge(R),
+```
+
+and the same resolved-family cross budget
+
+```text
+Delta V_coh,max^2(R) = 2[A_g(R)A_d(R) + A_g(R)A_b(R) + A_d(R)A_b(R)].
+```
+
+Define the required effective correlator by
+
+```text
+C_req(R) = [max(V_obs^2(R) - V_N^2(R), 0)] / Delta V_coh,max^2(R).
+```
+
+Then the accounted correlator curve is
+
+```text
+V_corr,acc^2(R) = V_N^2(R) + 2 C_req(R)[A_g(R)A_d(R) + A_g(R)A_b(R) + A_d(R)A_b(R)].
+```
+
+So in every radius where the observed rotation lies above the Newtonian baryonic curve, the excess is written exactly as a baryonic correlator term. Where the observed point dips below the Newtonian curve, the correlator term is set to zero, because the dark-matter question concerns the positive excess above the baryonic baseline.
+
+This is not a prediction. It is an exact accounting statement: the observed galactic excess can be represented as a correlator term built from the resolved baryonic amplitudes.
+
+The bottom panel plots the same `C_req(R)` profile. The green band `0 <= C_req <= 1` is the resolved-family correlator band. Values above `1` mean the resolved gas-disk-bulge families alone are not enough, so finer baryonic decomposition or additional unresolved baryonic families must still contribute.
+
+For NGC 3198, the accounting plot shows two things at once:
+
+- the observed excess really can be written in correlator form,
+- but the required correlator rises above the simple resolved-family band across most of the outer disk.
+
+So the explanation accounts for the observations structurally, while the present gas-disk-bulge truncation remains too coarse to make the correlator fully internal without further baryonic subdivision.
 
 Data source:
 - SPARC machine-readable mass models: https://astroweb.case.edu/SPARC/MassModels_Lelli2016c.mrt
@@ -460,7 +530,129 @@ def plot_galaxy(galaxy: SparcGalaxy, output_dir: Path) -> Path:
     return output_path
 
 
-def print_summary(galaxy: SparcGalaxy, image_path: Path, csv_path: Path, caption_path: Path) -> None:
+def plot_accounting_galaxy(galaxy: SparcGalaxy, output_dir: Path) -> Path:
+    output_dir.mkdir(parents=True, exist_ok=True)
+    filename = f"{slugify(galaxy.display_name)}-observed-newtonian-and-correlator-accounting.png"
+    output_path = output_dir / filename
+
+    fig, (ax_top, ax_bottom) = plt.subplots(
+        2,
+        1,
+        figsize=(11.0, 8.3),
+        sharex=True,
+        gridspec_kw={"height_ratios": [3.2, 2.1]},
+    )
+
+    fig.patch.set_facecolor("#f8f4ec")
+    radius = galaxy.radius_kpc
+    v_bar = galaxy.v_bar_visible
+    v_accounted = galaxy.v_energy_flow_correlator_accounted
+    c_req = galaxy.c_req
+
+    ax_top.set_facecolor("#fffdf9")
+    ax_top.fill_between(radius, v_bar, v_accounted, color="#cfe6d8", alpha=0.35)
+    ax_top.errorbar(
+        radius,
+        galaxy.v_obs_kms,
+        yerr=galaxy.v_obs_err_kms,
+        fmt="o",
+        color="#143d59",
+        ecolor="#90a4ae",
+        elinewidth=1.0,
+        capsize=2.5,
+        markersize=4.6,
+        label="Observed rotation",
+    )
+    ax_top.plot(radius, v_bar, color="#c26d1a", linewidth=2.4, label="Newtonian baryonic prediction")
+    ax_top.plot(
+        radius,
+        v_accounted,
+        color="#2f6b5f",
+        linewidth=2.7,
+        label="Correlator-accounted excess",
+    )
+    ax_top.fill_between(radius, 0.0, v_bar, color="#efcf9f", alpha=0.18)
+    ax_top.set_ylabel("Circular speed [km/s]")
+    ax_top.grid(True, alpha=0.25)
+    ax_top.legend(loc="best", fontsize=10)
+
+    ax_bottom.set_facecolor("#fbfdff")
+    ax_bottom.axhspan(
+        0.0,
+        1.0,
+        color="#d9efe3",
+        alpha=0.65,
+        label=r"Resolved-family band $0 \leq C_{\mathrm{eff}} \leq 1$",
+    )
+    clipped_c = np.minimum(c_req, 5.0)
+    ax_bottom.plot(
+        radius,
+        clipped_c,
+        color="#2f6b8a",
+        linewidth=2.5,
+        label=r"Required correlator $C_{\mathrm{req}}$",
+    )
+    overflow_mask = c_req > 5.0
+    if np.any(overflow_mask):
+        ax_bottom.scatter(
+            radius[overflow_mask],
+            np.full(np.count_nonzero(overflow_mask), 5.0),
+            marker="^",
+            s=48,
+            color="#2f6b8a",
+            label=r"$C_{\mathrm{req}}>5$ (clipped)",
+            zorder=5,
+        )
+    ax_bottom.set_xlabel("Galactocentric radius [kpc]")
+    ax_bottom.set_ylabel(r"Effective correlator $C_{\mathrm{req}}$")
+    ax_bottom.set_title(
+        "Required correlator profile for the observed positive excess",
+        fontsize=11.5,
+    )
+    ax_bottom.grid(True, alpha=0.25)
+    ax_bottom.legend(loc="best", fontsize=10)
+    ax_bottom.set_ylim(0.0, 5.05)
+
+    formula_text = (
+        r"$V_{\mathrm{corr,acc}}^2 = V_N^2 + 2C_{\mathrm{req}}(A_gA_d+A_gA_b+A_dA_b)$" "\n"
+        r"$C_{\mathrm{req}} = \frac{\max(V_{\mathrm{obs}}^2 - V_N^2, 0)}{2(A_gA_d+A_gA_b+A_dA_b)}$"
+    )
+    ax_bottom.text(
+        0.98,
+        0.97,
+        formula_text,
+        transform=ax_bottom.transAxes,
+        ha="right",
+        va="top",
+        fontsize=11,
+        bbox={"boxstyle": "round,pad=0.35", "facecolor": "#ffffff", "edgecolor": "#c9d6df"},
+    )
+
+    fig.suptitle(f"{galaxy.display_name} as baryons plus correlator excess", fontsize=15, color="#1f1f1f", y=0.98)
+    fig.text(
+        0.5,
+        0.955,
+        "Observed rotation, Newtonian baryons, and exact correlator accounting of the positive excess",
+        ha="center",
+        va="top",
+        fontsize=10.0,
+        color="#3a3a3a",
+    )
+
+    fig.tight_layout(rect=[0.03, 0.04, 0.97, 0.90])
+    fig.savefig(output_path, dpi=180)
+    plt.close(fig)
+    return output_path
+
+
+def print_summary(
+    galaxy: SparcGalaxy,
+    band_image_path: Path,
+    band_caption_path: Path,
+    accounting_image_path: Path,
+    accounting_caption_path: Path,
+    csv_path: Path,
+) -> None:
     print(galaxy.display_name)
     print(f"  radii: {galaxy.radius_kpc.size}")
     print(f"  observed peak [km/s]: {float(np.max(galaxy.v_obs_kms)):.2f}")
@@ -468,9 +660,11 @@ def print_summary(galaxy: SparcGalaxy, image_path: Path, csv_path: Path, caption
     print(f"  correlator-band upper peak [km/s]: {float(np.max(galaxy.v_energy_flow_correlator_upper_bound)):.2f}")
     finite_c = galaxy.c_req[np.isfinite(galaxy.c_req)]
     print(f"  C_req range: {float(np.min(finite_c)):.3f} to {float(np.max(finite_c)):.3f}")
-    print(f"  figure: {image_path}")
+    print(f"  band figure: {band_image_path}")
+    print(f"  band caption: {band_caption_path}")
+    print(f"  accounting figure: {accounting_image_path}")
+    print(f"  accounting caption: {accounting_caption_path}")
     print(f"  extracted data: {csv_path}")
-    print(f"  caption: {caption_path}")
 
 
 def main() -> int:
@@ -482,9 +676,18 @@ def main() -> int:
     for galaxy_id in galaxy_ids:
         galaxy = build_galaxy(rows, galaxy_id)
         csv_path = export_extracted_csv(galaxy, args.data_dir)
-        image_path = plot_galaxy(galaxy, args.output_dir)
-        caption_path = write_caption(galaxy, args.output_dir, image_path.name)
-        print_summary(galaxy, image_path, csv_path, caption_path)
+        band_image_path = plot_galaxy(galaxy, args.output_dir)
+        band_caption_path = write_caption(galaxy, args.output_dir, band_image_path.name)
+        accounting_image_path = plot_accounting_galaxy(galaxy, args.output_dir)
+        accounting_caption_path = write_accounting_caption(galaxy, args.output_dir, accounting_image_path.name)
+        print_summary(
+            galaxy,
+            band_image_path,
+            band_caption_path,
+            accounting_image_path,
+            accounting_caption_path,
+            csv_path,
+        )
 
     return 0
 
