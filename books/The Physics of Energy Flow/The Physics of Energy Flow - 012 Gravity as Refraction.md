@@ -99,7 +99,9 @@ load is therefore shape and organized transport, not a second substance. It is
 also not a neglected higher multipole tail of the scalar mass-potential: any
 finite compact scalar multipole decays too quickly to sustain a flat outer
 curve. The galactic excess belongs instead to the surviving directional second
-moment of organized transport, which a monopole reduction throws away.
+moment of organized transport, which a monopole reduction throws away. The
+observed baryonic profile is still kept; what changes is its scalar-only
+dynamical reading.
 
 
 ## Refraction by the mass-potential

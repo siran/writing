@@ -805,6 +805,69 @@ baryonic decomposition or additional unresolved baryonic families must still
 contribute.
 
 
+### 6.2. What the observations give, and what the ontology changes
+
+Nothing in this argument rejects the astronomical observations themselves.
+
+The observations give resolved baryonic organization:
+
+- surface-brightness profiles,
+- colors and spectra,
+- gas tracers,
+- and the rotation field.
+
+What standard practice then does is reduce that observed organization to a
+scalar baryonic mass profile and assume that this scalar profile is the whole
+dynamically relevant object.
+
+In symbols, the usual ontological reduction is
+
+$$
+\text{observed baryonic light/tracers}
+\;\longrightarrow\;
+\rho_{\mathrm{bar}}(R)
+\;\longrightarrow\;
+\text{gravity from scalar mass alone}.
+$$
+
+This text keeps the observational first step but rejects the last reduction as
+ontologically incomplete for an extended rotating galaxy.
+
+The observed baryonic profile still gives the diagonal content:
+
+$$
+V_N^2(R)=\sum_I A_I^2(R).
+$$
+
+But the same observed baryonic organization can also carry a surviving
+directional second moment, and that second moment contributes through the
+correlator term
+
+$$
+\Delta v_{\mathrm{coh}}^2(R)
+=
+2\sum_{I<J}A_I(R)A_J(R)\,C_{IJ}(R).
+$$
+
+So the collective dynamical object recovered from the observations is not just
+a scalar mass density. It is
+
+$$
+\text{diagonal baryonic content}
++
+\text{surviving correlator/stress structure}.
+$$
+
+That is the ontological correction. The data are not discarded. What changes
+is the dynamical reading of those data.
+
+This is also why the galactic excess need not imply either additional unseen
+matter or an error in the observed baryonic profile. It can arise because a
+structured rotating baryonic system is being forced into a scalar-only
+gravitational reading. In that misreading, the correlator/stress contribution
+has nowhere to appear except as fictitious missing mass.
+
+
 ## 7. Flat curves
 
 Equation

@@ -90,7 +90,9 @@ stress can remain, and the extra galactic inward load commonly attributed to
 dark matter is recovered here as a stress-supported shape effect rather than as
 additional unseen matter. This galactic excess is not a neglected scalar
 multipole tail of the mass-potential, but the surviving directional second
-moment of organized transport that a monopole reduction discards.
+moment of organized transport that a monopole reduction discards. The observed
+baryonic profile is therefore not rejected, but its scalar-only dynamical
+reading is.
 
 The unifying claim of the book is not that mathematics is unnecessary, but that
 fewer primitive ontologies are necessary. One substrate, one continuity
