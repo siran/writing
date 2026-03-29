@@ -804,8 +804,142 @@ then the resolved families undercount the full positive cross term, and finer
 baryonic decomposition or additional unresolved baryonic families must still
 contribute.
 
+### 6.2. Internal winding channels lift the coarse resolved-family band
 
-### 6.2. What the observations give, and what the ontology changes
+The previous band still treats each resolved visible family as though it were a
+single coherent channel. That is too restrictive.
+
+A visible family can itself contain several coherent winding sectors. Write
+
+$$
+A_I^2(R)=\sum_k A_{Ik}^2(R),
+$$
+
+where the index `k` labels the active winding channels carried by resolved
+family `I`.
+
+Then the full constructive energy-flow curve is
+
+$$
+V_{\mathrm{EF}}^2(R)
+=
+\sum_{I,k}A_{Ik}^2(R)
++
+2\sum_{(I,k)<(J,\ell)}A_{Ik}(R)A_{J\ell}(R)\,C_{Ik,J\ell}(R).
+$$
+
+This matters for two reasons.
+
+First, same-family coherent products now appear automatically through the terms
+with fixed `I` and different winding labels `k\neq \ell`. So the coarse
+resolved-family denominator no longer collapses merely because only one visible
+family dominates at some radius.
+
+Second, the visible coarse amplitudes still control the constructive envelope.
+By Cauchy,
+
+$$
+\sum_k A_{Ik}(R)
+\le
+\sqrt{N_I(R)}\,A_I(R),
+$$
+
+where `N_I(R)` is the number of active winding channels carried by resolved
+family `I` at that radius.
+
+Therefore
+
+$$
+V_{\mathrm{EF}}^2(R)
+\le
+\left(\sum_I\sum_k A_{Ik}(R)\right)^2
+\le
+\left(\sum_I \sqrt{N_I(R)}\,A_I(R)\right)^2.
+$$
+
+If one common ceiling `N_\ast(R)` bounds the active winding multiplicity of the
+visible families,
+
+$$
+N_I(R)\le N_\ast(R)
+\qquad
+\text{for all }I,
+$$
+
+then
+
+$$
+\boxed{
+V_{\mathrm{EF}}^2(R)
+\le
+N_\ast(R)\bigl(A_g(R)+A_d(R)+A_b(R)\bigr)^2.
+}
+$$
+
+This is the rigorous winding-channel lift of the coarse baryonic ceiling.
+
+The coarse resolved-family band corresponds to
+
+$$
+N_\ast=1.
+$$
+
+If each visible family carries at most one dominant conjugate pair, for
+example `(m,n)` together with `(n,m)`, then
+
+$$
+N_\ast=2,
+$$
+
+and the constructive ceiling becomes
+
+$$
+\boxed{
+V_{\mathrm{EF}}^2(R)
+\le
+2\bigl(A_g(R)+A_d(R)+A_b(R)\bigr)^2.
+}
+$$
+
+So a preferred conjugate winding pair does not merely change interpretation. It
+strictly raises the admissible baryonic ceiling and restores same-family
+coherent products that the coarse resolved-family formula omits.
+
+The observed galaxy then defines the required common winding ceiling
+
+$$
+\boxed{
+N_{\ast,\mathrm{req}}(R)
+:=
+\frac{v_{\mathrm{obs}}^2(R)}
+\bigl(A_g(R)+A_d(R)+A_b(R)\bigr)^2.
+}
+$$
+
+Whenever
+
+$$
+N_{\ast,\mathrm{req}}(R)\le 1,
+$$
+
+the observed point lies inside the coarse one-channel ceiling. Whenever
+
+$$
+1 < N_{\ast,\mathrm{req}}(R)\le 2,
+$$
+
+a single dominant conjugate pair per visible family is enough. If instead
+
+$$
+N_{\ast,\mathrm{req}}(R)>2,
+$$
+
+then even that is not enough, and more active winding sectors, finer baryonic
+decomposition, or additional unresolved baryonic families must still
+contribute.
+
+
+### 6.3. What the observations give, and what the ontology changes
 
 Nothing in this argument rejects the astronomical observations themselves.
 
