@@ -506,8 +506,9 @@ would lie outside the capacity of this mechanism.
 ### 6.1. Coherent interaction term from aligned baryonic closures
 
 The envelope above only bounds what the azimuthal-stress channel can supply.
-To recover a more explicit coarse-grained expression, now suppress the
-microscopic knot details and keep only the positive baryonic family amplitudes.
+To connect that bound directly to the coherent-overlap logic of the
+self-refraction chapters, now write the interaction term as an averaged product
+term.
 
 Let the resolved co-rotating baryonic families be labeled by $I$, with local
 positive azimuthal amplitudes
@@ -516,7 +517,64 @@ $$
 A_I(R,z)\ge 0.
 $$
 
-Their diagonal energy content is
+Choose local oscillatory representatives
+
+$$
+f_I(t;R,z)
+:=
+\sqrt{2}\,A_I(R,z)\cos\bigl(\omega t+\phi_I(R,z)\bigr).
+$$
+
+Then each family contributes the diagonal average
+
+$$
+\langle f_I^2\rangle = A_I^2.
+$$
+
+Therefore the time-averaged square of the summed local family field is
+
+$$
+\left\langle \left(\sum_I f_I\right)^2 \right\rangle
+=
+\sum_I A_I^2
++
+2\sum_{I<J}A_IA_J\,C_{IJ},
+$$
+
+where the pair correlators are
+
+$$
+C_{IJ}(R,z)
+:=
+\left\langle \cos\bigl(\phi_I-\phi_J\bigr)\right\rangle.
+$$
+
+This is the exact averaged-product form of the coherent interaction term. The
+ordinary baryonic addition keeps only the diagonal piece and drops the positive
+product term.
+
+The local `4u` result is the two-family maximal case of this same formula. If
+
+$$
+A_1=A_2=\sqrt{u},
+\qquad
+C_{12}=1,
+$$
+
+then
+
+$$
+\left\langle (f_1+f_2)^2\right\rangle
+=
+u+u+2u
+=
+4u.
+$$
+
+So the galactic interaction term is the coarse-grained many-family descendant
+of the same coherent-overlap rule.
+
+Now define the diagonal family energy content by
 
 $$
 U_I:=A_I^2.
@@ -525,25 +583,24 @@ $$
 The ordinary baryonic baseline then keeps only the diagonal contribution:
 
 $$
-V_N^2=\sum_I U_I.
+V_N^2=\sum_I U_I=\sum_I A_I^2.
 $$
 
-Now allow coherent loading between different families. At the same
-coarse-grained point, write the pairwise coherence factors as
+If the resolved families contribute coherently to the aligned azimuthal second
+moment, the corresponding coarse-grained energy-flow curve is
 
 $$
-0\le \lambda_{IJ}\le 1,
-\qquad I<J.
-$$
-
-Then the aligned azimuthal second moment at resolved-family level is
-
-$$
-\Sigma_{\phi\phi}^{\mathrm{fam}}
-\approx
-\sum_I U_I
+V_{\mathrm{EF}}^2
+=
+V_N^2
 +
-2\sum_{I<J}\lambda_{IJ}A_IA_J.
+2\sum_{I<J}A_IA_J\,C_{IJ}.
+$$
+
+In the constructive aligned sector,
+
+$$
+0\le C_{IJ}\le 1.
 $$
 
 So the coherent excess above the diagonal baryonic baseline is
@@ -551,14 +608,10 @@ So the coherent excess above the diagonal baryonic baseline is
 $$
 \Delta v_{\mathrm{coh}}^2
 \approx
-2\sum_{I<J}\lambda_{IJ}A_IA_J.
+2\sum_{I<J}A_IA_J\,C_{IJ}.
 $$
 
-This is the clean structural origin of the galactic interaction term. Standard
-baryonic addition keeps the diagonal part $\sum_I U_I$ and drops the positive
-cross term.
-
-Because each $\lambda_{IJ}$ lies between zero and one, the resolved-family
+Because each correlator lies between zero and one, the resolved-family
 coherent term obeys the exact coarse bounds
 
 $$
@@ -585,9 +638,8 @@ $$
 
 So the diagonal Newtonian curve is the lower bound, while the fully coherent
 resolved-family sum is the upper bound. No detailed knot shape is needed for
-this step. The local `4u` principle enters only in justifying that positive
-cross-loading is real; the coarse bound itself depends only on positivity and
-bounded coherence.
+this step. The local `4u` principle enters in exactly the right place: it is
+the maximal two-family value of the same averaged product term.
 
 For the resolved SPARC families gas, disk, and bulge, take
 
@@ -607,7 +659,7 @@ $$
 \Upsilon_b=0.7.
 $$
 
-Then the resolved-family coherence band becomes
+Then the resolved-family correlator band becomes
 
 $$
 \boxed{
@@ -629,11 +681,30 @@ $$
 }
 $$
 
-Define the required effective resolved coherence by
+If one compresses the three resolved pair correlators into a single effective
+correlator
+
+$$
+C_{\mathrm{eff}}(R),
+$$
+
+then
 
 $$
 \boxed{
-\lambda_{\mathrm{req}}(R)
+V_{\mathrm{EF}}^2(R)
+=
+V_N^2(R)
++
+2\,C_{\mathrm{eff}}(R)\bigl(A_gA_d+A_gA_b+A_dA_b\bigr).
+}
+$$
+
+and the observed galaxy defines the required effective correlator
+
+$$
+\boxed{
+C_{\mathrm{req}}(R)
 :=
 \frac{v_{\mathrm{obs}}^2(R)-V_N^2(R)}
 {2\bigl(A_gA_d+A_gA_b+A_dA_b\bigr)}.
@@ -643,14 +714,14 @@ $$
 Whenever
 
 $$
-0\le \lambda_{\mathrm{req}}(R)\le 1,
+0\le C_{\mathrm{req}}(R)\le 1,
 $$
 
 the observed excess can be recovered inside the resolved gas-disk-bulge
-coherence band alone. If instead
+correlator band alone. If instead
 
 $$
-\lambda_{\mathrm{req}}(R)>1,
+C_{\mathrm{req}}(R)>1,
 $$
 
 then the resolved families undercount the full positive cross term, and finer
