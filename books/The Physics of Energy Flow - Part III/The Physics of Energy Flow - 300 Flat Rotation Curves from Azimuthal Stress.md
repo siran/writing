@@ -124,6 +124,82 @@ $\nabla\cdot(\mathbf A\otimes\mathbf A)$ and its coarse-grained stress
 descendants.
 
 
+### 2.1. Why the galactic excess is not a multipole tail
+
+It is important not to confuse two different notions of "second moment."
+
+A scalar multipole expansion of a compact source is one thing. The surviving
+directional second moment of organized transport is another.
+
+For a compact scalar exterior field, the far expansion has the form
+
+$$
+\eta(r,\Omega)
+=
+\frac{M_0}{r}
++
+\frac{D_1(\Omega)}{r^2}
++
+\frac{Q_2(\Omega)}{r^3}
++
+\cdots
+$$
+
+where the angular factors encode dipole, quadrupole, and higher scalar
+multipoles.
+
+The corresponding radial loading scales as
+
+$$
+g_r \sim \partial_r \eta
+\sim
+\frac{1}{r^2},
+\frac{1}{r^3},
+\frac{1}{r^4},
+\ldots
+$$
+
+and the circular-balance contribution of each finite compact multipole scales
+as
+
+$$
+v_\phi^2
+=
+r\,g_r
+\sim
+\frac{1}{r},
+\frac{1}{r^2},
+\frac{1}{r^3},
+\ldots
+$$
+
+So a neglected compact multipole tail can modify the angular structure of the
+field, but it cannot sustain a flat outer curve. Every such term decays too
+quickly.
+
+A flat regime requires instead
+
+$$
+v_\phi(R)\approx v_f=\text{const.},
+$$
+
+so the required inward loading is
+
+$$
+g_R(R)\approx \frac{v_f^2}{R},
+$$
+
+which corresponds to a logarithmic effective scalar, not to any finite compact
+scalar multipole tail.
+
+That is why the galactic dark-matter effect should not be read here as the sum
+of neglected higher terms in the scalar mass expansion of chapter 12. The
+missing object is tensorial rather than scalar: the surviving azimuthal second
+moment of organized transport. It enters through the stress tensor and its
+cylindrical divergence, not as a scalar quadrupole correction to the monopole
+field.
+
+
 ## 3. Exact coarse-grained momentum balance
 
 Appendix 207 already recovered the exact coarse-grained momentum equation

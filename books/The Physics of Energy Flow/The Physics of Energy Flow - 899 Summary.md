@@ -88,7 +88,9 @@ passing transport by refraction. For extended rotating systems, however, the
 scalar monopole is not the whole collective object. A surviving anisotropic
 stress can remain, and the extra galactic inward load commonly attributed to
 dark matter is recovered here as a stress-supported shape effect rather than as
-additional unseen matter.
+additional unseen matter. This galactic excess is not a neglected scalar
+multipole tail of the mass-potential, but the surviving directional second
+moment of organized transport that a monopole reduction discards.
 
 The unifying claim of the book is not that mathematics is unnecessary, but that
 fewer primitive ontologies are necessary. One substrate, one continuity

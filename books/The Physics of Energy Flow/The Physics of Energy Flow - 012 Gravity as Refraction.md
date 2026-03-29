@@ -95,7 +95,11 @@ vector first moment can cancel while an anisotropic stress survives. In that
 case the additional inward load commonly attributed to dark matter belongs, in
 this framework, to the organized stress of the galactic transport itself rather
 than to additional unseen matter. The structural source of that extra galactic
-load is therefore shape and organized transport, not a second substance.
+load is therefore shape and organized transport, not a second substance. It is
+also not a neglected higher multipole tail of the scalar mass-potential: any
+finite compact scalar multipole decays too quickly to sustain a flat outer
+curve. The galactic excess belongs instead to the surviving directional second
+moment of organized transport, which a monopole reduction throws away.
 
 
 ## Refraction by the mass-potential
