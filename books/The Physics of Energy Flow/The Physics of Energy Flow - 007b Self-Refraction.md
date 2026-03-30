@@ -160,14 +160,26 @@ $$
 This is the part of the algebra that counts the absence of the second occupied
 extent. By itself it explains only the first doubling.
 
-But the exact local readout above is $4u$, so one further step is needed. The
-proposed agent is the tangential closure stress of the same self-refracting
-flow. Coherent overlap reinforces the closure-carrying tangential sectors, so
-the one remaining occupied extent is tightened from $V$ to
+But the exact local readout above is $4u$, so conservation with total merged
+energy $E_1+E_2=2E$ forces
 
 $$
-V_{\mathrm{occ}}=\frac{V}{2}.
+V_{\mathrm{occ}}
+=
+\frac{E_1+E_2}{4u}
+=
+\frac{2E}{4E/V}
+=
+\frac{V}{2}.
 $$
+
+So the shrinkage from $V$ to $V/2$ is the algebraic consequence of keeping the
+local $4u$ readout while preserving the same total merged energy. What algebra
+alone does not supply is the dynamical agent of that compaction. The proposed
+agent here is the tangential closure stress of the same self-refracting flow.
+Coherent overlap reinforces the closure-carrying tangential sectors, and that
+reinforced closure is the proposed physical reading of the algebraic
+compaction just derived.
 
 Then
 
