@@ -179,6 +179,9 @@ $$
 4u.
 $$
 
+So the second step is exactly "same merged energy, twice the density" relative
+to the already-overlapped $2u$ state.
+
 So the $4u$ picture is two-step: exact overlap removes the second occupied
 extent, giving $2u$; strengthened closure then contracts the merged extent
 from $V$ to $V/2$, giving $4u$. On this reading, concentration is not the
