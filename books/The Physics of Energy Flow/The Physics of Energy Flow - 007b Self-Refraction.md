@@ -127,133 +127,81 @@ u=(\sqrt{u_1}+\sqrt{u_2})^2=4u_1,
 \mathbf S=4\mathbf S_1.
 $$
 
-That algebra is correct, but by itself it gives only the local readout of the
-merged field. It does not yet say how the same total energy is realized there
-without creating energy. The answer is redistribution.
-
-Let one isolated pulse carry energy $E$ on base area $A$ and normal extent
-$h$, so
+That is the exact local readout of the merged field. To connect it with energy
+bookkeeping, now treat the overlapping objects not as two unrelated infinite
+waves but as two equal closed portions of flow. Write
 
 $$
-u=\frac{E}{Ah}.
+E_i=\int_{V_i} u_i\,dV.
 $$
 
-Write
+For two equal isolated closures,
 
 $$
-V:=Ah
-$$
-
-for the occupied extent of one isolated pulse, so
-
-$$
+E_1=E_2=E,
+\qquad
+V_1=V_2=V,
+\qquad
 u=\frac{E}{V}.
 $$
 
-Here the overlapping objects are not two unrelated infinite waves. They are
-two equal closed portions of flow. Two separate equal closures therefore carry
-total energy $2E$ across total occupied extent $2V$. Under exact coherent
-in-phase overlap, those two occupied extents are no longer separate. The same
-closed flow is now realized on one common occupied extent rather than on two
-distinct ones.
-
-The cleanest bookkeeping is therefore immediate: what had previously occupied
-two equal extents is now realized on one common extent $V$. Before any further
-tightening of closure is counted, the density has already doubled:
+Under exact coherent in-phase overlap, the occupied extents are identified
+rather than added: the same merged closure is realized on one common extent
+$V$, not on two separate extents $2V$. That bookkeeping alone therefore gives
 
 $$
-\frac{2E}{V}=2u.
+\frac{E_1+E_2}{V}
+=
+\frac{2E}{V}
+=
+2u.
 $$
 
-So even the first step does not create energy. It simply realizes the same
-total $2E$ on one occupied extent rather than two. In that precise sense, the
-algebra already counts the absence of the second occupied extent.
+This is the part of the algebra that counts the absence of the second occupied
+extent. By itself it explains only the first doubling.
 
-But this still gives only $2u$. A second step is needed to reach $4u$.
-Bookkeeping alone does not yet say what contracts the remaining occupied
-extent. The proposed agent here is the tangential closure stress of the same
-self-refracting flow. Coherent overlap adds not only the propagating
-amplitudes, but also the closure-carrying tangential stress sectors. If that
-tangential closure stress doubles coherently, then the characteristic
-transverse cell scale of that common extent is reduced by a factor of two in
-each transverse direction. That further tightening drives the realized
-occupied extent from $V$ to
+But the exact local readout above is $4u$, so one further step is needed. The
+proposed agent is the tangential closure stress of the same self-refracting
+flow. Coherent overlap reinforces the closure-carrying tangential sectors, so
+the one remaining occupied extent is tightened from $V$ to
 
 $$
 V_{\mathrm{occ}}=\frac{V}{2}.
 $$
 
-With total energy $2E$ carried on that contracted extent, the local density is
-therefore
+Then
 
 $$
-\frac{2E}{V/2}=4u.
+\frac{E_1+E_2}{V_{\mathrm{occ}}}
+=
+\frac{2E}{V/2}
+=
+4u.
 $$
 
-The full $4u$ picture is therefore two-step: first exact overlap removes the
-second occupied extent from the bookkeeping, so $2E$ is realized on $V$
-instead of $2V$; then strengthened closure contracts that one remaining extent
-from $V$ to $V/2$. On this reading, concentration is not the cause of the
-squeeze. Strengthened closure is the cause, and the higher density is the
-scalar reading of the same compaction.
+So the $4u$ picture is two-step: exact overlap removes the second occupied
+extent, giving $2u$; strengthened closure then contracts the merged extent
+from $V$ to $V/2$, giving $4u$. On this reading, concentration is not the
+cause of the squeeze. Strengthened closure is the cause, and the higher
+density is the scalar reading of the same compaction.
 
 This same reading is consistent with the later effective-string reduction of a
-bounded Maxwellian closure. Part II, appendix 217 derives the line energy
-density
+bounded Maxwellian closure. Part II, appendix 217 derives
 
 $$
 \mathcal{T}=\int_{\Sigma}u\,dA
 $$
 
 as effective line tension along a thin closed tube. The present overlap
-argument is the transverse counterpart of that same ontology. The closed path
-is still one Maxwellian closure, not a new object. Coherent overlap increases
-the tangential closure stress carried along that path; the strengthened
-tangential stress then contracts the two transverse scales of the occupied
-cell, so the same total $2E$ is realized first on $V$ and then on $V/2$,
-yielding $4u$.
-
-If exact in-phase overlap gives local density $4u$, then conservation forces
-the occupied three-dimensional extent of the merged coherent region to be
-
-$$
-V_{\mathrm{occ}}
-=
-\frac{2E}{4u}
-=
-\frac{2E}{4E/(Ah)}
-=
-\frac{Ah}{2}.
-$$
-
-So relative to one original pulse the realized occupied extent is halved. This
-is not an additional postulate. It is the quantity forced by keeping the total
-energy $2E$ while taking the exact coherent-overlap law $u_{\mathrm{overlap}}=4u$
-seriously.
-
-Since the in-plane base after overlap is the one shared area $A$, the normal
-extent itself must be reduced to $h/2$. This is the precise sense in which the
-same total energy is compacted into half the support.
-
-So the statement is not that four times the total energy has appeared out of
-nowhere. The statement is that coherent overlap redistributes the same total
-energy into a smaller occupied region, and the fourfold local density is the
-reading of that concentration. The total bookkeeping still belongs to the full
-field through
+argument is the transverse counterpart of that same ontology: stronger
+coherent closure realizes the same total $2E$ on smaller occupied extent. The
+total bookkeeping still belongs to the full field through
 
 $$
 \partial_t u+\nabla\cdot\mathbf S=0,
 $$
 
 applied to the total field.
-
-That result is strange enough to have encouraged the operational dogma that a
-photon interferes only with itself. Mathematically, amplitudes add linearly and
-the observable load is quadratic in the total field. Physically, the contracting
-agent is the strengthened tangential closure of the same field, while the same
-total energy is being concentrated rather than created.
-
-The overlap itself is the effect.
 
 
 ## Effective-medium summary
