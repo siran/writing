@@ -127,17 +127,9 @@ u=(\sqrt{u_1}+\sqrt{u_2})^2=4u_1,
 \mathbf S=4\mathbf S_1.
 $$
 
-Written in normalized units, the point is simply
-
-$$
-1+1+2=4.
-$$
-
-The extra $2$ is exactly the interference term between $1$ and $1$.
-
-But the physical point is not exhausted by noting the algebraic square. The
-question is where the greater local density comes from without creating energy.
-It comes from redistribution.
+That algebra is correct, but by itself it gives only the local readout of the
+merged field. It does not yet say how the same total energy is realized there
+without creating energy. The answer is redistribution.
 
 Let one isolated pulse carry energy $E$ on base area $A$ and normal extent
 $h$, so
@@ -158,10 +150,12 @@ $$
 u=\frac{E}{V}.
 $$
 
-Two separate equal pulses therefore carry total energy $2E$ across total
-occupied extent $2V$. Under exact coherent in-phase overlap, those two occupied
-extents are no longer separate. They are realized as one common occupied
-region.
+Here the overlapping objects are not two unrelated infinite waves. They are
+two equal closed portions of flow. Two separate equal closures therefore carry
+total energy $2E$ across total occupied extent $2V$. Under exact coherent
+in-phase overlap, those two occupied extents are no longer separate. The same
+closed flow is now realized on one common occupied extent rather than on two
+distinct ones.
 
 The cleanest bookkeeping is therefore immediate: what had previously occupied
 two equal extents is now realized on one common extent $V$. Before any further
@@ -171,16 +165,19 @@ $$
 \frac{2E}{V}=2u.
 $$
 
-So even the first compression step does not create energy. It simply realizes
-the same total $2E$ on one occupied extent rather than two.
+So even the first step does not create energy. It simply realizes the same
+total $2E$ on one occupied extent rather than two. In that precise sense, the
+algebra already counts the absence of the second occupied extent.
 
-But bookkeeping alone does not yet say what contracts the region. The proposed
-agent here is the tangential closure stress of the same self-refracting flow.
-Coherent overlap adds not only the propagating amplitudes, but also the
-closure-carrying tangential stress sectors. If that tangential closure stress
-doubles coherently, then the characteristic transverse cell scale of that
-common extent is reduced by a factor of two in each transverse direction. That
-further tightening drives the realized occupied extent from $V$ to
+But this still gives only $2u$. A second step is needed to reach $4u$.
+Bookkeeping alone does not yet say what contracts the remaining occupied
+extent. The proposed agent here is the tangential closure stress of the same
+self-refracting flow. Coherent overlap adds not only the propagating
+amplitudes, but also the closure-carrying tangential stress sectors. If that
+tangential closure stress doubles coherently, then the characteristic
+transverse cell scale of that common extent is reduced by a factor of two in
+each transverse direction. That further tightening drives the realized
+occupied extent from $V$ to
 
 $$
 V_{\mathrm{occ}}=\frac{V}{2}.
@@ -193,11 +190,12 @@ $$
 \frac{2E}{V/2}=4u.
 $$
 
-On this reading, concentration is not the cause of the squeeze. Strengthened
-closure is the cause, and the higher density is the scalar reading of the same
-compaction. The full $4u$ picture is thus two-step: first $2E$ is realized on
-$V$ instead of $2V$, and then strengthened closure contracts that common extent
-from $V$ to $V/2$.
+The full $4u$ picture is therefore two-step: first exact overlap removes the
+second occupied extent from the bookkeeping, so $2E$ is realized on $V$
+instead of $2V$; then strengthened closure contracts that one remaining extent
+from $V$ to $V/2$. On this reading, concentration is not the cause of the
+squeeze. Strengthened closure is the cause, and the higher density is the
+scalar reading of the same compaction.
 
 This same reading is consistent with the later effective-string reduction of a
 bounded Maxwellian closure. Part II, appendix 217 derives the line energy
