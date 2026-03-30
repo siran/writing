@@ -332,6 +332,94 @@ distribution if the outer galaxy carries a residual azimuthal stress whose
 ratio to the effective inertial density is approximately constant.
 
 
+### 4.1. Why the outer curve is flat rather than Keplerian
+
+The reason this mechanism gives a plateau is geometric.
+
+A compact scalar monopole produces
+
+$$
+g_R(R)\sim \frac{1}{R^2},
+$$
+
+so circular balance gives
+
+$$
+v_\phi^2(R)=R\,|g_R(R)|\sim \frac{1}{R}.
+$$
+
+That is the Keplerian falloff.
+
+The azimuthal-stress mechanism is different. In the outer-disk regime above,
+the dominant inward term comes from the cylindrical divergence of the
+azimuthal second moment:
+
+$$
+\rho\,\frac{v_\phi^2}{R}
+\approx
+\frac{\Sigma_{\phi\phi}}{R}.
+$$
+
+The same geometric factor $1/R$ appears on both sides because both the
+centripetal term and the hoop-stress term are cylindrical curvature effects.
+So it cancels:
+
+$$
+\boxed{
+v_\phi^2 \approx \frac{\Sigma_{\phi\phi}}{\rho}.
+}
+$$
+
+This is the structural reason a plateau is natural here. The mechanism does
+not need to build a new scalar field whose radial derivative happens to give
+$1/R$. The required $1/R$ is already present in the cylindrical balance law.
+What remains is only the local ratio $\Sigma_{\phi\phi}/\rho$.
+
+Now write, as in section 5 below,
+
+$$
+\Sigma_{\phi\phi}\approx f\,u=f\,\rho\,k^2,
+$$
+
+where $f$ is the fraction of local coarse-grained energy stored in aligned
+unresolved azimuthal transport and $k$ is the local transport speed appearing
+in the same constitutive class. Then
+
+$$
+v_\phi^2 \approx f\,k^2.
+$$
+
+Therefore, if the outer disk enters a scale-free regime in which
+
+$$
+f(R,z)\approx f_0,
+\qquad
+k(R,z)\approx k_0,
+$$
+
+up to slow logarithmic drift, then
+
+$$
+v_\phi(R)\approx \sqrt{f_0}\,k_0=\text{const.}
+$$
+
+The residual slope is controlled explicitly by
+
+$$
+\frac{d}{d\ln R}v_\phi^2
+\approx
+k^2\,\frac{df}{d\ln R}
++
+f\,\frac{d k^2}{d\ln R}.
+$$
+
+So a flat outer curve requires only that the azimuthal transport fraction and
+the local transport scale vary slowly with radius. In other words: once the
+galaxy is treated as a stress-supported rotating disk rather than as a compact
+scalar monopole, the flat curve is the natural scale-free signature of a
+surviving azimuthal second moment.
+
+
 ## 5. Why $\Sigma_{\phi\phi}$ can survive
 
 Appendix 216 already gives the local transport-stress magnitude of a narrow
