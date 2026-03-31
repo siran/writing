@@ -63,29 +63,7 @@ u_1+u_2
 \frac{1}{\mu}\,\mathbf B_1\!\cdot\!\mathbf B_2.
 $$
 
-Likewise the energy flux is
-
-$$
-\mathbf S
-=
-\frac{1}{\mu}\,\mathbf E\times\mathbf B
-$$
-
-so
-
-$$
-\mathbf S
-=
-\mathbf S_1+\mathbf S_2
-+
-\frac{1}{\mu}\,\mathbf E_1\times\mathbf B_2
-+
-\frac{1}{\mu}\,\mathbf E_2\times\mathbf B_1.
-$$
-
-These cross terms are the interaction terms. They are not added by hand. They
-appear because overlapping portions of the same field are read as one common
-field.
+These cross terms are the interaction terms.
 
 But geometric crossing alone is not yet the strongest overlap. For a
 substantial coherent loading, the two portions must share a common local
@@ -95,15 +73,15 @@ their transport directions. If two flux tubes merely cross while their local
 transport directions fail to align, the cross terms are reduced and can wash
 out on averaging rather than building one merged loaded region.
 
-For in-phase coherent overlap in this stronger sense, the energy cross terms
-are non-null. The overlap region is therefore more heavily loaded than either
+Under coherent overlap in this stronger sense, the energy cross terms are
+non-null. The overlap region is therefore more heavily loaded than either
 isolated portion. In that sense, one region of the field acts for another as a
 denser electromagnetic medium.
 
 If the exact overlapping fields are kept, nothing further is needed. The
 interaction is already present in the total-field observables written above.
-For the simplest local case, take the two portions to be parallel and
-co-propagating, with the same polarization and a definite relative phase
+For the simplest local case, take the two portions to have the same local
+transport direction, the same polarization, and a definite relative phase
 $\Delta$. Then the local loading law can be written as
 
 $$
@@ -112,27 +90,13 @@ u
 u_1+u_2+2\sqrt{u_1u_2}\cos\Delta,
 $$
 
-and likewise
-
-$$
-\mathbf S
-=
-\mathbf S_1+\mathbf S_2+2\sqrt{|\mathbf S_1||\mathbf S_2|}\cos\Delta\,
-\hat{\mathbf s}
-$$
-
-when the two fluxes are parallel to the same unit direction
-$\hat{\mathbf s}$.
-
-So if one wants an addition law for the local load rather than for the field,
+so if one wants an addition law for the local load rather than for the field,
 this is it.
 
-For equal in-phase overlap, $\Delta=0$ and $u_1=u_2$, so
+Under coherent overlap, if $\Delta=0$ and $u_1=u_2$, then
 
 $$
-u=(\sqrt{u_1}+\sqrt{u_2})^2=4u_1,
-\qquad
-\mathbf S=4\mathbf S_1.
+u=(\sqrt{u_1}+\sqrt{u_2})^2=4u_1.
 $$
 
 That is the exact local readout of the merged field. To connect it with energy
@@ -150,31 +114,41 @@ E_1=E_2=E,
 \qquad
 V_1=V_2=V,
 \qquad
-u=\frac{E}{V}.
+u_{\mathrm{old}}:=\frac{E}{V}.
 $$
 
-Under exact coherent in-phase overlap, the occupied extents are identified
-rather than added: the same merged closure is realized on one common extent
-$V$, not on two separate extents $2V$. That bookkeeping alone therefore gives
+Before overlap, the total realized energy $2E$ occupies total extent $2V$, so
+the mean occupied density of the two-closure configuration is
+
+$$
+\frac{E_1+E_2}{V_1+V_2}
+=
+\frac{2E}{2V}
+=
+u_{\mathrm{old}}.
+$$
+
+After coherent overlap, the same total energy $2E$ is realized on one common
+extent $V$. That alone gives the first doubling:
 
 $$
 \frac{E_1+E_2}{V}
 =
 \frac{2E}{V}
 =
-2u.
+2u_{\mathrm{old}}.
 $$
 
-This is the part of the algebra that counts the absence of the second occupied
-extent. By itself it explains only the first doubling.
+This is the algebraic effect of the merge itself: the second occupied extent no
+longer enters the bookkeeping.
 
-But the exact local readout above is $4u$, so conservation with total merged
-energy $E_1+E_2=2E$ forces
+But the exact local readout above is $4u_{\mathrm{old}}$, so conservation with
+total merged energy $E_1+E_2=2E$ forces
 
 $$
 V_{\mathrm{occ}}
 =
-\frac{E_1+E_2}{4u}
+\frac{E_1+E_2}{4u_{\mathrm{old}}}
 =
 \frac{2E}{4E/V}
 =
