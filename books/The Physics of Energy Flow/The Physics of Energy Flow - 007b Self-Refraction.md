@@ -87,10 +87,18 @@ These cross terms are the interaction terms. They are not added by hand. They
 appear because overlapping portions of the same field are read as one common
 field.
 
-For in-phase coherent overlap, the energy cross terms are non-null. The
-overlap region is therefore more heavily loaded than either isolated portion.
-In that sense, one region of the field acts for another as a denser
-electromagnetic medium.
+But geometric crossing alone is not yet the strongest overlap. For a
+substantial coherent loading, the two portions must share a common local
+transport channel. In practice that means not only support overlap, but
+compatible polarization, phase relation, and a nonzero common projection of
+their transport directions. If two flux tubes merely cross while their local
+transport directions fail to align, the cross terms are reduced and can wash
+out on averaging rather than building one merged loaded region.
+
+For in-phase coherent overlap in this stronger sense, the energy cross terms
+are non-null. The overlap region is therefore more heavily loaded than either
+isolated portion. In that sense, one region of the field acts for another as a
+denser electromagnetic medium.
 
 If the exact overlapping fields are kept, nothing further is needed. The
 interaction is already present in the total-field observables written above.
