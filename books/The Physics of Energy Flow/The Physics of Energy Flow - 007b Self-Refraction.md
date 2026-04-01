@@ -79,23 +79,12 @@ non-null. The overlap region is therefore more heavily loaded than either
 isolated portion. In that sense, one region of the field acts for another as a
 denser electromagnetic medium.
 
-If the exact overlapping fields are kept, nothing further is needed. The
-interaction is already present in the total-field observables written above.
-For the simplest local case, take the two portions to have the same local
-transport direction, the same polarization, and a definite relative phase
-$\Delta$. Using the dot-product identity, the local loading law can be written
-as
+For the strongest local case, take the two portions to have the same local
+transport direction, the same polarization, and zero relative phase. Then the
+cross terms are maximal. If in addition $u_1=u_2$, the local readout is
 
 $$
-u
-=
-u_1+u_2+2\sqrt{u_1u_2}\cos\Delta,
-$$
-
-Under coherent overlap, if $\Delta=0$ and $u_1=u_2$, then
-
-$$
-u=(\sqrt{u_1}+\sqrt{u_2})^2=4u_1.
+u=4u_1.
 $$
 
 This result looks surprising: four times the energy density. To connect it
@@ -117,8 +106,7 @@ u_{\mathrm{independent}}:=\frac{E}{V}.
 $$
 
 Before overlap, each extent $V_1$ and $V_2$ carries the energy $E_1$ and
-$E_2$, respectively. In that way we may write the independent energy density
-as
+$E_2$, respectively, so
 
 $$
 u_{\mathrm{independent}}
@@ -126,10 +114,18 @@ u_{\mathrm{independent}}
 \frac{E_i}{V_i}.
 $$
 
-Equivalently, before overlap the total realized energy is
+The initial total realized energy is therefore
 
 $$
-\frac{E_1+E_2}{V_1+V_2}
+E_{\mathrm{initial}}=E_1+E_2=2E,
+\qquad
+V_{\mathrm{initial}}=V_1+V_2=2V,
+$$
+
+so the mean occupied density before overlap is
+
+$$
+\frac{E_{\mathrm{initial}}}{V_{\mathrm{initial}}}
 =
 \frac{2E}{2V}
 =
@@ -145,9 +141,7 @@ $$
 while the final occupied extent is one common volume
 
 $$
-V_{\mathrm{final}}=V,
-\qquad
-V_{\mathrm{initial}}=V_1+V_2=2V.
+V_{\mathrm{final}}=V.
 $$
 
 So after coherent overlap the same total energy is realized on one common
