@@ -81,15 +81,45 @@ denser electromagnetic medium.
 
 For the strongest local case, take the two portions to have the same local
 transport direction, the same polarization, and zero relative phase. Then the
-cross terms are maximal. If in addition $u_1=u_2$, the local readout is
+cross terms are maximal. Write that aligned equal-amplitude case explicitly as
 
 $$
-u=4u_1.
+\mathbf E_2=\mathbf E_1,
+\qquad
+\mathbf B_2=\mathbf B_1.
 $$
 
-This result looks surprising: four times the energy density. To connect it
-with energy bookkeeping, now treat the overlapping objects not as two
-unrelated infinite waves but as two equal closed portions of flow. Write
+Then
+
+$$
+\mathbf E=\mathbf E_1+\mathbf E_2=2\mathbf E_1,
+\qquad
+\mathbf B=\mathbf B_1+\mathbf B_2=2\mathbf B_1,
+$$
+
+so
+
+$$
+u
+=
+\frac{\epsilon}{2}|2\mathbf E_1|^2
++
+\frac{1}{2\mu}|2\mathbf B_1|^2
+=
+4\left(
+\frac{\epsilon}{2}|\mathbf E_1|^2
++
+\frac{1}{2\mu}|\mathbf B_1|^2
+\right)
+=
+4u_1.
+$$
+
+This is the rigorous local `4u` result.
+
+Now separate that exact local field readout from the energy bookkeeping of the
+merged flow. Treat the overlapping objects not as two unrelated infinite waves
+but as two equal closed portions of flow. Write
 
 $$
 E_i=\int_{V_i} u_i\,dV.
@@ -106,7 +136,7 @@ u_{\mathrm{independent}}:=\frac{E}{V}.
 $$
 
 Before overlap, each extent $V_1$ and $V_2$ carries the energy $E_1$ and
-$E_2$, respectively, so
+$E_2$, respectively, so the independent density is
 
 $$
 u_{\mathrm{independent}}
@@ -114,7 +144,7 @@ u_{\mathrm{independent}}
 \frac{E_i}{V_i}.
 $$
 
-The initial total realized energy is therefore
+The initial total realized energy and occupied extent are therefore
 
 $$
 E_{\mathrm{initial}}=E_1+E_2=2E,
@@ -132,10 +162,10 @@ $$
 u_{\mathrm{independent}}.
 $$
 
-After coherent overlap, the final realized energy is
+After coherent overlap, the final realized energy is still
 
 $$
-E_{\mathrm{final}}=E_1+E_2,
+E_{\mathrm{final}}=E_1+E_2=2E,
 $$
 
 while the final occupied extent is one common volume
@@ -150,8 +180,6 @@ extent:
 $$
 \frac{E_{\mathrm{final}}}{V_{\mathrm{final}}}
 =
-\frac{E_1+E_2}{V}
-=
 \frac{2E}{V}
 =
 2u_{\mathrm{independent}}.
@@ -160,56 +188,42 @@ $$
 This is the algebraic effect of the merge itself: the second occupied extent
 no longer enters the bookkeeping.
 
-But the algebra above gives the stronger local readout
+The exact local field algebra above is stronger:
 
 $$
 u=4u_{\mathrm{independent}}.
 $$
 
-So the next question is: in what volume is that $4u$ realized? Conservation
-with total merged energy $E_1+E_2=2E$ forces
+So the next question is: in what occupied volume is that `4u` realized?
+If that `4u` value is taken as the realized density of a bounded occupied
+region carrying the full merged energy $2E$, then conservation forces
 
 $$
 V_{\mathrm{occ}}
 =
-\frac{E_1+E_2}{4u_{\mathrm{independent}}}
+\frac{E_{\mathrm{final}}}{4u_{\mathrm{independent}}}
 =
 \frac{2E}{4E/V}
 =
 \frac{V}{2}.
 $$
 
-So the merge itself gives the mean density $2u_{\mathrm{independent}}$ on the
-common extent $V$, while the exact local $4u_{\mathrm{independent}}$ readout
-must be realized on a smaller occupied region of measure $V/2$. In that
-sense, the merged `2u` state is further concentrated into the local `4u`
-state.
+So the strict derivation is this:
 
-What algebra alone does not supply is the dynamical agent of that
-concentration. The proposed agent here is the tangential closure stress of the
-same self-refracting flow. Coherent overlap reinforces the closure-carrying
-tangential sectors, and that reinforced closure is the proposed physical
-reading of the algebraic concentration just derived.
+- the merge itself gives the mean density $2u_{\mathrm{independent}}$ on the
+  common extent $V$,
+- the exact local field algebra gives the stronger readout
+  $4u_{\mathrm{independent}}$,
+- and if that stronger value is read as the realized density of a bounded
+  occupied region carrying the full merged energy, then the occupied region
+  must have measure $V/2$.
 
-Then
-
-$$
-\frac{E_1+E_2}{V_{\mathrm{occ}}}
-=
-=
-\frac{2E}{V/2}
-=
-4u_{\mathrm{independent}}.
-$$
-
-So the second step is exactly "same merged energy, twice the density" relative
-to the already-overlapped $2u_{\mathrm{independent}}$ state.
-
-So the $4u$ picture is two-step: exact overlap removes the second occupied
-extent, giving $2u$; strengthened closure then contracts the merged extent
-from $V$ to $V/2$, giving $4u$. On this reading, concentration is not the
-cause of the squeeze. Strengthened closure is the cause, and the higher
-density is the scalar reading of the same compaction.
+What algebra alone does not supply is the dynamical agent that would make the
+realized occupied region take that smaller value. The proposed agent here is
+the tangential closure stress of the same self-refracting flow. Coherent
+overlap reinforces the closure-carrying tangential sectors, and that
+reinforced closure is the proposed physical reading of the algebraic
+concentration just derived.
 
 This same reading is consistent with the later effective-string reduction of a
 bounded Maxwellian closure. Part II, appendix 217 derives
