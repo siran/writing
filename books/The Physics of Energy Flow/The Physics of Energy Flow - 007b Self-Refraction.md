@@ -70,8 +70,9 @@ substantial coherent loading, the two portions must share a common local
 transport channel. In practice that means not only support overlap, but
 compatible polarization, phase relation, and a nonzero common projection of
 their transport directions. If two flux tubes merely cross while their local
-transport directions fail to align, the cross terms are reduced and can wash
-out on averaging rather than building one merged loaded region.
+transport directions fail to overlap coherently, the cross terms are reduced
+and in general average out to zero rather than building one merged loaded
+region.
 
 Under coherent overlap in this stronger sense, the energy cross terms are
 non-null. The overlap region is therefore more heavily loaded than either
@@ -82,7 +83,8 @@ If the exact overlapping fields are kept, nothing further is needed. The
 interaction is already present in the total-field observables written above.
 For the simplest local case, take the two portions to have the same local
 transport direction, the same polarization, and a definite relative phase
-$\Delta$. Then the local loading law can be written as
+$\Delta$. Using the dot-product identity, the local loading law can be written
+as
 
 $$
 u
@@ -90,18 +92,15 @@ u
 u_1+u_2+2\sqrt{u_1u_2}\cos\Delta,
 $$
 
-so if one wants an addition law for the local load rather than for the field,
-this is it.
-
 Under coherent overlap, if $\Delta=0$ and $u_1=u_2$, then
 
 $$
 u=(\sqrt{u_1}+\sqrt{u_2})^2=4u_1.
 $$
 
-That is the exact local readout of the merged field. To connect it with energy
-bookkeeping, now treat the overlapping objects not as two unrelated infinite
-waves but as two equal closed portions of flow. Write
+This result looks surprising: four times the energy density. To connect it
+with energy bookkeeping, now treat the overlapping objects not as two
+unrelated infinite waves but as two equal closed portions of flow. Write
 
 $$
 E_i=\int_{V_i} u_i\,dV.
@@ -114,41 +113,66 @@ E_1=E_2=E,
 \qquad
 V_1=V_2=V,
 \qquad
-u_{\mathrm{old}}:=\frac{E}{V}.
+u_{\mathrm{independent}}:=\frac{E}{V}.
 $$
 
-Before overlap, the total realized energy $2E$ occupies total extent $2V$, so
-the mean occupied density of the two-closure configuration is
+Before overlap, each extent $V_1$ and $V_2$ carries the energy $E_1$ and
+$E_2$, respectively. In that way we may write the independent energy density
+as
+
+$$
+u_{\mathrm{independent}}
+=
+\frac{E_i}{V_i}.
+$$
+
+Equivalently, before overlap the total realized energy is
 
 $$
 \frac{E_1+E_2}{V_1+V_2}
 =
 \frac{2E}{2V}
 =
-u_{\mathrm{old}}.
+u_{\mathrm{independent}}.
 $$
 
-After coherent overlap, the same total energy $2E$ is realized on one common
-extent $V$. That alone gives the first doubling:
+After coherent overlap, the final realized energy is
 
 $$
+E_{\mathrm{final}}=E_1+E_2,
+$$
+
+while the final occupied extent is one common volume
+
+$$
+V_{\mathrm{final}}=V,
+\qquad
+V_{\mathrm{initial}}=V_1+V_2=2V.
+$$
+
+So after coherent overlap the same total energy is realized on one common
+extent:
+
+$$
+\frac{E_{\mathrm{final}}}{V_{\mathrm{final}}}
+=
 \frac{E_1+E_2}{V}
 =
 \frac{2E}{V}
 =
-2u_{\mathrm{old}}.
+2u_{\mathrm{independent}}.
 $$
 
-This is the algebraic effect of the merge itself: the second occupied extent no
-longer enters the bookkeeping.
+This is the algebraic effect of the merge itself: the second occupied extent
+no longer enters the bookkeeping.
 
-But the exact local readout above is $4u_{\mathrm{old}}$, so conservation with
-total merged energy $E_1+E_2=2E$ forces
+But the exact local readout above is $4u_{\mathrm{independent}}$, so
+conservation with total merged energy $E_1+E_2=2E$ forces
 
 $$
 V_{\mathrm{occ}}
 =
-\frac{E_1+E_2}{4u_{\mathrm{old}}}
+\frac{E_1+E_2}{4u_{\mathrm{independent}}}
 =
 \frac{2E}{4E/V}
 =
@@ -168,13 +192,14 @@ Then
 $$
 \frac{E_1+E_2}{V_{\mathrm{occ}}}
 =
+=
 \frac{2E}{V/2}
 =
-4u.
+4u_{\mathrm{independent}}.
 $$
 
 So the second step is exactly "same merged energy, twice the density" relative
-to the already-overlapped $2u$ state.
+to the already-overlapped $2u_{\mathrm{independent}}$ state.
 
 So the $4u$ picture is two-step: exact overlap removes the second occupied
 extent, giving $2u$; strengthened closure then contracts the merged extent
