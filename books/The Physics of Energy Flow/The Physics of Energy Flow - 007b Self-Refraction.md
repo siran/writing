@@ -117,6 +117,14 @@ $$
 
 This is the rigorous local `4u` result.
 
+This result seems surprising: four times the energy density. A familiar
+hydraulic picture helps. If two equal water flows are joined into one tube of
+the same cross-section, the doubled flow is accounted for by increased speed.
+Energy transport here cannot do that, because the transport speed is already
+fixed at $c$. So if two equal energy flows are forced through the same
+effective cross-section while the transport speed remains the same, the
+doubled flow must instead appear as increased energy density.
+
 Now separate that exact local field readout from the energy bookkeeping of the
 merged flow. Treat the overlapping objects not as two unrelated infinite waves
 but as two equal closed portions of flow. Write
