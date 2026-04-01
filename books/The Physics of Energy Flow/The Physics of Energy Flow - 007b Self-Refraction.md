@@ -160,8 +160,14 @@ $$
 This is the algebraic effect of the merge itself: the second occupied extent
 no longer enters the bookkeeping.
 
-But the exact local readout above is $4u_{\mathrm{independent}}$, so
-conservation with total merged energy $E_1+E_2=2E$ forces
+But the algebra above gives the stronger local readout
+
+$$
+u=4u_{\mathrm{independent}}.
+$$
+
+So the next question is: in what volume is that $4u$ realized? Conservation
+with total merged energy $E_1+E_2=2E$ forces
 
 $$
 V_{\mathrm{occ}}
@@ -173,13 +179,17 @@ V_{\mathrm{occ}}
 \frac{V}{2}.
 $$
 
-So the shrinkage from $V$ to $V/2$ is the algebraic consequence of keeping the
-local $4u$ readout while preserving the same total merged energy. What algebra
-alone does not supply is the dynamical agent of that compaction. The proposed
-agent here is the tangential closure stress of the same self-refracting flow.
-Coherent overlap reinforces the closure-carrying tangential sectors, and that
-reinforced closure is the proposed physical reading of the algebraic
-compaction just derived.
+So the merge itself gives the mean density $2u_{\mathrm{independent}}$ on the
+common extent $V$, while the exact local $4u_{\mathrm{independent}}$ readout
+must be realized on a smaller occupied region of measure $V/2$. In that
+sense, the merged `2u` state is further concentrated into the local `4u`
+state.
+
+What algebra alone does not supply is the dynamical agent of that
+concentration. The proposed agent here is the tangential closure stress of the
+same self-refracting flow. Coherent overlap reinforces the closure-carrying
+tangential sectors, and that reinforced closure is the proposed physical
+reading of the algebraic concentration just derived.
 
 Then
 
