@@ -16,89 +16,93 @@ question is what that overlap does to transport.
 
 
 ## Coherent overlap
-
-To state the overlap principle without changing ontology, use one local
-amplitude of the transporting flow. Write that local amplitude as
-
-$$
-a(\mathbf r,t),
-$$
-
-normalized so that the observable local energy density is
+Write two coherent portions of the same transporting flow in the conventional
+electromagnetic variables
 
 $$
-u=|a|^2.
-$$
-
-So the observable is quadratic in amplitude. Equivalently, $\sqrt{u}$ is an
-amplitude scale, not a second density.
-
-Now let two coherent portions of the same transporting flow contribute local
-amplitudes
-
-$$
-a_1,
+\mathbf E_1,\ \mathbf B_1,
 \qquad
-a_2
+\mathbf E_2,\ \mathbf B_2.
 $$
 
-to the same transport channel.
-
-Geometric crossing alone is not yet the strongest overlap. For substantial
-coherent loading, the two portions must share a common local transport channel:
-support overlap, compatible polarization, a definite phase relation, and a
-nonzero common projection of the transport directions. If the local transport
-directions fail to overlap coherently, the mixed term is reduced and in general
-averages out to zero rather than building one merged loaded region.
-
-In the aligned case, write the relative phase as $\Delta$ and the total local
-amplitude as
+At one point of overlap, the total field is
 
 $$
-a=a_1+e^{i\Delta}a_2.
+\mathbf E=\mathbf E_1+\mathbf E_2,
+\qquad
+\mathbf B=\mathbf B_1+\mathbf B_2,
 $$
 
-Then
+so the local energy density is
 
 $$
 u
 =
-|a|^2
+\frac{\epsilon}{2}|\mathbf E|^2
++
+\frac{1}{2\mu}|\mathbf B|^2
 =
-|a_1|^2+|a_2|^2+2|a_1||a_2|\cos\Delta.
+u_1+u_2
++
+\epsilon\,\mathbf E_1\!\cdot\!\mathbf E_2
++
+\frac{1}{\mu}\,\mathbf B_1\!\cdot\!\mathbf B_2.
 $$
 
-Writing
+These mixed terms are the interaction terms. If the two portions do not
+overlap coherently, they are reduced and in general average out to zero.
+
+For the strongest local case, take the two portions to have the same local
+transport direction, the same polarization, and zero relative phase. Then
 
 $$
-u_1:=|a_1|^2,
+\mathbf E_2=\mathbf E_1,
 \qquad
-u_2:=|a_2|^2,
+\mathbf B_2=\mathbf B_1,
 $$
 
-gives
+so
 
 $$
-u=u_1+u_2+2\sqrt{u_1u_2}\cos\Delta.
+\mathbf E=2\mathbf E_1,
+\qquad
+\mathbf B=2\mathbf B_1,
 $$
 
-Under coherent overlap, if $\Delta=0$ and $u_1=u_2=u_0$, then
+and therefore
 
 $$
-u=(\sqrt{u_0}+\sqrt{u_0})^2=4u_0.
+u
+=
+\frac{\epsilon}{2}|2\mathbf E_1|^2
++
+\frac{1}{2\mu}|2\mathbf B_1|^2
+=
+4u_1.
 $$
 
 This is the rigorous local `4u` result.
 
-Now separate that exact local field readout from the energy bookkeeping of the
-merged flow. Treat the overlapping objects not as two unrelated infinite waves
-but as two equal closed portions of flow. Let each isolated closure carry
+This result looks surprising: four times the energy density. But the ordinary
+hydraulic comparison already shows the issue. If two equal water flows are
+joined into one pipe of the same cross-section, the water speeds up to carry
+the extra flow. Energy transport cannot resolve the merger that way, because
+the transport speed is already fixed at $c$. So if twice the energy flow is
+carried through the same realized cross-section, the increase must appear as
+greater local concentration.
+
+Now separate that exact local field readout from the bookkeeping of realized
+extent. In this book, volume is not a primitive container. Organized energy
+allows distance to be measured, and volume is the union of such measured
+distances.
+
+Let each isolated closure carry energy
 
 $$
 E
 $$
 
-on occupied extent
+on realized extent
 
 $$
 V,
@@ -107,11 +111,21 @@ $$
 so
 
 $$
-u_0=\frac{E}{V}.
+u_{\mathrm{independent}}=\frac{E}{V}.
 $$
 
-Before overlap, the two closures occupy separate extents, so the total realized
-energy and occupied extent are
+Before overlap, each realized extent $V_1,V_2$ carries the corresponding
+energy $E_1,E_2$. For equal isolated closures,
+
+$$
+E_1=E_2=E,
+\qquad
+V_1=V_2=V,
+\qquad
+u_{\mathrm{independent}}=\frac{E_i}{V_i}.
+$$
+
+The initial total energy and volume are therefore
 
 $$
 E_{\mathrm{initial}}=E_1+E_2=2E,
@@ -119,51 +133,52 @@ E_{\mathrm{initial}}=E_1+E_2=2E,
 V_{\mathrm{initial}}=V_1+V_2=2V.
 $$
 
-Therefore the mean occupied density before overlap is
+So the initial mean realized density is
 
 $$
 \frac{E_{\mathrm{initial}}}{V_{\mathrm{initial}}}
 =
 \frac{2E}{2V}
 =
-u_0.
+u_{\mathrm{independent}}.
 $$
 
-After coherent overlap, the same total energy is realized on one common extent
+After coherent overlap, the same total energy is realized on one common
+extent,
 
 $$
-V_{\mathrm{final}}=V,
-\qquad
 E_{\mathrm{final}}=2E,
+\qquad
+V_{\mathrm{final}}=V,
 $$
 
-so the mean merged density is
+so the merged mean density is
 
 $$
 \frac{E_{\mathrm{final}}}{V_{\mathrm{final}}}
 =
 \frac{2E}{V}
 =
-2u_0.
+2u_{\mathrm{independent}}.
 $$
 
-This is the algebraic effect of the merge itself: the second occupied extent no
-longer enters the bookkeeping.
+This is the algebraic effect of the merge itself: two independent realized
+extents become one common realized extent.
 
-But the exact local amplitude algebra above is stronger:
+But the exact local field algebra above is stronger:
 
 $$
-u=4u_0.
+u=4u_{\mathrm{independent}}.
 $$
 
-So the next question is: in what occupied volume is that `4u_0` realized? If
-that value is read as the realized density of a bounded occupied region
-carrying the full merged energy $2E$, then conservation forces
+So the next question is: in what realized volume is that `4u_{\mathrm{independent}}`
+readout occurring? If that value is read as the realized density of a bounded
+region carrying the full merged energy $2E$, then conservation forces
 
 $$
 V_{\mathrm{occ}}
 =
-\frac{E_{\mathrm{final}}}{4u_0}
+\frac{E_{\mathrm{final}}}{4u_{\mathrm{independent}}}
 =
 \frac{2E}{4E/V}
 =
@@ -172,18 +187,18 @@ $$
 
 So the strict derivation is this:
 
-- the merge itself gives the mean density $2u_0$ on the common extent $V$,
-- the exact local amplitude algebra gives the stronger readout $4u_0$,
+- the merge itself gives the mean density $2u_{\mathrm{independent}}$ on the common extent $V$,
+- the exact local field algebra gives the stronger local readout $4u_{\mathrm{independent}}$,
 - and if that stronger value is read as the realized density of a bounded
-  occupied region carrying the full merged energy, then the occupied region
+  region carrying the full merged energy, then the realized region
   must have measure $V/2$.
 
 What algebra alone does not supply is the dynamical agent that would make the
-realized occupied region take that smaller value. The proposed agent here is
-the tangential closure stress of the same self-refracting flow. Coherent
-overlap reinforces the closure-carrying tangential sectors, and that
-reinforced closure is the proposed physical reading of the algebraic
-concentration just derived.
+realized region take that smaller value. The proposed agent here is the
+tangential closure stress of the same self-refracting flow. Coherent overlap
+reinforces the closure-carrying tangential sectors, and that reinforced
+closure is the proposed physical reading of the algebraic concentration just
+derived.
 
 ## Effective-medium summary
 
