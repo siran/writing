@@ -83,13 +83,13 @@ $$
 
 This is the rigorous local `4u` result.
 
-This result looks surprising: four times the energy density. But the ordinary
-hydraulic comparison already shows the issue. If two equal water flows are
-joined into one pipe of the same cross-section, the water speeds up to carry
-the extra flow. Energy transport cannot resolve the merger that way, because
-the transport speed is already fixed at $c$. So if twice the energy flow is
-carried through the same realized cross-section, the increase must appear as
-greater local concentration.
+There is nothing mysterious in that result once the transport picture is kept
+in view. From the starting point that something exists and moves continuously,
+the book recovered source-free continuous transport, and in that regime energy
+advances at the fixed rate $c$. An ordinary fluid resolves extra flow through
+the same cross-section by increasing speed. This transport cannot do that. So
+when twice the flow is recovered in the same realized section, the increase
+must be read as greater local concentration.
 
 Now separate that exact local field readout from the bookkeeping of realized
 extent. In this book, volume is not a primitive container. Organized energy
@@ -171,9 +171,10 @@ $$
 u=4u_{\mathrm{independent}}.
 $$
 
-So the next question is: in what realized volume is that `4u_{\mathrm{independent}}`
-readout occurring? If that value is read as the realized density of a bounded
-region carrying the full merged energy $2E$, then conservation forces
+So the remaining bookkeeping question is simple: what realized volume carries
+that `4u_{\mathrm{independent}}` readout? If that value is read as the
+realized density of a bounded region carrying the full merged energy $2E$,
+then conservation forces
 
 $$
 V_{\mathrm{occ}}
@@ -188,7 +189,7 @@ $$
 At the level of bookkeeping, this is analogous to an ideal pulley. A pulley
 does not create work; it recovers greater force by reducing the distance
 through which that force acts. Here too no new energy is created. The stronger
-local loading is read as the same merged energy realized on smaller extent.
+local loading is the same merged energy read on smaller extent.
 
 So the strict derivation is this:
 
@@ -198,11 +199,11 @@ So the strict derivation is this:
   region carrying the full merged energy, then the realized region
   must have measure $V/2$.
 
-What algebra alone does not supply is the dynamical agent that would make the
-realized region take that smaller value. The proposed agent here is the
-tangential closure stress of the same self-refracting flow. Coherent overlap
-reinforces the closure-carrying tangential sectors, and that reinforced
-closure is the proposed physical reading of the algebraic concentration just
+The algebra therefore fixes the concentration bookkeeping. What remains is the
+physical reading of why the flow takes that smaller realized extent. The
+proposed reading here is tangential closure stress in the same self-refracting
+flow. Coherent overlap reinforces the closure-carrying tangential sectors, and
+that reinforced closure is the proposed mechanism for the concentration just
 derived.
 
 ## Effective-medium summary
