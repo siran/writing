@@ -139,6 +139,15 @@ P_{\mathrm{final}}=u_{\mathrm{merge}}\,c\,A
 u_{\mathrm{merge}}=2u_{\mathrm{independent}}.
 $$
 
+The same point may be pictured discretely. Suppose one isolated flow is read as
+three recurring transport nodes per unit length along a path. After coherent
+merger, the second flow does not gain a second independent path, and the common
+path cannot carry it by increasing speed beyond $c$. The added flow must
+therefore be recovered in the same longitudinal extent, filling the
+intermediate recurrence. In that picture the merged path carries six nodes per
+unit length rather than three. The two flows add, and the realized flow is
+therefore denser.
+
 So the merge by itself already gives the `2u` result. The exact local `4u`
 law is the stronger overlap statement.
 
