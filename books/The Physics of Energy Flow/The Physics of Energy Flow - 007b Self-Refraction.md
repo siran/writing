@@ -185,6 +185,11 @@ V_{\mathrm{occ}}
 \frac{V}{2}.
 $$
 
+At the level of bookkeeping, this is analogous to an ideal pulley. A pulley
+does not create work; it recovers greater force by reducing the distance
+through which that force acts. Here too no new energy is created. The stronger
+local loading is read as the same merged energy realized on smaller extent.
+
 So the strict derivation is this:
 
 - the merge itself gives the mean density $2u_{\mathrm{independent}}$ on the common extent $V$,
