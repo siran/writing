@@ -91,11 +91,6 @@ the same cross-section by increasing speed. This transport cannot do that. So
 when twice the flow is recovered in the same realized section, the increase
 must be read as greater local concentration.
 
-Now separate that exact local field readout from the bookkeeping of realized
-extent. In this book, volume is not a primitive container. Organized energy
-allows distance to be measured, and volume is the union of such measured
-distances.
-
 Let each isolated closure carry energy
 
 $$
@@ -113,6 +108,43 @@ so
 $$
 u_{\mathrm{independent}}=\frac{E}{V}.
 $$
+
+The same point can be written directly in transport form. Through a local
+section $A$ normal to the transport direction, the recovered power is
+
+$$
+P=u\,c\,A.
+$$
+
+This is the local transport capacity: area times speed times density. For one
+isolated portion,
+
+$$
+P_1=u_{\mathrm{independent}}\,c\,A.
+$$
+
+If two equal portions are merged into one common section of the same area $A$,
+then
+
+$$
+P_{\mathrm{final}}=P_1+P_2=2u_{\mathrm{independent}}\,c\,A.
+$$
+
+But the transport speed is still $c$ and the common section is still $A$, so
+
+$$
+P_{\mathrm{final}}=u_{\mathrm{merge}}\,c\,A
+\qquad\Rightarrow\qquad
+u_{\mathrm{merge}}=2u_{\mathrm{independent}}.
+$$
+
+So the merge by itself already gives the `2u` result. The exact local `4u`
+law is the stronger overlap statement.
+
+Now separate that exact local field readout from the bookkeeping of realized
+extent. In this book, volume is not a primitive container. Organized energy
+allows distance to be measured, and volume is the union of such measured
+distances.
 
 Before overlap, each realized extent $V_1,V_2$ carries the corresponding
 energy $E_1,E_2$. For equal isolated closures,
