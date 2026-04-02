@@ -83,13 +83,14 @@ $$
 
 This is the rigorous local `4u` result.
 
-There is nothing mysterious in that result once the transport picture is kept
-in view. From the starting point that something exists and moves continuously,
-the book recovered source-free continuous transport, and in that regime energy
-advances at the fixed rate $c$. An ordinary fluid resolves extra flow through
-the same cross-section by increasing speed. This transport cannot do that. So
-when twice the flow is recovered in the same realized section, the increase
-must be read as greater local concentration.
+Interpretation is straightforward once the transport picture is kept in view.
+If two ordinary fluid flows of similar cross-section are joined into an outlet
+of similar cross-section, the fluid increases its speed at the outlet in order
+to carry twice the incoming flow through the same section. But as earlier
+chapters recovered, energy transport proceeds at the fixed rate $c$. In that
+sense the exit speed is already controlled: the transport cannot simply move
+faster to account for the added flow. Since energy is conserved, the remaining
+way to carry more through the same realized section is greater energy density.
 
 Let each isolated closure carry energy
 
