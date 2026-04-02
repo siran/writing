@@ -17,199 +17,153 @@ question is what that overlap does to transport.
 
 ## Coherent overlap
 
-Write those two aspects in their conventional electromagnetic variables
+To state the overlap principle without changing ontology, use one local
+amplitude of the transporting flow. Write that local amplitude as
 
 $$
-\mathbf E,
+a(\mathbf r,t),
+$$
+
+normalized so that the observable local energy density is
+
+$$
+u=|a|^2.
+$$
+
+So the observable is quadratic in amplitude. Equivalently, $\sqrt{u}$ is an
+amplitude scale, not a second density.
+
+Now let two coherent portions of the same transporting flow contribute local
+amplitudes
+
+$$
+a_1,
 \qquad
-\mathbf B.
+a_2
 $$
 
-Write two coherent portions of the same field as
+to the same transport channel.
+
+Geometric crossing alone is not yet the strongest overlap. For substantial
+coherent loading, the two portions must share a common local transport channel:
+support overlap, compatible polarization, a definite phase relation, and a
+nonzero common projection of the transport directions. If the local transport
+directions fail to overlap coherently, the mixed term is reduced and in general
+averages out to zero rather than building one merged loaded region.
+
+In the aligned case, write the relative phase as $\Delta$ and the total local
+amplitude as
 
 $$
-\mathbf E_1,\ \mathbf B_1,
-\qquad
-\mathbf E_2,\ \mathbf B_2.
-$$
-
-When they overlap, the observables are computed from the total field,
-
-$$
-\mathbf E=\mathbf E_1+\mathbf E_2,
-\qquad
-\mathbf B=\mathbf B_1+\mathbf B_2.
-$$
-
-So the local energy density is
-
-$$
-u
-=
-\frac{\epsilon}{2}|\mathbf E|^2
-+
-\frac{1}{2\mu}|\mathbf B|^2
-$$
-
-that is,
-
-$$
-u
-=
-u_1+u_2
-+
-\epsilon\,\mathbf E_1\!\cdot\!\mathbf E_2
-+
-\frac{1}{\mu}\,\mathbf B_1\!\cdot\!\mathbf B_2.
-$$
-
-These cross terms are the interaction terms.
-
-But geometric crossing alone is not yet the strongest overlap. For a
-substantial coherent loading, the two portions must share a common local
-transport channel. In practice that means not only support overlap, but
-compatible polarization, phase relation, and a nonzero common projection of
-their transport directions. If two flux tubes merely cross while their local
-transport directions fail to overlap coherently, the cross terms are reduced
-and in general average out to zero rather than building one merged loaded
-region.
-
-Under coherent overlap in this stronger sense, the energy cross terms are
-non-null. The overlap region is therefore more heavily loaded than either
-isolated portion. In that sense, one region of the field acts for another as a
-denser electromagnetic medium.
-
-For the strongest local case, take the two portions to have the same local
-transport direction, the same polarization, and zero relative phase. Then the
-cross terms are maximal. Write that aligned equal-amplitude case explicitly as
-
-$$
-\mathbf E_2=\mathbf E_1,
-\qquad
-\mathbf B_2=\mathbf B_1.
+a=a_1+e^{i\Delta}a_2.
 $$
 
 Then
 
 $$
-\mathbf E=\mathbf E_1+\mathbf E_2=2\mathbf E_1,
+u
+=
+|a|^2
+=
+|a_1|^2+|a_2|^2+2|a_1||a_2|\cos\Delta.
+$$
+
+Writing
+
+$$
+u_1:=|a_1|^2,
 \qquad
-\mathbf B=\mathbf B_1+\mathbf B_2=2\mathbf B_1,
+u_2:=|a_2|^2,
+$$
+
+gives
+
+$$
+u=u_1+u_2+2\sqrt{u_1u_2}\cos\Delta.
+$$
+
+Under coherent overlap, if $\Delta=0$ and $u_1=u_2=u_0$, then
+
+$$
+u=(\sqrt{u_0}+\sqrt{u_0})^2=4u_0.
+$$
+
+This is the rigorous local `4u` result.
+
+Now separate that exact local field readout from the energy bookkeeping of the
+merged flow. Treat the overlapping objects not as two unrelated infinite waves
+but as two equal closed portions of flow. Let each isolated closure carry
+
+$$
+E
+$$
+
+on occupied extent
+
+$$
+V,
 $$
 
 so
 
 $$
-u
-=
-\frac{\epsilon}{2}|2\mathbf E_1|^2
-+
-\frac{1}{2\mu}|2\mathbf B_1|^2
-=
-4\left(
-\frac{\epsilon}{2}|\mathbf E_1|^2
-+
-\frac{1}{2\mu}|\mathbf B_1|^2
-\right)
-=
-4u_1.
+u_0=\frac{E}{V}.
 $$
 
-This is the rigorous local `4u` result.
-
-This result seems surprising: four times the energy density. A familiar
-hydraulic picture helps. If two equal water flows are joined into one tube of
-the same cross-section, the doubled flow is accounted for by increased speed.
-Energy transport here cannot do that, because the transport speed is already
-fixed at $c$. So if two equal energy flows are forced through the same
-effective cross-section while the transport speed remains the same, the
-doubled flow must instead appear as increased energy density.
-
-Now separate that exact local field readout from the energy bookkeeping of the
-merged flow. Treat the overlapping objects not as two unrelated infinite waves
-but as two equal closed portions of flow. Write
-
-$$
-E_i=\int_{V_i} u_i\,dV.
-$$
-
-For two equal isolated closures,
-
-$$
-E_1=E_2=E,
-\qquad
-V_1=V_2=V,
-\qquad
-u_{\mathrm{independent}}:=\frac{E}{V}.
-$$
-
-Before overlap, each extent $V_1$ and $V_2$ carries the energy $E_1$ and
-$E_2$, respectively, so the independent density is
-
-$$
-u_{\mathrm{independent}}
-=
-\frac{E_i}{V_i}.
-$$
-
-The initial total realized energy and occupied extent are therefore
+Before overlap, the two closures occupy separate extents, so the total realized
+energy and occupied extent are
 
 $$
 E_{\mathrm{initial}}=E_1+E_2=2E,
 \qquad
-V_{\mathrm{initial}}=V_1+V_2=2V,
+V_{\mathrm{initial}}=V_1+V_2=2V.
 $$
 
-so the mean occupied density before overlap is
+Therefore the mean occupied density before overlap is
 
 $$
 \frac{E_{\mathrm{initial}}}{V_{\mathrm{initial}}}
 =
 \frac{2E}{2V}
 =
-u_{\mathrm{independent}}.
+u_0.
 $$
 
-After coherent overlap, the final realized energy is still
+After coherent overlap, the same total energy is realized on one common extent
 
 $$
-E_{\mathrm{final}}=E_1+E_2=2E,
+V_{\mathrm{final}}=V,
+\qquad
+E_{\mathrm{final}}=2E,
 $$
 
-while the final occupied extent is one common volume
-
-$$
-V_{\mathrm{final}}=V.
-$$
-
-So after coherent overlap the same total energy is realized on one common
-extent:
+so the mean merged density is
 
 $$
 \frac{E_{\mathrm{final}}}{V_{\mathrm{final}}}
 =
 \frac{2E}{V}
 =
-2u_{\mathrm{independent}}.
+2u_0.
 $$
 
-This is the algebraic effect of the merge itself: the second occupied extent
-no longer enters the bookkeeping.
+This is the algebraic effect of the merge itself: the second occupied extent no
+longer enters the bookkeeping.
 
-The exact local field algebra above is stronger:
+But the exact local amplitude algebra above is stronger:
 
 $$
-u=4u_{\mathrm{independent}}.
+u=4u_0.
 $$
 
-So the next question is: in what occupied volume is that `4u` realized?
-If that `4u` value is taken as the realized density of a bounded occupied
-region carrying the full merged energy $2E$, then conservation forces
+So the next question is: in what occupied volume is that `4u_0` realized? If
+that value is read as the realized density of a bounded occupied region
+carrying the full merged energy $2E$, then conservation forces
 
 $$
 V_{\mathrm{occ}}
 =
-\frac{E_{\mathrm{final}}}{4u_{\mathrm{independent}}}
+\frac{E_{\mathrm{final}}}{4u_0}
 =
 \frac{2E}{4E/V}
 =
@@ -218,10 +172,8 @@ $$
 
 So the strict derivation is this:
 
-- the merge itself gives the mean density $2u_{\mathrm{independent}}$ on the
-  common extent $V$,
-- the exact local field algebra gives the stronger readout
-  $4u_{\mathrm{independent}}$,
+- the merge itself gives the mean density $2u_0$ on the common extent $V$,
+- the exact local amplitude algebra gives the stronger readout $4u_0$,
 - and if that stronger value is read as the realized density of a bounded
   occupied region carrying the full merged energy, then the occupied region
   must have measure $V/2$.
@@ -232,25 +184,6 @@ the tangential closure stress of the same self-refracting flow. Coherent
 overlap reinforces the closure-carrying tangential sectors, and that
 reinforced closure is the proposed physical reading of the algebraic
 concentration just derived.
-
-This same reading is consistent with the later effective-string reduction of a
-bounded Maxwellian closure. Part II, appendix 217 derives
-
-$$
-\mathcal{T}=\int_{\Sigma}u\,dA
-$$
-
-as effective line tension along a thin closed tube. The present overlap
-argument is the transverse counterpart of that same ontology: stronger
-coherent closure realizes the same total $2E$ on smaller occupied extent. The
-total bookkeeping still belongs to the full field through
-
-$$
-\partial_t u+\nabla\cdot\mathbf S=0,
-$$
-
-applied to the total field.
-
 
 ## Effective-medium summary
 
@@ -265,8 +198,8 @@ c_{\mathrm{eff}}=\frac{c}{n_{\mathrm{eff}}}.
 $$
 
 This does not replace the exact superposition above. It is only a compact
-summary of the fact that the loaded overlap region advances more slowly than
-an isolated portion would.
+summary of the fact that the loaded overlap region advances more slowly than an
+isolated portion would.
 
 
 ## Local bending
@@ -275,9 +208,9 @@ Once different sides of a local wavefront are loaded differently, they do not
 advance at the same speed. The more heavily loaded side moves more slowly, so
 the transport bends toward it. That is refraction.
 
-Approximating the overlap region as a higher-index layer of the same field,
-with exterior index $1$, and approximating the entering transport as locally
-tangent to that layer, Snell's law gives
+Approximating the overlap region as a higher-index layer of the same field, with
+exterior index $1$, and approximating the entering transport as
+locally tangent to that layer, Snell's law gives
 
 $$
 \sin\theta_{\mathrm{in}}
@@ -311,12 +244,13 @@ transport line.
 ## The retarded case
 
 For a self-refracting closure, the overlap is not produced by two independent
-laboratory sources. It is produced when a later portion of the same flow
-enters a region already shaped by an earlier portion of that same flow.
+laboratory sources. It is produced when a later portion of the same flow enters
+a region already shaped by an earlier portion of that same flow.
 
 Let $\gamma(s)$ describe a local transport line, parameterized by arclength
-$s$. A local segment at position $s$ interacts causally with earlier source
-positions $s_{\mathrm{ret}}$ on the same flow, related by
+$s$. A local segment at position $s$ interacts
+causally with earlier source positions $s_{\mathrm{ret}}$ on the same flow,
+related by
 
 $$
 \left|\gamma(s)-\gamma(s_{\mathrm{ret}})\right|
@@ -347,12 +281,12 @@ $$
 and likewise for $B_{\mathrm{ret}}$. So the retarded self-action enters as a
 phase lag $\omega\tau$ carried by earlier portions of the same flow.
 
-The retarded case is therefore not the definition of self-interaction. It is
-the closure-relevant causal specialization of the overlap principle already
-derived above.
+The retarded case is therefore not the definition of self-interaction. It is the
+closure-relevant causal specialization of the overlap principle already derived
+above.
 
-In the retarded case one may write the same coarse-grained summary more explicitly
-as
+In the retarded case one may write the same coarse-grained summary more
+explicitly as
 
 $$
 D
@@ -364,8 +298,8 @@ H
 \frac{1}{\mu}B_{\mathrm{loc}} - M_{\mathrm{self}}[E_{\mathrm{ret}},B_{\mathrm{ret}}].
 $$
 
-In the thin, nearly uniform, slowly varying regime, linearize the exact
-retarded response against the local field:
+In the thin, nearly uniform, slowly varying regime, linearize the exact retarded
+response against the local field:
 
 $$
 P_{\mathrm{self}}\approx \epsilon\,\chi_{e,\mathrm{eff}}\,E_{\mathrm{loc}},
@@ -405,9 +339,8 @@ n_{\mathrm{eff}}
 \sqrt{(1+\chi_{e,\mathrm{eff}})(1+\chi_{m,\mathrm{eff}})}.
 $$
 
-This recovers the same local refraction law, now written in the explicit
-causal form relevant when the field bends back and meets its own earlier
-transport.
+This recovers the same local refraction law, now written in the explicit causal
+form relevant when the field bends back and meets its own earlier transport.
 
 
 ## What This Does and Does Not Yet Give
@@ -416,13 +349,14 @@ This chapter derives the principle, not yet the global shape.
 
 It shows:
 
-- how coherent overlap of distinct portions of the same field produces
-  non-null interaction terms in the observables,
+- how coherent overlap of distinct portions of the same field produces non-null
+  interaction terms in the observables,
 - how that overlap is summarized phenomenologically by a local effective
   refractive index,
 - how the closure-relevant retarded case fits inside that more general
   self-interaction picture and can be written in dielectric form,
 - and how that loading bends transport by ordinary refraction.
+
 
 It does **not** yet require closure.
 
