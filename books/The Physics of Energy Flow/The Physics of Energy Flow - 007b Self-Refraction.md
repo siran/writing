@@ -115,10 +115,14 @@ But as earlier chapters recovered, energy transport proceeds at the fixed rate
 $c$. Since there are no sinks, the transported content entering and
 leaving over the same interval must still match. If the speed cannot increase,
 then the remaining degree of freedom is density. Under coherent overlap, the
-two separate flows are recovered as one common coherent wave transport. The
-transported content through that common path doubles while the propagation
-speed remains fixed at $c$. The same merged content must therefore be carried
-through the same section and in the same interval by becoming denser.
+two separate flows are recovered as one common coherent wave transport. Before
+overlap there are two independent channels, each advancing one realized
+wave-volume $V=A\ell$ over the interval $\Delta t$. After coherent overlap,
+there is only one surviving channel. That single wave now carries the merged
+content of the two previous waves. The transported content per surviving wave
+therefore doubles while the propagation speed remains fixed at $c$. The same
+merged content must therefore be carried through the same section and in the
+same interval by becoming denser.
 
 Let each isolated closure carry energy
 
@@ -163,14 +167,16 @@ $$
 
 After coherent merger, the two flows no longer travel on two independent paths.
 The merged content is recovered on one common path of the same cross-section
-$A$ and the same total realized transport volume
+$A$. Over the same interval $\Delta t$, that surviving path advances only one
+realized wave-volume
 
 $$
 V_{\mathrm{final}}=A\ell,
 $$
 
-Considering that $\ell=\ell_1=\ell_2$, we can see ratio between the new volume
-and the previous
+so the number of realized transport channels has fallen from two to one, while
+the total transported energy remains $2E$. The ratio between the previous total
+wave-volume and the surviving wave-volume is
 
 $$
 \frac{V_{\mathrm{initial}}}{V_{\mathrm{final}}}=2
