@@ -114,8 +114,11 @@ doubled content by increasing its speed through the outlet.
 But as earlier chapters recovered, energy transport proceeds at the fixed rate
 $c$. Since there are no sinks, the transported content entering and
 leaving over the same interval must still match. If the speed cannot increase,
-then the remaining degree of freedom is density. The same merged content must be
-carried through the same section and in the same interval by becoming denser.
+then the remaining degree of freedom is density. Under coherent overlap, the
+two separate flows are recovered as one common coherent wave transport. The
+transported content through that common path doubles while the propagation
+speed remains fixed at $c$. The same merged content must therefore be carried
+through the same section and in the same interval by becoming denser.
 
 Let each isolated closure carry energy
 
@@ -126,13 +129,13 @@ $$
 on realized extent
 
 $$
-V=A\ell,
+V_1=A\ell_1,
 $$
 
 so
 
 $$
-u_{\mathrm{independent}}=\frac{E}{A\ell}.
+u_{\mathrm{independent}}=\frac{E}{A\ell_1}.
 $$
 
 Before coherent overlap, the two independent portions therefore carry total
@@ -145,7 +148,7 @@ $$
 on total realized volume
 
 $$
-V_{\mathrm{initial}}=V_1+V_2=2A\ell,
+V_{\mathrm{initial}}=V_1+V_2=A(\ell_1+\ell_2)=2A\ell,
 $$
 
 so the initial mean density is
@@ -160,13 +163,25 @@ $$
 
 After coherent merger, the two flows no longer travel on two independent paths.
 The merged content is recovered on one common path of the same cross-section
-$A$ and the same transport length $\ell=c\Delta t$. So the merged
-mean density is
+$A$ and the same total realized transport volume
+
+$$
+V_{\mathrm{final}}=A\ell,
+$$
+
+Considering that $\ell=\ell_1=\ell_2$, we can see ratio between the new volume
+and the previous
+
+$$
+\frac{V_{\mathrm{initial}}}{V_{\mathrm{final}}}=2
+$$
+
+So the merged mean density is
 
 $$
 u_{\mathrm{merge}}
 =
-\frac{E_1+E_2}{A\ell}
+\frac{E_1+E_2}{V_{\mathrm{final}}}
 =
 \frac{2E}{A\ell}
 =
@@ -185,9 +200,9 @@ tracking each contributing portion separately. Then it is convenient to write
 the exact overlap phenomenologically as a local effective index
 
 $$
-n_{\mathrm{eff}}>1,
-\qquad
-c_{\mathrm{eff}}=\frac{c}{n_{\mathrm{eff}}}.
+
+n_{\mathrm{eff}}>1, \qquad c_{\mathrm{eff}}=\frac{c}{n_{\mathrm{eff}}}.
+
 $$
 
 This does not replace the exact superposition above. It is only a compact
@@ -206,27 +221,28 @@ exterior index $1$, and approximating the entering transport as
 locally tangent to that layer, Snell's law gives
 
 $$
-\sin\theta_{\mathrm{in}}
-=
-n_{\mathrm{eff}}\sin\theta_{\mathrm{tr}},
-\qquad
+
+\sin\theta_{\mathrm{in}} = n_{\mathrm{eff}}\sin\theta_{\mathrm{tr}}, \qquad
 \theta_{\mathrm{in}}=\frac{\pi}{2},
+
 $$
 
 so
 
 $$
+
 \sin\theta_{\mathrm{tr}}=\frac{1}{n_{\mathrm{eff}}}.
+
 $$
 
 If $\beta$ denotes the complementary angle to the local tangent, then
 
 $$
-\beta=\frac{\pi}{2}-\theta_{\mathrm{tr}},
-\qquad
-\cos\beta=\frac{1}{n_{\mathrm{eff}}},
-\qquad
+
+\beta=\frac{\pi}{2}-\theta_{\mathrm{tr}}, \qquad
+\cos\beta=\frac{1}{n_{\mathrm{eff}}}, \qquad
 \tan\beta=\sqrt{n_{\mathrm{eff}}^2-1}.
+
 $$
 
 This is the local self-refraction law: stronger coherent loading means larger
