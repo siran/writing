@@ -85,9 +85,9 @@ $$
 This is the rigorous local `4u` result.
 
 Interpretation is straightforward once the transport picture is kept in view.
-Take one isolated transporting portion over one transport interval $\Delta t$.
-If its realized cross-section is $A$, then its realized length over that
-interval is
+Take one isolated transporting portion over one transport interval
+$\Delta t$. If its realized cross-section is $A$, then its
+realized length over that interval is
 
 $$
 \ell = c\,\Delta t,
@@ -106,16 +106,16 @@ u_{\mathrm{independent}}=\frac{E}{V}=\frac{E}{A\ell}.
 $$
 
 Now imagine two such equal portions. If one simply concatenates the two flux
-tubes, the resulting tube has the same cross-section $A$ but double the length
-$2\ell$. That is the ordinary fluid picture. To keep the inflow and outflow
-equal over the same time window, the fluid resolves the doubled content by
-increasing its speed through the outlet.
+tubes, the resulting tube has the same cross-section $A$ but double
+the length $2\ell$. That is the ordinary fluid picture. To keep the
+inflow and outflow equal over the same time window, the fluid resolves the
+doubled content by increasing its speed through the outlet.
 
 But as earlier chapters recovered, energy transport proceeds at the fixed rate
-$c$. Since there are no sinks, the transported content entering and leaving over
-the same interval must still match. If the speed cannot increase, then the
-remaining degree of freedom is density. The same merged content must be carried
-through the same section and in the same interval by becoming denser.
+$c$. Since there are no sinks, the transported content entering and
+leaving over the same interval must still match. If the speed cannot increase,
+then the remaining degree of freedom is density. The same merged content must be
+carried through the same section and in the same interval by becoming denser.
 
 Let each isolated closure carry energy
 
@@ -160,8 +160,8 @@ $$
 
 After coherent merger, the two flows no longer travel on two independent paths.
 The merged content is recovered on one common path of the same cross-section
-$A$ and the same transport length $\ell=c\Delta t$. So the merged mean density
-is
+$A$ and the same transport length $\ell=c\Delta t$. So the merged
+mean density is
 
 $$
 u_{\mathrm{merge}}
@@ -174,49 +174,25 @@ u_{\mathrm{merge}}
 $$
 
 This is the first bookkeeping consequence of the merge: the two flows add, and
-because they are recovered on one common realized path at fixed transport
-speed, the merged flow is denser.
+because they are recovered on one common realized path at fixed transport speed,
+the merged flow is denser.
 
-The same point may be pictured discretely. Suppose one isolated flow is read as
-three recurring transport nodes per unit length along the path. After coherent
-merger, the second flow does not gain a second independent path, and the common
-path cannot carry it by increasing speed beyond $c$. The added flow is
-therefore recovered in the same longitudinal extent, filling the intermediate
-recurrence. In that picture the merged path carries six nodes per unit length
-rather than three.
 
-So the merge by itself gives the `2u` result. The exact local field algebra is
-stronger:
+## Effective-medium summary
+
+Sometimes one wants a local summary of that loaded overlap region without
+tracking each contributing portion separately. Then it is convenient to write
+the exact overlap phenomenologically as a local effective index
 
 $$
-u=4u_{\mathrm{independent}}.
+n_{\mathrm{eff}}>1,
+\qquad
+c_{\mathrm{eff}}=\frac{c}{n_{\mathrm{eff}}}.
 $$
 
-If that stronger local value is read as the realized density of a bounded
-region carrying the full merged energy $2E$, then conservation forces
-
-$$
-V_{\mathrm{occ}}
-=
-\frac{2E}{4u_{\mathrm{independent}}}
-=
-\frac{V}{2}.
-$$
-
-Equivalently, since $V=A\ell$,
-
-$$
-\ell_{\mathrm{occ}}=\frac{\ell}{2}.
-$$
-
-So the strict bookkeeping is:
-
-- concatenating the two flux tubes gives the ordinary-fluid intuition of double length,
-- fixed-speed transport prevents resolving that merger by greater speed,
-- the merge therefore gives $2u_{\mathrm{independent}}$ on one common path,
-- and the exact local overlap law gives the stronger local readout
-  $4u_{\mathrm{independent}}$, which implies $\ell_{\mathrm{occ}}=\ell/2$ if
-  that value is read as the realized density of the merged region.
+This does not replace the exact superposition above. It is only a compact
+summary of the fact that the loaded overlap region advances more slowly than an
+isolated portion would.
 
 
 ## Local bending
@@ -230,28 +206,27 @@ exterior index $1$, and approximating the entering transport as
 locally tangent to that layer, Snell's law gives
 
 $$
-
-\sin\theta_{\mathrm{in}} = n_{\mathrm{eff}}\sin\theta_{\mathrm{tr}}, \qquad
+\sin\theta_{\mathrm{in}}
+=
+n_{\mathrm{eff}}\sin\theta_{\mathrm{tr}},
+\qquad
 \theta_{\mathrm{in}}=\frac{\pi}{2},
-
 $$
 
 so
 
 $$
-
 \sin\theta_{\mathrm{tr}}=\frac{1}{n_{\mathrm{eff}}}.
-
 $$
 
 If $\beta$ denotes the complementary angle to the local tangent, then
 
 $$
-
-\beta=\frac{\pi}{2}-\theta_{\mathrm{tr}}, \qquad
-\cos\beta=\frac{1}{n_{\mathrm{eff}}}, \qquad
+\beta=\frac{\pi}{2}-\theta_{\mathrm{tr}},
+\qquad
+\cos\beta=\frac{1}{n_{\mathrm{eff}}},
+\qquad
 \tan\beta=\sqrt{n_{\mathrm{eff}}^2-1}.
-
 $$
 
 This is the local self-refraction law: stronger coherent loading means larger
