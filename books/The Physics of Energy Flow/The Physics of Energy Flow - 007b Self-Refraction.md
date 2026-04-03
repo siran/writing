@@ -85,13 +85,37 @@ $$
 This is the rigorous local `4u` result.
 
 Interpretation is straightforward once the transport picture is kept in view.
-If two ordinary fluid flows of similar cross-section are joined into an outlet
-of similar cross-section, the fluid carries the added flow by increasing the
-outlet speed. But as earlier chapters recovered, energy transport proceeds at
-the fixed rate $c$. In that sense the transport speed is already controlled:
-the flow cannot simply move faster to account for added throughput. Since
-energy is conserved, the remaining degree of freedom is greater density in the
-same realized path.
+Take one isolated transporting portion over one transport interval $\Delta t$.
+If its realized cross-section is $A$, then its realized length over that
+interval is
+
+$$
+\ell = c\,\Delta t,
+$$
+
+so its realized volume is
+
+$$
+V=A\ell.
+$$
+
+If that portion carries energy $E$, then
+
+$$
+u_{\mathrm{independent}}=\frac{E}{V}=\frac{E}{A\ell}.
+$$
+
+Now imagine two such equal portions. If one simply concatenates the two flux
+tubes, the resulting tube has the same cross-section $A$ but double the length
+$2\ell$. That is the ordinary fluid picture. To keep the inflow and outflow
+equal over the same time window, the fluid resolves the doubled content by
+increasing its speed through the outlet.
+
+But as earlier chapters recovered, energy transport proceeds at the fixed rate
+$c$. Since there are no sinks, the transported content entering and leaving over
+the same interval must still match. If the speed cannot increase, then the
+remaining degree of freedom is density. The same merged content must be carried
+through the same section and in the same interval by becoming denser.
 
 Let each isolated closure carry energy
 
@@ -102,76 +126,64 @@ $$
 on realized extent
 
 $$
-V,
+V=A\ell,
 $$
 
 so
 
 $$
-u_{\mathrm{independent}}=\frac{E}{V}.
+u_{\mathrm{independent}}=\frac{E}{A\ell}.
 $$
 
-Write that realized extent as a cross-section times a longitudinal extent,
+Before coherent overlap, the two independent portions therefore carry total
+energy
 
 $$
-V=A\ell,
+E_{\mathrm{initial}}=E_1+E_2=2E
 $$
 
-where $A$ is normal to the transport direction and $\ell$ measures the
-occupied length along the path. Then
+on total realized volume
 
 $$
-E=u_{\mathrm{independent}}A\ell.
+V_{\mathrm{initial}}=V_1+V_2=2A\ell,
 $$
 
-The same point can be written directly in transport form. Through a local
-section $A$, the recovered power is
+so the initial mean density is
 
 $$
-P=u\,c\,A.
+\frac{E_{\mathrm{initial}}}{V_{\mathrm{initial}}}
+=
+\frac{2E}{2A\ell}
+=
+u_{\mathrm{independent}}.
 $$
 
-This is the local transport capacity: area times speed times density. For one
-isolated portion,
-
-$$
-P_1=u_{\mathrm{independent}}\,c\,A.
-$$
-
-If two equal portions are merged into one common section of the same area $A$,
-then
-
-$$
-P_{\mathrm{final}}=P_1+P_2=2u_{\mathrm{independent}}\,c\,A.
-$$
-
-But the transport speed is still $c$ and the common section is still $A$, so
-
-$$
-P_{\mathrm{final}}=u_{\mathrm{merge}}\,c\,A
-\qquad\Rightarrow\qquad
-u_{\mathrm{merge}}=2u_{\mathrm{independent}}.
-$$
-
-This is the first bookkeeping consequence of the merge: two equal flows now
-pass through one common path, so the realized density doubles.
+After coherent merger, the two flows no longer travel on two independent paths.
+The merged content is recovered on one common path of the same cross-section
+$A$ and the same transport length $\ell=c\Delta t$. So the merged mean density
+is
 
 $$
 u_{\mathrm{merge}}
+=
+\frac{E_1+E_2}{A\ell}
 =
 \frac{2E}{A\ell}
 =
 2u_{\mathrm{independent}}.
 $$
 
+This is the first bookkeeping consequence of the merge: the two flows add, and
+because they are recovered on one common realized path at fixed transport
+speed, the merged flow is denser.
+
 The same point may be pictured discretely. Suppose one isolated flow is read as
-three recurring transport nodes per unit length along a path. After coherent
+three recurring transport nodes per unit length along the path. After coherent
 merger, the second flow does not gain a second independent path, and the common
 path cannot carry it by increasing speed beyond $c$. The added flow is
 therefore recovered in the same longitudinal extent, filling the intermediate
 recurrence. In that picture the merged path carries six nodes per unit length
-rather than three. The two flows add, and the realized flow is therefore
-denser.
+rather than three.
 
 So the merge by itself gives the `2u` result. The exact local field algebra is
 stronger:
@@ -191,7 +203,7 @@ V_{\mathrm{occ}}
 \frac{V}{2}.
 $$
 
-Equivalently, with $V=A\ell$,
+Equivalently, since $V=A\ell$,
 
 $$
 \ell_{\mathrm{occ}}=\frac{\ell}{2}.
@@ -199,11 +211,12 @@ $$
 
 So the strict bookkeeping is:
 
-- the merge itself gives $2u_{\mathrm{independent}}$ on one common path,
-- the exact local overlap law gives the stronger readout $4u_{\mathrm{independent}}$,
-- and if that stronger value is read as the realized density of the merged
-  region, then the realized longitudinal extent is reduced from $\ell$ to
-  $\ell/2$.
+- concatenating the two flux tubes gives the ordinary-fluid intuition of double length,
+- fixed-speed transport prevents resolving that merger by greater speed,
+- the merge therefore gives $2u_{\mathrm{independent}}$ on one common path,
+- and the exact local overlap law gives the stronger local readout
+  $4u_{\mathrm{independent}}$, which implies $\ell_{\mathrm{occ}}=\ell/2$ if
+  that value is read as the realized density of the merged region.
 
 
 ## Local bending
