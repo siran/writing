@@ -260,28 +260,22 @@ causally with earlier source positions $s_{\mathrm{ret}}$ on the same flow,
 related by
 
 $$
-
 \left|\gamma(s)-\gamma(s_{\mathrm{ret}})\right| = c\,(t-t_{\mathrm{ret}}).
-
 $$
 
 For a harmonic mode with period $T=2\pi/\omega$,
 
 $$
-
 E(s,t)=\Re\!\left[\widetilde E(s)e^{-i\omega t}\right], \qquad
 B(s,t)=\Re\!\left[\widetilde B(s)e^{-i\omega t}\right],
-
 $$
 
 the retarded contribution can be written as
 
 $$
-
 E_{\mathrm{ret}}(s,t) = E(s_{\mathrm{ret}},t_{\mathrm{ret}}) =
 \Re\!\left[\widetilde E(s_{\mathrm{ret}})e^{-i\omega t}e^{\,i\omega\tau}\right],
 \qquad \tau=t-t_{\mathrm{ret}},
-
 $$
 
 and likewise for $B_{\mathrm{ret}}$. So the retarded self-action enters as a
@@ -295,51 +289,41 @@ In the retarded case one may write the same coarse-grained summary more
 explicitly as
 
 $$
-
 D = \epsilon E_{\mathrm{loc}} +
 P_{\mathrm{self}}[E_{\mathrm{ret}},B_{\mathrm{ret}}], \qquad H =
 \frac{1}{\mu}B_{\mathrm{loc}} -
 M_{\mathrm{self}}[E_{\mathrm{ret}},B_{\mathrm{ret}}].
-
 $$
 
 In the thin, nearly uniform, slowly varying regime, linearize the exact retarded
 response against the local field:
 
 $$
-
 P_{\mathrm{self}}\approx \epsilon\,\chi_{e,\mathrm{eff}}\,E_{\mathrm{loc}},
 \qquad M_{\mathrm{self}}\approx \chi_{m,\mathrm{eff}}\,H.
-
 $$
 
 Then
 
 $$
-
 D \approx \epsilon_{\mathrm{eff}}E_{\mathrm{loc}}, \qquad B_{\mathrm{loc}}
 \approx \mu_{\mathrm{eff}}H,
-
 $$
 
 with
 
 $$
-
 \epsilon_{\mathrm{eff}}=\epsilon(1+\chi_{e,\mathrm{eff}}), \qquad
 \mu_{\mathrm{eff}}=\mu(1+\chi_{m,\mathrm{eff}}).
-
 $$
 
 Therefore
 
 $$
-
 c_{\mathrm{eff}} = \frac{1}{\sqrt{\mu_{\mathrm{eff}}\epsilon_{\mathrm{eff}}}},
 \qquad n_{\mathrm{eff}} = \frac{c}{c_{\mathrm{eff}}} =
 \sqrt{\frac{\mu_{\mathrm{eff}}\epsilon_{\mathrm{eff}}}{\mu\epsilon}} =
 \sqrt{(1+\chi_{e,\mathrm{eff}})(1+\chi_{m,\mathrm{eff}})}.
-
 $$
 
 This recovers the same local refraction law, now written in the explicit causal
