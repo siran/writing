@@ -114,15 +114,15 @@ doubled content by increasing its speed through the outlet.
 But as earlier chapters recovered, energy transport proceeds at the fixed rate
 $c$. Since there are no sinks, the transported content entering and
 leaving over the same interval must still match. If the speed cannot increase,
-then the remaining degree of freedom is density. Under coherent overlap, the
-two separate flows are recovered as one common coherent wave transport. Before
+then the remaining degree of freedom is density. Under coherent overlap, the two
+separate flows are recovered as one common coherent wave transport. Before
 overlap there are two independent channels, each advancing one realized
-wave-volume $V=A\ell$ over the interval $\Delta t$. After coherent overlap,
-there is only one surviving channel. That single wave now carries the merged
-content of the two previous waves. The transported content per surviving wave
-therefore doubles while the propagation speed remains fixed at $c$. The same
-merged content must therefore be carried through the same section and in the
-same interval by becoming denser.
+wave-volume $V=A\ell$ over the interval $\Delta t$. After coherent
+overlap, there is only one surviving channel. That single wave now carries the
+merged content of the two previous waves. The transported content per surviving
+wave therefore doubles while the propagation speed remains fixed at
+$c$. The same merged content must therefore be carried through the
+same section and in the same interval by becoming denser.
 
 Let each isolated closure carry energy
 
@@ -167,16 +167,16 @@ $$
 
 After coherent merger, the two flows no longer travel on two independent paths.
 The merged content is recovered on one common path of the same cross-section
-$A$. Over the same interval $\Delta t$, that surviving path advances only one
-realized wave-volume
+$A$. Over the same interval $\Delta t$, that surviving path
+advances only one realized wave-volume
 
 $$
 V_{\mathrm{final}}=A\ell,
 $$
 
 so the number of realized transport channels has fallen from two to one, while
-the total transported energy remains $2E$. The ratio between the previous total
-wave-volume and the surviving wave-volume is
+the total transported energy remains $2E$. The ratio between the
+previous total wave-volume and the surviving wave-volume is
 
 $$
 \frac{V_{\mathrm{initial}}}{V_{\mathrm{final}}}=2
@@ -189,9 +189,9 @@ u_{\mathrm{merge}}
 =
 \frac{E_1+E_2}{V_{\mathrm{final}}}
 =
-\frac{2E}{A\ell}
+\frac{2E}{V_{\mathrm{initial}}/2}
 =
-2u_{\mathrm{independent}}.
+4u_{\mathrm{independent}}.
 $$
 
 This is the first bookkeeping consequence of the merge: the two flows add, and
@@ -206,9 +206,7 @@ tracking each contributing portion separately. Then it is convenient to write
 the exact overlap phenomenologically as a local effective index
 
 $$
-
 n_{\mathrm{eff}}>1, \qquad c_{\mathrm{eff}}=\frac{c}{n_{\mathrm{eff}}}.
-
 $$
 
 This does not replace the exact superposition above. It is only a compact
@@ -227,28 +225,22 @@ exterior index $1$, and approximating the entering transport as
 locally tangent to that layer, Snell's law gives
 
 $$
-
 \sin\theta_{\mathrm{in}} = n_{\mathrm{eff}}\sin\theta_{\mathrm{tr}}, \qquad
 \theta_{\mathrm{in}}=\frac{\pi}{2},
-
 $$
 
 so
 
 $$
-
 \sin\theta_{\mathrm{tr}}=\frac{1}{n_{\mathrm{eff}}}.
-
 $$
 
 If $\beta$ denotes the complementary angle to the local tangent, then
 
 $$
-
 \beta=\frac{\pi}{2}-\theta_{\mathrm{tr}}, \qquad
 \cos\beta=\frac{1}{n_{\mathrm{eff}}}, \qquad
 \tan\beta=\sqrt{n_{\mathrm{eff}}^2-1}.
-
 $$
 
 This is the local self-refraction law: stronger coherent loading means larger
