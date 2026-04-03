@@ -84,6 +84,11 @@ $$
 
 This is the rigorous local `4u` result.
 
+Crucially, this does not mean that where there had been flowing energy $2E$
+there is now flowing energy $4E$. The total transported energy is still the
+merged $2E$. What changes under coherent overlap is the local density of that
+flowing energy in the surviving wave transport.
+
 Interpretation is straightforward once the transport picture is kept in view.
 Take one isolated transporting portion over one transport interval
 $\Delta t$. If its realized cross-section is $A$, then its
