@@ -16,8 +16,8 @@ this overlap modifies transport.
 
 ## Coherent overlap and quadratic loading
 
-Because the local loading is positive, it can be written as the square of a
-local amplitude-like quantity:
+Because the loading is positive, it can be written as the square of an
+amplitude-like quantity:
 
 $$
 u = |f|^2.
@@ -49,7 +49,8 @@ u_{\mathrm{join}}
 |f_1|^2 + |f_2|^2 + 2|f_1||f_2|\cos\delta,
 $$
 
-where $\delta$ is the relative phase between the two contributions.
+where $\delta$ is the relative phase between the two flows,
+$f_1$ and $f_2$.
 
 Writing
 
@@ -83,45 +84,57 @@ $$
 0 \le u_{\mathrm{join}} \le 4u_0.
 $$
 
-In the strongest local case, the two contributions are in phase:
+In the "strongest" local case, the two contributions are in phase:
 
 $$
 \delta = 0.
 $$
 
-Then
+So the energy of the joined flow becomes
 
 $$
 u_{\mathrm{join}} = 4u_0.
 $$
 
+In the "weakest" local case, the two contributions are out of phase:
+
+$$
+\delta = \pi.
+$$
+
+And so the resulting energy is apparently gone,
+
+$$
+u_{\mathrm{join}} = 0.
+$$
+
 So two equal coherent contributions can range from full cancellation to a
-fourfold local loading, with the exact `4u` result at perfect phase alignment.
+fourfold local loading, with the exact $4u$ result at perfect phase
+alignment.
 
 
 ## Apparent paradox
 
 At first sight, this seems to contradict conservation.
 
-In conventional electromagnetic language, the two contributions may be described
-as two electromagnetic waves. In the more general language of this book, that
-is the same physical situation written more minimally: one energy flow whose
-two orthogonal aspects are conventionally called $\mathbf E$ and
+If we picture the flow in conventional electromagnetic language, as was shown in
+preceding sections, the energy flow F is an electromagnetic wave: one energy
+flow whose two orthogonal aspects are conventionally called $\mathbf E$ and
 $\mathbf B$.
 
-So when this chapter speaks of two beams, it does not mean two different
-substances. It means two coherent portions of the same energy-flow wave.
-
-Two such beams each carry the same transported content, and yet the joined beam
-is described locally by a loading four times as large. No additional energy has
-been introduced, so the result must reflect not the creation of new content but
+Say two such energy flow waves carry the same transported energy content, and
+there is a region in which these flows are joined. Since no additional energy
+has been introduced, the result must reflect not the creation of new content but
 a reorganization of how the same content is realized.
 
-The bookkeeping is easier to picture with a concrete analogy. Suppose each beam
-is like one glass carrying one unit of water. Before joining, there are two
-glasses carrying two units in total. After joining, there is one surviving
-glass. If one glass normally carries one unit, then two units do not fit into
-one unchanged glass. The liquid would have to be compressed.
+The bookkeeping is easier to picture with a concrete analogy. We can think of
+the way energy is reorganized in double-curl transport as a chain of containers
+carrying one unit of ordinary liquid (energy) passing to the next container.
+Before joining, there are two containers carrying two units in total. After
+overlapping coherently (same phase), there is one surviving chain of container
+that must carry the double fluid content of the joined chains. If one container
+normally carries one unit, then two units do not fit into one unchanged
+container. The liquid would have to be compressed in order to fit.
 
 That is the point of the support language below. When two beams join, the field
 does not merely become stronger at the same place. The same transported content
@@ -130,15 +143,29 @@ is recovered on a smaller realized extent.
 
 ## Energy and support
 
-The analogy above is only a picture. The exact bookkeeping is this: transport is
-described by both what is carried and by the realized extent on which it is
-recovered during a fixed interval.
+The analogy above is only a picture. The actual explanation comes from
+continuity.
 
-Let $\Omega$ denote the realized support of a transporting portion over
-a fixed interval $\Delta t$.
+The square form
 
-For a thin transport tube of cross section $A$ and realized length
-$L$, define the geometric support by
+$$
+u = |f|^2
+$$
+
+does not explain why the joined flow becomes denser. It only makes the
+interaction term visible and counts the local joined state once that state is
+already given.
+
+The physical explanation is simpler: if there are no primitive sources or
+sinks, then whatever enters the overlap region must be accounted for by what
+leaves it. If two inflows become one outflow, the same transported content must
+be recovered on one surviving channel.
+
+To write that bookkeeping explicitly, let $\Omega$ denote the realized support
+of a transporting portion over a fixed interval $\Delta t$.
+
+For a thin transport tube of cross section $A$ and realized length $L$, define
+the geometric support by
 
 $$
 \Sigma(\Omega) := A L.
@@ -148,11 +175,7 @@ Since transport proceeds at the fixed rate $c$,
 
 $$
 L = c\,\Delta t,
-$$
-
-so
-
-$$
+\qquad
 \Sigma(\Omega) = A c\,\Delta t.
 $$
 
@@ -168,78 +191,76 @@ $$
 \bar u(\Omega) := \frac{\mu(\Omega)}{\Sigma(\Omega)}.
 $$
 
-This is the amount of transported energy per unit realized support.
+This is the amount of transported energy recovered per unit realized support.
 
 
-## Two independent beams
+## Two inflows, one outflow
 
-Before overlap, consider two equal beams on disjoint supports $\Omega_1$
-and $\Omega_2$.
-
-Each carries transported content
+Before overlap, consider two equal inflows on disjoint supports
+$\Omega_1$ and $\Omega_2$:
 
 $$
 \mu(\Omega_1)=\mu(\Omega_2)=E,
-$$
-
-and each has support
-
-$$
+\qquad
 \Sigma(\Omega_1)=\Sigma(\Omega_2)=\Sigma_0.
 $$
 
-The total initial support is therefore
+So the total incoming content is
 
 $$
-\Sigma_{\mathrm{initial}} = \Sigma(\Omega_1) + \Sigma(\Omega_2) = 2\Sigma_0,
+\mu_{\mathrm{in}} = 2E,
 $$
 
-and the total transported content is
+and the total incoming support is
 
 $$
-\mu_{\mathrm{initial}} = \mu(\Omega_1)+\mu(\Omega_2)=2E.
+\Sigma_{\mathrm{initial}}
+=
+\Sigma(\Omega_1)+\Sigma(\Omega_2)
+=
+2\Sigma_0.
 $$
 
-So the initial mean support density is
+Therefore the incoming mean density is
 
 $$
 \bar u_{\mathrm{initial}}
 =
-\frac{\mu_{\mathrm{initial}}}{\Sigma_{\mathrm{initial}}}
+\frac{\mu_{\mathrm{in}}}{\Sigma_{\mathrm{initial}}}
 =
 \frac{2E}{2\Sigma_0}
 =
 \frac{E}{\Sigma_0}.
 $$
 
-
-## Joining and support contraction
-
-Now suppose the two beams are recovered on one common support
-$\Omega_{\mathrm{final}}$.
-
-The transported content is unchanged:
+Now let those two inflows be recovered on one surviving outflow over the same
+interval. Then there is only one realized support left:
 
 $$
-\mu_{\mathrm{final}} = 2E.
-$$
-
-But the realized support is reduced:
-
-$$
-\Sigma_{\mathrm{final}} = \Sigma_0
+\Sigma_{\mathrm{final}}
+=
+\Sigma_0
 =
 \frac{1}{2}\Sigma_{\mathrm{initial}}.
 $$
 
-So the final mean support density is
+But continuity forbids any loss of the transported content, so the outgoing
+content must still be
+
+$$
+\mu_{\mathrm{out}} = 2E.
+$$
+
+Therefore the outgoing mean density is
 
 $$
 \bar u_{\mathrm{final}}
 =
-\frac{\mu_{\mathrm{final}}}{\Sigma_{\mathrm{final}}}
+\frac{\mu_{\mathrm{out}}}{\Sigma_{\mathrm{final}}}
 =
 \frac{2E}{\Sigma_0}
+=
+\frac{4E}{\Sigma_{\mathrm{initial}}}
 =
 2\bar u_{\mathrm{initial}}.
 $$
@@ -263,27 +284,46 @@ This is the exact support identity for the joined configuration.
 
 ## Resolution of the paradox
 
-The fourfold local loading is now intelligible.
+The mathematics above still explains nothing. It only counts what the joined
+configuration looks like once written as a square.
 
-The same transported content is no longer realized on two disjoint supports. It
-is recovered on one common support. That support contraction already doubles the
-mean density:
+The physical explanation is continuity:
+
+- there are two equal inflows,
+- there is one surviving outflow,
+- no primitive source or sink may remove the difference,
+- so the same total content must be recovered by compression on that one
+  outflow.
+
+That is the only physical doubling in the argument. The same transported
+content that had been realized on two inflows is now realized on one outflow,
+so the mean density must double:
 
 $$
 \bar u_{\mathrm{final}} = 2\bar u_{\mathrm{initial}}.
 $$
 
-The remaining factor of two comes from coherent quadratic loading: amplitudes
-add before the local observable is squared.
+The square form
 
-So the full factor of four is not evidence of created energy. It is the local
-expression of two simultaneous facts: twice the energy is transported on half
-the realized support.
+$$
+u = |f|^2
+$$
 
-In this ontology, joining two beams makes the realized whole smaller by the
-joined extent. In the glass picture, the same two units once carried by two
-glasses are now recovered on one surviving glass. In the field language, the
-realized extent itself has been reduced.
+does not add a second mechanism. It only makes the interaction term visible and
+counts the local joined state. In the perfectly aligned case that local
+counting reaches the exact endpoint
+
+$$
+u_{\mathrm{join}} = 4u_0.
+$$
+
+So the full `4u` result is not evidence of created energy. It is the local
+reading of one compressed superposed outflow that must account for what had
+previously been carried on two inflows.
+
+In the glass picture, the same two units once carried by two glasses are now
+recovered on one surviving glass. In the field language, the realized extent
+itself has been reduced.
 
 
 ## Effective advance
@@ -291,113 +331,67 @@ realized extent itself has been reduced.
 Transport along each realized path still proceeds at the local rate
 $c$.
 
-What changes is how much support is advanced over a fixed time interval.
+What changes is the lag of the joined outflow when compared with isolated
+transport. Over the same interval, one loaded outflow now replaces what had
+previously been two independent inflows.
 
-Define the effective advance rate by
-
-$$
-c_{\mathrm{eff}} := \frac{\Sigma}{A\,\Delta t}.
-$$
-
-For the unloaded case,
+If one wants a compact summary of that lag without carrying the full inflow and
+outflow bookkeeping every time, it is convenient to write an effective advance
+rate
 
 $$
-\Sigma_0 = A c\,\Delta t,
+c_{\mathrm{eff}} < c
 $$
 
-so for a loaded support $\Sigma$ we obtain
+and a corresponding effective index
 
 $$
-c_{\mathrm{eff}} = \frac{\Sigma}{\Sigma_0}\,c.
+n_{\mathrm{eff}} := \frac{c}{c_{\mathrm{eff}}} > 1.
 $$
 
-Define the loading factor
+This is not the explanation of the effect. It is only the compact language for
+the lag produced by continuity under superposition.
+
+One convenient local summary is to use the density ratio
 
 $$
-\lambda := \frac{\Sigma_0}{\Sigma}.
-$$
-
-Then
-
-$$
-c_{\mathrm{eff}} = \frac{c}{\lambda}.
-$$
-
-Since
-
-$$
-\bar u = \frac{\mu}{\Sigma},
+n_{\mathrm{eff}} := \frac{\bar u}{\bar u_0},
 \qquad
-\bar u_0 = \frac{\mu}{\Sigma_0},
+c_{\mathrm{eff}} = \frac{c}{n_{\mathrm{eff}}}.
 $$
 
-it follows that
-
-$$
-\lambda = \frac{\bar u}{\bar u_0},
-$$
-
-and therefore
-
-$$
-c_{\mathrm{eff}} = c\,\frac{\bar u_0}{\bar u}.
-$$
-
-
-## Interpretation of effective speed
-
-This result is exact and requires no additional mechanism.
-
-The microscopic transport rate along each realized path remains
-$c$.
-
-But if the same transported content is recovered on less support, then less
-support is advanced over the same time interval. That is what is measured as a
-reduced effective speed.
-
-So the point is not that more energy moves faster. It does not.
-
-Rather:
-
-- transported content increases relative to support,
-- density increases,
-- effective advance decreases.
-
-
-If the mean support density doubles,
+When the mean density doubles,
 
 $$
 \bar u = 2\bar u_0,
 $$
 
-then
+this summary reads
 
 $$
 c_{\mathrm{eff}} = \frac{c}{2}.
 $$
 
-Thus higher loading corresponds to slower effective advance.
+
+## Interpretation of effective speed
+
+The microscopic transport rate along each realized path remains
+$c$.
+
+But if two inflows are recovered on one outflow, then the joined pattern lags
+relative to the unloaded case. In coarse-grained language that lag is written
+as a reduced effective advance.
+
+So the point is not that more energy moves faster. It does not. The point is
+that continuity forces the same total content through one surviving channel.
+That compression is what the reduced effective advance is summarizing.
 
 
 ## Effective index
 
-For compact writing, define an effective index by
-
-$$
-n_{\mathrm{eff}} := \frac{\bar u}{\bar u_0}.
-$$
-
-Then
-
-$$
-c_{\mathrm{eff}} = \frac{c}{n_{\mathrm{eff}}}.
-$$
-
-This does not introduce a new physical mechanism. It is only a summary of the
-exact support-content bookkeeping:
-
-- reduced support means higher density,
-- higher density means lower effective advance.
+The effective index is therefore not a second mechanism. It is the compact way
+to write that more strongly superposed regions lag more strongly than weakly
+loaded ones.
 
 
 ## Local bending
@@ -416,8 +410,7 @@ That lag bends the transport toward the more strongly loaded side.
 This is refraction.
 
 No external medium is required. The field bends because different parts of the
-same flow carry different amounts of transported content per unit realized
-support.
+same flow are superposed and compressed by different amounts.
 
 
 ## Retarded self-overlap
@@ -477,7 +470,7 @@ n_{\mathrm{eff}} = \sqrt{(1+\chi_{e,\mathrm{eff}})(1+\chi_{m,\mathrm{eff}})}.
 $$
 
 This dielectric-style writing is only a coarse summary of the same retarded
-support-loading effect.
+compression effect.
 
 
 ## What this gives
@@ -485,10 +478,12 @@ support-loading effect.
 This chapter establishes:
 
 - coherent overlap produces quadratic local loading,
-- the factor of four does not imply created energy,
-- joining beams contracts realized support,
-- support contraction raises density,
-- raised density lowers effective advance,
+- the square law counts the joined state but does not by itself explain it,
+- continuity forbids assigning the difference to primitive sinks or sources,
+- two inflows recovered on one outflow force compression of the same total
+  content,
+- that compression doubles the mean density,
+- reduced effective advance is the coarse-grained summary of that lag,
 - differential loading bends transport,
 - self-refraction is retarded overlap of the same flow.
 
