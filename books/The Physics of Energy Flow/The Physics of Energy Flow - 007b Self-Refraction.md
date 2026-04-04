@@ -394,6 +394,99 @@ to write that more strongly superposed regions lag more strongly than weakly
 loaded ones.
 
 
+## Proportional background response
+
+There is also a direct local route to the same effective advance.
+
+Treat the second contribution not as a second independent substance but as the
+background response induced by the first. In the same way one writes
+
+$$
+P = \chi E,
+$$
+
+write the reinforcing response of the same flow as
+
+$$
+f_2 = k f_1,
+\qquad
+k \ge 0.
+$$
+
+Then the joined flow is
+
+$$
+f_{\mathrm{tot}}
+=
+f_1 + f_2
+=
+(1+k)f_1.
+$$
+
+So the joined local loading is
+
+$$
+u_{\mathrm{tot}}
+=
+|f_{\mathrm{tot}}|^2
+=
+|1+k|^2 |f_1|^2
+=
+(1+k)^2 u_1.
+$$
+
+In the reinforcing case it is therefore natural to write
+
+$$
+n_{\mathrm{eff}} := 1+k.
+$$
+
+Then
+
+$$
+u_{\mathrm{tot}} = n_{\mathrm{eff}}^2 u_1.
+$$
+
+Continuity then gives the matching lag statement: if one surviving outflow must
+recover what is now loaded by the factor $n_{\mathrm{eff}}$, the effective
+advance is
+
+$$
+c_{\mathrm{eff}} = \frac{c}{n_{\mathrm{eff}}}.
+$$
+
+So the proportional-response shortcut closes the same circle:
+
+$$
+f_2 = kf_1
+\quad\Longrightarrow\quad
+f_{\mathrm{tot}} = (1+k)f_1
+\quad\Longrightarrow\quad
+u_{\mathrm{tot}} = (1+k)^2u_1
+\quad\Longrightarrow\quad
+c_{\mathrm{eff}} = \frac{c}{1+k}.
+$$
+
+For the equal-contribution case,
+
+$$
+k = 1,
+$$
+
+so
+
+$$
+f_{\mathrm{tot}} = 2f_1,
+\qquad
+u_{\mathrm{tot}} = 4u_1,
+\qquad
+c_{\mathrm{eff}} = \frac{c}{2}.
+$$
+
+This is the easiest local route from superposition to the effective-medium
+summary.
+
+
 ## Local bending
 
 If different regions of a wavefront have different loading, then they do not
@@ -469,8 +562,12 @@ c_{\mathrm{eff}} = \frac{1}{\sqrt{\mu_{\mathrm{eff}}\epsilon_{\mathrm{eff}}}},
 n_{\mathrm{eff}} = \sqrt{(1+\chi_{e,\mathrm{eff}})(1+\chi_{m,\mathrm{eff}})}.
 $$
 
-This dielectric-style writing is only a coarse summary of the same retarded
-compression effect.
+This dielectric-style writing is the conventional two-aspect version of the same
+proportional-response idea. The response coefficient $k$ above is the
+one-field analogue of the effective susceptibilities written here through
+$\chi_{e,\mathrm{eff}}$ and $\chi_{m,\mathrm{eff}}$. The dielectric form
+therefore does not introduce a different mechanism. It is the conventional
+electromagnetic writing of the same retarded compression effect.
 
 
 ## What this gives
@@ -484,6 +581,8 @@ This chapter establishes:
   content,
 - that compression doubles the mean density,
 - reduced effective advance is the coarse-grained summary of that lag,
+- the proportional-response form $f_2 = kf_1$ gives the direct local route to
+  $c_{\mathrm{eff}}$ and closes onto the dielectric effective-medium writing,
 - differential loading bends transport,
 - self-refraction is retarded overlap of the same flow.
 
