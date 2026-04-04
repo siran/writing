@@ -16,51 +16,87 @@ this overlap modifies transport.
 
 ## Coherent overlap and quadratic loading
 
-The local energy density is quadratic in the field. In the electromagnetic
-writing recovered earlier, the local loading is of the form
+Because the local loading is positive, it can be written as the square of a
+local amplitude-like quantity:
 
 $$
-u \propto |\mathbf{E}|^2 + |\mathbf{B}|^2.
+u = |f|^2.
 $$
 
-So when two coherent contributions meet, the fields add first, and only then is
-the local density evaluated.
-
-If two equal contributions satisfy
+Let two coherent contributions of the same transporting flow be
 
 $$
-\mathbf{E}_2 = \mathbf{E}_1,
+f_1,
 \qquad
-\mathbf{B}_2 = \mathbf{B}_1,
+f_2.
 $$
 
-then the joined field is
+When they join, the amplitudes add first:
 
 $$
-\mathbf{E}_{\mathrm{join}} = \mathbf{E}_1 + \mathbf{E}_2 = 2\mathbf{E}_1,
+f_{\mathrm{join}} = f_1 + f_2.
+$$
+
+So the joined local loading is
+
+$$
+u_{\mathrm{join}}
+=
+|f_{\mathrm{join}}|^2
+=
+|f_1+f_2|^2
+=
+|f_1|^2 + |f_2|^2 + 2|f_1||f_2|\cos\delta,
+$$
+
+where $\delta$ is the relative phase between the two contributions.
+
+Writing
+
+$$
+u_1 := |f_1|^2,
 \qquad
-\mathbf{B}_{\mathrm{join}} = \mathbf{B}_1 + \mathbf{B}_2 = 2\mathbf{B}_1.
+u_2 := |f_2|^2,
+$$
+
+gives
+
+$$
+u_{\mathrm{join}} = u_1 + u_2 + 2\sqrt{u_1u_2}\cos\delta.
+$$
+
+For equal contributions,
+
+$$
+u_1 = u_2 = u_0,
+$$
+
+so
+
+$$
+u_{\mathrm{join}} = 2u_0(1+\cos\delta).
 $$
 
 Therefore
 
 $$
-u_{\mathrm{join}}
-=
-|\mathbf{E}_{\mathrm{join}}|^2 + |\mathbf{B}_{\mathrm{join}}|^2
-=
-|2\mathbf{E}_1|^2 + |2\mathbf{B}_1|^2
-=
-4\big(|\mathbf{E}_1|^2 + |\mathbf{B}_1|^2\big).
+0 \le u_{\mathrm{join}} \le 4u_0.
 $$
 
-Hence
+In the strongest local case, the two contributions are in phase:
 
 $$
-u_{\mathrm{join}} = 4u_1.
+\delta = 0.
 $$
 
-So two equal coherent contributions produce four times the local loading.
+Then
+
+$$
+u_{\mathrm{join}} = 4u_0.
+$$
+
+So two equal coherent contributions can range from full cancellation to a
+fourfold local loading, with the exact `4u` result at perfect phase alignment.
 
 
 ## Apparent paradox
@@ -222,7 +258,8 @@ $$
 \bar u_{\mathrm{final}} = 2\bar u_{\mathrm{initial}}.
 $$
 
-The remaining factor of two comes from the two energy components.
+The remaining factor of two comes from coherent quadratic loading: amplitudes
+add before the local observable is squared.
 
 So the full factor of four is not evidence of created energy. It is the local
 expression of two simultaneous facts: twice the energy is transported on half
