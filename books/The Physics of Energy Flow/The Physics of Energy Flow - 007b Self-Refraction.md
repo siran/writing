@@ -103,21 +103,36 @@ fourfold local loading, with the exact `4u` result at perfect phase alignment.
 
 At first sight, this seems to contradict conservation.
 
-Two beams each carry the same transported content, and yet the joined beam is
-described locally by a loading four times as large. No additional energy has
+In conventional electromagnetic language, the two contributions may be described
+as two electromagnetic waves. In the more general language of this book, that
+is the same physical situation written more minimally: one energy flow whose
+two orthogonal aspects are conventionally called $\mathbf E$ and
+$\mathbf B$.
+
+So when this chapter speaks of two beams, it does not mean two different
+substances. It means two coherent portions of the same energy-flow wave.
+
+Two such beams each carry the same transported content, and yet the joined beam
+is described locally by a loading four times as large. No additional energy has
 been introduced, so the result must reflect not the creation of new content but
 a reorganization of how the same content is realized.
 
-The resolution is that, in this framework, energy is not something contained in
-a pre-given space. The realized extent of the field is part of what physically
-exists. When two beams join, the field does not merely become stronger at the
-same place. Its realized support also changes.
+The bookkeeping is easier to picture with a concrete analogy. Suppose each beam
+is like one glass carrying one unit of water. Before joining, there are two
+glasses carrying two units in total. After joining, there is one surviving
+glass. If one glass normally carries one unit, then two units do not fit into
+one unchanged glass. The liquid would have to be compressed.
+
+That is the point of the support language below. When two beams join, the field
+does not merely become stronger at the same place. The same transported content
+is recovered on a smaller realized extent.
 
 
 ## Energy and support
 
-Transport is described not only by what is carried, but by the support on which
-it is carried.
+The analogy above is only a picture. The exact bookkeeping is this: transport is
+described by both what is carried and by the realized extent on which it is
+recovered during a fixed interval.
 
 Let $\Omega$ denote the realized support of a transporting portion over
 a fixed interval $\Delta t$.
@@ -266,8 +281,9 @@ expression of two simultaneous facts: twice the energy is transported on half
 the realized support.
 
 In this ontology, joining two beams makes the realized whole smaller by the
-joined extent. The field is not being squeezed inside an unchanged container.
-The realized extent of the field itself has been reduced.
+joined extent. In the glass picture, the same two units once carried by two
+glasses are now recovered on one surviving glass. In the field language, the
+realized extent itself has been reduced.
 
 
 ## Effective advance
