@@ -5,380 +5,444 @@ date: 2026-03-26
 
 # 7b. Self-Refraction
 
-Chapter 7 recovered the source-free wave equation, and chapter 7a resolved the
-one transporting field into two complementary transverse aspects. That still
-does not yet say how the same field could bend its own path.
+Chapter 7 recovered source-free transport, and Chapter 7a resolved that
+transport into two complementary transverse aspects. What remains is to
+understand how a single field can bend its own path.
 
-The point of this chapter is that no second substrate is needed. Distinct
-portions of the same electromagnetic flow interact directly when they meet as
-one common field. The question is what that overlap does to transport.
+No second substrate is required. Distinct portions of the same transporting
+field interact when they are realized on a common support. The question is how
+this overlap modifies transport.
 
 
-## Coherent overlap
+## Coherent overlap and quadratic loading
 
-Because the local loading is positive, write it as the square of a local
-amplitude-like quantity:
-
-$$
-u = |f|^2.
-$$
-
-Let two coherent portions of the same transporting flow contribute amplitudes
+The local energy density is quadratic in the field. In the electromagnetic
+writing recovered earlier, the local loading is of the form
 
 $$
-f_1,
+u \propto |\mathbf{E}|^2 + |\mathbf{B}|^2.
+$$
+
+So when two coherent contributions meet, the fields add first, and only then is
+the local density evaluated.
+
+If two equal contributions satisfy
+
+$$
+\mathbf{E}_2 = \mathbf{E}_1,
 \qquad
-f_2
+\mathbf{B}_2 = \mathbf{B}_1,
 $$
 
-to one common transport channel. Then the combined amplitude is
+then the joined field is
 
 $$
-f = f_1 + f_2,
-$$
-
-so the local loading is
-
-$$
-u
-=
-|f_1+f_2|^2
-=
-|f_1|^2+|f_2|^2+2|f_1||f_2|\cos\Delta.
-$$
-
-Writing
-
-$$
-u_1 := |f_1|^2,
+\mathbf{E}_{\mathrm{join}} = \mathbf{E}_1 + \mathbf{E}_2 = 2\mathbf{E}_1,
 \qquad
-u_2 := |f_2|^2,
-$$
-
-gives
-
-$$
-u = u_1 + u_2 + 2\sqrt{u_1u_2}\cos\Delta.
-$$
-
-The mixed term is the interaction term. If the two portions do not overlap
-coherently, it is reduced and in general averages out to zero.
-
-For the strongest local case, take equal amplitudes in the same local transport
-direction with zero relative phase. Then
-
-$$
-f_2 = f_1,
-\qquad
-\Delta = 0,
-$$
-
-so
-
-$$
-u
-=
-|2f_1|^2
-=
-4u_1.
-$$
-
-This is the rigorous local `4u` result.
-
-
-## The joined-channel picture
-
-The transport bookkeeping is easiest to see by thinking of two conveyor belts
-that join into one. The picture is only about carried content and realized path
-length, not about a second material substance.
-
-Take one isolated transporting portion over one transport interval
-$\Delta t$. If its realized cross-section is $A$, then its realized
-length over that interval is
-
-$$
-\ell = c\,\Delta t.
-$$
-
-If that portion carries energy $E$, then its realized wave-volume is
-
-$$
-V = A\ell,
-$$
-
-and its mean density is
-
-$$
-u_{\mathrm{independent}} = \frac{E}{A\ell}.
-$$
-
-Now imagine two such equal channels. Before they join, the total transported
-energy is
-
-$$
-E_{\mathrm{initial}} = E_1 + E_2 = 2E,
-$$
-
-and the total realized wave-volume over the same interval is
-
-$$
-V_{\mathrm{initial}} = A\ell + A\ell = 2A\ell.
-$$
-
-So the initial mean density is still
-
-$$
-\frac{E_{\mathrm{initial}}}{V_{\mathrm{initial}}}
-=
-\frac{2E}{2A\ell}
-=
-u_{\mathrm{independent}}.
-$$
-
-Now let the two channels join into one common channel of the same
-cross-section $A$. Because transport along that joined channel still
-proceeds at the fixed rate $c$, the surviving channel advances only one
-realized length $\ell$ during the same interval $\Delta t$. Its
-realized wave-volume is therefore
-
-$$
-V_{\mathrm{join}} = A\ell.
-$$
-
-But it must now carry the merged content of both prior channels:
-
-$$
-E_{\mathrm{join}} = 2E.
-$$
-
-So the mean density on the joined channel is
-
-$$
-u_{\mathrm{join}}
-=
-\frac{E_{\mathrm{join}}}{V_{\mathrm{join}}}
-=
-\frac{2E}{A\ell}
-=
-2u_{\mathrm{independent}}.
-$$
-
-This is the clean `2u` result. Nothing has been created. The same transported
-content is now recovered on one surviving channel rather than on two.
-
-
-## Relation to the exact `4u` result
-
-The joined-channel result and the exact coherent-overlap result are not rivals.
-They refer to two different parts of the same event.
-
-The joined-channel bookkeeping says:
-
-- two equal carried contents $E$ become $2E$ on one realized channel,
-- the surviving channel still advances at the fixed rate $c$,
-- so the mean density on that surviving channel doubles.
-
-
-That gives the clean transport result
-
-$$
-u_{\mathrm{join}} = 2u_{\mathrm{independent}}.
-$$
-
-The stronger local result
-
-$$
-u = 4u_1
-$$
-
-belongs to the coherent field overlap itself. Once the two equal contributions
-share one common channel and remain phase-aligned, amplitudes add before the
-observable is squared. That gives the second factor of two.
-
-So the interpretation is:
-
-- channel merger gives one factor of $2$,
-- coherent quadratic loading gives the second factor of $2$,
-- together they yield the exact local `4u` overlap result.
-
-
-If coherence is lost, the second factor is reduced and can average away. The
-joined-channel factor does not depend on that phase alignment.
-
-
-## Effective-medium summary
-
-Sometimes one wants a compact local summary of the loaded overlap region without
-tracking each contributing portion separately. Then it is convenient to write
-the exact overlap phenomenologically as a local effective index
-
-$$
-n_{\mathrm{eff}} > 1,
-\qquad
-c_{\mathrm{eff}} = \frac{c}{n_{\mathrm{eff}}}.
-$$
-
-This does not replace the exact superposition or the joined-channel
-bookkeeping above. Nor does it say that the underlying transport ceases to move
-locally at $c$. It says only that the loaded region, treated as one
-effective channel, advances more slowly as a pattern than an isolated portion
-would. That is the coarse-grained meaning of $c_{\mathrm{eff}}$.
-
-
-## Local bending
-
-Once different sides of a local wavefront are loaded differently, they do not
-advance at the same effective rate. The more heavily loaded side has larger
-$n_{\mathrm{eff}}$, smaller $c_{\mathrm{eff}}$, and therefore lags. The
-transport bends toward it. That is refraction.
-
-Approximating the overlap region as a higher-index layer of the same field, with
-exterior index $1$, and approximating the entering transport as
-locally tangent to that layer, Snell's law gives
-
-$$
-\sin\theta_{\mathrm{in}} = n_{\mathrm{eff}}\sin\theta_{\mathrm{tr}},
-\qquad
-\theta_{\mathrm{in}} = \frac{\pi}{2},
-$$
-
-so
-
-$$
-\sin\theta_{\mathrm{tr}} = \frac{1}{n_{\mathrm{eff}}}.
-$$
-
-If $\beta$ denotes the complementary angle to the local tangent, then
-
-$$
-\beta = \frac{\pi}{2}-\theta_{\mathrm{tr}},
-\qquad
-\cos\beta = \frac{1}{n_{\mathrm{eff}}},
-\qquad
-\tan\beta = \sqrt{n_{\mathrm{eff}}^2-1}.
-$$
-
-This is the local self-refraction law: stronger loading means larger
-$n_{\mathrm{eff}}$, stronger bending, and larger departure from a straight
-transport line.
-
-
-## The retarded case
-
-For a self-refracting closure, the overlap is not produced by two independent
-laboratory sources. It is produced when a later portion of the same flow enters
-a region already shaped by an earlier portion of that same flow.
-
-Let $\gamma(s)$ describe a local transport line, parameterized by arclength
-$s$. A local segment at position $s$ interacts causally with earlier
-source positions $s_{\mathrm{ret}}$ on the same flow, related by
-
-$$
-\left|\gamma(s)-\gamma(s_{\mathrm{ret}})\right| = c\,(t-t_{\mathrm{ret}}).
-$$
-
-For a harmonic mode with period $T=2\pi/\omega$,
-
-$$
-E(s,t) = \Re\!\left[\widetilde E(s)e^{-i\omega t}\right],
-\qquad
-B(s,t) = \Re\!\left[\widetilde B(s)e^{-i\omega t}\right],
-$$
-
-the retarded contribution can be written as
-
-$$
-E_{\mathrm{ret}}(s,t)
-=
-E(s_{\mathrm{ret}},t_{\mathrm{ret}})
-=
-\Re\!\left[\widetilde E(s_{\mathrm{ret}})e^{-i\omega t}e^{\,i\omega\tau}\right],
-\qquad
-\tau = t-t_{\mathrm{ret}},
-$$
-
-and likewise for $B_{\mathrm{ret}}$. So the retarded self-action enters as a
-phase lag $\omega\tau$ carried by earlier portions of the same flow.
-
-The retarded case is therefore not the definition of self-interaction. It is the
-closure-relevant causal specialization of the overlap principle already derived
-above.
-
-In the retarded case one may write the same coarse-grained summary more
-explicitly as
-
-$$
-D = \epsilon E_{\mathrm{loc}} +
-P_{\mathrm{self}}[E_{\mathrm{ret}},B_{\mathrm{ret}}],
-\qquad
-H = \frac{1}{\mu}B_{\mathrm{loc}} -
-M_{\mathrm{self}}[E_{\mathrm{ret}},B_{\mathrm{ret}}].
-$$
-
-In the thin, nearly uniform, slowly varying regime, linearize the exact retarded
-response against the local field:
-
-$$
-P_{\mathrm{self}} \approx \epsilon\,\chi_{e,\mathrm{eff}}\,E_{\mathrm{loc}},
-\qquad
-M_{\mathrm{self}} \approx \chi_{m,\mathrm{eff}}\,H.
-$$
-
-Then
-
-$$
-D \approx \epsilon_{\mathrm{eff}}E_{\mathrm{loc}},
-\qquad
-B_{\mathrm{loc}} \approx \mu_{\mathrm{eff}}H,
-$$
-
-with
-
-$$
-\epsilon_{\mathrm{eff}} = \epsilon(1+\chi_{e,\mathrm{eff}}),
-\qquad
-\mu_{\mathrm{eff}} = \mu(1+\chi_{m,\mathrm{eff}}).
+\mathbf{B}_{\mathrm{join}} = \mathbf{B}_1 + \mathbf{B}_2 = 2\mathbf{B}_1.
 $$
 
 Therefore
 
 $$
-c_{\mathrm{eff}} = \frac{1}{\sqrt{\mu_{\mathrm{eff}}\epsilon_{\mathrm{eff}}}},
-\qquad
-n_{\mathrm{eff}}
+u_{\mathrm{join}}
 =
-\frac{c}{c_{\mathrm{eff}}}
+|\mathbf{E}_{\mathrm{join}}|^2 + |\mathbf{B}_{\mathrm{join}}|^2
 =
-\sqrt{\frac{\mu_{\mathrm{eff}}\epsilon_{\mathrm{eff}}}{\mu\epsilon}}
+|2\mathbf{E}_1|^2 + |2\mathbf{B}_1|^2
 =
-\sqrt{(1+\chi_{e,\mathrm{eff}})(1+\chi_{m,\mathrm{eff}})}.
+4\big(|\mathbf{E}_1|^2 + |\mathbf{B}_1|^2\big).
 $$
 
-This recovers the same local refraction law, now written in the explicit causal
-form relevant when the field bends back and meets its own earlier transport.
+Hence
+
+$$
+u_{\mathrm{join}} = 4u_1.
+$$
+
+So two equal coherent contributions produce four times the local loading.
 
 
-## What This Does and Does Not Yet Give
+## Apparent paradox
 
-This chapter derives the principle, not yet the global shape.
+At first sight, this seems to contradict conservation.
 
-It shows:
+Two beams each carry the same transported content, and yet the joined beam is
+described locally by a loading four times as large. No additional energy has
+been introduced, so the result must reflect not the creation of new content but
+a reorganization of how the same content is realized.
 
-- how coherent overlap of distinct portions of the same field produces non-null
-  interaction terms in the observables,
-- how joining two equal transport channels into one same-speed channel gives the
-  clean `2u` density increase,
-- how the exact coherent case gives the stronger local `4u` result,
-- how that loading is summarized phenomenologically by a local effective
-  refractive index,
-- how the closure-relevant retarded case fits inside that more general
-  self-interaction picture and can be written in dielectric form,
-- and how that loading bends transport by ordinary refraction.
+The resolution is that, in this framework, energy is not something contained in
+a pre-given space. The realized extent of the field is part of what physically
+exists. When two beams join, the field does not merely become stronger at the
+same place. Its realized support also changes.
 
 
-It does **not** yet require closure.
+## Energy and support
 
-The next chapter takes the next step:
+Transport is described not only by what is carried, but by the support on which
+it is carried.
 
-> if self-refraction becomes strong enough to make the path close on itself,
-> what global standing organizations are then allowed?
+Let $\Omega$ denote the realized support of a transporting portion over
+a fixed interval $\Delta t$.
+
+For a thin transport tube of cross section $A$ and realized length
+$L$, define the geometric support by
+
+$$
+\Sigma(\Omega) := A L.
+$$
+
+Since transport proceeds at the fixed rate $c$,
+
+$$
+L = c\,\Delta t,
+$$
+
+so
+
+$$
+\Sigma(\Omega) = A c\,\Delta t.
+$$
+
+Let the transported content carried by that support be
+
+$$
+\mu(\Omega) := E.
+$$
+
+The mean support density is then
+
+$$
+\bar u(\Omega) := \frac{\mu(\Omega)}{\Sigma(\Omega)}.
+$$
+
+This is the amount of transported energy per unit realized support.
+
+
+## Two independent beams
+
+Before overlap, consider two equal beams on disjoint supports $\Omega_1$
+and $\Omega_2$.
+
+Each carries transported content
+
+$$
+\mu(\Omega_1)=\mu(\Omega_2)=E,
+$$
+
+and each has support
+
+$$
+\Sigma(\Omega_1)=\Sigma(\Omega_2)=\Sigma_0.
+$$
+
+The total initial support is therefore
+
+$$
+\Sigma_{\mathrm{initial}} = \Sigma(\Omega_1) + \Sigma(\Omega_2) = 2\Sigma_0,
+$$
+
+and the total transported content is
+
+$$
+\mu_{\mathrm{initial}} = \mu(\Omega_1)+\mu(\Omega_2)=2E.
+$$
+
+So the initial mean support density is
+
+$$
+\bar u_{\mathrm{initial}}
+=
+\frac{\mu_{\mathrm{initial}}}{\Sigma_{\mathrm{initial}}}
+=
+\frac{2E}{2\Sigma_0}
+=
+\frac{E}{\Sigma_0}.
+$$
+
+
+## Joining and support contraction
+
+Now suppose the two beams are recovered on one common support
+$\Omega_{\mathrm{final}}$.
+
+The transported content is unchanged:
+
+$$
+\mu_{\mathrm{final}} = 2E.
+$$
+
+But the realized support is reduced:
+
+$$
+\Sigma_{\mathrm{final}} = \Sigma_0
+=
+\frac{1}{2}\Sigma_{\mathrm{initial}}.
+$$
+
+So the final mean support density is
+
+$$
+\bar u_{\mathrm{final}}
+=
+\frac{\mu_{\mathrm{final}}}{\Sigma_{\mathrm{final}}}
+=
+\frac{2E}{\Sigma_0}
+=
+2\bar u_{\mathrm{initial}}.
+$$
+
+Equivalently,
+
+$$
+\frac{2E}{\Sigma_{\mathrm{final}}}
+=
+\frac{2E}{\Sigma_{\mathrm{initial}}/2}
+=
+\frac{4E}{\Sigma_{\mathrm{initial}}},
+\qquad
+\Sigma_{\mathrm{final}}
+=
+\frac{1}{2}\Sigma_{\mathrm{initial}}.
+$$
+
+This is the exact support identity for the joined configuration.
+
+
+## Resolution of the paradox
+
+The fourfold local loading is now intelligible.
+
+The same transported content is no longer realized on two disjoint supports. It
+is recovered on one common support. That support contraction already doubles the
+mean density:
+
+$$
+\bar u_{\mathrm{final}} = 2\bar u_{\mathrm{initial}}.
+$$
+
+The remaining factor of two comes from the two energy components.
+
+So the full factor of four is not evidence of created energy. It is the local
+expression of two simultaneous facts: twice the energy is transported on half
+the realized support.
+
+In this ontology, joining two beams makes the realized whole smaller by the
+joined extent. The field is not being squeezed inside an unchanged container.
+The realized extent of the field itself has been reduced.
+
+
+## Effective advance
+
+Transport along each realized path still proceeds at the local rate
+$c$.
+
+What changes is how much support is advanced over a fixed time interval.
+
+Define the effective advance rate by
+
+$$
+c_{\mathrm{eff}} := \frac{\Sigma}{A\,\Delta t}.
+$$
+
+For the unloaded case,
+
+$$
+\Sigma_0 = A c\,\Delta t,
+$$
+
+so for a loaded support $\Sigma$ we obtain
+
+$$
+c_{\mathrm{eff}} = \frac{\Sigma}{\Sigma_0}\,c.
+$$
+
+Define the loading factor
+
+$$
+\lambda := \frac{\Sigma_0}{\Sigma}.
+$$
+
+Then
+
+$$
+c_{\mathrm{eff}} = \frac{c}{\lambda}.
+$$
+
+Since
+
+$$
+\bar u = \frac{\mu}{\Sigma},
+\qquad
+\bar u_0 = \frac{\mu}{\Sigma_0},
+$$
+
+it follows that
+
+$$
+\lambda = \frac{\bar u}{\bar u_0},
+$$
+
+and therefore
+
+$$
+c_{\mathrm{eff}} = c\,\frac{\bar u_0}{\bar u}.
+$$
+
+
+## Interpretation of effective speed
+
+This result is exact and requires no additional mechanism.
+
+The microscopic transport rate along each realized path remains
+$c$.
+
+But if the same transported content is recovered on less support, then less
+support is advanced over the same time interval. That is what is measured as a
+reduced effective speed.
+
+So the point is not that more energy moves faster. It does not.
+
+Rather:
+
+- transported content increases relative to support,
+- density increases,
+- effective advance decreases.
+
+
+If the mean support density doubles,
+
+$$
+\bar u = 2\bar u_0,
+$$
+
+then
+
+$$
+c_{\mathrm{eff}} = \frac{c}{2}.
+$$
+
+Thus higher loading corresponds to slower effective advance.
+
+
+## Effective index
+
+For compact writing, define an effective index by
+
+$$
+n_{\mathrm{eff}} := \frac{\bar u}{\bar u_0}.
+$$
+
+Then
+
+$$
+c_{\mathrm{eff}} = \frac{c}{n_{\mathrm{eff}}}.
+$$
+
+This does not introduce a new physical mechanism. It is only a summary of the
+exact support-content bookkeeping:
+
+- reduced support means higher density,
+- higher density means lower effective advance.
+
+
+## Local bending
+
+If different regions of a wavefront have different loading, then they do not
+advance equally.
+
+- higher density implies lower $c_{\mathrm{eff}}$,
+- lower density implies higher $c_{\mathrm{eff}}$.
+
+
+So one side of the wavefront lags behind the other.
+
+That lag bends the transport toward the more strongly loaded side.
+
+This is refraction.
+
+No external medium is required. The field bends because different parts of the
+same flow carry different amounts of transported content per unit realized
+support.
+
+
+## Retarded self-overlap
+
+In a self-interacting configuration, the overlap is not produced by two
+independent laboratory beams. It is produced when a later portion of the same
+flow enters a region already shaped by an earlier portion.
+
+Let $\gamma(s)$ be a transport line. Then a point at $s$
+interacts with earlier positions $s_{\mathrm{ret}}$ satisfying
+
+$$
+|\gamma(s)-\gamma(s_{\mathrm{ret}})| = c\,(t-t_{\mathrm{ret}}).
+$$
+
+For a harmonic field,
+
+$$
+E(s,t) = \Re\!\left[\widetilde E(s)e^{-i\omega t}\right],
+$$
+
+the retarded contribution is
+
+$$
+E_{\mathrm{ret}}(s,t)
+=
+\Re\!\left[\widetilde E(s_{\mathrm{ret}})e^{-i\omega t}e^{i\omega\tau}\right],
+\qquad
+\tau = t-t_{\mathrm{ret}}.
+$$
+
+So self-interaction appears as a phase-delayed contribution carried by the
+earlier flow.
+
+In coarse form, this may be summarized by writing
+
+$$
+D = \epsilon E_{\mathrm{loc}} + P_{\mathrm{self}},
+\qquad
+H = \frac{1}{\mu}B_{\mathrm{loc}} - M_{\mathrm{self}},
+$$
+
+with
+
+$$
+P_{\mathrm{self}} \approx \epsilon \chi_{e,\mathrm{eff}} E_{\mathrm{loc}},
+\qquad
+M_{\mathrm{self}} \approx \chi_{m,\mathrm{eff}} H.
+$$
+
+Then
+
+$$
+c_{\mathrm{eff}} = \frac{1}{\sqrt{\mu_{\mathrm{eff}}\epsilon_{\mathrm{eff}}}},
+\qquad
+n_{\mathrm{eff}} = \sqrt{(1+\chi_{e,\mathrm{eff}})(1+\chi_{m,\mathrm{eff}})}.
+$$
+
+This dielectric-style writing is only a coarse summary of the same retarded
+support-loading effect.
+
+
+## What this gives
+
+This chapter establishes:
+
+- coherent overlap produces quadratic local loading,
+- the factor of four does not imply created energy,
+- joining beams contracts realized support,
+- support contraction raises density,
+- raised density lowers effective advance,
+- differential loading bends transport,
+- self-refraction is retarded overlap of the same flow.
+
+
+No second substrate is required.
+
+The next step is global:
+
+> when self-refraction is strong enough to close the path, what stable
+> configurations are allowed?
