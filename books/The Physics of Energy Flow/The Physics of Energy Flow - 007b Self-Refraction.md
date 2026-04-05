@@ -127,24 +127,33 @@ there is a region in which these flows are joined. Since no additional energy
 has been introduced, the result must reflect not the creation of new content but
 a reorganization of how the same content is realized.
 
-The bookkeeping is easier to picture with a concrete analogy. We can think of
-the way energy is reorganized in double-curl transport as a chain of containers
-carrying one unit of ordinary liquid (energy) passing to the next container.
-Before joining, there are two containers carrying two units in total. After
-overlapping coherently (same phase), there is one surviving chain of container
-that must carry the double fluid content of the joined chains. If one container
-normally carries one unit, then two units do not fit into one unchanged
-container. The liquid would have to be compressed in order to fit.
+The bookkeeping can be stated directly in transport variables. Over a fixed
+interval $\Delta t$, a thin transporting channel of cross section $A$ and local
+advance $c$ occupies the realized transport volume
 
-That is the point of the support language below. When two beams join, the field
-does not merely become stronger at the same place. The same transported content
-is recovered on a smaller realized extent.
+$$
+V_0 := A c\,\Delta t.
+$$
+
+Before joining, two equal inflows occupy two such volumes. After coherent
+joining, there is one surviving outflow over the same interval, so only one
+such volume remains. The question is therefore not whether new energy appears.
+It is how the same total content $2E$ is recovered when the realized transport
+volume has fallen from $2V_0$ to $V_0$.
 
 
-## Energy and support
+## Energy and transport volume
 
-The analogy above is only a picture. The actual explanation comes from
-continuity.
+The actual explanation starts from source-free continuity,
+
+$$
+\partial_t u + \nabla\!\cdot\!\mathbf J = 0.
+$$
+
+Whatever energy enters the overlap region must be recovered by what leaves it
+unless a source or sink is introduced. Since this chapter forbids primitive
+sources and sinks, two inflows becoming one outflow means that the same
+transported content must be recovered on one remaining outflow.
 
 The square form
 
@@ -152,57 +161,44 @@ $$
 u = |f|^2
 $$
 
-does not explain why the joined flow becomes denser. It only makes the
-interaction term visible and counts the local joined state once that state is
-already given.
+does not explain the compression. It only makes the interaction term visible
+and counts the local joined state once that state is already given.
 
-The physical explanation is simpler: if there are no primitive sources or
-sinks, then whatever enters the overlap region must be accounted for by what
-leaves it. If two inflows become one outflow, the same transported content must
-be recovered on one surviving channel.
-
-To write that bookkeeping explicitly, let $\Omega$ denote the realized support
-of a transporting portion over a fixed interval $\Delta t$.
-
-For a thin transport tube of cross section $A$ and realized length $L$, define
-the geometric support by
+To write the bookkeeping explicitly, let $V(\Omega)$ denote the realized
+transport volume of a transporting portion over a fixed interval $\Delta t$.
+For a thin transport tube of cross section $A$ and realized length
+$L = c\,\Delta t$,
 
 $$
-\Sigma(\Omega) := A L.
+V(\Omega) := A L = A c\,\Delta t.
 $$
 
-Since transport proceeds at the fixed rate $c$,
-
-$$
-L = c\,\Delta t,
-\qquad
-\Sigma(\Omega) = A c\,\Delta t.
-$$
-
-Let the transported content carried by that support be
+Let the transported content carried by that volume be
 
 $$
 \mu(\Omega) := E.
 $$
 
-The mean support density is then
+The mean transported energy density is then
 
 $$
-\bar u(\Omega) := \frac{\mu(\Omega)}{\Sigma(\Omega)}.
+\bar u(\Omega) := \frac{\mu(\Omega)}{V(\Omega)}.
 $$
 
-This is the amount of transported energy recovered per unit realized support.
+This is the amount of transported energy recovered per unit realized transport
+volume.
 
 
 ## Two inflows, one outflow
 
-Before overlap, consider two equal inflows on disjoint supports
+Before overlap, consider two equal inflows on disjoint realized transport
+volumes
 $\Omega_1$ and $\Omega_2$:
 
 $$
 \mu(\Omega_1)=\mu(\Omega_2)=E,
 \qquad
-\Sigma(\Omega_1)=\Sigma(\Omega_2)=\Sigma_0.
+V(\Omega_1)=V(\Omega_2)=V_0=A c\,\Delta t.
 $$
 
 So the total incoming content is
@@ -211,14 +207,14 @@ $$
 \mu_{\mathrm{in}} = 2E,
 $$
 
-and the total incoming support is
+and the total incoming transport volume is
 
 $$
-\Sigma_{\mathrm{initial}}
+V_{\mathrm{initial}}
 =
-\Sigma(\Omega_1)+\Sigma(\Omega_2)
+V(\Omega_1)+V(\Omega_2)
 =
-2\Sigma_0.
+2V_0.
 $$
 
 Therefore the incoming mean density is
@@ -226,22 +222,22 @@ Therefore the incoming mean density is
 $$
 \bar u_{\mathrm{initial}}
 =
-\frac{\mu_{\mathrm{in}}}{\Sigma_{\mathrm{initial}}}
+\frac{\mu_{\mathrm{in}}}{V_{\mathrm{initial}}}
 =
-\frac{2E}{2\Sigma_0}
+\frac{2E}{2V_0}
 =
-\frac{E}{\Sigma_0}.
+\frac{E}{V_0}.
 $$
 
 Now let those two inflows be recovered on one surviving outflow over the same
-interval. Then there is only one realized support left:
+interval. Then there is only one realized transport volume left:
 
 $$
-\Sigma_{\mathrm{final}}
+V_{\mathrm{final}}
 =
-\Sigma_0
+V_0
 =
-\frac{1}{2}\Sigma_{\mathrm{initial}}.
+\frac{1}{2}V_{\mathrm{initial}}.
 $$
 
 But continuity forbids any loss of the transported content, so the outgoing
@@ -256,11 +252,11 @@ Therefore the outgoing mean density is
 $$
 \bar u_{\mathrm{final}}
 =
-\frac{\mu_{\mathrm{out}}}{\Sigma_{\mathrm{final}}}
+\frac{\mu_{\mathrm{out}}}{V_{\mathrm{final}}}
 =
-\frac{2E}{\Sigma_0}
+\frac{2E}{V_0}
 =
-\frac{4E}{\Sigma_{\mathrm{initial}}}
+\frac{4E}{V_{\mathrm{initial}}}
 =
 2\bar u_{\mathrm{initial}}.
 $$
@@ -268,32 +264,30 @@ $$
 Equivalently,
 
 $$
-\frac{2E}{\Sigma_{\mathrm{final}}}
+\frac{2E}{V_{\mathrm{final}}}
 =
-\frac{2E}{\Sigma_{\mathrm{initial}}/2}
+\frac{2E}{V_{\mathrm{initial}}/2}
 =
-\frac{4E}{\Sigma_{\mathrm{initial}}},
+\frac{4E}{V_{\mathrm{initial}}},
 \qquad
-\Sigma_{\mathrm{final}}
+V_{\mathrm{final}}
 =
-\frac{1}{2}\Sigma_{\mathrm{initial}}.
+\frac{1}{2}V_{\mathrm{initial}}.
 $$
 
-This is the exact support identity for the joined configuration.
+This is the exact transport-volume identity for the joined configuration.
 
 
 ## Resolution of the paradox
 
-The mathematics above still explains nothing. It only counts what the joined
-configuration looks like once written as a square.
-
-The physical explanation is continuity:
+The physical explanation is now explicit:
 
 - there are two equal inflows,
-- there is one surviving outflow,
+- over the same interval $\Delta t$, they realize $2V_0$ of transport volume,
+- after joining, there is one surviving outflow realizing only $V_0$,
 - no primitive source or sink may remove the difference,
-- so the same total content must be recovered by compression on that one
-  outflow.
+- so the same total content must be recovered on half the realized transport
+  volume.
 
 That is the only physical doubling in the argument. The same transported
 content that had been realized on two inflows is now realized on one outflow,
@@ -302,6 +296,10 @@ so the mean density must double:
 $$
 \bar u_{\mathrm{final}} = 2\bar u_{\mathrm{initial}}.
 $$
+
+In ordinary volume bookkeeping, it is the equivalent of recovering
+$2 \times 12\ \mathrm{oz}$ on $12\ \mathrm{oz}$ of carrier volume: not more
+liquid, but the same amount on half the available volume.
 
 The square form
 
@@ -321,9 +319,9 @@ So the full `4u` result is not evidence of created energy. It is the local
 reading of one compressed superposed outflow that must account for what had
 previously been carried on two inflows.
 
-In the glass picture, the same two units once carried by two glasses are now
-recovered on one surviving glass. In the field language, the realized extent
-itself has been reduced.
+In field language, the same $2E$ that had been distributed over
+$V_{\mathrm{initial}} = 2V_0$ is now recovered on
+$V_{\mathrm{final}} = V_0$.
 
 
 ## Effective advance
