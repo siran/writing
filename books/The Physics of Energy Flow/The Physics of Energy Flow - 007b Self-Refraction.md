@@ -10,7 +10,7 @@ transport into two complementary transverse aspects. What remains is to
 understand how a single field can bend its own path.
 
 No second substrate is required. Distinct portions of the same transporting
-field interact when they are realized on a common support. The question is how
+field interact when they are realized in a common overlap region. The question is how
 this overlap modifies transport.
 
 
@@ -72,7 +72,7 @@ $$
 u_1 = u_2 = u_0,
 $$
 
-so
+the joined local readout becomes
 
 $$
 u_{\mathrm{join}} = 2u_0(1+\cos\delta).
@@ -84,222 +84,215 @@ $$
 0 \le u_{\mathrm{join}} \le 4u_0.
 $$
 
-In the "strongest" local case, the two contributions are in phase:
+This is the local quadratic readout of the joined branch. It is not yet the
+full continuity statement for the two-stream interaction.
+
+
+## Pair budget and joined branch
+
+To distinguish the conserved pair budget from the local joined readout, it is
+useful to introduce the normalized sum and difference variables
 
 $$
-\delta = 0.
+f_{+} := \frac{f_1+f_2}{\sqrt{2}},
+\qquad
+f_{-} := \frac{f_1-f_2}{\sqrt{2}}.
 $$
 
-So the energy of the joined flow becomes
+Then exactly
 
 $$
-u_{\mathrm{join}} = 4u_0.
+|f_{+}|^2 + |f_{-}|^2 = |f_1|^2 + |f_2|^2.
 $$
 
-In the "weakest" local case, the two contributions are out of phase:
+For two equal inputs this becomes
 
 $$
-\delta = \pi.
+|f_{+}|^2 + |f_{-}|^2 = 2u_0.
 $$
 
-And so the resulting energy is apparently gone,
+So the interacting pair always carries the same total budget $2u_0$. What
+changes with phase is how that fixed budget is distributed between the joined
+combination $f_{+}$ and the opposed combination $f_{-}$.
+
+Since
 
 $$
-u_{\mathrm{join}} = 0.
+f_{\mathrm{join}} = f_1 + f_2 = \sqrt{2}\,f_{+},
 $$
 
-So two equal coherent contributions can range from full cancellation to a
-fourfold local loading, with the exact $4u$ result at perfect phase
-alignment.
+the local joined readout is
+
+$$
+u_{\mathrm{join}} = |f_{\mathrm{join}}|^2 = 2|f_{+}|^2.
+$$
+
+That is why the joined branch can read locally as $4u_0$ even though the
+conserved pair budget is only $2u_0$.
+
+This is only bookkeeping. It does not introduce a second substance. It only
+keeps separate two questions that must not be conflated:
+
+- how much energy the interacting pair carries in total,
+- how much of that budget is read locally on the joined branch.
 
 
-## Apparent paradox
+## Finite overlap region
 
-At first sight, this seems to contradict conservation.
+The physical explanation starts from continuity on a finite overlap region
+$\Omega$:
 
-If we picture the flow in conventional electromagnetic language, as was shown in
-preceding sections, the energy flow F is an electromagnetic wave: one energy
-flow whose two orthogonal aspects are conventionally called $\mathbf E$ and
-$\mathbf B$.
+$$
+\frac{d}{dt}\int_{\Omega} u\,dV
+=
+-\oint_{\partial\Omega}\mathbf J\cdot\mathbf n\,dS.
+$$
 
-Say two such energy flow waves carry the same transported energy content, and
-there is a region in which these flows are joined. Since no additional energy
-has been introduced, the result must reflect not the creation of new content but
-a reorganization of how the same content is realized.
+No primitive source or sink is allowed. So whatever energy enters the overlap
+region must either
 
-The bookkeeping can be stated directly in transport variables. Over a fixed
-interval $\Delta t$, a thin transporting channel of cross section $A$ and local
-advance $c$ occupies the realized transport volume
+- leave through some part of its boundary, or
+- remain transiently stored inside the region.
+
+Over a fixed interval $\Delta t$, let one thin inflow of cross section $A$
+occupy the realized transport volume
 
 $$
 V_0 := A c\,\Delta t.
 $$
 
-Before joining, two equal inflows occupy two such volumes. After coherent
-joining, there is one surviving outflow over the same interval, so only one
-such volume remains. The question is therefore not whether new energy appears.
-It is how the same total content $2E$ is recovered when the realized transport
-volume has fallen from $2V_0$ to $V_0$.
-
-
-## Energy and transport volume
-
-The actual explanation starts from source-free continuity,
-
-$$
-\partial_t u + \nabla\!\cdot\!\mathbf J = 0.
-$$
-
-Whatever energy enters the overlap region must be recovered by what leaves it
-unless a source or sink is introduced. Since this chapter forbids primitive
-sources and sinks, two inflows becoming one outflow means that the same
-transported content must be recovered on one remaining outflow.
-
-The square form
-
-$$
-u = |f|^2
-$$
-
-does not explain the compression. It only makes the interaction term visible
-and counts the local joined state once that state is already given.
-
-To write the bookkeeping explicitly, let $V(\Omega)$ denote the realized
-transport volume of a transporting portion over a fixed interval $\Delta t$.
-For a thin transport tube of cross section $A$ and realized length
-$L = c\,\Delta t$,
-
-$$
-V(\Omega) := A L = A c\,\Delta t.
-$$
-
-Let the transported content carried by that volume be
-
-$$
-\mu(\Omega) := E.
-$$
-
-The mean transported energy density is then
-
-$$
-\bar u(\Omega) := \frac{\mu(\Omega)}{V(\Omega)}.
-$$
-
-This is the amount of transported energy recovered per unit realized transport
-volume.
-
-
-## Two inflows, one outflow
-
-Before overlap, consider two equal inflows on disjoint realized transport
-volumes
-$\Omega_1$ and $\Omega_2$:
-
-$$
-\mu(\Omega_1)=\mu(\Omega_2)=E,
-\qquad
-V(\Omega_1)=V(\Omega_2)=V_0=A c\,\Delta t.
-$$
-
-So the total incoming content is
+If two equal inflows enter the overlap region, then before interaction the
+incoming budget is
 
 $$
 \mu_{\mathrm{in}} = 2E,
+\qquad
+V_{\mathrm{in}} = 2V_0.
 $$
 
-and the total incoming transport volume is
+So the incoming mean density is
 
 $$
-V_{\mathrm{initial}}
+\bar u_{\mathrm{in}}
 =
-V(\Omega_1)+V(\Omega_2)
-=
-2V_0.
-$$
-
-Therefore the incoming mean density is
-
-$$
-\bar u_{\mathrm{initial}}
-=
-\frac{\mu_{\mathrm{in}}}{V_{\mathrm{initial}}}
+\frac{\mu_{\mathrm{in}}}{V_{\mathrm{in}}}
 =
 \frac{2E}{2V_0}
 =
 \frac{E}{V_0}.
 $$
 
-Now let those two inflows be recovered on one surviving outflow over the same
-interval. Then there is only one realized transport volume left:
+
+## Constructive recombination
+
+If the two inflows are in phase,
 
 $$
-V_{\mathrm{final}}
+\delta = 0,
+$$
+
+then
+
+$$
+f_{+} = \sqrt{2}\,f_1,
+\qquad
+f_{-} = 0,
+$$
+
+and the joined local readout reaches
+
+$$
+u_{\mathrm{join}} = 4u_0.
+$$
+
+Now suppose the overlap region recovers the two inflows on one loaded branch
+over the same interval. Then the realized transport volume falls from
+$2V_0$ to $V_0$ while the carried content remains $2E$:
+
+$$
+\mu_{\mathrm{out}} = 2E,
+\qquad
+V_{\mathrm{out}} = V_0.
+$$
+
+Therefore the mean density on that loaded branch is
+
+$$
+\bar u_{\mathrm{out}}
 =
-V_0
-=
-\frac{1}{2}V_{\mathrm{initial}}.
-$$
-
-But continuity forbids any loss of the transported content, so the outgoing
-content must still be
-
-$$
-\mu_{\mathrm{out}} = 2E.
-$$
-
-Therefore the outgoing mean density is
-
-$$
-\bar u_{\mathrm{final}}
-=
-\frac{\mu_{\mathrm{out}}}{V_{\mathrm{final}}}
+\frac{\mu_{\mathrm{out}}}{V_{\mathrm{out}}}
 =
 \frac{2E}{V_0}
 =
-\frac{4E}{V_{\mathrm{initial}}}
-=
-2\bar u_{\mathrm{initial}}.
+2\bar u_{\mathrm{in}}.
 $$
 
-Equivalently,
+This is the exact compression statement: the mean density doubles because the
+same transported content is recovered on half the transport volume.
+
+The stronger value
 
 $$
-\frac{2E}{V_{\mathrm{final}}}
-=
-\frac{2E}{V_{\mathrm{initial}}/2}
-=
-\frac{4E}{V_{\mathrm{initial}}},
+u_{\mathrm{join}} = 4u_0
+$$
+
+is a local quadratic readout of that constructively recombined branch. It is
+not the conserved pair budget itself.
+
+
+## Destructive overlap
+
+If instead the two inflows are out of phase,
+
+$$
+\delta = \pi,
+$$
+
+then
+
+$$
+f_{+} = 0,
 \qquad
-V_{\mathrm{final}}
-=
-\frac{1}{2}V_{\mathrm{initial}}.
+f_{-} = \sqrt{2}\,f_1,
 $$
 
-This is the exact transport-volume identity for the joined configuration.
-
-
-## Resolution of the paradox
-
-The physical explanation is now explicit:
-
-- there are two equal inflows,
-- over the same interval $\Delta t$, they realize $2V_0$ of transport volume,
-- after joining, there is one surviving outflow realizing only $V_0$,
-- no primitive source or sink may remove the difference,
-- so the same total content must be recovered on half the realized transport
-  volume.
-
-That is the only physical doubling in the argument. The same transported
-content that had been realized on two inflows is now realized on one outflow,
-so the mean density must double:
+and the joined forward readout is
 
 $$
-\bar u_{\mathrm{final}} = 2\bar u_{\mathrm{initial}}.
+u_{\mathrm{join}} = 0.
 $$
 
-In ordinary volume bookkeeping, it is the equivalent of recovering
-$2 \times 12\ \mathrm{oz}$ on $12\ \mathrm{oz}$ of carrier volume: not more
-liquid, but the same amount on half the available volume.
+This is not a sink. It means only that the joined branch vanishes. The pair
+budget is still
+
+$$
+|f_{+}|^2 + |f_{-}|^2 = 2u_0.
+$$
+
+Continuity then forces the same incoming $2E$ to be recovered not on the
+forward joined branch but elsewhere in the overlap geometry.
+
+For a steady interaction there are only two possibilities:
+
+- the flux leaves through other faces of the overlap region, that is, it is
+  redirected,
+- or the flows separate again after the overlap and recover the original
+  two-branch distribution.
+
+In the second case, if no new local recompression occurs, the natural recovery
+is simply
+
+$$
+u_0 + u_0 = 2u_0.
+$$
+
+So destructive overlap does not produce a hidden `4u_0`. It removes the joined
+branch and preserves the original pair budget. To obtain a fresh `4u_0`
+readout, the transport must undergo a new constructive recombination into one
+branch.
+
+
+## What the square law does and does not do
 
 The square form
 
@@ -307,31 +300,23 @@ $$
 u = |f|^2
 $$
 
-does not add a second mechanism. It only makes the interaction term visible and
-counts the local joined state. In the perfectly aligned case that local
-counting reaches the exact endpoint
+does not create or remove energy. It does two precise jobs:
 
-$$
-u_{\mathrm{join}} = 4u_0.
-$$
+- it gives the local readout of the branch being sampled,
+- it makes the phase-sensitive cross term explicit.
 
-So the full `4u` result is not evidence of created energy. It is the local
-reading of one compressed superposed outflow that must account for what had
-previously been carried on two inflows.
-
-In field language, the same $2E$ that had been distributed over
-$V_{\mathrm{initial}} = 2V_0$ is now recovered on
-$V_{\mathrm{final}} = V_0$.
+The continuity argument is separate. It tells us how the transported content is
+recovered across the whole overlap region.
 
 
 ## Effective advance
 
-Transport along each realized path still proceeds at the local rate
-$c$.
+Transport along each realized path still proceeds at the local rate $c$.
 
-What changes is the lag of the joined outflow when compared with isolated
-transport. Over the same interval, one loaded outflow now replaces what had
-previously been two independent inflows.
+What changes is the lag of a loaded branch when compared with isolated
+transport. Wherever two inflows are locally recovered on one branch, that
+branch must carry the same content through less realized transport volume over
+the same interval.
 
 If one wants a compact summary of that lag without carrying the full inflow and
 outflow bookkeeping every time, it is convenient to write an effective advance
@@ -373,15 +358,15 @@ $$
 
 ## Interpretation of effective speed
 
-The microscopic transport rate along each realized path remains
-$c$.
+The microscopic transport rate along each realized path remains $c$.
 
-But if two inflows are recovered on one outflow, then the joined pattern lags
-relative to the unloaded case. In coarse-grained language that lag is written
-as a reduced effective advance.
+But if two inflows are locally recovered on one loaded branch, then that branch
+lags relative to the unloaded case. In coarse-grained language that lag is
+written as a reduced effective advance.
 
 So the point is not that more energy moves faster. It does not. The point is
-that continuity forces the same total content through one surviving channel.
+that continuity forces the same total content through one locally surviving
+branch.
 That compression is what the reduced effective advance is summarizing.
 
 
@@ -402,6 +387,10 @@ background response induced by the first. In the same way one writes
 $$
 P = \chi E,
 $$
+
+This shortcut concerns the reinforcing branch. When the local sum vanishes, one
+does not assign a negative effective advance to a non-existent forward branch;
+one returns instead to the finite-region continuity statement above.
 
 write the reinforcing response of the same flow as
 
@@ -561,8 +550,8 @@ n_{\mathrm{eff}} = \sqrt{(1+\chi_{e,\mathrm{eff}})(1+\chi_{m,\mathrm{eff}})}.
 $$
 
 This dielectric-style writing is the conventional two-aspect version of the same
-proportional-response idea. The response coefficient $k$ above is the
-one-field analogue of the effective susceptibilities written here through
+proportional-response idea. The response coefficient $k$ above is
+the one-field analogue of the effective susceptibilities written here through
 $\chi_{e,\mathrm{eff}}$ and $\chi_{m,\mathrm{eff}}$. The dielectric form
 therefore does not introduce a different mechanism. It is the conventional
 electromagnetic writing of the same retarded compression effect.
@@ -573,14 +562,18 @@ electromagnetic writing of the same retarded compression effect.
 This chapter establishes:
 
 - coherent overlap produces quadratic local loading,
+- the local joined readout can range from $0$ to $4u_0$,
+- the conserved two-stream budget remains $2u_0$,
 - the square law counts the joined state but does not by itself explain it,
 - continuity forbids assigning the difference to primitive sinks or sources,
 - two inflows recovered on one outflow force compression of the same total
   content,
 - that compression doubles the mean density,
+- destructive overlap removes the joined branch without removing the pair
+  budget, which must be redirected or later re-separated,
 - reduced effective advance is the coarse-grained summary of that lag,
-- the proportional-response form $f_2 = kf_1$ gives the direct local route to
-  $c_{\mathrm{eff}}$ and closes onto the dielectric effective-medium writing,
+- the proportional-response form $f_2 = kf_1$ gives the direct local route
+  to $c_{\mathrm{eff}}$ and closes onto the dielectric effective-medium writing,
 - differential loading bends transport,
 - self-refraction is retarded overlap of the same flow.
 
