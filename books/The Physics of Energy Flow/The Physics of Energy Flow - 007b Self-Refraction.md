@@ -84,9 +84,9 @@ $$
 0 \le u_{\mathrm{join}} \le 4u_0.
 $$
 
-At first sight, both endpoints are surprising: coherent overlap seems to
-produce a fourfold local loading for free, while destructive overlap seems to
-erase the joined energy altogether.
+At first sight, both endpoints are surprising: coherent overlap seems to produce
+a fourfold local loading for free, while destructive overlap seems to erase the
+joined energy altogether.
 
 But in all cases energy is conserved, so these endpoints have to be interpreted
 through continuity on the full overlap region, not by the local square-law
@@ -159,7 +159,8 @@ $$
 
 Now suppose the overlap region recovers the two inflows on one loaded branch
 over the same interval. Then the realized transport volume falls from
-$2V_0$ to $V_0$ while the carried content remains $2E$:
+$2V_0$ to $V_0$ while the carried content remains
+$2E$:
 
 $$
 \mu_{\mathrm{out}} = 2E,
@@ -167,7 +168,15 @@ $$
 V_{\mathrm{out}} = V_0.
 $$
 
-Therefore the mean density on that loaded branch is
+Since in this case
+
+$$
+\mu_{\mathrm{out}} = \mu_{\mathrm{in}} = 2E,
+\qquad
+V_{\mathrm{out}} = V_0.
+$$
+
+The mean density on that loaded branch is
 
 $$
 \bar u_{\mathrm{out}}
@@ -179,17 +188,8 @@ $$
 2\bar u_{\mathrm{in}}.
 $$
 
-This is the exact compression statement: the mean density doubles because the
+This is the exact *compression* statement: the mean density doubles because the
 same transported content is recovered on half the transport volume.
-
-The stronger value
-
-$$
-u_{\mathrm{join}} = 4u_0
-$$
-
-is the local quadratic readout of that constructively recombined branch. It is
-not a statement that the conserved transported budget itself has become `4u_0`.
 
 
 ## Destructive overlap
@@ -215,10 +215,109 @@ forward branch is not the channel on which the incoming content is recovered.
 
 For a finite overlap region, continuity leaves only two possibilities:
 
-- the incoming content exits through other parts of the boundary, that is, it
-  is redirected,
+- the incoming content reappears through other parts of the boundary,
 - or the flows separate again after the overlap and recover the original
   two-branch distribution.
+
+This is also the place to distinguish the amplitude-like quantity from the
+recovered density. The sign or phase can reverse in $f$, but the recovered
+density
+
+$$
+u = |f|^2
+$$
+
+does not become negative. It can only vanish at a node and then reappear
+elsewhere.
+
+That spatial reappearance becomes explicit when the relative phase varies across
+the overlap region. Let two equal contributions have the form
+
+$$
+f_1(x) = A e^{ikx},
+\qquad
+f_2(x) = A e^{-ikx}.
+$$
+
+Then
+
+$$
+f_{\mathrm{join}}(x)
+=
+f_1(x)+f_2(x)
+=
+2A\cos(kx),
+$$
+
+so the recovered density is
+
+$$
+u(x)
+=
+|f_{\mathrm{join}}(x)|^2
+=
+4|A|^2\cos^2(kx).
+$$
+
+Writing
+
+$$
+u_0 := |A|^2,
+$$
+
+this becomes
+
+$$
+u(x) = 4u_0\cos^2(kx).
+$$
+
+Therefore
+
+$$
+u(x)=0
+\qquad
+\text{at}
+\qquad
+x=\frac{(2n+1)\pi}{2k},
+$$
+
+while
+
+$$
+u(x)=4u_0
+\qquad
+\text{at}
+\qquad
+x=\frac{n\pi}{k}.
+$$
+
+The amplitude-like quantity $f_{\mathrm{join}}(x)$ changes sign across each
+node because $\cos(kx)$ changes sign there. The density does not invert. It
+vanishes at the node and reappears at separated antinodes.
+
+Over one spatial period
+
+$$
+\lambda = \frac{2\pi}{k},
+$$
+
+the mean recovered density is
+
+$$
+\frac{1}{\lambda}\int_0^\lambda u(x)\,dx
+=
+\frac{1}{\lambda}\int_0^\lambda 4u_0\cos^2(kx)\,dx
+=
+2u_0.
+$$
+
+So the two-stream mean budget is recovered exactly, even though some points are
+dark. The local zero is therefore not a sink. It is one part of a spatially
+redistributed density pattern.
+
+This example does not realize $\delta=\pi$ at every point. It shows the generic
+case in which local destructive points are paired with local constructive
+points, and the two-stream budget is recovered by spatial redistribution.
 
 In the second case, if no new local recompression occurs, the natural recovery
 is simply
@@ -230,11 +329,12 @@ $$
 So destructive overlap does not create a contradiction and does not prove that
 no real overlap region is possible. It proves only that an everywhere-dark
 joined branch cannot itself be the full recovery geometry. If a finite overlap
-region produced zero joined readout and no redirected or re-separated exit, that
-region would act as a sink and would therefore be forbidden.
+region produced zero joined readout everywhere and no reappearance elsewhere on
+the outgoing pattern, that region would act as a sink and would therefore be
+forbidden.
 
-To obtain a fresh `4u_0` readout after destructive overlap, the transport must
-undergo a new constructive recombination into one branch.
+To obtain a fresh `4u_0` readout after destructive overlap, the
+transport must undergo a new constructive recombination into one branch.
 
 
 ## What the square law does and does not do
@@ -249,6 +349,7 @@ does not create or remove energy. It does two precise jobs:
 
 - it gives the local readout of the branch being sampled,
 - it makes the phase-sensitive cross term explicit.
+
 
 The continuity argument is separate. It tells us how the transported content is
 recovered across the whole overlap region.
@@ -527,8 +628,10 @@ This chapter establishes:
 - where two inflows are locally recovered on one outflow, continuity forces
   compression of the same total content,
 - that constructive one-branch recovery doubles the mean density,
-- destructive overlap removes the joined branch without removing the pair
-  budget, which must be redirected or later re-separated,
+- spatially varying phase produces nodes where the density vanishes and
+  antinodes where it reappears more densely,
+- an everywhere-dark joined branch cannot be the full recovery geometry for a
+  nonzero incoming budget,
 - reduced effective advance is the coarse-grained summary of that loaded-branch
   lag,
 - the proportional-response form $f_2 = kf_1$ gives the direct local route
