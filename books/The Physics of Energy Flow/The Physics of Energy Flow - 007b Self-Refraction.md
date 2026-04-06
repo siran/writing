@@ -84,58 +84,16 @@ $$
 0 \le u_{\mathrm{join}} \le 4u_0.
 $$
 
-This is the local quadratic readout of the joined branch. It is not yet the full
-continuity statement for the two-stream interaction.
+At first sight, both endpoints are surprising: coherent overlap seems to
+produce a fourfold local loading for free, while destructive overlap seems to
+erase the joined energy altogether.
 
+But in all cases energy is conserved, so these endpoints have to be interpreted
+through continuity on the full overlap region, not by the local square-law
+readout alone.
 
-## Pair budget and joined branch
-
-To distinguish the conserved pair budget from the local joined readout, it is
-useful to introduce the normalized sum and difference variables
-
-$$
-f_{+} := \frac{f_1+f_2}{\sqrt{2}},
-\qquad
-f_{-} := \frac{f_1-f_2}{\sqrt{2}}.
-$$
-
-Then exactly
-
-$$
-|f_{+}|^2 + |f_{-}|^2 = |f_1|^2 + |f_2|^2.
-$$
-
-For two equal inputs this becomes
-
-$$
-|f_{+}|^2 + |f_{-}|^2 = 2u_0.
-$$
-
-So the interacting pair always carries the same total budget $2u_0$.
-What changes with phase is how that fixed budget is distributed between the
-joined combination $f_{+}$ and the opposed combination
-$f_{-}$.
-
-Since
-
-$$
-f_{\mathrm{join}} = f_1 + f_2 = \sqrt{2}\,f_{+},
-$$
-
-the local joined readout is
-
-$$
-u_{\mathrm{join}} = |f_{\mathrm{join}}|^2 = 2|f_{+}|^2.
-$$
-
-That is why the joined branch can read locally as $4u_0$ even though
-the conserved pair budget is only $2u_0$.
-
-This is only bookkeeping. It does not introduce a second substance. It only
-keeps separate two questions that must not be conflated:
-
-- how much energy the interacting pair carries in total,
-- how much of that budget is read locally on the joined branch.
+For two equal inputs, the incoming two-stream budget is still the original
+$u_0 + u_0 = 2u_0$ before any particular recovery geometry is considered.
 
 
 ## Finite overlap region
@@ -193,15 +151,7 @@ $$
 \delta = 0,
 $$
 
-then
-
-$$
-f_{+} = \sqrt{2}\,f_1,
-\qquad
-f_{-} = 0,
-$$
-
-and the joined local readout reaches
+then the joined local readout reaches
 
 $$
 u_{\mathrm{join}} = 4u_0.
@@ -209,8 +159,7 @@ $$
 
 Now suppose the overlap region recovers the two inflows on one loaded branch
 over the same interval. Then the realized transport volume falls from
-$2V_0$ to $V_0$ while the carried content remains
-$2E$:
+$2V_0$ to $V_0$ while the carried content remains $2E$:
 
 $$
 \mu_{\mathrm{out}} = 2E,
@@ -239,8 +188,8 @@ $$
 u_{\mathrm{join}} = 4u_0
 $$
 
-is a local quadratic readout of that constructively recombined branch. It is not
-the conserved pair budget itself.
+is the local quadratic readout of that constructively recombined branch. It is
+not a statement that the conserved transported budget itself has become `4u_0`.
 
 
 ## Destructive overlap
@@ -251,37 +200,25 @@ $$
 \delta = \pi,
 $$
 
-then
-
-$$
-f_{+} = 0,
-\qquad
-f_{-} = \sqrt{2}\,f_1,
-$$
-
-and the joined forward readout is
+then the joined local readout reaches
 
 $$
 u_{\mathrm{join}} = 0.
 $$
 
-This is not a sink. It means only that the joined branch vanishes. The pair
-budget is still
+This needs interpretation. The continuity equation tells us that the incoming
+energy cannot simply disappear, but the joined forward branch now contributes no
+local readout.
 
-$$
-|f_{+}|^2 + |f_{-}|^2 = 2u_0.
-$$
+The correct conclusion is not that a sink has appeared. It is that the joined
+forward branch is not the channel on which the incoming content is recovered.
 
-Continuity then forces the same incoming $2E$ to be recovered not on
-the forward joined branch but elsewhere in the overlap geometry.
+For a finite overlap region, continuity leaves only two possibilities:
 
-For a steady interaction there are only two possibilities:
-
-- the flux leaves through other faces of the overlap region, that is, it is
-  redirected,
+- the incoming content exits through other parts of the boundary, that is, it
+  is redirected,
 - or the flows separate again after the overlap and recover the original
   two-branch distribution.
-
 
 In the second case, if no new local recompression occurs, the natural recovery
 is simply
@@ -290,10 +227,14 @@ $$
 u_0 + u_0 = 2u_0.
 $$
 
-So destructive overlap does not produce a hidden `4u_0`. It removes
-the joined branch and preserves the original pair budget. To obtain a fresh
-`4u_0` readout, the transport must undergo a new constructive
-recombination into one branch.
+So destructive overlap does not create a contradiction and does not prove that
+no real overlap region is possible. It proves only that an everywhere-dark
+joined branch cannot itself be the full recovery geometry. If a finite overlap
+region produced zero joined readout and no redirected or re-separated exit, that
+region would act as a sink and would therefore be forbidden.
+
+To obtain a fresh `4u_0` readout after destructive overlap, the transport must
+undergo a new constructive recombination into one branch.
 
 
 ## What the square law does and does not do
@@ -315,7 +256,8 @@ recovered across the whole overlap region.
 
 ## Effective advance
 
-Transport along each realized path still proceeds at the local rate $c$.
+Transport along each realized path still proceeds at the local rate
+$c$.
 
 What changes is not the microscopic transport speed but the coarse-grained lag
 of a branch that must recover two inflows on one realized transport volume over
@@ -412,10 +354,9 @@ f_2 = k f_1,
 k \ge 0.
 $$
 
-This shortcut concerns only the reinforcing branch. When the local sum
-vanishes, one does not assign a negative effective advance to a non-existent
-forward branch; one returns instead to the finite-region continuity statement
-above.
+This shortcut concerns only the reinforcing branch. When the local sum vanishes,
+one does not assign a negative effective advance to a non-existent forward
+branch; one returns instead to the finite-region continuity statement above.
 
 Then the joined flow is
 
