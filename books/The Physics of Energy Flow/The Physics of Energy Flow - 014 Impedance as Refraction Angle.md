@@ -240,3 +240,97 @@ So the toroidal ratio does not need to set the common propagation speed. It can
 change only the relative weighting of the two aspects while the common loading
 scale $s$ remains fixed. Conversely, changing $s$ at fixed $m/n$ changes the
 common refractive lag while preserving the same aspect skew.
+
+
+## Extracting a rational core and a residual skew
+
+The observed pair need not satisfy the toroidal ansatz exactly. In that case
+one may still separate a rational core from a residual skew.
+
+Let the observed coefficients be
+
+$$
+\mu_{\mathrm{obs}},
+\qquad
+\epsilon_{\mathrm{obs}},
+$$
+
+and write the observed skew as
+
+$$
+r_{\mathrm{obs}} := \frac{\mu_{\mathrm{obs}}}{\epsilon_{\mathrm{obs}}}.
+$$
+
+Choose a rational approximation
+
+$$
+\frac{m}{n}
+$$
+
+to that observed skew, and define the residual factor
+
+$$
+\rho
+:=
+\frac{r_{\mathrm{obs}}}{m/n}
+=
+\frac{n\,\mu_{\mathrm{obs}}}{m\,\epsilon_{\mathrm{obs}}}.
+$$
+
+Then
+
+$$
+r_{\mathrm{obs}} = \rho\,\frac{m}{n}.
+$$
+
+Let the common loading scale still be
+
+$$
+s := \sqrt{\mu_{\mathrm{obs}}\epsilon_{\mathrm{obs}}}.
+$$
+
+Substituting
+
+$$
+r = \rho\,\frac{m}{n}
+$$
+
+into the earlier decomposition gives
+
+$$
+\mu_{\mathrm{obs}}
+=
+s\sqrt{\rho\,\frac{m}{n}},
+\qquad
+\epsilon_{\mathrm{obs}}
+=
+s\sqrt{\frac{1}{\rho}\,\frac{n}{m}}.
+$$
+
+So the observed pair is separated into three pieces:
+
+- the common loading scale $s$,
+- the rational toroidal core $m/n$,
+- the residual skew $\rho$.
+
+If
+
+$$
+\rho = 1,
+$$
+
+then the observed ratio is exactly toroidal:
+
+$$
+\frac{\mu_{\mathrm{obs}}}{\epsilon_{\mathrm{obs}}} = \frac{m}{n}.
+$$
+
+If instead
+
+$$
+\rho \ne 1,
+$$
+
+then the ratio contains an exact rational core together with a non-rational
+correction. In that case the toroidal integers describe only the leading skew,
+not the full observed value.
