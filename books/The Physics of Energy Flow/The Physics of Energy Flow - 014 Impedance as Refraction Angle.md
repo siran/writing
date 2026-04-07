@@ -112,3 +112,131 @@ ratio or also the propagation speed, since $\mu$ and $\epsilon$ enter both the
 ratio $\sqrt{\mu/\epsilon}$ and the speed $c=1/\sqrt{\mu\epsilon}$. The
 chapter therefore opens a direction: transport may be reoriented even when the
 full constant structure is not yet closed.
+
+
+## Separating common loading from aspect skew
+
+The two recovered coefficients enter transport in two independent combinations:
+
+$$
+v = \frac{1}{\sqrt{\mu\epsilon}},
+\qquad
+Z = \sqrt{\frac{\mu}{\epsilon}}.
+$$
+
+The product $\mu\epsilon$ fixes the common propagation lag. The ratio
+$\mu/\epsilon$ fixes the skew between the two complementary aspects. So if the
+skew is to be constrained by a toroidal integer pair, the clean place to write
+that constraint is the ratio itself.
+
+Write
+
+$$
+s := \sqrt{\mu\epsilon},
+\qquad
+r := \frac{\mu}{\epsilon}.
+$$
+
+Then
+
+$$
+\mu\epsilon = s^2,
+\qquad
+\frac{\mu}{\epsilon} = r.
+$$
+
+Multiply these two relations:
+
+$$
+\left(\mu\epsilon\right)\left(\frac{\mu}{\epsilon}\right)
+=
+s^2 r.
+$$
+
+The factor $\epsilon$ cancels, so
+
+$$
+\mu^2 = s^2 r.
+$$
+
+Taking the positive root gives
+
+$$
+\mu = s\sqrt{r}.
+$$
+
+Now divide the product relation by the ratio relation:
+
+$$
+\frac{\mu\epsilon}{\mu/\epsilon}
+=
+\frac{s^2}{r}.
+$$
+
+The factor $\mu$ cancels, so
+
+$$
+\epsilon^2 = \frac{s^2}{r}.
+$$
+
+Again taking the positive root gives
+
+$$
+\epsilon = \frac{s}{\sqrt{r}}.
+$$
+
+Therefore the pair can always be written as
+
+$$
+\mu = s\sqrt{r},
+\qquad
+\epsilon = \frac{s}{\sqrt{r}}.
+$$
+
+Now impose the literal toroidal ansatz
+
+$$
+r = \frac{m}{n},
+\qquad
+m,n \in \mathbb N.
+$$
+
+Then
+
+$$
+\mu = s\sqrt{\frac{m}{n}},
+\qquad
+\epsilon = s\sqrt{\frac{n}{m}}.
+$$
+
+The two observable transport combinations become
+
+$$
+v = \frac{1}{s},
+\qquad
+Z = \sqrt{\frac{m}{n}}.
+$$
+
+This separates the two roles cleanly.
+
+- The common lag is carried by $s = \sqrt{\mu\epsilon}$.
+- The aspect skew is carried by the toroidal ratio $m/n$.
+
+The symmetric case is recovered when
+
+$$
+m=n,
+$$
+
+for which
+
+$$
+\mu = \epsilon = s,
+\qquad
+Z = 1.
+$$
+
+So the toroidal ratio does not need to set the common propagation speed. It can
+change only the relative weighting of the two aspects while the common loading
+scale $s$ remains fixed. Conversely, changing $s$ at fixed $m/n$ changes the
+common refractive lag while preserving the same aspect skew.
