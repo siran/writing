@@ -300,6 +300,71 @@ These are not generic interference formulas. They are the direct experimental
 predictions of the loaded-branch reading of Chapter 7b.
 
 
+## A3.6a Longitudinal Bright-Stripe Measurement
+
+The cleanest measurement is therefore longitudinal rather than transverse.
+
+Choose a bright-fringe center
+
+$$
+x_n = \frac{2n\pi}{q},
+$$
+
+place a narrow spatial filter around that ridge, and let only that bright
+stripe propagate forward.
+
+If the stripe remains centered on the same bright ridge over a forward path
+length $L$, then the measured delay is the delay of one surviving loaded
+channel, not merely the static readout of a screen pattern.
+
+The experimental comparison is then:
+
+1. one reference beam with the same carrier and modulation,
+2. one isolated bright stripe taken from the coherent overlap region,
+3. equal downstream path length $L$ for both channels,
+4. phase or pulse-delay comparison at the outputs.
+
+If the Chapter 7b branch law is correct, the bright-stripe channel must arrive
+later than the reference channel.
+
+In vacuum, the reference time is
+
+$$
+t_{\mathrm{ref}} = \frac{L}{c},
+$$
+
+while the bright-stripe prediction at a fringe center is
+
+$$
+t_{\mathrm{peak}} = \frac{2L}{c\cos\theta}.
+$$
+
+In a medium of ordinary refractive index $n$, the corresponding comparison is
+
+$$
+t_{\mathrm{ref,med}} = \frac{nL}{c},
+\qquad
+t_{\mathrm{peak,med}} = \frac{2nL}{c\cos\theta}.
+$$
+
+For nearly collinear beams,
+
+$$
+\cos\theta \approx 1,
+$$
+
+so the predicted medium speed approaches
+
+$$
+v_{\mathrm{peak,med}} \approx \frac{c}{2n}.
+$$
+
+That is the direct operational form of the earlier water-tube intuition: once a
+bright fringe is isolated and propagated as a channel, the test is no longer
+"does a screen show fringes?" but rather "does the denser channel acquire the
+larger forward delay predicted by the loaded-branch law?"
+
+
 ## A3.7 Relation to a Misaligned Mach-Zehnder
 
 A slightly misaligned Mach-Zehnder is a practical way to realize the same
