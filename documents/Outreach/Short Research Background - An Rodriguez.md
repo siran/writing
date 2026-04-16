@@ -18,9 +18,15 @@ experience with optical setups and interference-based measurements.
 
 ## Current Research Interest
 
-My current interest is in experimental tests related to coherent overlap,
-interference fringes, and possible delay differences in isolated bright fringe
-channels relative to matched reference beams.
+My current research interest is fundamental physics, especially the physics of
+energy flow. In my current work, source-free energy transport is treated as the
+primitive condition, and from that basis known physics is recovered,
+including electromagnetism, quantum theory, Newtonian mechanics, and general
+relativity.
+
+A current experimental direction of interest is whether coherent overlap can
+produce measurable propagation differences in isolated bright fringe channels
+relative to matched lower-density reference beams.
 
 
 ## Research Links
