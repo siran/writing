@@ -11,6 +11,45 @@ Measure whether the center of a bright interference fringe propagates with a
 different longitudinal delay than one of the incident beams that forms it.
 
 
+## Rationale
+
+The proposal tests a simple effective-advance law:
+
+$$
+J = u\,c_{\mathrm{eff}},
+$$
+
+where `J` is the carried flux, `u` is the recovered local density, and
+`c_eff` is the effective longitudinal advance speed of the channel.
+
+For one incident beam,
+
+$$
+J_0 = u\,c.
+$$
+
+For two equal incident beams, the total incoming budget is
+
+$$
+J_{\mathrm{in}} = 2u\,c.
+$$
+
+If coherent overlap recovers a bright-fringe center with local density `4u`,
+then the same incoming budget concentrated into that denser channel gives
+
+$$
+c_{\mathrm{eff}}=\frac{J_{\mathrm{in}}}{4u}
+=
+\frac{2u\,c}{4u}
+=
+\frac{c}{2}.
+$$
+
+So the hypothesis is simple: coherent concentration into a denser bright
+channel should produce a lower effective longitudinal speed, operationally
+like a refractive slowdown.
+
+
 ## Geometry
 
 1. Split a coherent laser beam into two equal beams.
