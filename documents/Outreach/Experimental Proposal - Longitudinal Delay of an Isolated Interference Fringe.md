@@ -5,11 +5,6 @@ date: 2026-04-16
 
 # Experimental Proposal
 
-## Title
-
-Longitudinal Delay of an Isolated Bright Interference Fringe
-
-
 ## Goal
 
 Measure whether the center of a bright interference fringe propagates with a
@@ -202,9 +197,8 @@ This is done independently for:
 The comparison is therefore:
 
 ```text
-v_ref = 1 / m_ref,
-qquad
-v_fringe = 1 / m_fringe.
+v_ref = 1 / m_ref
+v_fringe = 1 / m_fringe
 ```
 
 

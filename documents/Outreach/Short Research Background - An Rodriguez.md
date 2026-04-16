@@ -26,16 +26,16 @@ relativity.
 
 A current experimental direction of interest is whether coherent overlap can
 produce measurable propagation differences in isolated bright fringe channels
-relative to matched lower-density reference beams.
+relative to incident-beam reference channels.
 
 
 ## Research Links
 
 - ResearchGate: <https://www.researchgate.net/profile/An-Rodriguez>
-- Writing repository: <https://writing.preferredframe.com>
+- Public writing repository: <https://writing.preferredframe.com/prints>
 
 
 ## Note
 
-I would be glad to provide a short project note describing the proposed
-measurement geometry in more detail if useful.
+I would be glad to provide a short experimental proposal describing the
+proposed measurement geometry in more detail if useful.
