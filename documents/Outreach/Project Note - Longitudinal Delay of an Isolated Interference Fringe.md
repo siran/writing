@@ -12,27 +12,28 @@ Longitudinal Delay of an Isolated Bright Interference Fringe
 
 ## Motivation
 
-After two coherent beams are made to interfere, most naturally after a first
-beam splitter in a Mach-Zehnder interferometer and with a small relative angle
-at recombination, fringes appear on both output branches of the final beam
-splitter. A bright fringe on one output corresponds to a dark fringe on the
-other, as in the complementary cosine-squared and sine-squared decomposition.
-The two outputs together recover the full input power.
+Take a Mach-Zehnder interferometer. After the first beam splitter, two coherent
+beams are recombined at a small relative angle at the final beam splitter. This
+produces fringes on both output branches.
 
-At the raw overlap level, two equal coherent contributions can produce local
-energy loading from 0 up to 4 times the loading of one contribution. The
-measurement proposed here targets the central part of one bright fringe ridge
-and compares its longitudinal delay against either of the two incident beams at
+A bright fringe on one output corresponds to a dark fringe on the other. The
+two outputs are complementary, with the usual cosine-squared and sine-squared
+profiles, and together they recover the full incident two-beam power.
+
+At the raw overlap level, however, two equal coherent contributions can produce
+local energy density from 0 up to 4 times the density of one incident beam. The
+proposed measurement targets the central part of one bright fringe ridge and
+compares its longitudinal delay against either of the two incident beams before
 the final recombiner.
 
 
 ## Basic Idea
 
 Two equal coherent beams are recombined at a small angle so that stable
-straight fringes are formed. A narrow bright fringe ridge is then spatially
-filtered and allowed to propagate forward as an isolated channel. Its
-modulation or pulse delay is compared against one of the incident beams before
-recombination, with matched carrier, modulation, and downstream path length.
+straight fringes are formed. One bright fringe ridge is spatially filtered and
+propagated forward as an isolated channel. Its modulation or pulse delay is
+then compared against one of the incident beams, with matched carrier,
+modulation, and downstream path length.
 
 The goal is not to measure fringe visibility. The goal is to measure the
 forward propagation delay of one bright fringe channel.
@@ -41,8 +42,8 @@ forward propagation delay of one bright fringe channel.
 ## Hypothesis
 
 For two equal coherent amplitudes, the local loading follows the square of
-their sum. This gives a fringe density profile with bright ridges that are more
-densely loaded than either incident beam alone.
+their sum. This gives bright ridges that are more densely loaded than either
+incident beam alone.
 
 Under the working hypothesis behind this project, the bright fringe ridge is
 treated as a surviving loaded channel. If the same forward flux budget is
@@ -59,8 +60,7 @@ So the experimental question is:
 
 ## Mathematical Model
 
-Let the two equal beams arriving at the final recombination region be written
-as
+Let the two equal beams arriving at the final recombination region be
 
 $$
 f_1(x,z,t)=A\,e^{i(kz-\omega t)}e^{+iqx/2},
@@ -80,7 +80,7 @@ where:
 
 ### Raw Coherent Overlap
 
-Before any final output-mode projection, the two-beam overlap is
+Before any final output-mode projection, the raw overlap field is
 
 $$
 f_{\mathrm{raw}} = f_1 + f_2
@@ -120,7 +120,7 @@ $$
 ### Bright-Core Region with Loading Above 3u
 
 To isolate the strongest part of the fringe, one wants the neighborhood in
-which the raw coherent loading remains above $3u$.
+which the raw coherent loading stays above $3u$.
 
 Write
 
@@ -178,7 +178,7 @@ $$
 |\Delta x| < \frac{\Lambda}{6}.
 $$
 
-So the central region of each bright fringe contains a stripe of full width
+So the central part of each bright fringe contains a stripe of full width
 
 $$
 \frac{\Lambda}{3}
@@ -191,7 +191,7 @@ on which the raw coherent loading stays strictly above $3u$.
 
 If the same two fields are projected through the final 50/50 beam splitter of
 a slightly misaligned Mach-Zehnder interferometer, the observable output modes
-are the normalized combinations
+are
 
 $$
 f_+(x)=\frac{f_1(x)+f_2(x)}{\sqrt2},
@@ -232,8 +232,8 @@ So:
   $u_+(x)$ and $u_-(x)$ profiles.
 
 The proposed measurement targets the central part of a bright fringe ridge,
-where the raw overlap loading is maximal and where the branch selected from one
-output is most naturally associated with the strongest coherent loading.
+where the raw overlap loading is maximal and where the selected output branch
+is most naturally associated with the strongest coherent loading.
 
 
 ## Proposed Geometry
@@ -259,7 +259,7 @@ Possible realizations:
 
 - free-space propagation over equal lengths,
 - propagation through a tube or cell,
-- propagation through a medium such as water or gas, if desired.
+- propagation through a medium such as water or gas.
 
 
 ## Minimum Experimental Requirements
@@ -277,8 +277,7 @@ Possible realizations:
 ## Why the Comparison Matters
 
 A screen at one fixed plane only shows the fringe pattern. It does not measure
-the forward travel time of one bright ridge. The required comparison is instead
-between:
+the forward travel time of one bright ridge. The required comparison is between
 
 - one isolated bright fringe channel, and
 - one matched incident-beam reference channel.
@@ -296,13 +295,13 @@ larger forward delay.
 - check whether any measured delay scales with fringe brightness or geometry
 
 
-## Expected Value of the Project
+## Expected Value
 
 This project is useful even if the result is null.
 
 - If no additional delay is observed, that places a clean constraint on the
   loaded-branch hypothesis.
-- If a reproducible excess delay is observed, that would justify a more careful
+- If a reproducible excess delay is observed, that justifies a more careful
   follow-up study.
 
 
