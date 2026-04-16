@@ -19,8 +19,8 @@ $$
 J = u\,c_{\mathrm{eff}},
 $$
 
-where `J` is the carried flux, `u` is the recovered local density, and
-`c_eff` is the effective longitudinal advance speed of the channel.
+where $J$ is the carried flux, $u$ is the recovered local density, and
+$c_{\mathrm{eff}}$ is the effective longitudinal advance speed of the channel.
 
 For one incident beam,
 
@@ -34,7 +34,7 @@ $$
 J_{\mathrm{in}} = 2u\,c.
 $$
 
-If coherent overlap recovers a bright-fringe center with local density `4u`,
+If coherent overlap recovers a bright-fringe center with local density $4u$,
 then the same incoming budget concentrated into that denser channel gives
 
 $$
@@ -50,21 +50,7 @@ channel should produce a lower effective longitudinal speed, operationally
 like a refractive slowdown.
 
 
-## Geometry
-
-1. Split a coherent laser beam into two equal beams.
-2. Recombine them at a small angle in a Mach-Zehnder interferometer.
-3. Use one output branch, where stable straight fringes are visible.
-4. Spatially isolate the center of one bright fringe ridge.
-5. Propagate that bright ridge over a known distance `L`.
-6. In parallel, propagate one incident beam as a reference over the same
-   distance.
-7. Amplitude-modulate both channels from the same source.
-8. For each channel, measure the delay `\tau` relative to the common
-   modulation signal on an oscilloscope or phase meter.
-
-
-## Interference Model
+## Complementary Outputs
 
 Let the two equal fields arriving at the final recombination region be
 
@@ -80,7 +66,35 @@ $$
 u := |A|^2.
 $$
 
-The raw coherent overlap is
+At the final 50/50 beam splitter, the two output modes are
+
+$$
+f_+(x)=\frac{f_1(x)+f_2(x)}{\sqrt2},
+\qquad
+f_-(x)=\frac{f_1(x)-f_2(x)}{\sqrt2}.
+$$
+
+Therefore
+
+$$
+u_+(x)=2u\cos^2\!\left(\frac{qx}{2}\right),
+\qquad
+u_-(x)=2u\sin^2\!\left(\frac{qx}{2}\right).
+$$
+
+So the two outputs satisfy
+
+$$
+u_+(x)+u_-(x)=2u.
+$$
+
+A bright fringe on one output corresponds to a dark fringe on the other. This
+is the basic $\cos^2+\sin^2=1$ structure of the two output branches.
+
+
+## Raw Overlap Peak
+
+Before output-mode normalization, the direct coherent overlap is
 
 $$
 f_{\mathrm{raw}} = f_1 + f_2
@@ -111,6 +125,9 @@ the loading reaches
 $$
 u_{\mathrm{raw}}(x_n)=4u.
 $$
+
+This is the local peak used in the $c_{\mathrm{eff}}$ estimate: two incident
+channels of density $u$ can recover a bright-center loading of $4u$.
 
 
 ## Bright-Core Region
@@ -169,85 +186,154 @@ $$
 \frac{\Lambda}{3}
 $$
 
-stays above `3u`.
+stays above $3u$.
 
 
-## Observable Mach-Zehnder Outputs
+## Crossing Angle and Fringe Width
 
-At the final 50/50 beam splitter, the output modes are
+If the two beams recombine with total crossing angle $\theta$, then the
+transverse wave-number difference is
 
 $$
-f_+(x)=\frac{f_1(x)+f_2(x)}{\sqrt2},
+q = 2k\sin\!\left(\frac{\theta}{2}\right),
 \qquad
-f_-(x)=\frac{f_1(x)-f_2(x)}{\sqrt2}.
+k=\frac{2\pi}{\lambda}.
 $$
 
-Therefore
+This is the small recombination-angle triangle: the opening angle between the
+two rays sets the transverse phase gradient and therefore the fringe spacing.
+
+Therefore the fringe period is
 
 $$
-u_+(x)=2u\cos^2\!\left(\frac{qx}{2}\right),
-\qquad
-u_-(x)=2u\sin^2\!\left(\frac{qx}{2}\right).
+\Lambda = \frac{2\pi}{q}
+=
+\frac{\lambda}{2\sin(\theta/2)}
+\approx
+\frac{\lambda}{\theta}
+\quad
+(\theta \ll 1).
 $$
 
-So the two outputs are complementary and satisfy
+A $1\,\mathrm{m}$ Mach-Zehnder arm is practical, but the fringe width is set by
+the recombination angle $\theta$, not by the arm length.
+
+For a HeNe laser,
 
 $$
-u_+(x)+u_-(x)=2u.
+\lambda = 632.8\,\mathrm{nm}.
 $$
 
-A bright fringe on one output corresponds to a dark fringe on the other, and
-the two outputs together recover the full incident two-beam power.
+Choosing a fairly wide fringe with
+
+$$
+\theta = 0.2\,\mathrm{mrad},
+$$
+
+gives
+
+$$
+\Lambda \approx \frac{632.8\times 10^{-9}}{2\times 10^{-4}}
+\approx
+3.16\,\mathrm{mm}.
+$$
+
+Then the bright-core region above $3u$ has full width
+
+$$
+\frac{\Lambda}{3} \approx 1.05\,\mathrm{mm}.
+$$
+
+That is large enough for straightforward spatial isolation.
+
+If the detector or entrance slit is centered on the fringe maximum and has
+active width $a$, then the worst-case sampled loading is
+
+$$
+u_{\mathrm{edge}} = 4u\cos^2\!\left(\frac{\pi a}{2\Lambda}\right).
+$$
+
+For the same HeNe example:
+
+- if $a=0.25\,\mathrm{mm}$, then $u_{\mathrm{edge}}\approx 3.94u$;
+- if $a=0.50\,\mathrm{mm}$, then $u_{\mathrm{edge}}\approx 3.76u$.
+
+So a practical target is a sensor or slit width in the range
+
+$$
+0.25\,\mathrm{mm} \;\text{to}\; 0.50\,\mathrm{mm},
+$$
+
+centered on the bright-fringe maximum.
 
 
 ## Measurement Model
 
-For each channel separately, use several propagation lengths `L` and measure
-the corresponding delays `\tau` relative to the common modulation signal:
+1. Split a coherent laser beam into two equal beams.
+2. Recombine them at a small angle in a Mach-Zehnder interferometer.
+3. Use one output branch, where stable straight fringes are visible.
+4. Spatially isolate the center of one bright fringe ridge.
+5. Propagate that bright ridge over a known distance $L$.
+6. In parallel, propagate one incident beam as a reference over the same
+   distance.
+7. Amplitude-modulate both channels from the same source.
+8. For each channel, measure the delay $\tau$ relative to the common
+   modulation signal on an oscilloscope or phase meter.
 
-```text
-(L1, tau1), (L2, tau2), (L3, tau3), ...
-```
+For each channel separately, collect data
 
-Plot `\tau` versus `L` and fit
+$$
+(L_1,\tau_1),\ (L_2,\tau_2),\ (L_3,\tau_3),\ \ldots
+$$
 
-```text
-tau(L) = mL + b.
-```
+and fit
 
-With the zero-length reference chosen appropriately, `b` should be close to
-zero. The slope is
+$$
+\tau(L)=mL+b.
+$$
 
-```text
-m = d tau / dL = 1 / v.
-```
+With the zero-length reference chosen appropriately, $b$ should be close to
+zero. The local slope estimates are
 
-So the speed is recovered directly as
+$$
+m_i = \frac{\delta \tau_i}{\delta L_i},
+$$
 
-```text
-v = 1 / m.
-```
+and the regression returns the mean slope
 
-This is done independently for:
+$$
+\langle m \rangle \approx \frac{d\tau}{dL}.
+$$
 
-- the incident-beam reference,
-- the isolated bright-fringe channel.
+Since
 
-The comparison is therefore:
+$$
+\tau = \frac{L}{v},
+$$
 
-```text
-v_ref = 1 / m_ref
-v_fringe = 1 / m_fringe
-```
+the speed is
+
+$$
+v = \frac{1}{\langle m \rangle}.
+$$
+
+This is done independently for the incident-beam reference and for the
+isolated bright-fringe channel:
+
+$$
+v_{\mathrm{ref}} = \frac{1}{\langle m_{\mathrm{ref}} \rangle},
+\qquad
+v_{\mathrm{fringe}} = \frac{1}{\langle m_{\mathrm{fringe}} \rangle}.
+$$
 
 
 ## Experimental Question
 
 Does the isolated bright-fringe channel yield
 
-```text
-v_fringe < v_ref ?
-```
+$$
+v_{\mathrm{fringe}} < v_{\mathrm{ref}} \; ?
+$$
 
 If yes, the bright fringe carries an additional longitudinal delay.  
 If no, the fringe behaves like the reference beam within experimental error.
@@ -272,8 +358,8 @@ The proposal is simple:
 1. create stable fringes in a Mach-Zehnder output,
 2. isolate the center of one bright fringe ridge,
 3. measure its delay for several lengths,
-4. fit `tau(L)`,
-5. recover `v = 1/m`,
+4. fit $\tau(L)$,
+5. recover $v = 1/\langle m \rangle$,
 6. compare that speed against one incident beam.
 
 This gives a direct experimental test of whether the bright fringe channel
