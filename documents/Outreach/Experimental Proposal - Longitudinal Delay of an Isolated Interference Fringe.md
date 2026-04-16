@@ -21,7 +21,8 @@ different longitudinal delay than one of the incident beams that forms it.
 6. In parallel, propagate one incident beam as a reference over the same
    distance.
 7. Amplitude-modulate both channels from the same source.
-8. Measure the delay `\tau` of each channel on an oscilloscope or phase meter.
+8. For each channel, measure the delay `\tau` relative to the common
+   modulation signal on an oscilloscope or phase meter.
 
 
 ## Interference Model
@@ -162,28 +163,27 @@ the two outputs together recover the full incident two-beam power.
 
 ## Measurement Model
 
-Each channel is measured separately against the same modulation source.
-
-For each channel, record several pairs
+For each channel separately, use several propagation lengths `L` and measure
+the corresponding delays `\tau` relative to the common modulation signal:
 
 ```text
 (L1, tau1), (L2, tau2), (L3, tau3), ...
 ```
 
-and fit
+Plot `\tau` versus `L` and fit
 
 ```text
 tau(L) = mL + b.
 ```
 
 With the zero-length reference chosen appropriately, `b` should be close to
-zero, and the slope is
+zero. The slope is
 
 ```text
 m = d tau / dL = 1 / v.
 ```
 
-So the propagation speed is recovered directly from the fit as
+So the speed is recovered directly as
 
 ```text
 v = 1 / m.
