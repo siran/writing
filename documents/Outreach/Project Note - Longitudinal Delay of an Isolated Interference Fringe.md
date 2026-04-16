@@ -12,20 +12,27 @@ Longitudinal Delay of an Isolated Bright Interference Fringe
 
 ## Motivation
 
-This note outlines a short optical measurement project motivated by a simple
-question: if two equal coherent beams overlap and create a stable fringe
-pattern, does an isolated bright fringe ridge propagate with the same forward
-delay as a matched lower-density single-beam reference, or does the higher
-local density of the bright ridge produce an additional delay?
+After two coherent beams are made to interfere, most naturally after a first
+beam splitter in a Mach-Zehnder interferometer and with a small relative angle
+at recombination, fringes appear on both output branches of the final beam
+splitter. A bright fringe on one output corresponds to a dark fringe on the
+other, as in the complementary cosine-squared and sine-squared decomposition.
+The two outputs together recover the full input power.
+
+At the raw overlap level, two equal coherent contributions can produce local
+energy loading from 0 up to 4 times the loading of one contribution. The
+measurement proposed here targets the central part of one bright fringe ridge
+and compares its longitudinal delay against either of the two incident beams at
+the final recombiner.
 
 
 ## Basic Idea
 
-Two equal coherent beams are crossed at a small angle so that a stable fringe
-pattern is formed. A narrow bright fringe ridge is then spatially filtered and
-allowed to propagate forward as an isolated channel. Its modulation or pulse
-delay is compared against a matched single-beam reference that carries the same
-carrier and modulation but lower density.
+Two equal coherent beams are recombined at a small angle so that stable
+straight fringes are formed. A narrow bright fringe ridge is then spatially
+filtered and allowed to propagate forward as an isolated channel. Its
+modulation or pulse delay is compared against one of the incident beams before
+recombination, with matched carrier, modulation, and downstream path length.
 
 The goal is not to measure fringe visibility. The goal is to measure the
 forward propagation delay of one bright fringe channel.
@@ -34,20 +41,20 @@ forward propagation delay of one bright fringe channel.
 ## Hypothesis
 
 For two equal coherent amplitudes, the local loading follows the square of
-their sum. This gives a fringe density profile that ranges from dark points to
-bright points with substantially higher local density than either beam alone.
+their sum. This gives a fringe density profile with bright ridges that are more
+densely loaded than either incident beam alone.
 
 Under the working hypothesis behind this project, the bright fringe ridge is
 treated as a surviving loaded channel. If the same forward flux budget is
-recovered on a denser ridge, then the effective forward advance of that ridge
-should be reduced relative to a lower-density reference channel.
+recovered on that denser ridge, then the effective forward advance of that
+ridge should be reduced relative to one incident beam.
 
 So the experimental question is:
 
 - standard expectation: the isolated bright ridge shows the usual propagation
   delay for the chosen medium,
 - loaded-branch hypothesis: the isolated bright ridge shows an additional
-  forward delay.
+  forward delay relative to one incident beam.
 
 
 ## Proposed Geometry
@@ -56,8 +63,8 @@ So the experimental question is:
 2. Recombine them at a small angle to form stable straight fringes.
 3. Select one bright fringe ridge using a slit or equivalent spatial filter.
 4. Propagate that isolated ridge over a known forward distance.
-5. In parallel, propagate a matched lower-density single-beam reference over
-   the same distance.
+5. In parallel, propagate one incident beam as a matched reference over the
+   same distance.
 6. Compare the two arrival times using amplitude modulation or pulse timing.
 
 
@@ -95,7 +102,7 @@ the forward travel time of one bright ridge. The required comparison is instead
 between:
 
 - one isolated bright fringe channel, and
-- one matched lower-density reference channel.
+- one matched incident-beam reference channel.
 
 That is the direct test of whether higher recovered density is accompanied by a
 larger forward delay.
@@ -104,8 +111,8 @@ larger forward delay.
 ## Useful Controls
 
 - vary the crossing angle while keeping downstream distance fixed
+- compare bright-ridge delay against either incident beam
 - compare bright-ridge delay against the unsplit beam
-- compare bright-ridge delay against one single arm with matched power
 - repeat in air and in a simple medium
 - check whether any measured delay scales with fringe brightness or geometry
 
@@ -127,7 +134,7 @@ The proposed measurement is simple in form:
 - create a stable fringe pattern,
 - isolate one bright fringe ridge,
 - propagate it forward,
-- compare its delay against a matched lower-density reference.
+- compare its delay against an incident-beam reference.
 
 That gives a direct experimental test of whether coherent density loading in an
 isolated fringe channel affects longitudinal propagation delay.
