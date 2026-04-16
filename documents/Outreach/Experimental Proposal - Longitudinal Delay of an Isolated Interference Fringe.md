@@ -1,9 +1,9 @@
 ---
-title: Project Note - Longitudinal Delay of an Isolated Interference Fringe
+title: Experimental Proposal - Longitudinal Delay of an Isolated Interference Fringe
 date: 2026-04-16
 ---
 
-# Project Note
+# Experimental Proposal
 
 ## Title
 
