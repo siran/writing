@@ -13,16 +13,15 @@ different longitudinal delay than one of the incident beams that forms it.
 
 ## Rationale
 
-The proposal tests a simple effective-advance law:
+For a laser beam of energy density $u$ advancing longitudinally at speed $c$,
+the energy flux is
 
 $$
-J = u\,c_{\mathrm{eff}},
+J = u\,c.
 $$
 
-where $J$ is the carried flux, $u$ is the recovered local density, and
-$c_{\mathrm{eff}}$ is the effective longitudinal advance speed of the channel.
-
-For one incident beam,
+Suppose two equal channels arrive at the final recombination region, each
+carrying density $u$. Then for one incident channel,
 
 $$
 J_0 = u\,c.
@@ -34,8 +33,9 @@ $$
 J_{\mathrm{in}} = 2u\,c.
 $$
 
-If coherent overlap recovers a bright-fringe center with local density $4u$,
-then the same incoming budget concentrated into that denser channel gives
+If coherent overlap recovers a bright-fringe center with local density
+$4u$, then the same incoming budget concentrated into that denser
+channel gives
 
 $$
 c_{\mathrm{eff}}=\frac{J_{\mathrm{in}}}{4u}
@@ -45,9 +45,9 @@ c_{\mathrm{eff}}=\frac{J_{\mathrm{in}}}{4u}
 \frac{c}{2}.
 $$
 
-So the hypothesis is simple: coherent concentration into a denser bright
-channel should produce a lower effective longitudinal speed, operationally
-like a refractive slowdown.
+So the hypothesis is simple: if two incoming channels are recovered as one
+denser bright channel, the same incoming budget implies a lower effective
+longitudinal speed, operationally like a refractive slowdown.
 
 
 ## Complementary Outputs
@@ -88,8 +88,8 @@ $$
 u_+(x)+u_-(x)=2u.
 $$
 
-A bright fringe on one output corresponds to a dark fringe on the other. This
-is the basic $\cos^2+\sin^2=1$ structure of the two output branches.
+A bright fringe on one output corresponds to a dark fringe on the other. This is
+the basic $\cos^2+\sin^2=1$ structure of the two output branches.
 
 
 ## Raw Overlap Peak
@@ -127,7 +127,8 @@ u_{\mathrm{raw}}(x_n)=4u.
 $$
 
 This is the local peak used in the $c_{\mathrm{eff}}$ estimate: two incident
-channels of density $u$ can recover a bright-center loading of $4u$.
+channels of density $u$ can recover a bright-center loading of
+$4u$.
 
 
 ## Bright-Core Region
@@ -258,6 +259,7 @@ For the same HeNe example:
 - if $a=0.25\,\mathrm{mm}$, then $u_{\mathrm{edge}}\approx 3.94u$;
 - if $a=0.50\,\mathrm{mm}$, then $u_{\mathrm{edge}}\approx 3.76u$.
 
+
 So a practical target is a sensor or slit width in the range
 
 $$
@@ -280,6 +282,7 @@ centered on the bright-fringe maximum.
 8. For each channel, measure the delay $\tau$ relative to the common
    modulation signal on an oscilloscope or phase meter.
 
+
 For each channel separately, collect data
 
 $$
@@ -292,8 +295,8 @@ $$
 \tau(L)=mL+b.
 $$
 
-With the zero-length reference chosen appropriately, $b$ should be close to
-zero. The local slope estimates are
+With the zero-length reference chosen appropriately, $b$ should be
+close to zero. The local slope estimates are
 
 $$
 m_i = \frac{\delta \tau_i}{\delta L_i},
@@ -317,8 +320,8 @@ $$
 v = \frac{1}{\langle m \rangle}.
 $$
 
-This is done independently for the incident-beam reference and for the
-isolated bright-fringe channel:
+This is done independently for the incident-beam reference and for the isolated
+bright-fringe channel:
 
 $$
 v_{\mathrm{ref}} = \frac{1}{\langle m_{\mathrm{ref}} \rangle},
@@ -335,8 +338,8 @@ $$
 v_{\mathrm{fringe}} < v_{\mathrm{ref}} \; ?
 $$
 
-If yes, the bright fringe carries an additional longitudinal delay.  
-If no, the fringe behaves like the reference beam within experimental error.
+If yes, the bright fringe carries an additional longitudinal delay. If no, the
+fringe behaves like the reference beam within experimental error.
 
 
 ## Minimum Requirements
@@ -361,6 +364,7 @@ The proposal is simple:
 4. fit $\tau(L)$,
 5. recover $v = 1/\langle m \rangle$,
 6. compare that speed against one incident beam.
+
 
 This gives a direct experimental test of whether the bright fringe channel
 acquires an additional longitudinal delay.
