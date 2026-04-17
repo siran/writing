@@ -97,6 +97,13 @@ $$
 A bright fringe on one output corresponds to a dark fringe on the other. This
 is the basic $\cos^2+\sin^2=1$ structure of the two output branches.
 
+In the tested hypothesis, a dark fringe is not just a low-intensity point. It
+marks local self-cancellation of that longitudinal recovery channel. At the
+same transverse position, the complementary bright fringe is treated as the
+surviving recovery channel. That is the sense in which the proposal interprets
+the overlap as a local $2{:}1$ compression of the incoming two-channel budget
+into one available bright channel.
+
 
 ## Raw Overlap Peak
 
