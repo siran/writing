@@ -274,7 +274,7 @@ centered on the bright-fringe maximum.
 
 ## Measurement Model
 
-1. Split a coherent laser beam into two equal beams.
+1. Split a coherent amplitude-modulated laser beam into two equal beams.
 2. Recombine them at a small angle in a Mach-Zehnder interferometer.
 3. Use one output branch, where stable straight fringes are visible.
 4. Spatially isolate the center of one bright fringe ridge.
