@@ -26,10 +26,10 @@ $$
 J_{\mathrm{in}} = 2u\,c.
 $$
 
-The tested hypothesis is not that brightness alone slows propagation. It is
-that coherent overlap can compress the same incoming transport budget into
-fewer effective longitudinal channels. If the bright surviving channel recovers
-local loading $4u$, then the same incoming budget gives
+The tested hypothesis is that coherent overlap can compress the same incoming
+transport budget into fewer effective longitudinal channels. If the bright
+surviving channel recovers local loading $4u$, then the same incoming budget
+gives
 
 $$
 c_{\mathrm{eff}}
