@@ -54,30 +54,60 @@ longitudinal speed, operationally like a refractive slowdown.
 
 ## Complementary Outputs
 
-Let two equal coherent fields interfere at the recombination region with total
-crossing angle $\phi$. Let
+Let two equal coherent fields interfere at the recombination region. For the
+delay measurement, both beams carry the same slow amplitude modulation. That
+common envelope factors out of the spatial interference calculation, so the
+carrier fields can be written as
 
 $$
-k=\frac{2\pi}{\lambda},
+f_1(\mathbf{r},t)=A\,e^{-i(\mathbf{k}_1\cdot\mathbf{r}-\omega t)},
 \qquad
-q(\phi)=2k\sin\!\left(\frac{\phi}{2}\right).
+f_2(\mathbf{r},t)=A\,e^{-i(\mathbf{k}_2\cdot\mathbf{r}-\omega t)},
 $$
 
-For the delay measurement, both beams carry the same slow amplitude modulation.
-That common envelope factors out of the spatial interference calculation, so
-the carrier fields can be written as
+where $\mathbf{r}=x\hat{\mathbf{x}}+z\hat{\mathbf{z}}$ is the position in the
+recombination plane, $x$ is the transverse coordinate across the fringes, $z$
+is the longitudinal propagation coordinate, $t$ is time, $A$ is the common
+field amplitude, $\omega$ is the optical angular frequency, and
+$|\mathbf{k}_1|=|\mathbf{k}_2|=k=2\pi/\lambda$.
+
+For symmetric recombination with total crossing angle $\phi$, take
 
 $$
-f_1(x,z,t)=A\,e^{i(kz\cos(\phi/2)-\omega t)}e^{+iq(\phi)x/2},
+\mathbf{k}_1 =
+k\sin\!\left(\frac{\phi}{2}\right)\hat{\mathbf{x}}
++
+k\cos\!\left(\frac{\phi}{2}\right)\hat{\mathbf{z}},
 \qquad
-f_2(x,z,t)=A\,e^{i(kz\cos(\phi/2)-\omega t)}e^{-iq(\phi)x/2},
+\mathbf{k}_2 =
+-k\sin\!\left(\frac{\phi}{2}\right)\hat{\mathbf{x}}
++
+k\cos\!\left(\frac{\phi}{2}\right)\hat{\mathbf{z}}.
 $$
 
-where $x$ is the transverse coordinate across the fringes, $z$ is the
-longitudinal propagation coordinate, $t$ is time, $A$ is the common field
-amplitude, $k=2\pi/\lambda$ is the optical wave number, $\omega$ is the
-optical angular frequency, and $q(\phi)$ is the transverse phase-gradient
-parameter set by the crossing angle. Let
+Then the relative phase is
+
+$$
+\Delta\Phi(\mathbf{r})
+=
+(\mathbf{k}_1-\mathbf{k}_2)\cdot\mathbf{r}
+=
+2k\sin\!\left(\frac{\phi}{2}\right)x.
+$$
+
+Define the transverse phase-gradient parameter by
+
+$$
+q(\phi):=2k\sin\!\left(\frac{\phi}{2}\right).
+$$
+
+Then
+
+$$
+\Delta\Phi(\mathbf{r})=q(\phi)x.
+$$
+
+Let
 
 $$
 u := |A|^2.
@@ -216,61 +246,12 @@ stays above $3u$.
 
 ## Crossing Angle and Fringe Width
 
-Let the two recombining beams make equal angles $\pm \phi/2$ with the
-longitudinal $z$ axis. Their wavevectors are
-
-$$
-\mathbf{k}_1 =
-k\sin\!\left(\frac{\phi}{2}\right)\hat{\mathbf{x}}
-+
-k\cos\!\left(\frac{\phi}{2}\right)\hat{\mathbf{z}},
-\qquad
-\mathbf{k}_2 =
--k\sin\!\left(\frac{\phi}{2}\right)\hat{\mathbf{x}}
-+
-k\cos\!\left(\frac{\phi}{2}\right)\hat{\mathbf{z}},
-$$
-
-The corresponding phases are
-
-$$
-\Phi_1(x,z,t)=
-kx\sin\!\left(\frac{\phi}{2}\right)
-+
-kz\cos\!\left(\frac{\phi}{2}\right)
--\omega t,
-$$
-
-$$
-\Phi_2(x,z,t)=
--kx\sin\!\left(\frac{\phi}{2}\right)
-+
-kz\cos\!\left(\frac{\phi}{2}\right)
--\omega t.
-$$
-
-Therefore the transverse phase difference is
-
-$$
-\Delta\Phi(x)=\Phi_1-\Phi_2
-=
-2k\sin\!\left(\frac{\phi}{2}\right)x.
-$$
-
-Comparing this with
-
-$$
-\Delta\Phi(x)=q(\phi)x,
-$$
-
-gives the transverse wave-number difference
+The small recombination-angle triangle sets the transverse phase gradient and
+therefore the fringe spacing through
 
 $$
 q(\phi) = 2k\sin\!\left(\frac{\phi}{2}\right).
 $$
-
-This is the small recombination-angle triangle: the opening angle between the
-two rays sets the transverse phase gradient and therefore the fringe spacing.
 
 Therefore the fringe period is
 
