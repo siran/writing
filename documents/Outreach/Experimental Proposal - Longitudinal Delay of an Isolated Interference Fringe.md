@@ -60,9 +60,9 @@ common envelope factors out of the spatial interference calculation, so the
 carrier fields can be written as
 
 $$
-f_1(\mathbf{r},t)=A\,e^{-i(\mathbf{k}_1\cdot\mathbf{r}-\omega t)},
+f_1(\mathbf{r},t)=A_1(t)\,e^{-i(\mathbf{k}_1\cdot\mathbf{r}-\omega t)},
 \qquad
-f_2(\mathbf{r},t)=A\,e^{-i(\mathbf{k}_2\cdot\mathbf{r}-\omega t)},
+f_2(\mathbf{r},t)=A_2(t)\,e^{-i(\mathbf{k}_2\cdot\mathbf{r}-\omega t)},
 $$
 
 where
@@ -73,12 +73,21 @@ $$
 
 is position, the interference geometry lies in the $x$-$z$ plane, $x$ is the
 transverse coordinate across the fringes, $z$ is the longitudinal propagation
-coordinate, $t$ is time, $A$ is the common field amplitude, $\omega$ is the
-optical angular frequency, and
+coordinate, $t$ is time, $A_i(t)$ is the modulated amplitude of beam $i$,
+$\omega$ is the optical carrier angular frequency, and
 
 $$
 |\mathbf{k}_1|=|\mathbf{k}_2|=k=\frac{2\pi}{\lambda}.
 $$
+
+For a sinusoidal amplitude modulation driven by a function generator, one may
+take
+
+$$
+A_1(t)=A_2(t)=A_m\sin(\Omega t),
+$$
+
+with modulation amplitude $A_m$ and modulation angular frequency $\Omega$.
 
 For symmetric recombination with total crossing angle $\theta$, take
 
@@ -119,7 +128,7 @@ $$
 Let
 
 $$
-u := |A|^2.
+u(t) := |A_1(t)|^2 = |A_2(t)|^2.
 $$
 
 At the final 50/50 beam splitter, the two output modes are
@@ -133,15 +142,15 @@ $$
 Therefore
 
 $$
-u_+(x)=2u\cos^2\!\left(\frac{q(\theta)x}{2}\right),
+u_+(x,t)=2u(t)\cos^2\!\left(\frac{q(\theta)x}{2}\right),
 \qquad
-u_-(x)=2u\sin^2\!\left(\frac{q(\theta)x}{2}\right).
+u_-(x,t)=2u(t)\sin^2\!\left(\frac{q(\theta)x}{2}\right).
 $$
 
 So the two outputs satisfy
 
 $$
-u_+(x)+u_-(x)=2u.
+u_+(x,t)+u_-(x,t)=2u(t).
 $$
 
 A bright fringe on one output corresponds to a dark fringe on the other. This
@@ -162,19 +171,19 @@ The direct coherent overlap is
 $$
 f_{\mathrm{raw}} = f_1 + f_2
 =
-2A\cos\!\left(\frac{q(\theta)x}{2}\right)e^{i(kz\cos(\theta/2)-\omega t)},
+2A_1(t)\cos\!\left(\frac{q(\theta)x}{2}\right)e^{-i(kz\cos(\theta/2)-\omega t)},
 $$
 
 so the raw overlap density is
 
 $$
-u_{\mathrm{raw}}(x)=4u\cos^2\!\left(\frac{q(\theta)x}{2}\right).
+u_{\mathrm{raw}}(x,t)=4u(t)\cos^2\!\left(\frac{q(\theta)x}{2}\right).
 $$
 
 Therefore
 
 $$
-0 \le u_{\mathrm{raw}}(x) \le 4u.
+0 \le u_{\mathrm{raw}}(x,t) \le 4u(t).
 $$
 
 At a bright-fringe center
@@ -186,12 +195,12 @@ $$
 with $n$ an integer, the loading reaches
 
 $$
-u_{\mathrm{raw}}(x_n)=4u.
+u_{\mathrm{raw}}(x_n,t)=4u(t).
 $$
 
 This is the local peak used in the $c_{\mathrm{eff}}$ estimate: two incident
-channels of density $u$ can recover a bright-center loading of
-$4u$.
+channels of density $u(t)$ can recover a bright-center loading of
+$4u(t)$.
 
 
 ## Bright-Core Region
@@ -199,7 +208,7 @@ $4u$.
 To isolate the strongest part of the fringe, require
 
 $$
-u_{\mathrm{raw}}(x) > 3u.
+u_{\mathrm{raw}}(x,t) > 3u(t).
 $$
 
 With
@@ -211,7 +220,7 @@ $$
 this becomes
 
 $$
-4u\cos^2\!\left(\frac{q(\theta)\Delta x}{2}\right) > 3u,
+4u(t)\cos^2\!\left(\frac{q(\theta)\Delta x}{2}\right) > 3u(t),
 $$
 
 so
@@ -250,7 +259,7 @@ $$
 \frac{\Lambda}{3}
 $$
 
-stays above $3u$.
+stays above $3u(t)$.
 
 
 ## Crossing Angle and Fringe Width
@@ -309,13 +318,13 @@ If the detector or entrance slit is centered on the fringe maximum and has
 active width $a$, then the worst-case sampled loading is
 
 $$
-u_{\mathrm{edge}} = 4u\cos^2\!\left(\frac{\pi a}{2\Lambda}\right).
+u_{\mathrm{edge}}(t) = 4u(t)\cos^2\!\left(\frac{\pi a}{2\Lambda}\right).
 $$
 
 For the same HeNe example:
 
-- if $a=0.25\,\mathrm{mm}$, then $u_{\mathrm{edge}}\approx 3.94u$;
-- if $a=0.50\,\mathrm{mm}$, then $u_{\mathrm{edge}}\approx 3.76u$.
+- if $a=0.25\,\mathrm{mm}$, then $u_{\mathrm{edge}}(t)\approx 3.94u(t)$;
+- if $a=0.50\,\mathrm{mm}$, then $u_{\mathrm{edge}}(t)\approx 3.76u(t)$.
 
 So a practical target is a sensor or slit width in the range
 
