@@ -13,14 +13,14 @@ different longitudinal delay than one of the incident beams that forms it.
 
 ## Rationale
 
-For a laser beam of energy density $u$ advancing longitudinally at speed $c$,
-the energy flux is
+For a laser beam of energy density $u$ advancing longitudinally at
+speed $c$, the energy flux is
 
 $$
 J = u\,c.
 $$
 
-Suppose two equal channels arrive at the final recombination region, each
+Suppose two coherent beams arrive at the final recombination region, each
 carrying density $u$. Then for one incident channel,
 
 $$
@@ -33,9 +33,9 @@ $$
 J_{\mathrm{in}} = 2u\,c.
 $$
 
-If coherent overlap recovers a bright-fringe center with local density
-$4u$, then the same incoming budget concentrated into that denser
-channel gives
+If the two beams overlap coherently and recover a bright-fringe center with
+local density $4u$, then the same incoming budget concentrated into that
+denser channel gives
 
 $$
 c_{\mathrm{eff}}=\frac{J_{\mathrm{in}}}{4u}
@@ -258,7 +258,6 @@ For the same HeNe example:
 
 - if $a=0.25\,\mathrm{mm}$, then $u_{\mathrm{edge}}\approx 3.94u$;
 - if $a=0.50\,\mathrm{mm}$, then $u_{\mathrm{edge}}\approx 3.76u$.
-
 
 So a practical target is a sensor or slit width in the range
 
