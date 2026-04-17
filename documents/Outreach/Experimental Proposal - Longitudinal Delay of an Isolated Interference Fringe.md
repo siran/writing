@@ -198,13 +198,63 @@ stays above $3u$.
 
 ## Crossing Angle and Fringe Width
 
-If the two beams recombine with total crossing angle $\theta$, then the
-transverse wave-number difference is
+Let the two recombining beams make equal angles $\pm \theta/2$ with the
+longitudinal $z$ axis. Their wavevectors are
 
 $$
-q = 2k\sin\!\left(\frac{\theta}{2}\right),
+\mathbf{k}_1 =
+k\sin\!\left(\frac{\theta}{2}\right)\hat{\mathbf{x}}
++
+k\cos\!\left(\frac{\theta}{2}\right)\hat{\mathbf{z}},
 \qquad
+\mathbf{k}_2 =
+-k\sin\!\left(\frac{\theta}{2}\right)\hat{\mathbf{x}}
++
+k\cos\!\left(\frac{\theta}{2}\right)\hat{\mathbf{z}},
+$$
+
+with
+
+$$
 k=\frac{2\pi}{\lambda}.
+$$
+
+The corresponding phases are
+
+$$
+\phi_1(x,z,t)=
+kx\sin\!\left(\frac{\theta}{2}\right)
++
+kz\cos\!\left(\frac{\theta}{2}\right)
+-\omega t,
+$$
+
+$$
+\phi_2(x,z,t)=
+-kx\sin\!\left(\frac{\theta}{2}\right)
++
+kz\cos\!\left(\frac{\theta}{2}\right)
+-\omega t.
+$$
+
+Therefore the transverse phase difference is
+
+$$
+\Delta\phi(x)=\phi_1-\phi_2
+=
+2k\sin\!\left(\frac{\theta}{2}\right)x.
+$$
+
+Comparing this with
+
+$$
+\Delta\phi(x)=qx,
+$$
+
+gives the transverse wave-number difference
+
+$$
+q = 2k\sin\!\left(\frac{\theta}{2}\right).
 $$
 
 This is the small recombination-angle triangle: the opening angle between the
