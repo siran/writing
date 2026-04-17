@@ -33,9 +33,11 @@ $$
 J_{\mathrm{in}} = 2u\,c.
 $$
 
-If the two beams overlap coherently and recover a bright-fringe center with
-local density $4u$, then the same incoming budget concentrated into that
-denser channel gives
+The tested hypothesis is not that brightness by itself slows propagation. It
+is that coherent overlap compresses the same incoming transport budget into
+fewer effective longitudinal channels. If the two beams overlap coherently and
+recover a bright-fringe center with local density $4u$, then the same incoming
+budget concentrated into that denser channel gives
 
 $$
 c_{\mathrm{eff}}=\frac{J_{\mathrm{in}}}{4u}
@@ -335,7 +337,19 @@ $$
 
 ## Experimental Question
 
-Does the isolated bright-fringe channel yield
+The standard-optics expectation is
+
+$$
+v_{\mathrm{fringe}} = v_{\mathrm{ref}}
+$$
+
+within experimental error. The tested alternative is
+
+$$
+v_{\mathrm{fringe}} < v_{\mathrm{ref}}.
+$$
+
+So the experimental question is:
 
 $$
 v_{\mathrm{fringe}} < v_{\mathrm{ref}} \; ?
