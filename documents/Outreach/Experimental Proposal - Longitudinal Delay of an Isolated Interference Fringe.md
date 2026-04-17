@@ -52,7 +52,7 @@ denser bright channel, the same incoming budget implies a lower effective
 longitudinal speed, operationally like a refractive slowdown.
 
 
-## Complementary Outputs
+## Standard Optical Interference Theory Applied to the Proposal
 
 Let two equal coherent fields interfere at the recombination region. For the
 delay measurement, both beams carry the same slow amplitude modulation. That
