@@ -65,46 +65,55 @@ f_1(\mathbf{r},t)=A\,e^{-i(\mathbf{k}_1\cdot\mathbf{r}-\omega t)},
 f_2(\mathbf{r},t)=A\,e^{-i(\mathbf{k}_2\cdot\mathbf{r}-\omega t)},
 $$
 
-where $\mathbf{r}=x\hat{\mathbf{x}}+z\hat{\mathbf{z}}$ is the position in the
-recombination plane, $x$ is the transverse coordinate across the fringes, $z$
-is the longitudinal propagation coordinate, $t$ is time, $A$ is the common
-field amplitude, $\omega$ is the optical angular frequency, and
-$|\mathbf{k}_1|=|\mathbf{k}_2|=k=2\pi/\lambda$.
+where
 
-For symmetric recombination with total crossing angle $\phi$, take
+$$
+\mathbf{r}=x\hat{\mathbf{x}}+y\hat{\mathbf{y}}+z\hat{\mathbf{z}}
+$$
+
+is position, the interference geometry lies in the $x$-$z$ plane, $x$ is the
+transverse coordinate across the fringes, $z$ is the longitudinal propagation
+coordinate, $t$ is time, $A$ is the common field amplitude, $\omega$ is the
+optical angular frequency, and
+
+$$
+|\mathbf{k}_1|=|\mathbf{k}_2|=k=\frac{2\pi}{\lambda}.
+$$
+
+For symmetric recombination with total crossing angle $\theta$, take
 
 $$
 \mathbf{k}_1 =
-k\sin\!\left(\frac{\phi}{2}\right)\hat{\mathbf{x}}
+k\sin\!\left(\frac{\theta}{2}\right)\hat{\mathbf{x}}
 +
-k\cos\!\left(\frac{\phi}{2}\right)\hat{\mathbf{z}},
+k\cos\!\left(\frac{\theta}{2}\right)\hat{\mathbf{z}},
 \qquad
 \mathbf{k}_2 =
--k\sin\!\left(\frac{\phi}{2}\right)\hat{\mathbf{x}}
+-k\sin\!\left(\frac{\theta}{2}\right)\hat{\mathbf{x}}
 +
-k\cos\!\left(\frac{\phi}{2}\right)\hat{\mathbf{z}}.
+k\cos\!\left(\frac{\theta}{2}\right)\hat{\mathbf{z}}.
 $$
 
 Then the relative phase is
 
 $$
-\Delta\Phi(\mathbf{r})
+\Psi(\mathbf{r})
 =
 (\mathbf{k}_1-\mathbf{k}_2)\cdot\mathbf{r}
 =
-2k\sin\!\left(\frac{\phi}{2}\right)x.
+2k\sin\!\left(\frac{\theta}{2}\right)x.
 $$
 
 Define the transverse phase-gradient parameter by
 
 $$
-q(\phi):=2k\sin\!\left(\frac{\phi}{2}\right).
+q(\theta):=2k\sin\!\left(\frac{\theta}{2}\right).
 $$
 
 Then
 
 $$
-\Delta\Phi(\mathbf{r})=q(\phi)x.
+\Psi(\mathbf{r})=q(\theta)x.
 $$
 
 Let
@@ -124,9 +133,9 @@ $$
 Therefore
 
 $$
-u_+(x)=2u\cos^2\!\left(\frac{q(\phi)x}{2}\right),
+u_+(x)=2u\cos^2\!\left(\frac{q(\theta)x}{2}\right),
 \qquad
-u_-(x)=2u\sin^2\!\left(\frac{q(\phi)x}{2}\right).
+u_-(x)=2u\sin^2\!\left(\frac{q(\theta)x}{2}\right).
 $$
 
 So the two outputs satisfy
@@ -153,13 +162,13 @@ The direct coherent overlap is
 $$
 f_{\mathrm{raw}} = f_1 + f_2
 =
-2A\cos\!\left(\frac{q(\phi)x}{2}\right)e^{i(kz\cos(\phi/2)-\omega t)},
+2A\cos\!\left(\frac{q(\theta)x}{2}\right)e^{i(kz\cos(\theta/2)-\omega t)},
 $$
 
 so the raw overlap density is
 
 $$
-u_{\mathrm{raw}}(x)=4u\cos^2\!\left(\frac{q(\phi)x}{2}\right).
+u_{\mathrm{raw}}(x)=4u\cos^2\!\left(\frac{q(\theta)x}{2}\right).
 $$
 
 Therefore
@@ -171,7 +180,7 @@ $$
 At a bright-fringe center
 
 $$
-x_n = \frac{2\pi n}{q(\phi)},
+x_n = \frac{2\pi n}{q(\theta)},
 $$
 
 with $n$ an integer, the loading reaches
@@ -202,31 +211,31 @@ $$
 this becomes
 
 $$
-4u\cos^2\!\left(\frac{q(\phi)\Delta x}{2}\right) > 3u,
+4u\cos^2\!\left(\frac{q(\theta)\Delta x}{2}\right) > 3u,
 $$
 
 so
 
 $$
-\cos^2\!\left(\frac{q(\phi)\Delta x}{2}\right) > \frac{3}{4}.
+\cos^2\!\left(\frac{q(\theta)\Delta x}{2}\right) > \frac{3}{4}.
 $$
 
 Hence
 
 $$
-\left|\frac{q(\phi)\Delta x}{2}\right| < \frac{\pi}{6},
+\left|\frac{q(\theta)\Delta x}{2}\right| < \frac{\pi}{6},
 $$
 
 which gives
 
 $$
-|\Delta x| < \frac{\pi}{3q(\phi)}.
+|\Delta x| < \frac{\pi}{3q(\theta)}.
 $$
 
 If the fringe period is
 
 $$
-\Lambda = \frac{2\pi}{q(\phi)},
+\Lambda = \frac{2\pi}{q(\theta)},
 $$
 
 then the bright-core condition is
@@ -250,23 +259,23 @@ The small recombination-angle triangle sets the transverse phase gradient and
 therefore the fringe spacing through
 
 $$
-q(\phi) = 2k\sin\!\left(\frac{\phi}{2}\right).
+q(\theta) = 2k\sin\!\left(\frac{\theta}{2}\right).
 $$
 
 Therefore the fringe period is
 
 $$
-\Lambda = \frac{2\pi}{q(\phi)}
+\Lambda = \frac{2\pi}{q(\theta)}
 =
-\frac{\lambda}{2\sin(\phi/2)}
+\frac{\lambda}{2\sin(\theta/2)}
 \approx
-\frac{\lambda}{\phi}
+\frac{\lambda}{\theta}
 \quad
-(\phi \ll 1).
+(\theta \ll 1).
 $$
 
 A $1\,\mathrm{m}$ Mach-Zehnder arm is practical, but the fringe width is set by
-the recombination angle $\phi$, not by the arm length.
+the recombination angle $\theta$, not by the arm length.
 
 For a HeNe laser,
 
@@ -277,7 +286,7 @@ $$
 Choosing a fairly wide fringe with
 
 $$
-\phi = 0.2\,\mathrm{mrad},
+\theta = 0.2\,\mathrm{mrad},
 $$
 
 gives
