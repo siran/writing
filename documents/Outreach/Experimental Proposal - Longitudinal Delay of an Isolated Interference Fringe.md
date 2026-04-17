@@ -60,7 +60,11 @@ f_1(x,z,t)=A\,e^{i(kz-\omega t)}e^{+iqx/2},
 f_2(x,z,t)=A\,e^{i(kz-\omega t)}e^{-iqx/2},
 $$
 
-with
+where $x$ is the transverse coordinate across the fringes, $z$ is the
+longitudinal propagation coordinate, $t$ is time, $A$ is the common field
+amplitude, $k=2\pi/\lambda$ is the optical wave number, $\omega$ is the
+optical angular frequency, and $q$ is the transverse phase-gradient parameter
+that sets the fringe spacing. Let
 
 $$
 u := |A|^2.
@@ -88,8 +92,8 @@ $$
 u_+(x)+u_-(x)=2u.
 $$
 
-A bright fringe on one output corresponds to a dark fringe on the other. This is
-the basic $\cos^2+\sin^2=1$ structure of the two output branches.
+A bright fringe on one output corresponds to a dark fringe on the other. This
+is the basic $\cos^2+\sin^2=1$ structure of the two output branches.
 
 
 ## Raw Overlap Peak
@@ -120,7 +124,7 @@ $$
 x_n = \frac{2\pi n}{q},
 $$
 
-the loading reaches
+with $n$ an integer, the loading reaches
 
 $$
 u_{\mathrm{raw}}(x_n)=4u.
@@ -281,8 +285,8 @@ centered on the bright-fringe maximum.
 8. For each channel, measure the delay $\tau$ relative to the common
    modulation signal on an oscilloscope or phase meter.
 
-
-For each channel separately, collect data
+For each channel separately, collect pairs $(L_i,\tau_i)$, where $L_i$ is the
+propagation distance and $\tau_i$ is the measured delay:
 
 $$
 (L_1,\tau_1),\ (L_2,\tau_2),\ (L_3,\tau_3),\ \ldots
@@ -294,8 +298,8 @@ $$
 \tau(L)=mL+b.
 $$
 
-With the zero-length reference chosen appropriately, $b$ should be
-close to zero. The local slope estimates are
+Here $b$ is the fixed zero-length offset, which should be close to zero after
+referencing. The local slope estimates are
 
 $$
 m_i = \frac{\delta \tau_i}{\delta L_i},
@@ -319,8 +323,8 @@ $$
 v = \frac{1}{\langle m \rangle}.
 $$
 
-This is done independently for the incident-beam reference and for the isolated
-bright-fringe channel:
+This is done independently for the incident-beam reference and for the
+isolated bright-fringe channel:
 
 $$
 v_{\mathrm{ref}} = \frac{1}{\langle m_{\mathrm{ref}} \rangle},
