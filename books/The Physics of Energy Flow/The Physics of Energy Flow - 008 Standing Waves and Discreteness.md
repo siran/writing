@@ -24,7 +24,17 @@ same flow alter the local transport law and bend later transport of that same
 field. This chapter asks what follows once that bending becomes strong enough
 to make the path close on itself.
 
-Such a self-refracting closure must be a shape that admits continuous
+Toroidal configurations are not exotic. They arise spontaneously whenever a
+flow curls back on itself — smoke rings, vortex rings in water, incense
+plumes disturbed by a hand. What is common to all these cases is that
+toroidal geometry forms easily; what distinguishes them is whether the
+resulting closure can self-sustain. Most such configurations dissipate. The
+ones that persist are those whose self-refraction loading matches the
+geometric curvature needed to maintain the closure (Appendix A0). This
+chapter does not address the self-consistency of the closure. It asks only
+what standing-wave organizations are allowed once a toroidal closure exists.
+
+A self-refracting closure must be a shape that admits continuous
 nowhere-vanishing tangential flow. A sphere does not: by the hairy ball
 theorem, no continuous nowhere-vanishing tangential vector field exists on a
 sphere. The simplest closed shape that can sustain such flow is a torus, a
@@ -63,13 +73,17 @@ $$
 $$
 
 This chapter needs only the geometric consequence: once self-refraction has
-produced a thin nearly uniform toroidal closure, the winding can be treated as
-approximately uniform.
+produced a toroidal closure, the winding can be treated as approximately
+uniform. The self-consistent aspect ratio of such a closure is derived in
+Appendix A0. The mode counting below does not depend on that ratio: the
+integer conditions are topological and hold for any aspect ratio. The
+separated wave equation used below omits curvature corrections that depend on
+the aspect ratio; these corrections shift the exact mode frequencies but do
+not change the integer counting (see Appendix A2 for the full toroidal
+Laplacian).
 
-At the level needed to count allowed standing closures, take a thin nearly
-uniform toroidal closure: the cross-sectional radius is approximately constant
-$r$, the centerline length is approximately constant
-$L=2\pi R$, and the winding angle $\beta$ is approximately constant along a
+Take a toroidal closure with cross-sectional radius $r$ and centerline length
+$L=2\pi R$, with the winding angle $\beta$ approximately constant along a
 closed streamline. If one such streamline winds $m$ times around the major
 cycle and $n$ times around the minor cycle before returning to itself, then
 
@@ -132,8 +146,10 @@ c^2\left(
 \right),
 $$
 
-with lower-order curvature terms omitted because they do not change the integer
-closure counting below.
+with curvature corrections omitted. These corrections, which depend on the
+aspect ratio $r/R$, shift the exact mode frequencies but do not affect the
+integer counting. The full toroidal wave equation with all curvature terms
+retained is treated in Appendix A2.
 
 Because the closure is self-consistent, the field must be periodic on both
 cycles:
