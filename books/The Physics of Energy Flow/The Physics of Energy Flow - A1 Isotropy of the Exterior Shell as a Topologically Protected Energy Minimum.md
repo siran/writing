@@ -20,6 +20,9 @@ keywords:
   - self-refraction
 ---
 
+> TO BE READ: rough AI draft pending detailed human review.
+
+
 # Appendix A1. Isotropy of the Exterior Shell as a Topologically Protected Energy Minimum
 
 Chapter 10 asserts that the exterior curl-flux of a net-chiral toroidal closure

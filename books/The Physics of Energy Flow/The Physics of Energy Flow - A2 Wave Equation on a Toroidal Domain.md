@@ -19,6 +19,8 @@ keywords:
   - wave equation
 ---
 
+> TO BE READ: rough AI draft pending detailed human review.
+
 
 # Appendix A2. Wave Equation on a Toroidal Domain
 

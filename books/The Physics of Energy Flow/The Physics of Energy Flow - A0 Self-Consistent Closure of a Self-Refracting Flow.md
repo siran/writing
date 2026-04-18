@@ -22,6 +22,8 @@ keywords:
   - self-consistency
 ---
 
+> TO BE READ: rough AI draft pending detailed human review.
+
 
 # Appendix A0. Self-Consistent Closure of a Self-Refracting Flow
 
