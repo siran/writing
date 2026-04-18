@@ -22,10 +22,25 @@ For two equal incident beams, the total incoming budget is
 
 $$ J_{\mathrm{in}} = 2u c. $$
 
-The tested hypothesis is that coherent overlap can compress the same incoming
-transport budget into fewer effective longitudinal channels. If the bright
-surviving channel recovers local loading $4u$, then the same
-incoming budget gives
+There are two distinct readings of the bright region.
+
+If it is read as a normalized surviving channel of density $2u$, then the full
+two-beam budget can continue at speed $c$:
+
+$$ J_{\mathrm{std}} = (2u)c = 2u c = J_{\mathrm{in}}. $$
+
+The tested hypothesis is the stronger identification: the transported branch is
+the raw bright-overlap peak, whose center recovers local loading
+
+$$ u_{\mathrm{raw,peak}} = 4u. $$
+
+If that raw bright peak also advanced at speed $c$, it would carry
+
+$$ J_{\mathrm{raw,peak}} = (4u)c = 4u c \gt J_{\mathrm{in}}. $$
+
+That would overcarry the available incoming budget and violate energy
+conservation. Under this identification the forward advance must therefore
+drop, so the same incoming budget gives
 
 $$ c_{\mathrm{eff}} = \frac{J_{\mathrm{in}}}{4u} = \frac{2u c}{4u} = \frac{c}{2}. $$
 
