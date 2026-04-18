@@ -35,7 +35,7 @@ $$ v_{\mathrm{fringe}} = v_{\mathrm{ref}} $$
 
 within experimental error. The tested alternative is
 
-$$ v_{\mathrm{fringe}} < v_{\mathrm{ref}}. $$
+$$ v_{\mathrm{fringe}} \lt v_{\mathrm{ref}}. $$
 
 
 ## Standard Optical Interference Theory Applied to the Proposal
@@ -46,7 +46,7 @@ This section does six things:
 2. derives the interference amplitude pattern on the observation plane,
 3. derives the transverse phase-gradient parameter $q(\theta)$ from the
    rejoining angle $\theta$,
-4. derives the fringe width and the $>3u$ observation window,
+4. derives the fringe width and the above-$3u$ observation window,
 5. states the one-way speed measurement by amplitude modulation,
 6. leaves the channel-unavailability interpretation to Appendix A.
 
@@ -149,7 +149,7 @@ the standard complementary $\cos^2/\sin^2$ way.
 
 To keep the sampled region above $3u(t)$, require
 
-$$ u_{\mathrm{raw}}(x,t) > 3u(t). $$
+$$ u_{\mathrm{raw}}(x,t) \gt 3u(t). $$
 
 Writing
 
@@ -157,19 +157,19 @@ $$ x=x_n+\Delta x, $$
 
 gives
 
-$$ 4u(t)\cos^2\left(\frac{q(\theta)\Delta x}{2}\right) > 3u(t), $$
+$$ 4u(t)\cos^2\left(\frac{q(\theta)\Delta x}{2}\right) \gt 3u(t), $$
 
 so
 
-$$ \cos^2\left(\frac{q(\theta)\Delta x}{2}\right) > \frac{3}{4}. $$
+$$ \cos^2\left(\frac{q(\theta)\Delta x}{2}\right) \gt \frac{3}{4}. $$
 
 Therefore
 
-$$ \left|\frac{q(\theta)\Delta x}{2}\right| < \frac{\pi}{6}, $$
+$$ \left|\frac{q(\theta)\Delta x}{2}\right| \lt \frac{\pi}{6}, $$
 
 hence
 
-$$ |\Delta x| < \frac{\pi}{3q(\theta)}. $$
+$$ |\Delta x| \lt \frac{\pi}{3q(\theta)}. $$
 
 The fringe period is
 
@@ -191,7 +191,7 @@ then
 
 $$ \Lambda \approx \frac{632.8\times10^{-9}}{2\times10^{-4}} \approx 3.16 \mathrm{mm}, $$
 
-so the $>3u(t)$ bright-core width is
+so the above-$3u(t)$ bright-core width is
 
 $$ \frac{\Lambda}{3} \approx 1.05 \mathrm{mm}. $$
 
@@ -264,7 +264,7 @@ $$ v_{\mathrm{fringe}}=v_{\mathrm{ref}} $$
 
 within experimental error. The tested alternative is
 
-$$ v_{\mathrm{fringe}}<v_{\mathrm{ref}}. $$
+$$ v_{\mathrm{fringe}} \lt v_{\mathrm{ref}}. $$
 
 
 ## Appendix A. Channel Energetic Unavailability
