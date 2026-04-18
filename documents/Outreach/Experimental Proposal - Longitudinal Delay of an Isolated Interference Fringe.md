@@ -7,34 +7,39 @@ date: 2026-04-16
 
 ## Goal
 
-Measure whether the center of a bright interference fringe propagates with a
-different longitudinal delay than one of the incident beams that forms it.
+Measure the center longitudinal delay profile of a fringe in a Mach-Zenhder
+interferometer.
 
 
-## Tested Hypothesis
+## Hypothesis being tested
 
-For a single beam of density $u$ advancing longitudinally at speed
-$c$, the flux is
+A single beam of local loading $u$ advancing longitudinally at speed $c$
+has forward flux
 
-$$ J_0 = u c. $$
+$$
+J_0 = u c
+$$
 
-For two equal incident beams, the total incoming budget is
+For two equal incident beams, the available incoming forward budget is
 
-$$ J_{\mathrm{in}} = 2u c. $$
+$$
+J_{\mathrm{in}} = 2u c
+$$
 
-There are two distinct readings of the bright region.
+The tested step is the same loaded-branch reading used in the dielectric
+argument: for a transported branch, the effective advance is set by the
+available forward flux divided by the recovered local loading,
 
-If it is read as a normalized surviving channel of density $2u$, then the full
-two-beam budget can continue at speed $c$:
+$$
+c_{\mathrm{eff}} = \frac{J}{u}
+$$
 
-$$ J_{\mathrm{std}} = (2u)c = 2u c = J_{\mathrm{in}}. $$
-
-The tested hypothesis is the stronger identification: the transported branch is
-the raw bright-overlap peak, whose center recovers local loading
+The nonstandard identification is that the isolated bright-core branch should
+be read as the raw overlap center. At the bright center,
 
 $$ u_{\mathrm{raw,peak}} = 4u. $$
 
-If that raw bright peak also advanced at speed $c$, it would carry
+If that identified branch also advanced at speed $c$, it would carry
 
 $$ J_{\mathrm{raw,peak}} = (4u)c = 4u c \gt J_{\mathrm{in}}. $$
 
@@ -43,6 +48,9 @@ conservation. Under this identification the forward advance must therefore
 drop, so the same incoming budget gives
 
 $$ c_{\mathrm{eff}} = \frac{J_{\mathrm{in}}}{4u} = \frac{2u c}{4u} = \frac{c}{2}. $$
+
+Standard optics does not make that raw-branch identification and therefore
+predicts no fringe-specific one-way speed change.
 
 Standard optics predicts no fringe-specific one-way speed change:
 
@@ -319,16 +327,17 @@ This proves the precise claim used by the proposal:
 - its energetic budget is not destroyed,
 - the full positive budget is recovered in the complementary surviving channel.
 
+
 This proves exact channel reduction, but not yet reduced propagation speed.
 
 If the surviving branch is read as the normalized Mach-Zehnder bright output,
-then its density is only $2|a|^2$ and it can carry the full two-beam budget at
-speed $c$ with no contradiction. The proposal's tested step is the stronger
-identification used in the main hypothesis block: the transported branch is the
-raw bright-overlap peak of density $4|a|^2$. Under that identification, letting
-it advance at speed $c$ would imply a carried flux larger than the available
-incoming budget, so reduced $c_{\mathrm{eff}}$ is required by conservation.
-
+then its density is only $2|a|^2$ and it can carry the full two-beam
+budget at speed $c$ with no contradiction. The proposal's tested
+step is the stronger identification used in the main hypothesis block: the
+transported branch is the raw bright-overlap peak of density $4|a|^2$.
+Under that identification, letting it advance at speed $c$ would
+imply a carried flux larger than the available incoming budget, so reduced
+$c_{\mathrm{eff}}$ is required by conservation.
 
 In this interpretation, a dark fringe is a self-cancelled local recovery
 channel, and the complementary bright fringe is the surviving compressed
