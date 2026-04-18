@@ -242,9 +242,12 @@ This appendix proves the following:
 - the raw coherent fringe has an exact density profile from $0$ to $4u_0$,
 - the fringe-period mean density is exactly $2u_0$,
 - the total forward flux projection is exactly $2u_0 c\cos\theta$,
+- the normalized complementary-output reading of a misaligned Mach-Zehnder has
+  bright density $2u_0$ and can therefore carry the full two-beam budget at
+  speed $c\cos\theta$ with no conservation conflict,
 - if the Chapter 7b loaded-branch law is applied locally to the surviving
-  bright parts of the fringe, the bright-fringe center carries the candidate
-  effective advance
+  raw $4u_0$ bright parts of the fringe, the bright-fringe center carries the
+  candidate effective advance
   $$
   c_{\mathrm{eff,peak}} = \frac{c\cos\theta}{2}.
   $$
@@ -415,5 +418,19 @@ So the misaligned Mach-Zehnder gives the complementary two-output version of
 the same redistribution picture: where one output is bright, the other is dark,
 and together they recover the full incoming budget.
 
+At the bright center of a normalized output branch,
+
+$$
+u_+(x)=2u_{\mathrm{arm}},
+$$
+
+so that branch can carry the full two-beam budget at the usual projected speed
+$c\cos\theta$ with no conservation conflict. This is the standard-optics null
+reading.
+
 The direct $0$ to $4u_0$ profile of Sections A3.1-A3.4 is the raw overlap
-picture before that normalized two-output projection is imposed.
+picture before that normalized two-output projection is imposed. The
+nonstandard transport hypothesis tested by the proposal is precisely that an
+isolated bright stripe should be read as that raw $4u_0$ branch rather than as
+the normalized $2u_0$ output channel. Only under that stronger identification
+does conservation force the reduced candidate $c_{\mathrm{eff}}$.

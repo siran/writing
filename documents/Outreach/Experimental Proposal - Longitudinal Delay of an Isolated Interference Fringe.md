@@ -319,6 +319,16 @@ This proves the precise claim used by the proposal:
 - its energetic budget is not destroyed,
 - the full positive budget is recovered in the complementary surviving channel.
 
+This proves exact channel reduction, but not yet reduced propagation speed.
+
+If the surviving branch is read as the normalized Mach-Zehnder bright output,
+then its density is only $2|a|^2$ and it can carry the full two-beam budget at
+speed $c$ with no contradiction. The proposal's tested step is the stronger
+identification used in the main hypothesis block: the transported branch is the
+raw bright-overlap peak of density $4|a|^2$. Under that identification, letting
+it advance at speed $c$ would imply a carried flux larger than the available
+incoming budget, so reduced $c_{\mathrm{eff}}$ is required by conservation.
+
 
 In this interpretation, a dark fringe is a self-cancelled local recovery
 channel, and the complementary bright fringe is the surviving compressed
