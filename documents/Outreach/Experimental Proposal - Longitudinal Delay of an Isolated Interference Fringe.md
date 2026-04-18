@@ -7,7 +7,7 @@ date: 2026-04-16
 
 ## Goal
 
-Measure the center longitudinal delay profile of a fringe in a Mach-Zenhder
+Measure the center longitudinal delay profile of a fringe in a Mach-Zehnder
 interferometer.
 
 
@@ -26,31 +26,49 @@ $$
 J_{\mathrm{in}} = 2u c
 $$
 
-The tested step is the same loaded-branch reading used in the dielectric
-argument: for a transported branch, the effective advance is set by the
-available forward flux divided by the recovered local loading,
+For any transported branch, forward flux is local loading times longitudinal
+advance,
+
+$$
+J = u\,c_{\mathrm{eff}}
+$$
+
+so for a fixed available forward budget the realized advance is
 
 $$
 c_{\mathrm{eff}} = \frac{J}{u}
 $$
 
-The nonstandard identification is that the isolated bright-core branch should
-be read as the raw overlap center. At the bright center,
+This is the same loaded-branch reading used in the dielectric argument: if the
+recovered local loading rises while the available forward budget does not, the
+realized advance must fall.
+
+The tested step here is to apply that same reading to the isolated
+bright-core branch. At the bright center,
 
 $$ u_{\mathrm{raw,peak}} = 4u. $$
 
-If that identified branch also advanced at speed $c$, it would carry
+If the available incoming forward budget remains
+
+$$
+J = J_{\mathrm{in}} = 2u c,
+$$
+
+then the branch law gives
+
+$$
+c_{\mathrm{eff}} = \frac{J_{\mathrm{in}}}{u_{\mathrm{raw,peak}}}
+= \frac{2u c}{4u}
+= \frac{c}{2}.
+$$
+
+Equivalently, if that identified branch instead advanced unchanged at speed
+$c$, it would carry
 
 $$ J_{\mathrm{raw,peak}} = (4u)c = 4u c \gt J_{\mathrm{in}}. $$
 
 That would overcarry the available incoming budget and violate energy
-conservation. Under this identification the forward advance must therefore
-drop, so the same incoming budget gives
-
-$$ c_{\mathrm{eff}} = \frac{J_{\mathrm{in}}}{4u} = \frac{2u c}{4u} = \frac{c}{2}. $$
-
-Standard optics does not make that raw-branch identification and therefore
-predicts no fringe-specific one-way speed change.
+conservation.
 
 Standard optics predicts no fringe-specific one-way speed change:
 
