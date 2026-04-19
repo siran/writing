@@ -13,8 +13,8 @@ interferometer.
 
 ## Hypothesis being tested
 
-A single beam of local loading $u$ advancing longitudinally at speed $c$
-has forward flux
+A single beam of local loading $u$ advancing longitudinally at
+speed $c$ has forward flux
 
 $$
 J_0 = u c
@@ -23,52 +23,70 @@ $$
 For two equal incident beams, the available incoming forward budget is
 
 $$
-J_{\mathrm{in}} = 2u c
+J_{\mathrm{in}} = 2u c.
 $$
 
-For any transported branch, forward flux is local loading times longitudinal
-advance,
+Conservation requires that the total outgoing forward budget equal the total
+incoming forward budget,
 
 $$
-J = u\,c_{\mathrm{eff}}
+J_{\mathrm{out}} = J_{\mathrm{in}} = 2u c.
 $$
 
-so for a fixed available forward budget the realized advance is
+Standard interference gives the raw local bright-fringe loading profile
 
 $$
-c_{\mathrm{eff}} = \frac{J}{u}
+u_{\mathrm{raw}}(x) = 4u \cos^2\!\left(\frac{q(x-x_0)}{2}\right),
 $$
 
-This is the same loaded-branch reading used in the dielectric argument: if the
-recovered local loading rises while the available forward budget does not, the
-realized advance must fall.
-
-The tested step here is to apply that same reading to the isolated
-bright-core branch. At the bright center,
-
-$$ u_{\mathrm{raw,peak}} = 4u. $$
-
-If the available incoming forward budget remains
+so across a single fringe
 
 $$
-J = J_{\mathrm{in}} = 2u c,
+0 \le u_{\mathrm{raw}}(x) \le 4u.
 $$
 
-then the branch law gives
+At the bright center $x=x_0$,
 
 $$
-c_{\mathrm{eff}} = \frac{J_{\mathrm{in}}}{u_{\mathrm{raw,peak}}}
-= \frac{2u c}{4u}
-= \frac{c}{2}.
+u_{\mathrm{raw,peak}} = 4u.
 $$
 
-Equivalently, if that identified branch instead advanced unchanged at speed
-$c$, it would carry
+The tested nonstandard step is to treat the isolated bright-core branch as the
+transported branch carrying the available outgoing budget.
 
-$$ J_{\mathrm{raw,peak}} = (4u)c = 4u c \gt J_{\mathrm{in}}. $$
+If that identified branch also advanced unchanged at speed $c$, then at the
+bright center it would carry
 
-That would overcarry the available incoming budget and violate energy
-conservation.
+$$
+J_{\mathrm{peak}} = u_{\mathrm{raw,peak}} c = (4u)c = 4u c,
+$$
+
+but the total available outgoing budget is only
+
+$$
+J_{\mathrm{out}} = 2u c.
+$$
+
+Therefore
+
+$$
+J_{\mathrm{peak}} = 4u c \gt 2u c = J_{\mathrm{out}},
+$$
+
+which is the contradiction: assigning the raw $4u$ bright center the unchanged
+speed $c$ would overcarry the available outgoing budget.
+
+Under this branch reading, the bright-core branch must instead satisfy
+
+$$
+u_{\mathrm{raw,peak}} c_{\mathrm{eff}} = J_{\mathrm{out}} = 2u c,
+$$
+
+and therefore
+
+$$
+c_{\mathrm{eff}} = \frac{2u c}{4u} = \frac{c}{2}.
+$$
 
 Standard optics predicts no fringe-specific one-way speed change:
 
