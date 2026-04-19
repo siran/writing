@@ -36,13 +36,66 @@ $$
 J_{\mathrm{in}}(x,y)=J_{\mathrm{out}}(x,y)=u_b(x,y)c.
 $$
 
-The nonstandard reading tested here is not the standard
-$u_b\cos^2/u_b\sin^2$ output split, but the raw overlap branch
+To describe the raw overlap before resolving it into the complementary output
+branches, write the two returned arm amplitudes as
+
+$$
+a_1(x,y)=\sqrt{\frac{u_b(x,y)}{2}}\,e^{i\phi_1(x,y)},\qquad
+a_2(x,y)=\sqrt{\frac{u_b(x,y)}{2}}\,e^{i\phi_2(x,y)},
+$$
+
+so that
+
+$$
+|a_1|^2=|a_2|^2=\frac{u_b}{2},
+\qquad
+\Delta\phi=\phi_1-\phi_2.
+$$
+
+The raw superposed amplitude is
+
+$$
+a_{\mathrm{raw}}=a_1+a_2,
+$$
+
+so its loading is
+
+$$
+u_{\mathrm{raw}}=|a_{\mathrm{raw}}|^2=|a_1+a_2|^2.
+$$
+
+Expanding,
+
+$$
+u_{\mathrm{raw}}
+=|a_1|^2+|a_2|^2+a_1a_2^*+a_1^*a_2
+=\frac{u_b}{2}+\frac{u_b}{2}+\frac{u_b}{2}e^{i\Delta\phi}+\frac{u_b}{2}e^{-i\Delta\phi}.
+$$
+
+Using
+
+$$
+e^{i\Delta\phi}+e^{-i\Delta\phi}=2\cos(\Delta\phi),
+$$
+
+this gives
 
 $$
 u_{\mathrm{raw}}(x,y)
-=2u_b(x,y)\cos^2\!\left(\frac{\Delta\phi(x,y)}{2}\right)
 =u_b(x,y)\bigl[1+\cos(\Delta\phi(x,y))\bigr].
+$$
+
+Finally, with
+
+$$
+1+\cos(\Delta\phi)=2\cos^2\!\left(\frac{\Delta\phi}{2}\right),
+$$
+
+we obtain
+
+$$
+u_{\mathrm{raw}}(x,y)
+=2u_b(x,y)\cos^2\!\left(\frac{\Delta\phi(x,y)}{2}\right).
 $$
 
 Therefore
