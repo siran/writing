@@ -13,52 +13,48 @@ Mach-Zehnder interferometer.
 
 ## Hypothesis being tested
 
-A single beam of local loading $u$ advancing longitudinally at
-speed $c$ has forward flux
+Let $u_b(x,y)$ be the total local recombination loading carried by the two
+returning arms just before the final beam splitter, and let
+$\Delta\phi(x,y)$ be their local phase difference.
+
+Standard Mach-Zehnder interferometry gives complementary output branches
 
 $$
-J_0 = u c
+u_+(x,y)=u_b(x,y)\cos^2\!\left(\frac{\Delta\phi(x,y)}{2}\right),\qquad
+u_-(x,y)=u_b(x,y)\sin^2\!\left(\frac{\Delta\phi(x,y)}{2}\right),
 $$
 
-For two equal incident beams, the available incoming forward budget is
+so
 
 $$
-J_{\mathrm{in}} = 2u c.
+u_+(x,y)+u_-(x,y)=u_b(x,y).
 $$
 
-Conservation requires that the total outgoing forward budget equal the total
-incoming forward budget,
+The available local forward budget at recombination is therefore
 
 $$
-J_{\mathrm{out}} = J_{\mathrm{in}} = 2u c.
+J_{\mathrm{in}}(x,y)=J_{\mathrm{out}}(x,y)=u_b(x,y)c.
 $$
 
-Standard interference gives the raw local bright-fringe loading profile
+The nonstandard reading tested here is not the standard
+$u_b\cos^2/u_b\sin^2$ output split, but the raw overlap branch
 
 $$
-u_{\mathrm{raw}}(x) = 4u \cos^2\!\left(\frac{q(x-x_0)}{2}\right),
+u_{\mathrm{raw}}(x,y)
+=2u_b(x,y)\cos^2\!\left(\frac{\Delta\phi(x,y)}{2}\right)
+=u_b(x,y)\bigl[1+\cos(\Delta\phi(x,y))\bigr].
 $$
 
-so across a single fringe
+Therefore
 
 $$
-0 \le u_{\mathrm{raw}}(x) \le 4u.
+0 \le u_{\mathrm{raw}}(x,y) \le 2u_b(x,y).
 $$
 
-At the bright center $x=x_0$,
+At a bright center, where $\Delta\phi=0$,
 
 $$
-u_{\mathrm{raw,peak}} = 4u.
-$$
-
-A more realistic Mach-Zehnder starts from one bounded laser beam that is split
-into two coherent arms at the first beam splitter. Let $u_b(x,y)$ be the
-single-arm loading profile on the observation plane, and let
-$\Delta\phi(x,y)$ be the local phase difference between the two returning arms.
-Then the exact raw overlap loading is
-
-$$
-u_{\mathrm{raw}}(x,y) = 4u_b(x,y)\cos^2\!\left(\frac{\Delta\phi(x,y)}{2}\right).
+u_{\mathrm{raw,peak}} = 2u_b.
 $$
 
 For any observation aperture $A$ in that plane, if the raw overlap pattern were
@@ -68,35 +64,21 @@ be
 $$
 \Phi_{\mathrm{peak}}(A)
 := c \iint_A u_{\mathrm{raw}}(x,y)\,dA
-= 4c \iint_A u_b(x,y)\cos^2\!\left(\frac{\Delta\phi(x,y)}{2}\right)dA.
-$$
-
-Using
-
-$$
-\cos^2\!\left(\frac{\Delta\phi}{2}\right)=\frac{1+\cos(\Delta\phi)}{2},
-$$
-
-this becomes
-
-$$
-\Phi_{\mathrm{peak}}(A)
-= 2c \iint_A u_b(x,y)\,[1+\cos(\Delta\phi(x,y))]\,dA.
+= c \iint_A u_b(x,y)\bigl[1+\cos(\Delta\phi(x,y))\bigr]\,dA.
 $$
 
 Over the same aperture, the exact available incoming two-beam throughput is
 
 $$
 \Phi_{\mathrm{in}}(A)
-:= \iint_A 2u_b(x,y)c\,dA
-= 2c \iint_A u_b(x,y)\,dA.
+:= c \iint_A u_b(x,y)\,dA.
 $$
 
 Therefore
 
 $$
 \Phi_{\mathrm{peak}}(A)-\Phi_{\mathrm{in}}(A)
-= 2c \iint_A u_b(x,y)\cos(\Delta\phi(x,y))\,dA.
+= c \iint_A u_b(x,y)\cos(\Delta\phi(x,y))\,dA.
 $$
 
 So for any isolated bright-core aperture on which $\cos(\Delta\phi)>0$
@@ -105,11 +87,36 @@ were assigned unchanged longitudinal speed $c$. This is the exact
 conservation-law contradiction in the finite-beam case. The strip and disk
 calculations below are explicit closed-form examples.
 
-In the plane-wave geometry adopted in the derivation section below, the fringes
-are straight ridges invariant in $y$, not circular rings. So the exact control
-volume for that model is a transverse strip. No approximation such as
-$\cos(\cdot)\approx 1$ or $\sin(\cdot)\approx(\cdot)$ is used in the following
-integrals.
+The pointwise bright-center limit gives
+
+$$
+J_{\mathrm{peak}} = u_{\mathrm{raw,peak}}c = (2u_b)c = 2u_b c \gt u_b c = J_{\mathrm{out}}.
+$$
+
+Under this branch reading, the bright-core branch must instead satisfy
+
+$$
+u_{\mathrm{raw,peak}} c_{\mathrm{eff}} = J_{\mathrm{out}} = u_b c,
+$$
+
+and therefore
+
+$$
+c_{\mathrm{eff}} = \frac{u_b c}{2u_b} = \frac{c}{2}.
+$$
+
+For explicit closed forms, the derivation section below specializes to equal
+plane-wave arms with single-arm loading $u$, so the total recombination loading
+is
+
+$$
+u_b = 2u.
+$$
+
+In that plane-wave specialization, the fringes are straight ridges invariant in
+$y$, not circular rings. So the exact control volume for that model is a
+transverse strip. No approximation such as $\cos(\cdot)\approx 1$ or
+$\sin(\cdot)\approx(\cdot)$ is used in the following integrals.
 
 Take a symmetric strip window
 
@@ -236,38 +243,13 @@ unavailable. Appendix A states that channel-unavailability argument
 explicitly.
 
 The pointwise center statement is the $\delta \to 0$ strip limit, or
-equivalently the $\rho \to 0$ disk limit, of the same comparison. If that
-surviving bright-core branch also advances unchanged at speed $c$, then at the
-bright center it would carry
+equivalently the $\rho \to 0$ disk limit, of the same comparison. In the
+plane-wave specialization $u_b=2u$, the generic bright-center relations reduce
+to
 
 $$
-J_{\mathrm{peak}} = u_{\mathrm{raw,peak}} c = (4u)c = 4u c,
-$$
-
-but the total available outgoing budget is only
-
-$$
-J_{\mathrm{out}} = 2u c.
-$$
-
-Therefore
-
-$$
-J_{\mathrm{peak}} = 4u c \gt 2u c = J_{\mathrm{out}},
-$$
-
-which is the contradiction: assigning the raw $4u$ bright center the
-unchanged speed $c$ would overcarry the available outgoing budget.
-
-Under this branch reading, the bright-core branch must instead satisfy
-
-$$
-u_{\mathrm{raw,peak}} c_{\mathrm{eff}} = J_{\mathrm{out}} = 2u c,
-$$
-
-and therefore
-
-$$
+u_{\mathrm{raw,peak}} = 4u,\qquad
+J_{\mathrm{out}} = 2u c,\qquad
 c_{\mathrm{eff}} = \frac{2u c}{4u} = \frac{c}{2}.
 $$
 
