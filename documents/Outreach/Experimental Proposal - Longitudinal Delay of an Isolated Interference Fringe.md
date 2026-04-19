@@ -51,9 +51,63 @@ $$
 u_{\mathrm{raw,peak}} = 4u.
 $$
 
-In the plane-wave geometry adopted below, the Mach-Zehnder fringes are straight
-ridges invariant in $y$, not circular rings. So the exact control volume for
-this model is a transverse strip. No approximation such as
+A more realistic Mach-Zehnder starts from one bounded laser beam that is split
+into two coherent arms at the first beam splitter. Let $u_b(x,y)$ be the
+single-arm loading profile on the observation plane, and let
+$\Delta\phi(x,y)$ be the local phase difference between the two returning arms.
+Then the exact raw overlap loading is
+
+$$
+u_{\mathrm{raw}}(x,y) = 4u_b(x,y)\cos^2\!\left(\frac{\Delta\phi(x,y)}{2}\right).
+$$
+
+For any observation aperture $A$ in that plane, if the raw overlap pattern were
+transported unchanged at speed $c$, the implied longitudinal throughput would
+be
+
+$$
+\Phi_{\mathrm{peak}}(A)
+:= c \iint_A u_{\mathrm{raw}}(x,y)\,dA
+= 4c \iint_A u_b(x,y)\cos^2\!\left(\frac{\Delta\phi(x,y)}{2}\right)dA.
+$$
+
+Using
+
+$$
+\cos^2\!\left(\frac{\Delta\phi}{2}\right)=\frac{1+\cos(\Delta\phi)}{2},
+$$
+
+this becomes
+
+$$
+\Phi_{\mathrm{peak}}(A)
+= 2c \iint_A u_b(x,y)\,[1+\cos(\Delta\phi(x,y))]\,dA.
+$$
+
+Over the same aperture, the exact available incoming two-beam throughput is
+
+$$
+\Phi_{\mathrm{in}}(A)
+:= \iint_A 2u_b(x,y)c\,dA
+= 2c \iint_A u_b(x,y)\,dA.
+$$
+
+Therefore
+
+$$
+\Phi_{\mathrm{peak}}(A)-\Phi_{\mathrm{in}}(A)
+= 2c \iint_A u_b(x,y)\cos(\Delta\phi(x,y))\,dA.
+$$
+
+So for any isolated bright-core aperture on which $\cos(\Delta\phi)>0$
+throughout, the raw-overlap profile would overcarry the available budget if it
+were assigned unchanged longitudinal speed $c$. This is the exact
+conservation-law contradiction in the finite-beam case. The strip and disk
+calculations below are explicit closed-form examples.
+
+In the plane-wave geometry adopted in the derivation section below, the fringes
+are straight ridges invariant in $y$, not circular rings. So the exact control
+volume for that model is a transverse strip. No approximation such as
 $\cos(\cdot)\approx 1$ or $\sin(\cdot)\approx(\cdot)$ is used in the following
 integrals.
 
