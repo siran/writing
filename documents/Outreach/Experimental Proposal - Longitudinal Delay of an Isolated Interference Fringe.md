@@ -51,15 +51,52 @@ $$
 u_{\mathrm{raw,peak}} = 4u.
 $$
 
-At the same transverse position, a bright center on one Mach-Zehnder output
-corresponds to a dark center on the complementary output. The nonstandard
-reading tested here is that opposite-phase overlap is locally equivalent to a
-bounce, so one recovery channel is energetically unavailable and the surviving
-bright-core branch carries the available outgoing budget. Appendix A states
-that channel-unavailability argument explicitly.
+Take a symmetric observation window
 
-If that surviving bright-core branch also advances unchanged at speed $c$, then
-at the bright center it would carry
+$$
+|x-x_0| \le \delta,
+$$
+
+with $0 \lt \delta \le \pi/q$, and measure longitudinal throughput per unit
+stripe height in the inert $y$ direction. If the raw bright profile were
+transported unchanged at speed $c$, the implied windowed throughput would be
+
+$$
+\Phi_{\mathrm{peak}}(\delta)
+:= c \int_{x_0-\delta}^{x_0+\delta} u_{\mathrm{raw}}(x)\,dx
+= 4u c\left(\delta + \frac{\sin(q\delta)}{q}\right).
+$$
+
+Over the same symmetric window, the available incoming two-beam throughput is
+
+$$
+\Phi_{\mathrm{in}}(\delta)
+:= \int_{x_0-\delta}^{x_0+\delta} 2u c\,dx
+= 4u c\,\delta.
+$$
+
+Therefore
+
+$$
+\Phi_{\mathrm{peak}}(\delta)-\Phi_{\mathrm{in}}(\delta)
+= \frac{4u c}{q}\sin(q\delta).
+$$
+
+For every proper bright-core window $0 \lt \delta \lt \pi/q$, this difference
+is positive. So the contradiction is not only pointwise at $x_0$: any isolated
+symmetric window around the bright center would overcarry the available budget
+if the raw $4u\cos^2$ profile were taken to move longitudinally at speed $c$.
+Only when the window expands to the full bright-to-dark cell $\delta=\pi/q$
+does the excess vanish.
+
+This is the nonstandard step tested here: the isolated bright-core branch is
+treated as the transported branch, with the complementary channel locally
+unavailable. Appendix A states that channel-unavailability argument
+explicitly.
+
+The pointwise center statement is the $\delta \to 0$ limit of the same
+comparison. If that surviving bright-core branch also advances unchanged at
+speed $c$, then at the bright center it would carry
 
 $$
 J_{\mathrm{peak}} = u_{\mathrm{raw,peak}} c = (4u)c = 4u c,
@@ -91,15 +128,6 @@ and therefore
 $$
 c_{\mathrm{eff}} = \frac{2u c}{4u} = \frac{c}{2}.
 $$
-
-Standard optics does not make that raw-branch identification and therefore
-predicts no fringe-specific one-way speed change:
-
-$$ v_{\mathrm{fringe}} = v_{\mathrm{ref}} $$
-
-within experimental error. The tested alternative is
-
-$$ v_{\mathrm{fringe}} \lt v_{\mathrm{ref}}. $$
 
 
 ## Standard Optical Interference Theory Applied to the Proposal
