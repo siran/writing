@@ -51,52 +51,140 @@ $$
 u_{\mathrm{raw,peak}} = 4u.
 $$
 
-Take a symmetric observation window
+In the plane-wave geometry adopted below, the Mach-Zehnder fringes are straight
+ridges invariant in $y$, not circular rings. So the exact control volume for
+this model is a transverse strip. No approximation such as
+$\cos(\cdot)\approx 1$ or $\sin(\cdot)\approx(\cdot)$ is used in the following
+integrals.
+
+Take a symmetric strip window
 
 $$
 |x-x_0| \le \delta,
 $$
 
-with $0 \lt \delta \le \pi/q$, and measure longitudinal throughput per unit
-stripe height in the inert $y$ direction. If the raw bright profile were
-transported unchanged at speed $c$, the implied windowed throughput would be
+with $0 \lt \delta \le \pi/q$, and let $h$ be the sampled stripe height in the
+inert $y$ direction. If the raw bright profile were transported unchanged at
+speed $c$, the implied exact strip throughput would be
 
 $$
-\Phi_{\mathrm{peak}}(\delta)
-:= c \int_{x_0-\delta}^{x_0+\delta} u_{\mathrm{raw}}(x)\,dx
-= 4u c\left(\delta + \frac{\sin(q\delta)}{q}\right).
+\Phi_{\mathrm{peak}}^{\mathrm{strip}}(\delta;h)
+:= h c \int_{x_0-\delta}^{x_0+\delta} u_{\mathrm{raw}}(x)\,dx.
 $$
 
-Over the same symmetric window, the available incoming two-beam throughput is
+Using
 
 $$
-\Phi_{\mathrm{in}}(\delta)
-:= \int_{x_0-\delta}^{x_0+\delta} 2u c\,dx
-= 4u c\,\delta.
+\cos^2\!\left(\frac{q(x-x_0)}{2}\right)=\frac{1+\cos(q(x-x_0))}{2},
+$$
+
+this becomes
+
+$$
+\Phi_{\mathrm{peak}}^{\mathrm{strip}}(\delta;h)
+= 4u c h\left(\delta + \frac{\sin(q\delta)}{q}\right).
+$$
+
+Over the same strip, the available incoming two-beam throughput is exact
+because in this model the incoming two-beam loading is uniform and equal to
+$2u$:
+
+$$
+\Phi_{\mathrm{in}}^{\mathrm{strip}}(\delta;h)
+:= h \int_{x_0-\delta}^{x_0+\delta} 2u c\,dx
+= 4u c h\,\delta.
 $$
 
 Therefore
 
 $$
-\Phi_{\mathrm{peak}}(\delta)-\Phi_{\mathrm{in}}(\delta)
-= \frac{4u c}{q}\sin(q\delta).
+\Phi_{\mathrm{peak}}^{\mathrm{strip}}(\delta;h)
+- \Phi_{\mathrm{in}}^{\mathrm{strip}}(\delta;h)
+= \frac{4u c h}{q}\sin(q\delta).
 $$
 
-For every proper bright-core window $0 \lt \delta \lt \pi/q$, this difference
-is positive. So the contradiction is not only pointwise at $x_0$: any isolated
-symmetric window around the bright center would overcarry the available budget
-if the raw $4u\cos^2$ profile were taken to move longitudinally at speed $c$.
-Only when the window expands to the full bright-to-dark cell $\delta=\pi/q$
-does the excess vanish.
+For every proper bright-core strip $0 \lt \delta \lt \pi/q$, we have
+$0 \lt q\delta \lt \pi$, hence $\sin(q\delta)\gt 0$, so
+
+$$
+\Phi_{\mathrm{peak}}^{\mathrm{strip}}(\delta;h)
+\gt \Phi_{\mathrm{in}}^{\mathrm{strip}}(\delta;h).
+$$
+
+So in the adopted straight-fringe geometry, any isolated symmetric strip around
+the bright center would overcarry the available budget if the raw
+$4u\cos^2$ profile were taken to move longitudinally at speed $c$. The excess
+vanishes exactly only when the window expands to the full bright-to-dark cell
+$\delta=\pi/q$.
+
+If one instead prefers a circular aperture of radius $\rho$ centered on the
+bright point, write $\xi:=x-x_0$. Then the exact disk throughput is
+
+$$
+\Phi_{\mathrm{peak}}^{\mathrm{disk}}(\rho)
+:= c \iint_{(x-x_0)^2+y^2\le \rho^2} u_{\mathrm{raw}}(x)\,dA
+= 8u c \int_{-\rho}^{\rho} \sqrt{\rho^2-\xi^2}\cos^2\!\left(\frac{q\xi}{2}\right)d\xi.
+$$
+
+Using $\cos^2(q\xi/2)=(1+\cos(q\xi))/2$, this becomes
+
+$$
+\Phi_{\mathrm{peak}}^{\mathrm{disk}}(\rho)
+= 4u c \int_{-\rho}^{\rho} \sqrt{\rho^2-\xi^2}\,[1+\cos(q\xi)]\,d\xi.
+$$
+
+Now use the exact identities
+
+$$
+\int_{-\rho}^{\rho} \sqrt{\rho^2-\xi^2}\,d\xi = \frac{\pi\rho^2}{2},
+\qquad
+\int_{-\rho}^{\rho} \sqrt{\rho^2-\xi^2}\cos(q\xi)\,d\xi
+= \frac{\pi\rho}{q}J_1(q\rho),
+$$
+
+where $J_1$ is the Bessel function of the first kind. Therefore
+
+$$
+\Phi_{\mathrm{peak}}^{\mathrm{disk}}(\rho)
+= 2\pi u c\,\rho^2 + \frac{4\pi u c\,\rho}{q}J_1(q\rho).
+$$
+
+Over the same disk, the available incoming throughput is
+
+$$
+\Phi_{\mathrm{in}}^{\mathrm{disk}}(\rho)
+= 2u c\,(\pi \rho^2)
+= 2\pi u c\,\rho^2.
+$$
+
+Therefore
+
+$$
+\Phi_{\mathrm{peak}}^{\mathrm{disk}}(\rho)
+- \Phi_{\mathrm{in}}^{\mathrm{disk}}(\rho)
+= \frac{4\pi u c\,\rho}{q}J_1(q\rho).
+$$
+
+Since $J_1(x)\gt 0$ for $0 \lt x \lt j_{1,1}\approx 3.8317$, every proper
+bright-core disk with $0 \lt \rho \lt \pi/q$ also satisfies
+
+$$
+\Phi_{\mathrm{peak}}^{\mathrm{disk}}(\rho)
+\gt \Phi_{\mathrm{in}}^{\mathrm{disk}}(\rho),
+$$
+
+because $\pi \lt j_{1,1}$. So the contradiction survives exact circular-aperture
+integration as well.
 
 This is the nonstandard step tested here: the isolated bright-core branch is
 treated as the transported branch, with the complementary channel locally
 unavailable. Appendix A states that channel-unavailability argument
 explicitly.
 
-The pointwise center statement is the $\delta \to 0$ limit of the same
-comparison. If that surviving bright-core branch also advances unchanged at
-speed $c$, then at the bright center it would carry
+The pointwise center statement is the $\delta \to 0$ strip limit, or
+equivalently the $\rho \to 0$ disk limit, of the same comparison. If that
+surviving bright-core branch also advances unchanged at speed $c$, then at the
+bright center it would carry
 
 $$
 J_{\mathrm{peak}} = u_{\mathrm{raw,peak}} c = (4u)c = 4u c,
