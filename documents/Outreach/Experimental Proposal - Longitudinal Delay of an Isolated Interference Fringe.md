@@ -7,8 +7,8 @@ date: 2026-04-16
 
 ## Goal
 
-Measure the center longitudinal delay profile of a fringe in a Mach-Zehnder
-interferometer.
+Measure the longitudinal delay of the center of an isolated bright fringe in a
+Mach-Zehnder interferometer.
 
 
 ## Hypothesis being tested
@@ -51,11 +51,15 @@ $$
 u_{\mathrm{raw,peak}} = 4u.
 $$
 
-The tested nonstandard step is to treat the isolated bright-core branch as the
-transported branch carrying the available outgoing budget.
+At the same transverse position, a bright center on one Mach-Zehnder output
+corresponds to a dark center on the complementary output. The nonstandard
+reading tested here is that opposite-phase overlap is locally equivalent to a
+bounce, so one recovery channel is energetically unavailable and the surviving
+bright-core branch carries the available outgoing budget. Appendix A states
+that channel-unavailability argument explicitly.
 
-If that identified branch also advanced unchanged at speed $c$, then at the
-bright center it would carry
+If that surviving bright-core branch also advances unchanged at speed $c$, then
+at the bright center it would carry
 
 $$
 J_{\mathrm{peak}} = u_{\mathrm{raw,peak}} c = (4u)c = 4u c,
@@ -73,8 +77,8 @@ $$
 J_{\mathrm{peak}} = 4u c \gt 2u c = J_{\mathrm{out}},
 $$
 
-which is the contradiction: assigning the raw $4u$ bright center the unchanged
-speed $c$ would overcarry the available outgoing budget.
+which is the contradiction: assigning the raw $4u$ bright center the
+unchanged speed $c$ would overcarry the available outgoing budget.
 
 Under this branch reading, the bright-core branch must instead satisfy
 
@@ -88,7 +92,8 @@ $$
 c_{\mathrm{eff}} = \frac{2u c}{4u} = \frac{c}{2}.
 $$
 
-Standard optics predicts no fringe-specific one-way speed change:
+Standard optics does not make that raw-branch identification and therefore
+predicts no fringe-specific one-way speed change:
 
 $$ v_{\mathrm{fringe}} = v_{\mathrm{ref}} $$
 
