@@ -16,6 +16,10 @@ Mach-Zehnder interferometer.
 Let $u_{\mathrm{in}}(x,y)$ be the incident energy density at the first beam
 splitter. For an ideal 50/50 splitter, the incident amplitude is divided as
 
+Because energy density is quadratic in field amplitude, dividing the energy
+equally between two arm channels requires each arm amplitude to fall by a
+factor $1/\sqrt{2}$ rather than $1/2$.
+
 $$
 a_{\mathrm{in}} \longrightarrow
 a_1=\frac{a_{\mathrm{in}}}{\sqrt{2}},\qquad
