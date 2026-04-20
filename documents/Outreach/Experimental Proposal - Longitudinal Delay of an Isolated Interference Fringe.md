@@ -13,13 +13,52 @@ Mach-Zehnder interferometer.
 
 ## Hypothesis being tested
 
-Let $u_b(x,y)$ be the total local recombination energy density carried by the two
-returning arms just before the final beam splitter, and let
+Let $u_{\mathrm{in}}(x,y)$ be the incident energy density at the first beam
+splitter. For an ideal 50/50 splitter, the incident amplitude is divided as
+
+$$
+a_{\mathrm{in}} \longrightarrow
+a_1=\frac{a_{\mathrm{in}}}{\sqrt{2}},\qquad
+a_2=\frac{i\,a_{\mathrm{in}}}{\sqrt{2}},
+$$
+
+so the two arm channels carry
+
+$$
+|a_1|^2=|a_2|^2=\frac{u_{\mathrm{in}}}{2}.
+$$
+
+If each arm still propagates at speed $c$, then
+
+$$
+J_1=\frac{u_{\mathrm{in}}c}{2},\qquad
+J_2=\frac{u_{\mathrm{in}}c}{2},
+$$
+
+and therefore
+
+$$
+J_1+J_2=u_{\mathrm{in}}c.
+$$
+
+So the first beam splitter is the decompression step: **one** incident channel
+becomes **two** arm channels, each with half the incident energy density, while
+the total energy flux is conserved.
+
+Let $u_b(x,y)$ be the total local recombination energy density carried by the
+two returning arms just before the final beam splitter, and let
 $\Delta\phi(x,y)$ be their local phase difference.
 
-Standard Mach-Zehnder interferometry recovers the total energy originally
-carried by the **two** distinct input beams as **one** recovered
-output-channel energy flux distributed across the two output arms:
+For an ideal lossless interferometer, the recombination energy density equals
+the incident one:
+
+$$
+u_b(x,y)=u_{\mathrm{in}}(x,y).
+$$
+
+Standard Mach-Zehnder interferometry then recovers the total energy carried by
+the **two** returned arm channels as **one** recovered output-channel energy
+flux distributed across the two output arms:
 
 $$
 u_+(x,y)=u_b(x,y)\cos^2\!\left(\frac{\Delta\phi(x,y)}{2}\right),\qquad
@@ -32,9 +71,9 @@ $$
 u_+(x,y)+u_-(x,y)=u_b(x,y).
 $$
 
-So the $\sin^2+\cos^2=1$ decomposition means that the total incoming energy
-flux is recovered as **one** conserved output-channel energy flux, spatially distributed
-across the two output arms of the Mach-Zehnder recombination.
+So the $\sin^2+\cos^2=1$ decomposition means that the total returned arm energy
+flux is recovered as **one** conserved output-channel energy flux, spatially
+distributed across the two output arms of the Mach-Zehnder recombination.
 
 The available local forward energy flux of that recovered output-channel
 energy flux is
