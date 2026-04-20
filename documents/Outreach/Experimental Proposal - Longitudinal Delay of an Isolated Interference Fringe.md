@@ -17,7 +17,9 @@ Let $u_b(x,y)$ be the total local recombination loading carried by the two
 returning arms just before the final beam splitter, and let
 $\Delta\phi(x,y)$ be their local phase difference.
 
-Standard Mach-Zehnder interferometry gives complementary output branches
+Standard Mach-Zehnder interferometry recovers the total budget originally
+carried by the **two** distinct input beams as **one** recovered
+output-channel budget distributed across the two output arms:
 
 $$
 u_+(x,y)=u_b(x,y)\cos^2\!\left(\frac{\Delta\phi(x,y)}{2}\right),\qquad
@@ -30,14 +32,20 @@ $$
 u_+(x,y)+u_-(x,y)=u_b(x,y).
 $$
 
-The available local forward budget at recombination is therefore
+So the $\sin^2+\cos^2=1$ decomposition means that the total incoming budget is
+recovered as **one** conserved output-channel budget, spatially distributed
+across the two output arms of the Mach-Zehnder recombination.
+
+The available local forward budget of that recovered output-channel budget is
+therefore
 
 $$
 J_{\mathrm{in}}(x,y)=J_{\mathrm{out}}(x,y)=u_b(x,y)c.
 $$
 
-To describe the raw overlap before resolving it into the complementary output
-branches, write the two returned arm amplitudes as
+To describe the raw overlap corresponding to that same recovered
+output-channel budget before expressing it in the complementary
+$\cos^2/\sin^2$ arm decomposition, write the two returned arm amplitudes as
 
 $$
 a_1(x,y)=\sqrt{\frac{u_b(x,y)}{2}}\,e^{i\phi_1(x,y)},\qquad
