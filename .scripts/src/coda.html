@@ -30,10 +30,31 @@
         padding: 0 1.25rem;
         box-sizing: border-box;
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+        line-height: 1.4;
     }
 
     .md-container p {
-        margin: 0.6em 0;
+        margin: 0.3em 0;
+    }
+
+    code.math-inline {
+        font-family: monospace;
+        font-size: 0.9em;
+        background: rgba(0, 0, 0, 0.05);
+        padding: 0.05em 0.2em;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    pre.math-display {
+        font-family: monospace;
+        font-size: 0.9em;
+        background: rgba(0, 0, 0, 0.05);
+        padding: 0.4em 0.8em;
+        border-radius: 3px;
+        overflow-x: auto;
+        margin: 0.5em 0;
+        line-height: 1.4;
     }
 
     @media (max-width: 960px) {
@@ -182,6 +203,15 @@
             var normalizeTarget = function (value) {
                 return value.replace(/[ \t]*[\r\n]+[ \t]*/g, " ").trim();
             };
+
+            // Display math: $$...$$ (must run before inline $ to avoid double-match)
+            html = html.replace(/\$\$([\s\S]+?)\$\$/g, function (_m, inner) {
+                return '<pre class="math-display">$$' + inner + '$$</pre>';
+            });
+            // Inline math: $...$
+            html = html.replace(/(?<!\$)\$([^$\n]+?)\$(?!\$)/g, function (_m, inner) {
+                return '<code class="math-inline">$' + inner + '$</code>';
+            });
 
             // Markdown images: ![alt](url "optional title")
             // Run this BEFORE link conversion.
@@ -955,44 +985,6 @@
             document.addEventListener("DOMContentLoaded", run);
         } else {
             run();
-        }
-    })();
-</script>
-<script>
-    (function () {
-        try {
-            // Only load MathJax on mirrored markdown views (*.md.html)
-            var path = window.location.pathname || "";
-            if (!/\.md\.html$/i.test(path)) {
-                return;
-            }
-
-            // Avoid double-loading
-            if (window.MathJax) {
-                return;
-            }
-
-            // MathJax v3 configuration: $...$ and $$...$$
-            window.MathJax = {
-                tex: {
-                    inlineMath: [['$', '$'], ['\\(', '\\)']],
-                    displayMath: [['$$', '$$'], ['\\[', '\\]']]
-                },
-                options: {
-                    // Don't try to typeset inside code/pre etc.
-                    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-                },
-                svg: {
-                    fontCache: 'global'
-                }
-            };
-
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js';
-            document.head.appendChild(script);
-        } catch (e) {
-            // silent failure is fine here
         }
     })();
 </script>
