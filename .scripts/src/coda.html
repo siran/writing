@@ -30,32 +30,35 @@
         padding: 0 1.25rem;
         box-sizing: border-box;
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-        line-height: 1.4;
+        font-size: 17px;
+        line-height: 1.5;
+        white-space: normal;
     }
 
-    .md-container p {
-        margin: 0.3em 0;
+    /* Headings: block + proper sizes (overrides global inline-block/1em defaults) */
+    .md-container h1,
+    .md-container h2,
+    .md-container h3,
+    .md-container h4,
+    .md-container h5,
+    .md-container h6 {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.25em;
     }
+    .md-container h1 { font-size: 1.45em; margin-top: 1.4em; }
+    .md-container h2 { font-size: 1.18em; margin-top: 1.1em; }
+    .md-container h3 { font-size: 1.04em; margin-top: 0.9em; }
+    .md-container h4,
+    .md-container h5,
+    .md-container h6 { font-size: 1em; margin-top: 0.75em; }
 
-    code.math-inline {
-        font-family: monospace;
-        font-size: 0.9em;
-        background: rgba(0, 0, 0, 0.05);
-        padding: 0.05em 0.2em;
-        border-radius: 2px;
-        white-space: nowrap;
-    }
+    /* First heading at top of page: no extra top margin */
+    .md-container > h1:first-child,
+    .md-container > h2:first-child { margin-top: 0.4em; }
 
-    pre.math-display {
-        font-family: monospace;
-        font-size: 0.9em;
-        background: rgba(0, 0, 0, 0.05);
-        padding: 0.4em 0.8em;
-        border-radius: 3px;
-        overflow-x: auto;
-        margin: 0.5em 0;
-        line-height: 1.4;
-    }
+    .md-container p { margin: 0 0 0.5em 0; }
+    .md-container p:last-child { margin-bottom: 0; }
 
     @media (max-width: 960px) {
         .md-container {
@@ -204,15 +207,6 @@
                 return value.replace(/[ \t]*[\r\n]+[ \t]*/g, " ").trim();
             };
 
-            // Display math: $$...$$ (must run before inline $ to avoid double-match)
-            html = html.replace(/\$\$([\s\S]+?)\$\$/g, function (_m, inner) {
-                return '<pre class="math-display">$$' + inner + '$$</pre>';
-            });
-            // Inline math: $...$
-            html = html.replace(/(?<!\$)\$([^$\n]+?)\$(?!\$)/g, function (_m, inner) {
-                return '<code class="math-inline">$' + inner + '$</code>';
-            });
-
             // Markdown images: ![alt](url "optional title")
             // Run this BEFORE link conversion.
             html = html.replace(
@@ -242,6 +236,30 @@
             html = html.replace(/(^|\s)(https?:\/\/[^\s)]+)/g, '$1<a href="$2">$2</a>');
 
             document.body.innerHTML = html;
+
+            // Paragraph-wrap .md-container content so white-space:normal collapses
+            // blank lines cleanly. Block-level tags are passed through; runs of text
+            // lines are joined into <p> elements.
+            var mdc = document.querySelector('.md-container');
+            if (mdc) {
+                var BLOCK = /^<\s*\/?\s*(h[1-6]|p|pre|div|ul|ol|li|blockquote|hr|table|thead|tbody|tfoot|tr|th|td|figure|figcaption|section|article|header|footer|nav|aside|img)\b/i;
+                var clines = mdc.innerHTML.split('\n');
+                var cout = [];
+                var cbuf = [];
+                var flushC = function () {
+                    var t = cbuf.join(' ').trim();
+                    if (t) { cout.push('<p>' + t + '</p>'); }
+                    cbuf = [];
+                };
+                for (var ci = 0; ci < clines.length; ci++) {
+                    var cl = clines[ci].trim();
+                    if (!cl) { flushC(); }
+                    else if (BLOCK.test(cl)) { flushC(); cout.push(cl); }
+                    else { cbuf.push(cl); }
+                }
+                flushC();
+                mdc.innerHTML = cout.join('\n');
+            }
         } catch (e) { }
     })();
 </script>
@@ -986,5 +1004,39 @@
         } else {
             run();
         }
+    })();
+</script>
+<script>
+    (function () {
+        try {
+            // KaTeX: only on .md.html pages
+            var path = window.location.pathname || "";
+            if (!/\.md\.html$/i.test(path)) { return; }
+
+            var BASE = 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/';
+            var lnk = document.createElement('link');
+            lnk.rel = 'stylesheet';
+            lnk.href = BASE + 'katex.min.css';
+            document.head.appendChild(lnk);
+
+            function load(src, cb) {
+                var s = document.createElement('script');
+                s.src = src;
+                s.onload = cb;
+                document.head.appendChild(s);
+            }
+
+            load(BASE + 'katex.min.js', function () {
+                load(BASE + 'contrib/auto-render.min.js', function () {
+                    renderMathInElement(document.body, {
+                        delimiters: [
+                            { left: '$$', right: '$$', display: true },
+                            { left: '$',  right: '$',  display: false }
+                        ],
+                        throwOnError: false
+                    });
+                });
+            });
+        } catch (e) { }
     })();
 </script>
