@@ -1019,20 +1019,38 @@
             lnk.href = BASE + 'katex.min.css';
             document.head.appendChild(lnk);
 
-            // Intercept copy: replace every rendered math span with its LaTeX source.
+            // Walk a DOM node to plain text, preserving block-element newlines.
+            var BLOCK2 = /^(P|H[1-6]|BLOCKQUOTE|PRE)$/;
+            var BLOCK1 = /^(DIV|LI|TR|TH|TD|SECTION|ARTICLE|HEADER|FOOTER|NAV|ASIDE|FIGURE|FIGCAPTION)$/;
+            function nodeToText(root) {
+                var buf = [];
+                function walk(n) {
+                    if (n.nodeType === 3) { buf.push(n.nodeValue || ''); return; }
+                    if (n.nodeType !== 1) { return; }
+                    var tag = (n.tagName || '').toUpperCase();
+                    if (tag === 'BR') { buf.push('\n'); return; }
+                    for (var i = 0; i < n.childNodes.length; i++) { walk(n.childNodes[i]); }
+                    if (BLOCK2.test(tag)) { buf.push('\n\n'); }
+                    else if (BLOCK1.test(tag)) { buf.push('\n'); }
+                }
+                for (var i = 0; i < root.childNodes.length; i++) { walk(root.childNodes[i]); }
+                return buf.join('').replace(/\n{3,}/g, '\n\n').trim();
+            }
+
+            // Intercept copy: replace every rendered math span with its LaTeX source,
+            // then extract text with proper newlines.
             document.addEventListener('copy', function (e) {
                 var sel = window.getSelection();
                 if (!sel || sel.rangeCount === 0 || sel.isCollapsed) { return; }
                 var frag = sel.getRangeAt(0).cloneContents();
                 var mels = frag.querySelectorAll('[data-latex]');
-                if (!mels.length) { return; }
                 for (var i = 0; i < mels.length; i++) {
                     var mel = mels[i];
                     mel.parentNode.replaceChild(
                         document.createTextNode(mel.getAttribute('data-latex')), mel
                     );
                 }
-                var text = frag.textContent || '';
+                var text = nodeToText(frag);
                 if (!text) { return; }
                 e.clipboardData.setData('text/plain', text);
                 e.preventDefault();
