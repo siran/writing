@@ -1009,7 +1009,7 @@
 <script>
     (function () {
         try {
-            // KaTeX: only on .md.html pages
+            // KaTeX with copy-as-LaTeX: only on .md.html pages.
             var path = window.location.pathname || "";
             if (!/\.md\.html$/i.test(path)) { return; }
 
@@ -1019,23 +1019,104 @@
             lnk.href = BASE + 'katex.min.css';
             document.head.appendChild(lnk);
 
+            // Intercept copy: replace every rendered math span with its LaTeX source.
+            document.addEventListener('copy', function (e) {
+                var sel = window.getSelection();
+                if (!sel || sel.rangeCount === 0 || sel.isCollapsed) { return; }
+                var frag = sel.getRangeAt(0).cloneContents();
+                var mels = frag.querySelectorAll('[data-latex]');
+                if (!mels.length) { return; }
+                for (var i = 0; i < mels.length; i++) {
+                    var mel = mels[i];
+                    mel.parentNode.replaceChild(
+                        document.createTextNode(mel.getAttribute('data-latex')), mel
+                    );
+                }
+                var text = frag.textContent || '';
+                if (!text) { return; }
+                e.clipboardData.setData('text/plain', text);
+                e.preventDefault();
+            });
+
+            // Split a text string into alternating plain/math parts.
+            // $$ display math is detected before single $ inline math.
+            function splitMath(text) {
+                var parts = [];
+                var rem = text;
+                while (rem.length) {
+                    var di = rem.indexOf('$');
+                    if (di < 0) { parts.push({ math: false, text: rem }); break; }
+                    if (di > 0) {
+                        parts.push({ math: false, text: rem.slice(0, di) });
+                        rem = rem.slice(di);
+                        continue;
+                    }
+                    if (rem.slice(0, 2) === '$$') {
+                        var ci = rem.indexOf('$$', 2);
+                        if (ci < 0) { parts.push({ math: false, text: rem }); break; }
+                        parts.push({ math: true, display: true,
+                            src: rem.slice(0, ci + 2), inner: rem.slice(2, ci) });
+                        rem = rem.slice(ci + 2);
+                    } else {
+                        var ci2 = rem.indexOf('$', 1);
+                        if (ci2 < 0) { parts.push({ math: false, text: rem }); break; }
+                        parts.push({ math: true, display: false,
+                            src: rem.slice(0, ci2 + 1), inner: rem.slice(1, ci2) });
+                        rem = rem.slice(ci2 + 1);
+                    }
+                }
+                return parts;
+            }
+
+            // Walk text nodes in root, render math, store LaTeX in data-latex.
+            // Skips text inside code/pre/script/style.
+            function renderMathInContainer(root) {
+                var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+                var nodes = [];
+                while (walker.nextNode()) { nodes.push(walker.currentNode); }
+                nodes = nodes.filter(function (tn) {
+                    var p = tn.parentNode;
+                    while (p && p !== root) {
+                        if (/^(CODE|PRE|SCRIPT|STYLE)$/.test((p.tagName || '').toUpperCase())) {
+                            return false;
+                        }
+                        p = p.parentNode;
+                    }
+                    return true;
+                });
+                nodes.forEach(function (tn) {
+                    var text = tn.nodeValue || '';
+                    if (text.indexOf('$') < 0) { return; }
+                    var parts = splitMath(text);
+                    if (!parts.some(function (pt) { return pt.math; })) { return; }
+                    var frag = document.createDocumentFragment();
+                    parts.forEach(function (pt) {
+                        if (!pt.math) {
+                            if (pt.text) { frag.appendChild(document.createTextNode(pt.text)); }
+                        } else {
+                            var span = document.createElement('span');
+                            span.setAttribute('data-latex', pt.src);
+                            try {
+                                window.katex.render(pt.inner, span,
+                                    { displayMode: pt.display, throwOnError: false });
+                            } catch (_e) { span.textContent = pt.src; }
+                            frag.appendChild(span);
+                        }
+                    });
+                    tn.parentNode.replaceChild(frag, tn);
+                });
+            }
+
             function load(src, cb) {
                 var s = document.createElement('script');
-                s.src = src;
-                s.onload = cb;
+                s.src = src; s.onload = cb;
                 document.head.appendChild(s);
             }
 
+            // Load only katex.min.js (no auto-render needed).
             load(BASE + 'katex.min.js', function () {
-                load(BASE + 'contrib/auto-render.min.js', function () {
-                    renderMathInElement(document.body, {
-                        delimiters: [
-                            { left: '$$', right: '$$', display: true },
-                            { left: '$',  right: '$',  display: false }
-                        ],
-                        throwOnError: false
-                    });
-                });
+                var mdc = document.querySelector('.md-container');
+                if (mdc) { renderMathInContainer(mdc); }
             });
         } catch (e) { }
     })();
