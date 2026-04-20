@@ -13,13 +13,13 @@ Mach-Zehnder interferometer.
 
 ## Hypothesis being tested
 
-Let $u_b(x,y)$ be the total local recombination loading carried by the two
+Let $u_b(x,y)$ be the total local recombination energy density carried by the two
 returning arms just before the final beam splitter, and let
 $\Delta\phi(x,y)$ be their local phase difference.
 
-Standard Mach-Zehnder interferometry recovers the total budget originally
+Standard Mach-Zehnder interferometry recovers the total energy originally
 carried by the **two** distinct input beams as **one** recovered
-output-channel budget distributed across the two output arms:
+output-channel energy flux distributed across the two output arms:
 
 $$
 u_+(x,y)=u_b(x,y)\cos^2\!\left(\frac{\Delta\phi(x,y)}{2}\right),\qquad
@@ -32,11 +32,12 @@ $$
 u_+(x,y)+u_-(x,y)=u_b(x,y).
 $$
 
-So the $\sin^2+\cos^2=1$ decomposition means that the total incoming budget is
-recovered as **one** conserved output-channel budget, spatially distributed
+So the $\sin^2+\cos^2=1$ decomposition means that the total incoming energy
+flux is recovered as **one** conserved output-channel energy flux, spatially distributed
 across the two output arms of the Mach-Zehnder recombination.
 
-The available local forward budget of that recovered output-channel budget is
+The available local forward energy flux of that recovered output-channel
+energy flux is
 therefore
 
 $$
@@ -44,7 +45,7 @@ J_{\mathrm{in}}(x,y)=J_{\mathrm{out}}(x,y)=u_b(x,y)c.
 $$
 
 To describe the raw overlap corresponding to that same recovered
-output-channel budget before expressing it in the complementary
+output-channel energy flux before expressing it in the complementary
 $\cos^2/\sin^2$ arm decomposition, write the two returned arm amplitudes as
 
 $$
@@ -66,7 +67,7 @@ $$
 a_{\mathrm{raw}}=a_1+a_2,
 $$
 
-so its loading is
+so its energy density is
 
 $$
 u_{\mathrm{raw}}=|a_{\mathrm{raw}}|^2=|a_1+a_2|^2.
@@ -143,7 +144,7 @@ $$
 $$
 
 So for any isolated bright-core aperture on which $\cos(\Delta\phi)>0$
-throughout, the raw-overlap profile would overcarry the available budget if it
+throughout, the raw-overlap profile would overcarry the available energy flux if it
 were assigned unchanged longitudinal speed $c$. This is the exact
 conservation-law contradiction in the finite-beam case. The strip and disk
 calculations below are explicit closed-form examples.
@@ -166,8 +167,10 @@ $$
 c_{\mathrm{eff}} = \frac{u_b c}{2u_b} = \frac{c}{2}.
 $$
 
+Here $c_{\mathrm{eff}}$ is the effective longitudinal propagation speed.
+
 For explicit closed forms, the derivation section below specializes to equal
-plane-wave arms with single-arm loading $u$, so the total recombination loading
+plane-wave arms with single-arm energy density $u$, so the total recombination energy density
 is
 
 $$
@@ -208,7 +211,7 @@ $$
 $$
 
 Over the same strip, the available incoming two-beam throughput is exact
-because in this model the incoming two-beam loading is uniform and equal to
+because in this model the incoming two-beam energy density is uniform and equal to
 $2u$:
 
 $$
@@ -234,7 +237,7 @@ $$
 $$
 
 So in the adopted straight-fringe geometry, any isolated symmetric strip around
-the bright center would overcarry the available budget if the raw
+the bright center would overcarry the available energy flux if the raw
 $4u\cos^2$ profile were taken to move longitudinally at speed $c$. The excess
 vanishes exactly only when the window expands to the full bright-to-dark cell
 $\delta=\pi/q$.
@@ -473,7 +476,7 @@ so the above-$3u(t)$ bright-core width is
 $$ \frac{\Lambda}{3} \approx 1.05 \mathrm{mm}. $$
 
 If a detector or slit centered on the bright maximum has active width
-$a$, the worst-case sampled loading is
+$a$, the worst-case sampled energy density is
 
 $$ u_{\mathrm{edge}}(t) = 4u(t)\cos^2\left(\frac{\pi a}{2\Lambda}\right). $$
 
@@ -561,7 +564,7 @@ Then
 
 $$ u_+ + u_- = \frac{|a+b|^2 + |a-b|^2}{2} = |a|^2 + |b|^2. $$
 
-So the total budget is conserved exactly.
+So the total energy is conserved exactly.
 
 Now take equal-energy opposite-sign inputs:
 
@@ -578,20 +581,20 @@ $$ u_+ = 0, \qquad u_- = 2|a|^2. $$
 This proves the precise claim used by the proposal:
 
 - the cancelled channel is energetically unavailable,
-- its energetic budget is not destroyed,
-- the full positive budget is recovered in the complementary surviving channel.
+- its energy is not destroyed,
+- the full positive energy is recovered in the complementary surviving channel.
 
 
 This proves exact channel reduction, but not yet reduced propagation speed.
 
 If the surviving branch is read as the normalized Mach-Zehnder bright output,
 then its density is only $2|a|^2$ and it can carry the full two-beam
-budget at speed $c$ with no contradiction. The proposal's tested
+energy flux at speed $c$ with no contradiction. The proposal's tested
 step is the stronger identification used in the main hypothesis block: the
 transported branch is the raw bright-overlap peak of density $4|a|^2$.
 Under that identification, letting it advance at speed $c$ would
-imply a carried flux larger than the available incoming budget, so reduced
-$c_{\mathrm{eff}}$ is required by conservation.
+imply a carried flux larger than the available incoming energy flux, so reduced
+effective longitudinal propagation speed $c_{\mathrm{eff}}$ is required by conservation.
 
 In this interpretation, a dark fringe is a self-cancelled local recovery
 channel, and the complementary bright fringe is the surviving compressed
