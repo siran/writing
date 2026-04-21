@@ -247,7 +247,7 @@
                 var cout = [];
                 var cbuf = [];
                 var flushC = function () {
-                    var t = cbuf.join(' ').trim();
+                    var t = cbuf.join('\n').trim();
                     if (t) { cout.push('<p>' + t + '</p>'); }
                     cbuf = [];
                 };
