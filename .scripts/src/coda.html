@@ -1037,22 +1037,47 @@
                 return buf.join('').replace(/\n{3,}/g, '\n\n').trim();
             }
 
-            // Intercept copy: replace every rendered math span with its LaTeX source,
-            // then extract text with proper newlines.
+            // Intercept copy: set text/plain (LaTeX source) and text/html (MathML).
             document.addEventListener('copy', function (e) {
                 var sel = window.getSelection();
                 if (!sel || sel.rangeCount === 0 || sel.isCollapsed) { return; }
-                var frag = sel.getRangeAt(0).cloneContents();
-                var mels = frag.querySelectorAll('[data-latex]');
-                for (var i = 0; i < mels.length; i++) {
-                    var mel = mels[i];
-                    mel.parentNode.replaceChild(
-                        document.createTextNode(mel.getAttribute('data-latex')), mel
+                var range = sel.getRangeAt(0);
+
+                // text/plain: replace math spans with LaTeX source
+                var fragText = range.cloneContents();
+                var melsT = fragText.querySelectorAll('[data-latex]');
+                for (var i = 0; i < melsT.length; i++) {
+                    var mt = melsT[i];
+                    mt.parentNode.replaceChild(
+                        document.createTextNode(mt.getAttribute('data-latex')), mt
                     );
                 }
-                var text = nodeToText(frag);
+                var text = nodeToText(fragText);
                 if (!text) { return; }
+
+                // text/html: replace math spans with self-contained MathML
+                var fragHtml = range.cloneContents();
+                var melsH = fragHtml.querySelectorAll('[data-latex]');
+                for (var j = 0; j < melsH.length; j++) {
+                    var mh = melsH[j];
+                    var mathml = mh.getAttribute('data-mathml');
+                    if (mathml) {
+                        var tmp = document.createElement('span');
+                        tmp.innerHTML = mathml;
+                        var par = mh.parentNode;
+                        while (tmp.firstChild) { par.insertBefore(tmp.firstChild, mh); }
+                        par.removeChild(mh);
+                    } else {
+                        mh.parentNode.replaceChild(
+                            document.createTextNode(mh.getAttribute('data-latex') || ''), mh
+                        );
+                    }
+                }
+                var wrapDiv = document.createElement('div');
+                wrapDiv.appendChild(fragHtml);
+
                 e.clipboardData.setData('text/plain', text);
+                e.clipboardData.setData('text/html', wrapDiv.innerHTML);
                 e.preventDefault();
             });
 
@@ -1114,6 +1139,11 @@
                         } else {
                             var span = document.createElement('span');
                             span.setAttribute('data-latex', pt.src);
+                            try {
+                                span.setAttribute('data-mathml',
+                                    window.katex.renderToString(pt.inner,
+                                        { output: 'mathml', displayMode: pt.display, throwOnError: false }));
+                            } catch (_e2) { }
                             try {
                                 window.katex.render(pt.inner, span,
                                     { displayMode: pt.display, throwOnError: false });
