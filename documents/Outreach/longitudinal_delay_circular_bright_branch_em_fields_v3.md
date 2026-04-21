@@ -35,6 +35,13 @@ isolates a circular bright region, or a narrow annular bright ring, and measures
 its modulation delay over a known longitudinal distance against a reference
 beam.
 
+In a Mach-Zehnder there is a split phase and a recombination phase, and these
+are not the same spatial operation run backward. The first beam splitter sends
+one bright incident beam into two bright arm beams. Recombination instead
+recovers one coherent two-beam flux and only then distributes it across the
+complementary output arms. The loaded-branch question belongs to this
+recombination phase, not to the initial split.
+
 The standard expectation is that the selected bright region and the reference
 beam have the same propagation speed. The loaded-branch expectation uses the
 same electromagnetic loading effect as dielectric slowing: if the selected
@@ -166,6 +173,14 @@ $$
 No plane-wave approximation is required. No small-angle approximation is
 required. The formulas below may be evaluated using the measured beam profiles
 and measured phase difference.
+
+The Mach-Zehnder sequence is divided conceptually into two distinct phases. The
+first beam splitter is the **split phase**: one bright incident beam becomes
+two bright arm beams. The return overlap at the second beam splitter is the
+**recombination phase**: the two arm beams meet coherently and recover one
+two-beam flux before the ordinary lossless output decomposition is written.
+These phases are not the same spatial decomposition run backward, even though
+the interferometer is lossless overall.
 
 Two planes are distinguished throughout the proposal. Sections 4--9 describe
 the **overlap plane**, where the two returned fields are written as
