@@ -52,9 +52,11 @@ becomes **two** arm channels, the occupied propagation volume doubles, the
 energy density in each arm drops from $2u$ to $u$, and the total energy flux is
 unchanged.
 
-At recombination, the inverse channel count becomes available. Standard
-Mach-Zehnder interferometry distributes the recovered output-channel energy
-flux across the two output arms as
+Recombination is not the same spatial operation as the first beam splitter.
+At BS1, one bright incident beam is divided into two bright arm channels. At
+recombination, the two bright returned arm channels recover one coherent
+output-channel energy flux, and that single recovered flux is then
+distributed across the two output arms as
 
 $$
 u_+(x,y)=2u\cos^2\!\left(\frac{\Delta\phi(x,y)}{2}\right),\qquad
@@ -136,14 +138,31 @@ $$
 u_{\mathrm{raw,peak}} = 4u.
 $$
 
-So BS2 is the inverse of BS1 at the channel-count level:
+So the compression step is not the same spatial picture as the split step:
 
 $$
-2u \longrightarrow u+u \longrightarrow 4u,
+2u \longrightarrow u+u
+\qquad\text{at BS1,}
 $$
 
-where the first step is decompression into two arm channels and the second step
-is coherent recompression into the raw bright overlap.
+$$
+u+u \longrightarrow \text{one recovered output-channel flux}
+\qquad\text{at recombination.}
+$$
+
+The first map sends one bright incident beam into two bright arm channels. The
+second map does not produce two bright outputs of the same kind. Instead, the
+returned arm flux is recovered as one coherent output-channel flux, and the raw
+bright overlap reaches
+
+$$
+u_{\mathrm{raw,peak}}=4u.
+$$
+
+The two interfaces are therefore not symmetric as spatial decompositions:
+BS1 yields two bright arm beams, whereas recombination yields one coherent
+recovered output flux spatially distributed across the complementary
+$\sin^2/\cos^2$ output arms.
 
 The contradiction is not with energy conservation, which is assumed throughout.
 It is with forcing the isolated bright branch to keep the unchanged
