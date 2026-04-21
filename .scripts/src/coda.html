@@ -1037,7 +1037,83 @@
                 return buf.join('').replace(/\n{3,}/g, '\n\n').trim();
             }
 
-            // Intercept copy: set text/plain (LaTeX source) and text/html (MathML).
+            // Render the selection to a PNG blob via SVG <foreignObject>.
+            // Attaches a styled clone to the live document so getComputedStyle works,
+            // inlines those styles so the SVG is self-contained, then draws to canvas.
+            function selectionToPng(range, callback) {
+                try {
+                    var frag = range.cloneContents();
+                    var host = document.createElement('div');
+                    host.className = 'md-container';
+                    host.style.cssText = 'position:fixed;left:-99999px;top:0;background:white;' +
+                        'padding:14px;pointer-events:none;z-index:-9999;';
+                    var mdc = document.querySelector('.md-container');
+                    if (mdc) { host.style.width = Math.min(mdc.offsetWidth, 820) + 'px'; }
+                    host.appendChild(frag);
+                    document.body.appendChild(host);
+
+                    // Inline computed styles on every element so the SVG needs no stylesheet.
+                    var PROPS = ['display','position','top','left','right','bottom',
+                        'width','height','min-width','min-height',
+                        'font-family','font-size','font-style','font-weight',
+                        'line-height','letter-spacing','text-align','white-space',
+                        'vertical-align',
+                        'margin-top','margin-right','margin-bottom','margin-left',
+                        'padding-top','padding-right','padding-bottom','padding-left',
+                        'border-top','border-right','border-bottom','border-left',
+                        'color','background-color','overflow'];
+                    var hostEls = host.querySelectorAll('*');
+                    for (var i = 0; i < hostEls.length; i++) {
+                        var cs = window.getComputedStyle(hostEls[i]);
+                        var s = '';
+                        for (var k = 0; k < PROPS.length; k++) {
+                            var v = cs.getPropertyValue(PROPS[k]);
+                            if (v) {
+                                if (PROPS[k] === 'font-family') {
+                                    // Strip KaTeX fonts; fall back to system math fonts.
+                                    v = v.replace(/KaTeX_[A-Za-z0-9]+,?\s*/g, '').replace(/^,\s*/, '');
+                                    if (!v) { v = '"STIX Two Math","Cambria Math",serif'; }
+                                }
+                                s += PROPS[k] + ':' + v + ';';
+                            }
+                        }
+                        if (s) { hostEls[i].setAttribute('style', s); }
+                    }
+
+                    var W = host.scrollWidth + 28;
+                    var H = host.scrollHeight + 28;
+                    var inner = host.innerHTML;
+                    document.body.removeChild(host);
+
+                    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + W + '" height="' + H + '">' +
+                        '<foreignObject width="' + W + '" height="' + H + '">' +
+                        '<div xmlns="http://www.w3.org/1999/xhtml" ' +
+                        'style="background:white;padding:14px;box-sizing:border-box;width:' + W + 'px;">' +
+                        inner + '</div></foreignObject></svg>';
+
+                    var svgBlob = new Blob([svg], { type: 'image/svg+xml' });
+                    var url = URL.createObjectURL(svgBlob);
+                    var img = new Image();
+                    img.onload = function () {
+                        var dpr = Math.max(window.devicePixelRatio || 1, 2);
+                        var canvas = document.createElement('canvas');
+                        canvas.width = W * dpr;
+                        canvas.height = H * dpr;
+                        var ctx = canvas.getContext('2d');
+                        ctx.scale(dpr, dpr);
+                        ctx.fillStyle = '#ffffff';
+                        ctx.fillRect(0, 0, W, H);
+                        try { ctx.drawImage(img, 0, 0, W, H); } catch (_de) { }
+                        URL.revokeObjectURL(url);
+                        canvas.toBlob(callback, 'image/png');
+                    };
+                    img.onerror = function () { URL.revokeObjectURL(url); callback(null); };
+                    img.src = url;
+                } catch (_e) { callback(null); }
+            }
+
+            // Intercept copy: set text/plain (LaTeX) + text/html (MathML) synchronously
+            // as fallback, then upgrade to also include image/png via ClipboardItem API.
             document.addEventListener('copy', function (e) {
                 var sel = window.getSelection();
                 if (!sel || sel.rangeCount === 0 || sel.isCollapsed) { return; }
@@ -1075,10 +1151,24 @@
                 }
                 var wrapDiv = document.createElement('div');
                 wrapDiv.appendChild(fragHtml);
+                var htmlStr = wrapDiv.innerHTML;
 
+                // Synchronous fallback (works everywhere)
                 e.clipboardData.setData('text/plain', text);
-                e.clipboardData.setData('text/html', wrapDiv.innerHTML);
+                e.clipboardData.setData('text/html', htmlStr);
                 e.preventDefault();
+
+                // Async upgrade: add image/png so it pastes as rendered image in Gmail etc.
+                if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write) {
+                    selectionToPng(range, function (pngBlob) {
+                        var items = {
+                            'text/plain': new Blob([text], { type: 'text/plain' }),
+                            'text/html': new Blob([htmlStr], { type: 'text/html' })
+                        };
+                        if (pngBlob) { items['image/png'] = pngBlob; }
+                        navigator.clipboard.write([new ClipboardItem(items)]).catch(function () { });
+                    });
+                }
             });
 
             // Split a text string into alternating plain/math parts.
