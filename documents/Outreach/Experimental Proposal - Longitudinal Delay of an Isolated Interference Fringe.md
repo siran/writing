@@ -13,104 +13,90 @@ Mach-Zehnder interferometer.
 
 ## Hypothesis being tested
 
-Let $u_{\mathrm{in}}(x,y)$ be the incident energy density at the first beam
-splitter. For an ideal 50/50 splitter, the incident amplitude is divided as
-
-Because energy density is quadratic in field amplitude, dividing the energy
-equally between two arm channels requires each arm amplitude to fall by a
-factor $1/\sqrt{2}$ rather than $1/2$.
+Take one incident beam entering the first beam splitter with energy density
+$2u$. Over a propagation interval $\Delta t$ and transverse area $A$, the
+incident channel occupies volume
 
 $$
-a_{\mathrm{in}} \longrightarrow
-a_1=\frac{a_{\mathrm{in}}}{\sqrt{2}},\qquad
-a_2=\frac{i\,a_{\mathrm{in}}}{\sqrt{2}},
+V = A c \Delta t,
 $$
 
-so the two arm channels carry
+so the incident energy and energy flux are
 
 $$
-|a_1|^2=|a_2|^2=\frac{u_{\mathrm{in}}}{2}.
+E_{\mathrm{in}} = 2uV,\qquad J_{\mathrm{in}} = 2u c.
 $$
 
-If each arm still propagates at speed $c$, then
+At the first beam splitter, that one incident channel is divided into two arm
+channels of the same volume $V$. The total energy is split equally, so each arm
+carries
 
 $$
-J_1=\frac{u_{\mathrm{in}}c}{2},\qquad
-J_2=\frac{u_{\mathrm{in}}c}{2},
+E_1 = E_2 = uV,
 $$
 
-and therefore
+hence each arm has energy density $u$ and energy flux
 
 $$
-J_1+J_2=u_{\mathrm{in}}c.
+J_1 = J_2 = u c.
+$$
+
+Therefore
+
+$$
+2u c \longrightarrow u c + u c.
 $$
 
 So the first beam splitter is the decompression step: **one** incident channel
-becomes **two** arm channels, each with half the incident energy density, while
-the total energy flux is conserved.
+becomes **two** arm channels, the occupied propagation volume doubles, the
+energy density in each arm drops from $2u$ to $u$, and the total energy flux is
+unchanged.
 
-Let $u_b(x,y)$ be the total local recombination energy density carried by the
-two returning arms just before the final beam splitter, and let
-$\Delta\phi(x,y)$ be their local phase difference.
-
-For an ideal lossless interferometer, the recombination energy density equals
-the incident one:
+At recombination, the inverse channel count becomes available. Standard
+Mach-Zehnder interferometry distributes the recovered output-channel energy
+flux across the two output arms as
 
 $$
-u_b(x,y)=u_{\mathrm{in}}(x,y).
-$$
-
-Standard Mach-Zehnder interferometry then recovers the total energy carried by
-the **two** returned arm channels as **one** recovered output-channel energy
-flux distributed across the two output arms:
-
-$$
-u_+(x,y)=u_b(x,y)\cos^2\!\left(\frac{\Delta\phi(x,y)}{2}\right),\qquad
-u_-(x,y)=u_b(x,y)\sin^2\!\left(\frac{\Delta\phi(x,y)}{2}\right),
+u_+(x,y)=2u\cos^2\!\left(\frac{\Delta\phi(x,y)}{2}\right),\qquad
+u_-(x,y)=2u\sin^2\!\left(\frac{\Delta\phi(x,y)}{2}\right),
 $$
 
 so
 
 $$
-u_+(x,y)+u_-(x,y)=u_b(x,y).
+u_+(x,y)+u_-(x,y)=2u.
 $$
 
-So the $\sin^2+\cos^2=1$ decomposition means that the total returned arm energy
-flux is recovered as **one** conserved output-channel energy flux, spatially
-distributed across the two output arms of the Mach-Zehnder recombination.
-
-The available local forward energy flux of that recovered output-channel
-energy flux is
-therefore
+Thus the total returned arm energy flux is recovered as **one** conserved
+output-channel energy flux, spatially distributed across the two output arms of
+the Mach-Zehnder recombination:
 
 $$
-J_{\mathrm{in}}(x,y)=J_{\mathrm{out}}(x,y)=u_b(x,y)c.
+J_{\mathrm{out}} = 2u c.
 $$
 
-To describe the raw overlap corresponding to that same recovered
-output-channel energy flux before expressing it in the complementary
-$\cos^2/\sin^2$ arm decomposition, write the two returned arm amplitudes as
+To describe the raw overlap corresponding to that same recovered output-channel
+energy flux before expressing it in the complementary $\cos^2/\sin^2$ arm
+decomposition, write the two returned arm amplitudes as
 
 $$
-a_1(x,y)=\sqrt{\frac{u_b(x,y)}{2}}\,e^{i\phi_1(x,y)},\qquad
-a_2(x,y)=\sqrt{\frac{u_b(x,y)}{2}}\,e^{i\phi_2(x,y)},
+a_1(x,y)=\sqrt{u}\,e^{i\phi_1(x,y)},\qquad
+a_2(x,y)=\sqrt{u}\,e^{i\phi_2(x,y)},
 $$
 
-so that
+with
 
 $$
-|a_1|^2=|a_2|^2=\frac{u_b}{2},
-\qquad
 \Delta\phi=\phi_1-\phi_2.
 $$
 
-The raw superposed amplitude is
+Then the raw superposed amplitude is
 
 $$
 a_{\mathrm{raw}}=a_1+a_2,
 $$
 
-so its energy density is
+so the raw overlap energy density is
 
 $$
 u_{\mathrm{raw}}=|a_{\mathrm{raw}}|^2=|a_1+a_2|^2.
@@ -121,7 +107,7 @@ Expanding,
 $$
 u_{\mathrm{raw}}
 =|a_1|^2+|a_2|^2+a_1a_2^*+a_1^*a_2
-=\frac{u_b}{2}+\frac{u_b}{2}+\frac{u_b}{2}e^{i\Delta\phi}+\frac{u_b}{2}e^{-i\Delta\phi}.
+=u+u+u e^{i\Delta\phi}+u e^{-i\Delta\phi}.
 $$
 
 Using
@@ -134,95 +120,63 @@ this gives
 
 $$
 u_{\mathrm{raw}}(x,y)
-=u_b(x,y)\bigl[1+\cos(\Delta\phi(x,y))\bigr].
-$$
-
-Finally, with
-
-$$
-1+\cos(\Delta\phi)=2\cos^2\!\left(\frac{\Delta\phi}{2}\right),
-$$
-
-we obtain
-
-$$
-u_{\mathrm{raw}}(x,y)
-=2u_b(x,y)\cos^2\!\left(\frac{\Delta\phi(x,y)}{2}\right).
+=2u+2u\cos(\Delta\phi(x,y))
+=4u\cos^2\!\left(\frac{\Delta\phi(x,y)}{2}\right).
 $$
 
 Therefore
 
 $$
-0 \le u_{\mathrm{raw}}(x,y) \le 2u_b(x,y).
+0 \le u_{\mathrm{raw}}(x,y) \le 4u.
 $$
 
 At a bright center, where $\Delta\phi=0$,
 
 $$
-u_{\mathrm{raw,peak}} = 2u_b.
+u_{\mathrm{raw,peak}} = 4u.
 $$
 
-For any observation aperture $A$ in that plane, if the raw overlap pattern were
-transported unchanged at speed $c$, the implied longitudinal throughput would
-be
+So BS2 is the inverse of BS1 at the channel-count level:
 
 $$
-\Phi_{\mathrm{peak}}(A)
-:= c \iint_A u_{\mathrm{raw}}(x,y)\,dA
-= c \iint_A u_b(x,y)\bigl[1+\cos(\Delta\phi(x,y))\bigr]\,dA.
+2u \longrightarrow u+u \longrightarrow 4u,
 $$
 
-Over the same aperture, the exact available incoming two-beam throughput is
+where the first step is decompression into two arm channels and the second step
+is coherent recompression into the raw bright overlap.
+
+The contradiction is not with energy conservation, which is assumed throughout.
+It is with forcing the isolated bright branch to keep the unchanged
+longitudinal speed $c$. If that bright branch were assigned speed $c$, then at
+the bright center it would carry
 
 $$
-\Phi_{\mathrm{in}}(A)
-:= c \iint_A u_b(x,y)\,dA.
+J_{\mathrm{bright}} = 4u c,
 $$
 
-Therefore
+while the available recovered output-channel energy flux is only
 
 $$
-\Phi_{\mathrm{peak}}(A)-\Phi_{\mathrm{in}}(A)
-= c \iint_A u_b(x,y)\cos(\Delta\phi(x,y))\,dA.
+J_{\mathrm{out}} = 2u c.
 $$
 
-So for any isolated bright-core aperture on which $\cos(\Delta\phi)>0$
-throughout, the raw-overlap profile would overcarry the available energy flux if it
-were assigned unchanged longitudinal speed $c$. This is the exact
-conservation-law contradiction in the finite-beam case. The strip and disk
-calculations below are explicit closed-form examples.
-
-The pointwise bright-center limit gives
+Under this branch reading, conservation therefore requires
 
 $$
-J_{\mathrm{peak}} = u_{\mathrm{raw,peak}}c = (2u_b)c = 2u_b c \gt u_b c = J_{\mathrm{out}}.
+4u\,c_{\mathrm{eff}} = 2u c,
 $$
 
-Under this branch reading, the bright-core branch must instead satisfy
+and hence
 
 $$
-u_{\mathrm{raw,peak}} c_{\mathrm{eff}} = J_{\mathrm{out}} = u_b c,
-$$
-
-and therefore
-
-$$
-c_{\mathrm{eff}} = \frac{u_b c}{2u_b} = \frac{c}{2}.
+c_{\mathrm{eff}} = \frac{c}{2}.
 $$
 
 Here $c_{\mathrm{eff}}$ is the effective longitudinal propagation speed.
 
-For explicit closed forms, the derivation section below specializes to equal
-plane-wave arms with single-arm energy density $u$, so the total recombination energy density
-is
-
-$$
-u_b = 2u.
-$$
-
 In that plane-wave specialization, the fringes are straight ridges invariant in
-$y$, not circular rings. So the exact control volume for that model is a
-transverse strip. No approximation such as $\cos(\cdot)\approx 1$ or
+$y$, not circular rings. So the exact control volume for that model
+is a transverse strip. No approximation such as $\cos(\cdot)\approx 1$ or
 $\sin(\cdot)\approx(\cdot)$ is used in the following integrals.
 
 Take a symmetric strip window
@@ -231,9 +185,10 @@ $$
 |x-x_0| \le \delta,
 $$
 
-with $0 \lt \delta \le \pi/q$, and let $h$ be the sampled stripe height in the
-inert $y$ direction. If the raw bright profile were transported unchanged at
-speed $c$, the implied exact strip throughput would be
+with $0 \lt \delta \le \pi/q$, and let $h$ be the sampled stripe
+height in the inert $y$ direction. If the raw bright profile were
+transported unchanged at speed $c$, the implied exact strip
+throughput would be
 
 $$
 \Phi_{\mathrm{peak}}^{\mathrm{strip}}(\delta;h)
@@ -253,8 +208,8 @@ $$
 = 4u c h\left(\delta + \frac{\sin(q\delta)}{q}\right).
 $$
 
-Over the same strip, the available incoming two-beam throughput is exact
-because in this model the incoming two-beam energy density is uniform and equal to
+Over the same strip, the available incoming two-beam throughput is exact because
+in this model the incoming two-beam energy density is uniform and equal to
 $2u$:
 
 $$
@@ -281,12 +236,12 @@ $$
 
 So in the adopted straight-fringe geometry, any isolated symmetric strip around
 the bright center would overcarry the available energy flux if the raw
-$4u\cos^2$ profile were taken to move longitudinally at speed $c$. The excess
-vanishes exactly only when the window expands to the full bright-to-dark cell
-$\delta=\pi/q$.
+$4u\cos^2$ profile were taken to move longitudinally at speed
+$c$. The excess vanishes exactly only when the window expands to
+the full bright-to-dark cell $\delta=\pi/q$.
 
-If one instead prefers a circular aperture of radius $\rho$ centered on the
-bright point, write $\xi:=x-x_0$. Then the exact disk throughput is
+If one instead prefers a circular aperture of radius $\rho$ centered
+on the bright point, write $\xi:=x-x_0$. Then the exact disk throughput is
 
 $$
 \Phi_{\mathrm{peak}}^{\mathrm{disk}}(\rho)
@@ -346,13 +301,11 @@ integration as well.
 
 This is the nonstandard step tested here: the isolated bright-core branch is
 treated as the transported branch, with the complementary channel locally
-unavailable. Appendix A states that channel-unavailability argument
-explicitly.
+unavailable. Appendix A states that channel-unavailability argument explicitly.
 
 The pointwise center statement is the $\delta \to 0$ strip limit, or
 equivalently the $\rho \to 0$ disk limit, of the same comparison. In the
-plane-wave specialization $u_b=2u$, the generic bright-center relations reduce
-to
+plane-wave notation used here, the bright-center relations reduce to
 
 $$
 u_{\mathrm{raw,peak}} = 4u,\qquad
@@ -632,12 +585,13 @@ This proves exact channel reduction, but not yet reduced propagation speed.
 
 If the surviving branch is read as the normalized Mach-Zehnder bright output,
 then its density is only $2|a|^2$ and it can carry the full two-beam
-energy flux at speed $c$ with no contradiction. The proposal's tested
-step is the stronger identification used in the main hypothesis block: the
-transported branch is the raw bright-overlap peak of density $4|a|^2$.
-Under that identification, letting it advance at speed $c$ would
-imply a carried flux larger than the available incoming energy flux, so reduced
-effective longitudinal propagation speed $c_{\mathrm{eff}}$ is required by conservation.
+energy flux at speed $c$ with no contradiction. The proposal's
+tested step is the stronger identification used in the main hypothesis block:
+the transported branch is the raw bright-overlap peak of density
+$4|a|^2$. Under that identification, letting it advance at speed
+$c$ would imply a carried flux larger than the available incoming
+energy flux, so reduced effective longitudinal propagation speed
+$c_{\mathrm{eff}}$ is required by conservation.
 
 In this interpretation, a dark fringe is a self-cancelled local recovery
 channel, and the complementary bright fringe is the surviving compressed
