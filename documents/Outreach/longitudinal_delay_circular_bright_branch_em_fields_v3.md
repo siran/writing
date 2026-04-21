@@ -4,7 +4,7 @@ subtitle: "A time-of-flight test of loaded raw-overlap transport in circular opt
 author: "An M. Rodriguez"
 date: "2026-04-21"
 one-sentence-summary: "This proposal tests whether an isolated bright region of a circular interference pattern propagates at the ordinary reference speed or at a reduced speed set by its higher coherent energy density."
-summary: "Two coherent laser beams are recombined to produce circular fringes. Standard electromagnetic superposition gives bright regions where the electric and magnetic fields add and dark regions where they cancel, while the full pattern conserves the two-beam energy budget. The experiment isolates a bright circular region or annular ring and measures its modulation delay against a reference beam over the same longitudinal distance. Ordinary output transport predicts no delay difference. The loaded raw-overlap hypothesis predicts that if the bright region carries the conserved two-beam flux on a higher local energy density, its effective longitudinal advance is reduced according to v_eff = J/u. For equal local beam densities at a bright maximum on axis, the predicted speed is c/2."
+summary: "Two coherent laser beams are recombined to produce circular fringes. Standard electromagnetic superposition gives bright regions where the electric and magnetic fields add and dark regions where they cancel, while the full pattern conserves the two-beam flux. The experiment isolates a bright circular region or annular ring and measures its modulation delay against a reference beam over the same longitudinal distance. Ordinary output transport predicts no delay difference. The loaded raw-overlap reading uses the same electromagnetic loading effect as dielectric slowing: if the bright region carries the conserved two-beam flux on a higher local energy density, its effective longitudinal advance is reduced according to v_eff = J/u. For equal local beam densities at a bright maximum on axis, the predicted speed is c/2."
 keywords:
   - interference
   - circular fringes
@@ -13,7 +13,7 @@ keywords:
   - energy density
   - Poynting vector
   - coherent loading
-  - dielectric analogy
+  - dielectric loading
   - speed of light
   - time-of-flight
 ---
@@ -30,18 +30,18 @@ loading.
 Two coherent laser beams are recombined so that their wavefronts produce
 fringes. Standard interference gives a spatial redistribution of energy density:
 bright rings exceed the two-beam mean while neighboring dark rings fall below
-it, with the full pattern conserving the two-beam energy budget. The experiment
+it, with the full pattern conserving the two-beam flux. The experiment
 isolates a circular bright region, or a narrow annular bright ring, and measures
 its modulation delay over a known longitudinal distance against a reference
 beam.
 
 The standard expectation is that the selected bright region and the reference
-beam have the same propagation speed. The loaded-branch expectation is different
-(in analogy with dielectrics): if the selected bright region carries the
-available two-beam flux on a higher local energy density, then its effective
-longitudinal advance must be slower. For equal local beam densities at a bright
-maximum, the predicted speed is one half of the local available longitudinal
-transport speed.
+beam have the same propagation speed. The loaded-branch expectation uses the
+same electromagnetic loading effect as dielectric slowing: if the selected
+bright region carries the conserved two-beam flux on a higher local energy
+density, then its effective longitudinal advance must be slower. For equal
+local beam densities at a bright maximum, the predicted speed is one half of
+the local available longitudinal transport speed.
 
 The experiment is therefore a direct time-of-flight test between ordinary output
 transport and loaded raw-overlap transport.
@@ -99,18 +99,18 @@ the electromagnetic energy density is quadratic in the fields, the raw local
 energy density at an equal-beam bright maximum is four times the single-beam
 energy density.
 
-The recombined two-beam flux budget is the conserved flux of the two input
+The recombined two-beam flux is the conserved flux of the two input
 beams. After recombination, the full interference pattern conserves energy by
 distributing density into bright and dark regions: a bright fringe in one
 output corresponds symmetrically to a dark fringe in the other output.
 
-The proposal applies the same standard electromagnetic loading logic used in
-dielectric propagation to the case of two coherent beams fully overlapping in
-vacuum. The beam splitter only prepares the geometry, direction, and relative
-phase. At overlap, each beam is treated as a propagating electromagnetic field
-that acts as the coherent response seen by the other. Under that reading, the
-overlap is a loaded branch: the conserved two-beam longitudinal flux is carried
-on a higher local energy density, so the effective longitudinal transport speed
+The proposal applies the same electromagnetic loading effect that slows light
+in a dielectric to the case of two coherent beams fully overlapping in vacuum.
+The beam splitter only prepares the geometry, direction, and relative phase. At
+overlap, each beam is treated as a propagating electromagnetic field that acts
+as the coherent response seen by the other. Under that reading, the overlap is
+a loaded branch: the conserved two-beam longitudinal flux is carried on a
+higher local energy density, so the effective longitudinal transport speed
 follows from
 
 $$
@@ -178,7 +178,7 @@ included as the standard comparison.
 
 ---
 
-# 4. Beams Interference
+# 4. Electromagnetic Interference
 
 This section derives the local interference energy density using ordinary
 electric and magnetic fields, not a scalar shortcut.
@@ -637,8 +637,9 @@ $$
 $$
 
 Thus the standard post-overlap Poynting flux contains interference cross terms.
-Those cross terms are part of the ordinary-output reading discussed in Section
-10.
+Those cross terms belong to the standard electromagnetic description of the
+overlap field. Section 10 then gives the equivalent lossless output-mode
+decomposition.
 
 The loaded-branch test uses a different bookkeeping quantity: the conserved
 two-input longitudinal flux assigned to the selected branch. Define the
@@ -722,7 +723,7 @@ J_{1z}(\rho)+J_{2z}(\rho)
 }
 $$
 
-This is the flux budget used in the loaded raw-overlap law
+This is the conserved two-input flux used in the loaded raw-overlap law
 
 $$
 v_{\mathrm{eff}}=\frac{J}{u}.
@@ -802,7 +803,8 @@ u_1(\rho)+u_2(\rho)
 }
 $$
 
-This is the circular-fringe loaded-branch prediction using the conserved two-input flux budget.
+This is the circular-fringe loaded-branch prediction using the conserved
+two-input flux.
 
 It is written entirely in terms of measurable beam quantities:
 
@@ -1108,10 +1110,10 @@ circular bright region.
 
 # 12. Dielectric-Style Derivation of the Loaded-Branch Law
 
-Standard dielectric slowing is the template used here. In dielectric
-propagation, electromagnetic transport is slowed by field interaction with a
-response field carried by matter. The fringe-delay test applies that same
-electromagnetic loading logic to the simplest unbound case: two coherent light
+In a dielectric, electromagnetic transport is slowed because a given through
+flux is carried on a larger total energy density through interaction with the
+response field of matter. The fringe-delay test applies that same
+electromagnetic loading effect to the simplest unbound case: two coherent light
 fields fully overlapping in vacuum.
 
 The beam splitter itself is not the loading mechanism. It only prepares the
@@ -1562,7 +1564,7 @@ The standard prediction remains no density-dependent delay.
 
 Open the aperture to collect a complete bright-dark radial cell, or a
 sufficiently large balanced region. The sampled density approaches the two-beam
-budget.
+mean density.
 
 The loaded-branch anomaly should weaken or disappear under full-pattern
 averaging.
@@ -1795,7 +1797,7 @@ $$
 J_{iz}(\rho)=u_i(\rho)c\frac{a_i}{R_i(\rho)}.
 $$
 
-The loaded-branch aperture prediction, using the conserved two-input flux budget, is
+The loaded-branch aperture prediction, using the conserved two-input flux, is
 
 $$
 v_{\Omega}
