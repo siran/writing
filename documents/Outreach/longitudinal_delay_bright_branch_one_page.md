@@ -1,6 +1,19 @@
 ---
-title: Proposal - Longitudinal Delay of an Isolated Bright Interference Branch
-date: 2026-04-22
+title: "Longitudinal Delay of an Isolated Bright Interference Branch"
+subtitle: "A dielectric-first derivation and time-of-flight test in a Mach-Zehnder interferometer"
+author: "An M. Rodriguez"
+date: "2026-04-22"
+one-sentence-summary: "This proposal tests whether an isolated bright interference branch produced at Mach-Zehnder recombination propagates at the ordinary reference speed or at a reduced speed set by coherent electromagnetic loading."
+summary: "The document begins from the standard dielectric result that electromagnetic propagation slows when the electric and magnetic response increases the effective permittivity and permeability. It then asks whether the same loading structure appears when two coherent beams fully overlap during Mach-Zehnder recombination. The first beam splitter only creates two bright arm beams, while recombination is a different phase in which two populated arm states meet and are redistributed across the two output ports. Under the tested reading, each overlapping beam supplies the coherent response seen by the other, so equal-beam bright overlap doubles the fields, quadruples the instantaneous energy density at the bright center, and yields c_eff = c/2. The ordinary output reading instead assigns the bright output density 2u_0 and predicts no anomalous delay. The experiment isolates a bright branch and compares its modulation delay against a matched reference beam over the same longitudinal distance."
+keywords:
+  - interference
+  - Mach-Zehnder interferometer
+  - dielectric slowing
+  - coherent overlap
+  - energy density
+  - bright branch
+  - time-of-flight
+  - speed of light
 ---
 
 # Longitudinal Delay of an Isolated Bright Interference Branch
