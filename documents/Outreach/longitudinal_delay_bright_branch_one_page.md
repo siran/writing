@@ -4,12 +4,12 @@ subtitle: "A dielectric-first derivation and time-of-flight test in a Mach-Zehnd
 author: "An M. Rodriguez"
 date: "2026-04-22"
 one-sentence-summary: "An isolated bright interference branch produced at Mach-Zehnder recombination carries increased coherent energy density and therefore propagates more slowly than an ordinary reference beam."
-summary: "Electromagnetic propagation in a dielectric slows when the electric and magnetic response increases the effective permittivity and permeability. Full coherent overlap at Mach-Zehnder recombination has the same loading structure. The first beam splitter creates two bright arm beams, while recombination is a distinct phase in which two populated arm states meet and are redistributed across the two output ports. Each overlapping beam supplies the coherent response seen by the other, so equal-beam bright overlap doubles the fields, quadruples the instantaneous energy density at the bright center, and yields c_eff = c/2. The ordinary output reading instead assigns the bright output density 2u_0 and therefore gives no anomalous delay. Isolating a bright branch and comparing its modulation delay against a matched reference beam over the same longitudinal distance gives a direct time-of-flight discrimination between the two readings."
+summary: "Electromagnetic propagation in a dielectric slows when the electric and magnetic response increases the effective permittivity and permeability. Full coherent superposition at Mach-Zehnder recombination has the same loading structure. The first beam splitter creates two bright arm beams, while recombination is a distinct phase in which two populated arm states meet and are redistributed across the two output ports. Each beam supplies the coherent response seen by the other, so equal-beam constructive interference doubles the fields, quadruples the instantaneous energy density at the bright center, and yields c_eff = c/2. The ordinary output reading instead assigns the bright output density 2u_0 and therefore gives no anomalous delay. Isolating a bright branch and comparing its modulation delay against a matched reference beam over the same longitudinal distance gives a direct time-of-flight discrimination between the two readings."
 keywords:
   - interference
   - Mach-Zehnder interferometer
   - dielectric slowing
-  - coherent overlap
+  - constructive interference
   - energy density
   - bright branch
   - time-of-flight
@@ -30,15 +30,16 @@ c_{\mathrm{eff}}=\frac{1}{\sqrt{\varepsilon_{\mathrm{eff}}\mu_{\mathrm{eff}}}}
 =\frac{c}{n}.
 $$
 
-The same kind of slowdown follows when two coherent beams fully overlap in the
-recombination phase of a Mach-Zehnder interferometer. The first beam splitter
-only prepares two bright arm beams. The relevant step appears later, when those
-beams recombine. These are not the same spatial operation run backward (see
-Section 3).
+The same kind of slowdown follows when two coherent beams are brought into
+coherent superposition in the recombination phase of a Mach-Zehnder
+interferometer. The first beam splitter only prepares two bright arm beams. The
+relevant step appears later, when those beams recombine. These are not the
+same spatial operation run backward (see Section 3).
 
-If each overlapping beam is treated as the coherent electromagnetic response
-seen by the other, then equal-beam bright overlap doubles the fields, quadruples
-the instantaneous energy density, and gives the same reduced-speed result
+If each beam is treated as the coherent electromagnetic response seen by the
+other, then equal-beam constructive interference doubles the fields,
+quadruples the instantaneous energy density, and gives the same reduced-speed
+result
 
 $$
 c_{\mathrm{eff}}=\frac{c}{2}.
@@ -151,10 +152,10 @@ This is the standard reduced-speed result.
 
 ---
 
-## 2. Same Structure at Coherent Overlap
+## 2. Same Structure at Coherent Superposition
 
-The same electromagnetic loading structure appears when two coherent beams
-fully overlap in vacuum during recombination.
+The same electromagnetic loading structure appears when two coherent beams are
+coherently superposed in vacuum during recombination.
 
 Let one beam have fields
 
@@ -171,8 +172,8 @@ $$
 \mathbf H_2=k\mathbf H_1.
 $$
 
-Here the overlap is described in the same form as the dielectric case, but
-with the second coherent beam supplying the response sector. Define,
+Here the coherent superposition is described in the same form as the dielectric
+case, but with the second coherent beam supplying the response sector. Define,
 abbreviating *coherent* by the subscript $\mathrm{coh}$,
 
 $$
@@ -247,7 +248,7 @@ c_{\mathrm{eff}}
 =\frac{c}{1+k}.
 $$
 
-For equal coherent overlap,
+For equal beams at constructive interference,
 
 $$
 k=1,
@@ -259,7 +260,8 @@ $$
 c_{\mathrm{eff}}=\frac{c}{2}.
 $$
 
-At the bright center of the fringe, the overlap fields are
+At the bright center of the fringe, where the interference is constructive,
+the total fields are
 
 $$
 \mathbf E_{\mathrm{tot}}=2\mathbf E_1,
@@ -293,7 +295,7 @@ At the first beam splitter:
 
 - one bright incident beam becomes two bright arm beams
 - the purpose is to prepare coherent branches
-- no loaded overlap is being claimed
+- no loaded constructive-interference branch is being claimed
 
 At recombination:
 
@@ -466,11 +468,11 @@ $$
 c_{\mathrm{eff}}=\frac{c}{1+k}.
 $$
 
-### 6.2 Instantaneous Overlap Derivation
+### 6.2 Instantaneous Constructive-Interference Derivation
 
 No time averaging is needed for the basic bright-point argument.
 
-At a full bright overlap point for equal beams,
+At a full constructive-interference point for equal beams,
 
 $$
 \mathbf E_1(t)=\mathbf E_0(t),
@@ -542,7 +544,7 @@ $$
 c_{\mathrm{eff}}=\frac{c}{1+k}.
 $$
 
-For equal overlap, $k=1$, hence
+For equal beams at constructive interference, $k=1$, hence
 
 $$
 c_{\mathrm{eff}}=\frac{c}{2}.
@@ -556,7 +558,7 @@ This experiment tests which object should be treated as the propagating branch
 after recombination:
 
 - the ordinary normalized output mode
-- or the isolated raw bright overlap
+- or the isolated raw constructive-interference branch
 
 If the measured delay matches the reference, the ordinary reading wins. If the
 measured delay approaches the $c/2$ prediction in the equal-beam limit, the
