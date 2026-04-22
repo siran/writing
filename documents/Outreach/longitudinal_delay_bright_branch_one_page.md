@@ -7,29 +7,24 @@ date: 2026-04-22
 
 ## Abstract
 
-This proposal tests whether an isolated bright interference branch in a
-Mach-Zehnder interferometer propagates with the ordinary reference speed, or
-with a reduced effective longitudinal transport speed.
-
-The key physical point is that a Mach-Zehnder has two distinct phases:
-
-1. a split phase, where one bright input beam becomes two bright arm beams
-2. a recombination phase, where two coherent arm beams overlap and recover one
-   two-beam flux before the ordinary output decomposition is written
-
-These are not the same spatial operation run backward. The slowdown question
-belongs to the recombination phase.
-
-At a bright recombination point for two equal beams, the raw overlap fields
-double, so the instantaneous energy density is four times the single-beam
-density. But the conserved longitudinal flux feeding that point is only the sum
-of the two beam fluxes. Under the loaded-branch reading,
+This proposal begins from the standard result that light propagates more slowly
+in a dielectric because a given longitudinal flux is carried on a larger total
+energy density. In that form, the effective transport speed is
 
 $$
 v_{\mathrm{eff}}=\frac{J}{u}.
 $$
 
-So for equal beams on axis,
+The proposal then asks whether the same loading effect appears when two
+coherent beams fully overlap in the recombination phase of a Mach-Zehnder
+interferometer. The first beam splitter only prepares two bright arm beams. The
+slowdown question appears later, when those two beams recombine. These two
+phases are not the same spatial operation run backward.
+
+At a bright recombination point for two equal beams, the instantaneous overlap
+fields double, so the raw energy density is four times the single-beam density.
+But the conserved longitudinal flux feeding that point is only the sum of the
+two beam fluxes. Under the loaded-branch reading,
 
 $$
 J=2u_0c,
@@ -45,32 +40,56 @@ between these two readings.
 
 ---
 
-## 1. One-Page Statement
+## 1. Classic Dielectric Result
 
-Start with one input beam entering a Mach-Zehnder. At the first beam splitter,
-the beam is divided into two bright arm beams. Nothing unusual is being claimed
-there. The split phase simply prepares two coherent branches.
+In a transparent linear dielectric, standard electromagnetism gives the
+familiar reduced speed
 
-The question appears at recombination. Two coherent arm beams overlap. At a
-bright center, the electric and magnetic fields add before the density readout
-is taken. Because energy density is quadratic in the fields, the raw overlap
-density is larger than the density of either beam by itself.
+$$
+v_{\mathrm{dielectric}}=\frac{1}{\sqrt{\varepsilon\mu}}=\frac{c}{n}.
+$$
 
-For two equal beams at full bright overlap:
+The same result can be written in transport form:
+
+$$
+v_{\mathrm{eff}}=\frac{J}{u}.
+$$
+
+Here `J` is the longitudinal energy flux and `u` is the total electromagnetic
+energy density carried with the wave. The medium response increases the total
+carried energy density, so the same through-flux corresponds to a smaller
+transport speed. That is the standard starting point.
+
+---
+
+## 2. Same Logic at Coherent Overlap
+
+This proposal asks whether the same loading effect appears when two coherent
+beams fully overlap in vacuum during recombination.
+
+At a full bright overlap point, the electric and magnetic fields add before the
+energy-density readout is taken. For two equal beams,
+
+$$
+E_{\mathrm{raw}}=2E_0,
+\qquad
+B_{\mathrm{raw}}=2B_0.
+$$
+
+So the instantaneous raw energy density is
 
 $$
 u_{\mathrm{raw}}=4u_0.
 $$
 
-But the longitudinal flux feeding that bright region is only the sum of the two
-incoming beam fluxes:
+But the longitudinal flux feeding that bright point is only the sum of the two
+beam fluxes:
 
 $$
 J=2u_0c_z.
 $$
 
-If the isolated bright branch is treated as the transported branch, then the
-effective longitudinal transport speed is
+If the isolated bright branch is treated as the transported branch, then
 
 $$
 v_{\mathrm{eff}}=\frac{J}{u_{\mathrm{raw}}}
@@ -83,45 +102,6 @@ On axis, where `c_z=c`,
 $$
 v_{\mathrm{eff}}=\frac{c}{2}.
 $$
-
-So the experimental fork is:
-
-- ordinary output reading:
-  $$
-  v_{\mathrm{bright}}=v_{\mathrm{ref}}
-  $$
-- loaded raw-overlap reading:
-  $$
-  v_{\mathrm{bright}}=\frac{v_{\mathrm{ref}}}{2}
-  $$
-  in the equal-beam on-axis limit
-
-That prediction is large enough to be tested directly by modulation-delay
-measurement.
-
----
-
-## 2. Experimental Idea
-
-Use a coherent source, modulate it, split it into two arms, and recombine the
-arms so they form stable fringes. Then:
-
-1. isolate one bright branch with an aperture
-2. propagate that selected branch over distance `L`
-3. propagate a matched reference beam over the same distance
-4. compare delay slopes `d\tau/dL`
-
-The standard output reading predicts equal slopes. The loaded-branch reading
-predicts a larger slope for the bright branch.
-
-For the equal-beam on-axis limit,
-
-$$
-\tau_{\mathrm{bright}}-\tau_{\mathrm{ref}}\approx \frac{L}{c}.
-$$
-
-So at `1 m` the extra delay is about `3.34 ns`, and at `10 m` it is about
-`33.4 ns`.
 
 ---
 
@@ -149,7 +129,7 @@ split.
 
 ---
 
-## 4. Standard Output Reading
+## 4. Experimental Fork
 
 At a lossless 50/50 recombiner, the ordinary output fields are
 
@@ -161,7 +141,7 @@ $$
 
 and likewise for the magnetic fields.
 
-So for equal beams at a bright output point,
+So for equal beams at a bright output point, the standard output reading gives
 
 $$
 u_+=2u_0,
@@ -169,46 +149,66 @@ u_+=2u_0,
 u_-=0.
 $$
 
-This reading predicts no anomalous delay:
+Therefore the two readings are:
 
-$$
-v_{\mathrm{bright}}=v_{\mathrm{ref}}.
-$$
+- ordinary output reading:
+  $$
+  v_{\mathrm{bright}}=v_{\mathrm{ref}}
+  $$
+- loaded raw-overlap reading:
+  $$
+  v_{\mathrm{bright}}=\frac{v_{\mathrm{ref}}}{2}
+  $$
+  in the equal-beam on-axis limit
 
 ---
 
-## 5. Loaded Raw-Overlap Reading
+## 5. Experimental Idea
 
-The loaded reading uses the same electromagnetic loading effect as dielectric
-slowing, but now applied to full coherent overlap in vacuum. Each beam is
-treated as the coherent response seen by the other. The overlap branch carries
-the conserved two-beam flux on a higher local energy density, so
+Use a coherent source, modulate it, split it into two arms, and recombine the
+arms so they form stable fringes. Then:
 
-$$
-v_{\mathrm{eff}}=\frac{J}{u}.
-$$
+1. isolate one bright branch with an aperture
+2. propagate that selected branch over distance `L`
+3. propagate a matched reference beam over the same distance
+4. compare delay slopes `d\tau/dL`
 
-At equal-beam bright overlap,
+The standard output reading predicts equal slopes. The loaded-branch reading
+predicts a larger slope for the bright branch.
 
-$$
-J=2u_0c_z,
-\qquad
-u_{\mathrm{raw}}=4u_0,
-$$
-
-therefore
+For the equal-beam on-axis limit,
 
 $$
-v_{\mathrm{eff}}=\frac{c_z}{2}.
+\tau_{\mathrm{bright}}-\tau_{\mathrm{ref}}\approx \frac{L}{c}.
 $$
 
-This is the tested claim.
+So at `1 m` the extra delay is about `3.34 ns`, and at `10 m` it is about
+`33.4 ns`.
 
 ---
 
 ## 6. Detailed Derivation
 
-### 6.1 Instantaneous Bright-Point Density
+### 6.1 Dielectric Speed in Standard Form
+
+For a plane wave in a transparent linear dielectric,
+
+$$
+v=\frac{1}{\sqrt{\varepsilon\mu}}.
+$$
+
+This is the standard reduced propagation speed.
+
+The same result can be written in transport form as
+
+$$
+v_{\mathrm{eff}}=\frac{J}{u},
+$$
+
+where `J` is longitudinal energy flux and `u` is the total carried
+electromagnetic energy density.
+
+### 6.2 Instantaneous Bright-Point Density
 
 No time averaging is needed for the basic bright-point argument.
 
@@ -266,7 +266,7 @@ $$
 
 So the bright-point factor of four is already an instantaneous result.
 
-### 6.2 Local Longitudinal Flux
+### 6.3 Local Longitudinal Flux
 
 For a freely propagating beam in vacuum, or more generally in a transparent
 linear medium, the local longitudinal flux is
@@ -284,7 +284,7 @@ $$
 J=J_{1z}+J_{2z}=2u_0c_z.
 $$
 
-### 6.3 Loaded-Branch Speed
+### 6.4 Loaded-Branch Speed
 
 Combining the two previous results,
 
