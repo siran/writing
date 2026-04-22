@@ -1,9 +1,9 @@
 ---
-title: Simplified Proposal - Longitudinal Delay of an Isolated Bright Interference Branch
+title: Proposal - Longitudinal Delay of an Isolated Bright Interference Branch
 date: 2026-04-22
 ---
 
-# Simplified Proposal
+# Longitudinal Delay of an Isolated Bright Interference Branch
 
 ## Abstract
 
@@ -336,6 +336,13 @@ which gives one bright output and one dark output. The optical element is the
 same, but the populated states are different, so the split and recombination
 phases are not the same spatial decomposition.
 
+This also explains why recombination still produces two spatially distributed
+output arms rather than a single merged beam. The recombiner is a two-port
+linear map: it sends the two incoming arm fields into the sum and difference
+output channels. Those channels emerge in different spatial directions, so the
+recovered field is written across two output arms even when one of them is dark
+at a bright point.
+
 So the slowdown question belongs to recombination, not to the initial split.
 
 ---
@@ -353,13 +360,13 @@ $$
 and likewise for the magnetic fields.
 
 Here "lossless" means the splitter is modeled as conserving total optical
-energy. Small real losses do not change the core result being tested, and in a
-well-aligned setup they are negligible compared with the claimed factor-of-two
-speed difference.
+energy, so all energy is accounted for across the two output arms. Small real
+losses do not change the core result being tested, and in a well-aligned setup
+they are negligible compared with the claimed factor-of-two speed difference.
 
 The factor $1/\sqrt 2$ appears because the splitter divides the incoming energy
 into two equal beams. Energy density is a positive quadratic quantity in the
-field amplitudes, so halving the energy means scaling the field amplitudes by
+field *amplitudes*, so halving the energy means scaling the field amplitudes by
 $1/\sqrt 2$, not by $1/2$. The same factor is written on both the electric and
 magnetic fields because they are modeled as vector fields and enter the
 electromagnetic energy density quadratically.
