@@ -3,8 +3,8 @@ title: "Longitudinal Delay of an Isolated Bright Interference Branch"
 subtitle: "A dielectric-first derivation and time-of-flight test in a Mach-Zehnder interferometer"
 author: "An M. Rodriguez"
 date: "2026-04-22"
-one-sentence-summary: "This proposal tests whether an isolated bright interference branch produced at Mach-Zehnder recombination propagates at the ordinary reference speed or at a reduced speed set by coherent electromagnetic loading."
-summary: "The document begins from the standard dielectric result that electromagnetic propagation slows when the electric and magnetic response increases the effective permittivity and permeability. It then asks whether the same loading structure appears when two coherent beams fully overlap during Mach-Zehnder recombination. The first beam splitter only creates two bright arm beams, while recombination is a different phase in which two populated arm states meet and are redistributed across the two output ports. Under the tested reading, each overlapping beam supplies the coherent response seen by the other, so equal-beam bright overlap doubles the fields, quadruples the instantaneous energy density at the bright center, and yields c_eff = c/2. The ordinary output reading instead assigns the bright output density 2u_0 and predicts no anomalous delay. The experiment isolates a bright branch and compares its modulation delay against a matched reference beam over the same longitudinal distance."
+one-sentence-summary: "An isolated bright interference branch produced at Mach-Zehnder recombination carries increased coherent energy density and therefore propagates more slowly than an ordinary reference beam."
+summary: "Electromagnetic propagation in a dielectric slows when the electric and magnetic response increases the effective permittivity and permeability. Full coherent overlap at Mach-Zehnder recombination has the same loading structure. The first beam splitter creates two bright arm beams, while recombination is a distinct phase in which two populated arm states meet and are redistributed across the two output ports. Each overlapping beam supplies the coherent response seen by the other, so equal-beam bright overlap doubles the fields, quadruples the instantaneous energy density at the bright center, and yields c_eff = c/2. The ordinary output reading instead assigns the bright output density 2u_0 and therefore gives no anomalous delay. Isolating a bright branch and comparing its modulation delay against a matched reference beam over the same longitudinal distance gives a direct time-of-flight discrimination between the two readings."
 keywords:
   - interference
   - Mach-Zehnder interferometer
@@ -20,21 +20,21 @@ keywords:
 
 ## Abstract
 
-This proposal begins from the standard result that light propagates more slowly
-in a transparent dielectric. In the usual electromagnetic description, the
-electric and magnetic response of the medium increases the effective
-permittivity and permeability, so the propagation speed becomes
+Light propagates more slowly in a transparent dielectric because the electric
+and magnetic response of the medium increases the effective permittivity and
+permeability. In the usual electromagnetic description, the propagation speed
+therefore becomes
 
 $$
 c_{\mathrm{eff}}=\frac{1}{\sqrt{\varepsilon_{\mathrm{eff}}\mu_{\mathrm{eff}}}}
 =\frac{c}{n}.
 $$
 
-The proposal then asks whether the same kind of slowdown appears when two
-coherent beams fully overlap in the recombination phase of a Mach-Zehnder
-interferometer. The first beam splitter only prepares two bright arm beams. The
-question appears later, when those beams recombine. These are not the same
-spatial operation run backward (see Section 3).
+The same kind of slowdown follows when two coherent beams fully overlap in the
+recombination phase of a Mach-Zehnder interferometer. The first beam splitter
+only prepares two bright arm beams. The relevant step appears later, when those
+beams recombine. These are not the same spatial operation run backward (see
+Section 3).
 
 If each overlapping beam is treated as the coherent electromagnetic response
 seen by the other, then equal-beam bright overlap doubles the fields, quadruples
@@ -45,7 +45,7 @@ c_{\mathrm{eff}}=\frac{c}{2}.
 $$
 
 The standard output reading instead assigns the bright output density $2u_0$
-and predicts no anomalous delay. The experiment is therefore a direct
+and therefore gives no anomalous delay. The experiment is a direct
 time-of-flight test between these two readings.
 
 ---
@@ -153,8 +153,8 @@ This is the standard reduced-speed result.
 
 ## 2. Same Structure at Coherent Overlap
 
-The proposal asks whether the same electromagnetic loading structure appears
-when two coherent beams fully overlap in vacuum during recombination.
+The same electromagnetic loading structure appears when two coherent beams
+fully overlap in vacuum during recombination.
 
 Let one beam have fields
 
@@ -171,9 +171,9 @@ $$
 \mathbf H_2=k\mathbf H_1.
 $$
 
-Under the tested reading, the overlap is described in the same form as the
-dielectric case, but with the second coherent beam supplying the response
-sector. Define, abbreviating *coherent* by the subscript $\mathrm{coh}$,
+Here the overlap is described in the same form as the dielectric case, but
+with the second coherent beam supplying the response sector. Define,
+abbreviating *coherent* by the subscript $\mathrm{coh}$,
 
 $$
 \mathbf D_{\mathrm{coh}}
