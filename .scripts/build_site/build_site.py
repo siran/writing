@@ -2063,11 +2063,6 @@ def _format_dir_index_common(
                     prov_path = it.path.parent / "provenance.yaml"
                     if prov_path.exists():
                         pdf_url = _provenance_pdf_url(prov_path)
-                    else:
-                        pdf_url = (
-                            f"https://github.com/{OWNER}/{REPO}/blob/"
-                            f"{BRANCH}/{gh_path}"
-                        )
                     if pdf_url:
                         extra.append(f'<a href="{html.escape(pdf_url, quote=True)}">pdf</a>')
                 if gh_url:
