@@ -31,7 +31,7 @@ $$
 c_{\mathrm{eff}}=\frac{c}{2}.
 $$
 
-The standard output reading instead assigns the bright output density `2u_0`
+The standard output reading instead assigns the bright output density $2u_0$
 and predicts no anomalous delay. The experiment is therefore a direct
 time-of-flight test between these two readings.
 
@@ -99,7 +99,7 @@ $$
 $$
 
 Taking the curl of the first equation, and using the second together with
-`\nabla\cdot\mathbf E=0`, gives the wave equation
+$\nabla\cdot\mathbf E=0$, gives the wave equation
 
 $$
 \nabla^2\mathbf E-\varepsilon_{\mathrm{eff}}\mu_{\mathrm{eff}}
@@ -325,9 +325,9 @@ Use a coherent source, modulate it, split it into two arms, and recombine the
 arms so they form stable fringes. Then:
 
 1. isolate one bright branch with an aperture
-2. propagate that selected branch over distance `L`
+2. propagate that selected branch over distance $L$
 3. propagate a matched reference beam over the same distance
-4. compare delay slopes `d\tau/dL`
+4. compare delay slopes $d\tau/dL$
 
 The standard output reading predicts equal slopes. The loaded-branch reading
 predicts a larger slope for the bright branch.
@@ -338,8 +338,8 @@ $$
 \tau_{\mathrm{bright}}-\tau_{\mathrm{ref}}\approx \frac{L}{c}.
 $$
 
-So at `1 m` the extra delay is about `3.34 ns`, and at `10 m` it is about
-`33.4 ns`.
+So at $1\,\mathrm{m}$ the extra delay is about $3.34\,\mathrm{ns}$, and at
+$10\,\mathrm{m}$ it is about $33.4\,\mathrm{ns}$.
 
 ---
 
@@ -373,7 +373,7 @@ $$
 c_{\mathrm{eff}}=\frac{1}{\sqrt{\varepsilon_{\mathrm{eff}}\mu_{\mathrm{eff}}}}.
 $$
 
-For symmetric loading `\chi_e=\chi_m=k`,
+For symmetric loading $\chi_e=\chi_m=k$,
 
 $$
 c_{\mathrm{eff}}=\frac{c}{1+k}.
@@ -455,7 +455,7 @@ $$
 c_{\mathrm{eff}}=\frac{c}{1+k}.
 $$
 
-For equal overlap, `k=1`, hence
+For equal overlap, $k=1$, hence
 
 $$
 c_{\mathrm{eff}}=\frac{c}{2}.
@@ -472,5 +472,5 @@ after recombination:
 - or the isolated raw bright overlap
 
 If the measured delay matches the reference, the ordinary reading wins. If the
-measured delay approaches the `c/2` prediction in the equal-beam limit, the
+measured delay approaches the $c/2$ prediction in the equal-beam limit, the
 loaded-branch reading is supported.
