@@ -40,6 +40,8 @@ WATCH_SUFFIXES = {
     ".yaml",
     ".yml",
 }
+# Dotfiles that act as build-control markers (no extension in pathlib terms).
+WATCH_DOTFILES = {".pdf"}
 SKIP_DIRS = {
     ".git",
     ".pnpmd",
@@ -78,9 +80,8 @@ def _iter_watch_files() -> list[Path]:
             base = Path(dirpath)
             for name in filenames:
                 path = base / name
-                if path.suffix.lower() not in WATCH_SUFFIXES:
-                    continue
-                paths.append(path)
+                if name in WATCH_DOTFILES or path.suffix.lower() in WATCH_SUFFIXES:
+                    paths.append(path)
     return paths
 
 
