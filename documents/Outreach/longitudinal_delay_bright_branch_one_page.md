@@ -21,7 +21,7 @@ The proposal then asks whether the same kind of slowdown appears when two
 coherent beams fully overlap in the recombination phase of a Mach-Zehnder
 interferometer. The first beam splitter only prepares two bright arm beams. The
 question appears later, when those beams recombine. These are not the same
-spatial operation run backward.
+spatial operation run backward (see Section 3).
 
 If each overlapping beam is treated as the coherent electromagnetic response
 seen by the other, then equal-beam bright overlap doubles the fields, quadruples
@@ -160,7 +160,7 @@ $$
 
 Under the tested reading, the overlap is described in the same form as the
 dielectric case, but with the second coherent beam supplying the response
-sector. Define, abbreviating coherent by the subscript $\mathrm{coh}$,
+sector. Define, abbreviating *coherent* by the subscript $\mathrm{coh}$,
 
 $$
 \mathbf D_{\mathrm{coh}}
@@ -246,7 +246,7 @@ $$
 c_{\mathrm{eff}}=\frac{c}{2}.
 $$
 
-At the same time, the overlap fields are
+At the bright center of the fringe, the overlap fields are
 
 $$
 \mathbf E_{\mathrm{tot}}=2\mathbf E_1,
@@ -254,11 +254,19 @@ $$
 \mathbf H_{\mathrm{tot}}=2\mathbf H_1,
 $$
 
-and the instantaneous energy density is
+and the instantaneous energy density there is
 
 $$
 u_{\mathrm{tot}}=4u_1.
 $$
+
+More generally, across the fringe profile one may write
+
+$$
+u(x)=4u_1\cos^2\!\left(\frac{\Delta\phi(x)}{2}\right),
+$$
+
+so the factor $4$ is the bright-center value of the full spatial dependence.
 
 That is the tested coherent-overlap result.
 
@@ -281,13 +289,60 @@ At recombination:
 - the loaded-branch question is whether the bright raw overlap itself propagates
   with the reduced speed above
 
+Mathematically, the same 50/50 beam-splitter matrix can describe both
+interfaces, but the occupied input states are different. If
+
+$$
+\binom{b_1}{b_2}
+=
+\frac{1}{\sqrt 2}
+\begin{pmatrix}
+1 & 1 \\
+1 & -1
+\end{pmatrix}
+\binom{a_1}{a_2},
+$$
+
+then the split phase starts from one populated input port,
+
+$$
+\binom{a_1}{a_2}=\binom{A}{0},
+$$
+
+so
+
+$$
+\binom{b_1}{b_2}
+=
+\binom{A/\sqrt 2}{A/\sqrt 2},
+$$
+
+which gives two bright arm beams. Recombination starts instead from two
+populated arm inputs,
+
+$$
+\binom{a_1}{a_2}=\binom{A}{A},
+$$
+
+so
+
+$$
+\binom{b_1}{b_2}
+=
+\binom{\sqrt 2\,A}{0},
+$$
+
+which gives one bright output and one dark output. The optical element is the
+same, but the populated states are different, so the split and recombination
+phases are not the same spatial decomposition.
+
 So the slowdown question belongs to recombination, not to the initial split.
 
 ---
 
 ## 4. Experimental Fork
 
-At a lossless 50/50 recombiner, the ordinary output fields are
+At a "lossless" 50/50 recombiner, the ordinary output fields are
 
 $$
 \mathbf E_+=\frac{\mathbf E_1+\mathbf E_2}{\sqrt 2},
@@ -296,6 +351,18 @@ $$
 $$
 
 and likewise for the magnetic fields.
+
+Here "lossless" means the splitter is modeled as conserving total optical
+energy. Small real losses do not change the core result being tested, and in a
+well-aligned setup they are negligible compared with the claimed factor-of-two
+speed difference.
+
+The factor $1/\sqrt 2$ appears because the splitter divides the incoming energy
+into two equal beams. Energy density is a positive quadratic quantity in the
+field amplitudes, so halving the energy means scaling the field amplitudes by
+$1/\sqrt 2$, not by $1/2$. The same factor is written on both the electric and
+magnetic fields because they are modeled as vector fields and enter the
+electromagnetic energy density quadratically.
 
 For equal beams at a bright output point, the standard output reading gives
 
