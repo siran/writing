@@ -57,7 +57,7 @@
     .md-container > h1:first-child,
     .md-container > h2:first-child { margin-top: 0.4em; }
 
-    .md-container p { margin: 0 0 0.5em 0; }
+    .md-container p { margin: 0 0 0.5em 0; white-space: pre-line; }
     .md-container p:last-child { margin-bottom: 0; }
 
     @media (max-width: 960px) {
@@ -247,7 +247,7 @@
                 var cout = [];
                 var cbuf = [];
                 var flushC = function () {
-                    var t = cbuf.join('<br>').trim();
+                    var t = cbuf.join('\n').trim();
                     if (t) { cout.push('<p>' + t + '</p>'); }
                     cbuf = [];
                 };
