@@ -41,7 +41,7 @@ WATCH_SUFFIXES = {
     ".yml",
 }
 # Dotfiles that act as build-control markers (no extension in pathlib terms).
-WATCH_DOTFILES = {".pdf"}
+WATCH_DOTFILES = {".pdf", ".book"}
 SKIP_DIRS = {
     ".git",
     ".pnpmd",
@@ -130,10 +130,10 @@ def main() -> int:
         default="fast",
         help=(
             "Build mode to use with --watch. "
-            "fast: HTML only (--skip-books --skip-pdf --skip-epub). "
-            "books: books HTML only (--skip-pdf --skip-epub). "
-            "pdf: PDF markers only (--skip-books --skip-epub). "
-            "full: nothing skipped."
+            "fast: HTML + dotfile markers only (--skip-books --skip-pdf --skip-epub). "
+            "books: books HTML only, skip .book markers (--skip-pdf --skip-epub --skip-book-markers). "
+            "pdf: .pdf markers only, skip .book markers (--skip-books --skip-epub --skip-book-markers). "
+            "full: everything, skip .book markers (global book build covers them)."
         ),
     )
     args = ap.parse_args()
@@ -152,6 +152,10 @@ def main() -> int:
         build_command.append("--skip-pdf")
     if args.build_mode != "full":
         build_command.append("--skip-epub")
+    # .book markers are redundant when global book build runs; skip them for
+    # books/pdf/full modes. fast mode honors them to build only marked books.
+    if args.build_mode != "fast":
+        build_command.append("--skip-book-markers")
 
     if args.watch:
         watcher = threading.Thread(

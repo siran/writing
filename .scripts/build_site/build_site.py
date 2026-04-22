@@ -2627,12 +2627,22 @@ def main():
     ap.add_argument(
         "--skip-pdf",
         action="store_true",
-        help="Skip generating PDFs (books and individual Markdown files).",
+        help="Skip generating PDFs for books.",
     )
     ap.add_argument(
         "--skip-epub",
         action="store_true",
         help="Skip generating EPUBs (books and individual Markdown files).",
+    )
+    ap.add_argument(
+        "--skip-pdf-markers",
+        action="store_true",
+        help="Skip .pdf dotfile marker processing (individual-doc PDF generation).",
+    )
+    ap.add_argument(
+        "--skip-book-markers",
+        action="store_true",
+        help="Skip .book dotfile marker processing (per-folder book rendering).",
     )
     ap.add_argument(
         "--book-workers",
@@ -2744,8 +2754,9 @@ def main():
         # .pdf marker file: opt-in PDF generation per folder.
         # If .pdf exists and is empty  → render every .md in this directory.
         # If .pdf lists filenames      → render only those files.
+        # Controlled by --skip-pdf-markers (independent of --skip-pdf).
         pdf_marker = d / ".pdf"
-        if pdf_marker.exists() and not args.skip_pdf:
+        if pdf_marker.exists() and not args.skip_pdf_markers:
             marker_text = ""
             try:
                 marker_text = pdf_marker.read_text(encoding="utf-8").strip()
@@ -2769,6 +2780,45 @@ def main():
                     continue
                 print(f"[DEBUG] .pdf marker: rendering PDF for {rel(src_md)}")
                 render_md_formats(dst_md, rel(src_md), do_pdf=True, do_epub=False)
+
+        # .book marker file: opt-in book rendering per folder.
+        # If .book exists and is empty  → render all book.yml/book.yaml in this directory.
+        # If .book lists filenames      → render only those yaml files.
+        # Controlled by --skip-book-markers (independent of --skip-books).
+        book_marker = d / ".book"
+        if book_marker.exists() and not args.skip_book_markers:
+            marker_text = ""
+            try:
+                marker_text = book_marker.read_text(encoding="utf-8").strip()
+            except Exception:
+                pass
+            if marker_text:
+                yaml_names = [ln.strip() for ln in marker_text.splitlines() if ln.strip()]
+            else:
+                yaml_names = [fn for fn in filenames if fn in ("book.yml", "book.yaml")]
+            _render_py = ROOT / ".scripts" / "render" / "render.py"
+            if not _render_py.exists():
+                print("[DEBUG] .book marker: render.py not found; skipping")
+            elif yaml_names:
+                out_book_dir = OUT / rel(d)
+                _bk_pdf = not (args.skip_pdf or ".pdf" in SKIP_COPY_EXTS)
+                _bk_epub = not args.skip_epub
+                for yaml_name in yaml_names:
+                    if not (out_book_dir / yaml_name).exists():
+                        print(f"[DEBUG] .book marker: {yaml_name} not in OUT {out_book_dir}; skipping")
+                        continue
+                    sync_state = _sync_out_book_dir_with_source(out_book_dir, yaml_name)
+                    if sync_state == "removed":
+                        continue
+                    print(f"[DEBUG] .book marker: rendering {yaml_name} in {rel(d)}")
+                    _render_single_book(
+                        out_book_dir,
+                        yaml_name,
+                        _render_py,
+                        include_epub=_bk_epub,
+                        include_pdf=_bk_pdf,
+                        include_html=True,
+                    )
 
     copy_static()
     # Render books from the mirrored copies under OUT to avoid touching source.

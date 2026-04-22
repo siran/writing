@@ -13,13 +13,13 @@ clean:
 
 buildb:
 	@echo "building books..."
-	$(PYTHON) .scripts/build_site/build_site.py --skip-pdf --skip-epub
+	$(PYTHON) .scripts/build_site/build_site.py --skip-pdf --skip-epub --skip-book-markers
 buildn:
-	@echo "building fast (HTML only, no books/PDF/EPUB)..."
+	@echo "building fast (HTML + dotfile markers)..."
 	$(PYTHON) .scripts/build_site/build_site.py --skip-books --skip-pdf --skip-epub
 buildp:
 	@echo "building PDFs (honor .pdf markers, no books)..."
-	$(PYTHON) .scripts/build_site/build_site.py --skip-books --skip-epub
+	$(PYTHON) .scripts/build_site/build_site.py --skip-books --skip-epub --skip-book-markers
 
 serve: buildn
 	@echo "serving fast build (HTML only, no books/PDF/EPUB)..."
