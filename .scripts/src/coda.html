@@ -1112,6 +1112,75 @@
                 } catch (_e) { callback(null); }
             }
 
+            // Render a single formula span to a PNG data URI (via SVG <foreignObject>).
+            // Callback receives a data: string or null on failure.
+            function formulaSpanToPng(span, callback) {
+                try {
+                    var clone = span.cloneNode(true);
+                    var host2 = document.createElement('div');
+                    host2.style.cssText = 'position:fixed;left:-99999px;top:0;background:white;' +
+                        'display:inline-block;padding:3px;pointer-events:none;z-index:-9999;white-space:nowrap;';
+                    host2.appendChild(clone);
+                    document.body.appendChild(host2);
+
+                    var PROPS2 = ['display','position','top','left','right','bottom',
+                        'width','height','min-width','min-height',
+                        'font-family','font-size','font-style','font-weight',
+                        'line-height','letter-spacing','text-align','white-space',
+                        'vertical-align',
+                        'margin-top','margin-right','margin-bottom','margin-left',
+                        'padding-top','padding-right','padding-bottom','padding-left',
+                        'border-top','border-right','border-bottom','border-left',
+                        'color','background-color','overflow'];
+                    var h2els = host2.querySelectorAll('*');
+                    for (var i2 = 0; i2 < h2els.length; i2++) {
+                        var cs2 = window.getComputedStyle(h2els[i2]);
+                        var s2 = '';
+                        for (var k2 = 0; k2 < PROPS2.length; k2++) {
+                            var v2 = cs2.getPropertyValue(PROPS2[k2]);
+                            if (v2) {
+                                if (PROPS2[k2] === 'font-family') {
+                                    v2 = v2.replace(/KaTeX_[A-Za-z0-9]+,?\s*/g, '').replace(/^,\s*/, '');
+                                    if (!v2) { v2 = '"STIX Two Math","Cambria Math",serif'; }
+                                }
+                                s2 += PROPS2[k2] + ':' + v2 + ';';
+                            }
+                        }
+                        if (s2) { h2els[i2].setAttribute('style', s2); }
+                    }
+
+                    var W2 = host2.scrollWidth;
+                    var H2 = host2.scrollHeight;
+                    var inner2 = host2.innerHTML;
+                    document.body.removeChild(host2);
+
+                    if (!W2 || !H2) { callback(null); return; }
+
+                    var svg2 = '<svg xmlns="http://www.w3.org/2000/svg" width="' + W2 + '" height="' + H2 + '">' +
+                        '<foreignObject width="' + W2 + '" height="' + H2 + '">' +
+                        '<div xmlns="http://www.w3.org/1999/xhtml" ' +
+                        'style="background:white;padding:3px;box-sizing:border-box;width:' + W2 + 'px;white-space:nowrap;">' +
+                        inner2 + '</div></foreignObject></svg>';
+
+                    var svgBlob2 = new Blob([svg2], { type: 'image/svg+xml' });
+                    var url2 = URL.createObjectURL(svgBlob2);
+                    var img2 = new Image();
+                    img2.onload = function () {
+                        var dpr2 = Math.max(window.devicePixelRatio || 1, 2);
+                        var canvas2 = document.createElement('canvas');
+                        canvas2.width = W2 * dpr2; canvas2.height = H2 * dpr2;
+                        var ctx2 = canvas2.getContext('2d');
+                        ctx2.scale(dpr2, dpr2);
+                        ctx2.fillStyle = '#ffffff'; ctx2.fillRect(0, 0, W2, H2);
+                        try { ctx2.drawImage(img2, 0, 0, W2, H2); } catch (_de2) { }
+                        URL.revokeObjectURL(url2);
+                        callback(canvas2.toDataURL('image/png'));
+                    };
+                    img2.onerror = function () { URL.revokeObjectURL(url2); callback(null); };
+                    img2.src = url2;
+                } catch (_e2) { callback(null); }
+            }
+
             // Intercept copy: set text/plain (LaTeX) + text/html (MathML) synchronously
             // as fallback, then upgrade to also include image/png via ClipboardItem API.
             document.addEventListener('copy', function (e) {
@@ -1158,16 +1227,53 @@
                 e.clipboardData.setData('text/html', htmlStr);
                 e.preventDefault();
 
-                // Async upgrade: add image/png so it pastes as rendered image in Gmail etc.
+                // Async upgrade: per-formula PNG images in text/html + full-selection image/png.
+                // This makes formulas paste as rendered images in Gmail, LibreOffice, etc.
                 if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write) {
-                    selectionToPng(range, function (pngBlob) {
+                    var fragF = range.cloneContents();
+                    var fSpans = Array.prototype.slice.call(fragF.querySelectorAll('[data-latex]'));
+                    var pending = 1 + fSpans.length; // selection PNG + N formula PNGs
+                    var selBlob = null;
+                    var fUris = new Array(fSpans.length);
+
+                    function onPart() {
+                        if (--pending > 0) { return; }
+                        // Build text/html replacing each formula span with a PNG <img>
+                        var fragI = range.cloneContents();
+                        var mI = Array.prototype.slice.call(fragI.querySelectorAll('[data-latex]'));
+                        for (var ii = 0; ii < mI.length; ii++) {
+                            var me = mI[ii];
+                            var isDisplay = (me.getAttribute('data-latex') || '').slice(0, 2) === '$$';
+                            var uri = fUris[ii];
+                            if (uri) {
+                                var imgTag = document.createElement('img');
+                                imgTag.src = uri;
+                                imgTag.style.cssText = isDisplay
+                                    ? 'display:block;margin:0.4em auto;'
+                                    : 'display:inline-block;vertical-align:middle;';
+                                me.parentNode.replaceChild(imgTag, me);
+                            } else {
+                                me.parentNode.replaceChild(
+                                    document.createTextNode(me.getAttribute('data-latex') || ''), me
+                                );
+                            }
+                        }
+                        var wI = document.createElement('div');
+                        wI.appendChild(fragI);
                         var items = {
                             'text/plain': new Blob([text], { type: 'text/plain' }),
-                            'text/html': new Blob([htmlStr], { type: 'text/html' })
+                            'text/html': new Blob([wI.innerHTML], { type: 'text/html' })
                         };
-                        if (pngBlob) { items['image/png'] = pngBlob; }
+                        if (selBlob) { items['image/png'] = selBlob; }
                         navigator.clipboard.write([new ClipboardItem(items)]).catch(function () { });
-                    });
+                    }
+
+                    selectionToPng(range, function (blob) { selBlob = blob; onPart(); });
+                    for (var fi = 0; fi < fSpans.length; fi++) {
+                        (function (idx, fs) {
+                            formulaSpanToPng(fs, function (uri) { fUris[idx] = uri; onPart(); });
+                        })(fi, fSpans[fi]);
+                    }
                 }
             });
 
