@@ -45,10 +45,22 @@ $$
 \mathbf D=\varepsilon_0\mathbf E+\mathbf P,
 $$
 
-and for a linear response,
+and
+
+$$
+\mathbf B=\mu_0(\mathbf H+\mathbf M).
+$$
+
+For a linear response,
 
 $$
 \mathbf P=\varepsilon_0\chi_e\mathbf E.
+$$
+
+and
+
+$$
+\mathbf M=\chi_m\mathbf H.
 $$
 
 Therefore
@@ -70,11 +82,34 @@ $$
 \mu_{\mathrm{eff}}=\mu_0(1+\chi_m).
 $$
 
-Then the propagation speed is
+In a source-free region,
 
 $$
-c_{\mathrm{eff}}
-=\frac{1}{\sqrt{\varepsilon_{\mathrm{eff}}\mu_{\mathrm{eff}}}}.
+\nabla\times \mathbf E=-\frac{\partial \mathbf B}{\partial t},
+\qquad
+\nabla\times \mathbf H=\frac{\partial \mathbf D}{\partial t}.
+$$
+
+Substituting the effective constitutive relations gives
+
+$$
+\nabla\times \mathbf E=-\mu_{\mathrm{eff}}\frac{\partial \mathbf H}{\partial t},
+\qquad
+\nabla\times \mathbf H=\varepsilon_{\mathrm{eff}}\frac{\partial \mathbf E}{\partial t}.
+$$
+
+Taking the curl of the first equation, and using the second together with
+`\nabla\cdot\mathbf E=0`, gives the wave equation
+
+$$
+\nabla^2\mathbf E-\varepsilon_{\mathrm{eff}}\mu_{\mathrm{eff}}
+\frac{\partial^2\mathbf E}{\partial t^2}=0.
+$$
+
+Therefore the propagation speed is
+
+$$
+c_{\mathrm{eff}}=\frac{1}{\sqrt{\varepsilon_{\mathrm{eff}}\mu_{\mathrm{eff}}}}.
 $$
 
 For symmetric electric and magnetic loading,
@@ -111,7 +146,7 @@ when two coherent beams fully overlap in vacuum during recombination.
 Let one beam have fields
 
 $$
-\mathbf E_1,\qquad \mathbf B_1,
+\mathbf E_1,\qquad \mathbf H_1,
 $$
 
 and let the second beam act as a coherent response field proportional to the
@@ -120,28 +155,83 @@ first:
 $$
 \mathbf E_2=k\mathbf E_1,
 \qquad
-\mathbf B_2=k\mathbf B_1.
+\mathbf H_2=k\mathbf H_1.
 $$
 
-Then the total overlap fields are
+Under the tested reading, the overlap is described in the same form as the
+dielectric case, but with the second coherent beam supplying the response
+sector. Define
 
 $$
-\mathbf E_{\mathrm{tot}}=(1+k)\mathbf E_1,
+\mathbf D_{\mathrm{coh}}
+=\varepsilon_0(\mathbf E_1+\mathbf E_2),
 \qquad
-\mathbf B_{\mathrm{tot}}=(1+k)\mathbf B_1.
+\mathbf B_{\mathrm{coh}}
+=\mu_0(\mathbf H_1+\mathbf H_2).
 $$
 
-Because electromagnetic energy density is quadratic in the fields, the overlap
-density scales as
+Then
 
 $$
-u_{\mathrm{tot}}=(1+k)^2u_1.
+\mathbf D_{\mathrm{coh}}
+=\varepsilon_0(1+k)\mathbf E_1
+=\varepsilon_{\mathrm{coh}}\mathbf E_1,
 $$
 
-If the same loading rule as in the dielectric case is applied, then
+with
 
 $$
-c_{\mathrm{eff}}=\frac{c}{1+k}.
+\varepsilon_{\mathrm{coh}}=\varepsilon_0(1+k),
+$$
+
+and likewise
+
+$$
+\mathbf B_{\mathrm{coh}}
+=\mu_0(1+k)\mathbf H_1
+=\mu_{\mathrm{coh}}\mathbf H_1,
+$$
+
+with
+
+$$
+\mu_{\mathrm{coh}}=\mu_0(1+k).
+$$
+
+The same source-free Maxwell form then becomes
+
+$$
+\nabla\times \mathbf E_1
+=-\frac{\partial \mathbf B_{\mathrm{coh}}}{\partial t},
+\qquad
+\nabla\times \mathbf H_1
+=\frac{\partial \mathbf D_{\mathrm{coh}}}{\partial t}.
+$$
+
+So
+
+$$
+\nabla\times \mathbf E_1
+=-\mu_{\mathrm{coh}}\frac{\partial \mathbf H_1}{\partial t},
+\qquad
+\nabla\times \mathbf H_1
+=\varepsilon_{\mathrm{coh}}\frac{\partial \mathbf E_1}{\partial t}.
+$$
+
+Taking the curl again gives
+
+$$
+\nabla^2\mathbf E_1-\varepsilon_{\mathrm{coh}}\mu_{\mathrm{coh}}
+\frac{\partial^2\mathbf E_1}{\partial t^2}=0,
+$$
+
+therefore
+
+$$
+c_{\mathrm{eff}}
+=\frac{1}{\sqrt{\varepsilon_{\mathrm{coh}}\mu_{\mathrm{coh}}}}
+=\frac{1}{\sqrt{\varepsilon_0\mu_0(1+k)^2}}
+=\frac{c}{1+k}.
 $$
 
 For equal coherent overlap,
@@ -153,24 +243,24 @@ $$
 so
 
 $$
-\mathbf E_{\mathrm{tot}}=2\mathbf E_1,
-\qquad
-\mathbf B_{\mathrm{tot}}=2\mathbf B_1,
+c_{\mathrm{eff}}=\frac{c}{2}.
 $$
 
-and
+At the same time, the overlap fields are
+
+$$
+\mathbf E_{\mathrm{tot}}=2\mathbf E_1,
+\qquad
+\mathbf H_{\mathrm{tot}}=2\mathbf H_1,
+$$
+
+and the instantaneous energy density is
 
 $$
 u_{\mathrm{tot}}=4u_1.
 $$
 
-Therefore
-
-$$
-c_{\mathrm{eff}}=\frac{c}{2}.
-$$
-
-That is the simple claim being tested.
+That is the tested coherent-overlap result.
 
 ---
 
