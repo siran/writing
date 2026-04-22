@@ -1,4 +1,4 @@
-.PHONY: serve serveb watch watchb clean
+.PHONY: serve serveb watch watchb watchp clean
 
 PYTHON_VENV := $(firstword $(wildcard $(VIRTUAL_ENV)/Scripts/python.exe $(VIRTUAL_ENV)/bin/python))
 PYTHON := $(if $(PYTHON_VENV),$(PYTHON_VENV),$(shell command -v python 2>/dev/null || command -v python3 2>/dev/null))
@@ -12,21 +12,27 @@ clean:
 	rm -r site || true
 
 buildb:
-	@echo "building ..."
-	$(PYTHON) .scripts/build_site/build_site.py
-buildn:
-	@echo "building fast (build HTML, skip PDFs/EPUBs)..."
+	@echo "building books..."
 	$(PYTHON) .scripts/build_site/build_site.py --skip-pdf --skip-epub
+buildn:
+	@echo "building fast (HTML only, no books/PDF/EPUB)..."
+	$(PYTHON) .scripts/build_site/build_site.py --skip-books --skip-pdf --skip-epub
+buildp:
+	@echo "building PDFs (honor .pdf markers, no books)..."
+	$(PYTHON) .scripts/build_site/build_site.py --skip-books --skip-epub
 
 serve: buildn
-	@echo "serving fast build (book HTML, no PDF/EPUB)..."
+	@echo "serving fast build (HTML only, no books/PDF/EPUB)..."
 	$(PYTHON) .scripts/dev_server.py --root site --port 8000
 serveb: buildb
 	@echo "serving WITH books..."
 	$(PYTHON) .scripts/dev_server.py --root site --port 8000
 watch: buildn
-	@echo "watching fast build (book HTML, no PDF/EPUB)..."
+	@echo "watching fast (HTML only, no books/PDF/EPUB)..."
 	$(PYTHON) .scripts/dev_server.py --root site --port 8000 --watch --build-mode fast
 watchb: buildb
-	@echo "watching full build (attempt PDF/EPUB too)..."
-	$(PYTHON) .scripts/dev_server.py --root site --port 8000 --watch --build-mode full
+	@echo "watching books (HTML, no PDF/EPUB)..."
+	$(PYTHON) .scripts/dev_server.py --root site --port 8000 --watch --build-mode books
+watchp: buildp
+	@echo "watching PDFs (honor .pdf markers, no books)..."
+	$(PYTHON) .scripts/dev_server.py --root site --port 8000 --watch --build-mode pdf

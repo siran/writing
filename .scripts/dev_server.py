@@ -126,9 +126,15 @@ def main() -> int:
     ap.add_argument("--interval", type=float, default=1.0, help="Watch poll interval in seconds.")
     ap.add_argument(
         "--build-mode",
-        choices=("fast", "books", "full"),
+        choices=("fast", "books", "pdf", "full"),
         default="fast",
-        help="Build mode to use with --watch.",
+        help=(
+            "Build mode to use with --watch. "
+            "fast: HTML only (--skip-books --skip-pdf --skip-epub). "
+            "books: books HTML only (--skip-pdf --skip-epub). "
+            "pdf: PDF markers only (--skip-books --skip-epub). "
+            "full: nothing skipped."
+        ),
     )
     args = ap.parse_args()
 
@@ -140,10 +146,12 @@ def main() -> int:
         sys.executable,
         str(ROOT / ".scripts" / "build_site" / "build_site.py"),
     ]
+    if args.build_mode in {"fast", "pdf"}:
+        build_command.append("--skip-books")
     if args.build_mode in {"fast", "books"}:
-        build_command.extend(["--skip-pdf", "--skip-epub"])
-    else:
-        pass
+        build_command.append("--skip-pdf")
+    if args.build_mode != "full":
+        build_command.append("--skip-epub")
 
     if args.watch:
         watcher = threading.Thread(
