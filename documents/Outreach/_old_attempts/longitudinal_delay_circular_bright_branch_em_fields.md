@@ -4,7 +4,7 @@ subtitle: "A time-of-flight test of loaded raw-overlap transport in circular opt
 author: "An M. Rodriguez"
 date: "2026-04-21"
 one-sentence-summary: "This proposal tests whether an isolated bright region of a circular interference pattern propagates at the ordinary reference speed or at a reduced speed set by its higher coherent energy density."
-summary: "Two coherent laser beams are recombined to produce circular fringes. Standard electromagnetic superposition gives bright regions where the electric and magnetic fields add and dark regions where they cancel, while the full pattern conserves the two-beam flux. The experiment isolates a bright circular region or annular ring and measures its modulation delay against a reference beam over the same longitudinal distance. Ordinary output transport predicts no delay difference. The loaded raw-overlap reading uses the same electromagnetic loading effect as dielectric slowing: if the bright region carries the conserved two-beam flux on a higher local energy density, its effective longitudinal advance is reduced according to v_eff = J/u. For equal local beam densities at a bright maximum on axis, the predicted speed is c/2."
+summary: "Two coherent laser beams are recombined to produce circular fringes. Standard electromagnetic superposition gives bright regions where the electric and magnetic fields add and dark regions where they cancel, while the full pattern conserves the two-beam energy budget. The experiment isolates a bright circular region or annular ring and measures its modulation delay against a reference beam over the same longitudinal distance. Ordinary output transport predicts no delay difference. The loaded raw-overlap hypothesis predicts that if the bright region carries the available two-beam flux on a higher local energy density, its effective longitudinal advance is reduced according to v_eff = J/u. For equal local beam densities at a bright maximum on axis, the predicted speed is c/2."
 keywords:
   - interference
   - circular fringes
@@ -13,7 +13,7 @@ keywords:
   - energy density
   - Poynting vector
   - coherent loading
-  - dielectric loading
+  - dielectric analogy
   - speed of light
   - time-of-flight
 ---
@@ -30,25 +30,18 @@ loading.
 Two coherent laser beams are recombined so that their wavefronts produce
 fringes. Standard interference gives a spatial redistribution of energy density:
 bright rings exceed the two-beam mean while neighboring dark rings fall below
-it, with the full pattern conserving the two-beam flux. The experiment
+it, with the full pattern conserving the two-beam energy budget. The experiment
 isolates a circular bright region, or a narrow annular bright ring, and measures
 its modulation delay over a known longitudinal distance against a reference
 beam.
 
-In a Mach-Zehnder there is a split phase and a recombination phase, and these
-are not the same spatial operation run backward. The first beam splitter sends
-one bright incident beam into two bright arm beams. Recombination instead
-recovers one coherent two-beam flux and only then distributes it across the
-complementary output arms. The loaded-branch question belongs to this
-recombination phase, not to the initial split.
-
 The standard expectation is that the selected bright region and the reference
-beam have the same propagation speed. The loaded-branch expectation uses the
-same electromagnetic loading effect as dielectric slowing: if the selected
-bright region carries the conserved two-beam flux on a higher local energy
-density, then its effective longitudinal advance must be slower. For equal
-local beam densities at a bright maximum, the predicted speed is one half of
-the local available longitudinal transport speed.
+beam have the same propagation speed. The loaded-branch expectation is different
+(in analogy with dielectrics): if the selected bright region carries the
+available two-beam flux on a higher local energy density, then its effective
+longitudinal advance must be slower. For equal local beam densities at a bright
+maximum, the predicted speed is one half of the local available longitudinal
+transport speed.
 
 The experiment is therefore a direct time-of-flight test between ordinary output
 transport and loaded raw-overlap transport.
@@ -106,23 +99,14 @@ the electromagnetic energy density is quadratic in the fields, the raw local
 energy density at an equal-beam bright maximum is four times the single-beam
 energy density.
 
-The recombined two-beam flux is the conserved flux of the two input
-beams. After recombination, the full interference pattern conserves energy by
-distributing density into bright and dark regions: a bright fringe in one
-output corresponds symmetrically to a dark fringe in the other output.
-
-The proposal applies the same electromagnetic loading effect that slows light
-in a dielectric to the case of two coherent beams fully overlapping in vacuum.
-The beam splitter only prepares the geometry, direction, and relative phase. At
-overlap, each beam is treated as a propagating electromagnetic field that acts
-as the coherent response seen by the other. Under that reading, the overlap is
-a loaded branch: the conserved two-beam longitudinal flux is carried on a
-higher local energy density, so the effective longitudinal transport speed
-follows from
-
-$$
-v_{\mathrm{eff}}=\frac{J}{u}.
-$$
+The incoming two-beam flux budget is twice the single-beam flux. After
+recombination, the full interference pattern conserves energy by distributing
+density into bright and dark regions: a bright fringe in one output corresponds
+symmetrically to a dark fringe in the other output. The proposed test asks
+whether a locally denser bright region must propagate more slowly in order to
+respect the available flux budget. The physical motivation comes from the
+standard slowing of light in dielectric material, here read as a field-loading
+effect.
 
 At an equal-beam bright maximum on the optical axis,
 
@@ -174,26 +158,9 @@ No plane-wave approximation is required. No small-angle approximation is
 required. The formulas below may be evaluated using the measured beam profiles
 and measured phase difference.
 
-The Mach-Zehnder sequence is divided conceptually into two distinct phases. The
-first beam splitter is the **split phase**: one bright incident beam becomes
-two bright arm beams. The return overlap at the second beam splitter is the
-**recombination phase**: the two arm beams meet coherently and recover one
-two-beam flux before the ordinary lossless output decomposition is written.
-These phases are not the same spatial decomposition run backward, even though
-the interferometer is lossless overall.
-
-Two planes are distinguished throughout the proposal. Sections 4--9 describe
-the **overlap plane**, where the two returned fields are written as
-$\mathbf E_1,\mathbf B_1$ and $\mathbf E_2,\mathbf B_2$ before assigning the
-selected bright region to a transport law. Section 10 describes the
-**beam-splitter output plane**, where the same two returned fields are resolved
-into the ordinary lossless output combinations $(+)$ and $(-)$. The loaded
-branch law is applied to the raw overlap reading; the ordinary-output section is
-included as the standard comparison.
-
 ---
 
-# 4. Electromagnetic Interference
+# 4. Beams Interference
 
 This section derives the local interference energy density using ordinary
 electric and magnetic fields, not a scalar shortcut.
@@ -615,50 +582,9 @@ constant-density approximation is used.
 
 ---
 
-# 7. Input-Branch Longitudinal Flux Budget for the Loaded-Branch Test
+# 7. Exact Longitudinal Flux Budget for a Selected Circular Region
 
-This section defines the flux used by the tested loaded-branch law. It is not
-claimed to be the full standard post-overlap Poynting flux of the superposed
-field through the aperture.
-
-In standard electromagnetism, the Poynting vector of the raw superposed field is
-
-$$
-\mathbf S_{\mathrm{raw}}
-=
-\frac{1}{\mu_0}
-(\mathbf E_1+\mathbf E_2)\times(\mathbf B_1+\mathbf B_2).
-$$
-
-Expanding,
-
-$$
-\mathbf S_{\mathrm{raw}}
-=
-\mathbf S_1+\mathbf S_2
-+
-\frac{1}{\mu_0}
-\left(
-\mathbf E_1\times\mathbf B_2
-+
-\mathbf E_2\times\mathbf B_1
-\right),
-$$
-
-where
-
-$$
-\mathbf S_i=\frac{1}{\mu_0}\mathbf E_i\times\mathbf B_i.
-$$
-
-Thus the standard post-overlap Poynting flux contains interference cross terms.
-Those cross terms belong to the standard electromagnetic description of the
-overlap field. Section 10 then gives the equivalent lossless output-mode
-decomposition.
-
-The loaded-branch test uses a different bookkeeping quantity: the conserved
-two-input longitudinal flux assigned to the selected branch. Define the
-individual input-branch longitudinal flux densities as
+Let the longitudinal flux densities of the two individual beams be
 
 $$
 J_{1z}(\rho),
@@ -666,8 +592,15 @@ J_{1z}(\rho),
 J_{2z}(\rho).
 $$
 
-They are obtained from each beam separately, before forming the raw overlap
-Poynting vector. For time-harmonic fields,
+They are obtained from each beam's Poynting vector:
+
+$$
+\mathbf S_i(\rho)
+=
+\frac{1}{\mu_0}\mathbf E_i(\rho,t)\times\mathbf B_i(\rho,t),
+$$
+
+or, for time-harmonic fields, from its cycle average
 
 $$
 \langle\mathbf S_i\rangle_t
@@ -676,10 +609,10 @@ $$
 \mathrm{Re}
 \left(
 \widetilde{\mathbf E}_i\times\widetilde{\mathbf B}_i^*
-\right),
+\right).
 $$
 
-and
+Then
 
 $$
 J_{iz}(\rho)
@@ -693,7 +626,7 @@ $$
 J_{iz}(\rho)=u_i(\rho)c\cos\alpha_i(\rho),
 $$
 
-where $\alpha_i(\rho)$ is the local angle between beam $i$'s energy-flow
+where $\alpha_i(\rho)$ is the local angle between the beam's energy-flow
 direction and the $z$-axis.
 
 For exact spherical wavefronts,
@@ -712,11 +645,11 @@ J_{iz}(\rho)
 u_i(\rho)c\frac{Z-z_i}{R_i(\rho)}.
 $$
 
-The conserved two-input longitudinal flux assigned to aperture $\Omega$ is
+The exact available longitudinal flux through aperture $\Omega$ is
 
 $$
 \boxed{
-\Phi_{\mathrm{in},z}(\Omega)
+\Phi_z(\Omega)
 =
 \int_\Omega
 \left[
@@ -729,7 +662,7 @@ For a radial aperture,
 
 $$
 \boxed{
-\Phi_{\mathrm{in},z}(\Omega)
+\Phi_z(\Omega)
 =
 2\pi\int_{\rho_-}^{\rho_+}
 \left[
@@ -738,14 +671,7 @@ J_{1z}(\rho)+J_{2z}(\rho)
 }
 $$
 
-This is the conserved two-input flux used in the loaded raw-overlap law
-
-$$
-v_{\mathrm{eff}}=\frac{J}{u}.
-$$
-
-The ordinary-output comparison instead uses the full lossless output-mode
-decomposition of Section 10.
+This is the two-beam longitudinal budget available to the selected region.
 
 ---
 
@@ -757,13 +683,13 @@ $$
 v_{\mathrm{eff}}=\frac{J}{u}.
 $$
 
-For a finite aperture, the corresponding area-integrated loaded-branch prediction is
+For a finite aperture, the corresponding exact area-integrated prediction is
 
 $$
 \boxed{
 v_{\Omega}
 =
-\frac{\Phi_{\mathrm{in},z}(\Omega)}
+\frac{\Phi_z(\Omega)}
 {
 \int_\Omega u_{\mathrm{raw}}(\rho)\,dA
 }.
@@ -818,8 +744,7 @@ u_1(\rho)+u_2(\rho)
 }
 $$
 
-This is the circular-fringe loaded-branch prediction using the conserved
-two-input flux.
+This is the exact circular-fringe loaded-branch prediction.
 
 It is written entirely in terms of measurable beam quantities:
 
@@ -1100,7 +1025,7 @@ $$
 u_{\mathrm{raw}}=4u_0.
 $$
 
-The conserved two-beam flux assigned to the selected region is
+The available two-beam flux is
 
 $$
 J=2u_0c_z.
@@ -1125,18 +1050,10 @@ circular bright region.
 
 # 12. Dielectric-Style Derivation of the Loaded-Branch Law
 
-In a dielectric, electromagnetic transport is slowed because a given through
-flux is carried on a larger total energy density through interaction with the
-response field of matter. The fringe-delay test applies that same
-electromagnetic loading effect to the simplest unbound case: two coherent light
-fields fully overlapping in vacuum.
-
-The beam splitter itself is not the loading mechanism. It only prepares the
-returned beams with the required direction and relative phase. At recombination,
-the two beams are treated strictly as propagating electric and magnetic fields.
-Under that reading, each beam acts as the coherent response field seen by the
-other. If that overlap is carried as a single loaded branch, the slowdown
-follows from the same dielectric-style transport rule.
+Matter is standing electromagnetic organization. Dielectric slowing is therefore
+field-field interaction in a stable organized background. The fringe-delay test
+asks whether the same loading rule appears in the simplest unbound case: two
+coherent light fields overlapping in phase.
 
 ## 12.1 Ordinary Dielectric Form
 
@@ -1215,15 +1132,15 @@ v_{\mathrm{eff}}=\frac{c}{1+k}.
 }
 $$
 
-## 12.2 Mutual Coherent Response Fields
+## 12.2 Coherent Response Field
 
-Let one beam have electric field amplitude
+Let a primary branch have electric field amplitude
 
 $$
 E_1.
 $$
 
-Let the coherent response field supplied by the other beam be proportional:
+Let the coherent response field be proportional:
 
 $$
 E_2=kE_1,
@@ -1335,13 +1252,11 @@ $$
 J_1=u_1c.
 $$
 
-For two equal branches in phase, the conserved available flux is
+For two equal branches in phase, the available total flux is
 
 $$
-J_{\mathrm{available}}=2u_1c,
+J_{\mathrm{available}}=2u_1c.
 $$
-
-which is the same two-branch flux present before recombination.
 
 The joined raw density is
 
@@ -1521,8 +1436,8 @@ $$
 \Delta\tau\approx33.4\ \mathrm{ns}.
 $$
 
-For an off-axis annular ring, replace $c$ by the local or aperture-averaged
-longitudinal transport factor obtained from the input-branch flux integral:
+For an off-axis annular ring, replace $c$ by the exact local or aperture-averaged
+longitudinal transport factor obtained from the flux integral:
 
 $$
 v_\Omega
@@ -1567,7 +1482,7 @@ prediction varies with sampled density:
 
 $$
 v_\Omega=
-\frac{\Phi_{\mathrm{in},z}(\Omega)}
+\frac{\Phi_z(\Omega)}
 {\int_\Omega u_{\mathrm{raw}}\,dA}.
 $$
 
@@ -1579,7 +1494,7 @@ The standard prediction remains no density-dependent delay.
 
 Open the aperture to collect a complete bright-dark radial cell, or a
 sufficiently large balanced region. The sampled density approaches the two-beam
-mean density.
+budget.
 
 The loaded-branch anomaly should weaken or disappear under full-pattern
 averaging.
@@ -1683,10 +1598,10 @@ This proposal establishes:
    u_{\mathrm{raw}}=4u_0.
    $$
 
-3. The exact conserved longitudinal flux through a selected circular or annular aperture is
+3. The exact available longitudinal flux through a selected circular or annular aperture is
 
    $$
-   \Phi_{\mathrm{in},z}(\Omega)
+   \Phi_z(\Omega)
    =
    \int_\Omega
    \left[
@@ -1699,7 +1614,7 @@ This proposal establishes:
    $$
    v_{\Omega}
    =
-   \frac{\Phi_{\mathrm{in},z}(\Omega)}
+   \frac{\Phi_z(\Omega)}
    {\int_\Omega u_{\mathrm{raw}}\,dA}.
    $$
 
@@ -1812,7 +1727,7 @@ $$
 J_{iz}(\rho)=u_i(\rho)c\frac{a_i}{R_i(\rho)}.
 $$
 
-The loaded-branch aperture prediction, using the conserved two-input flux, is
+The exact loaded-branch aperture prediction is
 
 $$
 v_{\Omega}

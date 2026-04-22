@@ -1,22 +1,23 @@
 ---
-title: "Longitudinal Delay of an Isolated Bright Interference Branch"
+title: "Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe"
 subtitle: "A dielectric-first derivation and time-of-flight test in a Mach-Zehnder interferometer"
 author: "An M. Rodriguez"
 date: "2026-04-22"
-one-sentence-summary: "An isolated bright interference branch produced at Mach-Zehnder recombination carries increased coherent energy density and therefore propagates more slowly than an ordinary reference beam."
-summary: "Electromagnetic propagation in a dielectric slows when the electric and magnetic response increases the effective permittivity and permeability. Full coherent superposition at Mach-Zehnder recombination has the same loading structure. The first beam splitter creates two bright arm beams, while recombination is a distinct phase in which two populated arm states meet and are redistributed across the two output ports. Each beam supplies the coherent response seen by the other, so equal-beam constructive interference doubles the fields, quadruples the instantaneous energy density at the bright center, and yields c_eff = c/2. The ordinary output reading instead assigns the bright output density 2u_0 and therefore gives no anomalous delay. Isolating a bright branch and comparing its modulation delay against a matched reference beam over the same longitudinal distance gives a direct time-of-flight discrimination between the two readings."
+one-sentence-summary: "A bright interference fringe produced at Mach-Zehnder recombination carries increased constructive-interference energy density and therefore exhibits a dielectric longitudinal delay relative to an ordinary reference beam."
+summary: "Electromagnetic propagation in a dielectric slows when the electric and magnetic response increases the effective permittivity and permeability. Full coherent superposition at Mach-Zehnder recombination has the same loading structure. The first beam splitter creates two bright arm beams, while recombination is a distinct phase in which two populated arm states meet and are redistributed across the two output ports. Each beam supplies the coherent response seen by the other, so equal-beam constructive interference doubles the fields, quadruples the instantaneous energy density at the bright center, and yields c_eff = c/2. The ordinary output reading instead assigns the bright output density 2u_0 and therefore gives no anomalous delay. Isolating a bright interference fringe and comparing its modulation delay against a matched reference beam over the same longitudinal distance gives a direct time-of-flight discrimination between the two readings."
 keywords:
   - interference
   - Mach-Zehnder interferometer
   - dielectric slowing
+  - dielectric longitudinal delay
   - constructive interference
   - energy density
-  - bright branch
+  - bright interference fringe
   - time-of-flight
   - speed of light
 ---
 
-# Longitudinal Delay of an Isolated Bright Interference Branch
+# Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe
 
 ## Abstract
 
@@ -294,14 +295,14 @@ A Mach-Zehnder has two distinct phases.
 At the first beam splitter:
 
 - one bright incident beam becomes two bright arm beams
-- the purpose is to prepare coherent branches
-- no loaded constructive-interference branch is being claimed
+- the purpose is to prepare coherent arm beams
+- no loaded constructive-interference fringe is being claimed
 
 At recombination:
 
 - two arm beams meet coherently
 - the fields add or subtract before the ordinary output decomposition is written
-- the loaded-branch question is whether the bright raw overlap itself propagates
+- the loaded-fringe question is whether the bright raw overlap itself propagates
   with the reduced speed above
 
 Mathematically, the same 50/50 beam-splitter matrix can describe both
@@ -413,13 +414,13 @@ So the experimental fork is:
 Use a coherent source, modulate it, split it into two arms, and recombine the
 arms so they form stable fringes. Then:
 
-1. isolate one bright branch with an aperture
-2. propagate that selected branch over distance $L$
+1. isolate one bright interference fringe with an aperture
+2. propagate that selected fringe over distance $L$
 3. propagate a matched reference beam over the same distance
 4. compare delay slopes $d\tau/dL$
 
-The standard output reading predicts equal slopes. The loaded-branch reading
-predicts a larger slope for the bright branch.
+The standard output reading predicts equal slopes. The loaded-fringe reading
+predicts a larger slope for the bright fringe.
 
 For the equal-beam limit,
 
@@ -554,12 +555,12 @@ $$
 
 ## 7. What the Experiment Decides
 
-This experiment tests which object should be treated as the propagating branch
+This experiment tests which object should be treated as the propagating fringe
 after recombination:
 
 - the ordinary normalized output mode
-- or the isolated raw constructive-interference branch
+- or the isolated raw constructive-interference fringe
 
 If the measured delay matches the reference, the ordinary reading wins. If the
 measured delay approaches the $c/2$ prediction in the equal-beam limit, the
-loaded-branch reading is supported.
+loaded-fringe reading is supported.
