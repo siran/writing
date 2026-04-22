@@ -8,107 +8,175 @@ date: 2026-04-22
 ## Abstract
 
 This proposal begins from the standard result that light propagates more slowly
-in a dielectric because a given longitudinal flux is carried on a larger total
-energy density. In that form, the effective transport speed is
+in a transparent dielectric. In the usual electromagnetic description, the
+electric and magnetic response of the medium increases the effective
+permittivity and permeability, so the propagation speed becomes
 
 $$
-v_{\mathrm{eff}}=\frac{J}{u}.
+c_{\mathrm{eff}}=\frac{1}{\sqrt{\varepsilon_{\mathrm{eff}}\mu_{\mathrm{eff}}}}
+=\frac{c}{n}.
 $$
 
-The proposal then asks whether the same loading effect appears when two
+The proposal then asks whether the same kind of slowdown appears when two
 coherent beams fully overlap in the recombination phase of a Mach-Zehnder
 interferometer. The first beam splitter only prepares two bright arm beams. The
-slowdown question appears later, when those two beams recombine. These two
-phases are not the same spatial operation run backward.
+question appears later, when those beams recombine. These are not the same
+spatial operation run backward.
 
-At a bright recombination point for two equal beams, the instantaneous overlap
-fields double, so the raw energy density is four times the single-beam density.
-But the conserved longitudinal flux feeding that point is only the sum of the
-two beam fluxes. Under the loaded-branch reading,
+If each overlapping beam is treated as the coherent electromagnetic response
+seen by the other, then equal-beam bright overlap doubles the fields, quadruples
+the instantaneous energy density, and gives the same reduced-speed result
 
 $$
-J=2u_0c,
-\qquad
-u_{\mathrm{raw}}=4u_0,
-\qquad
-v_{\mathrm{eff}}=\frac{c}{2}.
+c_{\mathrm{eff}}=\frac{c}{2}.
 $$
 
 The standard output reading instead assigns the bright output density `2u_0`
-and predicts no anomalous delay. The experiment is a direct time-of-flight test
-between these two readings.
+and predicts no anomalous delay. The experiment is therefore a direct
+time-of-flight test between these two readings.
 
 ---
 
 ## 1. Classic Dielectric Result
 
-In a transparent linear dielectric, standard electromagnetism gives the
-familiar reduced speed
+In a transparent linear dielectric,
 
 $$
-v_{\mathrm{dielectric}}=\frac{1}{\sqrt{\varepsilon\mu}}=\frac{c}{n}.
+\mathbf D=\varepsilon_0\mathbf E+\mathbf P,
 $$
 
-The same result can be written in transport form:
+and for a linear response,
 
 $$
-v_{\mathrm{eff}}=\frac{J}{u}.
+\mathbf P=\varepsilon_0\chi_e\mathbf E.
 $$
 
-Here `J` is the longitudinal energy flux and `u` is the total electromagnetic
-energy density carried with the wave. The medium response increases the total
-carried energy density, so the same through-flux corresponds to a smaller
-transport speed. That is the standard starting point.
+Therefore
+
+$$
+\mathbf D=\varepsilon_0(1+\chi_e)\mathbf E
+=\varepsilon_{\mathrm{eff}}\mathbf E,
+$$
+
+so
+
+$$
+\varepsilon_{\mathrm{eff}}=\varepsilon_0(1+\chi_e).
+$$
+
+If the magnetic sector is likewise loaded,
+
+$$
+\mu_{\mathrm{eff}}=\mu_0(1+\chi_m).
+$$
+
+Then the propagation speed is
+
+$$
+c_{\mathrm{eff}}
+=\frac{1}{\sqrt{\varepsilon_{\mathrm{eff}}\mu_{\mathrm{eff}}}}.
+$$
+
+For symmetric electric and magnetic loading,
+
+$$
+\chi_e=\chi_m=k,
+$$
+
+so
+
+$$
+\varepsilon_{\mathrm{eff}}=\varepsilon_0(1+k),
+\qquad
+\mu_{\mathrm{eff}}=\mu_0(1+k),
+$$
+
+and therefore
+
+$$
+c_{\mathrm{eff}}
+=\frac{1}{\sqrt{\varepsilon_0\mu_0(1+k)^2}}
+=\frac{c}{1+k}.
+$$
+
+This is the standard reduced-speed result.
 
 ---
 
-## 2. Same Logic at Coherent Overlap
+## 2. Same Structure at Coherent Overlap
 
-This proposal asks whether the same loading effect appears when two coherent
-beams fully overlap in vacuum during recombination.
+The proposal asks whether the same electromagnetic loading structure appears
+when two coherent beams fully overlap in vacuum during recombination.
 
-At a full bright overlap point, the electric and magnetic fields add before the
-energy-density readout is taken. For two equal beams,
+Let one beam have fields
 
 $$
-E_{\mathrm{raw}}=2E_0,
+\mathbf E_1,\qquad \mathbf B_1,
+$$
+
+and let the second beam act as a coherent response field proportional to the
+first:
+
+$$
+\mathbf E_2=k\mathbf E_1,
 \qquad
-B_{\mathrm{raw}}=2B_0.
+\mathbf B_2=k\mathbf B_1.
 $$
 
-So the instantaneous raw energy density is
+Then the total overlap fields are
 
 $$
-u_{\mathrm{raw}}=4u_0.
+\mathbf E_{\mathrm{tot}}=(1+k)\mathbf E_1,
+\qquad
+\mathbf B_{\mathrm{tot}}=(1+k)\mathbf B_1.
 $$
 
-But the longitudinal flux feeding that bright point is only the sum of the two
-beam fluxes:
+Because electromagnetic energy density is quadratic in the fields, the overlap
+density scales as
 
 $$
-J=2u_0c_z.
+u_{\mathrm{tot}}=(1+k)^2u_1.
 $$
 
-If the isolated bright branch is treated as the transported branch, then
+If the same loading rule as in the dielectric case is applied, then
 
 $$
-v_{\mathrm{eff}}=\frac{J}{u_{\mathrm{raw}}}
-=\frac{2u_0c_z}{4u_0}
-=\frac{c_z}{2}.
+c_{\mathrm{eff}}=\frac{c}{1+k}.
 $$
 
-On axis, where `c_z=c`,
+For equal coherent overlap,
 
 $$
-v_{\mathrm{eff}}=\frac{c}{2}.
+k=1,
 $$
+
+so
+
+$$
+\mathbf E_{\mathrm{tot}}=2\mathbf E_1,
+\qquad
+\mathbf B_{\mathrm{tot}}=2\mathbf B_1,
+$$
+
+and
+
+$$
+u_{\mathrm{tot}}=4u_1.
+$$
+
+Therefore
+
+$$
+c_{\mathrm{eff}}=\frac{c}{2}.
+$$
+
+That is the simple claim being tested.
 
 ---
 
 ## 3. Why the Split Phase Is Different
 
-The first beam splitter and the recombination phase should not be described as
-the same spatial process.
+A Mach-Zehnder has two distinct phases.
 
 At the first beam splitter:
 
@@ -119,13 +187,11 @@ At the first beam splitter:
 At recombination:
 
 - two arm beams meet coherently
-- one recovered two-beam flux is present before the ordinary output
-  decomposition is written
-- the loaded-branch question is whether the isolated bright raw overlap itself
-  transports as a branch
+- the fields add or subtract before the ordinary output decomposition is written
+- the loaded-branch question is whether the bright raw overlap itself propagates
+  with the reduced speed above
 
-This is why the test belongs to the recombination phase, not to the initial
-split.
+So the slowdown question belongs to recombination, not to the initial split.
 
 ---
 
@@ -134,14 +200,14 @@ split.
 At a lossless 50/50 recombiner, the ordinary output fields are
 
 $$
-E_+=\frac{E_1+E_2}{\sqrt 2},
+\mathbf E_+=\frac{\mathbf E_1+\mathbf E_2}{\sqrt 2},
 \qquad
-E_-=\frac{E_1-E_2}{\sqrt 2},
+\mathbf E_-=\frac{\mathbf E_1-\mathbf E_2}{\sqrt 2},
 $$
 
 and likewise for the magnetic fields.
 
-So for equal beams at a bright output point, the standard output reading gives
+For equal beams at a bright output point, the standard output reading gives
 
 $$
 u_+=2u_0,
@@ -149,7 +215,7 @@ u_+=2u_0,
 u_-=0.
 $$
 
-Therefore the two readings are:
+So the experimental fork is:
 
 - ordinary output reading:
   $$
@@ -159,7 +225,7 @@ Therefore the two readings are:
   $$
   v_{\mathrm{bright}}=\frac{v_{\mathrm{ref}}}{2}
   $$
-  in the equal-beam on-axis limit
+  in the equal-beam limit
 
 ---
 
@@ -176,7 +242,7 @@ arms so they form stable fringes. Then:
 The standard output reading predicts equal slopes. The loaded-branch reading
 predicts a larger slope for the bright branch.
 
-For the equal-beam on-axis limit,
+For the equal-beam limit,
 
 $$
 \tau_{\mathrm{bright}}-\tau_{\mathrm{ref}}\approx \frac{L}{c}.
@@ -189,126 +255,128 @@ So at `1 m` the extra delay is about `3.34 ns`, and at `10 m` it is about
 
 ## 6. Detailed Derivation
 
-### 6.1 Dielectric Speed in Standard Form
+### 6.1 Dielectric Derivation
 
-For a plane wave in a transparent linear dielectric,
-
-$$
-v=\frac{1}{\sqrt{\varepsilon\mu}}.
-$$
-
-This is the standard reduced propagation speed.
-
-The same result can be written in transport form as
+Start from
 
 $$
-v_{\mathrm{eff}}=\frac{J}{u},
-$$
-
-where `J` is longitudinal energy flux and `u` is the total carried
-electromagnetic energy density.
-
-### 6.2 Instantaneous Bright-Point Density
-
-No time averaging is needed for the basic bright-point argument.
-
-At a full bright overlap point, take two equal coherent beams with instantaneous
-fields
-
-$$
-E_1(t)=E_0(t),
+\mathbf D=\varepsilon_0\mathbf E+\mathbf P,
 \qquad
-E_2(t)=E_0(t),
-$$
-
-and
-
-$$
-B_1(t)=B_0(t),
-\qquad
-B_2(t)=B_0(t).
+\mathbf P=\varepsilon_0\chi_e\mathbf E.
 $$
 
 Then
 
 $$
-E_{\mathrm{raw}}(t)=E_1(t)+E_2(t)=2E_0(t),
+\varepsilon_{\mathrm{eff}}=\varepsilon_0(1+\chi_e).
+$$
+
+If the magnetic sector is likewise loaded,
+
+$$
+\mu_{\mathrm{eff}}=\mu_0(1+\chi_m).
+$$
+
+So
+
+$$
+c_{\mathrm{eff}}=\frac{1}{\sqrt{\varepsilon_{\mathrm{eff}}\mu_{\mathrm{eff}}}}.
+$$
+
+For symmetric loading `\chi_e=\chi_m=k`,
+
+$$
+c_{\mathrm{eff}}=\frac{c}{1+k}.
+$$
+
+### 6.2 Instantaneous Overlap Derivation
+
+No time averaging is needed for the basic bright-point argument.
+
+At a full bright overlap point for equal beams,
+
+$$
+\mathbf E_1(t)=\mathbf E_0(t),
+\qquad
+\mathbf E_2(t)=\mathbf E_0(t),
 $$
 
 and
 
 $$
-B_{\mathrm{raw}}(t)=B_1(t)+B_2(t)=2B_0(t).
+\mathbf B_1(t)=\mathbf B_0(t),
+\qquad
+\mathbf B_2(t)=\mathbf B_0(t).
+$$
+
+Then
+
+$$
+\mathbf E_{\mathrm{tot}}(t)=2\mathbf E_0(t),
+\qquad
+\mathbf B_{\mathrm{tot}}(t)=2\mathbf B_0(t).
 $$
 
 The instantaneous electromagnetic energy density is
 
 $$
-u_{\mathrm{raw}}(t)
+u_{\mathrm{tot}}(t)
 =
-\frac{\varepsilon_0}{2}E_{\mathrm{raw}}(t)^2
+\frac{\varepsilon_0}{2}\lvert \mathbf E_{\mathrm{tot}}(t)\rvert^2
 +
-\frac{1}{2\mu_0}B_{\mathrm{raw}}(t)^2.
+\frac{1}{2\mu_0}\lvert \mathbf B_{\mathrm{tot}}(t)\rvert^2.
 $$
 
 Substituting the doubled fields gives
 
 $$
-u_{\mathrm{raw}}(t)
-=
-4\left[
-\frac{\varepsilon_0}{2}E_0(t)^2
-+
-\frac{1}{2\mu_0}B_0(t)^2
-\right]
-=4u_0(t).
+u_{\mathrm{tot}}(t)=4u_0(t).
 $$
 
 So the bright-point factor of four is already an instantaneous result.
 
-### 6.3 Local Longitudinal Flux
+### 6.3 Coherent-Response Form
 
-For a freely propagating beam in vacuum, or more generally in a transparent
-linear medium, the local longitudinal flux is
-
-$$
-J_{iz}=u_i c\cos\alpha_i,
-$$
-
-where `\alpha_i` is the local angle between the energy-flow direction and the
-measurement axis.
-
-For two equal beams with the same local longitudinal factor `c_z`,
+Write the second beam as a coherent response field proportional to the first:
 
 $$
-J=J_{1z}+J_{2z}=2u_0c_z.
+\mathbf E_2=k\mathbf E_1,
+\qquad
+\mathbf B_2=k\mathbf B_1.
 $$
 
-### 6.4 Loaded-Branch Speed
-
-Combining the two previous results,
+Then
 
 $$
-v_{\mathrm{eff}}=\frac{J}{u_{\mathrm{raw}}}
-=\frac{2u_0c_z}{4u_0}
-=\frac{c_z}{2}.
+\mathbf E_{\mathrm{tot}}=(1+k)\mathbf E_1,
+\qquad
+\mathbf B_{\mathrm{tot}}=(1+k)\mathbf B_1,
 $$
 
-On axis,
+so
 
 $$
-v_{\mathrm{eff}}=\frac{c}{2}.
+u_{\mathrm{tot}}=(1+k)^2u_1.
+$$
+
+Applying the same reduced-speed structure as in the dielectric case gives
+
+$$
+c_{\mathrm{eff}}=\frac{c}{1+k}.
+$$
+
+For equal overlap, `k=1`, hence
+
+$$
+c_{\mathrm{eff}}=\frac{c}{2}.
 $$
 
 ---
 
 ## 7. What the Experiment Decides
 
-This experiment does not test whether energy is conserved. Energy conservation
-is assumed throughout.
-
-It tests which object should be treated as the transported branch after
-recombination:
+This experiment tests which object should be treated as the propagating branch
+after recombination:
 
 - the ordinary normalized output mode
 - or the isolated raw bright overlap
