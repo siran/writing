@@ -2738,6 +2738,35 @@ def main():
                 rendered_dst = dst.with_suffix(dst.suffix + ".html")
                 render_markdown_file(p, rendered_dst, title=p.stem)
 
+        # .pdf marker file: opt-in PDF generation per folder.
+        # If .pdf exists and is empty  → render every .md in this directory.
+        # If .pdf lists filenames      → render only those files.
+        pdf_marker = d / ".pdf"
+        if pdf_marker.exists() and not args.skip_pdf:
+            marker_text = ""
+            try:
+                marker_text = pdf_marker.read_text(encoding="utf-8").strip()
+            except Exception:
+                pass
+            if marker_text:
+                target_names = [ln.strip() for ln in marker_text.splitlines() if ln.strip()]
+            else:
+                target_names = [
+                    fn for fn in filenames
+                    if Path(fn).suffix.lower() in MD_EXTS and not fn.startswith(".")
+                ]
+            for md_name in target_names:
+                src_md = d / md_name
+                if not src_md.exists():
+                    print(f"[DEBUG] .pdf marker: missing source {src_md}; skipping")
+                    continue
+                dst_md = OUT / rel(src_md)
+                if not dst_md.exists():
+                    print(f"[DEBUG] .pdf marker: mirrored file not found {dst_md}; skipping")
+                    continue
+                print(f"[DEBUG] .pdf marker: rendering PDF for {rel(src_md)}")
+                render_md_formats(dst_md, rel(src_md), do_pdf=True, do_epub=False)
+
     copy_static()
     # Render books from the mirrored copies under OUT to avoid touching source.
     book_include_pdf = not (args.skip_pdf or args.skip_books or ".pdf" in SKIP_COPY_EXTS)
