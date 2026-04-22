@@ -235,6 +235,22 @@
             // Bare URLs → <a>; don't match inside ) etc.
             html = html.replace(/(^|\s)(https?:\/\/[^\s)]+)/g, '$1<a href="$2">$2</a>');
 
+            // Ordered lists: consecutive lines starting with N. (digit + period + space)
+            html = html.replace(/((?:(?:^|\n)\d+\.\s+[^\n]+)+)/g, function (m) {
+                var ls = m.replace(/^\n+/, '').split('\n');
+                return '\n<ol>' + ls.filter(function (l) { return l.trim(); }).map(function (l) {
+                    return '<li>' + l.replace(/^\s*\d+\.\s+/, '') + '</li>';
+                }).join('') + '</ol>\n';
+            });
+
+            // Unordered lists: consecutive lines starting with - or * followed by a space
+            html = html.replace(/((?:(?:^|\n)[-*]\s+[^\n]+)+)/g, function (m) {
+                var ls = m.replace(/^\n+/, '').split('\n');
+                return '\n<ul>' + ls.filter(function (l) { return l.trim(); }).map(function (l) {
+                    return '<li>' + l.replace(/^\s*[-*]\s+/, '') + '</li>';
+                }).join('') + '</ul>\n';
+            });
+
             document.body.innerHTML = html;
 
             // Paragraph-wrap .md-container content so white-space:normal collapses
