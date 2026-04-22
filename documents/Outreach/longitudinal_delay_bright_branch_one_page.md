@@ -160,7 +160,7 @@ $$
 
 Under the tested reading, the overlap is described in the same form as the
 dielectric case, but with the second coherent beam supplying the response
-sector. Define
+sector. Define, abbreviating coherent by the subscript $\mathrm{coh}$,
 
 $$
 \mathbf D_{\mathrm{coh}}
