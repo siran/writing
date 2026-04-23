@@ -299,94 +299,34 @@ $$
 
 ## Why the Split Phase Is Different {#sec:split}
 
-A Mach-Zehnder has two distinct phases.
+The split and recombination use the same physical element but are not the same
+operation.
 
-At the first beam splitter:
+The split takes one beam and produces two equal beams from it. Its purpose is
+to prepare coherent arm beams; no loaded interference fringe is formed.
 
-- one bright incident beam becomes two bright arm beams
-- the purpose is to prepare coherent arm beams
-- no loaded constructive-interference fringe is being claimed
+Recombination takes two coherent equal beams and concentrates them into a
+single signal distributed across two output channels. The bright channel
+receives the constructive-interference fringe; the dark channel receives
+nothing. Together they account for the full input energy — the fringe profile
+$\cos^2+\sin^2=1$ sums to unity.
 
-At recombination:
-
-- two arm beams meet coherently
-- the fields add or subtract before the ordinary output decomposition is written
-- the loaded-fringe question is whether the bright raw overlap itself propagates
-  with the reduced speed above
-
-Mathematically, the same 50/50 beam-splitter matrix can describe both
-interfaces, but the occupied input states are different. If
-
-$$
-\binom{b_1}{b_2}
-=
-\frac{1}{\sqrt 2}
-\begin{pmatrix}
-1 & 1 \\
-1 & -1
-\end{pmatrix}
-\binom{a_1}{a_2},
-$$
-
-then the split phase starts from one populated input port,
-
-$$
-\binom{a_1}{a_2}=\binom{A}{0},
-$$
-
-so
-
-$$
-\binom{b_1}{b_2}
-=
-\binom{A/\sqrt 2}{A/\sqrt 2},
-$$
-
-which gives two bright arm beams. Recombination starts instead from two
-populated arm inputs,
-
-$$
-\binom{a_1}{a_2}=\binom{A}{A},
-$$
-
-so
-
-$$
-\binom{b_1}{b_2}
-=
-\binom{\sqrt 2\,A}{0},
-$$
-
-which gives one bright output and one dark output. The optical element is the
-same, but the populated states are different, so the split and recombination
-phases are not the same spatial decomposition.
-
-This also explains why recombination still produces two spatially distributed
-output arms rather than a single merged beam. The recombiner is a two-port
-linear map: it sends the two incoming arm fields into the sum and difference
-output channels. Those channels emerge in different spatial directions, so the
-recovered field is written across two output arms even when one of them is dark
-at a bright point.
-
-So the slowdown question belongs to recombination, not to the initial split.
+The dielectric loading question belongs to recombination, where two in-phase
+equal beams combine, not to the split.
 
 ---
 
 ## Experimental Fork
 
-The dielectric loading acts on the raw constructive-interference overlap before
-the recombiner writes the output decomposition. Each arm carries amplitude $E_0$
-(intensity $u$). At full in-phase recombination,
+Each arm carries amplitude $E_0$ (intensity $u$). At recombination the two
+coherent equal beams combine: the bright fringe has amplitude $2E_0$ and
+intensity $4u$; the dark fringe has $0$. The fringe profile
+$\cos^2+\sin^2=1$ distributes the full input energy across the two output
+channels.
 
-$$
-\mathbf E_{\mathrm{overlap}}=\mathbf E_1+\mathbf E_2=2E_0,
-\qquad
-u_{\mathrm{overlap}}=4u.
-$$
-
-With $k=1$ the dielectric result gives $c_{\mathrm{eff}}=c/2$. The recombiner
-then routes this overlap into the bright and dark output ports (see
-@sec:energy-flux for the routing accounting).
+The dielectric loading applies to the combined field at the bright fringe.
+With $k=1$ the dielectric result gives $c_{\mathrm{eff}}=c/2$ (see
+@sec:energy-flux for the full energy and routing accounting).
 
 The two readings are:
 
