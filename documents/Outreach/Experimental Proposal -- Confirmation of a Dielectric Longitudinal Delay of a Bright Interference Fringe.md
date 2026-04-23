@@ -35,7 +35,7 @@ The same kind of slowdown follows when two coherent beams are brought into
 coherent superposition in the recombination phase of a Mach-Zehnder
 interferometer. The first beam splitter only prepares two bright arm beams. The
 relevant step appears later, when those beams recombine. These are not the
-same spatial operation run backward (see Section 4).
+same spatial operation run backward (see @sec:split).
 
 If each beam is treated as the coherent electromagnetic response seen by the
 other, then equal-beam constructive interference doubles the fields,
@@ -52,7 +52,7 @@ time-of-flight test between these two readings.
 
 ---
 
-## 1. Rationale
+## Rationale
 
 In a linear dielectric, an incident electromagnetic wave induces a response
 electromagnetic wave in the medium. Maxwell electrodynamics is linear, so the
@@ -77,7 +77,7 @@ dark-limit cancels the fringe rather than producing a faster propagated one.
 
 ---
 
-## 2. Classic Dielectric Result
+## Classic Dielectric Result
 
 In a transparent linear dielectric,
 
@@ -178,7 +178,7 @@ This is the standard reduced-speed result.
 
 ---
 
-## 3. Same Structure at Coherent Superposition
+## Same Structure at Coherent Superposition
 
 The same electromagnetic loading structure appears when two coherent beams are
 coherently superposed in vacuum during recombination.
@@ -313,7 +313,7 @@ That is the tested coherent-overlap result.
 
 ---
 
-## 4. Why the Split Phase Is Different
+## Why the Split Phase Is Different {#sec:split}
 
 A Mach-Zehnder has two distinct phases.
 
@@ -388,7 +388,7 @@ So the slowdown question belongs to recombination, not to the initial split.
 
 ---
 
-## 5. Experimental Fork
+## Experimental Fork
 
 At a "lossless" 50/50 recombiner, the ordinary output fields are
 
@@ -434,7 +434,7 @@ So the experimental fork is:
 
 ---
 
-## 6. Experimental Idea
+## Experimental Idea
 
 Use a coherent source, modulate it, split it into two arms, and recombine the
 arms so they form stable fringes. Then:
@@ -458,9 +458,9 @@ $10\,\mathrm{m}$ it is about $33.4\,\mathrm{ns}$.
 
 ---
 
-## 7. Detailed Derivation
+## Detailed Derivation
 
-### 7.1 Dielectric Derivation
+### Dielectric Derivation
 
 Start from
 
@@ -494,7 +494,7 @@ $$
 c_{\mathrm{eff}}=\frac{c}{1+k}.
 $$
 
-### 7.2 Instantaneous Constructive-Interference Derivation
+### Instantaneous Constructive-Interference Derivation
 
 No time averaging is needed for the basic bright-point argument.
 
@@ -540,7 +540,7 @@ $$
 
 So the bright-point factor of four is already an instantaneous result.
 
-### 7.3 Coherent-Response Form
+### Coherent-Response Form
 
 Write the second beam as a coherent response field proportional to the first:
 
@@ -578,7 +578,7 @@ $$
 
 ---
 
-## 8. What the Experiment Decides
+## What the Experiment Decides
 
 This experiment tests which object should be treated as the propagating fringe
 after recombination:
