@@ -59,15 +59,39 @@ that trail off.
 
 ## Loading and decoherence
 
-Any dielectric-like loading imposed by a coherent overlap lives inside this
-cigar. Two beams derived from the same source that meet in a bright fringe
-load each other's propagation only while they remain coherent. As the overlap
-exits the coherent extent, the loading fades: the cross term
+Dielectric-like loading is a *pair* phenomenon. A lone cigar moves at $c$.
+But where two in-phase cigars share space, the overlap region hosts a
+bright fringe whose combined field phase-propagates at the reduced speed.
+Two beams derived from the same source load each other's propagation only
+while both remain coherent. As the overlap exits either coherent extent,
+the loading fades: the cross term
 $\langle\mathbf{E}_1\cdot\mathbf{E}_2\rangle$ decays, $k_{\mathrm{eff}}$ drops
 from one toward zero, and the effective refractive index slides from two back
 toward one.
 
 The bright fringe does not slam into a wall. It smoothly un-slows.
+
+## How slow can it go?
+
+The loading formula has no ceiling. Stack $N$ coherent beams in phase and
+$k=N-1$, so $c_{\mathrm{eff}}=c/N$. A high-finesse Fabry-Perot is this idea
+pushed by repeated self-overlap; slow-light experiments routinely reach
+meters per second.
+
+At $v\ll c$, gravity gets a handle. A photon moving at one meter per second
+falls measurably across a laboratory — the time spent inside the
+gravitational potential becomes long, and $\tfrac{1}{2}gt^{2}$ accumulates.
+Slow light is gravitationally classical: an ordinary parabola, not a tiny GR
+deflection.
+
+Absorption is the real-medium caveat. In vacuum, coherent superposition is
+lossless — no imaginary part to $k$, purely reactive loading. In real media
+there is always some $\mathrm{Im}(\chi)$, and energy leaks.
+
+The boundary between *light* and *matter* starts to blur here. A cigar slowed
+hard enough, confined enough, and self-consistent enough has a rest frame,
+has mass-energy, and responds to gravity. Which is what matter is supposed
+to be.
 
 ## Open questions
 
