@@ -644,9 +644,17 @@ def prepare_preprocessed(
     if shift_headings is not None:
         shift_preview = shift_headings
     elif auto_shift:
-        mhl = _min_heading_level(body2)
-        if mhl and mhl > 1:
-            shift_preview = 1 - mhl
+        # Skip auto-shift when YAML front matter already provides a title:
+        # pandoc's \maketitle handles the top level, so body headings should
+        # stay at the level they're written (## stays \subsection, etc.).
+        # Only auto-shift when there's no YAML title, to promote body
+        # headings to top-level sections.
+        yaml_title = (yaml_meta or {}).get("title") if use_yaml else None
+        has_yaml_title = bool(yaml_title and str(yaml_title).strip())
+        if not has_yaml_title:
+            mhl = _min_heading_level(body2)
+            if mhl and mhl > 1:
+                shift_preview = 1 - mhl
 
     if not omit_toc:
         body2, has_toc_marker = replace_toc_marker(body2, toc_depth, shift_preview)
