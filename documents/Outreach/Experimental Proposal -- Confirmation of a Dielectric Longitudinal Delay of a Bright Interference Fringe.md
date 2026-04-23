@@ -44,16 +44,20 @@ second arm supplying the response sector instead of the medium.
 The first beam splitter only prepares two coherent arm beams. The loading
 question belongs to recombination, not to the initial split (see @sec:split).
 
-Equal-beam constructive interference therefore doubles the fields, quadruples
-the instantaneous energy density, and gives
+The input laser carries intensity $2u$. The first beam splitter produces two
+arm beams of amplitude $E_0$ and intensity $u$ each. At recombination, the two
+equal arm amplitudes add in phase: $E_0 + E_0 = 2E_0$, intensity $4u$ at the
+bright fringe. Each arm is the equal-amplitude in-phase response to the other
+($k=1$), so
 
 $$
 c_{\mathrm{eff}}=\frac{c}{2}.
 $$
 
-The standard output reading assigns the bright output density $2u_0$ and
-predicts no delay. The experiment is a direct time-of-flight test between these
-two readings.
+The recombiner routes this $4u$ overlap into the output ports: bright port
+carries $2u$, dark port $0$, recovering the input laser energy. The ordinary
+reading reports a $2u$ output beam propagating at $c$ and predicts no delay.
+The experiment is a direct time-of-flight test between these two readings.
 
 ---
 
@@ -196,7 +200,12 @@ physical realizations of the same coherent in-phase response. The reduced-speed
 result is not transferred by analogy — it applies directly, because the
 mechanism is the same.
 
-Writing the second beam as the response sector proportional to the first,
+The input laser carries intensity $2u$. After the first beam splitter, each
+arm has amplitude $E_0$ and intensity $u$, where $u\propto E_0^2$. At
+recombination the two equal arms arrive in phase; each is the equal-amplitude
+in-phase response to the other, so $k=1$ without any further substitution.
+
+Writing the response amplitude as $k$ times the first arm,
 
 $$
 \mathbf E_2=k\mathbf E_1,
@@ -290,28 +299,29 @@ $$
 c_{\mathrm{eff}}=\frac{c}{2}.
 $$
 
-At the bright center of the fringe, where the interference is constructive,
-the total fields are
+At the bright center, with $k=1$ and arm amplitude $E_0$ (intensity $u$),
 
 $$
-\mathbf E_{\mathrm{tot}}=2\mathbf E_1,
+\mathbf E_{\mathrm{tot}}=2E_0,
 \qquad
-\mathbf H_{\mathrm{tot}}=2\mathbf H_1,
+\mathbf H_{\mathrm{tot}}=2H_0,
 $$
 
-and the instantaneous energy density there is
+and the instantaneous energy density is
 
 $$
-u_{\mathrm{tot}}=4u_1.
+u_{\mathrm{tot}}=4u.
 $$
 
-More generally, across the fringe profile one may write
+This is twice the input laser intensity $2u$ and four times each arm intensity
+$u$. Energy is conserved: the dark fringe carries $0$, so the spatial
+redistribution accounts for the full input. Across the fringe profile,
 
 $$
-u(x)=4u_1\cos^2\!\left(\frac{\Delta\phi(x)}{2}\right),
+u(x)=4u\cos^2\!\left(\frac{\Delta\phi(x)}{2}\right),
 $$
 
-so the factor $4$ is the bright-center value of the full spatial dependence.
+averaging to $2u$ over a full fringe period, as required.
 
 That is the tested coherent-overlap result.
 
@@ -394,47 +404,43 @@ So the slowdown question belongs to recombination, not to the initial split.
 
 ## Experimental Fork
 
-At a "lossless" 50/50 recombiner, the ordinary output fields are
+Each arm carries amplitude $E_0$ (intensity $u$). The raw overlap at the
+recombination region is
 
 $$
-\mathbf E_+=\frac{\mathbf E_1+\mathbf E_2}{\sqrt 2},
+\mathbf E_{\mathrm{overlap}}=\mathbf E_1+\mathbf E_2=2E_0,
 \qquad
-\mathbf E_-=\frac{\mathbf E_1-\mathbf E_2}{\sqrt 2},
+u_{\mathrm{overlap}}=4u.
 $$
 
-and likewise for the magnetic fields.
+This is the loaded object — the field that the dielectric mechanism acts on.
 
-Here "lossless" means the splitter is modeled as conserving total optical
-energy, so all energy is accounted for across the two output arms. Small real
-losses do not change the core result being tested, and in a well-aligned setup
-they are negligible compared with the claimed factor-of-two speed difference.
-
-The factor $1/\sqrt 2$ appears because the splitter divides the incoming energy
-into two equal beams. Energy density is a positive quadratic quantity in the
-field *amplitudes*, so halving the energy means scaling the field amplitudes by
-$1/\sqrt 2$, not by $1/2$. The same factor is written on both the electric and
-magnetic fields because they are modeled as vector fields and enter the
-electromagnetic energy density quadratically.
-
-For equal beams at a bright output point, the standard output reading gives
+The recombiner then routes the overlap into two output spatial modes. For a
+lossless 50/50 recombiner the output fields are
 
 $$
-u_+=2u_0,
+\mathbf E_+=\frac{\mathbf E_1+\mathbf E_2}{\sqrt 2}=\sqrt{2}\,E_0,
+\qquad
+\mathbf E_-=\frac{\mathbf E_1-\mathbf E_2}{\sqrt 2}=0,
+$$
+
+and likewise for the magnetic fields. The $1/\sqrt{2}$ here is the recombiner's
+routing factor, distinct from the $1/\sqrt{2}$ that already reduced the arm
+amplitudes at the initial split. Together they return the full input laser
+energy to the bright port:
+
+$$
+u_+=2u,
 \qquad
 u_-=0.
 $$
 
-So the experimental fork is:
+The ordinary reading starts from the $2u$ output beam and finds no anomalous
+delay. The loaded-fringe reading starts from the $4u$ raw overlap and predicts
+$c/2$. The experimental fork is:
 
-- ordinary output reading:
-  $$
-  v_{\mathrm{bright}}=v_{\mathrm{ref}}
-  $$
-- loaded raw-overlap reading:
-  $$
-  v_{\mathrm{bright}}=\frac{v_{\mathrm{ref}}}{2}
-  $$
-  in the equal-beam limit
+- ordinary output reading: $v_{\mathrm{bright}}=c$, no extra delay
+- loaded raw-overlap reading: $v_{\mathrm{bright}}=c/2$, extra delay $L/c$ over distance $L$
 
 ---
 
@@ -500,30 +506,25 @@ $$
 
 ### Instantaneous Constructive-Interference Derivation
 
-No time averaging is needed for the basic bright-point argument.
-
-At a full constructive-interference point for equal beams,
+No time averaging is needed. Each arm beam has amplitude $E_0$ and intensity
+$u$. At a full constructive-interference point,
 
 $$
-\mathbf E_1(t)=\mathbf E_0(t),
+\mathbf E_1(t)=E_0(t),
 \qquad
-\mathbf E_2(t)=\mathbf E_0(t),
-$$
-
-and
-
-$$
-\mathbf B_1(t)=\mathbf B_0(t),
+\mathbf E_2(t)=E_0(t),
 \qquad
-\mathbf B_2(t)=\mathbf B_0(t).
-$$
-
-Then
-
-$$
-\mathbf E_{\mathrm{tot}}(t)=2\mathbf E_0(t),
+\mathbf B_1(t)=B_0(t),
 \qquad
-\mathbf B_{\mathrm{tot}}(t)=2\mathbf B_0(t).
+\mathbf B_2(t)=B_0(t).
+$$
+
+The total field is
+
+$$
+\mathbf E_{\mathrm{tot}}(t)=2E_0(t),
+\qquad
+\mathbf B_{\mathrm{tot}}(t)=2B_0(t).
 $$
 
 The instantaneous electromagnetic energy density is
@@ -533,52 +534,42 @@ u_{\mathrm{tot}}(t)
 =
 \frac{\varepsilon_0}{2}\lvert \mathbf E_{\mathrm{tot}}(t)\rvert^2
 +
-\frac{1}{2\mu_0}\lvert \mathbf B_{\mathrm{tot}}(t)\rvert^2.
+\frac{1}{2\mu_0}\lvert \mathbf B_{\mathrm{tot}}(t)\rvert^2
+= 4u.
 $$
 
-Substituting the doubled fields gives
-
-$$
-u_{\mathrm{tot}}(t)=4u_0(t).
-$$
-
-So the bright-point factor of four is already an instantaneous result.
+The factor of four is instantaneous and exact: amplitude doubles, intensity
+quadruples. The input laser was $2u$; the bright fringe peak is $4u$; the dark
+fringe is $0$; the spatial average is $2u$. Energy is conserved.
 
 ### Coherent-Response Form
 
-Write the second beam as a coherent response field proportional to the first:
+Each arm has amplitude $E_0$ (intensity $u$). The second arm is the response
+sector with $k=1$:
 
 $$
-\mathbf E_2=k\mathbf E_1,
+\mathbf E_2=\mathbf E_1=E_0,
 \qquad
-\mathbf B_2=k\mathbf B_1.
+\mathbf B_2=\mathbf B_1=B_0.
 $$
 
-Then
+Total field:
 
 $$
-\mathbf E_{\mathrm{tot}}=(1+k)\mathbf E_1,
+\mathbf E_{\mathrm{tot}}=(1+k)E_0=2E_0,
 \qquad
-\mathbf B_{\mathrm{tot}}=(1+k)\mathbf B_1,
+u_{\mathrm{tot}}=(1+k)^2u=4u.
 $$
 
-so
+The dielectric loading gives
 
 $$
-u_{\mathrm{tot}}=(1+k)^2u_1.
+c_{\mathrm{eff}}=\frac{c}{1+k}=\frac{c}{2}.
 $$
 
-Applying the same reduced-speed structure as in the dielectric case gives
-
-$$
-c_{\mathrm{eff}}=\frac{c}{1+k}.
-$$
-
-For equal beams at constructive interference, $k=1$, hence
-
-$$
-c_{\mathrm{eff}}=\frac{c}{2}.
-$$
+The $2u$ laser, split to $u$ per arm, recombines to a $4u$ bright fringe
+propagating at $c/2$. The recombiner routes that fringe to a $2u$ output port
+at $c$. The experiment distinguishes which propagation speed is physical.
 
 ---
 
