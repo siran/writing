@@ -35,7 +35,7 @@ The same kind of slowdown follows when two coherent beams are brought into
 coherent superposition in the recombination phase of a Mach-Zehnder
 interferometer. The first beam splitter only prepares two bright arm beams. The
 relevant step appears later, when those beams recombine. These are not the
-same spatial operation run backward (see Section 3).
+same spatial operation run backward (see Section 4).
 
 If each beam is treated as the coherent electromagnetic response seen by the
 other, then equal-beam constructive interference doubles the fields,
@@ -52,7 +52,28 @@ time-of-flight test between these two readings.
 
 ---
 
-## 1. Classic Dielectric Result
+## 1. Rationale
+
+In a linear dielectric, an incident electromagnetic wave induces a response
+electromagnetic wave in the medium. Maxwell electrodynamics is linear, so the
+physical field is the sum of the incident and response sectors.
+
+When that response is in phase with the incident wave, the fields add, the
+local electromagnetic energy density increases, and the propagation speed is
+reduced through the larger effective permittivity and permeability.
+
+Constructive interference has the same local structure. Two coherent beams add
+linearly in phase to form a larger total field. At the level of the
+electromagnetic field equations, that is the same loading pattern: one sector
+is carried together with a second in-phase response sector.
+
+Dielectric slowing follows from this linear in-phase field addition in
+electromagnetism. The same dielectric-like longitudinal delay therefore
+follows at constructive interference.
+
+---
+
+## 2. Classic Dielectric Result
 
 In a transparent linear dielectric,
 
@@ -153,7 +174,7 @@ This is the standard reduced-speed result.
 
 ---
 
-## 2. Same Structure at Coherent Superposition
+## 3. Same Structure at Coherent Superposition
 
 The same electromagnetic loading structure appears when two coherent beams are
 coherently superposed in vacuum during recombination.
@@ -288,7 +309,7 @@ That is the tested coherent-overlap result.
 
 ---
 
-## 3. Why the Split Phase Is Different
+## 4. Why the Split Phase Is Different
 
 A Mach-Zehnder has two distinct phases.
 
@@ -363,7 +384,7 @@ So the slowdown question belongs to recombination, not to the initial split.
 
 ---
 
-## 4. Experimental Fork
+## 5. Experimental Fork
 
 At a "lossless" 50/50 recombiner, the ordinary output fields are
 
@@ -409,7 +430,7 @@ So the experimental fork is:
 
 ---
 
-## 5. Experimental Idea
+## 6. Experimental Idea
 
 Use a coherent source, modulate it, split it into two arms, and recombine the
 arms so they form stable fringes. Then:
@@ -433,9 +454,9 @@ $10\,\mathrm{m}$ it is about $33.4\,\mathrm{ns}$.
 
 ---
 
-## 6. Detailed Derivation
+## 7. Detailed Derivation
 
-### 6.1 Dielectric Derivation
+### 7.1 Dielectric Derivation
 
 Start from
 
@@ -469,7 +490,7 @@ $$
 c_{\mathrm{eff}}=\frac{c}{1+k}.
 $$
 
-### 6.2 Instantaneous Constructive-Interference Derivation
+### 7.2 Instantaneous Constructive-Interference Derivation
 
 No time averaging is needed for the basic bright-point argument.
 
@@ -515,7 +536,7 @@ $$
 
 So the bright-point factor of four is already an instantaneous result.
 
-### 6.3 Coherent-Response Form
+### 7.3 Coherent-Response Form
 
 Write the second beam as a coherent response field proportional to the first:
 
@@ -553,7 +574,7 @@ $$
 
 ---
 
-## 7. What the Experiment Decides
+## 8. What the Experiment Decides
 
 This experiment tests which object should be treated as the propagating fringe
 after recombination:
