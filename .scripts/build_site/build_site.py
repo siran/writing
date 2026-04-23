@@ -2448,7 +2448,7 @@ def _out_has_source(out_path: Path) -> bool:
     """Return True if the given file under OUT has a corresponding source.
 
     Handles the common mappings:
-      OUT/<rel>           ← ROOT/<rel>  or  ROOT/site/<rel>
+      OUT/<rel>           ← ROOT/<rel>  or  SRC/site/<rel>  (static assets)
       OUT/<rel>.md.html   ← ROOT/<rel>.md (rendered companion)
       OUT/<rel>.pandoc.md ← ROOT/<rel>.md (pandoc intermediate)
       OUT/<rel>.pdf/.epub ← ROOT/<rel>.md, or ROOT/<dir>/book.yml (book render)
@@ -2459,17 +2459,20 @@ def _out_has_source(out_path: Path) -> bool:
     rel_p = out_path.relative_to(OUT)
     name = out_path.name
 
-    # Direct mirror from ROOT
+    # Direct mirror from ROOT (main build walks ROOT and copies non-ignored files)
     if (ROOT / rel_p).exists():
         return True
-    # Direct mirror from ROOT/site/
-    if (ROOT / "site" / rel_p).exists():
+    # Direct mirror from SRC/site/ (static site assets: header/footer templates, etc.)
+    if (SRC / "site" / rel_p).exists():
         return True
 
     # foo.md.html  ← foo.md
     if name.endswith(".md.html"):
         md_src = ROOT / rel_p.with_suffix("")  # strips trailing .html
         if md_src.exists():
+            return True
+        md_site_src = SRC / "site" / rel_p.with_suffix("")
+        if md_site_src.exists():
             return True
 
     # foo.pandoc.md  ← foo.md
@@ -2520,14 +2523,23 @@ def prune_orphans_from_out():
         if parts and parts[0] == ".well-known":
             continue
 
-        # Directory index.html is generated fresh each build, but only keep it
-        # if the directory still has other surviving content.
-        if name == "index.html" and len(parts) > 1:
+        # Directory index files are generated fresh each build (one variant per
+        # sort key: name, created, modified). Keep them if the directory still
+        # holds non-index content; otherwise they're the last artifacts of a
+        # deleted subtree and should go.
+        _INDEX_VARIANTS = {
+            "index.html",
+            "index.md.html",
+            "index.created.md.html",
+            "index.modified.md.html",
+        }
+        if name in _INDEX_VARIANTS and len(parts) > 1:
             dir_path = path.parent
-            has_siblings = any(
-                p.is_file() and p != path for p in dir_path.iterdir()
+            has_real_content = any(
+                p.is_file() and p.name not in _INDEX_VARIANTS
+                for p in dir_path.iterdir()
             )
-            if has_siblings:
+            if has_real_content:
                 continue
 
         if _out_has_source(path):
