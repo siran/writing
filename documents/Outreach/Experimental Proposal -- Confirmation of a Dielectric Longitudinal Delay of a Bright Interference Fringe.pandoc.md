@@ -20,6 +20,10 @@ keywords:
   - speed of light
 ---
 
+**One-Sentence Summary.** At Mach-Zehnder recombination each arm beam is the in-phase electromagnetic response to the other, so the dielectric slowing mechanism applies directly and the bright fringe propagates at c/2.
+
+**Keywords.** interference, Mach-Zehnder interferometer, dielectric slowing, dielectric longitudinal delay, constructive interference, energy density, bright interference fringe, refraction, Snell's law, total internal reflection, time-of-flight, speed of light
+
 ## Abstract
 
 A dielectric slows light because the medium responds to the incident
@@ -99,6 +103,7 @@ bright-fringe direction of the fork carries a substantive prediction.
 
 
 ## Theory
+
 
 ### The Dielectric Mechanism
 
@@ -204,6 +209,7 @@ equal beams combine, not to the split.
 
 ## Proposed Experiments
 
+
 ### The Two Readings
 
 Each arm carries amplitude $E_0$ (energy density $u$).
@@ -214,7 +220,7 @@ input energy across the two output channels.
 
 The dielectric loading applies to the combined field at the bright fringe. With
 $k=1$ the dielectric result gives $c_{\mathrm{eff}}=c/2$ (see
-@sec:energy-flux for the full energy and routing accounting).
+\nameref{sec:energy-flux} for the full energy and routing accounting).
 
 The two readings differ in the phase velocity assigned to the bright fringe:
 
