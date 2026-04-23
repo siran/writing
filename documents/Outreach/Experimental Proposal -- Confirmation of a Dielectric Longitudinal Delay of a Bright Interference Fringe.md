@@ -71,6 +71,10 @@ Dielectric slowing follows from this linear in-phase field addition in
 electromagnetism. The same dielectric-like longitudinal delay therefore
 follows at constructive interference.
 
+This logic is one-sided. Constructive interference yields a denser surviving
+bright fringe, while destructive interference depletes the field and in the
+dark-limit cancels the fringe rather than producing a faster propagated one.
+
 ---
 
 ## 2. Classic Dielectric Result
