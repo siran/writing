@@ -83,10 +83,7 @@ interferes only with itself* — the two arm beams are two paths of the same
 coherent state. The loading one arm imposes on the other is therefore
 self-interference in the strict sense: the photon encountering its own
 amplitude. The present proposal tests whether that self-interference carries a
-measurable phase-velocity signature, along the self-refraction line developed
-in *The Physics of Energy Flow* (Ch. 7b). If confirmed, the same mechanism
-supports the broader program in which stable matter appears as an
-electromagnetic configuration held together by its own coherent overlap.
+measurable phase-velocity signature.
 
 The ordinary output-mode analysis disagrees. It normalizes the recombined
 field through the $1/\sqrt 2$ routing factor and treats the bright port as a
@@ -450,20 +447,13 @@ For the time-of-flight test, if the measured delay matches the reference, the
 ordinary reading wins. If the delay approaches the $c/2$ prediction in the
 equal-beam limit, the loaded-fringe reading is supported.
 
-More broadly, confirmation would establish that coherent superposition alone
-loads Maxwell's equations in the dielectric sense, independent of matter. That
-is the physical hinge on which the self-refraction program — in which stable
-matter appears as an electromagnetic configuration held together by its own
-coherent overlap — rests.
-
 ---
 
 ## Acknowledgments
 
 We thank Celso L. Ladera of Universidad Simón Bolívar, Caracas, for
 introducing one of us (A.M.R.) to Dirac's dictum on self-interference during
-his undergraduate optics course. That seed resurfaced while writing *The
-Physics of Energy Flow* and motivated the present proposal.
+his undergraduate optics course.
 
 ---
 
@@ -483,11 +473,4 @@ Physics of Energy Flow* and motivated the present proposal.
    Electromagnetic Superposition: Polarization Without Matter*. Preferred
    Frame. <https://writing.preferredframe.com/doi/10.5281/zenodo.18396637>.
    Precursor derivation of the effective refractive index and local light
-   speed from coherent superposition of free electromagnetic fields, without
-   invoking matter.
-
-4. Rodriguez, A. M. *The Physics of Energy Flow*, Part I (in preparation).
-   See Ch. 7b, Self-Refraction, for the coherent-overlap formulation of
-   dielectric-like loading from a field interacting with itself, and for the
-   broader program in which matter appears as stabilized configurations of
-   self-refracting electromagnetic energy flow.
+   speed from coherent superposition of free electromagnetic fields.
