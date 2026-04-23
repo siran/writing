@@ -3,8 +3,8 @@ title: "Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay
 subtitle: "A dielectric-first derivation and time-of-flight test in a Mach-Zehnder interferometer"
 author: "An M. Rodriguez"
 date: "2026-04-22"
-one-sentence-summary: "A bright interference fringe produced at Mach-Zehnder recombination carries increased constructive-interference energy density and therefore exhibits a dielectric longitudinal delay relative to an ordinary reference beam."
-summary: "Electromagnetic propagation in a dielectric slows when the electric and magnetic response increases the effective permittivity and permeability. Full coherent superposition at Mach-Zehnder recombination has the same loading structure. The first beam splitter creates two bright arm beams, while recombination is a distinct phase in which two populated arm states meet and are redistributed across the two output ports. Each beam supplies the coherent response seen by the other, so equal-beam constructive interference doubles the fields, quadruples the instantaneous energy density at the bright center, and yields c_eff = c/2. The ordinary output reading instead assigns the bright output density 2u_0 and therefore gives no anomalous delay. Isolating a bright interference fringe and comparing its modulation delay against a matched reference beam over the same longitudinal distance gives a direct time-of-flight discrimination between the two readings."
+one-sentence-summary: "At Mach-Zehnder recombination each arm beam is the in-phase electromagnetic response to the other, so the dielectric slowing mechanism applies directly and the bright fringe propagates at c/2."
+summary: "Electromagnetic propagation in a dielectric slows because the medium's polarization response is an in-phase electromagnetic wave that loads the effective permittivity and permeability. At Mach-Zehnder recombination the second arm beam plays that role: both arms originate from the same coherent source and arrive in phase, making each beam the full-amplitude in-phase response to the other (k=1), which gives c_eff = c/2 by the standard dielectric formula. The ordinary output reading takes the routed output beam and predicts no delay. Isolating a bright interference fringe and comparing its time-of-flight against a matched reference beam over the same distance gives a direct discrimination between these two readings."
 keywords:
   - interference
   - Mach-Zehnder interferometer
@@ -44,20 +44,16 @@ second arm supplying the response sector instead of the medium.
 The first beam splitter only prepares two coherent arm beams. The loading
 question belongs to recombination, not to the initial split (see @sec:split).
 
-The input laser carries intensity $2u$. The first beam splitter produces two
-arm beams of amplitude $E_0$ and intensity $u$ each. At recombination, the two
-equal arm amplitudes add in phase: $E_0 + E_0 = 2E_0$, intensity $4u$ at the
-bright fringe. Each arm is the equal-amplitude in-phase response to the other
-($k=1$), so
+At equal-beam recombination, the arm amplitudes are equal, so each arm is the
+full-amplitude in-phase response to the other: $k=1$. The dielectric formula
+then gives directly
 
 $$
 c_{\mathrm{eff}}=\frac{c}{2}.
 $$
 
-The recombiner routes this $4u$ overlap into the output ports: bright port
-carries $2u$, dark port $0$, recovering the input laser energy. The ordinary
-reading reports a $2u$ output beam propagating at $c$ and predicts no delay.
-The experiment is a direct time-of-flight test between these two readings.
+The ordinary reading takes the routed output beam and predicts no delay. The
+experiment is a direct time-of-flight test between these two readings.
 
 ---
 
@@ -200,10 +196,10 @@ physical realizations of the same coherent in-phase response. The reduced-speed
 result is not transferred by analogy — it applies directly, because the
 mechanism is the same.
 
-The input laser carries intensity $2u$. After the first beam splitter, each
-arm has amplitude $E_0$ and intensity $u$, where $u\propto E_0^2$. At
-recombination the two equal arms arrive in phase; each is the equal-amplitude
-in-phase response to the other, so $k=1$ without any further substitution.
+After the first beam splitter each arm has amplitude $E_0$ and intensity $u$.
+At recombination the two equal arms arrive in phase; each is the
+equal-amplitude in-phase response to the other, so $k=1$ without any further
+substitution.
 
 Writing the response amplitude as $k$ times the first arm,
 
@@ -299,32 +295,6 @@ $$
 c_{\mathrm{eff}}=\frac{c}{2}.
 $$
 
-At the bright center, with $k=1$ and arm amplitude $E_0$ (intensity $u$),
-
-$$
-\mathbf E_{\mathrm{tot}}=2E_0,
-\qquad
-\mathbf H_{\mathrm{tot}}=2H_0,
-$$
-
-and the instantaneous energy density is
-
-$$
-u_{\mathrm{tot}}=4u.
-$$
-
-This is twice the input laser intensity $2u$ and four times each arm intensity
-$u$. Energy is conserved: the dark fringe carries $0$, so the spatial
-redistribution accounts for the full input. Across the fringe profile,
-
-$$
-u(x)=4u\cos^2\!\left(\frac{\Delta\phi(x)}{2}\right),
-$$
-
-averaging to $2u$ over a full fringe period, as required.
-
-That is the tested coherent-overlap result.
-
 ---
 
 ## Why the Split Phase Is Different {#sec:split}
@@ -404,8 +374,9 @@ So the slowdown question belongs to recombination, not to the initial split.
 
 ## Experimental Fork
 
-Each arm carries amplitude $E_0$ (intensity $u$). The raw overlap at the
-recombination region is
+The dielectric loading acts on the raw constructive-interference overlap before
+the recombiner writes the output decomposition. Each arm carries amplitude $E_0$
+(intensity $u$). At full in-phase recombination,
 
 $$
 \mathbf E_{\mathrm{overlap}}=\mathbf E_1+\mathbf E_2=2E_0,
@@ -413,31 +384,11 @@ $$
 u_{\mathrm{overlap}}=4u.
 $$
 
-This is the loaded object — the field that the dielectric mechanism acts on.
+With $k=1$ the dielectric result gives $c_{\mathrm{eff}}=c/2$. The recombiner
+then routes this overlap into the bright and dark output ports (see
+@sec:energy-flux for the routing accounting).
 
-The recombiner then routes the overlap into two output spatial modes. For a
-lossless 50/50 recombiner the output fields are
-
-$$
-\mathbf E_+=\frac{\mathbf E_1+\mathbf E_2}{\sqrt 2}=\sqrt{2}\,E_0,
-\qquad
-\mathbf E_-=\frac{\mathbf E_1-\mathbf E_2}{\sqrt 2}=0,
-$$
-
-and likewise for the magnetic fields. The $1/\sqrt{2}$ here is the recombiner's
-routing factor, distinct from the $1/\sqrt{2}$ that already reduced the arm
-amplitudes at the initial split. Together they return the full input laser
-energy to the bright port:
-
-$$
-u_+=2u,
-\qquad
-u_-=0.
-$$
-
-The ordinary reading starts from the $2u$ output beam and finds no anomalous
-delay. The loaded-fringe reading starts from the $4u$ raw overlap and predicts
-$c/2$. The experimental fork is:
+The two readings are:
 
 - ordinary output reading: $v_{\mathrm{bright}}=c$, no extra delay
 - loaded raw-overlap reading: $v_{\mathrm{bright}}=c/2$, extra delay $L/c$ over distance $L$
@@ -504,10 +455,70 @@ $$
 c_{\mathrm{eff}}=\frac{c}{1+k}.
 $$
 
-### Instantaneous Constructive-Interference Derivation
+### Coherent-Response Form
 
-No time averaging is needed. Each arm beam has amplitude $E_0$ and intensity
-$u$. At a full constructive-interference point,
+Each arm has amplitude $E_0$ (intensity $u$). The second arm is the response
+sector with $k=1$:
+
+$$
+\mathbf E_2=\mathbf E_1=E_0,
+\qquad
+\mathbf B_2=\mathbf B_1=B_0.
+$$
+
+Total field:
+
+$$
+\mathbf E_{\mathrm{tot}}=(1+k)E_0=2E_0,
+\qquad
+u_{\mathrm{tot}}=(1+k)^2u=4u.
+$$
+
+The dielectric loading gives
+
+$$
+c_{\mathrm{eff}}=\frac{c}{1+k}=\frac{c}{2}.
+$$
+
+The $2u$ laser, split to $u$ per arm, recombines to a $4u$ bright fringe
+propagating at $c/2$. The recombiner routes that fringe to a $2u$ output port
+at $c$. The experiment distinguishes which propagation speed is physical.
+
+---
+
+## Discussion: Energy and Flux Accounting {#sec:energy-flux}
+
+The dielectric argument above establishes $c_{\mathrm{eff}}=c/2$ from the
+loading structure alone. The following energy and flux calculations are
+consistency checks, not the primary argument.
+
+**Energy density at the bright center.** With $k=1$ and arm amplitude $E_0$
+(intensity $u$),
+
+$$
+\mathbf E_{\mathrm{tot}}=2E_0,
+\qquad
+\mathbf H_{\mathrm{tot}}=2H_0,
+$$
+
+and the instantaneous energy density is
+
+$$
+u_{\mathrm{tot}}=4u.
+$$
+
+This is twice the input laser intensity $2u$ and four times each arm intensity
+$u$. Across the fringe profile,
+
+$$
+u(x)=4u\cos^2\!\left(\frac{\Delta\phi(x)}{2}\right),
+$$
+
+averaging to $2u$ over a full fringe period. The dark fringe carries $0$, so
+the spatial redistribution accounts for the full input energy.
+
+**Instantaneous derivation.** No time averaging is needed. At a full
+constructive-interference point,
 
 $$
 \mathbf E_1(t)=E_0(t),
@@ -539,37 +550,32 @@ u_{\mathrm{tot}}(t)
 $$
 
 The factor of four is instantaneous and exact: amplitude doubles, intensity
-quadruples. The input laser was $2u$; the bright fringe peak is $4u$; the dark
-fringe is $0$; the spatial average is $2u$. Energy is conserved.
+quadruples.
 
-### Coherent-Response Form
-
-Each arm has amplitude $E_0$ (intensity $u$). The second arm is the response
-sector with $k=1$:
+**Output routing.** The recombiner maps the overlap into two output spatial
+modes. For a lossless 50/50 recombiner,
 
 $$
-\mathbf E_2=\mathbf E_1=E_0,
+\mathbf E_+=\frac{\mathbf E_1+\mathbf E_2}{\sqrt 2}=\sqrt{2}\,E_0,
 \qquad
-\mathbf B_2=\mathbf B_1=B_0.
+\mathbf E_-=\frac{\mathbf E_1-\mathbf E_2}{\sqrt 2}=0,
 $$
 
-Total field:
+and likewise for the magnetic fields. The $1/\sqrt{2}$ routing factor, combined
+with the $1/\sqrt{2}$ that already reduced the arm amplitudes at the initial
+split, returns the full input energy to the bright port:
 
 $$
-\mathbf E_{\mathrm{tot}}=(1+k)E_0=2E_0,
+u_+=2u,
 \qquad
-u_{\mathrm{tot}}=(1+k)^2u=4u.
+u_-=0.
 $$
 
-The dielectric loading gives
-
-$$
-c_{\mathrm{eff}}=\frac{c}{1+k}=\frac{c}{2}.
-$$
-
-The $2u$ laser, split to $u$ per arm, recombines to a $4u$ bright fringe
-propagating at $c/2$. The recombiner routes that fringe to a $2u$ output port
-at $c$. The experiment distinguishes which propagation speed is physical.
+The ordinary reading starts from this $2u$ output and finds no anomalous
+delay. The loaded-fringe reading starts from the $4u$ raw overlap and predicts
+$c/2$. These energy-accounting relations are consistent with both readings;
+they do not by themselves decide which propagation speed is physical. That
+discrimination is what the time-of-flight experiment provides.
 
 ---
 
