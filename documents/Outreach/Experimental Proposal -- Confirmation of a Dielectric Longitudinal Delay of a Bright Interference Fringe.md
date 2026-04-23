@@ -204,7 +204,7 @@ equal beams combine, not to the split.
 
 ## Proposed Experiments
 
-### The Fork
+### The Two Readings
 
 Each arm carries amplitude $E_0$ (energy density $u$). At recombination the
 two coherent equal beams combine: the bright fringe has amplitude $2E_0$ and
@@ -229,7 +229,7 @@ independent confirmations but complementary observation channels.
 
 ### Refraction Test
 
-The simplest realization of the fork is geometric. Snell's law at a boundary
+The simplest test to discriminate the two readings is geometric. Snell's law at a boundary
 between two media,
 
 $$
