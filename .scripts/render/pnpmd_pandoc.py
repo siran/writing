@@ -11,7 +11,7 @@ from pnpmd_util import run_visible
 
 
 _PANDOC_IMAGE = os.environ.get("PNPMD_PANDOC_IMAGE", "pandoc/extra:3.1")
-_CONTAINER_CMD = os.environ.get("PNPMD_CONTAINER_CMD", "podman")
+_CONTAINER_CMD = os.environ.get("PNPMD_CONTAINER_CMD", "docker")
 _PANDOC_CMD = os.environ.get("PNPMD_PANDOC_CMD", "pandoc")
 _PANDOC_CROSSREF_CMD = os.environ.get("PNPMD_PANDOC_CROSSREF_CMD", "pandoc-crossref")
 _MATHJAX_URL = os.environ.get(
