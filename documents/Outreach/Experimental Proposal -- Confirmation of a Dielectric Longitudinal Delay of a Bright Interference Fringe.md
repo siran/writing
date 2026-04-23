@@ -1,11 +1,7 @@
 ---
 title: "Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe"
 subtitle: "A dielectric-first derivation and two experimental tests in a Mach-Zehnder interferometer"
-author:
-  - name: "An M. Rodriguez"
-    email: "an@preferredframe.com"
-  - name: "Leo Marchetti"
-    email: "leo@preferredframe.com"
+author: "An M. Rodriguez <an@preferredframe.com>, Leo Marchetti <leo@preferredframe.com>"
 date: "2026-04-22"
 one-sentence-summary: "At Mach-Zehnder recombination each arm beam is the in-phase electromagnetic response to the other, so the dielectric slowing mechanism applies directly and the bright fringe propagates at c/2."
 summary: "Electromagnetic propagation in a dielectric slows because the medium's polarization response is an in-phase electromagnetic wave that loads the effective permittivity and permeability. At Mach-Zehnder recombination the second arm beam plays that role: both arms originate from the same coherent source and arrive in phase, making each beam the full-amplitude in-phase response to the other (k=1), which gives c_eff = c/2 by the standard dielectric formula. The ordinary output reading takes the routed output beam and predicts no delay. Two experiments discriminate the readings: refraction of the isolated bright fringe at a glass boundary — where the loaded reading predicts total internal reflection above the critical angle sin(theta_c) = n_g/2 ~ 0.75 — and time-of-flight along a propagation path."
