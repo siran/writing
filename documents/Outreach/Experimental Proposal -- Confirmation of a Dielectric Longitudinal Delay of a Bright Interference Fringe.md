@@ -21,34 +21,39 @@ keywords:
 
 ## Abstract
 
-Light propagates more slowly in a transparent dielectric because the electric
-and magnetic response of the medium increases the effective permittivity and
-permeability. In the usual electromagnetic description, the propagation speed
-therefore becomes
+A dielectric slows light because the medium responds to the incident
+electromagnetic wave with an in-phase polarization wave. Maxwell's equations
+then describe the combined field — incident plus response — propagating at the
+reduced speed
 
 $$
 c_{\mathrm{eff}}=\frac{1}{\sqrt{\varepsilon_{\mathrm{eff}}\mu_{\mathrm{eff}}}}
 =\frac{c}{n}.
 $$
 
-The same kind of slowdown follows when two coherent beams are brought into
-coherent superposition in the recombination phase of a Mach-Zehnder
-interferometer. The first beam splitter only prepares two bright arm beams. The
-relevant step appears later, when those beams recombine. These are not the
-same spatial operation run backward (see @sec:split).
+A dielectric is, at bottom, a coherent recombiner: one in-phase electromagnetic
+wave riding alongside another.
 
-If each beam is treated as the coherent electromagnetic response seen by the
-other, then equal-beam constructive interference doubles the fields,
-quadruples the instantaneous energy density, and gives the same reduced-speed
-result
+At Mach-Zehnder recombination, the second arm beam is that in-phase response.
+Both arms originate from the same coherent source, travel equal paths, and
+arrive in phase at a bright point. Each beam is, for the other, the in-phase
+electromagnetic addition that constitutes the dielectric loading. This is not
+an analogy to the dielectric case — it is the dielectric mechanism, with the
+second arm supplying the response sector instead of the medium.
+
+The first beam splitter only prepares two coherent arm beams. The loading
+question belongs to recombination, not to the initial split (see @sec:split).
+
+Equal-beam constructive interference therefore doubles the fields, quadruples
+the instantaneous energy density, and gives
 
 $$
 c_{\mathrm{eff}}=\frac{c}{2}.
 $$
 
-The standard output reading instead assigns the bright output density $2u_0$
-and therefore gives no anomalous delay. The experiment is a direct
-time-of-flight test between these two readings.
+The standard output reading assigns the bright output density $2u_0$ and
+predicts no delay. The experiment is a direct time-of-flight test between these
+two readings.
 
 ---
 
@@ -62,14 +67,11 @@ When that response is in phase with the incident wave, the fields add, the
 local electromagnetic energy density increases, and the propagation speed is
 reduced through the larger effective permittivity and permeability.
 
-Constructive interference has the same local structure. Two coherent beams add
-linearly in phase to form a larger total field. At the level of the
-electromagnetic field equations, that is the same loading pattern: one sector
-is carried together with a second in-phase response sector.
-
-Dielectric slowing follows from this linear in-phase field addition in
-electromagnetism. The same dielectric-like longitudinal delay therefore
-follows at constructive interference.
+Constructive interference is that same mechanism. Two coherent beams add
+linearly in phase: one sector carried together with a second in-phase
+electromagnetic response sector. That is not a pattern that resembles a
+dielectric — it is what a dielectric is. The longitudinal delay at
+constructive interference is a dielectric delay.
 
 This logic is one-sided. Constructive interference yields a denser surviving
 bright fringe, while destructive interference depletes the field and in the
@@ -178,29 +180,31 @@ This is the standard reduced-speed result.
 
 ---
 
-## Same Structure at Coherent Superposition
+## Recombination as a Dielectric
 
-The same electromagnetic loading structure appears when two coherent beams are
-coherently superposed in vacuum during recombination.
+A dielectric slows light because the medium's polarization response is an
+in-phase electromagnetic wave riding alongside the incident wave. The physical
+content of the dielectric result is this: an in-phase electromagnetic response
+sector accompanying a wave reduces the propagation speed. The permittivity and
+permeability merely parametrize how large that response is.
 
-Let one beam have fields
+At Mach-Zehnder recombination, the second arm beam is that response sector.
+Both arms come from the same coherent source and arrive in phase at a bright
+point. Each beam is, from the other's perspective, an in-phase electromagnetic
+addition. The medium's polarization current and the second arm beam are two
+physical realizations of the same coherent in-phase response. The reduced-speed
+result is not transferred by analogy — it applies directly, because the
+mechanism is the same.
 
-$$
-\mathbf E_1,\qquad \mathbf H_1,
-$$
-
-and let the second beam act as a coherent response field proportional to the
-first:
+Writing the second beam as the response sector proportional to the first,
 
 $$
 \mathbf E_2=k\mathbf E_1,
 \qquad
-\mathbf H_2=k\mathbf H_1.
+\mathbf H_2=k\mathbf H_1,
 $$
 
-Here the coherent superposition is described in the same form as the dielectric
-case, but with the second coherent beam supplying the response sector. Define,
-abbreviating *coherent* by the subscript $\mathrm{coh}$,
+and defining, abbreviating *coherent* by the subscript $\mathrm{coh}$,
 
 $$
 \mathbf D_{\mathrm{coh}}
