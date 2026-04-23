@@ -36,7 +36,7 @@ jobs:
           fi
 
       - name: Build site
-        run: python .scripts/build_site/build_site.py
+        run: python .scripts/build_site/build_site.py --skip-pdf --skip-epub --skip-pdf-markers
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
