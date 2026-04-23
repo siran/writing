@@ -199,7 +199,7 @@ physical realizations of the same coherent in-phase response. The reduced-speed
 result is not transferred by analogy — it applies directly, because the
 mechanism is the same.
 
-After the first beam splitter each arm has amplitude $E_0$ and intensity $u$.
+After the first beam splitter each arm has amplitude $E_0$ and energy density $u$.
 At recombination the two equal arms arrive in phase; each is the
 equal-amplitude in-phase response to the other, so $k=1$ without any further
 substitution.
@@ -321,9 +321,9 @@ equal beams combine, not to the split.
 
 ## Experimental Fork
 
-Each arm carries amplitude $E_0$ (intensity $u$). At recombination the two
-coherent equal beams combine: the bright fringe has amplitude $2E_0$ and
-intensity $4u$; the dark fringe has $0$. The fringe profile
+Each arm carries amplitude $E_0$ (energy density $u$). At recombination the
+two coherent equal beams combine: the bright fringe has amplitude $2E_0$ and
+energy density $4u$; the dark fringe has $0$. The fringe profile
 $\cos^2+\sin^2=1$ distributes the full input energy across the two output
 channels.
 
@@ -459,7 +459,7 @@ $$
 
 ### Coherent-Response Form
 
-Each arm has amplitude $E_0$ (intensity $u$). The second arm is the response
+Each arm has amplitude $E_0$ (energy density $u$). The second arm is the response
 sector with $k=1$:
 
 $$
@@ -494,8 +494,10 @@ The dielectric argument above establishes $c_{\mathrm{eff}}=c/2$ from the
 loading structure alone. The following energy and flux calculations are
 consistency checks, not the primary argument.
 
-**Energy density at the bright center.** With $k=1$ and arm amplitude $E_0$
-(intensity $u$),
+**Energy density at the bright center.** Throughout this document $u$ denotes
+energy density (J/m³), not intensity (W/m²); the two are related by
+$I = u\,v$ where $v$ is the propagation speed, and they differ between the two
+readings. With $k=1$ and arm amplitude $E_0$ (energy density $u$),
 
 $$
 \mathbf E_{\mathrm{tot}}=2E_0,
@@ -509,8 +511,8 @@ $$
 u_{\mathrm{tot}}=4u.
 $$
 
-This is twice the input laser intensity $2u$ and four times each arm intensity
-$u$. Across the fringe profile,
+This is twice the input laser energy density $2u$ and four times each arm's
+energy density $u$. Across the fringe profile,
 
 $$
 u(x)=4u\cos^2\!\left(\frac{\Delta\phi(x)}{2}\right),
@@ -551,8 +553,8 @@ u_{\mathrm{tot}}(t)
 = 4u.
 $$
 
-The factor of four is instantaneous and exact: amplitude doubles, intensity
-quadruples.
+The factor of four is instantaneous and exact: amplitude doubles, energy
+density quadruples.
 
 **Output routing.** The recombiner maps the overlap into two output spatial
 modes. For a lossless 50/50 recombiner,
