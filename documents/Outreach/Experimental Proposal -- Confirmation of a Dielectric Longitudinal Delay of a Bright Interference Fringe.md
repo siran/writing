@@ -59,7 +59,7 @@ $$
 The ordinary reading takes the routed output beam and predicts no delay. The
 experiment is a direct test between these two readings, and it reduces — in
 the refraction version — to a binary outcome near the critical angle
-$\theta_c\approx 48.6°$.
+$\theta_c\approx 48.6^\circ$.
 
 ---
 
@@ -89,7 +89,7 @@ prediction, frames the disagreement as a direct experimental fork, and
 proposes two tests: refraction at a glass boundary (geometric) and
 time-of-flight along a propagation path (temporal). The refraction test
 reduces the discrimination to a binary outcome near the critical angle
-$\theta_c\approx 48.6°$, where the loaded reading predicts total internal
+$\theta_c\approx 48.6^\circ$, where the loaded reading predicts total internal
 reflection and the ordinary reading predicts standard transmission.
 
 The logic is one-sided. Constructive interference yields a denser in-phase
@@ -271,14 +271,14 @@ For the loaded reading a critical angle appears at
 $$
 \sin\theta_c=\frac{n_g}{n_{\mathrm{eff}}}=0.75,
 \qquad
-\theta_c\approx 48.6°.
+\theta_c\approx 48.6^\circ.
 $$
 
 Above that incidence angle the loaded reading predicts total internal
 reflection — no transmitted beam — while the ordinary reading still predicts
 standard transmission.
 
-At $\theta_i\gtrsim 49°$ the experiment reduces to a binary discriminator:
+At $\theta_i\gtrsim 49^\circ$ the experiment reduces to a binary discriminator:
 either the bright fringe transmits into the glass or it does not. No timing
 measurement is required.
 
@@ -398,7 +398,7 @@ after recombination:
 - or the isolated raw constructive-interference fringe, with $n_{\mathrm{eff}}=2$
 
 For the refraction test, if the bright fringe transmits into the glass at
-$\theta_i\gtrsim 49°$ together with the reference, the ordinary reading wins.
+$\theta_i\gtrsim 49^\circ$ together with the reference, the ordinary reading wins.
 If the bright fringe undergoes total internal reflection while the reference
 still transmits, the loaded-fringe reading is supported.
 
