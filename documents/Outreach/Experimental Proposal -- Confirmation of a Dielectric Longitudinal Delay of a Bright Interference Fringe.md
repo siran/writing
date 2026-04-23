@@ -57,8 +57,6 @@ experiment is a direct test between these two readings, and it reduces — in
 the refraction version — to a binary outcome near the critical angle
 $\theta_c\approx 48.6^\circ$.
 
----
-
 ## Introduction
 
 In a linear dielectric, an incident electromagnetic wave induces an in-phase
@@ -99,8 +97,6 @@ The logic is one-sided. Constructive interference yields a denser in-phase
 combined field; destructive interference depletes the field and, in the
 dark-fringe limit, cancels it rather than producing anything faster. Only the
 bright-fringe direction of the fork carries a substantive prediction.
-
----
 
 ## Theory
 
@@ -202,8 +198,6 @@ $\cos^2+\sin^2=1$ sums to unity.
 
 The dielectric loading question belongs to recombination, where two in-phase
 equal beams combine, not to the split.
-
----
 
 ## Proposed Experiments
 
@@ -310,8 +304,6 @@ $$
 So at $1\,\mathrm{m}$ the extra delay is about $3.34\,\mathrm{ns}$, and at
 $10\,\mathrm{m}$ it is about $33.4\,\mathrm{ns}$.
 
----
-
 ## Discussion: Energy and Flux Accounting {#sec:energy-flux}
 
 The dielectric argument above establishes $c_{\mathrm{eff}}=c/2$ from the
@@ -390,46 +382,6 @@ with both readings; they do not by themselves decide which propagation speed
 is physical. That discrimination is what the refraction and time-of-flight
 experiments provide.
 
----
-
-## Possible Applications (if confirmed)
-
-If the loaded-fringe reading is confirmed, the relative phase between the two
-arm beams becomes a continuous control parameter for the refraction behavior
-at a glass boundary. Three distinct regimes emerge, all reachable at the same
-fixed incidence angle $\theta_i\gtrsim\theta_c$ by tuning phase alone.
-
-1. **No coherent loading** — arms in quadrature ($\Delta\phi=\pi/2$) or one
-   arm blocked. The in-phase response vanishes, so $k_{\mathrm{eff}}=0$ and
-   $n_{\mathrm{eff}}=1$. The output refracts at the standard Snell angle,
-   identical to a reference beam.
-
-2. **Partial loading** — intermediate phase ($0<\Delta\phi<\pi/2$). The
-   in-phase response is partial, so $0<k_{\mathrm{eff}}<1$ and
-   $1<n_{\mathrm{eff}}<2$. The refraction angle tracks the phase continuously.
-
-3. **Full in-phase loading** — arms in phase ($\Delta\phi=0$), $k=1$,
-   $n_{\mathrm{eff}}=2$. For $\theta_i>\theta_c\approx 48.6^\circ$ the boundary
-   rejects the bright fringe into total internal reflection. An evanescent
-   wave penetrates a sub-wavelength depth into the glass, available for
-   frustrated-TIR coupling at a second nearby interface.
-
-A single glass surface, controlled by a single quantity (relative phase),
-therefore provides three complementary device primitives:
-
-- **a binary optical switch** (transmission ↔ TIR) with no carrier injection,
-  thermal control, or moving parts — only phase
-- **a continuous beam-steerer** with refraction angle tracking phase
-- **a phase-gated evanescent coupler** for waveguide interconnect near $\theta_c$
-
-Each is linear, fast, low-power, and compatible with standard coherent-light
-platforms. The shared physics is that the glass boundary senses the phase
-velocity of the combined field, and that phase velocity is tunable through
-coherent superposition. Applications span optical computing, photonic signal
-routing, and coherent interconnect.
-
----
-
 ## Conclusion
 
 The experiments test which object should be treated as the propagating fringe
@@ -447,15 +399,11 @@ For the time-of-flight test, if the measured delay matches the reference, the
 ordinary reading wins. If the delay approaches the $c/2$ prediction in the
 equal-beam limit, the loaded-fringe reading is supported.
 
----
-
 ## Acknowledgments
 
 We thank Celso L. Ladera of Universidad Simón Bolívar, Caracas, for
 introducing one of us (A.M.R.) to Dirac's dictum on self-interference during
 his undergraduate optics course.
-
----
 
 ## References
 
