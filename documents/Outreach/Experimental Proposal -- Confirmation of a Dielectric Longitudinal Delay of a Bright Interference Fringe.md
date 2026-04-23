@@ -465,11 +465,16 @@ his undergraduate optics course.
    internal reflection with evanescent decay — the full toolbox used in the
    derivation and in both proposed tests.
 
-2. Dirac, P. A. M. (1958). *The Principles of Quantum Mechanics*, 4th ed.
+2. Hecht, E. (2017). *Optics*, 5th ed. Pearson. Standard undergraduate
+   treatment of interference (including the Mach-Zehnder geometry), Snell's
+   law, reflection and refraction, and total internal reflection with
+   evanescent waves.
+
+3. Dirac, P. A. M. (1958). *The Principles of Quantum Mechanics*, 4th ed.
    Oxford University Press. §I.3 on the superposition principle: "each photon
    then interferes only with itself."
 
-3. Rodriguez, A. M. (2026). *Light Speed as an Emergent Property of
+4. Rodriguez, A. M. (2026). *Light Speed as an Emergent Property of
    Electromagnetic Superposition: Polarization Without Matter*. Preferred
    Frame. <https://writing.preferredframe.com/doi/10.5281/zenodo.18396637>.
    Precursor derivation of the effective refractive index and local light
