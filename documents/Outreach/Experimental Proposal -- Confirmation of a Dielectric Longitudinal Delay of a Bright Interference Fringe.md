@@ -1,10 +1,10 @@
 ---
 title: "Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe"
-subtitle: "A dielectric-first derivation and time-of-flight test in a Mach-Zehnder interferometer"
+subtitle: "A dielectric-first derivation and two experimental tests in a Mach-Zehnder interferometer"
 author: "An M. Rodriguez"
 date: "2026-04-22"
 one-sentence-summary: "At Mach-Zehnder recombination each arm beam is the in-phase electromagnetic response to the other, so the dielectric slowing mechanism applies directly and the bright fringe propagates at c/2."
-summary: "Electromagnetic propagation in a dielectric slows because the medium's polarization response is an in-phase electromagnetic wave that loads the effective permittivity and permeability. At Mach-Zehnder recombination the second arm beam plays that role: both arms originate from the same coherent source and arrive in phase, making each beam the full-amplitude in-phase response to the other (k=1), which gives c_eff = c/2 by the standard dielectric formula. The ordinary output reading takes the routed output beam and predicts no delay. Isolating a bright interference fringe and comparing its time-of-flight against a matched reference beam over the same distance gives a direct discrimination between these two readings."
+summary: "Electromagnetic propagation in a dielectric slows because the medium's polarization response is an in-phase electromagnetic wave that loads the effective permittivity and permeability. At Mach-Zehnder recombination the second arm beam plays that role: both arms originate from the same coherent source and arrive in phase, making each beam the full-amplitude in-phase response to the other (k=1), which gives c_eff = c/2 by the standard dielectric formula. The ordinary output reading takes the routed output beam and predicts no delay. Two experiments discriminate the readings: refraction of the isolated bright fringe at a glass boundary — where the loaded reading predicts total internal reflection above the critical angle sin(theta_c) = n_g/2 ~ 0.75 — and time-of-flight along a propagation path."
 keywords:
   - interference
   - Mach-Zehnder interferometer
@@ -13,6 +13,9 @@ keywords:
   - constructive interference
   - energy density
   - bright interference fringe
+  - refraction
+  - Snell's law
+  - total internal reflection
   - time-of-flight
   - speed of light
 ---
@@ -328,14 +331,73 @@ The dielectric loading applies to the combined field at the bright fringe.
 With $k=1$ the dielectric result gives $c_{\mathrm{eff}}=c/2$ (see
 @sec:energy-flux for the full energy and routing accounting).
 
-The two readings are:
+The two readings differ in the phase velocity assigned to the bright fringe:
 
-- ordinary output reading: $v_{\mathrm{bright}}=c$, no extra delay
-- loaded raw-overlap reading: $v_{\mathrm{bright}}=c/2$, extra delay $L/c$ over distance $L$
+- ordinary output reading: $v_{\mathrm{bright}}=c$
+- loaded-fringe reading: $v_{\mathrm{bright}}=c/2$
+
+Two experiments can probe this phase velocity: refraction at a glass boundary
+(geometric) and time-of-flight along a propagation path (temporal). Both
+access the same underlying wavevector magnitude $|k|=n_{\mathrm{eff}}\,\omega/c$
+in the overlap region; they are not independent confirmations but
+complementary observation channels.
 
 ---
 
-## Experimental Idea
+## Refraction Test
+
+The simplest realization of the fork is geometric. Snell's law at a boundary
+between two media,
+
+$$
+n_1\sin\theta_i=n_2\sin\theta_r,
+$$
+
+is tangential-wavevector conservation: $|k|_{\mathrm{tangential}}$ is preserved
+at the boundary, and $|k|=n\,\omega/c$. The refraction angle therefore reads
+off the wavevector magnitude of the incident wave. The testable content of the
+$c_{\mathrm{eff}}=c/2$ claim is exactly that the combined field at the bright
+fringe carries $|k|=2\omega/c$ in the overlap region.
+
+**Setup.** Arrange the Mach-Zehnder so the two arm beams are collinear at the
+recombiner output. Isolate one bright fringe with an aperture and let it
+propagate toward a glass slab ($n_g\approx 1.5$) at oblique incidence $\theta_i$.
+A reference beam taken directly from the laser is sent to the same slab at the
+same $\theta_i$ for standard-refraction comparison.
+
+The two arm beams remain spatially coincident within the apertured beam, so
+each is still the in-phase response to the other and the dielectric loading
+argument persists as long as they propagate together.
+
+**Predictions.**
+
+- *Ordinary reading* ($n_{\mathrm{eff}}=1$): standard refraction, identical to
+  the reference: $\sin\theta_r=\sin\theta_i/n_g$.
+- *Loaded-fringe reading* ($n_{\mathrm{eff}}=2$):
+  $\sin\theta_r=(2/n_g)\sin\theta_i=(4/3)\sin\theta_i$.
+
+For the loaded reading a critical angle appears at
+
+$$
+\sin\theta_c=\frac{n_g}{n_{\mathrm{eff}}}=0.75,
+\qquad
+\theta_c\approx 48.6°.
+$$
+
+Above that incidence angle the loaded reading predicts total internal
+reflection — no transmitted beam — while the ordinary reading still predicts
+standard transmission.
+
+At $\theta_i\gtrsim 49°$ the experiment reduces to a binary discriminator:
+either the bright fringe transmits into the glass or it does not. No timing
+measurement is required.
+
+---
+
+## Time-of-Flight Test
+
+If the refraction test is positive, a direct temporal confirmation is to
+propagate the fringe and measure its group delay.
 
 Use a coherent source, modulate it, split it into two arms, and recombine the
 arms so they form stable fringes. Then:
@@ -345,8 +407,8 @@ arms so they form stable fringes. Then:
 3. propagate a matched reference beam over the same distance
 4. compare delay slopes $d\tau/dL$
 
-The standard output reading predicts equal slopes. The loaded-fringe reading
-predicts a larger slope for the bright fringe.
+The ordinary reading predicts equal slopes. The loaded-fringe reading predicts
+a larger slope for the bright fringe.
 
 For the equal-beam limit,
 
@@ -512,21 +574,27 @@ u_-=0.
 $$
 
 The ordinary reading starts from this $2u$ output and finds no anomalous
-delay. The loaded-fringe reading starts from the $4u$ raw overlap and predicts
-$c/2$. These energy-accounting relations are consistent with both readings;
-they do not by themselves decide which propagation speed is physical. That
-discrimination is what the time-of-flight experiment provides.
+refraction or delay. The loaded-fringe reading starts from the $4u$ raw
+overlap and predicts $c/2$. These energy-accounting relations are consistent
+with both readings; they do not by themselves decide which propagation speed
+is physical. That discrimination is what the refraction and time-of-flight
+experiments provide.
 
 ---
 
 ## What the Experiment Decides
 
-This experiment tests which object should be treated as the propagating fringe
+The experiments test which object should be treated as the propagating fringe
 after recombination:
 
-- the ordinary normalized output mode
-- or the isolated raw constructive-interference fringe
+- the ordinary normalized output mode, with $n_{\mathrm{eff}}=1$
+- or the isolated raw constructive-interference fringe, with $n_{\mathrm{eff}}=2$
 
-If the measured delay matches the reference, the ordinary reading wins. If the
-measured delay approaches the $c/2$ prediction in the equal-beam limit, the
-loaded-fringe reading is supported.
+For the refraction test, if the bright fringe transmits into the glass at
+$\theta_i\gtrsim 49°$ together with the reference, the ordinary reading wins.
+If the bright fringe undergoes total internal reflection while the reference
+still transmits, the loaded-fringe reading is supported.
+
+For the time-of-flight test, if the measured delay matches the reference, the
+ordinary reading wins. If the delay approaches the $c/2$ prediction in the
+equal-beam limit, the loaded-fringe reading is supported.
