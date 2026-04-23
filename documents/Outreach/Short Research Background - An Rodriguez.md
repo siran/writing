@@ -1,5 +1,6 @@
 ---
 title: Short Research Background - An Rodriguez
+author: "An M. Rodriguez <an@preferredframe.com>"
 date: 2026-04-15
 ---
 
@@ -14,11 +15,17 @@ My current research develops a first-principles account of energy flow in which
 continuity and source-free transport are treated as primitive, and known
 physics is recovered from that basis. The main line of work recovers
 electromagnetism, quantum dynamics, inertial mass, and relativistic kinematics
-from field transport rather than from particles or pre-given geometry.
+from field transport rather than from particles or pre-given geometry. A
+recent extension derives refraction itself from coherent superposition of free
+electromagnetic fields, without invoking matter — the theoretical ground for
+the current experimental proposal.
 
-My current experimental focus is interferometric: a Mach-Zehnder
-time-of-flight test of whether a bright interference fringe exhibits a
-dielectric-like longitudinal delay under constructive interference.
+My current experimental focus is interferometric: a Mach-Zehnder test of
+whether a bright interference fringe exhibits a dielectric-like loading under
+constructive interference. Two experiments probe the same prediction —
+refraction at a glass boundary (a binary discriminator near the critical
+angle $\theta_c \approx 48.6^\circ$, where the loaded reading predicts total
+internal reflection) and time-of-flight along a propagation path.
 
 ## Selected Publications
 
@@ -34,6 +41,8 @@ dielectric-like longitudinal delay under constructive interference.
   Inertial mass recovered from geometric delay and trapped electromagnetic momentum.
 - [Curved Propagation vs. Curved Space](https://writing.preferredframe.com/prints/Curved%20Propagation%20vs.%20Curved%20Space/10.5281/zenodo.18445575/)
   Relativistic kinematics interpreted as a consequence of curved propagation rather than curved space itself.
+- [Light Speed as an Emergent Property of Electromagnetic Superposition](https://writing.preferredframe.com/prints/Light%20Speed%20as%20an%20Emergent%20Property%20of%20Electromagnetic%20Superposition/10.5281/zenodo.18396637/)
+  Effective refractive index and local light speed derived from coherent superposition of free electromagnetic fields. Direct theoretical precursor to the present experimental proposal.
 
 ## Links
 
