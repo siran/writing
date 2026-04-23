@@ -389,6 +389,44 @@ experiments provide.
 
 ---
 
+## Possible Applications (if confirmed)
+
+If the loaded-fringe reading is confirmed, the relative phase between the two
+arm beams becomes a continuous control parameter for the refraction behavior
+at a glass boundary. Three distinct regimes emerge, all reachable at the same
+fixed incidence angle $\theta_i\gtrsim\theta_c$ by tuning phase alone.
+
+1. **No coherent loading** — arms in quadrature ($\Delta\phi=\pi/2$) or one
+   arm blocked. The in-phase response vanishes, so $k_{\mathrm{eff}}=0$ and
+   $n_{\mathrm{eff}}=1$. The output refracts at the standard Snell angle,
+   identical to a reference beam.
+
+2. **Partial loading** — intermediate phase ($0<\Delta\phi<\pi/2$). The
+   in-phase response is partial, so $0<k_{\mathrm{eff}}<1$ and
+   $1<n_{\mathrm{eff}}<2$. The refraction angle tracks the phase continuously.
+
+3. **Full in-phase loading** — arms in phase ($\Delta\phi=0$), $k=1$,
+   $n_{\mathrm{eff}}=2$. For $\theta_i>\theta_c\approx 48.6^\circ$ the boundary
+   rejects the bright fringe into total internal reflection. An evanescent
+   wave penetrates a sub-wavelength depth into the glass, available for
+   frustrated-TIR coupling at a second nearby interface.
+
+A single glass surface, controlled by a single quantity (relative phase),
+therefore provides three complementary device primitives:
+
+- **a binary optical switch** (transmission ↔ TIR) with no carrier injection,
+  thermal control, or moving parts — only phase
+- **a continuous beam-steerer** with refraction angle tracking phase
+- **a phase-gated evanescent coupler** for waveguide interconnect near $\theta_c$
+
+Each is linear, fast, low-power, and compatible with standard coherent-light
+platforms. The shared physics is that the glass boundary senses the phase
+velocity of the combined field, and that phase velocity is tunable through
+coherent superposition. Applications span optical computing, photonic signal
+routing, and coherent interconnect.
+
+---
+
 ## Conclusion
 
 The experiments test which object should be treated as the propagating fringe
