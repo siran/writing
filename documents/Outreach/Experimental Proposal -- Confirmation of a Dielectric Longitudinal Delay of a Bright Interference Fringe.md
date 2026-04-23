@@ -1,7 +1,11 @@
 ---
 title: "Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe"
 subtitle: "A dielectric-first derivation and two experimental tests in a Mach-Zehnder interferometer"
-author: "An M. Rodriguez"
+author:
+  - name: "An M. Rodriguez"
+    email: "an@preferredframe.com"
+  - name: "Leo Marchetti"
+    email: "leo@preferredframe.com"
 date: "2026-04-22"
 one-sentence-summary: "At Mach-Zehnder recombination each arm beam is the in-phase electromagnetic response to the other, so the dielectric slowing mechanism applies directly and the bright fringe propagates at c/2."
 summary: "Electromagnetic propagation in a dielectric slows because the medium's polarization response is an in-phase electromagnetic wave that loads the effective permittivity and permeability. At Mach-Zehnder recombination the second arm beam plays that role: both arms originate from the same coherent source and arrive in phase, making each beam the full-amplitude in-phase response to the other (k=1), which gives c_eff = c/2 by the standard dielectric formula. The ordinary output reading takes the routed output beam and predicts no delay. Two experiments discriminate the readings: refraction of the isolated bright fringe at a glass boundary — where the loaded reading predicts total internal reflection above the critical angle sin(theta_c) = n_g/2 ~ 0.75 — and time-of-flight along a propagation path."
@@ -44,9 +48,6 @@ electromagnetic addition that constitutes the dielectric loading. This is not
 an analogy to the dielectric case — it is the dielectric mechanism, with the
 second arm supplying the response sector instead of the medium.
 
-The first beam splitter only prepares two coherent arm beams. The loading
-question belongs to recombination, not to the initial split (see @sec:split).
-
 At equal-beam recombination, the arm amplitudes are equal, so each arm is the
 full-amplitude in-phase response to the other: $k=1$. The dielectric formula
 then gives directly
@@ -56,254 +57,136 @@ c_{\mathrm{eff}}=\frac{c}{2}.
 $$
 
 The ordinary reading takes the routed output beam and predicts no delay. The
-experiment is a direct time-of-flight test between these two readings.
+experiment is a direct test between these two readings, and it reduces — in
+the refraction version — to a binary outcome near the critical angle
+$\theta_c\approx 48.6°$.
 
 ---
 
-## Rationale
+## Introduction
 
-In a linear dielectric, an incident electromagnetic wave induces a response
-electromagnetic wave in the medium. Maxwell electrodynamics is linear, so the
-physical field is the sum of the incident and response sectors.
+In a linear dielectric, an incident electromagnetic wave induces an in-phase
+polarization response. Maxwell's equations, applied to the combined field of
+incident wave plus response, yield the reduced propagation speed $c/n$. The
+dielectric index encodes, at bottom, the presence of a second in-phase
+electromagnetic wave riding alongside the first.
 
-When that response is in phase with the incident wave, the fields add, the
-local electromagnetic energy density increases, and the propagation speed is
-reduced through the larger effective permittivity and permeability.
+This observation generalizes beyond bulk media. Any configuration that places a
+second coherent in-phase electromagnetic wave alongside a probe wave should
+produce the same reduced propagation speed, by the same Maxwell derivation.
 
-Constructive interference is that same mechanism. Two coherent beams add
-linearly in phase: one sector carried together with a second in-phase
-electromagnetic response sector. That is not a pattern that resembles a
-dielectric — it is what a dielectric is. The longitudinal delay at
-constructive interference is a dielectric delay.
+A Mach-Zehnder interferometer at its recombination point is precisely such a
+configuration. Both arm beams originate from the same coherent source, travel
+equal paths, and arrive in phase at a bright point. Each beam is, from the
+other's perspective, a full-amplitude in-phase electromagnetic response. The
+mathematical structure matches the dielectric case exactly, with $k=1$, so the
+reduced speed is $c_{\mathrm{eff}}=c/2$.
 
-This logic is one-sided. Constructive interference yields a denser surviving
-bright fringe, while destructive interference depletes the field and in the
-dark-limit cancels the fringe rather than producing a faster propagated one.
+The ordinary output-mode analysis disagrees. It normalizes the recombined
+field through the $1/\sqrt 2$ routing factor and treats the bright port as a
+single beam propagating at $c$. This paper derives the loaded-fringe
+prediction, frames the disagreement as a direct experimental fork, and
+proposes two tests: refraction at a glass boundary (geometric) and
+time-of-flight along a propagation path (temporal). The refraction test
+reduces the discrimination to a binary outcome near the critical angle
+$\theta_c\approx 48.6°$, where the loaded reading predicts total internal
+reflection and the ordinary reading predicts standard transmission.
+
+The logic is one-sided. Constructive interference yields a denser in-phase
+combined field; destructive interference depletes the field and, in the
+dark-fringe limit, cancels it rather than producing anything faster. Only the
+bright-fringe direction of the fork carries a substantive prediction.
 
 ---
 
-## Classic Dielectric Result
+## Theory
 
-In a transparent linear dielectric,
+### The Dielectric Mechanism
 
-$$
-\mathbf D=\varepsilon_0\mathbf E+\mathbf P,
-$$
-
-and
+Consider a region in which an electromagnetic probe wave
+$(\mathbf E_1,\mathbf H_1)$ is accompanied by an in-phase response wave with
+amplitude ratio $k\ge 0$,
 
 $$
-\mathbf B=\mu_0(\mathbf H+\mathbf M).
+\mathbf E_2=k\,\mathbf E_1,
+\qquad
+\mathbf H_2=k\,\mathbf H_1.
 $$
 
-For a linear response,
+The sum fields enter Maxwell's equations through the constitutive relations
 
 $$
-\mathbf P=\varepsilon_0\chi_e\mathbf E.
+\mathbf D=\varepsilon_0(\mathbf E_1+\mathbf E_2)=\varepsilon_0(1+k)\,\mathbf E_1
+\equiv\varepsilon_{\mathrm{eff}}\,\mathbf E_1,
 $$
 
-and
-
 $$
-\mathbf M=\chi_m\mathbf H.
-$$
-
-Therefore
-
-$$
-\mathbf D=\varepsilon_0(1+\chi_e)\mathbf E
-=\varepsilon_{\mathrm{eff}}\mathbf E,
-$$
-
-so
-
-$$
-\varepsilon_{\mathrm{eff}}=\varepsilon_0(1+\chi_e).
-$$
-
-If the magnetic sector is likewise loaded,
-
-$$
-\mu_{\mathrm{eff}}=\mu_0(1+\chi_m).
+\mathbf B=\mu_0(\mathbf H_1+\mathbf H_2)=\mu_0(1+k)\,\mathbf H_1
+\equiv\mu_{\mathrm{eff}}\,\mathbf H_1.
 $$
 
 In a source-free region,
 
 $$
-\nabla\times \mathbf E=-\frac{\partial \mathbf B}{\partial t},
-\qquad
-\nabla\times \mathbf H=\frac{\partial \mathbf D}{\partial t}.
+\nabla\times\mathbf E_1=-\frac{\partial\mathbf B}{\partial t}
+=-\mu_{\mathrm{eff}}\frac{\partial\mathbf H_1}{\partial t},
 $$
 
-Substituting the effective constitutive relations gives
-
 $$
-\nabla\times \mathbf E=-\mu_{\mathrm{eff}}\frac{\partial \mathbf H}{\partial t},
-\qquad
-\nabla\times \mathbf H=\varepsilon_{\mathrm{eff}}\frac{\partial \mathbf E}{\partial t}.
+\nabla\times\mathbf H_1=\frac{\partial\mathbf D}{\partial t}
+=\varepsilon_{\mathrm{eff}}\frac{\partial\mathbf E_1}{\partial t}.
 $$
 
-Taking the curl of the first equation, and using the second together with
-$\nabla\cdot\mathbf E=0$, gives the wave equation
+Taking the curl of the first equation and using $\nabla\cdot\mathbf E_1=0$
+gives the wave equation
 
 $$
-\nabla^2\mathbf E-\varepsilon_{\mathrm{eff}}\mu_{\mathrm{eff}}
-\frac{\partial^2\mathbf E}{\partial t^2}=0.
-$$
-
-Therefore the propagation speed is
-
-$$
-c_{\mathrm{eff}}=\frac{1}{\sqrt{\varepsilon_{\mathrm{eff}}\mu_{\mathrm{eff}}}}.
-$$
-
-For symmetric electric and magnetic loading,
-
-$$
-\chi_e=\chi_m=k,
-$$
-
-so
-
-$$
-\varepsilon_{\mathrm{eff}}=\varepsilon_0(1+k),
-\qquad
-\mu_{\mathrm{eff}}=\mu_0(1+k),
-$$
-
-and therefore
-
-$$
-c_{\mathrm{eff}}
-=\frac{1}{\sqrt{\varepsilon_0\mu_0(1+k)^2}}
-=\frac{c}{1+k}.
-$$
-
-This is the standard reduced-speed result.
-
----
-
-## Recombination as a Dielectric
-
-A dielectric slows light because the medium's polarization response is an
-in-phase electromagnetic wave riding alongside the incident wave. The physical
-content of the dielectric result is this: an in-phase electromagnetic response
-sector accompanying a wave reduces the propagation speed. The permittivity and
-permeability merely parametrize how large that response is.
-
-At Mach-Zehnder recombination, the second arm beam is that response sector.
-Both arms come from the same coherent source and arrive in phase at a bright
-point. Each beam is, from the other's perspective, an in-phase electromagnetic
-addition. The medium's polarization current and the second arm beam are two
-physical realizations of the same coherent in-phase response. The reduced-speed
-result is not transferred by analogy — it applies directly, because the
-mechanism is the same.
-
-After the first beam splitter each arm has amplitude $E_0$ and energy density $u$.
-At recombination the two equal arms arrive in phase; each is the
-equal-amplitude in-phase response to the other, so $k=1$ without any further
-substitution.
-
-Writing the response amplitude as $k$ times the first arm,
-
-$$
-\mathbf E_2=k\mathbf E_1,
-\qquad
-\mathbf H_2=k\mathbf H_1,
-$$
-
-and defining, abbreviating *coherent* by the subscript $\mathrm{coh}$,
-
-$$
-\mathbf D_{\mathrm{coh}}
-=\varepsilon_0(\mathbf E_1+\mathbf E_2),
-\qquad
-\mathbf B_{\mathrm{coh}}
-=\mu_0(\mathbf H_1+\mathbf H_2).
-$$
-
-Then
-
-$$
-\mathbf D_{\mathrm{coh}}
-=\varepsilon_0(1+k)\mathbf E_1
-=\varepsilon_{\mathrm{coh}}\mathbf E_1,
-$$
-
-with
-
-$$
-\varepsilon_{\mathrm{coh}}=\varepsilon_0(1+k),
-$$
-
-and likewise
-
-$$
-\mathbf B_{\mathrm{coh}}
-=\mu_0(1+k)\mathbf H_1
-=\mu_{\mathrm{coh}}\mathbf H_1,
-$$
-
-with
-
-$$
-\mu_{\mathrm{coh}}=\mu_0(1+k).
-$$
-
-The same source-free Maxwell form then becomes
-
-$$
-\nabla\times \mathbf E_1
-=-\frac{\partial \mathbf B_{\mathrm{coh}}}{\partial t},
-\qquad
-\nabla\times \mathbf H_1
-=\frac{\partial \mathbf D_{\mathrm{coh}}}{\partial t}.
-$$
-
-So
-
-$$
-\nabla\times \mathbf E_1
-=-\mu_{\mathrm{coh}}\frac{\partial \mathbf H_1}{\partial t},
-\qquad
-\nabla\times \mathbf H_1
-=\varepsilon_{\mathrm{coh}}\frac{\partial \mathbf E_1}{\partial t}.
-$$
-
-Taking the curl again gives
-
-$$
-\nabla^2\mathbf E_1-\varepsilon_{\mathrm{coh}}\mu_{\mathrm{coh}}
+\nabla^2\mathbf E_1
+-\varepsilon_{\mathrm{eff}}\mu_{\mathrm{eff}}
 \frac{\partial^2\mathbf E_1}{\partial t^2}=0,
 $$
 
-therefore
+so the combined field propagates at
 
 $$
 c_{\mathrm{eff}}
-=\frac{1}{\sqrt{\varepsilon_{\mathrm{coh}}\mu_{\mathrm{coh}}}}
+=\frac{1}{\sqrt{\varepsilon_{\mathrm{eff}}\mu_{\mathrm{eff}}}}
 =\frac{1}{\sqrt{\varepsilon_0\mu_0(1+k)^2}}
 =\frac{c}{1+k}.
 $$
 
-For equal beams at constructive interference,
+This result depends only on the existence of an in-phase electromagnetic
+response with amplitude ratio $k$. It does not depend on the physical origin
+of that response.
 
-$$
-k=1,
-$$
+### Two Physical Realizations
 
-so
+**Linear dielectric.** In a transparent linear dielectric, $\mathbf E_2$ is the
+electromagnetic field of the medium's polarization response, and the amplitude
+ratio is the electric susceptibility, $k=\chi_e$ (analogously $\chi_m$ for the
+magnetic response). The standard reduced-speed formula $c/n$ follows with
+$n=\sqrt{(1+\chi_e)(1+\chi_m)}$.
+
+**Mach-Zehnder recombination.** At the recombination point of a Mach-Zehnder
+interferometer, $\mathbf E_2$ is the second arm beam. Both arms originate from
+the same coherent source, travel equal paths, and arrive in phase at a bright
+point. Each beam is, from the other's perspective, a full-amplitude in-phase
+electromagnetic response. At full constructive interference
+$\mathbf E_2=\mathbf E_1$, so $k=1$ without further substitution, and
 
 $$
 c_{\mathrm{eff}}=\frac{c}{2}.
 $$
 
----
+The physical realizations differ — medium polarization versus free-propagating
+beam — but the mathematical structure, and therefore the predicted propagation
+speed, is identical. The dielectric result is not transferred by analogy; it
+applies directly, because the mechanism is the same.
 
-## Why the Split Phase Is Different {#sec:split}
+### Why the Split Phase Is Different {#sec:split}
 
-The split and recombination use the same physical element but are not the same
-operation.
+The split and recombination use the same physical element (a 50/50 beam
+splitter) but are not the same operation.
 
 The split takes one beam and produces two equal beams from it. Its purpose is
 to prepare coherent arm beams; no loaded interference fringe is formed.
@@ -319,7 +202,9 @@ equal beams combine, not to the split.
 
 ---
 
-## Experimental Fork
+## Proposed Experiments
+
+### The Fork
 
 Each arm carries amplitude $E_0$ (energy density $u$). At recombination the
 two coherent equal beams combine: the bright fringe has amplitude $2E_0$ and
@@ -338,13 +223,11 @@ The two readings differ in the phase velocity assigned to the bright fringe:
 
 Two experiments can probe this phase velocity: refraction at a glass boundary
 (geometric) and time-of-flight along a propagation path (temporal). Both
-access the same underlying wavevector magnitude $|k|=n_{\mathrm{eff}}\,\omega/c$
-in the overlap region; they are not independent confirmations but
-complementary observation channels.
+access the same underlying wavevector magnitude
+$|k|=n_{\mathrm{eff}}\,\omega/c$ in the overlap region; they are not
+independent confirmations but complementary observation channels.
 
----
-
-## Refraction Test
+### Refraction Test
 
 The simplest realization of the fork is geometric. Snell's law at a boundary
 between two media,
@@ -356,8 +239,15 @@ $$
 is tangential-wavevector conservation: $|k|_{\mathrm{tangential}}$ is preserved
 at the boundary, and $|k|=n\,\omega/c$. The refraction angle therefore reads
 off the wavevector magnitude of the incident wave. The testable content of the
-$c_{\mathrm{eff}}=c/2$ claim is exactly that the combined field at the bright
-fringe carries $|k|=2\omega/c$ in the overlap region.
+$c_{\mathrm{eff}}=c/2$ claim is that the combined field at the bright fringe
+carries $|k|=2\omega/c$ in the overlap region, which at a boundary with glass
+of index $n_g$ bends the beam to
+
+$$
+\sin\theta_r=\frac{2}{n_g}\sin\theta_i,
+$$
+
+twice the ordinary prediction.
 
 **Setup.** Arrange the Mach-Zehnder so the two arm beams are collinear at the
 recombiner output. Isolate one bright fringe with an aperture and let it
@@ -372,7 +262,7 @@ argument persists as long as they propagate together.
 **Predictions.**
 
 - *Ordinary reading* ($n_{\mathrm{eff}}=1$): standard refraction, identical to
-  the reference: $\sin\theta_r=\sin\theta_i/n_g$.
+  the reference, $\sin\theta_r=\sin\theta_i/n_g$.
 - *Loaded-fringe reading* ($n_{\mathrm{eff}}=2$):
   $\sin\theta_r=(2/n_g)\sin\theta_i=(4/3)\sin\theta_i$.
 
@@ -392,9 +282,7 @@ At $\theta_i\gtrsim 49°$ the experiment reduces to a binary discriminator:
 either the bright fringe transmits into the glass or it does not. No timing
 measurement is required.
 
----
-
-## Time-of-Flight Test
+### Time-of-Flight Test
 
 If the refraction test is positive, a direct temporal confirmation is to
 propagate the fringe and measure its group delay.
@@ -421,83 +309,18 @@ $10\,\mathrm{m}$ it is about $33.4\,\mathrm{ns}$.
 
 ---
 
-## Detailed Derivation
-
-### Dielectric Derivation
-
-Start from
-
-$$
-\mathbf D=\varepsilon_0\mathbf E+\mathbf P,
-\qquad
-\mathbf P=\varepsilon_0\chi_e\mathbf E.
-$$
-
-Then
-
-$$
-\varepsilon_{\mathrm{eff}}=\varepsilon_0(1+\chi_e).
-$$
-
-If the magnetic sector is likewise loaded,
-
-$$
-\mu_{\mathrm{eff}}=\mu_0(1+\chi_m).
-$$
-
-So
-
-$$
-c_{\mathrm{eff}}=\frac{1}{\sqrt{\varepsilon_{\mathrm{eff}}\mu_{\mathrm{eff}}}}.
-$$
-
-For symmetric loading $\chi_e=\chi_m=k$,
-
-$$
-c_{\mathrm{eff}}=\frac{c}{1+k}.
-$$
-
-### Coherent-Response Form
-
-Each arm has amplitude $E_0$ (energy density $u$). The second arm is the response
-sector with $k=1$:
-
-$$
-\mathbf E_2=\mathbf E_1=E_0,
-\qquad
-\mathbf B_2=\mathbf B_1=B_0.
-$$
-
-Total field:
-
-$$
-\mathbf E_{\mathrm{tot}}=(1+k)E_0=2E_0,
-\qquad
-u_{\mathrm{tot}}=(1+k)^2u=4u.
-$$
-
-The dielectric loading gives
-
-$$
-c_{\mathrm{eff}}=\frac{c}{1+k}=\frac{c}{2}.
-$$
-
-The $2u$ laser, split to $u$ per arm, recombines to a $4u$ bright fringe
-propagating at $c/2$. The recombiner routes that fringe to a $2u$ output port
-at $c$. The experiment distinguishes which propagation speed is physical.
-
----
-
 ## Discussion: Energy and Flux Accounting {#sec:energy-flux}
 
 The dielectric argument above establishes $c_{\mathrm{eff}}=c/2$ from the
 loading structure alone. The following energy and flux calculations are
 consistency checks, not the primary argument.
 
-**Energy density at the bright center.** Throughout this document $u$ denotes
-energy density (J/m³), not intensity (W/m²); the two are related by
-$I = u\,v$ where $v$ is the propagation speed, and they differ between the two
-readings. With $k=1$ and arm amplitude $E_0$ (energy density $u$),
+Throughout this document $u$ denotes energy density (J/m³), not intensity
+(W/m²); the two are related by $I=u\,v$ where $v$ is the propagation speed,
+and they differ between the two readings.
+
+**Energy density at the bright center.** With $k=1$ and arm amplitude $E_0$
+(energy density $u$),
 
 $$
 \mathbf E_{\mathrm{tot}}=2E_0,
@@ -522,27 +345,9 @@ averaging to $2u$ over a full fringe period. The dark fringe carries $0$, so
 the spatial redistribution accounts for the full input energy.
 
 **Instantaneous derivation.** No time averaging is needed. At a full
-constructive-interference point,
-
-$$
-\mathbf E_1(t)=E_0(t),
-\qquad
-\mathbf E_2(t)=E_0(t),
-\qquad
-\mathbf B_1(t)=B_0(t),
-\qquad
-\mathbf B_2(t)=B_0(t).
-$$
-
-The total field is
-
-$$
-\mathbf E_{\mathrm{tot}}(t)=2E_0(t),
-\qquad
-\mathbf B_{\mathrm{tot}}(t)=2B_0(t).
-$$
-
-The instantaneous electromagnetic energy density is
+constructive-interference point, $\mathbf E_1(t)=\mathbf E_2(t)=E_0(t)$ and
+$\mathbf B_1(t)=\mathbf B_2(t)=B_0(t)$, so
+$\mathbf E_{\mathrm{tot}}(t)=2E_0(t)$, $\mathbf B_{\mathrm{tot}}(t)=2B_0(t)$, and
 
 $$
 u_{\mathrm{tot}}(t)
@@ -550,7 +355,7 @@ u_{\mathrm{tot}}(t)
 \frac{\varepsilon_0}{2}\lvert \mathbf E_{\mathrm{tot}}(t)\rvert^2
 +
 \frac{1}{2\mu_0}\lvert \mathbf B_{\mathrm{tot}}(t)\rvert^2
-= 4u.
+=4u.
 $$
 
 The factor of four is instantaneous and exact: amplitude doubles, energy
@@ -565,8 +370,8 @@ $$
 \mathbf E_-=\frac{\mathbf E_1-\mathbf E_2}{\sqrt 2}=0,
 $$
 
-and likewise for the magnetic fields. The $1/\sqrt{2}$ routing factor, combined
-with the $1/\sqrt{2}$ that already reduced the arm amplitudes at the initial
+and likewise for the magnetic fields. The $1/\sqrt 2$ routing factor, combined
+with the $1/\sqrt 2$ that already reduced the arm amplitudes at the initial
 split, returns the full input energy to the bright port:
 
 $$
@@ -584,7 +389,7 @@ experiments provide.
 
 ---
 
-## What the Experiment Decides
+## Conclusion
 
 The experiments test which object should be treated as the propagating fringe
 after recombination:
