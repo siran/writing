@@ -805,7 +805,9 @@ def parse_args():
         help="Stem of an existing publication this should be a new version of.",
     )
     ap.add_argument(
-        "--assets-dir", default="../assets", help="Path to local assets repo (default: ../assets)."
+        "--assets-dir",
+        default=str(ROOT.parent / "assets"),
+        help="Path to local assets repo (default: <repo-root>/../assets).",
     )
     ap.add_argument(
         "--assets-base-url",
