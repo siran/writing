@@ -126,13 +126,14 @@ def main() -> int:
     ap.add_argument("--interval", type=float, default=1.0, help="Watch poll interval in seconds.")
     ap.add_argument(
         "--build-mode",
-        choices=("fast", "books", "pdf", "full"),
-        default="fast",
+        choices=("fast", "books", "epub", "pdf", "full"),
+        default="books",
         help=(
             "Build mode to use with --watch. "
             "fast: HTML + dotfile markers only (--skip-books --skip-pdf --skip-epub). "
-            "books: books HTML only, skip .book markers (--skip-pdf --skip-epub --skip-book-markers). "
-            "pdf: .pdf markers only, skip .book markers (--skip-books --skip-epub --skip-book-markers). "
+            "books: books HTML + .pdf markers, no EPUB or book PDF (default). "
+            "epub: books HTML + EPUB + .pdf markers, no book PDF. "
+            "pdf: .pdf markers only, skip books. "
             "full: everything, skip .book markers (global book build covers them)."
         ),
     )
@@ -148,12 +149,12 @@ def main() -> int:
     ]
     if args.build_mode in {"fast", "pdf"}:
         build_command.append("--skip-books")
-    if args.build_mode in {"fast", "books"}:
+    if args.build_mode in {"fast", "books", "epub"}:
         build_command.append("--skip-pdf")
-    if args.build_mode != "full":
+    if args.build_mode not in {"full", "epub"}:
         build_command.append("--skip-epub")
     # .book markers are redundant when global book build runs; skip them for
-    # books/pdf/full modes. fast mode honors them to build only marked books.
+    # books/epub/pdf/full modes. fast mode honors them to build only marked books.
     if args.build_mode != "fast":
         build_command.append("--skip-book-markers")
 

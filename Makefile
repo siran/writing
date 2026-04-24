@@ -1,4 +1,4 @@
-.PHONY: serve serveb watch watchb watchn watchp clean
+.PHONY: serve serveb watch watchb build buildb clean
 
 PYTHON_VENV := $(firstword $(wildcard $(VIRTUAL_ENV)/Scripts/python.exe $(VIRTUAL_ENV)/bin/python))
 PYTHON := $(if $(PYTHON_VENV),$(PYTHON_VENV),$(shell command -v python 2>/dev/null || command -v python3 2>/dev/null))
@@ -11,29 +11,22 @@ clean:
 	@echo "removing site/"
 	rm -r site || true
 
+build:
+	@echo "building (concatenated book HTML + .pdf markers, no EPUB)..."
+	$(PYTHON) .scripts/build_site/build_site.py --skip-pdf --skip-epub
 buildb:
-	@echo "building books..."
-	$(PYTHON) .scripts/build_site/build_site.py --skip-pdf --skip-epub --skip-book-markers
-buildn:
-	@echo "building fast (HTML + dotfile markers)..."
-	$(PYTHON) .scripts/build_site/build_site.py --skip-books --skip-pdf --skip-epub
-buildp:
-	@echo "building PDFs (honor .pdf markers, no books)..."
-	$(PYTHON) .scripts/build_site/build_site.py --skip-books --skip-epub --skip-book-markers
+	@echo "building with EPUB (book HTML + EPUB + .pdf markers, no book PDFs)..."
+	$(PYTHON) .scripts/build_site/build_site.py --skip-pdf
 
-serve: buildn
-	@echo "serving fast build (HTML only, no books/PDF/EPUB)..."
+serve: build
+	@echo "serving..."
 	$(PYTHON) .scripts/dev_server.py --root site --port 8000
 serveb: buildb
-	@echo "serving WITH books..."
+	@echo "serving with EPUB..."
 	$(PYTHON) .scripts/dev_server.py --root site --port 8000
-watch: buildb
-	@echo "watching with books (HTML concatenated from book.yaml, no PDF/EPUB)..."
+watch: build
+	@echo "watching (concatenated book HTML + .pdf markers)..."
 	$(PYTHON) .scripts/dev_server.py --root site --port 8000 --watch --build-mode books
-watchb: watch
-watchn: buildn
-	@echo "watching fast (HTML only, no books/PDF/EPUB)..."
-	$(PYTHON) .scripts/dev_server.py --root site --port 8000 --watch --build-mode fast
-watchp: buildp
-	@echo "watching PDFs (honor .pdf markers, no books)..."
-	$(PYTHON) .scripts/dev_server.py --root site --port 8000 --watch --build-mode pdf
+watchb: buildb
+	@echo "watching with EPUB..."
+	$(PYTHON) .scripts/dev_server.py --root site --port 8000 --watch --build-mode epub
