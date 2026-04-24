@@ -1,4 +1,4 @@
-.PHONY: serve serveb watch watchb watchp clean
+.PHONY: serve serveb watch watchb watchn watchp clean
 
 PYTHON_VENV := $(firstword $(wildcard $(VIRTUAL_ENV)/Scripts/python.exe $(VIRTUAL_ENV)/bin/python))
 PYTHON := $(if $(PYTHON_VENV),$(PYTHON_VENV),$(shell command -v python 2>/dev/null || command -v python3 2>/dev/null))
@@ -27,12 +27,13 @@ serve: buildn
 serveb: buildb
 	@echo "serving WITH books..."
 	$(PYTHON) .scripts/dev_server.py --root site --port 8000
-watch: buildn
+watch: buildb
+	@echo "watching with books (HTML concatenated from book.yaml, no PDF/EPUB)..."
+	$(PYTHON) .scripts/dev_server.py --root site --port 8000 --watch --build-mode books
+watchb: watch
+watchn: buildn
 	@echo "watching fast (HTML only, no books/PDF/EPUB)..."
 	$(PYTHON) .scripts/dev_server.py --root site --port 8000 --watch --build-mode fast
-watchb: buildb
-	@echo "watching books (HTML, no PDF/EPUB)..."
-	$(PYTHON) .scripts/dev_server.py --root site --port 8000 --watch --build-mode books
 watchp: buildp
 	@echo "watching PDFs (honor .pdf markers, no books)..."
 	$(PYTHON) .scripts/dev_server.py --root site --port 8000 --watch --build-mode pdf
