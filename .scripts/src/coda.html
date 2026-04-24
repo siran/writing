@@ -60,6 +60,14 @@
     .md-container p { margin: 0 0 0.5em 0; white-space: pre-line; }
     .md-container p:last-child { margin-bottom: 0; }
 
+    /* Display math rendered by KaTeX: center in the container. */
+    .md-container .math-display {
+        display: block;
+        text-align: center;
+        margin: 0.75em 0;
+        white-space: normal;
+    }
+
     @media (max-width: 960px) {
         .md-container {
             max-width: 100%;
@@ -1333,18 +1341,21 @@
                         if (!pt.math) {
                             if (pt.text) { frag.appendChild(document.createTextNode(pt.text)); }
                         } else {
-                            var span = document.createElement('span');
-                            span.setAttribute('data-latex', pt.src);
+                            // Display math needs a block wrapper so .katex-display
+                            // can center itself; inline math keeps the span.
+                            var el = document.createElement(pt.display ? 'div' : 'span');
+                            if (pt.display) { el.className = 'math-display'; }
+                            el.setAttribute('data-latex', pt.src);
                             try {
-                                span.setAttribute('data-mathml',
+                                el.setAttribute('data-mathml',
                                     window.katex.renderToString(pt.inner,
                                         { output: 'mathml', displayMode: pt.display, throwOnError: false }));
                             } catch (_e2) { }
                             try {
-                                window.katex.render(pt.inner, span,
+                                window.katex.render(pt.inner, el,
                                     { displayMode: pt.display, throwOnError: false });
-                            } catch (_e) { span.textContent = pt.src; }
-                            frag.appendChild(span);
+                            } catch (_e) { el.textContent = pt.src; }
+                            frag.appendChild(el);
                         }
                     });
                     tn.parentNode.replaceChild(frag, tn);
