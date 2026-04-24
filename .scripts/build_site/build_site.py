@@ -2525,8 +2525,10 @@ def prune_orphans_from_out():
 
         # Directory index files are generated fresh each build (one variant per
         # sort key: name, created, modified). Keep them if the directory still
-        # holds non-index content; otherwise they're the last artifacts of a
-        # deleted subtree and should go.
+        # holds non-index content -- which includes subdirectories (e.g. a
+        # prints/<title>/ stem dir whose only child is the DOI subtree under
+        # 10.5281/). Otherwise they're the last artifacts of a deleted subtree
+        # and should go.
         _INDEX_VARIANTS = {
             "index.html",
             "index.md.html",
@@ -2536,7 +2538,7 @@ def prune_orphans_from_out():
         if name in _INDEX_VARIANTS and len(parts) > 1:
             dir_path = path.parent
             has_real_content = any(
-                p.is_file() and p.name not in _INDEX_VARIANTS
+                p.name not in _INDEX_VARIANTS
                 for p in dir_path.iterdir()
             )
             if has_real_content:
