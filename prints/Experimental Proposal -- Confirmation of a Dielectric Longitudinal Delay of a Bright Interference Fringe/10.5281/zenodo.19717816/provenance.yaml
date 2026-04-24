@@ -1,0 +1,95 @@
+journal: Preferred Frame Writing
+subjournal: prints
+publication_type: article
+title: Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe
+doi: 10.5281/zenodo.19717816
+concept_doi: null
+permalink: "https://writing.preferredframe.com/prints/Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe/10.5281/zenodo.19717816/"
+publication_date: '2026-04-23'
+publication_year: '2026'
+keywords:
+- interference
+- Mach-Zehnder interferometer
+- dielectric slowing
+- dielectric longitudinal delay
+- constructive interference
+- energy density
+- bright interference fringe
+- refraction
+- Snell's law
+- total internal reflection
+- time-of-flight
+- speed of light
+one_sentence_summary: At Mach-Zehnder recombination each arm beam is the in-phase electromagnetic response to the other, so the dielectric slowing mechanism applies directly and the bright fringe propagates at c/2.
+abstract: 'Electromagnetic propagation in a dielectric slows because the medium''s polarization response is an in-phase electromagnetic wave that loads the effective permittivity and permeability. At Mach-Zehnder recombination the second arm beam plays that role: both arms originate from the same coherent source and arrive in phase, making each beam the full-amplitude in-phase response to the other (k=1), which gives c_eff = c/2 by the standard dielectric formula. The ordinary output reading takes the routed output beam and predicts no delay. Two experiments discriminate the readings: refraction of the isolated bright fringe at a glass boundary — where the loaded reading predicts total internal reflection above the critical angle sin(theta_c) = n_g/2 ~ 0.75 — and time-of-flight along a propagation path.'
+authors:
+- name: An M. Rodriguez <an@preferredframe.com>
+  orcid: 0009-0009-9098-9468
+- name: Leo Marchetti <leo@preferredframe.com>
+references_doi:
+- https://doi.org/10.5281/zenodo.18396637
+zenodo_metadata:
+  upload_type: publication
+  publication_type: article
+  title: Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe
+  creators:
+  - name: An M. Rodriguez <an@preferredframe.com>
+    orcid: 0009-0009-9098-9468
+  - name: Leo Marchetti <leo@preferredframe.com>
+  description: 'Electromagnetic propagation in a dielectric slows because the medium''s polarization response is an in-phase electromagnetic wave that loads the effective permittivity and permeability. At Mach-Zehnder recombination the second arm beam plays that role: both arms originate from the same coherent source and arrive in phase, making each beam the full-amplitude in-phase response to the other (k=1), which gives c_eff = c/2 by the standard dielectric formula. The ordinary output reading takes the routed output beam and predicts no delay. Two experiments discriminate the readings: refraction of the isolated bright fringe at a glass boundary — where the loaded reading predicts total internal reflection above the critical angle sin(theta_c) = n_g/2 ~ 0.75 — and time-of-flight along a propagation path.'
+  keywords:
+  - interference
+  - Mach-Zehnder interferometer
+  - dielectric slowing
+  - dielectric longitudinal delay
+  - constructive interference
+  - energy density
+  - bright interference fringe
+  - refraction
+  - Snell's law
+  - total internal reflection
+  - time-of-flight
+  - speed of light
+  journal_title: Preferred Frame Writing
+  publisher:
+    name: Preferred Frame Writing
+  publication_year: '2026'
+  date: '2026-04-23'
+  license: cc-by-4.0
+  related_identifiers:
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe/10.5281/zenodo.19717816/Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe.html"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://writing.preferredframe.com/prints/Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe/10.5281/zenodo.19717816/Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe.md"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe/10.5281/zenodo.19717816/Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe.pdf"
+    resource_type: publication-article
+  - relation: isIdenticalTo
+    identifier: "https://assets.preferredframe.com/preferredframe/Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe/10.5281/zenodo.19717816/Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe.embed.html"
+    resource_type: publication-article
+  - relation: cites
+    identifier: https://doi.org/10.5281/zenodo.18396637
+    resource_type: publication-article
+  communities:
+  - identifier: preferredframe
+  prereserve_doi: true
+  notes: At Mach-Zehnder recombination each arm beam is the in-phase electromagnetic response to the other, so the dielectric slowing mechanism applies directly and the bright fringe propagates at c/2.
+change_log: ''
+source:
+  repo_origin: git@github.com:siran/writing.git
+  commit: e0324621b118fb93c56122f2fefcc803dd0a9098
+  filename: Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe.md
+artifacts:
+  md: Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe.md
+  md_url: "https://writing.preferredframe.com/prints/Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe/10.5281/zenodo.19717816/Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe.md"
+  pandoc_md_name: Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe.pandoc.md
+  pandoc_md_url: "https://writing.preferredframe.com/prints/Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe/10.5281/zenodo.19717816/Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe.pandoc.md"
+  html_name: Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe.html
+  html_url: "https://writing.preferredframe.com/prints/Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe/10.5281/zenodo.19717816/Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe.html"
+  primary: md
+  pdf_name: Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe.pdf
+  pdf_url: "https://assets.preferredframe.com/preferredframe/Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe/10.5281/zenodo.19717816/Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe.pdf"
+  embed_html_name: Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe.embed.html
+  embed_url: "https://assets.preferredframe.com/preferredframe/Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe/10.5281/zenodo.19717816/Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe.embed.html"

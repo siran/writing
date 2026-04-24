@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="An M. Rodriguez &lt;an@preferredframe.com&gt;" />
+  <meta name="author" content="Leo Marchetti &lt;leo@preferredframe.com&gt;" />
+  <meta name="dcterms.date" content="2026-04-23" />
+  <meta name="keywords" content="interference, Mach-Zehnder
+interferometer, dielectric slowing, dielectric longitudinal
+delay, constructive interference, energy density, bright interference
+fringe, refraction, Snell’s law, total internal
+reflection, time-of-flight, speed of light" />
+  <title>Experimental Proposal -- Confirmation of a Dielectric Longitudinal Delay of a Bright Interference Fringe</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <style>
+  html {
+    font-family: sans-serif;
+  }
+  body {
+    font-family: inherit;
+    font-variant-ligatures: common-ligatures;
+    font-kerning: normal;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .header-section-number::after,
+  .toc-section-number::after {
+    content: ". ";
+  }
+  .toc ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .toc ul ul {
+    padding-left: 1.35rem;
+    margin-top: 0.25rem;
+  }
+  .toc li {
+    margin: 0.4em 0;
+  }
+  .toc-title {
+    display: block;
+    font-weight: 700;
+    font-size: 1.1em;
+    margin: 0.5em 0 0.4em;
+    text-align: center;
+  }
+  .toc-divider {
+    width: 35%;
+    margin: 3.2em auto 2.8em;
+    border: 0;
+    height: 1px;
+    background: rgba(0,0,0,0.25);
+  }
+  .toc a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid transparent;
+  }
+  .toc a:hover {
+    border-bottom-color: #1f5fbf;
+  }
+  .heading-anchor {
+    margin-left: 0.35em;
+    text-decoration: none;
+    opacity: 0;
+    font-size: 0.85em;
+    color: inherit;
+    transition: opacity 0.15s ease;
+  }
+  .heading-anchor::after {
+    content: "\1F517";
+  }
+  h1:hover .heading-anchor,
+  h2:hover .heading-anchor,
+  h3:hover .heading-anchor,
+  h4:hover .heading-anchor,
+  h5:hover .heading-anchor,
+  h6:hover .heading-anchor,
+  .heading-anchor:focus {
+    opacity: 1;
+  }
+  .heading-anchor:hover {
+    text-decoration: none;
+  }
+  </style>
+  <script>
+  (function () {
+    function slugify(text) {
+      return (text || "")
+        .toLowerCase()
+        .replace(/[^0-9a-zA-Z _-]+/g, "")
+        .trim()
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-")
+        .replace(/^-+|-+$/g, "") || "section";
+    }
+    function headingText(el) {
+      var clone = el.cloneNode(true);
+      var drop = clone.querySelectorAll(".heading-anchor, .header-section-number");
+      for (var i = 0; i < drop.length; i++) {
+        if (drop[i].parentNode) {
+          drop[i].parentNode.removeChild(drop[i]);
+        }
+      }
+      return (clone.textContent || "").trim();
+    }
+    function ensureId(el, used) {
+      var id = el.getAttribute("id") || "";
+      if (id) {
+        used[id] = true;
+        return id;
+      }
+      var base = slugify(headingText(el));
+      var cand = base;
+      var i = 1;
+      while (!cand || document.getElementById(cand) || used[cand]) {
+        cand = base + "-" + i;
+        i += 1;
+      }
+      el.setAttribute("id", cand);
+      used[cand] = true;
+      return cand;
+    }
+    function addAnchors(root) {
+      if (!root) {
+        return;
+      }
+      var headings = root.querySelectorAll("h1, h2, h3, h4, h5, h6");
+      var used = {};
+      for (var i = 0; i < headings.length; i++) {
+        var h = headings[i];
+        if (h.querySelector("a.heading-anchor")) {
+          continue;
+        }
+        var id = ensureId(h, used);
+        var a = document.createElement("a");
+        a.className = "heading-anchor";
+        a.href = "#" + id;
+        a.setAttribute("aria-label", "Link to this section");
+        a.setAttribute("title", "Link to this section");
+        h.appendChild(a);
+      }
+    }
+    function run() {
+      addAnchors(document.body);
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", run);
+    } else {
+      run();
+    }
+  })();
+  </script>
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Experimental Proposal -- Confirmation of a Dielectric
+Longitudinal Delay of a Bright Interference Fringe</h1>
+<p class="subtitle">A dielectric-first derivation and two experimental
+tests in a Mach-Zehnder interferometer</p>
+<p class="author">An M. Rodriguez &lt;an@preferredframe.com&gt;</p>
+<p class="author">Leo Marchetti &lt;leo@preferredframe.com&gt;</p>
+<p class="date">2026-04-23</p>
+</header>
+<p><strong>One-Sentence Summary.</strong> At Mach-Zehnder recombination
+each arm beam is the in-phase electromagnetic response to the other, so
+the dielectric slowing mechanism applies directly and the bright fringe
+propagates at c/2.</p>
+<p><strong>Keywords.</strong> interference, Mach-Zehnder interferometer,
+dielectric slowing, dielectric longitudinal delay, constructive
+interference, energy density, bright interference fringe, refraction,
+Snell’s law, total internal reflection, time-of-flight, speed of
+light</p>
+<h1 data-number="1" id="abstract"><span
+class="header-section-number">1</span> Abstract</h1>
+<p>A dielectric slows light because the medium responds to the incident
+electromagnetic wave with an in-phase polarization wave. Maxwell’s
+equations then describe the combined field — incident plus response —
+propagating at the reduced speed</p>
+<p><span class="math display">\[
+c_{\mathrm{eff}}=\frac{1}{\sqrt{\varepsilon_{\mathrm{eff}}\mu_{\mathrm{eff}}}}
+=\frac{c}{n}.
+\]</span></p>
+<p>A dielectric is, at bottom, a coherent recombiner: one in-phase
+electromagnetic wave riding alongside another.</p>
+<p>At Mach-Zehnder recombination, the second arm beam is that in-phase
+response. Both arms originate from the same coherent source, travel
+equal paths, and arrive in phase at a bright point. Each beam is, for
+the other, the in-phase electromagnetic addition that constitutes the
+dielectric loading. This is not an analogy to the dielectric case — it
+is the dielectric mechanism, with the second arm supplying the response
+sector instead of the medium.</p>
+<p>At equal-beam recombination, the arm amplitudes are equal, so each
+arm is the full-amplitude in-phase response to the other: <span
+class="math inline">\(k=1\)</span>. The dielectric formula then gives
+directly</p>
+<p><span class="math display">\[
+c_{\mathrm{eff}}=\frac{c}{2}.
+\]</span></p>
+<p>The ordinary reading takes the routed output beam and predicts no
+delay. The experiment is a direct test between these two readings, and
+it reduces — in the refraction version — to a binary outcome near the
+critical angle <span class="math inline">\(\theta_c\approx
+48.6^\circ\)</span>.</p>
+<h1 data-number="2" id="introduction"><span
+class="header-section-number">2</span> Introduction</h1>
+<p>In a linear dielectric, an incident electromagnetic wave induces an
+in-phase polarization response. Maxwell’s equations, applied to the
+combined field of incident wave plus response, yield the reduced
+propagation speed <span class="math inline">\(c/n\)</span>. The
+dielectric index encodes, at bottom, the presence of a second in-phase
+electromagnetic wave riding alongside the first.</p>
+<p>This observation generalizes beyond bulk media. Any configuration
+that places a second coherent in-phase electromagnetic wave alongside a
+probe wave should produce the same reduced propagation speed, by the
+same Maxwell derivation.</p>
+<p>A Mach-Zehnder interferometer at its recombination point is precisely
+such a configuration. Both arm beams originate from the same coherent
+source, travel equal paths, and arrive in phase at a bright point. Each
+beam is, from the other’s perspective, a full-amplitude in-phase
+electromagnetic response. The mathematical structure matches the
+dielectric case exactly, with <span class="math inline">\(k=1\)</span>,
+so the reduced speed is <span
+class="math inline">\(c_{\mathrm{eff}}=c/2\)</span>.</p>
+<p>In Dirac’s framing of the superposition principle — <em>each photon
+then interferes only with itself</em> — the two arm beams are two paths
+of the same coherent state. The loading one arm imposes on the other is
+therefore self-interference in the strict sense: the photon encountering
+its own amplitude. The present proposal tests whether that
+self-interference carries a measurable phase-velocity signature.</p>
+<p>The ordinary output-mode analysis disagrees. It normalizes the
+recombined field through the <span class="math inline">\(1/\sqrt
+2\)</span> routing factor and treats the bright port as a single beam
+propagating at <span class="math inline">\(c\)</span>. This paper
+derives the loaded-fringe prediction, frames the disagreement as a
+direct experimental fork, and proposes two tests: refraction at a glass
+boundary (geometric) and time-of-flight along a propagation path
+(temporal). The refraction test reduces the discrimination to a binary
+outcome near the critical angle <span
+class="math inline">\(\theta_c\approx 48.6^\circ\)</span>, where the
+loaded reading predicts total internal reflection and the ordinary
+reading predicts standard transmission.</p>
+<p>The logic is one-sided. Constructive interference yields a denser
+in-phase combined field; destructive interference depletes the field
+and, in the dark-fringe limit, cancels it rather than producing anything
+faster. Only the bright-fringe direction of the fork carries a
+substantive prediction.</p>
+<h1 data-number="3" id="theory"><span
+class="header-section-number">3</span> Theory</h1>
+<h2 data-number="3.1" id="the-dielectric-mechanism"><span
+class="header-section-number">3.1</span> The Dielectric Mechanism</h2>
+<p>Consider a region in which an electromagnetic probe wave <span
+class="math inline">\((\mathbf E_1,\mathbf H_1)\)</span> is accompanied
+by an in-phase response wave with amplitude ratio <span
+class="math inline">\(k\ge 0\)</span>,</p>
+<p><span class="math display">\[
+\mathbf E_2=k\,\mathbf E_1,
+\qquad
+\mathbf H_2=k\,\mathbf H_1.
+\]</span></p>
+<p>The sum fields enter Maxwell’s equations through the constitutive
+relations</p>
+<p><span class="math display">\[
+\mathbf D=\varepsilon_0(\mathbf E_1+\mathbf
+E_2)=\varepsilon_0(1+k)\,\mathbf E_1
+\equiv\varepsilon_{\mathrm{eff}}\,\mathbf E_1,
+\]</span></p>
+<p><span class="math display">\[
+\mathbf B=\mu_0(\mathbf H_1+\mathbf H_2)=\mu_0(1+k)\,\mathbf H_1
+\equiv\mu_{\mathrm{eff}}\,\mathbf H_1.
+\]</span></p>
+<p>In a source-free region,</p>
+<p><span class="math display">\[
+\nabla\times\mathbf E_1=-\frac{\partial\mathbf B}{\partial t}
+=-\mu_{\mathrm{eff}}\frac{\partial\mathbf H_1}{\partial t},
+\]</span></p>
+<p><span class="math display">\[
+\nabla\times\mathbf H_1=\frac{\partial\mathbf D}{\partial t}
+=\varepsilon_{\mathrm{eff}}\frac{\partial\mathbf E_1}{\partial t}.
+\]</span></p>
+<p>Taking the curl of the first equation and using <span
+class="math inline">\(\nabla\cdot\mathbf E_1=0\)</span> gives the wave
+equation</p>
+<p><span class="math display">\[
+\nabla^2\mathbf E_1
+-\varepsilon_{\mathrm{eff}}\mu_{\mathrm{eff}}
+\frac{\partial^2\mathbf E_1}{\partial t^2}=0,
+\]</span></p>
+<p>so the combined field propagates at</p>
+<p><span class="math display">\[
+c_{\mathrm{eff}}
+=\frac{1}{\sqrt{\varepsilon_{\mathrm{eff}}\mu_{\mathrm{eff}}}}
+=\frac{1}{\sqrt{\varepsilon_0\mu_0(1+k)^2}}
+=\frac{c}{1+k}.
+\]</span></p>
+<p>This result depends only on the existence of an in-phase
+electromagnetic response with amplitude ratio <span
+class="math inline">\(k\)</span>. It does not depend on the physical
+origin of that response.</p>
+<h2 data-number="3.2" id="two-physical-realizations"><span
+class="header-section-number">3.2</span> Two Physical Realizations</h2>
+<p><strong>Linear dielectric.</strong> In a transparent linear
+dielectric, <span class="math inline">\(\mathbf E_2\)</span> is the
+electromagnetic field of the medium’s polarization response, and the
+amplitude ratio is the electric susceptibility, <span
+class="math inline">\(k=\chi_e\)</span> (analogously <span
+class="math inline">\(\chi_m\)</span> for the magnetic response). The
+standard reduced-speed formula <span class="math inline">\(c/n\)</span>
+follows with <span
+class="math inline">\(n=\sqrt{(1+\chi_e)(1+\chi_m)}\)</span>.</p>
+<p><strong>Mach-Zehnder recombination.</strong> At the recombination
+point of a Mach-Zehnder interferometer, <span
+class="math inline">\(\mathbf E_2\)</span> is the second arm beam. Both
+arms originate from the same coherent source, travel equal paths, and
+arrive in phase at a bright point. Each beam is, from the other’s
+perspective, a full-amplitude in-phase electromagnetic response. At full
+constructive interference <span class="math inline">\(\mathbf
+E_2=\mathbf E_1\)</span>, so <span class="math inline">\(k=1\)</span>
+without further substitution, and</p>
+<p><span class="math display">\[
+c_{\mathrm{eff}}=\frac{c}{2}.
+\]</span></p>
+<p>The physical realizations differ — medium polarization versus
+free-propagating beam — but the mathematical structure, and therefore
+the predicted propagation speed, is identical. The dielectric result is
+not transferred by analogy; it applies directly, because the mechanism
+is the same.</p>
+<h2 data-number="3.3" id="sec:split"><span
+class="header-section-number">3.3</span> Why the Split Phase Is
+Different</h2>
+<p>The split and recombination use the same physical element (a 50/50
+beam splitter) but are not the same operation.</p>
+<p>The split takes one beam and produces two equal beams from it. Its
+purpose is to prepare coherent arm beams; no loaded interference fringe
+is formed.</p>
+<p>Recombination takes two coherent equal beams and concentrates them
+into a single signal distributed across two output channels. The bright
+channel receives the constructive-interference fringe; the dark channel
+receives nothing. Together they account for the full input energy — the
+fringe profile <span class="math inline">\(\cos^2+\sin^2=1\)</span> sums
+to unity.</p>
+<p>The dielectric loading question belongs to recombination, where two
+in-phase equal beams combine, not to the split.</p>
+<h1 data-number="4" id="proposed-experiments"><span
+class="header-section-number">4</span> Proposed Experiments</h1>
+<h2 data-number="4.1" id="the-two-readings"><span
+class="header-section-number">4.1</span> The Two Readings</h2>
+<p>Each arm carries amplitude <span class="math inline">\(E_0\)</span>
+(energy density <span class="math inline">\(u\)</span>). At
+recombination the two coherent equal beams combine: the bright fringe
+has amplitude <span class="math inline">\(2E_0\)</span> and energy
+density <span class="math inline">\(4u\)</span>; the dark fringe has
+<span class="math inline">\(0\)</span>. The fringe profile <span
+class="math inline">\(\cos^2+\sin^2=1\)</span> distributes the full
+input energy across the two output channels.</p>
+<p>The dielectric loading applies to the combined field at the bright
+fringe. With <span class="math inline">\(k=1\)</span> the dielectric
+result gives <span class="math inline">\(c_{\mathrm{eff}}=c/2\)</span>
+(see for the full energy and routing accounting).</p>
+<p>The two readings differ in the phase velocity assigned to the bright
+fringe:</p>
+<ul>
+<li>ordinary output reading: <span
+class="math inline">\(v_{\mathrm{bright}}=c\)</span></li>
+<li>loaded-fringe reading: <span
+class="math inline">\(v_{\mathrm{bright}}=c/2\)</span></li>
+</ul>
+<p>Two experiments can probe this phase velocity: refraction at a glass
+boundary (geometric) and time-of-flight along a propagation path
+(temporal). Both access the same underlying wavevector magnitude <span
+class="math inline">\(|k|=n_{\mathrm{eff}}\,\omega/c\)</span> in the
+overlap region; they are not independent confirmations but complementary
+observation channels.</p>
+<h2 data-number="4.2" id="refraction-test"><span
+class="header-section-number">4.2</span> Refraction Test</h2>
+<p>The simplest test to discriminate the two readings is geometric.
+Snell’s law at a boundary between two media,</p>
+<p><span class="math display">\[
+n_1\sin\theta_i=n_2\sin\theta_r,
+\]</span></p>
+<p>is tangential-wavevector conservation: <span
+class="math inline">\(|k|_{\mathrm{tangential}}\)</span> is preserved at
+the boundary, and <span class="math inline">\(|k|=n\,\omega/c\)</span>.
+The refraction angle therefore reads off the wavevector magnitude of the
+incident wave. The testable content of the <span
+class="math inline">\(c_{\mathrm{eff}}=c/2\)</span> claim is that the
+combined field at the bright fringe carries <span
+class="math inline">\(|k|=2\omega/c\)</span> in the overlap region,
+which at a boundary with glass of index <span
+class="math inline">\(n_g\)</span> bends the beam to</p>
+<p><span class="math display">\[
+\sin\theta_r=\frac{2}{n_g}\sin\theta_i,
+\]</span></p>
+<p>twice the ordinary prediction.</p>
+<p><strong>Setup.</strong> Arrange the Mach-Zehnder so the two arm beams
+are collinear at the recombiner output. Isolate one bright fringe with
+an aperture and let it propagate toward a glass slab (<span
+class="math inline">\(n_g\approx 1.5\)</span>) at oblique incidence
+<span class="math inline">\(\theta_i\)</span>. A reference beam taken
+directly from the laser is sent to the same slab at the same <span
+class="math inline">\(\theta_i\)</span> for standard-refraction
+comparison.</p>
+<p>The two arm beams remain spatially coincident within the apertured
+beam, so each is still the in-phase response to the other and the
+dielectric loading argument persists as long as they propagate
+together.</p>
+<p><strong>Predictions.</strong></p>
+<ul>
+<li><em>Ordinary reading</em> (<span
+class="math inline">\(n_{\mathrm{eff}}=1\)</span>): standard refraction,
+identical to the reference, <span
+class="math inline">\(\sin\theta_r=\sin\theta_i/n_g\)</span>.</li>
+<li><em>Loaded-fringe reading</em> (<span
+class="math inline">\(n_{\mathrm{eff}}=2\)</span>): <span
+class="math inline">\(\sin\theta_r=(2/n_g)\sin\theta_i=(4/3)\sin\theta_i\)</span>.</li>
+</ul>
+<p>For the loaded reading a critical angle appears at</p>
+<p><span class="math display">\[
+\sin\theta_c=\frac{n_g}{n_{\mathrm{eff}}}=0.75,
+\qquad
+\theta_c\approx 48.6^\circ.
+\]</span></p>
+<p>Above that incidence angle the loaded reading predicts total internal
+reflection — no transmitted beam — while the ordinary reading still
+predicts standard transmission.</p>
+<p>At <span class="math inline">\(\theta_i\gtrsim 49^\circ\)</span> the
+experiment reduces to a binary discriminator: either the bright fringe
+transmits into the glass or it does not. No timing measurement is
+required.</p>
+<h2 data-number="4.3" id="time-of-flight-test"><span
+class="header-section-number">4.3</span> Time-of-Flight Test</h2>
+<p>If the refraction test is positive, a direct temporal confirmation is
+to propagate the fringe and measure its group delay.</p>
+<p>Use a coherent source, modulate it, split it into two arms, and
+recombine the arms so they form stable fringes. Then:</p>
+<ol type="1">
+<li>isolate one bright interference fringe with an aperture</li>
+<li>propagate that selected fringe over distance <span
+class="math inline">\(L\)</span></li>
+<li>propagate a matched reference beam over the same distance</li>
+<li>compare delay slopes <span
+class="math inline">\(d\tau/dL\)</span></li>
+</ol>
+<p>The ordinary reading predicts equal slopes. The loaded-fringe reading
+predicts a larger slope for the bright fringe.</p>
+<p>For the equal-beam limit,</p>
+<p><span class="math display">\[
+\tau_{\mathrm{bright}}-\tau_{\mathrm{ref}}\approx \frac{L}{c}.
+\]</span></p>
+<p>So at <span class="math inline">\(1\,\mathrm{m}\)</span> the extra
+delay is about <span class="math inline">\(3.34\,\mathrm{ns}\)</span>,
+and at <span class="math inline">\(10\,\mathrm{m}\)</span> it is about
+<span class="math inline">\(33.4\,\mathrm{ns}\)</span>.</p>
+<h1 data-number="5" id="sec:energy-flux"><span
+class="header-section-number">5</span> Discussion: Energy and Flux
+Accounting</h1>
+<p>The dielectric argument above establishes <span
+class="math inline">\(c_{\mathrm{eff}}=c/2\)</span> from the loading
+structure alone. The following energy and flux calculations are
+consistency checks, not the primary argument.</p>
+<p>Throughout this document <span class="math inline">\(u\)</span>
+denotes energy density (J/m³), not intensity (W/m²); the two are related
+by <span class="math inline">\(I=u\,v\)</span> where <span
+class="math inline">\(v\)</span> is the propagation speed, and they
+differ between the two readings.</p>
+<p><strong>Energy density at the bright center.</strong> With <span
+class="math inline">\(k=1\)</span> and arm amplitude <span
+class="math inline">\(E_0\)</span> (energy density <span
+class="math inline">\(u\)</span>),</p>
+<p><span class="math display">\[
+\mathbf E_{\mathrm{tot}}=2E_0,
+\qquad
+\mathbf H_{\mathrm{tot}}=2H_0,
+\]</span></p>
+<p>and the instantaneous energy density is</p>
+<p><span class="math display">\[
+u_{\mathrm{tot}}=4u.
+\]</span></p>
+<p>This is twice the input laser energy density <span
+class="math inline">\(2u\)</span> and four times each arm’s energy
+density <span class="math inline">\(u\)</span>. Across the fringe
+profile,</p>
+<p><span class="math display">\[
+u(x)=4u\cos^2\!\left(\frac{\Delta\phi(x)}{2}\right),
+\]</span></p>
+<p>averaging to <span class="math inline">\(2u\)</span> over a full
+fringe period. The dark fringe carries <span
+class="math inline">\(0\)</span>, so the spatial redistribution accounts
+for the full input energy.</p>
+<p><strong>Instantaneous derivation.</strong> No time averaging is
+needed. At a full constructive-interference point, <span
+class="math inline">\(\mathbf E_1(t)=\mathbf E_2(t)=E_0(t)\)</span> and
+<span class="math inline">\(\mathbf B_1(t)=\mathbf
+B_2(t)=B_0(t)\)</span>, so <span class="math inline">\(\mathbf
+E_{\mathrm{tot}}(t)=2E_0(t)\)</span>, <span
+class="math inline">\(\mathbf B_{\mathrm{tot}}(t)=2B_0(t)\)</span>,
+and</p>
+<p><span class="math display">\[
+u_{\mathrm{tot}}(t)
+=
+\frac{\varepsilon_0}{2}\lvert \mathbf E_{\mathrm{tot}}(t)\rvert^2
++
+\frac{1}{2\mu_0}\lvert \mathbf B_{\mathrm{tot}}(t)\rvert^2
+=4u.
+\]</span></p>
+<p>The factor of four is instantaneous and exact: amplitude doubles,
+energy density quadruples.</p>
+<p><strong>Output routing.</strong> The recombiner maps the overlap into
+two output spatial modes. For a lossless 50/50 recombiner,</p>
+<p><span class="math display">\[
+\mathbf E_+=\frac{\mathbf E_1+\mathbf E_2}{\sqrt 2}=\sqrt{2}\,E_0,
+\qquad
+\mathbf E_-=\frac{\mathbf E_1-\mathbf E_2}{\sqrt 2}=0,
+\]</span></p>
+<p>and likewise for the magnetic fields. The <span
+class="math inline">\(1/\sqrt 2\)</span> routing factor, combined with
+the <span class="math inline">\(1/\sqrt 2\)</span> that already reduced
+the arm amplitudes at the initial split, returns the full input energy
+to the bright port:</p>
+<p><span class="math display">\[
+u_+=2u,
+\qquad
+u_-=0.
+\]</span></p>
+<p>The ordinary reading starts from this <span
+class="math inline">\(2u\)</span> output and finds no anomalous
+refraction or delay. The loaded-fringe reading starts from the <span
+class="math inline">\(4u\)</span> raw overlap and predicts <span
+class="math inline">\(c/2\)</span>. These energy-accounting relations
+are consistent with both readings; they do not by themselves decide
+which propagation speed is physical. That discrimination is what the
+refraction and time-of-flight experiments provide.</p>
+<h1 data-number="6" id="conclusion"><span
+class="header-section-number">6</span> Conclusion</h1>
+<p>The experiments test which object should be treated as the
+propagating fringe after recombination:</p>
+<ul>
+<li>the ordinary normalized output mode, with <span
+class="math inline">\(n_{\mathrm{eff}}=1\)</span></li>
+<li>or the isolated raw constructive-interference fringe, with <span
+class="math inline">\(n_{\mathrm{eff}}=2\)</span></li>
+</ul>
+<p>For the refraction test, if the bright fringe transmits into the
+glass at <span class="math inline">\(\theta_i\gtrsim 49^\circ\)</span>
+together with the reference, the ordinary reading wins. If the bright
+fringe undergoes total internal reflection while the reference still
+transmits, the loaded-fringe reading is supported.</p>
+<p>For the time-of-flight test, if the measured delay matches the
+reference, the ordinary reading wins. If the delay approaches the <span
+class="math inline">\(c/2\)</span> prediction in the equal-beam limit,
+the loaded-fringe reading is supported.</p>
+<h1 data-number="7" id="acknowledgments"><span
+class="header-section-number">7</span> Acknowledgments</h1>
+<p>We thank Celso L. Ladera of Universidad Simón Bolívar, Caracas, for
+introducing one of us (A.M.R.) to Dirac’s dictum on self-interference
+during his undergraduate optics course.</p>
+<h1 data-number="8" id="references"><span
+class="header-section-number">8</span> References</h1>
+<ol type="1">
+<li><p>Jackson, J. D. (1999). <em>Classical Electrodynamics</em>, 3rd
+ed. Wiley. Chapter 7 covers dielectric polarization, wave propagation in
+linear media, Snell’s law, reflection and refraction at plane
+interfaces, and total internal reflection with evanescent decay — the
+full toolbox used in the derivation and in both proposed tests.</p></li>
+<li><p>Hecht, E. (2017). <em>Optics</em>, 5th ed. Pearson. Standard
+undergraduate treatment of interference (including the Mach-Zehnder
+geometry), Snell’s law, reflection and refraction, and total internal
+reflection with evanescent waves.</p></li>
+<li><p>Dirac, P. A. M. (1958). <em>The Principles of Quantum
+Mechanics</em>, 4th ed. Oxford University Press. §I.3 on the
+superposition principle: “each photon then interferes only with
+itself.”</p></li>
+<li><p>Rodriguez, A. M. (2026). <em>Light Speed as an Emergent Property
+of Electromagnetic Superposition: Polarization Without Matter</em>.
+Preferred Frame. <a
+href="https://writing.preferredframe.com/doi/10.5281/zenodo.18396637"
+class="uri">https://writing.preferredframe.com/doi/10.5281/zenodo.18396637</a>.
+Precursor derivation of the effective refractive index and local light
+speed from coherent superposition of free electromagnetic
+fields.</p></li>
+</ol>
+</body>
+</html>
