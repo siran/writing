@@ -7,6 +7,7 @@ import re
 import sys
 import shutil
 import time
+import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
 from datetime import date
@@ -994,11 +995,35 @@ def _apply_orcid_list(parsed: dict, orcids: List[str], *, warn_unused: bool = Tr
     return updated
 
 
+def _ascii_tokens(name: str) -> List[str]:
+    """Lowercase, accent-stripped tokens of `name` (splits on whitespace;
+    trims trailing dots from initials like 'M.')."""
+    if not name:
+        return []
+    normalized = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode()
+    return [t.strip(".") for t in normalized.lower().split() if t.strip(".")]
+
+
+def _is_an_rodriguez(name: str) -> bool:
+    """Match 'An ... Rodriguez' / 'An ... Rodríguez' regardless of middle
+    initials and accent marks. Requires first token == 'an' and last token
+    == 'rodriguez' (after accent strip) to avoid false positives like
+    'Ann Rodriguez' or 'An Johnson'."""
+    tokens = _ascii_tokens(name)
+    if len(tokens) < 2:
+        return False
+    return tokens[0] == "an" and tokens[-1] == "rodriguez"
+
+
 def _find_default_orcid_author(authors: List[Dict]) -> Optional[int]:
     target_key = _author_key(DEFAULT_ORCID_NAME)
     for idx, author in enumerate(authors):
         name_key = _author_key(author.get("name", ""))
         if name_key and name_key == target_key:
+            return idx
+    # Relaxed match: any 'An [middle] Rodriguez' / 'Rodríguez' variant.
+    for idx, author in enumerate(authors):
+        if _is_an_rodriguez(author.get("name", "")):
             return idx
     for idx, author in enumerate(authors):
         email = (author.get("email") or "").strip().lower()
