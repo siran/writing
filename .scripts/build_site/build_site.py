@@ -47,7 +47,12 @@ DIR_INDEX_SORTS = [
 DIR_INDEX_DEFAULT = "modified"
 
 MD_EXTS = {".md", ".markdown", ".pandoc.md"}
-SKIP_COPY_EXTS = {".pdf"}
+# Extensions skipped from ROOT -> OUT mirroring. Previously included .pdf so
+# that archived prints' PDFs lived only on the assets repo, but this also
+# hid committed PDFs (drafts under documents/) from the site. Empty now so
+# any committed PDF is mirrored; prints still store their PDFs on assets and
+# will be absent from the writing repo in the usual flow.
+SKIP_COPY_EXTS = set()
 
 def _normalize_publish_name(name: str) -> str:
     out = name.lower()
