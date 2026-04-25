@@ -116,11 +116,18 @@ They may have seen an apple taken away. They may have seen an empty basket. They
 
 If we invent the label "negative-apple," then one negative-apple is still one positive unit of that kind. The sign belongs to the kind or direction. The unit that exists is positive.
 
+The same is true for debt. A child may owe an apple, but the owing is not a negative apple. The owing is a real relation. Debt `D` is a positive asset:
+
+```text
+D = d^2
+```
+
+It exists positively as a promise, claim, memory, or record. The minus sign is a bookkeeping mark placed on one side of the relation.
+
 This does not mean negative symbols are useless. It means they should be introduced honestly:
 
 ```text
 negative as taking away
-negative as owing
 negative as opposite direction
 negative as cancellation
 ```

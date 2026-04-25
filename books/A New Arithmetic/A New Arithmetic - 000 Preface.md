@@ -49,11 +49,19 @@ things that exist are positive
 
 When have we ever seen a negative apple?
 
-We can see one apple. We can see no apple. We can see an apple removed, owed, imagined, or canceled from a list. But we do not meet a negative apple as a negative thing standing in the room.
+We can see one apple. We can see no apple. We can see an apple removed, promised, imagined, or canceled from a list. But we do not meet a negative apple as a negative thing standing in the room.
 
 Even if someone names a "negative apple," the thing named is still a positive unit of that kind. One negative-apple is one positive negative-apple. The negativity belongs to the kind, role, or direction being named. It is not a negative unit of existence.
 
-Negative numbers may be useful signs. They may describe debt, loss, direction, removal, or opposition. But they are not existing units in the same way positive things are.
+Debt is the same. A debt is not a negative apple. Debt `D` is a positive asset:
+
+```text
+D = d^2
+```
+
+It is a positive obligation, a positive record, or a positive relation between people. Bookkeeping may mark one side of that relation with a minus sign, but the debt itself exists as something present.
+
+Negative numbers may be useful signs. They may describe loss, direction, removal, cancellation, or opposition. But they are not existing units in the same way positive things are.
 
 So the new beginning is:
 
@@ -71,11 +79,19 @@ When things are added, ask what they become together.
 
 Only after this habit is clear do we need the formal arithmetic.
 
-For the adult reader, the proposal is that numbers can be reinterpreted as positive square-forms:
+For the adult reader, the proposal is that numbers can be reinterpreted as square-forms:
 
 ```text
 U = u^2
 ```
+
+When `u` is real, the square is positive and ultrareal. It is a manifested value. When `u` is rotated into the imaginary direction, the square can be negative:
+
+```text
+(iu)^2 = -u^2
+```
+
+That negative value is not a negative ultrareal. It is a rotated square-value.
 
 The visible number is `U`. The inner value is `u`.
 
@@ -107,5 +123,6 @@ They are not separate realities.
 Addition is not union.
 Union is union.
 Things that exist are positive.
+Ultrareals are manifestations of energy.
 There are no negative ultrareals.
 ```

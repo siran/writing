@@ -1,12 +1,12 @@
 # Rotation and Opposition
 
-An ultrareal number is positive:
+An ultrareal number is a positive manifestation:
 
 ```text
 U = u^2
 ```
 
-But the inner value that exposes it can carry orientation.
+with `u` real. But the inner value that exposes it can carry orientation.
 
 The simplest orientation is sign:
 
@@ -61,7 +61,7 @@ because:
 (iu)^2 = i^2 u^2 = -u^2
 ```
 
-So a negative number is not a negative ultrareal. It is a rotated ultrareal.
+So a negative number is not a negative ultrareal. It is a rotated square-value.
 
 ## General Rotation
 
@@ -84,7 +84,7 @@ theta = pi/2
 (u e^{i pi/2})^2 = -u^2
 ```
 
-This is why negative numbers enter as rotations rather than magnitudes.
+This is why `u^2` can be negative if `u` is not real. The negative square is not an ultrareal manifestation; it is the result of rotating the inner value before squaring.
 
 ## Rotation-Aware Joining
 
