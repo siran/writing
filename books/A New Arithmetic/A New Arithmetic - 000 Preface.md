@@ -2,13 +2,27 @@
 
 This book describes a new way of thinking about numbers.
 
-Numbers are usually treated as non-interacting pieces. One unit sits beside another unit. A pile is joined to another pile. The count increases. This model is useful, and we can certainly use it.
+Numbers are usually treated as non-interacting.
 
-But it is an ideal model. It belongs to the abstract space where units are allowed to remain indifferent to one another. In that space, the units do not press, mix, damage, arrange, obstruct, assist, or change one another. They simply sit in the mind as separate marks.
+That is standard arithmetic's main abstraction, and it is a legitimate object of study. It is the arithmetic of units that do not affect one another.
 
-Reality is richer than that.
+It is not fair to arithmetic to rely on physics examples to make this point. Arithmetic can say it on its own: standard addition studies the special case where the interaction term is zero.
 
-Once units are attached to actual things, ordinary addition stops being the whole story. Two children in one room is missing the interaction term: they may become a conversation, a game, a friendship, a conflict, or a shared silence. One rotten apple added to a bag is missing the interaction term too. It changes the condition of the bag.
+When we write "two children in one room," we may only be writing a union:
+
+```text
+one child in a room
+union
+one child in a room
+```
+
+and then counting the result as:
+
+```text
+two children in a room
+```
+
+That is useful, but it is not the full arithmetic of the situation. "Two children in one room" is missing the interaction term. The same is true of a rotten apple added to a bag. The count may be correct, while the arithmetic is incomplete.
 
 So the first claim of this book is simple:
 
@@ -18,7 +32,7 @@ So the first claim of this book is simple:
 
 There is also an interaction term.
 
-Classical arithmetic describes an ideal case: separated units treated as if they do not affect one another. It is not thrown away. It becomes the special case of non-interacting things. A new arithmetic should describe the larger case: units brought into relation.
+Classical arithmetic is not thrown away. It becomes the special case of non-interacting things. A new arithmetic should describe the larger case: units brought into relation.
 
 This book is therefore written for anyone who has been through kindergarten.
 
@@ -85,7 +99,7 @@ D = d^2
 
 A debt is value assigned to future settlement. It is a positive obligation, a positive record, or a positive relation between people. Bookkeeping may mark one side of that relation with a minus sign, but the debt itself exists as something present and future-directed.
 
-Negative numbers may be useful signs. They may describe loss, direction, removal, cancellation, or opposition. But they are not existing units in the same way positive things are.
+Negative numbers may be useful signs. They may describe loss, direction, removal, cancellation, or opposition. But nothing real is negative in the ultrareal sense. Negative numbers do not exist as ultrareal values.
 
 So the practical beginning is:
 
@@ -116,6 +130,8 @@ When `u` is real, the square is positive and ultrareal. When `u` is rotated into
 ```
 
 That negative value is not a negative ultrareal. It is a rotated square-value.
+
+The `i` marks the rotation. The positive value is not disappearing; it is returning through the inner square-form from another direction.
 
 The visible number is `U`. The inner value is `u`.
 

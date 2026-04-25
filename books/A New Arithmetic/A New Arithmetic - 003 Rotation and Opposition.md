@@ -63,6 +63,13 @@ because:
 
 So a negative number is not a negative ultrareal. It is a rotated square-value.
 
+The symbol `i` marks that rotation. It does not mean the positive value has disappeared. It means the square-value is returning through the inner layer from another direction:
+
+```text
+U = u^2
+-U = (iu)^2
+```
+
 ## General Rotation
 
 Let the inner value be rotated:
