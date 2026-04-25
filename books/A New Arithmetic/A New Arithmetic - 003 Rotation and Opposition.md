@@ -70,6 +70,34 @@ U = u^2
 -U = (iu)^2
 ```
 
+## Rotated Infinity
+
+The same rule applies at infinity.
+
+Positive infinity is the unbounded limit of positive square-forms:
+
+```text
+U = u^2
+u -> infinity
+U -> infinity
+```
+
+Negative infinity is not a different kind of negative substance. It is the same unbounded positive square-form seen through the rotated branch:
+
+```text
+-U = (iu)^2
+u -> infinity
+-U -> -infinity
+```
+
+So:
+
+```text
+-infinity = rotated infinity
+```
+
+In the ultrareal layer there is only positive unbounded value. The negative sign belongs to orientation.
+
 ## General Rotation
 
 Let the inner value be rotated:
