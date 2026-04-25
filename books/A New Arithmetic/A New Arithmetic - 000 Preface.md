@@ -8,7 +8,7 @@ But it is an ideal model. It belongs to the abstract space where units are allow
 
 Reality is richer than that.
 
-Once units are attached to actual things, ordinary addition stops being the whole story. Two children in one room are not merely the number two. They may become a conversation, a game, a friendship, a conflict, or a shared silence. One rotten apple added to a bag is not merely one more apple. It changes the condition of the bag.
+Once units are attached to actual things, ordinary addition stops being the whole story. Two children in one room is missing the interaction term: they may become a conversation, a game, a friendship, a conflict, or a shared silence. One rotten apple added to a bag is missing the interaction term too. It changes the condition of the bag.
 
 So the first claim of this book is simple:
 
