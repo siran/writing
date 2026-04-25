@@ -1135,7 +1135,13 @@
                 s = s.replace(/\\(left|right|bigl|bigr|Bigl|Bigr|biggl|biggr|Biggl|Biggr)\s*/g, '');
 
                 // _{xyz} -> _xyz   ^{xyz} -> ^xyz
-                s = s.replace(/([_^])\s*\{([^{}]*)\}/g, '$1$2');
+                // Whitespace inside the braces is a LaTeX separator with no
+                // rendered meaning -- strip it. Without this, _{\partial V}
+                // becomes _∂ V; with it, _∂V (which is what \oint_{\partial V}
+                // is meant to read as).
+                s = s.replace(/([_^])\s*\{([^{}]*)\}/g, function (_m, op, content) {
+                    return op + content.replace(/\s+/g, '');
+                });
 
                 // Spacing commands: \, \; \: \! \quad \qquad \space
                 s = s.replace(/\\(?:,|;|:|!|quad|qquad|space|enspace|thinspace)/g, ' ');
