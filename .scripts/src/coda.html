@@ -60,6 +60,22 @@
     .md-container p { margin: 0 0 0.5em 0; white-space: pre-line; }
     .md-container p:last-child { margin-bottom: 0; }
 
+    .md-container pre {
+        background: #f5f5f5;
+        padding: 0.75em 1em;
+        overflow-x: auto;
+        font-family: monospace;
+        font-size: 0.95em;
+        line-height: 1.4;
+        white-space: pre;
+        margin: 0.75em 0;
+        border-radius: 3px;
+    }
+    .md-container code {
+        font-family: monospace;
+        font-size: 0.95em;
+    }
+
     /* Display math rendered by KaTeX: center in the container. */
     .md-container .math-display {
         display: block;
@@ -209,6 +225,13 @@
     (function () {
         try {
             var html = document.body.innerHTML;
+
+            // Fenced code blocks: ```lang\ncontent\n```
+            // Must run first so code content is not markdown-processed.
+            html = html.replace(/`{3}[^\n]*\n([\s\S]*?)`{3}/g, function (_m, code) {
+                var esc = code.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                return '<pre><code>' + esc.trim() + '</code></pre>';
+            });
 
             // Collapse wrapped lines inside Markdown link targets back into single spaces.
             var normalizeTarget = function (value) {
