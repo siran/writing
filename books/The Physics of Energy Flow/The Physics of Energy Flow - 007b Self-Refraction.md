@@ -72,7 +72,7 @@ phase-locked portion of the same transporting flow rather than by organized
 matter.
 
 
-## Coherent overlap and the amplitude-square form
+## Coherent overlap as field-pattern addition
 
 The energy density at each point is expressed as the square of an
 amplitude-like quantity:
@@ -124,13 +124,18 @@ $$
 u_{\mathrm{join}} = u_1 + u_2 + 2\sqrt{u_1u_2}\cos\delta.
 $$
 
+The final term is the interference term. It is not a correction to arithmetic;
+it is the pointwise overlap of the two field-value patterns. If the patterns are
+incoherent or orthogonal, this term averages away. If they are equal and
+in phase, it contributes positively everywhere on the joined branch.
+
 For equal contributions,
 
 $$
 u_1 = u_2 = u_0,
 $$
 
-the joined local readout becomes
+the joined local density becomes
 
 $$
 u_{\mathrm{join}} = 2u_0(1+\cos\delta).
@@ -147,17 +152,36 @@ a fourfold local energy density for free, while destructive overlap seems to era
 joined energy altogether.
 
 But in all cases energy is conserved, so these endpoints have to be interpreted
-through continuity on the full overlap region, not by the local square-law
-readout alone.
+through continuity on the full overlap region, not by the local density value
+alone.
 
 For two equal inputs, the incoming two-stream budget is still the original
 $u_0 + u_0 = 2u_0$ before any particular recovery geometry is considered.
 
 
-## Flux mismatch and the required slowdown
+## Collinear flux mismatch and selected-branch compression
 
-This is the physical reason the loaded branch cannot simply keep the original
-advance rate.
+The cleanest case is collinear recovery. There is no fringe pattern and no
+transverse $\cos^2+\sin^2$ redistribution to average over. Two equal in-phase
+channels are brought back onto one line.
+
+The density change is ordinary wave-pattern addition. Two patterns of field
+values are added point by point. In-phase values reinforce, out-of-phase values
+cancel, and shifted patterns generate alternating dense and sparse regions. Thus
+two equal in-phase contributions do not merely sit side by side as $u+u$ once
+they are recovered on one line. Their joined field value is
+$\sqrt u+\sqrt u$, so its density is
+
+$$
+(\sqrt u+\sqrt u)^2 = 4u.
+$$
+
+This is no more mysterious than a moire pattern: two static patterns can be
+superposed to generate denser and sparser visible regions without creating new
+ink. Coherent waves do the dynamical version.
+
+The physical question is then whether the available flux can support that
+value at the original advance rate.
 
 In the laboratory version, let the original laser channel carry energy density
 $2u$ and advance at $c$. Its flux is
@@ -179,24 +203,26 @@ $$
 J_{\mathrm{available}} = 2u c.
 $$
 
-At constructive recovery, the two coherent contributions add in amplitude. The
-local bright energy density is therefore
+At collinear constructive recovery, the two coherent contributions add in
+amplitude on the same outgoing line. Relative to either arriving contribution,
+the local recovered density is
 
 $$
 u_{\mathrm{bright}} = 4u.
 $$
 
-If that single bright recovery channel were assigned the unchanged advance
-$c$, it would require
+If that recovered branch were assigned the unchanged advance $c$, it would
+require the flux
 
 $$
 J_{\mathrm{bright}} = u_{\mathrm{bright}}c = 4u c.
 $$
 
-But the laser only supplies $2u c$ into the two-arm recovery. There is
-no second positive forward channel with $\mathbf S>0$ that can provide the
-missing flux. The same input cannot feed a $4u$ branch moving at
-$c$.
+But the laser supplies only $2u c$ into the two-arm recovery. In the collinear
+case there is only one positive recovery channel and no second place with
+$\mathbf S>0$ that can provide the missing flux. The two split channels can be
+re-phased into one recovered branch, but the same input cannot feed a $4u$
+branch moving at $c$.
 
 So the forbidden combination is precise:
 
@@ -206,13 +232,10 @@ u_{\mathrm{bright}}=4u
 c_{\mathrm{eff}}=c.
 $$
 
-At most one of those can survive as the description of a single positive
-recovery channel. If the bright channel really recovers the $4u$
-energy density, its advance must slow. If the channel is forced to advance at
-$c$, then the laser cannot supply a sustained $4u$
-recovery there; the energy density must fail to reach that value as a transported
-channel, or the recovery must involve additional spatial redistribution outside
-the selected branch.
+At most one of those can survive as the description of the recovered branch. If
+the branch really recovers the $4u$ energy density as its transported density,
+its advance must slow. If the branch is forced to advance at $c$, then the $4u$
+value cannot be sustained as the transported density of that branch.
 
 Continuity therefore fixes the effective advance by
 
@@ -230,9 +253,15 @@ $$
 c_{\mathrm{eff}} = \frac{c}{2}.
 $$
 
-The slowdown is not an added mechanism. It is the flux-density accounting of a
-single positive recovery channel: the energy density increases locally while the
-available flux does not.
+The slowdown is not an added mechanism. It is the forced consequence of
+maintaining the $4u$ density while only $2u c$ of flux is supplied.
+
+The small-angle fringe version is a practical variant, not the conceptual core.
+When the two outgoing rays cross at a nonzero angle, the same accounting is
+spread across a spatial pattern. The full $\cos^2+\sin^2$ pattern can still
+carry the original mean flux at the original speed by redistribution. The
+loaded-branch question then concerns a selected bright part of that pattern,
+which is the local version of the collinear recovery branch.
 
 
 ## Finite overlap region
@@ -290,7 +319,7 @@ $$
 \delta = 0,
 $$
 
-then the joined local readout reaches
+then the joined local density reaches
 
 $$
 u_{\mathrm{join}} = 4u_0.
@@ -341,7 +370,7 @@ $$
 \delta = \pi,
 $$
 
-then the joined local readout reaches
+then the joined local density reaches
 
 $$
 u_{\mathrm{join}} = 0.
@@ -349,7 +378,7 @@ $$
 
 This needs interpretation. The continuity equation tells us that the incoming
 energy cannot simply disappear, but the joined forward branch now contributes no
-local readout.
+local density.
 
 The correct conclusion is not that a sink has appeared. It is that this local
 joined forward branch is absent. At the dark branch, $\mathbf S=0$ for the
@@ -472,30 +501,12 @@ $$
 
 So destructive overlap does not create a contradiction. It proves only that an
 everywhere-dark joined branch has no positive recovery channel. If a finite
-overlap region produced zero joined readout everywhere and no positive outgoing
+overlap region produced zero joined density everywhere and no positive outgoing
 flux anywhere in the continuing pattern, that region would act as a sink and
 would therefore be forbidden.
 
-To obtain a fresh `4u_0` readout after destructive overlap, the
+To obtain a fresh `4u_0` density after destructive overlap, the
 transport must undergo a new constructive recombination into one branch.
-
-
-## What the square law does and does not do
-
-The square form
-
-$$
-u = |f|^2
-$$
-
-does not create or remove energy. It does two precise jobs:
-
-- it gives the local readout of the branch being sampled,
-- it makes the phase-sensitive cross term explicit.
-
-
-The continuity argument is separate. It tells us how the transported content is
-recovered across the whole overlap region.
 
 
 ## Effective advance
@@ -611,8 +622,21 @@ The laboratory test is direct because ordinary interference already gives the
 energy density profile. A flux detector placed at a screen measures the flux of the
 superposed fields arriving at that point.
 
-For two equal coherent beams crossing symmetrically about the $z$
-direction, write
+The cleanest delay version is collinear. The two recovered rays are brought back
+onto the same line and phase, so the whole recovered channel is bright. There is
+no transverse fringe average to appeal to. The available flux is $2u_0c$, while
+the coherent density is $4u_0$. The loaded-branch prediction is therefore
+
+$$
+c_{\mathrm{eff,bright}}=\frac{2u_0c}{4u_0}=\frac{c}{2}.
+$$
+
+A small nonzero crossing angle is useful when one wants a visible bright stripe
+to select. For two equal coherent rays leaving the final recombination region
+and crossing symmetrically about the $z$ direction, let $\theta$ be the angle
+each ray makes with the $z$ axis. At a screen coordinate $x$, one ray has
+transverse phase $+kx\sin\theta$ and the other has transverse phase
+$-kx\sin\theta$. Their longitudinal phase is the same:
 
 $$
 f_1(x,z,t)
@@ -626,22 +650,33 @@ f_2(x,z,t)
 A e^{i(-kx\sin\theta+kz\cos\theta-\omega t)}.
 $$
 
+The opposite signs are not opposite optical phases. They are only the opposite
+transverse components of the two angled rays. Both beams have the same
+longitudinal phase $kz\cos\theta-\omega t$. Their relative phase across the
+screen is therefore
+
+$$
+\Delta\phi(x)=2kx\sin\theta.
+$$
+
+In the collinear limit $\theta=0$, the relative phase does not vary across the
+screen. The result is one recovered bright beam rather than a spatial fringe
+pattern.
+
 With
 
 $$
 u_0 := |A|^2,
-\qquad
-q := 2k\sin\theta,
 $$
 
-the joined readout is
+the joined density is
 
 $$
 u(x)
 =
 |f_1+f_2|^2
 =
-4u_0\cos^2\!\left(\frac{qx}{2}\right).
+4u_0\cos^2(kx\sin\theta).
 $$
 
 The bright centers therefore have
@@ -678,8 +713,8 @@ $$
 
 For nearly collinear beams this is $c/2$.
 
-The experiment is therefore not "does a screen show a $4u_0$ bright
-fringe?" That part is ordinary interference. The experiment is:
+The experiment is therefore not "does a screen show a bright fringe?" That part
+is ordinary interference. The experiment is:
 
 > Does an isolated bright stripe, once selected as the surviving positive
 > channel, acquire the larger longitudinal delay implied by
@@ -691,7 +726,16 @@ the isolated bright channel keeps the $4u_0$ energy density and slows, or a
 channel that advances at the ordinary speed cannot sustain the $4u_0$
 energy density as an isolated transported branch.
 
-One implementation is a delay measurement:
+A collinear delay implementation is:
+
+1. split one coherent source into two equal arms,
+2. recombine the arms collinearly and in phase,
+3. propagate the recovered bright channel over a known length $L$,
+4. propagate a matched reference beam over the same length,
+5. compare modulation or pulse delay.
+
+
+A small-angle stripe implementation is:
 
 1. form a stable two-beam fringe pattern,
 2. isolate a narrow region around a bright center,
@@ -816,10 +860,11 @@ electromagnetic writing of the same retarded compression effect.
 
 This chapter establishes:
 
-- coherent overlap concentrates local energy density as the square of the joined amplitude,
-- the local joined readout can range from $0$ to $4u_0$,
+- coherent overlap adds field patterns point by point,
+- the local joined density can range from $0$ to $4u_0$,
 - the conserved two-stream budget remains $2u_0$,
-- the square law counts the joined state but does not by itself explain it,
+- the interference term records the pointwise overlap of the added field
+  patterns,
 - continuity forbids assigning the difference to primitive sinks or sources,
 - where two constructive inflows recover as one local positive branch,
   continuity forces compression of the same total content,
