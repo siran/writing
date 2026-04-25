@@ -1,8 +1,28 @@
 # Preface: Numbers Interact
 
-This book is written first for teachers of young children.
+This book describes a new way of thinking about numbers.
 
-Children are usually taught arithmetic as if numbers were separate little realities. One block plus one block makes two blocks. One apple plus one apple makes two apples. This is useful. Children do need to count. They need to know how many things are present.
+Numbers are usually treated as non-interacting pieces. One unit sits beside another unit. A pile is joined to another pile. The count increases. This model is useful, and we can certainly use it.
+
+But it is an ideal model. It belongs to the abstract space where units are allowed to remain indifferent to one another. In that space, the units do not press, mix, damage, arrange, obstruct, assist, or change one another. They simply sit in the mind as separate marks.
+
+Reality is richer than that.
+
+Once units are attached to actual things, ordinary addition stops being the whole story. Two children in one room are not merely the number two. They may become a conversation, a game, a friendship, a conflict, or a shared silence. One rotten apple added to a bag is not merely one more apple. It changes the condition of the bag.
+
+So the first claim of this book is simple:
+
+```text
+1 + 1 is not necessarily only 2.
+```
+
+There is also an interaction term.
+
+Classical arithmetic describes an ideal case: separated units treated as if they do not affect one another. A new arithmetic should describe the real case: units brought into relation.
+
+This book is therefore written first for teachers of young children.
+
+Children do need to count. They need to know how many things are present. But they should not be taught, even accidentally, that count exhausts addition.
 
 But addition has usually been mistaken for union:
 
@@ -16,13 +36,13 @@ But union is not addition.
 
 Addition is the new condition created when the parts are together. If we replace addition with union, we teach children to count the joined group while ignoring what the joining did.
 
-But children also know something deeper before we teach them to ignore it:
+Children already know something deeper before we teach them to ignore it:
 
 ```text
 Things change when they are put together.
 ```
 
-Two blocks can make a tower. Two children can become a game, a friendship, or a fight. One spoonful of sugar added to water does not sit beside the water as a separate object. It changes the water. A rotten apple added to a bag does not merely increase the count. It can damage the remaining apples.
+Two blocks can make a tower. One spoonful of sugar added to water does not sit beside the water as a separate object. It changes the water. Children see these facts directly.
 
 Ordinary arithmetic says:
 
@@ -63,7 +83,7 @@ A debt is value assigned to future settlement. It is a positive obligation, a po
 
 Negative numbers may be useful signs. They may describe loss, direction, removal, cancellation, or opposition. But they are not existing units in the same way positive things are.
 
-So the new beginning is:
+So the practical beginning is:
 
 ```text
 1 + 1 is not only 2.
