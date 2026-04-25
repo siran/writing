@@ -25,11 +25,28 @@ _configure_stdio()
 def make_staging_dir(prefix: str = "pnpmd_") -> Path:
     """
     Create a unique staging directory for a render run.
-    Uses PNPMD_STAGING_DIR env var if set, otherwise .pnpmd/ in CWD.
+
+    Resolution order:
+      1. PNPMD_STAGING_DIR env var, if set.
+      2. <repo-root>/.pnpmd/ (repo root inferred from this file's location:
+         pnpmd_util.py lives at <repo>/.scripts/render/).
+      3. <CWD>/.pnpmd/ as a last resort if the repo root can't be found.
+
+    Pinning the default to the repo root prevents .pnpmd/ from sprouting
+    inside every directory the renderer happens to be invoked from --
+    notably book directories under site/ during make watch.
+
     Avoids system /tmp to prevent permission issues with container bind mounts.
     """
     base_env = os.environ.get("PNPMD_STAGING_DIR", "").strip()
-    base = Path(base_env) if base_env else Path.cwd() / ".pnpmd"
+    if base_env:
+        base = Path(base_env)
+    else:
+        try:
+            repo_root = Path(__file__).resolve().parents[2]
+            base = repo_root / ".pnpmd"
+        except Exception:
+            base = Path.cwd() / ".pnpmd"
     base.mkdir(parents=True, exist_ok=True)
     d = base / f"{prefix}{uuid.uuid4().hex[:8]}"
     d.mkdir(parents=True, exist_ok=True)
