@@ -98,6 +98,49 @@ So:
 
 In the ultrareal layer there is only positive unbounded value. The negative sign belongs to orientation.
 
+## Euler's Rotation
+
+Euler's identity gives the standard notation for this rotation:
+
+```text
+e^{i theta} = cos(theta) + i sin(theta)
+```
+
+This expression represents a point on the unit circle in the complex plane. Changing `theta` rotates the point.
+
+At a quarter-turn:
+
+```text
+theta = pi/2
+e^{i pi/2} = i
+```
+
+So:
+
+```text
+i = e^{i pi/2}
+```
+
+Squaring `i` doubles the rotation:
+
+```text
+i^2 = e^{i pi} = -1
+```
+
+Therefore:
+
+```text
+i = sqrt(-1)
+```
+
+more precisely:
+
+```text
+sqrt(-1) = +/- i
+```
+
+This is the arithmetic reason negative values can be understood as rotated positive square-values. The negative sign is a half-turn in value-space, produced by a quarter-turn in the inner square-root layer.
+
 ## General Rotation
 
 Let the inner value be rotated:
