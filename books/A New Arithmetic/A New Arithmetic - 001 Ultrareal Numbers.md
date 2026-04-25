@@ -25,13 +25,13 @@ So ultrareals are positive definite. They are numbers as presences, values, magn
 
 This matches ordinary experience. Existing things appear as positive presences. We meet an apple, not a negative apple. We meet a block, not a negative block. Negatives enter when something is removed, reversed, canceled, compared, or rotated out of the positive layer.
 
-Debt should not be placed in the negative layer. Debt `D` is a positive asset:
+Debt should not be placed in the negative layer. Debt `D` is a positive value:
 
 ```text
 D = d^2
 ```
 
-It exists positively as an obligation, claim, record, or relation. Only a bookkeeping view assigns a minus sign to one side of that positive relation.
+Its difference is phase. Debt is positive value applied in the future. It exists positively as an obligation, claim, record, or relation. Only a bookkeeping view assigns a minus sign to one side of that positive relation.
 
 If a language names a "negative-apple," then the named thing is still positive as a unit:
 
