@@ -1,6 +1,6 @@
 # Ultrareal Numbers
 
-An ultrareal number is a manifested square-form:
+An ultrareal number is a positive square-form:
 
 ```text
 U = u^2
@@ -8,7 +8,7 @@ U = u^2
 
 The number is `U`. The inner value is `u`.
 
-This is not a trick of notation. Every manifested positive number can be seen as a square, and this way of seeing separates two layers:
+This is not a trick of notation. Every positive number can be seen as a square, and this way of seeing separates two layers:
 
 ```text
 visible value:  U
@@ -21,17 +21,17 @@ In the basic ultrareal domain, `u` is real:
 UR = {u^2 | u >= 0}
 ```
 
-So ultrareals are positive definite. They are numbers as presences, values, magnitudes, or manifestations of energy. They are not absences, removals, or opposites.
+So ultrareals are positive definite. They are numbers as values or magnitudes. They are not absences, removals, or opposites.
 
-This matches ordinary experience. Existing things appear as positive presences. We meet an apple, not a negative apple. We meet a block, not a negative block. Negatives enter when something is removed, reversed, canceled, compared, or rotated out of the positive layer.
+This matches ordinary experience. Existing things appear as positive values. We meet an apple, not a negative apple. We meet a block, not a negative block. Negatives enter when something is removed, reversed, canceled, compared, or rotated out of the positive layer.
 
-Debt should not be placed in the negative layer. Debt `D` is a positive value:
+Debt should not be placed in the negative layer. Debt `D` is a positive future claim:
 
 ```text
 D = d^2
 ```
 
-Its difference is phase. Debt is positive value applied in the future. It exists positively as an obligation, claim, record, or relation. Only a bookkeeping view assigns a minus sign to one side of that positive relation.
+Debt is value assigned to future settlement. It exists positively as an obligation, claim, record, or relation. Only a bookkeeping view assigns a minus sign to one side of that positive relation.
 
 If a language names a "negative-apple," then the named thing is still positive as a unit:
 
@@ -49,7 +49,7 @@ This does not mean a square can never be negative. It means a negative square is
 (iu)^2 = -u^2
 ```
 
-So `u^2` can be negative when `u` has been rotated into the imaginary direction. But the result is not an ultrareal manifestation. It is a rotated square-value.
+So `u^2` can be negative when `u` has been rotated into the imaginary direction. But the result is not an ultrareal value. It is a rotated square-value.
 
 Changing the sign of the inner value does not create a negative ultrareal:
 
@@ -75,4 +75,4 @@ A negative real value is an imaginary-square value:
 
 This is not an ultrareal. It is a rotated square-value.
 
-The claim is not that old algebra cannot manipulate negative symbols. The claim is that negative numbers are not ultrareal magnitudes. They are marks of rotation, opposition, removal, cancellation, comparison, or phase in the layer beneath positive value.
+The claim is not that old algebra cannot manipulate negative symbols. The claim is that negative numbers are not ultrareal magnitudes. They are marks of rotation, opposition, removal, cancellation, or comparison in the layer beneath positive value.

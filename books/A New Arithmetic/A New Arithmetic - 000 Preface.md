@@ -53,13 +53,13 @@ We can see one apple. We can see no apple. We can see an apple removed, promised
 
 Even if someone names a "negative apple," the thing named is still a positive unit of that kind. One negative-apple is one positive negative-apple. The negativity belongs to the kind, role, or direction being named. It is not a negative unit of existence.
 
-Debt is the same. A debt is not a negative apple. Debt `D` is a positive value:
+Debt is the same. A debt is not a negative apple. Debt `D` is a positive future claim:
 
 ```text
 D = d^2
 ```
 
-Its difference is phase. A debt is positive value applied in the future. It is a positive obligation, a positive record, or a positive relation between people. Bookkeeping may mark one side of that relation with a minus sign, but the debt itself exists as something present and future-oriented.
+A debt is value assigned to future settlement. It is a positive obligation, a positive record, or a positive relation between people. Bookkeeping may mark one side of that relation with a minus sign, but the debt itself exists as something present and future-directed.
 
 Negative numbers may be useful signs. They may describe loss, direction, removal, cancellation, or opposition. But they are not existing units in the same way positive things are.
 
@@ -85,7 +85,7 @@ For the adult reader, the proposal is that numbers can be reinterpreted as squar
 U = u^2
 ```
 
-When `u` is real, the square is positive and ultrareal. It is a manifested value. When `u` is rotated into the imaginary direction, the square can be negative:
+When `u` is real, the square is positive and ultrareal. When `u` is rotated into the imaginary direction, the square can be negative:
 
 ```text
 (iu)^2 = -u^2
@@ -123,6 +123,5 @@ They are not separate realities.
 Addition is not union.
 Union is union.
 Things that exist are positive.
-Ultrareals are manifestations of energy.
 There are no negative ultrareals.
 ```

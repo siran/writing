@@ -1,6 +1,6 @@
 # Rotation and Opposition
 
-An ultrareal number is a positive manifestation:
+An ultrareal number is a positive square-form:
 
 ```text
 U = u^2
@@ -84,7 +84,7 @@ theta = pi/2
 (u e^{i pi/2})^2 = -u^2
 ```
 
-This is why `u^2` can be negative if `u` is not real. The negative square is not an ultrareal manifestation; it is the result of rotating the inner value before squaring.
+This is why `u^2` can be negative if `u` is not real. The negative square is not an ultrareal value; it is the result of rotating the inner value before squaring.
 
 ## Rotation-Aware Joining
 
