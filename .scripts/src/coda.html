@@ -1108,8 +1108,13 @@
                 // expression. Nested integrals get one outer scope -- fine for
                 // the simple cases we care about; readable for complex ones too.
                 var hadInt = false;
+                // Note: \b doesn't work after '\\int' before '_' because '_'
+                // is a word char in JS regex, so '\b' fails the boundary
+                // check there. Use (?![A-Za-z]) instead -- matches before
+                // '_', '^', whitespace, EOS, etc., but not before another
+                // letter (so '\\intermediate' doesn't get clipped).
                 s = s.replace(
-                    /\\int(?:limits|nolimits)?\b\s*(_\{[^{}]*\}|_\S)?\s*(\^\{[^{}]*\}|\^\S)?\s*/,
+                    /\\int(?:limits|nolimits)?(?![A-Za-z])\s*(_\{[^{}]*\}|_\S)?\s*(\^\{[^{}]*\}|\^\S)?\s*/,
                     function (_m, sub, sup) {
                         hadInt = true;
                         return 'S' + (sub || '') + (sup || '') + '[ ';
