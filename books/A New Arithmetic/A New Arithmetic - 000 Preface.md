@@ -1,5 +1,13 @@
 # Preface: Numbers Interact
 
+So the first claim of this book is simple:
+
+```text
+1 + 1 is not necessarily only 2.
+```
+
+There is also an interaction term.
+
 This book describes a new way of thinking about numbers.
 
 Numbers are usually treated as non-interacting.
@@ -7,6 +15,8 @@ Numbers are usually treated as non-interacting.
 That is standard arithmetic's main abstraction, and it is a legitimate object of study. It is the arithmetic of units that do not affect one another.
 
 It is not fair to arithmetic to rely on physics examples to make this point. Arithmetic can say it on its own: standard addition studies the special case where the interaction term is zero.
+
+Classical arithmetic is not thrown away. It becomes the special case of non-interacting things. A new arithmetic should describe the larger case: units brought into relation.
 
 When we write "two children in one room," we may only be writing a union:
 
@@ -23,16 +33,6 @@ two children in a room
 ```
 
 That is useful, but it is not the full arithmetic of the situation. "Two children in one room" is missing the interaction term. The same is true of a rotten apple added to a bag. The count may be correct, while the arithmetic is incomplete.
-
-So the first claim of this book is simple:
-
-```text
-1 + 1 is not necessarily only 2.
-```
-
-There is also an interaction term.
-
-Classical arithmetic is not thrown away. It becomes the special case of non-interacting things. A new arithmetic should describe the larger case: units brought into relation.
 
 This book is therefore written for anyone who has been through kindergarten.
 
