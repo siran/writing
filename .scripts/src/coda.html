@@ -1057,10 +1057,72 @@
             //   $\frac{c}{n}$             -> (c)/(n)
             //   $\sum_{i=1}^N a_i$        -> ∑_i=1^N a_i
             //   $\theta \approx 48.6$     -> θ ≈ 48.6
+            // Pre-pass: bracket every integral's integrand as ∫_..^..[ ... ].
+            // Operates on raw LaTeX so subscripts/superscripts can still be
+            // detected via braces. Each integral opens its own bracket, and
+            // closes at:
+            //   - a relational operator (=, <, >, \\le, \\ge, \\approx, ...)
+            //   - the next \\int / \\oint / etc.
+            //   - end of expression
+            // Multi-integral sums joined by + or - get one bracket per integral
+            // (the previous integral closes at the next integral start).
+            function bracketIntegralsLatex(input) {
+                var INT_RE = /^\\(int|oint|iint|iiint|iiiint|idotsint|oiint|oiiint)(?:limits|nolimits)?(?![A-Za-z])/;
+                var TERM_RE = /^(?:=|<|>|\\(?:le|leq|ge|geq|ll|gg|approx|equiv|neq|sim|simeq|cong|to|rightarrow|leftarrow|Rightarrow|Leftarrow|Leftrightarrow|propto)(?![A-Za-z]))/;
+                var SUB_RE = /^_(\{[^{}]*\}|\\[A-Za-z]+|[^\s])/;
+                var SUP_RE = /^\^(\{[^{}]*\}|\\[A-Za-z]+|[^\s])/;
+                function skipWs(s, i) {
+                    while (i < s.length && /\s/.test(s[i])) { i++; }
+                    return i;
+                }
+                var s = input, out = '', i = 0, openLevel = 0;
+                function closePending() {
+                    if (openLevel > 0) {
+                        out = out.replace(/\s+$/, '') + ' ]';
+                        openLevel--;
+                    }
+                }
+                while (i < s.length) {
+                    var rest = s.substring(i);
+                    var im = rest.match(INT_RE);
+                    if (im) {
+                        closePending();
+                        out += im[0];
+                        i += im[0].length;
+                        i = skipWs(s, i);
+                        var sub = s.substring(i).match(SUB_RE);
+                        if (sub) { out += sub[0]; i += sub[0].length; i = skipWs(s, i); }
+                        var sup = s.substring(i).match(SUP_RE);
+                        if (sup) { out += sup[0]; i += sup[0].length; i = skipWs(s, i); }
+                        if (!sub) {
+                            var sub2 = s.substring(i).match(SUB_RE);
+                            if (sub2) { out += sub2[0]; i += sub2[0].length; i = skipWs(s, i); }
+                        }
+                        out += '[ ';
+                        openLevel++;
+                        continue;
+                    }
+                    var tm = rest.match(TERM_RE);
+                    if (tm && openLevel > 0) {
+                        out = out.replace(/\s+$/, '') + ' ] ' + tm[0];
+                        i += tm[0].length;
+                        openLevel--;
+                        continue;
+                    }
+                    out += s[i];
+                    i++;
+                }
+                closePending();
+                return out;
+            }
+
             function latexToCharText(latex) {
                 var s = latex || '';
                 // Strip outer $$ or $ delimiters.
                 s = s.replace(/^\$\$([\s\S]*)\$\$$/, '$1').replace(/^\$([\s\S]*)\$$/, '$1').trim();
+                // Bracket each integral's integrand before symbol substitution
+                // so we can use LaTeX subscript syntax to detect limits cleanly.
+                s = bracketIntegralsLatex(s);
 
                 var greek = {
                     alpha: 'α', beta: 'β', gamma: 'γ', delta: 'δ', epsilon: 'ε',
@@ -1073,9 +1135,8 @@
                     Pi: 'Π', Sigma: 'Σ', Upsilon: 'Υ', Phi: 'Φ', Psi: 'Ψ', Omega: 'Ω'
                 };
                 var symbols = {
-                    sum: '∑', prod: '∏', oint: '∮',
-                    // \int handled specially below as a bracketed operator
-                    // S_..^..[ ... ] so the integrand is explicit.
+                    sum: '∑', prod: '∏', int: '∫', oint: '∮',
+                    iint: '∬', iiint: '∭', oiint: '∯', oiiint: '∰',
                     partial: '∂', nabla: '∇', infty: '∞',
                     pm: '±', mp: '∓', times: '×', cdot: '·', div: '÷', ast: '∗',
                     approx: '≈', equiv: '≡', neq: '≠', sim: '∼', simeq: '≃',
@@ -1098,28 +1159,6 @@
                 }
                 applyMap(greek);
                 applyMap(symbols);
-
-                // Integral as a bracketed operator so the integrand is unambiguous:
-                //   \int x^2 dx              -> S[ x^2 dx ]
-                //   \int_V x^2 dx            -> S_V[ x^2 dx ]
-                //   \int_{0}^{1} x^2 dx      -> S_0^1[ x^2 dx ]
-                //   \int_{-\infty}^{\infty}  -> S_{-∞}^{∞}[ ... ]
-                // Best-effort: a single outer bracket pair is closed at end of
-                // expression. Nested integrals get one outer scope -- fine for
-                // the simple cases we care about; readable for complex ones too.
-                var hadInt = false;
-                // Note: \b doesn't work after '\\int' before '_' because '_'
-                // is a word char in JS regex, so '\b' fails the boundary
-                // check there. Use (?![A-Za-z]) instead -- matches before
-                // '_', '^', whitespace, EOS, etc., but not before another
-                // letter (so '\\intermediate' doesn't get clipped).
-                s = s.replace(
-                    /\\int(?:limits|nolimits)?(?![A-Za-z])\s*(_\{[^{}]*\}|_\S)?\s*(\^\{[^{}]*\}|\^\S)?\s*/,
-                    function (_m, sub, sup) {
-                        hadInt = true;
-                        return 'S' + (sub || '') + (sup || '') + '[ ';
-                    }
-                );
 
                 // \frac{a}{b} -> (a)/(b). Repeat to catch nested cases.
                 for (var pass = 0; pass < 4; pass++) {
@@ -1151,9 +1190,6 @@
 
                 // Collapse runs of whitespace.
                 s = s.replace(/\s+/g, ' ').trim();
-
-                // Close the integral bracket if we opened one.
-                if (hadInt) { s = s + ' ]'; }
                 return s;
             }
 
