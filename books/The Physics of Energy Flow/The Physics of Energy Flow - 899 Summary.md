@@ -64,7 +64,7 @@ class are fixed by the winding before any force law is written.
 
 Charge is recovered as the $(m, n)$ energy flow of the toroidal shell projected
 onto successive enclosing shells. Because the same organized flow is distributed
-over shells of increasing area, its surface density falls as $1/r^2$. This is
+over shells of increasing area, its surface energy density falls as $1/r^2$. This is
 the source-free account of the inverse-square field: no primitive source is
 required, only a topologically non-trivial closure whose interior organization
 continues outward.

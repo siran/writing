@@ -55,7 +55,7 @@ shell content, but the area across which it is distributed.
 
 Let $E_{(m,n)}$ denote the total organized shell energy carried by that
 continuation. On an enclosing shell at radius $r$, the isotropic shell reading
-of that same organized total is spread over area $4\pi r^2$. Its shell density
+of that same organized total is spread over area $4\pi r^2$. Its shell energy density
 is therefore
 
 $$

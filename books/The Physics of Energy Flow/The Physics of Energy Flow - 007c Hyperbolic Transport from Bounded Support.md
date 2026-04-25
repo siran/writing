@@ -17,7 +17,7 @@ $$
 \bar u = \frac{\mu}{\Sigma}.
 $$
 
-That chapter also showed that increasing density does not increase the local
+That chapter also showed that increasing energy density does not increase the local
 transport speed. Instead, it reduces the amount of support advanced over a fixed
 time interval.
 

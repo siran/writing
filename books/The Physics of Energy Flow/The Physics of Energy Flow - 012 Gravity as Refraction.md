@@ -78,14 +78,14 @@ the summed positive energies.
 
 The same monopole has an equivalent shell reading. On an enclosing shell at
 radius $r$, the aggregate energy is spread over area $4\pi r^2$, so the
-unsigned shell density is
+unsigned shell energy density is
 
 $$
 \frac{Mc^2}{4\pi r^2} \propto \frac{1}{r^2}.
 $$
 
 The $1/r^2$ shell energy density and the $1/r$ mass-potential are the same far-field
-scalar read in two complementary ways: shell density on the one hand, cumulative
+scalar read in two complementary ways: shell energy density on the one hand, cumulative
 weak-field potential on the other.
 
 That compact scalar reduction is not the whole story for every organized

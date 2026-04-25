@@ -159,7 +159,7 @@ $u_0 + u_0 = 2u_0$ before any particular recovery geometry is considered.
 This is the physical reason the loaded branch cannot simply keep the original
 advance rate.
 
-In the laboratory version, let the original laser channel carry density
+In the laboratory version, let the original laser channel carry energy density
 $2u$ and advance at $c$. Its flux is
 
 $$
@@ -180,7 +180,7 @@ J_{\mathrm{available}} = 2u c.
 $$
 
 At constructive recovery, the two coherent contributions add in amplitude. The
-local bright density is therefore
+local bright energy density is therefore
 
 $$
 u_{\mathrm{bright}} = 4u.
@@ -208,9 +208,9 @@ $$
 
 At most one of those can survive as the description of a single positive
 recovery channel. If the bright channel really recovers the $4u$
-density, its advance must slow. If the channel is forced to advance at
+energy density, its advance must slow. If the channel is forced to advance at
 $c$, then the laser cannot supply a sustained $4u$
-recovery there; the density must fail to reach that value as a transported
+recovery there; the energy density must fail to reach that value as a transported
 channel, or the recovery must involve additional spatial redistribution outside
 the selected branch.
 
@@ -231,7 +231,7 @@ c_{\mathrm{eff}} = \frac{c}{2}.
 $$
 
 The slowdown is not an added mechanism. It is the flux-density accounting of a
-single positive recovery channel: the density increases locally while the
+single positive recovery channel: the energy density increases locally while the
 available flux does not.
 
 
@@ -269,7 +269,7 @@ $$
 V_{\mathrm{in}} = 2V_0.
 $$
 
-So the incoming mean density is
+So the incoming mean energy density is
 
 $$
 \bar u_{\mathrm{in}}
@@ -317,7 +317,7 @@ $$
 V_{\mathrm{out}} = V_0.
 $$
 
-The mean density on that loaded branch is
+The mean energy density on that loaded branch is
 
 $$
 \bar u_{\mathrm{out}}
@@ -329,7 +329,7 @@ $$
 2\bar u_{\mathrm{in}}.
 $$
 
-This is the exact *compression* statement: the mean density doubles because the
+This is the exact *compression* statement: the mean energy density doubles because the
 same transported content is recovered on half the transport volume.
 
 
@@ -363,8 +363,8 @@ itself is not a recovery channel; it is the local absence of the forward joined
 branch.
 
 This is also the place to distinguish the amplitude-like quantity from the
-recovered density. The sign or phase can reverse in $f$, but the
-recovered density
+recovered energy density. The sign or phase can reverse in $f$, but the
+recovered energy density
 
 $$
 u = |f|^2
@@ -392,7 +392,7 @@ f_1(x)+f_2(x)
 2A\cos(kx),
 $$
 
-so the recovered density is
+so the recovered energy density is
 
 $$
 u(x)
@@ -435,7 +435,7 @@ x=\frac{n\pi}{k}.
 $$
 
 The amplitude-like quantity $f_{\mathrm{join}}(x)$ changes sign across each node
-because $\cos(kx)$ changes sign there. The density does not invert. It
+because $\cos(kx)$ changes sign there. The energy density does not invert. It
 vanishes at the node and reappears at separated antinodes.
 
 Over one spatial period
@@ -444,7 +444,7 @@ $$
 \lambda = \frac{2\pi}{k},
 $$
 
-the mean recovered density is
+the mean recovered energy density is
 
 $$
 \frac{1}{\lambda}\int_0^\lambda u(x)\,dx
@@ -456,7 +456,7 @@ $$
 
 So the two-stream mean budget is recovered exactly, even though some points are
 dark. The local zero is therefore not a sink. It is one part of a spatially
-redistributed density pattern.
+redistributed energy density pattern.
 
 This example does not realize $\delta=\pi$ at every point. It shows the
 generic case in which local destructive points are paired with local
@@ -531,7 +531,7 @@ $$
 \bar u_{\mathrm{out}} = 2\bar u_{\mathrm{in}}.
 $$
 
-That doubled mean density is the local compression statement. Equivalently, the
+That doubled mean energy density is the local compression statement. Equivalently, the
 branch obeys the flux-density relation
 
 $$
@@ -591,8 +591,8 @@ regions lag more strongly than weakly loaded ones.
 If different regions of a wavefront have different energy density, then they do not
 advance equally.
 
-- higher density implies lower $c_{\mathrm{eff}}$,
-- lower density implies higher $c_{\mathrm{eff}}$.
+- higher energy density implies lower $c_{\mathrm{eff}}$,
+- lower energy density implies higher $c_{\mathrm{eff}}$.
 
 
 So one side of the wavefront lags behind the other.
@@ -608,7 +608,7 @@ same flow are superposed and compressed by different amounts.
 ## Operational test
 
 The laboratory test is direct because ordinary interference already gives the
-density profile. A flux detector placed at a screen measures the flux of the
+energy density profile. A flux detector placed at a screen measures the flux of the
 superposed fields arriving at that point.
 
 For two equal coherent beams crossing symmetrically about the $z$
@@ -687,9 +687,9 @@ fringe?" That part is ordinary interference. The experiment is:
 
 
 Equivalently, the experiment asks which part of the forbidden pair fails. Either
-the isolated bright channel keeps the $4u_0$ density and slows, or a
+the isolated bright channel keeps the $4u_0$ energy density and slows, or a
 channel that advances at the ordinary speed cannot sustain the $4u_0$
-density as an isolated transported branch.
+energy density as an isolated transported branch.
 
 One implementation is a delay measurement:
 
@@ -743,7 +743,7 @@ the glass, while an ordinary reference beam at the same angle should still
 transmit. That is the clean refraction form of the same loaded-branch claim.
 
 Opening the aperture to average over a full fringe period should erase the
-loaded-branch signature, because the measured density returns to the two-beam
+loaded-branch signature, because the measured energy density returns to the two-beam
 mean $2u_0$. The prediction belongs to the isolated bright channel,
 not to the unselected fringe pattern as a whole.
 
@@ -823,8 +823,8 @@ This chapter establishes:
 - continuity forbids assigning the difference to primitive sinks or sources,
 - where two constructive inflows recover as one local positive branch,
   continuity forces compression of the same total content,
-- that constructive one-branch recovery doubles the mean density,
-- spatially varying phase produces nodes where the density vanishes and
+- that constructive one-branch recovery doubles the mean energy density,
+- spatially varying phase produces nodes where the energy density vanishes and
   antinodes where it reappears more densely,
 - a dark branch has no positive flux channel; recovery is read only where the
   continuing pattern has $\mathbf S>0$,

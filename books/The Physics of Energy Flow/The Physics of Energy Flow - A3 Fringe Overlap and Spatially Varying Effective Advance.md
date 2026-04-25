@@ -5,7 +5,7 @@ kind: appendix
 part: Appendices
 summary: >
   Two equal coherent beams overlapping at a small angle produce a fringe
-  density profile ranging from 0 to 4u relative to one beam, while the period
+  energy density profile ranging from 0 to 4u relative to one beam, while the period
   average remains 2u. The forward flux budget is worked out explicitly. Under
   the loaded-branch law of Chapter 7b, this yields a candidate spatial profile
   for c_eff on the surviving bright parts of the fringe. The appendix states
@@ -29,12 +29,12 @@ c_{\mathrm{eff}} = \frac{J}{u}
 $$
 
 for a loaded branch: the carried flux $J$ is preserved while the recovered
-density $u$ rises.
+energy density $u$ rises.
 
 This appendix works out the simplest spatial overlap geometry in which that
 claim can be tested. The goal is to separate three statements cleanly:
 
-1. what the density profile of a coherent fringe is,
+1. what the energy density profile of a coherent fringe is,
 2. what the forward flux budget is,
 3. under what extra condition a spatially varying $c_{\mathrm{eff}}$ becomes
    an operational prediction.
@@ -76,7 +76,7 @@ f_1 + f_2
 e^{\,i(kz\cos\theta - \omega t)}.
 $$
 
-So the recovered density is
+So the recovered energy density is
 
 $$
 u(x)
@@ -126,10 +126,10 @@ $$
 2u_0.
 $$
 
-So the density budget is exact:
+So the energy density budget is exact:
 
-- each incoming beam contributes mean density $u_0$,
-- the overlapping pattern has mean density $2u_0$,
+- each incoming beam contributes mean energy density $u_0$,
+- the overlapping pattern has mean energy density $2u_0$,
 - local bright fringes are denser than the mean,
 - local dark fringes are less dense than the mean,
 - the full period average recovers the two-beam budget.
@@ -161,7 +161,7 @@ $$
 J_{z,\mathrm{in}} = 2u_0 c\cos\theta.
 $$
 
-Dividing by the mean fringe density gives
+Dividing by the mean fringe energy density gives
 
 $$
 \frac{J_{z,\mathrm{in}}}{\langle u \rangle}
@@ -176,7 +176,7 @@ projection of the original beam directions.
 
 Nothing slower has yet been proved. Up to this point one has only shown:
 
-- exact density redistribution,
+- exact energy density redistribution,
 - exact recovery of the two-beam mean budget,
 - exact forward flux projection.
 
@@ -184,7 +184,7 @@ Nothing slower has yet been proved. Up to this point one has only shown:
 ## A3.4 Candidate Local Effective Advance
 
 Chapter 7b adds one more statement: if a surviving branch carries a fixed
-carried flux while its recovered density rises, then its effective advance
+carried flux while its recovered energy density rises, then its effective advance
 drops according to
 
 $$
@@ -220,7 +220,7 @@ $$
 
 This is the direct spatial analogue of the Chapter 7b constructive
 recombination result: the local bright region carries the same two-beam forward
-flux, but at twice the mean density and four times the single-beam density.
+flux, but at twice the mean energy density and four times the single-beam energy density.
 
 At a node,
 
@@ -239,11 +239,11 @@ The local formula is meaningful only on open bright intervals between nodes.
 
 This appendix proves the following:
 
-- the raw coherent fringe has an exact density profile from $0$ to $4u_0$,
-- the fringe-period mean density is exactly $2u_0$,
+- the raw coherent fringe has an exact energy density profile from $0$ to $4u_0$,
+- the fringe-period mean energy density is exactly $2u_0$,
 - the total forward flux projection is exactly $2u_0 c\cos\theta$,
 - the normalized complementary-output reading of a misaligned Mach-Zehnder has
-  bright density $2u_0$ and can therefore carry the full two-beam budget at
+  bright energy density $2u_0$ and can therefore carry the full two-beam budget at
   speed $c\cos\theta$ with no conservation conflict,
 - if the Chapter 7b loaded-branch law is applied locally to the surviving
   raw $4u_0$ bright parts of the fringe, the bright-fringe center carries the

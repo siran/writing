@@ -27,7 +27,7 @@ keywords:
 
 Chapter 10 asserts that the exterior curl-flux of a net-chiral toroidal closure
 is distributed isotropically over large enclosing shells, so that its surface
-density falls as $1/r^2$. This appendix proves that claim in three steps.
+energy density falls as $1/r^2$. This appendix proves that claim in three steps.
 
 1. A non-uniform flux distribution on an enclosing shell creates a restoring
    force, derived directly from the self-refraction principle of Chapter 7b.
@@ -292,7 +292,7 @@ u_{(m,n)}(r) = \frac{Q^2}{4\pi r^4},
 }
 $$
 
-The shell density falls as $1/r^4$ in energy and as $1/r^2$ in the amplitude
+The shell energy density falls as $1/r^4$ in energy and as $1/r^2$ in the amplitude
 (field-strength) reading. It is isotropic — independent of $\hat{\mathbf{r}}$ —
 by the result of Section A1.3, and that isotropy is globally stable by
 Section A1.4.
@@ -323,5 +323,5 @@ The three steps of this appendix establish:
 
 Together these three steps ground the isotropy assertion of Chapter 10 as a
 derived result rather than an assumption, and identify the $1/r^2$ shell
-density as the necessary exterior form of a topologically stable net-chiral
+energy density as the necessary exterior form of a topologically stable net-chiral
 toroidal closure.
