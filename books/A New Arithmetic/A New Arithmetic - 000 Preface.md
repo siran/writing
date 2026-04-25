@@ -18,7 +18,7 @@ So the first claim of this book is simple:
 
 There is also an interaction term.
 
-Classical arithmetic describes an ideal case: separated units treated as if they do not affect one another. A new arithmetic should describe the real case: units brought into relation.
+Classical arithmetic describes an ideal case: separated units treated as if they do not affect one another. It is not thrown away. It becomes the special case of non-interacting things. A new arithmetic should describe the larger case: units brought into relation.
 
 This book is therefore written for anyone who has been through kindergarten.
 

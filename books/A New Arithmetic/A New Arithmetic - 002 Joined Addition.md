@@ -43,6 +43,50 @@ Expanded into old notation:
 
 The first two terms are what ordinary inventory would keep. The last term is the relation term.
 
+## Standard Arithmetic As A Special Case
+
+Standard arithmetic is not discarded. It is recovered as the special case of non-interacting things.
+
+In standard arithmetic:
+
+```text
+U + V
+```
+
+means that `U` and `V` are counted together while their relation is ignored, absent, canceled, or irrelevant.
+
+In ultrareal arithmetic, the fuller joined form can be written with an explicit relation coefficient:
+
+```text
+u^2 + v^2 := u^2 + v^2 + 2kuv
+```
+
+The aligned ultrareal case has:
+
+```text
+k = 1
+```
+
+The standard case has:
+
+```text
+k = 0
+```
+
+The relation term is then zero because the operation deliberately studies units as non-interacting:
+
+```text
+u^2 + v^2 + 2(0)uv = u^2 + v^2
+```
+
+This makes standard arithmetic an object of study inside the larger system. It is the arithmetic of indifferent units: useful, precise, and limited.
+
+The ultrareal question is different:
+
+```text
+what happens when the units are not indifferent?
+```
+
 ## Zero
 
 Zero remains the additive identity:
