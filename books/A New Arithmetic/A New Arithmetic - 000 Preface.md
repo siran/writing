@@ -20,7 +20,11 @@ There is also an interaction term.
 
 Classical arithmetic describes an ideal case: separated units treated as if they do not affect one another. A new arithmetic should describe the real case: units brought into relation.
 
-This book is therefore written first for teachers of young children.
+This book is therefore written for anyone who has been through kindergarten.
+
+That is almost everyone. We all inherited a first picture of number. We learned to count objects as if they were separate pieces, and that early picture stayed with us longer than we may notice.
+
+The book is especially for kindergarten teachers who still return to first principles. They stand close to the moment when number is first introduced. If addition is taught there as nothing but union and counting, the mistake becomes part of the child's first model of reality.
 
 Children do need to count. They need to know how many things are present. But they should not be taught, even accidentally, that count exhausts addition.
 
@@ -59,9 +63,9 @@ count:       how many things are there?
 relation:   what happens when they are together?
 ```
 
-This book does not ask teachers to stop teaching counting. It asks teachers not to confuse counting with the whole meaning of addition.
+This book does not ask anyone to stop teaching counting. It asks us not to confuse counting with the whole meaning of addition.
 
-It also asks teachers to notice something children can understand immediately:
+It also asks us to notice something children can understand immediately:
 
 ```text
 things that exist are positive

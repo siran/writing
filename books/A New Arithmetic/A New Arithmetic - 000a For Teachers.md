@@ -1,6 +1,6 @@
-# For Teachers
+# For Anyone Who Passed Through Kindergarten
 
-The goal is not to make preschool arithmetic harder.
+The goal is not to make early arithmetic harder.
 
 The goal is to prevent arithmetic from becoming too small.
 
@@ -30,7 +30,7 @@ Relational arithmetic asks:
 What happens together?
 ```
 
-Both questions belong in early education.
+Both questions belong in early education, and they still matter after early education.
 
 Addition has often been taught as if it meant union:
 
@@ -89,7 +89,7 @@ The symbol `+` should not train children to forget the word "with."
 
 It should also not train them to forget the word "becomes."
 
-## The Teacher's Rule
+## The Rule
 
 Every addition lesson can hold two truths:
 
