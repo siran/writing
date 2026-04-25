@@ -1045,16 +1045,93 @@
                 return buf.join('').replace(/\n{3,}/g, '\n\n').trim();
             }
 
-            // Intercept copy: math spans become LaTeX text in both text/plain
-            // and text/html. text/html keeps surrounding markup (paragraphs,
-            // headings, links) so Substack/Notion/Docs paste with structure
-            // preserved, but math is plain LaTeX -- no MathML, no PNG images.
+            // Render a single math span (KaTeX-rendered HTML) to a PNG data
+            // URI. The KaTeX visual depends on its stylesheet + fonts; to
+            // produce a self-contained image we attach a clone offscreen,
+            // inline computed styles on every node, then snapshot via SVG
+            // foreignObject -> canvas -> dataURL. Returns null if anything
+            // fails, so the caller can fall back to LaTeX text.
+            function formulaSpanToPng(span, callback) {
+                try {
+                    var clone = span.cloneNode(true);
+                    var host = document.createElement('div');
+                    host.style.cssText = 'position:fixed;left:-99999px;top:0;background:white;' +
+                        'display:inline-block;padding:3px;pointer-events:none;z-index:-9999;white-space:nowrap;';
+                    host.appendChild(clone);
+                    document.body.appendChild(host);
+
+                    var PROPS = ['display', 'position', 'top', 'left', 'right', 'bottom',
+                        'width', 'height', 'min-width', 'min-height',
+                        'font-family', 'font-size', 'font-style', 'font-weight',
+                        'line-height', 'letter-spacing', 'text-align', 'white-space',
+                        'vertical-align',
+                        'margin-top', 'margin-right', 'margin-bottom', 'margin-left',
+                        'padding-top', 'padding-right', 'padding-bottom', 'padding-left',
+                        'border-top', 'border-right', 'border-bottom', 'border-left',
+                        'color', 'background-color', 'overflow'];
+                    var els = host.querySelectorAll('*');
+                    for (var i = 0; i < els.length; i++) {
+                        var cs = window.getComputedStyle(els[i]);
+                        var s = '';
+                        for (var k = 0; k < PROPS.length; k++) {
+                            var v = cs.getPropertyValue(PROPS[k]);
+                            if (!v) { continue; }
+                            if (PROPS[k] === 'font-family') {
+                                // Strip KaTeX fonts; fall back to system math fonts.
+                                v = v.replace(/KaTeX_[A-Za-z0-9]+,?\s*/g, '').replace(/^,\s*/, '');
+                                if (!v) { v = '"STIX Two Math","Cambria Math",serif'; }
+                            }
+                            s += PROPS[k] + ':' + v + ';';
+                        }
+                        if (s) { els[i].setAttribute('style', s); }
+                    }
+
+                    var W = host.scrollWidth;
+                    var H = host.scrollHeight;
+                    var inner = host.innerHTML;
+                    document.body.removeChild(host);
+                    if (!W || !H) { callback(null); return; }
+
+                    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + W + '" height="' + H + '">' +
+                        '<foreignObject width="' + W + '" height="' + H + '">' +
+                        '<div xmlns="http://www.w3.org/1999/xhtml" ' +
+                        'style="background:white;padding:3px;box-sizing:border-box;width:' + W + 'px;white-space:nowrap;">' +
+                        inner + '</div></foreignObject></svg>';
+                    var url = URL.createObjectURL(new Blob([svg], { type: 'image/svg+xml' }));
+                    var img = new Image();
+                    img.onload = function () {
+                        var dpr = Math.max(window.devicePixelRatio || 1, 2);
+                        var canvas = document.createElement('canvas');
+                        canvas.width = W * dpr;
+                        canvas.height = H * dpr;
+                        var ctx = canvas.getContext('2d');
+                        ctx.scale(dpr, dpr);
+                        ctx.fillStyle = '#ffffff';
+                        ctx.fillRect(0, 0, W, H);
+                        try { ctx.drawImage(img, 0, 0, W, H); } catch (_de) { }
+                        URL.revokeObjectURL(url);
+                        callback(canvas.toDataURL('image/png'));
+                    };
+                    img.onerror = function () { URL.revokeObjectURL(url); callback(null); };
+                    img.src = url;
+                } catch (_e) { callback(null); }
+            }
+
+            // Intercept copy:
+            //   text/plain                 -> LaTeX source (always)
+            //   text/html (sync fallback)  -> LaTeX source inside the HTML structure
+            //   text/html (async upgrade)  -> per-formula <img alt="$latex$" src="data:image/png...">
+            //                                 so paste into Substack/Gmail/Docs renders
+            //                                 the formulas visually, while the alt text
+            //                                 keeps the LaTeX accessible to screen
+            //                                 readers, scrapers, and the rare client
+            //                                 that prefers alt over images.
+            // No full-selection PNG snapshot, no MathML.
             document.addEventListener('copy', function (e) {
                 var sel = window.getSelection();
                 if (!sel || sel.rangeCount === 0 || sel.isCollapsed) { return; }
                 var range = sel.getRangeAt(0);
 
-                // Replace every math span with its LaTeX source.
                 function replaceMathWithLatex(frag) {
                     var spans = frag.querySelectorAll('[data-latex]');
                     for (var i = 0; i < spans.length; i++) {
@@ -1065,13 +1142,11 @@
                     }
                 }
 
-                // text/plain: flatten to text via nodeToText.
                 var fragText = range.cloneContents();
                 replaceMathWithLatex(fragText);
                 var text = nodeToText(fragText);
                 if (!text) { return; }
 
-                // text/html: keep surrounding HTML structure, but math is LaTeX text.
                 var fragHtml = range.cloneContents();
                 replaceMathWithLatex(fragHtml);
                 var wrapDiv = document.createElement('div');
@@ -1081,6 +1156,52 @@
                 e.clipboardData.setData('text/plain', text);
                 e.clipboardData.setData('text/html', htmlStr);
                 e.preventDefault();
+
+                // Async upgrade: replace every math span with an <img>.
+                if (!(window.ClipboardItem && navigator.clipboard && navigator.clipboard.write)) {
+                    return;
+                }
+                var fragF = range.cloneContents();
+                var fSpans = Array.prototype.slice.call(fragF.querySelectorAll('[data-latex]'));
+                if (fSpans.length === 0) { return; }
+                var pending = fSpans.length;
+                var fUris = new Array(fSpans.length);
+
+                function onPart() {
+                    if (--pending > 0) { return; }
+                    var fragI = range.cloneContents();
+                    var mI = Array.prototype.slice.call(fragI.querySelectorAll('[data-latex]'));
+                    for (var ii = 0; ii < mI.length; ii++) {
+                        var me = mI[ii];
+                        var latex = me.getAttribute('data-latex') || '';
+                        var uri = fUris[ii];
+                        if (uri) {
+                            var isDisplay = latex.slice(0, 2) === '$$';
+                            var imgTag = document.createElement('img');
+                            imgTag.src = uri;
+                            imgTag.alt = latex;
+                            imgTag.style.cssText = isDisplay
+                                ? 'display:block;margin:0.4em auto;'
+                                : 'display:inline-block;vertical-align:middle;';
+                            me.parentNode.replaceChild(imgTag, me);
+                        } else {
+                            me.parentNode.replaceChild(document.createTextNode(latex), me);
+                        }
+                    }
+                    var wI = document.createElement('div');
+                    wI.appendChild(fragI);
+                    var items = {
+                        'text/plain': new Blob([text], { type: 'text/plain' }),
+                        'text/html': new Blob([wI.innerHTML], { type: 'text/html' })
+                    };
+                    navigator.clipboard.write([new ClipboardItem(items)]).catch(function () { });
+                }
+
+                for (var fi = 0; fi < fSpans.length; fi++) {
+                    (function (idx, fs) {
+                        formulaSpanToPng(fs, function (uri) { fUris[idx] = uri; onPart(); });
+                    })(fi, fSpans[fi]);
+                }
             });
 
             // Split a text string into alternating plain/math parts.
