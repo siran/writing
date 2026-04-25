@@ -2487,20 +2487,25 @@ def _out_has_source(out_path: Path) -> bool:
         if md_src.exists():
             return True
 
-    # foo.pdf / foo.epub  ← foo.md (single-doc render) or book.yml (book render)
+    # Book render outputs land in the book dir alongside book.yml/book.yaml:
+    # the concatenated <title>.md / .pandoc.md / .html / .pdf / .epub, plus
+    # book-style.css. Keep any of these whenever the directory has a book
+    # manifest; the directory is a build artifact root, not a mirror.
+    parent_dir = ROOT / rel_p.parent
+    in_book_dir = (parent_dir / "book.yml").exists() or (parent_dir / "book.yaml").exists()
+
+    # foo.pdf / foo.epub  ← foo.md (single-doc render) or book render
     if name.endswith((".pdf", ".epub")):
         md_src = ROOT / rel_p.with_suffix(".md")
         if md_src.exists():
             return True
-        parent_dir = ROOT / rel_p.parent
-        if (parent_dir / "book.yml").exists() or (parent_dir / "book.yaml").exists():
+        if in_book_dir:
             return True
 
-    # Book-generated HTML: any .html in a dir whose ROOT counterpart has book.yml
-    if name.endswith(".html"):
-        parent_dir = ROOT / rel_p.parent
-        if (parent_dir / "book.yml").exists() or (parent_dir / "book.yaml").exists():
-            return True
+    # Book-rendered HTML, concatenated .md, and book-style.css live next to
+    # book.yml without a ROOT counterpart.
+    if in_book_dir and name.endswith((".html", ".md", ".css")):
+        return True
 
     return False
 
