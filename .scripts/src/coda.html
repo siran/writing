@@ -1073,7 +1073,9 @@
                     Pi: 'Π', Sigma: 'Σ', Upsilon: 'Υ', Phi: 'Φ', Psi: 'Ψ', Omega: 'Ω'
                 };
                 var symbols = {
-                    sum: '∑', prod: '∏', int: '∫', oint: '∮',
+                    sum: '∑', prod: '∏', oint: '∮',
+                    // \int handled specially below as a bracketed operator
+                    // S_..^..[ ... ] so the integrand is explicit.
                     partial: '∂', nabla: '∇', infty: '∞',
                     pm: '±', mp: '∓', times: '×', cdot: '·', div: '÷', ast: '∗',
                     approx: '≈', equiv: '≡', neq: '≠', sim: '∼', simeq: '≃',
@@ -1096,6 +1098,23 @@
                 }
                 applyMap(greek);
                 applyMap(symbols);
+
+                // Integral as a bracketed operator so the integrand is unambiguous:
+                //   \int x^2 dx              -> S[ x^2 dx ]
+                //   \int_V x^2 dx            -> S_V[ x^2 dx ]
+                //   \int_{0}^{1} x^2 dx      -> S_0^1[ x^2 dx ]
+                //   \int_{-\infty}^{\infty}  -> S_{-∞}^{∞}[ ... ]
+                // Best-effort: a single outer bracket pair is closed at end of
+                // expression. Nested integrals get one outer scope -- fine for
+                // the simple cases we care about; readable for complex ones too.
+                var hadInt = false;
+                s = s.replace(
+                    /\\int(?:limits|nolimits)?\b\s*(_\{[^{}]*\}|_\S)?\s*(\^\{[^{}]*\}|\^\S)?\s*/,
+                    function (_m, sub, sup) {
+                        hadInt = true;
+                        return 'S' + (sub || '') + (sup || '') + '[ ';
+                    }
+                );
 
                 // \frac{a}{b} -> (a)/(b). Repeat to catch nested cases.
                 for (var pass = 0; pass < 4; pass++) {
@@ -1121,6 +1140,9 @@
 
                 // Collapse runs of whitespace.
                 s = s.replace(/\s+/g, ' ').trim();
+
+                // Close the integral bracket if we opened one.
+                if (hadInt) { s = s + ' ]'; }
                 return s;
             }
 
