@@ -399,7 +399,7 @@ exercise that does not change the topological structure of the spectrum (one
 mode per integer pair) but does change the quantitative spacing between
 levels.
 
-For higher $m$ at fixed $n$, or for closures confined by external loading
+For higher $m$ at fixed $n$, or for closures confined by external energy density
 to $\epsilon \ll 1$, the flat-torus formula is quantitatively accurate to
 $O(\epsilon^2)$.
 

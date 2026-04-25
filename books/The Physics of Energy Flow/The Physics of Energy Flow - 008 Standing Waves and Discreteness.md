@@ -29,7 +29,7 @@ flow curls back on itself — smoke rings, vortex rings in water, incense
 plumes disturbed by a hand. What is common to all these cases is that
 toroidal geometry forms easily; what distinguishes them is whether the
 resulting closure can self-sustain. Most such configurations dissipate. The
-ones that persist are those whose self-refraction loading matches the
+ones that persist are those whose self-refraction energy density matches the
 geometric curvature needed to maintain the closure (Appendix A0). This
 chapter does not address the self-consistency of the closure. It asks only
 what standing-wave organizations are allowed once a toroidal closure exists.

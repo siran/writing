@@ -295,7 +295,7 @@ $$
 
 So the weak-field factor of two should not be explained by arbitrary
 constitutive symmetry. It belongs more deeply to the two-aspect stress
-structure of the probe itself and to the sign-symmetric axial loading by a
+structure of the probe itself and to the sign-symmetric axial energy density contribution by a
 static toroidal closure.
 
 The next chapter completes that weak exterior derivation directly from axial

@@ -51,7 +51,7 @@ $$
 The claim is not that empty space dissipates motion as a material medium. The
 claim is that the non-unit ratio records how a unitary flow is refracted as it
 traverses a loaded energetic region. This is the same self-refraction
-principle used earlier in the book: a higher energetic loading resists the same
+principle used earlier in the book: a higher energy density resists the same
 flow and forces an angular change. In this reading, impedance is correctly read
 as resistance, not by loss, but by refraction of one flow through a denser
 region of the same field. The measured value is the trace of that refracting
@@ -114,7 +114,7 @@ chapter therefore opens a direction: transport may be reoriented even when the
 full constant structure is not yet closed.
 
 
-## Separating common loading from aspect skew
+## Separating common energy density from aspect skew
 
 The two recovered coefficients enter transport in two independent combinations:
 
@@ -237,7 +237,7 @@ Z = 1.
 $$
 
 So the toroidal ratio does not need to set the common propagation speed. It can
-change only the relative weighting of the two aspects while the common loading
+change only the relative weighting of the two aspects while the common energy density
 scale $s$ remains fixed. Conversely, changing $s$ at fixed $m/n$ changes the
 common refractive lag while preserving the same aspect skew.
 
@@ -283,7 +283,7 @@ $$
 r_{\mathrm{obs}} = \rho\,\frac{m}{n}.
 $$
 
-Let the common loading scale still be
+Let the common energy density scale still be
 
 $$
 s := \sqrt{\mu_{\mathrm{obs}}\epsilon_{\mathrm{obs}}}.
@@ -309,7 +309,7 @@ $$
 
 So the observed pair is separated into three pieces:
 
-- the common loading scale $s$,
+- the common energy density scale $s$,
 - the rational toroidal core $m/n$,
 - the residual skew $\rho$.
 

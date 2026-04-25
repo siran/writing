@@ -253,7 +253,7 @@ $$
 where $\hat{\mathbf{t}}$ is tangent to the centerline (major cycle) and
 $\hat{\boldsymbol{\theta}}$ is the turning direction around the minor cycle.
 
-The self-refraction loading now has two sources:
+The self-refraction energy density now has two sources:
 
 1. The curvature of the major cycle bends the beam toward the torus center.
    This produces a radial index gradient as in Section A0.3.
@@ -314,7 +314,7 @@ $$
 
 ### Combined closure condition
 
-The total effective index is the combined loading from both cycles. For a thin
+The total effective index follows from the combined energy density from both cycles. For a thin
 torus with independent overlap contributions,
 
 $$

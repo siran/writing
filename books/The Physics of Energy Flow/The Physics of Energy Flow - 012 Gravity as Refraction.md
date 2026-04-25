@@ -8,7 +8,7 @@ date: 2026-03-21
 
 Gravity appears here as electromagnetic refraction: the bending of energy
 transport paths of one organized flow by another, caused by the exterior
-scalar loading of a large aggregate of bounded closures.
+scalar energy density of a large aggregate of bounded closures.
 
 
 ## The massive body as aggregate
@@ -84,7 +84,7 @@ $$
 \frac{Mc^2}{4\pi r^2} \propto \frac{1}{r^2}.
 $$
 
-The $1/r^2$ shell loading and the $1/r$ mass-potential are the same far-field
+The $1/r^2$ shell energy density and the $1/r$ mass-potential are the same far-field
 scalar read in two complementary ways: shell density on the one hand, cumulative
 weak-field potential on the other.
 
@@ -124,8 +124,8 @@ field. This is the same self-refraction principle derived in chapter 7b and
 then used in chapter 8 to explain how a flow can bend strongly enough to close
 on itself. Here only the weak exterior effect of a large aggregate is
 kept. In the present chapter that weak exterior effect is written
-phenomenologically, at leading order, as a small constitutive loading of the
-local transport law.
+phenomenologically, at leading order, as a small constitutive increase in the
+local energy density.
 
 When the transport is written in conventional electromagnetic variables,
 $\mathbf{E}$ and $\mathbf{B}$ are complementary aspects of one organized flow.
@@ -158,7 +158,7 @@ n(r)=\frac{c}{c_\text{local}(r)}
 =1+\frac{2GM}{rc^2}.
 $$
 
-This equal loading is the weak-field macroscopic writing of self-refraction.
+This equal energy density increase is the weak-field macroscopic writing of self-refraction.
 Chapters 12a and 12b recover it directly from the flow: a null Maxwell probe
 carries two equal stress sectors, and a static toroidal closure samples both
 axial channels symmetrically.

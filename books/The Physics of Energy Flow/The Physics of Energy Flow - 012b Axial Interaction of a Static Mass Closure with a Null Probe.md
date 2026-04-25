@@ -151,7 +151,7 @@ This identity is exact. No weak-field approximation has been used yet.
 It says that a static closure samples two things at once:
 
 - occupancy of the axial line by energy density,
-- directed loading of that line by longitudinal momentum flux.
+- directed axial coupling by longitudinal momentum flux.
 
 That is the flow-theoretic origin of the doubling.
 
@@ -373,7 +373,7 @@ $$
 $$
 
 So the full weak-field light-bending value is recovered here directly from the
-axial two-channel loading of a null Maxwell probe.
+axial two-channel coupling of a null Maxwell probe.
 
 ## 12b.6 Relation to the Newtonian Half-Value
 
@@ -406,7 +406,7 @@ $$
 $$
 
 So the Newtonian half-value is not mysterious. It is simply the result of
-counting only one axial loading channel of the probe.
+counting only one axial interaction channel of the probe.
 
 The full null value appears when the static closure is allowed to sample the
 probe through both axial directions, as a toroidal same-substrate interaction
