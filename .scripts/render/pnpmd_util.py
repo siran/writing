@@ -1,8 +1,10 @@
 # pnpmd_util.py
 
+import atexit
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import time
@@ -22,11 +24,38 @@ def _configure_stdio() -> None:
 
 _configure_stdio()
 
+_CREATED_STAGING_DIRS: List[Path] = []
+_CLEANUP_REGISTERED = False
+
+
+def _cleanup_staging_dirs() -> None:
+    """Remove every staging dir created by this process, plus the .pnpmd/
+    parent if it ends up empty. Called via atexit; ignores errors."""
+    for d in _CREATED_STAGING_DIRS:
+        try:
+            if d.exists():
+                shutil.rmtree(d, ignore_errors=True)
+        except Exception:
+            pass
+    if _CREATED_STAGING_DIRS:
+        parent = _CREATED_STAGING_DIRS[0].parent
+        try:
+            if parent.exists():
+                next(parent.iterdir())
+        except StopIteration:
+            try:
+                parent.rmdir()
+            except Exception:
+                pass
+        except Exception:
+            pass
+
+
 def make_staging_dir(prefix: str = "pnpmd_") -> Path:
     """
     Create a unique staging directory for a render run.
 
-    Resolution order:
+    Resolution order for the parent .pnpmd/ root:
       1. PNPMD_STAGING_DIR env var, if set.
       2. <repo-root>/.pnpmd/ (repo root inferred from this file's location:
          pnpmd_util.py lives at <repo>/.scripts/render/).
@@ -36,8 +65,14 @@ def make_staging_dir(prefix: str = "pnpmd_") -> Path:
     inside every directory the renderer happens to be invoked from --
     notably book directories under site/ during make watch.
 
+    Each created staging dir is registered for atexit cleanup. The
+    surviving .pnpmd/ parent is also removed if empty at exit. Concurrent
+    render processes (e.g. parallel book renders spawned by build_site)
+    each track their own subdirs, so they don't race.
+
     Avoids system /tmp to prevent permission issues with container bind mounts.
     """
+    global _CLEANUP_REGISTERED
     base_env = os.environ.get("PNPMD_STAGING_DIR", "").strip()
     if base_env:
         base = Path(base_env)
@@ -50,6 +85,10 @@ def make_staging_dir(prefix: str = "pnpmd_") -> Path:
     base.mkdir(parents=True, exist_ok=True)
     d = base / f"{prefix}{uuid.uuid4().hex[:8]}"
     d.mkdir(parents=True, exist_ok=True)
+    _CREATED_STAGING_DIRS.append(d)
+    if not _CLEANUP_REGISTERED:
+        atexit.register(_cleanup_staging_dirs)
+        _CLEANUP_REGISTERED = True
     return d
 
 
