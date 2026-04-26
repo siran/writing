@@ -76,6 +76,16 @@
         font-size: 0.95em;
     }
 
+    /* Cover image immediately after the title block. */
+    .md-title-block + p > img:only-child,
+    .md-title-block + p img[alt="Cover"] {
+        display: block;
+        max-width: 260px;
+        margin: 1.2em auto 0;
+        border-radius: 3px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    }
+
     /* Pandoc % title-block rendered as a book header. */
     .md-title-block {
         margin: 0.5em 0 1.5em 0;

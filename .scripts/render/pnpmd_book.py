@@ -632,6 +632,8 @@ def render_book_yaml(
     ) as fp:
         # Human-friendly header (pandoc percent style) without YAML
         fh.write(f"% {title_text}\n% {author_text}\n% {date_text}\n\n")
+        if cover_value:
+            fh.write(f"![Cover]({cover_value})\n\n")
 
         # Pandoc input keeps full YAML metadata/front matter.
         fp.write(yaml_block)
