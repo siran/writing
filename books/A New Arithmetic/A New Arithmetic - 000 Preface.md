@@ -80,9 +80,11 @@ The capital $N$ is the visible number, or observable: the
 instantiation of the idea of a number into something concrete. The lower-case
 $n$ is its inner state.
 
-The word *real* matters: ultrareals are only positive. What standard arithmetic
-marks with a minus sign is not a negative ultrareal; it is a rotated
-presentation, comparison, opposition, or bookkeeping direction.
+The word *real* matters: ultrareals are only positive. A thing can be called
+"negative" by role, direction, debt, opposition, comparison, or bookkeeping
+side. The existing thing remains positive. What standard arithmetic marks with
+a minus sign is not a negative ultrareal; it is relation data or an ordinary
+sign convention placed on a positive value.
 
 The word *ultra* matters too. Ultrareals are not merely the usual real positive
 numbers renamed. They keep track of something standard arithmetic does not
@@ -178,21 +180,22 @@ positive-definite in the square-form sense.
 ## Rotations and Phases of Number Densities
 
 A minus-signed presentation is different from an opposing ultrareal. It is a
-rotated presentation of a square-value, not an ultrareal value itself:
+half-turned presentation of a square-value, not an ultrareal value itself.
 
 $$
-\operatorname{Rot}_{\pi}(U)=(iu)^2.
+i=e^{i\pi/2},\qquad i^2=e^{i\pi}.
 $$
 
-In ordinary complex notation, this rotated presentation is written with the
-minus sign because:
+The symbol $i$ marks a quarter-turn of the inner state. Squaring doubles that
+turn into the half-turn of the visible square-value:
 
 $$
-i^2=\operatorname{Rot}_{\pi}(1).
+(iu)^2=(i^2)u^2=e^{i\pi}u^2.
 $$
 
-That is the description that matters: $-1$ is not a negative ultrareal object.
-It is the symbol for a half-turn of the visible square-value.
+Ordinary notation writes that half-turn with the minus sign. That description
+matters: $-1$ is not a negative ultrareal object. It is the ordinary symbol for
+the half-turn of the unit value.
 
 The sign records a turn. Multiplication by $i$ is a quarter-turn of the inner
 state, and squaring returns that turn as a half-turn in the visible value.

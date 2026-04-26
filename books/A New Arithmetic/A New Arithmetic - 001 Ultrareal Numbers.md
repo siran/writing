@@ -74,6 +74,8 @@ sign to one side of that positive relation.
 
 If a language names a "negative-apple," then the named thing is still positive
 as a unit: one negative-apple is one positive unit of the kind negative-apple.
+A thing can be called "negative" by role, direction, opposition, debt, or
+bookkeeping side, but existence itself remains positive.
 
 The sign belongs to the label, role, direction, or relation. It does not
 make the existing unit negative.
@@ -85,11 +87,12 @@ notation. It means that such notation describes a rotated presentation, not an
 ultrareal value produced by a real inner state:
 
 $$
-\operatorname{Rot}_{\pi}(U)=(iu)^2.
+i=e^{i\pi/2},\qquad (iu)^2=(i^2)u^2=e^{i\pi}u^2.
 $$
 
-Ordinary notation writes this half-turn as $-u^2$. The minus sign is the
-description of the rotation; it is not the discovery of a negative ultrareal.
+Ordinary notation writes this half-turn with the minus sign. The minus sign is
+the description of the rotation; it is not the discovery of a negative
+ultrareal.
 
 Changing the sign of the inner state does not create a negative ultrareal:
 
@@ -107,15 +110,15 @@ $$
 \begin{aligned}
 \text{positive ultrareal:}\quad &u^2,\\
 \text{inner opposition:}\quad &u \text{ and } -u,\\
-\text{rotated presentation:}\quad &(iu)^2=\operatorname{Rot}_{\pi}(U).
+\text{rotated presentation:}\quad &(iu)^2=(i^2)u^2.
 \end{aligned}
 $$
 
-A minus-signed real value is therefore a rotated presentation of an
-imaginary-square value:
+A minus-signed real value is therefore a rotated presentation of a positive
+square-value:
 
 $$
-\operatorname{Rot}_{\pi}(U)=(iu)^2
+(iu)^2=(i^2)u^2
 $$
 
 This is not an ultrareal. It is a value returned through a turn in the inner

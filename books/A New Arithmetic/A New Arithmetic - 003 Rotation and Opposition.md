@@ -53,30 +53,75 @@ $$
 
 The result is not less than zero. It is absence after opposition.
 
+## Cancellation Condition
+
+The general relation-aware sum makes the zero condition explicit. For nonzero
+ultrareals, let:
+
+$$
+A=a^2,\qquad B=b^2.
+$$
+
+Then:
+
+$$
+A+B=a^2+b^2+2d(A,B)ab.
+$$
+
+The descriptor multiplies the product of the inner magnitudes. Exact
+cancellation requires:
+
+$$
+0=a^2+b^2+2d(A,B)ab.
+$$
+
+So:
+
+$$
+d(A,B)=-\frac{a^2+b^2}{2ab}.
+$$
+
+Inside the angular or field-alignment scale, where $-1\le d(A,B)\le1$, this can
+happen only when $a=b$ and $d(A,B)=-1$. Complete opposition gives:
+
+$$
+d(A,B)=-1
+\quad\Longrightarrow\quad
+A+B=(a-b)^2.
+$$
+
+Thus if $A+B=0$ and $A,B$ are ultrareals inside this opposition scale, then
+$A$ and $B$ must be equal positive square-forms joined in complete opposition.
+If the inner magnitudes differ, opposition leaves the positive residue
+$(a-b)^2$.
+
 ## Rotated Minus-Signed Values
 
-A minus-signed presentation is represented by a rotation out of the ultrareal
-layer:
+A minus-signed presentation is not a negative ultrareal. It is ordinary notation
+for a half-turned presentation of a positive square-value outside the ultrareal
+layer.
 
 $$
-\operatorname{Rot}_{\pi}(U)=(iu)^2
+i=e^{i\pi/2},\qquad i^2=e^{i\pi}.
 $$
 
-Ordinary notation writes this rotated presentation with a minus sign because:
+The symbol $i$ marks a quarter-turn of the inner state. Squaring doubles that
+turn:
 
 $$
-i^2 = \operatorname{Rot}_{\pi}(1).
+(iu)^2=(i^2)u^2=e^{i\pi}u^2.
 $$
 
-So a minus-signed number is not a negative ultrareal. **There are no negative ultrareals.**
-It is a rotated presentation of a square-value.
+Ordinary notation writes the half-turned value with the minus sign. The sign
+describes orientation, not a negative existing unit. **There are no negative
+ultrareals.**
 
-The symbol $i$ marks that rotation. It does not mean the positive value has
-disappeared. It means the square-value is returning, re-turning, through the
-inner layer from another direction:
+The symbol $i$ does not mean the positive value has disappeared. It means the
+square-value is returning, re-turning, through the inner layer from another
+direction:
 
 $$
-U = u^2,\qquad \operatorname{Rot}_{\pi}(U)=(iu)^2.
+U = u^2,\qquad (iu)^2=(i^2)u^2.
 $$
 
 ## Rotated Infinity
@@ -95,9 +140,9 @@ Minus-signed infinity is not a different kind of substance. It is the same
 unbounded positive square-form seen through the rotated presentation:
 
 $$
-\operatorname{Rot}_{\pi}(U)=(iu)^2,\qquad
+(iu)^2=(i^2)u^2,\qquad
 u \to \infty,\qquad
-\operatorname{Rot}_{\pi}(U) \text{ is written as } -\infty.
+\text{the half-turned unbounded value is written as } -\infty.
 $$
 
 So:
@@ -138,14 +183,11 @@ $$
 Squaring $i$ doubles the rotation:
 
 $$
-i^2 = e^{i\pi}=\operatorname{Rot}_{\pi}(1).
+i^2 = e^{i\pi}.
 $$
 
-Ordinary notation names that half-turn with the minus sign:
-
-$$
--1 := \operatorname{Rot}_{\pi}(1).
-$$
+Ordinary notation names that half-turn with the minus sign. The unit half-turn
+is written as $-1$.
 
 So the familiar expression:
 
@@ -180,12 +222,12 @@ half-turn of the squared value:
 $$
 \theta = \frac{\pi}{2}
 \quad\Longrightarrow\quad
-(ue^{i\pi/2})^2=\operatorname{Rot}_{\pi}(U).
+(ue^{i\pi/2})^2=u^2e^{i\pi}.
 $$
 
-Ordinary notation writes this half-turn as $-u^2$. The minus-signed square is
-not an ultrareal value; it is the notation for rotating the inner state before
-squaring.
+Ordinary notation writes this half-turn with the minus sign. The minus-signed
+square is not an ultrareal value; it is the notation for rotating the inner
+state before squaring.
 
 ## Rotation-Aware Joining
 

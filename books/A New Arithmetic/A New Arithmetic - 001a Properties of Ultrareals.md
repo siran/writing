@@ -196,6 +196,41 @@ effective hyperbolicity or boundary: relation can stretch, turn, or oppose, but
 opposition cannot pass below zero without leaving the ultrareal layer or being
 reinterpreted as rotation, phase, or bookkeeping outside the positive magnitude.
 
+For two nonzero ultrareals, exact cancellation inside the angular or
+field-alignment scale has only one form. Let:
+
+$$
+A=a^2,\qquad B=b^2.
+$$
+
+Then:
+
+$$
+A+B=a^2+b^2+2d(A,B)ab.
+$$
+
+If $A+B=0$, then:
+
+$$
+d(A,B)=-\frac{a^2+b^2}{2ab}.
+$$
+
+But in the bounded opposition scale $-1\le d(A,B)\le1$, the right side can
+reach the scale only when $a=b$. Therefore cancellation inside $UR$ requires:
+
+$$
+a=b,\qquad d(A,B)=-1.
+$$
+
+Complete opposition then reduces the joined value to:
+
+$$
+A+B=(a-b)^2.
+$$
+
+Zero is not negative existence. It is equal positive magnitude joined in
+complete opposition.
+
 ## Standard Arithmetic
 
 Standard arithmetic is recovered when:
