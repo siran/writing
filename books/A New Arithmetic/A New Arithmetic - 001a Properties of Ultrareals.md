@@ -51,14 +51,14 @@ $$
 X = x^2
 $$
 
-This does not make $X$ unreal. It gives $X$ an inner value $x$.
+This does not make $X$ unreal. It gives $X$ an inner state $x$.
 
 The distinction is:
 
 $$
 \begin{aligned}
 \text{visible value:}\quad &X,\\
-\text{inner value:}\quad &x.
+\text{inner state:}\quad &x.
 \end{aligned}
 $$
 
@@ -96,7 +96,7 @@ $$
 ## Relation-Aware Addition
 
 The general two-term addition uses an overloaded $+$. The operator is aware of
-the parts being added: the visible values and their inner values.
+the parts being added: the visible values and their inner states.
 
 $$
 U + V = u^2 + v^2 + 2d(U,V)uv
@@ -231,7 +231,7 @@ The descriptors $d_{ij}$ are part of the arithmetic data.
 
 ## Multiplication
 
-Ultrareal multiplication is inherited from the inner values:
+Ultrareal multiplication is inherited from the inner states:
 
 $$
 u^2 \times_{\mathrm{UR}} v^2 = (uv)^2

@@ -22,7 +22,7 @@ U = u^2,\qquad V = v^2,
 $$
 
 then, in the aligned case, the overloaded operator $+$ can read both the visible
-values and their inner values:
+values and their inner states:
 
 $$
 U + V := (u + v)^2
@@ -42,8 +42,16 @@ $$
 (u + v)^2 = u^2 + v^2 + 2uv
 $$
 
-The first two terms are what ordinary inventory would keep. The last term is
-the relation term.
+This is the ordinary notable product, or *producto notable*:
+
+$$
+(u+v)^2.
+$$
+
+Nothing mysterious has been added to algebra. The relation term becomes visible
+because the number has been expressed as a square-form, $N=n^2$. The first two
+terms are what ordinary inventory would keep. The last term is the interaction
+between the inner states.
 
 ## Standard Arithmetic As A Special Case
 
@@ -182,5 +190,5 @@ bag increases the inventory count, but may reduce the value of the bag. That is
 not a failure of arithmetic. It is evidence that inventory and relation are
 different layers.
 
-The next step is therefore to let the inner values carry opposition and
+The next step is therefore to let the inner states carry opposition and
 rotation.

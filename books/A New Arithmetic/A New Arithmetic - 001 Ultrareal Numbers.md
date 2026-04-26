@@ -6,7 +6,7 @@ $$
 U = u^2
 $$
 
-The number is $U$. The inner value is $u$.
+The number is $U$. The inner state is $u$.
 
 More generally, a capital $N$ names a number:
 
@@ -17,7 +17,7 @@ $$
 In ordinary use, numbers are densities. They are visible values instantiated in
 what we handle: things counted, amounts measured, values assigned, distances
 crossed, times waited, balances owed or received. The square-form says that the
-handled number is the visible density; the lower-case value is the inner value
+handled number is the visible density; the lower-case symbol names the inner state
 behind that density.
 
 This is not a trick of notation. Every positive number can be seen as a square,
@@ -26,7 +26,7 @@ and this way of seeing separates two layers:
 $$
 \begin{aligned}
 \text{visible value:}\quad &U,\\
-\text{inner value:}\quad &u.
+\text{inner state:}\quad &u.
 \end{aligned}
 $$
 
@@ -79,7 +79,7 @@ make the existing unit negative.
 **There are no negative ultrareals.**
 
 This does not mean a square-value can never carry a minus sign. It means a
-minus-signed square-value is not produced by a real inner value:
+minus-signed square-value is not produced by a real inner state:
 
 $$
 (iu)^2 = -u^2
@@ -89,7 +89,7 @@ So $u^2$ can carry a minus sign when $u$ has been rotated into the imaginary
 direction. But the result is not an ultrareal value. It is a rotated
 square-value.
 
-Changing the sign of the inner value does not create a negative ultrareal:
+Changing the sign of the inner state does not create a negative ultrareal:
 
 $$
 (-u)^2 = u^2

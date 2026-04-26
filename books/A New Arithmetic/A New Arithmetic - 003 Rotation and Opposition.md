@@ -6,7 +6,7 @@ $$
 U = u^2
 $$
 
-with $u$ real. But the inner value that exposes it can carry orientation.
+with $u$ real. But the inner state that exposes it can carry orientation.
 
 To rotate is to turn. To return is to re-turn: the value comes back through a
 turn in the inner layer. The standard mathematical language for this is the
@@ -30,7 +30,7 @@ values are joined.
 
 ## Opposition
 
-If two inner values are opposed, their joined value is:
+If two inner states are opposed, their joined value is:
 
 $$
 u^2 + (-v)^2 := (u - v)^2
@@ -161,7 +161,7 @@ both be positive ultrareals; the opposition is their relative turn.
 
 ## General Rotation
 
-Let the inner value be rotated:
+Let the inner state be rotated:
 
 $$
 a = ue^{i\theta}
@@ -173,7 +173,7 @@ $$
 a^2 = u^2 e^{i2\theta}
 $$
 
-The outer orientation is doubled. A quarter-turn of the inner value becomes a
+The outer orientation is doubled. A quarter-turn of the inner state becomes a
 half-turn of the squared value:
 
 $$
@@ -183,11 +183,11 @@ $$
 
 This is why a square-value can carry a minus sign if $u$ is not real. The
 minus-signed square is not an ultrareal value; it is the result of rotating the
-inner value before squaring.
+inner state before squaring.
 
 ## Rotation-Aware Joining
 
-If two inner values carry orientations,
+If two inner states carry orientations,
 
 $$
 a = ue^{i\alpha},\qquad b = ve^{i\beta},

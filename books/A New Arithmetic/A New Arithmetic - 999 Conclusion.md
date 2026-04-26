@@ -24,7 +24,7 @@ $$
 N = n^2
 $$
 
-then addition can no longer be treated as mere union. The inner values may
+then addition can no longer be treated as mere union. The inner states may
 align, oppose, cancel, or, in vector-like cases, meet at an angle. Each case has
 its own arithmetic.
 

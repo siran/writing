@@ -12,7 +12,7 @@ Far from claiming a finished new mathematics, this book claims a new way of
 seeing numbers, and therefore a new arithmetic. Here we describe what we call
 *ultrareal numbers*: numbers that are never negative.
 
-More specifically, an ultrareal number $U$ has an "inner value"
+More specifically, an ultrareal number $U$ has an "inner state"
 $u$ whose visible value is written
 
 $$
@@ -23,7 +23,10 @@ An ultrareal number can then be more formally thought of as a positive
 square-form.
 
 The capital $U$ names the "visible value" or "observable value",
-while the lower-case $u$ names the "inner value".
+while the lower-case $u$ names the "inner state".
+
+It is a state rather than merely a value because it can carry orientation,
+phase, opposition, or other relation data before the visible value is evaluated.
 
 
 ## What is a number?
@@ -48,13 +51,13 @@ becomes realized in an instance.
 The analogy comes straight from physics and the concept of electromagnetic
 energy. In physics, when describing waves, energy is proportional to the square
 of the amplitude. In ultrareal language, energy is the outer value, and
-amplitude is the inner value:
+amplitude is the inner state:
 
 $$
 E = a^2
 $$
 
-When adding two waves, the amplitudes add first, as inner values in the
+When adding two waves, the amplitudes add first, as inner states in the
 ultrareals. Two waves of amplitudes $a_1$ and $a_2$ have
 energy:
 
@@ -75,7 +78,7 @@ $$
 
 The capital $N$ is the visible number, or observable: the
 instantiation of the idea of a number into something concrete. The lower-case
-$n$ is its inner value.
+$n$ is its inner state.
 
 The word *real* matters: ultrareals are only positive. What standard arithmetic
 calls "negative" becomes a rotation, using Euler's identity.
@@ -107,7 +110,7 @@ d(U,V) = 0
 $$
 
 Once relation is part of the arithmetic data, the operator $+$ is
-overloaded. It is defined on the visible ultrareals, their inner values, and
+overloaded. It is defined on the visible ultrareals, their inner states, and
 their interaction descriptor:
 
 $$
@@ -116,7 +119,17 @@ V = v^2,\qquad
 U + V = u^2 + v^2 + 2d(U,V)uv.
 $$
 
-with:
+When $d(U,V)=1$, this is just the ordinary notable product:
+
+$$
+(u+v)^2 = u^2+v^2+2uv.
+$$
+
+The novelty is not the algebraic identity. The novelty is making explicit that
+a handled number can be written as $N=n^2$, so the cross term becomes available
+as relation data instead of being hidden by ordinary inventory arithmetic.
+
+where the descriptor satisfies:
 
 $$
 -1 \le d(U,V) \le 1
@@ -131,7 +144,7 @@ d(U,V)=\cos\phi.
 $$
 
 If that relation is written in Euler form as $e^{i\phi}$, the $i\phi$ records
-the turn of the inner value. Other ultrareal quantities need not be vectorial
+the turn of the inner state. Other ultrareal quantities need not be vectorial
 and need not have such an angle, but they still have an interaction descriptor.
 The ultrareal magnitude remains positive-definite.
 
@@ -151,7 +164,7 @@ $$
 
 The sign records a turn. In the complex-analytic toolset of standard calculus,
 developed from Euler's notation, multiplication by $i$ is a quarter-turn of the
-inner value, and squaring returns that turn as a half-turn in the visible value.
+inner state, and squaring returns that turn as a half-turn in the visible value.
 This is the notation, mathematics, and operational calculus we extend to the
 ultrareals because the square-form is the same. The modulus of an ultrareal is
 positive definite:

@@ -112,7 +112,7 @@ That is cancellation, not negative magnitude.
 
 The same formula recovers the law of cosines.
 
-For joined inner values:
+For joined inner states:
 
 $$
 |u + ve^{i\theta}|^2
@@ -126,7 +126,7 @@ c^2 = u^2 + v^2 - 2uv\cos(C)
 $$
 
 The difference is orientation convention. The content is the same: the
-square-value depends on the relation between the inner values.
+square-value depends on the relation between the inner states.
 
 ## Angle Addition
 
@@ -165,7 +165,7 @@ $$
 $$
 
 So trigonometry is also relation arithmetic. It is the arithmetic of how inner
-values are oriented before the square-value is evaluated.
+states are oriented before the square-value is evaluated.
 
 ## Why This Matters
 
@@ -183,5 +183,5 @@ $$
 
 So Pythagoras is not outside the new arithmetic.
 
-It is what standard arithmetic looks like when the inner values meet at right
+It is what standard arithmetic looks like when the inner states meet at right
 angle.
