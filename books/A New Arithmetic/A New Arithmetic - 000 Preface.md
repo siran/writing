@@ -129,32 +129,55 @@ The novelty is not the algebraic identity. The novelty is making explicit that
 a handled number can be written as $N=n^2$, so the cross term becomes available
 as relation data instead of being hidden by ordinary inventory arithmetic.
 
-where the descriptor satisfies:
+The descriptor satisfies:
 
 $$
 -1 \le d(U,V) \le 1
 $$
 
-The descriptor is not a negative ultrareal. It is a degree of opposition. It
-does not have to be an angle. For vector-like or phase-like quantities, however,
-it is often useful to write an angular representation:
+The descriptor is not a negative ultrareal. It is relation data. It can express
+a degree of alignment, a degree of opposition, or another relation between the
+inner states. At the endpoints, $d(U,V)=1$ means aligned and $d(U,V)=-1$ means
+rotated into opposition. The scalar used in this two-term square-form may come
+from angular, hyperbolic, tangential, or other relation structures, as long as
+the coefficient entering the addition law lies in the bounded interval above.
+
+For vector-like or phase-like quantities, it is often useful to write an angular
+representation:
 
 $$
 d(U,V)=\cos\phi.
 $$
 
-If that relation is written in Euler form as $e^{i\phi}$, the $i\phi$ records
-the turn of the inner state. Other ultrareal quantities need not be vectorial
-and need not have such an angle, but they still have an interaction descriptor.
-The ultrareal magnitude remains positive-definite.
+The angle form is useful when the quantities carry orientation. It is not a
+requirement on ultrareal quantities.
 
 In this sense, addition in the ultrareals makes the parts whole through
 interaction.
 
-A similar distinction clarifies minus-signed numbers. **There are no negative ultrareals.**
-There are opposing positive ultrareals: two positive square-forms can meet
-through opposed inner orientations. A minus-signed value is different. It is a
-rotated square-value:
+## No Negative Ultrareals
+
+**There are no negative ultrareals.** There are opposing positive ultrareals:
+two positive square-forms can meet through aligned or opposed inner states.
+Opposition belongs to relation, orientation, or joining; it does not make the
+positive square-form negative.
+
+For a single ultrareal, the precise modulus statement is that it is
+nonnegative, and positive except at zero:
+
+$$
+|U|=U=u^2\ge0,
+\qquad
+|U|=0 \Longleftrightarrow U=0.
+$$
+
+Because the form is a square, it is also natural to call the ultrareal layer
+positive-definite in the square-form sense.
+
+## Rotations and Phases of Number Densities
+
+A minus-signed value is different from an opposing ultrareal. It is a rotated
+square-value:
 
 $$
 -U = (iu)^2,
@@ -165,16 +188,15 @@ $$
 The sign records a turn. In the complex-analytic toolset of standard calculus,
 developed from Euler's notation, multiplication by $i$ is a quarter-turn of the
 inner state, and squaring returns that turn as a half-turn in the visible value.
-This is the notation, mathematics, and operational calculus we extend to the
-ultrareals because the square-form is the same. The modulus of an ultrareal is
-positive definite:
+This uses the notation, mathematics, and operational calculus of standard
+complex analysis. Ultrareals extend that calculus because the square-form is the
+same.
 
-$$
-|U|=U=u^2\ge0.
-$$
+If a relation is written in Euler form as $e^{i\phi}$, the $i\phi$ records the
+turn of the inner state. The visible coefficient may be the projected descriptor
+$d(U,V)=\cos\phi$, but the ultrareal magnitude remains positive.
 
 The sign does not name an object in the ultrareal layer, nor remove the value
 from numerical existence.
-**The ultrareal modulus is positive definite.**
 
 When the parts interact, the whole includes the interaction term.

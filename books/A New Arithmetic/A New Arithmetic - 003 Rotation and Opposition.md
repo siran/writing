@@ -208,7 +208,7 @@ $$
 The relation term depends on relative orientation.
 
 For oriented quantities, the relative orientation can be summarized by one
-degree-of-opposition symbol:
+relation descriptor:
 
 $$
 d=\cos\phi,\qquad \phi=\alpha-\beta.
@@ -217,7 +217,8 @@ $$
 In Euler notation the same turn is carried by $e^{i\phi}$. The symbol $i\phi$
 does not introduce a negative ultrareal. It records the operational turn whose
 projection gives the real descriptor $d$. This is the vectorial or phase-like
-case, not a requirement on every ultrareal quantity.
+case. Other ultrareal quantities may use hyperbolic, tangential, or otherwise
+non-angular descriptors.
 
 Aligned joining:
 

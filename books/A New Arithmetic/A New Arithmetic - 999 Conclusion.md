@@ -25,7 +25,7 @@ N = n^2
 $$
 
 then addition can no longer be treated as mere union. The inner states may
-align, oppose, cancel, or, in vector-like cases, meet at an angle. Each case has
+align, oppose, cancel, or meet through another relation structure. Each case has
 its own arithmetic.
 
 The general lesson is:
@@ -42,12 +42,13 @@ minus-signed magnitudes outside the real layer, and let rotation or opposition
 explain what ordinary signs were trying to say.
 
 This is why ultrareals fit energy so naturally. Energy-like quantities are
-positive densities. Their modulus is positive definite; what varies is not a
-hidden deficit, but the relation between positive quantities. The degree
-of opposition can be carried by $\phi$, or analytically by $e^{i\phi}$, while
-the ultrareal magnitude remains inside the positive part of the reals. But the
-angle is only one useful representation of relation, not a requirement on every
-ultrareal quantity.
+positive densities. Their modulus is nonnegative, and positive except at zero;
+what varies is not a hidden deficit, but the relation between positive
+quantities. In phase-like cases, the relation can be carried by $\phi$, or
+analytically by $e^{i\phi}$, while the ultrareal magnitude remains inside the
+positive part of the reals. But the angle is only one useful representation of
+relation, not a requirement on every ultrareal quantity; descriptors may also
+encode hyperbolic, tangential, or otherwise non-angular relations.
 
 The program is therefore conservative in one sense and radical in another: keep
 the physics of energy in positive real magnitudes, and move opposition into

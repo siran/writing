@@ -36,9 +36,10 @@ $$
 UR = \{u^2 \mid u \ge 0\}
 $$
 
-So ultrareals are positive definite. They are numbers as values or magnitudes.
-They are not absences or removals. Opposition is a relation between positive
-ultrareals, carried by orientation in the inner layer.
+So ultrareals are positive square-forms: nonnegative, and positive except at
+zero. They are numbers as values or magnitudes. They are not absences or
+removals. Opposition is a relation between positive ultrareals, carried by
+orientation in the inner layer.
 
 For every ultrareal, the modulus is the value itself:
 
@@ -52,7 +53,8 @@ $$
 |U|=0 \quad\Longleftrightarrow\quad U=0.
 $$
 
-This is the precise sense in which the ultrareal layer is positive definite.
+This is the precise square-form sense in which the ultrareal layer is positive
+definite.
 
 This matches ordinary experience. Existing things appear as positive values. We
 meet an apple, not a negative apple. We meet a block, not a negative block.

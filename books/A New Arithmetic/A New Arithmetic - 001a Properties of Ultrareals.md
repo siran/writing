@@ -18,9 +18,9 @@ $$
 UR = \{u^2 \mid u \ge 0\}
 $$
 
-## Positive Definiteness
+## Positive Square-Form
 
-The modulus of every ultrareal is positive definite:
+The modulus of every ultrareal is the value itself:
 
 $$
 |U| = U = u^2 \ge 0.
@@ -31,6 +31,9 @@ It vanishes only at zero:
 $$
 |U|=0 \quad\Longleftrightarrow\quad U=0.
 $$
+
+In the square-form sense, this is positive definite: the value is never
+negative, and only zero has zero modulus.
 
 **There are no negative ultrareals.**
 
@@ -120,8 +123,9 @@ So relation-aware addition includes partial alignment, not only the three named
 cases of alignment, orthogonality, and opposition.
 
 The descriptor need not come from an angle. It is whatever relation data the
-quantities require. If the quantities are vector-like or phase-like, and
-$d(U,V)$ does come from an angle, then:
+quantities require: alignment, opposition, hyperbolic relation, tangential
+relation, or another structure. If the quantities are vector-like or phase-like,
+and $d(U,V)$ does come from an angle, then:
 
 $$
 d(U,V) = \cos(\theta)
