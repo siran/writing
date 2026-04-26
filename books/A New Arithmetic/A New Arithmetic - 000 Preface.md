@@ -16,66 +16,90 @@ More specifically, an ultrareal number is a positive square-form:
 U = u^2
 ```
 
-The capital `U` names the visible value. The lower-case `u` names the inner value.
+The capital `U` names the visible value. The lower-case
+`u` names the inner value.
 
-This book also uses the capital word *Number* for the values we handle directly. A Number is not first met as an isolated mark. A Number is instantiated in something: a counted thing, a measured amount, a balance, a distance, a duration, a density, a value.
+## What is a number?
 
-In this sense, Numbers as we know them are densities. They are visible positive values carried by actual instances. In ultrareal notation, a Number appears as:
+A number is not a concrete thing. It took humans a long time to abstract the
+concept; some counting systems still distinguish only a few quantities before
+reaching "many." Concepts such as color also evolved constructively through
+language. Here the concern is numbers and what they are under this new
+arithmetic.
 
-```text
+Being not something concrete, a number can be understood as a numerical
+*density*: when projected onto whatever we are referencing, the density becomes
+realized in an instance.
+
+The analogy comes straight from physics and the concept of electromagnetic
+energy. In physics, when describing waves, energy is proportional to the square
+of the amplitude. In ultrareal language, energy is the outer value, and
+amplitude is the inner value:
+
+$$
+E = a^2
+$$
+
+When adding two waves, the amplitudes add first, as inner values in the
+ultrareals. Two waves of amplitudes $a_1$ and $a_2$ have energy:
+
+$$
+E=(a_1+a_2)^2
+$$
+
+In this sense, Numbers as we know them are densities. They are visible positive
+values carried by actual instances. In ultrareal notation, a Number appears as:
+
+$$
 N = n^2
-```
+$$
 
-The capital `N` is the visible Number. The lower-case `n` is its inner value.
+The capital $N$ is the visible number, or observable: the instantiation of the
+idea of a number into something concrete. The lower-case $n$ is its inner value.
 
-The word *real* matters: ultrareals are only positive.
+The word *real* matters: ultrareals are only positive. What standard arithmetic
+calls "negative" becomes a rotation, using Euler's identity.
 
-The word *ultra* matters too. Ultrareals are not merely the usual real numbers renamed. They keep track of something standard arithmetic does not represent: the relation between numbers being added.
+The word *ultra* matters too. Ultrareals are not merely the usual real numbers
+renamed. They keep track of something standard arithmetic does not represent:
+the relation between numbers being added. So they are *more than* real, hence
+*ultra*.
 
-One could call them superreal numbers. I use *ultrareal* because the letter `U` is the natural symbol for the visible positive square-form:
+Also, *ultra* points beyond the usual negative extension of the number line. In
+reality there are no negative things. There is no such thing as a negative apple
+that gets added to a dozen after you eat one:
 
-```text
-U = u^2
-```
-
-Also, *ultra* points beyond the usual negative extension of the number line. In reality there are no negative things. There is no such thing as a negative apple that gets added to a dozen:
-
-```text
+$$
 12 + (-1) = 11
-```
+$$
 
-The symbol `-1 < 0` does not name an ultrareal. It names an operation, direction, cancellation, comparison, or rotation applied to positive values.
+The symbol "$-1$", as in "$-1 < 0$", does not map to the
+ultrareals.
 
-Standard arithmetic studies numbers as non-interacting. In that model, addition behaves like the mathematical union of sets: the parts are placed together, and the relation term is not part of the calculation.
-
-In ultrareal arithmetic, this becomes a special case: the case where the relation term is zero.
+Standard arithmetic studies numbers as non-interacting. In that model, addition
+behaves like the mathematical union of sets: the parts are placed together, and
+the relation term is not part of the calculation. Ultrareal arithmetic treats
+that as the special case:
 
 ```text
 d(U,V) = 0
 ```
 
-Once relation is admitted as part of the arithmetic data, the operator `+` is overloaded. It is aware of the parts being added: the visible ultrareals `U` and `V`, their inner values `u` and `v`, and their interaction descriptor `d(U,V)`.
-
-The general two-term form is:
-
-```text
-U + V = u^2 + v^2 + 2d(U,V)uv
-```
-
-where:
+Once relation is part of the arithmetic data, the operator `+` is overloaded.
+It is defined on the visible ultrareals, their inner values, and their
+interaction descriptor:
 
 ```text
 U = u^2
 V = v^2
+U + V = u^2 + v^2 + 2d(U,V)uv
 ```
 
-and `d(U,V)` has values:
+with:
 
 ```text
 -1 <= d(U,V) <= 1
 ```
-
-Usually `d(U,V)` measures alignment between `U` and `V`.
 
 The important cases are:
 
@@ -93,67 +117,29 @@ standard:       U + V = u^2 + v^2
 opposed:        U + V = (u - v)^2
 ```
 
-To see the aligned case directly, start with two ultrareals:
-
-```text
-U = u^2
-V = v^2
-```
-
-Aligned addition first joins the inner values, then squares:
-
-```text
-U + V = (u + v)^2
-```
-
-Expanding gives:
+The aligned case shows the interaction term directly:
 
 ```text
 (u + v)^2 = u^2 + v^2 + 2uv
 ```
 
-The term `2uv` is the interaction term.
-
-Standard arithmetic is not thrown away. It is recovered as:
-
-```text
-d(U,V) = 0
-```
-
-The difference is that ultrareal arithmetic does not require the interaction descriptor to be zero.
-
 In this sense, addition makes the parts whole through interaction.
 
-This is why addition is different from just uniting sets and counting. Union says that parts are considered together. Addition asks what whole is produced when the parts are brought into relation.
-
-The same distinction clarifies negative numbers. There are no negative ultrareals. A negative value is not a negative real thing. It is a rotated square-value. We can use the machinery developed around `sqrt(-1)` to write how a positive number can be rotated through the imaginary direction:
+The same distinction clarifies negative numbers. There are no negative
+ultrareals. A negative value is a rotated square-value:
 
 ```text
 -U = (iu)^2
-```
-
-because:
-
-```text
 i^2 = -1
 ```
 
-The central claim can now be stated more exactly:
+The sign records rotation, opposition, cancellation, or comparison. It does not
+name a negative object in the ultrareal layer.
+
+The opening claim can now be stated by cases:
 
 ```text
-1 + 1 is not necessarily only 2
-```
-
-because `2` is the non-interaction case:
-
-```text
-d(1,1) = 0
-1 + 1 = 2
-```
-
-Other relations give other wholes:
-
-```text
+d(1,1) =  0   gives   1 + 1 = 2
 d(1,1) =  1   gives   1 + 1 = 4
 d(1,1) = -1   gives   1 + 1 = 0
 ```
