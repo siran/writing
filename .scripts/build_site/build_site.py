@@ -39,6 +39,12 @@ MIRROR_EXTS = {
     ".pandoc.md",
     ".txt",
     ".css",
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".gif",
+    ".webp",
+    ".svg",
 }
 DIR_INDEX_SORTS = [
     ("name", "Name", "asc"),
