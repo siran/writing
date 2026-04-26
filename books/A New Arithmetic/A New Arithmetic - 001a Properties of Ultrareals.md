@@ -20,15 +20,24 @@ $$
 
 ## Positive Definiteness
 
-Every ultrareal is nonnegative:
+The modulus of every ultrareal is positive definite:
 
 $$
-U \ge 0
+|U| = U = u^2 \ge 0.
 $$
 
-There are no negative ultrareals.
+It vanishes only at zero:
 
-The only ultrareal that is neither positive nor negative is zero:
+$$
+|U|=0 \quad\Longleftrightarrow\quad U=0.
+$$
+
+**There are no negative ultrareals.**
+
+There are opposing positive ultrareals. Opposition belongs to relation,
+orientation, or joining; it does not make the positive square-form negative.
+
+The only zero-modulus ultrareal is zero:
 
 $$
 0 = 0^2
@@ -150,6 +159,8 @@ $$
 
 So relation-aware addition does not require negative ultrareals.
 
+It requires opposing positive ultrareals when the descriptor records opposition.
+
 ## Standard Arithmetic
 
 Standard arithmetic is recovered when:
@@ -253,5 +264,5 @@ $$
 (u - u)^2 = 0
 $$
 
-Negativity belongs to rotation or opposition in the inner layer, not to
+Signs, rotation, and opposition belong to the inner layer or to relation, not to
 ultrareal magnitude.

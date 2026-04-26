@@ -98,7 +98,7 @@ Ask plainly:
 
 Someone may have seen an apple taken away. Someone may have seen an empty
 basket. Someone may have seen someone owe an apple. But no one has seen a
-negative apple sitting on the table as a negative object.
+negative apple sitting on the table.
 
 If we invent the label "negative-apple," then one negative-apple is still one
 positive unit of that kind. The sign belongs to the kind or direction. The unit
@@ -116,12 +116,12 @@ Debt is value assigned to future settlement. It exists positively as a promise,
 claim, memory, or record. The minus sign is a bookkeeping mark placed on one
 side of the relation.
 
-This does not mean negative symbols are useless. It means they should be
+This does not mean minus signs are useless. It means they should be
 introduced honestly:
 
-> negative as taking away
-> negative as opposite direction
-> negative as cancellation
+> minus as taking away
+> minus as opposite direction
+> minus as cancellation
 
 not as a strange kind of object.
 

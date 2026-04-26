@@ -176,7 +176,7 @@ $$
 \begin{aligned}
 \text{relation term present:}\quad &u^2 + v^2 + 2uv\cos(\theta),\\
 \text{relation term zero:}\quad &u^2 + v^2,\\
-\text{relation term negative:}\quad &u^2 + v^2 - 2uv.
+\text{opposed relation term:}\quad &u^2 + v^2 - 2uv.
 \end{aligned}
 $$
 

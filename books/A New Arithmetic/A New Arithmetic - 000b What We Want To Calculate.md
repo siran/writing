@@ -61,7 +61,25 @@ $$
 -1 \le d(U,V) \le 1
 $$
 
-It behaves like alignment in fields. The special values are:
+It behaves like alignment in fields. Equivalently, it can be written as a
+degree of opposition:
+
+$$
+d(U,V)=\cos\phi.
+$$
+
+Here $\phi$ is not a minus-signed magnitude. It is the relative turn between the
+inner values. If the same turn is written with Euler's notation,
+
+$$
+e^{i\phi},
+$$
+
+then $i\phi$ belongs to the orientation bookkeeping, not to the ultrareal
+magnitude. The ultrareal value remains positive definite; the opposition is in
+the relation.
+
+The special values are:
 
 $$
 \begin{aligned}
@@ -93,7 +111,7 @@ This framework lets us calculate:
 - trigonometric addition laws
 - repeated units
 - split-and-rejoin cases
-- rotated negative values
+- rotated minus-signed values
 - rotated infinity
 
 The point is not that every situation uses the same interaction descriptor.
