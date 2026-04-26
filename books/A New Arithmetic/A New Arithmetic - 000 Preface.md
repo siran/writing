@@ -101,7 +101,10 @@ with:
 -1 <= d(U,V) <= 1
 ```
 
-The important cases are:
+This descriptor is continuous. It works like alignment in fields: the values
+between `-1` and `1` are partial alignments, not separate kinds of addition.
+
+The important endpoint and midpoint cases are:
 
 ```text
 d(U,V) =  1   aligned joining

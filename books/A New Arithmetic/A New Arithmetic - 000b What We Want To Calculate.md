@@ -63,7 +63,13 @@ U + V = u^2 + v^2 + 2d(U,V)uv
 
 where `d(U,V)` records the relation between the parts being added. The operator is defined on the operands `U = u^2` and `V = v^2`, and it uses the inner values `u` and `v`.
 
-Important cases:
+The descriptor is continuous:
+
+```text
+-1 <= d(U,V) <= 1
+```
+
+It behaves like alignment in fields. The special values are:
 
 ```text
 d(U,V) =  1   aligned joining

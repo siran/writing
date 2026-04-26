@@ -98,6 +98,15 @@ V = v^2
 
 The descriptor `d(U,V)` records relation.
 
+It is continuous over:
+
+```text
+-1 <= d(U,V) <= 1
+```
+
+So relation-aware addition includes partial alignment, not only the three named
+cases of alignment, orthogonality, and opposition.
+
 If `d(U,V)` comes from an angle, then:
 
 ```text
@@ -112,7 +121,7 @@ U + V = u^2 + v^2 + 2uv cos(theta)
 
 ## Closure
 
-For:
+For the continuous range:
 
 ```text
 -1 <= d(U,V) <= 1
