@@ -119,7 +119,9 @@ $$
 So relation-aware addition includes partial alignment, not only the three named
 cases of alignment, orthogonality, and opposition.
 
-If $d(U,V)$ comes from an angle, then:
+The descriptor need not come from an angle. It is whatever relation data the
+quantities require. If the quantities are vector-like or phase-like, and
+$d(U,V)$ does come from an angle, then:
 
 $$
 d(U,V) = \cos(\theta)

@@ -61,15 +61,17 @@ $$
 -1 \le d(U,V) \le 1
 $$
 
-It behaves like alignment in fields. Equivalently, it can be written as a
-degree of opposition:
+It behaves like alignment in fields. It does not have to be an angle. Some
+ultrareal quantities are not vectorial and have no literal angle between them.
+They still have an interaction descriptor. When an angular representation is
+available, the descriptor can be written as a degree of opposition:
 
 $$
 d(U,V)=\cos\phi.
 $$
 
 Here $\phi$ is not a minus-signed magnitude. It is the relative turn between the
-inner values. If the same turn is written with Euler's notation,
+inner values in the angular case. If the same turn is written with Euler's notation,
 
 $$
 e^{i\phi},

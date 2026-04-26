@@ -122,16 +122,18 @@ $$
 -1 \le d(U,V) \le 1
 $$
 
-The descriptor is not a negative ultrareal. It is a degree of opposition. In
-angle form:
+The descriptor is not a negative ultrareal. It is a degree of opposition. It
+does not have to be an angle. For vector-like or phase-like quantities, however,
+it is often useful to write an angular representation:
 
 $$
 d(U,V)=\cos\phi.
 $$
 
-If the same relation is written in Euler form as $e^{i\phi}$, the $i\phi$
-records the turn of the inner value. The ultrareal magnitude remains
-positive-definite.
+If that relation is written in Euler form as $e^{i\phi}$, the $i\phi$ records
+the turn of the inner value. Other ultrareal quantities need not be vectorial
+and need not have such an angle, but they still have an interaction descriptor.
+The ultrareal magnitude remains positive-definite.
 
 In this sense, addition in the ultrareals makes the parts whole through
 interaction.

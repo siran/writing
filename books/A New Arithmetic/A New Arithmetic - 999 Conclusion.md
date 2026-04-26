@@ -25,7 +25,8 @@ N = n^2
 $$
 
 then addition can no longer be treated as mere union. The inner values may
-align, oppose, cancel, or meet at an angle. Each case has its own arithmetic.
+align, oppose, cancel, or, in vector-like cases, meet at an angle. Each case has
+its own arithmetic.
 
 The general lesson is:
 
@@ -44,7 +45,9 @@ This is why ultrareals fit energy so naturally. Energy-like quantities are
 positive densities. Their modulus is positive definite; what varies is not a
 hidden deficit, but the relation between positive quantities. The degree
 of opposition can be carried by $\phi$, or analytically by $e^{i\phi}$, while
-the ultrareal magnitude remains inside the positive part of the reals.
+the ultrareal magnitude remains inside the positive part of the reals. But the
+angle is only one useful representation of relation, not a requirement on every
+ultrareal quantity.
 
 The program is therefore conservative in one sense and radical in another: keep
 the physics of energy in positive real magnitudes, and move opposition into

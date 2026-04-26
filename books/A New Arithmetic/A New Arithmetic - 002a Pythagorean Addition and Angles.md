@@ -8,8 +8,9 @@ $$
 U + V = u^2 + v^2 + 2uv\cos(\theta)
 $$
 
-where $U = u^2$ and $V = v^2$. The overloaded $+$ reads the parts being added;
-the angle $\theta$ is one way to specify their interaction descriptor:
+where $U = u^2$ and $V = v^2$. The overloaded $+$ reads the parts being added.
+For vector-like or phase-like quantities, the angle $\theta$ is one way to
+specify their interaction descriptor:
 
 $$
 d(U,V) = \cos(\theta)
