@@ -48,7 +48,7 @@ quantities. In phase-like cases, the relation can be carried by $\phi$, or
 analytically by $e^{i\phi}$, while the ultrareal magnitude remains inside the
 positive part of the reals. But the angle is only one useful representation of
 relation, not a requirement on every ultrareal quantity; descriptors may also
-encode hyperbolic, tangential, or otherwise non-angular relations.
+encode hyperbolic, tangential, weighted, or otherwise non-angular relations.
 
 The program is therefore conservative in one sense and radical in another: keep
 the physics of energy in positive real magnitudes, and move opposition into

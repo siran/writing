@@ -217,8 +217,8 @@ $$
 In Euler notation the same turn is carried by $e^{i\phi}$. The symbol $i\phi$
 does not introduce a negative ultrareal. It records the operational turn whose
 projection gives the real descriptor $d$. This is the vectorial or phase-like
-case. Other ultrareal quantities may use hyperbolic, tangential, or otherwise
-non-angular descriptors.
+case. Other ultrareal quantities may let the descriptor encode hyperbolic,
+tangential, weighted, or otherwise non-angular relations.
 
 Aligned joining:
 

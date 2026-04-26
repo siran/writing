@@ -42,7 +42,7 @@ $$
 (u + v)^2 = u^2 + v^2 + 2uv
 $$
 
-This is the ordinary notable product, or *producto notable*:
+This is the binomial square identity:
 
 $$
 (u+v)^2.

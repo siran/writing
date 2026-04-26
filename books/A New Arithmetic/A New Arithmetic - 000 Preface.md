@@ -102,8 +102,8 @@ ultrareals.
 Standard arithmetic studies numbers as non-interacting. In that model, addition
 behaves like the mathematical union of sets: the parts are placed together, and
 the relation term is not part of the calculation. To describe the interaction
-between numbers, introduce a descriptor $-1 \le d(\cdot,\cdot) \le 1$ so that
-$d(U,V)=0$ recovers the usual non-interacting arithmetic,
+between numbers, introduce a descriptor $d(\cdot,\cdot)$ so that $d(U,V)=0$
+recovers the usual non-interacting arithmetic,
 
 $$
 d(U,V) = 0
@@ -119,7 +119,7 @@ V = v^2,\qquad
 U + V = u^2 + v^2 + 2d(U,V)uv.
 $$
 
-When $d(U,V)=1$, this is just the ordinary notable product:
+When $d(U,V)=1$, this is just the binomial square identity:
 
 $$
 (u+v)^2 = u^2+v^2+2uv.
@@ -129,7 +129,7 @@ The novelty is not the algebraic identity. The novelty is making explicit that
 a handled number can be written as $N=n^2$, so the cross term becomes available
 as relation data instead of being hidden by ordinary inventory arithmetic.
 
-The descriptor satisfies:
+For ordinary angular alignment, the descriptor satisfies:
 
 $$
 -1 \le d(U,V) \le 1
@@ -138,9 +138,9 @@ $$
 The descriptor is not a negative ultrareal. It is relation data. It can express
 a degree of alignment, a degree of opposition, or another relation between the
 inner states. At the endpoints, $d(U,V)=1$ means aligned and $d(U,V)=-1$ means
-rotated into opposition. The scalar used in this two-term square-form may come
-from angular, hyperbolic, tangential, or other relation structures, as long as
-the coefficient entering the addition law lies in the bounded interval above.
+rotated into opposition. The descriptor can also encode hyperbolic, tangential,
+weighted, or otherwise non-angular relations when those are the relations at
+work.
 
 For vector-like or phase-like quantities, it is often useful to write an angular
 representation:
