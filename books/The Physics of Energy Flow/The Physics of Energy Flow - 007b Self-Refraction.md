@@ -81,6 +81,34 @@ $$
 u = |f|^2.
 $$
 
+For a monochromatic ray, the phase is the optical phase along the ray,
+
+$$
+\phi = ks-\omega t+\phi_0,
+$$
+
+not the joining angle of two beams. The corresponding field value may be written
+
+$$
+f = A e^{i\phi}=A(\cos\phi+i\sin\phi),
+$$
+
+so
+
+$$
+u=|f|^2=A^2(\cos^2\phi+\sin^2\phi).
+$$
+
+The split
+
+$$
+\cos^2\phi+\sin^2\phi=1
+$$
+
+is first a trigonometric identity, rooted in geometry. In field language it
+appears as two quadrature projections of one oscillation. As an energy-density
+expression it is a geometric decomposition of one transported mode.
+
 Let two coherent contributions of the same transporting flow be
 
 $$
@@ -94,6 +122,10 @@ When they join, the amplitudes add first:
 $$
 f_{\mathrm{join}} = f_1 + f_2.
 $$
+
+The recovery geometry can selectively make coincident the quadrature projections
+from each branch. What is recovered is therefore determined by field-value
+addition before squaring.
 
 So the joined local energy density is
 
