@@ -76,6 +76,28 @@
         font-size: 0.95em;
     }
 
+    /* Pandoc % title-block rendered as a book header. */
+    .md-title-block {
+        margin: 0.5em 0 1.5em 0;
+        padding-bottom: 0.6em;
+        border-bottom: 1px solid #ddd;
+    }
+    .md-title-block .md-title {
+        font-size: 1.7em;
+        font-weight: bold;
+        margin: 0 0 0.15em 0;
+    }
+    .md-title-block .md-author {
+        margin: 0;
+        font-style: italic;
+        color: #444;
+    }
+    .md-title-block .md-date {
+        margin: 0;
+        font-size: 0.9em;
+        color: #888;
+    }
+
     /* Display math rendered by KaTeX: center in the container. */
     .md-container .math-display {
         display: block;
@@ -232,6 +254,19 @@
                 var esc = code.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
                 return '<pre><code>' + esc.trim() + '</code></pre>';
             });
+
+            // Pandoc % title-block: up to three consecutive lines starting with %
+            // immediately after the md-container opening tag. Render as a styled header.
+            html = html.replace(
+                /(<div\b[^>]*\bmd-container\b[^>]*>\s*\n)([ \t]*%[ \t]+([^\n]+)\n)([ \t]*%[ \t]+([^\n]+)\n)?([ \t]*%[ \t]+([^\n]+))?/,
+                function (_m, divOpen, _l1, title, _l2, author, _l3, date_) {
+                    var out = divOpen + '<div class="md-title-block"><h1 class="md-title">' + title.trim() + '</h1>';
+                    if (author) { out += '<p class="md-author">' + author.trim() + '</p>'; }
+                    if (date_)  { out += '<p class="md-date">'   + date_.trim()  + '</p>'; }
+                    out += '</div>';
+                    return out;
+                }
+            );
 
             // Collapse wrapped lines inside Markdown link targets back into single spaces.
             var normalizeTarget = function (value) {
