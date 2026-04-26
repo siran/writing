@@ -18,11 +18,17 @@ $$
 UR = \{u^2 \mid u \ge 0\}
 $$
 
-The mathematics used here is already familiar: squares, norms, inner products,
-Gram matrices, quadratic forms, and the law of cosines. The new move is to
-stitch those pieces into a single number system: numbers are positive
-density-values, addition carries relation data, and negative signs belong to
-orientation, comparison, or bookkeeping rather than to ultrareal magnitude.
+The mathematics touched here is already familiar. For the full theory of
+squares, norms, inner products, quadratic forms, matrices, and the law of
+cosines, the reader should go to the books written by masters of those fields.
+This book is not trying to replace them.
+
+The aim here is narrower: to look at a small shiny angle where geometry,
+physics, linear algebra, number theory, and basic algebra meet. Each field sees
+part of the picture. Ultrareals gather those views into a single arithmetic
+language: numbers are positive density-values, addition carries relation data,
+and negative signs belong to orientation, comparison, or bookkeeping rather than
+to ultrareal magnitude.
 
 ## Positive Square-Form
 
@@ -154,7 +160,7 @@ $$
 -1 \le d(U,V) \le 1
 $$
 
-the result remains ultrareal:
+and the result remains ultrareal:
 
 $$
 u^2 + v^2 + 2d(U,V)uv \ge 0
@@ -232,7 +238,7 @@ $$
 (u + v + w)^2
 $$
 
-## Many-Term Addition as a Quadratic Form
+## Many-Term Addition as Relation Arithmetic
 
 This is the rigorous core of the number system.
 
@@ -242,80 +248,81 @@ $$
 U_i = u_i^2
 $$
 
-and collect the inner states into:
+For many terms, relation-aware addition is:
 
 $$
-\mathbf u =
-\begin{bmatrix}
-u_1\\
-\vdots\\
-u_n
-\end{bmatrix}.
+\boxed{
+U_1+\cdots+U_n
+:=
+\sum_i u_i^2
++ 2\sum_{i<j}d_{ij}u_i u_j
+}
 $$
 
-Let $D$ be the relation matrix:
+The coefficients $d_{ij}$ form a table of relations between the parts:
 
 $$
-D_{ii}=1,
-\qquad
-D_{ij}=d_{ij}.
+\begin{array}{c|cccc}
+ & U_1 & U_2 & \cdots & U_n\\
+\hline
+U_1 & 1 & d_{12} & \cdots & d_{1n}\\
+U_2 & d_{21} & 1 & \cdots & d_{2n}\\
+\vdots & \vdots & \vdots & \ddots & \vdots\\
+U_n & d_{n1} & d_{n2} & \cdots & 1
+\end{array}
 $$
 
-Then the relation-aware joined value is:
+The diagonal entries are $1$ because each term is fully itself. The off-diagonal
+entries are the interaction descriptors.
+
+Ordinary arithmetic is recovered when every off-diagonal relation is zero:
+
+$$
+d_{ij}=0
+\quad (i\ne j).
+$$
+
+Then:
 
 $$
 U_1+\cdots+U_n
-:=
-\mathbf u^{\mathsf T}D\mathbf u.
-$$
-
-Expanded:
-
-$$
-\mathbf u^{\mathsf T}D\mathbf u
 =
-\sum_i u_i^2
-+ 2\sum_{i<j}d_{ij}u_i u_j.
+u_1^2+\cdots+u_n^2.
 $$
 
-The descriptors $d_{ij}$ are part of the arithmetic data. Ordinary arithmetic
-is the diagonal case:
+Aligned joined addition is recovered when every relation is $1$:
 
 $$
-D=I,
-\qquad
-\mathbf u^{\mathsf T}I\mathbf u
-=
-\sum_i u_i^2.
-$$
-
-Aligned joined addition is the all-ones relation matrix:
-
-$$
-D_{ij}=1
+d_{ij}=1
 \quad\Longrightarrow\quad
-\mathbf u^{\mathsf T}D\mathbf u
-=
-(u_1+\cdots+u_n)^2.
+U_1+\cdots+U_n=(u_1+\cdots+u_n)^2.
 $$
 
-Angular or phase-like relations give Gram matrices:
+Opposed relations subtract from the joined value through the relation term, but
+the admissibility rule remains:
+
+$$
+U_1+\cdots+U_n \ge 0.
+$$
+
+In angular or phase-like cases one common choice is:
 
 $$
 d_{ij}=\cos(\theta_i-\theta_j).
 $$
 
-A Gram matrix is positive semidefinite, so the joined value is automatically
-nonnegative:
+This is the law-of-cosines pattern generalized to many terms.
+
+Readers who know linear algebra will recognize the same expression as a
+quadratic form:
 
 $$
-\mathbf u^{\mathsf T}D\mathbf u \ge 0.
+\mathbf u^{\mathsf T}D\mathbf u.
 $$
 
-For hyperbolic, tangential, weighted, or otherwise non-angular relations, the
-same rule applies: the descriptor may be used if the resulting relation matrix
-is admissible. For a whole class of signed or rotated inner states, the clean
-condition is:
+Angular relation tables are Gram matrices, which automatically keep the joined
+value nonnegative. In that language, a whole class of signed or rotated inner
+states is safely admissible when:
 
 $$
 D \succeq 0.
@@ -336,6 +343,10 @@ state-specific condition is enough:
 $$
 \mathbf u^{\mathsf T}D\mathbf u \ge 0.
 $$
+
+That is useful language, but it is not the center of the book. The arithmetic
+point is simpler: the relation table is part of addition, and the joined value
+must remain a positive density.
 
 This is the formal version of "you cannot oppose beyond zero." A proposed
 relation that makes the joined density negative is not an ultrareal sum.
@@ -370,7 +381,7 @@ $$
 
 The novelty is therefore not a new binomial identity. It is the organization of
 positive magnitudes, relation descriptors, rotations, cancellations, and
-ordinary arithmetic inside one operational calculus of density-values.
+ordinary arithmetic inside one operational arithmetic of density-values.
 
 ## Multiplication
 
