@@ -8,9 +8,9 @@ So the first claim of this book is simple:
 
 There is also an interaction term.
 
-This book describes ultrareal numbers.
+This book describes ultrareal numbers: numbers that are never negative.
 
-An ultrareal number is a positive square-form:
+More specifically, an ultrareal number is a positive square-form:
 
 ```text
 U = u^2
@@ -28,15 +28,21 @@ One could call them superreal numbers. I use *ultrareal* because the letter `U` 
 U = u^2
 ```
 
-Standard arithmetic treats numbers as non-interacting.
+Also, *ultra* points beyond the usual negative extension of the number line. In reality there are no negative things. There is no such thing as a negative apple that gets added to a dozen:
 
-That is a legitimate object of study. It is the arithmetic of the special case where the relation term is zero:
+```text
+12 + (-1) = 11
+```
+
+The symbol `-1 < 0` does not name an ultrareal. It names an operation, direction, cancellation, comparison, or rotation applied to positive values.
+
+Standard arithmetic legitimately treats numbers as non-interacting. In the ultrareals, this becomes a special case: the case where the relation term is zero.
 
 ```text
 k = 0
 ```
 
-But once relation is admitted as part of the arithmetic data, the general two-term form is:
+Once relation is admitted as part of the arithmetic data, the general two-term form is:
 
 ```text
 U +_{k} V = u^2 + v^2 + 2kuv
@@ -49,7 +55,13 @@ U = u^2
 V = v^2
 ```
 
-and `k` records relation.
+and `k` is an interaction descriptor with values:
+
+```text
+-1 <= k <= 1
+```
+
+Usually `k` measures alignment between `U` and `V`.
 
 The important cases are:
 
@@ -67,15 +79,40 @@ standard:       U +_{0} V = u^2 + v^2
 opposed:        U +_{-1} V = (u - v)^2
 ```
 
-Standard arithmetic is not thrown away. It is recovered as the non-interaction case inside a larger arithmetic.
+To see the aligned case directly, start with two ultrareals:
 
-The difference is that ultrareal arithmetic does not pretend that the relation term is always zero.
+```text
+U = u^2
+V = v^2
+```
 
-Addition makes the parts whole through interaction.
+Aligned addition first joins the inner values, then squares:
 
-This is why addition is not union. Union says that parts are considered together. Addition asks what whole is produced when the parts are brought into relation.
+```text
+U +_{1} V = (u + v)^2
+```
 
-The same distinction clarifies negative numbers. There are no negative ultrareals. A negative value is not a negative real thing. It is a rotated square-value:
+Expanding gives:
+
+```text
+(u + v)^2 = u^2 + v^2 + 2uv
+```
+
+The term `2uv` is the interaction term.
+
+Standard arithmetic is not thrown away. It is recovered as:
+
+```text
+k = 0
+```
+
+The difference is that ultrareal arithmetic does not require the interaction descriptor to be zero.
+
+In this sense, addition makes the parts whole through interaction.
+
+This is why addition is different from just uniting sets and counting. Union says that parts are considered together. Addition asks what whole is produced when the parts are brought into relation.
+
+The same distinction clarifies negative numbers. There are no negative ultrareals. A negative value is not a negative real thing. It is a rotated square-value. We can use the machinery developed around `sqrt(-1)` to write how a positive number can be rotated through the imaginary direction:
 
 ```text
 -U = (iu)^2
@@ -87,24 +124,24 @@ because:
 i^2 = -1
 ```
 
-The `i` marks rotation. The positive value is not disappearing; it is returning through the inner square-form from another direction.
-
-This book is therefore not a metaphor about arithmetic. It is a description of a number system:
-
-```text
-ultrareal values:      U = u^2, u real
-standard addition:     k = 0
-joined addition:       k = 1
-opposition:            k = -1
-negative values:       rotated square-values
-```
-
 The central claim can now be stated more exactly:
 
 ```text
 1 + 1 is not necessarily only 2
 ```
 
-because `2` is the non-interaction case.
+because `2` is the non-interaction case:
+
+```text
+1 +_{0} 1 = 2
+```
+
+Other relations give other wholes:
+
+```text
+1 +_{1} 1 = 4
+1 +_{-1} 1 = 0
+```
 
 When the parts interact, the whole includes the interaction term.
+
