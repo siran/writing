@@ -201,11 +201,11 @@ alpha - beta = pi
 |a + b|^2 = (u - v)^2
 ```
 
-Relation-erased joining:
+Orthogonal joining:
 
 ```text
 alpha - beta = pi/2
 |a + b|^2 = u^2 + v^2
 ```
 
-Ordinary addition is therefore not the whole operation. It is the case where the relation term is absent, canceled, or ignored.
+Ordinary addition is therefore the non-interaction case of the operation. It is the case where the relation term is zero.

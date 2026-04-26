@@ -16,10 +16,10 @@ Standard arithmetic remains useful. It is the arithmetic of non-interacting unit
 d(U,V) = 0
 ```
 
-But if numbers are understood as positive square-forms,
+But if Numbers are understood as density-values instantiated as positive square-forms,
 
 ```text
-U = u^2
+N = n^2
 ```
 
 then addition can no longer be treated as mere union. The inner values may align, oppose, cancel, or meet at an angle. Each case has its own arithmetic.
@@ -31,9 +31,9 @@ count the parts
 notice the relation
 ```
 
-This is not only a lesson for children. It is a correction for anyone who learned to treat number as indifferent units sitting beside one another.
+This is not only a lesson for children. It is a correction for anyone who learned to treat number only as non-interacting units sitting beside one another.
 
-Ultrareals make the correction explicit. They keep positive value positive, remove negative magnitudes from the real layer, and let rotation or opposition explain what ordinary signs were trying to say.
+Ultrareals make the correction explicit. They keep positive value positive, keep negative magnitudes outside the real layer, and let rotation or opposition explain what ordinary signs were trying to say.
 
 The book therefore ends where it began:
 

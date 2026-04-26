@@ -18,9 +18,19 @@ U = u^2
 
 The capital `U` names the visible value. The lower-case `u` names the inner value.
 
+This book also uses the capital word *Number* for the values we handle directly. A Number is not first met as an isolated mark. A Number is instantiated in something: a counted thing, a measured amount, a balance, a distance, a duration, a density, a value.
+
+In this sense, Numbers as we know them are densities. They are visible positive values carried by actual instances. In ultrareal notation, a Number appears as:
+
+```text
+N = n^2
+```
+
+The capital `N` is the visible Number. The lower-case `n` is its inner value.
+
 The word *real* matters: ultrareals are only positive.
 
-The word *ultra* matters too. Ultrareals are not merely the usual real numbers renamed. They keep track of something standard arithmetic usually suppresses: the relation between numbers being added.
+The word *ultra* matters too. Ultrareals are not merely the usual real numbers renamed. They keep track of something standard arithmetic does not represent: the relation between numbers being added.
 
 One could call them superreal numbers. I use *ultrareal* because the letter `U` is the natural symbol for the visible positive square-form:
 
@@ -36,7 +46,9 @@ Also, *ultra* points beyond the usual negative extension of the number line. In 
 
 The symbol `-1 < 0` does not name an ultrareal. It names an operation, direction, cancellation, comparison, or rotation applied to positive values.
 
-Standard arithmetic legitimately treats numbers as non-interacting. In the ultrareals, this becomes a special case: the case where the relation term is zero.
+Standard arithmetic studies numbers as non-interacting. In that model, addition behaves like the mathematical union of sets: the parts are placed together, and the relation term is not part of the calculation.
+
+In ultrareal arithmetic, this becomes a special case: the case where the relation term is zero.
 
 ```text
 d(U,V) = 0

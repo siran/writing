@@ -10,7 +10,7 @@ one thing + one thing = two things
 
 Joined addition begins from the situation created when those things are actually together.
 
-This matters because addition has often been mistaken for union. But union is union. It says the parts are in one set. It does not say what the parts do to one another.
+This matters because standard arithmetic can model addition like union. Union is union: it says the parts are in one set. It does not say what the parts do to one another.
 
 Joined addition asks for the new condition created by the joining.
 
@@ -53,7 +53,7 @@ In standard arithmetic:
 U + V
 ```
 
-means that `U` and `V` are counted together while their relation is ignored, absent, canceled, or irrelevant.
+means that `U` and `V` are counted together under the union-like simplification: the relation between them is not represented in the operation.
 
 In ultrareal arithmetic, the fuller joined form uses an interaction descriptor:
 
@@ -79,12 +79,12 @@ The relation term is then zero because the operation deliberately studies units 
 u^2 + v^2 + 2(0)uv = u^2 + v^2
 ```
 
-This makes standard arithmetic an object of study inside the larger system. It is the arithmetic of indifferent units: useful, precise, and limited.
+This makes standard arithmetic an object of study inside the larger system. It is the arithmetic of non-interacting units: useful as a simplification, and exact when the relation term is zero.
 
 The ultrareal question is different:
 
 ```text
-what happens when the units are not indifferent?
+what happens when the relation is part of the operation?
 ```
 
 ## Zero

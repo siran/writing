@@ -2,11 +2,11 @@
 
 This note does not belong at the beginning of the book.
 
-The book itself is a description of ultrareal numbers. But the idea has a pedagogical consequence: arithmetic should not train the mind to mistake union for addition.
+The book itself is a description of ultrareal numbers. But the idea has a pedagogical consequence: arithmetic should distinguish union from addition.
 
 The goal is not to make early arithmetic harder.
 
-The goal is to prevent arithmetic from becoming too small.
+The goal is to keep relation available as part of arithmetic.
 
 A child can learn:
 
@@ -57,7 +57,7 @@ Addition asks:
 what whole is produced by the relation?
 ```
 
-The mistake is subtle because union and counting are useful. But if they replace addition, the learner sees only the joined pile, not the relation created by joining.
+The distinction is subtle because union and counting are useful. But if they replace addition, the learner sees only the joined pile, not the relation created by joining.
 
 Subtraction has a similar problem. It is often taught through set pictures: take away, cross out, keep what remains, compare what overlaps. Those pictures may help, but they are not the operation itself. Intersection is intersection. Removal is removal. Opposition is opposition. The arithmetic should not be collapsed into the picture.
 
@@ -142,5 +142,4 @@ If arithmetic is learned only as inventory, it can make the world look like a pi
 
 But relation is part of the world. Food mixes. Friends affect each other. Rooms become crowded. Blocks become structures. A small thing added in the right place can change the whole situation.
 
-Arithmetic should not be the place where relation is erased.
-
+Arithmetic can count parts and still keep relation visible.
