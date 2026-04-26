@@ -8,27 +8,42 @@ $$
 
 There is also an interaction term.
 
-This book describes ultrareal numbers: numbers that are never negative.
+Far from claiming a finished new mathematics, this book claims a new way of
+seeing numbers, and therefore a new arithmetic. Here we describe what we call
+*ultrareal numbers*: numbers that are never negative.
 
-More specifically, an ultrareal number is a positive square-form:
+More specifically, an ultrareal number $U$ has an "inner value" $u$ whose
+visible value is written
 
 $$
 U = u^2
 $$
 
-The capital $U$ names the visible value. The lower-case $u$ names the inner value.
+An ultrareal number can then be more formally thought of as a positive
+square-form.
+
+The capital $U$ names the "visible value" or "observable value",
+while the lower-case $u$ names the "inner value".
+
 
 ## What is a number?
 
 A number is not a concrete thing. It took humans a long time to abstract the
-concept; some counting systems still distinguish only a few quantities before
-reaching "many." Concepts such as color also evolved constructively through
-language. Here the concern is numbers and what they are under this new
-arithmetic.
+concept. Some languages still show that the abstraction is constructed rather
+than automatic. The Piraha of the Brazilian Amazon have been described as using
+*hoi* with falling tone, *hoi* with rising tone, and *aibaagi* or *baagi* for
+roughly "one," "two," and "many," though later work argues these are relative
+quantity words rather than exact numerals. The Munduruku, also in the Brazilian
+Amazon, give another example:
+published numeral lists give *peng* for "one," *shepshep* for "two," and
+*ebapeng* for "three," while experimental work reports that larger quantities
+move toward approximate expressions such as "some, not many" and "many."
+Concepts such as color also evolved constructively through language. Here the
+concern is numbers and what they are under this new arithmetic.
 
 Being not something concrete, a number can be understood as a numerical
-*density*: when projected onto whatever we are referencing, the density becomes
-realized in an instance.
+*density* that when projected onto whatever we are referencing, the density
+becomes realized in an instance.
 
 The analogy comes straight from physics and the concept of electromagnetic
 energy. In physics, when describing waves, energy is proportional to the square
@@ -40,29 +55,31 @@ E = a^2
 $$
 
 When adding two waves, the amplitudes add first, as inner values in the
-ultrareals. Two waves of amplitudes $a_1$ and $a_2$ have energy:
+ultrareals. Two waves of amplitudes $a_1$ and $a_2$ have
+energy:
 
 $$
 E=(a_1+a_2)^2
 $$
 
-In this sense, Numbers as we know them are densities. They are visible positive
-values carried by actual instances. In ultrareal notation, a Number appears as:
+In this sense, numbers as we know them are densities. They are visible positive
+values carried by actual instances. In ultrareal notation, a number appears as:
 
 $$
 N = n^2
 $$
 
-The capital $N$ is the visible number, or observable: the instantiation of the
-idea of a number into something concrete. The lower-case $n$ is its inner value.
+The capital $N$ is the visible number, or observable: the
+instantiation of the idea of a number into something concrete. The lower-case
+$n$ is its inner value.
 
 The word *real* matters: ultrareals are only positive. What standard arithmetic
 calls "negative" becomes a rotation, using Euler's identity.
 
-The word *ultra* matters too. Ultrareals are not merely the usual real numbers
-renamed. They keep track of something standard arithmetic does not represent:
-the relation between numbers being added. So they are *more than* real, hence
-*ultra*.
+The word *ultra* matters too. Ultrareals are not merely the usual real positive
+numbers renamed. They keep track of something standard arithmetic does not
+represent: the relation between numbers being added. So they are *more than*
+real, hence *ultra*.
 
 Also, *ultra* points beyond the usual negative extension of the number line. In
 reality there are no negative things. There is no such thing as a negative apple
@@ -72,20 +89,23 @@ $$
 12 + (-1) = 11
 $$
 
-The symbol $-1$, as in $-1 < 0$, does not map to the ultrareals.
+The symbol $-1$, as in $-1 < 0$, does not map to the
+ultrareals.
 
 Standard arithmetic studies numbers as non-interacting. In that model, addition
 behaves like the mathematical union of sets: the parts are placed together, and
-the relation term is not part of the calculation. Ultrareal arithmetic treats
-that as the special case:
+the relation term is not part of the calculation. To describe the interaction
+between numbers, introduce a descriptor
+$-1 \le d(\cdot,\cdot) \le 1$ so that $d(U,V)=0$ recovers the usual
+non-interacting arithmetic,
 
 $$
 d(U,V) = 0
 $$
 
-Once relation is part of the arithmetic data, the operator $+$ is overloaded.
-It is defined on the visible ultrareals, their inner values, and their
-interaction descriptor:
+Once relation is part of the arithmetic data, the operator $+$ is
+overloaded. It is defined on the visible ultrareals, their inner values, and
+their interaction descriptor:
 
 $$
 U = u^2,\qquad
@@ -100,7 +120,8 @@ $$
 $$
 
 This descriptor is continuous. It works like alignment in fields: the values
-between $-1$ and $1$ are partial alignments, not separate kinds of addition.
+between $-1$ and $1$ are partial alignments, not
+separate kinds of addition.
 
 The important endpoint and midpoint cases are:
 

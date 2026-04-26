@@ -17,7 +17,7 @@ $$
 d(U,V) = 0
 $$
 
-But if Numbers are understood as density-values instantiated as positive
+But if numbers are understood as density-values instantiated as positive
 square-forms,
 
 $$
@@ -42,7 +42,7 @@ explain what ordinary signs were trying to say.
 
 The book therefore ends where it began:
 
-> Numbers interact.
+> numbers interact.
 > Addition makes the parts whole through interaction.
 > Addition is not union.
 > Standard arithmetic is the non-interaction case.

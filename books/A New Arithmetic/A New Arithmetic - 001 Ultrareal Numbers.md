@@ -8,16 +8,16 @@ $$
 
 The number is $U$. The inner value is $u$.
 
-More generally, a capital $N$ names a Number:
+More generally, a capital $N$ names a number:
 
 $$
 N = n^2
 $$
 
-Numbers, as we know them, are densities. They are visible values instantiated in
+In ordinary use, numbers are densities. They are visible values instantiated in
 what we handle: things counted, amounts measured, values assigned, distances
 crossed, times waited, balances owed or received. The square-form says that the
-handled Number is the visible density; the lower-case value is the inner value
+handled number is the visible density; the lower-case value is the inner value
 behind that density.
 
 This is not a trick of notation. Every positive number can be seen as a square,

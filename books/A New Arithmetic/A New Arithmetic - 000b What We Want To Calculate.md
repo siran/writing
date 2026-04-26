@@ -16,16 +16,16 @@ Ultrareal arithmetic asks what changes when the relation is not zero.
 
 ## The Basic Objects
 
-We begin with Numbers as positive density-values:
+We begin with numbers as positive density-values:
 
 $$
 N = n^2
 $$
 
-A Number is the visible value we handle. Its inner value is the lower-case term
+A number is the visible value we handle. Its inner value is the lower-case term
 whose square gives that visible value.
 
-For two Numbers:
+For two numbers:
 
 $$
 U = u^2,\qquad V = v^2.
