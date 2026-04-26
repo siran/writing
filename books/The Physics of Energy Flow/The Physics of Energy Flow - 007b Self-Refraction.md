@@ -74,8 +74,8 @@ matter.
 
 ## Coherent overlap as field-pattern addition
 
-The energy density at each point is expressed as the square of an
-amplitude-like quantity:
+The energy density at each point is expressed as the square of an amplitude-like
+quantity:
 
 $$
 u = |f|^2.
@@ -126,8 +126,8 @@ $$
 
 The final term is the interference term. It is not a correction to arithmetic;
 it is the pointwise overlap of the two field-value patterns. If the patterns are
-incoherent or orthogonal, this term averages away. If they are equal and
-in phase, it contributes positively everywhere on the joined branch.
+incoherent or orthogonal, this term averages away. If they are equal and in
+phase, it contributes positively everywhere on the joined branch.
 
 For equal contributions,
 
@@ -148,8 +148,8 @@ $$
 $$
 
 At first sight, both endpoints are surprising: coherent overlap seems to produce
-a fourfold local energy density for free, while destructive overlap seems to erase the
-joined energy altogether.
+a fourfold local energy density for free, while destructive overlap seems to
+erase the joined energy altogether.
 
 But in all cases energy is conserved, so these endpoints have to be interpreted
 through continuity on the full overlap region, not by the local density value
@@ -168,9 +168,9 @@ channels are brought back onto one line.
 The density change is ordinary wave-pattern addition. Two patterns of field
 values are added point by point. In-phase values reinforce, out-of-phase values
 cancel, and shifted patterns generate alternating dense and sparse regions. Thus
-two equal in-phase contributions do not merely sit side by side as $u+u$ once
-they are recovered on one line. Their joined field value is
-$\sqrt u+\sqrt u$, so its density is
+two equal in-phase contributions do not merely sit side by side as
+$u+u$ once they are recovered on one line. Their joined field value
+is $\sqrt u+\sqrt u$, so its density is
 
 $$
 (\sqrt u+\sqrt u)^2 = 4u.
@@ -180,8 +180,8 @@ This is no more mysterious than a moire pattern: two static patterns can be
 superposed to generate denser and sparser visible regions without creating new
 ink. Coherent waves do the dynamical version.
 
-The physical question is then whether the available flux can support that
-value at the original advance rate.
+The physical question is then whether the available flux can support that value
+at the original advance rate.
 
 In the laboratory version, let the original laser channel carry energy density
 $2u$ and advance at $c$. Its flux is
@@ -211,18 +211,18 @@ $$
 u_{\mathrm{bright}} = 4u.
 $$
 
-If that recovered branch were assigned the unchanged advance $c$, it would
-require the flux
+If that recovered branch were assigned the unchanged advance $c$,
+it would require the flux
 
 $$
 J_{\mathrm{bright}} = u_{\mathrm{bright}}c = 4u c.
 $$
 
-But the laser supplies only $2u c$ into the two-arm recovery. In the collinear
-case there is only one positive recovery channel and no second place with
-$\mathbf S>0$ that can provide the missing flux. The two split channels can be
-re-phased into one recovered branch, but the same input cannot feed a $4u$
-branch moving at $c$.
+But the laser supplies only $2u c$ into the two-arm recovery. In the
+collinear case there is only one positive recovery channel and no second place
+with $\mathbf S>0$ that can provide the missing flux. The two split channels
+can be re-phased into one recovered branch, but the same input cannot feed a
+$4u$ branch moving at $c$.
 
 So the forbidden combination is precise:
 
@@ -233,9 +233,10 @@ c_{\mathrm{eff}}=c.
 $$
 
 At most one of those can survive as the description of the recovered branch. If
-the branch really recovers the $4u$ energy density as its transported density,
-its advance must slow. If the branch is forced to advance at $c$, then the $4u$
-value cannot be sustained as the transported density of that branch.
+the branch really recovers the $4u$ energy density as its
+transported density, its advance must slow. If the branch is forced to advance
+at $c$, then the $4u$ value cannot be sustained as the
+transported density of that branch.
 
 Continuity therefore fixes the effective advance by
 
@@ -254,7 +255,8 @@ c_{\mathrm{eff}} = \frac{c}{2}.
 $$
 
 The slowdown is not an added mechanism. It is the forced consequence of
-maintaining the $4u$ density while only $2u c$ of flux is supplied.
+maintaining the $4u$ density while only $2u c$ of flux is
+supplied.
 
 The small-angle fringe version is a practical variant, not the conceptual core.
 When the two outgoing rays cross at a nonzero angle, the same accounting is
@@ -358,8 +360,8 @@ $$
 2\bar u_{\mathrm{in}}.
 $$
 
-This is the exact *compression* statement: the mean energy density doubles because the
-same transported content is recovered on half the transport volume.
+This is the exact *compression* statement: the mean energy density doubles
+because the same transported content is recovered on half the transport volume.
 
 
 ## Destructive overlap
@@ -392,8 +394,8 @@ itself is not a recovery channel; it is the local absence of the forward joined
 branch.
 
 This is also the place to distinguish the amplitude-like quantity from the
-recovered energy density. The sign or phase can reverse in $f$, but the
-recovered energy density
+recovered energy density. The sign or phase can reverse in $f$, but
+the recovered energy density
 
 $$
 u = |f|^2
@@ -464,8 +466,8 @@ x=\frac{n\pi}{k}.
 $$
 
 The amplitude-like quantity $f_{\mathrm{join}}(x)$ changes sign across each node
-because $\cos(kx)$ changes sign there. The energy density does not invert. It
-vanishes at the node and reappears at separated antinodes.
+because $\cos(kx)$ changes sign there. The energy density does not invert.
+It vanishes at the node and reappears at separated antinodes.
 
 Over one spatial period
 
@@ -542,8 +544,8 @@ $$
 \bar u_{\mathrm{out}} = 2\bar u_{\mathrm{in}}.
 $$
 
-That doubled mean energy density is the local compression statement. Equivalently, the
-branch obeys the flux-density relation
+That doubled mean energy density is the local compression statement.
+Equivalently, the branch obeys the flux-density relation
 
 $$
 J = u\,c_{\mathrm{eff}},
@@ -599,8 +601,8 @@ regions lag more strongly than weakly loaded ones.
 
 ## Local bending
 
-If different regions of a wavefront have different energy density, then they do not
-advance equally.
+If different regions of a wavefront have different energy density, then they do
+not advance equally.
 
 - higher energy density implies lower $c_{\mathrm{eff}}$,
 - lower energy density implies higher $c_{\mathrm{eff}}$.
@@ -619,13 +621,14 @@ same flow are superposed and compressed by different amounts.
 ## Operational test
 
 The laboratory test is direct because ordinary interference already gives the
-energy density profile. A flux detector placed at a screen measures the flux of the
-superposed fields arriving at that point.
+energy density profile. A flux detector placed at a screen measures the flux of
+the superposed fields arriving at that point.
 
 The cleanest delay version is collinear. The two recovered rays are brought back
 onto the same line and phase, so the whole recovered channel is bright. There is
-no transverse fringe average to appeal to. The available flux is $2u_0c$, while
-the coherent density is $4u_0$. The loaded-branch prediction is therefore
+no transverse fringe average to appeal to. The available flux is
+$2u_0c$, while the coherent density is $4u_0$. The
+loaded-branch prediction is therefore
 
 $$
 c_{\mathrm{eff,bright}}=\frac{2u_0c}{4u_0}=\frac{c}{2}.
@@ -633,10 +636,11 @@ $$
 
 A small nonzero crossing angle is useful when one wants a visible bright stripe
 to select. For two equal coherent rays leaving the final recombination region
-and crossing symmetrically about the $z$ direction, let $\theta$ be the angle
-each ray makes with the $z$ axis. At a screen coordinate $x$, one ray has
-transverse phase $+kx\sin\theta$ and the other has transverse phase
-$-kx\sin\theta$. Their longitudinal phase is the same:
+and crossing symmetrically about the $z$ direction, let
+$\theta$ be the angle each ray makes with the $z$ axis. At
+a screen coordinate $x$, one ray has transverse phase
+$+kx\sin\theta$ and the other has transverse phase $-kx\sin\theta$. Their
+longitudinal phase is the same:
 
 $$
 f_1(x,z,t)
@@ -659,8 +663,8 @@ $$
 \Delta\phi(x)=2kx\sin\theta.
 $$
 
-In the collinear limit $\theta=0$, the relative phase does not vary across the
-screen. The result is one recovered bright beam rather than a spatial fringe
+In the collinear limit $\theta=0$, the relative phase does not vary across
+the screen. The result is one recovered bright beam rather than a spatial fringe
 pattern.
 
 With
@@ -722,9 +726,9 @@ is ordinary interference. The experiment is:
 
 
 Equivalently, the experiment asks which part of the forbidden pair fails. Either
-the isolated bright channel keeps the $4u_0$ energy density and slows, or a
-channel that advances at the ordinary speed cannot sustain the $4u_0$
-energy density as an isolated transported branch.
+the isolated bright channel keeps the $4u_0$ energy density and slows,
+or a channel that advances at the ordinary speed cannot sustain the
+$4u_0$ energy density as an isolated transported branch.
 
 A collinear delay implementation is:
 
@@ -787,9 +791,9 @@ the glass, while an ordinary reference beam at the same angle should still
 transmit. That is the clean refraction form of the same loaded-branch claim.
 
 Opening the aperture to average over a full fringe period should erase the
-loaded-branch signature, because the measured energy density returns to the two-beam
-mean $2u_0$. The prediction belongs to the isolated bright channel,
-not to the unselected fringe pattern as a whole.
+loaded-branch signature, because the measured energy density returns to the
+two-beam mean $2u_0$. The prediction belongs to the isolated bright
+channel, not to the unselected fringe pattern as a whole.
 
 
 ## Retarded self-overlap
