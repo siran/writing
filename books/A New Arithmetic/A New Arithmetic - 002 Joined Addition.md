@@ -21,7 +21,7 @@ U = u^2
 V = v^2
 ```
 
-then:
+then, in the aligned case, the overloaded operator `+` can read both the visible values and their inner values:
 
 ```text
 U + V := (u + v)^2
@@ -33,7 +33,7 @@ Equivalently, in square-form notation:
 u^2 + v^2 := (u + v)^2
 ```
 
-This is the defining axiom of ultrareal addition.
+This is the defining axiom of aligned ultrareal addition.
 
 Expanded into old notation:
 
@@ -55,22 +55,22 @@ U + V
 
 means that `U` and `V` are counted together while their relation is ignored, absent, canceled, or irrelevant.
 
-In ultrareal arithmetic, the fuller joined form can be written with an explicit relation coefficient:
+In ultrareal arithmetic, the fuller joined form uses an interaction descriptor:
 
 ```text
-u^2 + v^2 := u^2 + v^2 + 2kuv
+U + V := u^2 + v^2 + 2d(U,V)uv
 ```
 
 The aligned ultrareal case has:
 
 ```text
-k = 1
+d(U,V) = 1
 ```
 
 The standard case has:
 
 ```text
-k = 0
+d(U,V) = 0
 ```
 
 The relation term is then zero because the operation deliberately studies units as non-interacting:

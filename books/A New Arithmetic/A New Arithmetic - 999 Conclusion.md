@@ -10,10 +10,10 @@ There is also an interaction term.
 
 Addition makes the parts whole through interaction.
 
-Standard arithmetic remains useful. It is the arithmetic of non-interacting units, the case where the relation coefficient is zero:
+Standard arithmetic remains useful. It is the arithmetic of non-interacting units, the case where the interaction descriptor is zero:
 
 ```text
-k = 0
+d(U,V) = 0
 ```
 
 But if numbers are understood as positive square-forms,

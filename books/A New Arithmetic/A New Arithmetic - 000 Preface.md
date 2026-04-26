@@ -39,13 +39,15 @@ The symbol `-1 < 0` does not name an ultrareal. It names an operation, direction
 Standard arithmetic legitimately treats numbers as non-interacting. In the ultrareals, this becomes a special case: the case where the relation term is zero.
 
 ```text
-k = 0
+d(U,V) = 0
 ```
 
-Once relation is admitted as part of the arithmetic data, the general two-term form is:
+Once relation is admitted as part of the arithmetic data, the operator `+` is overloaded. It is aware of the parts being added: the visible ultrareals `U` and `V`, their inner values `u` and `v`, and their interaction descriptor `d(U,V)`.
+
+The general two-term form is:
 
 ```text
-U +_{k} V = u^2 + v^2 + 2kuv
+U + V = u^2 + v^2 + 2d(U,V)uv
 ```
 
 where:
@@ -55,28 +57,28 @@ U = u^2
 V = v^2
 ```
 
-and `k` is an interaction descriptor with values:
+and `d(U,V)` has values:
 
 ```text
--1 <= k <= 1
+-1 <= d(U,V) <= 1
 ```
 
-Usually `k` measures alignment between `U` and `V`.
+Usually `d(U,V)` measures alignment between `U` and `V`.
 
 The important cases are:
 
 ```text
-k =  1   aligned joining
-k =  0   non-interaction
-k = -1   opposition
+d(U,V) =  1   aligned joining
+d(U,V) =  0   non-interaction
+d(U,V) = -1   opposition
 ```
 
 So:
 
 ```text
-aligned:        U +_{1} V = (u + v)^2
-standard:       U +_{0} V = u^2 + v^2
-opposed:        U +_{-1} V = (u - v)^2
+aligned:        U + V = (u + v)^2
+standard:       U + V = u^2 + v^2
+opposed:        U + V = (u - v)^2
 ```
 
 To see the aligned case directly, start with two ultrareals:
@@ -89,7 +91,7 @@ V = v^2
 Aligned addition first joins the inner values, then squares:
 
 ```text
-U +_{1} V = (u + v)^2
+U + V = (u + v)^2
 ```
 
 Expanding gives:
@@ -103,7 +105,7 @@ The term `2uv` is the interaction term.
 Standard arithmetic is not thrown away. It is recovered as:
 
 ```text
-k = 0
+d(U,V) = 0
 ```
 
 The difference is that ultrareal arithmetic does not require the interaction descriptor to be zero.
@@ -133,15 +135,15 @@ The central claim can now be stated more exactly:
 because `2` is the non-interaction case:
 
 ```text
-1 +_{0} 1 = 2
+d(1,1) = 0
+1 + 1 = 2
 ```
 
 Other relations give other wholes:
 
 ```text
-1 +_{1} 1 = 4
-1 +_{-1} 1 = 0
+d(1,1) =  1   gives   1 + 1 = 4
+d(1,1) = -1   gives   1 + 1 = 0
 ```
 
 When the parts interact, the whole includes the interaction term.
-

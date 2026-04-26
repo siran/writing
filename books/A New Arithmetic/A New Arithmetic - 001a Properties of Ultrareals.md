@@ -72,35 +72,42 @@ If signs or rotations are introduced, they belong to the inner layer, not to the
 Zero is the additive identity:
 
 ```text
-0^2 +_{k} u^2 = u^2
+0^2 + u^2 = u^2
 ```
 
-for any relation coefficient `k`, because the relation term vanishes:
+for any interaction descriptor, because the relation term vanishes:
 
 ```text
-2k(0)u = 0
+2d(0^2,u^2)(0)u = 0
 ```
 
 ## Relation-Aware Addition
 
-The general two-term addition is:
+The general two-term addition uses an overloaded `+`. The operator is aware of the parts being added: the visible values and their inner values.
 
 ```text
-u^2 +_{k} v^2 = u^2 + v^2 + 2kuv
+U + V = u^2 + v^2 + 2d(U,V)uv
 ```
 
-The coefficient `k` records relation.
-
-If `k` comes from an angle, then:
+where:
 
 ```text
-k = cos(theta)
+U = u^2
+V = v^2
+```
+
+The descriptor `d(U,V)` records relation.
+
+If `d(U,V)` comes from an angle, then:
+
+```text
+d(U,V) = cos(theta)
 ```
 
 and:
 
 ```text
-u^2 +_{theta} v^2 = u^2 + v^2 + 2uv cos(theta)
+U + V = u^2 + v^2 + 2uv cos(theta)
 ```
 
 ## Closure
@@ -108,19 +115,19 @@ u^2 +_{theta} v^2 = u^2 + v^2 + 2uv cos(theta)
 For:
 
 ```text
--1 <= k <= 1
+-1 <= d(U,V) <= 1
 ```
 
 the result remains ultrareal:
 
 ```text
-u^2 + v^2 + 2kuv >= 0
+u^2 + v^2 + 2d(U,V)uv >= 0
 ```
 
 The smallest case is opposition:
 
 ```text
-k = -1
+d(U,V) = -1
 ```
 
 which gives:
@@ -136,13 +143,13 @@ So relation-aware addition does not require negative ultrareals.
 Standard arithmetic is recovered when:
 
 ```text
-k = 0
+d(U,V) = 0
 ```
 
 Then:
 
 ```text
-u^2 +_{0} v^2 = u^2 + v^2
+U + V = u^2 + v^2
 ```
 
 So standard addition is the non-interaction case.
@@ -152,19 +159,20 @@ So standard addition is the non-interaction case.
 Aligned ultrareal addition is:
 
 ```text
-u^2 +_{1} v^2 = (u + v)^2
+d(U,V) = 1
+U + V = (u + v)^2
 ```
 
 This operation is commutative:
 
 ```text
-u^2 +_{1} v^2 = v^2 +_{1} u^2
+u^2 + v^2 = v^2 + u^2
 ```
 
 and associative:
 
 ```text
-(u^2 +_{1} v^2) +_{1} w^2 = u^2 +_{1} (v^2 +_{1} w^2)
+(u^2 + v^2) + w^2 = u^2 + (v^2 + w^2)
 ```
 
 because both sides equal:
@@ -192,10 +200,10 @@ If the terms have different relations, the coefficients must be shown:
 
 ```text
 u_1^2 + ... + u_n^2
-+ 2 sum_{i<j} k_ij u_i u_j
++ 2 sum_{i<j} d_ij u_i u_j
 ```
 
-The coefficients `k_ij` are part of the arithmetic data.
+The descriptors `d_ij` are part of the arithmetic data.
 
 ## Multiplication
 
@@ -214,8 +222,8 @@ The multiplicative identity is:
 For aligned addition, multiplication distributes:
 
 ```text
-u^2 *_UR (v^2 +_{1} w^2)
-= (uv)^2 +_{1} (uw)^2
+u^2 *_UR (v^2 + w^2)
+= (uv)^2 + (uw)^2
 ```
 
 ## No Negative Inverses Inside UR

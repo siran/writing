@@ -5,10 +5,14 @@ Pythagoras appears naturally in ultrareal arithmetic.
 The relation-aware addition rule is:
 
 ```text
-u^2 +_{theta} v^2 = u^2 + v^2 + 2uv cos(theta)
+U + V = u^2 + v^2 + 2uv cos(theta)
 ```
 
-The angle `theta` records how the inner values meet.
+where `U = u^2` and `V = v^2`. The overloaded `+` reads the parts being added; the angle `theta` is one way to specify their interaction descriptor:
+
+```text
+d(U,V) = cos(theta)
+```
 
 ## Aligned Addition
 
@@ -27,7 +31,7 @@ cos(0) = 1
 so:
 
 ```text
-u^2 +_{theta=0} v^2 = u^2 + v^2 + 2uv = (u + v)^2
+U + V = u^2 + v^2 + 2uv = (u + v)^2
 ```
 
 This is aligned ultrareal addition.
@@ -49,7 +53,7 @@ cos(pi/2) = 0
 so:
 
 ```text
-u^2 +_{theta=pi/2} v^2 = u^2 + v^2
+U + V = u^2 + v^2
 ```
 
 This is the Pythagorean case.
@@ -87,7 +91,7 @@ cos(pi) = -1
 so:
 
 ```text
-u^2 +_{theta=pi} v^2 = u^2 + v^2 - 2uv = (u - v)^2
+U + V = u^2 + v^2 - 2uv = (u - v)^2
 ```
 
 Opposition still produces a positive square-form.
