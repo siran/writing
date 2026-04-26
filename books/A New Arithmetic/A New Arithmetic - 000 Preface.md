@@ -1,4 +1,4 @@
-# Preface: Numbers Interact
+# Preface: Ultrareal Numbers
 
 So the first claim of this book is simple:
 
@@ -8,200 +8,103 @@ So the first claim of this book is simple:
 
 There is also an interaction term.
 
-Addition makes the parts whole through interaction.
+This book describes ultrareal numbers.
 
-This book describes a new way of thinking about numbers.
-
-Numbers are usually treated as non-interacting.
-
-That is standard arithmetic's main abstraction, and it is a legitimate object of
-study. It is the arithmetic of units that do not affect one another.
-
-It is not fair to arithmetic to rely on physics examples to make this point.
-Arithmetic can say it on its own: standard addition studies the special case
-where the interaction term is zero.
-
-Classical arithmetic is not thrown away. It becomes the special case of
-non-interacting things. A new arithmetic should describe the larger case: units
-brought into relation.
-
-When we write "two children in one room," we may only be writing a union:
-
-```text
-one child in a room
-union
-one child in a room
-```
-
-and then counting the result as:
-
-```text
-two children in a room
-```
-
-That is useful, but it is not the full arithmetic of the situation. "Two
-children in one room" is missing the interaction term. The same is true of a
-rotten apple added to a bag. The count may be correct, while the arithmetic is
-incomplete.
-
-This book is therefore written for anyone who has been through kindergarten.
-
-That is almost everyone. We all inherited a first picture of number. We learned
-to count objects as if they were separate pieces, and that early picture stayed
-with us longer than we may notice.
-
-The book is especially for kindergarten teachers who still return to first
-principles. They stand close to the moment when number is first introduced. If
-addition is taught there as nothing but union and counting, the mistake becomes
-part of the child's first model of reality.
-
-Children do need to count. They need to know how many things are present. But
-they should not be taught, even accidentally, that count exhausts addition.
-
-But addition has usually been mistaken for union:
-
-```text
-this pile joined with that pile
-```
-
-Union is what it is. It is a real operation. It tells us that this group and
-that group are being considered together.
-
-But union is not addition.
-
-Addition is the new condition created when the parts are together. If we replace
-addition with union, we teach children to count the joined group while ignoring
-what the joining did.
-
-Children already know something deeper before we teach them to ignore it:
-
-```text
-Things change when they are put together.
-```
-
-Two blocks can make a tower. One spoonful of sugar added to water does not sit
-beside the water as a separate object. It changes the water. Children see these
-facts directly.
-
-Ordinary arithmetic says:
-
-```text
-12 + 1 = 13
-```
-
-That is inventory arithmetic. It tells us how many. It does not tell us what
-happened.
-
-A more honest arithmetic should keep both truths:
-
-```text
-count:       how many things are there?
-relation:   what happens when they are together?
-```
-
-This book does not ask anyone to stop teaching counting. It asks us not to
-confuse counting with the whole meaning of addition.
-
-It also asks us to notice something children can understand immediately:
-
-```text
-things that exist are positive
-```
-
-When have we ever seen a negative apple?
-
-We can see one apple. We can see no apple. We can see an apple removed,
-promised, imagined, or canceled from a list. But we do not meet a negative apple
-as a negative thing standing in the room.
-
-Even if someone names a "negative apple," the thing named is still a positive
-unit of that kind. One negative-apple is one positive negative-apple. The
-negativity belongs to the kind, role, or direction being named. It is not a
-negative unit of existence.
-
-Debt is the same. A debt is not a negative apple. Debt `D` is a
-positive future claim:
-
-```text
-D = d^2
-```
-
-A debt is value assigned to future settlement. It is a positive obligation, a
-positive record, or a positive relation between people. Bookkeeping may mark one
-side of that relation with a minus sign, but the debt itself exists as something
-present and future-directed.
-
-Negative numbers may be useful signs. They may describe loss, direction,
-removal, cancellation, or opposition. But nothing real is negative in the
-ultrareal sense. Negative numbers do not exist as ultrareal values.
-
-So the practical beginning is:
-
-```text
-1 + 1 is not only 2.
-```
-
-It is also the relation made by the two being together.
-
-The first lesson is therefore not a formula. It is a habit of attention:
-
-```text
-When things are added, ask what they become together.
-```
-
-Only after this habit is clear do we need the formal arithmetic.
-
-For the adult reader, the proposal is that numbers can be reinterpreted as
-square-forms:
+An ultrareal number is a positive square-form:
 
 ```text
 U = u^2
 ```
 
-When `u` is real, the square is positive and ultrareal. When
-`u` is rotated into the imaginary direction, the square can be
-negative:
+The capital `U` names the visible value. The lower-case `u` names the inner value.
+
+The word *real* matters: ultrareals are only positive.
+
+The word *ultra* matters too. Ultrareals are not merely the usual real numbers renamed. They keep track of something standard arithmetic usually suppresses: the relation between numbers being added.
+
+One could call them superreal numbers. I use *ultrareal* because the letter `U` is the natural symbol for the visible positive square-form:
 
 ```text
-(iu)^2 = -u^2
+U = u^2
 ```
 
-That negative value is not a negative ultrareal. It is a rotated square-value.
+Standard arithmetic treats numbers as non-interacting.
 
-The `i` marks the rotation. The positive value is not disappearing;
-it is returning through the inner square-form from another direction.
-
-The visible number is `U`. The inner value is `u`.
-
-When two numbers are merely counted, ordinary arithmetic records:
+That is a legitimate object of study. It is the arithmetic of the special case where the relation term is zero:
 
 ```text
-U + V
+k = 0
 ```
 
-When two numbers are joined, the inner values join first:
+But once relation is admitted as part of the arithmetic data, the general two-term form is:
 
 ```text
-u^2 + v^2 := (u + v)^2
+U +_{k} V = u^2 + v^2 + 2kuv
 ```
 
-Expanding the joined value reveals the term ordinary inventory leaves out:
+where:
 
 ```text
-(u + v)^2 = u^2 + v^2 + 2uv
+U = u^2
+V = v^2
 ```
 
-The term `2uv` is the interaction term. It is the mathematical sign
-that two values have been placed into one situation.
+and `k` records relation.
 
-This is the seed of a new arithmetic. But its teaching form is simpler:
+The important cases are:
 
 ```text
-Numbers interact.
+k =  1   aligned joining
+k =  0   non-interaction
+k = -1   opposition
+```
+
+So:
+
+```text
+aligned:        U +_{1} V = (u + v)^2
+standard:       U +_{0} V = u^2 + v^2
+opposed:        U +_{-1} V = (u - v)^2
+```
+
+Standard arithmetic is not thrown away. It is recovered as the non-interaction case inside a larger arithmetic.
+
+The difference is that ultrareal arithmetic does not pretend that the relation term is always zero.
+
 Addition makes the parts whole through interaction.
-They are not separate realities.
-Addition is not union.
-Union is union.
-Things that exist are positive.
-There are no negative ultrareals.
+
+This is why addition is not union. Union says that parts are considered together. Addition asks what whole is produced when the parts are brought into relation.
+
+The same distinction clarifies negative numbers. There are no negative ultrareals. A negative value is not a negative real thing. It is a rotated square-value:
+
+```text
+-U = (iu)^2
 ```
+
+because:
+
+```text
+i^2 = -1
+```
+
+The `i` marks rotation. The positive value is not disappearing; it is returning through the inner square-form from another direction.
+
+This book is therefore not a metaphor about arithmetic. It is a description of a number system:
+
+```text
+ultrareal values:      U = u^2, u real
+standard addition:     k = 0
+joined addition:       k = 1
+opposition:            k = -1
+negative values:       rotated square-values
+```
+
+The central claim can now be stated more exactly:
+
+```text
+1 + 1 is not necessarily only 2
+```
+
+because `2` is the non-interaction case.
+
+When the parts interact, the whole includes the interaction term.

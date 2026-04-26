@@ -1,4 +1,8 @@
-# For Anyone Who Passed Through Kindergarten
+# Pedagogical Note
+
+This note does not belong at the beginning of the book.
+
+The book itself is a description of ultrareal numbers. But the idea has a pedagogical consequence: arithmetic should not train the mind to mistake union for addition.
 
 The goal is not to make early arithmetic harder.
 
@@ -50,14 +54,14 @@ these groups are now considered together
 Addition asks:
 
 ```text
-what new condition is created by the togetherness?
+what whole is produced by the relation?
 ```
 
-The mistake is subtle because union and counting are useful. But if they replace addition, children learn to see only the joined pile, not the relation created by joining.
+The mistake is subtle because union and counting are useful. But if they replace addition, the learner sees only the joined pile, not the relation created by joining.
 
 Subtraction has a similar problem. It is often taught through set pictures: take away, cross out, keep what remains, compare what overlaps. Those pictures may help, but they are not the operation itself. Intersection is intersection. Removal is removal. Opposition is opposition. The arithmetic should not be collapsed into the picture.
 
-## Simple Classroom Language
+## Simple Language
 
 Use ordinary words first:
 
@@ -72,8 +76,6 @@ building
 changing
 ```
 
-Children already understand these words.
-
 Then arithmetic becomes less abstract:
 
 ```text
@@ -85,9 +87,9 @@ one color + one color = two colors
 one color mixed with one color = a new color
 ```
 
-The symbol `+` should not train children to forget the word "with."
+The symbol `+` should not train anyone to forget the word "with."
 
-It should also not train them to forget the word "becomes."
+It should also not train anyone to forget the word "becomes."
 
 ## The Rule
 
@@ -104,7 +106,7 @@ The second truth gives meaning.
 
 ## Positive Things
 
-Children can also be invited to notice that existing things are positive.
+Existing things are positive.
 
 Ask plainly:
 
@@ -112,11 +114,11 @@ Ask plainly:
 Have you ever seen a negative apple?
 ```
 
-They may have seen an apple taken away. They may have seen an empty basket. They may have seen someone owe an apple. But they have not seen a negative apple sitting on the table as a negative object.
+Someone may have seen an apple taken away. Someone may have seen an empty basket. Someone may have seen someone owe an apple. But no one has seen a negative apple sitting on the table as a negative object.
 
 If we invent the label "negative-apple," then one negative-apple is still one positive unit of that kind. The sign belongs to the kind or direction. The unit that exists is positive.
 
-The same is true for debt. A child may owe an apple, but the owing is not a negative apple. The owing is a real relation. Debt `D` is a positive future claim:
+The same is true for debt. A person may owe an apple, but the owing is not a negative apple. The owing is a real relation. Debt `D` is a positive future claim:
 
 ```text
 D = d^2
@@ -136,8 +138,9 @@ not as a strange kind of object.
 
 ## Why This Matters
 
-If children learn only inventory arithmetic, they may begin to imagine that the world is made of separate units that merely pile up.
+If arithmetic is learned only as inventory, it can make the world look like a pile of separate units.
 
-But the world they actually live in is relational. Food mixes. Friends affect each other. Rooms become crowded. Blocks become structures. A small thing added in the right place can change the whole situation.
+But relation is part of the world. Food mixes. Friends affect each other. Rooms become crowded. Blocks become structures. A small thing added in the right place can change the whole situation.
 
-Arithmetic should not be the first place where children are taught to ignore relation.
+Arithmetic should not be the place where relation is erased.
+
