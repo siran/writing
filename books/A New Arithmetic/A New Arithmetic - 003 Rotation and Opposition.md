@@ -55,27 +55,28 @@ The result is not less than zero. It is absence after opposition.
 
 ## Rotated Minus-Signed Values
 
-A minus-signed value is represented by a rotation out of the ultrareal layer:
+A minus-signed presentation is represented by a rotation out of the ultrareal
+layer:
 
 $$
--U = (iu)^2
+\operatorname{Rot}_{\pi}(U)=(iu)^2
 $$
 
-because:
+Ordinary notation writes this rotated presentation with a minus sign because:
 
 $$
-(iu)^2 = i^2u^2 = -u^2
+i^2 = \operatorname{Rot}_{\pi}(1).
 $$
 
 So a minus-signed number is not a negative ultrareal. **There are no negative ultrareals.**
-It is a rotated square-value.
+It is a rotated presentation of a square-value.
 
 The symbol $i$ marks that rotation. It does not mean the positive value has
 disappeared. It means the square-value is returning, re-turning, through the
 inner layer from another direction:
 
 $$
-U = u^2,\qquad -U = (iu)^2.
+U = u^2,\qquad \operatorname{Rot}_{\pi}(U)=(iu)^2.
 $$
 
 ## Rotated Infinity
@@ -91,18 +92,18 @@ U \to \infty.
 $$
 
 Minus-signed infinity is not a different kind of substance. It is the same
-unbounded positive square-form seen through the rotated branch:
+unbounded positive square-form seen through the rotated presentation:
 
 $$
--U = (iu)^2,\qquad
+\operatorname{Rot}_{\pi}(U)=(iu)^2,\qquad
 u \to \infty,\qquad
--U \to -\infty.
+\operatorname{Rot}_{\pi}(U) \text{ is written as } -\infty.
 $$
 
 So:
 
 $$
--\infty = \text{rotated infinity}
+-\infty = \text{the ordinary sign for rotated infinity}
 $$
 
 In the ultrareal layer there is only positive unbounded value. The minus sign
@@ -137,24 +138,24 @@ $$
 Squaring $i$ doubles the rotation:
 
 $$
-i^2 = e^{i\pi} = -1
+i^2 = e^{i\pi}=\operatorname{Rot}_{\pi}(1).
 $$
 
-Therefore:
+Ordinary notation names that half-turn with the minus sign:
+
+$$
+-1 := \operatorname{Rot}_{\pi}(1).
+$$
+
+So the familiar expression:
 
 $$
 i = \sqrt{-1}
 $$
 
-more precisely:
-
-$$
-\sqrt{-1} = \pm i
-$$
-
-This is the arithmetic reason minus-signed values can be understood as rotated
-positive square-values. The minus sign is a half-turn in value-space,
-produced by a quarter-turn in the inner square-root layer.
+means: $i$ is the quarter-turn whose square produces the half-turn conventionally
+written as $-1$. The minus sign is the sign of that rotation, not a negative
+ultrareal object.
 
 Opposition is different from a rotated minus-signed value. Opposed values can
 both be positive ultrareals; the opposition is their relative turn.
@@ -177,13 +178,14 @@ The outer orientation is doubled. A quarter-turn of the inner state becomes a
 half-turn of the squared value:
 
 $$
-\theta = \frac{\pi}{2},\qquad
-(ue^{i\pi/2})^2 = -u^2.
+\theta = \frac{\pi}{2}
+\quad\Longrightarrow\quad
+(ue^{i\pi/2})^2=\operatorname{Rot}_{\pi}(U).
 $$
 
-This is why a square-value can carry a minus sign if $u$ is not real. The
-minus-signed square is not an ultrareal value; it is the result of rotating the
-inner state before squaring.
+Ordinary notation writes this half-turn as $-u^2$. The minus-signed square is
+not an ultrareal value; it is the notation for rotating the inner state before
+squaring.
 
 ## Rotation-Aware Joining
 

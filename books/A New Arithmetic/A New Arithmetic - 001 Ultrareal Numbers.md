@@ -59,7 +59,7 @@ definite.
 This matches ordinary experience. Existing things appear as positive values. We
 meet an apple, not a negative apple. We meet a block, not a negative block.
 Minus signs enter when something is removed, reversed, canceled, compared, or
-rotated out of the positive layer.
+presented through a rotation outside the positive layer.
 
 Debt should not be placed in a minus layer. Debt $D$ is a positive future
 claim:
@@ -80,16 +80,16 @@ make the existing unit negative.
 
 **There are no negative ultrareals.**
 
-This does not mean a square-value can never carry a minus sign. It means a
-minus-signed square-value is not produced by a real inner state:
+This does not mean a square-value can never carry a minus sign in ordinary
+notation. It means that such notation describes a rotated presentation, not an
+ultrareal value produced by a real inner state:
 
 $$
-(iu)^2 = -u^2
+\operatorname{Rot}_{\pi}(U)=(iu)^2.
 $$
 
-So $u^2$ can carry a minus sign when $u$ has been rotated into the imaginary
-direction. But the result is not an ultrareal value. It is a rotated
-square-value.
+Ordinary notation writes this half-turn as $-u^2$. The minus sign is the
+description of the rotation; it is not the discovery of a negative ultrareal.
 
 Changing the sign of the inner state does not create a negative ultrareal:
 
@@ -107,18 +107,19 @@ $$
 \begin{aligned}
 \text{positive ultrareal:}\quad &u^2,\\
 \text{inner opposition:}\quad &u \text{ and } -u,\\
-\text{minus-signed value:}\quad &(iu)^2 = -u^2.
+\text{rotated presentation:}\quad &(iu)^2=\operatorname{Rot}_{\pi}(U).
 \end{aligned}
 $$
 
-A minus-signed real value is an imaginary-square value:
+A minus-signed real value is therefore a rotated presentation of an
+imaginary-square value:
 
 $$
--U = (iu)^2
+\operatorname{Rot}_{\pi}(U)=(iu)^2
 $$
 
-This is not an ultrareal. It is a rotated square-value: a value returned through
-a turn in the inner layer.
+This is not an ultrareal. It is a value returned through a turn in the inner
+layer and then described with the ordinary minus sign.
 
 The claim is not that old algebra cannot manipulate minus signs. The claim is
 that the ultrareal layer has no negative magnitude. Minus signs mark rotation,

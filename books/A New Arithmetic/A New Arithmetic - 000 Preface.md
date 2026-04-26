@@ -81,7 +81,8 @@ instantiation of the idea of a number into something concrete. The lower-case
 $n$ is its inner state.
 
 The word *real* matters: ultrareals are only positive. What standard arithmetic
-calls "negative" becomes a rotation, using Euler's identity.
+marks with a minus sign is not a negative ultrareal; it is a rotated
+presentation, comparison, opposition, or bookkeeping direction.
 
 The word *ultra* matters too. Ultrareals are not merely the usual real positive
 numbers renamed. They keep track of something standard arithmetic does not
@@ -176,21 +177,25 @@ positive-definite in the square-form sense.
 
 ## Rotations and Phases of Number Densities
 
-A minus-signed value is different from an opposing ultrareal. It is a rotated
-square-value:
+A minus-signed presentation is different from an opposing ultrareal. It is a
+rotated presentation of a square-value, not an ultrareal value itself:
 
 $$
--U = (iu)^2,
-\qquad
-i^2 = -1.
+\operatorname{Rot}_{\pi}(U)=(iu)^2.
 $$
 
-The sign records a turn. In the complex-analytic toolset of standard calculus,
-developed from Euler's notation, multiplication by $i$ is a quarter-turn of the
-inner state, and squaring returns that turn as a half-turn in the visible value.
-This uses the notation, mathematics, and operational calculus of standard
-complex analysis. Ultrareals extend that calculus because the square-form is the
-same.
+In ordinary complex notation, this rotated presentation is written with the
+minus sign because:
+
+$$
+i^2=\operatorname{Rot}_{\pi}(1).
+$$
+
+That is the description that matters: $-1$ is not a negative ultrareal object.
+It is the symbol for a half-turn of the visible square-value.
+
+The sign records a turn. Multiplication by $i$ is a quarter-turn of the inner
+state, and squaring returns that turn as a half-turn in the visible value.
 
 If a relation is written in Euler form as $e^{i\phi}$, the $i\phi$ records the
 turn of the inner state. The visible coefficient may be the projected descriptor
