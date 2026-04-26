@@ -4,35 +4,36 @@ Pythagoras appears naturally in ultrareal arithmetic.
 
 The relation-aware addition rule is:
 
-```text
-U + V = u^2 + v^2 + 2uv cos(theta)
-```
+$$
+U + V = u^2 + v^2 + 2uv\cos(\theta)
+$$
 
-where `U = u^2` and `V = v^2`. The overloaded `+` reads the parts being added; the angle `theta` is one way to specify their interaction descriptor:
+where $U = u^2$ and $V = v^2$. The overloaded $+$ reads the parts being added;
+the angle $\theta$ is one way to specify their interaction descriptor:
 
-```text
-d(U,V) = cos(theta)
-```
+$$
+d(U,V) = \cos(\theta)
+$$
 
 ## Aligned Addition
 
 When:
 
-```text
-theta = 0
-```
+$$
+\theta = 0
+$$
 
 we have:
 
-```text
-cos(0) = 1
-```
+$$
+\cos(0) = 1
+$$
 
 so:
 
-```text
+$$
 U + V = u^2 + v^2 + 2uv = (u + v)^2
-```
+$$
 
 This is aligned ultrareal addition.
 
@@ -40,67 +41,69 @@ This is aligned ultrareal addition.
 
 When:
 
-```text
-theta = pi/2
-```
+$$
+\theta = \frac{\pi}{2}
+$$
 
 we have:
 
-```text
-cos(pi/2) = 0
-```
+$$
+\cos\left(\frac{\pi}{2}\right) = 0
+$$
 
 so:
 
-```text
+$$
 U + V = u^2 + v^2
-```
+$$
 
 This is the Pythagorean case.
 
 If:
 
-```text
+$$
 c^2 = u^2 + v^2
-```
+$$
 
 then:
 
-```text
-c = sqrt(u^2 + v^2)
-```
+$$
+c = \sqrt{u^2 + v^2}
+$$
 
-So the Pythagorean theorem is standard arithmetic recovered as orthogonal ultrareal addition.
+So the Pythagorean theorem is standard arithmetic recovered as orthogonal
+ultrareal addition.
 
-Standard addition is not the absence of structure. It is the case where the relation term vanishes.
+Standard addition is not the absence of structure. It is the case where the
+relation term vanishes.
 
 ## Opposed Addition
 
 When:
 
-```text
-theta = pi
-```
+$$
+\theta = \pi
+$$
 
 we have:
 
-```text
-cos(pi) = -1
-```
+$$
+\cos(\pi) = -1
+$$
 
 so:
 
-```text
+$$
 U + V = u^2 + v^2 - 2uv = (u - v)^2
-```
+$$
 
 Opposition still produces a positive square-form.
 
-If `u = v`, the result is:
+If $u = v$, the result is:
 
-```text
+$$
 (u - u)^2 = 0
-```
+$$
 
 That is cancellation, not negative magnitude.
 
@@ -110,18 +113,19 @@ The same formula recovers the law of cosines.
 
 For joined inner values:
 
-```text
-|u + v e^{i theta}|^2
-= u^2 + v^2 + 2uv cos(theta)
-```
+$$
+|u + ve^{i\theta}|^2
+= u^2 + v^2 + 2uv\cos(\theta)
+$$
 
 For the opposite side of a triangle, the conventional sign is:
 
-```text
-c^2 = u^2 + v^2 - 2uv cos(C)
-```
+$$
+c^2 = u^2 + v^2 - 2uv\cos(C)
+$$
 
-The difference is orientation convention. The content is the same: the square-value depends on the relation between the inner values.
+The difference is orientation convention. The content is the same: the
+square-value depends on the relation between the inner values.
 
 ## Angle Addition
 
@@ -129,35 +133,38 @@ Euler's rotation rule also recovers the standard angle-addition formulas.
 
 Rotations multiply:
 
-```text
-e^{i alpha} e^{i beta} = e^{i(alpha + beta)}
-```
+$$
+e^{i\alpha}e^{i\beta} = e^{i(\alpha + \beta)}
+$$
 
 Using:
 
-```text
-e^{i theta} = cos(theta) + i sin(theta)
-```
+$$
+e^{i\theta} = \cos(\theta) + i\sin(\theta)
+$$
 
 the left side becomes:
 
-```text
-(cos alpha + i sin alpha)(cos beta + i sin beta)
-```
+$$
+(\cos\alpha + i\sin\alpha)(\cos\beta + i\sin\beta)
+$$
 
 Expanding and collecting real and imaginary parts gives:
 
-```text
-cos(alpha + beta) = cos alpha cos beta - sin alpha sin beta
-```
+$$
+\cos(\alpha + \beta)
+= \cos\alpha\cos\beta - \sin\alpha\sin\beta
+$$
 
 and:
 
-```text
-sin(alpha + beta) = sin alpha cos beta + cos alpha sin beta
-```
+$$
+\sin(\alpha + \beta)
+= \sin\alpha\cos\beta + \cos\alpha\sin\beta
+$$
 
-So trigonometry is also relation arithmetic. It is the arithmetic of how inner values are oriented before the square-value is evaluated.
+So trigonometry is also relation arithmetic. It is the arithmetic of how inner
+values are oriented before the square-value is evaluated.
 
 ## Why This Matters
 
@@ -165,12 +172,15 @@ The Pythagorean theorem is often taught as a special geometric fact.
 
 In ultrareal arithmetic, it becomes one case of a larger addition rule:
 
-```text
-relation term present:     u^2 + v^2 + 2uv cos(theta)
-relation term zero:        u^2 + v^2
-relation term negative:    u^2 + v^2 - 2uv
-```
+$$
+\begin{aligned}
+\text{relation term present:}\quad &u^2 + v^2 + 2uv\cos(\theta),\\
+\text{relation term zero:}\quad &u^2 + v^2,\\
+\text{relation term negative:}\quad &u^2 + v^2 - 2uv.
+\end{aligned}
+$$
 
 So Pythagoras is not outside the new arithmetic.
 
-It is what standard arithmetic looks like when the inner values meet at right angle.
+It is what standard arithmetic looks like when the inner values meet at right
+angle.

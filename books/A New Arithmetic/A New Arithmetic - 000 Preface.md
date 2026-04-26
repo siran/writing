@@ -2,9 +2,9 @@
 
 So the first claim of this book is simple:
 
-```text
-1 + 1 is not necessarily only 2.
-```
+$$
+1 + 1 \text{ is not necessarily only } 2.
+$$
 
 There is also an interaction term.
 
@@ -12,12 +12,11 @@ This book describes ultrareal numbers: numbers that are never negative.
 
 More specifically, an ultrareal number is a positive square-form:
 
-```text
+$$
 U = u^2
-```
+$$
 
-The capital `U` names the visible value. The lower-case
-`u` names the inner value.
+The capital $U$ names the visible value. The lower-case $u$ names the inner value.
 
 ## What is a number?
 
@@ -73,78 +72,84 @@ $$
 12 + (-1) = 11
 $$
 
-The symbol "$-1$", as in "$-1 < 0$", does not map to the
-ultrareals.
+The symbol $-1$, as in $-1 < 0$, does not map to the ultrareals.
 
 Standard arithmetic studies numbers as non-interacting. In that model, addition
 behaves like the mathematical union of sets: the parts are placed together, and
 the relation term is not part of the calculation. Ultrareal arithmetic treats
 that as the special case:
 
-```text
+$$
 d(U,V) = 0
-```
+$$
 
-Once relation is part of the arithmetic data, the operator `+` is overloaded.
+Once relation is part of the arithmetic data, the operator $+$ is overloaded.
 It is defined on the visible ultrareals, their inner values, and their
 interaction descriptor:
 
-```text
-U = u^2
-V = v^2
-U + V = u^2 + v^2 + 2d(U,V)uv
-```
+$$
+U = u^2,\qquad
+V = v^2,\qquad
+U + V = u^2 + v^2 + 2d(U,V)uv.
+$$
 
 with:
 
-```text
--1 <= d(U,V) <= 1
-```
+$$
+-1 \le d(U,V) \le 1
+$$
 
 This descriptor is continuous. It works like alignment in fields: the values
-between `-1` and `1` are partial alignments, not separate kinds of addition.
+between $-1$ and $1$ are partial alignments, not separate kinds of addition.
 
 The important endpoint and midpoint cases are:
 
-```text
-d(U,V) =  1   aligned joining
-d(U,V) =  0   non-interaction
-d(U,V) = -1   opposition
-```
+$$
+\begin{aligned}
+d(U,V) &= 1 &&\text{aligned joining},\\
+d(U,V) &= 0 &&\text{non-interaction},\\
+d(U,V) &=-1 &&\text{opposition}.
+\end{aligned}
+$$
 
 So:
 
-```text
-aligned:        U + V = (u + v)^2
-standard:       U + V = u^2 + v^2
-opposed:        U + V = (u - v)^2
-```
+$$
+\begin{aligned}
+\text{aligned:}\quad &U + V = (u + v)^2,\\
+\text{standard:}\quad &U + V = u^2 + v^2,\\
+\text{opposed:}\quad &U + V = (u - v)^2.
+\end{aligned}
+$$
 
 The aligned case shows the interaction term directly:
 
-```text
+$$
 (u + v)^2 = u^2 + v^2 + 2uv
-```
+$$
 
 In this sense, addition makes the parts whole through interaction.
 
 The same distinction clarifies negative numbers. There are no negative
 ultrareals. A negative value is a rotated square-value:
 
-```text
--U = (iu)^2
-i^2 = -1
-```
+$$
+-U = (iu)^2,
+\qquad
+i^2 = -1.
+$$
 
 The sign records rotation, opposition, cancellation, or comparison. It does not
 name a negative object in the ultrareal layer.
 
 The opening claim can now be stated by cases:
 
-```text
-d(1,1) =  0   gives   1 + 1 = 2
-d(1,1) =  1   gives   1 + 1 = 4
-d(1,1) = -1   gives   1 + 1 = 0
-```
+$$
+\begin{aligned}
+d(1,1) &= 0 &&\text{gives } 1 + 1 = 2,\\
+d(1,1) &= 1 &&\text{gives } 1 + 1 = 4,\\
+d(1,1) &=-1 &&\text{gives } 1 + 1 = 0.
+\end{aligned}
+$$
 
 When the parts interact, the whole includes the interaction term.
