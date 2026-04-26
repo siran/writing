@@ -8,15 +8,22 @@ So the first claim of this book is simple:
 
 There is also an interaction term.
 
+Addition makes the parts whole through interaction.
+
 This book describes a new way of thinking about numbers.
 
 Numbers are usually treated as non-interacting.
 
-That is standard arithmetic's main abstraction, and it is a legitimate object of study. It is the arithmetic of units that do not affect one another.
+That is standard arithmetic's main abstraction, and it is a legitimate object of
+study. It is the arithmetic of units that do not affect one another.
 
-It is not fair to arithmetic to rely on physics examples to make this point. Arithmetic can say it on its own: standard addition studies the special case where the interaction term is zero.
+It is not fair to arithmetic to rely on physics examples to make this point.
+Arithmetic can say it on its own: standard addition studies the special case
+where the interaction term is zero.
 
-Classical arithmetic is not thrown away. It becomes the special case of non-interacting things. A new arithmetic should describe the larger case: units brought into relation.
+Classical arithmetic is not thrown away. It becomes the special case of
+non-interacting things. A new arithmetic should describe the larger case: units
+brought into relation.
 
 When we write "two children in one room," we may only be writing a union:
 
@@ -32,15 +39,24 @@ and then counting the result as:
 two children in a room
 ```
 
-That is useful, but it is not the full arithmetic of the situation. "Two children in one room" is missing the interaction term. The same is true of a rotten apple added to a bag. The count may be correct, while the arithmetic is incomplete.
+That is useful, but it is not the full arithmetic of the situation. "Two
+children in one room" is missing the interaction term. The same is true of a
+rotten apple added to a bag. The count may be correct, while the arithmetic is
+incomplete.
 
 This book is therefore written for anyone who has been through kindergarten.
 
-That is almost everyone. We all inherited a first picture of number. We learned to count objects as if they were separate pieces, and that early picture stayed with us longer than we may notice.
+That is almost everyone. We all inherited a first picture of number. We learned
+to count objects as if they were separate pieces, and that early picture stayed
+with us longer than we may notice.
 
-The book is especially for kindergarten teachers who still return to first principles. They stand close to the moment when number is first introduced. If addition is taught there as nothing but union and counting, the mistake becomes part of the child's first model of reality.
+The book is especially for kindergarten teachers who still return to first
+principles. They stand close to the moment when number is first introduced. If
+addition is taught there as nothing but union and counting, the mistake becomes
+part of the child's first model of reality.
 
-Children do need to count. They need to know how many things are present. But they should not be taught, even accidentally, that count exhausts addition.
+Children do need to count. They need to know how many things are present. But
+they should not be taught, even accidentally, that count exhausts addition.
 
 But addition has usually been mistaken for union:
 
@@ -48,11 +64,14 @@ But addition has usually been mistaken for union:
 this pile joined with that pile
 ```
 
-Union is what it is. It is a real operation. It tells us that this group and that group are being considered together.
+Union is what it is. It is a real operation. It tells us that this group and
+that group are being considered together.
 
 But union is not addition.
 
-Addition is the new condition created when the parts are together. If we replace addition with union, we teach children to count the joined group while ignoring what the joining did.
+Addition is the new condition created when the parts are together. If we replace
+addition with union, we teach children to count the joined group while ignoring
+what the joining did.
 
 Children already know something deeper before we teach them to ignore it:
 
@@ -60,7 +79,9 @@ Children already know something deeper before we teach them to ignore it:
 Things change when they are put together.
 ```
 
-Two blocks can make a tower. One spoonful of sugar added to water does not sit beside the water as a separate object. It changes the water. Children see these facts directly.
+Two blocks can make a tower. One spoonful of sugar added to water does not sit
+beside the water as a separate object. It changes the water. Children see these
+facts directly.
 
 Ordinary arithmetic says:
 
@@ -68,7 +89,8 @@ Ordinary arithmetic says:
 12 + 1 = 13
 ```
 
-That is inventory arithmetic. It tells us how many. It does not tell us what happened.
+That is inventory arithmetic. It tells us how many. It does not tell us what
+happened.
 
 A more honest arithmetic should keep both truths:
 
@@ -77,7 +99,8 @@ count:       how many things are there?
 relation:   what happens when they are together?
 ```
 
-This book does not ask anyone to stop teaching counting. It asks us not to confuse counting with the whole meaning of addition.
+This book does not ask anyone to stop teaching counting. It asks us not to
+confuse counting with the whole meaning of addition.
 
 It also asks us to notice something children can understand immediately:
 
@@ -87,19 +110,30 @@ things that exist are positive
 
 When have we ever seen a negative apple?
 
-We can see one apple. We can see no apple. We can see an apple removed, promised, imagined, or canceled from a list. But we do not meet a negative apple as a negative thing standing in the room.
+We can see one apple. We can see no apple. We can see an apple removed,
+promised, imagined, or canceled from a list. But we do not meet a negative apple
+as a negative thing standing in the room.
 
-Even if someone names a "negative apple," the thing named is still a positive unit of that kind. One negative-apple is one positive negative-apple. The negativity belongs to the kind, role, or direction being named. It is not a negative unit of existence.
+Even if someone names a "negative apple," the thing named is still a positive
+unit of that kind. One negative-apple is one positive negative-apple. The
+negativity belongs to the kind, role, or direction being named. It is not a
+negative unit of existence.
 
-Debt is the same. A debt is not a negative apple. Debt `D` is a positive future claim:
+Debt is the same. A debt is not a negative apple. Debt `D` is a
+positive future claim:
 
 ```text
 D = d^2
 ```
 
-A debt is value assigned to future settlement. It is a positive obligation, a positive record, or a positive relation between people. Bookkeeping may mark one side of that relation with a minus sign, but the debt itself exists as something present and future-directed.
+A debt is value assigned to future settlement. It is a positive obligation, a
+positive record, or a positive relation between people. Bookkeeping may mark one
+side of that relation with a minus sign, but the debt itself exists as something
+present and future-directed.
 
-Negative numbers may be useful signs. They may describe loss, direction, removal, cancellation, or opposition. But nothing real is negative in the ultrareal sense. Negative numbers do not exist as ultrareal values.
+Negative numbers may be useful signs. They may describe loss, direction,
+removal, cancellation, or opposition. But nothing real is negative in the
+ultrareal sense. Negative numbers do not exist as ultrareal values.
 
 So the practical beginning is:
 
@@ -117,13 +151,16 @@ When things are added, ask what they become together.
 
 Only after this habit is clear do we need the formal arithmetic.
 
-For the adult reader, the proposal is that numbers can be reinterpreted as square-forms:
+For the adult reader, the proposal is that numbers can be reinterpreted as
+square-forms:
 
 ```text
 U = u^2
 ```
 
-When `u` is real, the square is positive and ultrareal. When `u` is rotated into the imaginary direction, the square can be negative:
+When `u` is real, the square is positive and ultrareal. When
+`u` is rotated into the imaginary direction, the square can be
+negative:
 
 ```text
 (iu)^2 = -u^2
@@ -131,7 +168,8 @@ When `u` is real, the square is positive and ultrareal. When `u` is rotated into
 
 That negative value is not a negative ultrareal. It is a rotated square-value.
 
-The `i` marks the rotation. The positive value is not disappearing; it is returning through the inner square-form from another direction.
+The `i` marks the rotation. The positive value is not disappearing;
+it is returning through the inner square-form from another direction.
 
 The visible number is `U`. The inner value is `u`.
 
@@ -153,12 +191,14 @@ Expanding the joined value reveals the term ordinary inventory leaves out:
 (u + v)^2 = u^2 + v^2 + 2uv
 ```
 
-The term `2uv` is the interaction term. It is the mathematical sign that two values have been placed into one situation.
+The term `2uv` is the interaction term. It is the mathematical sign
+that two values have been placed into one situation.
 
 This is the seed of a new arithmetic. But its teaching form is simpler:
 
 ```text
 Numbers interact.
+Addition makes the parts whole through interaction.
 They are not separate realities.
 Addition is not union.
 Union is union.

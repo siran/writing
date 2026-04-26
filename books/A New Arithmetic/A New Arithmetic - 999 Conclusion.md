@@ -8,6 +8,8 @@ The first claim of this book was simple:
 
 There is also an interaction term.
 
+Addition makes the parts whole through interaction.
+
 Standard arithmetic remains useful. It is the arithmetic of non-interacting units, the case where the relation coefficient is zero:
 
 ```text
@@ -37,9 +39,9 @@ The book therefore ends where it began:
 
 ```text
 Numbers interact.
+Addition makes the parts whole through interaction.
 Addition is not union.
 Standard arithmetic is the non-interaction case.
 ```
 
 To remember this is to see number less as a pile of separate marks and more as a language of relation.
-
