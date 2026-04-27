@@ -3,318 +3,152 @@
 An ultrareal number is a positive square-form:
 
 $$
-U = u^2
+U=u^2,\qquad u\ge0.
 $$
 
-The number is $U$. The inner magnitude is $u\ge0$. The
-full inner state is $ue^{i\phi}$. The unrotated case has $\phi=0$,
-so $ue^{i0}=u$.
+The number is $U$. Its inner magnitude, or natural inner state, is $u$.
 
-More generally, a capital $N$ names a number:
+The ultrareal domain is:
 
 $$
-N = n^2
+\mathbb U=\{u^2\mid u\in\mathbb R_{\ge0}\}=[0,\infty).
 $$
 
-In ordinary use, numbers are densities. They are visible values instantiated in
-what we handle: things counted, amounts measured, values assigned, distances
-crossed, times waited, balances owed or received. The square-form says that the
-handled number is the visible density; the lower-case symbol names the inner
-magnitude behind that density.
+The map from inner magnitude to visible value is:
 
-This is not a trick of notation. Every positive number can be seen as a square,
-and this way of seeing separates two layers:
+$$
+q:\mathbb R_{\ge0}\to\mathbb U,\qquad q(u)=u^2.
+$$
+
+Because the inner magnitude is constrained by $u\ge0$, this representation is
+unique. For every $U\in\mathbb U$ there is exactly one natural inner state:
+
+$$
+u=\sqrt U.
+$$
+
+## Value And Inner Magnitude
+
+The notation separates two roles:
 
 $$
 \begin{aligned}
 \text{visible value:}\quad &U,\\
-\text{inner magnitude:}\quad &u,\\
-\text{inner state:}\quad &ue^{i\phi}.
+\text{inner magnitude:}\quad &u.
 \end{aligned}
 $$
 
-The basic ultrareal domain is the set of visible square-values:
+The visible value is the square-value handled by arithmetic. The inner magnitude
+is the root through which relation terms are formed.
+
+This separation is the structural move of the book. Ordinary arithmetic normally
+works directly with visible values. Ultrareal arithmetic keeps the inner
+magnitude available, so a joined value can include terms that depend on how the
+parts meet.
+
+## Positivity
+
+Every ultrareal is nonnegative:
 
 $$
-UR = \{u^2 \mid u\in\mathbb R_{\ge0}\}=[0,\infty).
+U=u^2\ge0.
 $$
 
-Here $u$ is the inner magnitude. It is not a negative quantity. The
-phase is always present:
+Its modulus is the value itself:
 
 $$
-ue^{i\phi}.
-$$
-
-When there is no turn, $\phi=0$. When orientation, opposition, or return
-has to be represented, $\phi$ changes. The magnitude remains
-$u\ge0$.
-
-So ultrareals are positive square-forms: nonnegative, and positive except at
-zero. They are numbers as values or magnitudes. They are not absences or
-removals. Opposition is a relation between positive ultrareals, carried by
-orientation in the inner layer.
-
-For every ultrareal, the modulus is the value itself:
-
-$$
-|U| = U = u^2 \ge 0.
+|U|=U.
 $$
 
 It vanishes only at zero:
 
 $$
-|U|=0 \quad\Longleftrightarrow\quad U=0.
+|U|=0\quad\Longleftrightarrow\quad U=0.
 $$
 
-This is the precise square-form sense in which the ultrareal layer is positive
-definite.
+In this square-form sense, the ultrareal layer is positive definite: no member
+of $\mathbb U$ is below zero, and only zero has zero modulus.
 
-This matches ordinary experience. Existing things appear as positive values. We
-meet an apple, not a negative apple. We meet a block, not a negative block. When
-an apple is taken from a dozen, that apple does not vanish into numerical
-oblivion. If the dozen becomes eleven, one apple has been re-turned somewhere:
-eaten, stored, owed, moved, or counted from another side of the relation. In
-this sense, turning and rotation let arithmetic represent real changes without
-pretending that existing things disappear into negative existence.
+## Equality
 
-Debt should not be placed in a minus layer. Debt $D$ is a positive
-future claim:
+Two ultrareals are equal exactly when their visible square-forms are equal:
 
 $$
-D = d^2
+U=V
+\quad\Longleftrightarrow\quad
+u^2=v^2.
 $$
 
-Debt is value assigned to future settlement. It exists positively as an
-obligation, claim, record, or relation. Only a bookkeeping view assigns a minus
-sign to one side of that positive relation.
-
-If a language names a "negative-apple," then the named thing is still positive
-as a unit: one negative-apple is one positive unit of the kind negative-apple. A
-thing can be called "negative" by role, direction, opposition, debt, or
-bookkeeping side, but existence itself remains positive.
-
-The sign belongs to the label, role, direction, or relation. It does not make
-the existing unit negative.
-
-**There are no negative ultrareals.**
-
-This does not mean a square-value can never carry a minus sign in ordinary
-notation. It means that such notation describes a rotated presentation, not an
-ultrareal value produced by a negative inner magnitude.
-
-The proof is direct. Let $U$ be a nonzero ultrareal:
+Since $u,v\ge0$, this is equivalent to equality of their natural inner states:
 
 $$
-U=u^2,\qquad u\in\mathbb R_{\ge0},\qquad U>0.
+U=V
+\quad\Longleftrightarrow\quad
+u=v.
 $$
 
-For any allowed inner magnitude $r\in\mathbb R_{\ge0}$, the square is
-nonnegative:
+## Zero
+
+Zero is the ultrareal whose inner magnitude is zero:
+
+$$
+0=0^2.
+$$
+
+It is the additive identity for ordinary visible addition and for every
+relation-aware joining, because any relation term containing its inner magnitude
+vanishes.
+
+## No Negative Ultrareals
+
+There are no negative ultrareals.
+
+Let $U$ be a nonzero ultrareal:
+
+$$
+U=u^2,\qquad u>0.
+$$
+
+For every allowed inner magnitude $r\in\mathbb R_{\ge0}$,
 
 $$
 r^2\ge0.
 $$
 
-Therefore no allowed inner magnitude can produce the minus-signed visible value
-of a positive ultrareal. If such an $r$ existed, then:
-
-$$
-r^2=-U.
-$$
-
-But the left side is nonnegative and the right side is below zero in ordinary
-signed notation. So a minus-signed visible value is not produced by an allowed
-inner magnitude.
-
-To obtain the ordinary minus-signed presentation of $U$, the inner
-state must take a quarter-turn:
-
-$$
-i=e^{i\pi/2}.
-$$
-
-Then:
-
-$$
-(iu)^2=(e^{i\pi/2}u)^2=e^{i\pi}u^2.
-$$
-
-The factor $e^{i\pi}$ is the unit half-turn. Ordinary notation writes that
-half-turn with the minus sign. The sign is therefore the description of a
-rotation, not the discovery of a negative ultrareal.
+Therefore no allowed inner magnitude can produce $-U$, because $-U<0$ in
+ordinary signed notation. The symbol $-U$ may still be useful as ordinary
+notation, but it is not a member of $\mathbb U$.
 
 The conclusion is:
 
 $$
-u\in\mathbb R_{\ge0} \Longrightarrow u^2\in UR,
-\qquad
-ue^{i0}=u,
-\qquad
-ue^{i\phi} \text{ carries phase, not negative magnitude.}
+\mathbb U=[0,\infty),\qquad
+\mathbb U\cap(-\infty,0)=\varnothing.
 $$
 
-Thus $(iu)^2$ is not a basic ultrareal value. It is a square-value
-returned through a non-real turn in the inner layer and then described with the
-ordinary minus sign.
+Signs belong to presentation, comparison, direction, cancellation, or relation.
+They do not name negative ultrareal values.
 
-The claim is not that old algebra cannot manipulate minus signs. The claim is
-that the ultrareal layer has no negative magnitude. Minus signs mark rotation,
-opposition, removal, cancellation, or comparison in the layer beneath positive
-value.
+## Oriented Presentations
 
-## Self-Return and Magnitude
+A lone ultrareal does not require orientation. Its natural inner state is $u$.
 
-The full inner state is:
+In problems where orientation matters, one may introduce an oriented inner
+presentation:
 
 $$
-z=ue^{i\phi}.
+z=ue^{i\alpha}.
 $$
 
-The raw square of this state is:
+This is not a new ultrareal value. It is a presentation of the same inner
+magnitude with an added orientation parameter. The ultrareal value recovered
+from this presentation is:
 
 $$
-z^2=(ue^{i\phi})^2=u^2e^{i2\phi}.
-$$
-
-So the raw square is not generally the ultrareal value $u^2$. It is a rotated
-square-presentation:
-
-$$
-u^2e^{i2\phi}=u^2(\cos 2\phi+i\sin 2\phi).
-$$
-
-The positive ultrareal value is obtained by pairing the state with its return:
-
-$$
-U=z\bar z.
-$$
-
-Since:
-
-$$
-\bar z=ue^{-i\phi},
-$$
-
-we have:
-
-$$
-\begin{aligned}
 z\bar z
-&=(ue^{i\phi})(ue^{-i\phi})\\
-&=u^2e^{i\phi-i\phi}\\
-&=u^2.
-\end{aligned}
+=(ue^{i\alpha})(ue^{-i\alpha})
+=u^2.
 $$
 
-Back-expanded through Euler's form, the same calculation is:
-
-$$
-\begin{aligned}
-z\bar z
-&=u^2(\cos\phi+i\sin\phi)(\cos\phi-i\sin\phi)\\
-&=u^2(\cos^2\phi+\sin^2\phi)\\
-&=u^2.
-\end{aligned}
-$$
-
-This back-expansion shows the geometry. The inner state is being seen through
-two perpendicular aspects:
-
-$$
-z=u\cos\phi+iu\sin\phi.
-$$
-
-The return is:
-
-$$
-\bar z=u\cos\phi-iu\sin\phi.
-$$
-
-Multiplying them confronts the two aspects with their return:
-
-$$
-\begin{aligned}
-z\bar z
-&=(u\cos\phi+iu\sin\phi)(u\cos\phi-iu\sin\phi)\\
-&=u^2\cos^2\phi
--iu^2\cos\phi\sin\phi
-+iu^2\sin\phi\cos\phi
-+u^2\sin^2\phi.
-\end{aligned}
-$$
-
-The crossed perpendicular terms cancel:
-
-$$
--iu^2\cos\phi\sin\phi
-+iu^2\sin\phi\cos\phi
-=0.
-$$
-
-What remains is:
-
-$$
-u^2\cos^2\phi+u^2\sin^2\phi=u^2.
-$$
-
-This is like seeing the same number from orthogonal aspects, front and side.
-The number is not a frozen ideal mark outside orientation. It can be turned in
-its inner state:
-
-$$
-z(\phi)=ue^{i\phi}.
-$$
-
-The front view is:
-
-$$
-z(0)=ue^{i0}=u.
-$$
-
-The back view is:
-
-$$
-z(\pi)=ue^{i\pi}.
-$$
-
-These are different presentations of the inner state, but their self-returned
-ultrareal value is the same:
-
-$$
-z(0)\overline{z(0)}=z(\pi)\overline{z(\pi)}=u^2.
-$$
-
-So the back is not a negative existence of the front. It is the same magnitude
-seen after a half-turn. In this sense, an ultrareal is symmetric in itself: its
-front and back views return the same positive value.
-
-The conjugate is therefore not an arbitrary mathematical trick. It is the
-inverse turn: the state meeting its own return. The result behaves like a
-standing-wave-like magnitude. A phase and its reverse do not travel away from
-one another in the value; they close into a stationary positive density.
-
-This does not mean numbers are literally physical waves. It means the
-ultrareal value is a self-returning magnitude, while phase remains available for
-relation.
-
-When two states are joined, phase no longer cancels as self-phase. Let:
-
-$$
-z_1=ue^{i\phi_1},\qquad z_2=ve^{i\phi_2}.
-$$
-
-Then:
-
-$$
-\begin{aligned}
-|z_1+z_2|^2
-&=(z_1+z_2)(\bar z_1+\bar z_2)\\
-&=u^2+v^2\\
-&\quad+uv\left(e^{i(\phi_1-\phi_2)}+e^{-i(\phi_1-\phi_2)}\right)\\
-&=u^2+v^2+2uv\cos(\phi_1-\phi_2).
-\end{aligned}
-$$
-
-Self-phase cancels in a single ultrareal. Relative phase remains between
-ultrareals, and that remaining relation is the interaction term.
+Thus self-orientation cancels in a single ultrareal. Relative orientation
+matters only when two or more inner states are joined.

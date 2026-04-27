@@ -1,212 +1,95 @@
-# Preface: Ultrareal Numbers
+# Preface: A New Arithmetic
 
-So the first claim of this book is simple:
+The first claim of this book is simple:
 
 $$
 1 + 1 \text{ is not necessarily only } 2.
 $$
 
-There is also an interaction term.
+There may also be a relation term.
 
-Far from claiming a finished new mathematics, this book claims a new way of
-seeing numbers, and therefore a new arithmetic. Here we describe what we call
-*ultrareal numbers*: numbers that are never negative.
+Ordinary arithmetic is not wrong. It is a recovered case: the arithmetic of
+quantities treated as non-interacting parts. This book describes a broader
+arithmetic in which a number is first a positive square-form, and addition may
+also carry the relation between the parts being joined.
 
-More specifically, an ultrareal number $U$ has an inner magnitude $u\ge0$ and
-a phase $\phi$. Its full inner state is $ue^{i\phi}$. The unrotated case has
-$\phi=0$, so the visible value is written
-
-$$
-U = u^2
-$$
-
-An ultrareal number can then be more formally thought of as a positive
-square-form.
-
-The capital $U$ names the "visible value" or "observable value", while the
-lower-case $u$ names the inner magnitude.
-
-The full inner state is more than a magnitude because $ue^{i\phi}$ can carry
-orientation, phase, opposition, or other relation data before the visible value
-is evaluated.
-
-
-## What is a number?
-
-A number is not a concrete thing. It took humans a long time to abstract the
-concept. Some languages still show that the abstraction is constructed rather
-than automatic. The Piraha of the Brazilian Amazon have been described as using
-*hoi* with falling tone, *hoi* with rising tone, and *aibaagi* or *baagi* for
-roughly "one," "two," and "many," though later work argues these are relative
-quantity words rather than exact numerals. The Munduruku, also in the Brazilian
-Amazon, give another example: published numeral lists give *peng* for "one,"
-*shepshep* for "two," and *ebapeng* for "three," while experimental work reports
-that larger quantities move toward approximate expressions such as "some, not
-many" and "many." Concepts such as color also evolved constructively through
-language. Here the concern is numbers and what they are under this new
-arithmetic.
-
-Being not something concrete, a number can be understood as a numerical
-*density* that when projected onto whatever we are referencing, the density
-becomes realized in an instance.
-
-The analogy comes straight from physics and the concept of electromagnetic
-energy. In physics, when describing waves, energy is proportional to the square
-of the amplitude. In ultrareal language, energy is the outer value, and
-amplitude is the inner state:
+The numbers described here are called *ultrareal numbers*. An ultrareal number
+is written:
 
 $$
-E = a^2
+U = u^2,\qquad u\ge 0.
 $$
 
-When adding two waves, the amplitudes add first, as inner states in the
-ultrareals. Two waves of amplitudes $a_1$ and $a_2$ have
-energy:
+The capital letter names the visible value. The lower-case letter names the
+inner magnitude, or natural inner state. The ultrareal domain is:
 
 $$
-E=(a_1+a_2)^2
+\mathbb U=\{u^2\mid u\in\mathbb R_{\ge0}\}=[0,\infty).
 $$
 
-This is the physical motivation for ultrareals. Energy-like quantities are
-positive densities. If opposition is carried by phase, turn, or relation, then
-the magnitude itself can remain in the positive real subset.
+The point is not that ordinary positive real numbers have been renamed. The
+point is that the square-form separates visible value from inner magnitude. Once
+that distinction is explicit, addition can ask a more precise question: are the
+parts merely counted together, or do they meet through a relation?
 
-In this sense, numbers as we know them are densities. They are visible positive
-values carried by actual instances. In ultrareal notation, a number appears as:
-
-$$
-N = n^2
-$$
-
-The capital $N$ is the visible number, or observable: the
-instantiation of the idea of a number into something concrete. The lower-case
-$n$ is its inner state.
-
-The word *real* matters: ultrareals are only positive. A thing can be called
-"negative" by role, direction, debt, opposition, comparison, or bookkeeping
-side. The existing thing remains positive. What standard arithmetic marks with
-a minus sign is not a negative ultrareal; it is relation data or an ordinary
-sign convention placed on a positive value.
-
-The word *ultra* matters too. Ultrareals are not merely the usual real positive
-numbers renamed. They keep track of something standard arithmetic does not
-represent: the relation between numbers being added. So they are *more than*
-real, hence *ultra*.
-
-Also, *ultra* points beyond the usual negative extension of the number line. In
-reality there are no negative things. There is no such thing as a negative apple
-that gets added to a dozen after you eat one:
+For two ultrareals,
 
 $$
-12 + (-1) = 11
+U=u^2,\qquad V=v^2,
 $$
 
-The symbol $-1$, as in $-1 < 0$, does not map to the
-ultrareals.
-
-Standard arithmetic studies numbers as non-interacting. In that model, addition
-behaves like the mathematical union of sets: the parts are placed together, and
-the relation term is not part of the calculation. To describe the interaction
-between numbers, introduce a descriptor $d(\cdot,\cdot)$ so that $d(U,V)=0$
-recovers the usual non-interacting arithmetic,
+the relation-aware sum is:
 
 $$
-d(U,V) = 0
+U\oplus_d V := u^2+v^2+2duv.
 $$
 
-Once relation is part of the arithmetic data, the operator $+$ is
-overloaded. It is defined on the visible ultrareals, their inner states, and
-their interaction descriptor:
+The descriptor $d$ records the relation used in that joining. When $d=0$, the
+interaction term vanishes and ordinary addition is recovered:
 
 $$
-U = u^2,\qquad
-V = v^2,\qquad
-U + V = u^2 + v^2 + 2d(U,V)uv.
+U\oplus_0 V=u^2+v^2.
 $$
 
-When $d(U,V)=1$, this is just the binomial square identity:
+When $d=1$, the parts are aligned:
 
 $$
-(u+v)^2 = u^2+v^2+2uv.
+U\oplus_1 V=(u+v)^2.
 $$
 
-The novelty is not the algebraic identity. The novelty is making explicit that
-a handled number can be written as $N=n^2$, so the cross term becomes available
-as relation data instead of being hidden by ordinary inventory arithmetic.
-
-For ordinary angular alignment, the descriptor satisfies:
+When $d=-1$, the parts are opposed:
 
 $$
--1 \le d(U,V) \le 1
+U\oplus_{-1}V=(u-v)^2.
 $$
 
-The descriptor is not a negative ultrareal. It is relation data. It can express
-a degree of alignment, a degree of opposition, or another relation between the
-inner states. At the endpoints, $d(U,V)=1$ means aligned and $d(U,V)=-1$ means
-rotated into opposition. The descriptor can also encode hyperbolic, tangential,
-weighted, or otherwise non-angular relations when those are the relations at
-work.
+Thus the novelty is not the binomial identity. The novelty is the placement of
+that identity inside arithmetic: the cross term is treated as relation data, not
+as an accidental expansion.
 
-For vector-like or phase-like quantities, it is often useful to write an angular
-representation:
+For angular or phase-like quantities, the descriptor is often written:
 
 $$
-d(U,V)=\cos\phi.
+d=\cos\Delta,
 $$
 
-The angle form is useful when the quantities carry orientation. It is not a
-requirement on ultrareal quantities.
+where $\Delta$ is the relative difference between two oriented inner
+presentations. The angle is not part of the definition of a lone ultrareal. A
+single ultrareal has natural inner state $u$. Orientation is introduced only
+when the problem being modeled requires it.
 
-In this sense, addition in the ultrareals makes the parts whole through
-interaction.
+This distinction matters for signs. There are no negative ultrareals. A minus
+sign may record direction, opposition, removal, comparison, bookkeeping, or a
+rotated presentation. It does not create a negative member of $\mathbb U$.
+Inside the ultrareal layer, value remains positive, and zero is the boundary.
 
-## No Negative Ultrareals
+The physical analogy is energy. Energy-like quantities are positive
+square-values. Their amplitudes may align, oppose, or carry phase, but the
+measured density remains nonnegative. Ultrareal arithmetic abstracts that
+pattern: keep value positive, keep relation explicit, and recover ordinary
+arithmetic when relation is zero.
 
-**There are no negative ultrareals.** There are opposing positive ultrareals:
-two positive square-forms can meet through aligned or opposed inner states.
-Opposition belongs to relation, orientation, or joining; it does not make the
-positive square-form negative.
-
-For a single ultrareal, the precise modulus statement is that it is
-nonnegative, and positive except at zero:
-
-$$
-|U|=U=u^2\ge0,
-\qquad
-|U|=0 \Longleftrightarrow U=0.
-$$
-
-Because the form is a square, it is also natural to call the ultrareal layer
-positive-definite in the square-form sense.
-
-## Rotations and Phases of Number Densities
-
-A minus-signed presentation is different from an opposing ultrareal. It is a
-half-turned presentation of a square-value, not an ultrareal value itself.
-
-$$
-i=e^{i\pi/2},\qquad i^2=e^{i\pi}.
-$$
-
-The symbol $i$ marks a quarter-turn of the inner state. Squaring doubles that
-turn into the half-turn of the visible square-value:
-
-$$
-(iu)^2=(i^2)u^2=e^{i\pi}u^2.
-$$
-
-Ordinary notation writes that half-turn with the minus sign. That description
-matters: $-1$ is not a negative ultrareal object. It is the ordinary symbol for
-the half-turn of the unit value.
-
-The sign records a turn. Multiplication by $i$ is a quarter-turn of the inner
-state, and squaring returns that turn as a half-turn in the visible value.
-
-If a relation is written in Euler form as $e^{i\phi}$, the $i\phi$ records the
-turn of the inner state. The visible coefficient may be the projected descriptor
-$d(U,V)=\cos\phi$, but the ultrareal magnitude remains positive.
-
-The sign does not name an object in the ultrareal layer, nor remove the value
-from numerical existence.
-
-When the parts interact, the whole includes the interaction term.
+The book proceeds in that order. First it defines ultrareal numbers. Then it
+defines relation-aware addition. Then it states the admissibility condition that
+keeps joined values inside $\mathbb U$. Only after that does it introduce
+angular difference, Euler notation, opposition, and signs.

@@ -1,65 +1,59 @@
 # Conclusion
 
-The first claim of this book was simple:
+The book began with the claim:
 
 $$
-1 + 1 \text{ is not necessarily only } 2.
+1+1 \text{ is not necessarily only } 2.
 $$
 
-There is also an interaction term.
-
-Addition makes the parts whole through interaction.
-
-Standard arithmetic remains useful. It is the arithmetic of non-interacting
-units, the case where the interaction descriptor is zero:
+That claim now has a formal meaning. If two unit ultrareals are joined with
+zero relation, ordinary arithmetic is recovered:
 
 $$
-d(U,V) = 0
+1\oplus_0 1=2.
 $$
 
-But if numbers are understood as density-values instantiated as positive
-square-forms,
+If they are joined in full alignment, the result is:
 
 $$
-N = n^2
+1\oplus_1 1=4.
 $$
 
-then addition can no longer be treated as mere union. The inner states may
-align, oppose, cancel, or meet through another relation structure. Each case has
-its own arithmetic.
+The difference is not a contradiction. It is a difference of operation.
 
-The general lesson is:
+An ultrareal number is a positive square-form:
 
-> count the parts
-> notice the relation
+$$
+U=u^2,\qquad u\ge0,\qquad U\in\mathbb U.
+$$
 
-This is not only a lesson for children. It is a correction for anyone who
-learned to treat number only as non-interacting units sitting beside one
-another.
+Relation-aware addition is:
 
-Ultrareals make the correction explicit. They keep positive value positive, keep
-minus-signed magnitudes outside the real layer, and let rotation or opposition
-explain what ordinary signs were trying to say.
+$$
+U\oplus_dV=u^2+v^2+2duv.
+$$
 
-This is why ultrareals fit energy so naturally. Energy-like quantities are
-positive densities. Their modulus is nonnegative, and positive except at zero;
-what varies is not a hidden deficit, but the relation between positive
-quantities. In phase-like cases, the relation can be carried by $\phi$, or
-analytically by $e^{i\phi}$, while the ultrareal magnitude remains inside the
-positive part of the reals. But the angle is only one useful representation of
-relation, not a requirement on every ultrareal quantity; descriptors may also
-encode hyperbolic, tangential, weighted, or otherwise non-angular relations.
+Ordinary arithmetic is the recovered non-interaction case $d=0$. Aligned
+addition is the case $d=1$. Opposition is the case $d=-1$ in the bounded scale.
 
-The program is therefore conservative in one sense and radical in another: keep
-the physics of energy in positive real magnitudes, and move opposition into
-orientation, turn, and relation.
+Angular relation is one way to supply the descriptor:
 
-The book therefore ends where it began:
+$$
+d=\cos\Delta.
+$$
 
-> numbers interact.
-> Addition makes the parts whole through interaction.
-> Addition is not union.
-> Standard arithmetic is the non-interaction case.
+Here $\Delta$ is relative difference, not an intrinsic phase required by every
+ultrareal. A lone ultrareal has natural inner state $u$. Orientation enters only
+when the situation calls for oriented presentation or relation between parts.
 
-To remember this is to see number less as a pile of separate marks and more as a
-language of relation.
+There are no negative ultrareals. Minus signs can record presentation,
+direction, bookkeeping, comparison, cancellation, or relation. The ultrareal
+layer itself remains positive, with zero as its boundary:
+
+$$
+\mathbb U=[0,\infty).
+$$
+
+The program is conservative in its algebra and radical in its organization:
+keep positive value positive, keep relation explicit, and recover standard
+arithmetic as the case where the relation term vanishes.
