@@ -12,8 +12,9 @@ Far from claiming a finished new mathematics, this book claims a new way of
 seeing numbers, and therefore a new arithmetic. Here we describe what we call
 *ultrareal numbers*: numbers that are never negative.
 
-More specifically, an ultrareal number $U$ has an "inner state"
-$u$ whose visible value is written
+More specifically, an ultrareal number $U$ has an inner magnitude $u\ge0$ and
+a phase $\phi$. Its full inner state is $ue^{i\phi}$. The unrotated case has
+$\phi=0$, so the visible value is written
 
 $$
 U = u^2
@@ -22,11 +23,12 @@ $$
 An ultrareal number can then be more formally thought of as a positive
 square-form.
 
-The capital $U$ names the "visible value" or "observable value",
-while the lower-case $u$ names the "inner state".
+The capital $U$ names the "visible value" or "observable value", while the
+lower-case $u$ names the inner magnitude.
 
-It is a state rather than merely a value because it can carry orientation,
-phase, opposition, or other relation data before the visible value is evaluated.
+The full inner state is more than a magnitude because $ue^{i\phi}$ can carry
+orientation, phase, opposition, or other relation data before the visible value
+is evaluated.
 
 
 ## What is a number?

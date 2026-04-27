@@ -6,20 +6,21 @@ $$
 U = u^2
 $$
 
-with $u\ge0$. The full inner state can carry orientation as $ue^{i\phi}$.
+with $u\ge0$. The full inner state is $ue^{i\phi}$. The unrotated case has
+$\phi=0$, so $ue^{i0}=u$.
 
 To rotate is to turn. To return is to re-turn: the value comes back through a
 turn in the inner layer. The standard mathematical language for this is the
 complex-analytic toolset built from Euler's notation. Ultrareals extend that
 language because the square-form already makes inner orientation operational.
 
-The simplest orientation is phase:
+Orientation is phase:
 
 $$
-u,\qquad ue^{i\phi}
+ue^{i\phi}
 $$
 
-The magnitude $u$ is nonnegative. The phase carries the turn. A full half-turn
+The magnitude $u$ is nonnegative. The phase carries the turn. A phase half-turn
 is written:
 
 $$

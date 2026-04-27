@@ -6,8 +6,8 @@ $$
 U = u^2
 $$
 
-The number is $U$. The inner magnitude is $u$. When orientation is relevant,
-the full inner state may be written as $ue^{i\phi}$.
+The number is $U$. The inner magnitude is $u\ge0$. The full inner state is
+$ue^{i\phi}$. The unrotated case has $\phi=0$, so $ue^{i0}=u$.
 
 More generally, a capital $N$ names a number:
 
@@ -27,7 +27,8 @@ and this way of seeing separates two layers:
 $$
 \begin{aligned}
 \text{visible value:}\quad &U,\\
-\text{inner magnitude:}\quad &u.
+\text{inner magnitude:}\quad &u,\\
+\text{inner state:}\quad &ue^{i\phi}.
 \end{aligned}
 $$
 
@@ -37,14 +38,15 @@ $$
 UR = \{u^2 \mid u\in\mathbb R_{\ge0}\}=[0,\infty).
 $$
 
-Here $u$ is the inner magnitude. It is not a negative quantity. If orientation,
-opposition, or return has to be represented, it is carried by a phase:
+Here $u$ is the inner magnitude. It is not a negative quantity. The phase is
+always present:
 
 $$
-u \longmapsto ue^{i\phi}.
+ue^{i\phi}.
 $$
 
-The magnitude remains $u\ge0$. The phase carries the turn.
+When there is no turn, $\phi=0$. When orientation, opposition, or return has to
+be represented, $\phi$ changes. The magnitude remains $u\ge0$.
 
 So ultrareals are positive square-forms: nonnegative, and positive except at
 zero. They are numbers as values or magnitudes. They are not absences or
@@ -123,8 +125,8 @@ But the left side is nonnegative and the right side is below zero in ordinary
 signed notation. So a minus-signed visible value is not produced by an allowed
 inner magnitude.
 
-To obtain the ordinary minus-signed presentation of $U$, the inner magnitude
-must be supplied with a phase turn:
+To obtain the ordinary minus-signed presentation of $U$, the inner state must
+take a quarter-turn:
 
 $$
 i=e^{i\pi/2}.
@@ -145,7 +147,9 @@ The conclusion is:
 $$
 u\in\mathbb R_{\ge0} \Longrightarrow u^2\in UR,
 \qquad
-ue^{i\phi} \text{ carries phase rather than negative magnitude.}
+ue^{i0}=u,
+\qquad
+ue^{i\phi} \text{ carries phase, not negative magnitude.}
 $$
 
 Thus $(iu)^2$ is not a basic ultrareal value. It is a square-value returned

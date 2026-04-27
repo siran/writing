@@ -12,9 +12,10 @@ $$
 UR = \{u^2 \mid u\in\mathbb R_{\ge0}\}=[0,\infty).
 $$
 
-The value $U$ is nonnegative, and the inner magnitude $u$ is nonnegative. If the
-quantity carries orientation, opposition, or return, that information is carried
-by a phase $e^{i\phi}$ rather than by a negative inner magnitude.
+The value $U$ is nonnegative, and the inner magnitude $u$ is nonnegative. The
+full inner state is $ue^{i\phi}$. The unrotated case has $\phi=0$. Orientation,
+opposition, and return are carried by changing $\phi$, not by introducing a
+negative inner magnitude.
 
 The mathematics touched here is already familiar. For the full theory of
 squares, norms, inner products, quadratic forms, matrices, and the law of
