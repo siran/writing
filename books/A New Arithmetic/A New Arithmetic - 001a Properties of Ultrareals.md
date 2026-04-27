@@ -131,8 +131,9 @@ $$
 -1 \le d(U,V) \le 1
 $$
 
-So relation-aware addition includes partial alignment, not only the three named
-cases of alignment, orthogonality, and opposition.
+So relation-aware addition includes every degree of partial relation inside the
+chosen scale. The special recovered case is non-interaction, where the
+descriptor is zero and the relation term vanishes.
 
 The descriptor need not come from an angle. It encodes whatever relation data
 the quantities require: alignment, opposition, hyperbolic relation, tangential
@@ -388,7 +389,8 @@ relation that makes the joined density negative is not an ultrareal sum.
 
 ## Immediate Identities and Novelties
 
-The identities are familiar, but their placement is different.
+The identities are familiar, but their placement is different. The important
+recovered special case is non-interaction.
 
 Standard arithmetic is recovered as the identity relation matrix:
 
@@ -396,7 +398,8 @@ $$
 D=I.
 $$
 
-Pythagorean addition is recovered as orthogonal relation:
+What geometry calls Pythagorean addition is the same zero-relation condition
+when the descriptor is angular:
 
 $$
 d_{ij}=0.

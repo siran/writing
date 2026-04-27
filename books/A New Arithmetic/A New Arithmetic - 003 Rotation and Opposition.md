@@ -45,7 +45,7 @@ $$
 The minus sign appears in the relation term. It does not create a negative
 ultrareal.
 
-The special case of perfect opposition is cancellation:
+The exact cancellation example is:
 
 $$
 u^2 + (-u)^2 := (u - u)^2 = 0

@@ -84,45 +84,69 @@ make the existing unit negative.
 
 This does not mean a square-value can never carry a minus sign in ordinary
 notation. It means that such notation describes a rotated presentation, not an
-ultrareal value produced by a real inner state:
+ultrareal value produced by a real negatively valued inner state.
+
+The proof is direct. Let $U$ be a nonzero ultrareal:
 
 $$
-i=e^{i\pi/2},\qquad (iu)^2=(i^2)u^2=e^{i\pi}u^2.
+U=u^2,\qquad u\in\mathbb R,\qquad U>0.
 $$
 
-Ordinary notation writes this half-turn with the minus sign. The minus sign is
-the description of the rotation; it is not the discovery of a negative
-ultrareal.
+For any real inner state $r$, the square is nonnegative:
 
-Changing the sign of the inner state does not create a negative ultrareal:
+$$
+r^2\ge0.
+$$
+
+Therefore no real inner state can produce the minus-signed visible value of a
+positive ultrareal. If such an $r$ existed, then:
+
+$$
+r^2=-U.
+$$
+
+But the left side is nonnegative and the right side is below zero in ordinary
+signed notation. So a minus-signed visible value is not produced by a real inner
+state.
+
+A real negative inner state does something different. It changes the sign of
+the inner representative, but not the ultrareal value:
 
 $$
 (-u)^2 = u^2
 $$
 
-So $u$ and $-u$ expose the same positive value. This matters because opposing
-positive ultrareals can exist through the inner layer without becoming negative
-magnitudes.
+So $u$ and $-u$ expose the same positive ultrareal. A real negative inner state
+does not make a negative value.
 
-The first distinction is therefore:
-
-$$
-\begin{aligned}
-\text{positive ultrareal:}\quad &u^2,\\
-\text{inner opposition:}\quad &u \text{ and } -u,\\
-\text{rotated presentation:}\quad &(iu)^2=(i^2)u^2.
-\end{aligned}
-$$
-
-A minus-signed real value is therefore a rotated presentation of a positive
-square-value:
+To obtain the ordinary minus-signed presentation of $U$, the inner state must
+leave the real inner line and take a quarter-turn:
 
 $$
-(iu)^2=(i^2)u^2
+i=e^{i\pi/2}.
 $$
 
-This is not an ultrareal. It is a value returned through a turn in the inner
-layer and then described with the ordinary minus sign.
+Then:
+
+$$
+(iu)^2=(e^{i\pi/2}u)^2=e^{i\pi}u^2.
+$$
+
+The factor $e^{i\pi}$ is the unit half-turn. Ordinary notation writes that
+half-turn with the minus sign. The sign is therefore the description of a
+rotation, not the discovery of a negative ultrareal.
+
+The conclusion is:
+
+$$
+u\in\mathbb R \Longrightarrow u^2\in UR,
+\qquad
+iu\notin\mathbb R \text{ for } u\ne0.
+$$
+
+Thus $(iu)^2$ is not a basic ultrareal value. It is a square-value returned
+through a non-real turn in the inner layer and then described with the ordinary
+minus sign.
 
 The claim is not that old algebra cannot manipulate minus signs. The claim is
 that the ultrareal layer has no negative magnitude. Minus signs mark rotation,

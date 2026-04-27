@@ -58,7 +58,7 @@ $$
 U + V = u^2 + v^2
 $$
 
-This is the Pythagorean case.
+This is the zero-relation form.
 
 If:
 
@@ -72,8 +72,9 @@ $$
 c = \sqrt{u^2 + v^2}
 $$
 
-So the Pythagorean theorem is standard arithmetic recovered as orthogonal
-ultrareal addition.
+So the Pythagorean theorem has the same algebraic form as standard arithmetic:
+the relation term is zero. When the descriptor is angular, that zero-relation
+condition is orthogonality.
 
 Standard addition is not the absence of structure. It is the case where the
 relation term vanishes.
@@ -169,19 +170,19 @@ states are oriented before the square-value is evaluated.
 
 ## Why This Matters
 
-The Pythagorean theorem is often taught as a special geometric fact.
-
-In ultrareal arithmetic, it becomes one case of a larger addition rule:
+The Pythagorean theorem is often taught as a standalone geometric fact. In
+ultrareal arithmetic, the recovered special case is non-interaction:
 
 $$
-\begin{aligned}
-\text{relation term present:}\quad &u^2 + v^2 + 2uv\cos(\theta),\\
-\text{relation term zero:}\quad &u^2 + v^2,\\
-\text{opposed relation term:}\quad &u^2 + v^2 - 2uv.
-\end{aligned}
+d(U,V)=0.
 $$
 
-So Pythagoras is not outside the new arithmetic.
+When the descriptor is angular, non-interaction is represented by a right
+angle:
 
-It is what standard arithmetic looks like when the inner states meet at right
-angle.
+$$
+\cos\left(\frac{\pi}{2}\right)=0.
+$$
+
+So Pythagoras is not a separate arithmetic. It is the geometric face of the
+same zero-relation condition that recovers standard addition.
