@@ -259,9 +259,35 @@ u^2\cos^2\phi+u^2\sin^2\phi=u^2.
 $$
 
 This is like seeing the same number from orthogonal aspects, front and side.
-The back is not a negative existence of the front; it is the returned phase of
-the same magnitude. In this sense, an ultrareal is symmetric in itself: its
-opposed view returns the same positive value.
+The number is not a frozen ideal mark outside orientation. It can be turned in
+its inner state:
+
+$$
+z(\phi)=ue^{i\phi}.
+$$
+
+The front view is:
+
+$$
+z(0)=ue^{i0}=u.
+$$
+
+The back view is:
+
+$$
+z(\pi)=ue^{i\pi}.
+$$
+
+These are different presentations of the inner state, but their self-returned
+ultrareal value is the same:
+
+$$
+z(0)\overline{z(0)}=z(\pi)\overline{z(\pi)}=u^2.
+$$
+
+So the back is not a negative existence of the front. It is the same magnitude
+seen after a half-turn. In this sense, an ultrareal is symmetric in itself: its
+front and back views return the same positive value.
 
 The conjugate is therefore not an arbitrary mathematical trick. It is the
 inverse turn: the state meeting its own return. The result behaves like a
