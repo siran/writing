@@ -1,3 +1,3 @@
 # Dedication
 
-To my daughter, may she remember that interaction is exchange between parts.
+To my daughter, may she remember that interaction is exchange.
