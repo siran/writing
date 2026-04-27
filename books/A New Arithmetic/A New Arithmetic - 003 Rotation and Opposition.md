@@ -6,40 +6,42 @@ $$
 U = u^2
 $$
 
-with $u$ real. But the inner state that exposes it can carry orientation.
+with $u\ge0$. The full inner state can carry orientation as $ue^{i\phi}$.
 
 To rotate is to turn. To return is to re-turn: the value comes back through a
 turn in the inner layer. The standard mathematical language for this is the
 complex-analytic toolset built from Euler's notation. Ultrareals extend that
 language because the square-form already makes inner orientation operational.
 
-The simplest orientation is sign:
+The simplest orientation is phase:
 
 $$
-u,\qquad -u
+u,\qquad ue^{i\phi}
 $$
 
-Both expose the same ultrareal:
+The magnitude $u$ is nonnegative. The phase carries the turn. A full half-turn
+is written:
 
 $$
-u^2 = (-u)^2
+ue^{i\pi}
 $$
 
-So sign is not visible as a negative magnitude. It is visible only when inner
-values are joined.
+Ordinary notation often writes this as a minus sign. In ultrareal language, the
+minus sign is not a negative inner magnitude; it is shorthand for the phase
+turn.
 
 ## Opposition
 
-If two inner states are opposed, their joined value is:
+If two inner states are opposed by a phase half-turn, their joined value is:
 
 $$
-u^2 + (-v)^2 := (u - v)^2
+|u+ve^{i\pi}|^2
 $$
 
 Expansion gives:
 
 $$
-(u - v)^2 = u^2 + v^2 - 2uv
+|u+ve^{i\pi}|^2 = u^2 + v^2 + 2uv\cos(\pi)=u^2+v^2-2uv
 $$
 
 The minus sign appears in the relation term. It does not create a negative
@@ -48,7 +50,7 @@ ultrareal.
 The exact cancellation example is:
 
 $$
-u^2 + (-u)^2 := (u - u)^2 = 0
+|u+ue^{i\pi}|^2=0
 $$
 
 The result is not less than zero. It is absence after opposition.

@@ -6,17 +6,15 @@ $$
 U = u^2
 $$
 
-with:
+The basic ultrareal domain is the set of visible square-values:
 
 $$
-u \ge 0
+UR = \{u^2 \mid u\in\mathbb R_{\ge0}\}=[0,\infty).
 $$
 
-The basic ultrareal domain is:
-
-$$
-UR = \{u^2 \mid u \ge 0\}
-$$
+The value $U$ is nonnegative, and the inner magnitude $u$ is nonnegative. If the
+quantity carries orientation, opposition, or return, that information is carried
+by a phase $e^{i\phi}$ rather than by a negative inner magnitude.
 
 The mathematics touched here is already familiar. For the full theory of
 squares, norms, inner products, quadratic forms, matrices, and the law of
@@ -66,14 +64,14 @@ $$
 X = x^2
 $$
 
-This does not make $X$ unreal. It gives $X$ an inner state $x$.
+This does not make $X$ unreal. It gives $X$ an inner magnitude $x$.
 
 The distinction is:
 
 $$
 \begin{aligned}
 \text{visible value:}\quad &X,\\
-\text{inner state:}\quad &x.
+\text{inner magnitude:}\quad &x.
 \end{aligned}
 $$
 
@@ -85,13 +83,13 @@ $$
 u^2 = v^2
 $$
 
-Since the ultrareal layer uses $u \ge 0$ and $v \ge 0$, this also means:
+Since the inner magnitudes satisfy $u\ge0$ and $v\ge0$, equality also means:
 
 $$
 u = v
 $$
 
-If signs or rotations are introduced, they belong to the inner layer, not to the
+If rotations are introduced, they belong to the inner layer, not to the
 ultrareal value itself.
 
 ## Zero
@@ -111,7 +109,7 @@ $$
 ## Relation-Aware Addition
 
 The general two-term addition uses an overloaded $+$. The operator is aware of
-the parts being added: the visible values and their inner states.
+the parts being added: the visible values and their inner magnitudes.
 
 $$
 U + V = u^2 + v^2 + 2d(U,V)uv
@@ -414,7 +412,7 @@ $$
 Opposition becomes a zero-boundary relation rather than a negative object:
 
 $$
-u^2+(-u)^2=(u-u)^2=0.
+|u+ue^{i\pi}|^2=0.
 $$
 
 The novelty is therefore not a new binomial identity. It is the organization of
