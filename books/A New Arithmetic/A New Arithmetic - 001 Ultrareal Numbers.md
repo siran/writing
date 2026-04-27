@@ -218,6 +218,51 @@ z\bar z
 \end{aligned}
 $$
 
+This back-expansion shows the geometry. The inner state is being seen through
+two perpendicular aspects:
+
+$$
+z=u\cos\phi+iu\sin\phi.
+$$
+
+The return is:
+
+$$
+\bar z=u\cos\phi-iu\sin\phi.
+$$
+
+Multiplying them confronts the two aspects with their return:
+
+$$
+\begin{aligned}
+z\bar z
+&=(u\cos\phi+iu\sin\phi)(u\cos\phi-iu\sin\phi)\\
+&=u^2\cos^2\phi
+-iu^2\cos\phi\sin\phi
++iu^2\sin\phi\cos\phi
++u^2\sin^2\phi.
+\end{aligned}
+$$
+
+The crossed perpendicular terms cancel:
+
+$$
+-iu^2\cos\phi\sin\phi
++iu^2\sin\phi\cos\phi
+=0.
+$$
+
+What remains is:
+
+$$
+u^2\cos^2\phi+u^2\sin^2\phi=u^2.
+$$
+
+This is like seeing the same number from orthogonal aspects, front and side.
+The back is not a negative existence of the front; it is the returned phase of
+the same magnitude. In this sense, an ultrareal is symmetric in itself: its
+opposed view returns the same positive value.
+
 The conjugate is therefore not an arbitrary mathematical trick. It is the
 inverse turn: the state meeting its own return. The result behaves like a
 standing-wave-like magnitude. A phase and its reverse do not travel away from
