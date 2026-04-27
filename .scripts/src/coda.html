@@ -304,7 +304,9 @@
             html = html.replace(/(^|\n)#\s+([^\n]+)(?=\n|$)/g, "$1<h1>$2</h1>");
 
             // Markdown links: [text](url)
-            html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (_m, t, u) {
+            // [^\]\n]+ — link text must not span lines; prevents LaTeX [0,\infty)
+            // from reaching the first ]( in the <script> tags below.
+            html = html.replace(/\[([^\]\n]+)\]\(([^)]+)\)/g, function (_m, t, u) {
                 return '<a href="' + normalizeTarget(u) + '">' + t + "</a>";
             });
 
