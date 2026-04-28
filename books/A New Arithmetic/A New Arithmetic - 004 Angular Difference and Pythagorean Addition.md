@@ -35,10 +35,10 @@ $$
 =u^2+v^2+2uv\cos\Delta.
 $$
 
-This is the relation-aware sum:
+This is upper-case relation-aware addition:
 
 $$
-U\oplus_{\cos\Delta}V.
+U+V=u^2+v^2+2uv\cos\Delta.
 $$
 
 ## Aligned Difference
@@ -58,7 +58,7 @@ $$
 So:
 
 $$
-U\oplus_1V=(u+v)^2.
+U+V=(u+v)^2.
 $$
 
 This is aligned addition.
@@ -80,7 +80,7 @@ $$
 So:
 
 $$
-U\oplus_0V=u^2+v^2.
+U+V=u^2+v^2.
 $$
 
 This is the Pythagorean case. The relation term vanishes.
@@ -117,7 +117,7 @@ $$
 So:
 
 $$
-U\oplus_{-1}V=(u-v)^2.
+U+V=(u-v)^2.
 $$
 
 Opposition is a relative difference between positive inner magnitudes. It is not
@@ -142,33 +142,74 @@ $$
 The sign difference is an orientation convention. The content is the same:
 the square-value depends on the relation between the parts.
 
-## Angle Addition
+## Euler's Formula
 
-Euler's rotation rule gives the standard angle-addition formulas:
-
-$$
-e^{i\alpha}e^{i\beta}=e^{i(\alpha+\beta)}.
-$$
-
-Using:
+The symbol $i$ can be introduced rigorously by adjoining it to the reals with
+the rule:
 
 $$
-e^{i\theta}=\cos\theta+i\sin\theta,
+i^2=-1.
 $$
 
-and collecting real and imaginary parts gives:
+This gives the complex plane:
 
 $$
-\cos(\alpha+\beta)
-=\cos\alpha\cos\beta-\sin\alpha\sin\beta,
+\mathbb C=\{a+bi\mid a,b\in\mathbb R\}.
+$$
+
+Define the exponential, cosine, and sine by their convergent power series:
+
+$$
+e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!},
+$$
+
+$$
+\cos x=\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!},
 $$
 
 and:
 
 $$
-\sin(\alpha+\beta)
-=\sin\alpha\cos\beta+\cos\alpha\sin\beta.
+\sin x=\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{(2n+1)!}.
+$$
+
+These series converge absolutely for every complex input, so separating the
+even and odd terms is legitimate.
+
+For real $\theta$:
+
+$$
+\begin{aligned}
+e^{i\theta}
+&=\sum_{n=0}^{\infty}\frac{(i\theta)^n}{n!}\\
+&=\sum_{n=0}^{\infty}\frac{(i\theta)^{2n}}{(2n)!}
+ +\sum_{n=0}^{\infty}\frac{(i\theta)^{2n+1}}{(2n+1)!}\\
+&=\sum_{n=0}^{\infty}(-1)^n\frac{\theta^{2n}}{(2n)!}
+ +i\sum_{n=0}^{\infty}(-1)^n
+   \frac{\theta^{2n+1}}{(2n+1)!}\\
+&=\cos\theta+i\sin\theta.
+\end{aligned}
+$$
+
+This is Euler's formula:
+
+$$
+e^{i\theta}=\cos\theta+i\sin\theta.
+$$
+
+At $\theta=\pi$:
+
+$$
+e^{i\pi}=-1,
+$$
+
+which gives the standard notation for complete opposition. At
+$\theta=\pi/2$:
+
+$$
+e^{i\pi/2}=i.
 $$
 
 Thus trigonometry is compatible with the ultrareal reading: angles describe how
-inner presentations differ before a positive square-value is evaluated.
+inner presentations differ before a positive square-value is evaluated, and the
+adjoined symbol $i$ gives a rigorous notation for those turns.

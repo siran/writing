@@ -1,26 +1,33 @@
 # Relation-Aware Addition
 
-Ultrareal arithmetic distinguishes visible value from inner magnitude:
+Ultrareal arithmetic overloads the symbol $+$ by the layer of its operands.
+
+Lower-case symbols name inner magnitudes or inner states. Upper-case symbols
+name visible ultrareal values:
 
 $$
 U=u^2,\qquad V=v^2,\qquad u,v\ge0.
 $$
 
-Once the inner magnitudes are available, addition can include the relation
-between the parts. The two-term relation-aware sum is:
+When lower-case inner magnitudes are added, ordinary inner-state addition is
+being used:
+
+$$
+u+v.
+$$
+
+When upper-case ultrareals are added, the operation may read both their visible
+values and their inner magnitudes. With relation descriptor $d$, the rule is:
 
 $$
 \boxed{
-U\oplus_d V:=u^2+v^2+2duv
+U+V:=u^2+v^2+2duv
 }
 $$
 
 The descriptor $d$ is not an ultrareal number. It is relation data for this
-joining.
-
-The operator $\oplus_d$ is used here to keep the formal structure visible. When
-the descriptor is fixed by context, one may write a plain plus sign as a
-shorthand, but the descriptor is part of the operation.
+joining. The operator is still $+$. The operands and the displayed relation
+determine which addition is meant.
 
 ## The Recovered Ordinary Case
 
@@ -34,16 +41,16 @@ $$
 Then:
 
 $$
-U\oplus_0 V=u^2+v^2.
+U+V=u^2+v^2.
 $$
 
 This is the arithmetic of non-interacting parts. The quantities are counted
 together, but no cross term is included.
 
-For unit values:
+For unit values in the non-interacting case:
 
 $$
-1\oplus_0 1=1+1=2.
+1+1=2.
 $$
 
 ## Aligned Addition
@@ -57,13 +64,13 @@ $$
 Then:
 
 $$
-U\oplus_1 V=u^2+v^2+2uv=(u+v)^2.
+U+V=u^2+v^2+2uv=(u+v)^2.
 $$
 
-For unit values:
+For unit values in the aligned case:
 
 $$
-1\oplus_1 1=(1+1)^2=4.
+1+1=(1+1)^2=4.
 $$
 
 This is why the opening claim is precise:
@@ -72,8 +79,8 @@ $$
 1+1 \text{ is not necessarily only } 2.
 $$
 
-The result depends on the operation. Non-interacting unit values recover $2$.
-Aligned unit values produce $4$.
+The printed expression is the same, but the operands and relation are not the
+same. Non-interacting unit values recover $2$. Aligned unit values produce $4$.
 
 ## Opposed Addition
 
@@ -86,7 +93,7 @@ $$
 Then:
 
 $$
-U\oplus_{-1} V=u^2+v^2-2uv=(u-v)^2.
+U+V=u^2+v^2-2uv=(u-v)^2.
 $$
 
 Opposition can reduce a joined value. It cannot create a negative ultrareal
@@ -95,7 +102,8 @@ inside this bounded relation scale.
 If $u=v$, complete opposition gives:
 
 $$
-U\oplus_{-1}U=0.
+U+U=0
+\qquad(d=-1).
 $$
 
 This is cancellation to the zero boundary, not passage into negative
@@ -125,11 +133,11 @@ requirement is admissibility: the joined value must remain an ultrareal.
 
 ## Basic Laws In The Fixed-Descriptor Cases
 
-For the recovered ordinary case, $\oplus_0$ is ordinary addition of visible
-values:
+For the recovered ordinary case, upper-case addition agrees with ordinary
+addition of visible values:
 
 $$
-U\oplus_0 V=U+V.
+U+V=u^2+v^2.
 $$
 
 It is commutative and associative because ordinary addition is commutative and
@@ -138,14 +146,14 @@ associative.
 For fully aligned joining, the operation is also commutative and associative:
 
 $$
-U\oplus_1 V=(u+v)^2=(v+u)^2=V\oplus_1 U.
+U+V=(u+v)^2=(v+u)^2=V+U.
 $$
 
 For three aligned terms:
 
 $$
-(U\oplus_1 V)\oplus_1 W
-=U\oplus_1(V\oplus_1 W)
+(U+V)+W
+=U+(V+W)
 =(u+v+w)^2.
 $$
 

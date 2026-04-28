@@ -8,7 +8,7 @@ $$
 
 The number is $U$. Its inner magnitude, or natural inner state, is $u$.
 
-The ultrareal domain is:
+The ultrareal domain is the positive real line with zero included:
 
 $$
 \mathbb U=\{u^2\mid u\in\mathbb R_{\ge0}\}=[0,\infty).
@@ -48,7 +48,7 @@ parts meet.
 
 ## Positivity
 
-Every ultrareal is nonnegative:
+Every ultrareal lies in the positive real layer with zero included:
 
 $$
 U=u^2\ge0.
@@ -66,8 +66,9 @@ $$
 |U|=0\quad\Longleftrightarrow\quad U=0.
 $$
 
-In this square-form sense, the ultrareal layer is positive definite: no member
-of $\mathbb U$ is below zero, and only zero has zero modulus.
+In this square-form sense, the ultrareal layer is positive definite with zero
+included: no member of $\mathbb U$ is below zero, and only zero has zero
+modulus.
 
 ## Equality
 
@@ -95,9 +96,8 @@ $$
 0=0^2.
 $$
 
-It is the additive identity for ordinary visible addition and for every
-relation-aware joining, because any relation term containing its inner magnitude
-vanishes.
+It is the additive identity for ordinary visible addition and for relation-aware
+joining, because any relation term containing its inner magnitude vanishes.
 
 ## No Negative Ultrareals
 
@@ -127,7 +127,8 @@ $$
 $$
 
 Signs belong to presentation, comparison, direction, cancellation, or relation.
-They do not name negative ultrareal values.
+They do not name negative ultrareal values. When opposition must be notated, the
+symbol $i$ may be adjoined to the real notation with the rule $i^2=-1$.
 
 ## Oriented Presentations
 

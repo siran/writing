@@ -6,8 +6,14 @@ $$
 U=u^2,\qquad u\ge0.
 $$
 
-Rotation is not part of that basic definition. It is an optional presentation of
-the inner state when orientation matters:
+Rotation is not part of that basic definition. To notate opposition and turns,
+one may adjoin a symbol $i$ to the reals with:
+
+$$
+i^2=-1.
+$$
+
+Then orientation can be written as an optional presentation of the inner state:
 
 $$
 z=ue^{i\alpha}.
@@ -61,13 +67,20 @@ The result is absence at the zero boundary, not a negative ultrareal.
 A minus sign can describe a rotated presentation of a square-value. It does not
 name a negative member of $\mathbb U$.
 
-Euler notation gives:
+The adjoined symbol satisfies:
+
+$$
+i^2=-1.
+$$
+
+In Euler notation, later derived from the power series, this is written:
 
 $$
 i=e^{i\pi/2}.
 $$
 
-The symbol $i$ marks a quarter-turn. Squaring doubles that turn:
+The symbol $i$ marks the elementary quarter-turn whose square gives the
+minus-signed half-turn. Squaring doubles that turn:
 
 $$
 (iu)^2=(e^{i\pi/2}u)^2=e^{i\pi}u^2.
@@ -104,7 +117,8 @@ is a signed presentation of a single square-value outside $\mathbb U$.
 The expression:
 
 $$
-u^2\oplus_{-1}v^2=(u-v)^2
+U+V=(u-v)^2
+\qquad(d=-1)
 $$
 
 is an admissible joining of two positive ultrareals through opposition.

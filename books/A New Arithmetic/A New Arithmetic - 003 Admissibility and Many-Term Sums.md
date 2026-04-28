@@ -1,6 +1,7 @@
 # Admissibility and Many-Term Sums
 
-Relation-aware addition must remain inside the ultrareal domain:
+Relation-aware addition must remain inside the ultrareal domain, the positive
+real line with zero included:
 
 $$
 \mathbb U=[0,\infty).
@@ -15,7 +16,7 @@ $$
 the joined value is:
 
 $$
-U\oplus_d V=u^2+v^2+2duv.
+U+V=u^2+v^2+2duv.
 $$
 
 The descriptor $d$ is admissible for this joining when:
@@ -27,7 +28,7 @@ $$
 Equivalently:
 
 $$
-U\oplus_d V\in\mathbb U.
+U+V\in\mathbb U.
 $$
 
 This is the basic closure rule.
@@ -55,7 +56,7 @@ $$
 Then:
 
 $$
-U\oplus_{-1}V=(u-v)^2.
+U+V=(u-v)^2.
 $$
 
 Thus opposition can cancel equal inner magnitudes to zero, but it cannot push a
@@ -75,7 +76,7 @@ $$
 If:
 
 $$
-A\oplus_d B=0,
+A+B=0,
 $$
 
 then:
@@ -114,12 +115,12 @@ $$
 U_i=u_i^2,\qquad i=1,\ldots,n,
 $$
 
-relation-aware addition is determined by a relation table $D=(d_{ij})$. Write
-the joined value as:
+relation-aware addition is determined by a relation table $D=(d_{ij})$. The
+same overloaded $+$ is used:
 
 $$
 \boxed{
-\operatorname{Join}_D(U_1,\ldots,U_n)
+U_1+\cdots+U_n
 :=
 \sum_i u_i^2
 +2\sum_{i<j}d_{ij}u_i u_j
@@ -185,7 +186,7 @@ $$
 Then:
 
 $$
-\operatorname{Join}_D(U_1,\ldots,U_n)
+U_1+\cdots+U_n
 =u_1^2+\cdots+u_n^2.
 $$
 
@@ -198,7 +199,7 @@ $$
 Then:
 
 $$
-\operatorname{Join}_D(U_1,\ldots,U_n)=(u_1+\cdots+u_n)^2.
+U_1+\cdots+U_n=(u_1+\cdots+u_n)^2.
 $$
 
 The arithmetic point is simple: addition is not only a rule for collecting

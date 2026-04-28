@@ -1,8 +1,9 @@
 # Pedagogical Note
 
 This note does not belong at the beginning of the book. The formal construction
-comes first: ultrareals are positive square-forms, and relation-aware addition
-uses an admissible descriptor.
+comes first: ultrareals are positive square-forms, and the same symbol $+$ is
+overloaded by layer. Lower-case operands name inner states. Upper-case operands
+name visible ultrareals.
 
 The pedagogical consequence is simpler:
 
@@ -27,13 +28,13 @@ The distinction can be taught without making arithmetic harder. A learner can
 hold both ideas:
 
 $$
-1\oplus_0 1=2
+1+1=2
 $$
 
 for non-interacting units, and:
 
 $$
-1\oplus_1 1=4
+1+1=4
 $$
 
 for fully aligned unit magnitudes.
@@ -57,7 +58,8 @@ $$
 Opposition belongs to relation:
 
 $$
-U\oplus_{-1}V=(u-v)^2.
+U+V=(u-v)^2
+\qquad(d=-1).
 $$
 
 This lets subtraction, opposition, and cancellation be introduced honestly as
