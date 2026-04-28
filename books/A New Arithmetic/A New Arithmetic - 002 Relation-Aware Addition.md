@@ -23,25 +23,56 @@ U+V=u^2+v^2.
 $$
 
 That is standard arithmetic. It counts the visible square-values without an
-interaction term.
-
-The ultrareal reading asks whether the sum is positive in the ultrareal sense.
-If it is, then the sum itself is an ultrareal. Let:
+interaction term. It is also closed in $\mathbb U$, since:
 
 $$
-X=U+V.
+u^2+v^2\ge0.
 $$
 
-Since $X$ is an ultrareal, it has the form:
+The inner magnitude of that ordinary visible sum is
+$\sqrt{u^2+v^2}$.
+
+## Closure Of The Joined Sum
+
+Before the joined sum is written as a square, closure must be proved.
+
+Let:
+
+$$
+U,V\in\mathbb U,\qquad U=u^2,\qquad V=v^2.
+$$
+
+Then:
+
+$$
+u,v\in\mathbb R_{\ge0}.
+$$
+
+The nonnegative reals are closed under ordinary addition, so the joined inner
+expression:
+
+$$
+x=u+v
+$$
+
+also lies in the nonnegative reals:
+
+$$
+x\in\mathbb R_{\ge0}.
+$$
+
+By the definition of an ultrareal number, $x^2\in\mathbb U$. Call this
+ultrareal $X$:
 
 $$
 X=x^2.
 $$
 
-The joined inner expression is:
+This proves that adding two ultrareals in the joined inner-state sense gives an
+ultrareal. Since it is the joined sum of $U$ and $V$:
 
 $$
-x=u+v.
+X=U+V.
 $$
 
 Therefore:
@@ -50,9 +81,8 @@ $$
 U+V=X=x^2=(u+v)^2.
 $$
 
-This is the positive-ultrareal reading of the sum. Nothing new is being added to
-the square-form: if the sum is an ultrareal, it can be expressed as the square
-of its inner expression.
+Nothing new is being added to the square-form. Once closure has been proved,
+the sum can be expressed as the square of its inner expression.
 
 The operator is still $+$. The operands determine which layer is being used.
 
@@ -196,16 +226,20 @@ or otherwise structured relation data. The formal requirement is not that every
 descriptor be commutative, scalar, or associative. The formal requirement is
 admissibility: the joined value must remain an ultrareal.
 
-The important order is the positive-ultrareal reading:
+The important order is the closure proof:
 
 $$
-X=U+V,\qquad X=x^2,\qquad x=u+v
+u,v\in\mathbb R_{\ge0}
+\quad\Longrightarrow\quad
+x=u+v\in\mathbb R_{\ge0}
+\quad\Longrightarrow\quad
+X=x^2\in\mathbb U.
 $$
 
-so:
+Then the joined sum can be written:
 
 $$
-U+V=(u+v)^2.
+U+V=X=(u+v)^2.
 $$
 
 Only then, when the inner-state product distributes:

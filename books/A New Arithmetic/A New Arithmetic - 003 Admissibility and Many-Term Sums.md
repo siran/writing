@@ -7,32 +7,33 @@ $$
 \mathbb U=[0,\infty).
 $$
 
-For two terms,
+The previous chapter proved closure for the joined sum. If:
 
 $$
 U=u^2,\qquad V=v^2,
 $$
 
-the positive-ultrareal reading gives:
+with $u,v\in\mathbb R_{\ge0}$, then:
 
 $$
-U+V=(u+v)^2.
+u+v\in\mathbb R_{\ge0}.
 $$
 
-It is admissible when:
+Therefore:
 
 $$
-(u+v)^2\in\mathbb U.
+U+V=(u+v)^2\in\mathbb U.
 $$
 
-If the inner-state product distributes, this can be read as the ordered
-condition:
+That is the basic closure rule for the joined sum. If the inner-state product
+distributes, the same value can be read as the ordered expression:
 
 $$
 u^2+uv+vu+v^2\in\mathbb U.
 $$
 
-This is the basic closure rule.
+Admissibility becomes explicit when the same joined value is represented by
+descriptor data.
 
 ## Descriptor Admissibility
 
@@ -142,25 +143,31 @@ $$
 U_i=u_i^2,\qquad i=1,\ldots,n,
 $$
 
-the pairwise descriptor table $D=(d_{ij})$ records the interaction terms. The
-same overloaded $+$ is used:
+the joined inner expression is:
+
+$$
+x=u_1+\cdots+u_n.
+$$
+
+Since every $u_i$ is nonnegative, $x\in\mathbb R_{\ge0}$, so:
+
+$$
+U_1+\cdots+U_n=(u_1+\cdots+u_n)^2\in\mathbb U.
+$$
+
+When this joined value is reduced to scalar descriptor data, the pairwise
+descriptor table $D=(d_{ij})$ records the interaction terms:
 
 $$
 \boxed{
 U_1+\cdots+U_n
-:=
+=
 \sum_i u_i^2
 +\sum_{i<j}d_{ij}
 }
 $$
 
-Before this scalar reduction, the many-term upper-case addition is simply:
-
-$$
-U_1+\cdots+U_n:=(u_1+\cdots+u_n)^2,
-$$
-
-with the expansion determined by the ordering, products, and parentheses of the
+The expansion is determined by the ordering, products, and parentheses of the
 chosen inner-state algebra.
 
 When the inner-state product is distributive and the order is explicit, the

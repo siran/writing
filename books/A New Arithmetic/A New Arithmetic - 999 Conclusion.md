@@ -33,9 +33,10 @@ $$
 U+V=u^2+v^2.
 $$
 
-That is the recovered standard case. The ultrareal reading asks whether $U+V$
-is positive in the ultrareal sense. If it is, let $X=U+V$ be an ultrareal, with
-$X=x^2$ and joined inner expression $x=u+v$. Then:
+That is the recovered standard case, and it remains in $\mathbb U$ because
+$u^2+v^2\ge0$. The joined ultrareal sum also remains in $\mathbb U$: since
+$u,v\in\mathbb R_{\ge0}$, the joined inner expression
+$x=u+v$ is nonnegative, so $X=x^2$ is an ultrareal. With $X=U+V$:
 
 $$
 U+V=X=x^2=(u+v)^2.

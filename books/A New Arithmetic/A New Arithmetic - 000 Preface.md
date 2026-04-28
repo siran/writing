@@ -47,23 +47,32 @@ $$
 U+V=u^2+v^2.
 $$
 
-That is standard arithmetic. In the ultrareal reading, if $U+V$ is positive in
-the ultrareal sense, then the sum itself is an ultrareal:
+That is standard arithmetic. For the joined ultrareal sum, closure is checked
+before the result is written as a square. Since:
 
 $$
-X=U+V.
+u,v\in\mathbb R_{\ge0},
 $$
 
-Since $X$ is an ultrareal, it has the form:
+and $\mathbb R_{\ge0}$ is closed under ordinary addition, the joined inner
+expression:
+
+$$
+x=u+v
+$$
+
+also lies in $\mathbb R_{\ge0}$. Therefore $x^2\in\mathbb U$. Call this
+ultrareal $X$:
 
 $$
 X=x^2.
 $$
 
-The joined inner expression is:
+This proves that the joined sum is an ultrareal. It is the result of adding
+$U$ and $V$ in the joined ultrareal sense, so:
 
 $$
-x=u+v.
+X=U+V.
 $$
 
 Therefore:
@@ -154,7 +163,7 @@ pattern: keep value positive, keep relation explicit, and recover ordinary
 arithmetic when relation is zero.
 
 The book proceeds in that order. First it defines ultrareal numbers. Then it
-states the positive-ultrareal reading of addition. Then it states the
-admissibility condition that keeps joined values inside $\mathbb U$. Only after
-that does it introduce angular difference, Euler notation, opposition, and
-signs.
+proves that adding two ultrareals in the joined sense gives an ultrareal. Then
+it states the admissibility condition that keeps descriptor presentations
+inside $\mathbb U$. Only after that does it introduce angular difference, Euler
+notation, opposition, and signs.
