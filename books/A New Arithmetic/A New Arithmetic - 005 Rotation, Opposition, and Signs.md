@@ -19,15 +19,67 @@ $$
 z=ue^{i\alpha}.
 $$
 
-The ultrareal value recovered from this presentation is:
+The reverse-oriented presentation is:
 
 $$
-z\bar z=u^2.
+z^*=ue^{-i\alpha}.
+$$
+
+The star denotes return orientation. It is not introduced as an ad hoc complex
+conjugate. The ultrareal value recovered from the oriented presentation is:
+
+$$
+zz^*=u^2.
 $$
 
 A single oriented presentation therefore returns to the same positive
 ultrareal. Orientation becomes operational when two or more presentations are
 joined.
+
+## Front, Back, And Sideways
+
+The front presentation of an inner magnitude is:
+
+$$
+u.
+$$
+
+The back presentation is the half-turn:
+
+$$
+-u=ue^{i\pi}.
+$$
+
+Both give the same positive square-value:
+
+$$
+u^2=(-u)^2.
+$$
+
+In that sense, the square-form looks the same from the front and the back.
+
+The sideways presentation is the quarter-turn:
+
+$$
+iu=ue^{i\pi/2}.
+$$
+
+Its raw square is:
+
+$$
+(iu)^2=-u^2.
+$$
+
+This is not a negative ultrareal. It is the sideways square-presentation, the
+orthogonal direction exposed by adjoining $i$. To recover density from a
+rotated presentation, use the return product:
+
+$$
+(iu)(iu)^*=u^2.
+$$
+
+This is the meaning of $n n^*$: an oriented inner state multiplied by its
+reverse-oriented return.
 
 ## Opposition
 
@@ -146,7 +198,7 @@ This raw square is generally an oriented square-presentation, not the
 ultrareal value itself. The positive ultrareal value is recovered by return:
 
 $$
-z\bar z=u^2.
+zz^*=u^2.
 $$
 
 For two oriented presentations,
@@ -155,17 +207,24 @@ $$
 a=ue^{i\alpha},\qquad b=ve^{i\beta},
 $$
 
+with reverse-oriented presentations:
+
+$$
+a^*=ue^{-i\alpha},\qquad b^*=ve^{-i\beta},
+$$
+
 their joined positive value is:
 
 $$
 |a+b|^2
+=(a+b)(a^*+b^*)
 =u^2+v^2+2uv\cos(\alpha-\beta).
 $$
 
 The interaction descriptor in this oriented case is:
 
 $$
-d(U,V):=a\bar b+b\bar a.
+d(U,V):=ab^*+ba^*.
 $$
 
 The relative difference $\Delta=\alpha-\beta$ determines the angular

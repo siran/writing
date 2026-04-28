@@ -38,8 +38,9 @@ $$
 \end{aligned}
 $$
 
-The visible value is the square-value handled by arithmetic. The inner magnitude
-is the root through which relation terms are formed.
+The visible value is the square-value handled by arithmetic. It may be read as
+a density. The inner magnitude is the root through which relation terms are
+formed.
 
 This separation is the structural move of the book. Ordinary arithmetic normally
 works directly with visible values. Ultrareal arithmetic keeps the inner
@@ -142,11 +143,19 @@ z=ue^{i\alpha}.
 $$
 
 This is not a new ultrareal value. It is a presentation of the same inner
-magnitude with an added orientation parameter. The ultrareal value recovered
-from this presentation is:
+magnitude with an added orientation parameter. Its reverse-oriented presentation
+is:
 
 $$
-z\bar z
+z^*=ue^{-i\alpha}.
+$$
+
+The star does not mean an unexplained extra operation. It means return: the same
+inner magnitude with the opposite orientation. The ultrareal value recovered
+from the oriented presentation is:
+
+$$
+zz^*
 =(ue^{i\alpha})(ue^{-i\alpha})
 =u^2.
 $$

@@ -27,6 +27,12 @@ $$
 U=u^2,\qquad u\ge0,\qquad U\in\mathbb U.
 $$
 
+In everyday terms, it is a density-value:
+
+$$
+N=n^2.
+$$
+
 Ordinary visible addition gives:
 
 $$
@@ -97,6 +103,16 @@ Minus signs can record presentation, direction, bookkeeping, comparison,
 cancellation, or relation. The symbol $i$ may be adjoined to the real notation
 with $i^2=-1$ to notate turn and opposition without adding negative values to
 $\mathbb U$.
+
+Once orientation is admitted, a rotated inner state has a reverse-oriented
+return $n^*$. The density is recovered by:
+
+$$
+n n^*.
+$$
+
+This is why the square-form can look the same from the front and the back while
+still distinguishing the sideways, orthogonal presentation.
 
 The program is conservative in its algebra and radical in its organization:
 keep positive value positive, keep relation explicit, and recover standard

@@ -9,13 +9,27 @@ $$
 a=ue^{i\alpha}.
 $$
 
+Its reverse-oriented presentation is:
+
+$$
+a^*=ue^{-i\alpha}.
+$$
+
+The returned density is $aa^*=u^2$.
+
 For two oriented presentations,
 
 $$
 a=ue^{i\alpha},\qquad b=ve^{i\beta},
 $$
 
-the relevant quantity is not either angle alone. It is their relative
+their reverse-oriented presentations are:
+
+$$
+a^*=ue^{-i\alpha},\qquad b^*=ve^{-i\beta}.
+$$
+
+The relevant quantity is not either angle alone. It is their relative
 difference:
 
 $$
@@ -28,17 +42,20 @@ $$
 d(U,V)=2uv\cos\Delta.
 $$
 
-The joined value is:
+The joined density is:
 
 $$
 |a+b|^2
+=
+(a+b)(a^*+b^*)
+=aa^*+ab^*+ba^*+bb^*
 =u^2+v^2+2uv\cos\Delta.
 $$
 
 In this angular case, the interaction descriptor is:
 
 $$
-d(U,V):=a\bar b+b\bar a=2uv\cos\Delta.
+d(U,V):=ab^*+ba^*=2uv\cos\Delta.
 $$
 
 This is upper-case relation-aware addition:
