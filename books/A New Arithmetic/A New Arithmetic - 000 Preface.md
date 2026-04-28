@@ -8,6 +8,52 @@ $$
 
 There is also an interaction term, and it need not always be zero.
 
+This depends on a choice in mathematics that is not as obvious as it first
+appears.
+
+If two real numbers are positive, with zero included, they can be written as
+square-forms:
+
+$$
+U=u^2,\qquad V=v^2.
+$$
+
+If we consider the sum $U+V$, the usual answer is immediate:
+
+$$
+U+V=u^2+v^2.
+$$
+
+That is the standard visible reading. It counts the two square-values.
+
+But there is a previous definition in view:
+
+$$
+U=u^2.
+$$
+
+Under this definition, $U+V$ is again a positive number, and as such it can be
+written as a square-form. The inner expression of the sum is:
+
+$$
+u+v.
+$$
+
+Therefore:
+
+$$
+U+V=(u+v)^2=uu+uv+vu+vv.
+$$
+
+Since $u^2=uu$ and $v^2=vv$, the question becomes: what is
+
+$$
+uv+vu?
+$$
+
+Those middle terms are the interaction term that the ordinary visible reading
+does not take into account. Numbers treated this way are ultrareals.
+
 The standard arithmetic that we love is not wrong. It is recovered when the
 interaction term is not taken into account. This book describes a broader
 arithmetic in which a number is first written as a positive square-form:
@@ -34,7 +80,7 @@ $$
 
 Second, it proves basic facts about them. In particular, it proves that adding
 two ultrareals gives another ultrareal. Only after that closure result is
-established does the book use the definition to write the sum as:
+established does the book use the definition to write the sum in square-form:
 
 $$
 U+V=(u+v)^2.
