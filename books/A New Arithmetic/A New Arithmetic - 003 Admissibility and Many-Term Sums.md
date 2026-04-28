@@ -7,7 +7,7 @@ $$
 \mathbb U=[0,\infty).
 $$
 
-The previous chapter proved closure for the joined sum. If:
+The previous chapter proved closure for the term-type-aware ultrareal sum. If:
 
 $$
 U=u^2,\qquad V=v^2,
@@ -25,14 +25,14 @@ $$
 U+V=(u+v)^2\in\mathbb U.
 $$
 
-That is the basic closure rule for the joined sum. If the inner-state product
-distributes, the same value can be read as the ordered expression:
+That is the basic closure rule for ultrareal addition. If the inner-state
+product distributes, the same value can be read as the ordered expression:
 
 $$
 u^2+uv+vu+v^2\in\mathbb U.
 $$
 
-Admissibility becomes explicit when the same joined value is represented by
+Admissibility becomes explicit when the same sum is represented by
 descriptor data.
 
 ## Descriptor Admissibility
@@ -43,13 +43,13 @@ $$
 d(U,V)=uv+vu,
 $$
 
-the joined value becomes:
+the sum becomes:
 
 $$
 U+V=u^2+d(U,V)+v^2.
 $$
 
-In scalar cases, the descriptor is admissible for this joining when:
+In scalar cases, the descriptor is admissible for this addition when:
 
 $$
 u^2+d(U,V)+v^2\ge0.
@@ -87,8 +87,8 @@ $$
 U+V=(u-v)^2.
 $$
 
-Thus opposition can cancel equal inner magnitudes to zero, but it cannot push a
-joined ultrareal below zero while remaining in the bounded scale.
+Thus opposition can cancel equal inner magnitudes to zero, but it cannot push an
+ultrareal result below zero while remaining in the bounded scale.
 
 ## Exact Cancellation
 
@@ -143,7 +143,7 @@ $$
 U_i=u_i^2,\qquad i=1,\ldots,n,
 $$
 
-the joined inner expression is:
+the many-term inner-state sum is:
 
 $$
 x=u_1+\cdots+u_n.
@@ -155,7 +155,7 @@ $$
 U_1+\cdots+U_n=(u_1+\cdots+u_n)^2\in\mathbb U.
 $$
 
-When this joined value is reduced to scalar descriptor data, the pairwise
+When this value is reduced to scalar descriptor data, the pairwise
 descriptor table $D=(d_{ij})$ records the interaction terms:
 
 $$
@@ -191,13 +191,13 @@ $$
 \mathbf u=(u_1,\ldots,u_n)^{\mathsf T},
 $$
 
-the joined value is:
+the resulting value is:
 
 $$
 \sum_i u_i^2+\sum_{i<j}d_{ij}.
 $$
 
-The descriptor table is admissible for the given joining when:
+The descriptor table is admissible for the given addition when:
 
 $$
 \sum_i u_i^2+\sum_{i<j}d_{ij}\ge0.
@@ -252,5 +252,5 @@ U_1+\cdots+U_n=(u_1+\cdots+u_n)^2.
 $$
 
 The arithmetic point is simple: addition is not only a rule for collecting
-visible values. It can also be a rule for joining inner magnitudes through an
-admissible relation structure.
+visible values. It can also be a rule whose term data exposes relation through
+an admissible descriptor structure.

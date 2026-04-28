@@ -6,20 +6,21 @@ $$
 1+1 \text{ is not necessarily only } 2.
 $$
 
-That claim now has a formal meaning. If two unit ultrareals are joined with
-zero relation, ordinary arithmetic is recovered:
+That claim now has a formal meaning. If two unit ultrareals are added with zero
+relation, ordinary arithmetic is recovered:
 
 $$
 1+1=2.
 $$
 
-If they are joined in full alignment, the result is:
+If they are added in full alignment, the result is:
 
 $$
 1+1=4.
 $$
 
-The difference is not a contradiction. It is a difference of operation.
+The difference is not a contradiction. It is a difference in term data and
+relation.
 
 An ultrareal number is a positive square-form:
 
@@ -33,16 +34,16 @@ $$
 N=n^2.
 $$
 
-Ordinary visible addition gives:
+When only visible values are counted, the recovered standard case gives:
 
 $$
 U+V=u^2+v^2.
 $$
 
-That is the recovered standard case, and it remains in $\mathbb U$ because
-$u^2+v^2\ge0$. The joined ultrareal sum also remains in $\mathbb U$: since
-$u,v\in\mathbb R_{\ge0}$, the joined inner expression
-$x=u+v$ is nonnegative, so $X=x^2$ is an ultrareal. With $X=U+V$:
+That remains in $\mathbb U$ because $u^2+v^2\ge0$. With the square-form terms
+kept in view, the term-type-aware result remains in $\mathbb U$: since
+$u,v\in\mathbb R_{\ge0}$, the inner-state sum $x=u+v$ is nonnegative, so $X=x^2$
+is an ultrareal. With $X=U+V$:
 
 $$
 U+V=X=x^2=(u+v)^2.
@@ -60,7 +61,7 @@ $$
 d(U,V)=uv+vu.
 $$
 
-When the descriptor is being emphasized, the same joined value can be written:
+When the descriptor is being emphasized, the same sum can be written:
 
 $$
 U\,d\,V=uu+uv+vu+vv.

@@ -11,9 +11,9 @@ The pedagogical consequence is simpler:
 > notice the relation
 
 Counting asks how many visible units are present. Relation-aware arithmetic asks
-what joined value is produced when the parts meet.
+what value is produced when the relation between the parts is kept visible.
 
-## Union And Joining
+## Union And Relation
 
 Early arithmetic often treats addition as union:
 
@@ -21,8 +21,7 @@ Early arithmetic often treats addition as union:
 > count the new group
 
 That lesson is useful, but it is not the whole operation. Union says that groups
-are considered together. Joining asks what happens through the relation between
-the parts.
+are considered together. Relation asks what happens between the parts.
 
 The distinction can be taught without making arithmetic harder. A learner can
 hold both ideas:
@@ -39,8 +38,8 @@ $$
 
 for fully aligned unit magnitudes.
 
-The first counts separated visible units. The second measures a joined
-square-value.
+The first counts separated visible units. The second measures the square-value
+with full alignment included.
 
 ## Signs
 

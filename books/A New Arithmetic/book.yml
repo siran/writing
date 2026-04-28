@@ -3,7 +3,7 @@ title: A New Arithmetic
 subtitle: Numbers Interact
 author: An M. Rodriguez
 description: "A formal description of ultrareal numbers as positive square-forms N = n^2, with closure for addition, interaction descriptors, and rotated inner-state return n n*."
-excerpt: "The first claim is simple: 1 + 1 is not necessarily only 2. The result depends on the relation carried by the joining operation."
+excerpt: "The first claim is simple: 1 + 1 is not necessarily only 2. The result depends on the term types and relation data carried by the operands."
 publisher: Preferred Frame Prints
 editor: An M. Rodriguez
 lang: en-US

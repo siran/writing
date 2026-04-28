@@ -42,7 +42,7 @@ $$
 d(U,V)=2uv\cos\Delta.
 $$
 
-The joined density is:
+The resulting density is:
 
 $$
 |a+b|^2
@@ -58,7 +58,7 @@ $$
 d(U,V):=ab^*+ba^*=2uv\cos\Delta.
 $$
 
-This is upper-case relation-aware addition:
+This is upper-case term-type-aware addition:
 
 $$
 U+V=u^2+d(U,V)+v^2.
@@ -148,7 +148,7 @@ a negative ultrareal.
 
 ## Law Of Cosines
 
-The same expression recovers the law of cosines. For joined oriented inner
+The same expression recovers the law of cosines. For the sum of oriented inner
 states:
 
 $$

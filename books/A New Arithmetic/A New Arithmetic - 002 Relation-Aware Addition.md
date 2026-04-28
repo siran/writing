@@ -1,40 +1,42 @@
-# Relation-Aware Addition
+# Term-Type-Aware Addition
 
-Ultrareal arithmetic overloads the symbol $+$ by the layer of its operands.
+Ultrareal arithmetic uses one addition operation,
+$+(\cdot,\cdot)$, read through the terms supplied to it.
 
-Lower-case symbols name inner magnitudes or inner states. Upper-case symbols
-name visible ultrareal values:
+Lower-case symbols name inner magnitudes, inner states, or presentations of
+inner states when relation data is present. Upper-case symbols name visible
+ultrareal values:
 
 $$
 U=u^2,\qquad V=v^2,\qquad u,v\ge0.
 $$
 
-When lower-case inner states are added, ordinary inner-state addition is being
-used:
+For natural scalar inner states, lower-case addition is ordinary inner-state
+addition:
 
 $$
-u+v.
++(u,v)=u+v.
 $$
 
-The ordinary visible reading is:
+When upper-case ultrareals are added, the result is the ultrareal determined by
+the corresponding lower-case sum. Since $U=u^2$ and $V=v^2$:
 
 $$
-U+V=u^2+v^2.
++(U,V)=U+V=(+(u,v))^2.
 $$
 
-That is standard arithmetic. It counts the visible square-values without an
-interaction term. It is also closed in $\mathbb U$, since:
+In the natural scalar case:
 
 $$
-u^2+v^2\ge0.
++(U,V)=U+V=(u+v)^2.
 $$
 
-The inner magnitude of that ordinary visible sum is
-$\sqrt{u^2+v^2}$.
+Thus the printed sign is the same. The term type determines how the operation
+is read.
 
-## Closure Of The Joined Sum
+## Closure Of Ultrareal Addition
 
-Before the joined sum is written as a square, closure must be proved.
+The natural scalar upper-case sum must remain inside $\mathbb U$.
 
 Let:
 
@@ -48,11 +50,11 @@ $$
 u,v\in\mathbb R_{\ge0}.
 $$
 
-The nonnegative reals are closed under ordinary addition, so the joined inner
-expression:
+The nonnegative reals are closed under ordinary addition, so the inner-state
+sum:
 
 $$
-x=u+v
+x=+(u,v)=u+v
 $$
 
 also lies in the nonnegative reals:
@@ -68,11 +70,11 @@ $$
 X=x^2.
 $$
 
-This proves that adding two ultrareals in the joined inner-state sense gives an
-ultrareal. Since it is the joined sum of $U$ and $V$:
+This proves that adding two ultrareals gives another ultrareal. Since
+$+(U,V)$ is the ultrareal determined by $+(u,v)$:
 
 $$
-X=U+V.
++(U,V)=U+V=X.
 $$
 
 Therefore:
@@ -81,8 +83,8 @@ $$
 U+V=X=x^2=(u+v)^2.
 $$
 
-Nothing new is being added to the square-form. Once closure has been proved,
-the sum can be expressed as the square of its inner expression.
+Nothing new is being added to the square-form. The upper-case result follows
+from the lower-case sum and the definition $U=u^2$.
 
 The operator is still $+$. The operands determine which layer is being used.
 
@@ -107,7 +109,7 @@ $$
 U+V=u^2+d(U,V)+v^2.
 $$
 
-When the descriptor is being displayed, the same joined value may also be
+When the descriptor is being displayed, the same sum may also be
 written:
 
 $$
@@ -129,10 +131,10 @@ $$
 uv=vu.
 $$
 
-Nor is there a need to assume that every larger joining is associative without
-stating the inner-state algebra that makes it so. Commutativity and
-associativity are common and useful in many applications, but they are not part
-of the bare ultrareal definition.
+Nor is there a need to assume that every many-term expression is associative
+without stating the inner-state algebra that makes it so. Commutativity and
+associativity are available when the arithmetic of the particular case supplies
+them, but they are not imposed by the bare ultrareal definition.
 
 ## Standard Arithmetic
 
@@ -150,6 +152,9 @@ $$
 
 This is the non-interaction case. The visible values are counted together, and
 no interaction term remains.
+
+This is not a second addition operation. It is the same upper-case sum read
+with zero relation data.
 
 For unit values in this case:
 
@@ -189,7 +194,7 @@ $$
 1+1 \text{ is not necessarily only } 2.
 $$
 
-The printed expression is the same, but the operands and relation are not the
+The printed expression is the same, but the term data and relation are not the
 same. Separated visible units recover $2$. Aligned unit magnitudes produce $4$.
 
 ## Opposed Scalar Case
@@ -206,7 +211,7 @@ $$
 U+V=u^2+v^2-2uv=(u-v)^2.
 $$
 
-Opposition can reduce a joined value. It cannot create a negative ultrareal
+Opposition can reduce a sum. It cannot create a negative ultrareal
 inside this bounded relation scale.
 
 If $u=v$, complete opposition gives:
@@ -222,11 +227,11 @@ ultrareal value.
 ## Descriptor Structure
 
 An interaction descriptor may encode angular, hyperbolic, weighted, tangential,
-or otherwise structured relation data. The formal requirement is not that every
-descriptor be commutative, scalar, or associative. The formal requirement is
-admissibility: the joined value must remain an ultrareal.
+or otherwise structured relation data. It need not be commutative, scalar, or
+associative in advance. The formal requirement is admissibility: the result
+must remain an ultrareal.
 
-The important order is the closure proof:
+The important order in the natural scalar case is the closure proof:
 
 $$
 u,v\in\mathbb R_{\ge0}
@@ -236,7 +241,7 @@ x=u+v\in\mathbb R_{\ge0}
 X=x^2\in\mathbb U.
 $$
 
-Then the joined sum can be written:
+Then the upper-case sum can be written:
 
 $$
 U+V=X=(u+v)^2.
@@ -249,11 +254,11 @@ d(U,V):=uv+vu.
 $$
 
 Thus $d(U,V)$ is not an extra number placed beside addition. It is the
-interaction term exposed by expanding the square of the joined inner states.
+interaction term exposed by expanding the square of the added inner states.
 
 ## Basic Laws
 
-For fully aligned joining in a commutative and associative inner-state setting,
+For fully aligned addition in a commutative and associative inner-state setting,
 addition has the familiar laws:
 
 $$
@@ -269,4 +274,4 @@ $$
 $$
 
 Without those properties, ordering and parentheses remain part of the data of
-the joining. The many-term form makes that structure explicit.
+the expression. The many-term form makes that structure explicit.

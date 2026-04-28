@@ -43,8 +43,8 @@ magnitude is the lower-case value through which relation terms are formed.
 
 This separation is the structural move of the book. Ordinary arithmetic normally
 works directly with visible values. Ultrareal arithmetic keeps the inner
-magnitude available, so a joined value can include terms that depend on how the
-parts meet.
+magnitude available, so a sum can expose terms that depend on how the parts
+meet.
 
 ## Positivity
 
@@ -97,7 +97,7 @@ $$
 $$
 
 It is the additive identity for ordinary visible addition and for relation-aware
-joining, because any relation term containing its inner magnitude vanishes.
+addition, because any relation term containing its inner magnitude vanishes.
 
 ## No Negative Ultrareals
 
@@ -160,4 +160,4 @@ zz^*
 $$
 
 Thus self-orientation cancels in a single ultrareal. Relative orientation
-matters only when two or more inner states are joined.
+matters only when two or more inner states are added or compared.

@@ -34,7 +34,7 @@ $$
 
 A single oriented presentation therefore returns to the same positive
 ultrareal. Orientation becomes operational when two or more presentations are
-joined.
+added or compared.
 
 ## Front, Back, And Sideways
 
@@ -95,7 +95,7 @@ $$
 \cos\Delta=-1.
 $$
 
-Their joined value is:
+Their sum value is:
 
 $$
 |u+ve^{i\pi}|^2
@@ -113,6 +113,37 @@ $$
 $$
 
 The result is absence at the zero boundary, not a negative ultrareal.
+
+## The Return Product
+
+The return product $zz^*$ is not a convention for recovering a norm. Its
+structure is that of a standing wave.
+
+A standing wave forms when two equal waves travel in exactly opposing
+directions. The propagation cancels. What remains is pure density at each
+point — energy without net flow, value without direction.
+
+The oriented inner state $z=ue^{i\alpha}$ presents inner magnitude $u$ in
+direction $\alpha$. Its return $z^*=ue^{-i\alpha}$ presents the same inner
+magnitude in the opposing direction $-\alpha$. Their product is:
+
+$$
+zz^*=(ue^{i\alpha})(ue^{-i\alpha})=u^2e^{i(\alpha-\alpha)}=u^2.
+$$
+
+The orientations cancel. What remains is $u^2$ — the ultrareal value, pure
+density, no net direction.
+
+This is not cancellation to zero. The inner magnitude $u$ is present in both
+$z$ and $z^*$. The opposed orientations cancel the directional component only.
+The value $u^2$ survives precisely because it was never held in the
+orientation. It was always in the square-form.
+
+The return partner of $z$ is unique. For a given inner magnitude $u$ and
+orientation $\alpha$, there is exactly one presentation with the same magnitude
+and exactly opposing orientation: $z^*=ue^{-i\alpha}$. Confronting $z$ with
+its return is the unique way to recover $u^2$ from an oriented presentation
+without further data.
 
 ## Minus-Signed Presentations
 
@@ -156,7 +187,7 @@ $$
 
 ## Presentation Versus Relation
 
-A minus-signed presentation and an opposed joining are different.
+A minus-signed presentation and opposed addition are different.
 
 The expression:
 
@@ -173,7 +204,7 @@ U+V=(u-v)^2
 \qquad(d(U,V)=-2uv)
 $$
 
-is an admissible joining of two positive ultrareals through opposition.
+is an admissible addition of two positive ultrareals through opposition.
 
 In the first case, the sign belongs to presentation. In the second case, the
 negative term belongs to the relation descriptor.
@@ -213,7 +244,7 @@ $$
 a^*=ue^{-i\alpha},\qquad b^*=ve^{-i\beta},
 $$
 
-their joined positive value is:
+their resulting positive value is:
 
 $$
 |a+b|^2

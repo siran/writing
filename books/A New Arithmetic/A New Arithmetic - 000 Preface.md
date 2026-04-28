@@ -18,7 +18,8 @@ $$
 U=u^2,\qquad V=v^2.
 $$
 
-If we consider the sum $U+V$, the usual answer is immediate:
+If we consider the sum $U+V$ and read only the visible square-values, the usual
+answer is immediate:
 
 $$
 U+V=u^2+v^2.
@@ -26,14 +27,15 @@ $$
 
 That is the standard visible reading. It counts the two square-values.
 
-But there is a previous definition in view:
+But the same terms also carry their square-form definition:
 
 $$
 U=u^2.
 $$
 
-Under this definition, $U+V$ is again a positive number, and as such it can be
-written as a square-form. The inner expression of the sum is:
+When the same $+$ is read with the square-forms in view, $U+V$ is again a
+positive number, and as such it can be written as a square-form. The inner
+expression of the sum is:
 
 $$
 u+v.
@@ -79,18 +81,20 @@ $$
 U=u^2,\qquad u\ge0.
 $$
 
-Second, it proves basic facts about them. In particular, it proves that adding
-two ultrareals gives another ultrareal. Only after that closure result is
-established does the book use the definition to write the sum in square-form:
+Second, it proves basic facts about them. In particular, it proves that the
+term-type-aware sum of two ultrareals is another ultrareal. The same operation
+$+(\cdot,\cdot)$ is read through the terms supplied to it: lower-case terms add
+as inner states, while upper-case ultrareals return the square-form determined
+by those inner states:
 
 $$
 U+V=(u+v)^2.
 $$
 
-Third, the book keeps algebraic assumptions explicit. Ultrareals may be
-commutative and associative in certain cases, but those laws are not
-requirements from the beginning. The aim is to model the arithmetic aspect of
-reality, where relation can matter. When the relevant inner product
+Third, the book keeps algebraic assumptions explicit. Commutativity,
+associativity, and distributivity may be used when the arithmetic of the
+particular case supplies them. They are not imposed as extra requirements before
+the relevant terms have been specified. When the relevant inner product
 distributes, the square can be expanded:
 
 $$
