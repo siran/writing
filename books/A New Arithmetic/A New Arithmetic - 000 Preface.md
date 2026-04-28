@@ -51,8 +51,9 @@ $$
 uv+vu?
 $$
 
-Those middle terms are the interaction term that the ordinary visible reading
-does not take into account. Numbers treated this way are ultrareals.
+Those middle terms are the relation $d(\cdot,\cdot)$ between the parts, the
+interaction term that the ordinary visible reading does not take into account.
+Numbers treated this way are ultrareals.
 
 The standard arithmetic that we love is not wrong. It is recovered when the
 interaction term is not taken into account. This book describes a broader
@@ -95,7 +96,8 @@ $$
 (u+v)^2=u^2+uv+vu+v^2.
 $$
 
-The middle terms are not decoration. They are the relation between the parts:
+The middle terms are not decoration. They are the relation $d(\cdot,\cdot)$
+between the parts:
 
 $$
 d(U,V)=uv+vu.
@@ -105,14 +107,14 @@ When that relation vanishes, ordinary arithmetic is recovered.
 
 Finally, the book introduces orientation. To notate turn and opposition, we
 adjoin the symbol $i$, with $i^2=-1$, and use Euler's identity. Here the symbol
-$-1$ is not being used to introduce a negative ultrareal with $-1<0$. It denotes
-opposition: a half-turn in presentation. There is no such thing as a negative
-ultrareal.
+$-1$ is not being used as in $-1<0$, since there are no negative ultrareals. It
+is a notation convenience, only a symbol for opposition. We know $\sqrt{-1}$ is
+not ultrareal, since $i^2=-1$ is not a positive number.
 
-Once orientation is available, a density can be presented through a rotated
-inner state. A half-turn looks the same from the square-form: front and back
-return the same density. A quarter-turn is different: it is sideways,
-orthogonal to the ordinary positive line.
+Once orientation is available, numbers themselves can be rotated. A half-turn
+looks the same from the square-form: front and back return the same value. A
+quarter-turn is different: it is sideways, orthogonal to the ordinary positive
+line.
 
 That sideways orthogonality gives meaning to the return product:
 
@@ -121,6 +123,6 @@ n n^*.
 $$
 
 The symbol $n^*$ is not an ad hoc complex conjugate. It is the reverse-oriented
-inner state, the return needed to recover density from a rotated presentation.
-This is how signs, opposition, orthogonality, and ordinary arithmetic fit
-inside one positive square-form account.
+inner state, the return needed to recover the positive value from a rotated
+presentation. This is how signs, opposition, orthogonality, and ordinary
+arithmetic fit inside one positive square-form account.
