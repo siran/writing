@@ -87,10 +87,11 @@ $$
 U+V=(u+v)^2.
 $$
 
-Third, the book uses ordinary arithmetic wherever it is licensed. Standard
-arithmetic can apply to the inner values as much as necessary. Commutativity
-and associativity are not assumed until they are required. When the inner
-product distributes, the square can be expanded:
+Third, the book keeps algebraic assumptions explicit. Ultrareals may be
+commutative and associative in certain cases, but those laws are not
+requirements from the beginning. The aim is to model the arithmetic aspect of
+reality, where relation can matter. When the relevant inner product
+distributes, the square can be expanded:
 
 $$
 (u+v)^2=u^2+uv+vu+v^2.
@@ -108,8 +109,10 @@ When that relation vanishes, ordinary arithmetic is recovered.
 Finally, the book introduces orientation. To notate turn and opposition, we
 adjoin the symbol $i$, with $i^2=-1$, and use Euler's identity. Here the symbol
 $-1$ is not being used as in $-1<0$, since there are no negative ultrareals. It
-is a notation convenience, only a symbol for opposition. We know $\sqrt{-1}$ is
-not ultrareal, since $i^2=-1$ is not a positive number.
+is a notation convenience, a useful geometric trick on the map of
+presentations. In this role, $i$ belongs on the presentation side of the
+notation: it records a turn. It is not itself an ultrareal. We know
+$\sqrt{-1}$ is not ultrareal, since $i^2=-1$ is not a positive number.
 
 Once orientation is available, numbers themselves can be rotated. A half-turn
 looks the same from the square-form: front and back return the same value. A
