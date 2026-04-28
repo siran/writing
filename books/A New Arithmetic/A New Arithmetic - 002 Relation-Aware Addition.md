@@ -16,8 +16,8 @@ $$
 u+v.
 $$
 
-When upper-case ultrareals are added, the operation is lifted from the joined
-inner states:
+When upper-case ultrareals are added, the definition uses the joined inner
+states:
 
 $$
 \boxed{
@@ -25,8 +25,9 @@ U+V := (u+v)^2
 }
 $$
 
-This is the defining rule. The operator is still $+$. The operands determine
-which layer is being used.
+This is the definition. Since $X=x^2$, adding upper-case ultrareals means
+squaring the joined lower-case inner states. The operator is still $+$. The
+operands determine which layer is being used.
 
 ## Ordered Expansion
 

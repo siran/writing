@@ -41,7 +41,7 @@ $$
 U=u^2,\qquad V=v^2,
 $$
 
-upper-case addition is lifted from the inner states:
+upper-case addition is defined by the inner states:
 
 $$
 U+V := (u+v)^2.
