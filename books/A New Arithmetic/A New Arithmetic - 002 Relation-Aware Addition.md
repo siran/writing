@@ -25,9 +25,25 @@ U+V := (u+v)^2
 }
 $$
 
-This is the definition. Since $X=x^2$, adding upper-case ultrareals means
-squaring the joined lower-case inner states. The operator is still $+$. The
-operands determine which layer is being used.
+This is the definition. If:
+
+$$
+X=U+V,
+$$
+
+then $X=x^2$ by definition, and the joined inner state is:
+
+$$
+x=u+v.
+$$
+
+Therefore:
+
+$$
+X=x^2=U+V=(u+v)^2.
+$$
+
+The operator is still $+$. The operands determine which layer is being used.
 
 ## Ordered Expansion
 
@@ -77,7 +93,30 @@ stating the inner-state algebra that makes it so. Commutativity and
 associativity are common and useful in many applications, but they are not part
 of the bare ultrareal definition.
 
-## Commutative Reduction
+## Standard Arithmetic
+
+Standard arithmetic is recovered when the descriptor vanishes:
+
+$$
+d(U,V)=0.
+$$
+
+Then:
+
+$$
+U+V=u^2+v^2.
+$$
+
+This is the non-interaction case. The visible values are counted together, and
+no interaction term remains.
+
+For unit values in this case:
+
+$$
+1+1=2.
+$$
+
+## Aligned Scalar Case
 
 In the common commutative scalar case:
 
@@ -85,13 +124,17 @@ $$
 uv=vu.
 $$
 
-Then the ordered expansion reduces to:
+Full alignment gives:
 
 $$
-U+V=u^2+v^2+2uv.
+d(U,V)=uv+vu=2uv.
 $$
 
-This is the fully aligned case.
+Then:
+
+$$
+U+V=u^2+v^2+2uv=(u+v)^2.
+$$
 
 For unit values in the aligned case:
 
@@ -108,42 +151,15 @@ $$
 The printed expression is the same, but the operands and relation are not the
 same. Separated visible units recover $2$. Aligned unit magnitudes produce $4$.
 
-## Descriptor Reduction
+## Opposed Scalar Case
 
-In many common cases, the interaction descriptor can be summarized by a scalar
-coefficient $\kappa$:
-
-$$
-d(U,V)=uv+vu\rightsquigarrow 2\kappa uv.
-$$
-
-Then the same upper-case addition has the scalar reduction:
+Complete opposition in the same scalar setting gives:
 
 $$
-U+V=u^2+v^2+2\kappa uv.
+d(U,V)=-2uv.
 $$
 
-The descriptor $d(U,V)$ is not an ultrareal number. It is relation data for this
-joining. The coefficient $\kappa$ is a normalized scalar summary of that
-descriptor when such a summary is available.
-
-The standard coefficient values are:
-
-$$
-\kappa=1 \quad\text{aligned},\qquad
-\kappa=0 \quad\text{non-interacting},\qquad
-\kappa=-1 \quad\text{opposed}.
-$$
-
-When $\kappa=0$:
-
-$$
-U+V=u^2+v^2.
-$$
-
-This is the recovered ordinary case: the cross terms vanish.
-
-When $\kappa=-1$:
+Then:
 
 $$
 U+V=u^2+v^2-2uv=(u-v)^2.
@@ -156,17 +172,17 @@ If $u=v$, complete opposition gives:
 
 $$
 U+U=0
-\qquad(\kappa=-1).
+\qquad(d(U,U)=-2u^2).
 $$
 
 This is cancellation to the zero boundary, not passage into negative
 ultrareal value.
 
-## Coefficients Are Reductions
+## Descriptor Structure
 
 An interaction descriptor may encode angular, hyperbolic, weighted, tangential,
 or otherwise structured relation data. The formal requirement is not that every
-descriptor reduce to a scalar coefficient. The formal requirement is
+descriptor be commutative, scalar, or associative. The formal requirement is
 admissibility: the joined value must remain an ultrareal.
 
 The important order is:
@@ -175,14 +191,14 @@ $$
 U+V := (u+v)^2
 $$
 
-first, and only then, when the inner-state algebra permits it:
+first, and only then, when the inner-state product distributes:
 
 $$
-d(U,V)=uv+vu \rightsquigarrow 2\kappa uv.
+d(U,V):=uv+vu.
 $$
 
-Thus $2\kappa uv$ is not the definition of addition. It is a common scalar form
-of the interaction descriptor.
+Thus $d(U,V)$ is not an extra number placed beside addition. It is the
+interaction term exposed by expanding the square of the joined inner states.
 
 ## Basic Laws
 

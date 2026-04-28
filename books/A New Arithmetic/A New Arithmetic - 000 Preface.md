@@ -47,6 +47,24 @@ $$
 U+V := (u+v)^2.
 $$
 
+Equivalently, if:
+
+$$
+X=U+V,
+$$
+
+then $X=x^2$ by definition, and the joined inner state is:
+
+$$
+x=u+v.
+$$
+
+Therefore:
+
+$$
+X=x^2=U+V=(u+v)^2.
+$$
+
 If the inner-state product distributes, this expands as:
 
 $$
@@ -86,31 +104,16 @@ $$
 U+V=u^2+v^2+2uv.
 $$
 
-In angular or otherwise projected scalar cases, the descriptor may be
-normalized by a coefficient $\kappa$:
+When the descriptor vanishes, the interaction term vanishes and ordinary
+addition is recovered:
 
 $$
-d(U,V)=uv+vu\rightsquigarrow 2\kappa uv.
-$$
-
-Then the common scalar reduction is:
-
-$$
-U+V=u^2+v^2+2\kappa uv.
-$$
-
-This is not a separate addition operator. It is a reduction of the same
-overloaded $+$ after the relation of the inner states has been specified.
-
-When the projected coefficient is $\kappa=0$, the interaction term vanishes and
-ordinary addition is recovered:
-
-$$
+d(U,V)=0,\qquad
 U+V=u^2+v^2.
 $$
 
-When $\kappa=1$, the parts are aligned. When $\kappa=-1$, the parts are
-opposed:
+In a commutative scalar setting, full alignment gives $d(U,V)=2uv$. Complete
+opposition gives $d(U,V)=-2uv$:
 
 $$
 U+V=(u+v)^2,\qquad U+V=(u-v)^2.
@@ -120,11 +123,10 @@ Thus the novelty is not the binomial identity. The novelty is the placement of
 that identity inside arithmetic: the cross term is treated as relation data, not
 as an accidental expansion.
 
-For angular or phase-like quantities, the normalized coefficient is often
-written:
+For angular or phase-like quantities, the descriptor is often:
 
 $$
-\kappa=\cos\Delta,
+d(U,V)=2uv\cos\Delta,
 $$
 
 where $\Delta$ is the relative difference between two oriented inner

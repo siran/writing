@@ -22,10 +22,10 @@ $$
 \Delta=\alpha-\beta.
 $$
 
-The angular coefficient is:
+The angular descriptor is:
 
 $$
-\kappa=\cos\Delta.
+d(U,V)=2uv\cos\Delta.
 $$
 
 The joined value is:
@@ -44,7 +44,7 @@ $$
 This is upper-case relation-aware addition:
 
 $$
-U+V=u^2+v^2+2\kappa uv.
+U+V=u^2+d(U,V)+v^2.
 $$
 
 ## Aligned Difference

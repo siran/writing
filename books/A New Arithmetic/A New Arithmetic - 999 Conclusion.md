@@ -57,20 +57,20 @@ $$
 U\,d\,V=U+V=u^2+d(U,V)+v^2.
 $$
 
-In common commutative scalar reductions:
-
-$$
-d(U,V)\rightsquigarrow 2\kappa uv.
-$$
-
 Ordinary arithmetic is the recovered non-interaction case where the cross terms
-vanish. Aligned addition is the commutative case $\kappa=1$. Opposition is the
-case $\kappa=-1$ in the bounded scale.
-
-Angular relation is one way to supply the coefficient:
+vanish:
 
 $$
-\kappa=\cos\Delta.
+d(U,V)=0.
+$$
+
+Aligned addition in a commutative scalar setting has $d(U,V)=2uv$. Opposition
+has $d(U,V)=-2uv$.
+
+Angular relation is one way to supply the descriptor:
+
+$$
+d(U,V)=2uv\cos\Delta.
 $$
 
 Here $\Delta$ is relative difference, not an intrinsic phase required by every

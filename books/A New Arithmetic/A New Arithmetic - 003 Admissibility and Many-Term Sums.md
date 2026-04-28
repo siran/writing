@@ -36,22 +36,22 @@ This is the basic closure rule.
 
 ## Descriptor Admissibility
 
-When the ordered cross terms are reduced by a scalar coefficient,
+When the ordered cross terms are written as the descriptor,
 
 $$
-d(U,V)=uv+vu\rightsquigarrow 2\kappa uv,
+d(U,V)=uv+vu,
 $$
 
 the joined value becomes:
 
 $$
-U+V=u^2+v^2+2\kappa uv.
+U+V=u^2+d(U,V)+v^2.
 $$
 
-In that reduction, the coefficient $\kappa$ is admissible for this joining when:
+In scalar cases, the descriptor is admissible for this joining when:
 
 $$
-u^2+v^2+2\kappa uv\ge0.
+u^2+d(U,V)+v^2\ge0.
 $$
 
 Equivalently:
@@ -62,22 +62,22 @@ $$
 
 ## Bounded Opposition
 
-In the bounded angular or field-alignment scale,
+In the bounded angular or field-alignment scale, the descriptor satisfies:
 
 $$
--1\le \kappa\le1,
+-2uv\le d(U,V)\le 2uv.
 $$
 
-closure is automatic:
+Closure is automatic:
 
 $$
-u^2+v^2+2\kappa uv\ge(u-v)^2\ge0.
+u^2+d(U,V)+v^2\ge(u-v)^2\ge0.
 $$
 
 The smallest value occurs at complete opposition:
 
 $$
-\kappa=-1.
+d(U,V)=-2uv.
 $$
 
 Then:
@@ -109,26 +109,26 @@ $$
 then:
 
 $$
-a^2+b^2+2\kappa ab=0.
+a^2+d(A,B)+b^2=0.
 $$
 
-Solving for $\kappa$ gives:
+Solving for the descriptor gives:
 
 $$
-\kappa=-\frac{a^2+b^2}{2ab}.
+d(A,B)=-(a^2+b^2).
 $$
 
 By the arithmetic-geometric mean inequality,
 
 $$
-\frac{a^2+b^2}{2ab}\ge1,
+a^2+b^2\ge2ab,
 $$
 
-with equality only when $a=b$. Therefore, inside $-1\le \kappa\le1$, exact
-cancellation requires:
+with equality only when $a=b$. Therefore, inside the bounded descriptor scale
+$-2ab\le d(A,B)\le2ab$, exact cancellation requires:
 
 $$
-a=b,\qquad \kappa=-1.
+a=b,\qquad d(A,B)=-2ab.
 $$
 
 Complete opposition is the only bounded relation that cancels two nonzero
@@ -142,15 +142,15 @@ $$
 U_i=u_i^2,\qquad i=1,\ldots,n,
 $$
 
-the common commutative scalar reduction can be recorded by a coefficient table
-$K=(\kappa_{ij})$. The same overloaded $+$ is used:
+the pairwise descriptor table $D=(d_{ij})$ records the interaction terms. The
+same overloaded $+$ is used:
 
 $$
 \boxed{
 U_1+\cdots+U_n
 :=
 \sum_i u_i^2
-+2\sum_{i<j}\kappa_{ij}u_i u_j
++\sum_{i<j}d_{ij}
 }
 $$
 
@@ -164,28 +164,18 @@ with the expansion determined by the ordering, products, and parentheses of the
 chosen inner-state algebra.
 
 When the inner-state product is distributive and the order is explicit, the
-pairwise interaction descriptors are:
+pairwise descriptors are:
 
 $$
-d(U_i,U_j):=u_i u_j+u_j u_i.
+d_{ij}=d(U_i,U_j):=u_i u_j+u_j u_i.
 $$
 
-The coefficient table is the common scalar reduction:
+There is no separate interaction descriptor on the diagonal in this sum. The
+visible square terms are already present as $u_i^2$. The off-diagonal entries
+record interactions between distinct parts:
 
 $$
-d(U_i,U_j)\rightsquigarrow 2\kappa_{ij}u_i u_j.
-$$
-
-The diagonal entries are fixed:
-
-$$
-\kappa_{ii}=1.
-$$
-
-The off-diagonal entries record relations between distinct parts:
-
-$$
-\kappa_{ij}=\kappa_{ji}.
+d_{ij}=d_{ji}
 $$
 
 In matrix form, with
@@ -197,16 +187,18 @@ $$
 the joined value is:
 
 $$
-\mathbf u^{\mathsf T}K\mathbf u.
+\sum_i u_i^2+\sum_{i<j}d_{ij}.
 $$
 
-The coefficient table is admissible for the given joining when:
+The descriptor table is admissible for the given joining when:
 
 $$
-\mathbf u^{\mathsf T}K\mathbf u\ge0.
+\sum_i u_i^2+\sum_{i<j}d_{ij}\ge0.
 $$
 
-It is admissible for every real inner state when:
+In the common scalar matrix representation, this may be rewritten as a quadratic
+form $\mathbf u^{\mathsf T}K\mathbf u$. That representation is admissible for
+every real inner state when:
 
 $$
 K\succeq0.
@@ -229,7 +221,7 @@ sums, the table itself must satisfy the appropriate positivity condition.
 Ordinary arithmetic is recovered when all off-diagonal relations vanish:
 
 $$
-\kappa_{ij}=0\qquad(i\ne j).
+d_{ij}=0\qquad(i\ne j).
 $$
 
 Then:
@@ -239,10 +231,11 @@ U_1+\cdots+U_n
 =u_1^2+\cdots+u_n^2.
 $$
 
-Fully aligned addition is recovered when every off-diagonal relation is one:
+Fully aligned addition is recovered when every off-diagonal descriptor is the
+commutative scalar descriptor:
 
 $$
-\kappa_{ij}=1\qquad(i\ne j).
+d_{ij}=2u_i u_j\qquad(i\ne j).
 $$
 
 Then:
