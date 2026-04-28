@@ -41,19 +41,19 @@ $$
 U=u^2,\qquad V=v^2,
 $$
 
-upper-case addition is defined by the inner states:
+let their sum be an ultrareal:
 
 $$
-U+V := (u+v)^2.
+X=U+V.
 $$
 
-Equivalently, if:
+Since $X$ is an ultrareal, it has the form:
 
 $$
-X=U+V,
+X=x^2.
 $$
 
-then $X=x^2$ by definition, and the joined inner state is:
+The joined inner state is:
 
 $$
 x=u+v.
@@ -62,7 +62,7 @@ $$
 Therefore:
 
 $$
-X=x^2=U+V=(u+v)^2.
+U+V=X=x^2=(u+v)^2.
 $$
 
 If the inner-state product distributes, this expands as:

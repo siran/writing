@@ -16,22 +16,19 @@ $$
 u+v.
 $$
 
-When upper-case ultrareals are added, the definition uses the joined inner
-states:
+When upper-case ultrareals are added, let the sum be an ultrareal:
 
 $$
-\boxed{
-U+V := (u+v)^2
-}
+X=U+V.
 $$
 
-This is the definition. If:
+Since $X$ is an ultrareal, it has the form:
 
 $$
-X=U+V,
+X=x^2.
 $$
 
-then $X=x^2$ by definition, and the joined inner state is:
+The joined inner state is:
 
 $$
 x=u+v.
@@ -40,7 +37,7 @@ $$
 Therefore:
 
 $$
-X=x^2=U+V=(u+v)^2.
+U+V=X=x^2=(u+v)^2.
 $$
 
 The operator is still $+$. The operands determine which layer is being used.
@@ -188,10 +185,16 @@ admissibility: the joined value must remain an ultrareal.
 The important order is:
 
 $$
-U+V := (u+v)^2
+X=U+V,\qquad X=x^2,\qquad x=u+v
 $$
 
-first, and only then, when the inner-state product distributes:
+so:
+
+$$
+U+V=(u+v)^2.
+$$
+
+Only then, when the inner-state product distributes:
 
 $$
 d(U,V):=uv+vu.
