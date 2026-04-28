@@ -16,9 +16,7 @@ $$
 u+v.
 $$
 
-At this point there is a choice.
-
-If $+$ is read as ordinary visible addition, then:
+The ordinary visible reading is:
 
 $$
 U+V=u^2+v^2.
@@ -27,8 +25,8 @@ $$
 That is standard arithmetic. It counts the visible square-values without an
 interaction term.
 
-Relation-aware ultrareal addition makes a different choice. It treats the sum
-itself as an ultrareal. Let:
+The ultrareal reading asks whether the sum is positive in the ultrareal sense.
+If it is, then the sum itself is an ultrareal. Let:
 
 $$
 X=U+V.
@@ -40,7 +38,7 @@ $$
 X=x^2.
 $$
 
-The joined inner state is:
+The joined inner expression is:
 
 $$
 x=u+v.
@@ -52,8 +50,9 @@ $$
 U+V=X=x^2=(u+v)^2.
 $$
 
-This is the joined-sum axiom. It is the point at which the arithmetic decides to
-join inner states rather than merely count visible square-values.
+This is the positive-ultrareal reading of the sum. Nothing new is being added to
+the square-form: if the sum is an ultrareal, it can be expressed as the square
+of its inner expression.
 
 The operator is still $+$. The operands determine which layer is being used.
 
@@ -197,7 +196,7 @@ or otherwise structured relation data. The formal requirement is not that every
 descriptor be commutative, scalar, or associative. The formal requirement is
 admissibility: the joined value must remain an ultrareal.
 
-The important order is the joined-sum axiom:
+The important order is the positive-ultrareal reading:
 
 $$
 X=U+V,\qquad X=x^2,\qquad x=u+v

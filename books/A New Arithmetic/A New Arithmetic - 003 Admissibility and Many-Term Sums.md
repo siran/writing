@@ -13,7 +13,7 @@ $$
 U=u^2,\qquad V=v^2,
 $$
 
-the joined-sum axiom gives:
+the positive-ultrareal reading gives:
 
 $$
 U+V=(u+v)^2.

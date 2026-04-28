@@ -33,9 +33,9 @@ $$
 U+V=u^2+v^2.
 $$
 
-That is the recovered standard case. Relation-aware ultrareal addition makes the
-joined-sum choice: let $X=U+V$ be an ultrareal, with $X=x^2$ and joined inner
-state $x=u+v$. Then:
+That is the recovered standard case. The ultrareal reading asks whether $U+V$
+is positive in the ultrareal sense. If it is, let $X=U+V$ be an ultrareal, with
+$X=x^2$ and joined inner expression $x=u+v$. Then:
 
 $$
 U+V=X=x^2=(u+v)^2.

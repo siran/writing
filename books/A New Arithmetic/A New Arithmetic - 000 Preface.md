@@ -41,15 +41,14 @@ $$
 U=u^2,\qquad V=v^2,
 $$
 
-there is an interpretive choice. If $+$ is read as ordinary visible addition,
-then:
+the ordinary visible reading is:
 
 $$
 U+V=u^2+v^2.
 $$
 
-That is standard arithmetic. Relation-aware ultrareal addition makes a
-different choice: let the sum itself be an ultrareal:
+That is standard arithmetic. In the ultrareal reading, if $U+V$ is positive in
+the ultrareal sense, then the sum itself is an ultrareal:
 
 $$
 X=U+V.
@@ -61,7 +60,7 @@ $$
 X=x^2.
 $$
 
-The joined inner state is:
+The joined inner expression is:
 
 $$
 x=u+v.
@@ -155,7 +154,7 @@ pattern: keep value positive, keep relation explicit, and recover ordinary
 arithmetic when relation is zero.
 
 The book proceeds in that order. First it defines ultrareal numbers. Then it
-states the joined-sum axiom for overloaded addition. Then it states the
+states the positive-ultrareal reading of addition. Then it states the
 admissibility condition that keeps joined values inside $\mathbb U$. Only after
 that does it introduce angular difference, Euler notation, opposition, and
 signs.
