@@ -1,6 +1,6 @@
 # Angular Difference and Pythagorean Addition
 
-Angular relation is one important descriptor system.
+Angular relation is one important setting.
 
 A lone ultrareal has natural inner state $u$. When orientation is needed, an
 inner state may be presented as:
@@ -22,10 +22,10 @@ $$
 \Delta=\alpha-\beta.
 $$
 
-The angular descriptor is:
+The angular coefficient is:
 
 $$
-d=\cos\Delta.
+\kappa=\cos\Delta.
 $$
 
 The joined value is:
@@ -35,10 +35,16 @@ $$
 =u^2+v^2+2uv\cos\Delta.
 $$
 
+In this angular case, the interaction descriptor is:
+
+$$
+d(U,V):=a\bar b+b\bar a=2uv\cos\Delta.
+$$
+
 This is upper-case relation-aware addition:
 
 $$
-U+V=u^2+v^2+2uv\cos\Delta.
+U+V=u^2+v^2+2\kappa uv.
 $$
 
 ## Aligned Difference

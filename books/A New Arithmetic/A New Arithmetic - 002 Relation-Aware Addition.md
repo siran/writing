@@ -9,63 +9,88 @@ $$
 U=u^2,\qquad V=v^2,\qquad u,v\ge0.
 $$
 
-When lower-case inner magnitudes are added, ordinary inner-state addition is
-being used:
+When lower-case inner states are added, ordinary inner-state addition is being
+used:
 
 $$
 u+v.
 $$
 
-When upper-case ultrareals are added, the operation may read both their visible
-values and their inner magnitudes. With relation descriptor $d$, the rule is:
+When upper-case ultrareals are added, the operation is lifted from the joined
+inner states:
 
 $$
 \boxed{
-U+V:=u^2+v^2+2duv
+U+V := (u+v)^2
 }
 $$
 
-The descriptor $d$ is not an ultrareal number. It is relation data for this
-joining. The operator is still $+$. The operands and the displayed relation
-determine which addition is meant.
+This is the defining rule. The operator is still $+$. The operands determine
+which layer is being used.
 
-## The Recovered Ordinary Case
+## Ordered Expansion
 
-Ordinary addition of visible values is recovered when the relation descriptor is
-zero:
-
-$$
-d=0.
-$$
-
-Then:
+Expanding the defining square gives the interaction terms. If the inner-state
+product distributes, then:
 
 $$
-U+V=u^2+v^2.
+(u+v)^2=(u+v)(u+v)=u^2+uv+vu+v^2.
 $$
 
-This is the arithmetic of non-interacting parts. The quantities are counted
-together, but no cross term is included.
-
-For unit values in the non-interacting case:
+The middle terms are ordered. They are the interaction descriptor:
 
 $$
-1+1=2.
+d(U,V):=uv+vu.
 $$
 
-## Aligned Addition
-
-Aligned addition is the case:
+Thus:
 
 $$
-d=1.
+U+V=u^2+d(U,V)+v^2.
 $$
 
-Then:
+When the descriptor is being displayed, the same joined value may also be
+written:
 
 $$
-U+V=u^2+v^2+2uv=(u+v)^2.
+U\,d\,V:=uu+uv+vu+vv.
 $$
+
+Equivalently:
+
+$$
+U\,d\,V=U+V=u^2+d(U,V)+v^2.
+$$
+
+The symbol $d$ in this notation marks that the interaction descriptor is being
+included.
+
+In general, there is no need to assume:
+
+$$
+uv=vu.
+$$
+
+Nor is there a need to assume that every larger joining is associative without
+stating the inner-state algebra that makes it so. Commutativity and
+associativity are common and useful in many applications, but they are not part
+of the bare ultrareal definition.
+
+## Commutative Reduction
+
+In the common commutative scalar case:
+
+$$
+uv=vu.
+$$
+
+Then the ordered expansion reduces to:
+
+$$
+U+V=u^2+v^2+2uv.
+$$
+
+This is the fully aligned case.
 
 For unit values in the aligned case:
 
@@ -80,17 +105,44 @@ $$
 $$
 
 The printed expression is the same, but the operands and relation are not the
-same. Non-interacting unit values recover $2$. Aligned unit values produce $4$.
+same. Separated visible units recover $2$. Aligned unit magnitudes produce $4$.
 
-## Opposed Addition
+## Descriptor Reduction
 
-Opposed addition is the case:
+In many common cases, the interaction descriptor can be summarized by a scalar
+coefficient $\kappa$:
 
 $$
-d=-1.
+d(U,V)=uv+vu\rightsquigarrow 2\kappa uv.
 $$
 
-Then:
+Then the same upper-case addition has the scalar reduction:
+
+$$
+U+V=u^2+v^2+2\kappa uv.
+$$
+
+The descriptor $d(U,V)$ is not an ultrareal number. It is relation data for this
+joining. The coefficient $\kappa$ is a normalized scalar summary of that
+descriptor when such a summary is available.
+
+The standard coefficient values are:
+
+$$
+\kappa=1 \quad\text{aligned},\qquad
+\kappa=0 \quad\text{non-interacting},\qquad
+\kappa=-1 \quad\text{opposed}.
+$$
+
+When $\kappa=0$:
+
+$$
+U+V=u^2+v^2.
+$$
+
+This is the recovered ordinary case: the cross terms vanish.
+
+When $\kappa=-1$:
 
 $$
 U+V=u^2+v^2-2uv=(u-v)^2.
@@ -103,47 +155,38 @@ If $u=v$, complete opposition gives:
 
 $$
 U+U=0
-\qquad(d=-1).
+\qquad(\kappa=-1).
 $$
 
 This is cancellation to the zero boundary, not passage into negative
 ultrareal value.
 
-## The Descriptor
+## Coefficients Are Reductions
 
-The descriptor records the relation required by the quantities being joined.
-In the simplest bounded scale:
+An interaction descriptor may encode angular, hyperbolic, weighted, tangential,
+or otherwise structured relation data. The formal requirement is not that every
+descriptor reduce to a scalar coefficient. The formal requirement is
+admissibility: the joined value must remain an ultrareal.
 
-$$
--1\le d\le1.
-$$
-
-The endpoints have clear meanings:
+The important order is:
 
 $$
-d=1 \quad\text{aligned},\qquad
-d=0 \quad\text{non-interacting},\qquad
-d=-1 \quad\text{opposed}.
+U+V := (u+v)^2
 $$
 
-Other descriptor systems are possible. A descriptor may encode angular,
-hyperbolic, weighted, tangential, or otherwise structured relation data. The
-formal requirement is not that every descriptor be angular. The formal
-requirement is admissibility: the joined value must remain an ultrareal.
-
-## Basic Laws In The Fixed-Descriptor Cases
-
-For the recovered ordinary case, upper-case addition agrees with ordinary
-addition of visible values:
+first, and only then, when the inner-state algebra permits it:
 
 $$
-U+V=u^2+v^2.
+d(U,V)=uv+vu \rightsquigarrow 2\kappa uv.
 $$
 
-It is commutative and associative because ordinary addition is commutative and
-associative.
+Thus $2\kappa uv$ is not the definition of addition. It is a common scalar form
+of the interaction descriptor.
 
-For fully aligned joining, the operation is also commutative and associative:
+## Basic Laws
+
+For fully aligned joining in a commutative and associative inner-state setting,
+addition has the familiar laws:
 
 $$
 U+V=(u+v)^2=(v+u)^2=V+U.
@@ -157,6 +200,5 @@ $$
 =(u+v+w)^2.
 $$
 
-For general relation-aware addition, associativity is not a property of a
-single two-term descriptor alone. It belongs to the whole relation structure
-among all parts. That structure is made explicit by the many-term form.
+Without those properties, ordering and parentheses remain part of the data of
+the joining. The many-term form makes that structure explicit.

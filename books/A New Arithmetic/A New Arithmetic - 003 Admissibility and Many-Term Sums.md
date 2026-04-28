@@ -13,16 +13,45 @@ $$
 U=u^2,\qquad V=v^2,
 $$
 
-the joined value is:
+the joined value is defined from the inner states:
 
 $$
-U+V=u^2+v^2+2duv.
+U+V=(u+v)^2.
 $$
 
-The descriptor $d$ is admissible for this joining when:
+It is admissible when:
 
 $$
-u^2+v^2+2duv\ge0.
+(u+v)^2\in\mathbb U.
+$$
+
+If the inner-state product distributes, this can be read as the ordered
+condition:
+
+$$
+u^2+uv+vu+v^2\in\mathbb U.
+$$
+
+This is the basic closure rule.
+
+## Descriptor Admissibility
+
+When the ordered cross terms are reduced by a scalar coefficient,
+
+$$
+d(U,V)=uv+vu\rightsquigarrow 2\kappa uv,
+$$
+
+the joined value becomes:
+
+$$
+U+V=u^2+v^2+2\kappa uv.
+$$
+
+In that reduction, the coefficient $\kappa$ is admissible for this joining when:
+
+$$
+u^2+v^2+2\kappa uv\ge0.
 $$
 
 Equivalently:
@@ -31,26 +60,24 @@ $$
 U+V\in\mathbb U.
 $$
 
-This is the basic closure rule.
-
 ## Bounded Opposition
 
 In the bounded angular or field-alignment scale,
 
 $$
--1\le d\le1,
+-1\le \kappa\le1,
 $$
 
 closure is automatic:
 
 $$
-u^2+v^2+2duv\ge(u-v)^2\ge0.
+u^2+v^2+2\kappa uv\ge(u-v)^2\ge0.
 $$
 
 The smallest value occurs at complete opposition:
 
 $$
-d=-1.
+\kappa=-1.
 $$
 
 Then:
@@ -82,13 +109,13 @@ $$
 then:
 
 $$
-a^2+b^2+2dab=0.
+a^2+b^2+2\kappa ab=0.
 $$
 
-Solving for $d$ gives:
+Solving for $\kappa$ gives:
 
 $$
-d=-\frac{a^2+b^2}{2ab}.
+\kappa=-\frac{a^2+b^2}{2ab}.
 $$
 
 By the arithmetic-geometric mean inequality,
@@ -97,11 +124,11 @@ $$
 \frac{a^2+b^2}{2ab}\ge1,
 $$
 
-with equality only when $a=b$. Therefore, inside $-1\le d\le1$, exact
+with equality only when $a=b$. Therefore, inside $-1\le \kappa\le1$, exact
 cancellation requires:
 
 $$
-a=b,\qquad d=-1.
+a=b,\qquad \kappa=-1.
 $$
 
 Complete opposition is the only bounded relation that cancels two nonzero
@@ -115,28 +142,50 @@ $$
 U_i=u_i^2,\qquad i=1,\ldots,n,
 $$
 
-relation-aware addition is determined by a relation table $D=(d_{ij})$. The
-same overloaded $+$ is used:
+the common commutative scalar reduction can be recorded by a coefficient table
+$K=(\kappa_{ij})$. The same overloaded $+$ is used:
 
 $$
 \boxed{
 U_1+\cdots+U_n
 :=
 \sum_i u_i^2
-+2\sum_{i<j}d_{ij}u_i u_j
++2\sum_{i<j}\kappa_{ij}u_i u_j
 }
+$$
+
+Before this scalar reduction, the many-term upper-case addition is simply:
+
+$$
+U_1+\cdots+U_n:=(u_1+\cdots+u_n)^2,
+$$
+
+with the expansion determined by the ordering, products, and parentheses of the
+chosen inner-state algebra.
+
+When the inner-state product is distributive and the order is explicit, the
+pairwise interaction descriptors are:
+
+$$
+d(U_i,U_j):=u_i u_j+u_j u_i.
+$$
+
+The coefficient table is the common scalar reduction:
+
+$$
+d(U_i,U_j)\rightsquigarrow 2\kappa_{ij}u_i u_j.
 $$
 
 The diagonal entries are fixed:
 
 $$
-d_{ii}=1.
+\kappa_{ii}=1.
 $$
 
 The off-diagonal entries record relations between distinct parts:
 
 $$
-d_{ij}=d_{ji}.
+\kappa_{ij}=\kappa_{ji}.
 $$
 
 In matrix form, with
@@ -148,19 +197,19 @@ $$
 the joined value is:
 
 $$
-\mathbf u^{\mathsf T}D\mathbf u.
+\mathbf u^{\mathsf T}K\mathbf u.
 $$
 
-The relation table is admissible for the given joining when:
+The coefficient table is admissible for the given joining when:
 
 $$
-\mathbf u^{\mathsf T}D\mathbf u\ge0.
+\mathbf u^{\mathsf T}K\mathbf u\ge0.
 $$
 
 It is admissible for every real inner state when:
 
 $$
-D\succeq0.
+K\succeq0.
 $$
 
 It is admissible for every nonnegative ultrareal inner state when it is
@@ -169,7 +218,7 @@ copositive on the positive cone:
 $$
 \mathbf u\ge0
 \quad\Longrightarrow\quad
-\mathbf u^{\mathsf T}D\mathbf u\ge0.
+\mathbf u^{\mathsf T}K\mathbf u\ge0.
 $$
 
 For a concrete sum, the state-specific condition is enough. For a whole class of
@@ -180,7 +229,7 @@ sums, the table itself must satisfy the appropriate positivity condition.
 Ordinary arithmetic is recovered when all off-diagonal relations vanish:
 
 $$
-d_{ij}=0\qquad(i\ne j).
+\kappa_{ij}=0\qquad(i\ne j).
 $$
 
 Then:
@@ -193,7 +242,7 @@ $$
 Fully aligned addition is recovered when every off-diagonal relation is one:
 
 $$
-d_{ij}=1\qquad(i\ne j).
+\kappa_{ij}=1\qquad(i\ne j).
 $$
 
 Then:

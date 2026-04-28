@@ -2,7 +2,7 @@
 title: A New Arithmetic
 subtitle: Numbers Interact
 author: An M. Rodriguez
-description: "A formal description of ultrareal numbers as positive square-forms U = u^2, with overloaded addition carried by operand layer, descriptor d, and cross term 2duv."
+description: "A formal description of ultrareal numbers as positive square-forms U = u^2, with overloaded addition lifted from joined inner states and common descriptor reductions."
 excerpt: "The first claim is simple: 1 + 1 is not necessarily only 2. The result depends on the relation carried by the joining operation."
 publisher: Preferred Frame Prints
 editor: An M. Rodriguez

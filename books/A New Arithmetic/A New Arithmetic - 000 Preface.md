@@ -41,39 +41,90 @@ $$
 U=u^2,\qquad V=v^2,
 $$
 
-relation-aware addition is:
+upper-case addition is lifted from the inner states:
 
 $$
-U+V := u^2+v^2+2duv.
+U+V := (u+v)^2.
 $$
 
-The descriptor $d$ records the relation used in that joining. When $d=0$, the
-interaction term vanishes and ordinary addition is recovered:
+If the inner-state product distributes, this expands as:
+
+$$
+(u+v)^2=u^2+uv+vu+v^2.
+$$
+
+The two middle terms are the interaction descriptor:
+
+$$
+d(U,V):=uv+vu.
+$$
+
+So the same rule can be written:
+
+$$
+U+V=u^2+d(U,V)+v^2.
+$$
+
+When the descriptor is being emphasized, the same joined value may be written:
+
+$$
+U\,d\,V := uu+uv+vu+vv.
+$$
+
+Since $uu=u^2$ and $vv=v^2$:
+
+$$
+U\,d\,V=U+V=u^2+d(U,V)+v^2.
+$$
+
+This is not a different arithmetic operation. It is the interaction notation
+for the same overloaded addition.
+
+In common commutative scalar cases, $uv=vu$, so:
+
+$$
+U+V=u^2+v^2+2uv.
+$$
+
+In angular or otherwise projected scalar cases, the descriptor may be
+normalized by a coefficient $\kappa$:
+
+$$
+d(U,V)=uv+vu\rightsquigarrow 2\kappa uv.
+$$
+
+Then the common scalar reduction is:
+
+$$
+U+V=u^2+v^2+2\kappa uv.
+$$
+
+This is not a separate addition operator. It is a reduction of the same
+overloaded $+$ after the relation of the inner states has been specified.
+
+When the projected coefficient is $\kappa=0$, the interaction term vanishes and
+ordinary addition is recovered:
 
 $$
 U+V=u^2+v^2.
 $$
 
-When $d=1$, the parts are aligned:
+When $\kappa=1$, the parts are aligned. When $\kappa=-1$, the parts are
+opposed:
 
 $$
-U+V=(u+v)^2.
-$$
-
-When $d=-1$, the parts are opposed:
-
-$$
-U+V=(u-v)^2.
+U+V=(u+v)^2,\qquad U+V=(u-v)^2.
 $$
 
 Thus the novelty is not the binomial identity. The novelty is the placement of
 that identity inside arithmetic: the cross term is treated as relation data, not
 as an accidental expansion.
 
-For angular or phase-like quantities, the descriptor is often written:
+For angular or phase-like quantities, the normalized coefficient is often
+written:
 
 $$
-d=\cos\Delta,
+\kappa=\cos\Delta,
 $$
 
 where $\Delta$ is the relative difference between two oriented inner

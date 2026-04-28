@@ -118,13 +118,13 @@ The expression:
 
 $$
 U+V=(u-v)^2
-\qquad(d=-1)
+\qquad(\kappa=-1)
 $$
 
 is an admissible joining of two positive ultrareals through opposition.
 
 In the first case, the sign belongs to presentation. In the second case, the
-negative coefficient belongs to the relation descriptor.
+negative coefficient belongs to the reduced relation descriptor.
 
 Neither case creates a negative ultrareal.
 
@@ -162,11 +162,17 @@ $$
 =u^2+v^2+2uv\cos(\alpha-\beta).
 $$
 
-The relative difference $\Delta=\alpha-\beta$ determines the angular
-descriptor:
+The interaction descriptor in this oriented case is:
 
 $$
-d=\cos\Delta.
+d(U,V):=a\bar b+b\bar a.
+$$
+
+The relative difference $\Delta=\alpha-\beta$ determines the angular
+coefficient:
+
+$$
+\kappa=\cos\Delta.
 $$
 
 This is why $\Delta$ is the right symbol for opposition and difference. It names

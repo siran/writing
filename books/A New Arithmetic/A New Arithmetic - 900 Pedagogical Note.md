@@ -59,7 +59,7 @@ Opposition belongs to relation:
 
 $$
 U+V=(u-v)^2
-\qquad(d=-1).
+\qquad(\kappa=-1).
 $$
 
 This lets subtraction, opposition, and cancellation be introduced honestly as
