@@ -865,16 +865,12 @@ def _book_output_files(
     include_epub: bool,
     include_html: bool,
 ) -> list[Path]:
-    outputs = [
-        book_dir / f"{base}.md",
-        book_dir / f"{base}.pandoc.md",
-    ]
+    # Use only the concatenated .md (always written) as the freshness marker.
+    # PDF/EPUB are attempted on each run but may fail (no LaTeX, etc.); their
+    # absence must not force endless re-renders.
+    outputs = [book_dir / f"{base}.md"]
     if include_html:
         outputs.append(book_dir / f"{base}.html")
-    if include_pdf:
-        outputs.append(book_dir / f"{base}.pdf")
-    if include_epub:
-        outputs.append(book_dir / f"{base}.epub")
     return outputs
 
 def _sync_out_book_dir_with_source(book_dir: Path, meta_name: str) -> str:
