@@ -38,9 +38,8 @@ $$
 \end{aligned}
 $$
 
-The visible value is the square-value handled by arithmetic. It may be read as
-a density. The inner magnitude is the root through which relation terms are
-formed.
+The visible value is the square-value handled by arithmetic. The inner
+magnitude is the lower-case value through which relation terms are formed.
 
 This separation is the structural move of the book. Ordinary arithmetic normally
 works directly with visible values. Ultrareal arithmetic keeps the inner
