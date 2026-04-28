@@ -27,10 +27,18 @@ $$
 U=u^2,\qquad u\ge0,\qquad U\in\mathbb U.
 $$
 
-Relation-aware addition is:
+Ordinary visible addition gives:
 
 $$
-U+V:=(u+v)^2.
+U+V=u^2+v^2.
+$$
+
+That is the recovered standard case. Relation-aware ultrareal addition makes the
+joined-sum choice: let $X=U+V$ be an ultrareal, with $X=x^2$ and joined inner
+state $x=u+v$. Then:
+
+$$
+U+V=X=x^2=(u+v)^2.
 $$
 
 When the inner-state product distributes:

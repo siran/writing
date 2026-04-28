@@ -16,7 +16,19 @@ $$
 u+v.
 $$
 
-When upper-case ultrareals are added, let the sum be an ultrareal:
+At this point there is a choice.
+
+If $+$ is read as ordinary visible addition, then:
+
+$$
+U+V=u^2+v^2.
+$$
+
+That is standard arithmetic. It counts the visible square-values without an
+interaction term.
+
+Relation-aware ultrareal addition makes a different choice. It treats the sum
+itself as an ultrareal. Let:
 
 $$
 X=U+V.
@@ -40,12 +52,15 @@ $$
 U+V=X=x^2=(u+v)^2.
 $$
 
+This is the joined-sum axiom. It is the point at which the arithmetic decides to
+join inner states rather than merely count visible square-values.
+
 The operator is still $+$. The operands determine which layer is being used.
 
 ## Ordered Expansion
 
-Expanding the defining square gives the interaction terms. If the inner-state
-product distributes, then:
+Expanding this square gives the interaction terms. If the inner-state product
+distributes, then:
 
 $$
 (u+v)^2=(u+v)(u+v)=u^2+uv+vu+v^2.
@@ -182,7 +197,7 @@ or otherwise structured relation data. The formal requirement is not that every
 descriptor be commutative, scalar, or associative. The formal requirement is
 admissibility: the joined value must remain an ultrareal.
 
-The important order is:
+The important order is the joined-sum axiom:
 
 $$
 X=U+V,\qquad X=x^2,\qquad x=u+v

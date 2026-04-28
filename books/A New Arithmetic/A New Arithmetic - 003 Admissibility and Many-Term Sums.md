@@ -13,7 +13,7 @@ $$
 U=u^2,\qquad V=v^2,
 $$
 
-the joined value is defined from the inner states:
+the joined-sum axiom gives:
 
 $$
 U+V=(u+v)^2.
