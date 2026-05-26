@@ -50,6 +50,7 @@ WRAP_WIDTH = 80
 FRONT_MATTER_DELIMS = ("---", "+++")
 INLINE_TOKEN_PREFIX = "<<<CODEXSPAN"
 INLINE_TOKEN_SUFFIX = ">>>"
+BOM = "\ufeff"
 
 
 def find_image_end(text: str) -> Optional[int]:
@@ -686,6 +687,11 @@ def main(path: Path) -> int:
         return 0
 
     original_text = path.read_text(encoding="utf-8")
+    # Strip a leading BOM before parsing so the first Markdown fence/headline
+    # is still recognized; restore it on write if the file started with one.
+    has_bom = original_text.startswith(BOM)
+    if has_bom:
+        original_text = original_text[len(BOM):]
     lines = original_text.splitlines(keepends=True)
     front_matter: list[str] = []
     body_lines = lines
@@ -695,7 +701,10 @@ def main(path: Path) -> int:
     new_text = "".join(front_matter) + format_only(
         body_lines, leading_context="front_matter" if front_matter else None
     )
-    if new_text != original_text:
+    comparison_text = BOM + original_text if has_bom else original_text
+    if has_bom:
+        new_text = BOM + new_text
+    if new_text != comparison_text:
         path.write_text(new_text, encoding="utf-8")
 
     return 0
