@@ -6,7 +6,7 @@ Format Markdown in-place using numbertext-style wrapping plus spacing rules:
 - Do not change content inside code fences, inline code, or math ($ / $$).
 - Wrap paragraphs to 80 columns while preserving blockquote prefixes.
 - Keep image lines intact (no wrapping).
-- Keep Markdown tables intact (no wrapping).
+- Keep Markdown tables and aligned indented layout blocks intact (no wrapping).
 - Normalize blank lines between blocks:
   - 2 before headings (except after front matter or another heading).
   - 1 after headings.
@@ -46,6 +46,7 @@ LIST_ITEM_RE = re.compile(r"^(\s*)([-*+]|[0-9]+[.)])(\s+|$)(.*)$")
 FENCE_START_RE = re.compile(r"^\s*(`{3,}|~{3,})")
 MATH_BLOCK_DELIM_RE = re.compile(r"^\s*\$\$\s*$")
 TABLE_CELL_RE = re.compile(r"^:?-{1,}:?$")
+ALIGNED_GAP_RE = re.compile(r"\S[ \t]{2,}\S")
 WRAP_WIDTH = 80
 FRONT_MATTER_DELIMS = ("---", "+++")
 INLINE_TOKEN_PREFIX = "<<<CODEXSPAN"
@@ -272,6 +273,37 @@ def is_table_paragraph(blines: list[str]) -> bool:
         if "|" not in line.strip():
             return False
     return True
+
+
+def is_aligned_literal_paragraph(blines: list[str]) -> bool:
+    """Keep hand-aligned indented blocks as written instead of reflowing them."""
+    indent = None
+    content_lines: list[str] = []
+    aligned_hits = 0
+
+    for line in blines:
+        if line.strip() == "":
+            continue
+        match = re.match(r"^([ \t]*)(.*)$", line)
+        if not match:
+            return False
+        cur_indent, content = match.groups()
+        if indent is None:
+            indent = cur_indent
+        elif cur_indent != indent:
+            return False
+        if not content.strip():
+            return False
+        content_lines.append(content.rstrip("\n"))
+        if ALIGNED_GAP_RE.search(content):
+            aligned_hits += 1
+
+    return (
+        len(content_lines) >= 2
+        and indent is not None
+        and len(indent) >= 2
+        and aligned_hits >= 2
+    )
 
 
 def is_list_paragraph(blines: list[str]) -> bool:
@@ -633,6 +665,9 @@ def format_only(lines: list[str], leading_context: Optional[str] = None) -> str:
                 text = paragraph
             elif is_table_paragraph(blines):
                 block_kind = "table"
+                text = paragraph
+            elif is_aligned_literal_paragraph(blines):
+                block_kind = "literal"
                 text = paragraph
             else:
                 if is_blockquote_paragraph(blines):
